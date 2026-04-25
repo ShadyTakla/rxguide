@@ -4120,7 +4120,7 @@ function showPregResult(key) {
   h += '<span style="font-weight:800;font-size:0.95rem;color:var(--text);">Pregnancy</span>';
   h += '<span style="padding:3px 12px;border-radius:20px;font-size:0.78rem;font-weight:700;background:' + d.pregColor + '22;color:' + d.pregColor + ';border:1px solid ' + d.pregColor + '44;">' + d.pregRisk + '</span>';
   h += '</div>';
-  h += '<p style="font-size:0.83rem;color:#c8cadc;line-height:1.6;margin:0;">' + d.pregDetail + '</p>';
+  h += '<ul style="margin:0;padding-left:18px;font-size:0.83rem;color:#c8cadc;line-height:1.6;">' + sentencesToBullets(d.pregDetail) + '</ul>';
   h += '</div>';
 
   // Breastfeeding section
@@ -4130,14 +4130,15 @@ function showPregResult(key) {
   h += '<span style="font-weight:800;font-size:0.95rem;color:var(--text);">Breastfeeding</span>';
   h += '<span style="padding:3px 12px;border-radius:20px;font-size:0.78rem;font-weight:700;background:' + d.bfColor + '22;color:' + d.bfColor + ';border:1px solid ' + d.bfColor + '44;">' + d.bfRisk + '</span>';
   h += '</div>';
-  h += '<p style="font-size:0.83rem;color:#c8cadc;line-height:1.6;margin:0;">' + d.bfDetail + '</p>';
+  h += '<ul style="margin:0;padding-left:18px;font-size:0.83rem;color:#c8cadc;line-height:1.6;">' + sentencesToBullets(d.bfDetail) + '</ul>';
   h += '</div>';
 
   // Alternatives
   if (d.alternatives) {
     h += '<div style="margin-bottom:12px;padding:12px;border-radius:8px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);">';
     h += '<div style="font-weight:700;font-size:0.8rem;color:#a5b4fc;margin-bottom:4px;">🔄 Safer Alternatives</div>';
-    h += '<p style="font-size:0.82rem;color:#c8cadc;line-height:1.5;margin:0;">' + d.alternatives + '</p>';
+    var altText = Array.isArray(d.alternatives) ? d.alternatives.join('; ') : d.alternatives;
+    h += '<ul style="margin:0;padding-left:18px;font-size:0.82rem;color:#c8cadc;line-height:1.5;">' + sentencesToBullets(altText) + '</ul>';
     h += '</div>';
   }
 
