@@ -4775,6 +4775,505 @@ var DRUG_FAMILIES = {
   "canadian_notes": "OTC (Unscheduled). Not ODB-covered. First-line fiber supplement for chronic constipation. LDL-lowering effect: FDA allows health claim (3 g/day reduces CVD risk). CRITICAL COUNSELLING: must drink FULL glass of water with every dose — obstruction risk if insufficient fluid.",
   "pearls": ["MUST take with full glass of water — obstruction risk (esophageal/intestinal) without adequate fluid", "Gas/bloating normalizes after 2–4 weeks as gut microbiome adapts", "LDL reduction: 3 g/day provides modest but meaningful ~5–7% reduction", "Separate from medications by 2 hours (fiber binding)"]
 }
+
+,"chlorpheniramine": {
+  "name": "Chlorpheniramine (Chlorphenamine)",
+  "brand": "Chlor-Tripolon, Chlor-Trimeton",
+  "class": "Respiratory/Allergy",
+  "napra": "U",
+  "moa": "First-generation H1 antihistamine; competes with histamine at H1 receptors; CNS-penetrant (sedating); also anticholinergic",
+  "indications": ["Allergic rhinitis (hay fever, seasonal)", "Urticaria", "Pruritus", "Cold/flu symptom combination products"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "4 mg q4–6h (max 24 mg/day); ER: 8–12 mg q8–12h", "notes": ""},
+    {"route": "Oral (pediatric 6–12)", "dose": "2 mg q4–6h", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Sedation (moderate)", "Dry mouth", "Urinary retention", "Constipation"],
+    "serious": ["Anticholinergic toxicity (elderly)", "QTc prolongation (modest)", "Paradoxical excitation in children"]
+  },
+  "contraindications": ["MAOI use", "Angle-closure glaucoma", "BPH", "Elderly (Beers list)"],
+  "interactions": [
+    {"drug": "CNS depressants / alcohol", "severity": "Major", "mechanism": "Additive CNS depression", "management": "Avoid alcohol; caution with sedatives"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Anticholinergic crisis", "management": "Contraindicated"}
+  ],
+  "pregnancy": "Category B. Generally safe; prefer second-generation (loratadine) in pregnancy.",
+  "pk": {"absorption": "Well absorbed; onset 15–30 min", "half_life": "12–15 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Common in combination cold/allergy products (e.g., Dristan, Contact-C). Beers list in elderly. Second-generation antihistamines (loratadine, cetirizine) preferred due to less sedation.",
+  "pearls": ["Moderate sedation — less than diphenhydramine, more than loratadine", "Common in combination cold remedies — watch for duplicate ingredients", "Beers list: avoid in elderly", "Take at night if sedation bothersome during day"]
+}
+,"cyproheptadine": {
+  "name": "Cyproheptadine",
+  "brand": "Periactin",
+  "class": "Respiratory/Allergy",
+  "napra": "Schedule I",
+  "moa": "First-generation H1 antihistamine + serotonin (5-HT2) antagonist; serotonin antagonism stimulates appetite (orexigenic); also antiserotonin effects in serotonin syndrome",
+  "indications": ["Appetite stimulation (failure to thrive, anorexia nervosa adjunct — off-label)", "Allergic rhinitis/urticaria (antihistamine effect)", "Serotonin syndrome (adjunct treatment)", "Migraine prophylaxis in children (off-label)"],
+  "dosing": [
+    {"route": "Oral (adult, appetite)", "dose": "4 mg TID with meals", "notes": ""},
+    {"route": "Oral (pediatric 2–6 yr)", "dose": "2 mg BID–TID", "notes": "Syrup available"}
+  ],
+  "side_effects": {
+    "common": ["Sedation (significant)", "Weight gain (desired for appetite stimulation)", "Dry mouth", "Dizziness"],
+    "serious": ["Anticholinergic effects", "Paradoxical CNS excitation in children", "Urinary retention"]
+  },
+  "contraindications": ["MAOI use", "Angle-closure glaucoma", "BPH", "Premature infants/neonates"],
+  "interactions": [
+    {"drug": "SSRIs / serotonergic drugs", "severity": "Major", "mechanism": "Cyproheptadine is 5-HT2 antagonist — can antagonize SSRI antidepressant effect AND is useful as antidote in serotonin syndrome", "management": "Avoid chronic co-administration with SSRIs (may reduce antidepressant efficacy); useful in serotonin syndrome"},
+    {"drug": "CNS depressants", "severity": "Major", "mechanism": "Additive sedation", "management": "Avoid alcohol; reduce other CNS depressants"}
+  ],
+  "pregnancy": "Category B. Limited data. Avoid if possible. Antihistamine effect probably safe.",
+  "pk": {"absorption": "Well absorbed", "half_life": "16 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. Unique orexigenic (appetite-stimulating) effect via 5-HT2 antagonism. Used off-label for failure to thrive in children and appetite stimulation in cancer/AIDS. Antidote for serotonin syndrome (cyproheptadine 12 mg oral/NGT).",
+  "pearls": ["Orexigenic (appetite stimulating): unique among antihistamines — used for failure to thrive", "Serotonin syndrome: cyproheptadine 12 mg is an antidote (5-HT2 antagonism)", "Sedation is significant — often used at bedtime", "Can antagonize SSRIs — avoid chronic co-administration"]
+}
+,"mometasone": {
+  "name": "Mometasone",
+  "brand": "Nasonex (nasal spray), Elocom (topical cream/ointment), Asmanex (inhaled)",
+  "class": "Respiratory/Allergy",
+  "napra": "Schedule I",
+  "moa": "Potent glucocorticoid; binds glucocorticoid receptor → suppresses NF-kB → reduces inflammatory cytokine production; high receptor affinity with low systemic bioavailability (especially intranasal: <0.1%)",
+  "indications": ["Allergic rhinitis (Nasonex — seasonal and perennial, first-line nasal ICS)", "Nasal polyps (Nasonex)", "Asthma maintenance (Asmanex)", "Inflammatory skin conditions (Elocom — moderate potency topical)"],
+  "dosing": [
+    {"route": "Nasal spray (allergic rhinitis)", "dose": "2 sprays each nostril once daily (200 mcg)", "notes": ""},
+    {"route": "Topical (Elocom 0.1%)", "dose": "Apply thin layer to affected area once daily", "notes": ""},
+    {"route": "Inhaled asthma (Asmanex)", "dose": "200–400 mcg once daily PM", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Nasal irritation/epistaxis (nasal)", "Headache", "Oropharyngeal candidiasis (inhaled — rinse mouth)", "Local skin atrophy (topical)"],
+    "serious": ["Adrenal suppression (high doses only)", "Growth suppression (high ICS doses in children)", "Skin atrophy (topical — prolonged use on face/intertriginous)"]
+  },
+  "contraindications": ["Hypersensitivity to mometasone"],
+  "interactions": [
+    {"drug": "CYP3A4 inhibitors (ketoconazole, ritonavir)", "severity": "Moderate", "mechanism": "May increase systemic mometasone exposure", "management": "Use with caution; mometasone has low baseline bioavailability — risk generally low"}
+  ],
+  "pregnancy": "Category C. ICS in pregnancy strongly recommended for asthma control. Budesonide has most safety data. Mometasone acceptable. Intranasal mometasone also acceptable for severe allergic rhinitis.",
+  "pk": {"absorption": "Nasal: <0.1% systemic; inhaled: low", "half_life": "5.8 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. Nasonex generic available (mometasone furoate). Very low intranasal bioavailability (<0.1%) — minimal systemic effects even with prolonged nasal use. Elocom topical: medium potency — suitable for body, avoid face/intertriginous areas.",
+  "pearls": ["Intranasal bioavailability <0.1% — safest nasal steroid for systemic side effects", "First-line for nasal polyps (Nasonex)", "Elocom: medium potency — avoid on face or skin folds", "Asmanex: once-daily dosing — adherence advantage"]
+}
+,"hyoscine": {
+  "name": "Hyoscine (Scopolamine)",
+  "brand": "Transderm V (transdermal patch), Buscopan (hyoscine butylbromide — GI antispasmodic)",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I (transdermal) / U (Buscopan OTC)",
+  "moa": "Muscarinic receptor antagonist (anticholinergic); Transderm V (hydrobromide): CNS-penetrating → vestibular suppression → motion sickness; Buscopan (butylbromide): quaternary ammonium → does NOT cross BBB → peripheral GI/GU smooth muscle relaxation → antispasmodic",
+  "indications": ["Transderm V: Motion sickness prevention (patch)", "Buscopan: IBS-associated abdominal cramping, biliary/ureteric colic (antispasmodic)", "Post-op nausea/vomiting (IV scopolamine)"],
+  "dosing": [
+    {"route": "Transdermal patch (motion sickness)", "dose": "1 patch behind ear 4 hours before travel; change q72h", "notes": "Apply to hairless skin behind one ear; wash hands after application"},
+    {"route": "Oral (Buscopan)", "dose": "20 mg QID (10 mg in elderly)", "notes": ""},
+    {"route": "IV (post-op NV)", "dose": "0.2–0.4 mg IV with opioid premedication", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Dry mouth (very common — patch)", "Blurred vision", "Sedation", "Skin irritation at patch site"],
+    "serious": ["Anticholinergic toxicity (confusion, delirium — especially elderly)", "Urinary retention", "Angle-closure glaucoma precipitation", "Tachycardia"]
+  },
+  "contraindications": ["Angle-closure glaucoma", "Pyloric obstruction", "BPH (urinary retention)", "Myasthenia gravis"],
+  "interactions": [
+    {"drug": "CNS depressants / anticholinergics", "severity": "Major", "mechanism": "Additive CNS/anticholinergic effects", "management": "Avoid in elderly on multiple anticholinergics — Beers list"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Anticholinergic crisis", "management": "Contraindicated"}
+  ],
+  "pregnancy": "Transderm V: Category C. Used for severe NVP when other treatments fail. Buscopan: Category B — OTC use for cramping acceptable.",
+  "pk": {"absorption": "Patch: slow (8h to steady state); Buscopan: poorly absorbed orally (~1% systemic)", "half_life": "Hydrobromide: 8 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "Transderm V patch: ODB General Benefit (Schedule I). Buscopan: OTC available (Unscheduled). Patch: apply 4h before travel (needs time to achieve steady state). Wash hands after patch application — accidental eye contact causes mydriasis. Remove patch before MRI.",
+  "pearls": ["Patch: apply 4 hours BEFORE travel onset for adequate onset", "Wash hands thoroughly after applying patch — accidental eye contact causes mydriasis/blurred vision", "Remove before MRI (metallic component in patch)", "Buscopan: does not cross BBB — fewer CNS side effects than Transderm V"]
+}
+,"fesoterodine": {
+  "name": "Fesoterodine",
+  "brand": "Toviaz",
+  "class": "Urology",
+  "napra": "Schedule I",
+  "moa": "Antimuscarinic; prodrug hydrolyzed to 5-hydroxymethyl tolterodine (same active metabolite as tolterodine); selectively blocks M3 muscarinic receptors in bladder detrusor → reduces detrusor overactivity → less urgency/incontinence",
+  "indications": ["Overactive bladder (OAB) with urgency, urge incontinence, and urinary frequency"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "4 mg once daily; increase to 8 mg if tolerated and needed (max 4 mg if CrCl <30 or strong CYP3A4 inhibitors)", "notes": "Take with or without food"}
+  ],
+  "side_effects": {
+    "common": ["Dry mouth (most common — 19–35%)", "Constipation", "Dry eyes", "Headache", "Urinary retention (mild — dose-related)"],
+    "serious": ["Urinary retention (especially BPH)", "Anticholinergic toxicity (elderly)", "QTc prolongation (modest)", "CNS effects (cognitive impairment in elderly)"]
+  },
+  "contraindications": ["Urinary retention", "Gastric retention", "Uncontrolled narrow-angle glaucoma", "Severe hepatic impairment"],
+  "interactions": [
+    {"drug": "Strong CYP3A4 inhibitors (ketoconazole, ritonavir)", "severity": "Major", "mechanism": "Significantly raise fesoterodine active metabolite levels → anticholinergic toxicity", "management": "Do NOT exceed 4 mg/day with strong CYP3A4 inhibitors"},
+    {"drug": "Other antimuscarinics", "severity": "Major", "mechanism": "Additive anticholinergic effects", "management": "Avoid combining; high anticholinergic burden — Beers list"},
+    {"drug": "Digoxin", "severity": "Moderate", "mechanism": "Reduced GI motility may increase digoxin absorption", "management": "Monitor digoxin levels"}
+  ],
+  "pregnancy": "Not applicable (used for OAB, mainly adults).",
+  "pk": {"absorption": "Rapidly hydrolyzed to active metabolite", "half_life": "Active metabolite: 7–8 h", "renal_adjustment": "Max 4 mg/day if CrCl <30"},
+  "canadian_notes": "ODB Limited Use. Mirabegron (beta-3 agonist) preferred over antimuscarinics in elderly (no anticholinergic CNS effects — reduced dementia risk). Antimuscarinics acceptable when mirabegron ineffective or not tolerated. Mirabegron + fesoterodine combination approved for refractory OAB.",
+  "pearls": ["Mirabegron preferred over antimuscarinics in elderly (no cognitive/anticholinergic CNS effects)", "Max 4 mg/day with strong CYP3A4 inhibitors — avoid escalating", "Dry mouth most common side effect — use sugar-free gum, adequate hydration", "Beers list: avoid antimuscarinics in elderly"]
+}
+
+,"ferrous_bisglycinate": {
+  "name": "Ferrous bisglycinate (iron bisglycinate chelate)",
+  "brand": "Gentle Iron, Feramax (Canada), Feramax Pediatric",
+  "class": "Vitamins/Supplements",
+  "napra": "U",
+  "moa": "Chelated iron supplement; iron bound to two glycine amino acids → protects iron from dietary inhibitors (phytates, tannins, calcium) and enhances absorption; lower GI side effects than ionic iron salts",
+  "indications": ["Iron deficiency anemia (treatment and prevention)", "Pregnancy iron supplementation", "Patients with iron salt GI intolerance"],
+  "dosing": [
+    {"route": "Oral (Feramax 150)", "dose": "1 capsule once daily (150 mg elemental iron)", "notes": "Can be taken with or without food (unlike ionic salts)"},
+    {"route": "Oral (Feramax Pediatric 15)", "dose": "15 mg elemental iron once daily (children)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Less GI upset than ferrous sulfate/fumarate", "Black stools (normal)", "Constipation (less than ionic forms)"],
+    "serious": ["Iron overload (hemochromatosis risk)"]
+  },
+  "contraindications": ["Hemochromatosis", "Repeated transfusions", "Hemolytic anemia"],
+  "interactions": [
+    {"drug": "Tetracyclines, fluoroquinolones, levothyroxine", "severity": "Moderate", "mechanism": "Chelated iron still reduces absorption of these drugs (less than ionic iron)", "management": "Separate by 1–2 hours (may require less separation than ionic iron)"},
+    {"drug": "Vitamin C", "severity": "Minor", "mechanism": "Less benefit than with ionic iron (already well-absorbed)", "management": "Not required, but not harmful"}
+  ],
+  "pregnancy": "Safe. Preferred over ferrous sulfate when GI tolerance is a concern (common in pregnancy). Well-tolerated once-daily dosing improves compliance.",
+  "pk": {"absorption": "Higher bioavailability than ionic iron (not dependent on gastric acid); ~25–40%", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Available as Feramax — well-known brand in Canada. More expensive than ferrous fumarate/sulfate. GI tolerability advantage: chelated form protected from GI inhibitors and less constipating. Does NOT require vitamin C or empty stomach.",
+  "pearls": ["Better GI tolerance than ferrous sulfate/fumarate — fewer side effects, better compliance", "Can take with food (acid-independent absorption)", "More expensive than ionic forms but may improve adherence", "Feramax 150 provides 150 mg elemental iron once daily"]
+}
+,"vitamin_c_supp": {
+  "name": "Vitamin C (Ascorbic acid)",
+  "brand": "Multiple OTC brands — Vit C 500, Emergen-C",
+  "class": "Vitamins/Supplements",
+  "napra": "U",
+  "moa": "Essential water-soluble antioxidant vitamin; cofactor for collagen synthesis, carnitine biosynthesis, neurotransmitter synthesis; enhances non-heme iron absorption by reducing Fe3+ to Fe2+; immune function support",
+  "indications": ["Vitamin C deficiency (scurvy — rare in Canada)", "Iron absorption enhancement (co-administered with iron supplements)", "Pregnancy supplementation (part of prenatal vitamins)", "Cold symptom duration reduction (modest evidence)", "Wound healing support"],
+  "dosing": [
+    {"route": "Oral (RDA)", "dose": "75–90 mg/day (adult)", "notes": "Pregnancy: 85 mg/day; breastfeeding: 120 mg/day"},
+    {"route": "Oral (cold prevention/treatment)", "dose": "500–1000 mg/day", "notes": "Limited evidence for significant clinical benefit beyond RDA"},
+    {"route": "Oral (iron absorption)", "dose": "500 mg with each iron dose", "notes": "Enhances non-heme iron absorption ~30%"}
+  ],
+  "side_effects": {
+    "common": ["GI upset/diarrhea (high doses >2 g/day)", "Kidney stone formation (oxalate — doses >1–2 g/day long-term)"],
+    "serious": ["Calcium oxalate kidney stones (with very high doses long-term)", "False-negative fecal occult blood tests (high doses)"]
+  },
+  "contraindications": ["Oxalate kidney stones (high doses)"],
+  "interactions": [
+    {"drug": "Warfarin", "severity": "Minor", "mechanism": "High doses (>1 g/day) may reduce warfarin anticoagulant effect", "management": "Monitor INR if patient on high-dose vitamin C"},
+    {"drug": "Iron supplements", "severity": "Minor", "mechanism": "Vitamin C enhances iron absorption — beneficial interaction", "management": "Intentional co-administration recommended"}
+  ],
+  "pregnancy": "Category A. Safe and recommended. Component of all prenatal vitamins. Supports fetal development and collagen synthesis.",
+  "pk": {"absorption": "Well absorbed at low doses; decreases at high doses (saturable transport)", "half_life": "30 min – 3 h", "renal_adjustment": "Reduce high doses in renal failure (oxalate accumulation)"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. High doses do NOT prevent colds in most people; may reduce duration by 1 day. Scurvy is rare in Canada but seen in elderly isolated individuals, alcoholics, limited fruit/vegetable intake. Mega-doses (>2 g/day) provide no benefit and increase kidney stone risk.",
+  "pearls": ["High doses do NOT prevent colds — modest reduction in duration only", "Co-administer with iron to enhance non-heme iron absorption 30%", "Doses >2 g/day: GI diarrhea and kidney stone risk", "Most prenatal vitamins contain adequate vitamin C — additional supplementation usually unnecessary"]
+}
+,"caffeine_supp": {
+  "name": "Caffeine (oral supplement/medication)",
+  "brand": "No-Doz, Vivarin; Cafcit (IV neonatal apnea)",
+  "class": "Psychiatry/Neurology",
+  "napra": "U (OTC stimulant) / Schedule I (Cafcit — neonatal)",
+  "moa": "Non-selective adenosine receptor antagonist (A1, A2A); blocks adenosine's inhibitory effects → CNS stimulation; neonatal: stimulates respiratory center → reduces apnea of prematurity",
+  "indications": ["Alertness/wakefulness (OTC)", "Apnea of prematurity (Cafcit IV — NICU)", "Migraine treatment adjunct (with analgesics — Excedrin contains caffeine)", "Headache associated with caffeine withdrawal"],
+  "dosing": [
+    {"route": "Oral (alertness)", "dose": "100–200 mg q3–4h (max 600 mg/day)", "notes": ""},
+    {"route": "IV neonatal (apnea of prematurity)", "dose": "Loading 20 mg/kg caffeine base; maintenance 5–10 mg/kg/day", "notes": "NICU use — specialist dosing"}
+  ],
+  "side_effects": {
+    "common": ["Insomnia", "Palpitations/tachycardia", "Anxiety/jitteriness", "GI upset", "Diuresis"],
+    "serious": ["Dependence and withdrawal (headache, fatigue on stopping)", "Arrhythmias at high doses", "Hypertension", "Neonatal toxicity (NICU — therapeutic drug monitoring)"]
+  },
+  "contraindications": ["Severe anxiety disorders", "Cardiac arrhythmias", "Peptic ulcer disease (stimulates gastric acid)"],
+  "interactions": [
+    {"drug": "CYP1A2 inhibitors (fluvoxamine, ciprofloxacin, oral contraceptives)", "severity": "Moderate", "mechanism": "Caffeine is CYP1A2 substrate — inhibitors raise caffeine levels up to 5x", "management": "Reduce caffeine intake with CYP1A2 inhibitors"},
+    {"drug": "Adenosine", "severity": "Major", "mechanism": "Caffeine antagonizes adenosine — reduces cardiovascular effects of adenosine (used in arrhythmia)", "management": "Hold caffeine before adenosine cardiac testing"}
+  ],
+  "pregnancy": "Category C. Safe at <200 mg/day (Health Canada/SOGC recommendation). Doses >200 mg/day associated with increased miscarriage and fetal growth restriction risk. Caffeine crosses placenta.",
+  "pk": {"absorption": "Rapid — peak 30–60 min", "half_life": "3–5 h (smokers shorter; pregnancy longer: 15 h in 3rd trimester)", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Health Canada: limit to <200 mg/day in pregnancy. Common source: coffee (~95 mg/250 mL), tea (~47 mg/250 mL), energy drinks (80–250 mg/500 mL), dark chocolate (~25 mg/30 g). Half-life doubles/triples in pregnancy — caffeine accumulates.",
+  "pearls": ["Pregnancy: <200 mg/day safe (Health Canada); accumulates as half-life prolongs in pregnancy", "Withdrawal headache: common even at moderate intake — taper rather than abrupt stop", "Energy drinks: may exceed 200 mg/can — check labels", "Adenosine cardiac testing: withhold caffeine 12–24h before test"]
+}
+,"echinacea": {
+  "name": "Echinacea",
+  "brand": "Echinacea by Jamieson, A.Vogel, many brands",
+  "class": "Vitamins/Supplements",
+  "napra": "U",
+  "moa": "Immunostimulant; polysaccharides and alkylamides in Echinacea purpurea stimulate macrophage phagocytosis, natural killer cell activity, and cytokine production; cyclooxygenase inhibition (mild anti-inflammatory)",
+  "indications": ["Common cold (modest reduction in duration — best evidence for prevention/early treatment)", "Upper respiratory tract infection symptomatic relief", "Immune support (subjective)"],
+  "dosing": [
+    {"route": "Oral (adults)", "dose": "Product-specific: 300–500 mg TID of standardized E. purpurea extract; or 2–4 mL tincture TID at cold onset", "notes": "Use at cold onset for best effect; not for >8 weeks continuous use"}
+  ],
+  "side_effects": {
+    "common": ["GI upset", "Allergic reactions (tingling tongue, rash)", "Taste"],
+    "serious": ["Anaphylaxis (rare — in atopic individuals)", "Cross-reactivity with ragweed, chrysanthemums (Asteraceae family)"]
+  },
+  "contraindications": ["Asteraceae/daisy family allergy (ragweed, chamomile)", "Autoimmune disease (theoretical immunostimulation concern)", "Immunosuppressed patients"],
+  "interactions": [
+    {"drug": "Immunosuppressants (cyclosporine, tacrolimus, corticosteroids)", "severity": "Major", "mechanism": "Echinacea immunostimulation may oppose immunosuppressive drugs", "management": "Avoid in organ transplant recipients and immunosuppressed patients"},
+    {"drug": "CYP3A4 substrates", "severity": "Minor", "mechanism": "Some Echinacea products mildly inhibit CYP3A4", "management": "Clinically significant interactions rare at standard doses"}
+  ],
+  "pregnancy": "Category C. Limited data. Some authorities advise caution in first trimester (theoretical immunostimulation). Generally avoided in pregnancy; benefit modest and uncertain.",
+  "pk": {"absorption": "Variable depending on formulation and species", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Health Canada licensed NHP (Natural Health Product). Evidence: meta-analyses show modest reduction in cold incidence (~35%) and duration (~1.4 days) but significant variability by product/species/preparation. E. purpurea has most evidence.",
+  "pearls": ["Start at FIRST symptom of cold for best effect", "Ragweed/daisy allergy: potential cross-reactivity — avoid if atopic", "Avoid in immunosuppressed/transplant patients", "Evidence is modest and inconsistent between studies and products"]
+}
+,"st_johns_wort": {
+  "name": "St. John's Wort (Hypericum perforatum)",
+  "brand": "Multiple NHP brands (Jamieson, Natural Factors, etc.)",
+  "class": "Psychiatry/Neurology",
+  "napra": "U",
+  "moa": "Hypericin and hyperforin: serotonin/norepinephrine/dopamine reuptake inhibition (similar mechanism to SSRIs but weaker); also weak MAO inhibition; potent CYP3A4 and P-glycoprotein INDUCER",
+  "indications": ["Mild-moderate depression (equivalent to standard antidepressants in some trials — RCTs; not approved by Health Canada for depression)", "Anxiety (limited evidence)"],
+  "dosing": [
+    {"route": "Oral (standardized extract)", "dose": "300 mg TID (standardized to 0.3% hypericin)", "notes": "Full effect may take 4–6 weeks; do not stop abruptly"}
+  ],
+  "side_effects": {
+    "common": ["Photosensitivity (especially fair-skinned)", "GI upset", "Dizziness", "Dry mouth"],
+    "serious": ["Serotonin syndrome (with SSRIs, SNRIs, MAOIs, tramadol)", "MAJOR drug interactions via CYP3A4/P-gp induction"]
+  },
+  "contraindications": ["SSRIs/SNRIs/MAOIs concurrent use (serotonin syndrome)", "Patients on any drugs metabolized by CYP3A4 (very broad list)"],
+  "interactions": [
+    {"drug": "Cyclosporine", "severity": "Major", "mechanism": "CYP3A4/P-gp induction — reduces cyclosporine levels by 50% → organ rejection", "management": "ABSOLUTE CONTRAINDICATION in transplant patients"},
+    {"drug": "Oral contraceptives", "severity": "Major", "mechanism": "CYP3A4 induction — reduces OCP efficacy → unintended pregnancy", "management": "AVOID; use non-hormonal contraception if taking SJW"},
+    {"drug": "HIV antiretrovirals (PIs, NNRTIs)", "severity": "Major", "mechanism": "CYP3A4/P-gp induction reduces ARV levels to sub-therapeutic → virologic failure", "management": "ABSOLUTELY CONTRAINDICATED with HIV therapy"},
+    {"drug": "Warfarin", "severity": "Major", "mechanism": "CYP2C9 induction — reduces warfarin levels → INR drops → thrombosis", "management": "AVOID; if stopped, INR rises significantly — monitor closely"}
+  ],
+  "pregnancy": "Category C. Avoid in pregnancy — insufficient safety data, potential for uterotonic effects, drug interactions in pregnancy (birth control failure).",
+  "pk": {"absorption": "Well absorbed; fat-soluble constituents", "half_life": "Hypericin: 24–48 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled) — available as Natural Health Product (NHP). Health Canada mandates labeling of drug interactions. Extremely important drug interaction profile: cyclosporine rejection episodes and OCP failures well-documented. Pharmacists should screen for SJW use in all patients on narrow therapeutic index drugs.",
+  "pearls": ["Most important drug interaction: cyclosporine (transplant rejection), OCP (pregnancy), HIV drugs, warfarin", "CYP3A4/P-gp inducer — affects almost all CYP3A4-metabolized medications", "Photosensitivity: avoid prolonged sun exposure especially with fair skin", "ALWAYS ask about herbal supplement use in patient medication reviews"]
+}
+
+,"ginger_supplement": {
+  "name": "Ginger (Zingiber officinale)",
+  "brand": "Gravol Natural Source, Jamieson Ginger, multiple brands",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Gingerols and shogaols: 5-HT3 receptor antagonism in GI tract (antiemetic); prostaglandin synthesis inhibition (anti-inflammatory); accelerates gastric emptying; direct effect on GI smooth muscle",
+  "indications": ["Nausea and vomiting of pregnancy (NVP) — first-line non-pharmacological and herbal", "Motion sickness", "Post-operative nausea (limited evidence)", "Chemotherapy-induced nausea (adjunct)"],
+  "dosing": [
+    {"route": "Oral (NVP)", "dose": "250 mg QID (1 g/day total) or 1000 mg once daily as standardized extract", "notes": "Fresh ginger tea, ginger chews, or capsules all used"},
+    {"route": "Oral (motion sickness)", "dose": "1000–2000 mg 1 hour before travel", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Heartburn/GERD (large doses)", "GI upset", "Burping"],
+    "serious": ["Antiplatelet effect at high doses (rare at standard supplemental doses)", "Rare contact dermatitis"]
+  },
+  "contraindications": ["Gallstones (large doses may stimulate bile flow)", "Anticoagulant therapy (high doses >4 g/day)"],
+  "interactions": [
+    {"drug": "Warfarin", "severity": "Minor", "mechanism": "High-dose ginger inhibits platelet aggregation; case reports of INR elevation", "management": "Standard culinary doses safe; monitor INR if high-dose ginger supplements with warfarin"},
+    {"drug": "Antiplatelet drugs (ASA, clopidogrel)", "severity": "Minor", "mechanism": "Additive platelet inhibition at high doses", "management": "Standard supplemental doses generally safe; avoid high-dose ginger"}
+  ],
+  "pregnancy": "Category B. Considered safe at ≤1 g/day. SOGC recommends ginger as first-line for mild NVP (before pharmacological therapy). Extensive use in pregnancy without teratogenicity reports.",
+  "pk": {"absorption": "Well absorbed; metabolized hepatically", "half_life": "Variable", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled) — NHP. SOGC NVP guidelines: ginger 1 g/day is first-line recommendation before doxylamine-pyridoxine. Gravol Natural Source ginger available as alternative to dimenhydrinate Gravol. Very safe at culinary-supplemental doses.",
+  "pearls": ["SOGC first-line for mild NVP — before adding antihistamines or antiemetics", "Standard doses (≤1 g/day) considered safe throughout pregnancy", "Culinary ginger (tea, chews, ginger ale) can be as effective as capsules", "High doses >4 g/day: avoid in pregnancy and with anticoagulants"]
+}
+,"saline_nasal_spray": {
+  "name": "Saline nasal spray / rinse (NaCl 0.9%)",
+  "brand": "SIMPLY SALINE, HydraSense, Physiomer, Neilmed SinusRinse",
+  "class": "Respiratory/Allergy",
+  "napra": "U",
+  "moa": "Isotonic/hypertonic saline; mechanically irrigates nasal passages → removes allergens, irritants, mucus, viral particles; humidifies nasal mucosa; may reduce nasal inflammation by altering ion transport; no pharmacological receptor activity",
+  "indications": ["Nasal congestion (preferred first-line in pregnancy, infants, elderly)", "Allergic rhinitis (adjunct — removes allergens)", "Post-nasal drip", "Sinusitis (adjunct to antibiotics or nasal steroids)", "Neonatal/infant nasal congestion"],
+  "dosing": [
+    {"route": "Nasal spray (adult/child)", "dose": "2–3 sprays each nostril 1–4x daily PRN", "notes": "Hypertonic saline (1.5–3%) more effective for clearing secretions"},
+    {"route": "Nasal rinse (Neilmed)", "dose": "240 mL isotonic/hypertonic packet, squeeze bottle both nostrils 1–2x daily", "notes": "Use distilled or boiled-cooled water (tap water not recommended for sinus rinse devices — amebic encephalitis risk)"}
+  ],
+  "side_effects": {
+    "common": ["Transient stinging (hypertonic)", "Post-rinse drainage"],
+    "serious": ["Naegleria fowleri amebic encephalitis (using tap water in sinus rinse devices — extremely rare but fatal)", "None otherwise"]
+  },
+  "contraindications": ["None for isotonic saline nasal spray"],
+  "interactions": [
+    {"drug": "No drug-drug interactions", "severity": "Minor", "mechanism": "No pharmacological receptor activity", "management": "Can be used to improve adherence and delivery of nasal sprays by using saline first to clear passages"}
+  ],
+  "pregnancy": "Category A. Safest treatment for nasal congestion in pregnancy. First-line recommended over all pharmacological decongestants in pregnancy.",
+  "pk": {"absorption": "Minimal systemic absorption", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Inexpensive, safe for all ages including neonates. Strongly preferred first-line for nasal congestion in pregnancy (instead of oxymetazoline or pseudoephedrine). Important: sinus rinse devices — use distilled, filtered, or boiled-cooled water only.",
+  "pearls": ["SAFEST decongestant — first-line in pregnancy, infants, elderly", "Use BEFORE medicated nasal sprays to clear passages and improve drug delivery", "Sinus rinse devices: NEVER use unfiltered tap water (Naegleria fowleri risk)", "Hypertonic saline (1.5–3%) better at removing secretions than isotonic"]
+}
+,"valerian": {
+  "name": "Valerian (Valeriana officinalis)",
+  "brand": "Valerian by Jamieson, Natural Factors — multiple NHP brands",
+  "class": "Psychiatry/Neurology",
+  "napra": "U",
+  "moa": "Valerenic acid: GABA-A receptor partial agonist and positive allosteric modulator; isovaltrate: possible serotonin 5-HT5a agonism; cumulative sedative effects — exact mechanism debated",
+  "indications": ["Insomnia (falling asleep and sleep quality — modest evidence)", "Anxiety (mild — limited evidence)"],
+  "dosing": [
+    {"route": "Oral (insomnia)", "dose": "300–600 mg of standardized extract 30–120 min before bed", "notes": "Multiple weeks of use may be needed for full effect"}
+  ],
+  "side_effects": {
+    "common": ["Headache", "Dizziness", "GI upset", "Morning grogginess"],
+    "serious": ["Rare hepatotoxicity (unclear causation)", "Potential withdrawal symptoms with abrupt discontinuation after prolonged use"]
+  },
+  "contraindications": ["Pregnancy and breastfeeding (insufficient safety data)", "Hepatic disease (rare hepatotoxicity reports)"],
+  "interactions": [
+    {"drug": "CNS depressants (benzodiazepines, alcohol, sedatives)", "severity": "Major", "mechanism": "Additive CNS depression", "management": "Avoid combination with sedating medications or alcohol"},
+    {"drug": "CYP3A4 substrates", "severity": "Minor", "mechanism": "Some in vitro evidence of CYP3A4 inhibition — clinical significance unclear", "management": "Monitor if using with narrow therapeutic index CYP3A4 substrates"}
+  ],
+  "pregnancy": "Avoid — insufficient safety data. Potential uterotonic effects. CBT-I preferred for insomnia in pregnancy.",
+  "pk": {"absorption": "Variable depending on formulation", "half_life": "~1 h (valerenic acid)", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled) — licensed NHP. Evidence for insomnia is inconsistent — some RCTs show benefit, others show no difference from placebo. Better evidence for short-term use. CBT-I (Cognitive Behavioral Therapy for Insomnia) remains first-line. Generally considered safe for short-term adult use.",
+  "pearls": ["Evidence inconsistent — some show benefit for sleep latency, others show none", "Avoid in pregnancy and with other CNS depressants", "May take 2–4 weeks for full sleep benefit", "CBT-I is superior first-line treatment for chronic insomnia"]
+}
+,"zinc_oxide_topical": {
+  "name": "Zinc oxide (topical)",
+  "brand": "Penaten, Desitin, Zincofax — many OTC brands",
+  "class": "Dermatology",
+  "napra": "U",
+  "moa": "Barrier cream; forms physical barrier on skin surface → prevents moisture and irritants from contacting skin; mild astringent; antimicrobial properties against Candida and bacteria; promotes wound healing (zinc cofactor for metalloproteinases)",
+  "indications": ["Diaper rash prevention and treatment (first-line)", "Mild skin irritation and inflammation", "Wound healing adjunct (minor cuts/abrasions)", "Sun protection (physical UV blocker in sunscreen formulations)"],
+  "dosing": [
+    {"route": "Topical (diaper rash)", "dose": "Apply thick layer to clean dry skin at each diaper change", "notes": "Thick application is protective — not cosmetically thin"},
+    {"route": "Topical (wound)", "dose": "Apply to affected area 1–3x daily", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["None at standard topical use"],
+    "serious": ["Systemic toxicity only with massive oral ingestion (not topical use)"]
+  },
+  "contraindications": ["Contact sensitivity to zinc oxide (very rare)"],
+  "interactions": [
+    {"drug": "No drug-drug interactions (topical)", "severity": "Minor", "mechanism": "Zinc oxide may reduce absorption of concurrently applied topical medications", "management": "Apply other topical drugs first, then zinc oxide as final protective layer"}
+  ],
+  "pregnancy": "Category A. Completely safe throughout pregnancy. Commonly used topically in pregnant women for skin protection. First-line for diaper rash in infants.",
+  "pk": {"absorption": "Topical: minimal systemic (negligible)", "half_life": "N/A", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Inexpensive, safe for all ages including neonates. First-line for diaper rash prevention. Physical UV blocker (zinc oxide 20–25%) in mineral sunscreens — preferred over chemical sunscreens in neonates and infants.",
+  "pearls": ["Apply other topical medications first, then zinc oxide as outer protective barrier", "Physical sunscreen (mineral): preferred for infants and sensitive skin", "Thick application is key — not thin", "Completely safe in pregnancy and infants"]
+}
+,"darifenacin": {
+  "name": "Darifenacin",
+  "brand": "Enablex",
+  "class": "Urology",
+  "napra": "Schedule I",
+  "moa": "Selective M3 muscarinic receptor antagonist; higher selectivity for M3 (bladder detrusor) over M1 (CNS, salivary glands) and M2 (heart) → potentially less cognitive and cardiac side effects vs non-selective antimuscarinics",
+  "indications": ["Overactive bladder (OAB) with urgency, urge incontinence, and urinary frequency"],
+  "dosing": [
+    {"route": "Oral ER (adult)", "dose": "7.5 mg once daily; increase to 15 mg after 2 weeks if needed", "notes": "Swallow whole; can take with or without food"}
+  ],
+  "side_effects": {
+    "common": ["Dry mouth (28–35%)", "Constipation (15–21%)", "Dry eyes", "Urinary retention (mild)"],
+    "serious": ["Urinary retention (BPH patients)", "Cognitive impairment (elderly)", "QTc prolongation (modest)"]
+  },
+  "contraindications": ["Urinary retention", "Gastric retention", "Severe hepatic impairment", "Narrow-angle glaucoma"],
+  "interactions": [
+    {"drug": "Strong CYP3A4 inhibitors (ketoconazole, ritonavir)", "severity": "Major", "mechanism": "Raise darifenacin levels — anticholinergic toxicity", "management": "Do not exceed 7.5 mg/day with strong CYP3A4 inhibitors"},
+    {"drug": "Other antimuscarinics", "severity": "Major", "mechanism": "Additive anticholinergic burden — Beers list", "management": "Avoid combining antimuscarinics"},
+    {"drug": "CYP2D6 substrates (narrow TI: flecainide, TCAs)", "severity": "Moderate", "mechanism": "Darifenacin inhibits CYP2D6 — raises levels of substrate drugs", "management": "Monitor for toxicity of CYP2D6 substrates"}
+  ],
+  "pregnancy": "Not applicable (adult OAB).",
+  "pk": {"absorption": "Well absorbed ER formulation", "half_life": "13–19 h", "renal_adjustment": "No dose adjustment needed"},
+  "canadian_notes": "ODB Limited Use. M3 selectivity theoretically advantageous (less CNS/cardiac effects). In practice, clinical differentiation from non-selective antimuscarinics is modest. Mirabegron preferred in elderly for OAB due to no anticholinergic CNS effects.",
+  "pearls": ["M3-selective: theoretical advantage of less cognitive effects vs oxybutynin", "Mirabegron still preferred over all antimuscarinics in elderly", "Max 7.5 mg/day with strong CYP3A4 inhibitors", "Constipation is a very common side effect (21%) — counsel and manage proactively"]
+}
+
+,"naphazoline": {
+  "name": "Naphazoline",
+  "brand": "Naphcon, Clear Eyes, Visine (original), Privine (nasal)",
+  "class": "Ophthalmology",
+  "napra": "U",
+  "moa": "Alpha-2 adrenergic agonist; causes vasoconstriction of conjunctival blood vessels → reduces redness (ophthalmic); nasal: vasoconstriction of nasal mucosa → decongestant",
+  "indications": ["Ocular redness relief (minor eye irritation from allergies, smog, smoke)", "Nasal congestion (nasal drops)"],
+  "dosing": [
+    {"route": "Ophthalmic (eye drops)", "dose": "1–2 drops in affected eye(s) up to QID", "notes": "Maximum 3–4 days for ophthalmic use (rebound hyperemia)"},
+    {"route": "Nasal drops", "dose": "2 drops each nostril q6h (maximum 3–5 days)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Burning/stinging", "Transient blurred vision", "Rebound hyperemia (ophthalmic — with overuse >3 days)", "Rebound nasal congestion"],
+    "serious": ["Neonatal/infant toxicity if accidentally ingested (bradycardia, CNS depression — SEVERE)", "Cardiovascular effects (hypertension, bradycardia — systemic absorption)"]
+  },
+  "contraindications": ["Angle-closure glaucoma", "Children <2 years (ophthalmic)", "MAOI use", "Contact lenses (remove before application, wait 15 min)"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Hypertensive crisis (sympathomimetic + MAOI)", "management": "Contraindicated"},
+    {"drug": "Tricyclic antidepressants", "severity": "Moderate", "mechanism": "Potentiate sympathomimetic pressor response", "management": "Use cautiously in patients on TCAs"}
+  ],
+  "pregnancy": "Category C. Avoid. Vasoconstriction may reduce ocular or nasal blood flow; limited pregnancy data. Saline eye drops and saline nasal spray are preferred in pregnancy.",
+  "pk": {"absorption": "Ophthalmic: minimal systemic normally", "half_life": "N/A (local)", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Rebound hyperemia (conjunctival redness) develops within 3–4 days of daily use — discourage regular use. For allergic conjunctivitis: sodium cromoglycate (Opticrom) or olopatadine (Pataday) preferred long-term. DANGER: alphaagonist eye drops are very toxic if accidentally swallowed by children — store safely.",
+  "pearls": ["Maximum 3–4 days — rebound conjunctival redness develops with overuse", "NEVER use in children <2 years — accidental ingestion causes severe CNS depression/bradycardia", "For allergic eye symptoms: antihistamine/mast cell stabilizer drops preferred (olopatadine)", "Remove contact lenses before use; wait 15 min before reinserting"]
+}
+,"artificial_tears": {
+  "name": "Artificial tears (lubricant eye drops)",
+  "brand": "Refresh, Systane, Soothe, Visine Tears, HyloForte",
+  "class": "Ophthalmology",
+  "napra": "U",
+  "moa": "Lubricating polymers (carboxymethylcellulose, polyvinyl alcohol, hyaluronic acid, polyethylene glycol) supplement or replace insufficient tear film → lubricate ocular surface → relieve dry eye symptoms",
+  "indications": ["Dry eye syndrome (keratoconjunctivitis sicca)", "Eye irritation/dryness from environment, screen use, or medications", "Post-LASIK dryness", "Contact lens comfort"],
+  "dosing": [
+    {"route": "Ophthalmic", "dose": "1–2 drops in affected eye(s) PRN (q4–6h or more frequently)", "notes": "Preservative-free single-dose vials preferred if use >4x/day (preservatives toxic to corneal epithelium with frequent use)"}
+  ],
+  "side_effects": {
+    "common": ["Transient blurred vision (thick/gel formulations)", "Mild stinging (preservative-containing drops — especially benzalkonium chloride)"],
+    "serious": ["Benzalkonium chloride (BAK) preservative: toxic to corneal epithelium with frequent use — use preservative-free if >4x/day"]
+  },
+  "contraindications": ["Allergy to components (preservative hypersensitivity)"],
+  "interactions": [
+    {"drug": "Contact lenses", "severity": "Minor", "mechanism": "Preservative-containing drops (BAK) damage soft contact lenses", "management": "Remove contacts before drops; preservative-free vials preferred with contact lens wear"}
+  ],
+  "pregnancy": "Category A. Completely safe throughout pregnancy. First-line for dry eye symptoms in pregnancy.",
+  "pk": {"absorption": "Not absorbed systemically", "half_life": "N/A", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Hyaluronate-based drops (HyloForte) are preservative-free and provide long-lasting lubrication. Gel formulations (Systane Gel) for more severe dry eye — longer duration but more blurring. Preservative-free vials (Refresh Plus, Systane Ultra PF) for frequent use and contact lens wearers.",
+  "pearls": ["Preservative-free required if using >4x daily (BAK corneal toxicity)", "Preservative-containing drops: remove contact lenses before instillation", "Gel formulations: longer relief but causes temporary blurring — use at bedtime", "Completely safe in pregnancy — first-line for eye dryness"]
+}
+,"phenylephrine_rectal": {
+  "name": "Phenylephrine (rectal) + Pramoxine",
+  "brand": "Preparation H (phenylephrine cream/suppository), Anusol Plus, Tucks",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Phenylephrine: alpha-1 adrenergic agonist → vasoconstriction of hemorrhoidal vessels → reduces engorgement; Pramoxine: local anesthetic (Na+ channel block) → reduces pain/pruritus; Hamamelis (witch hazel) alternative: astringent",
+  "indications": ["Hemorrhoids (internal and external) — symptom relief (pain, pruritus, bleeding)", "Rectal inflammation and itching"],
+  "dosing": [
+    {"route": "Rectal cream/ointment", "dose": "Apply externally to perianal area QID and after each bowel movement", "notes": ""},
+    {"route": "Rectal suppository", "dose": "Insert 1 suppository BID and after each bowel movement", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Local burning/stinging", "Allergic contact dermatitis (rare)"],
+    "serious": ["Systemic phenylephrine absorption (hypertension — minimal with topical rectal use)", "Corticosteroid-containing products: risk of perianal skin atrophy with prolonged use"]
+  },
+  "contraindications": ["Contact dermatitis/allergy to local anesthetics or vasoconstrictors"],
+  "interactions": [
+    {"drug": "MAO inhibitors (phenylephrine component)", "severity": "Moderate", "mechanism": "Systemic absorption of phenylephrine → pressor response enhanced by MAOIs", "management": "Avoid with MAOIs"}
+  ],
+  "pregnancy": "Topical rectal application: generally considered safe. Hemorrhoids are very common in pregnancy. Anusol (zinc oxide based) and witch hazel pads preferred in pregnancy over phenylephrine-containing products due to minimal systemic absorption.",
+  "pk": {"absorption": "Topical: minimal systemic", "half_life": "N/A (topical)", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Preparation H is widely available. Concurrent lifestyle measures critical: dietary fiber (35 g/day), adequate hydration, sitz baths. Witch hazel pads (Tucks) safe in pregnancy. Corticosteroid-containing products (Anusol HC): limit to 5–7 days.",
+  "pearls": ["Lifestyle measures essential: high fiber diet, hydration, sitz baths, avoid straining", "Witch hazel pads safe in pregnancy (minimal absorption)", "Corticosteroid combinations: limit to 5–7 days (perianal skin atrophy)", "Anusol (zinc oxide) is the safest option in pregnancy"]
+}
+,"glycerin_suppository": {
+  "name": "Glycerin (Glycerol) suppository",
+  "brand": "Fleet Glycerin Suppositories, Lax-A-Glycerin",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Osmotic/stimulant laxative; hygroscopic agent draws water into rectum osmotically → softens stool; also mild irritant to rectal mucosa → stimulates peristalsis → facilitates defecation",
+  "indications": ["Constipation (acute — rectal onset 15–30 minutes)", "Bowel preparation (rectal)", "Pediatric constipation (infant/child suppositories)", "Fecal impaction (adjunct)"],
+  "dosing": [
+    {"route": "Rectal suppository (adult)", "dose": "1 adult suppository (3 g) PR once daily PRN", "notes": "Insert high into rectum; hold 15–30 minutes if possible"},
+    {"route": "Rectal suppository (infant)", "dose": "Infant size (1 g) PR once daily PRN", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Rectal discomfort/irritation", "Urgency to defecate"],
+    "serious": ["None at standard use"]
+  },
+  "contraindications": ["Intestinal obstruction (all laxatives)", "Appendicitis (suspected)", "Rectal bleeding of unknown cause"],
+  "interactions": [
+    {"drug": "No drug-drug interactions", "severity": "Minor", "mechanism": "Local rectal action only", "management": "N/A"}
+  ],
+  "pregnancy": "Safe. Commonly used for constipation in pregnancy when oral laxatives are insufficient. Rectal use avoids any systemic absorption concerns. Safe for all trimesters.",
+  "pk": {"absorption": "Minimal systemic (<10% absorbed rectally)", "half_life": "N/A", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Fast-acting — useful for acute constipation relief (15–30 min onset). Infant suppositories for pediatric constipation — safe and effective. Avoid stimulant laxatives in pregnancy if possible — glycerin and PEG 3350 preferred.",
+  "pearls": ["Fast onset 15–30 minutes — useful for acute constipation relief", "Safe in pregnancy (rectal, minimal absorption)", "Infant-specific size available (1 g) — do not use adult size in infants", "Moisten before insertion to ease placement"]
+}
+,"lidocaine_topical": {
+  "name": "Lidocaine (topical)",
+  "brand": "Xylocaine Viscous, Lidocaine Cream 4%, EMLA (Lidocaine + prilocaine)",
+  "class": "Pain Management",
+  "napra": "Schedule I (EMLA, Rx lidocaine formulations); Schedule II/III or OTC depending on concentration",
+  "moa": "Local anesthetic; blocks voltage-gated sodium channels → inhibits neural depolarization → reversible sensory nerve blockade → anesthesia/analgesia in treated area",
+  "indications": ["EMLA: pre-procedural anesthesia (IV insertion, lumbar puncture, skin biopsies, laser, tattoo removal)", "Xylocaine Viscous: oropharyngeal/esophageal pain (mucositis, odynophagia)", "Topical 4%: surface anesthesia (mucous membranes)", "Hemorrhoid pain (pramoxine/lidocaine rectal products)"],
+  "dosing": [
+    {"route": "EMLA (topical)", "dose": "Thick layer of EMLA under occlusive dressing; 60–120 min before procedure", "notes": "1–2 g/10 cm² skin area; occlusion essential for absorption"},
+    {"route": "Xylocaine Viscous 2%", "dose": "15 mL swish and spit q3h (max 8 doses/24h)", "notes": "Max 300 mg/dose; avoid swallowing in infants/children — systemic toxicity risk"}
+  ],
+  "side_effects": {
+    "common": ["Local blanching (EMLA — due to vasoconstriction)", "Skin erythema on removal", "Methemoglobinemia (EMLA prilocaine component — risk in infants <3 months)", "Burning/stinging"],
+    "serious": ["Systemic lidocaine toxicity (CNS: tinnitus, seizures; CV: arrhythmia) — from excessive dosing or inadvertent swallowing", "Methemoglobinemia (EMLA in infants <3 months — prilocaine oxidizes hemoglobin)"]
+  },
+  "contraindications": ["EMLA: infants <3 months (methemoglobinemia from prilocaine)", "Broken/infected skin", "EMLA on mucous membranes (too much absorption)"],
+  "interactions": [
+    {"drug": "Antiarrhythmics (mexiletine, flecainide)", "severity": "Moderate", "mechanism": "Additive sodium channel blockade if systemic absorption occurs", "management": "Avoid large area/mucosal application in patients on antiarrhythmics"},
+    {"drug": "Methemoglobin-inducing drugs (dapsone, sulfamethoxazole) + EMLA", "severity": "Major", "mechanism": "Additive methemoglobinemia risk", "management": "Avoid EMLA in patients on dapsone or other met-Hb inducers, especially infants"}
+  ],
+  "pregnancy": "Category B. EMLA: safe for procedural use in pregnancy. Xylocaine viscous for mucositis: generally safe with appropriate dosing. Avoid excessive amounts.",
+  "pk": {"absorption": "EMLA: 5% through intact skin in 60 min; viscous: absorbed from mucous membranes (faster)", "half_life": "1.5–2 h (lidocaine)", "renal_adjustment": "No adjustment for topical"},
+  "canadian_notes": "ODB-covered for EMLA (Schedule I). EMLA must be covered with occlusion (dressing or film wrap) for adequate skin penetration. Xylocaine viscous: CRITICAL — do NOT use in infants <3 months; accidental swallowing in older infants/children causes serious systemic toxicity. Counsel parents.",
+  "pearls": ["EMLA: MUST use occlusion dressing and minimum 60 minutes for adequate effect", "NEVER use EMLA in infants <3 months (methemoglobinemia from prilocaine)", "Xylocaine Viscous: do NOT swallow — systemic toxicity (seizures, arrhythmia)", "methemoglobinemia risk: EMLA + dapsone/sulfonamides — avoid combination"]
+}
 }};
 var FAMILY_MAP = {
 "tacrolimus": "Topical Calcineurin Inhibitors",
