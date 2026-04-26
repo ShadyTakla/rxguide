@@ -3643,6 +3643,401 @@ var DRUG_FAMILIES = {
   "canadian_notes": "ODB General Benefit. Black Box Warnings: (1) NEVER use in children <2 — fatal respiratory depression; (2) IV promethazine can cause severe tissue necrosis — deep IM preferred. High anticholinergic burden — Beers list for elderly. Rectal suppository available.",
   "pearls": ["NEVER give IV without extreme caution — tissue necrosis from extravasation", "ABSOLUTELY CONTRAINDICATED in children <2 — respiratory depression deaths", "Beers list: avoid in elderly (anticholinergic, sedation, falls)", "Very sedating — use this to advantage for nighttime dosing or preoperative sedation"]
 }
+
+,"sulfasalazine": {
+  "name": "Sulfasalazine",
+  "brand": "Salazopyrin",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I",
+  "moa": "Prodrug cleaved by colonic bacteria into sulfapyridine (antibacterial) + 5-aminosalicylic acid (5-ASA — anti-inflammatory via inhibiting leukotrienes, prostaglandins, reactive oxygen species); also DMARD mechanism via folate antagonism",
+  "indications": ["Ulcerative colitis (mild-moderate — first-line)", "Crohn's colitis (colonic involvement)", "Rheumatoid arthritis (DMARD)", "Psoriatic arthritis", "Ankylosing spondylitis (limited evidence)"],
+  "dosing": [
+    {"route": "Oral (UC)", "dose": "Start 500 mg BID; increase to 2–4 g/day in divided doses", "notes": "Take with food; divide doses (TID–QID) to reduce GI side effects"},
+    {"route": "Oral (RA)", "dose": "500 mg once daily; titrate to 1 g BID–TID (max 3 g/day)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Nausea/GI upset (most common — take with food; EC formulation)", "Headache", "Malaise", "Yellow-orange urine/skin discolouration (harmless)"],
+    "serious": ["Bone marrow suppression (leukopenia, agranulocytosis — monitor CBC)", "Hypersensitivity reactions (rash, fever — sulfonamide allergy cross-react)", "Oligospermia (reversible — affects male fertility)", "Hepatotoxicity", "Pulmonary toxicity (rare)"]
+  },
+  "contraindications": ["Sulfonamide or salicylate allergy", "G6PD deficiency", "Porphyria", "Intestinal/urinary obstruction"],
+  "interactions": [
+    {"drug": "Methotrexate", "severity": "Moderate", "mechanism": "Additive folate antagonism — bone marrow suppression", "management": "Monitor CBC closely; ensure adequate folate supplementation"},
+    {"drug": "Digoxin", "severity": "Moderate", "mechanism": "Reduces digoxin absorption by up to 30%", "management": "Monitor digoxin levels"},
+    {"drug": "Warfarin", "severity": "Major", "mechanism": "Sulfonamide component inhibits CYP2C9", "management": "Monitor INR closely"},
+    {"drug": "Iron", "severity": "Moderate", "mechanism": "Sulfasalazine chelates iron", "management": "Separate doses by 2 hours"}
+  ],
+  "pregnancy": "Category B. Most widely used DMARD in pregnancy for IBD and RA. MUST supplement folic acid 5 mg/day (sulfasalazine is folate antagonist). Displaces neonatal bilirubin — avoid in last 2 weeks (kernicterus theoretical).",
+  "pk": {"absorption": "Cleaved in colon; 5-ASA acts locally", "half_life": "5-9 h (sulfapyridine component)", "renal_adjustment": "Use with caution in renal impairment; avoid if severe"},
+  "canadian_notes": "ODB General Benefit. Monitor: CBC and LFTs at baseline, then monthly x 3, then q3 months. Folic acid 5 mg/day mandatory — especially in pregnancy. Yellow-orange discolouration of urine, skin, and contact lenses — counsel patients (harmless).",
+  "pearls": ["Folic acid 5 mg/day mandatory (folate antagonist) — prevents megaloblastic anemia", "Yellow-orange urine/skin/contact lens staining — harmless, warn patients", "Male infertility (oligospermia): reversible on stopping — counsel men of reproductive age", "Enteric coated (Salazopyrin EN) improves GI tolerability"]
+}
+,"dronabinol": {
+  "name": "Dronabinol",
+  "brand": "Marinol",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I (controlled — cannabinoid)",
+  "moa": "Synthetic delta-9-tetrahydrocannabinol (THC); agonist at CB1 and CB2 cannabinoid receptors in CNS and GI tract → antiemetic via CTZ, appetite stimulation via hypothalamus",
+  "indications": ["Chemotherapy-induced nausea and vomiting (refractory to standard antiemetics)", "Anorexia/weight loss in AIDS patients", "Palliative care (off-label Canada)"],
+  "dosing": [
+    {"route": "Oral (CINV)", "dose": "5 mg/m² 1–3h before chemo; then 5 mg/m² q2–4h (max 4–6 doses/day)", "notes": ""},
+    {"route": "Oral (anorexia)", "dose": "2.5 mg BID before meals; increase to 5 mg BID if tolerated", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Euphoria/dysphoria", "Sedation/dizziness", "Confusion (especially elderly)", "Tachycardia"],
+    "serious": ["Psychosis/mania (in predisposed individuals)", "Hypotension/syncope", "Dependence (cannabis-use disorder)"]
+  },
+  "contraindications": ["History of psychosis/schizophrenia", "Hypersensitivity to cannabinoids or sesame oil (capsule formulation)", "Concurrent alcohol/CNS depressants (without careful monitoring)"],
+  "interactions": [
+    {"drug": "CNS depressants (opioids, benzodiazepines, alcohol)", "severity": "Major", "mechanism": "Additive CNS depression and sedation", "management": "Reduce doses; counsel against alcohol"},
+    {"drug": "Anticholinergics", "severity": "Moderate", "mechanism": "Additive tachycardia", "management": "Monitor heart rate"},
+    {"drug": "Highly protein-bound drugs", "severity": "Minor", "mechanism": "THC highly protein-bound — potential displacement interactions", "management": "Monitor for drug interactions"}
+  ],
+  "pregnancy": "Category C. AVOID in pregnancy (THC crosses placenta, associated with neonatal withdrawal, neurodevelopmental concerns). Cannabis use in pregnancy associated with adverse outcomes.",
+  "pk": {"absorption": "Oral: 10–20% (high first-pass); high lipophilicity", "half_life": "25–36 h (terminal); metabolites up to 50 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB via EAP. Controlled drug — CDSA Schedule II. Less commonly used now — many patients prefer cannabis (Health Canada Access to Cannabis for Medical Purposes). Palliative care and refractory CINV remain key indications.",
+  "pearls": ["Controlled drug — abuse potential and psychosis risk", "Very lipophilic: accumulates in fat, prolonged effects (up to 36h)", "Elderly: significant confusion, dysphoria risk — use with caution", "AVOID in pregnancy (THC crosses placenta — adverse neurodevelopmental outcomes)"]
+}
+,"terbutaline": {
+  "name": "Terbutaline",
+  "brand": "Bricanyl Turbuhaler, Brethine",
+  "class": "Respiratory/Allergy",
+  "napra": "Schedule I",
+  "moa": "Selective beta-2 adrenergic agonist; binds beta-2 receptors in bronchial smooth muscle → adenylyl cyclase activation → cAMP → PKA → smooth muscle relaxation → bronchodilation; also used for tocolysis (uterine relaxation)",
+  "indications": ["Asthma (SABA — short-acting beta agonist for acute bronchospasm)", "Reversible airway obstruction/COPD", "Preterm labor tocolysis (off-label — short-term <48h, to allow corticosteroid administration)"],
+  "dosing": [
+    {"route": "Inhaled (asthma)", "dose": "0.25–0.5 mg q4–6h PRN (Turbuhaler: 500 mcg/actuation)", "notes": ""},
+    {"route": "SC (acute severe asthma)", "dose": "0.25 mg SC; repeat in 15–30 min (max 0.5 mg in 4h)", "notes": "Alternative when inhaled not possible"},
+    {"route": "SC/IV (tocolysis)", "dose": "0.25 mg SC q1h (max 1 mg over 4h)", "notes": "Short-term only (<48h) — FDA warns against prolonged oral terbutaline for tocolysis (maternal cardiac deaths)"}
+  ],
+  "side_effects": {
+    "common": ["Tremor (fine hand tremor — dose-related)", "Tachycardia/palpitations", "Headache", "Hypokalemia (beta-2 shifts K+ into cells — transient)"],
+    "serious": ["Hypokalemia (significant with high doses — monitor ECG in ICU/acute severe asthma)", "Cardiovascular effects (tachyarrhythmias)", "Paradoxical bronchospasm (rare)", "Pulmonary edema (IV/SC tocolysis)"]
+  },
+  "contraindications": ["Hypersensitivity to terbutaline or sympathomimetics", "Tachyarrhythmias"],
+  "interactions": [
+    {"drug": "Beta-blockers (non-selective)", "severity": "Major", "mechanism": "Non-selective beta-blockers antagonize terbutaline bronchodilation", "management": "Avoid non-selective beta-blockers in asthma; cardioselective beta-blockers (bisoprolol, metoprolol) less problematic"},
+    {"drug": "Diuretics", "severity": "Moderate", "mechanism": "Additive hypokalemia", "management": "Monitor potassium, especially in acute asthma"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Risk of hypertensive crisis with sympathomimetics", "management": "Avoid concurrent MAOIs"}
+  ],
+  "pregnancy": "Category B. Short-term tocolysis: acceptable to delay delivery 48h for corticosteroid administration. AVOID long-term oral tocolysis — FDA Black Box (maternal cardiac deaths). SABAs used in pregnancy for asthma are safe.",
+  "pk": {"absorption": "Inhaled: rapid onset; SC: 15–30 min", "half_life": "3–4 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. Largely replaced by salbutamol (Ventolin) as preferred SABA — salbutamol has more clinical evidence and is more commonly used in Canada. Terbutaline Turbuhaler still used in some patients. Tocolysis: 48-hour use only with close monitoring.",
+  "pearls": ["SABA class: salbutamol more commonly used in Canada", "Hypokalemia: monitor K+ in acute severe asthma (especially with high-dose or IV)","Tocolysis: only 48h maximum — FDA black box warning against prolonged use", "Fine tremor common at therapeutic doses — usually diminishes"]
+}
+,"beclomethasone": {
+  "name": "Beclomethasone dipropionate",
+  "brand": "QVAR (inhaled), Beconase (nasal spray)",
+  "class": "Respiratory/Allergy",
+  "napra": "Schedule I",
+  "moa": "Inhaled corticosteroid (ICS); binds glucocorticoid receptor in airway epithelial/inflammatory cells → genomic effects: reduces cytokine production, decreases eosinophil/mast cell recruitment → reduces airway inflammation",
+  "indications": ["Asthma maintenance (ICS — first-line)", "Allergic rhinitis (intranasal spray — Beconase)", "COPD (ICS-containing combination products)"],
+  "dosing": [
+    {"route": "Inhaled asthma (adult)", "dose": "QVAR: 50–200 mcg BID; dose depends on asthma severity", "notes": "Rinse mouth after each use to prevent oropharyngeal candidiasis"},
+    {"route": "Intranasal (allergic rhinitis)", "dose": "1–2 sprays each nostril BID–QID", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Oropharyngeal candidiasis (oral thrush — rinse mouth after each use)", "Dysphonia (hoarse voice)", "Reflex cough (inhaled)"],
+    "serious": ["Adrenal suppression (high doses, prolonged — especially combined oral+inhaled)", "Posterior subcapsular cataracts (high ICS dose, long-term)", "Reduced bone mineral density (high-dose ICS)", "Growth suppression in children (high-dose)"]
+  },
+  "contraindications": ["Active pulmonary TB (relative — without anti-TB treatment)", "Hypersensitivity to beclomethasone"],
+  "interactions": [
+    {"drug": "CYP3A4 inhibitors (ketoconazole, ritonavir)", "severity": "Moderate", "mechanism": "Increase ICS systemic levels — adrenal suppression risk", "management": "Use with caution; consider alternative ICS less reliant on CYP3A4 (mometasone, ciclesonide)"},
+    {"drug": "Other corticosteroids (oral)", "severity": "Moderate", "mechanism": "Additive adrenal suppression with systemic steroids", "management": "Use lowest effective dose; taper systemic steroids carefully"}
+  ],
+  "pregnancy": "Category C. ICS use in asthma in pregnancy is RECOMMENDED — uncontrolled asthma is riskier than ICS use. Budesonide has most pregnancy safety data (preferred ICS in pregnancy). Beclomethasone also considered safe.",
+  "pk": {"absorption": "Inhaled: extensive pulmonary deposition; minimal systemic", "half_life": "0.5 h (active metabolite: 2.7 h)", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. ICS cornerstone of persistent asthma treatment. Always rinse mouth after inhaler use. QVAR MDI (CFC-free, HFA propellant) provides smaller particle size — better peripheral lung deposition. Budesonide preferred over beclomethasone in pregnancy.",
+  "pearls": ["Rinse mouth after every use — prevents oral thrush and dysphonia", "Budesonide preferred in pregnancy (most safety data); beclomethasone also acceptable", "High doses (>1000 mcg/day beclomethasone equivalent) increase adrenal suppression risk", "Extrafine particle QVAR: better small airway penetration"]
+}
+,"loratadine": {
+  "name": "Loratadine",
+  "brand": "Claritin, Aerius (desloratadine — active metabolite)",
+  "class": "Respiratory/Allergy",
+  "napra": "U",
+  "moa": "Second-generation (non-sedating) H1 antihistamine; selective peripheral H1 receptor antagonist; low CNS penetration (does not cross BBB well) → minimal sedation; does NOT block muscarinic, dopamine, or serotonin receptors",
+  "indications": ["Allergic rhinitis (seasonal and perennial)", "Chronic idiopathic urticaria", "Allergic conjunctivitis"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "10 mg once daily", "notes": "Can be taken with or without food"},
+    {"route": "Oral (pediatric 2–5 yr)", "dose": "5 mg once daily (syrup)", "notes": ""},
+    {"route": "Oral (pediatric ≥6 yr)", "dose": "10 mg once daily", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Headache", "Fatigue", "Dry mouth (low incidence)", "Somnolence (1–2% — much less than diphenhydramine)"],
+    "serious": ["QTc prolongation (rare — piperidine structure; less risk than terfenadine/astemizole withdrawn antihistamines)"]
+  },
+  "contraindications": ["Loratadine allergy", "Severe hepatic impairment (reduce frequency)"],
+  "interactions": [
+    {"drug": "Erythromycin / ketoconazole", "severity": "Minor", "mechanism": "CYP3A4 inhibition — raises loratadine levels modestly (desloratadine not affected)", "management": "No dose adjustment needed at standard doses"},
+    {"drug": "QT-prolonging drugs", "severity": "Minor", "mechanism": "Additive QTc (less than older antihistamines)", "management": "Monitor QTc in patients at risk"}
+  ],
+  "pregnancy": "Category B. Preferred second-generation antihistamine in pregnancy — most safety data. Safe in all trimesters. Commonly used for allergic rhinitis in pregnancy.",
+  "pk": {"absorption": "Fast; food may increase AUC slightly", "half_life": "8–10 h (desloratadine active metabolite: 28 h)", "renal_adjustment": "Reduce frequency to every other day if CrCl <30"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Very popular — wide availability, non-drowsy profile. Desloratadine (Aerius) is the active metabolite — similar efficacy but requires prescription and is ODB-covered. Loratadine preferred non-drowsy antihistamine in pregnancy.",
+  "pearls": ["Second-generation antihistamine: minimal sedation (much better than diphenhydramine)", "Preferred antihistamine in pregnancy (most safety data in category B agents)", "Can take any time of day (non-sedating)", "Desloratadine (Aerius) = active metabolite of loratadine — Rx required in Canada"]
+}
+
+,"desloratadine": {
+  "name": "Desloratadine",
+  "brand": "Aerius",
+  "class": "Respiratory/Allergy",
+  "napra": "Schedule I",
+  "moa": "Second-generation non-sedating H1 antihistamine; active metabolite of loratadine; even more potent peripheral H1 selectivity than loratadine; also has some anti-inflammatory properties (inhibits cytokines)",
+  "indications": ["Allergic rhinitis (seasonal and perennial)", "Chronic idiopathic urticaria", "Allergic conjunctivitis"],
+  "dosing": [
+    {"route": "Oral (adult/pediatric ≥12)", "dose": "5 mg once daily", "notes": ""},
+    {"route": "Oral (pediatric 6–11 yr)", "dose": "2.5 mg once daily", "notes": ""},
+    {"route": "Oral (pediatric 2–5 yr)", "dose": "1.25 mg once daily (syrup)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Headache", "Fatigue", "Dry mouth (rare)", "Myalgia"],
+    "serious": ["Rare hypersensitivity", "QTc prolongation (very rare, less than older antihistamines)"]
+  },
+  "contraindications": ["Desloratadine/loratadine allergy"],
+  "interactions": [
+    {"drug": "Azithromycin / ketoconazole", "severity": "Minor", "mechanism": "Inhibit CYP3A4 — modest increase in desloratadine levels (no clinical significance at standard doses)", "management": "No dose adjustment needed"}
+  ],
+  "pregnancy": "Category C. Similar safety profile to loratadine. Less data than loratadine in pregnancy. Loratadine preferred if either is appropriate.",
+  "pk": {"absorption": "Well absorbed; peak 3 h", "half_life": "27 h", "renal_adjustment": "Every other day if severe renal failure"},
+  "canadian_notes": "ODB General Benefit (Schedule I — requires Rx in Canada). Loratadine is OTC and similar efficacy — preferred for cost savings. Desloratadine is the active metabolite of loratadine; no efficacy advantage proven in head-to-head trials.",
+  "pearls": ["Active metabolite of loratadine — clinically interchangeable", "Requires prescription in Canada (ODB-covered) vs loratadine OTC", "No meaningful efficacy advantage over loratadine", "Once-daily dosing, non-sedating, safe for long-term use"]
+}
+,"fexofenadine": {
+  "name": "Fexofenadine",
+  "brand": "Allegra",
+  "class": "Respiratory/Allergy",
+  "napra": "U",
+  "moa": "Second-generation non-sedating H1 antihistamine; active metabolite of terfenadine; selective peripheral H1 antagonist; does NOT cross BBB; no anticholinergic or QTc effects",
+  "indications": ["Seasonal allergic rhinitis", "Chronic idiopathic urticaria"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "120 mg once daily or 180 mg once daily", "notes": ""},
+    {"route": "Oral (pediatric 6–11 yr)", "dose": "30 mg BID", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Headache", "Nausea", "Drowsiness (rare — less than other antihistamines)"],
+    "serious": ["Very rare hypersensitivity"]
+  },
+  "contraindications": ["Fexofenadine allergy"],
+  "interactions": [
+    {"drug": "Fruit juices (grapefruit, orange, apple)", "severity": "Moderate", "mechanism": "Inhibit OATP1A2 and OATP1B3 transporters — reduce fexofenadine absorption by up to 36%", "management": "Take with water; avoid taking with large amounts of fruit juice"},
+    {"drug": "Antacids (aluminum/magnesium hydroxide)", "severity": "Moderate", "mechanism": "Reduce fexofenadine absorption 41%", "management": "Separate by at least 2 hours"},
+    {"drug": "Ketoconazole / erythromycin", "severity": "Minor", "mechanism": "P-gp/CYP inhibition — modest increase in levels", "management": "No clinical significance at standard doses"}
+  ],
+  "pregnancy": "Category C. Limited pregnancy data. Less preferred than loratadine (less safety data). Loratadine preferred when non-drowsy antihistamine needed in pregnancy.",
+  "pk": {"absorption": "33%; reduced by fruit juices", "half_life": "14.4 h", "renal_adjustment": "CrCl <80: 60 mg once daily"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. No anticholinergic effects and no QTc risk (advantage over older antihistamines). Fruit juice interaction is important and underrecognized. Allegra is available OTC.",
+  "pearls": ["Fruit juice reduces absorption by 36% — take with WATER only", "No QTc prolongation (advantage when other QT-prolonging drugs present)", "Least sedating antihistamine available", "Antacids: separate by 2 hours (chelation reduces absorption)"]
+}
+,"diphenhydramine": {
+  "name": "Diphenhydramine",
+  "brand": "Benadryl, Nytol, Simply Sleep (sleep aid)",
+  "class": "Respiratory/Allergy",
+  "napra": "U",
+  "moa": "First-generation H1 antihistamine; significant CNS penetration → sedation; also anticholinergic (muscarinic blockade), antiemetic (CTZ), antitussive",
+  "indications": ["Allergic reactions (urticaria, hay fever, anaphylaxis adjunct)", "Sleep aid (OTC)", "Motion sickness", "Acute dystonia/EPS from antipsychotics/metoclopramide", "Pruritus", "Mild sedation/premedication"],
+  "dosing": [
+    {"route": "Oral/IM/IV (adult)", "dose": "25–50 mg q4–6h PRN (max 300 mg/day)", "notes": ""},
+    {"route": "IV (anaphylaxis adjunct)", "dose": "25–50 mg IV slowly", "notes": "Not first-line; epinephrine is first-line for anaphylaxis"},
+    {"route": "IV (acute dystonia)", "dose": "25–50 mg IV", "notes": "Very effective for drug-induced dystonic reactions"}
+  ],
+  "side_effects": {
+    "common": ["Sedation/drowsiness (very significant)", "Dry mouth", "Urinary retention", "Constipation", "Blurred vision"],
+    "serious": ["Anticholinergic toxicity (delirium, tachycardia, hyperthermia, urinary retention — especially elderly)", "Falls and fractures", "QTc prolongation (modest)"]
+  },
+  "contraindications": ["Benign prostatic hyperplasia (urinary retention)", "Angle-closure glaucoma", "MAOI use", "Elderly (Beers list — high anticholinergic risk)"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Prolonged anticholinergic effects; serotonin-like effects", "management": "Contraindicated"},
+    {"drug": "CNS depressants (alcohol, opioids, benzodiazepines)", "severity": "Major", "mechanism": "Additive CNS depression", "management": "Avoid alcohol; caution with other sedatives"},
+    {"drug": "Anticholinergic drugs", "severity": "Major", "mechanism": "Additive anticholinergic toxicity", "management": "Avoid in patients on multiple anticholinergics — Beers list high anticholinergic burden"}
+  ],
+  "pregnancy": "Category B. Generally considered safe in pregnancy for allergic reactions. Avoid prolonged use. Associated with rare reports of neonatal withdrawal. Preferred over promethazine for acute urticaria/allergy.",
+  "pk": {"absorption": "Well absorbed (40–60%)", "half_life": "4–8 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Beers list: AVOID in elderly — high anticholinergic risk (delirium, falls, urinary retention, cognitive impairment). Second-generation antihistamines (loratadine, cetirizine) preferred for allergy. Diphenhydramine as sleep aid: tolerance develops within 3–5 days (tachyphylaxis).",
+  "pearls": ["Beers list: AVOID in elderly (anticholinergic delirium, falls, cognitive impairment)", "Sleep aid: tolerance within 3–5 days — not for chronic insomnia", "Best use: acute dystonic reactions (IM/IV very effective)", "First-generation: significant impairment of driving ability — warn patients strongly"]
+}
+,"hydroxyzine": {
+  "name": "Hydroxyzine",
+  "brand": "Atarax (hydroxyzine HCl), Vistaril (hydroxyzine pamoate)",
+  "class": "Respiratory/Allergy",
+  "napra": "Schedule I",
+  "moa": "First-generation H1 antihistamine; also anxiolytic via CNS (mechanism debated — possible interaction with serotonin/SST receptors in amygdala); significant sedation",
+  "indications": ["Anxiety (short-term management — comparable to BZDs without dependence)", "Pruritus (urticaria, eczema)", "Nausea and vomiting (especially post-operative)", "Preoperative sedation/anxiolysis"],
+  "dosing": [
+    {"route": "Oral (anxiety)", "dose": "25–100 mg QID PRN (or scheduled)", "notes": ""},
+    {"route": "Oral (pruritus/antihistamine)", "dose": "25 mg TID–QID", "notes": ""},
+    {"route": "IM (preoperative/acute)", "dose": "25–100 mg IM", "notes": "Do NOT give IV (thrombophlebitis, tissue necrosis)"}
+  ],
+  "side_effects": {
+    "common": ["Sedation (significant)", "Dry mouth", "Dizziness"],
+    "serious": ["QTc prolongation (dose-related — Health Canada warning 2015)", "Anticholinergic effects (delirium in elderly)", "Seizures (with high doses or abrupt discontinuation from long-term use)"]
+  },
+  "contraindications": ["QTc >450 ms (relative)", "Concurrent QT-prolonging drugs", "Pregnancy (Category C — fetal withdrawal, orofacial cleft association in some studies)"],
+  "interactions": [
+    {"drug": "QT-prolonging drugs (antipsychotics, macrolides, fluoroquinolones)", "severity": "Major", "mechanism": "Additive QTc prolongation", "management": "Avoid combinations; baseline and monitoring ECG"},
+    {"drug": "CNS depressants", "severity": "Major", "mechanism": "Additive sedation", "management": "Reduce opioid doses by 50% when combined"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Enhances anticholinergic and CNS effects", "management": "Avoid"}
+  ],
+  "pregnancy": "Category C. Avoid especially in first trimester (possible orofacial clefts association). Some use in 2nd/3rd trimester for severe pruritus or anxiety.",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "20 h", "renal_adjustment": "No adjustment needed; use caution in elderly (prolonged half-life)"},
+  "canadian_notes": "ODB General Benefit. Health Canada 2015 warning on QTc prolongation — baseline ECG before starting at higher doses, avoid with QTc-prolonging drugs. Useful non-BZD anxiolytic — no dependency risk. Sedation used therapeutically for anxious/itchy patients. IM route (NEVER IV).",
+  "pearls": ["No dependence/withdrawal risk — advantage over benzodiazepines for anxiety", "QTc: check baseline ECG and avoid QT-prolonging drug combinations (Health Canada 2015 warning)", "NEVER give IV — IM only (thrombophlebitis/necrosis risk with IV/SC)", "Reduce opioid dose 50% when combined (additive CNS depression)"]
+}
+,"pseudoephedrine": {
+  "name": "Pseudoephedrine",
+  "brand": "Sudafed (with various combinations: Sudafed PE, Dristan, Contac)",
+  "class": "Respiratory/Allergy",
+  "napra": "II",
+  "moa": "Indirect sympathomimetic; releases norepinephrine from presynaptic terminals + direct alpha-1/beta-1 agonism → vasoconstriction of nasal mucosa → decongestant effect; also bronchodilation",
+  "indications": ["Nasal congestion (acute, sinusitis, upper respiratory infection)", "Eustachian tube dysfunction"],
+  "dosing": [
+    {"route": "Oral IR (adult)", "dose": "60 mg q4–6h (max 240 mg/day)", "notes": ""},
+    {"route": "Oral ER (adult)", "dose": "120 mg q12h or 240 mg once daily", "notes": ""},
+    {"route": "Oral (pediatric 6–12 yr)", "dose": "30 mg q4–6h", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Hypertension", "Tachycardia/palpitations", "Insomnia", "Nervousness", "Urinary retention (men — alpha effect)"],
+    "serious": ["Hypertensive crisis (in MAOI users)", "Hemorrhagic stroke (rare, high doses)", "Exacerbation of ischemic heart disease"]
+  },
+  "contraindications": ["MAOI within 14 days (hypertensive crisis)", "Severe hypertension", "Hyperthyroidism", "Angle-closure glaucoma", "BPH (urinary retention — alpha-1 activation in prostate)"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Hypertensive crisis — massive norepinephrine release", "management": "ABSOLUTELY CONTRAINDICATED; 14-day washout"},
+    {"drug": "Antihypertensives", "severity": "Major", "mechanism": "Antagonizes antihypertensive effects", "management": "Avoid in hypertensive patients; phenylephrine topical nasal spray preferred"},
+    {"drug": "Digoxin", "severity": "Moderate", "mechanism": "Sympathomimetic increases cardiac arrhythmia risk with digoxin", "management": "Avoid in patients on digoxin"}
+  ],
+  "pregnancy": "Category C. Avoid in first trimester (gastroschisis association in some epidemiological studies). Avoid throughout pregnancy if possible — vasoconstriction may reduce uteroplacental blood flow. Saline nasal spray preferred for congestion in pregnancy.",
+  "pk": {"absorption": "Well absorbed; onset 30 min", "half_life": "9–16 h", "renal_adjustment": "Reduce dose or frequency in renal impairment (renally excreted)"},
+  "canadian_notes": "NAPRA Schedule II — behind pharmacy counter (no Rx required, but pharmacist oversight). Limited to 3.6 g/purchase (methamphetamine precursor legislation). NOT available as front-of-store OTC. 'Sudafed PE' (phenylephrine) is front-of-store but much less effective. Phenylephrine oral bioavailability only 38% after first-pass metabolism.",
+  "pearls": ["Schedule II: behind pharmacy counter (pseudoephedrine legislation)", "Much more effective decongestant than phenylephrine (Sudafed PE)", "AVOID in hypertension, hyperthyroidism, BPH, MAOI use", "Saline nasal rinse preferred in pregnancy for nasal congestion"]
+}
+
+,"dextromethorphan": {
+  "name": "Dextromethorphan (DXM)",
+  "brand": "Benylin DM, Robitussin DM, Delsym",
+  "class": "Respiratory/Allergy",
+  "napra": "U",
+  "moa": "Sigma-1 receptor agonist and NMDA receptor antagonist; acts centrally in medullary cough center → antitussive (suppresses cough reflex); also weak serotonin reuptake inhibitor",
+  "indications": ["Symptomatic relief of dry, non-productive cough (acute upper respiratory tract infection)", "Combination products for cold/flu symptoms"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "10–30 mg q4–8h PRN (max 120 mg/day)", "notes": "Combination products have lower doses of DXM"},
+    {"route": "Oral (pediatric 6–12 yr)", "dose": "5–10 mg q4–8h", "notes": ""},
+    {"route": "Oral (pediatric 2–5 yr)", "dose": "2.5–5 mg q4–8h (per product)", "notes": "Health Canada advisory: not recommended <2 years; use cautiously 2–5 years"}
+  ],
+  "side_effects": {
+    "common": ["Nausea/vomiting", "Dizziness", "Drowsiness"],
+    "serious": ["Serotonin syndrome (with MAOIs, SSRIs, SNRIs, tramadol)", "DXM abuse — dissociative hallucinations at high doses (robotripping)", "Respiratory depression (high doses or in CYP2D6 poor metabolizers)"]
+  },
+  "contraindications": ["MAOI within 14 days (serotonin syndrome)", "CYP2D6 poor metabolizers at high doses"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Serotonin syndrome — DXM inhibits serotonin reuptake + MAOIs block serotonin degradation", "management": "ABSOLUTELY CONTRAINDICATED; 14-day washout"},
+    {"drug": "SSRIs / SNRIs / tramadol", "severity": "Major", "mechanism": "Additive serotonin syndrome risk (DXM is serotonergic)", "management": "Use with caution; counsel patients on serotonin syndrome signs"},
+    {"drug": "Fluoxetine / paroxetine (CYP2D6 inhibitors)", "severity": "Major", "mechanism": "Block DXM metabolism → high plasma levels → serotonin effects/hallucinations", "management": "Caution; combination increases serotonin effects"}
+  ],
+  "pregnancy": "Category C. Common in over-the-counter cold preparations. Limited pregnancy data. Consider benefit vs risk; acute use generally accepted as safe in 2nd/3rd trimester.",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "3–6 h (CYP2D6 metabolized; slow metabolizers: >24h)", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Health Canada cough/cold advisory: not recommended in children <2 years. Codeine-containing products removed from OTC availability in Canada — DXM is the main antitussive. Serotonin syndrome interaction with SSRIs is underrecognized.",
+  "pearls": ["MAOI: absolute contraindication — serotonin syndrome (lethal)", "CYP2D6 poor metabolizers: accumulate DXM → high levels, serotonin effects", "Abuse potential: high-dose hallucinations (robotripping) — be aware in teenagers", "Not recommended <2 years; caution 2–5 years"]
+}
+,"guaifenesin": {
+  "name": "Guaifenesin",
+  "brand": "Mucinex, Robitussin (guaifenesin), Buckley's",
+  "class": "Respiratory/Allergy",
+  "napra": "U",
+  "moa": "Expectorant; thought to hydrate and reduce viscosity of respiratory mucus secretions → facilitates mucociliary clearance → productive cough; mechanism not fully proven in clinical studies",
+  "indications": ["Productive cough (expectorant — loosens and thins mucus)", "Symptomatic treatment of acute respiratory tract infections with productive cough"],
+  "dosing": [
+    {"route": "Oral IR (adult)", "dose": "200–400 mg q4h (max 2400 mg/day)", "notes": "Take with plenty of water for best effect"},
+    {"route": "Oral ER (Mucinex)", "dose": "600–1200 mg q12h", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Nausea/vomiting", "GI upset", "Dizziness"],
+    "serious": ["No serious effects at standard doses; very safe drug"]
+  },
+  "contraindications": ["Hypersensitivity to guaifenesin"],
+  "interactions": [
+    {"drug": "No significant drug-drug interactions at standard doses", "severity": "Minor", "mechanism": "N/A", "management": "Drink extra water to enhance mucociliary effect"}
+  ],
+  "pregnancy": "Category C. Limited data but widely used. Considered safe in pregnancy. Not associated with birth defects in available studies. Adequate hydration more important.",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "1 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Evidence for clinical benefit is limited — systematic reviews do not consistently demonstrate superiority over placebo. Hydration (adequate fluid intake) is at least as important as expectorants. Safe, inexpensive.",
+  "pearls": ["Adequate hydration is equally or more important than guaifenesin for mucus clearance", "Evidence for efficacy over placebo is weak but drug is very safe", "Combination products: check for concurrent ingredients (DXM, pseudoephedrine, acetaminophen)", "Drink plenty of water — enhances action"]
+}
+,"methimazole": {
+  "name": "Methimazole",
+  "brand": "Tapazole",
+  "class": "Endocrine",
+  "napra": "Schedule I",
+  "moa": "Thionamide antithyroid; inhibits thyroid peroxidase (TPO) enzyme → blocks organification of iodide and coupling of iodotyrosines → reduces synthesis of T3 and T4",
+  "indications": ["Hyperthyroidism (Graves' disease — first-line)", "Toxic nodular goiter", "Preparation for thyroid surgery", "Thyrotoxicosis before radioactive iodine treatment"],
+  "dosing": [
+    {"route": "Oral (mild hyperthyroidism)", "dose": "5–15 mg once daily", "notes": "Once-daily dosing possible (half-life of intrathyroidal effect ~40h)"},
+    {"route": "Oral (moderate-severe)", "dose": "20–40 mg/day (divided or once daily)", "notes": ""},
+    {"route": "Oral (severe/thyroid storm)", "dose": "60–80 mg/day initially", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Rash/urticaria (5–6%)", "Nausea", "Arthralgias"],
+    "serious": ["Agranulocytosis (0.3–0.5% — medical emergency; onset usually within 90 days)", "Hepatotoxicity (cholestatic jaundice)", "ANCA-positive vasculitis (long-term)", "Aplastic anemia (rare)"]
+  },
+  "contraindications": ["Previous agranulocytosis on thionamides (use alternative agent)"],
+  "interactions": [
+    {"drug": "Warfarin", "severity": "Major", "mechanism": "Hyperthyroidism increases warfarin catabolism; correction of thyroid state requires warfarin dose reduction", "management": "Monitor INR closely as thyroid function normalizes"},
+    {"drug": "Beta-blockers", "severity": "Minor", "mechanism": "Hyperthyroidism increases propranolol clearance; correct thyroid state affects beta-blocker levels", "management": "Monitor heart rate; may need to reduce beta-blocker dose as euthyroid"},
+    {"drug": "Digoxin", "severity": "Moderate", "mechanism": "Hyperthyroidism alters digoxin clearance; normalize thyroid → digoxin levels may rise", "management": "Monitor digoxin levels"}
+  ],
+  "pregnancy": "AVOID in 1st trimester — teratogenic (embryopathy: scalp defects, choanal atresia, esophageal atresia). Use PTU (propylthiouracil) in 1st trimester instead. Switch to methimazole after 1st trimester (PTU has risk of maternal liver failure in later pregnancy).",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "4–6 h plasma (intrathyroidal: longer)", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. SOGC and Endocrine Society: PTU in 1st trimester, switch to methimazole at 13 weeks for remainder of pregnancy. Agranulocytosis: counsel patient to stop immediately and seek care if fever/sore throat develops. CBC with differential if symptoms develop.",
+  "pearls": ["Agranulocytosis: STOP immediately and check CBC if fever/sore throat develops — do not wait", "Pregnancy: PTU in 1st trimester → switch to methimazole at 13 weeks", "Once-daily dosing possible (convenient vs PTU's TID dosing)", "Monitor thyroid function q4–6 weeks initially; once stable, q3–6 months"]
+}
+,"propylthiouracil": {
+  "name": "Propylthiouracil (PTU)",
+  "brand": "Propyl-Thyracil",
+  "class": "Endocrine",
+  "napra": "Schedule I",
+  "moa": "Thionamide; inhibits thyroid peroxidase (TPO) → blocks T3/T4 synthesis; also inhibits peripheral conversion of T4 to T3 (unique vs methimazole); slower onset due to T4 to T3 conversion inhibition",
+  "indications": ["Hyperthyroidism during FIRST TRIMESTER of pregnancy (key indication vs methimazole)", "Thyroid storm (faster action due to T4→T3 conversion inhibition)", "Hyperthyroidism when methimazole fails or not tolerated"],
+  "dosing": [
+    {"route": "Oral (pregnancy 1st trimester)", "dose": "100–150 mg TID initially; taper to lowest effective dose", "notes": "TID dosing required (short half-life)"},
+    {"route": "Oral (thyroid storm)", "dose": "200–400 mg q4–6h then taper", "notes": "Higher doses for storm"}
+  ],
+  "side_effects": {
+    "common": ["Rash", "Nausea", "Arthralgias", "Headache"],
+    "serious": ["Hepatotoxicity — SEVERE (liver failure, deaths — BLACK BOX WARNING)", "Agranulocytosis (0.3–0.5%)", "ANCA-associated vasculitis", "Lupus-like syndrome"]
+  },
+  "contraindications": ["Previous PTU-induced hepatotoxicity", "Liver disease (relative)"],
+  "interactions": [
+    {"drug": "Warfarin", "severity": "Major", "mechanism": "As thyroid function normalizes, warfarin catabolism decreases → INR rises", "management": "Monitor INR closely"},
+    {"drug": "Lithium", "severity": "Moderate", "mechanism": "Additive hypothyroid effect (lithium inhibits thyroid)", "management": "Monitor thyroid function"}
+  ],
+  "pregnancy": "Category D. BLACK BOX — hepatotoxicity/liver failure. HOWEVER, used in 1st trimester specifically because methimazole is teratogenic in T1. Switch PTU → methimazole at ~13 weeks to minimize PTU hepatotoxicity risk.",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "1–2 h (must dose TID)", "renal_adjustment": "No specific adjustment"},
+  "canadian_notes": "ODB General Benefit. TID dosing is a compliance disadvantage vs once-daily methimazole. ONLY preferred for hyperthyroidism in first trimester of pregnancy and thyroid storm. FDA and Endocrine Society: Black Box on severe hepatotoxicity — restrict use to when methimazole not appropriate.",
+  "pearls": ["1st trimester pregnancy: use PTU (not methimazole — teratogenic)", "Switch PTU → methimazole after 1st trimester to reduce liver failure risk", "TID dosing required (short half-life) — compliance barrier", "Liver failure BLACK BOX: stop and check LFTs if any hepatitis symptoms"]
+}
+,"prednisolone": {
+  "name": "Prednisolone",
+  "brand": "Pediapred (pediatric solution), Orapred, Omnipred (ophthalmic)",
+  "class": "Endocrine",
+  "napra": "Schedule I",
+  "moa": "Active form of prednisone (prednisone requires hepatic conversion to prednisolone); glucocorticoid receptor agonist → genomic anti-inflammatory effects; suppresses cytokine production, leukocyte migration, and vascular permeability",
+  "indications": ["All indications of systemic corticosteroids (same as prednisone)", "Hepatic impairment (preferred over prednisone — no conversion needed)", "Pediatric asthma exacerbations, croup (liquid form)", "Ophthalmic inflammation (Omnipred drops)", "Pemphigus, IBD, transplant rejection, autoimmune disease"],
+  "dosing": [
+    {"route": "Oral (pediatric asthma)", "dose": "1–2 mg/kg/day (max 40–60 mg) x 3–5 days", "notes": "No taper needed for short courses (<5 days)"},
+    {"route": "Ophthalmic", "dose": "1–2 drops q2–6h (frequency depends on indication)", "notes": "Taper as inflammation resolves"}
+  ],
+  "side_effects": {
+    "common": ["Short-term: hyperglycemia, insomnia, mood changes, fluid retention", "Long-term: osteoporosis, adrenal suppression, cataracts, weight gain"],
+    "serious": ["Adrenal insufficiency on abrupt discontinuation (taper for courses >2 weeks)", "Avascular necrosis of femoral head (high-dose, long-term)", "Immunosuppression — increased infection risk"]
+  },
+  "contraindications": ["Active untreated systemic infections (relative)", "Live vaccines during immunosuppressive doses"],
+  "interactions": [
+    {"drug": "CYP3A4 inducers (rifampin, carbamazepine)", "severity": "Major", "mechanism": "Reduce prednisolone levels significantly", "management": "May need to increase prednisolone dose"},
+    {"drug": "NSAIDs", "severity": "Major", "mechanism": "Additive GI ulceration", "management": "Add PPI for GI protection"},
+    {"drug": "Insulin/oral hypoglycemics", "severity": "Moderate", "mechanism": "Corticosteroids cause hyperglycemia", "management": "Monitor blood glucose; may need to increase diabetes medications"}
+  ],
+  "pregnancy": "Category C. Used for autoimmune conditions in pregnancy. Small risk of cleft palate (1st trimester). Neonatal adrenal suppression with high-dose prolonged use. Benefit usually outweighs risk for IBD, asthma, autoimmune disease control.",
+  "pk": {"absorption": "Well absorbed; same as prednisone (does not require hepatic conversion)", "half_life": "2–4 h (biological effect: 12–36 h)", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. Preferred over prednisone in hepatic impairment (no conversion needed). Liquid form (Pediapred) convenient for pediatric dosing. Short courses (<5 days) don't require tapering. Document indication and duration for all corticosteroid prescriptions.",
+  "pearls": ["Preferred over prednisone in liver failure (no hepatic conversion required)", "Pediatric liquid form: useful for accurate weight-based dosing", "Short courses <5 days: no taper needed", "Long-term: bisphosphonate prophylaxis, monitor bone density, assess for adrenal suppression"]
+}
 }};
 var FAMILY_MAP = {
 "tacrolimus": "Topical Calcineurin Inhibitors",
