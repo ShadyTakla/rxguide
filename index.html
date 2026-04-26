@@ -3254,6 +3254,395 @@ var DRUG_FAMILIES = {
   "canadian_notes": "ODB-covered. Largely replaced by triptans for most patients — better safety profile. Strict limits: max 6 mg/attack, 10 mg/week to prevent ergotism. CYP3A4 inhibitor interaction is LETHAL — check all medications before prescribing.",
   "pearls": ["Largely replaced by triptans — use only when triptans unavailable/contraindicated", "Strict limits: 10 mg/week MAX — ergotism causes limb ischemia/gangrene", "CYP3A4 inhibitors absolutely contraindicated (macrolides, azoles, HIV PIs)", "Category X in pregnancy — oxytocic and directly embryotoxic"]
 }
+
+,"eletriptan": {
+  "name": "Eletriptan",
+  "brand": "Relpax",
+  "class": "Pain Management",
+  "napra": "Schedule I",
+  "moa": "Selective 5-HT1B/1D receptor agonist; strong CNS penetration; causes intracranial vasoconstriction and inhibits trigeminal release; highest lipophilicity among triptans",
+  "indications": ["Acute migraine with or without aura"],
+  "dosing": [
+    {"route": "Oral", "dose": "20–40 mg at onset; may repeat after 2 hours (max 80 mg/24h)", "notes": "40 mg more effective than 20 mg; can take up to 80 mg/24h total"}
+  ],
+  "side_effects": {
+    "common": ["Somnolence", "Chest tightness", "Dizziness", "Paresthesia", "Asthenia"],
+    "serious": ["Coronary vasospasm", "Serotonin syndrome", "Medication overuse headache"]
+  },
+  "contraindications": ["Ischemic heart disease", "Uncontrolled hypertension", "Stroke/TIA", "Hemiplegic/basilar migraine", "Severe hepatic impairment", "Potent CYP3A4 inhibitors (ketoconazole, itraconazole, ritonavir — within 72h)"],
+  "interactions": [
+    {"drug": "Potent CYP3A4 inhibitors (ketoconazole, itraconazole, ritonavir)", "severity": "Major", "mechanism": "Eletriptan is CYP3A4 substrate — levels increase 3–12x with strong inhibitors", "management": "Do NOT use within 72 hours of potent CYP3A4 inhibitors"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Serotonin toxicity", "management": "Contraindicated"},
+    {"drug": "Ergots", "severity": "Major", "mechanism": "Additive vasospasm", "management": "Separate by 24 hours"}
+  ],
+  "pregnancy": "Category C. Avoid; use acetaminophen or metoclopramide for pregnancy migraine.",
+  "pk": {"absorption": "Oral: ~50%", "half_life": "4 h", "renal_adjustment": "Use with caution in severe renal failure"},
+  "canadian_notes": "ODB General Benefit. Highest clinical efficacy among oral triptans for 2-hour pain freedom per meta-analysis. Strong CYP3A4 substrate — cannot use within 72 hours of potent CYP3A4 inhibitors (unique 72-hour restriction vs 24h for most other triptans).",
+  "pearls": ["Most clinically effective oral triptan for 2-hour pain freedom", "72-hour restriction with potent CYP3A4 inhibitors (longer than other triptans)", "Limit to ≤10 days/month (medication overuse headache)", "High lipophilicity — strong CNS penetration"]
+}
+,"dihydroergotamine": {
+  "name": "Dihydroergotamine (DHE)",
+  "brand": "Migranal (nasal spray), Ergomar (sublingual), IV DHE in hospital",
+  "class": "Pain Management",
+  "napra": "Schedule I",
+  "moa": "Ergot alkaloid; 5-HT1B/1D agonist, weak alpha-adrenergic agonist, dopamine antagonist; causes cranial vasoconstriction with less peripheral vasospasm than ergotamine; also blocks neurogenic inflammation",
+  "indications": ["Acute severe migraine (nasal spray or IV)", "Status migrainosus (refractory migraine >72h — IV protocol)", "Cluster headache (injectable)"],
+  "dosing": [
+    {"route": "Nasal spray (Migranal)", "dose": "1 spray (0.5 mg) each nostril at onset; repeat after 15 min (max 3 mg/24h)", "notes": "Prime spray 4 times before first use; keep head level"},
+    {"route": "IV (hospital)", "dose": "0.5–1 mg IV with antiemetic (metoclopramide or prochlorperazine) q8h x 72h for status migrainosus", "notes": "Raskin protocol for refractory migraine"}
+  ],
+  "side_effects": {
+    "common": ["Nasal irritation/rhinorrhea (nasal spray)", "Nausea", "Dizziness"],
+    "serious": ["Peripheral vasospasm (less than ergotamine but possible)", "Coronary vasospasm (rare)", "Ergotism with overuse", "Medication overuse headache"]
+  },
+  "contraindications": ["Pregnancy (Category X)", "Coronary artery disease", "Peripheral vascular disease", "Uncontrolled hypertension", "CYP3A4 inhibitors (macrolides, azoles, PIs)"],
+  "interactions": [
+    {"drug": "CYP3A4 inhibitors (macrolides, azoles, HIV PIs)", "severity": "Major", "mechanism": "Ergotism — severe peripheral ischemia", "management": "ABSOLUTELY CONTRAINDICATED"},
+    {"drug": "Triptans", "severity": "Major", "mechanism": "Additive vasospasm", "management": "Separate by 24 hours"},
+    {"drug": "Vasoconstrictors (sympathomimetics)", "severity": "Major", "mechanism": "Additive vasoconstriction", "management": "Avoid combination"}
+  ],
+  "pregnancy": "Category X. Uterotonic — causes abortion, birth defects. Absolutely contraindicated.",
+  "pk": {"absorption": "Nasal: ~40%; IV: direct", "half_life": "9–10 h (ergot metabolites)", "renal_adjustment": "Avoid in renal failure"},
+  "canadian_notes": "Migranal nasal spray ODB-covered. DHE IV in hospital for refractory migraine/status migrainosus (with antiemetic — Raskin protocol). Less peripheral vasospasm than ergotamine — relatively safer but same contraindications apply.",
+  "pearls": ["IV DHE protocol for status migrainosus — highly effective when oral treatments fail", "Nasal spray: prime spray properly and keep head upright for absorption", "Less peripheral vasospasm than oral ergotamine", "Category X in pregnancy — absolutely contraindicated"]
+}
+,"methocarbamol": {
+  "name": "Methocarbamol",
+  "brand": "Robaxin, Robaxacet (with acetaminophen), Robaxisal (with ASA)",
+  "class": "Pain Management",
+  "napra": "Schedule I (plain) / Schedule II or III (in OTC combinations)",
+  "moa": "Central muscle relaxant; mechanism not fully elucidated; depresses CNS (polysynaptic reflexes in spinal cord) → reduces muscle spasm; no direct action on muscle fibers",
+  "indications": ["Acute musculoskeletal pain and muscle spasm (adjunct to rest and physiotherapy)", "Neck/back spasm"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "750–1500 mg QID initially (max 8 g/day x 3 days acute); maintenance 750 mg QID–1500 mg TID", "notes": "Take with food"},
+    {"route": "IV/IM", "dose": "1–3 g IV (max rate 300 mg/min)", "notes": "Hospital use; risk of tissue damage with extravasation"}
+  ],
+  "side_effects": {
+    "common": ["Sedation/drowsiness", "Dizziness", "Nausea", "Headache", "Harmless urine discolouration (green, black, brown)"],
+    "serious": ["Allergic reactions", "Anaphylaxis (IV)", "Seizures (IV — in patients with epilepsy)", "Confusion (elderly — Beers list)"]
+  },
+  "contraindications": ["Renal impairment (IV form — PEG vehicle accumulates)", "Myasthenia gravis (worsens)", "Epilepsy (IV — reduces seizure threshold)"],
+  "interactions": [
+    {"drug": "CNS depressants (opioids, benzodiazepines, alcohol)", "severity": "Major", "mechanism": "Additive CNS depression", "management": "Avoid or minimize concurrent use; counsel against alcohol"},
+    {"drug": "Pyridostigmine (myasthenia gravis)", "severity": "Moderate", "mechanism": "May reduce efficacy of anticholinesterase therapy", "management": "Avoid in myasthenia gravis"}
+  ],
+  "pregnancy": "Category C. Limited data. Short-term use for acute muscle spasm; avoid if possible, especially in 1st trimester.",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "1–2 h", "renal_adjustment": "Avoid IV form in renal impairment; oral generally safe"},
+  "canadian_notes": "Robaxin-750 ODB General Benefit. Robaxacet and Robaxisal available OTC (Schedule II/III). Evidence for skeletal muscle relaxants is modest — combination of rest, NSAIDs, and physiotherapy is first-line. Elderly: Beers list — avoid due to CNS effects, falls.",
+  "pearls": ["Urine discolouration (green/black/brown) — harmless, warn patients", "Evidence for muscle relaxants is weak — short courses only, not for chronic pain", "Elderly: Beers list — falls, confusion risk", "OTC combinations (Robaxacet) available at pharmacy without prescription"]
+}
+,"rabeprazole": {
+  "name": "Rabeprazole",
+  "brand": "Pariet, Aciphex",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I",
+  "moa": "Proton pump inhibitor (PPI); irreversibly inhibits H+/K+-ATPase (proton pump) in gastric parietal cells after activation in acidic environment → blocks acid secretion",
+  "indications": ["GERD (erosive and non-erosive)", "Peptic ulcer disease (gastric and duodenal)", "H. pylori eradication (with antibiotics)", "NSAID-associated ulcer prevention", "Hypersecretory conditions (Zollinger-Ellison)"],
+  "dosing": [
+    {"route": "Oral (GERD)", "dose": "20 mg once daily before breakfast", "notes": "Take 30 min before meal for best efficacy"},
+    {"route": "Oral (H. pylori)", "dose": "20 mg BID with clarithromycin + amoxicillin x 7–14 days", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Headache", "Diarrhea", "Nausea", "Abdominal pain"],
+    "serious": ["Hypomagnesemia (long-term — monitor Mg++ in patients on >1 year)", "C. difficile risk (altered gut pH)", "Osteoporosis/fractures (long-term high-dose)", "Community-acquired pneumonia (slightly increased risk)", "CKD association (epidemiological — unclear causation)", "Vitamin B12 deficiency (long-term)"]
+  },
+  "contraindications": ["PPI hypersensitivity", "Concurrent methotrexate (high-dose — inhibits excretion)"],
+  "interactions": [
+    {"drug": "Clopidogrel", "severity": "Moderate", "mechanism": "PPIs inhibit CYP2C19 — rabeprazole LESS of an inhibitor than omeprazole/esomeprazole; preferred PPI with clopidogrel", "management": "Rabeprazole or pantoprazole preferred if PPI needed with clopidogrel"},
+    {"drug": "Methotrexate (high-dose)", "severity": "Major", "mechanism": "PPIs reduce renal MTX excretion → toxicity", "management": "Hold PPI around high-dose MTX; monitor MTX levels"},
+    {"drug": "HIV antivirals (atazanavir, rilpivirine)", "severity": "Major", "mechanism": "PPIs reduce atazanavir/rilpivirine absorption (requires acid)", "management": "Atazanavir: use H2 blocker or avoid PPI; rilpivirine: AVOID PPIs"}
+  ],
+  "pregnancy": "Category B. Generally safe; omeprazole/pantoprazole have most data. PPI-class effect — short-term use considered safe for symptomatic GERD in pregnancy.",
+  "pk": {"absorption": "Rapidly absorbed; peak 2–5 h", "half_life": "1–2 h (effect persists due to irreversible binding)", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. Similar efficacy to other PPIs. Lowest CYP2C19 inhibition among PPIs — may be preferred when clopidogrel interaction is a concern (though clinical significance debated). Reassess need for PPI regularly — many patients on PPIs inappropriately long-term.",
+  "pearls": ["Lowest CYP2C19 inhibition among PPIs — may be preferred with clopidogrel", "Take 30 min before first meal for maximal efficacy", "Annual reassessment for continued PPI need — step down when appropriate", "Long-term: monitor Mg, B12, bone density"]
+}
+,"ranitidine": {
+  "name": "Ranitidine (withdrawn) / Famotidine (active H2 blocker)",
+  "brand": "Ranitidine: Zantac (withdrawn Canada 2020); Famotidine: Pepcid",
+  "class": "Gastrointestinal",
+  "napra": "Schedule II/III (OTC); Schedule I (Rx doses)",
+  "moa": "H2 receptor antagonist; blocks histamine-2 receptors on parietal cells → reduces gastric acid secretion (more specific than antacids, less complete suppression than PPIs)",
+  "indications": ["GERD (mild-moderate)", "Peptic ulcer disease (duodenal/gastric)", "Prevention of stress ulcers", "H. pylori eradication (adjunct — less preferred)", "Heartburn (OTC)"],
+  "dosing": [
+    {"route": "Famotidine OTC", "dose": "10–20 mg as needed for heartburn (max 40 mg/day)", "notes": "Pepcid AC OTC — available without prescription"},
+    {"route": "Famotidine Rx (GERD)", "dose": "20–40 mg BID", "notes": ""},
+    {"route": "Famotidine (duodenal ulcer)", "dose": "40 mg once daily at bedtime x 4–8 weeks", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Headache", "Dizziness", "Constipation or diarrhea", "Fatigue"],
+    "serious": ["Confusion/delirium (elderly, IV, high-dose — Beers consideration)", "Thrombocytopenia (rare)", "Bradycardia (rare, rapid IV)"]
+  },
+  "contraindications": ["H2 blocker allergy"],
+  "interactions": [
+    {"drug": "Atazanavir, rilpivirine", "severity": "Major", "mechanism": "H2 blockers reduce absorption (acid-dependent) — less impact than PPIs; timing matters", "management": "Space H2 blocker 12 hours from atazanavir; rilpivirine: H2 blocker acceptable with timing"},
+    {"drug": "Iron, ketoconazole (oral)", "severity": "Moderate", "mechanism": "Reduce acid → impair absorption of acid-dependent drugs", "management": "Separate by 2 hours"},
+    {"drug": "Clopidogrel", "severity": "Minor", "mechanism": "H2 blockers have minimal CYP2C19 effect — famotidine preferred over omeprazole with clopidogrel", "management": "H2 blockers are safe with clopidogrel"}
+  ],
+  "pregnancy": "Category B. Famotidine safe in pregnancy. H2 blockers commonly used for GERD in pregnancy. Preferred over PPIs when possible due to longer safety data in pregnancy.",
+  "pk": {"absorption": "Famotidine: 40–45% oral", "half_life": "2.5–3.5 h", "renal_adjustment": "CrCl <50: reduce dose 50% (famotidine)"},
+  "canadian_notes": "IMPORTANT: Ranitidine (Zantac) voluntarily withdrawn in Canada (2020) due to N-nitrosodimethylamine (NDMA) contamination concern. Famotidine is safe replacement. H2 blockers preferred over PPIs for mild-moderate symptoms — less side effects, no PPI-class concerns.",
+  "pearls": ["Ranitidine withdrawn in Canada 2020 (NDMA contamination) — use famotidine", "H2 blockers preferred over PPIs for mild GERD and heartburn in pregnancy", "Safe with clopidogrel (unlike omeprazole/esomeprazole)", "Tolerance (tachyphylaxis) develops with continuous use — consider intermittent or as-needed dosing"]
+}
+
+,"sucralfate": {
+  "name": "Sucralfate",
+  "brand": "Sulcrate",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I",
+  "moa": "Polyaluminum hydroxide polymer; in acidic environment polymerizes and binds to ulcer crater proteins → forms protective barrier; also binds bile acids, pepsin, stimulates prostaglandin production",
+  "indications": ["Peptic ulcer disease (duodenal ulcer — healing and maintenance)", "Stress ulcer prophylaxis in critically ill (alternative to H2 blockers)", "GERD (adjunct)", "Radiation-induced esophagitis/proctitis"],
+  "dosing": [
+    {"route": "Oral (ulcer healing)", "dose": "1 g QID 1 hour before meals and at bedtime x 4–8 weeks", "notes": "Must take on empty stomach — requires acid for activation"},
+    {"route": "Oral (maintenance)", "dose": "1 g BID", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Constipation (most common — aluminum content)", "Dry mouth", "Nausea"],
+    "serious": ["Aluminum toxicity (long-term/renal failure — accumulation)", "Bezoar formation (rarely)"]
+  },
+  "contraindications": ["Renal failure (aluminum accumulates)", "Co-administration with fluoroquinolones or tetracyclines (without spacing)"],
+  "interactions": [
+    {"drug": "Fluoroquinolones, tetracyclines, digoxin, phenytoin, warfarin, levothyroxine", "severity": "Major", "mechanism": "Sucralfate binds multiple drugs in intestine — reduces absorption by up to 50%", "management": "Take sucralfate 2 hours AFTER these medications; or take them 2 hours before sucralfate"},
+    {"drug": "Antacids", "severity": "Moderate", "mechanism": "Antacids reduce sucralfate activation (requires acidic pH)", "management": "Separate antacids by 30 minutes"}
+  ],
+  "pregnancy": "Category B. Minimal systemic absorption — considered safe in pregnancy for acid-related symptoms. Good option when systemic drugs need to be minimized.",
+  "pk": {"absorption": "Minimal systemic (<5%)", "half_life": "N/A (local action)", "renal_adjustment": "Avoid in significant renal impairment (aluminum accumulation)"},
+  "canadian_notes": "ODB General Benefit. Not absorbed — safest option for GI protection in pregnancy. Major drug binding interaction — must space all other medications 2 hours away. Constipation due to aluminum content.",
+  "pearls": ["Minimally absorbed — very safe in pregnancy and nursing", "Bind ALL other medications: take 2h before or after sucralfate", "Requires acid for activation — DO NOT take with antacids simultaneously", "Constipation: aluminum-related — consider in patients with existing constipation"]
+}
+,"docusate": {
+  "name": "Docusate sodium",
+  "brand": "Colace, Soflax",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Stool softener (surfactant/emollient laxative); decreases surface tension of stool → allows water and lipids to penetrate stool → softens consistency; does NOT stimulate intestinal motility",
+  "indications": ["Constipation prevention (not treatment of established constipation)", "Post-surgical/anorectal conditions (hemorrhoids, fissures — prevent straining)", "Opioid-induced constipation (adjunct — less effective alone)", "Preparation for rectal procedures"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "50–500 mg/day in 1–4 divided doses", "notes": "Effect takes 1–3 days"},
+    {"route": "Oral (pediatric)", "dose": "10–40 mg/day (infants); 20–60 mg/day (children)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Abdominal cramping (mild)", "Diarrhea with excessive doses", "Bitter taste (liquid formulations)"],
+    "serious": ["No serious side effects at standard doses"]
+  },
+  "contraindications": ["Intestinal obstruction", "Nausea/vomiting/acute abdomen (all laxatives)", "Concurrent mineral oil (increases mineral oil absorption)"],
+  "interactions": [
+    {"drug": "Mineral oil", "severity": "Major", "mechanism": "Docusate enhances mineral oil absorption → systemic mineral oil (hepatic, lymph node deposition)", "management": "Do NOT use together"}
+  ],
+  "pregnancy": "Category C. Widely used in pregnancy for constipation prevention — generally considered safe. No teratogenicity in animal studies. Often first-line laxative in pregnancy.",
+  "pk": {"absorption": "Minimal systemic", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Inexpensive. Important: docusate is a stool SOFTENER, not a stimulant laxative — does not increase bowel movement frequency. Often insufficient alone for opioid-induced constipation; combine with senna for better efficacy.",
+  "pearls": ["Stool softener only — does NOT increase frequency; add senna for opioid constipation", "Takes 1–3 days to work — not for immediate relief", "AVOID with mineral oil (increases absorption of mineral oil — toxic)", "Safe in pregnancy and elderly; Beers list: combination docusate+senna appropriate in elderly on opioids"]
+}
+,"senna": {
+  "name": "Senna (Sennosides)",
+  "brand": "Senokot, Ex-Lax Gentle Strength, Senokot-S (with docusate)",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Anthraquinone stimulant laxative; bacterial hydrolysis in colon releases active anthrone → stimulates Auerbach plexus → increases colonic motility; also reduces water/electrolyte absorption from colon",
+  "indications": ["Constipation (acute and chronic)", "Opioid-induced constipation (preferred stimulant laxative)", "Bowel preparation adjunct", "Constipation during pregnancy (2nd/3rd trimester)"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "Senokot: 1–4 tablets at bedtime (2–4 tablets for opioid-induced); max 4 tablets BID", "notes": "Onset 6–12 hours — take at bedtime for morning effect"},
+    {"route": "Oral (pediatric)", "dose": "Weight and age-based: 5–15 mg sennosides/day", "notes": "Liquid available"}
+  ],
+  "side_effects": {
+    "common": ["Abdominal cramping", "Diarrhea (with excess use)", "Urine discolouration (yellow-brown — harmless)"],
+    "serious": ["Electrolyte imbalance (prolonged heavy use — hypokalemia)", "Melanosis coli (brownish pigmentation of colon — benign, reversible)", "Cathartic colon (theoretical with very long-term use — rarely proven)"]
+  },
+  "contraindications": ["Intestinal obstruction or suspected", "Inflammatory bowel disease (active flare)", "Nausea/vomiting"],
+  "interactions": [
+    {"drug": "Digoxin", "severity": "Moderate", "mechanism": "Electrolyte depletion (hypokalemia) potentiates digoxin toxicity", "management": "Monitor potassium levels"},
+    {"drug": "Diuretics", "severity": "Moderate", "mechanism": "Additive electrolyte depletion", "management": "Monitor electrolytes with long-term concurrent use"}
+  ],
+  "pregnancy": "Generally safe in 2nd/3rd trimester for constipation. Small amounts secreted in breast milk — may cause loose stools in infant. Preferred over stimulants in first trimester (castor oil avoided; bisacodyl preferred alternative).",
+  "pk": {"absorption": "Not absorbed orally; acts in colon", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered (OTC). First-choice stimulant laxative for opioid-induced constipation. Senokot-S (senna + docusate) commonly recommended for patients on opioids. Urine discolouration is harmless — counsel patients.",
+  "pearls": ["Best stimulant laxative for opioid-induced constipation (give prophylactically with every opioid prescription)", "Onset 6–12 hours — take at bedtime for morning bowel movement", "Urine discolouration: harmless, warn patients", "Melanosis coli: benign, reversible brown colon staining with long-term use"]
+}
+,"bisacodyl": {
+  "name": "Bisacodyl",
+  "brand": "Dulcolax, Fleet Bisacodyl (suppository/enema)",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Stimulant laxative; contact with colonic mucosa stimulates mass peristaltic contractions; also inhibits water and electrolyte absorption from colon",
+  "indications": ["Constipation (acute)", "Bowel preparation before procedures", "Post-surgical constipation", "Opioid-induced constipation (stimulant component)"],
+  "dosing": [
+    {"route": "Oral", "dose": "5–15 mg once at bedtime", "notes": "Onset 6–12 hours. DO NOT chew or crush — enteric coated; DO NOT take within 1 hour of dairy/antacids"},
+    {"route": "Rectal suppository", "dose": "10 mg suppository; onset 15–60 minutes", "notes": "When faster effect needed"},
+    {"route": "Rectal enema", "dose": "As directed (Fleet Bisacodyl)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Abdominal cramping", "Diarrhea", "Nausea"],
+    "serious": ["Electrolyte disturbances (hypokalemia, hyponatremia) with overuse", "Rectal burning/irritation (suppository)", "Melanosis coli (long-term)"]
+  },
+  "contraindications": ["Intestinal obstruction", "Appendicitis (suspected)", "Ileus", "Severe abdominal pain of unknown cause"],
+  "interactions": [
+    {"drug": "Antacids / milk / H2 blockers (within 1 hour)", "severity": "Major", "mechanism": "Dissolve enteric coating prematurely → gastric/duodenal irritation", "management": "Separate by at least 1 hour"},
+    {"drug": "Diuretics", "severity": "Moderate", "mechanism": "Additive electrolyte depletion", "management": "Monitor electrolytes"}
+  ],
+  "pregnancy": "Category C. Oral form generally avoided in pregnancy (stimulant can cause premature uterine contractions in theory — though not well-documented). Suppository locally acting — may be safer. Senna or lactulose preferred in pregnancy.",
+  "pk": {"absorption": "Oral: minimal (enteric-coated; 5% absorbed)", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Inexpensive and widely available. Enteric coated tablets: MUST NOT crush/chew and must separate from dairy/antacids (premature dissolution — GI irritation/cramping).",
+  "pearls": ["DO NOT crush/chew and separate from milk/antacids by 1 hour (premature coating dissolution)", "Suppository: faster onset (15–60 min) when oral not practical", "Abdominal cramping is common — take in evening, not during day", "Limit to short-term use — stimulant laxatives not for chronic constipation management"]
+}
+,"polyethylene_glycol": {
+  "name": "Polyethylene Glycol (PEG) 3350",
+  "brand": "RestoraLAX, MiraLAX, Lax-A-Day",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Osmotic laxative; PEG 3350 is a large molecular weight polymer; retains water in intestinal lumen osmotically → softens stool and increases stool frequency; not absorbed systemically",
+  "indications": ["Chronic constipation (first-line osmotic laxative)", "Fecal impaction (high-dose)", "Constipation in elderly", "Functional constipation in children", "Bowel preparation (high-dose — with electrolytes: GoLYTELY)"],
+  "dosing": [
+    {"route": "Oral (adult constipation)", "dose": "17 g (1 capful) dissolved in 240 mL fluid once daily", "notes": "Onset 1–3 days"},
+    {"route": "Oral (fecal impaction)", "dose": "17 g BID–TID x 3 days", "notes": ""},
+    {"route": "Oral (pediatric)", "dose": "0.5–1.5 g/kg/day x 3 days (disimpaction), then 0.25–0.75 g/kg/day (maintenance)", "notes": "Well studied in children"}
+  ],
+  "side_effects": {
+    "common": ["Abdominal bloating", "Cramping", "Nausea", "Diarrhea (excess dose)"],
+    "serious": ["Electrolyte disturbances (hyponatremia) with overuse in elderly", "Aspiration risk if administered to patients with swallowing difficulties"]
+  },
+  "contraindications": ["Intestinal obstruction", "Bowel perforation", "Toxic megacolon"],
+  "interactions": [
+    {"drug": "No significant drug interactions", "severity": "Minor", "mechanism": "PEG may dilute oral medications if taken together", "management": "Separate other medications by 2 hours"}
+  ],
+  "pregnancy": "Category C. Considered safe in pregnancy; commonly used for chronic constipation. Not absorbed systemically. Often preferred over stimulant laxatives in pregnancy.",
+  "pk": {"absorption": "Not absorbed — acts locally", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). RestoraLAX widely available. First-line for chronic constipation. Unlike lactulose, PEG does not produce gas/bloating to the same degree. Well tolerated. Can dissolve in any beverage (juice, water, coffee).",
+  "pearls": ["First-line for chronic constipation — safe, effective, well-tolerated", "Can dissolve in any liquid — improves compliance", "Onset 1–3 days — not for acute relief", "Electrolyte-free at standard doses — safer for elderly than senna/bisacodyl overuse"]
+}
+
+,"lactulose": {
+  "name": "Lactulose",
+  "brand": "Laxilose, Kristalose",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I (Rx) or OTC depending on formulation",
+  "moa": "Osmotic laxative and ammonia reducer; non-absorbable synthetic disaccharide → fermented by colonic bacteria → lactic/acetic acid → acidifies colon → reduces ammonia absorption (NH3 → NH4+) + osmotic effect draws water into colon",
+  "indications": ["Hepatic encephalopathy (KEY INDICATION — reduces serum ammonia)", "Chronic constipation", "Portosystemic encephalopathy prevention"],
+  "dosing": [
+    {"route": "Oral (hepatic encephalopathy)", "dose": "30–45 mL (20–30 g) TID–QID; titrate to 2–4 soft stools/day", "notes": "Adjust dose to maintain 2–4 loose stools daily"},
+    {"route": "Oral (constipation)", "dose": "15–30 mL once daily", "notes": "Onset 24–48 hours"},
+    {"route": "Rectal enema (HE coma)", "dose": "300 mL in 700 mL water, retain 30–60 min", "notes": "When oral not possible"}
+  ],
+  "side_effects": {
+    "common": ["Flatulence (very common — fermentation produces gas)", "Bloating", "Abdominal cramping", "Nausea (sweet taste)", "Diarrhea (excess doses)"],
+    "serious": ["Electrolyte imbalance (hypokalemia, hyponatremia) with high doses", "Aspiration risk if altered consciousness"]
+  },
+  "contraindications": ["Galactosemia (contains galactose)", "Intestinal obstruction", "Lactase deficiency (relative)"],
+  "interactions": [
+    {"drug": "Neomycin (for HE)", "severity": "Moderate", "mechanism": "Neomycin kills bacteria that metabolize lactulose — may reduce efficacy", "management": "Combination used historically but less so now; rifaximin preferred with lactulose"},
+    {"drug": "Antacids", "severity": "Moderate", "mechanism": "Neutralize colonic acid produced by lactulose — may reduce ammonia-trapping effect", "management": "Avoid antacids when using lactulose for HE"}
+  ],
+  "pregnancy": "Category B. Safe; commonly used for constipation in pregnancy. Minimal systemic absorption. First-line osmotic laxative option in pregnancy.",
+  "pk": {"absorption": "Not absorbed (<3%)", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. Cornerstone of hepatic encephalopathy management (with rifaximin in refractory cases). Flatulence is very common and can be socially limiting — counsel patients. Very sweet taste may reduce compliance in some patients.",
+  "pearls": ["Primary indication is hepatic encephalopathy — reduces serum ammonia", "Target 2–4 soft stools/day for HE (ensure not using 0–1 or causing diarrhea/dehydration)", "Very gassy — fermentation produces significant flatulence", "Rifaximin added when lactulose insufficient for HE prevention"]
+}
+,"dimenhydrinate": {
+  "name": "Dimenhydrinate",
+  "brand": "Gravol",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "H1 antihistamine (diphenhydramine + chlorotheophylline); blocks H1 and muscarinic receptors in vestibular system and chemoreceptor trigger zone (CTZ) → antiemetic, antivertigo effect",
+  "indications": ["Nausea and vomiting (motion sickness, post-operative, pregnancy)", "Vertigo", "Labyrinthitis"],
+  "dosing": [
+    {"route": "Oral/IM (adult)", "dose": "50–100 mg q4–6h PRN (max 400 mg/day)", "notes": ""},
+    {"route": "Oral (pediatric)", "dose": "Weight-based: 1.25 mg/kg QID (max 75 mg/day)", "notes": ""},
+    {"route": "Rectal suppository (adult)", "dose": "25–100 mg q8h", "notes": "When oral not possible (vomiting)"}
+  ],
+  "side_effects": {
+    "common": ["Sedation/drowsiness (significant)", "Dry mouth", "Urinary retention", "Constipation"],
+    "serious": ["Anticholinergic toxicity (confusion, hallucinations, tachycardia)", "Paradoxical excitation in children", "QTc prolongation (modest)"]
+  },
+  "contraindications": ["Benign prostatic hyperplasia (urinary retention)", "Angle-closure glaucoma", "Epilepsy (lowers seizure threshold)", "MAOI use"],
+  "interactions": [
+    {"drug": "CNS depressants (alcohol, opioids, benzodiazepines)", "severity": "Major", "mechanism": "Additive CNS depression", "management": "Avoid alcohol; caution with other sedatives"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Risk of hypertensive crisis and CNS effects", "management": "Contraindicated"},
+    {"drug": "Anticholinergic drugs", "severity": "Moderate", "mechanism": "Additive anticholinergic effects", "management": "Beers list: high anticholinergic burden in elderly"}
+  ],
+  "pregnancy": "Category B. Gravol widely used in pregnancy for nausea/vomiting. Long safety record. Generally considered safe. Second-line after doxylamine-pyridoxine (Diclegis) for pregnancy-related NVP.",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "3.5 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Very familiar to Canadians for motion sickness and pregnancy nausea. Beers list: avoid in elderly (anticholinergic burden, sedation, falls). Rectal suppository available for vomiting patients. Doxylamine-pyridoxine (Diclegis) is evidence-based first-line for NVP in pregnancy.",
+  "pearls": ["Very sedating — Beers list for elderly", "Rectal suppository useful when patient cannot swallow (vomiting)", "Pregnancy: Diclegis (doxylamine/B6) is first-line NVP; Gravol is second-line", "Anticholinergic burden: avoid in BPH, glaucoma, cognitive impairment"]
+}
+,"doxylamine_pyridoxine": {
+  "name": "Doxylamine + Pyridoxine (Vitamin B6)",
+  "brand": "Diclegis (delayed release), Bonjesta (extended release), Benadryl combination (antihistamine + B6 OTC)",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I (Diclegis/Bonjesta — Rx); OTC for individual components",
+  "moa": "Doxylamine: first-generation H1 antihistamine; antiemetic via H1 and muscarinic blockade in CTZ. Pyridoxine: Vitamin B6 cofactor; mechanism in NVP unclear but reduces nausea synergistically",
+  "indications": ["Nausea and vomiting of pregnancy (NVP) — FIRST-LINE EVIDENCE-BASED TREATMENT in Canada", "Hyperemesis gravidarum (with IV fluids, thiamine)"],
+  "dosing": [
+    {"route": "Diclegis (delayed release)", "dose": "Start: 2 tabs at bedtime; if inadequate, add 1 tab morning + 1 midday; max 4 tabs/day", "notes": "Delayed release — must take at least 1 hour before expected nausea relief"},
+    {"route": "OTC equivalent (off-label)", "dose": "Doxylamine 12.5 mg + Pyridoxine 25 mg every 6–8h", "notes": "Cut doxylamine sleep tabs and purchase B6 — pharmacists often counsel this"}
+  ],
+  "side_effects": {
+    "common": ["Drowsiness (significant — take at night to use to advantage)", "Dry mouth", "Constipation"],
+    "serious": ["Anticholinergic toxicity in high doses", "Sedation — avoid driving when titrating dose"]
+  },
+  "contraindications": ["MAOI within 14 days", "Hypersensitivity to doxylamine or pyridoxine"],
+  "interactions": [
+    {"drug": "CNS depressants", "severity": "Major", "mechanism": "Additive sedation", "management": "Avoid alcohol and sedatives"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Hypertensive crisis", "management": "Contraindicated"}
+  ],
+  "pregnancy": "Category A (in Canada — specifically approved for NVP in pregnancy). Extensive safety data. Approved by Health Canada and FDA specifically for NVP. No increased birth defects in large cohort studies (Motherisk, OTIS data).",
+  "pk": {"absorption": "Well absorbed", "half_life": "Doxylamine: 10 h; Pyridoxine: short", "renal_adjustment": "No specific adjustment"},
+  "canadian_notes": "ODB General Benefit for Diclegis. SOGC and ACOG: Diclegis is first-line pharmacological treatment for NVP. Drowsiness is the main side effect — take advantage (take at night when NVP typically worst in morning). OTC cost-saving: doxylamine 25 mg Unisom tabs cut in half + B6 25 mg tabs.",
+  "pearls": ["First-line pharmacological treatment for NVP — evidence-based, Category A in Canada", "Drowsiness: take advantage — dose at bedtime; morning/midday doses lower", "Delayed release: must swallow whole and take at bedtime (not for acute nausea)", "OTC equivalent for cost savings: half a Unisom tab (doxylamine 12.5 mg) + B6 25 mg"]
+}
+,"prochlorperazine": {
+  "name": "Prochlorperazine",
+  "brand": "Stemetil",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I",
+  "moa": "Phenothiazine; dopamine D2 receptor antagonist in CTZ and vomiting center → potent antiemetic; also antipsychotic at higher doses",
+  "indications": ["Severe nausea and vomiting (acute — IV/IM in emergency)", "Migraine acute treatment (IV — highly effective)", "Vestibular disorders (oral)", "Psychosis (high doses — less used now)"],
+  "dosing": [
+    {"route": "Oral", "dose": "5–10 mg TID–QID", "notes": ""},
+    {"route": "IM/IV (acute NV/migraine)", "dose": "5–10 mg IM; 2.5–10 mg slow IV", "notes": "IV: dilute and give slowly; monitor BP"},
+    {"route": "Rectal suppository", "dose": "25 mg BID PRN", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Sedation", "Extrapyramidal symptoms (EPS): akathisia (restlessness), dystonia", "Postural hypotension"],
+    "serious": ["Acute dystonic reaction (torticollis, oculogyric crisis — treat with diphenhydramine or benztropine)", "QTc prolongation", "Neuroleptic malignant syndrome (rare)", "Tardive dyskinesia (long-term)"]
+  },
+  "contraindications": ["CNS depression", "Bone marrow depression", "QTc prolongation", "Pediatric <2 years (risk of apnea)"],
+  "interactions": [
+    {"drug": "Other QT-prolonging drugs", "severity": "Major", "mechanism": "Additive QTc prolongation", "management": "Avoid combinations when possible"},
+    {"drug": "CNS depressants", "severity": "Major", "mechanism": "Additive sedation", "management": "Reduce doses"},
+    {"drug": "Levodopa", "severity": "Major", "mechanism": "D2 blockade opposes levodopa's dopaminergic effect", "management": "Avoid in Parkinson's disease; use domperidone for nausea in PD patients"}
+  ],
+  "pregnancy": "Category C. Used for severe NVP/hyperemesis gravidarum when doxylamine/pyridoxine, metoclopramide insufficient. Short-term use. Avoid in late pregnancy (neonatal EPS).",
+  "pk": {"absorption": "Variable oral (30%)", "half_life": "6–10 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. IV prochlorperazine is one of the most effective migraine treatments in ED (competes with sumatriptan). Akathisia (restlessness) common — treat with diphenhydramine 25 mg IV or benztropine. AVOID in Parkinson's (D2 blockade worsens parkinsonism).",
+  "pearls": ["IV use in ED for migraine: very effective (give with diphenhydramine to prevent akathisia)", "Akathisia (restless, unable to sit still) — common, distressing, responds to diphenhydramine/benztropine", "AVOID in Parkinson's disease — use domperidone instead for nausea", "IV: dilute and give slowly to minimize hypotension"]
+}
+,"promethazine": {
+  "name": "Promethazine",
+  "brand": "Phenergan, Histantil",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I",
+  "moa": "First-generation H1 antihistamine and phenothiazine; D2 antagonist in CTZ, H1 blocker, anticholinergic; potent antiemetic and sedative",
+  "indications": ["Nausea and vomiting (NVP, post-op, motion sickness)", "Allergic reactions (H1 blockade)", "Sedation (preoperative, procedural)", "Pruritus"],
+  "dosing": [
+    {"route": "Oral", "dose": "12.5–25 mg q4–6h PRN", "notes": ""},
+    {"route": "IM/IV", "dose": "12.5–25 mg IM (preferred over IV — Black Box for IV use)", "notes": "IV use associated with severe tissue necrosis — Health Canada Black Box; deep IM preferred"},
+    {"route": "Rectal suppository", "dose": "12.5–25 mg q4–6h PRN", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Sedation (very significant)", "Dry mouth", "Urinary retention", "Constipation"],
+    "serious": ["Respiratory depression (fatal in children <2 — BLACK BOX)", "Severe tissue necrosis (IV extravasation)", "Extrapyramidal reactions", "Neuroleptic malignant syndrome (rare)", "QTc prolongation"]
+  },
+  "contraindications": ["Children <2 years (respiratory depression deaths — BLACK BOX)", "IV use without extreme caution (tissue necrosis risk)", "MAOI use"],
+  "interactions": [
+    {"drug": "CNS depressants (opioids, benzodiazepines)", "severity": "Major", "mechanism": "Potentiates respiratory depression", "management": "Reduce opioid dose when combined; monitor carefully"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "CNS excitation, hypotension", "management": "Contraindicated"},
+    {"drug": "Anticholinergics", "severity": "Moderate", "mechanism": "Additive anticholinergic effects", "management": "High anticholinergic burden — avoid in elderly"}
+  ],
+  "pregnancy": "Category C. Used for NVP in pregnancy — after first-line agents. Short-term use. Risk of neonatal respiratory depression if used near delivery.",
+  "pk": {"absorption": "Well absorbed oral/IM", "half_life": "10–19 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. Black Box Warnings: (1) NEVER use in children <2 — fatal respiratory depression; (2) IV promethazine can cause severe tissue necrosis — deep IM preferred. High anticholinergic burden — Beers list for elderly. Rectal suppository available.",
+  "pearls": ["NEVER give IV without extreme caution — tissue necrosis from extravasation", "ABSOLUTELY CONTRAINDICATED in children <2 — respiratory depression deaths", "Beers list: avoid in elderly (anticholinergic, sedation, falls)", "Very sedating — use this to advantage for nighttime dosing or preoperative sedation"]
+}
 }};
 var FAMILY_MAP = {
 "tacrolimus": "Topical Calcineurin Inhibitors",
