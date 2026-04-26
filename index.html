@@ -2731,6 +2731,529 @@ var DRUG_FAMILIES = {
   "canadian_notes": "ODB General Benefit. Requires TID–QID dosing (less convenient than labetalol or nifedipine XL). Monitor CBC and LFTs periodically. Hemolytic anemia occurs in ~20% long-term (usually Coombs+ without overt hemolysis).",
   "pearls": ["Oldest antihypertensive with best pregnancy safety record", "Sedation common at initiation — improves over time", "Hemolytic anemia (Coombs positive): check CBC if long-term use", "TID–QID dosing burden: labetalol or nifedipine XL more convenient for most patients"]
 }
+
+,"hydralazine": {
+  "name": "Hydralazine",
+  "brand": "Apresoline",
+  "class": "Cardiovascular",
+  "napra": "Schedule I",
+  "moa": "Direct arteriolar vasodilator; inhibits IP3-mediated calcium release in vascular smooth muscle → arterial dilation → reduces afterload; minimal venous effect",
+  "indications": ["Severe hypertension in pregnancy (IV — first-line alongside labetalol IV, nifedipine)", "Chronic hypertension (oral — adjunct when other agents insufficient)", "Heart failure with systolic dysfunction (hydralazine-nitrate combination — especially in Black patients)"],
+  "dosing": [
+    {"route": "IV (acute severe HTN pregnancy)", "dose": "5–10 mg IV q20min (max 20–30 mg total)", "notes": "Monitor BP every 5 min; give IV fluid bolus before to prevent hypotension"},
+    {"route": "Oral (chronic)", "dose": "25–100 mg QID", "notes": "QID dosing is major compliance barrier"}
+  ],
+  "side_effects": {
+    "common": ["Reflex tachycardia", "Headache", "Flushing", "Palpitations", "Nausea"],
+    "serious": ["Drug-induced lupus (DILE) — dose and duration dependent; more common in slow acetylators", "Agranulocytosis (rare)", "Peripheral neuropathy (pyridoxine responsive)"]
+  },
+  "contraindications": ["Dissecting aortic aneurysm (increases wall stress via reflex tachycardia)", "Mitral valve rheumatic heart disease", "Coronary artery disease (reflex tachycardia may worsen angina)"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Potentiation of hypotensive effect", "management": "Avoid combination"},
+    {"drug": "Beta-blockers", "severity": "Minor", "mechanism": "Beta-blockers attenuate reflex tachycardia — often used intentionally", "management": "Usually beneficial combination"},
+    {"drug": "NSAIDs", "severity": "Moderate", "mechanism": "NSAIDs attenuate antihypertensive effect", "management": "Avoid NSAIDs in treated hypertension"}
+  ],
+  "pregnancy": "One of three first-line agents for acute severe hypertension in pregnancy (with labetalol IV and nifedipine). Extensive safety record. Reflex tachycardia more pronounced in pregnancy.",
+  "pk": {"absorption": "Oral: 30–50% (extensive first-pass)", "half_life": "3–7 h", "renal_adjustment": "No adjustment needed; active metabolites accumulate in renal failure"},
+  "canadian_notes": "ODB General Benefit. QID oral dosing is inconvenient — often reserved for IV acute use. Drug-induced lupus with long-term oral use: check ANA if arthralgia, serositis develop. African-American patients: hydralazine + isosorbide dinitrate reduces HF mortality (BiDil data).",
+  "pearls": ["Reflex tachycardia is common — combine with beta-blocker for chronic use", "Drug-induced lupus: check ANA if arthralgias develop", "QID oral dosing limits long-term compliance", "IV bolus 250 mL NS before administration reduces hypotension risk in pregnancy"]
+}
+,"prasugrel": {
+  "name": "Prasugrel",
+  "brand": "Effient",
+  "class": "Cardiovascular",
+  "napra": "Schedule I",
+  "moa": "Thienopyridine prodrug; irreversibly inhibits P2Y12 ADP receptor on platelets → prevents ADP-mediated platelet aggregation; more potent and faster onset than clopidogrel",
+  "indications": ["Acute coronary syndrome (ACS) managed with PCI — first-line over clopidogrel in eligible patients", "Secondary prevention post-PCI/ACS (with aspirin — dual antiplatelet therapy)"],
+  "dosing": [
+    {"route": "Oral (ACS/PCI)", "dose": "60 mg loading dose, then 10 mg once daily (maintenance)", "notes": "Reduce to 5 mg daily if weight <60 kg"},
+    {"route": "Older patients", "dose": "5 mg once daily if ≥75 years (10 mg associated with increased bleeding without additional efficacy benefit)", "notes": "Generally avoid in ≥75 unless high thrombotic risk"}
+  ],
+  "side_effects": {
+    "common": ["Bleeding (major: 2.4% vs 1.8% clopidogrel in TRITON-TIMI 38)", "Bruising"],
+    "serious": ["Life-threatening or fatal bleeding", "TTP (thrombotic thrombocytopenic purpura — rare)", "Intracerebral hemorrhage (avoid in prior TIA/stroke — net harm)"]
+  },
+  "contraindications": ["Prior TIA or stroke (net clinical harm — absolute contraindication)", "Active pathological bleeding", "Severe hepatic impairment"],
+  "interactions": [
+    {"drug": "NSAIDs", "severity": "Major", "mechanism": "Additive platelet inhibition — increased bleeding risk", "management": "Avoid chronic NSAIDs; acetaminophen preferred for analgesia"},
+    {"drug": "Anticoagulants (warfarin, DOACs)", "severity": "Major", "mechanism": "Triple therapy increases bleeding dramatically", "management": "Minimize triple therapy duration; transition to dual therapy ASAP"},
+    {"drug": "Opioids", "severity": "Moderate", "mechanism": "Opioids delay gastric emptying — reduced absorption/delayed onset of P2Y12 inhibitors in ACS (critical in STEMI)", "management": "Crushing loading dose tablet may partially overcome; morphine delay in platelets well-documented"}
+  ],
+  "pregnancy": "Category B. Avoid if possible — no controlled studies; platelet inhibition may increase peripartum bleeding. Use only if clearly necessary.",
+  "pk": {"absorption": "Well absorbed; rapidly metabolized to active thienol metabolite", "half_life": "Active metabolite: 7 h", "renal_adjustment": "No dose adjustment needed"},
+  "canadian_notes": "ODB Limited Use. Preferred over clopidogrel post-ACS/PCI (TRITON-TIMI 38 — 19% relative risk reduction in MACE vs clopidogrel). CONTRAINDICATED in prior TIA/stroke — this is a clinically important absolute contraindication. CYP2C19 polymorphism does NOT affect prasugrel (unlike clopidogrel).",
+  "pearls": ["CONTRAINDICATED in prior TIA/stroke — increases ICH risk", "No clopidogrel-equivalent CYP2C19 'non-responder' issue — metabolized by multiple CYP enzymes", "Reduce to 5 mg daily if <60 kg or ≥75 years", "More potent platelet inhibition = better efficacy but more bleeding vs clopidogrel"]
+}
+,"enoxaparin": {
+  "name": "Enoxaparin",
+  "brand": "Lovenox",
+  "class": "Cardiovascular",
+  "napra": "Schedule I",
+  "moa": "Low molecular weight heparin (LMWH); binds antithrombin III → catalyzes inactivation of factor Xa (primarily) and thrombin (factor IIa); more predictable pharmacokinetics than UFH",
+  "indications": ["DVT/PE treatment", "DVT prophylaxis (surgical, medical patients)", "ACS (unstable angina, NSTEMI — with antiplatelet therapy)", "VTE prophylaxis in pregnancy", "Bridging anticoagulation in perioperative period"],
+  "dosing": [
+    {"route": "DVT/PE treatment", "dose": "1 mg/kg SC q12h OR 1.5 mg/kg SC once daily (non-massive PE only)", "notes": "Anti-Xa monitoring recommended in pregnancy, extremes of weight, renal impairment"},
+    {"route": "Prophylaxis (medical)", "dose": "40 mg SC once daily", "notes": ""},
+    {"route": "Pregnancy (VTE prophylaxis)", "dose": "40 mg SC once daily (low risk) to 1 mg/kg q12h (therapeutic)", "notes": "Anti-Xa levels essential to ensure therapeutic levels in pregnancy"}
+  ],
+  "side_effects": {
+    "common": ["Injection site bruising", "Pain at injection site"],
+    "serious": ["Heparin-induced thrombocytopenia (HIT) — lower risk than UFH but still possible (0.1–1%)", "Major hemorrhage", "Spinal/epidural hematoma (if neuraxial anesthesia)"]
+  },
+  "contraindications": ["HIT or history of HIT", "Active major bleeding", "Spinal/epidural anesthesia within 12 hours (prophylactic) or 24 hours (therapeutic) — timing critical"],
+  "interactions": [
+    {"drug": "Antiplatelet agents (ASA, P2Y12 inhibitors)", "severity": "Major", "mechanism": "Additive bleeding risk", "management": "Balance thrombotic vs bleeding risk carefully (ACS: benefit outweighs risk)"},
+    {"drug": "NSAIDs", "severity": "Major", "mechanism": "Platelet inhibition + LMWH = additive bleeding", "management": "Avoid NSAIDs; use acetaminophen"},
+    {"drug": "SSRIs/SNRIs", "severity": "Moderate", "mechanism": "SSRIs impair platelet function — additive bleeding", "management": "Monitor for signs of bleeding"}
+  ],
+  "pregnancy": "Drug of choice for VTE treatment and prophylaxis in pregnancy (warfarin — teratogenic; DOACs — insufficient safety data). Does NOT cross placenta. Must switch to UFH at 36 weeks or earlier if delivery anticipated (neuraxial anesthesia timing).",
+  "pk": {"absorption": "SC: ~90% bioavailability", "half_life": "4.5–7 h", "renal_adjustment": "CrCl <30: 1 mg/kg once daily (treatment); 20 mg once daily (prophylaxis); monitor anti-Xa"},
+  "canadian_notes": "ODB General Benefit. SOGC: preferred anticoagulant in pregnancy for VTE treatment and prophylaxis. Anti-Xa levels 4 hours post-dose: therapeutic target 0.6–1.0 IU/mL (BID), 1.0–2.0 IU/mL (OD). Must hold 12–24 hours before epidural.",
+  "pearls": ["Anti-Xa monitoring essential in pregnancy, renal impairment, obesity (>150 kg)", "Hold therapeutic dose 24h before epidural; prophylactic dose 12h before", "HIT: platelet count at baseline and days 4–14; stop if >50% drop", "Cross-reacts with UFH in HIT — use argatroban or fondaparinux if HIT suspected"]
+}
+,"heparin": {
+  "name": "Unfractionated Heparin (UFH)",
+  "brand": "Heparin Leo, Hepalean",
+  "class": "Cardiovascular",
+  "napra": "Schedule I",
+  "moa": "Binds antithrombin III → conformational change → rapid inactivation of thrombin (IIa), Xa, IXa, XIa, XIIa; also activates heparin cofactor II; reversible with protamine sulfate",
+  "indications": ["VTE treatment and prophylaxis", "ACS (IV infusion)", "Anticoagulation in pregnancy at peripartum (switch from LMWH — reversible with protamine)", "Cardiac surgery, dialysis (circuit anticoagulation)", "PE (massive)"],
+  "dosing": [
+    {"route": "IV (VTE/ACS)", "dose": "80 units/kg bolus then 18 units/kg/h infusion (weight-based protocol)", "notes": "Adjust per aPTT every 6h (target aPTT 60–100s, or per protocol)"},
+    {"route": "Prophylaxis (SC)", "dose": "5000 units SC q8–12h", "notes": "Low-dose SC for medical/surgical prophylaxis"},
+    {"route": "Pregnancy peripartum", "dose": "Switch from LMWH to UFH SC q12h at 36 weeks (or when delivery anticipated)", "notes": "IV UFH can be reversed with protamine; LMWH only partially reversed"}
+  ],
+  "side_effects": {
+    "common": ["Injection site bruising", "Mild thrombocytopenia (early, benign Type 1 — first 2 days)"],
+    "serious": ["HIT Type 2 (immune-mediated, days 5–14 — thrombocytopenia + THROMBOSIS not just bleeding)", "Major hemorrhage", "Osteoporosis (long-term use)", "Hyperkalemia (aldosterone suppression)"]
+  },
+  "contraindications": ["HIT (current or history)", "Active major bleeding", "Recent neurosurgery/brain surgery"],
+  "interactions": [
+    {"drug": "Antiplatelet agents", "severity": "Major", "mechanism": "Additive bleeding risk", "management": "Monitor bleeding; benefit-risk assessment in ACS"},
+    {"drug": "Warfarin", "severity": "Minor", "mechanism": "Both prolong clotting tests (aPTT + PT); overlap intentional during warfarin initiation", "management": "Overlap 4–5 days when initiating warfarin (until 2 therapeutic INRs)"}
+  ],
+  "pregnancy": "Drug of choice peripartum (reversible with protamine). Does NOT cross placenta. LMWH preferred for chronic use in pregnancy (predictable dosing, once-daily SC, no aPTT monitoring).",
+  "pk": {"absorption": "SC: variable absorption", "half_life": "0.5–2 h IV", "renal_adjustment": "Accumulation in severe renal failure; monitor aPTT closely"},
+  "canadian_notes": "IV UFH: monitored with aPTT or anti-Xa. HIT monitoring: CBC on days 4 and 10. ODB-covered. Protamine reversal: 1 mg protamine per 100 units heparin (administered within 15 min). 4Ts scoring system (Thrombocytopenia, Timing, Thrombosis, oTher causes) for HIT pre-probability.",
+  "pearls": ["HIT: thrombocytopenia + clots (not just bleeding) — stop all heparin immediately and use argatroban/danaparoid/fondaparinux", "Reversibility with protamine is key advantage over LMWH peripartum", "Monitor aPTT q6h for IV infusion dosing", "Long-term use: osteoporosis risk with >1 month — prefer LMWH for long-term pregnancy anticoagulation"]
+}
+,"fenofibrate": {
+  "name": "Fenofibrate",
+  "brand": "Lipidil (EZ, Micro, Supra — different formulations)",
+  "class": "Cardiovascular",
+  "napra": "Schedule I",
+  "moa": "Fibric acid derivative; activates peroxisome proliferator-activated receptor alpha (PPARα) → increases lipoprotein lipase → enhances TG clearance; reduces VLDL synthesis; modestly increases HDL",
+  "indications": ["Hypertriglyceridemia (primary indication — TG >5.6 mmol/L to prevent pancreatitis)", "Mixed dyslipidemia (adjunct to statin)", "Diabetic dyslipidemia (high TG + low HDL)"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "145 mg once daily (Lipidil EZ) or 200 mg once daily (Lipidil Supra)", "notes": "Take with food for optimal absorption (Lipidil EZ can be taken without food — nanoparticle formulation)"}
+  ],
+  "side_effects": {
+    "common": ["GI upset", "Headache", "Elevated liver enzymes (transient)"],
+    "serious": ["Myopathy/rhabdomyolysis (increased risk when combined with statins)", "Hepatotoxicity (rare)", "Cholelithiasis (increases biliary cholesterol saturation)", "Pancreatitis (paradoxical — rare)", "Acute renal failure (rare — mechanism unclear)"]
+  },
+  "contraindications": ["Severe renal impairment (CrCl <30)", "Hepatic dysfunction", "Gallbladder disease", "Fibrate allergy"],
+  "interactions": [
+    {"drug": "Statins", "severity": "Major", "mechanism": "Additive myopathy risk (fenofibrate + statins — less risk than gemfibrozil + statins)", "management": "Fenofibrate preferred over gemfibrozil when combining with statins; monitor CPK"},
+    {"drug": "Warfarin", "severity": "Major", "mechanism": "Displaces warfarin from albumin + possible CYP interaction → INR elevation", "management": "Reduce warfarin dose 30%; monitor INR closely at initiation"},
+    {"drug": "Cyclosporine", "severity": "Major", "mechanism": "Cyclosporine increases fenofibrate levels; additive nephrotoxicity", "management": "Monitor renal function carefully in transplant patients"}
+  ],
+  "pregnancy": "Category C. Avoid; limited safety data, teratogenic in animals. Stop before pregnancy if possible.",
+  "pk": {"absorption": "Well absorbed with food", "half_life": "16–23 h", "renal_adjustment": "CrCl 30–60: 48 mg/day; CrCl <30: CONTRAINDICATED"},
+  "canadian_notes": "ODB General Benefit. Fenofibrate strongly preferred over gemfibrozil with statins (gemfibrozil inhibits statin glucuronidation — higher rhabdomyolysis risk). Key indication: TG >5.6 mmol/L to prevent acute pancreatitis. Check CrCl before initiating.",
+  "pearls": ["TG >5.6 mmol/L: fenofibrate to prevent pancreatitis (main indication)", "Fenofibrate + statin: acceptable combination; AVOID gemfibrozil + statin", "Monitor renal function — unexplained creatinine rise is a drug effect (mechanism unclear)", "Warfarin: expect INR increase — reduce dose 30% proactively"]
+}
+
+,"dalteparin": {
+  "name": "Dalteparin",
+  "brand": "Fragmin",
+  "class": "Cardiovascular",
+  "napra": "Schedule I",
+  "moa": "Low molecular weight heparin; preferentially inhibits factor Xa over thrombin (ratio ~2.7:1); binds antithrombin III; more predictable anticoagulation than UFH",
+  "indications": ["VTE prophylaxis (surgical, medical)", "VTE treatment", "Cancer-associated thrombosis (preferred LMWH — CLOT trial)", "ACS (unstable angina/NSTEMI)", "VTE prevention in pregnancy (alternative to enoxaparin)"],
+  "dosing": [
+    {"route": "VTE prophylaxis (medical)", "dose": "5000 units SC once daily", "notes": ""},
+    {"route": "VTE treatment", "dose": "200 units/kg SC once daily (max 18,000 units)", "notes": "Anti-Xa monitoring in pregnancy, obesity, renal impairment"},
+    {"route": "Cancer-associated VTE", "dose": "200 units/kg SC once daily x 1 month, then 150 units/kg once daily", "notes": "CLOT trial: dalteparin superior to warfarin for cancer thrombosis"}
+  ],
+  "side_effects": {
+    "common": ["Injection site bruising", "Pain"],
+    "serious": ["HIT (immune-mediated — 0.1–1% risk)", "Major bleeding", "Spinal/epidural hematoma", "Osteoporosis (long-term)"]
+  },
+  "contraindications": ["HIT or history of HIT", "Active major bleeding", "Neuraxial anesthesia timing (hold 12–24h)"],
+  "interactions": [
+    {"drug": "Antiplatelet agents", "severity": "Major", "mechanism": "Additive bleeding risk", "management": "Monitor carefully"},
+    {"drug": "NSAIDs", "severity": "Major", "mechanism": "Platelet inhibition + anticoagulant", "management": "Avoid NSAIDs; use acetaminophen"}
+  ],
+  "pregnancy": "Safe in pregnancy; does not cross placenta. Used for VTE treatment and prevention. Switch to UFH SC near delivery for reversibility with protamine.",
+  "pk": {"absorption": "SC: ~90%", "half_life": "3–5 h", "renal_adjustment": "Anti-Xa monitoring required if CrCl <30; avoid once-daily treatment dosing in severe renal failure"},
+  "canadian_notes": "ODB General Benefit. First-choice LMWH for cancer-associated VTE per Canadian and ASCO guidelines (CLOT and CATCH trial data). Interchangeable with enoxaparin for most VTE prophylaxis indications.",
+  "pearls": ["Preferred LMWH for cancer-associated thrombosis (CLOT trial data)", "Interchangeable with enoxaparin for most indications", "Anti-Xa target (once daily treatment): 1.0–2.0 IU/mL (4 hours post-dose)", "Hold before neuraxial: 12h prophylactic, 24h therapeutic dose"]
+}
+,"tinzaparin": {
+  "name": "Tinzaparin",
+  "brand": "Innohep",
+  "class": "Cardiovascular",
+  "napra": "Schedule I",
+  "moa": "LMWH; inhibits factor Xa and thrombin via antithrombin III; Xa:IIa inhibition ratio ~1.9:1; highest molecular weight of the LMWHs",
+  "indications": ["DVT/PE treatment", "DVT prophylaxis", "VTE prevention in cancer patients"],
+  "dosing": [
+    {"route": "VTE treatment", "dose": "175 units/kg SC once daily", "notes": ""},
+    {"route": "VTE prophylaxis", "dose": "3500 units SC once daily (general) or 75 units/kg once daily (orthopedic)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Injection site bruising"],
+    "serious": ["HIT", "Major bleeding", "Spinal/epidural hematoma"]
+  },
+  "contraindications": ["HIT history", "Active major bleeding"],
+  "interactions": [
+    {"drug": "Antiplatelet drugs", "severity": "Major", "mechanism": "Additive bleeding risk", "management": "Balance risk-benefit"}
+  ],
+  "pregnancy": "Safe; does not cross placenta. Less commonly used than enoxaparin or dalteparin in pregnancy in Canada.",
+  "pk": {"absorption": "SC: ~90%", "half_life": "3–4 h", "renal_adjustment": "May accumulate less than enoxaparin in renal failure (higher MW, less renal elimination); some guidelines suggest use in moderate renal impairment"},
+  "canadian_notes": "ODB General Benefit. Less commonly used than enoxaparin/dalteparin in Ontario. Some evidence of less accumulation than enoxaparin in moderate renal failure — alternative in CrCl 20–30 without dose adjustment (limited evidence).",
+  "pearls": ["Anti-Xa monitoring needed in renal impairment, obesity, pregnancy", "Less used than enoxaparin/dalteparin in Canada", "Some data suggests less renal accumulation than enoxaparin", "Same contraindications and precautions as other LMWHs"]
+}
+,"cholestyramine": {
+  "name": "Cholestyramine",
+  "brand": "Questran, Novo-Cholamine",
+  "class": "Cardiovascular",
+  "napra": "Schedule I",
+  "moa": "Bile acid sequestrant (resin); binds bile acids in intestinal lumen → prevents reabsorption → increased conversion of cholesterol to bile acids in liver → upregulates LDL receptors → reduces LDL-C",
+  "indications": ["Hypercholesterolemia (adjunct)", "Pruritus from cholestasis (bile acid binding)", "Diarrhea from bile acid malabsorption (post-cholecystectomy or ileal resection)", "Warfarin toxicity (blocks absorption — caution)", "Leflunomide washout (accelerated elimination)"],
+  "dosing": [
+    {"route": "Oral powder", "dose": "4–16 g (1–4 scoops) divided BID–QID before meals", "notes": "Mix in water or juice; take with plenty of fluid to prevent obstruction"}
+  ],
+  "side_effects": {
+    "common": ["Constipation (very common — 20–30%)", "Bloating/flatulence", "Nausea", "Heartburn"],
+    "serious": ["Intestinal obstruction (rare — especially in elderly with constipation)", "Fat-soluble vitamin deficiency (A, D, E, K) with long-term use", "Hypertriglyceridemia (can raise TG — use with caution in high TG)"]
+  },
+  "contraindications": ["Complete biliary obstruction", "Hypertriglyceridemia >4.5 mmol/L (worsens TG)"],
+  "interactions": [
+    {"drug": "Most oral medications", "severity": "Major", "mechanism": "Non-specifically binds many oral drugs in intestine — reduces absorption", "management": "Take all other medications 1 hour BEFORE or 4–6 hours AFTER cholestyramine"},
+    {"drug": "Fat-soluble vitamins (A, D, E, K)", "severity": "Moderate", "mechanism": "Impairs fat-soluble vitamin absorption", "management": "Supplement fat-soluble vitamins with long-term use"},
+    {"drug": "Warfarin", "severity": "Major", "mechanism": "Reduces warfarin absorption AND increases clotting factor levels (vitamin K absorption)", "management": "Monitor INR; take warfarin 1h before cholestyramine"}
+  ],
+  "pregnancy": "Category C. Used for cholestasis of pregnancy (intrahepatic) — reduces pruritus. Does not absorb systemically. Concerns about fat-soluble vitamin (K) deficiency — supplement vitamin K.",
+  "pk": {"absorption": "NOT absorbed — acts locally in intestine", "half_life": "N/A (not absorbed)", "renal_adjustment": "None needed"},
+  "canadian_notes": "ODB General Benefit. Largely replaced by statins for primary LDL lowering. Key niches: cholestatic pruritus, bile acid diarrhea, leflunomide washout (regulatory use). Constipation major compliance issue.",
+  "pearls": ["Take ALL other medications 1 hour before or 4–6 hours after (non-specific binding)", "Major use in Canada: cholestasis pruritus, bile acid diarrhea, leflunomide washout", "Supplement fat-soluble vitamins long-term", "Can raise triglycerides — avoid if TG elevated"]
+}
+,"desvenlafaxine": {
+  "name": "Desvenlafaxine",
+  "brand": "Pristiq",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I",
+  "moa": "Serotonin-norepinephrine reuptake inhibitor (SNRI); active O-desmethyl metabolite of venlafaxine; inhibits serotonin (5-HTT) and norepinephrine (NET) transporters with minimal dopamine activity",
+  "indications": ["Major depressive disorder (MDD)", "Menopausal vasomotor symptoms (hot flashes) — off-label in Canada"],
+  "dosing": [
+    {"route": "Oral", "dose": "50 mg once daily (standard dose)", "notes": "Higher doses (100 mg) not more effective for MDD but may be used; extended-release — do NOT crush"}
+  ],
+  "side_effects": {
+    "common": ["Nausea (common at initiation)", "Headache", "Insomnia", "Dizziness", "Hyperhidrosis (sweating)", "Sexual dysfunction"],
+    "serious": ["Serotonin syndrome (with serotonergic drugs)", "SIADH/hyponatremia (elderly)", "Increased blood pressure (dose-related)", "Activation/suicidality (black box — pediatric/young adults)", "Discontinuation syndrome (must taper)"]
+  },
+  "contraindications": ["MAOI use within 14 days (serotonin syndrome)", "Uncontrolled narrow-angle glaucoma"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Serotonin syndrome (potentially fatal)", "management": "ABSOLUTE contraindication; 14-day washout each way"},
+    {"drug": "Tramadol / triptans / other serotonergic drugs", "severity": "Major", "mechanism": "Serotonin syndrome", "management": "Avoid combinations when possible; monitor"},
+    {"drug": "NSAIDs / ASA / anticoagulants", "severity": "Moderate", "mechanism": "SSRIs/SNRIs reduce platelet serotonin → bleeding risk with antiplatelet effect", "management": "Consider GI protection; monitor for unusual bleeding"}
+  ],
+  "pregnancy": "Category C. Neonatal withdrawal syndrome with 3rd trimester exposure (irritability, respiratory distress, feeding difficulty). Weigh benefit vs risk. SSRIs/SNRIs in pregnancy: individualized discussion with patient.",
+  "pk": {"absorption": "80% oral; no first-pass metabolism (unlike venlafaxine)", "half_life": "11 h", "renal_adjustment": "CrCl 30–50: 50 mg every other day; CrCl <30: 50 mg every 2 days"},
+  "canadian_notes": "ODB General Benefit. Active metabolite of venlafaxine — no CYP2D6 metabolism needed (advantage in poor metabolizers). 50 mg dose appears equivalent to venlafaxine XR 75 mg. Taper slowly (every 1–2 weeks) to minimize discontinuation syndrome.",
+  "pearls": ["No CYP2D6 metabolism — advantage over venlafaxine in poor metabolizers or with CYP2D6 inhibitors", "Discontinuation syndrome prominent — taper slowly over 2–4 weeks minimum", "Blood pressure monitoring especially at higher doses", "Neonatal adaption syndrome with 3rd trimester use — discuss risk/benefit in pregnancy"]
+}
+,"vortioxetine": {
+  "name": "Vortioxetine",
+  "brand": "Trintellix",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I",
+  "moa": "Multimodal antidepressant; serotonin reuptake inhibitor (5-HTT) + direct serotonin receptor modulator (5-HT1A agonist, 5-HT1B partial agonist, 5-HT3/7/1D antagonist) → enhanced glutamate and acetylcholine release in prefrontal cortex → procognitive effects",
+  "indications": ["Major depressive disorder (MDD)", "Cognitive symptoms in depression (specifically studied — attention, memory, processing speed)"],
+  "dosing": [
+    {"route": "Oral", "dose": "Start 10 mg once daily; target 20 mg/day; range 5–20 mg", "notes": "5 mg for elderly or sensitive patients; may be taken with or without food"}
+  ],
+  "side_effects": {
+    "common": ["Nausea (most common — usually resolves within 2 weeks)", "Constipation", "Vomiting", "Sexual dysfunction (less than SSRIs per some trials)"],
+    "serious": ["Serotonin syndrome", "SIADH/hyponatremia", "Discontinuation syndrome (less severe than venlafaxine/paroxetine)", "Activation/suicidality (black box)"]
+  },
+  "contraindications": ["MAOI within 14 days (serotonin syndrome)", "Hypersensitivity to vortioxetine"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Serotonin syndrome", "management": "Contraindicated; 14-day washout"},
+    {"drug": "CYP2D6 inhibitors (bupropion, fluoxetine, paroxetine)", "severity": "Major", "mechanism": "CYP2D6 is primary metabolism — inhibitors raise vortioxetine levels up to 2–3x", "management": "Halve vortioxetine dose when starting a CYP2D6 inhibitor"},
+    {"drug": "CYP inducers (rifampin)", "severity": "Major", "mechanism": "Reduce vortioxetine levels significantly", "management": "May increase dose up to 3x with strong inducers"}
+  ],
+  "pregnancy": "Category C. Insufficient human data. Generally avoid unless clearly needed. Neonatal adaptation syndrome with 3rd trimester exposure possible.",
+  "pk": {"absorption": "75% oral", "half_life": "66 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. Marketed specifically for cognitive dysfunction in depression. Nausea at initiation is common — take with food initially, reassure patients it usually resolves within 1–2 weeks. CYP2D6 substrate — important drug interaction with fluoxetine/paroxetine/bupropion.",
+  "pearls": ["Procognitive effects — may be preferred when cognitive symptoms dominate", "Nausea at start: take with food; usually resolves in 2 weeks", "Halve dose with CYP2D6 inhibitors (fluoxetine, paroxetine, bupropion)", "Milder discontinuation syndrome than paroxetine/venlafaxine"]
+}
+
+,"guanfacine": {
+  "name": "Guanfacine",
+  "brand": "Intuniv XR (ER), Tenex (IR)",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I",
+  "moa": "Selective alpha-2A adrenergic receptor agonist in prefrontal cortex (PFC); strengthens PFC network connections → improves attention and impulse control; different mechanism than stimulants",
+  "indications": ["ADHD — monotherapy or adjunct (especially when stimulants not tolerated or insufficient)", "Tourette's syndrome (tic suppression)", "Hypertension (IR form — rarely used now)", "Oppositional defiant disorder behaviors (adjunct)"],
+  "dosing": [
+    {"route": "Oral XR (ADHD — pediatric)", "dose": "Start 1 mg once daily; titrate by 1 mg/week; range 1–7 mg/day (max 4 mg for adjunct stimulant)", "notes": "Take at same time daily; do NOT crush ER tablet; do NOT take with high-fat meal (increases AUC 75%)"},
+    {"route": "Oral XR (adult ADHD)", "dose": "1–4 mg once daily", "notes": "Less studied in adults than children"}
+  ],
+  "side_effects": {
+    "common": ["Somnolence (most common — 35–38%)", "Headache", "Fatigue", "Abdominal pain", "Hypotension (orthostatic)"],
+    "serious": ["Severe hypotension/bradycardia (especially with antihypertensives)", "Rebound hypertension on abrupt discontinuation (taper over 1–2 weeks)", "Syncope"]
+  },
+  "contraindications": ["Concurrent antihypertensives (additive hypotension)", "Hypersensitivity to guanfacine"],
+  "interactions": [
+    {"drug": "CYP3A4 inhibitors (ketoconazole, erythromycin)", "severity": "Major", "mechanism": "CYP3A4 substrate — inhibitors increase guanfacine AUC significantly", "management": "Reduce guanfacine dose 50% with strong CYP3A4 inhibitors"},
+    {"drug": "CYP3A4 inducers (rifampin, carbamazepine)", "severity": "Major", "mechanism": "Reduce guanfacine levels", "management": "May need to double guanfacine dose"},
+    {"drug": "Antihypertensives", "severity": "Major", "mechanism": "Additive blood pressure lowering → hypotension/syncope", "management": "Caution; monitor BP closely"}
+  ],
+  "pregnancy": "Category B. Not studied in pregnancy. Avoid; use only if clearly necessary.",
+  "pk": {"absorption": "80% oral; high-fat meal increases AUC 75%", "half_life": "17–21 h", "renal_adjustment": "No adjustment needed; monitor in severe renal failure"},
+  "canadian_notes": "Intuniv XR approved in Canada for ADHD in children/adolescents. Non-stimulant option — no abuse potential, not a controlled substance. Particularly useful when stimulants cause intolerable side effects, anxiety, or tics. Sedation decreases after 2–4 weeks.",
+  "pearls": ["Non-stimulant — no abuse potential, useful if stimulant misuse concern", "Somnolence major complaint — improves after 2–4 weeks; dose in evening", "AVOID high-fat meal — raises AUC 75%", "Taper over 1–2 weeks to stop — rebound hypertension risk", "Different mechanism from atomoxetine — can add to stimulant"]
+}
+,"buprenorphine": {
+  "name": "Buprenorphine / Buprenorphine-Naloxone",
+  "brand": "Subutex (buprenorphine SL); Suboxone, Zubsolv (buprenorphine/naloxone SL)",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I (controlled drug — opioid)",
+  "moa": "Partial agonist at mu-opioid receptor (high affinity, low intrinsic activity — ceiling effect reduces overdose risk) + antagonist at kappa-opioid receptor; naloxone added (poorly absorbed SL) to deter injection misuse",
+  "indications": ["Opioid use disorder (OUD) — first-line opioid agonist therapy (OAT)", "Pain (low-dose transdermal patch — Butrans — for chronic pain)", "Neonatal opioid withdrawal syndrome treatment"],
+  "dosing": [
+    {"route": "SL (OUD induction)", "dose": "Start 2–4 mg SL on day 1 (in mild-moderate withdrawal); titrate by 2–4 mg/day; maintenance 8–24 mg/day (Suboxone)", "notes": "MUST be in withdrawal before induction (COWS ≥8–12) to avoid precipitating severe withdrawal"},
+    {"route": "Transdermal (pain)", "dose": "Butrans 5–20 mcg/h patch (change weekly)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Headache", "Constipation", "Nausea", "Insomnia", "Sweating"],
+    "serious": ["Precipitated withdrawal if given before opioid levels drop (COWS <8)", "Respiratory depression (rare with ceiling effect — risk increases with benzodiazepines)", "Hepatotoxicity (rare)", "QTc prolongation (dose-dependent)"]
+  },
+  "contraindications": ["Acute opioid intoxication (full agonist present — precipitated withdrawal)", "Severe respiratory impairment", "Hypersensitivity"],
+  "interactions": [
+    {"drug": "Benzodiazepines / CNS depressants", "severity": "Major", "mechanism": "Additive respiratory depression (Black Box Warning — multiple deaths reported)", "management": "Avoid concurrent benzodiazepines when possible; if unavoidable, reduce doses, monitor closely"},
+    {"drug": "CYP3A4 inhibitors/inducers", "severity": "Moderate", "mechanism": "Buprenorphine is CYP3A4 substrate — interactions affect levels", "management": "Monitor for over/under-dosing with CYP3A4 interactions"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Risk of serotonin syndrome and opioid toxicity", "management": "Avoid concurrent MAOIs"}
+  ],
+  "pregnancy": "Category C (buprenorphine); naloxone avoid. Buprenorphine monotherapy (Subutex) preferred in pregnancy. Neonatal opioid withdrawal syndrome (NOWS) expected — neonatology involvement. Safer than untreated OUD or methadone for mother (no daily clinic requirement).",
+  "pk": {"absorption": "SL: 30–50%", "half_life": "24–60 h", "renal_adjustment": "No dose adjustment needed"},
+  "canadian_notes": "Ontario OHIP pays for Suboxone when prescribed by OAT-waivered physician or pharmacist. Any Canadian prescriber with basic prescribing rights can prescribe for OUD without additional waiver (regulatory change 2018). Carry doses available at pharmacy dispensing. Pharmacist observed ingestion in some programs.",
+  "pearls": ["MUST wait for withdrawal (COWS ≥8–12) before induction — precipitated withdrawal is severe", "Ceiling effect for respiratory depression = safer OD profile than methadone", "Buprenorphine monotherapy (no naloxone) in pregnancy — naloxone not well-studied in pregnancy", "Any prescriber in Canada can prescribe for OUD — no special waiver required since 2018"]
+}
+,"methadone_oat": {
+  "name": "Methadone (Opioid Agonist Therapy)",
+  "brand": "Metadol-D, Methadose",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I (controlled drug — narcotic)",
+  "moa": "Full mu-opioid receptor agonist (very high affinity); also NMDA receptor antagonist (useful for neuropathic pain); long and variable half-life provides once-daily suppression of withdrawal",
+  "indications": ["Opioid use disorder (OUD) — opioid agonist therapy (OAT) first-line option", "Chronic pain (specialist-managed)", "Detoxification"],
+  "dosing": [
+    {"route": "OAT induction", "dose": "Start 10–30 mg day 1 (assess prior opioid tolerance); increase slowly by 5–10 mg/week", "notes": "Requires Ontario-specific methadone prescribing authorization (CPSO Methadone Maintenance Treatment Guidelines)"},
+    {"route": "OAT maintenance", "dose": "60–120 mg/day (some patients need up to 200 mg)", "notes": "Daily witnessed ingestion at pharmacy required initially; carry doses granted on stability"}
+  ],
+  "side_effects": {
+    "common": ["Constipation", "Sweating", "Sedation", "Peripheral edema"],
+    "serious": ["QTc prolongation / Torsades de Pointes (dose-dependent — baseline ECG required; repeat at >100 mg/day)", "Respiratory depression (especially with benzodiazepines or at initiation)", "Drug-drug interactions via CYP3A4/2D6"]
+  },
+  "contraindications": ["QTc >500 ms (use with extreme caution)", "Concurrent QT-prolonging drugs"],
+  "interactions": [
+    {"drug": "Benzodiazepines / CNS depressants", "severity": "Major", "mechanism": "Additive respiratory depression — synergistic (major OD cause)", "management": "Avoid or minimize; if used, reduce doses, counsel, naloxone kit"},
+    {"drug": "CYP3A4 inducers (rifampin, phenytoin, carbamazepine)", "severity": "Major", "mechanism": "Reduce methadone levels by 50–80% → precipitate withdrawal", "management": "Significantly increase methadone dose; monitor closely"},
+    {"drug": "CYP3A4 inhibitors (fluconazole, fluoxetine)", "severity": "Major", "mechanism": "Raise methadone levels → respiratory depression/QTc risk", "management": "Reduce methadone dose; ECG monitoring"}
+  ],
+  "pregnancy": "Category C. OAT continued throughout pregnancy — withdrawal from opioids is dangerous in pregnancy (fetal death risk). Buprenorphine increasingly preferred (no QTc, no special authorization, fewer drug interactions). Neonatal opioid withdrawal syndrome expected.",
+  "pk": {"absorption": "Good oral absorption", "half_life": "8–59 h (highly variable — accumulation risk on initiation)", "renal_adjustment": "No standard adjustment; monitor closely"},
+  "canadian_notes": "In Ontario, prescribing methadone for OAT requires CPSO Methadone Maintenance Treatment Guidelines authorization (exemption 56). Pharmacies must be licensed/approved for dispensing. ECG monitoring required. Witnessed daily ingestion at pharmacy.",
+  "pearls": ["Most deaths in first 2 weeks: dose accumulation during induction — increase SLOWLY", "QTc: baseline ECG, repeat at doses >100 mg, and with QT-prolonging drugs", "Variable half-life (8–59 h) means steady state takes 3–7 days — do NOT accelerate dose increases based on acute withdrawal symptoms", "Buprenorphine increasingly preferred over methadone in pregnancy and in patients with QTc concerns"]
+}
+,"amphetamine_mixed": {
+  "name": "Amphetamine mixed salts (Amphetamine, d-Amphetamine)",
+  "brand": "Adderall XR (mixed salts); Dexedrine (d-amphetamine)",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I (controlled — stimulant)",
+  "moa": "Releases norepinephrine and dopamine from presynaptic terminals; also inhibits monoamine reuptake transporters; increases catecholamines in prefrontal cortex and striatum → improves attention and hyperactivity",
+  "indications": ["ADHD (first-line stimulant — equivalent efficacy to methylphenidate)", "Narcolepsy (dextroamphetamine)"],
+  "dosing": [
+    {"route": "Adderall XR (adult ADHD)", "dose": "Start 10–20 mg once daily; max 30 mg/day", "notes": ""},
+    {"route": "Adderall XR (pediatric ≥6 y)", "dose": "Start 5–10 mg once daily; max 30 mg/day", "notes": ""},
+    {"route": "Dexedrine (narcolepsy)", "dose": "5–60 mg/day in divided doses", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Decreased appetite", "Insomnia", "Headache", "Dry mouth", "Irritability/mood changes"],
+    "serious": ["Cardiovascular effects: tachycardia, hypertension, palpitations", "Psychosis/mania (at high doses or in predisposed)", "Growth suppression (children — periodic drug holidays)", "Dependence/abuse potential", "Sudden cardiac death (rare — avoid in structural heart disease)"]
+  },
+  "contraindications": ["Structural cardiac disease, cardiomyopathy", "Hyperthyroidism", "MAOI within 14 days (hypertensive crisis)", "Agitated states", "History of drug abuse (relative — careful prescribing)"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Hypertensive crisis, hyperthermia", "management": "ABSOLUTELY contraindicated; 14-day washout"},
+    {"drug": "Urinary alkalinizers (sodium bicarbonate)", "severity": "Moderate", "mechanism": "Raises urine pH → reduces amphetamine renal elimination → toxicity", "management": "Avoid urinary alkalinizing agents"},
+    {"drug": "Lithium", "severity": "Moderate", "mechanism": "May reduce stimulant effect; combination used in bipolar ADHD sometimes", "management": "Monitor both drug effects"},
+    {"drug": "Guanethidine", "severity": "Major", "mechanism": "Amphetamines reverse antihypertensive effect", "management": "Avoid combination"}
+  ],
+  "pregnancy": "Category C. Avoid — neonatal premature delivery, low birth weight, withdrawal symptoms. If ADHD severe, risk-benefit individualized discussion. Many patients stop during pregnancy.",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "10–13 h", "renal_adjustment": "Clearance increases with acidic urine; monitor in renal failure"},
+  "canadian_notes": "Schedule III controlled drug (CDSA). In Ontario, needs standard Rx (not triplicate like older regulations). Adderall XR available. Prescribing by family physicians in Canada requires adherence to provincial ODB criteria for ADHD stimulant coverage.",
+  "pearls": ["Equal efficacy to methylphenidate — choice often based on duration, side effect profile, preference", "Drug holidays (weekends, summers) can restore appetite and growth in children", "Screen for family/personal cardiac history before initiating", "MAOI washout 14 days both ways — serotonin syndrome/hypertensive crisis risk"]
+}
+,"eszopiclone": {
+  "name": "Eszopiclone",
+  "brand": "Lunesta",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I (controlled — benzodiazepine receptor agonist)",
+  "moa": "Non-benzodiazepine (Z-drug); binds GABA-A receptor with selectivity for alpha-1 subunit at benzodiazepine site → potentiates GABA inhibition → sedation, sleep induction/maintenance",
+  "indications": ["Insomnia (sleep onset and maintenance — approved for nightly use)"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "1–3 mg immediately before bed", "notes": "Start 1 mg (2 mg elderly); titrate to 3 mg if needed; ensure ≥8 hours before needed alertness"},
+    {"route": "Oral (elderly)", "dose": "1–2 mg maximum", "notes": "Higher doses: increased confusion, falls, next-day sedation"}
+  ],
+  "side_effects": {
+    "common": ["Unpleasant taste (metallic, bitter — up to 17%)", "Headache", "Dizziness", "Somnolence"],
+    "serious": ["Complex sleep behaviors (sleepwalking, sleep-driving — Black Box Warning 2019)", "Dependency/tolerance (scheduled drug)", "Rebound insomnia on discontinuation", "Anterograde amnesia", "CNS depression (especially with alcohol/sedatives)"]
+  },
+  "contraindications": ["Severe hepatic impairment (avoid 3 mg dose)", "Concurrent strong CYP3A4 inhibitors without dose reduction"],
+  "interactions": [
+    {"drug": "CNS depressants (alcohol, benzodiazepines, opioids)", "severity": "Major", "mechanism": "Additive CNS/respiratory depression", "management": "Avoid alcohol; reduce doses of concurrent CNS depressants"},
+    {"drug": "CYP3A4 inhibitors (ketoconazole, itraconazole)", "severity": "Major", "mechanism": "Significantly raise eszopiclone levels (AUC +2x)", "management": "Reduce eszopiclone to 1 mg with strong CYP3A4 inhibitors"},
+    {"drug": "CYP3A4 inducers (rifampin)", "severity": "Major", "mechanism": "Reduce eszopiclone efficacy", "management": "Avoid strong inducers or increase dose cautiously"}
+  ],
+  "pregnancy": "Category C. Avoid — limited safety data, potential neonatal withdrawal/respiratory depression. Non-pharmacological approaches preferred (CBT-I).",
+  "pk": {"absorption": "Rapidly absorbed; onset <30 min", "half_life": "6 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit (with criteria). Z-drugs (eszopiclone, zopiclone, zolpidem): Beers list — avoid in elderly (falls, fractures, cognitive impairment). CBT-I (Cognitive Behavioral Therapy for Insomnia) is first-line treatment per all guidelines — pharmacotherapy is adjunct. Health Canada Black Box: complex sleep behaviors (stop immediately if occurs).",
+  "pearls": ["Unpleasant bitter taste is very common and distressing — warn patients", "Complex sleep behaviors: stop drug and counsel patient (Black Box)", "Beers list: not recommended in elderly (>65)", "CBT-I first-line: superior to pharmacotherapy long-term and without side effects"]
+}
+
+,"indomethacin": {
+  "name": "Indomethacin",
+  "brand": "Indocid",
+  "class": "Pain Management",
+  "napra": "Schedule I",
+  "moa": "Non-selective NSAID; inhibits COX-1 and COX-2 → reduces prostaglandin synthesis → anti-inflammatory, analgesic, antipyretic; also inhibits neutrophil migration",
+  "indications": ["Gout (acute — very effective)", "Ankylosing spondylitis", "Pericarditis (adjunct)", "Patent ductus arteriosus (PDA) closure in premature neonates (IV)", "Preterm labor (tocolysis — <32 weeks, short-term)", "Migraine (acute — rectal suppository)"],
+  "dosing": [
+    {"route": "Oral (gout acute)", "dose": "50 mg TID x 2–3 days, then taper", "notes": "Take with food or antacid"},
+    {"route": "Oral (general)", "dose": "25–50 mg BID–TID (max 200 mg/day)", "notes": ""},
+    {"route": "Rectal (migraine)", "dose": "100 mg suppository at onset", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["GI upset/ulcers (COX-1 inhibition — highest GI risk among NSAIDs)", "Headache (paradoxically common)", "Dizziness/vertigo"],
+    "serious": ["GI hemorrhage", "Renal impairment (especially with diuretics/ACEi)", "Cardiovascular events (CV risk — class effect)", "Hepatotoxicity", "Agranulocytosis (rare)", "Aseptic meningitis (lupus patients)"]
+  },
+  "contraindications": ["NSAID allergy/ASA-sensitive asthma", "Active PUD", "Severe renal/hepatic impairment", "Post-CABG pain (all NSAIDs)", "Pregnancy ≥30 weeks (premature ductus arteriosus closure)"],
+  "interactions": [
+    {"drug": "Warfarin", "severity": "Major", "mechanism": "GI bleeding risk + possible CYP2C9 displacement", "management": "Avoid; use acetaminophen for analgesia if anticoagulated"},
+    {"drug": "Lithium", "severity": "Major", "mechanism": "NSAIDs reduce renal lithium clearance → toxicity", "management": "Monitor lithium levels closely; reduce dose if needed"},
+    {"drug": "ACE inhibitors/ARBs + diuretics", "severity": "Major", "mechanism": "Triple whammy — acute kidney injury (additive renal afferent vasoconstriction)", "management": "Avoid triple combination especially in elderly/dehydrated"}
+  ],
+  "pregnancy": "Category C (1st/2nd trimester); Category D/X (≥30 weeks — premature ductus arteriosus closure, oligohydramnios, pulmonary hypertension). AVOID after 30 weeks. Short-term tocolysis <32 weeks with monitoring only.",
+  "pk": {"absorption": "Well absorbed orally (90%)", "half_life": "4.5 h", "renal_adjustment": "Avoid in CrCl <30"},
+  "canadian_notes": "ODB General Benefit. Indomethacin has the highest GI side effect risk among NSAIDs — prefer alternatives for most indications. Key indication: acute gout (very effective). PDA closure in NICU — IV indomethacin.",
+  "pearls": ["Highest GI risk NSAID — take with food; co-prescribe PPI if risk factors", "Very effective for gout — often preferred by rheumatology for acute attacks", "Headache as side effect is paradoxical — limit use for headache disorders", "AVOID ≥30 weeks pregnancy — premature ductus closure"]
+}
+,"baclofen_oral": {
+  "name": "Baclofen",
+  "brand": "Lioresal",
+  "class": "Pain Management",
+  "napra": "Schedule I",
+  "moa": "GABA-B receptor agonist (presynaptic and postsynaptic); inhibits excitatory neurotransmitter release in spinal cord → reduces spasticity; also CNS depressant",
+  "indications": ["Spasticity (multiple sclerosis, spinal cord injury, cerebral palsy)", "Muscle spasm", "Trigeminal neuralgia (adjunct)", "Alcohol use disorder (off-label — Canada, France)", "Hiccups (refractory — off-label)"],
+  "dosing": [
+    {"route": "Oral (spasticity)", "dose": "Start 5 mg TID; increase by 5 mg TID every 3 days; usual maintenance 40–80 mg/day; max 80 mg/day (some use up to 120 mg)", "notes": "Titrate slowly — abrupt discontinuation DANGEROUS"},
+    {"route": "Intrathecal pump", "dose": "Specialist-placed — programmable pump for severe spasticity", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Sedation/drowsiness (dose-dependent — common)", "Weakness", "Dizziness", "Nausea"],
+    "serious": ["Respiratory depression (overdose — especially with CNS depressants)", "ABRUPT DISCONTINUATION: seizures, hallucinations, hyperpyrexia, autonomic instability (potentially fatal)", "Dependence with long-term use", "Confusion/cognitive effects (elderly — Beers list)"]
+  },
+  "contraindications": ["Abrupt discontinuation (taper always)", "Epilepsy (lowers seizure threshold)"],
+  "interactions": [
+    {"drug": "CNS depressants (opioids, benzodiazepines, alcohol)", "severity": "Major", "mechanism": "Additive CNS and respiratory depression", "management": "Avoid or minimize; counsel against alcohol"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "CNS depression, hypotension", "management": "Avoid"},
+    {"drug": "Tricyclic antidepressants", "severity": "Moderate", "mechanism": "Additive muscle relaxation and sedation", "management": "Monitor for excess sedation"}
+  ],
+  "pregnancy": "Category C. Limited data. Used for severe spasticity in pregnancy when benefit outweighs risk. Neonatal withdrawal syndrome reported.",
+  "pk": {"absorption": "Oral: 70–85%", "half_life": "3–4 h", "renal_adjustment": "Reduce dose significantly in renal failure (renally excreted)"},
+  "canadian_notes": "ODB General Benefit. Baclofen withdrawal is LIFE-THREATENING (seizures, hyperthermia) — NEVER abruptly stop; always taper. Elderly: Beers list due to CNS effects. Intrathecal baclofen for severe spasticity not responding to oral.",
+  "pearls": ["NEVER stop abruptly — taper over weeks to months (withdrawal can be fatal)", "Renal excretion — reduce dose in CrCl <30", "Beers list for elderly (sedation, falls, cognitive impairment)", "Intrathecal baclofen: for patients needing >120 mg/day orally without benefit"]
+}
+,"rizatriptan": {
+  "name": "Rizatriptan",
+  "brand": "Maxalt, Maxalt RPD (orally disintegrating)",
+  "class": "Pain Management",
+  "napra": "Schedule I",
+  "moa": "Selective serotonin 5-HT1B/1D receptor agonist; causes intracranial vasoconstriction + inhibits trigeminal nerve activation and CGRP release → acute migraine relief",
+  "indications": ["Acute migraine with or without aura (first-line triptan)", "Cluster headache (5HT1B/1D agonist — less evidence than sumatriptan)"],
+  "dosing": [
+    {"route": "Oral", "dose": "5–10 mg at migraine onset; may repeat after 2 hours (max 30 mg/24h)", "notes": "10 mg more effective; 5 mg if on propranolol (drug interaction — use 5 mg max)"},
+    {"route": "ODT (Maxalt RPD)", "dose": "Same dosing; dissolves on tongue without water — useful for nausea/vomiting", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Somnolence/dizziness", "Chest tightness/pressure (vasospasm sensation — common, rarely cardiac)", "Nausea", "Paresthesia"],
+    "serious": ["Coronary vasospasm / MI (rare — in patients with undisclosed cardiovascular disease)", "Serotonin syndrome (with serotonergic drugs)", "Stroke/TIA (rare)", "Medication overuse headache (>10 days/month)"]
+  },
+  "contraindications": ["Ischemic heart disease, coronary artery vasospasm (Prinzmetal)", "Uncontrolled hypertension", "Stroke / TIA history", "Basilar or hemiplegic migraine", "MAOI within 14 days", "Ergot within 24 hours (additive vasospasm)"],
+  "interactions": [
+    {"drug": "Propranolol", "severity": "Major", "mechanism": "Propranolol inhibits CYP1A2/MAO metabolism of rizatriptan → 70% increase in AUC", "management": "Reduce rizatriptan to 5 mg maximum when on propranolol"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Markedly elevates rizatriptan levels → serotonin syndrome/toxicity", "management": "Contraindicated; 14-day washout"},
+    {"drug": "Ergot alkaloids", "severity": "Major", "mechanism": "Additive vasospasm", "management": "Separate by 24 hours"},
+    {"drug": "SSRIs/SNRIs", "severity": "Moderate", "mechanism": "Serotonin syndrome (theoretical — case reports)", "management": "Monitor for serotonin syndrome symptoms; combination widely used in practice"}
+  ],
+  "pregnancy": "Category C. Triptans generally avoided in pregnancy (vasoconstrictive mechanism, limited safety data). For severe migraine in pregnancy: acetaminophen first-line; IV metoclopramide + IV fluids; triptans as last resort.",
+  "pk": {"absorption": "Oral: ~45%", "half_life": "2–3 h", "renal_adjustment": "Use with caution in severe renal failure"},
+  "canadian_notes": "ODB General Benefit. Most effective oral triptan for rapid onset. ODT form (Maxalt RPD) useful for nausea/vomiting. Propranolol interaction: reduce to 5 mg max. Medication overuse headache: limit use to ≤10 days/month.",
+  "pearls": ["Take propranolol for migraine prevention? Use only 5 mg rizatriptan (CYP interaction)", "ODT form — dissolves on tongue, convenient for nauseated migraineurs", "Most effective triptans for 2-hour pain freedom: eletriptan > rizatriptan > sumatriptan", "Medication overuse headache if using >10 days/month — requires detoxification"]
+}
+,"zolmitriptan": {
+  "name": "Zolmitriptan",
+  "brand": "Zomig, Zomig Rapimelt (ODT), Zomig Nasal Spray",
+  "class": "Pain Management",
+  "napra": "Schedule I",
+  "moa": "Selective 5-HT1B/1D agonist; also 5-HT1F activity; causes cranial vasoconstriction and inhibits trigeminal neurovascular release; CNS-penetrant (crosses BBB)",
+  "indications": ["Acute migraine with or without aura", "Cluster headache (nasal spray preferred for rapid onset)"],
+  "dosing": [
+    {"route": "Oral", "dose": "2.5–5 mg at onset; may repeat after 2 hours (max 10 mg/24h)", "notes": "Start 2.5 mg; increase if insufficient"},
+    {"route": "Nasal spray", "dose": "2.5–5 mg into one nostril; repeat after 2 hours if needed (max 10 mg/24h)", "notes": "Onset faster than oral; useful for cluster headache"},
+    {"route": "ODT (Rapimelt)", "dose": "2.5 mg; dissolves on tongue", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Paresthesia", "Warm sensation", "Chest/throat tightness", "Dizziness", "Asthenia"],
+    "serious": ["Coronary vasospasm", "Serotonin syndrome with serotonergic agents", "Medication overuse headache"]
+  },
+  "contraindications": ["Coronary artery disease", "Uncontrolled hypertension", "Stroke/TIA", "Hemiplegic/basilar migraine", "MAOI within 14 days", "Cimetidine (drug interaction — increases levels)"],
+  "interactions": [
+    {"drug": "Cimetidine", "severity": "Major", "mechanism": "Inhibits CYP1A2 — doubles zolmitriptan AUC", "management": "Reduce zolmitriptan dose to 2.5 mg max with cimetidine"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Increase zolmitriptan levels; serotonin syndrome", "management": "Contraindicated"},
+    {"drug": "Ergots", "severity": "Major", "mechanism": "Additive vasospasm", "management": "Separate by 24 hours"}
+  ],
+  "pregnancy": "Category C. Avoid in pregnancy. Use safer alternatives (acetaminophen, metoclopramide).",
+  "pk": {"absorption": "Oral: 40%; nasal spray faster onset than oral", "half_life": "3 h", "renal_adjustment": "Use with caution; max 5 mg/24h in severe renal impairment"},
+  "canadian_notes": "ODB General Benefit. Nasal spray useful for cluster headache (faster absorption) and patients with significant nausea. CNS penetration may give broader efficacy. Cimetidine interaction unique to zolmitriptan among triptans.",
+  "pearls": ["Nasal spray useful for cluster headache or when oral not tolerated", "Cimetidine: reduce max dose (unique interaction)", "Similar contraindications to all triptans — screen cardiac history", "Medication overuse headache: limit to ≤10 days/month"]
+}
+,"ergotamine": {
+  "name": "Ergotamine",
+  "brand": "Cafergot (ergotamine + caffeine)",
+  "class": "Pain Management",
+  "napra": "Schedule I",
+  "moa": "Non-selective serotonin (5-HT1B/1D/1F/2A), dopamine, and alpha-adrenergic agonist; causes sustained cranial and peripheral vasoconstriction (less selective than triptans); inhibits trigeminal peptide release",
+  "indications": ["Acute migraine (second-line — when triptans unavailable or ineffective)", "Cluster headache (second-line)"],
+  "dosing": [
+    {"route": "Oral (Cafergot)", "dose": "1–2 mg ergotamine + 100–200 mg caffeine at onset; repeat 30 min if needed (max 6 mg/attack, 10 mg/week)", "notes": "STRICT WEEKLY LIMIT — ergotism and rebound headache with overuse"}
+  ],
+  "side_effects": {
+    "common": ["Nausea/vomiting (very common — caffeine component worsens this)", "Peripheral paresthesia"],
+    "serious": ["Ergotism: severe peripheral vasoconstriction → limb ischemia (dose-related)", "Medication overuse headache (very high risk)", "Hypertensive crisis", "Coronary and cerebral vasospasm"]
+  },
+  "contraindications": ["Coronary artery disease", "Peripheral vascular disease", "Uncontrolled hypertension", "Pregnancy (Category X — oxytocic, causes abortion/fetal death)", "Liver/renal disease", "Sepsis", "CYP3A4 inhibitors (macrolides, azole antifungals, protease inhibitors)"],
+  "interactions": [
+    {"drug": "CYP3A4 inhibitors (erythromycin, clarithromycin, azole antifungals, ritonavir)", "severity": "Major", "mechanism": "Dramatic rise in ergotamine levels → ergotism (severe peripheral ischemia)", "management": "CONTRAINDICATED — multiple deaths and amputations reported"},
+    {"drug": "Triptans", "severity": "Major", "mechanism": "Additive vasospasm", "management": "Separate by ≥24 hours"},
+    {"drug": "Beta-blockers", "severity": "Moderate", "mechanism": "Additive vasoconstriction", "management": "Use cautiously; monitor for peripheral circulation"}
+  ],
+  "pregnancy": "Category X. Uterotonic — causes abortion, fetal death, major birth defects. ABSOLUTELY CONTRAINDICATED in pregnancy.",
+  "pk": {"absorption": "Variable oral (10–16%); very high first-pass", "half_life": "2 h (but effects last much longer due to vasoconstriction)", "renal_adjustment": "Avoid in renal impairment"},
+  "canadian_notes": "ODB-covered. Largely replaced by triptans for most patients — better safety profile. Strict limits: max 6 mg/attack, 10 mg/week to prevent ergotism. CYP3A4 inhibitor interaction is LETHAL — check all medications before prescribing.",
+  "pearls": ["Largely replaced by triptans — use only when triptans unavailable/contraindicated", "Strict limits: 10 mg/week MAX — ergotism causes limb ischemia/gangrene", "CYP3A4 inhibitors absolutely contraindicated (macrolides, azoles, HIV PIs)", "Category X in pregnancy — oxytocic and directly embryotoxic"]
+}
 }};
 var FAMILY_MAP = {
 "tacrolimus": "Topical Calcineurin Inhibitors",
