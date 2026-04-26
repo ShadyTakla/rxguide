@@ -4395,6 +4395,386 @@ var DRUG_FAMILIES = {
   "canadian_notes": "Health Canada and NACI provide ongoing recommendations (evolving). Provincial immunization programs fund COVID vaccines for recommended groups. Myocarditis: more common dose 2 mRNA in young males — self-limiting in most cases; MRI + cardiology follow-up recommended. PEG (polyethylene glycol) allergy: caution with mRNA vaccines; skin test if needed.",
   "pearls": ["Myocarditis more common dose 2 vs dose 1 or boosters; predominantly mild and self-resolving", "Anaphylaxis: monitor 15–30 minutes post-vaccination (epinephrine available)", "Annual updated formulation targets circulating strains — different from original series", "Can be co-administered with influenza vaccine on same day (different sites)"]
 }
+
+,"meclizine": {
+  "name": "Meclizine",
+  "brand": "Bonamine (Canada OTC), Sea-Legs",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "First-generation H1 antihistamine; acts in vestibular system and chemoreceptor trigger zone; anticholinergic properties contribute to antiemetic and antivertigo effect; lower sedation than dimenhydrinate",
+  "indications": ["Motion sickness (prevention and treatment — first-line OTC)", "Vertigo (Meniere's disease, benign paroxysmal positional vertigo)", "Nausea/vomiting due to vestibular disorders"],
+  "dosing": [
+    {"route": "Oral (motion sickness)", "dose": "25–50 mg 1 hour before travel; may repeat q24h", "notes": ""},
+    {"route": "Oral (vertigo)", "dose": "25 mg TID–QID PRN", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Drowsiness (less than dimenhydrinate)", "Dry mouth", "Blurred vision"],
+    "serious": ["Anticholinergic effects in elderly", "QTc prolongation (modest)"]
+  },
+  "contraindications": ["H1 antihistamine hypersensitivity", "MAOI use", "Glaucoma (narrow-angle)", "BPH (urinary retention)"],
+  "interactions": [
+    {"drug": "CNS depressants", "severity": "Major", "mechanism": "Additive CNS depression", "management": "Avoid alcohol; caution with sedatives"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Anticholinergic crisis potentiation", "management": "Contraindicated"}
+  ],
+  "pregnancy": "Category B. Long history of use for motion sickness and NVP in pregnancy. Considered safe; no teratogenicity in human studies. Alternative when doxylamine/pyridoxine not available.",
+  "pk": {"absorption": "Well absorbed; onset 1 hour, duration 8–24 hours", "half_life": "6 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Bonamine OTC in Canada. Less sedating than dimenhydrinate — preferred for motion sickness when need to drive/work. Long duration of action: once daily often sufficient for motion sickness.",
+  "pearls": ["Less sedating than dimenhydrinate (Gravol) — preferred when alertness needed", "Long duration (8–24h) — once-daily dosing for motion sickness", "Take 1 hour BEFORE travel for prevention", "Beers list in elderly: anticholinergic burden — use with caution"]
+}
+,"oxymetazoline": {
+  "name": "Oxymetazoline",
+  "brand": "Dristan, Drixoral, Otrivin (nasal); Visine Red Eye (ophthalmic — different use)",
+  "class": "Respiratory/Allergy",
+  "napra": "U",
+  "moa": "Alpha-2 adrenergic agonist (direct-acting); causes direct vasoconstriction of nasal mucosal blood vessels → rapid decongestant effect; no systemic effect at standard nasal doses",
+  "indications": ["Nasal congestion (acute — URI, sinusitis, allergic rhinitis acute relief)", "Otitis media (adjunct for Eustachian tube — limited evidence)"],
+  "dosing": [
+    {"route": "Nasal spray (adult/≥6yr)", "dose": "2–3 sprays per nostril q12h (max 3 days)", "notes": "MAXIMUM 3–5 CONSECUTIVE DAYS — rebound congestion"},
+    {"route": "Nasal drops (pediatric 2–5 yr)", "dose": "Oxymetazoline 0.025% — 2–3 drops q12h (max 5 days)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Burning/stinging/dryness in nose", "Sneezing"],
+    "serious": ["Rhinitis medicamentosa (rebound congestion) with use >3–5 days", "Hypertension (overdose/systemic absorption)", "CNS effects if large amounts swallowed (children)"]
+  },
+  "contraindications": ["Children <2 years (avoid altogether)", "MAOI within 14 days", "Narrow-angle glaucoma"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Risk of hypertensive crisis (sympathomimetic + MAO inhibition)", "management": "Contraindicated"},
+    {"drug": "Antihypertensives", "severity": "Moderate", "mechanism": "May counteract antihypertensive effect (systemic absorption)", "management": "Use cautiously in hypertensive patients; limit duration"}
+  ],
+  "pregnancy": "Category C. Avoid in first trimester. Short-term use (1–2 days) for acute severe congestion may be acceptable in 2nd/3rd trimester. Saline nasal spray preferred throughout pregnancy.",
+  "pk": {"absorption": "Nasal: minimal systemic (mostly local)", "half_life": "5–8 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). STRICT 3-5 day limit — rhinitis medicamentosa develops within 3–7 days of continuous use (rebound congestion worse than original). Saline nasal rinse is preferred first-line and can be used indefinitely. Counsel patients on rebound risk at every dispensing.",
+  "pearls": ["Maximum 3–5 days — rebound congestion (rhinitis medicamentosa) is common and distressing", "Saline nasal rinse is safer and can be used indefinitely", "Pregnancy: saline preferred; avoid oxymetazoline in 1st trimester", "If rhinitis medicamentosa: taper gradually using one nostril at a time, add fluticasone nasal spray"]
+}
+,"epinephrine_injector": {
+  "name": "Epinephrine auto-injector",
+  "brand": "EpiPen 0.3 mg (adult), EpiPen Jr 0.15 mg (child 15–30 kg), Allerject",
+  "class": "Gastrointestinal",
+  "napra": "Schedule I",
+  "moa": "Alpha-1 and beta-1/2 adrenergic agonist; alpha-1: vasoconstriction → reverses vasodilatory shock; beta-1: increased HR and contractility; beta-2: bronchodilation → reverses bronchospasm; also inhibits histamine/leukotriene release from mast cells",
+  "indications": ["Anaphylaxis — FIRST-LINE TREATMENT (IM injector)", "Severe allergic reactions (bee stings, food allergens, medications, latex)", "Angioedema with airway involvement"],
+  "dosing": [
+    {"route": "IM (anterolateral thigh — preferred)", "dose": "EpiPen: 0.3 mg (0.3 mL of 1 mg/mL) IM; EpiPen Jr: 0.15 mg", "notes": "Can inject through clothing; hold 10 seconds in place; repeat in 5–10 min if no response"},
+    {"route": "IM (weight-based)", "dose": "0.01 mg/kg (max 0.5 mg) — hospital setting without auto-injector", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Tachycardia", "Palpitations", "Pallor", "Tremor", "Anxiety"],
+    "serious": ["Hypertensive crisis (overdose)", "Ventricular arrhythmias (high doses)", "Pulmonary edema"]
+  },
+  "contraindications": ["No absolute contraindications in anaphylaxis — epinephrine is the ONLY first-line treatment", "Relative: coronary artery disease (use cautiously — benefit still far outweighs risk in anaphylaxis)"],
+  "interactions": [
+    {"drug": "Beta-blockers (non-selective)", "severity": "Major", "mechanism": "Non-selective beta-blockers can blunt epinephrine's beta-2 bronchodilation and cause paradoxical hypertension (unopposed alpha)", "management": "Epinephrine still first-line; may need higher doses; glucagon 1 mg IV if unresponsive"},
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Potentiate pressor response", "management": "Epinephrine still required for anaphylaxis — monitor BP closely"},
+    {"drug": "Tricyclic antidepressants", "severity": "Major", "mechanism": "Potentiate cardiovascular effects", "management": "Use with caution — anaphylaxis still requires epinephrine"}
+  ],
+  "pregnancy": "Use immediately for anaphylaxis — epinephrine is MANDATORY. Brief catecholamine surge is far safer than untreated anaphylaxis. No contraindications in anaphylaxis.",
+  "pk": {"absorption": "IM: rapid onset (8 min peak); IV faster", "half_life": "2–3 min IV; longer IM", "renal_adjustment": "No adjustment"},
+  "canadian_notes": "ODB General Benefit — EpiPen covered. Two auto-injectors prescribed at all times (60% of fatal anaphylaxis: first dose insufficient OR second dose needed for biphasic reaction). Keep at room temperature (not in car — heat degrades). Ontario: Allergy/Anaphylaxis Awareness education mandatory for some settings.",
+  "pearls": ["ALWAYS prescribe TWO EpiPens — biphasic anaphylaxis requires second dose in 20% of cases", "Anterolateral mid-outer thigh is preferred site (NOT buttock — slower absorption)", "Can inject through clothing in emergency", "After EpiPen: ALWAYS go to emergency department (biphasic anaphylaxis 4–12h later)", "Antihistamines and steroids are ADJUNCTS — epinephrine is the ONLY first-line treatment"]
+}
+,"simethicone": {
+  "name": "Simethicone",
+  "brand": "Gas-X, Ovol, Phazyme, Infacol",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Surfactant/defoaming agent; reduces surface tension of gas bubbles in GI tract → coalescence of bubbles → easier expulsion of gas; does NOT reduce gas production or absorption",
+  "indications": ["Functional bloating and flatulence", "Post-operative gas pain", "Infant colic (gas relief)", "Preparation for abdominal imaging (reduces gas artifacts)"],
+  "dosing": [
+    {"route": "Oral (adult)", "dose": "40–125 mg QID after meals and at bedtime", "notes": ""},
+    {"route": "Oral (infant colic)", "dose": "Infacol 20–40 mg/dose before feeds (infants)", "notes": "Evidence for infant colic is limited"}
+  ],
+  "side_effects": {
+    "common": ["No significant side effects at standard doses — inert molecule"],
+    "serious": ["None"]
+  },
+  "contraindications": ["Simethicone allergy (very rare)"],
+  "interactions": [
+    {"drug": "No significant drug interactions", "severity": "Minor", "mechanism": "Not absorbed; no systemic activity", "management": "N/A"}
+  ],
+  "pregnancy": "Category C. Considered safe — not absorbed systemically. Widely used for bloating and gas symptoms in pregnancy. No teratogenicity concerns.",
+  "pk": {"absorption": "Not absorbed", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Very safe — essentially inert. Limited clinical evidence that it significantly reduces symptoms beyond placebo for most indications. For infant colic: evidence weak.",
+  "pearls": ["Not absorbed — completely safe in pregnancy, elderly, infants", "Limited evidence for clinical efficacy beyond gas bubble mechanics", "Pre-imaging use: genuinely reduces gas shadow artifacts", "Infant colic: evidence poor but safe to try"]
+}
+,"valproic_acid": {
+  "name": "Valproic acid / Valproate",
+  "brand": "Depakene (valproic acid), Epival (divalproex sodium ER)",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I",
+  "moa": "Multiple mechanisms: enhances GABA neurotransmission; blocks voltage-gated sodium channels; inhibits histone deacetylase (HDAC) → antiproliferative; reduces T-type calcium channel activity",
+  "indications": ["Epilepsy (generalized, absence, myoclonic, focal — broad-spectrum anticonvulsant)", "Bipolar disorder (acute mania, maintenance)", "Migraine prophylaxis"],
+  "dosing": [
+    {"route": "Oral (epilepsy)", "dose": "10–60 mg/kg/day in 2–3 divided doses (ER once or twice daily)", "notes": "Therapeutic level: 350–700 umol/L (50–100 mg/L)"},
+    {"route": "Oral (bipolar)", "dose": "750–2000 mg/day (divalproex ER once daily)", "notes": ""},
+    {"route": "Oral (migraine prophylaxis)", "dose": "250–500 mg BID (Epival ER)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Weight gain", "Tremor (dose-dependent)", "Hair loss (alopecia)", "GI upset (take with food)", "Sedation"],
+    "serious": ["Teratogenicity: HIGHEST risk of all AEDs (neural tube defects 1–2%, major congenital malformations 10–12%, cognitive effects)", "Hepatotoxicity (fatal — especially <2 years; check LFTs)", "Pancreatitis (rare but serious)", "Thrombocytopenia", "Hyperammonemic encephalopathy (especially with topiramate co-administration)"]
+  },
+  "contraindications": ["Pregnancy (Category X — highest teratogen risk of all AEDs — ABSOLUTE CI in women of childbearing age UNLESS all alternatives exhausted)", "Hepatic disease/urea cycle disorders", "Mitochondrial disorders (Alpers-Huttenlocher)"],
+  "interactions": [
+    {"drug": "Lamotrigine", "severity": "Major", "mechanism": "Valproate inhibits UGT → doubles lamotrigine levels; requires halving lamotrigine dose", "management": "Reduce lamotrigine dose 50% when adding valproate; titrate very slowly"},
+    {"drug": "Carbapenem antibiotics (meropenem, imipenem)", "severity": "Major", "mechanism": "Carbapenems dramatically reduce valproate levels (up to 80%) within 24h → seizure risk", "management": "Avoid combination; if necessary, increase monitoring and consider IV loading"},
+    {"drug": "Aspirin", "severity": "Moderate", "mechanism": "Displaces valproate from protein binding → transiently raises free valproate levels", "management": "Monitor for valproate toxicity when adding aspirin"},
+    {"drug": "Topiramate", "severity": "Moderate", "mechanism": "Combination increases risk of hyperammonemic encephalopathy", "management": "Monitor ammonia levels; counsel on confusion/lethargy symptoms"}
+  ],
+  "pregnancy": "Category X — highest teratogen risk of all antiepileptics. Neural tube defects (1–2%), major malformations (10–12%), reduced IQ (7 points average reduction with in utero exposure). Health Canada: valproate CONTRAINDICATED in pregnancy and women of childbearing potential unless alternatives exhausted — written patient acknowledgment required.",
+  "pk": {"absorption": "Well absorbed; extended-release preferred for compliance", "half_life": "9–16 h", "renal_adjustment": "No renal adjustment; hepatic metabolism"},
+  "canadian_notes": "ODB General Benefit. Health Canada 2023: Valproate Safety Measures — mandatory written informed consent from women of childbearing age; prescriber must document alternatives have been tried; pharmacists required to counsel each dispense. Highest priority AED/mood stabilizer for teratogenicity counselling.",
+  "pearls": ["HIGHEST teratogen risk of all AEDs — absolute contraindication in pregnancy unless no alternatives", "Health Canada mandatory written consent required for women of childbearing age (2023)", "Carbapenems (meropenem, ertapenem) dramatically reduce levels within 24h — avoid combination", "Lamotrigine: halve dose when adding valproate (UGT inhibition doubles lamotrigine levels)"]
+}
+
+,"ciclesonide": {
+  "name": "Ciclesonide",
+  "brand": "Omnaris (nasal), Alvesco (inhaled)",
+  "class": "Respiratory/Allergy",
+  "napra": "Schedule I",
+  "moa": "Inactive prodrug; activated by esterases in airway → des-ciclesonide (active glucocorticoid) → local anti-inflammatory effects in bronchial/nasal mucosa; high first-pass inactivation → low systemic bioavailability → less systemic side effects",
+  "indications": ["Allergic rhinitis (Omnaris nasal spray — seasonal and perennial)", "Asthma maintenance (Alvesco inhaled corticosteroid)"],
+  "dosing": [
+    {"route": "Nasal spray (allergic rhinitis)", "dose": "2 sprays each nostril once daily (200 mcg total)", "notes": ""},
+    {"route": "Inhaled (asthma)", "dose": "160–320 mcg once daily or BID (Alvesco)", "notes": "Once-daily dosing advantage"}
+  ],
+  "side_effects": {
+    "common": ["Nasal irritation/epistaxis (nasal)", "Headache", "Oropharyngeal candidiasis (low rate — prodrug advantage)"],
+    "serious": ["Adrenal suppression (lower risk than beclomethasone at equivalent doses)", "Growth suppression children (low dose risk compared to older ICS)"]
+  },
+  "contraindications": ["Hypersensitivity to ciclesonide"],
+  "interactions": [
+    {"drug": "CYP3A4 inhibitors (ketoconazole, ritonavir)", "severity": "Moderate", "mechanism": "May increase systemic ciclesonide levels", "management": "Use with caution; ciclesonide less susceptible than some ICS"}
+  ],
+  "pregnancy": "Category C. ICS use in asthma strongly recommended in pregnancy. Budesonide has most data. Ciclesonide acceptable alternative.",
+  "pk": {"absorption": "Nasal/inhaled: low systemic bioavailability (<1%)", "half_life": "Active metabolite: 6–7 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. Prodrug advantage: activated in target tissue → low systemic absorption → fewer systemic corticosteroid side effects. Lower oral candidiasis rate than beclomethasone. Once-daily Alvesco convenient for adherence.",
+  "pearls": ["Prodrug: lowest oral candidiasis risk among ICS (activated only in airways)", "Once-daily Alvesco — convenient for adherence", "Very low systemic bioavailability — preferred in patients concerned about steroid side effects", "Rinse mouth still recommended"]
+}
+,"bilastine": {
+  "name": "Bilastine",
+  "brand": "Blexten",
+  "class": "Respiratory/Allergy",
+  "napra": "Schedule I",
+  "moa": "Second-generation selective H1 antihistamine; competitive antagonist; does NOT cross BBB; no CYP interactions; non-cardiotoxic",
+  "indications": ["Seasonal and perennial allergic rhinitis", "Chronic idiopathic urticaria"],
+  "dosing": [
+    {"route": "Oral (adult/≥12yr)", "dose": "20 mg once daily on empty stomach", "notes": "Take 1 hour before or 2 hours after meals (food reduces bioavailability 30%)"},
+    {"route": "Oral (pediatric 6–11yr)", "dose": "10 mg once daily", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Headache", "Somnolence (minimal — 1–2%)"],
+    "serious": ["Very rare hypersensitivity"]
+  },
+  "contraindications": ["Bilastine allergy", "Concomitant ketoconazole or erythromycin (raises bilastine levels) with renal impairment"],
+  "interactions": [
+    {"drug": "Ketoconazole / erythromycin", "severity": "Moderate", "mechanism": "P-gp inhibition — raises bilastine AUC 2x; usually not clinically significant in normal renal function", "management": "Avoid if CrCl <60 with P-gp inhibitors"},
+    {"drug": "Fruit juice / food", "severity": "Moderate", "mechanism": "Reduces bilastine absorption 30%", "management": "Take on empty stomach; separate from fruit juice by 1 hour"}
+  ],
+  "pregnancy": "Category C. Insufficient data in pregnancy. Loratadine or cetirizine preferred (more data).",
+  "pk": {"absorption": "Well absorbed fasting (reduced 30% with food)", "half_life": "14.5 h", "renal_adjustment": "Caution if CrCl <60 with interacting drugs; otherwise no adjustment"},
+  "canadian_notes": "ODB General Benefit (Schedule I — Rx in Canada). Newest second-generation antihistamine available in Canada. No CYP interactions — practical advantage. Must take on empty stomach (food reduces efficacy).",
+  "pearls": ["Take on empty stomach (food reduces bioavailability 30%) — unlike most antihistamines", "No CYP drug interactions — practical advantage in polypharmacy patients", "Minimal sedation — one of least sedating antihistamines", "Prescription required in Canada (unlike loratadine OTC)"]
+}
+,"latanoprost": {
+  "name": "Latanoprost",
+  "brand": "Xalatan",
+  "class": "Ophthalmology",
+  "napra": "Schedule I",
+  "moa": "Prostaglandin F2-alpha analogue (FP receptor agonist); increases aqueous humor outflow through uveoscleral pathway → reduces intraocular pressure (IOP); first-line for open-angle glaucoma",
+  "indications": ["Open-angle glaucoma (first-line topical)", "Ocular hypertension"],
+  "dosing": [
+    {"route": "Ophthalmic", "dose": "1 drop in affected eye(s) once daily in the EVENING", "notes": "Evening use more effective (diurnal IOP variation); refrigerate unopened; room temperature after opening (28 days)"}
+  ],
+  "side_effects": {
+    "common": ["Iris pigmentation increase (permanent — brown pigmentation — does not affect vision)", "Periorbital skin darkening (reversible on stopping)", "Eyelash changes (length, thickness, number — hypertrichosis)", "Conjunctival hyperemia (red eye)"],
+    "serious": ["Macular edema (aphakic/pseudophakic patients)", "Uveitis exacerbation", "Periorbital fat atrophy (prostaglandin-induced — sunken eye appearance)"]
+  },
+  "contraindications": ["Hypersensitivity to latanoprost", "Active intraocular inflammation"],
+  "interactions": [
+    {"drug": "Other prostaglandin analogues", "severity": "Major", "mechanism": "Paradoxical IOP increase with concurrent prostaglandins (prostaglandin receptor downregulation)", "management": "NEVER combine two prostaglandin analogues"},
+    {"drug": "NSAIDs (ophthalmic)", "severity": "Minor", "mechanism": "May reduce prostaglandin analogue efficacy", "management": "Monitor IOP"}
+  ],
+  "pregnancy": "Category C. Avoid if possible — prostaglandins can stimulate uterine contractions. Use only if clearly necessary with ophthalmologist involvement. Avoid in 1st trimester.",
+  "pk": {"absorption": "Ophthalmic: minimal systemic", "half_life": "N/A (local)", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "ODB General Benefit. First-line prostaglandin analogue for glaucoma. Evening application preferred. Iris color change is permanent — important consent discussion with patients (irreversible). Refrigerate before opening. Generic latanoprost widely available.",
+  "pearls": ["Apply in EVENING for best IOP control", "Iris pigmentation change is PERMANENT — counsel patients before starting", "NEVER combine two prostaglandin analogues — IOP paradoxically rises (receptor downregulation)", "Eyelash growth: may be desired by some patients but also causes periorbital changes"]
+}
+,"timolol_ophthalmic": {
+  "name": "Timolol (ophthalmic)",
+  "brand": "Timoptic, Timoptic-XE (gel-forming)",
+  "class": "Ophthalmology",
+  "napra": "Schedule I",
+  "moa": "Non-selective beta-adrenergic blocker (beta-1 and beta-2); reduces aqueous humor production by ciliary epithelium → reduces intraocular pressure; no effect on pupil size or accommodation",
+  "indications": ["Open-angle glaucoma (often second-line or adjunct to prostaglandin analogue)", "Ocular hypertension"],
+  "dosing": [
+    {"route": "Ophthalmic solution", "dose": "1 drop 0.25–0.5% BID in affected eye(s)", "notes": ""},
+    {"route": "Ophthalmic gel (Timoptic-XE)", "dose": "1 drop 0.25–0.5% once daily AM", "notes": "Gel-forming: once-daily convenience"}
+  ],
+  "side_effects": {
+    "common": ["Eye irritation/burning", "Blurred vision (transient)"],
+    "serious": ["Systemic beta-blockade absorbed through nasolacrimal duct: BRONCHOSPASM (contraindicated in asthma/COPD)", "Bradycardia/heart block/hypotension", "Masking hypoglycemia symptoms in diabetics", "Exacerbation of heart failure", "CNS effects (fatigue, depression)"]
+  },
+  "contraindications": ["Asthma or severe COPD (ABSOLUTE contraindication)", "Bradycardia or AV block", "Decompensated heart failure"],
+  "interactions": [
+    {"drug": "Systemic beta-blockers", "severity": "Major", "mechanism": "Additive systemic beta-blockade (ophthalmic timolol IS absorbed systemically)", "management": "Avoid combination; use selective beta-1 blocking eye drop (betaxolol) if beta-blocker needed with systemic beta-blockade"},
+    {"drug": "Verapamil / diltiazem", "severity": "Major", "mechanism": "Additive AV block and negative inotropy", "management": "Avoid combination; monitor HR and BP"}
+  ],
+  "pregnancy": "Category C. Systemic absorption means potential for fetal bradycardia, growth restriction. Avoid if possible. Use only under ophthalmologist supervision.",
+  "pk": {"absorption": "Ophthalmic: significant systemic absorption via nasolacrimal duct (~80% of dose)", "half_life": "4 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB General Benefit. CRITICAL SAFETY POINT: Timolol eye drops cause significant systemic beta-blockade — treat as if giving systemic beta-blocker. Nasolacrimal occlusion (press inner corner of eye 2 minutes after drop) reduces systemic absorption significantly — teach all patients.",
+  "pearls": ["ABSOLUTE contraindication in asthma — causes bronchospasm (systemic absorption via nasolacrimal duct)", "Nasolacrimal occlusion technique: press inner corner of eye 2 min after instilling — reduces systemic absorption", "Treat ophthalmic timolol as systemic beta-blocker for drug interactions", "Betaxolol (beta-1 selective) is safer alternative in patients with mild COPD/cardiac concerns"]
+}
+,"desmethylphenidate": {
+  "name": "Dexmethylphenidate",
+  "brand": "Focalin, Focalin XR",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I (controlled — stimulant)",
+  "moa": "d-enantiomer of methylphenidate; blocks dopamine and norepinephrine reuptake transporters (DAT, NET) more potently than racemic methylphenidate; increases catecholamines in prefrontal cortex → improves ADHD symptoms",
+  "indications": ["ADHD in adults and children ≥6 years"],
+  "dosing": [
+    {"route": "Oral XR (adult ADHD)", "dose": "5–20 mg once daily AM (max 40 mg/day)", "notes": "Half the methylphenidate dose — 10 mg methylphenidate ≈ 5 mg dexmethylphenidate"},
+    {"route": "Oral IR (pediatric)", "dose": "2.5 mg BID (max 20 mg/day)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Decreased appetite", "Insomnia", "Headache", "Nervousness", "Tachycardia"],
+    "serious": ["Cardiovascular: hypertension, tachycardia, palpitations", "Psychosis/mania (predisposed individuals)", "Growth suppression (children — periodic drug holidays)", "Abuse potential (scheduled — stimulant)"]
+  },
+  "contraindications": ["Structural cardiac disease, cardiomyopathy", "MAOI within 14 days", "Hyperthyroidism", "Tourette syndrome (relative — may worsen tics)", "Anxiety (worsening)"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Hypertensive crisis and hyperthermia", "management": "ABSOLUTELY CONTRAINDICATED"},
+    {"drug": "Antihypertensives", "severity": "Moderate", "mechanism": "Stimulants raise BP — antagonize antihypertensives", "management": "Monitor BP closely"},
+    {"drug": "Warfarin / TCAs / anticonvulsants", "severity": "Moderate", "mechanism": "Methylphenidate inhibits CYP2D6/2C9 → raises levels of these drugs", "management": "Monitor warfarin INR, TCA levels, phenytoin levels"}
+  ],
+  "pregnancy": "Category C. Avoid during pregnancy. Neonatal withdrawal syndrome if used in 3rd trimester. Most women discontinue stimulants during pregnancy.",
+  "pk": {"absorption": "Well absorbed; XR biphasic release", "half_life": "2–4.5 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "Less commonly prescribed than methylphenidate in Canada (Ritalin/Concerta more available, more evidence base). Twice as potent as racemic methylphenidate by weight. Schedule III controlled drug in Canada (CDSA).",
+  "pearls": ["Dose is half of methylphenidate equivalents (5 mg dexmethylphenidate = 10 mg methylphenidate)", "Less commonly used in Canada vs methylphenidate — less prescriber familiarity", "Monitor BP and HR — especially if family history of cardiac disease", "Drug holiday (weekends, summer) option in children to allow growth/appetite recovery"]
+}
+
+,"dorzolamide": {
+  "name": "Dorzolamide",
+  "brand": "Trusopt (dorzolamide alone), Cosopt (dorzolamide + timolol)",
+  "class": "Ophthalmology",
+  "napra": "Schedule I",
+  "moa": "Topical carbonic anhydrase inhibitor (CAI); inhibits carbonic anhydrase II in ciliary epithelium → reduces aqueous humor production → lowers IOP; used as adjunct to prostaglandins/beta-blockers",
+  "indications": ["Open-angle glaucoma (adjunct)", "Ocular hypertension"],
+  "dosing": [
+    {"route": "Ophthalmic (Trusopt)", "dose": "1 drop TID in affected eye(s)", "notes": ""},
+    {"route": "Ophthalmic (Cosopt fixed combo)", "dose": "1 drop BID (contains timolol 0.5% + dorzolamide 2%)", "notes": "Combination reduces drop burden"}
+  ],
+  "side_effects": {
+    "common": ["Bitter taste after drops (common — nasolacrimal drainage)", "Burning/stinging", "Blurred vision (transient)"],
+    "serious": ["Systemic CAI effects (rare from topical) — sulfonamide allergy cross-reactivity", "Corneal edema (in endothelial disease)"]
+  },
+  "contraindications": ["Sulfonamide allergy (cross-reactivity — dorzolamide is a sulfonamide)", "Severe renal impairment (systemic accumulation of metabolites)"],
+  "interactions": [
+    {"drug": "Systemic carbonic anhydrase inhibitors (acetazolamide)", "severity": "Major", "mechanism": "Additive systemic CAI effects — electrolyte disturbances, acidosis", "management": "Avoid combination; Cosopt provides some topical CAI"},
+    {"drug": "High-dose aspirin", "severity": "Minor", "mechanism": "Salicylate toxicity increased with CAI", "management": "Monitor if high-dose ASA used"}
+  ],
+  "pregnancy": "Category C. Avoid if possible. Sulfonamide effects and limited safety data.",
+  "pk": {"absorption": "Topical: some systemic absorption", "half_life": "N/A (local primary)", "renal_adjustment": "Avoid if severe renal impairment"},
+  "canadian_notes": "ODB General Benefit. Cosopt (dorzolamide/timolol) useful when adherence with multiple drops is poor — reduces drops to BID. Sulfonamide allergy cross-reactivity should be assessed before prescribing. Bitter taste very common — counsel patients.",
+  "pearls": ["Bitter/sour taste after instillation: common (nasolacrimal drainage) — warn patients", "Cosopt combination: reduces drop burden for adherence", "Sulfonamide allergy: cross-reactivity possible", "Nasolacrimal occlusion technique reduces systemic absorption and bitter taste"]
+}
+,"alfuzosin": {
+  "name": "Alfuzosin",
+  "brand": "Xatral XL",
+  "class": "Urology",
+  "napra": "Schedule I",
+  "moa": "Selective alpha-1A adrenergic receptor antagonist; blocks alpha-1 in smooth muscle of prostate, bladder neck, and urethra → relaxation → improved urine flow; alpha-1B less affected than tamsulosin → less orthostatic hypotension",
+  "indications": ["Benign prostatic hyperplasia (BPH) — lower urinary tract symptoms", "Urinary retention (acute — as adjunct to catheterization)"],
+  "dosing": [
+    {"route": "Oral XL (adult men)", "dose": "10 mg once daily immediately after same meal each day", "notes": "Extended release — must not crush"}
+  ],
+  "side_effects": {
+    "common": ["Dizziness (orthostatic — less than non-selective alpha-blockers)", "Headache", "Fatigue", "Rhinitis"],
+    "serious": ["Floppy iris syndrome (IFIS — intraoperative — disclose to ophthalmologist before cataract surgery)", "Angioedema (rare)", "QTc prolongation (modest)", "Priapism (very rare)"]
+  },
+  "contraindications": ["Severe hepatic impairment (alfuzosin extensively metabolized)", "CYP3A4 inhibitors (ketoconazole, ritonavir — potent interaction)"],
+  "interactions": [
+    {"drug": "PDE5 inhibitors (sildenafil, tadalafil)", "severity": "Major", "mechanism": "Additive hypotension — vasodilation + alpha blockade", "management": "Avoid or use with extreme caution; PDE5 inhibitors approved for concurrent BPH/ED use with careful BP monitoring"},
+    {"drug": "Antihypertensives", "severity": "Major", "mechanism": "Additive hypotension", "management": "Monitor BP; first-dose hypotension risk"},
+    {"drug": "CYP3A4 inhibitors (ketoconazole, ritonavir)", "severity": "Major", "mechanism": "Dramatically increase alfuzosin levels → toxicity", "management": "Contraindicated with strong CYP3A4 inhibitors"}
+  ],
+  "pregnancy": "Not applicable (used in men only).",
+  "pk": {"absorption": "49% oral (with food); food increases absorption", "half_life": "10 h", "renal_adjustment": "No adjustment needed (renal dose adjustment only in severe CKD)"},
+  "canadian_notes": "ODB General Benefit. Must disclose use to ophthalmologist before any cataract surgery (IFIS — intraoperative floppy iris syndrome). Take after same meal daily — food improves absorption. Similar efficacy to tamsulosin.",
+  "pearls": ["ALWAYS disclose to ophthalmologist before cataract surgery — IFIS risk", "Take with meal — food significantly improves absorption of alfuzosin XL", "Less hypotension than doxazosin/terazosin (more uroselective)", "Contraindicated with strong CYP3A4 inhibitors (ketoconazole, ritonavir)"]
+}
+,"agomelatine": {
+  "name": "Agomelatine",
+  "brand": "Valdoxan",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I",
+  "moa": "Melatonin receptor (MT1/MT2) agonist + serotonin 5-HT2C antagonist; resynchronizes circadian rhythms; improves sleep architecture; 5-HT2C antagonism enhances dopamine and norepinephrine in frontal cortex → antidepressant effect",
+  "indications": ["Major depressive disorder (MDD) — particularly with sleep disturbance and anhedonia"],
+  "dosing": [
+    {"route": "Oral", "dose": "25 mg once daily at bedtime; increase to 50 mg if no response at 2 weeks", "notes": "Take at bedtime for circadian benefit"}
+  ],
+  "side_effects": {
+    "common": ["Nausea (usually transient)", "Headache", "Dizziness", "Somnolence (mild)"],
+    "serious": ["Hepatotoxicity (elevated ALT/AST — 10x ULN in rare cases; liver failure reported)", "Should NOT be used with CYP1A2 inhibitors"]
+  },
+  "contraindications": ["Hepatic impairment (any degree — contraindicated)", "Concurrent CYP1A2 inhibitors (fluvoxamine, ciprofloxacin)", "Alcohol use disorder"],
+  "interactions": [
+    {"drug": "Fluvoxamine / ciprofloxacin (CYP1A2 inhibitors)", "severity": "Major", "mechanism": "CYP1A2 substrate — inhibitors raise agomelatine levels 60x → hepatotoxicity", "management": "ABSOLUTELY CONTRAINDICATED"},
+    {"drug": "Potent CYP1A2 inducers (tobacco smoke)", "severity": "Moderate", "mechanism": "Smoking induces CYP1A2 → reduces agomelatine levels by 50%", "management": "Higher doses may be needed in smokers"}
+  ],
+  "pregnancy": "Category C. Limited data. Avoid if possible. No established teratogenicity but insufficient human data.",
+  "pk": {"absorption": "Well absorbed; first-pass CYP1A2 metabolism", "half_life": "1–2 h", "renal_adjustment": "No renal adjustment; contraindicated in hepatic impairment"},
+  "canadian_notes": "ODB General Benefit. Mandatory LFT monitoring: baseline, 3, 6, 12, 24 weeks. Unique mechanism — no serotonergic side effects (no sexual dysfunction, no serotonin syndrome, no discontinuation syndrome). Best studied benefit: sleep improvement. Fluvoxamine is absolutely contraindicated (60x level increase).",
+  "pearls": ["No serotonin syndrome risk, no sexual dysfunction, no discontinuation syndrome", "LFT monitoring MANDATORY at baseline, 3, 6, 12, 24 weeks (hepatotoxicity)", "Fluvoxamine absolutely contraindicated — fatal hepatotoxicity from 60x level increase", "Smokers: CYP1A2 induction reduces levels — may need 50 mg dose"]
+}
+,"desipramine": {
+  "name": "Desipramine",
+  "brand": "Norpramin",
+  "class": "Psychiatry/Neurology",
+  "napra": "Schedule I",
+  "moa": "Tricyclic antidepressant (TCA); most selective norepinephrine reuptake inhibitor among TCAs (NE >> 5-HT); minimal antihistaminic and anticholinergic effects compared to amitriptyline → better tolerated",
+  "indications": ["Major depressive disorder (3rd-line after SSRIs/SNRIs)", "Neuropathic pain (adjunct)", "ADHD (older agent — when stimulants fail or contraindicated)", "Panic disorder"],
+  "dosing": [
+    {"route": "Oral (depression)", "dose": "Start 25–50 mg/day; titrate over weeks to 100–300 mg/day at bedtime", "notes": "Bedtime dosing takes advantage of sedative effect (though less sedating than amitriptyline)"},
+    {"route": "Therapeutic level", "dose": "Target 115–215 ng/mL (TCA monitoring)", "notes": "Useful in overdose concern or poor response"}
+  ],
+  "side_effects": {
+    "common": ["Dry mouth", "Constipation", "Urinary retention", "Blurred vision", "Orthostatic hypotension", "Tachycardia"],
+    "serious": ["QTc prolongation and fatal arrhythmias (overdose) — wide therapeutic index concern", "Anticholinergic toxicity", "Seizures", "Narrow therapeutic window — dangerous in overdose"]
+  },
+  "contraindications": ["Recent MI", "QTc >450 ms or QT-prolonging drugs", "MAOI within 14 days", "Acute angle-closure glaucoma", "BPH"],
+  "interactions": [
+    {"drug": "MAO inhibitors", "severity": "Major", "mechanism": "Serotonin syndrome, hyperthermia — potentially fatal", "management": "ABSOLUTELY CONTRAINDICATED; 14-day washout"},
+    {"drug": "CYP2D6 inhibitors (fluoxetine, paroxetine, bupropion)", "severity": "Major", "mechanism": "CYP2D6 substrate — inhibitors raise desipramine levels substantially → TCA toxicity (arrhythmia)", "management": "Avoid combination or reduce desipramine dose significantly and monitor levels"},
+    {"drug": "Sympathomimetics (epinephrine, norepinephrine)", "severity": "Major", "mechanism": "NE reuptake inhibition → exaggerated pressor response", "management": "Use with extreme caution in surgical settings; inform anesthesiologist"}
+  ],
+  "pregnancy": "Category C. TCAs generally avoided in pregnancy. Neonatal withdrawal syndrome reported. SSRIs preferred.",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "15–24 h", "renal_adjustment": "No renal adjustment"},
+  "canadian_notes": "ODB General Benefit. Least anticholinergic TCA — better tolerated than amitriptyline/imipramine in terms of dry mouth/constipation/cognitive effects. Still Beers list for elderly (falls, orthostatic hypotension, QTc). Lethal in overdose — prescribe cautiously in patients at suicide risk.",
+  "pearls": ["Most NE-selective TCA — less anticholinergic than amitriptyline (less dry mouth/constipation)", "LETHAL in overdose — limit dispensing in high-suicide-risk patients", "CYP2D6 inhibitors (fluoxetine, paroxetine) substantially increase levels — avoid combination", "Beers list: avoid in elderly (falls, orthostatic hypotension, QTc)"]
+}
+,"psyllium": {
+  "name": "Psyllium (Ispaghula husk)",
+  "brand": "Metamucil, Prodiem, Fibre Sure",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Soluble dietary fiber; not digested by human enzymes; absorbs water in intestine → forms viscous gel → increases stool bulk and softness (laxative effect); also binds bile acids → modest LDL-lowering effect; prebiotic effect (fermented by gut microbiome)",
+  "indications": ["Constipation (chronic — first-line fiber supplement)", "IBS with constipation (IBS-C — reduces symptoms)", "Diarrhea (normalizes stool consistency)", "Hypercholesterolemia (adjunct — 3 g psyllium/day reduces LDL ~5–7%)", "Prevention of complications from hemorrhoids and anal fissures"],
+  "dosing": [
+    {"route": "Oral (constipation)", "dose": "3.4–10 g (1–3 teaspoons/scoops) in ≥240 mL water, 1–3 times daily", "notes": "CRITICAL: must take with adequate water (risk of esophageal/intestinal obstruction if insufficient fluid)"},
+    {"route": "Oral (IBS)", "dose": "3.4 g BID–TID", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Bloating/flatulence (especially starting — improves with time)", "Abdominal distension"],
+    "serious": ["Esophageal or intestinal obstruction (insufficient fluid intake)", "Anaphylaxis (rare — occupational exposure to psyllium powder; rare with oral use)", "Aspiration (in elderly with dysphagia)"]
+  },
+  "contraindications": ["Esophageal narrowing/dysphagia", "Intestinal obstruction", "Phenylketonuria (some products contain aspartame)"],
+  "interactions": [
+    {"drug": "Oral medications (carbamazepine, digoxin, lithium, warfarin, insulin)", "severity": "Moderate", "mechanism": "Viscous fiber may delay or reduce absorption of oral medications", "management": "Take medications 2 hours before or after psyllium"},
+    {"drug": "Antidiabetic drugs", "severity": "Minor", "mechanism": "Psyllium slows glucose absorption — may reduce post-prandial glucose", "management": "May improve glycemic control — monitor glucose, adjust medications if needed"}
+  ],
+  "pregnancy": "Category B. Safe; commonly used for constipation in pregnancy. Increases bulk without stimulant effects. Adequate hydration essential.",
+  "pk": {"absorption": "Not absorbed systemically", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. First-line fiber supplement for chronic constipation. LDL-lowering effect: FDA allows health claim (3 g/day reduces CVD risk). CRITICAL COUNSELLING: must drink FULL glass of water with every dose — obstruction risk if insufficient fluid.",
+  "pearls": ["MUST take with full glass of water — obstruction risk (esophageal/intestinal) without adequate fluid", "Gas/bloating normalizes after 2–4 weeks as gut microbiome adapts", "LDL reduction: 3 g/day provides modest but meaningful ~5–7% reduction", "Separate from medications by 2 hours (fiber binding)"]
+}
 }};
 var FAMILY_MAP = {
 "tacrolimus": "Topical Calcineurin Inhibitors",
