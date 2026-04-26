@@ -5274,6 +5274,251 @@ var DRUG_FAMILIES = {
   "canadian_notes": "ODB-covered for EMLA (Schedule I). EMLA must be covered with occlusion (dressing or film wrap) for adequate skin penetration. Xylocaine viscous: CRITICAL — do NOT use in infants <3 months; accidental swallowing in older infants/children causes serious systemic toxicity. Counsel parents.",
   "pearls": ["EMLA: MUST use occlusion dressing and minimum 60 minutes for adequate effect", "NEVER use EMLA in infants <3 months (methemoglobinemia from prilocaine)", "Xylocaine Viscous: do NOT swallow — systemic toxicity (seizures, arrhythmia)", "methemoglobinemia risk: EMLA + dapsone/sulfonamides — avoid combination"]
 }
+
+,"prenatal_multivitamin_drugs": {
+  "name": "Prenatal Multivitamin",
+  "brand": "Materna, PregVit, Centrum Materna, Jamieson Prenatal",
+  "class": "Vitamins/Supplements",
+  "napra": "U",
+  "moa": "Combined essential vitamin and mineral supplement formulated for pregnancy requirements; contains folic acid (neural tube defect prevention), iron (maternal/fetal iron demands), DHA (fetal brain/retinal development), calcium, vitamin D, iodine, B vitamins",
+  "indications": ["Pregnancy supplementation (start pre-conception ideally, continue throughout)", "Pre-conception folic acid supplementation", "Breastfeeding nutritional support"],
+  "dosing": [
+    {"route": "Oral", "dose": "1 tablet/capsule daily (product-specific formulation)", "notes": "Take with food to reduce nausea; some products split into morning/evening doses (PregVit)"}
+  ],
+  "side_effects": {
+    "common": ["Nausea (iron component)", "Constipation (iron)", "Black/dark stools (iron)", "Reflux (large tablets)"],
+    "serious": ["Iron overload (rare at prenatal doses in patients without hemochromatosis)"]
+  },
+  "contraindications": ["Hemochromatosis (high iron content)", "Component allergy"],
+  "interactions": [
+    {"drug": "Levothyroxine, bisphosphonates, fluoroquinolones, tetracyclines", "severity": "Major", "mechanism": "Iron and calcium in prenatal vitamins chelate these drugs — reduces absorption", "management": "Take prenatal vitamin 2 hours away from these medications"},
+    {"drug": "Warfarin (vitamin K in some prenatal vitamins)", "severity": "Minor", "mechanism": "Vitamin K content varies by product — may affect INR minimally", "management": "Use consistent product; monitor INR if INR changes unexpectedly"}
+  ],
+  "pregnancy": "Category A. Essential — start ideally 3 months before conception. Neural tube defect prevention with folic acid requires adequate blood levels before conception (neural tube closes by day 28 of pregnancy).",
+  "pk": {"absorption": "Variable per nutrient", "half_life": "N/A", "renal_adjustment": "No adjustment needed for standard use"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered (OTC). SOGC recommends starting prenatal vitamins 3 months before conception. Key nutrients: folic acid 0.4–1 mg, iron 27 mg, DHA 200–300 mg, vitamin D 600 IU, iodine 150 mcg. High-risk women need 5 mg folic acid (LU code for ODB coverage).",
+  "pearls": ["Start 3 MONTHS before conception — neural tube closes before most women know they are pregnant", "Take 2 hours away from levothyroxine, bisphosphonates, fluoroquinolones (iron/calcium chelation)", "High-risk (NTD history, AEDs, diabetes, BMI ≥35): need 5 mg folic acid daily (ODB LU covered)", "DHA component: 200–300 mg/day minimum for fetal brain/retinal development"]
+}
+,"salicylic_acid_topical": {
+  "name": "Salicylic acid (topical)",
+  "brand": "Compound W (warts), Duofilm, Stridex, Clearasil SA",
+  "class": "Dermatology",
+  "napra": "U",
+  "moa": "Keratolytic agent; disrupts intracellular cement between keratinocytes → desquamation of stratum corneum; reduces comedone formation (mild comedolytic); antiinflammatory via inhibition of prostaglandin synthesis",
+  "indications": ["Acne vulgaris (topical — mild comedolytic/antiinflammatory)", "Warts (verruca vulgaris — higher concentrations 40%)", "Psoriasis (keratolytic — helps penetration of other topicals)", "Calluses and corns", "Seborrheic dermatitis (shampoo formulations)", "Ichthyosis"],
+  "dosing": [
+    {"route": "Topical acne (0.5–2%)", "dose": "Apply to affected area QD–BID", "notes": ""},
+    {"route": "Topical warts (17–40%)", "dose": "Apply to wart daily after soaking; protect surrounding skin", "notes": "File away dead tissue before reapplication; takes weeks to months"}
+  ],
+  "side_effects": {
+    "common": ["Skin dryness/irritation", "Peeling", "Burning/stinging"],
+    "serious": ["Salicylate toxicity (systemic absorption from large area application, especially in children — tinnitus, confusion, hyperventilation)", "Skin irritation with high concentrations"]
+  },
+  "contraindications": ["Salicylate allergy (cross-react with aspirin — rare)", "Facial/perianal application (high concentration wart preparations)", "Pregnancy (high-concentration formulations — systemic absorption concerns)"],
+  "interactions": [
+    {"drug": "Other keratolytics / retinoids", "severity": "Moderate", "mechanism": "Additive skin irritation", "management": "Avoid concurrent application; alternate or use separate areas"}
+  ],
+  "pregnancy": "Category C. Low-concentration (≤2%) spot treatment: generally considered safe for short-term acne use. High-concentration (17–40%): AVOID in pregnancy — systemic salicylate absorption possible. Benzoyl peroxide preferred for acne in pregnancy.",
+  "pk": {"absorption": "Topical: variable; high-concentration/large area increases systemic absorption", "half_life": "N/A (topical)", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Inexpensive first-line OTC acne treatment. Wart treatment: patient must be patient — weeks to months of daily application. Salicylate toxicity (rare but serious): avoid applying to large areas, especially in children under occlusion.",
+  "pearls": ["Wart treatment: soak, file, apply, cover — daily for weeks to months", "Avoid applying over large areas in children (systemic salicylate absorption)", "Low concentrations safe for acne; avoid high concentrations in pregnancy", "Can be combined with retinoid (separate timing) for acne"]
+}
+,"benzocaine_topical": {
+  "name": "Benzocaine (topical)",
+  "brand": "Anbesol, Orajel, Solarcaine, Cepacol (lozenges with benzocaine)",
+  "class": "Pain Management",
+  "napra": "U",
+  "moa": "Local anesthetic; ester-type; blocks voltage-gated sodium channels in nerve cell membranes → reversible inhibition of sensory nerve impulses → topical analgesia",
+  "indications": ["Oropharyngeal pain (toothache, teething, canker sores, sore throat)", "Topical skin pain (sunburn, minor burns, insect bites)", "Hemorrhoid pain (rectal)"],
+  "dosing": [
+    {"route": "Oral gel/liquid (dental)", "dose": "Apply to affected area with cotton applicator q2h PRN", "notes": ""},
+    {"route": "Topical (skin)", "dose": "Apply to affected area QID PRN", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Burning/stinging on application", "Temporary numbness"],
+    "serious": ["Methemoglobinemia (BLACK BOX WARNING — Health Canada/FDA): infants and young children especially at risk; benzocaine metabolite oxidizes hemoglobin to methemoglobin → cyanosis, respiratory distress", "Contact dermatitis/allergy (ester local anesthetic — more allergenic than amide agents)"]
+  },
+  "contraindications": ["Infants <2 years (teething gels — Black Box methemoglobinemia risk)", "Ester local anesthetic allergy", "PABA allergy (benzocaine is PABA derivative)"],
+  "interactions": [
+    {"drug": "Methemoglobin-producing agents (dapsone, sulfonamides, nitrates, antimalarials)", "severity": "Major", "mechanism": "Additive methemoglobinemia", "management": "Avoid combination"},
+    {"drug": "Antimalarials (chloroquine, primaquine)", "severity": "Major", "mechanism": "Additive methemoglobin oxidation", "management": "Avoid benzocaine with these agents"}
+  ],
+  "pregnancy": "Category C. Short-term oral or topical use for pain relief — generally considered acceptable. Avoid large-area or prolonged use. Avoid teething gels in infants.",
+  "pk": {"absorption": "Topical: poor systemic absorption through intact skin; better through mucous membranes", "half_life": "Short (ester hydrolysis)", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). BLACK BOX WARNING (Health Canada): DO NOT USE benzocaine-containing products in infants/children <2 years for teething — fatal methemoglobinemia cases reported. Use cold teething ring or acetaminophen for teething pain instead. Methemoglobinemia: treat with methylene blue IV.",
+  "pearls": ["NEVER use in infants <2 years — fatal methemoglobinemia Black Box Warning", "Alternative for infant teething: cold teething ring, massage, acetaminophen", "Contact dermatitis: ester anesthetics (benzocaine) more allergenic than amides (lidocaine)", "Methemoglobinemia: suspect if cyanosis + normal O2 sat by standard pulse oximetry (SpO2 reads falsely high)"]
+}
+,"mineral_oil": {
+  "name": "Mineral oil",
+  "brand": "Fleet Mineral Oil Enema, Lansoyl (oral emulsion)",
+  "class": "Gastrointestinal",
+  "napra": "U",
+  "moa": "Lubricant laxative; coats stool and intestinal mucosa → reduces water absorption from stool → lubricates → facilitates passage; emollient effect softens stool; NOT absorbed",
+  "indications": ["Constipation (especially fecal impaction — lubricant effect)", "Rectal constipation (enema)", "Temporary constipation relief in elderly and disabled"],
+  "dosing": [
+    {"route": "Oral (lubricant laxative)", "dose": "15–45 mL orally at bedtime (on empty stomach)", "notes": "Do NOT take within 2 hours of food or mealtime (reduces fat-soluble vitamin absorption)"},
+    {"route": "Rectal enema", "dose": "Fleet Mineral Oil enema: one unit PR (133 mL); retain 1–5 min", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Oily anal leakage", "Soiling of clothing"],
+    "serious": ["Aspiration pneumonitis (elderly, dysphagia — fatal lipoid pneumonia)", "Fat-soluble vitamin malabsorption (A, D, E, K) with prolonged oral use", "Mineral oil absorption increases with docusate (do NOT combine)"]
+  },
+  "contraindications": ["Dysphagia/aspiration risk (oral — lipoid pneumonia risk)", "Children <2 years (oral — risk of aspiration)", "Elderly with swallowing difficulty (aspiration risk)", "Concurrent docusate (increases absorption)"],
+  "interactions": [
+    {"drug": "Docusate", "severity": "Major", "mechanism": "Docusate (surfactant) increases mineral oil absorption — systemic mineral oil deposits", "management": "NEVER combine docusate and mineral oil"},
+    {"drug": "Fat-soluble vitamins (A, D, E, K) / warfarin", "severity": "Major", "mechanism": "Mineral oil impairs fat-soluble vitamin absorption → deficiency and reduced vitamin K → INR may rise", "management": "Supplement fat-soluble vitamins; take separately from oil; monitor INR"}
+  ],
+  "pregnancy": "Avoid. Prolonged use causes fat-soluble vitamin malabsorption → vitamin K deficiency → neonatal hemorrhage risk. Rectal enema: occasional use safer than oral.",
+  "pk": {"absorption": "Oral: not absorbed normally; small amount may absorb with prolonged use", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Oral use: risks outweigh benefits in elderly (aspiration pneumonitis) and pregnant women (vitamin K deficiency). Rectal enema: safer — local effect, not absorbed. Docusate combination absolutely contraindicated.",
+  "pearls": ["NEVER combine with docusate (systemic absorption of mineral oil)", "Elderly/dysphagia: AVOID oral form — aspiration lipoid pneumonia risk", "Take at bedtime on empty stomach (separate 2 hours from food/fat-soluble vitamins)", "Rectal enema: safer alternative to oral for constipation relief"]
+}
+,"camphor_menthol": {
+  "name": "Camphor / Menthol (topical counterirritant)",
+  "brand": "Vicks VapoRub, Bengay, Absorbine Jr, Tiger Balm",
+  "class": "Pain Management",
+  "napra": "U",
+  "moa": "Counterirritant; camphor and menthol activate TRPM8 (cold receptors) and TRPA1 channels → cooling sensation → gate control theory of pain (activates Aδ fibers to inhibit C-fiber pain signals); also mild topical anesthetic and anti-inflammatory",
+  "indications": ["Minor musculoskeletal pain (back pain, muscle aches, arthralgia)", "Nasal congestion relief (Vicks VapoRub — inhalation)", "Minor joint pain"],
+  "dosing": [
+    {"route": "Topical (adults/children ≥2)", "dose": "Apply thin layer to affected area up to TID–QID; massage in gently", "notes": ""},
+    {"route": "Nasal congestion (Vicks vapors)", "dose": "Apply thin layer to chest/throat; inhale vapors; OR add to steam vaporizer", "notes": "Never apply inside nostrils or under nose in infants"}
+  ],
+  "side_effects": {
+    "common": ["Skin warming/burning sensation", "Redness", "Blistering with excessive amounts or occlusion"],
+    "serious": ["Camphor toxicity: CNS seizures, coma (ingestion — 5 mg/kg toxic in children)", "Vicks under/in nose of infants <2 years: airway mucus increase → respiratory distress"]
+  },
+  "contraindications": ["Infants/children <2 years — nasal application (increase mucus — WHO warning)", "Broken skin", "Mucous membranes (eyes, nose interior)", "Near open flame (flammable)"],
+  "interactions": [
+    {"drug": "No drug-drug interactions (topical)", "severity": "Minor", "mechanism": "Minimal systemic absorption", "management": "N/A"}
+  ],
+  "pregnancy": "Category C. Topical chest/musculoskeletal use: generally safe in small amounts in pregnancy. Camphor crosses placenta — avoid large applications or prolonged use. Menthol component considered safe.",
+  "pk": {"absorption": "Topical: small systemic amount; camphor readily absorbed", "half_life": "N/A (topical)", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Vicks VapoRub: widely used — contraindicated under/in nose of infants/children <2 years (WHO warning 2009 — increased mucus secretion causing respiratory distress). Camphor: toxic if ingested — child safety packaging important. Keep away from children.",
+  "pearls": ["NEVER apply in or under nose of infants/toddlers <2 years — respiratory distress risk", "Camphor is toxic if swallowed — store safely away from children", "Counterirritant effect: provides 30–60 min pain relief", "Adequate for minor musculoskeletal pain — not for serious injuries"]
+}
+
+,"menthol_lozenge": {
+  "name": "Menthol / Benzocaine throat lozenges",
+  "brand": "Halls, Strepsils, Cepacol, Fisherman's Friend",
+  "class": "Respiratory/Allergy",
+  "napra": "U",
+  "moa": "Menthol: TRPM8 cold receptor agonist → cooling/numbing sensation in oropharynx; mild topical anesthetic; mild expectorant via mild mucosal irritation stimulating mucous glands; Benzocaine (in some): local anesthetic Na+ channel block",
+  "indications": ["Sore throat symptomatic relief", "Minor mouth/throat irritation", "Cough suppression (mild — menthol reduces cough reflex sensitivity)", "Dry mouth/throat (sucking lozenges stimulates saliva)"],
+  "dosing": [
+    {"route": "Oral lozenge", "dose": "1 lozenge q2–3h PRN; dissolve slowly in mouth (do not chew)", "notes": "Check product for specific max dose/day — varies by benzocaine content"}
+  ],
+  "side_effects": {
+    "common": ["Mild oral stinging", "GI upset (swallowed in large quantities)"],
+    "serious": ["Methemoglobinemia (benzocaine-containing lozenges — especially with excess use)", "Aspiration (in elderly with dysphagia)"]
+  },
+  "contraindications": ["Children <2 years (benzocaine-containing) — methemoglobinemia", "Asthma (menthol may rarely trigger bronchospasm in sensitized individuals)"],
+  "interactions": [
+    {"drug": "No significant interactions", "severity": "Minor", "mechanism": "Topical local action", "management": "N/A"}
+  ],
+  "pregnancy": "Menthol lozenges: generally safe in pregnancy — minimal systemic absorption. Avoid benzocaine-containing lozenges in high frequency (methemoglobin risk). Saltwater gargles, honey-lemon tea equally effective.",
+  "pk": {"absorption": "Minimal systemic", "half_life": "N/A", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Halls (menthol only) widely used. Evidence for sore throat: modest symptom relief only — does not treat infection. Strepsils contains antibacterials (amylmetacresol, dichlorobenzyl alcohol) — limited evidence. Antibacterial lozenges not equivalent to antibiotics for streptococcal pharyngitis.",
+  "pearls": ["Symptomatic relief only — does not treat underlying infection", "Streptococcal pharyngitis: lozenges do NOT replace antibiotics (penicillin)", "Benzocaine versions: methemoglobin risk — avoid in excess and in very young children", "Sucking on any hard candy provides similar saliva stimulation"]
+}
+,"witch_hazel": {
+  "name": "Witch hazel (Hamamelis virginiana)",
+  "brand": "Tucks Medicated Pads, Thayers Witch Hazel, many OTC brands",
+  "class": "Dermatology",
+  "napra": "U",
+  "moa": "Astringent; tannins in witch hazel extract cause protein precipitation → constricts tissue proteins → vasoconstriction → reduces inflammation/swelling/bleeding; antimicrobial; anti-oxidant properties",
+  "indications": ["Hemorrhoids (symptomatic relief — pain, pruritus, bleeding)", "Minor skin irritation (after shaving, insect bites)", "Postpartum perineal care", "Acne (mild astringent toner)", "Varicose vein discomfort (topical)"],
+  "dosing": [
+    {"route": "Topical/rectal (pads)", "dose": "Apply witch hazel pad to perianal area after each bowel movement and PRN up to 6x daily", "notes": ""},
+    {"route": "Topical (skin)", "dose": "Apply with cotton ball to affected area 1–3x daily", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Mild skin dryness (tannin astringent effect)", "Rare contact dermatitis"],
+    "serious": ["None at standard use"]
+  },
+  "contraindications": ["Contact dermatitis/allergy to witch hazel components"],
+  "interactions": [
+    {"drug": "No drug-drug interactions", "severity": "Minor", "mechanism": "Topical use only", "management": "N/A"}
+  ],
+  "pregnancy": "Category A. Completely safe. One of the preferred topical agents for hemorrhoids in pregnancy (over phenylephrine-containing products). Very commonly used postpartum for perineal healing (episiotomy/lacerations) and hemorrhoids.",
+  "pk": {"absorption": "Topical: minimal systemic", "half_life": "N/A", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Tucks Medicated Pads — very popular for hemorrhoid relief in Canada. Ideal for pregnancy — no vasoconstrictive effect, safe for baby. Postpartum: chilled witch hazel pads for perineal soothing widely recommended by obstetric nurses and midwives.",
+  "pearls": ["Preferred hemorrhoid treatment in pregnancy — safe, effective, no vasoconstrictors", "Postpartum perineal care: cool/chilled witch hazel pads provide soothing relief", "Completely safe in all trimesters and while breastfeeding", "Less evidence than phenylephrine but safer and adequate for mild hemorrhoid symptoms"]
+}
+,"deet": {
+  "name": "DEET (N,N-Diethyl-meta-toluamide)",
+  "brand": "OFF!, Muskol, Deep Woods OFF!, Cutter Backwoods",
+  "class": "Dermatology",
+  "napra": "U",
+  "moa": "Insect repellent; mechanism of action: DEET does not kill insects; confuses and repels insects by interfering with chemoreceptors sensitive to CO2, lactic acid, and other host-detection chemicals; effectiveness is concentration-dependent",
+  "indications": ["Prevention of insect bites (mosquitoes, ticks, black flies, sand flies)", "Prevention of arthropod-borne diseases (West Nile virus, Lyme disease, malaria, Zika)"],
+  "dosing": [
+    {"route": "Topical skin (adults)", "dose": "10–30% concentration: apply to exposed skin; reapply per product instructions; wash off when no longer outdoors", "notes": "Higher concentration = longer duration (30% lasts ~6h)"},
+    {"route": "Topical (pregnancy)", "dose": "10–30% DEET: safe, Health Canada-approved in pregnancy", "notes": ""},
+    {"route": "Topical (children)", "dose": "Children 2–12 yr: 10% DEET max; children <2 yr: Health Canada permits 10% limited use x 3 applications/day", "notes": "Avoid hands, mouth area in children"}
+  ],
+  "side_effects": {
+    "common": ["Skin/eye irritation if contact with eyes", "Rare contact dermatitis"],
+    "serious": ["Neurological effects (encephalopathy) with excessive use or inappropriate application — rare, mostly children with very high concentrations or prolonged use", "Contact dermatitis (uncommon)"]
+  },
+  "contraindications": ["Infants <6 months: Health Canada recommends against DEET use (use physical barriers instead)", "Eyes and mucous membranes", "Broken skin"],
+  "interactions": [
+    {"drug": "Sunscreen", "severity": "Minor", "mechanism": "Apply sunscreen first, DEET second; DEET reduces sunscreen SPF by ~35%", "management": "Apply sunscreen first; increase sunscreen reapplication frequency; use SPF 50 if using DEET concurrently"}
+  ],
+  "pregnancy": "Health Canada: DEET is SAFE and RECOMMENDED in pregnancy to prevent mosquito-borne diseases (Zika, malaria, West Nile). Use 10–30% concentration on exposed skin. Benefits of preventing disease far outweigh minimal DEET risk.",
+  "pk": {"absorption": "Dermal absorption: 5–15% (higher through skin damaged or sunburned)", "half_life": "N/A (applied topically)", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "Health Canada DEET recommendations: Adults: up to 30%. Children 2–12 years: 10% max. Children <2 years: 10% with limited applications (1–3/day). Infants <6 months: AVOID; use physical barriers (mosquito nets, clothing). In pregnancy: use DEET to prevent Zika/West Nile/malaria — clearly beneficial.",
+  "pearls": ["SAFE and recommended in pregnancy — prevents dangerous arthropod-borne diseases", "Apply sunscreen BEFORE DEET (sunscreen first; wait, then DEET)", "DEET reduces sunscreen efficacy by 35% — use higher SPF, reapply more often", "Wash off with soap and water when returning indoors — do not leave on all day unnecessarily"]
+}
+,"sunscreen_otc": {
+  "name": "Sunscreen (Chemical and Physical/Mineral)",
+  "brand": "Coppertone, Banana Boat, Neutrogena, La Roche-Posay, Ombrelle",
+  "class": "Dermatology",
+  "napra": "U",
+  "moa": "Physical/Mineral sunscreens (zinc oxide, titanium dioxide): reflect/scatter UV radiation → protect against UVA and UVB. Chemical sunscreens (oxybenzone, avobenzone, octinoxate, octocrylene): absorb UV photons → release energy as heat → prevent DNA damage",
+  "indications": ["Photoprotection — prevention of sunburn, premature skin aging, and skin cancer", "Photosensitive conditions (drug-induced photosensitivity: tetracyclines, fluoroquinolones, isotretinoin)", "Post-procedure skin protection"],
+  "dosing": [
+    {"route": "Topical (adults/children ≥6 months)", "dose": "Apply SPF 30+ generously 15–30 min before UV exposure; reapply every 2 hours or after swimming/sweating", "notes": "Most people apply 25–50% of recommended amount — apply more generously"},
+    {"route": "Infants <6 months", "dose": "Avoid — use sun protective clothing, shade, UV-protective stroller covers", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Stinging/burning (especially eyes)", "Acne flares (pore-clogging formulations)", "Contact dermatitis (chemical sunscreen ingredients)"],
+    "serious": ["Endocrine disruption concerns (oxybenzone, octinoxate — detected in blood/breast milk; FDA requiring more safety data; clinical significance unclear)", "Reef toxicity (oxybenzone/octinoxate banned in some jurisdictions for reef protection)"]
+  },
+  "contraindications": ["Infants <6 months (avoid — use physical barriers)", "Chemical sunscreen allergy"],
+  "interactions": [
+    {"drug": "DEET", "severity": "Minor", "mechanism": "Apply sunscreen first; DEET reduces SPF by ~35%", "management": "Sunscreen first, then DEET; use higher SPF with DEET"}
+  ],
+  "pregnancy": "Physical/mineral sunscreens (zinc oxide, titanium dioxide) preferred in pregnancy — no systemic absorption concerns. Chemical sunscreens: safety data reassuring but some uncertainty. Both acceptable; mineral preferred for facial use in pregnancy.",
+  "pk": {"absorption": "Mineral: no systemic absorption. Chemical: some systemic absorption (oxybenzone detected in blood) — clinical significance unknown", "half_life": "N/A", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "Regulated as cosmetics in Canada (not drugs as in USA). Health Canada: SPF 30 minimum recommended for most skin types. Broad-spectrum (UVA+UVB protection) required. Sunscreen plus sun-protective clothing + seeking shade most effective combination. Mineral sunscreens (zinc oxide) preferred for infants, sensitive skin, and pregnancy.",
+  "pearls": ["Mineral (zinc oxide/titanium dioxide) preferred in pregnancy, infants, sensitive skin — no systemic absorption", "Apply generously — most people apply only 25% of needed amount", "Reapply every 2 hours; immediately after swimming (water-resistant ≠ waterproof)", "Chemical sunscreens: oxybenzone concerns — switch to mineral alternatives if concerned"]
+}
+,"raspberry_leaf": {
+  "name": "Red Raspberry Leaf (Rubus idaeus)",
+  "brand": "Multiple NHP tea/capsule brands — Traditional Medicinals, Organic Traditions",
+  "class": "Vitamins/Supplements",
+  "napra": "U",
+  "moa": "Fragarine alkaloid: uterine smooth muscle relaxant and mild uterine tonic (paradoxical: may coordinate contractions); tannins: astringent; flavonoids and vitamins (C, E, B); mechanisms not well-characterized",
+  "indications": ["Traditional use: preparation for labor (3rd trimester — popular but evidence limited)", "Menstrual cramping relief (traditional)", "General pregnancy tonic (folk medicine use)"],
+  "dosing": [
+    {"route": "Tea (3rd trimester only)", "dose": "1–2 cups of raspberry leaf tea daily (if used)", "notes": "Traditional use: start at 32–34 weeks; some midwives recommend starting later. No established evidence-based dosing."},
+    {"route": "Capsules", "dose": "400–500 mg BID–TID (standardized extract)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Mild laxative effect (large amounts)", "GI upset"],
+    "serious": ["Uterotonic effects: theoretical risk of premature labor if used in early pregnancy (avoid 1st/2nd trimester)", "Stimulation of contractions", "Potential hypoglycemia (in vitro effects on glucose)"]
+  },
+  "contraindications": ["1st and 2nd trimester (theoretical uterotonic risk)", "Scheduled C-section (some practitioners advise avoiding)", "Previous complicated pregnancies (preterm birth, placenta previa)"],
+  "interactions": [
+    {"drug": "Oxytocin / prostaglandins (induction agents)", "severity": "Moderate", "mechanism": "Additive uterotonic effects (theoretical)", "management": "Disclose herbal supplement use to obstetric provider"},
+    {"drug": "Iron", "severity": "Minor", "mechanism": "Tannins in tea may bind iron — reduce absorption", "management": "Separate raspberry leaf tea from iron supplements"}
+  ],
+  "pregnancy": "Evidence: limited — 1 small RCT showed modest reduction in labor stage 2 duration; no clear safety/efficacy evidence. Use only in 3rd trimester if at all. Avoid in 1st/2nd trimester. Disclose use to healthcare provider. SOGC: insufficient evidence to recommend.",
+  "pk": {"absorption": "Variable — herbal constituents", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled) — NHP regulated by Health Canada. Widely used by pregnant women self-directing care. Important: healthcare provider should be informed of use. Evidence is very limited and mostly anecdotal. Avoid in 1st and 2nd trimester — potential uterotonic effects.",
+  "pearls": ["Evidence VERY limited — mostly traditional and anecdotal", "AVOID in 1st and 2nd trimester (potential uterotonic effects)", "Tannins in tea may reduce iron absorption — separate from iron supplements by 2 hours", "Always disclose herbal supplement use to obstetric care provider"]
+}
 }};
 var FAMILY_MAP = {
 "tacrolimus": "Topical Calcineurin Inhibitors",
