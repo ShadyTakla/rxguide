@@ -4038,6 +4038,363 @@ var DRUG_FAMILIES = {
   "canadian_notes": "ODB General Benefit. Preferred over prednisone in hepatic impairment (no conversion needed). Liquid form (Pediapred) convenient for pediatric dosing. Short courses (<5 days) don't require tapering. Document indication and duration for all corticosteroid prescriptions.",
   "pearls": ["Preferred over prednisone in liver failure (no hepatic conversion required)", "Pediatric liquid form: useful for accurate weight-based dosing", "Short courses <5 days: no taper needed", "Long-term: bisphosphonate prophylaxis, monitor bone density, assess for adrenal suppression"]
 }
+
+,"fludrocortisone": {
+  "name": "Fludrocortisone",
+  "brand": "Florinef",
+  "class": "Endocrine",
+  "napra": "Schedule I",
+  "moa": "Potent mineralocorticoid agonist (aldosterone receptor); promotes sodium and water retention by distal nephron, increases potassium and hydrogen ion excretion; also has glucocorticoid activity (about 10x prednisone)",
+  "indications": ["Adrenal insufficiency (with hydrocortisone — mineralocorticoid replacement)", "Orthostatic hypotension (primary autonomic failure, Shy-Drager syndrome)", "Congenital adrenal hyperplasia (salt-losing form)", "Addison's disease"],
+  "dosing": [
+    {"route": "Oral (adrenal insufficiency)", "dose": "0.05–0.2 mg once daily", "notes": "Take with food; dose individualized by BP, electrolytes, clinical response"},
+    {"route": "Oral (orthostatic hypotension)", "dose": "0.1–0.3 mg/day", "notes": "Monitor lying and standing BP"}
+  ],
+  "side_effects": {
+    "common": ["Hypertension (volume expansion)", "Edema", "Hypokalemia"],
+    "serious": ["Severe hypertension", "Heart failure (sodium retention)", "Hypokalemic myopathy/cardiac arrhythmias (electrolyte imbalance)", "Osteoporosis (long-term — glucocorticoid effect)"]
+  },
+  "contraindications": ["Systemic fungal infections (relative — immunosuppressive)", "Hypertension (relative)", "Hypervolemia states"],
+  "interactions": [
+    {"drug": "Diuretics (thiazides, loop diuretics)", "severity": "Moderate", "mechanism": "Additive potassium loss — hypokalemia", "management": "Monitor potassium levels; supplement K+ if needed"},
+    {"drug": "NSAIDs", "severity": "Moderate", "mechanism": "NSAIDs reduce mineralocorticoid effect on sodium retention AND additive fluid retention", "management": "Avoid NSAIDs or monitor BP/electrolytes"},
+    {"drug": "Digoxin", "severity": "Moderate", "mechanism": "Fludrocortisone-induced hypokalemia increases digoxin toxicity risk", "management": "Monitor potassium and digoxin levels"}
+  ],
+  "pregnancy": "Category C. Used for adrenal insufficiency in pregnancy — replacement therapy essential. Monitor blood pressure and electrolytes closely. Women with adrenal insufficiency need stress-dosing at delivery.",
+  "pk": {"absorption": "Well absorbed orally", "half_life": "3.5 h (mineralocorticoid effect lasts much longer)", "renal_adjustment": "Use with caution in renal impairment (sodium/water retention)"},
+  "canadian_notes": "ODB General Benefit. Essential for adrenal insufficiency replacement alongside hydrocortisone. No substitute for physiological mineralocorticoid replacement. Monitor BP, electrolytes (sodium, potassium) regularly. Stress dosing protocol needed for surgery, illness.",
+  "pearls": ["No oral substitute for mineralocorticoid replacement in Addison's disease", "Monitor BP, Na+, K+ regularly — hypertension and hypokalemia are dose-related", "Stress dosing: double/triple hydrocortisone for illness/surgery (not always fludrocortisone)", "Edema and hypertension: reduce dose if present; add potassium supplementation if hypokalemic"]
+}
+,"desmopressin": {
+  "name": "Desmopressin (DDAVP)",
+  "brand": "DDAVP (intranasal, oral, injectable), Nocdurna (low-dose sublingual)",
+  "class": "Endocrine",
+  "napra": "Schedule I",
+  "moa": "Synthetic vasopressin analogue (V2 receptor agonist); acts on renal collecting duct V2 receptors → inserts aquaporin-2 channels → increases water reabsorption → antidiuresis; also stimulates von Willebrand factor/factor VIII release (V2 in endothelial cells — hemostatic effect)",
+  "indications": ["Central diabetes insipidus (DI)", "Nocturnal enuresis (bedwetting) in children and adults", "Nocturia (Nocdurna — low dose)", "Hemophilia A and von Willebrand disease type 1 (hemostatic — bleeding)", "Uremic bleeding (off-label)"],
+  "dosing": [
+    {"route": "Intranasal (DI)", "dose": "10–40 mcg once daily or BID (1–4 sprays each nostril)", "notes": ""},
+    {"route": "Oral (enuresis/DI)", "dose": "0.1–0.4 mg BID–TID (oral less potent than intranasal)", "notes": ""},
+    {"route": "IV/SC (bleeding)", "dose": "0.3 mcg/kg IV over 30 min", "notes": "Stimulates vWF/FVIII release — for mild bleeding or pre-procedure"}
+  ],
+  "side_effects": {
+    "common": ["Headache", "Hyponatremia (water retention without sodium — MOST SERIOUS RISK)", "Nasal irritation (intranasal)", "Nausea"],
+    "serious": ["Hyponatremia / SIADH (especially in elderly, high fluid intake, diuretics)", "Seizures (hyponatremia)", "Thromboembolism (rare — stimulates vWF aggregation)"]
+  },
+  "contraindications": ["Hyponatremia", "Polydipsia (excessive drinking)", "Moderate-severe renal impairment (CrCl <50 for nocturia/enuresis)", "Heart failure or hypervolemia", "Von Willebrand type 2B (can worsen thrombocytopenia)"],
+  "interactions": [
+    {"drug": "Diuretics / SSRIs / carbamazepine / chlorpropamide", "severity": "Major", "mechanism": "All increase SIADH/hyponatremia risk when combined with desmopressin", "management": "Monitor serum sodium closely; avoid combination in elderly"},
+    {"drug": "NSAIDs", "severity": "Moderate", "mechanism": "NSAIDs reduce renal prostaglandins → enhance ADH effect → hyponatremia risk", "management": "Monitor sodium levels"}
+  ],
+  "pregnancy": "Category B. Used for diabetes insipidus in pregnancy (hormonal changes alter ADH metabolism). Desmopressin does not have oxytocic activity (unlike vasopressin) — safe. Monitor sodium.",
+  "pk": {"absorption": "Oral: <1% (low but effective at high doses); intranasal: 3–5%", "half_life": "1.5–2.5 h intranasal", "renal_adjustment": "CrCl <50: avoid for enuresis/nocturia (hyponatremia risk)"},
+  "canadian_notes": "ODB General Benefit. Nocdurna (low-dose sublingual) approved specifically for nocturia in adults — lower dose, less hyponatremia risk. Hyponatremia risk in elderly is significant — baseline sodium, repeat at 7 days after starting. Restrict fluid intake for 8 hours after dosing for enuresis.",
+  "pearls": ["Hyponatremia is the major risk — check sodium at baseline and 7 days after starting", "Restrict fluids 1–2 hours before and 8 hours after dose for enuresis/nocturia", "Elderly: very high hyponatremia risk — start low, monitor closely", "Hemostatic use: tachyphylaxis develops after 2–3 doses (endothelial stores deplete)"]
+}
+,"benzoyl_peroxide": {
+  "name": "Benzoyl Peroxide",
+  "brand": "PanOxyl, Benzagel, Clearasil",
+  "class": "Dermatology",
+  "napra": "U",
+  "moa": "Oxidizing agent; releases free radical oxygen → bactericidal against C. acnes; also has keratolytic (mild peeling) and mild anti-inflammatory effects; does NOT cause bacterial resistance (unlike antibiotics)",
+  "indications": ["Acne vulgaris (first-line OTC)", "Rosacea (mild — low-concentration wash)", "Combination acne therapy (with topical retinoids or antibiotics)"],
+  "dosing": [
+    {"route": "Topical (wash, gel, cream)", "dose": "2.5–10% applied once or twice daily", "notes": "Start with 2.5–5% to minimize irritation; higher concentrations not more effective, only more irritating"},
+    {"route": "Combination use", "dose": "Apply BP AM + retinoid PM (never simultaneously)", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Skin dryness/irritation (dose-dependent)", "Erythema", "Peeling/stinging", "Bleaches hair/clothing/linens"],
+    "serious": ["Contact dermatitis (allergy — uncommon)", "Rare anaphylactic reactions (very rare)"]
+  },
+  "contraindications": ["Benzoyl peroxide allergy", "Concurrent use with tretinoin (degrades tretinoin — must separate)"],
+  "interactions": [
+    {"drug": "Tretinoin", "severity": "Moderate", "mechanism": "BP oxidizes and degrades tretinoin — reduces efficacy", "management": "Apply tretinoin at night, BP in morning (not simultaneously); or use adapalene instead (stable with BP — Tactuo combo)"},
+    {"drug": "Clindamycin / erythromycin topical", "severity": "Minor", "mechanism": "BP can slightly reduce antibiotic stability; combination reduces resistance (BP) while treating (antibiotic)", "management": "Apply separately; combination available as Benzaclin (BP+clindamycin)"}
+  ],
+  "pregnancy": "Category C. Limited systemic absorption (5%). Short-term use generally considered safe. Avoid in first trimester out of caution; acceptable 2nd/3rd trimester.",
+  "pk": {"absorption": "Topical: ~5% systemic", "half_life": "N/A (topical)", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. First-line OTC acne treatment. Does not cause antibiotic resistance — important stewardship advantage. Start with 2.5% (equally effective to 10%, much less irritating). Adapalene + BP combination (Tactuo) is a convenient fixed-dose product.",
+  "pearls": ["2.5% is as effective as 10% — start low (less irritation)", "Does NOT cause bacterial resistance — key advantage vs antibiotic use alone", "Bleaches fabrics: use white pillowcase and avoid contact with dark clothing", "Incompatible with simultaneous tretinoin — separate to AM/PM application"]
+}
+,"permethrin": {
+  "name": "Permethrin",
+  "brand": "Nix (1% cream rinse — lice), Kwellada-P (5% cream — scabies), Kwellada-P Lotion",
+  "class": "Dermatology",
+  "napra": "U (1%) / Schedule II (5%)",
+  "moa": "Synthetic pyrethroid insecticide; acts on voltage-gated sodium channels of parasite nervous system → prolonged sodium channel opening → depolarization → paralysis and death of mite/louse; low mammalian toxicity",
+  "indications": ["Scabies (5% cream — first-line)", "Head lice (1% cream rinse — first-line)", "Pubic lice (crabs)", "Scabies in pregnancy (first-line topical)"],
+  "dosing": [
+    {"route": "Topical 5% cream (scabies)", "dose": "Apply from neck down to entire body; leave 8–14 hours; rinse; repeat in 7–14 days", "notes": "Treat all household contacts simultaneously; wash linens"},
+    {"route": "Topical 1% cream rinse (lice)", "dose": "Apply to shampooed/towel-dried hair; leave 10 min; rinse; comb with nit comb; repeat in 7 days", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Stinging/burning (scalp/skin)", "Pruritus (may worsen briefly — dying mites cause itching for 2–4 weeks after successful treatment)", "Erythema"],
+    "serious": ["Contact dermatitis (rare)"]
+  },
+  "contraindications": ["Pyrethroid allergy", "Allergy to chrysanthemums (cross-reactivity possible)"],
+  "interactions": [
+    {"drug": "No significant drug-drug interactions (topical)", "severity": "Minor", "mechanism": "Minimal systemic absorption", "management": "N/A"}
+  ],
+  "pregnancy": "Category B. Preferred topical treatment for scabies in pregnancy (minimal systemic absorption, animal studies reassuring). Oral ivermectin not used in pregnancy.",
+  "pk": {"absorption": "Topical: <2% systemic", "half_life": "N/A (topical)", "renal_adjustment": "Not applicable"},
+  "canadian_notes": "1% OTC; 5% Schedule II (pharmacist oversight). First-line treatment for scabies in pregnancy. Pruritus persisting 2–4 weeks after treatment is NOT treatment failure — this is normal (immune reaction to dead mites). Reinforce: treat ALL household members simultaneously.",
+  "pearls": ["Pruritus after successful treatment: persists 2–4 weeks (dead mites causing immune reaction)", "Treat ALL household contacts simultaneously — otherwise reinfection", "Wash all clothing and linens in hot water on treatment day", "Pregnancy: first-line for scabies (preferred over ivermectin which is not used in pregnancy)"]
+}
+,"etanercept": {
+  "name": "Etanercept",
+  "brand": "Enbrel (originator); Brenzys, Erelzi (biosimilars)",
+  "class": "Immunosuppressants",
+  "napra": "Schedule I",
+  "moa": "Fusion protein: TNF receptor 2 (p75) linked to IgG1 Fc; binds and neutralizes both TNF-alpha and TNF-beta (lymphotoxin-alpha) → prevents TNF binding to cell surface receptors → reduces inflammation",
+  "indications": ["Rheumatoid arthritis (moderate-severe — DMARD failure)", "Psoriatic arthritis", "Ankylosing spondylitis", "Plaque psoriasis (moderate-severe)", "Juvenile idiopathic arthritis (JIA)"],
+  "dosing": [
+    {"route": "SC (RA, PsA, AS)", "dose": "50 mg SC once weekly OR 25 mg SC twice weekly", "notes": "Pre-filled syringe or auto-injector; rotate injection sites"},
+    {"route": "SC (psoriasis)", "dose": "50 mg SC twice weekly x 3 months, then 50 mg once weekly", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Injection site reactions (erythema, pain, swelling)", "Upper respiratory infections", "Headache"],
+    "serious": ["Serious infections (TB reactivation, opportunistic infections — screen before starting)", "Heart failure exacerbation (avoid in NYHA III–IV)", "Demyelinating disorders (rare — avoid in MS)", "Lymphoma (biologic class effect — unclear causation)", "Drug-induced lupus (rare)"]
+  },
+  "contraindications": ["Active serious infection (sepsis, active TB, opportunistic infection)", "Heart failure NYHA III–IV (do not use TNF inhibitors)", "Demyelinating disease (relative)"],
+  "interactions": [
+    {"drug": "Live vaccines", "severity": "Major", "mechanism": "Immunosuppression — live vaccines contraindicated during biologic therapy", "management": "Update all vaccines BEFORE starting; avoid live vaccines during treatment"},
+    {"drug": "Abatacept / rituximab / other biologics", "severity": "Major", "mechanism": "Additive immunosuppression and infection risk", "management": "Do not combine with other biologics"},
+    {"drug": "Methotrexate", "severity": "Minor", "mechanism": "Combination increases efficacy (approved combination for RA); no meaningful safety concern beyond individual drug side effects", "management": "Monitor CBC and LFTs"}
+  ],
+  "pregnancy": "Category B. Most reproductive safety data of all biologics. Half-life shorter than monoclonal antibody biologics. Can be continued into 2nd trimester; stop 4 weeks before planned delivery. Neonates: avoid live vaccines for 6 months.",
+  "pk": {"absorption": "SC: ~76%", "half_life": "70–132 h", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "ODB via EAP for RA (ODB-funded if DMARD failure criteria met). Biosimilars (Brenzys, Erelzi) available — Ontario mandating biosimilar transitions. TB screening (IGRA/TST + CXR) before initiation MANDATORY. Annual influenza and pneumococcal vaccination recommended.",
+  "pearls": ["TB screening mandatory before starting (IGRA/TST + CXR)", "Avoid live vaccines during therapy — update vaccines BEFORE starting", "Etanercept binds BOTH TNF-α and TNF-β (lymphotoxin) — unique among TNF inhibitors", "Biosimilars available in Canada — comparable safety and efficacy"]
+}
+
+,"ferrous_gluconate": {
+  "name": "Ferrous gluconate",
+  "brand": "Fergon, Apo-Ferrous Gluconate",
+  "class": "Vitamins/Supplements",
+  "napra": "U",
+  "moa": "Iron supplementation; iron absorbed in duodenum/proximal jejunum as Fe2+ (ferrous form); incorporated into hemoglobin (heme iron) and stored as ferritin; cofactor for cellular enzymes",
+  "indications": ["Iron deficiency anemia (treatment and prevention)", "Pregnancy iron supplementation (part of prenatal vitamins)", "Chronic iron deficiency (malabsorption, chronic blood loss)"],
+  "dosing": [
+    {"route": "Oral (treatment)", "dose": "300 mg (35 mg elemental iron) TID between meals", "notes": "Or 150–200 mg elemental iron/day in divided doses — equivalent to ferrous fumarate/sulfate dosing"},
+    {"route": "Oral (prevention)", "dose": "300 mg once daily", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["GI upset (nausea, constipation, abdominal cramps)", "Black tarry stools (normal)", "Metallic taste"],
+    "serious": ["Iron overload with excessive doses (especially hemochromatosis)"]
+  },
+  "contraindications": ["Hemochromatosis/hemosiderosis", "Chronic hemolytic anemia (thalassemia — unless deficient)", "Repeated blood transfusions"],
+  "interactions": [
+    {"drug": "Tetracyclines, fluoroquinolones, levothyroxine, bisphosphonates, levodopa", "severity": "Major", "mechanism": "Iron chelates these drugs — markedly reduces their absorption", "management": "Separate iron by 2 hours from these medications"},
+    {"drug": "Vitamin C (ascorbic acid)", "severity": "Minor", "mechanism": "Converts Fe3+ to Fe2+ — enhances iron absorption by up to 30%", "management": "Co-administer vitamin C for better absorption"},
+    {"drug": "Calcium supplements / antacids", "severity": "Moderate", "mechanism": "Calcium and alkaline pH reduce iron absorption", "management": "Separate iron from calcium/antacids by 2 hours"}
+  ],
+  "pregnancy": "Safe; essential for iron-deficiency anemia in pregnancy. Lower elemental iron content (12% vs 33% fumarate) — may cause less GI upset. Prenatal vitamins contain varying iron amounts.",
+  "pk": {"absorption": "~10–15% (higher with deficiency)", "half_life": "N/A (iron stored in body)", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Ferrous gluconate has less elemental iron per mg than ferrous fumarate or ferrous sulfate — larger tablet required but potentially better tolerated. Alternate-day dosing may be as effective and better tolerated than daily dosing.",
+  "pearls": ["Less elemental iron per mg than fumarate/sulfate — requires larger dose but better GI tolerance", "Alternate-day dosing as effective as daily with better GI tolerability", "Vitamin C enhances absorption — take with orange juice", "Separate from levothyroxine and fluoroquinolones by 2 hours minimum"]
+}
+,"vitamin_b6": {
+  "name": "Pyridoxine (Vitamin B6)",
+  "brand": "Multiple — Pyridoxine HCl",
+  "class": "Vitamins/Supplements",
+  "napra": "U",
+  "moa": "Essential water-soluble vitamin; cofactor for >100 enzymatic reactions; involved in amino acid metabolism, neurotransmitter synthesis (serotonin, dopamine, GABA, norepinephrine), heme synthesis, and homocysteine remethylation",
+  "indications": ["Nausea and vomiting of pregnancy (NVP) — first-line alone or as Diclegis with doxylamine", "Isoniazid-induced peripheral neuropathy (prophylaxis)", "Sideroblastic anemia (high-dose)", "Pyridoxine-dependent epilepsy (neonatal)"],
+  "dosing": [
+    {"route": "Oral (NVP)", "dose": "10–25 mg TID–QID (first-line for mild NVP before antiemetic needed)", "notes": "Up to 200 mg/day has been used; toxicity risk at >500 mg/day"},
+    {"route": "Oral (INH prophylaxis)", "dose": "25–50 mg daily with isoniazid", "notes": "Prevents peripheral neuropathy"}
+  ],
+  "side_effects": {
+    "common": ["No side effects at standard doses"],
+    "serious": ["Peripheral sensory neuropathy (doses >200 mg/day long-term — usually reversible on stopping)", "Photosensitivity (high doses)"]
+  },
+  "contraindications": ["No absolute contraindications at therapeutic doses"],
+  "interactions": [
+    {"drug": "Levodopa (without carbidopa)", "severity": "Major", "mechanism": "B6 increases peripheral decarboxylation of levodopa → reduces CNS levodopa levels", "management": "If using levodopa without carbidopa: avoid high-dose B6; not relevant with carbidopa/levodopa combination"},
+    {"drug": "Isoniazid / cycloserine / hydralazine", "severity": "Moderate", "mechanism": "These drugs increase B6 requirements (vitamin B6 antagonism)", "management": "Always co-prescribe B6 25–50 mg/day with isoniazid"}
+  ],
+  "pregnancy": "Category A. First-line for NVP (Category A designation in pregnancy). Safe at doses used for NVP. Component of Diclegis. Recommended with isoniazid in pregnancy.",
+  "pk": {"absorption": "Well absorbed", "half_life": "15–20 days (body stores)", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). First-line for mild NVP (SOGC recommends B6 before antiemetic drugs). Used with isoniazid to prevent neuropathy. High-dose peripheral neuropathy is underrecognized — patients may take high-dose supplements unknowingly.",
+  "pearls": ["First-line for NVP — try before antiemetics", "Peripheral neuropathy with high doses (>200 mg/day long-term): usually reversible", "Always give with isoniazid (25–50 mg/day) to prevent peripheral neuropathy", "Avoid high doses with levodopa monotherapy (enhances peripheral decarboxylation)"]
+}
+,"calcium_citrate": {
+  "name": "Calcium citrate",
+  "brand": "Citracal",
+  "class": "Vitamins/Supplements",
+  "napra": "U",
+  "moa": "Elemental calcium supplementation; absorbed in intestinal epithelium as calcium ions; supports bone mineralization, cell signaling, muscle contraction, nerve conduction, blood coagulation",
+  "indications": ["Calcium deficiency / osteoporosis prevention (supplement)", "Chronic kidney disease patients on dialysis (better absorbed with low gastric acid)", "PPI users (lower gastric acid — calcium citrate preferred over carbonate)", "Post-bariatric surgery calcium replacement"],
+  "dosing": [
+    {"route": "Oral", "dose": "250–500 mg elemental calcium BID–TID (with meals not required)", "notes": "Maximum 500–600 mg elemental calcium at a time for absorption"}
+  ],
+  "side_effects": {
+    "common": ["Constipation (less than calcium carbonate)", "GI upset (less than carbonate)", "Bloating"],
+    "serious": ["Hypercalcemia (excess supplementation)", "Kidney stones (calcium oxalate — at very high doses)"]
+  },
+  "contraindications": ["Hypercalcemia", "Severe renal failure without medical supervision"],
+  "interactions": [
+    {"drug": "Iron", "severity": "Moderate", "mechanism": "Calcium reduces iron absorption", "management": "Separate iron and calcium supplements by 2 hours"},
+    {"drug": "Bisphosphonates, levothyroxine, tetracyclines, fluoroquinolones", "severity": "Major", "mechanism": "Calcium chelates these drugs — reduces their absorption", "management": "Separate by 2 hours"},
+    {"drug": "Thiazide diuretics", "severity": "Moderate", "mechanism": "Thiazides reduce renal calcium excretion — hypercalcemia risk with excess supplementation", "management": "Monitor calcium if on thiazides plus calcium supplements"}
+  ],
+  "pregnancy": "Safe; essential in pregnancy. Total recommended 1000 mg elemental calcium/day in pregnancy. Often part of prenatal vitamins.",
+  "pk": {"absorption": "Well absorbed WITHOUT food (acid-independent)", "half_life": "N/A", "renal_adjustment": "Monitor calcium in severe renal impairment"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Key advantage over carbonate: does NOT require acid for absorption → better in PPI users, elderly, achlorhydria, post-gastric bypass. More expensive than carbonate. Each Citracal tablet contains 200–315 mg elemental calcium.",
+  "pearls": ["Absorbs WITHOUT food (unlike carbonate) — better for PPI users, elderly, post-gastric bypass", "Less constipation than calcium carbonate", "Maximum 500–600 mg elemental calcium at one time for maximal absorption", "Separate from iron supplements by 2 hours"]
+}
+,"influenza_vaccine": {
+  "name": "Influenza Vaccine",
+  "brand": "Fluzone, Flucelvax, Flublok, FluMist (LAIV — nasal spray)",
+  "class": "Vaccines",
+  "napra": "Schedule I (administered by HCP) / exempt (LAIV — self-admin under supervision)",
+  "moa": "Inactivated influenza vaccine (IIV): killed virus antigens → antibody production (IgG) against hemagglutinin and neuraminidase; cell-mediated immunity. Live attenuated (LAIV): replicates in nasopharynx → mucosal + systemic immunity (broader coverage)",
+  "indications": ["Annual influenza immunization for all persons ≥6 months", "Priority groups: elderly, chronic disease, healthcare workers, pregnant women, immunocompromised", "Children 6 months–8 years: 2 doses first year (4 weeks apart)"],
+  "dosing": [
+    {"route": "IM (IIV — adult)", "dose": "0.5 mL IM deltoid once yearly", "notes": "High-dose (Fluzone HD): 0.7 mL IM for adults ≥65"},
+    {"route": "IM (IIV — pediatric 6–35 months)", "dose": "0.25 mL or 0.5 mL (product-specific) IM", "notes": ""},
+    {"route": "Intranasal (LAIV — FluMist)", "dose": "0.2 mL intranasally (0.1 mL per nostril); 2–59 years only", "notes": "LAIV preferred for children 2–17 in some guidelines (NACI)"}
+  ],
+  "side_effects": {
+    "common": ["Injection site pain, redness, swelling (IIV)", "Myalgia, headache (mild)", "Low-grade fever", "Nasal congestion/runny nose (LAIV)"],
+    "serious": ["Anaphylaxis (rare — 1–2 per million doses)", "Guillain-Barré syndrome (very rare — ~1–2 per million)", "Egg allergy: all current flu vaccines safe in egg allergy (including anaphylaxis — give with 15-min observation)"]
+  },
+  "contraindications": ["LAIV: immunocompromised, pregnant, asthma/reactive airway <5 years, <2 years, ≥60 years", "IIV: anaphylaxis to previous flu vaccine (not egg allergy alone)", "Moderate-severe acute illness (defer until recovered)"],
+  "interactions": [
+    {"drug": "Immunosuppressants", "severity": "Moderate", "mechanism": "Reduced immunogenicity of vaccine in immunocompromised", "management": "Still give vaccine — some protection better than none; time vaccination with lowest immunosuppressive state if possible"},
+    {"drug": "Antivirals (oseltamivir)", "severity": "Moderate", "mechanism": "Oseltamivir may reduce LAIV replication — reduces efficacy", "management": "Avoid LAIV within 48h before or 2 weeks after oseltamivir"}
+  ],
+  "pregnancy": "STRONGLY RECOMMENDED in all trimesters. IIV only (not LAIV). Influenza in pregnancy associated with severe illness. Maternal antibodies protect newborn. NACI and SOGC: influenza vaccine is one of the highest priority vaccines in pregnancy.",
+  "pk": {"absorption": "N/A", "half_life": "N/A", "renal_adjustment": "N/A"},
+  "canadian_notes": "Ontario provides FREE annual influenza vaccine for all Ontario residents (UIIP — Universal Influenza Immunization Program, Oct–Mar). Pharmacists can administer in all provinces. High-dose Fluzone HD for ≥65 — better immunogenicity. Egg allergy is NO LONGER a contraindication to any influenza vaccine (NACI 2022).",
+  "pearls": ["Free for ALL Ontario residents (Universal Immunization Program)", "Egg allergy NOT a contraindication (even anaphylaxis) — observe 15 min post-vaccination", "LAIV preferred for healthy children 2–17 (NACI), but IIV also acceptable", "High-dose vaccine for ≥65 years — better antibody response"]
+}
+,"tdap": {
+  "name": "Tdap (Tetanus-diphtheria-acellular pertussis)",
+  "brand": "Adacel (Td+aP), Boostrix",
+  "class": "Vaccines",
+  "napra": "Schedule I",
+  "moa": "Combination toxoid and acellular pertussis vaccine; tetanus and diphtheria toxoids induce neutralizing antibodies; acellular pertussis antigens (PT, FHA, PRN, FIM) induce cellular and humoral immunity against B. pertussis",
+  "indications": ["Booster for adults (Tdap once, then Td q10 years)", "PREGNANCY: one dose each pregnancy (27–32 weeks) — protects newborn via maternal antibody transfer", "Post-exposure pertussis prophylaxis (Tdap if not recently received)", "Catch-up immunization", "Tetanus wound prophylaxis (if >5 years since last Td/Tdap)"],
+  "dosing": [
+    {"route": "IM (adult booster)", "dose": "0.5 mL IM (deltoid) once (Tdap), then Td q10 years", "notes": ""},
+    {"route": "IM (pregnancy)", "dose": "0.5 mL IM at 27–32 weeks each pregnancy", "notes": "Highest antibody levels at delivery for passive transfer to newborn"}
+  ],
+  "side_effects": {
+    "common": ["Injection site pain/swelling/redness", "Fatigue", "Headache", "Low-grade fever"],
+    "serious": ["Anaphylaxis (very rare)", "Exaggerated Arthus reaction (excessive local reaction — with too frequent Td/Tdap dosing)"]
+  },
+  "contraindications": ["Anaphylaxis to previous Tdap/Td/DTaP dose", "Encephalopathy within 7 days of previous pertussis-containing vaccine (use Td without pertussis component)", "Moderate-severe acute illness"],
+  "interactions": [
+    {"drug": "Immunosuppressants", "severity": "Moderate", "mechanism": "Reduced immunogenicity", "management": "Still recommend vaccination; time appropriately"},
+    {"drug": "Other inactivated vaccines", "severity": "Minor", "mechanism": "Can be given simultaneously (different sites)", "management": "Multiple vaccines at same visit acceptable"}
+  ],
+  "pregnancy": "Category B. STRONGLY RECOMMENDED at 27–32 weeks every pregnancy. Cocooning strategy (Tdap for new parents/caregivers if not recently vaccinated). Maternal antibodies cross placenta to protect newborn before primary series complete.",
+  "pk": {"absorption": "N/A", "half_life": "N/A", "renal_adjustment": "N/A"},
+  "canadian_notes": "OHIP-funded Tdap/Td boosters in Ontario. Recommended: Tdap in every pregnancy (27–32 weeks), then Td q10 years. Wound management: if tetanus-prone wound and >5 years since last Td/Tdap → give Tdap or Td; if unknown immunization status → Tdap + TIG (tetanus immune globulin).",
+  "pearls": ["Every pregnancy: Tdap at 27–32 weeks — protects newborns before they can receive primary series", "Cocooning: vaccinate all household contacts who haven't recently received Tdap", "Wound prophylaxis: Tdap if >5 years since last tetanus booster", "Arthus reaction: avoid Td/Tdap more frequently than q5 years after wound unless necessary"]
+}
+
+,"rho_immune_globulin": {
+  "name": "Rho(D) Immune Globulin (RhIG)",
+  "brand": "WinRho SDF, RhoGAM",
+  "class": "Vaccines",
+  "napra": "Schedule I",
+  "moa": "Passive immunization; concentrated human anti-D IgG antibodies → binds Rh(D)-positive fetal RBCs that enter maternal circulation → prevents maternal sensitization to Rh(D) antigen → prevents hemolytic disease of the fetus/newborn (HDFN) in future pregnancies",
+  "indications": ["Prevention of Rh(D) sensitization in Rh-negative pregnancies", "Routine antenatal (28 weeks) and postpartum (within 72h of delivery of Rh+ baby)", "After sensitizing events: miscarriage, amniocentesis, chorionic villus sampling, abdominal trauma", "Immune thrombocytopenic purpura (ITP) — IV high-dose"],
+  "dosing": [
+    {"route": "IM (antenatal at 28 weeks)", "dose": "300 mcg (1500 IU) IM", "notes": ""},
+    {"route": "IM (postpartum within 72h)", "dose": "300 mcg (1500 IU) IM (within 72h — sooner is better)", "notes": "Additional doses for large fetal-maternal hemorrhage (Kleihauer-Betke test)"},
+    {"route": "IM (sensitizing event <12 weeks)", "dose": "120 mcg (600 IU) sufficient for early pregnancy events", "notes": ""}
+  ],
+  "side_effects": {
+    "common": ["Injection site discomfort", "Low-grade fever (mild)", "Myalgia"],
+    "serious": ["Hemolytic anemia (if inadvertently given to Rh-positive individuals or ITP patients)", "Intravascular hemolysis (IV high-dose for ITP in Rh+ splenectomized — avoid)"]
+  },
+  "contraindications": ["Rh(D)-positive individuals (antenatal/postpartum use — not applicable)", "ITP in Rh-negative or splenectomized patients (no D-positive RBCs to sensitize — no benefit)", "Prior anaphylaxis to immunoglobulin"],
+  "interactions": [
+    {"drug": "Live vaccines (MMR, varicella, rotavirus)", "severity": "Moderate", "mechanism": "Passive antibodies may interfere with live vaccine immunogenicity", "management": "Delay live vaccines 3 months after RhIG; or check antibody response afterward"}
+  ],
+  "pregnancy": "Essential for Rh-negative pregnant women at 28 weeks and after delivery. If not given within 72 hours, can give up to 10 days (lower efficacy). Protects future pregnancies from HDFN.",
+  "pk": {"absorption": "IM: ~100%", "half_life": "21–25 days", "renal_adjustment": "N/A"},
+  "canadian_notes": "OHIP-funded in Ontario for antenatal and postpartum indications in Rh-negative pregnancies. Provincial blood banks and hospitals supply. 72-hour postpartum window is critical — do not miss. Kleihauer-Betke (or flow cytometry) for large hemorrhage quantification to determine if extra RhIG doses needed.",
+  "pearls": ["72-hour window after delivery — but effective up to 10 days (decreased efficacy)", "Additional doses if large fetal-maternal hemorrhage (Kleihauer-Betke test to quantify)", "Give at 28 weeks routinely even without sensitizing events (reduces sensitization rate)", "Delay live vaccines 3 months after RhIG administration"]
+}
+,"omega_3": {
+  "name": "Omega-3 Fatty Acids (Fish Oil, DHA, EPA)",
+  "brand": "Lovaza/Vascepa (Rx high-dose EPA); Jamieson, Webber Naturals (OTC)",
+  "class": "Vitamins/Supplements",
+  "napra": "U (OTC) / Schedule I (Vascepa — high-dose icosapentaenoic acid Rx)",
+  "moa": "Essential fatty acids (EPA and DHA); incorporated into cell membranes → reduce arachidonic acid-derived pro-inflammatory eicosanoids; EPA/DHA reduce TG synthesis in liver (via PPAR-alpha activation); also reduce platelet aggregation",
+  "indications": ["Hypertriglyceridemia (high-dose Rx EPA — Vascepa: REDUCE-IT trial, cardiovascular risk reduction)", "Triglyceridemia (OTC doses — modest TG reduction)", "Cardiovascular disease prevention (unclear benefit at OTC doses)", "Fetal neurodevelopment (DHA in pregnancy)", "Depression adjunct (EPA)"],
+  "dosing": [
+    {"route": "OTC (prevention/general)", "dose": "1–2 g/day EPA+DHA", "notes": "Varied omega-3 content per capsule — read labels"},
+    {"route": "Rx Vascepa (high-dose EPA only)", "dose": "4 g/day (2 g BID with meals)", "notes": "For TG ≥1.5 mmol/L + statin therapy — REDUCE-IT trial"}
+  ],
+  "side_effects": {
+    "common": ["Fishy breath/burp (take with meals; enteric coated)", "GI upset", "Mild antiplatelet effect"],
+    "serious": ["Increased LDL-C (with some formulations — not with Vascepa pure EPA)", "Increased bleeding (at very high doses with anticoagulants)"]
+  },
+  "contraindications": ["Fish/shellfish allergy (fish-derived omega-3)", "Vascepa: not for TG <1.5 mmol/L"],
+  "interactions": [
+    {"drug": "Warfarin / anticoagulants", "severity": "Moderate", "mechanism": "High-dose omega-3 (>3 g/day) inhibits platelet aggregation + may potentiate anticoagulants", "management": "Monitor INR at doses >3 g/day; OTC doses generally safe"},
+    {"drug": "Antihypertensives", "severity": "Minor", "mechanism": "Omega-3 has mild BP-lowering effect", "management": "Benefit — monitor if significant"}
+  ],
+  "pregnancy": "DHA supplementation recommended in pregnancy for fetal brain/retina development. AHA recommends 200–300 mg DHA/day in pregnancy. Most prenatal vitamins contain some DHA. Safe at supplemental doses.",
+  "pk": {"absorption": "Fat-dependent; take with food", "half_life": "Variable — incorporated into membranes", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "Vascepa (icosapentaenoic acid 4 g/day) ODB Limited Use for high-TG patients on statin with established CV disease (REDUCE-IT trial data). OTC fish oil: minimal cardiovascular benefit at standard doses per recent trials (ASCEND, VITAL). DHA important for fetal neurodevelopment.",
+  "pearls": ["OTC doses: minimal CV benefit per recent large trials (ASCEND, VITAL)", "Vascepa (Rx EPA) 4 g/day: significant CV event reduction in REDUCE-IT (25% RRR) — different from OTC fish oil", "Take with meals to reduce fishy burp and improve absorption", "Pregnancy: 200–300 mg DHA daily for fetal neurodevelopment"]
+}
+,"probiotics": {
+  "name": "Probiotics",
+  "brand": "Florastor (Saccharomyces boulardii), BioGaia, Culturelle, Align, Jamieson",
+  "class": "Vitamins/Supplements",
+  "napra": "U",
+  "moa": "Live microorganisms; strain-specific mechanisms include: competitive exclusion of pathogens, production of antimicrobial substances (bacteriocins), enhancement of mucosal barrier function, modulation of immune response, restoration of gut microbiome",
+  "indications": ["C. difficile-associated diarrhea prevention (Saccharomyces boulardii, Lactobacillus rhamnosus)", "Antibiotic-associated diarrhea prevention (take during antibiotic course)", "Irritable bowel syndrome (limited evidence — some strains)", "Infant colic (Lactobacillus reuteri)", "Prevention of NEC in premature infants", "Vaginal Candida/BV (vaginal probiotics)"],
+  "dosing": [
+    {"route": "Oral (general probiotic)", "dose": "Product-specific (typically 1–10 billion CFU/day during and 2 weeks after antibiotics)", "notes": "Refrigerate most live cultures; S. boulardii room-temperature stable"},
+    {"route": "Oral (C. diff prevention)", "dose": "Florastor: 250 mg BID during antibiotic course", "notes": "Start with antibiotics, continue 2 weeks after"}
+  ],
+  "side_effects": {
+    "common": ["Increased gas/bloating (transient)", "Nausea"],
+    "serious": ["Bacteremia/fungemia in severely immunocompromised (rare — avoid in ICU patients, stem cell transplant)"]
+  },
+  "contraindications": ["Severely immunocompromised (risk of bacteremia)", "ICU/critical illness (use under specialist guidance)", "Central venous catheter in situ (Saccharomyces contamination risk)"],
+  "interactions": [
+    {"drug": "Antibiotics", "severity": "Minor", "mechanism": "Antibiotics kill probiotic organisms — separate by 2 hours", "management": "Take 2 hours away from antibiotic dose; S. boulardii (fungus) is intrinsically antibiotic-resistant"},
+    {"drug": "Immunosuppressants", "severity": "Moderate", "mechanism": "Use with caution in high-level immunosuppression", "management": "Avoid in severely immunocompromised patients"}
+  ],
+  "pregnancy": "Safe in pregnancy. Commonly used for antibiotic-associated diarrhea during pregnancy infections. No teratogenicity. Lactobacillus strains frequently used during pregnancy.",
+  "pk": {"absorption": "Viable organisms transient in GI tract", "half_life": "N/A", "renal_adjustment": "No adjustment needed"},
+  "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Evidence is strain-specific — general marketing overstates evidence. Best evidence: S. boulardii for C. difficile prevention during antibiotic courses. Separate probiotic from antibiotics by 2 hours (exception: S. boulardii — resistant to antibiotics).",
+  "pearls": ["Evidence is strain-specific — not all probiotics are equivalent", "S. boulardii: best evidence for C. diff prevention; antibiotic-resistant (no separation needed)", "Separate most probiotics from antibiotics by 2 hours", "Avoid in severely immunocompromised (fungemia/bacteremia risk)"]
+}
+,"covid_vaccine": {
+  "name": "COVID-19 Vaccines (mRNA and other platforms)",
+  "brand": "Comirnaty (Pfizer-BioNTech mRNA), Spikevax (Moderna mRNA), Nuvaxovid (Novavax — protein subunit)",
+  "class": "Vaccines",
+  "napra": "Schedule I",
+  "moa": "mRNA vaccines: lipid nanoparticle delivers mRNA encoding SARS-CoV-2 spike protein → cells produce spike protein → immune response (antibodies + T cells) against spike. Protein subunit (Novavax): spike protein + Matrix-M adjuvant → traditional protein vaccine immune response",
+  "indications": ["Prevention of COVID-19 (Moderna, Pfizer) — primary series + booster", "Annual updated booster for high-risk individuals (elderly, immunocompromised, underlying conditions)", "First immunization series in all eligible individuals"],
+  "dosing": [
+    {"route": "IM (primary series — updated products)", "dose": "Current: single updated dose IM deltoid (based on current Health Canada recommendations for 2024–25 formulation)", "notes": "Recommendations evolve annually — check current NACI guidance"},
+    {"route": "IM (high-risk groups)", "dose": "Annual booster in adults ≥65, immunocompromised, chronic disease, HCW", "notes": "Timing adjusted to respiratory season"}
+  ],
+  "side_effects": {
+    "common": ["Injection site pain, redness, swelling", "Fatigue, headache, myalgia", "Fever", "Chills"],
+    "serious": ["Myocarditis/pericarditis (mRNA vaccines — rare, predominantly young males 16–40, dose 2; mostly mild/self-limiting)", "Anaphylaxis (rare — 2–5 per million doses; related to PEG component in mRNA vaccines)", "VITT — vaccine-induced immune thrombocytopenia with thrombosis (adenoviral vector — AstraZeneca, J&J: not used in Canada now)"]
+  },
+  "contraindications": ["Anaphylaxis to previous dose of the same vaccine or component (PEG for mRNA)", "Myocarditis/pericarditis after previous dose: individualized decision"],
+  "interactions": [
+    {"drug": "Immunosuppressants", "severity": "Moderate", "mechanism": "Reduced immunogenicity", "management": "Still vaccinate; consider timing with lowest immunosuppressive dose; check serology in immunocompromised"},
+    {"drug": "Other vaccines", "severity": "Minor", "mechanism": "Can be given simultaneously with most vaccines", "management": "Can co-administer with influenza vaccine"}
+  ],
+  "pregnancy": "STRONGLY RECOMMENDED — COVID-19 mRNA vaccines safe and effective in pregnancy. Maternal antibodies cross placenta and protect newborn. SOGC, NACI, and ACOG: vaccinate in all trimesters. Lower risk of preterm birth, severe COVID complications with vaccination.",
+  "pk": {"absorption": "N/A", "half_life": "mRNA: degrades within days; antibody response persists months", "renal_adjustment": "N/A"},
+  "canadian_notes": "Health Canada and NACI provide ongoing recommendations (evolving). Provincial immunization programs fund COVID vaccines for recommended groups. Myocarditis: more common dose 2 mRNA in young males — self-limiting in most cases; MRI + cardiology follow-up recommended. PEG (polyethylene glycol) allergy: caution with mRNA vaccines; skin test if needed.",
+  "pearls": ["Myocarditis more common dose 2 vs dose 1 or boosters; predominantly mild and self-resolving", "Anaphylaxis: monitor 15–30 minutes post-vaccination (epinephrine available)", "Annual updated formulation targets circulating strains — different from original series", "Can be co-administered with influenza vaccine on same day (different sites)"]
+}
 }};
 var FAMILY_MAP = {
 "tacrolimus": "Topical Calcineurin Inhibitors",
