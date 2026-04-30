@@ -51171,16 +51171,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Immunosuppressants",
+        "drug": "Immunosuppressants (methotrexate, azathioprine, mycophenolate, biologics, corticosteroids >20mg/day prednisone)",
         "severity": "Moderate",
-        "mechanism": "Reduced immunogenicity",
-        "management": "Still recommend vaccination; time appropriately"
+        "mechanism": "Immunosuppressive medications reduce vaccine immunogenicity — seroconversion rates are lower in immunocompromised patients. B-cell depleting agents (rituximab) may virtually eliminate antibody responses for 6-12 months post-infusion. Tdap immune responses are impaired with B-cell or T-cell suppression.",
+        "management": "Administer Tdap before starting immunosuppressive therapy if possible (ideally 2-4 weeks before). During therapy, still administer — reduced protection is better than none. After rituximab: wait 6 months for best response. Methotrexate: consider holding for 2 weeks post-Tdap if disease allows."
       },
       {
-        "drug": "Other inactivated vaccines",
+        "drug": "Anticoagulants (warfarin, DOACs) and antiplatelet agents — IM injection site",
         "severity": "Minor",
-        "mechanism": "Can be given simultaneously (different sites)",
-        "management": "Multiple vaccines at same visit acceptable"
+        "mechanism": "Tdap is administered IM (deltoid). Anticoagulated patients have increased bruising risk at injection site — not a pharmacokinetic interaction. The vaccine itself has no interaction with anticoagulation pathways.",
+        "management": "IM vaccination is safe in anticoagulated patients. Use 23-gauge or smaller needle, apply firm pressure for 2 minutes after injection. INR does not require monitoring after routine vaccination. Do not delay Tdap vaccination in anticoagulated patients."
+      },
+      {
+        "drug": "NSAIDs and acetaminophen — pre-medication considerations",
+        "severity": "Minor",
+        "mechanism": "Pre-treatment with acetaminophen or NSAIDs to prevent post-vaccine soreness is common. Some evidence suggests NSAIDs modestly reduce antibody responses to vaccines, though clinical significance is debated.",
+        "management": "NACI: do not routinely pre-medicate with analgesics before Tdap. Treat post-vaccine soreness and fever with acetaminophen or ibuprofen AFTER vaccination as needed. This is standard for all IM vaccines and Tdap-related injection site reactions."
+      },
+      {
+        "drug": "Pregnancy — Tdap vaccination recommendation (27-32 weeks gestation)",
+        "severity": "Beneficial (critical timing recommendation)",
+        "mechanism": "Tdap administered to the pregnant mother at 27-32 weeks gestation generates high maternal antibody titers that are passively transferred to the fetus, providing newborn pertussis protection before the infant can receive their own primary series. No pharmacokinetic interaction with prenatal medications.",
+        "management": "Health Canada/NACI: Tdap is RECOMMENDED in every pregnancy at 27-32 weeks regardless of prior vaccination history. Maternal passive immunity protection for newborn pertussis is the most important clinical benefit. Safe with all prenatal medications. Administer at the same visit as influenza vaccine."
+      },
+      {
+        "drug": "Other vaccines — co-administration evidence",
+        "severity": "Minor",
+        "mechanism": "Tdap can be co-administered with inactivated influenza, COVID-19, pneumococcal, and other recommended vaccines at the same visit at different anatomical sites. Immunogenicity is not significantly reduced by co-administration.",
+        "management": "Tdap CAN be given simultaneously with influenza and COVID-19 vaccines at separate injection sites per NACI 2022+ guidelines. In pregnancy: Tdap + influenza co-administration at 27-32 weeks is recommended and efficient. Give each vaccine in a different arm if multiple IM injections at one visit."
+      },
+      {
+        "drug": "Corticosteroids (local — intra-articular, inhaled) vs systemic — differential effect",
+        "severity": "Minor",
+        "mechanism": "Local corticosteroids (intra-articular injections, inhaled ICS) do NOT impair vaccine immunogenicity. Only systemic corticosteroids (prednisone >20mg/day equivalent for >14 days) reduce immune response to vaccines.",
+        "management": "Rheumatology patients on intra-articular steroid injections and asthma patients on inhaled corticosteroids can receive Tdap without timing concerns related to steroid use — only systemic immunosuppressive doses matter. No special scheduling needed for local corticosteroid users."
       }
     ],
     "pregnancy": "Category B. STRONGLY RECOMMENDED at 27–32 weeks every pregnancy. Cocooning strategy (Tdap for new parents/caregivers if not recently vaccinated). Maternal antibodies cross placenta to protect newborn before primary series complete.",
@@ -51401,16 +51425,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Antibiotics",
+        "drug": "Antibiotics (amoxicillin, ciprofloxacin, metronidazole, clindamycin, vancomycin oral, all systemic antibiotics)",
         "severity": "Minor",
-        "mechanism": "Antibiotics kill probiotic organisms — separate by 2 hours",
-        "management": "Take 2 hours away from antibiotic dose; S. boulardii (fungus) is intrinsically antibiotic-resistant"
+        "mechanism": "Antibiotics kill or inhibit probiotic organisms (Lactobacillus, Bifidobacterium) during concurrent administration, eliminating the probiotic benefit. However, probiotics help restore gut microbiome AFTER antibiotic course and reduce antibiotic-associated diarrhea (AAD) risk — particularly Lactobacillus rhamnosus GG and Saccharomyces boulardii.",
+        "management": "Take probiotics 2h AFTER antibiotic dose (not simultaneously). Best efficacy achieved by starting probiotics at antibiotic initiation and continuing 2-4 weeks after antibiotic completion. Meta-analyses support probiotics reducing AAD and C. difficile-associated diarrhea by ~50%. Refrigerate live culture probiotics."
       },
       {
-        "drug": "Immunosuppressants",
+        "drug": "Immunosuppressants and severe immunocompromise (organ transplant, HIV CD4<200, HSCT, high-dose steroids)",
+        "severity": "Major",
+        "mechanism": "Probiotic organisms (live Lactobacillus, Saccharomyces boulardii) can cause bacteremia or fungemia in severely immunocompromised patients. Multiple case reports of Lactobacillus bacteremia and Saccharomyces fungemia in immunocompromised hosts receiving probiotic supplements.",
+        "management": "AVOID live probiotics in severely immunocompromised patients (transplant, HSCT, HIV AIDS, premature neonates). Probiotic supplementation in neutropenic patients or patients on high-dose immunosuppressants is potentially dangerous. If gut microbiome support is needed, use heat-killed or postbiotic preparations."
+      },
+      {
+        "drug": "Antifungal drugs (fluconazole, clotrimazole, nystatin) — Saccharomyces boulardii",
+        "severity": "Major",
+        "mechanism": "Saccharomyces boulardii (Florastor) is a yeast probiotic — it is killed by antifungal medications targeting Candida and other yeasts. Concurrent use renders S. boulardii ineffective.",
+        "management": "Do NOT co-administer Saccharomyces boulardii (Florastor) with antifungals — these drugs kill the probiotic yeast. Switch to bacterial probiotic strains (Lactobacillus GG, Bifidobacterium) if probiotic benefit is still desired during antifungal therapy. Separate antifungal and S. boulardii by 4h is insufficient — antifungals persist in the GI tract."
+      },
+      {
+        "drug": "Warfarin (coumarin anticoagulants) — gut flora vitamin K interaction",
         "severity": "Moderate",
-        "mechanism": "Use with caution in high-level immunosuppression",
-        "management": "Avoid in severely immunocompromised patients"
+        "mechanism": "Intestinal bacteria produce vitamin K2 (menaquinones) — a source of vitamin K contributing to coagulation factor synthesis. Probiotics that dramatically alter gut flora composition may theoretically change vitamin K2 production and thus warfarin sensitivity. Clinical significance is generally small but case reports exist.",
+        "management": "Monitor INR more frequently when initiating or stopping probiotic supplementation in warfarin patients. The effect is generally minor (<0.5 INR change) at standard probiotic doses. Document probiotic use in medication records — it is a potential source of INR variability that is often overlooked."
+      },
+      {
+        "drug": "Concurrent CDI treatment (fidaxomicin, vancomycin oral) — probiotics during C. difficile therapy",
+        "severity": "Minor",
+        "mechanism": "Oral vancomycin and fidaxomicin kill C. difficile in the colon — they also kill or inhibit many probiotic bacteria. Saccharomyces boulardii is resistant to vancomycin (it is a yeast, not bacteria) and remains viable during oral vancomycin CDI treatment.",
+        "management": "S. boulardii (Florastor) can be added alongside vancomycin or fidaxomicin CDI treatment — meta-analyses show modestly reduced CDI recurrence with S. boulardii co-administration. For bacterial probiotics (Lactobacillus GG): start AFTER antibiotic course completion for CDI, not during. Continue for 4 weeks post-CDI."
+      },
+      {
+        "drug": "Proton pump inhibitors (omeprazole, pantoprazole) — altered gastric pH effects on probiotic viability",
+        "severity": "Minor",
+        "mechanism": "PPIs raise gastric pH — theoretically increasing the survival of probiotic organisms (which are killed by gastric acid). This may increase the number of viable bacteria reaching the colon. Clinical significance is debated — PPIs may enhance or marginally alter probiotic colonization.",
+        "management": "No dose adjustment needed for probiotics with PPIs. Take probiotics with food to maximize survival through the stomach. If using enteric-coated probiotic capsules, PPI co-administration may be particularly beneficial for delivery of higher numbers of viable organisms to the colon."
       }
     ],
     "pregnancy": "Safe in pregnancy. Commonly used for antibiotic-associated diarrhea during pregnancy infections. No teratogenicity. Lactobacillus strains frequently used during pregnancy.",
@@ -51470,16 +51518,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Immunosuppressants",
+        "drug": "Immunosuppressants (methotrexate, azathioprine, mycophenolate, prednisone >20mg, biologics, JAK inhibitors)",
         "severity": "Moderate",
-        "mechanism": "Reduced immunogenicity",
-        "management": "Still vaccinate; consider timing with lowest immunosuppressive dose; check serology in immunocompromised"
+        "mechanism": "Immunosuppressants reduce vaccine immunogenicity — seroconversion rates and antibody titers are lower in immunocompromised patients. B-cell depleting agents (rituximab, ocrelizumab) may virtually eliminate humoral response. mRNA vaccines still stimulate some T-cell immunity even with poor B-cell response.",
+        "management": "Still vaccinate immunocompromised patients — reduced protection is better than none. Timing recommendations: rituximab → vaccinate 4-6 weeks before next dose or 6 months after last dose. Methotrexate: hold for 2 weeks after each vaccine dose if disease allows. Consider third primary dose for moderately/severely immunocompromised patients per NACI/Health Canada."
       },
       {
-        "drug": "Other vaccines",
+        "drug": "Anticoagulants (warfarin, DOACs) and antiplatelet agents — IM injection site",
         "severity": "Minor",
-        "mechanism": "Can be given simultaneously with most vaccines",
-        "management": "Can co-administer with influenza vaccine"
+        "mechanism": "COVID-19 vaccines are administered IM. Anticoagulated patients have increased bruising risk at injection site. No pharmacokinetic interaction with the vaccine antigens. Rare vaccine-associated thrombocytopenia (VITT) with adenoviral vector vaccines (Vaxzevria) is an immune-mediated phenomenon unrelated to anticoagulant use.",
+        "management": "IM vaccination is safe in anticoagulated patients. Use 23-gauge needle, apply firm pressure for 2 minutes. VITT (vaccine-induced immune thrombocytopenia and thrombosis) with Vaxzevria: presents with thrombosis + thrombocytopenia 4-28 days post-injection — treat with IVIG, NOT heparin (heparin worsens VITT)."
+      },
+      {
+        "drug": "NSAIDs (ibuprofen, naproxen) and acetaminophen — pre-medication practice",
+        "severity": "Minor",
+        "mechanism": "Pre-medication with NSAIDs or acetaminophen to prevent post-vaccine symptoms: NACI advises against routine pre-medication with acetaminophen/NSAIDs before vaccination — some evidence suggests modest reduction in antibody titers with prophylactic NSAIDs/acetaminophen. Post-vaccine symptom treatment is acceptable.",
+        "management": "Do NOT pre-medicate routinely with NSAIDs or acetaminophen before COVID-19 vaccine. For post-vaccination symptoms (injection site pain, fever, myalgia), acetaminophen or ibuprofen after vaccination is appropriate. Counsel patients that mild post-vaccine symptoms indicate immune response."
+      },
+      {
+        "drug": "Antiviral medications (Paxlovid, nirmatrelvir/ritonavir; molnupiravir) — COVID-19 treatment interaction",
+        "severity": "Note (therapeutic sequencing)",
+        "mechanism": "Paxlovid (nirmatrelvir/ritonavir) treats COVID-19 infection and should not be used simultaneously with vaccination (one treats established infection, one prevents it). No direct pharmacokinetic interaction between antivirals and COVID-19 vaccine components (mRNA degrades within hours).",
+        "management": "Defer COVID-19 vaccination during active COVID-19 illness until after recovery. After Paxlovid treatment, standard vaccination schedule resumes — no interaction with future vaccine doses. Ritonavir in Paxlovid has extensive drug interactions (CYP3A4 inhibitor) but not with the vaccine itself."
+      },
+      {
+        "drug": "Other vaccines administered concurrently (influenza, Shingrix, pneumococcal, HPV, Tdap)",
+        "severity": "Minor",
+        "mechanism": "Co-administration of COVID-19 mRNA vaccine with other vaccines at the same visit was initially not recommended. Current evidence (2022 onwards) supports co-administration at different anatomical sites without meaningful reduction in immunogenicity for either vaccine.",
+        "management": "NACI/Health Canada 2022+: COVID-19 vaccine CAN be co-administered with other vaccines at the same visit (different injection sites). If possible, administer in different limbs. Post-vaccination monitoring applies to both vaccines. Annual influenza + COVID-19 booster co-administration is an effective public health strategy."
+      },
+      {
+        "drug": "Dermal fillers (hyaluronic acid fillers: Juvederm, Restylane) — COVID-19 mRNA vaccine specific concern",
+        "severity": "Moderate",
+        "mechanism": "Rare post-COVID-19 mRNA vaccine inflammatory reactions have occurred at sites of prior dermal filler injection — delayed hypersensitivity immune activation may trigger local inflammatory responses at filler sites (facial swelling, nodules) via innate immune pathway stimulation.",
+        "management": "Dermal fillers are not contraindicated before COVID-19 vaccination. If delayed filler-site swelling occurs after COVID-19 mRNA vaccination, treat with antihistamines or short-course oral corticosteroids — typically self-limiting. This reaction does not preclude future doses. Report to Health Canada Adverse Event Following Immunization (AEFI) system."
       }
     ],
     "pregnancy": "STRONGLY RECOMMENDED — COVID-19 mRNA vaccines safe and effective in pregnancy. Maternal antibodies cross placenta and protect newborn. SOGC, NACI, and ACOG: vaccinate in all trimesters. Lower risk of preterm birth, severe COVID complications with vaccination.",
@@ -51630,16 +51702,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "MAO inhibitors",
+        "drug": "MAOIs (phenelzine, tranylcypromine, selegiline, moclobemide) — within 14 days",
         "severity": "Major",
-        "mechanism": "Risk of hypertensive crisis (sympathomimetic + MAO inhibition)",
-        "management": "Contraindicated"
+        "mechanism": "Oxymetazoline is a potent alpha-adrenergic agonist. MAOIs prevent catecholamine breakdown — even topical nasal decongestant doses of oxymetazoline can cause significant sympathomimetic effects with MAOI co-administration → hypertensive crisis, severe headache, arrhythmias.",
+        "management": "CONTRAINDICATED during or within 14 days of MAOI therapy. For nasal congestion in MAOI-treated patients, use saline nasal spray or topical nasal corticosteroids (budesonide, fluticasone intranasal — no sympathomimetic activity). Health Canada nasal decongestant labelling: MAOI contraindication."
       },
       {
-        "drug": "Antihypertensives",
+        "drug": "Antihypertensives (beta-blockers, ACE inhibitors, ARBs, calcium channel blockers, alpha-blockers)",
         "severity": "Moderate",
-        "mechanism": "May counteract antihypertensive effect (systemic absorption)",
-        "management": "Use cautiously in hypertensive patients; limit duration"
+        "mechanism": "Oxymetazoline causes systemic vasoconstriction (alpha-1/alpha-2 agonism) — particularly with prolonged use or abuse (rhinitis medicamentosa). This can elevate blood pressure and counteract antihypertensive therapy. Systemic absorption from nasal spray is substantial at higher doses.",
+        "management": "Limit oxymetazoline nasal spray to maximum 3-5 days to avoid rebound congestion (rhinitis medicamentosa). Caution in hypertensive patients — prefer intranasal saline or intranasal corticosteroids for chronic nasal congestion. Rhofade (oxymetazoline 1% for rosacea) has low systemic absorption."
+      },
+      {
+        "drug": "Tricyclic antidepressants (TCAs — amitriptyline, imipramine, nortriptyline, desipramine)",
+        "severity": "Moderate",
+        "mechanism": "TCAs sensitize the cardiovascular system to alpha-adrenergic agonists by inhibiting norepinephrine reuptake — may potentiate oxymetazoline's vasopressor effects, causing acute hypertension and potentially cardiac arrhythmias. Effect is more significant with intranasal overdose or rhinitis medicamentosa.",
+        "management": "Use oxymetazoline with caution in TCA-treated patients. Limit to 3-5 days. For chronic nasal congestion in TCA-treated patients, prefer intranasal corticosteroids (no sympathomimetic activity). Monitor BP in TCA patients using nasal decongestants frequently."
+      },
+      {
+        "drug": "Cocaine (illicit) — additive sympathomimetic and rhinitis medicamentosa",
+        "severity": "Major",
+        "mechanism": "Both cocaine and oxymetazoline cause nasal vasoconstriction and cocaine users may use oxymetazoline to manage cocaine-induced rhinitis. Additive sympathomimetic effects: severe hypertension, arrhythmias, coronary vasospasm. Cocaine also blocks NE reuptake, sensitizing to oxymetazoline.",
+        "management": "Patients with cocaine use disorder using oxymetazoline rhinitis medicamentosa are at high cardiovascular risk. Screen for substance use. Address underlying cocaine rhinitis with septoplasty consultation and addiction medicine referral. Oxymetazoline is medically contraindicated in active cocaine use."
+      },
+      {
+        "drug": "Digoxin — arrhythmia potentiation",
+        "severity": "Moderate",
+        "mechanism": "Oxymetazoline causes hypertension and reflex bradycardia via alpha-adrenergic stimulation. Combined with digoxin (which independently slows AV nodal conduction and increases vagal tone), there is additive bradycardia and potential for heart block.",
+        "management": "Avoid frequent or prolonged use of oxymetazoline in digoxin-treated patients. Maximum 3-5 days per episode. Monitor HR in digoxin patients using nasal decongestants regularly. Prefer saline spray or intranasal corticosteroids for ongoing nasal congestion in digoxin-treated patients."
+      },
+      {
+        "drug": "Rebound congestion (rhinitis medicamentosa) — prolonged use concern",
+        "severity": "Major (adverse effect, not DDI)",
+        "mechanism": "Oxymetazoline used >3-5 days continuously causes rebound vasoconstriction upon withdrawal → rhinitis medicamentosa (worsening nasal congestion requiring increasing oxymetazoline frequency). This drug-induced disorder traps patients in a cycle of oxymetazoline dependence.",
+        "management": "Health Canada labelling: do NOT use oxymetazoline nasal spray for more than 3-5 consecutive days. If rhinitis medicamentosa develops, taper oxymetazoline using one-nostril withdrawal protocol + intranasal budesonide. Saline irrigation helps. Most patients recover within 2-4 weeks of oxymetazoline cessation."
       }
     ],
     "pregnancy": "Category C. Avoid in first trimester. Short-term use (1–2 days) for acute severe congestion may be acceptable in 2nd/3rd trimester. Saline nasal spray preferred throughout pregnancy.",
@@ -51938,10 +52034,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "CYP3A4 inhibitors (ketoconazole, ritonavir)",
+        "drug": "Strong CYP3A4 inhibitors (ketoconazole, itraconazole, ritonavir, cobicistat, clarithromycin, grapefruit juice)",
         "severity": "Moderate",
-        "mechanism": "May increase systemic ciclesonide levels",
-        "management": "Use with caution; ciclesonide less susceptible than some ICS"
+        "mechanism": "Ciclesonide is a prodrug activated in the lungs to active desisobutyryl-ciclesonide (des-CIC). Des-CIC undergoes extensive first-pass CYP3A4 metabolism — strong inhibitors reduce this clearance, increasing systemic exposure. Risk of adrenal suppression is lower than with fluticasone/budesonide because ciclesonide has less systemic deposition.",
+        "management": "Use with caution in patients on strong CYP3A4 inhibitors. Monitor for Cushing's syndrome signs with ritonavir/cobicistat co-administration. Ciclesonide is generally preferred over fluticasone/budesonide in HIV patients on boosted ART due to its lower systemic exposure profile."
+      },
+      {
+        "drug": "Other inhaled corticosteroids (fluticasone, budesonide, beclomethasone, mometasone) — ICS duplication",
+        "severity": "Major",
+        "mechanism": "Two ICS products provide no additive anti-inflammatory benefit for asthma or COPD. Combining doubles the risk of local adverse effects (oral candidiasis, dysphonia) and systemic effects (adrenal suppression, osteoporosis) at higher cumulative doses.",
+        "management": "Use only ONE inhaled corticosteroid. Ciclesonide is particularly useful when switching to reduce systemic exposure (lower oropharyngeal deposition — ciclesonide is activated in the lungs, not oropharynx). No oral candidiasis prophylaxis required with ciclesonide in most patients."
+      },
+      {
+        "drug": "Beta-2 agonists (SABA: salbutamol; LABA: formoterol, salmeterol) — asthma step-up therapy",
+        "severity": "Beneficial (standard combination)",
+        "mechanism": "ICS (ciclesonide) reduces airway inflammation; LABA provides sustained bronchodilation. ICS/LABA combination is step 3-4 asthma therapy. Ciclesonide does not have approved fixed-combination ICS/LABA formulations in Canada — separate inhalers required.",
+        "management": "LABA must NEVER be used in asthma without concurrent ICS (increased asthma mortality risk from LABA monotherapy). When prescribing ciclesonide + formoterol separately, consider switching to an approved ICS/LABA fixed combination (budesonide/formoterol, fluticasone/formoterol) for better adherence."
+      },
+      {
+        "drug": "Oral corticosteroids (prednisone, dexamethasone) — additive adrenal suppression",
+        "severity": "Moderate",
+        "mechanism": "Although ciclesonide has lower adrenal suppression risk than other ICS at equivalent doses, combined with systemic corticosteroids during asthma exacerbations or for other indications, total HPA axis suppression increases. Ciclesonide does not eliminate systemic corticosteroid effects.",
+        "management": "Transition gradually from oral to inhaled therapy when stepping down from systemic steroids. Taper prednisone slowly (no faster than 2.5mg/week equivalent) to allow adrenal recovery. Monitor for adrenal insufficiency symptoms during taper."
+      },
+      {
+        "drug": "Antifungal agents (nystatin, clotrimazole) — oral candidiasis prevention",
+        "severity": "Note (lesser risk than other ICS)",
+        "mechanism": "Ciclesonide is activated in the lungs (not oropharynx) by esterases — this unique pharmacology significantly reduces oropharyngeal candidiasis compared to other ICS (budesonide, fluticasone). Nystatin/clotrimazole are less frequently needed with ciclesonide.",
+        "management": "Ciclesonide does NOT require routine mouth rinsing after inhalation (unlike other ICS). However, at high doses (>800 mcg/day), some oropharyngeal deposition occurs. If candidiasis develops, treat with nystatin or clotrimazole without discontinuing ciclesonide. Use spacer device for all ICS."
+      },
+      {
+        "drug": "COVID-19 treatment — ciclesonide clinical context (off-label data)",
+        "severity": "Note",
+        "mechanism": "Early COVID-19 trials explored inhaled ciclesonide for mild-to-moderate disease based on its anti-inflammatory properties and lung-specific activation. The CONTAIN COVID-19 trial (inhaled ciclesonide for mild outpatient COVID-19) did not demonstrate significant benefit on primary endpoints.",
+        "management": "Ciclesonide is NOT recommended for COVID-19 treatment outside of clinical trials. Continue ciclesonide as prescribed for underlying asthma/COPD during COVID-19 infection — stopping ICS during COVID-19 illness is not recommended per GINA 2023 and Health Canada guidance."
       }
     ],
     "pregnancy": "Category C. ICS use in asthma strongly recommended in pregnancy. Budesonide has most data. Ciclesonide acceptable alternative.",
@@ -53194,16 +53320,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Tetracyclines, fluoroquinolones, levothyroxine",
+        "drug": "Fluoroquinolones (ciprofloxacin, levofloxacin), tetracyclines (doxycycline, minocycline), and levothyroxine",
         "severity": "Moderate",
-        "mechanism": "Chelated iron still reduces absorption of these drugs (less than ionic iron)",
-        "management": "Separate by 1–2 hours (may require less separation than ionic iron)"
+        "mechanism": "Ferrous bisglycinate is a chelated (amino acid-chelated) iron formulation — the iron is bound to glycine, which partially protects it from GI chelation interactions. Studies show chelated iron has 15-30% LESS inhibition of fluoroquinolone/tetracycline absorption compared to ionic iron salts. However, meaningful interaction still occurs and separation is recommended.",
+        "management": "Although the chelation interaction is attenuated vs. ionic iron, take fluoroquinolones, tetracyclines, and levothyroxine at least 2h before ferrous bisglycinate. The reduced interaction is advantageous but does not eliminate the need for timing separation. This is the primary clinical advantage of chelated iron vs. ferrous sulphate."
       },
       {
-        "drug": "Vitamin C",
+        "drug": "Calcium supplements (calcium carbonate, calcium citrate) and antacids (Mg, Al, Ca)",
         "severity": "Minor",
-        "mechanism": "Less benefit than with ionic iron (already well-absorbed)",
-        "management": "Not required, but not harmful"
+        "mechanism": "Chelated iron is less susceptible to polyvalent cation competition at the DMT-1 transporter — glycine chelation protects iron from competing with calcium. Studies show calcium reduces ferrous bisglycinate absorption less than ionic iron formulations. However, some interaction persists at higher calcium doses.",
+        "management": "Ferrous bisglycinate can generally be taken with meals (unlike ferrous sulphate which is best taken on an empty stomach). Separate from large calcium doses (>500mg) by 1h where possible. This gentler formulation is particularly useful for patients who cannot tolerate iron on an empty stomach."
+      },
+      {
+        "drug": "Proton pump inhibitors (omeprazole, pantoprazole) and H2 blockers — pH-independent advantage",
+        "severity": "Minor",
+        "mechanism": "Ferrous bisglycinate absorption is largely pH-independent — it is taken up via a peptide transport pathway (PepT1) rather than requiring acidic dissolution like ionic iron. This means PPI/H2 blocker co-administration has minimal impact on ferrous bisglycinate bioavailability.",
+        "management": "Ferrous bisglycinate is preferred over ferrous sulphate/gluconate in patients on chronic PPI therapy, those with achlorhydria, or after bariatric surgery. No timing restrictions needed relative to PPI dosing. This represents a clinical advantage for the chelated formulation."
+      },
+      {
+        "drug": "Vitamin C (ascorbic acid) — reduced need for enhancement",
+        "severity": "Beneficial (less dependent on vitamin C than ionic iron)",
+        "mechanism": "Ionic iron (ferrous sulphate) requires reduction to Fe2+ by vitamin C for optimal absorption in higher-pH environments. Ferrous bisglycinate uses amino acid transport (PepT1) — its absorption is less dependent on vitamin C co-administration. Some studies show vitamin C still modestly enhances chelated iron absorption.",
+        "management": "Ferrous bisglycinate can be taken without vitamin C supplementation, unlike ionic iron. If vitamin C is taken for other reasons (general health), no concern with ferrous bisglycinate. This makes chelated iron more convenient for patients who dislike taking multiple supplements simultaneously."
+      },
+      {
+        "drug": "Celiac disease and inflammatory bowel disease — malabsorption context",
+        "severity": "Note (clinical advantage context)",
+        "mechanism": "In celiac disease (active) and IBD (active inflammation), the duodenal mucosa responsible for DMT-1-mediated ionic iron absorption is damaged or inflamed. Ferrous bisglycinate's PepT1 transport pathway may be less affected by mucosal damage, providing better absorption in these conditions.",
+        "management": "Consider ferrous bisglycinate (chelated iron) over ionic iron salts in iron deficiency with concurrent celiac disease (on strict GFD) or IBD in remission. Monitor haemoglobin response over 8-12 weeks. If oral iron response is inadequate despite optimization, IV iron (ferric carboxymaltose) bypasses all GI absorption issues."
+      },
+      {
+        "drug": "Mycophenolate mofetil (MMF) — transplant patient iron supplementation",
+        "severity": "Moderate",
+        "mechanism": "Ionic iron chelates mycophenolate in the GI tract, reducing MMF absorption by 50-90%. Ferrous bisglycinate's chelated structure reduces this interaction substantially — MMF absorption impairment is less with chelated vs. ionic iron, though some interaction persists.",
+        "management": "Ferrous bisglycinate is preferred over ionic iron salts in transplant patients on mycophenolate who require iron supplementation. Administer at different meal times to minimize overlap. Monitor MPA trough levels and renal function after initiating any iron supplementation in transplant patients."
       }
     ],
     "pregnancy": "Safe. Preferred over ferrous sulfate when GI tolerance is a concern (common in pregnancy). Well-tolerated once-daily dosing improves compliance.",
@@ -53594,16 +53744,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "CNS depressants (benzodiazepines, alcohol, sedatives)",
+        "drug": "CNS depressants (benzodiazepines, opioids, alcohol, antihistamines, antipsychotics, muscle relaxants)",
         "severity": "Major",
-        "mechanism": "Additive CNS depression",
-        "management": "Avoid combination with sedating medications or alcohol"
+        "mechanism": "Valerian contains valerenic acid which potentiates GABA-A receptor activity — similar mechanism to benzodiazepines. Additive CNS depression with other sedating medications including alcohol. Risk of respiratory depression, excessive sedation, falls, and cognitive impairment.",
+        "management": "AVOID combination with sedating medications. Do not take with alcohol. Discontinue 2 weeks before surgery (risk of additive anesthetic CNS depression). Beers 2023: herbal supplements with sedative properties should be avoided in elderly patients on CNS depressants."
       },
       {
-        "drug": "CYP3A4 substrates",
+        "drug": "CYP3A4 substrates (benzodiazepines, statins, immunosuppressants, warfarin, some antiretrovirals)",
         "severity": "Minor",
-        "mechanism": "Some in vitro evidence of CYP3A4 inhibition — clinical significance unclear",
-        "management": "Monitor if using with narrow therapeutic index CYP3A4 substrates"
+        "mechanism": "In vitro evidence suggests valerian may inhibit CYP3A4 at high concentrations. Clinical significance at typical supplement doses (400-900mg) is uncertain. Possible modest increases in levels of CYP3A4-metabolized drugs with chronic high-dose valerian use.",
+        "management": "Monitor for increased adverse effects of narrow-therapeutic-index CYP3A4 substrates (tacrolimus, cyclosporine, warfarin) with high-dose or chronic valerian use. The clinical magnitude of this interaction at standard supplement doses is likely small. Disclose herbal supplement use to prescribers."
+      },
+      {
+        "drug": "MAOIs (phenelzine, tranylcypromine, moclobemide, selegiline)",
+        "severity": "Moderate",
+        "mechanism": "Valerian has mild serotonergic activity. Combined with MAOIs, there is theoretical risk of serotonin syndrome or hypertensive crisis — similar to concerns with other serotonergic natural products (5-HTP, St. John's Wort). Evidence is limited but precautionary avoidance is advised.",
+        "management": "Avoid valerian during MAOI therapy. Inform patients on MAOIs to disclose all herbal supplement use. If insomnia requires treatment during MAOI therapy, non-pharmacological sleep hygiene approaches or safe pharmacological options should be explored with prescriber."
+      },
+      {
+        "drug": "Warfarin and anticoagulants — potential antiplatelet and CYP interaction",
+        "severity": "Moderate",
+        "mechanism": "Limited case reports of elevated INR with valerian use — mechanism may involve CYP2C9 inhibition (S-warfarin clearance), CYP3A4 inhibition (R-warfarin clearance), or mild antiplatelet properties. Clinical evidence is sparse but precautionary monitoring is warranted.",
+        "management": "Monitor INR in warfarin patients who start or stop valerian supplementation. Report any unusual bruising or bleeding. Instruct patients to inform their anticoagulation clinic about herbal supplement use — valerian is frequently not disclosed spontaneously as a potential drug interaction."
+      },
+      {
+        "drug": "Sedative anesthetic agents (propofol, midazolam, fentanyl) — perioperative risk",
+        "severity": "Major",
+        "mechanism": "Chronic valerian use may cause physical dependence (GABA-A potentiation similar to benzodiazepines). Abrupt discontinuation before surgery may cause benzodiazepine-like withdrawal symptoms. Concurrent use increases anesthetic depth and prolongs emergence from anesthesia.",
+        "management": "Inform anesthesiologist of valerian use. Discontinue valerian 2 weeks before elective surgery. If abrupt discontinuation before emergency surgery, alert anesthesiologist — may need to adjust anesthetic doses and monitor for withdrawal signs post-operatively. Taper valerian gradually before planned procedures."
+      },
+      {
+        "drug": "Hepatotoxic drugs (valproate, statins, methotrexate, isoniazid, alcohol)",
+        "severity": "Minor",
+        "mechanism": "Case reports of valerian-associated hepatotoxicity — the causative mechanism and implicated compounds are debated. Combining with other hepatotoxic drugs may compound liver injury risk, particularly with chronic high-dose use.",
+        "management": "Monitor LFTs if valerian is used long-term (>4 months) in patients on other hepatotoxic medications. Advise patients against using valerian as a substitute for prescribed sleep medications without consulting a healthcare provider. Hepatotoxic effects of valerian are rare at standard supplement doses."
       }
     ],
     "pregnancy": "Avoid — insufficient safety data. Potential uterotonic effects. CBT-I preferred for insomnia in pregnancy.",
@@ -60505,10 +60679,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Other oxidative drugs",
+        "drug": "Other oxidative stress-causing drugs (dapsone, nitrofurantoin, phenazopyridine, rasburicase, methylene blue) in G6PD-deficient patients",
+        "severity": "Major",
+        "mechanism": "Primaquine and all listed drugs generate oxidative stress in red blood cells. In patients with G6PD deficiency, insufficient glutathione reductase protection causes oxidative haemolysis (intravascular, Heinz body formation). Combination dramatically accelerates haemolysis → severe haemolytic anaemia, haemoglobinuria.",
+        "management": "G6PD TESTING IS MANDATORY before starting primaquine — this is an absolute requirement per Health Canada primaquine PM and WHO malaria guidelines. CONTRAINDICATED in severe G6PD deficiency. For mild-to-moderate G6PD deficiency: weekly dosing protocols reduce haemolysis risk. Monitor CBC and urine colour."
+      },
+      {
+        "drug": "Chloroquine, hydroxychloroquine (partner drugs in malaria treatment)",
+        "severity": "Beneficial (standard combination) / Monitor",
+        "mechanism": "Chloroquine kills asexual blood-stage P. vivax parasites; primaquine eliminates hepatic hypnozoites (dormant liver stages causing relapse) and gametocytes. The combination is complementary and essential for radical cure of P. vivax. No clinically significant pharmacokinetic interaction.",
+        "management": "Standard P. vivax treatment: chloroquine (or hydroxychloroquine) for 3 days + primaquine for 14 days after G6PD testing. Do NOT use primaquine as monotherapy without blood-stage treatment. Weekly primaquine (0.75 mg/kg/week x 8 weeks) for G6PD-intermediate patients."
+      },
+      {
+        "drug": "CYP2D6 inhibitors (fluoxetine, paroxetine, bupropion, duloxetine, quinidine)",
         "severity": "Moderate",
-        "mechanism": "Additive hemolysis in G6PD-deficient",
-        "management": "G6PD test"
+        "mechanism": "Primaquine is activated to active metabolites via CYP2D6. Strong CYP2D6 inhibitors reduce formation of carboxyprimaquine and other active metabolites → reduced antiparasitic efficacy. Paradoxically, also affects the haematotoxic metabolites — may reduce haemolysis risk in G6PD-deficient patients taking CYP2D6 inhibitors.",
+        "management": "Avoid strong CYP2D6 inhibitors during primaquine treatment if possible. If unavoidable, monitor clinical response (recurrence of P. vivax malaria at 3 months indicates treatment failure). In CYP2D6 poor metabolizers (natural phenotype), primaquine may be ineffective — genotype testing guides dosing in endemic setting relapses."
+      },
+      {
+        "drug": "Antacids and food interactions — primaquine absorption",
+        "severity": "Minor",
+        "mechanism": "Primaquine is better tolerated with food — taking with a meal reduces GI adverse effects (nausea, abdominal cramps, which occur in 10-20% of patients). No significant chelation or absorption interaction with antacids or food.",
+        "management": "Administer primaquine with food to reduce GI intolerance — this is the standard recommendation. No separation from antacids required. GI side effects are the main reason for adherence issues during the 14-day P. vivax treatment course."
+      },
+      {
+        "drug": "QT-prolonging drugs (chloroquine, hydroxychloroquine, azithromycin, fluoroquinolones)",
+        "severity": "Moderate",
+        "mechanism": "Primaquine has modest QT-prolonging potential. When combined with chloroquine (which also prolongs QT), cumulative QTc prolongation occurs — risk of Torsades de Pointes, particularly in patients with baseline QT prolongation, hypokalemia, or structural heart disease.",
+        "management": "Obtain baseline ECG in patients with cardiac risk factors before combined chloroquine + primaquine therapy. Monitor QTc during treatment — discontinue if QTcF >500ms or increase >60ms from baseline. Correct electrolytes (K+, Mg2+). Risk is generally low in otherwise healthy malaria patients at standard doses."
+      },
+      {
+        "drug": "Pregnancy — absolute contraindication (via G6PD testing of fetus/neonate)",
+        "severity": "Contraindicated",
+        "mechanism": "Primaquine is CONTRAINDICATED in pregnancy — it crosses the placenta and can cause haemolytic anaemia in the G6PD-deficient fetus/neonate, even if the mother is G6PD-normal. The fetal G6PD status is unknown and testing is not feasible prenatally.",
+        "management": "CONTRAINDICATED throughout pregnancy. For pregnant P. vivax patients, use chloroquine as suppressive therapy throughout pregnancy, then complete primaquine radical cure postpartum after breastfeeding cessation and G6PD testing. G6PD test the infant before initiating maternal primaquine postpartum."
       }
     ],
     "pregnancy": "CONTRAINDICATED in pregnancy (fetal G6PD status unknown). Defer terminal prophylaxis until post-partum + G6PD-tested infant.",
@@ -60925,10 +61129,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Anastrazole/letrozole",
+        "drug": "Aromatase inhibitors (anastrozole, letrozole, exemestane) — off-label combination for male hypogonadism",
         "severity": "Moderate",
-        "mechanism": "Combined off-label use in male hypogonadism",
-        "management": "Specialty management"
+        "mechanism": "Clomiphene increases LH/FSH → testosterone production. Aromatase inhibitors block testosterone-to-estradiol conversion, increasing the T/E2 ratio. This combination is used off-label in specialized male endocrinology to optimize testosterone levels while preventing estradiol-related side effects.",
+        "management": "Off-label use requiring endocrinology or urology specialist management. Monitor LH, FSH, testosterone, estradiol, and CBC. Target testosterone 400-700 ng/dL with E2 20-40 pg/mL. Maintain semen analysis monitoring (important for fertility-preserving treatment vs. testosterone replacement)."
+      },
+      {
+        "drug": "Exogenous testosterone (testosterone cypionate, enanthate, gels, patches — TRT)",
+        "severity": "Major",
+        "mechanism": "Exogenous testosterone suppresses the hypothalamic-pituitary axis, reducing LH and FSH → testicular atrophy and impaired spermatogenesis. Clomiphene works by stimulating endogenous LH/FSH release — exogenous testosterone directly negates this mechanism and eliminates any fertility benefit.",
+        "management": "CONTRAINDICATED to combine clomiphene with exogenous testosterone. The fundamental purpose of clomiphene for male hypogonadism is to preserve/restore testicular function AND fertility. Patients who want fertility preservation must avoid TRT. If TRT started, clomiphene efficacy is negated."
+      },
+      {
+        "drug": "Selective estrogen receptor modulators (tamoxifen, raloxifene) — similar mechanism",
+        "severity": "Moderate",
+        "mechanism": "Tamoxifen also blocks hypothalamic-pituitary estrogen receptors, stimulating LH/FSH release for off-label male hypogonadism. Combining two SERMs (clomiphene + tamoxifen) provides additive LH/FSH stimulation without clear additional benefit — increases adverse effects (visual disturbances, mood effects).",
+        "management": "Avoid combining two SERMs. Some protocols use tamoxifen as an alternative to clomiphene, not in addition. If switching between SERMs, assess response before changing. Combination should only be used under endocrinology specialist supervision for specific clinical scenarios (e.g., refractory cases)."
+      },
+      {
+        "drug": "Gonadotropins (hCG, FSH, LH injections) — combination for hypogonadism or infertility",
+        "severity": "Moderate",
+        "mechanism": "hCG directly stimulates Leydig cells to produce testosterone (LH analog). Combined with clomiphene, additive stimulation of testosterone production is possible. This combination is used in hypogonadotropic hypogonadism for fertility treatment under specialist direction.",
+        "management": "hCG + clomiphene combination is used in reproductive medicine for male infertility due to hypogonadotropic hypogonadism. Requires specialist fertility (andrology/REI) oversight. Monitor testosterone, estradiol, and semen analysis. Excessive testosterone elevation may suppress spermatogenesis via negative feedback."
+      },
+      {
+        "drug": "Enzyme-inducing drugs (rifampin, carbamazepine, phenytoin, phenobarbital) — clomiphene metabolism",
+        "severity": "Moderate",
+        "mechanism": "Clomiphene is metabolized by CYP3A4 and glucuronidation. Strong CYP3A4 inducers reduce clomiphene plasma levels, potentially reducing its LH/FSH-stimulating efficacy. Clinically significant for long-term off-label male hypogonadism therapy.",
+        "management": "Monitor testosterone and LH/FSH levels when enzyme inducers are co-prescribed. May need clomiphene dose increase (from typical 25mg to 50mg EOD or daily) to maintain therapeutic response. Document monitoring plan."
+      },
+      {
+        "drug": "Thyroid replacement (levothyroxine) and medications affecting GnRH axis",
+        "severity": "Minor",
+        "mechanism": "Hypothyroidism impairs the HPG axis, reducing responsiveness to clomiphene's stimulatory effects. Levothyroxine replacement in hypothyroid males improves testosterone levels independently of clomiphene. No pharmacokinetic interaction.",
+        "management": "Ensure thyroid function is optimized (TSH 1-2.5 mU/L) before initiating clomiphene therapy for male hypogonadism. Hypothyroid males may have reduced clomiphene response. After levothyroxine optimization, clomiphene efficacy may improve. Screen all hypogonadal males for thyroid dysfunction."
       }
     ],
     "pregnancy": "Not applicable to male use; female pregnancy contraindicated.",
@@ -85330,16 +85564,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Photosensitizing drugs (tetracyclines, doxycycline, fluoroquinolones)",
+        "drug": "Photosensitizing drugs (tetracyclines — doxycycline, minocycline; fluoroquinolones — ciprofloxacin; sulfamethoxazole; amiodarone)",
         "severity": "Moderate",
-        "mechanism": "Additive photosensitivity from adapalene component",
-        "management": "Apply sunscreen SPF 30+ every morning; limit sun exposure; counsel patient"
+        "mechanism": "Adapalene component increases skin photosensitivity by thinning the stratum corneum. Combined with photosensitizing systemic medications (which are commonly co-prescribed for acne), additive photosensitivity causes increased sunburn risk and phototoxic reactions.",
+        "management": "Apply sunscreen SPF 30+ daily. Avoid prolonged sun exposure during summer months. If doxycycline or other photosensitizer is co-prescribed for acne, emphasize sun protection. Avoid tanning beds during combined therapy."
       },
       {
-        "drug": "Other retinoids (tretinoin, tazarotene) or keratolytics (salicylic acid, AHAs)",
+        "drug": "Other topical retinoids (tretinoin, tazarotene, isotretinoin topical)",
+        "severity": "Major",
+        "mechanism": "Cabtreo contains adapalene (retinoid) — combining with another topical retinoid causes additive retinoid-mediated irritation, erythema, dryness, desquamation, and burning. No additional therapeutic benefit from combining two retinoids.",
+        "management": "Do NOT combine Cabtreo with other topical retinoid products. One retinoid-containing product is sufficient. If isotretinoin is started systemically, discontinue topical retinoids — additive mucocutaneous dryness and irritation with no added benefit."
+      },
+      {
+        "drug": "Other topical benzoyl peroxide products and salicylic acid washes",
         "severity": "Moderate",
-        "mechanism": "Additive irritation; increased skin barrier disruption",
-        "management": "Avoid concurrent use with other retinoids; use adapalene/BPO/clindamycin as monotherapy"
+        "mechanism": "Cabtreo already contains benzoyl peroxide 2.5%. Additional topical BP products (cleansers, spot treatments) provide no incremental antibacterial benefit but significantly increase skin dryness, peeling, and contact dermatitis risk. Salicylic acid washes add keratolytic irritation.",
+        "management": "Use Cabtreo as the sole benzoyl peroxide-containing product in the acne regimen. Gentle non-comedogenic cleansers without active acne ingredients are preferred alongside Cabtreo. A moisturizer with SPF is recommended to buffer retinoid dryness."
+      },
+      {
+        "drug": "Topical antibiotics (clindamycin, erythromycin) — current evidence for combination",
+        "severity": "Beneficial (complementary) / Minor risk",
+        "mechanism": "Benzoyl peroxide in Cabtreo helps prevent bacterial resistance to concurrent topical antibiotics (clindamycin). The combination of retinoid + BP + antibiotic addresses multiple acne pathogenic factors: comedone formation, Cutibacterium acnes proliferation, and inflammation.",
+        "management": "Topical clindamycin + adapalene/BP combination is a well-established and guideline-recommended approach for inflammatory acne. If using separate topical antibiotic alongside Cabtreo, apply at different times (morning and evening). Benzoyl peroxide serves as a resistance-prevention agent."
+      },
+      {
+        "drug": "Systemic isotretinoin (Accutane, Clarus — oral retinoid for severe acne)",
+        "severity": "Major",
+        "mechanism": "Isotretinoin is a systemic retinoid causing profound retinoid effects. Adding topical retinoid (adapalene in Cabtreo) provides no additional therapeutic benefit for acne and dramatically increases mucocutaneous toxicity — severe dryness, fissuring, and irritant dermatitis.",
+        "management": "DISCONTINUE Cabtreo (and all topical retinoids) when starting oral isotretinoin. During isotretinoin therapy, use only gentle cleansers and fragrance-free moisturizers. Resume topical retinoid if needed AFTER isotretinoin course completion."
+      },
+      {
+        "drug": "Waxing, threading, laser hair removal, and chemical peels — skin barrier disruption",
+        "severity": "Moderate",
+        "mechanism": "Adapalene thins the stratum corneum; benzoyl peroxide dries and can mildly irritate skin. Cosmetic procedures that disrupt the skin barrier (waxing, chemical peels, laser, microdermabrasion) can cause severe irritation, burns, and scarring when performed on retinoid-treated skin.",
+        "management": "Discontinue Cabtreo at least 7 days before any waxing, laser, or chemical peel procedure on the treated area. Resume after skin fully recovers. Avoid applying Cabtreo to skin that has been recently waxed or treated with chemical exfoliants. Advise patients to inform aestheticians about retinoid use."
       }
     ],
     "pregnancy": "CONTRAINDICATED — adapalene (retinoid) is teratogenic; Category X. Even with low topical absorption, all retinoids are contraindicated in pregnancy regardless of route.",
