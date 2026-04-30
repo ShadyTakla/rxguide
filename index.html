@@ -42714,6 +42714,107 @@ var DRUGS = {
     ],
     "source": "Health Canada PM (Vermox). CDC Parasitic Diseases Branch. AMMI Canada / Bugs & Drugs 2024. WHO Guidelines for Preventive Chemotherapy of Soil-Transmitted Helminthiasis. OCP Minor Ailments O. Reg. 256/24."
   },
+  "ivermectin": {
+    "name": "Ivermectin",
+    "brand": "Stromectol (oral — Merck Canada); Sklice 0.5% (topical lotion — Arbor Pharmaceuticals); Soolantra 1% (topical cream for rosacea — Galderma)",
+    "class": "Antiparasitic — Macrocyclic Lactone (Avermectin)",
+    "napra": "I (oral); Sklice 0.5% lotion is OTC; Soolantra 1% cream is Rx",
+    "moa": "Selective high-affinity agonist of glutamate-gated chloride channels (GluCl) in invertebrate nerve and muscle cells → sustained chloride influx → hyperpolarization → paralysis and death of the parasite. Also has weaker affinity for invertebrate GABA-gated channels. Mammalian GluCl receptors do not exist (and ivermectin does not normally cross the intact blood-brain barrier in mammals at therapeutic doses) → wide therapeutic index in humans. Topical formulations (Sklice, Soolantra) act locally with negligible systemic absorption.",
+    "indications": [
+      "Scabies (oral — first-line alternative to permethrin; preferred for crusted/Norwegian scabies and for institutional/household-wide outbreaks where compliance with topical permethrin is difficult)",
+      "Head lice (oral or 0.5% topical lotion — for permethrin-resistant cases)",
+      "Strongyloidiasis (Strongyloides stercoralis — first-line)",
+      "Onchocerciasis (river blindness — first-line, mass administration programs)",
+      "Filariasis (lymphatic — Wuchereria bancrofti)",
+      "Rosacea — papulopustular subtype (topical 1% cream Soolantra — anti-inflammatory + antiparasitic effect on Demodex mites)"
+    ],
+    "dosing": [
+      {
+        "indication": "Scabies (oral) — adult and children ≥15 kg",
+        "dose": "200 µg/kg PO × 1 dose; REPEAT day 7–14 (kills newly hatched mites — not ovicidal). CRUSTED SCABIES: multi-dose protocol — days 1, 2, 8, 9, 15 (± 22, 29) plus concurrent topical permethrin nightly initially. Take with water on empty stomach (or with fatty food to increase absorption ~2.5× — clinically used to enhance efficacy in some protocols).",
+        "renal": "No specific adjustment (poorly studied in CKD; minimal renal excretion)"
+      },
+      {
+        "indication": "Head lice (oral) — adult and children ≥15 kg",
+        "dose": "200 µg/kg PO × 1 dose; REPEAT day 7–10. Reserved for permethrin-resistant cases or institutional outbreaks.",
+        "renal": "No adjustment"
+      },
+      {
+        "indication": "Head lice — topical (Sklice 0.5% lotion)",
+        "dose": "Apply enough lotion to cover dry hair and scalp; leave on 10 minutes; rinse with water. SINGLE application typically curative (no repeat needed unlike permethrin). For ages ≥6 months. Avoid contact with eyes.",
+        "renal": "No adjustment (negligible systemic absorption)"
+      },
+      {
+        "indication": "Strongyloidiasis",
+        "dose": "200 µg/kg PO OD × 1–2 days. Disseminated/hyperinfection (immunocompromised): 200 µg/kg/day × 14 days ± thiabendazole (specialist).",
+        "renal": "No adjustment"
+      },
+      {
+        "indication": "Rosacea (topical Soolantra 1% cream)",
+        "dose": "Pea-sized amount applied to affected areas of face once daily at bedtime. Thin layer; avoid eyes/mouth. Improvement typically seen by 4 weeks; full effect by 12–16 weeks.",
+        "renal": "No adjustment (topical)"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Mazzotti reaction (in onchocerciasis/filariasis only) — pruritus, fever, lymphadenopathy due to dying microfilariae; not relevant for scabies/lice/Strongyloides",
+        "Mild GI upset (nausea, abdominal pain — usually transient)",
+        "Headache, dizziness",
+        "Topical: transient burning/stinging at application site (Soolantra)"
+      ],
+      "serious": [
+        "Severe encephalopathy in patients with HIGH Loa loa microfilarial burden (>30,000 mf/mL) — can be fatal; screen with quantitative loa filaria testing in patients from Loa-endemic areas of West/Central Africa BEFORE giving ivermectin for any indication",
+        "Severe dermatologic reactions (Stevens-Johnson syndrome, DRESS) — very rare",
+        "Hypotension and tachycardia (usually associated with Mazzotti reaction in heavy filarial infection)"
+      ]
+    },
+    "contraindications": [
+      "Pregnancy (Category C — animal teratogenicity at supratherapeutic doses; safety in 1st trimester not established; defer treatment to postpartum if possible for elective indications like rosacea or non-severe scabies)",
+      "Children <15 kg or younger than 5 years (oral — limited safety data; topical Sklice is approved from 6 months)",
+      "Loa loa co-infection with high microfilarial burden (encephalopathy risk)",
+      "Hypersensitivity to ivermectin or any component"
+    ],
+    "interactions": [
+      {
+        "drug": "Strong CYP3A4 inhibitors (clarithromycin, itraconazole, ritonavir)",
+        "severity": "Moderate",
+        "mechanism": "Increased ivermectin plasma levels via CYP3A4 inhibition — clinical impact minor for short courses",
+        "management": "No routine adjustment for short-course scabies/lice; monitor for adverse effects with prolonged courses"
+      },
+      {
+        "drug": "Warfarin",
+        "severity": "Moderate",
+        "mechanism": "Rare reports of INR elevation when ivermectin is added to chronic warfarin",
+        "management": "Recheck INR 5–7 days after starting ivermectin if on warfarin"
+      },
+      {
+        "drug": "GABAergic CNS depressants (benzodiazepines, barbiturates, valproate)",
+        "severity": "Theoretical / Minor",
+        "mechanism": "Ivermectin has weak GABA-receptor activity in mammals if blood-brain barrier disrupted (e.g., meningitis, neonates) — theoretical additive sedation",
+        "management": "Standard caution; clinically rare"
+      }
+    ],
+    "pregnancy": "Category C — Health Canada lists pregnancy as a relative contraindication for oral ivermectin. Most observational cohort data (large mass drug administration programs in West Africa for onchocerciasis) suggest no increased risk of major birth defects, but data are limited and labeling remains cautionary. Defer elective treatment (rosacea, mild scabies) until postpartum. For severe scabies or strongyloidiasis in pregnancy, treatment can be considered after specialist consultation, ideally in 2nd/3rd trimester. Lactation: minimal milk transfer (~2% of maternal dose) — generally compatible; oral absorption in breastfed infant is poor. Topical Sklice/Soolantra: negligible systemic absorption — compatible with pregnancy and lactation.",
+    "pk": {
+      "absorption": "Oral bioavailability ~50–80%; markedly increased (up to ~2.5×) when taken with high-fat meal (some clinicians use this to enhance scabies efficacy)",
+      "half_life": "~18 h (oral)",
+      "elimination": "Hepatic metabolism via CYP3A4; primarily fecal excretion (>90%); renal <2%",
+      "onset": "Paralysis of parasites within hours; clinical symptom resolution over days",
+      "peak": "4–5 h (oral)"
+    },
+    "canadian_notes": "Ivermectin oral (Stromectol) is increasingly used as first-line for scabies in Canada — easier compliance than full-body permethrin 5% cream applied for 8–14 hours, especially in institutional outbreaks (long-term care, shelters), in children old enough to swallow tablets, and in crusted scabies. SKLICE 0.5% topical lotion (single 10-minute application) is OTC in Canada for head lice and is more effective than permethrin for resistant cases — does NOT require repeat application. SOOLANTRA 1% cream is Rx-only for rosacea (anti-inflammatory + activity against Demodex mites — strong evidence base). KEY COUNSELLING: oral ivermectin for scabies must be REPEATED at day 7–14 (not ovicidal — kills hatched mites only); treat all close contacts simultaneously; wash bedding/clothing/towels in hot water (≥50°C) and dry on high heat or seal in plastic bag for 72 hours. The well-publicized off-label COVID-19 use of ivermectin is NOT supported by current evidence (multiple high-quality RCTs negative including TOGETHER and ACTIV-6); Health Canada and AMMI Canada explicitly advise against ivermectin for COVID-19. Counsel patients seeking it for COVID-19 about lack of evidence and risk of toxicity from veterinary formulations.",
+    "pearls": [
+      "Oral ivermectin for scabies: REPEAT dose at day 7–14 (not ovicidal — kills hatched mites only)",
+      "Crusted (Norwegian) scabies requires multi-dose protocol (days 1, 2, 8, 9, 15) PLUS topical permethrin — high parasite burden requires aggressive therapy",
+      "Take with fatty meal to enhance absorption ~2.5× (some clinicians use this for refractory scabies)",
+      "Topical Sklice 0.5% lotion: SINGLE 10-minute application typically curative for head lice — major advantage over permethrin (no repeat needed)",
+      "Soolantra 1% cream is approved for rosacea — addresses Demodex mite burden + anti-inflammatory effect",
+      "Loa loa screening required before mass administration in West/Central Africa (encephalopathy risk in heavy filariasis)",
+      "Health Canada and AMMI explicitly advise AGAINST ivermectin for COVID-19 — no efficacy in high-quality trials; counsel patients seeking veterinary formulations",
+      "Lice resistance to permethrin is rising in Canada — ivermectin is the preferred second-line agent"
+    ],
+    "source": "Health Canada PM (Stromectol, Sklice, Soolantra). CDC Parasitic Diseases Branch. AMMI Canada Bugs & Drugs 2024. CPS Position on Pediculosis. CADTH Scabies Treatment Review."
+  },
   "famciclovir": {
     "name": "Famciclovir",
     "brand": "Famvir",
