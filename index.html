@@ -92167,8 +92167,42 @@ var DRUGS = {
       "Defer if acute febrile illness"
     ],
     "interactions": [
-      "Can be co-administered with other vaccines at different sites",
-      "HBIG: give at separate site if given simultaneously"
+      {
+        "drug": "Immunosuppressants and immunocompromising conditions (dialysis, HIV, transplant)",
+        "severity": "Major",
+        "mechanism": "Hepatitis B vaccine (Engerix-B, Recombivax HB) is a non-live recombinant subunit vaccine; immunosuppression reduces anti-HBs seroconversion rates: dialysis patients ~50–70% vs. >95% in healthy adults; HIV patients with low CD4 may not respond; transplant patients on immunosuppressants have blunted response",
+        "management": "Vaccinate BEFORE immunosuppression or transplant whenever possible (1–2 months lead time for complete series); for immunocompromised patients, use DOUBLE DOSE (40 mcg instead of 20 mcg for Engerix-B) and 4-dose schedule (0, 1, 2, 6 months); check anti-HBs titre 1–2 months after series completion — if <10 IU/L, repeat series; dialysis patients should receive 40 mcg formulation (Recombivax HB dialysis formulation)"
+      },
+      {
+        "drug": "Hepatitis B immune globulin (HBIG) — post-exposure prophylaxis combination",
+        "severity": "Beneficial",
+        "mechanism": "For post-exposure prophylaxis (HBV-positive needlestick, sexual exposure, newborn of HBsAg-positive mother), HBIG provides immediate passive immunity while hep B vaccine initiates active immunity; HBIG administered simultaneously with first vaccine dose is standard management; passive antibody from HBIG does not significantly interfere with vaccine-induced active immunity if administered at different sites",
+        "management": "Give HBIG (0.06 mL/kg IM) AND first dose of hepatitis B vaccine SIMULTANEOUSLY at DIFFERENT anatomical sites within 24 hours of exposure (ideally within 12 hours); complete vaccine series (0, 1, 6 months); test anti-HBs at 1–2 months after series completion to confirm seroprotection; newborns of HBsAg+ mothers: HBIG 0.5 mL + hepatitis B vaccine at birth within 12 hours"
+      },
+      {
+        "drug": "Other vaccines — concurrent administration",
+        "severity": "No interaction",
+        "mechanism": "Hepatitis B vaccine is a non-live recombinant subunit vaccine; can be co-administered with all other routine vaccines (MMR, DPT, influenza, pneumococcal, meningococcal, Tdap, HAV) at different anatomical sites; no pharmacokinetic interactions between vaccines; combination hepatitis A + B vaccine (Twinrix) administered at 0, 1, 6 months schedule in Canada",
+        "management": "Administer at different sites; document lot numbers; separate syringes required; for travel vaccination, Twinrix (hep A + B combined) is convenient if both vaccines indicated; NACI 2-dose Twinrix schedule for adults (1st dose + 2nd dose 6–12 months later) is an alternative to 3-dose schedule"
+      },
+      {
+        "drug": "Anticoagulants and antiplatelet agents (IM injection safety)",
+        "severity": "Minor",
+        "mechanism": "Hepatitis B vaccine is administered IM (deltoid in adults, anterolateral thigh in infants); patients on anticoagulants (warfarin, DOACs) or antiplatelets have increased risk of hematoma at IM injection site; however, IM vaccines should not be withheld for patients on anticoagulants — subcutaneous/intradermal alternatives have lower immunogenicity",
+        "management": "IM injection acceptable in anticoagulated patients: use smallest needle gauge possible (23G); apply firm pressure for ≥2 minutes after injection without rubbing; schedule injection on same day as INR test (before drawing blood) to monitor for hematoma; recent guidance supports IM vaccines in patients on stable anticoagulation; document anti-coagulation status in vaccine record"
+      },
+      {
+        "drug": "Rituximab and other B-cell depleting agents",
+        "severity": "Major",
+        "mechanism": "B-cell depletion by rituximab prevents antibody production in response to vaccination; hepatitis B vaccine given during or shortly after rituximab will fail to generate protective anti-HBs titres; patients with HBsAg+ or anti-HBc+ status on rituximab are at high risk of HBV reactivation",
+        "management": "Complete hepatitis B vaccination BEFORE rituximab (allow 4–8 weeks for immune response before immunosuppression); if unvaccinated and rituximab is needed urgently, vaccinate but check anti-HBs titre later — revaccinate 6+ months after rituximab course; all patients starting rituximab must be screened for HBV (HBsAg, anti-HBc, anti-HBs) — HBV carriers require antiviral prophylaxis (entecavir)"
+      },
+      {
+        "drug": "Chloroquine and hydroxychloroquine",
+        "severity": "Minor",
+        "mechanism": "Some evidence that chloroquine/hydroxychloroquine impairs the immune response to hepatitis B vaccine by reducing lysosomal antigen processing of the HBsAg protein; hydroxychloroquine is widely used for SLE and RA, conditions often requiring hepatitis B vaccination; clinical significance at standard hydroxychloroquine doses for rheumatic disease is uncertain",
+        "management": "Vaccinate as scheduled — do not withhold or delay hepatitis B vaccine based on hydroxychloroquine use alone; check anti-HBs titre 1–2 months after completing series; if response is suboptimal (anti-HBs <10 IU/L), consider double-dose series or consult immunology; this interaction is less established than the major immunosuppressant interactions"
+      }
     ],
     "monitoring": [
       "Anti-HBs titre 1–2 months post-series for HCW, dialysis, immunocompromised, HBsAg+ partner contacts"
@@ -92242,7 +92276,42 @@ var DRUGS = {
       "Acute febrile illness (defer)"
     ],
     "interactions": [
-      "Can be co-administered with other vaccines at separate sites"
+      {
+        "drug": "Immunosuppressants (corticosteroids, methotrexate, biologics, cyclosporine, rituximab)",
+        "severity": "Major",
+        "mechanism": "Twinrix (combined hepatitis A + B recombinant vaccine) is a non-live subunit vaccine; immunosuppression may blunt seroconversion for both hepatitis A (anti-HAV) and hepatitis B (anti-HBs) components; B-cell depleting agents (rituximab) completely abrogate antibody response; high-dose corticosteroids and other immunosuppressants reduce response rates",
+        "management": "Complete Twinrix series BEFORE immunosuppression whenever possible; for immunocompromised patients, use double-dose schedule (0, 1, 2, 12 months with double-dose at each visit); check both anti-HAV and anti-HBs 1–2 months post-series; if anti-HBs <10 IU/L, repeat series; for rituximab patients, vaccinate ≥4 weeks before or ≥6 months after rituximab for best response"
+      },
+      {
+        "drug": "Hepatitis B immune globulin (HBIG) — post-exposure combination",
+        "severity": "Beneficial",
+        "mechanism": "For simultaneous post-HBV exposure prophylaxis, HBIG provides immediate passive immunity while Twinrix or hepatitis B vaccine initiates active immunity; passive anti-HBs from HBIG at a different anatomical site does not significantly impair vaccine-induced immunity; hepatitis A component of Twinrix is not relevant in a pure HBV exposure scenario",
+        "management": "For HBV exposure: HBIG + first dose Twinrix (or monovalent HBV vaccine) SIMULTANEOUSLY at different sites within 12–24 hours; complete Twinrix series (0, 1, 6 months for standard; alternative 0, 7, 21 days + 12 months for accelerated travel schedule); verify anti-HBs 1–2 months post-series"
+      },
+      {
+        "drug": "Other vaccines — concurrent administration at travel vaccination visit",
+        "severity": "No interaction",
+        "mechanism": "Twinrix is commonly administered at travel vaccination visits alongside other vaccines (typhoid, meningococcal, yellow fever, Japanese encephalitis); no pharmacokinetic interactions between non-live vaccines; yellow fever is live attenuated — can be given same day if needed (NACI guidance), otherwise separate by 4 weeks",
+        "management": "Administer at different anatomical sites with separate syringes; if yellow fever vaccine is also needed, co-administration same day is acceptable per NACI if travel timeframe is tight; otherwise, spacing 4 weeks between live (yellow fever) and other vaccines is preferred; document all lot numbers"
+      },
+      {
+        "drug": "Anticoagulants (warfarin, DOACs) — IM injection management",
+        "severity": "Minor",
+        "mechanism": "Twinrix is administered IM; patients on anticoagulants have increased hematoma risk at IM injection sites; withholding the vaccine is not recommended as the benefit of hepatitis A + B vaccination outweighs injection site risk in most patients on anticoagulation",
+        "management": "Use 23G or smaller needle; apply firm pressure for ≥2 minutes without rubbing; inform patient of minor hematoma risk; acceptable to give IM in patients on stable anticoagulation; subcutaneous administration of hepatitis vaccines has significantly lower immunogenicity and should not be substituted for IM without specialist guidance"
+      },
+      {
+        "drug": "Chloroquine / hydroxychloroquine (HAV and HBV component attenuation)",
+        "severity": "Minor",
+        "mechanism": "Both chloroquine and hydroxychloroquine may impair immune response to both hepatitis A and hepatitis B vaccine components by interfering with endosomal antigen processing; HAV vaccine may be especially affected (chloroquine interferes with anti-HAV seroconversion in some studies)",
+        "management": "Check anti-HAV IgG and anti-HBs titres 4–6 weeks after completing Twinrix in patients on chloroquine/hydroxychloroquine; if seroconversion rates are inadequate, additional doses under immunology guidance may be needed; vaccinate before chloroquine use for malaria prophylaxis if travel vaccination and malaria prophylaxis both needed"
+      },
+      {
+        "drug": "Aspirin and NSAIDs (vaccine-associated fever management)",
+        "severity": "Minor",
+        "mechanism": "Some studies suggest prophylactic antipyretics (aspirin, acetaminophen, NSAIDs) administered before or at time of vaccination may reduce the febrile immune response and potentially attenuate antibody production; relevant for multi-vaccine travel visits; however, using antipyretics to manage post-vaccine fever/pain as needed (not prophylactically) is standard and acceptable",
+        "management": "Do not routinely pre-medicate with NSAIDs/aspirin before Twinrix or other vaccinations to prevent side effects; use acetaminophen or ibuprofen only if fever or significant injection site pain develops POST-vaccination; pre-emptive antipyretic prophylaxis is not recommended in adults (may mildly reduce immunogenicity)"
+      }
     ],
     "monitoring": [
       "Anti-HAV and anti-HBs titres post-series in immunocompromised or high-risk patients"
@@ -92315,8 +92384,42 @@ var DRUGS = {
       "Severe allergic reaction to any vaccine component"
     ],
     "interactions": [
-      "Can be co-administered with other vaccines at separate sites",
-      "No significant drug interactions"
+      {
+        "drug": "Immunosuppressants (prednisone ≥20 mg/day, methotrexate, biologics, cyclosporine, rituximab)",
+        "severity": "Moderate",
+        "mechanism": "Tdap (tetanus, diphtheria, acellular pertussis — Adacel, Boostrix) is a non-live inactivated vaccine; not contraindicated in immunosuppressed patients but immune response may be suboptimal; B-cell depleting agents (rituximab) markedly impair antibody response to the toxoid components",
+        "management": "Administer Tdap as scheduled to immunosuppressed patients — non-live vaccine is safe; vaccinate BEFORE planned immunosuppression if possible (particularly before rituximab or transplant); for rituximab patients, vaccinate ≥4 weeks before rituximab or ≥6 months after last dose; check antibody titres if clinical concern about vaccine failure; do not defer Tdap booster in pregnancy (27–32 weeks) based on immunosuppression alone — pertussis protection for newborn is critical"
+      },
+      {
+        "drug": "Pregnancy (pertussis cocooning and maternal vaccination — timing with other medications)",
+        "severity": "Beneficial",
+        "mechanism": "NACI and SOGC recommend Tdap at 27–32 weeks gestation in EVERY pregnancy to transfer protective maternal antibodies to the fetus before birth; this provides newborn pertussis protection in the first 2 months before infant vaccine series begins; Tdap in pregnancy is safe and does not increase adverse pregnancy outcomes; can be co-administered with influenza vaccine",
+        "management": "Administer Tdap at 27–32 weeks in every pregnancy regardless of prior Tdap history; co-administer with influenza vaccine at the same visit if indicated; document in both maternal and newborn vaccination records; Tdap given later in pregnancy (32+ weeks) may reduce antibody transfer time — earlier in the 27–32 window is preferred"
+      },
+      {
+        "drug": "Other vaccines — concurrent administration",
+        "severity": "No interaction",
+        "mechanism": "Tdap is a non-live inactivated vaccine; can be co-administered with influenza vaccine, COVID-19 vaccine, hepatitis vaccines, and other non-live vaccines at different sites; no pharmacokinetic interactions; there may be additive injection site reactions when multiple IM vaccines are given same day",
+        "management": "Administer at different anatomical sites (different arms, or arm + thigh); use separate syringes; document each vaccine's lot number; informing patients that multiple same-day vaccines may increase local reactions (pain, swelling) compared to a single vaccine — this is expected and does not represent an adverse interaction"
+      },
+      {
+        "drug": "Anticoagulants and antiplatelet agents (IM injection)",
+        "severity": "Minor",
+        "mechanism": "Tdap is IM injection; patients on warfarin, DOACs, or antiplatelet agents have increased hematoma risk at injection site; do not withhold Tdap vaccination (particularly in pregnancy) for anticoagulation — risk of pertussis and tetanus outweighs injection site hematoma risk",
+        "management": "Use 23G needle; apply firm pressure ≥2 minutes; check INR is therapeutic (not supratherapeutic) before IM injection in warfarin patients; IM injections at therapeutic anticoagulation levels are generally safe with these precautions; do not substitute subcutaneous injection — immunogenicity is significantly lower"
+      },
+      {
+        "drug": "Immunoglobulin products (TIG — tetanus immune globulin — post-exposure management)",
+        "severity": "Minor",
+        "mechanism": "For patients with contaminated wounds requiring both tetanus immunization AND passive prophylaxis, tetanus immune globulin (TIG) and Tdap/Td are given SIMULTANEOUSLY at different anatomical sites; passive TIG antibodies do not significantly impair the active immune response to Tdap toxoid components",
+        "management": "For wound prophylaxis when both TIG and Tdap are indicated: administer TIG and Tdap at different sites simultaneously; do NOT mix in same syringe; document both product lot numbers; TIG indication: contaminated wound in patient with unknown or <3 prior tetanus vaccine doses (or >5 years since last booster with high-risk wound)"
+      },
+      {
+        "drug": "Acetaminophen and ibuprofen (post-vaccination management)",
+        "severity": "Minor",
+        "mechanism": "Prophylactic antipyretics before vaccination may mildly reduce antibody response to pertussis and diphtheria components; PRN use AFTER vaccination for symptom relief is acceptable and has minimal impact on immunogenicity; this is particularly relevant in pregnancy where fever management is important",
+        "management": "Do not routinely pre-medicate with antipyretics before Tdap; use acetaminophen (preferred in pregnancy) PRN for significant fever or injection site pain that develops post-vaccination; ibuprofen PRN after 12 weeks gestation is acceptable; reassure pregnant patients that injection site reactions and mild fever are expected and not concerning"
+      }
     ],
     "monitoring": [
       "Arthus reaction at injection site (prior tetanus immunization within 5 yr): more common but not contraindication"
@@ -92388,7 +92491,42 @@ var DRUGS = {
       "Pregnancy (not recommended — defer until postpartum)"
     ],
     "interactions": [
-      "Can be co-administered with other vaccines at separate injection sites"
+      {
+        "drug": "Immunosuppressants (organ transplant, HIV, systemic corticosteroids, methotrexate, biologics)",
+        "severity": "Moderate",
+        "mechanism": "HPV vaccine (Gardasil 9) is a non-live recombinant VLP vaccine; contraindicated in truly immunocompromised patients only per age cut-offs, not immunosuppression; immunosuppressed individuals may have reduced HPV vaccine immunogenicity; transplant patients have significantly higher HPV-associated disease burden and benefit from vaccination",
+        "management": "Gardasil 9 is RECOMMENDED for immunocompromised patients including HIV-positive individuals (CD4 any level), transplant patients, and those on immunosuppressants; vaccinate BEFORE immunosuppression (transplant, chemotherapy) if possible; for HIV patients, NACI recommends vaccination regardless of CD4 count; check anti-HPV antibody titres only in clinical research context — routine titre checking not standard practice; 3-dose schedule recommended for immunocompromised (not 2-dose)"
+      },
+      {
+        "drug": "Oral contraceptives and hormonal contraception",
+        "severity": "No interaction",
+        "mechanism": "No pharmacokinetic or pharmacodynamic interaction between HPV vaccine and oral contraceptives, patches, rings, IUDs, or other hormonal contraception; both are given to adolescents and young adults; hormonal contraception does not affect HPV vaccine immunogenicity or safety",
+        "management": "HPV vaccination schedule is unaffected by any hormonal contraceptive use; continue OCP/hormonal contraception as prescribed; vaccinating girls on OCPs is standard practice; counsel patients that HPV vaccine prevents HPV infection, does not prevent other STIs — consistent with OCP counselling about STI prevention"
+      },
+      {
+        "drug": "Other vaccines — concurrent administration (school-based immunization programs)",
+        "severity": "No interaction",
+        "mechanism": "Gardasil 9 is a non-live recombinant vaccine that can be co-administered with other non-live vaccines (meningococcal, hepatitis B, Tdap); in school-based immunization programs, co-administration is common and validated; no pharmacokinetic interactions",
+        "management": "Administer at different anatomical sites; separate syringes required; document lot numbers for each vaccine; co-administration of Gardasil 9 with meningococcal vaccines (MenACWY, MenB) and Tdap is supported by NACI; same-day co-administration may slightly increase systemic side effects (fever, fatigue) compared to single vaccine visit"
+      },
+      {
+        "drug": "Immunoglobulin products (IVIG, HBIG, RhIG) — timing consideration",
+        "severity": "Minor",
+        "mechanism": "HPV vaccine is a non-live VLP vaccine; passive antibody from immunoglobulin products does NOT impair immune response to non-live vaccines; no timing separation needed (unlike live vaccines which require delay after immunoglobulin products)",
+        "management": "HPV vaccine can be given at any time relative to immunoglobulin products; no delay required; this is relevant for Rh-negative obstetric patients receiving RhIG who may also benefit from HPV vaccination"
+      },
+      {
+        "drug": "Anticoagulants — IM injection management",
+        "severity": "Minor",
+        "mechanism": "HPV vaccine is IM (deltoid); hematoma risk at injection site in patients on warfarin or DOACs; do not withhold HPV vaccination for anticoagulation — the public health benefit outweighs injection site hematoma risk",
+        "management": "Use 23G or smaller needle; firm pressure for ≥2 minutes; IM injection acceptable in patients on therapeutic anticoagulation; for patients with bleeding disorders (hemophilia), subcutaneous administration may be preferred (discuss with hematologist); document anticoagulation status at vaccination visit"
+      },
+      {
+        "drug": "NSAID prophylaxis and antipyretics — pre-vaccination use",
+        "severity": "Minor",
+        "mechanism": "Some evidence that prophylactic antipyretics (acetaminophen, ibuprofen) given before vaccines may mildly reduce immune response to vaccine antigens; not clinically significant for HPV vaccine in most patients; relevant for first vaccine dose where patients may be anxious about side effects and request pre-medication",
+        "management": "Do not routinely pre-medicate with antipyretics before HPV vaccination; use acetaminophen or ibuprofen PRN for fever or significant pain AFTER vaccination; vasovagal syncope risk is real with HPV vaccine — observe patients for 15 minutes post-injection; document pre-syncope and syncope events"
+      }
     ],
     "monitoring": [
       "Observe 15 min post-injection (syncope risk in adolescents)",
@@ -92462,7 +92600,42 @@ var DRUGS = {
       "Defer if moderate-severe acute illness"
     ],
     "interactions": [
-      "Can be co-administered with other vaccines at separate sites"
+      {
+        "drug": "Immunosuppressants (rituximab, high-dose corticosteroids, methotrexate, biologics, transplant medications)",
+        "severity": "Major",
+        "mechanism": "Pneumococcal conjugate vaccine (PCV13/Prevnar 13, PCV15/Vaxneuvance, PCV20/Apexxnar) is non-live — not contraindicated in immunosuppressed patients, but immune response is reduced; B-cell depleting agents (rituximab) may completely ablate antibody response; patients with asplenia, HIV, or transplant are at highest pneumococcal disease risk and most benefit from vaccination",
+        "management": "Vaccinate BEFORE starting immunosuppression when possible (at least 2–4 weeks before); for rituximab: vaccinate ≥4 weeks before initiation or ≥6 months after last dose; for splenectomy: vaccinate 2 weeks before if elective, or 2 weeks after if emergency; in Canada, PCV20 (20-valent conjugate) may replace sequential PPSV23 for many immunocompromised patients per NACI 2023; document immunization in chart with date and vaccine brand"
+      },
+      {
+        "drug": "Pneumococcal polysaccharide vaccine (PPSV23 — Pneumovax) — sequential vaccination",
+        "severity": "Beneficial",
+        "mechanism": "For immunocompromised adults and those ≥65, sequential PCV + PPSV23 vaccination provides broader serotype coverage; PCV generates T-cell-dependent immune memory (conjugate vaccine effect); PPSV23 extends coverage to additional serotypes; standard Canadian adult schedule: PCV13 or PCV20 first, then PPSV23 ≥8 weeks later (for high-risk groups) or 1 year later (for elderly), then PPSV23 booster at 5 years",
+        "management": "Administer PCV before PPSV23 (never reverse order — priming effect is lost); spacing of 8 weeks minimum between PCV and PPSV23 is recommended; if PPSV23 given first inadvertently, wait 1 year before giving PCV; NACI 2023 update: PCV20 alone may suffice without sequential PPSV23 in some populations"
+      },
+      {
+        "drug": "Influenza vaccine (concurrent administration)",
+        "severity": "No interaction",
+        "mechanism": "Pneumococcal conjugate vaccine can be safely co-administered with influenza vaccine (injectable, not FluMist in immunocompromised) at different sites; both are non-live vaccines; co-administration is common in elderly and high-risk patients during fall vaccination campaigns; no pharmacokinetic interactions",
+        "management": "Administer at different anatomical sites (different arms, or deltoid + thigh); separate syringes; document lot numbers; same-day co-administration is NACI-endorsed; patients may have slightly more injection site reactions and fatigue when receiving multiple vaccines — expected and not a contraindication"
+      },
+      {
+        "drug": "Eculizumab (and other complement inhibitors — ravulizumab)",
+        "severity": "Major",
+        "mechanism": "Complement inhibitors (eculizumab, ravulizumab) predispose to encapsulated organism infections including Streptococcus pneumoniae; all patients starting complement inhibitors must receive pneumococcal vaccination; if vaccine was not given ≥2 weeks before eculizumab initiation, oral penicillin V prophylaxis must be continued (and vaccination given ASAP)",
+        "management": "MANDATORY: Complete PCV + PPSV23 vaccination at least 2 weeks before eculizumab initiation; meningococcal vaccination is also mandatory; if urgent eculizumab start needed before 2-week vaccine response window, start prophylactic penicillin V 250 mg BID (or equivalent) and continue for ≥2 weeks after vaccination; lifelong antibiotic prophylaxis controversial — discuss with hematology/immunology"
+      },
+      {
+        "drug": "Anticoagulants (warfarin, DOACs) — IM injection management",
+        "severity": "Minor",
+        "mechanism": "PCV is IM administered; same IM injection concerns apply for anticoagulated patients as with other vaccines; the benefit of pneumococcal vaccination in high-risk patients (asplenia, elderly, immunocompromised) vastly outweighs the risk of minor hematoma",
+        "management": "Administer IM with 23G needle; firm pressure for ≥2 minutes; do not withhold pneumococcal vaccine for anticoagulation; local hematoma is self-limiting and not a reason to defer; for patients with severe thrombocytopenia (<50 × 10⁹/L), subcutaneous may be considered but immunogenicity may be reduced"
+      },
+      {
+        "drug": "Salicylates (aspirin) in children — Reye syndrome risk consideration",
+        "severity": "Minor",
+        "mechanism": "Long-term aspirin therapy in children is associated with Reye syndrome risk with viral infections; PCV is a non-live vaccine and does not cause viral infection; however, post-vaccination fever in children on aspirin requires management — acetaminophen is preferred over aspirin for vaccine-associated fever in pediatric patients on chronic aspirin",
+        "management": "Continue chronic aspirin therapy as prescribed in children receiving PCV; manage post-vaccine fever with acetaminophen (not additional aspirin); educate parents to use acetaminophen for fever management in children chronically on aspirin to prevent Reye syndrome risk from any febrile illness"
+      }
     ],
     "monitoring": [
       "Fever in infants post-vaccination (counsel caregivers)",
@@ -92532,8 +92705,42 @@ var DRUGS = {
       "Hypersensitivity to any vaccine component"
     ],
     "interactions": [
-      "Zostavax II: avoid immunosuppressants",
-      "Can receive Shingrix and influenza vaccine simultaneously at separate sites"
+      {
+        "drug": "High-dose immunosuppressants (prednisone ≥20 mg/day, cyclosporine, mycophenolate, azathioprine, methotrexate ≥0.4 mg/kg/week)",
+        "severity": "Major",
+        "mechanism": "Shingrix (recombinant zoster vaccine, RZV) is a NON-live adjuvanted subunit vaccine — it does NOT contain live virus and is NOT contraindicated in immunosuppressed patients; however, the immune response to Shingrix may be attenuated in significantly immunosuppressed patients (seroconversion rates lower); Zostavax (live attenuated) is CONTRAINDICATED in immunosuppressed patients but is largely discontinued in Canada (replaced by Shingrix)",
+        "management": "Shingrix (preferred zoster vaccine in Canada) CAN be given to immunosuppressed patients — administer 2 doses 2–6 months apart; vaccinate BEFORE planned immunosuppression if possible (e.g., before chemotherapy, organ transplant) for best response; if already immunosuppressed, vaccine is still recommended and offers meaningful protection; NACI recommends Shingrix for all adults ≥50 and for immunocompromised patients ≥18 years"
+      },
+      {
+        "drug": "Biologic immunosuppressants (anti-TNF agents — adalimumab, etanercept, infliximab; rituximab; JAK inhibitors)",
+        "severity": "Major",
+        "mechanism": "Anti-TNF agents, B-cell depleting agents, and JAK inhibitors significantly increase shingles risk (anti-TNF ~2x; JAK inhibitors up to 5x; particularly tofacitinib for herpes zoster); Shingrix is non-live and can be given concurrently; however, rituximab (B-cell depletion) may markedly impair antibody response — vaccinate ideally 4 weeks before rituximab or 6 months after last rituximab dose",
+        "management": "STRONGLY RECOMMENDED: Give both Shingrix doses before initiating JAK inhibitor, anti-TNF, or biologic therapy; if already on biologic, Shingrix can still be administered (non-live vaccine); for rituximab-treated patients, vaccinate ≥4 weeks before next rituximab dose or ≥6 months after last dose for best antibody response; document vaccination status at biologic initiation"
+      },
+      {
+        "drug": "Corticosteroids — intra-articular injections and local corticosteroids",
+        "severity": "No interaction",
+        "mechanism": "Local corticosteroids (intra-articular, inhaled, intranasal, topical) do not cause sufficient systemic immunosuppression to affect Shingrix response; Shingrix is a non-live vaccine — no contraindication from any route or dose of local corticosteroid",
+        "management": "No delay in Shingrix vaccination is required for patients on topical, inhaled, intranasal, or intra-articular corticosteroids; these forms of steroid administration do not contraindicate any vaccine; administer Shingrix on schedule regardless of local corticosteroid use"
+      },
+      {
+        "drug": "Other vaccines — concurrent administration",
+        "severity": "Minor",
+        "mechanism": "Shingrix can be co-administered with most other vaccines at different anatomical sites; NACI 2023 guidance supports same-day administration with influenza vaccine, Tdap, pneumococcal vaccines, and COVID-19 vaccines; no pharmacokinetic interactions between non-live vaccines; separate syringes and injection sites required",
+        "management": "Administer at different anatomical sites (different arms or thigh); separate syringes and needles; document all vaccine lot numbers and sites; reactogenicity (injection site pain, myalgia, fatigue) may be higher when multiple vaccines administered same day — counsel patients; scheduling separate visits is acceptable but may reduce completion rates"
+      },
+      {
+        "drug": "Immunoglobulin products (IVIg, HBIG, VZIG, RhIG) — timing consideration",
+        "severity": "Minor",
+        "mechanism": "Shingrix is a non-live, protein-based subunit vaccine containing VZV glycoprotein E (gE); unlike live vaccines (Zostavax), passive antibody from immunoglobulin products does NOT interfere with the humoral or cellular immune response to Shingrix — Shingrix generates T-cell mediated immunity that is not blocked by passive IgG",
+        "management": "Shingrix CAN be given at any time relative to immunoglobulin products (IVIg, HBIG, RhIG); no delay required unlike with live attenuated vaccines; this is a key advantage of Shingrix over the discontinued Zostavax; vaccinate without concern for recent immunoglobulin exposure"
+      },
+      {
+        "drug": "Antivirals — acyclovir, valacyclovir, famciclovir (antiherpetic prophylaxis)",
+        "severity": "Moderate",
+        "mechanism": "Antiviral prophylaxis against VZV (acyclovir, valacyclovir) may theoretically reduce the antigenic stimulation from Shingrix vaccination if live viral replication were part of the response — but Shingrix is non-live, so antivirals do not directly impair its immunogenicity; however, patients on antiviral prophylaxis to prevent herpes reactivation during immunosuppression should not have Shingrix delayed because of the antiviral",
+        "management": "Shingrix can be given regardless of concurrent antiviral prophylaxis; if patient has active herpes zoster (shingles outbreak), defer Shingrix until outbreak resolves; routine antiviral prophylaxis during immunosuppression does not contraindicate Shingrix"
+      }
     ],
     "monitoring": [
       "Systemic reactions (Shingrix) — counsel patients about expected symptoms",
@@ -92597,7 +92804,42 @@ var DRUGS = {
       "Hypersensitivity to immunoglobulin"
     ],
     "interactions": [
-      "Live vaccines: delay attenuated live vaccines 3 months post-TIG"
+      {
+        "drug": "Tetanus toxoid / Tdap / Td vaccines (simultaneous post-exposure administration)",
+        "severity": "Beneficial",
+        "mechanism": "For contaminated wounds in incompletely immunized patients, TIG (passive immediate immunity) and tetanus toxoid/Tdap (active long-term immunity) must be given together; passive TIG antibodies may slightly reduce the active immune response if given at the same site — but different anatomical site co-administration is standard and safe",
+        "management": "CRITICAL: Administer TIG and tetanus toxoid (Tdap preferred in adults) SIMULTANEOUSLY at DIFFERENT anatomical sites (different limbs); do not mix in same syringe; TIG dose: 250–500 IU IM for prophylaxis; if large contaminated wound or prolonged wound management delay, use 500 IU; document both products in chart; this approach prevents tetanus while establishing long-term immunity"
+      },
+      {
+        "drug": "Live attenuated vaccines (MMR, varicella, rotavirus, yellow fever)",
+        "severity": "Major",
+        "mechanism": "TIG is a passive immunoglobulin product; like other immunoglobulin preparations, TIG may interfere with immune response to live vaccine viruses by providing passive antibodies that neutralize vaccine virus before active immunity is established; the anti-tetanus antibodies themselves do not target vaccine viruses, but the immunoglobulin preparation may contain low-level non-specific antibodies",
+        "management": "Defer live vaccines (MMR, varicella) for 3 months after TIG administration; if live vaccine was given first, administer TIG as needed without delay (active immunity already initiated); inactivated vaccines (Tdap, hepatitis B, influenza injectable, pneumococcal) can be given with TIG at any time; for children, document TIG date and defer MMR/varicella by 3 months in immunization registry"
+      },
+      {
+        "drug": "Anticoagulants and antiplatelet agents (IM injection)",
+        "severity": "Minor",
+        "mechanism": "TIG is mandatory IM administration (do not give IV); in patients on warfarin, DOACs, or aspirin, IM injection carries hematoma risk; withholding TIG is NEVER appropriate when tetanus prophylaxis is indicated — the risk of tetanus is far greater than injection site hematoma risk; this is an urgent clinical situation",
+        "management": "Administer TIG IM regardless of anticoagulant use — tetanus prophylaxis is time-critical and cannot be delayed; use the anterolateral thigh or deltoid with the smallest appropriate needle; apply firm pressure; if patient on supratherapeutic warfarin (INR >5), consider reversal first if wound management allows, but do not delay TIG for minor hematoma concerns"
+      },
+      {
+        "drug": "Wound management — antiseptics (hydrogen peroxide, povidone-iodine, chlorhexidine)",
+        "severity": "No interaction",
+        "mechanism": "TIG is a systemic passive immunoglobulin that circulates in blood; local wound antiseptics (hydrogen peroxide, povidone-iodine, chlorhexidine used to clean the wound) do not interact with systemic TIG; however, thorough wound debridement and antiseptic cleaning are essential and complementary to TIG — without adequate wound cleaning, C. tetani spores remain viable",
+        "management": "Thorough wound irrigation with normal saline or clean water, followed by antiseptic cleaning and debridement, is MANDATORY alongside TIG; TIG is not a substitute for wound management; deep puncture wounds, crush injuries, and contaminated wounds require irrigation under pressure; refer complex wounds to surgery; document wound type for tetanus risk stratification"
+      },
+      {
+        "drug": "Other immunoglobulin products (IVIg, RhIG, HBIG) — total immunoglobulin load",
+        "severity": "Minor",
+        "mechanism": "Multiple immunoglobulin products can be given concurrently but increase the total immunoglobulin protein load; no specific drug-drug interaction between TIG and other IgG products; patients requiring multiple passive immunizations (e.g., post-exposure to multiple infections, or post-complex trauma) need careful documentation of total immunoglobulin doses",
+        "management": "Administer at different injection sites; document all immunoglobulin products administered; IgA-deficient patients are at risk for anaphylaxis from any immunoglobulin product — check IgA status before elective IgG administration (emergency situations override this precaution); standard TIG formulations (HyperTET S/D) are given IM only, not IV"
+      },
+      {
+        "drug": "Immunosuppressants (transplant patients, cancer patients — tetanus risk)",
+        "severity": "Minor",
+        "mechanism": "Immunosuppressed patients may not respond adequately to active tetanus immunization (toxoid); TIG provides passive immunity that is independent of the patient's immune status — effective even in complete immunosuppression; for injuries in immunosuppressed patients with unknown or incomplete tetanus history, TIG is strongly recommended regardless of their vaccine history",
+        "management": "For contaminated injuries in immunosuppressed patients, administer TIG regardless of prior tetanus vaccination history (immune response to prior vaccines may be inadequate); additionally administer Tdap to initiate or maintain active immunization; consult infectious disease if uncertain about prophylaxis adequacy in severely immunocompromised patients"
+      }
     ],
     "monitoring": [
       "Wound healing",
