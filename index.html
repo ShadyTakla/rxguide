@@ -44846,10 +44846,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Warfarin (vaginal miconazole)",
+        "drug": "Warfarin (oral or vaginal/topical miconazole)",
         "severity": "Major",
-        "mechanism": "Vaginal miconazole absorbed systemically (up to 2%) — inhibits CYP2C9 → INR elevation",
-        "management": "Monitor INR during and after vaginal antifungal course; consider single-dose oral fluconazole alternative (if safe)"
+        "mechanism": "Miconazole inhibits CYP2C9 even with topical/vaginal formulations due to 1–8% systemic absorption; CYP2C9 is the primary enzyme metabolizing S-warfarin (the more potent enantiomer); INR can increase by 50–100% or more, causing life-threatening bleeding; multiple case reports of fatal hemorrhage with vaginal miconazole + warfarin",
+        "management": "MONITOR INR within 3–5 days of starting ANY miconazole formulation (vaginal, oral gel, topical) in patients on warfarin; anticipate significant INR increase; consider alternative antifungal (topical clotrimazole for vaginal candidiasis has negligible systemic absorption); if oral miconazole gel used (for oral candidiasis), significant INR elevation expected — reduce warfarin dose preemptively"
+      },
+      {
+        "drug": "Anticoagulants — phenindione, acenocoumarol, other vitamin K antagonists",
+        "severity": "Major",
+        "mechanism": "Same CYP2C9 inhibition mechanism applies to all vitamin K antagonists; miconazole's CYP2C9 inhibition is potent and applies regardless of miconazole formulation (systemic, vaginal, or oral gel); acenocoumarol is even more sensitive than warfarin to CYP2C9 inhibition",
+        "management": "Same monitoring as for warfarin; INR monitoring critical within days of any miconazole exposure in patients on any vitamin K antagonist; inform patients to report unusual bruising/bleeding immediately"
+      },
+      {
+        "drug": "Sulfonylureas (glipizide, glyburide/glibenclamide, glimepiride)",
+        "severity": "Major",
+        "mechanism": "Sulfonylureas are CYP2C9 substrates; miconazole (particularly oral gel formulation) inhibits CYP2C9 → increases sulfonylurea plasma levels → severe and prolonged hypoglycemia; case reports of life-threatening hypoglycemia in elderly patients on glyburide + oral miconazole gel",
+        "management": "Avoid systemic/oral miconazole in patients on sulfonylureas; use topical nystatin (oral suspension or pastilles) for oral candidiasis as alternative; if miconazole unavoidable, reduce sulfonylurea dose and monitor blood glucose closely; advise patient to eat regular meals and check glucose 4–6x/day"
+      },
+      {
+        "drug": "Phenytoin",
+        "severity": "Moderate",
+        "mechanism": "Phenytoin is a CYP2C9 substrate; miconazole inhibits CYP2C9 → increased phenytoin levels → toxicity (nystagmus, ataxia, diplopia, confusion); particularly relevant when oral miconazole gel is used for prolonged oral candidiasis treatment in epilepsy patients",
+        "management": "Monitor phenytoin levels if any miconazole formulation is started; symptoms of phenytoin toxicity (nystagmus, ataxia) indicate levels are rising; consider alternative antifungal; if miconazole necessary, check phenytoin level within 5–7 days and reduce dose accordingly"
+      },
+      {
+        "drug": "Tacrolimus and cyclosporine (post-transplant oral/esophageal candidiasis)",
+        "severity": "Moderate",
+        "mechanism": "Miconazole inhibits CYP3A4 and P-gp in addition to CYP2C9; tacrolimus and cyclosporine are CYP3A4/P-gp substrates — miconazole increases their levels; relevant in transplant patients who frequently develop oral/esophageal candidiasis requiring antifungal treatment",
+        "management": "Monitor calcineurin inhibitor trough levels closely if miconazole started; consider fluconazole (also CYP3A4 inhibitor but more predictable PK) or nystatin (no CYP interaction) as preferred alternative in transplant patients; miconazole oral gel in transplant patients requires urgent CN inhibitor level check within 3–5 days"
+      },
+      {
+        "drug": "Statins (simvastatin, lovastatin — CYP3A4 substrates)",
+        "severity": "Moderate",
+        "mechanism": "Systemic miconazole inhibits CYP3A4, increasing plasma levels of CYP3A4-metabolized statins (simvastatin, lovastatin most significantly); risk of statin-associated myopathy/rhabdomyolysis; particularly relevant with oral/systemic miconazole; vaginal/topical formulations have lower but non-zero systemic absorption",
+        "management": "Consider temporarily holding simvastatin/lovastatin during a course of systemic or oral miconazole; pravastatin or rosuvastatin (non-CYP3A4 substrates) are safer alternatives; if topical/vaginal miconazole used for short course, monitor for myalgia/CK elevation"
       }
     ],
     "pregnancy": "Topical and vaginal: generally preferred over oral azoles in pregnancy (less systemic). Avoid oral azoles (fluconazole) in 1st trimester. Vaginal miconazole: commonly used for VVC in pregnancy.",
@@ -48326,15 +48356,39 @@ var DRUGS = {
     "interactions": [
       {
         "drug": "Digoxin",
-        "severity": "Moderate",
-        "mechanism": "Electrolyte depletion (hypokalemia) potentiates digoxin toxicity",
-        "management": "Monitor potassium levels"
+        "severity": "Major",
+        "mechanism": "Chronic senna use causes hypokalemia through stimulant laxative-induced stool potassium loss; hypokalemia potentiates digoxin cardiotoxicity by increasing myocardial sensitivity to digoxin at the Na+/K+ ATPase — risk of digoxin-induced arrhythmias (premature ventricular contractions, AV block, ventricular tachycardia) at normally therapeutic digoxin levels",
+        "management": "Monitor serum potassium regularly in patients on digoxin using laxatives long-term; maintain K+ ≥3.5 mmol/L; replace potassium as needed; use bulk-forming or osmotic laxatives as first-line in digoxin patients; if senna required, add dietary potassium or potassium supplements; target serum K+ 4–5 mmol/L in patients on digoxin"
       },
       {
-        "drug": "Diuretics",
+        "drug": "Diuretics (thiazides — HCTZ, chlorthalidone; loop — furosemide)",
         "severity": "Moderate",
-        "mechanism": "Additive electrolyte depletion",
-        "management": "Monitor electrolytes with long-term concurrent use"
+        "mechanism": "Additive potassium depletion: loop and thiazide diuretics cause renal potassium wasting, senna causes GI potassium loss; combined hypokalemia risk in patients on diuretics who use senna long-term for opioid-induced or chronic constipation",
+        "management": "Monitor electrolytes (K+, Mg2+) at least every 3–6 months in patients on both diuretics and stimulant laxatives long-term; supplement potassium and magnesium if needed; use bulk-forming laxatives (psyllium) or polyethylene glycol as alternatives; avoid chronic senna use when possible — address constipation cause"
+      },
+      {
+        "drug": "Opioids (morphine, oxycodone, hydromorphone, fentanyl) — constipation management",
+        "severity": "Beneficial",
+        "mechanism": "Opioids cause constipation in virtually 100% of patients through mu-receptor-mediated reduction in GI motility; senna is the stimulant laxative of choice for opioid-induced constipation — it directly stimulates enteric nerve plexus, partially overcoming the opioid suppression of motility",
+        "management": "START senna prophylactically when opioid therapy is initiated; do not wait for constipation to develop; starting dose: senna 2 tabs (17.2 mg sennosides) twice daily; titrate to 4 tabs BID as needed; add docusate if stool softening needed; if maximal senna + docusate fails, escalate to PEG or methylnaltrexone (PAMORA); do not use PRN — prescribe scheduled"
+      },
+      {
+        "drug": "Anthraquinone-containing herbal products (cascara, aloe latex, rhubarb root, buckthorn)",
+        "severity": "Moderate",
+        "mechanism": "Senna contains anthraquinone glycosides (sennosides A and B); concurrent use with other anthraquinone laxatives doubles the cathartic effect and significantly increases risk of electrolyte imbalances, laxative dependency, and melanosis coli (dark pigmentation of colonic mucosa — benign but indicating chronic anthraquinone use)",
+        "management": "Avoid combining multiple anthraquinone-based laxatives; use one stimulant laxative at a time at lowest effective dose; if additional laxative effect needed, add an osmotic agent (PEG) rather than a second anthraquinone; counsel patients about melanosis coli risk with chronic use"
+      },
+      {
+        "drug": "Oral medications with time-sensitive absorption (levothyroxine, bisphosphonates, antiretrovirals)",
+        "severity": "Minor",
+        "mechanism": "Accelerated GI transit from senna may reduce absorption time for drugs requiring adequate GI contact time for absorption; stimulant laxatives increase colonic motility and reduce total GI transit time; most drugs are absorbed in the small intestine before senna-stimulated motility changes affect the colon",
+        "management": "Clinically significant impact is limited for most drugs; take levothyroxine and bisphosphonates as directed (fasting, well ahead of other medications); in patients with significant diarrhea from excess senna use, drug absorption may be impaired — adjust dosing if rapid transit is documented"
+      },
+      {
+        "drug": "Spironolactone and potassium-sparing diuretics — paradoxical hyperkalemia context",
+        "severity": "Minor",
+        "mechanism": "In patients on potassium-sparing diuretics (spironolactone, amiloride, eplerenone) or ACE inhibitors/ARBs + CKD, potassium homeostasis is already altered; senna-induced GI potassium loss may be protective against hyperkalemia in these patients — or may cause unpredictable electrolyte swings; the net effect on potassium depends on baseline renal function and drug doses",
+        "management": "Monitor potassium levels in complex patients on potassium-affecting medications (both potassium-sparing and potassium-losing); avoid assumption that senna is safe in all patients on spironolactone — hypokalemia can still develop; electrolyte monitoring at 1–3 months is appropriate in high-risk patients"
       }
     ],
     "pregnancy": "Generally safe in 2nd/3rd trimester for constipation. Small amounts secreted in breast milk — may cause loose stools in infant. Preferred over stimulants in first trimester (castor oil avoided; bisacodyl preferred alternative).",
@@ -48401,16 +48455,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Antacids / milk / H2 blockers (within 1 hour)",
+        "drug": "Antacids, H2 blockers, PPIs, and dairy products (within 1 hour of dose)",
         "severity": "Major",
-        "mechanism": "Dissolve enteric coating prematurely → gastric/duodenal irritation",
-        "management": "Separate by at least 1 hour"
+        "mechanism": "Bisacodyl tablets have an enteric coating to prevent dissolution in the stomach and avoid upper GI irritation; alkaline pH from antacids/H2 blockers/PPIs, or high-fat/protein-buffered foods (milk), can dissolve the enteric coating prematurely in the stomach → gastric and duodenal irritation, nausea, vomiting, abdominal cramping, and loss of laxative efficacy",
+        "management": "Do not take bisacodyl within 1 hour of antacids, milk, dairy products, PPIs at high doses, or H2 blockers; ideally separate by at least 1 hour; tablets should be swallowed whole without crushing or chewing; if patient requires both a PPI and bisacodyl, administer bisacodyl at a different time of day"
       },
       {
-        "drug": "Diuretics",
+        "drug": "Diuretics (loop — furosemide; thiazides — hydrochlorothiazide, chlorthalidone)",
         "severity": "Moderate",
-        "mechanism": "Additive electrolyte depletion",
-        "management": "Monitor electrolytes"
+        "mechanism": "Bisacodyl stimulates colonic secretion of water and electrolytes, causing potassium and sodium loss in stool; concurrent diuretic-induced renal potassium wasting creates additive hypokalemia risk — clinically important in patients with heart failure, cirrhosis, or on digoxin",
+        "management": "Monitor serum potassium and magnesium in patients using bisacodyl long-term with diuretics; supplement potassium as needed; use bisacodyl for the minimum duration necessary; prefer osmotic laxatives (PEG, lactulose) for chronic constipation management in patients on diuretics"
+      },
+      {
+        "drug": "Digoxin (and antiarrhythmics — amiodarone, quinidine)",
+        "severity": "Major",
+        "mechanism": "Bisacodyl-induced hypokalemia increases digoxin toxicity (see senna interaction); in patients on antiarrhythmics, QTc prolongation risk is also enhanced by hypokalemia — additive QTc prolongation with amiodarone, quinidine, sotalol when combined with electrolyte-depleting laxatives",
+        "management": "Avoid long-term bisacodyl in patients on digoxin or QTc-prolonging antiarrhythmics; use bulk-forming (psyllium) or osmotic (PEG) laxatives as first-line alternatives; if bisacodyl required short-term, ensure potassium is within normal range; target K+ ≥4.0 mmol/L in patients on digoxin or antiarrhythmics"
+      },
+      {
+        "drug": "Opioids — constipation management indication",
+        "severity": "Beneficial",
+        "mechanism": "Opioid-induced constipation (OIC) requires stimulant laxative therapy; bisacodyl stimulates the myenteric plexus directly, partially overcoming opioid-mediated reduction in propulsive motility; similar to senna for OIC but with more direct enteric nerve stimulation",
+        "management": "Start bisacodyl at opioid initiation; 5–10 mg at bedtime titrated up as needed; can be combined with docusate for stool softening; if OIC persists on maximal bisacodyl + docusate, consider adding PEG or escalating to peripheral mu-opioid receptor antagonist (methylnaltrexone/naloxegol/naldemedine)"
+      },
+      {
+        "drug": "Oral antibiotics (neomycin, rifaximin) — bowel preparation context",
+        "severity": "Minor",
+        "mechanism": "Bisacodyl is frequently used as part of mechanical bowel preparation (colonoscopy, colorectal surgery) in conjunction with oral antibiotics (neomycin + metronidazole for elective colorectal surgery mechanical/antibiotic bowel prep); rapid GI transit from bisacodyl may slightly reduce contact time for oral antibiotics in the colon, but this is not clinically problematic as the goal is GI cleansing, not absorption",
+        "management": "Combination is intentional in bowel prep protocols; no dose adjustments required; administer antibiotics as part of the scheduled bowel prep regimen; ensure patient is well hydrated before bisacodyl-based bowel preps"
+      },
+      {
+        "drug": "Corticosteroids (chronic use) — bowel microbiome and electrolyte effects",
+        "severity": "Minor",
+        "mechanism": "Long-term corticosteroids promote hyperglycemia and may alter bowel motility (some patients develop constipation); concurrent bisacodyl use in this context carries the same electrolyte-depletion concerns; corticosteroid-induced sodium retention may partially offset bisacodyl-induced sodium loss, but potassium depletion risk persists",
+        "management": "Monitor electrolytes in patients on both corticosteroids and stimulant laxatives; prefer dietary fiber supplementation and osmotic laxatives for chronic corticosteroid-associated constipation; document total electrolyte-affecting medications when assessing hypokalemia risk"
       }
     ],
     "pregnancy": "Category C. Oral form generally avoided in pregnancy (stimulant can cause premature uterine contractions in theory — though not well-documented). Suppository locally acting — may be safer. Senna or lactulose preferred in pregnancy.",
@@ -51366,10 +51444,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Live vaccines (MMR, varicella, rotavirus)",
+        "drug": "Live attenuated vaccines (MMR, varicella, rotavirus, yellow fever)",
+        "severity": "Major",
+        "mechanism": "Rh(D) immune globulin contains passive antibodies that can interfere with immune response to live attenuated vaccines; MMR and varicella vaccines particularly affected — passive anti-Rh(D) IgG does not directly neutralize vaccine virus, but the immunoglobulin preparation may contain other antibodies that impair live vaccine seroconversion; ACIP/NACI guidelines specify intervals",
+        "management": "Delay MMR and varicella vaccines for at least 3 months after RhIG administration; if live vaccines given first, administer RhIG as needed (e.g., postpartum or post-abortion) — the vaccine was given before antibodies, so the live vaccines are not affected; inactivated vaccines (influenza, Tdap, hepatitis B) can be given anytime with RhIG; document RhIG dose and timing"
+      },
+      {
+        "drug": "Other blood products — packed red blood cells, platelets, fresh frozen plasma",
         "severity": "Moderate",
-        "mechanism": "Passive antibodies may interfere with live vaccine immunogenicity",
-        "management": "Delay live vaccines 3 months after RhIG; or check antibody response afterward"
+        "mechanism": "If Rh(D)-negative patient receives Rh(D)-positive blood products (due to emergency/shortage), RhIG dose must be recalculated based on volume of Rh(D)-positive RBCs transfused; standard 300 mcg RhIG covers 15 mL Rh(D)-positive RBCs (30 mL whole blood); larger exposures require multiple vials",
+        "management": "Calculate RhIG dose based on volume of Rh(D)-positive RBC exposure; give within 72 hours of exposure; for large transfusion events, use Kleihauer-Betke test to quantify fetal-maternal hemorrhage; consult transfusion medicine; doses may need to be administered IM over multiple sites or as IV formulation"
+      },
+      {
+        "drug": "Neonatal hemolytic disease — maternal RhIG effect on newborn testing",
+        "severity": "Minor",
+        "mechanism": "Passively transferred anti-Rh(D) IgG (from prenatal RhIG administration) crosses the placenta and causes weakly positive DAT (direct antiglobulin test) in Rh(D)-positive newborns; this is expected and NOT indicative of hemolytic disease of the newborn — can cause diagnostic confusion",
+        "management": "Counsel laboratory that prenatal RhIG was given — weak positive DAT in Rh(D)-positive newborn is expected; monitor neonatal bilirubin clinically; true hemolytic disease of the newborn presents with strongly positive DAT, significant hyperbilirubinemia, and anemia"
+      },
+      {
+        "drug": "Immunosuppressants (post-transplant, anti-CD20 agents like rituximab)",
+        "severity": "Moderate",
+        "mechanism": "Severely immunosuppressed patients (B-cell depleted by rituximab or other agents) may have impaired production of endogenous anti-Rh(D) antibodies; RhIG administration is still appropriate for Rh(D)-negative immunosuppressed patients to prevent Rh alloimmunization from future pregnancy, but immune response tracking is limited",
+        "management": "RhIG indication and dosing remain unchanged in immunosuppressed patients; passive protection from RhIG works regardless of immune status (antibodies are exogenous); ensure Rh(D) status is documented; if patient undergoes B-cell depletion therapy, standard RhIG dosing applies for any Rh(D)-positive exposure"
+      },
+      {
+        "drug": "IV anti-D (Rhophylac IV) — IV formulation specific interactions",
+        "severity": "Moderate",
+        "mechanism": "IV formulation of Rh(D) immune globulin (used for ITP treatment — WinRho SDF) can cause intravascular hemolysis in Rh(D)-positive patients with ITP; concurrent medications affecting RBC stability (NSAIDs, heparin) may compound hemolysis risk; monitoring requirements specific to IV anti-D for ITP",
+        "management": "IV anti-D for ITP is used ONLY in Rh(D)-positive non-splenectomized patients; monitor for hemolysis (signs: back pain, shaking chills, fever, decreased Hgb, hemoglobinuria) for 8 hours post-infusion; concurrent medications including NSAIDs should be evaluated for impact on renal function given hemolysis risk"
+      },
+      {
+        "drug": "Aspirin and NSAIDs (in context of pregnancy — prophylactic RhIG timing)",
+        "severity": "Minor",
+        "mechanism": "No direct pharmacological interaction between RhIG and NSAIDs; however, in obstetric practice, both aspirin (for preeclampsia prevention) and RhIG are commonly given to Rh(D)-negative pregnant patients — shared IM injection timing needs coordination to minimize patient discomfort; no pharmacodynamic interaction",
+        "management": "No dose adjustment for either drug; administer at different injection sites; routine RhIG at 28 weeks and postpartum can be coordinated with other scheduled prenatal medications; aspirin for preeclampsia prevention (81 mg/day) does not interact with RhIG"
       }
     ],
     "pregnancy": "Essential for Rh-negative pregnant women at 28 weeks and after delivery. If not given within 72 hours, can give up to 10 days (lower efficacy). Protects future pregnancies from HDFN.",
@@ -53165,10 +53273,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "CYP3A4 inhibitors (ketoconazole, ritonavir)",
+        "drug": "CYP3A4 inhibitors — ritonavir, cobicistat, ketoconazole (systemic), itraconazole, clarithromycin",
+        "severity": "Major",
+        "mechanism": "Mometasone furoate is a CYP3A4 substrate with extremely high glucocorticoid receptor affinity (higher than fluticasone); systemic absorption from nasal/inhaled routes is low (0.1% from nasal; 1–2% from inhaled), but potent CYP3A4 inhibitors substantially reduce mometasone clearance → significant systemic glucocorticoid excess → iatrogenic Cushing syndrome and adrenal suppression; multiple case reports of Cushing syndrome with fluticasone/mometasone + ritonavir",
+        "management": "AVOID combining mometasone (inhaled or nasal) with systemic ketoconazole, itraconazole, or ritonavir/cobicistat-boosted HIV regimens; use beclomethasone (less CYP3A4 dependent) as alternative inhaled steroid in HIV patients on PIs; if combination unavoidable, use lowest effective mometasone dose, monitor for Cushing features (weight gain, striae, easy bruising, hypertension)"
+      },
+      {
+        "drug": "Systemic corticosteroids (prednisone, dexamethasone, methylprednisolone)",
         "severity": "Moderate",
-        "mechanism": "May increase systemic mometasone exposure",
-        "management": "Use with caution; mometasone has low baseline bioavailability — risk generally low"
+        "mechanism": "Additive HPA axis suppression; mometasone at high doses has measurable systemic activity; combination with systemic corticosteroids increases total glucocorticoid burden and risk of adrenal suppression, particularly during systemic steroid tapering",
+        "management": "Use lowest effective mometasone dose during systemic steroid courses; avoid step-up to higher-dose mometasone when systemic steroids are being tapered; monitor for signs of HPA suppression if high-dose inhaled mometasone is used concurrently with or shortly after systemic steroids; morning cortisol or ACTH stimulation test if clinical concern"
+      },
+      {
+        "drug": "Other inhaled corticosteroids (budesonide, fluticasone, beclomethasone) — combined inhalers",
+        "severity": "Moderate",
+        "mechanism": "Using multiple inhaled corticosteroids or both an inhaled corticosteroid and an intranasal corticosteroid (for comorbid asthma + allergic rhinitis) compounds total ICS dose and systemic absorption; total ICS dose calculation must account for all corticosteroid formulations",
+        "management": "Account for ALL corticosteroid routes when assessing total steroid burden; if patient uses mometasone nasal spray AND mometasone inhaler (or another ICS), combined dose may approach levels associated with HPA suppression in children; use lowest effective doses of each; consider combination nasal products (fluticasone-azelastine) to minimize steroid burden"
+      },
+      {
+        "drug": "Antifungal azoles — fluconazole, voriconazole",
+        "severity": "Moderate",
+        "mechanism": "Fluconazole (moderate CYP3A4 inhibitor) and voriconazole (potent CYP3A4 inhibitor) may increase mometasone systemic exposure; less severe than itraconazole/ketoconazole but still clinically relevant, particularly with high-dose or prolonged mometasone use or in patients with multiple corticosteroid exposures",
+        "management": "Monitor for signs of steroid excess (easy bruising, weight gain, blood glucose elevation) during prolonged azole antifungal courses in patients on mometasone; consider reducing mometasone dose frequency (alternate-day dosing) or switching to beclomethasone during azole course"
+      },
+      {
+        "drug": "Vaccines — live attenuated (in context of systemic steroid use)",
+        "severity": "Minor",
+        "mechanism": "Intranasal/inhaled mometasone at standard therapeutic doses does NOT cause clinically significant systemic immunosuppression — standard-dose ICS is NOT a contraindication to live vaccines; concern arises only when very high-dose ICS is combined with other immunosuppressive medications",
+        "management": "Standard-dose mometasone nasal/inhaled: NO contraindication to any vaccine including live vaccines (MMR, varicella, shingles); high-dose ICS (>2000 mcg/day fluticasone equivalent) in combination with other immunosuppressants: follow immunocompromised vaccine schedule; reassure patients on routine mometasone that vaccines are safe"
+      },
+      {
+        "drug": "Aldosterone antagonists (spironolactone) and potassium-sparing diuretics",
+        "severity": "Minor",
+        "mechanism": "At high systemic exposure (CYP3A4 inhibitor combination or very high doses), mometasone has some mineralocorticoid activity that can cause sodium retention, potassium loss, and fluid retention; in patients on spironolactone for heart failure or hyperaldosteronism, significant mometasone systemic exposure could partially counteract spironolactone's potassium-sparing and anti-aldosterone effects",
+        "management": "Clinically relevant only with high-dose mometasone AND concurrent CYP3A4 inhibition; standard intranasal mometasone therapy with no enzyme inhibitors: minimal clinical concern; monitor electrolytes if patient uses multiple corticosteroids or CYP3A4 inhibitors simultaneously"
       }
     ],
     "pregnancy": "Category C. ICS in pregnancy strongly recommended for asthma control. Budesonide has most safety data. Mometasone acceptable. Intranasal mometasone also acceptable for severe allergic rhinitis.",
@@ -91253,7 +91391,42 @@ var DRUGS = {
       "Avoid in immunocompromised (efficacy reduced, risk of systemic absorption)"
     ],
     "interactions": [
-      "No significant drug interactions"
+      {
+        "drug": "Systemic immunosuppressants (cyclosporine, mycophenolate, azathioprine, tacrolimus, prednisone)",
+        "severity": "Major",
+        "mechanism": "Imiquimod is a TLR7/8 agonist that stimulates innate immunity and local cytokine production (IFN-alpha, TNF-alpha, IL-12); in immunosuppressed patients (transplant, autoimmune disease), imiquimod may trigger unpredictable local or systemic immune responses — risk of graft rejection if applied to large areas in transplant patients; also, immunosuppression impairs imiquimod's therapeutic mechanism (needs functioning immune cells to work)",
+        "management": "Use with extreme caution in solid organ transplant recipients — imiquimod for HPV warts or actinic keratosis in transplant patients requires specialist (dermatology + transplant) oversight; reduced efficacy expected; topical cidofovir or photodynamic therapy may be preferred in heavily immunosuppressed patients; smaller treatment areas and longer intervals reduce systemic cytokine release risk"
+      },
+      {
+        "drug": "UV phototherapy (UVB, PUVA) and radiation therapy",
+        "severity": "Moderate",
+        "mechanism": "Imiquimod is commonly used for actinic keratoses and superficial BCC — conditions often managed with phototherapy; concurrent use of topical immune activators and phototherapy on the same skin may cause excessive local inflammation; radiation therapy fields should not be treated with imiquimod during active treatment",
+        "management": "Avoid applying imiquimod on areas currently undergoing radiation therapy; allow 4–6 weeks after completion of radiation before starting imiquimod; for AK management, imiquimod and field-directed phototherapy are typically used sequentially rather than concurrently; sun protection is mandatory during imiquimod treatment"
+      },
+      {
+        "drug": "Topical corticosteroids (applied to imiquimod-treated areas)",
+        "severity": "Moderate",
+        "mechanism": "Imiquimod induces local inflammation (erythema, erosion, flaking — expected therapeutic response indicating immune activation); using topical corticosteroids to reduce imiquimod-induced local reaction may impair therapeutic efficacy — corticosteroid anti-inflammatory effect partially opposes imiquimod's pro-inflammatory mechanism",
+        "management": "Avoid topical corticosteroids on imiquimod-treated areas during active treatment; local reactions (erythema, scabbing, flaking) are expected and indicate treatment is working; for severe intolerable local reactions, brief rest periods (1–2 weeks) from imiquimod are preferable to adding corticosteroids; if unbearable, reduce frequency to 2–3x/week"
+      },
+      {
+        "drug": "Warfarin (systemic absorption in large-area treatment)",
+        "severity": "Minor",
+        "mechanism": "Standard small-area imiquimod use (≤2 cm2 for AK; discrete warts) produces minimal systemic cytokine levels; however, large-area treatment (field therapy for extensive AK, large condylomata) produces measurable systemic IFN-alpha and cytokine release that may theoretically affect warfarin metabolism via cytokine-CYP modulation",
+        "management": "Clinically relevant only with large-area or aggressive imiquimod schedules; standard small-area use: no specific INR monitoring needed; for large-area facial AK treatment (full face 3x/week for 16 weeks), consider INR check at 4–6 weeks; advise patients on warfarin to report unusual bruising during imiquimod treatment"
+      },
+      {
+        "drug": "Other topical immune-modulating agents (5-fluorouracil, ingenol mebutate, diclofenac 3%)",
+        "severity": "Moderate",
+        "mechanism": "Combining two field-directed AK treatments simultaneously on the same area doubles local inflammatory injury, potentially causing severe erosion, ulceration, and impaired healing; these agents are alternatives, not complements; sequential therapy after healing is the standard approach",
+        "management": "Do NOT combine imiquimod with 5-FU cream, ingenol mebutate (Picato), or diclofenac 3% (Solaraze) on the same area at the same time; complete one treatment course and allow full healing (4–6 weeks) before starting another field-directed therapy; switching agents is appropriate if one is ineffective or poorly tolerated"
+      },
+      {
+        "drug": "Circumcision and procedural wound healing context",
+        "severity": "Minor",
+        "mechanism": "For penile warts, imiquimod should not be applied to open wounds, recently circumcised areas, or genital abrasions — the drug causes significant local inflammation that impairs wound healing; the intact epidermal barrier is needed to prevent excessive systemic absorption through damaged skin",
+        "management": "Allow complete wound healing (minimum 4 weeks) before starting imiquimod on previously injured or surgically treated genital skin; verify skin integrity before each application; do not apply under tight-fitting occlusive clothing (increases absorption and local reaction)"
+      }
     ],
     "monitoring": [
       "Local reaction severity (dose-limiting)",
@@ -91389,7 +91562,42 @@ var DRUGS = {
       "Hypersensitivity to palivizumab or humanized monoclonal antibodies"
     ],
     "interactions": [
-      "No significant drug interactions"
+      {
+        "drug": "Live attenuated vaccines (MMR, varicella, rotavirus)",
+        "severity": "Moderate",
+        "mechanism": "Palivizumab is a humanized monoclonal antibody (anti-RSV F protein); as an immunoglobulin product, it theoretically could interfere with live vaccine immune responses similar to polyclonal IVIg; however, palivizumab has a narrow specificity (RSV F protein only) unlike polyclonal IVIg — interference with MMR/varicella is not expected at monoclonal antibody doses",
+        "management": "No routine delay of standard live vaccines (MMR, varicella) is required due to palivizumab; Canadian and US immunization schedules recommend that palivizumab does NOT need to be factored into timing of live vaccines (unlike polyclonal immunoglobulin); follow standard NACI/ACIP immunization schedules; RSV-specific mAb does not contain broad antibody interference"
+      },
+      {
+        "drug": "Concurrent RSV prophylaxis products — nirsevimab (Beyfortus)",
+        "severity": "Contraindicated",
+        "mechanism": "Nirsevimab is a longer-acting anti-RSV monoclonal antibody (anti-RSV prefusion F protein) that has largely replaced palivizumab for RSV prophylaxis in Canada (NACI 2024); using both palivizumab and nirsevimab simultaneously provides no additional benefit and doubles immunoglobulin load and cost",
+        "management": "Use ONE RSV prophylaxis product per season; nirsevimab (single dose, broader population coverage) is now preferred over palivizumab monthly injections per NACI 2024 update; do not administer palivizumab to infants who have received nirsevimab in the same RSV season"
+      },
+      {
+        "drug": "Immunosuppressive therapy (post-cardiac surgery, immunodeficiency conditions)",
+        "severity": "Minor",
+        "mechanism": "Palivizumab is indicated for high-risk infants (prematurity <29 weeks, hemodynamically significant CHD, CLD of prematurity); many of these infants also receive post-operative steroids, diuretics, or other medications; no pharmacokinetic interactions with these drugs; however, immunosuppressed infants may have altered antibody pharmacokinetics",
+        "management": "No dose adjustments for concurrent medications in most cases; monthly dosing (15 mg/kg IM) is based on body weight and RSV season timing, not concurrent medications; document all concurrent medications but no specific interaction management required"
+      },
+      {
+        "drug": "Synagis dosing in presence of cardiopulmonary bypass",
+        "severity": "Minor",
+        "mechanism": "Cardiopulmonary bypass (CPB) during cardiac surgery can cause dilution and consumption of palivizumab; palivizumab serum levels drop significantly after CPB procedures — a supplemental dose (15 mg/kg IM) is recommended after CPB to restore protective levels before RSV season",
+        "management": "Administer an additional palivizumab dose as soon as feasible after CPB surgery (within 24–48 hours); do not wait until the next scheduled monthly dose; document CPB and supplemental dose in immunization records; this is a pharmacokinetic concern, not a drug-drug interaction in the traditional sense"
+      },
+      {
+        "drug": "Corticosteroids (systemic — post-cardiac/respiratory surgery management)",
+        "severity": "Minor",
+        "mechanism": "Systemic corticosteroids do not directly interact with palivizumab pharmacokinetics; however, immunosuppressive corticosteroid doses may theoretically reduce palivizumab efficacy by impairing complement and Fc-receptor-mediated effector functions needed for antibody-dependent cellular cytotoxicity (ADCC)",
+        "management": "Continue palivizumab prophylaxis regardless of corticosteroid use — the primary mechanism (RSV F protein neutralization) is independent of immune effector cells; no dose adjustments based on corticosteroid therapy; document all immunosuppressive medications at palivizumab administration"
+      },
+      {
+        "drug": "Furosemide and other diuretics (CLD of prematurity — concurrent use)",
+        "severity": "No interaction",
+        "mechanism": "No pharmacokinetic or pharmacodynamic interaction between palivizumab and diuretics; both are commonly co-prescribed in premature infants with chronic lung disease of prematurity who require RSV prophylaxis; palivizumab is a large monoclonal antibody not affected by renal clearance pathways relevant to diuretics",
+        "management": "No dose adjustments required; administer monthly palivizumab IM doses as scheduled regardless of diuretic therapy; confirm patient weight for accurate dosing at each monthly visit"
+      }
     ],
     "monitoring": [
       "RSV infection symptoms during season",
