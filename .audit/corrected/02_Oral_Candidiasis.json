@@ -1,0 +1,77 @@
+{
+  "name": "Oral Candidiasis (Thrush)",
+  "icon": "🦷",
+  "category": "Oral",
+  "assessment": {
+    "key_questions": [
+      "Inhaled corticosteroid use (most common cause — rinsing mouth after?)",
+      "Recent antibiotic use?",
+      "Dentures (fit and cleaning regimen)?",
+      "Immunosuppression, diabetes, HIV?",
+      "Dry mouth (Sjogren's, medications)?",
+      "Infant (<4 months) or breastfeeding mother-infant pair (treat both)?"
+    ],
+    "red_flags": [
+      "Difficulty swallowing (odynophagia) → esophageal candidiasis (refer)",
+      "Unresponsive to antifungal → resistant Candida or alternative diagnosis",
+      "Immunocompromised patient — systemic infection risk",
+      "Unusual appearance (one-sided, ulcerated) → malignancy",
+      "Infant <4 months with oral thrush — refer to physician",
+      "Breastfeeding mother-infant dyad — treat both (infant oral nystatin AND maternal nipples with miconazole or clotrimazole cream) to prevent ping-pong reinfection"
+    ],
+    "ddx": [
+      "Leukoplakia (cannot be wiped off)",
+      "Geographic tongue",
+      "Aphthous ulcers",
+      "Lichen planus",
+      "Chemical burn",
+      "Angular cheilitis",
+      "Erythematous (denture stomatitis) — red, flat patches under dentures"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Nystatin Suspension",
+        "drugs": "Nystatin 100,000 units/mL: 4–6 mL swish and swallow QID × 7–14 days. Infant dosing: 1 mL each side of mouth (total 2 mL) QID × 7–14 days",
+        "notes": "Topical antifungal — swish vigorously throughout mouth for 2 min, then swallow. Effective and cheap. Continue 48h after symptoms resolve. Works by binding ergosterol in fungal cell membrane. ONTARIO MA SCOPE: Nystatin IS prescribable by pharmacists under the OCP Minor Ailments algorithm for oral thrush. This is the practical first-line topical option in Ontario.",
+        "preferred_when": "Mild-moderate thrush; first-line for most patients including infants and breastfeeding dyads"
+      },
+      {
+        "name": "Clotrimazole Troches",
+        "drugs": "Clotrimazole 10 mg lozenge: dissolve slowly in mouth 5× daily × 14 days",
+        "notes": "Good compliance. Dissolve slowly — do not chew. More convenient than nystatin for some patients. NOTE: Clotrimazole 10 mg troches are NOT consistently available in Canadian pharmacies (often special order or unavailable). In most Ontario practice settings, nystatin suspension is the only reliable topical option. Confirm availability before recommending."
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Fluconazole — systemic (NOT in OCP MA algorithm — requires physician referral)",
+        "drugs": "Fluconazole 200 mg PO loading dose on Day 1, then 100 mg OD × 7–14 days (total course 7–14 days). Alternatively: 100–200 mg OD × 7–14 days without loading dose for mild-moderate cases",
+        "notes": "CRITICAL DOSE NOTE: The correct dose for ORAL CANDIDIASIS is 100–200 mg daily × 7–14 days with a 200 mg loading dose. A single 150 mg dose is the regimen for VAGINAL candidiasis — this is the WRONG indication and dose for oral thrush. For moderate-severe or refractory oral candidiasis, or denture-associated thrush, or when topical agents fail. Check drug interactions (many CYP3A4 interactions — warfarin, calcineurin inhibitors, statins, oral hypoglycemics). ONTARIO MA SCOPE: Fluconazole (systemic) is NOT in the OCP Minor Ailments prescribing algorithm for oral thrush. Pharmacist must refer to physician for systemic antifungal."
+      }
+    ],
+    "non_pharm": [
+      "ICS users: ALWAYS rinse mouth and gargle with water after each puffer use — prevents recurrence",
+      "Denture hygiene: remove dentures at night; soak in chlorhexidine 0.12% rinse or nystatin suspension to eliminate Candida biofilm from denture surface",
+      "Good oral hygiene: soft toothbrush twice daily",
+      "Address predisposing factors (diabetes control, dry mouth treatment)",
+      "Spacer device for ICS — reduces oropharyngeal deposition significantly",
+      "Infant: apply nystatin 1 mL to each side of mouth QID; ensure pacifiers and bottle nipples are sterilized daily",
+      "Breastfeeding dyad: apply miconazole 2% or clotrimazole 1% cream to maternal nipples after each feed (wipe off before next feed); treat infant orally simultaneously"
+    ],
+    "refer_when": [
+      "Odynophagia or dysphagia (esophageal involvement — requires systemic treatment and physician assessment)",
+      "Unresponsive to topical nystatin after 7–14 days",
+      "Immunocompromised patients (HIV, chemotherapy, high-dose systemic steroids) — systemic risk",
+      "Recurrent thrush without clear predisposing cause (may indicate undiagnosed diabetes, HIV, or immunodeficiency)",
+      "Infant <4 months with oral candidiasis",
+      "Requires systemic fluconazole (outside OCP MA scope — physician referral needed)"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Oral Candidiasis. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "RxTx (Canadian Pharmacists Association). Oral Candidiasis — Therapeutic Choices, 8th ed. (2023).",
+    "Pappas PG, et al. Clinical Practice Guideline for the Management of Candidiasis: 2016 Update by IDSA. Clin Infect Dis. 2016;62(4):e1–e50.",
+    "NICE. Candida — oral: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence (2023)."
+  ]
+}

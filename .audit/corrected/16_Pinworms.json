@@ -1,0 +1,69 @@
+{
+  "name": "Pinworms (Enterobiasis)",
+  "icon": "🪱",
+  "category": "Infectious",
+  "ontario_ma_scope": "⚠️ Pinworms/enterobiasis is NOT a designated Ontario MA condition. Pyrantel pamoate (Combantrin) is OTC — pharmacist provides OTC counselling only.",
+  "assessment": {
+    "key_questions": [
+      "Perianal itch (especially nocturnal — hallmark: female worms lay eggs at night)?",
+      "Child in daycare/school (highly transmissible in children)?",
+      "Household contacts symptomatic?",
+      "In practice, empirical treatment is standard in Canada when classic symptoms (nocturnal perianal itch, especially in children) are present — confirm diagnosis not always required.",
+      "Scotch tape (pinworm paddle) test: apply sticky tape to perianal area in morning before bathing, examine microscopically for eggs — highest sensitivity when done before bathing or defecation"
+    ],
+    "red_flags": [
+      "Significant weight loss, diarrhea, or malabsorption → other parasitic infection",
+      "Abdominal pain + eosinophilia → other helminth",
+      "Pelvic symptoms in girls → pinworm migration to vagina/uterus (requires gynaecology)"
+    ],
+    "ddx": [
+      "Contact dermatitis (perianal)",
+      "Psoriasis (perianal — well-demarcated red plaque)",
+      "Pruritus ani (idiopathic)",
+      "Candidal perianal dermatitis",
+      "Perianal streptococcal dermatitis",
+      "Anal fissure"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Pyrantel Pamoate (Practical First-Line in Canada)",
+        "drugs": "Pyrantel pamoate (Combantrin) 11 mg/kg single dose (max 1g) — repeat in 2 weeks",
+        "notes": "PYRANTEL PAMOATE (Combantrin) IS THE PRACTICAL FIRST-LINE IN CANADA. Mebendazole (Vermox) was discontinued in Canada ~2012 and has had intermittent, unreliable availability since — as of 2024–2025, NOT consistently available in Canadian pharmacies. Single dose is effective — repeat in 2 weeks to kill worms hatched from eggs after first dose. TREAT THE ENTIRE HOUSEHOLD simultaneously (re-infection cycle). Pyrantel pamoate is OTC in Canada. Safe in children ≥2 years per Combantrin Canadian monograph (some references cite ≥1 year — note this discrepancy). Pyrantel pamoate poorly absorbed — preferred if treatment during pregnancy deemed necessary. Pregnancy: mebendazole and albendazole generally avoided in first trimester — consult physician.",
+        "preferred_when": "All household contacts treated simultaneously; first-line practical choice in Canada"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Mebendazole (when available)",
+        "drugs": "Mebendazole 100 mg single dose — repeat in 2 weeks",
+        "notes": "As of 2024–2025, mebendazole (Vermox) is NOT consistently available in Canadian pharmacies. Use pyrantel pamoate as practical alternative. Requires prescription in Canada."
+      },
+      {
+        "name": "Albendazole (when mebendazole unavailable)",
+        "drugs": "Albendazole 400 mg single dose — repeat in 2 weeks",
+        "notes": "Available via Special Access Programme (SAP) or compounding in Canada when mebendazole is unavailable. Generally avoided in first trimester of pregnancy."
+      }
+    ],
+    "non_pharm": [
+      "Treat ALL household members simultaneously — key to eradication",
+      "Wash all bedding, towels, underwear, and clothing in hot water on day of treatment; avoid shaking bedding (disperses eggs)",
+      "Trim fingernails short (eggs under nails are main transmission route); discourage nail-biting and thumb-sucking",
+      "Strict hand-washing especially after toilet use and before meals",
+      "Morning shower — removes eggs deposited overnight in perianal area"
+    ],
+    "refer_when": [
+      "Treatment failure after 2 courses",
+      "Immunocompromised patient",
+      "Ectopic infection (vaginal, peritoneal — pelvic symptoms in girls)",
+      "Uncertainty about diagnosis or atypical presentation"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Pinworm Infection (Enterobiasis). OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "Canadian Paediatric Society (CPS). Common questions about Enterobius vermicularis (pinworm) management (2018, reaffirmed 2023).",
+    "AAP (American Academy of Pediatrics). Red Book: Report of the Committee on Infectious Diseases, 32nd ed. Pinworm Infection (Enterobiasis). 2021.",
+    "WHO. Soil-transmitted helminthiases: Enterobiasis (Pinworm). World Health Organization (2023)."
+  ]
+}

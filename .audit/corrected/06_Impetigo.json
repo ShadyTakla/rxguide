@@ -1,0 +1,73 @@
+{
+  "name": "Impetigo",
+  "icon": "🦠",
+  "category": "Dermatology",
+  "assessment": {
+    "key_questions": [
+      "Number of lesions and extent of involvement?",
+      "Non-bullous (honey-crusted) vs bullous (large fluid-filled blisters)?",
+      "Contagious setting: school/daycare, family members affected?",
+      "Prior antibiotic use (resistance)?",
+      "Underlying skin condition (eczema — common portal of entry)?"
+    ],
+    "red_flags": [
+      "Systemic symptoms (fever, lymphadenopathy) → systemic infection/cellulitis",
+      "Rapidly spreading or worsening despite treatment → MRSA, cellulitis",
+      "Bullous impetigo in infant — more serious (systemic S. aureus)",
+      "Post-strep glomerulonephritis risk (hematuria, edema) — with nephritogenic strains",
+      "Staphylococcal scalded skin syndrome (SSSS): extensive blistering, fever, diffuse skin tenderness, positive Nikolsky sign — emergency referral",
+      "Necrotizing fasciitis: rapidly spreading erythema, disproportionate pain, systemic toxicity — emergency"
+    ],
+    "ddx": [
+      "Herpes simplex (grouped vesicles, tingling)",
+      "Tinea (ringworm — KOH positive)",
+      "Contact dermatitis",
+      "Chickenpox (generalized, pruritic)",
+      "Cellulitis",
+      "Scabies (burrows, intense nocturnal itch, interdigital spaces)",
+      "Eczema herpeticum (atopic patient with punched-out erosions, fever)",
+      "Insect bites with secondary infection"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Topical Antibiotic (localized)",
+        "drugs": "Mupirocin 2% ointment (Bactroban) BID × 5 days | Fusidic acid 2% cream (Fucidin) TID × 5–7 days | Ozenoxacin 1% cream (Ozanex) BID × 5 days",
+        "notes": "Topical therapy equivalent to oral for localized non-bullous impetigo. Reduces systemic antibiotic exposure and resistance risk. Pharmacist can prescribe under Ontario Minor Ailments (topical antibiotics only). SCOPE NOTE: Typically ≤3 localized lesions in one body area for topical-only MA management per OPA guidance. Clean crusts with warm water before applying. Mupirocin and fusidic acid cover S. aureus and Group A Strep. Ozenoxacin (Ozanex) 1% cream: Health Canada-approved 2017 for impetigo in patients ≥2 months; on Ontario Schedule 4 — a notable Canadian option for mupirocin-resistant cases.",
+        "preferred_when": "Localized (≤3 lesions, one body area), non-bullous impetigo"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Oral Antibiotic (widespread/bullous)",
+        "drugs": "Cephalexin 500 mg QID × 7 days (children: 25–50 mg/kg/day ÷ QID) | Amoxicillin-clavulanate 500/125 mg TID × 7 days",
+        "notes": "SCOPE NOTE: Oral antibiotics for widespread or bullous impetigo are OUTSIDE Ontario pharmacist Minor Ailments scope — refer to physician or NP. For widespread impetigo (>5 lesions), bullous type, or treatment failure with topical therapy. Cephalexin covers S. aureus (MSSA) and Strep. If MRSA suspected (no response to cephalexin): TMP-SMX DS BID × 7 days."
+      }
+    ],
+    "non_pharm": [
+      "Keep lesions covered with gauze to prevent spread",
+      "Wash hands frequently — highly contagious",
+      "School/daycare exclusion: child may return 24h after starting effective antibiotic treatment AND lesions are covered (Ontario PHU standard)",
+      "Do not share towels, washcloths, or bedding",
+      "Wash linens/clothing in hot water",
+      "Trim nails to prevent scratching and autoinoculation"
+    ],
+    "refer_when": [
+      "Widespread impetigo (>3 lesions or multiple body areas) — oral antibiotics required, outside MA scope",
+      "Bullous impetigo in any patient, especially infants",
+      "Systemic symptoms (fever, lymphadenopathy)",
+      "Failure to improve after 48–72h of topical antibiotic therapy",
+      "Facial impetigo near eyes or mucous membranes",
+      "Suspected MRSA",
+      "Immunocompromised patient",
+      "Suspected staphylococcal scalded skin syndrome or necrotizing fasciitis — emergency"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Impetigo. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "AMMI Canada (Association of Medical Microbiology and Infectious Disease Canada). Skin and Soft Tissue Infection Guidelines (2019).",
+    "Stevens DL, et al. Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections: 2014 Update by IDSA. Clin Infect Dis. 2014;59(2):e10–e52.",
+    "NICE. Impetigo: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence (2023)."
+  ]
+}

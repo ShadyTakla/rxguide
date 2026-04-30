@@ -1,0 +1,70 @@
+{
+  "name": "Insect Bites & Stings",
+  "icon": "🐝",
+  "category": "Dermatology",
+  "ontario_ma_scope": "Insect bites/stings are NOT a designated Ontario MA condition. Pharmacist role is OTC counselling and referral. Cross-reference: Tick Bite/Lyme is a separate Ontario MA condition.",
+  "assessment": {
+    "key_questions": [
+      "Type of insect (bee/wasp sting vs mosquito/fly bite)?",
+      "History of previous severe reactions to the same insect?",
+      "Stinger still present (bee stings — remove immediately)?",
+      "Local reaction vs generalized/systemic symptoms (anaphylaxis)?",
+      "Lyme disease risk (tick bite — see Tick Bite protocol)?"
+    ],
+    "red_flags": [
+      "Systemic symptoms (hives beyond bite site, wheezing, hypotension, dizziness, throat tightness) → ANAPHYLAXIS — CALL 911, epinephrine",
+      "Large local reaction expanding rapidly over hours → cellulitis vs severe local reaction",
+      "Fever + expanding warmth/redness at bite site → secondary infection",
+      "Multiple bee/wasp stings → systemic toxicity risk",
+      "If anaphylaxis symptoms — prescribe/recommend EpiPen auto-injector, teach technique, advise carry 2, call 911 even after epinephrine use"
+    ],
+    "ddx": [
+      "Anaphylaxis",
+      "Secondary cellulitis (bacterial infection of bite)",
+      "Tick bite (Lyme risk)",
+      "Scabies (burrow pattern)",
+      "Urticaria (multiple wheals)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Local Reaction Management",
+        "drugs": "Hydrocortisone 1% cream TID-QID × 3–5 days (itch/swelling) | Cetirizine (Reactine) 10 mg OD (systemic itch/urticaria) | Acetaminophen 500–1000 mg or ibuprofen 400 mg q6–8h for pain from stings",
+        "notes": "Remove stinger (bee): Remove by any means quickly — speed of removal matters more than method. Scraping with a card or nail is acceptable; so is grasping with fingers. Avoid squeezing the venom sac. Ice 10–15 min immediately — reduces swelling and pain. Topical hydrocortisone + oral antihistamine for local reaction. ⚠️ Topical diphenhydramine is generally discouraged — risk of contact sensitization (RxFiles, NICE CKS). Use topical hydrocortisone 1% instead for local itch.",
+        "preferred_when": "Local reaction only (redness/swelling confined to bite area)"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Short-Course Oral Corticosteroid",
+        "drugs": "Prednisone 40–60 mg × 3–5 days; no taper needed for courses <7 days",
+        "notes": "For large local reactions (>10 cm) or prominent systemic hives (urticaria beyond bite site) that do not respond to antihistamines."
+      }
+    ],
+    "non_pharm": [
+      "Remove stinger (bee) by any means quickly — speed matters more than method; scraping with card or nail is fine; avoid squeezing venom sac",
+      "Wash bite area with soap and water",
+      "Ice pack 10–15 min × q1–2h for first 24h",
+      "Elevate if limb is affected",
+      "Calamine lotion: soothing for mild itch",
+      "Prevention: insect repellent (DEET 20–30%), cover skin in wooded areas, avoid floral perfumes, food odours when outdoors"
+    ],
+    "refer_when": [
+      "Anaphylaxis — prescribe/recommend EpiPen auto-injector, teach technique, advise carry 2, call 911 even after epinephrine use; refer to allergist",
+      "Epinephrine auto-injector prescription + allergist referral for known severe reactors",
+      "Large local reactions (>10 cm) not responding to antihistamines/steroids",
+      "Secondary infection (expanding erythema, warmth, fever, purulent discharge)",
+      "Tick bite with >36h attachment (Lyme prophylaxis protocol)",
+      "Mosquito bite in traveller returning from tropical region (malaria, dengue, Zika, EEE/WNV risk)",
+      "Multiple stings (>10 in children, >50 in adults — toxicity risk)",
+      "Unusual or worsening reaction not responding to OTC management"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Insect Bites and Stings. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "RxTx (Canadian Pharmacists Association). Insect Bites and Stings — Therapeutic Choices, 8th ed. (2023).",
+    "AAD (American Academy of Dermatology). Insect Bite Reactions: Diagnosis and Management (2022).",
+    "WHO. Vector Control: Insect Repellents and Bite Prevention. World Health Organization (2023)."
+  ]
+}

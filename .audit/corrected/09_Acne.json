@@ -1,0 +1,98 @@
+{
+  "name": "Acne Vulgaris",
+  "icon": "😶",
+  "category": "Dermatology",
+  "assessment": {
+    "key_questions": [
+      "Severity: comedonal (blackheads/whiteheads only), mild inflammatory (few papules/pustules), moderate inflammatory (multiple papules/pustules), or severe (many papules/pustules + nodules/cysts)?",
+      "Distribution: face, chest, back?",
+      "Current treatments tried (OTC retinoids, benzoyl peroxide, niacinamide)?",
+      "Female: relation to menstrual cycle? PCOS features?",
+      "Medications worsening acne: corticosteroids, lithium, iodides, androgens?"
+    ],
+    "red_flags": [
+      "Acne fulminans: sudden onset severe nodular acne + fever + arthralgia → urgent dermatology",
+      "Scarring (pitting, ice-pick scars) → escalate treatment",
+      "Signs of PCOS in women: irregular menses, hirsutism → appropriate investigation",
+      "Psychological impact (anxiety, depression, social withdrawal) — address actively"
+    ],
+    "ddx": [
+      "Rosacea (flushing, no comedones, central face)",
+      "Perioral dermatitis",
+      "Folliculitis (hot tub, trunk, uniform papules)",
+      "Milia (superficial white cysts)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Scope Note",
+        "drugs": "",
+        "notes": "⚠️ Acne vulgaris is NOT in the Ontario MA prescribing scope. Pharmacists can counsel on OTC products and refer. Topical clindamycin/BPO combination and oral therapies require physician/NP prescription."
+      },
+      {
+        "name": "Benzoyl Peroxide",
+        "drugs": "Benzoyl peroxide 2.5–5% gel/cream (PanOxyl, Benzagel) OD–BID",
+        "notes": "Most effective OTC acne treatment. Bactericidal (no resistance), comedolytic, anti-inflammatory. Start with 2.5% (less irritating than 5% or 10% — same efficacy). Apply to entire affected area (not just spots). Bleaches fabrics — warn patient. Takes 6–8 weeks for full benefit. Application sequencing: apply BPO in the MORNING; apply retinoid in the EVENING — avoid co-applying as BPO can oxidise retinoids.",
+        "preferred_when": "Mild inflammatory acne (papules/pustules); also prevents antibiotic resistance when combined with topical antibiotics"
+      },
+      {
+        "name": "Topical Retinoid",
+        "drugs": "Adapalene 0.1% gel (Differin — OTC) OD at bedtime | Adapalene 0.3% gel (Differin 0.3% — Rx only) | Tretinoin 0.025–0.05% cream (Retin-A — prescription) | Trifarotene 0.005% cream (Aklief — prescription)",
+        "notes": "Normalize follicular keratinization, reduce comedones, anti-inflammatory. Adapalene 0.1% (Differin): OTC in Canada — excellent tolerability. Adapalene 0.3%: prescription only — do not confuse with OTC 0.1% strength. Tretinoin: prescription, slightly more potent. Trifarotene 0.005% cream (Aklief): Health Canada approved 2020; indicated for body acne (face, trunk, shoulders) in patients ≥9 years — requires prescription. Apply pea-sized amount to ENTIRE face/affected area (not spot treatment) at bedtime. Initial irritation (dryness, peeling) peaks weeks 2–4 then improves. Sun protection essential. Takes 12+ weeks for full benefit. Pregnancy safety: AVOID all topical retinoids in pregnancy — teratogenic. Safe alternatives: azelaic acid, BPO, erythromycin.",
+        "preferred_when": "Comedonal acne (blackheads/whiteheads); moderate acne; long-term maintenance"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Topical Antibiotic + BPO Combination",
+        "drugs": "Clindamycin 1% + benzoyl peroxide 5% gel (Benzaclin, Clindoxyl ADV) — apply OD (once daily)",
+        "notes": "Clindamycin 1% topical: anti-inflammatory, reduces P. acnes. ALWAYS combine with benzoyl peroxide to prevent antibiotic resistance. Never use topical antibiotic alone (without BPO) — resistance risk. AAD 2024: fixed-dose combinations (e.g. Clindoxyl ADV) support OD dosing — BID dosing increases irritation without added benefit."
+      },
+      {
+        "name": "Oral Antibiotic (Rx — physician/NP required)",
+        "drugs": "Doxycycline 50–100 mg BID OR 100 mg OD (modified-release, e.g. Apprilon) | Minocycline 50–100 mg BID (second choice)",
+        "notes": "Use for ≤3–4 months maximum; always combine with topical BPO to prevent resistance. Doxycycline: preferred tetracycline (lower resistance profile than minocycline). Minocycline: second choice due to greater resistance concerns and drug-induced lupus risk. Take with food and full glass of water; avoid lying down for 30 min (esophageal irritation). AVOID in pregnancy (tetracyclines contraindicated in pregnancy and children <8 years)."
+      },
+      {
+        "name": "Hormonal Therapy — Adult Women (Rx — physician/NP required)",
+        "drugs": "Spironolactone 50–200 mg/day | Cyproterone acetate/ethinyl estradiol (Diane-35) | OCP: ethinyl estradiol + drospirenone (Yaz, Yasmin) | EE + norgestimate (Tri-Cyclen)",
+        "notes": "For adult women with hormonal/cyclical acne ± PCOS. Spironolactone: anti-androgen; effective for hormonal acne; requires monitoring of potassium/BP; contraindicated in pregnancy (teratogenic — reliable contraception required). Cyproterone/EE (Diane-35): Health Canada approved for acne in women — note increased VTE risk vs other OCPs; contraindicated in women with migraine with aura. Combined OCPs: reduces androgenic stimulation of sebaceous glands; takes 3+ months for full benefit."
+      },
+      {
+        "name": "Azelaic Acid",
+        "drugs": "Azelaic acid 15% gel (Finacea) or 20% cream (Skinoren) BID",
+        "notes": "Comedolytic, antibacterial, anti-inflammatory; also reduces post-inflammatory hyperpigmentation (PIH). Pregnancy-safe (suitable alternative when retinoids and tetracyclines must be avoided). Requires prescription in Canada."
+      },
+      {
+        "name": "Combined OCP (females)",
+        "drugs": "Ethinyl estradiol + drospirenone (Yaz, Yasmin) | EE + norgestimate (Tri-Cyclen)",
+        "notes": "For women with acne ± PCOS — reduces androgenic stimulation of sebaceous glands. Health Canada approved for acne. Takes 3+ months for full benefit."
+      }
+    ],
+    "non_pharm": [
+      "Gentle non-comedogenic cleanser BID (not scrubbing — worsens inflammation)",
+      "Non-comedogenic SPF 30+ sunscreen (especially with retinoid use)",
+      "Do not pick or squeeze (causes scarring, spreads bacteria)",
+      "Oil-free makeup and skincare products",
+      "Change pillowcase frequently (every 2–3 days)",
+      "Application sequencing: MORNING — apply benzoyl peroxide; EVENING — apply retinoid. Avoid co-application (BPO oxidises retinoids, reducing efficacy and increasing irritation)",
+      "Pregnancy safety note: avoid all retinoids (topical and oral) and tetracyclines. Acceptable options: azelaic acid, benzoyl peroxide, topical erythromycin",
+      "Manage psychological impact — refer if significant mental health effect"
+    ],
+    "refer_when": [
+      "Moderate-to-severe inflammatory acne requiring prescription therapy (topical antibiotics, oral antibiotics, retinoids)",
+      "Nodulocystic acne — candidate for oral isotretinoin (Accutane/Epuris) — requires dermatologist",
+      "Women requesting hormonal therapy (spironolactone, Diane-35, OCP for acne)",
+      "Acne in pregnancy — safe prescribing guidance needed",
+      "Scarring — escalate treatment to prevent further damage",
+      "Acne with significant psychological distress (anxiety, depression, social withdrawal)"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Acne. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "Canadian Dermatology Association (CDA). Acne Management Guidelines. J Cutan Med Surg. 2015;19(2):101–108 (latest CDA guidance, with OCP updates).",
+    "Zaenglein AL, et al. Guidelines of care for the management of acne vulgaris. J Am Acad Dermatol. 2016;74(5):945–973.e33. (AAD, updated 2024)",
+    "NICE. Acne vulgaris: management. NICE guideline [NG198]. National Institute for Health and Care Excellence (2021)."
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Urticaria (Hives)",
+  "icon": "🔴",
+  "category": "Dermatology",
+  "assessment": {
+    "key_questions": [
+      "Acute (<6 weeks) vs chronic (>6 weeks)?",
+      "Triggers: food, medication, infection, exercise, stress, cold, pressure?",
+      "Angioedema (swelling of lips, tongue, throat)?",
+      "New medications in past 6 weeks (especially NSAIDs, ACE inhibitors, antibiotics)?",
+      "Recent infection (viral URI, strep throat)?",
+      "Duration of individual hives — do they last >24 hours or leave bruising/pigmentation (urticarial vasculitis)?"
+    ],
+    "red_flags": [
+      "Angioedema of tongue/throat or stridor → anaphylaxis/airway emergency — CALL 911",
+      "Wheeze, hypotension, systemic symptoms → anaphylaxis",
+      "Systemic symptoms (fever, arthralgia, lymphadenopathy) → vasculitis, autoinflammatory",
+      "Chronic urticaria >6 weeks → requires investigation, refer to allergist",
+      "Individual hive lasting >24 hours or leaving bruise/pigmentation after resolving → urticarial vasculitis (refer to physician/allergist)"
+    ],
+    "ddx": [
+      "Anaphylaxis",
+      "Contact dermatitis",
+      "Erythema multiforme",
+      "Mastocytosis",
+      "Hereditary angioedema (no urticaria)",
+      "Urticarial vasculitis (wheals persist >24h, may leave purpuric/pigmented marks — biopsy required)",
+      "Drug eruption (morbilliform)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Non-Sedating Oral Antihistamine (2nd-generation H1)",
+        "drugs": "Cetirizine (Reactine) 10 mg OD–BID | Fexofenadine (Allegra) 180 mg OD | Loratadine (Claritin) 10 mg OD | Bilastine (Blexten) 20 mg OD | Rupatadine (Rupall) 10 mg OD | Desloratadine (Aerius) 5 mg OD | Levocetirizine (Xyzal) 5 mg OD",
+        "notes": "Non-sedating H1 antihistamines are the first-line for acute urticaria (EAACI/GA2LEN/WAO 2022, CSACI). Take regularly (not PRN) for better effect. Continue until urticaria fully resolved. UP-DOSING PROTOCOL (EAACI 2022): If standard dose is insufficient, increase to up to 4× the licensed dose before escalating to second-line (e.g., cetirizine 10 mg/day → 20 mg/day → 40 mg/day in divided doses; fexofenadine 180 mg → 360 mg → 720 mg/day). Try up-dosing for at least 1–2 weeks before escalating. ONTARIO MA SCOPE: Acute urticaria (<6 weeks) with non-sedating H1 antihistamines is within Ontario pharmacist MA scope (added Oct 2023). Chronic urticaria, angioedema, and prednisone are OUT of MA scope.",
+        "preferred_when": "First-line for all acute urticaria; try up to 4× standard dose before escalating"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Sedating Antihistamine (short-term add-on — use with caution)",
+        "drugs": "Diphenhydramine (Benadryl) 25–50 mg q6h (avoid in elderly — Beers Criteria)",
+        "notes": "IMPORTANT — CURRENT GUIDELINE POSITION: EAACI/GA2LEN/WAO 2022 and CSACI recommend AGAINST first-generation sedating antihistamines as routine add-on therapy for urticaria, due to significant anticholinergic burden and impaired sleep architecture. The preferred approach when standard-dose non-sedating antihistamine is insufficient is to UP-TITRATE the non-sedating agent to up to 4× the licensed dose. Use a first-generation antihistamine (e.g., diphenhydramine) only if sedation is explicitly needed for severe nocturnal pruritus interfering with sleep, and only for short-term use. Avoid in elderly (falls, confusion, cognitive impairment). Not appropriate for chronic urticaria."
+      },
+      {
+        "name": "Short-Course Prednisone (NOT in Ontario MA scope — physician referral required)",
+        "drugs": "Prednisone 30–40 mg OD × 3–5 days (maximum 10 days per EAACI 2022 guideline)",
+        "notes": "For severe acute urticaria not responding to antihistamine therapy including up-dosing. Do not use for chronic urticaria (no long-term benefit; significant side effects with prolonged use). Per EAACI 2022: maximum course is 10 days. ONTARIO MA SCOPE: Prednisone for urticaria is OUT of Ontario pharmacist MA scope — refer to physician."
+      }
+    ],
+    "non_pharm": [
+      "Identify and avoid triggers (food diary, medication review)",
+      "Cool compresses for symptomatic relief",
+      "Loose fitting clothing",
+      "Avoid ASA and NSAIDs (worsen urticaria in many patients)",
+      "Avoid alcohol (vasodilator — worsens itch)"
+    ],
+    "refer_when": [
+      "Chronic urticaria >6 weeks — refer to allergist/immunologist for investigation and omalizumab evaluation",
+      "Angioedema involvement (especially face, lips, tongue, larynx) — refer to physician; prescribe EpiPen if appropriate",
+      "Urticarial vasculitis suspected (individual wheals lasting >24h, leaving bruise or pigmentation) — requires skin biopsy and physician assessment",
+      "Requires prednisone beyond a single short course (>10 days) — out of Ontario MA scope",
+      "Suspected hereditary angioedema (no wheals, family history of recurrent swelling)",
+      "Urticaria with systemic symptoms (fever, arthralgia, lymphadenopathy) — vasculitis or autoinflammatory workup needed",
+      "Failure to respond to antihistamines including up-dosing to 4× standard dose"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Urticaria. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "CSACI (Canadian Society of Allergy and Clinical Immunology). Urticaria Management — Canadian Consensus Guidelines (2019).",
+    "Bernstein JA, et al. The diagnosis and management of acute and chronic urticaria: 2014 update. J Allergy Clin Immunol. 2014;133(5):1270–1277. (AAAAI/ACAAI Joint Task Force)",
+    "Zuberbier T, et al. The EAACI/GA²LEN/EDF/WAO Guideline for the Definition, Classification, Diagnosis and Management of Urticaria. Allergy. 2022;77(3):734–766."
+  ]
+}

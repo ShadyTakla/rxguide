@@ -1,0 +1,68 @@
+{
+  "name": "Tick Bite (Lyme Prophylaxis)",
+  "icon": "🦟",
+  "category": "Infectious",
+  "assessment": {
+    "key_questions": [
+      "Geographic risk: known Lyme-endemic area (southern/eastern Ontario [Long Point, Turkey Point, Rouge Valley, Thousand Islands, Kingston area, Niagara, eastern ON], NS, NB, southern QC, southern MB)?",
+      "Tick species: black-legged tick (deer tick, Ixodes scapularis) — the vector for Lyme in Canada?",
+      "Tick attachment time: ≥36h attached = significant transmission risk (must be engorged)",
+      "Time since tick removal: <72h = prophylaxis window",
+      "Ability to identify tick (black-legged vs dog tick)? Submit to eTick.ca for identification (free Canadian resource)",
+      "Allergy to doxycycline or tetracyclines?",
+      "Pregnancy status?"
+    ],
+    "red_flags": [
+      "Bull's eye rash (erythema migrans, ≥5 cm expanding) → early Lyme disease — requires treatment not just prophylaxis",
+      "Flu-like symptoms (fever, fatigue, myalgia, headache, neck stiffness) after tick bite → treat for Lyme",
+      "Neurological symptoms or cardiac symptoms (palpitations, syncope) → disseminated Lyme — urgent refer",
+      "Rash at any other body site after tick bite in endemic area"
+    ],
+    "ddx": [
+      "Early Lyme disease (erythema migrans)",
+      "Rocky Mountain spotted fever (rare in Canada)",
+      "Cellulitis at bite site",
+      "Local allergic reaction to tick bite"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Doxycycline Prophylaxis (single dose)",
+        "drugs": "Doxycycline 200 mg single oral dose (adults) | 4.4 mg/kg single dose (children of all ages, max 200 mg)",
+        "notes": "Indication: all 4 criteria must be met — (1) black-legged tick (Ixodes scapularis) confirmed; (2) attached ≥36h; (3) in endemic area (check PHO Lyme disease risk map — updated annually); (4) prophylaxis started within 72h of tick removal. Efficacy: 87% reduction in Lyme disease if criteria met. PEDIATRIC UPDATE (IDSA/AAN/ACR 2020; AAP): Doxycycline single-dose prophylaxis is now recommended for all ages including children <8 years — no clinically significant dental staining occurs at this single dose. Age ≥8 restriction is outdated. Dose: 4.4 mg/kg (max 200 mg) for all children. COUNSELLING: Take with a full glass of water; remain upright for at least 30 minutes after taking; can take with food to reduce esophageal irritation. Advise photosensitivity — use sunscreen, avoid prolonged sun exposure. PREGNANCY: Doxycycline is generally avoided throughout pregnancy in Canada; pregnancy = refer to physician (not pharmacist-managed under MA). ALLERGY: Doxycycline is the ONLY recommended prophylactic agent per PHO algorithm. Doxycycline/tetracycline allergy = refer to physician (no alternative prophylaxis). PRIMARY ONTARIO REFERENCE: PHO Pharmacist Assessment & Prescribing Algorithm for Lyme Disease Post-Exposure Prophylaxis (2023).",
+        "preferred_when": "All 4 prophylaxis criteria met (tick species + attachment time + endemic area + within 72h)"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Watchful Waiting (if criteria not fully met)",
+        "drugs": "No prophylaxis — monitor for symptoms × 30 days",
+        "notes": "If prophylaxis criteria not all met (dog tick, <36h attached, non-endemic area): observe only. Advise patient to return immediately if erythema migrans rash or flu-like symptoms develop within 30 days."
+      }
+    ],
+    "non_pharm": [
+      "Proper tick removal: fine-tipped tweezers, grasp close to skin surface, pull upward steadily — no twisting, no petroleum jelly/fire",
+      "Submit tick for identification at eTick.ca (free Canadian resource for tick photos and species identification)",
+      "Save the tick (sealed container or tape to paper) for identification if eTick.ca not accessible",
+      "Photograph the rash if present",
+      "Report tick bite to public health if in endemic area",
+      "Prevention: light-coloured clothing, long pants/sleeves in wooded areas, DEET insect repellent (20–30%), check for ticks after outdoor activity",
+      "Monitor for symptoms (erythema migrans, flu-like illness) for up to 30 days after bite"
+    ],
+    "refer_when": [
+      "Erythema migrans rash (expanding bull's eye, ≥5 cm) — requires treatment, not just prophylaxis",
+      "Flu-like illness (fever, myalgia, headache) after tick bite in endemic area",
+      "Neurological or cardiac symptoms after tick bite",
+      "Pregnancy — doxycycline avoided throughout pregnancy; refer to physician",
+      "Doxycycline/tetracycline allergy — no alternative prophylaxis; refer to physician",
+      "Prophylaxis criteria not fully met but clinical uncertainty warrants physician input"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Tick Bite / Lyme Disease Prophylaxis. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "Public Health Ontario (PHO). Lyme Disease: Prevention and Clinical Resources (2024). Ontario Agency for Health Protection and Promotion.",
+    "Lantos PM, et al. Clinical Practice Guidelines by IDSA/AAN/ACR: 2020 Guidelines for Prevention, Diagnosis and Treatment of Lyme Disease. Clin Infect Dis. 2021;72(1):e1–e48.",
+    "NICE. Lyme disease: NICE guideline [NG95]. National Institute for Health and Care Excellence (2018, updated 2023)."
+  ]
+}

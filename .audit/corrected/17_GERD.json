@@ -1,0 +1,79 @@
+{
+  "name": "GERD (Heartburn)",
+  "icon": "🔥",
+  "category": "GI",
+  "ontario_ma_scope": "⚠️ GERD/heartburn is NOT in the Ontario MA prescribing program. Pharmacist role: OTC counselling for mild/intermittent symptoms, Rx adaptation for existing therapy, referral for new/alarm symptoms.",
+  "assessment": {
+    "key_questions": [
+      "Typical symptoms: retrosternal burning, regurgitation, worsened post-prandially/lying down?",
+      "Alarm symptoms (dysphagia, weight loss, GI bleeding, vomiting)?",
+      "Age ≥60 with new-onset symptoms (increased risk of Barrett's/cancer — ACG 2022 threshold)?",
+      "Current medications worsening GERD (CCBs, nitrates, TCAs, bisphosphonates)?",
+      "Frequency: <2×/week (mild) vs >2×/week (moderate-frequent)?",
+      "Heaviness of Smoking Index (HSI) if applicable; long-term PPI use — reassess indication?"
+    ],
+    "red_flags": [
+      "Dysphagia or odynophagia → structural pathology — endoscopy",
+      "Unintentional weight loss + GI symptoms → malignancy",
+      "GI bleeding (hematemesis, melena) → upper GI bleed — ER",
+      "Age ≥60 with new-onset symptoms → endoscopy to exclude Barrett's oesophagus/cancer (ACG 2022; note CAG uses different threshold — reassess with specialist)",
+      "Iron deficiency anaemia without clear cause → upper GI workup",
+      "Persistent vomiting → structural or motility pathology"
+    ],
+    "ddx": [
+      "Peptic ulcer disease",
+      "Angina (cardiac chest pain)",
+      "Esophageal spasm",
+      "Gastroparesis",
+      "H. pylori gastritis",
+      "Eosinophilic esophagitis"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Proton Pump Inhibitor",
+        "drugs": "Omeprazole (Losec / Olex OTC 20 mg) 20 mg OD 30–60 min before breakfast × 8 weeks | Pantoprazole (Pantoloc) 20–40 mg OD before breakfast",
+        "notes": "Most effective acid suppression. Take 30–60 min BEFORE breakfast — proton pumps must be active for PPIs to work. Standard initial symptomatic trial: 8 weeks (ACG 2022), then reassess for step-down/deprescribing. For on-demand GERD (appropriate for non-erosive reflux disease/NERD only — NOT suitable for erosive esophagitis, which requires endoscopic diagnosis beyond pharmacist MA scope): omeprazole 20 mg when symptoms occur. Long-term: annual review of indication; step-down if possible. OTC omeprazole 20 mg (Olex, Losec OTC) available in Canada without Rx — advise max 14 days OTC use then reassess. DRUG INTERACTIONS: Omeprazole/esomeprazole significantly inhibit CYP2C19 → reduce clopidogrel efficacy (use pantoprazole or rabeprazole instead in patients on clopidogrel). PPIs reduce absorption of ketoconazole, itraconazole, atazanavir, levothyroxine, oral iron (separate by 2h), dasatinib. DEPRESCRIBING: For long-term PPI users without ongoing indication — consider stepwise deprescribing (step down to H2RA or PRN) to avoid rebound acid hypersecretion. Wean over 2–4 weeks. Note: ranitidine (Zantac) permanently withdrawn from Canadian market in 2020 due to NDMA contamination — use famotidine or PPI instead.",
+        "preferred_when": "Moderate-frequent heartburn (>2×/week); erosive esophagitis (endoscopy-confirmed — refer for diagnosis)"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "H2 Receptor Antagonist",
+        "drugs": "Famotidine (Pepcid) 10–20 mg PRN or BID",
+        "notes": "Faster onset than PPIs (30 min vs 1–4h) — useful for breakthrough or PRN. Less effective than PPI for severe or frequent GERD. Tachyphylaxis develops with regular use. Can use famotidine at bedtime + morning PPI for nocturnal breakthrough. Note: ranitidine (Zantac) permanently withdrawn from Canadian market in 2020 due to NDMA contamination — use famotidine instead."
+      },
+      {
+        "name": "Antacids",
+        "drugs": "Calcium carbonate (Tums) | Aluminum/magnesium hydroxide (Gaviscon, Maalox) PRN",
+        "notes": "Immediate relief (minutes) but short duration (30–60 min). PRN for mild breakthrough. Gaviscon: forms raft over stomach contents — useful for regurgitation. Not for regular scheduled use. In pregnancy: lifestyle + antacids (calcium carbonate) first-line; ranitidine withdrawn — use famotidine if H2RA needed; PPIs (omeprazole, pantoprazole) acceptable if symptoms persist."
+      }
+    ],
+    "non_pharm": [
+      "Head of bed elevation 15–20 cm (for nocturnal symptoms — most effective lifestyle intervention)",
+      "Avoid meals within 3h of bedtime",
+      "Lose weight if overweight (most evidence-based lifestyle intervention)",
+      "Avoid trigger foods (individualized): coffee, citrus, tomatoes, spicy foods, high-fat meals, chocolate, mint",
+      "Reduce alcohol and smoking",
+      "Small frequent meals rather than large meals"
+    ],
+    "refer_when": [
+      "New onset in patient ≥60 years (alarm feature — endoscopy to exclude Barrett's/malignancy; ACG 2022 threshold; CAG uses different threshold — reassess with specialist)",
+      "Dysphagia (progressive difficulty swallowing) — structural pathology",
+      "Unexplained weight loss",
+      "Persistent vomiting",
+      "GI bleeding (melena or hematemesis) → urgent ER referral",
+      "Iron deficiency anaemia (alarm feature → urgent referral)",
+      "Failure to respond to PPI × 8 weeks",
+      "Suspected atypical/extra-esophageal GERD (chronic cough, hoarseness, asthma)",
+      "Recurrent GERD requiring ongoing PPI — reassess indication, consider GI referral"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Gastroesophageal Reflux Disease (GERD). OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "Armstrong D, et al. Canadian Consensus Conference on the Management of Gastroesophageal Reflux Disease in Adults — Update 2004. Can J Gastroenterol. 2005;19(1):15–35. (supplemented by RxTx 2023 updates).",
+    "Katz PO, et al. ACG Clinical Guideline for the Diagnosis and Management of Gastroesophageal Reflux Disease. Am J Gastroenterol. 2022;117(1):27–56.",
+    "NICE. Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management. NICE guideline [CG184]. National Institute for Health and Care Excellence (2014, updated 2023)."
+  ]
+}

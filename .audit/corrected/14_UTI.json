@@ -1,0 +1,82 @@
+{
+  "name": "Uncomplicated UTI (Women)",
+  "icon": "💧",
+  "category": "Womens Health",
+  "assessment": {
+    "key_questions": [
+      "Classic triad: dysuria + frequency + urgency (without fever/flank pain — lower tract only)?",
+      "Non-pregnant woman?",
+      "No structural urinary abnormality, immunosuppression, or renal disease?",
+      "Previous UTIs and response to nitrofurantoin?",
+      "Vaginal discharge or irritation (may suggest vaginitis vs UTI)?",
+      "Ontario MA UTI criteria: non-pregnant female aged 16–64, no fever/flank pain/systemic symptoms (i.e., no upper UTI), no recurrent UTI (≥2 in 6 months or ≥3 in 12 months), no antibiotics for UTI in past 3 months, no urinary catheter, no known urinary structural/functional abnormality",
+      "Pregnancy test recommended before initiating treatment (Ontario MA requirement)",
+      "Document and notify primary care provider of MA prescribing (Ontario MA requirement)"
+    ],
+    "red_flags": [
+      "Fever ≥38°C, rigors, flank/CVA tenderness, nausea/vomiting → PYELONEPHRITIS — not minor ailment, needs full assessment",
+      "Pregnancy → complicated UTI — refer for culture + appropriate antibiotic",
+      "Male, elderly, immunocompromised, recurrent (>3/year) → complicated UTI — not minor ailment",
+      "Hematuria alone without classic UTI symptoms → other pathology (stones, cancer) — investigate"
+    ],
+    "ddx": [
+      "Pyelonephritis",
+      "Vaginitis/vaginosis (discharge, odour, external dysuria)",
+      "Urethritis/STI (chlamydia — especially young, sexually active)",
+      "Interstitial cystitis (frequency/urgency without bacteriuria)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Nitrofurantoin Macrobid",
+        "drugs": "Nitrofurantoin macrocrystals (Macrobid) 100 mg BID × 5 days WITH food",
+        "notes": "First-line for uncomplicated UTI in Ontario (Bugs & Drugs — low E. coli resistance <10%). Take with food — improves absorption and reduces GI side effects. Only for lower tract UTI — NOT for pyelonephritis (inadequate tissue penetration). Avoid if eGFR <30. Urine may turn brown/yellow — harmless. Fluoroquinolones (ciprofloxacin, levofloxacin) are EXCLUDED from Ontario MA UTI algorithm (Health Canada/FDA black box; reserve for complicated UTI/pyelonephritis under physician care).",
+        "preferred_when": "First-line uncomplicated UTI, non-pregnant women, eGFR ≥30"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "TMP-SMX DS",
+        "drugs": "TMP-SMX DS (160/800 mg) BID × 3 days",
+        "notes": "Use only if local E. coli resistance <20% (check Bugs & Drugs Ontario). Note: TMP-SMX should not be used empirically if local E. coli resistance >20%, which now exceeds this threshold in many Ontario regions — verify local antibiogram before use. Sulfonamide allergy contraindication. Drug interactions: hyperkalemia with ACEi/ARBs (monitor K+), INR elevation with warfarin. Avoid in last trimester of pregnancy, G6PD deficiency, and sulfa allergy."
+      },
+      {
+        "name": "Fosfomycin",
+        "drugs": "Fosfomycin 3g granules single oral dose (dissolve in water)",
+        "notes": "Single-dose — excellent adherence. Effective for uncomplicated UTI. ODB coverage limited. Take on empty stomach."
+      },
+      {
+        "name": "Beta-Lactam Alternatives (when first-line CI'd)",
+        "drugs": "Cephalexin 500 mg QID × 3–7 days | Amoxicillin-clavulanate 875/125 mg BID × 3–7 days (less preferred due to resistance)",
+        "notes": "Use when nitrofurantoin and TMP-SMX are contraindicated. Amoxicillin-clavulanate is less preferred due to higher resistance rates and broader spectrum impact."
+      }
+    ],
+    "non_pharm": [
+      "Increase fluid intake (dilute urine reduces bacterial concentration)",
+      "Void after intercourse (reduces post-coital UTI)",
+      "Avoid spermicides and diaphragm (alter vaginal flora)",
+      "Phenazopyridine (pyridium) 95 mg tablets — OTC dose: 190 mg (2 tablets) TID × maximum 2 days: bladder analgesic — relieves burning/urgency while antibiotics work; turns urine orange (warn patient); NOT an antibiotic. Note: 200 mg TID is US Rx strength — Canadian OTC tablet is 95 mg.",
+      "D-mannose: Evidence controversial; MERIT trial 2024 (JAMA) showed no benefit over placebo for recurrence prevention. Low-quality evidence only.",
+      "Cranberry (PAC 36 mg/day): modest prevention evidence"
+    ],
+    "refer_when": [
+      "Age <16 or ≥65 (outside Ontario MA eligibility)",
+      "Pregnancy (complicated UTI — culture + appropriate antibiotic required)",
+      "Recurrent UTI (≥2 in 6 months or ≥3 in 12 months)",
+      "Symptoms of upper UTI: fever >38°C, flank pain, rigors, nausea/vomiting (pyelonephritis)",
+      "Male patient",
+      "Immunocompromised",
+      "Antibiotic use for UTI in prior 3 months",
+      "No response to 48h of antibiotics",
+      "Hematuria without classic UTI symptoms (stones, cancer — investigate)",
+      "Suspected STI or vaginitis"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Uncomplicated Urinary Tract Infection. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "AMMI Canada. Community-acquired Urinary Tract Infections in Adults — Canadian Guidelines (2019).",
+    "Gupta K, et al. International Clinical Practice Guidelines for the Treatment of Acute Uncomplicated Cystitis and Pyelonephritis in Women: 2010 Update by IDSA and ESCMID. Clin Infect Dis. 2011;52(5):e103–e120. (with AMMI Canada local antibiogram updates).",
+    "NICE. Urinary tract infection (lower) — women: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence (2023)."
+  ]
+}

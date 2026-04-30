@@ -1,0 +1,78 @@
+{
+  "name": "Smoking Cessation",
+  "icon": "🚬",
+  "category": "Prevention",
+  "ontario_prescribing_authority": "Pharmacists in Ontario can prescribe varenicline, bupropion, and NRT under the Ontario Smoking Cessation Prescribing Authority (separate from the Minor Ailments program; available since 2012, expanded 2021). ODB covers 12 weeks/year for eligible patients.",
+  "assessment": {
+    "key_questions": [
+      "Heaviness of Smoking Index (HSI) — nicotine dependence screening: (1) Time to first cigarette after waking: <5 min = 3 pts, 5–30 min = 2 pts, 31–60 min = 1 pt, >60 min = 0 pt; (2) Cigarettes per day: ≤10 = 0, 11–20 = 1, 21–30 = 2, ≥31 = 3. Total ≥4 = high dependence.",
+      "Number of cigarettes per day (>20/day = high dependence)?",
+      "Previous quit attempts: what helped, what caused relapse?",
+      "Motivation to quit (stages of change: precontemplation, contemplation, preparation, action)?",
+      "Comorbid depression, anxiety, or other mental health conditions?"
+    ],
+    "red_flags": [
+      "Active cardiovascular disease: NRT is SAFE (nicotine without carcinogens is far safer than smoking) — do NOT withhold NRT",
+      "Pregnancy: behavioural support first-line; intermittent NRT (gum or lozenge, NOT patch) preferred if pharmacotherapy needed; varenicline and bupropion NOT recommended in pregnancy (insufficient safety data per CAN-ADAPTT, SOGC) — discuss risk-benefit with obstetric team",
+      "Severe psychiatric illness: varenicline is safe (BBW was overestimated — EAGLES trial); address psychiatric stability",
+      "Current medications affected by smoking cessation: on quitting, smoking-induced CYP1A2 induction is lost — monitor and reduce doses of clozapine, olanzapine, theophylline, caffeine, fluvoxamine, R-warfarin by ~25–50% over 1–2 weeks post-cessation"
+    ],
+    "ddx": []
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Varenicline (generic)",
+        "drugs": "Generic varenicline (Champix brand remains off market in Canada — prescribe as generic varenicline): 0.5 mg OD × 3 days → 0.5 mg BID × 4 days → 1 mg BID × 12 weeks. Extend to 24 weeks for relapse prevention.",
+        "notes": "Most effective single cessation agent (NNT ~7). Partial nicotinic receptor agonist — reduces craving AND blocks reward. Take with food (reduces nausea). Set quit date at Day 8–14. Prescribable by pharmacists in Ontario under the Ontario Smoking Cessation Prescribing Authority (separate from the Minor Ailments program; available since 2012, expanded 2021) — ODB covers 12 weeks/year. Generic varenicline returned to Canadian market in 2023. EAGLES trial: neuropsychiatric risk lower than BBW suggested — safe in stable psychiatric patients. Counselling tip: insomnia/vivid dreams — take evening dose earlier in day. NOT recommended in pregnancy (CAN-ADAPTT, SOGC).",
+        "preferred_when": "Most patients — most effective; also for patients with prior NRT failure"
+      },
+      {
+        "name": "Combination NRT",
+        "drugs": "Nicotine patch: ≥10 cigarettes/day → start 21 mg patch; <10 cigarettes/day → start 14 mg patch. Heavy smokers (>40/day) may need 2 patches simultaneously. Add PRN short-acting: nicotine gum 2–4 mg, lozenge 2–4 mg, or inhaler.",
+        "notes": "Combination NRT (patch + short-acting) superior to monotherapy. Long-acting patch for baseline; short-acting PRN for breakthrough cravings. Prescribable by pharmacists under the Ontario Smoking Cessation Prescribing Authority — ODB covers 12 weeks/year. Safe in cardiovascular disease. In pregnancy: intermittent NRT (gum or lozenge) preferred over patch; patch provides continuous nicotine exposure — use only if gum/lozenge insufficient and with obstetric team input.",
+        "preferred_when": "Prefer non-prescription or prior varenicline failure; pregnancy (intermittent NRT gum/lozenge > patch > pharmacotherapy)"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Bupropion SR (Zyban)",
+        "drugs": "Bupropion SR (Zyban) 150 mg OD × 3 days then 150 mg BID (at least 8h apart) — start 1–2 weeks before quit date",
+        "notes": "Acute treatment: 7–12 weeks. Maintenance up to 6 months for relapse prevention. Max 300 mg/day SR. Cessation rate ~2.0× placebo. Useful if comorbid depression. Contraindications: seizure history, current/recent eating disorder (anorexia/bulimia), abrupt alcohol or BZD withdrawal, MAOI within 14 days. Prescribable under Ontario Smoking Cessation Prescribing Authority — NOT under Ontario Minor Ailments. ODB covers up to 12 weeks/year. NOT recommended in pregnancy (CAN-ADAPTT, SOGC)."
+      },
+      {
+        "name": "Cytisine (Cravv)",
+        "drugs": "Cytisine (Cravv) 1.5 mg: Titration: 1.5 mg 6×/day × 3 days → 3×/day × 9 days → 2×/day × 4 days → 1×/day × 3 days (25-day total course). Can repeat.",
+        "notes": "Plant-based partial nicotinic agonist; Health Canada-approved. Cochrane 2023 high-certainty evidence supports efficacy similar to varenicline. Steroid-sparing option for patients unable to tolerate varenicline or preferring a shorter course. Take with or without food."
+      },
+      {
+        "name": "Nicotine E-cigarettes (harm reduction)",
+        "drugs": "Nicotine e-cigarettes (regulated nicotine vaping products)",
+        "notes": "Cochrane 2023 (high certainty) — nicotine e-cigarettes increase quit rates vs NRT. Health Canada allows as harm reduction tool for adult smokers who have tried other methods. Not recommended for non-smokers or youth. Counsel on transitioning off e-cigarettes as well."
+      }
+    ],
+    "non_pharm": [
+      "5 A's Framework: Ask (about tobacco use), Advise (clear, strong message to quit), Assess (readiness), Assist (pharmacotherapy + counselling), Arrange (follow-up in 1–2 weeks)",
+      "Ontario Smokers' Helpline: 1-877-513-5333 (free Ontario service — coaches, text support). Talk Tobacco for Indigenous patients.",
+      "CAMH STOP (Smoking Treatment for Ontario Patients) program provides free NRT to eligible Ontario patients — refer patients for enrolment.",
+      "Identify and plan for triggers (coffee, alcohol, stress, after meals)",
+      "Remove all cigarettes, lighters, ashtrays from home/car",
+      "Behavioral strategies: delay, distraction, deep breathing, drink water",
+      "Weight gain (4–5 kg average): counsel proactively — exercise, diet strategies",
+      "Average 8–14 quit attempts before sustained abstinence — every attempt builds skill"
+    ],
+    "refer_when": [
+      "Complex psychiatric comorbidity requiring specialist management",
+      "Pregnancy — specialist/obstetric input required; behavioural support first-line, then intermittent NRT with team input",
+      "Significant cardiovascular disease (most can be managed by pharmacist with NRT — do NOT withhold NRT)",
+      "Withdrawal seizure risk (alcohol or BZD co-dependence)"
+    ],
+    "drug_interactions_on_cessation": "On quitting, smoking-induced CYP1A2 induction is lost — monitor and reduce doses of: clozapine, olanzapine, theophylline, caffeine, fluvoxamine, R-warfarin by ~25–50% over 1–2 weeks post-cessation."
+  },
+  "references": [
+    "Ontario College of Pharmacists. Smoking Cessation Prescribing Authority under the Pharmacy Act, O. Reg. 202/94 (as amended 2024). OCP Practice Policy (2024).",
+    "Registered Nurses' Association of Ontario (RNAO) / CAN-ADAPTT. Canadian Smoking Cessation Clinical Practice Guideline. Toronto: CAMH (2011, updated standards 2023).",
+    "Fiore MC, et al. Treating Tobacco Use and Dependence: 2008 Update. Clinical Practice Guideline. USDHHS/PHS (2008). Supplemented by VA/DoD Clinical Practice Guideline (2020).",
+    "WHO. MPOWER: A policy package to reverse the tobacco epidemic. World Health Organization (2023)."
+  ]
+}

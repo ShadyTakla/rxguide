@@ -1,0 +1,84 @@
+{
+  "name": "Eczema / Contact Dermatitis",
+  "icon": "🔴",
+  "category": "Dermatology",
+  "ontario_ma_scope": "Atopic dermatitis IS in Ontario MA scope (Oct 2023). Allergic contact dermatitis (ACD) is NOT — pharmacists cannot prescribe for new-onset ACD requiring patch testing. This module focuses on atopic dermatitis.",
+  "assessment": {
+    "key_questions": [
+      "Atopic dermatitis (personal/family history of atopy, chronic/relapsing, typical distribution)?",
+      "Allergic contact dermatitis (ACD): exposure to latex, nickel, fragrances, preservatives, hair dye?",
+      "Irritant contact dermatitis (ICD): repeated exposure to water, detergents, solvents (most common — healthcare workers)?",
+      "Distribution matches exposure (hands for ICD/ACD; generalized for atopic)?",
+      "Current moisturizer use (type, frequency)?"
+    ],
+    "red_flags": [
+      "Secondary bacterial infection (weeping/yellow crusting, fever) → S. aureus",
+      "Eczema herpeticum (widespread punched-out vesicles in eczema) → HSV emergency — urgent referral",
+      "Erythroderma (≥90% BSA) = emergency referral to ER",
+      "Moderate-severe uncontrolled eczema not responding to optimized topical therapy → refer for dupilumab (Dupixent) or JAK inhibitor consideration"
+    ],
+    "ddx": [
+      "Psoriasis (well-demarcated, extensor, silvery scale)",
+      "Tinea (active leading edge, KOH positive)",
+      "Scabies (burrows, nocturnal itch, webspaces)",
+      "Seborrheic dermatitis (scalp, nasolabial folds, greasy scale)",
+      "Atopic dermatitis: personal/family history of atopy, flexural distribution, chronic pruritus",
+      "Irritant contact dermatitis: exposure history (water, detergents, solvents), no sensitization, common on hands, resolves with avoidance",
+      "Allergic contact dermatitis: sensitization required, patch test positive, resolves with allergen avoidance (nickel, fragrance, methylisothiazolinone most common)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Emollient (Cornerstone)",
+        "drugs": "Cetaphil cream | CeraVe moisturizing cream | Eucerin | Aveeno — apply immediately after bathing ('soak and seal')",
+        "notes": "Liberal emollient use is THE cornerstone of eczema management. Apply to entire body immediately after bathing (within 3 minutes) to seal in moisture. Use unscented, fragrance-free products. Apply liberally QID. More is better. Can reduce topical steroid requirement significantly. Fingertip unit (FTU) guide: 1 FTU (from fingertip to first crease) covers approximately 2 palm areas of adult skin. Face = 2.5 FTU; one arm = 3 FTU; one hand = 1 FTU; trunk front = 7 FTU.",
+        "preferred_when": "All patients with eczema — baseline maintenance"
+      },
+      {
+        "name": "Topical Corticosteroid",
+        "drugs": "Hydrocortisone 1–2.5% (face/folds/children) | Desonide 0.05% (sensitive areas) | Betamethasone valerate 0.05–0.1% (trunk/limbs) | Mometasone 0.1% (trunk/limbs)",
+        "notes": "Match potency to site: LOW (hydrocortisone 1–2.5%, desonide 0.05%) for face, eyelids, groin, axilla; MODERATE (betamethasone valerate 0.05–0.1%, mometasone 0.1%) for trunk and extremities. Apply fingertip unit amount to affected areas BID during flare. ⚠️ High-potency TCS (e.g., betamethasone dipropionate 0.05%) is generally OUTSIDE Ontario MA prescribing scope. MA TCS prescribing is limited to low-to-mid potency: hydrocortisone 1–2.5%, desonide 0.05%, betamethasone valerate 0.05–0.1%, mometasone 0.1%. Refer for high-potency. Do not use high-potency on face/skin folds. Proactive/maintenance therapy: apply low-potency TCS 2×/week to previously affected areas (even when clear) to prevent flares — AAD 2023 strong recommendation.",
+        "preferred_when": "Acute flares — combine with emollient"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Topical Calcineurin Inhibitor (TCI)",
+        "drugs": "Tacrolimus 0.03%/0.1% ointment (Protopic) BID | Pimecrolimus 1% cream (Elidel) BID",
+        "notes": "Physician/NP-prescribed only — NOT within Ontario MA prescribing scope. Refer for TCI consideration in patients failing TCS. Non-steroidal option for face, eyelids, skin folds (areas where TCS causes atrophy). Burning/stinging on application (transient, improves). Useful for maintenance in sensitive areas. FDA boxed warning still in place; however, AAD 2023 guideline conditionally recommends TCIs noting that long-term data (>10 years) shows no increased population-level cancer risk. Maintain precaution; counsel patients on the warning while reassuring about evidence."
+      },
+      {
+        "name": "Crisaborole (Eucrisa)",
+        "drugs": "Crisaborole (Eucrisa) 2% ointment BID",
+        "notes": "Non-steroidal PDE4 inhibitor; Health Canada approved for mild-to-moderate atopic dermatitis ≥2 years. Steroid-sparing option for sensitive areas (face, skin folds). Transient application site stinging possible."
+      }
+    ],
+    "non_pharm": [
+      "Identify and avoid triggers: soaps, detergents, fragrances, wool, extreme temperatures, stress, sweating",
+      "Lukewarm (not hot) bath/shower — brief; pat dry (do NOT rub)",
+      "Fragrance-free laundry detergent",
+      "Cotton clothing (avoid synthetic/wool)",
+      "Bleach bath 2× weekly (1/2 cup bleach in full tub) — reduces S. aureus colonization",
+      "Keep nails trimmed short (reduces scratch damage)",
+      "Humidity control (humidifier in winter)",
+      "Fingertip unit (FTU) guide: 1 FTU (from fingertip to first crease) covers approximately 2 palm areas of adult skin. Face = 2.5 FTU; one arm = 3 FTU; one hand = 1 FTU; trunk front = 7 FTU.",
+      "Proactive/maintenance therapy: apply low-potency TCS 2×/week to previously affected areas (even when clear) to prevent flares — AAD 2023 strong recommendation",
+      "Wet wrap therapy for moderate-severe flares: apply TCS, cover with damp tubular bandage or cotton pyjamas, then dry layer on top × 2–6h or overnight",
+      "Oral antihistamines are NOT effective for itch in atopic dermatitis (AAD 2023 — itch mediated by IL-31, not histamine). Sedating antihistamines (e.g., diphenhydramine) may help sleep only."
+    ],
+    "refer_when": [
+      "Moderate-to-severe AD not responding to optimized topical therapy → refer for dupilumab (Dupixent) or JAK inhibitor (abrocitinib, upadacitinib) consideration",
+      "Erythroderma (≥90% BSA) → emergency referral to ER",
+      "Suspected allergic contact dermatitis (ACD) — patch testing needed (NOT within pharmacist MA scope)",
+      "Secondary infected eczema not responding to 7 days of antibiotics",
+      "Eczema herpeticum (vesicular/punched-out crusted lesions — emergency)"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Atopic Dermatitis (Eczema). OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "Canadian Dermatology Association (CDA). Atopic Dermatitis Guidelines — Canadian Consensus (2023).",
+    "Sidbury R, et al. Guidelines of care for the management of atopic dermatitis in adults with phototherapy and systemic therapies. J Am Acad Dermatol. 2023;89(2):e49–e70. (AAD, full guideline series 2023)",
+    "NICE. Atopic eczema in under 12s: diagnosis and management. NICE guideline [CG57] (2007, updated 2023); Eczema — atopic: CKS (2023)."
+  ]
+}

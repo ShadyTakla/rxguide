@@ -1,0 +1,80 @@
+{
+  "name": "Musculoskeletal Sprains",
+  "icon": "🦵",
+  "category": "MSK",
+  "assessment": {
+    "key_questions": [
+      "Mechanism of injury: inversion sprain (lateral ankle), fall, overuse?",
+      "Ability to weight-bear (Ottawa Rules: cannot bear weight × 4 steps → X-ray)?",
+      "Location of pain: bone tenderness (Ottawa Rules) vs ligament?",
+      "Ottawa Ankle Rules: bony tenderness at posterior edge or tip of lateral or medial malleolus (distal 6 cm) OR base of 5th metatarsal OR navicular, AND/OR inability to bear weight immediately after injury AND in clinic for 4 steps → X-ray recommended",
+      "Ottawa Knee Rules: knee effusion + age ≥55, OR tenderness at head of fibula or isolated patella, OR inability to flex to 90°, OR inability to bear weight × 4 steps → X-ray recommended",
+      "Timing since injury: acute (<48h) vs subacute/chronic?"
+    ],
+    "red_flags": [
+      "Ottawa Rules positive → X-ray to rule out fracture before treating as sprain",
+      "Significant swelling + inability to weight bear → possible fracture",
+      "Knee: inability to extend knee, joint effusion → ACL/meniscus tear — ortho",
+      "Neurovascular compromise (numbness, pallor, decreased pulse)",
+      "Recurrent 'sprain' in same location → ligament laxity, instability"
+    ],
+    "ddx": [
+      "Fracture (Ottawa Rules — X-ray)",
+      "Tendon rupture (Achilles — Thompson test)",
+      "Septic arthritis (hot, swollen joint + fever — emergency)",
+      "Gout (podagra — first MTP)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Ontario MA Scope Note",
+        "drugs": "",
+        "notes": "Musculoskeletal sprains and strains ARE in Ontario MA scope (Oct 2023). Pharmacists can assess and prescribe oral and topical NSAIDs."
+      },
+      {
+        "name": "PEACE & LOVE Protocol + Analgesia",
+        "drugs": "Ibuprofen 400–600 mg q6–8h with food × 5–7 days | Naproxen 500 mg BID × 5–7 days | Acetaminophen 650–1000 mg q6h (if NSAID contraindicated)",
+        "notes": "PEACE & LOVE (Dubois & Esculier, BJSM 2019) — replaces POLICE/RICE:\n• Protection: relative rest for 48–72h; avoid painful loading; offload if needed\n• Elevation: keep injured limb above heart level\n• Avoid anti-inflammatories early: NSAIDs and ice may impair tissue healing — limit to first 48–72h for severe pain only; avoid prolonged use; do not use ice/NSAIDs chronically\n• Compression: reduces swelling\n• Education: active role of patient in recovery; avoid excessive passive treatments\n• Load: early progressive loading as pain allows — prevents stiffness\n• Optimism: positive expectations improve outcomes\n• Vascularization: pain-free cardiovascular activity early (cycling, swimming)\n• Exercise: progressive strengthening and proprioception training\n\nNSAID cautions: avoid if eGFR <30, active PUD, third-trimester pregnancy, or on anticoagulants; use with caution in patients >65 years (GI/renal/CV risk). Take with food.\n\nRecovery expectations: Grade I (mild, intact ligament) — 1–2 weeks; Grade II (partial tear) — 3–6 weeks; Grade III (complete tear) — months, may require surgery.",
+        "preferred_when": "Acute sprain (grade I–II): PEACE & LOVE + NSAID first 48–72h"
+      },
+      {
+        "name": "Topical NSAID",
+        "drugs": "Diclofenac 1.16% gel (Voltaren Emulgel) — apply QID to affected area | Diclofenac 2.32% gel (Voltaren Emulgel Extra Strength) — apply BID to affected area",
+        "notes": "Topical diclofenac: equivalent efficacy to oral NSAIDs for local musculoskeletal pain with minimal systemic absorption. Preferred in elderly, renal disease (eGFR 30–60 — use with caution), GI risk. Voltaren Emulgel 1.16%: apply QID. Voltaren Emulgel Extra Strength 2.32%: apply BID — do not apply more frequently."
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Compression + Functional Bracing",
+        "drugs": "Tensor bandage / elastic support | Lace-up ankle brace (preferred) | Air stirrup brace for Grade II–III",
+        "notes": "Compression reduces swelling. Functional lace-up ankle brace preferred over rigid immobilization for ankle sprains — allows early ambulation while protecting ligaments (AAOS recommendation). Grade III (complete tear): ortho referral. DVT risk if immobilized >72h — monitor for calf swelling, warmth, erythema, pain."
+      }
+    ],
+    "non_pharm": [
+      "Ice for pain relief: 20 min every 2–4 hours for first 48h (not directly on skin — towel wrap); provides analgesia but limited healing benefit — do not use as primary treatment beyond 48–72h",
+      "Elevation: keep injured limb above heart level to reduce swelling",
+      "Early controlled movement: begin gentle range-of-motion exercises after 24–48h as pain allows",
+      "Functional bracing/lace-up brace preferred over immobilization for ankle sprains (AAOS) — promotes earlier return to activity",
+      "Proprioception/balance exercises during recovery: essential to prevent re-injury (e.g., single-leg balance, wobble board)",
+      "Physiotherapy: for grade II–III sprains — significantly reduces re-injury risk",
+      "DVT risk: if immobilized >72h, monitor for signs of deep vein thrombosis (unilateral calf swelling, warmth, redness, pain)",
+      "Return to activity progressively — pain is the guide; avoid complete rest beyond initial 48–72h"
+    ],
+    "refer_when": [
+      "Ottawa Ankle or Knee Rules positive → X-ray to rule out fracture",
+      "Complete ligament rupture (Grade III sprain) — orthopaedic assessment",
+      "Joint effusion or haemarthrosis — rule out intra-articular injury",
+      "Suspected fracture or tendon rupture",
+      "Significant functional impairment not improving within 2–3 weeks",
+      "Recurrent instability or chronic ligament laxity",
+      "Neurovascular compromise (numbness, pallor, absent pulse) — emergency"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Minor MSK Sprains and Strains. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "RxFiles (Saskatoon Health Region). Musculoskeletal Pain — Analgesic Comparison Chart (2022).",
+    "AAOS (American Academy of Orthopaedic Surgeons). Clinical Practice Guideline: Management of Ankle Sprains (2023).",
+    "NICE. Sprains and strains: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence (2022)."
+  ]
+}

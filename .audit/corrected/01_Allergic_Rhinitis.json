@@ -1,0 +1,86 @@
+{
+  "name": "Allergic Rhinitis",
+  "icon": "🤧",
+  "category": "ENT",
+  "assessment": {
+    "key_questions": [
+      "Seasonal (tree/grass/ragweed) or perennial (dust mites, pet dander, mold)?",
+      "Duration and timing of symptoms — morning vs throughout day?",
+      "Previous allergy testing or immunotherapy?",
+      "Concurrent asthma, eczema (atopic triad)?",
+      "Current medications including nasal decongestants (rhinitis medicamentosa risk)?"
+    ],
+    "red_flags": [
+      "Unilateral nasal obstruction or bleeding → polyp or malignancy",
+      "Facial pain/pressure + fever + purulent discharge → sinusitis",
+      "Anosmia (new loss of smell)",
+      "Symptoms not responding to adequate trial of intranasal corticosteroids"
+    ],
+    "ddx": [
+      "Vasomotor rhinitis (non-allergic)",
+      "Rhinitis medicamentosa (decongestant overuse)",
+      "Nasal polyps",
+      "Sinusitis",
+      "Deviated septum"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Intranasal Corticosteroid (INCS)",
+        "drugs": "Fluticasone propionate (Flonase) 50 mcg/spray: 2 sprays each nostril OD | Fluticasone furoate (Flonase Sensimist) 27.5 mcg/spray: 2 sprays each nostril OD | Mometasone (Nasonex) 50 mcg/spray: 2 sprays each nostril OD (OTC since 2022) | Budesonide (Rhinocort) 2 sprays each nostril OD | Ciclesonide (Omnaris) 200 mcg/day (2 sprays each nostril OD)",
+        "notes": "Most effective pharmacotherapy for allergic rhinitis — superior to antihistamines for congestion and nasal symptoms. Takes 1–2 weeks for full effect. Spray toward outer ear, not nasal septum (prevents septum perforation). Can be used long-term. Note: Flonase = fluticasone propionate 50 mcg/spray; Flonase Sensimist = fluticasone furoate 27.5 mcg/spray — different molecules and strengths.",
+        "preferred_when": "Persistent symptoms or predominantly nasal congestion"
+      },
+      {
+        "name": "Oral Non-Sedating Antihistamine (2nd-generation)",
+        "drugs": "Cetirizine (Reactine) 10 mg OD | Loratadine (Claritin) 10 mg OD | Fexofenadine (Allegra) 120 mg OD (seasonal AR) | Bilastine (Blexten) 20 mg OD | Rupatadine (Rupall) 10 mg OD | Levocetirizine (Xyzal) 5 mg OD",
+        "notes": "First-line for mild-intermittent symptoms or sneezing/itch predominance. Non-sedating (second-generation). Take daily for seasonal allergies (continuous > PRN). Cetirizine: mildly sedating in some — take at night. Bilastine, rupatadine, and levocetirizine are Canadian-available options endorsed by CSACI.",
+        "preferred_when": "Itching, sneezing, watery eyes as predominant symptoms"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Intranasal Antihistamine + INCS Combination (preferred step-up)",
+        "drugs": "Azelastine/fluticasone propionate (Dymista) nasal spray: 1 spray each nostril BID",
+        "notes": "ARIA 2020 preferred step-up when INCS or antihistamine monotherapy fails. Combination of intranasal antihistamine (azelastine) and INCS (fluticasone) in one spray. Faster onset than INCS alone. Superior to either component alone for moderate-severe AR."
+      },
+      {
+        "name": "Intranasal Antihistamine (monotherapy)",
+        "drugs": "Azelastine (Astelin) nasal spray 1–2 sprays each nostril BID",
+        "notes": "Faster onset than oral antihistamines. Useful for breakthrough symptoms or when INCS insufficient. Step up to Dymista (azelastine/fluticasone combo) if inadequate response."
+      },
+      {
+        "name": "Oral Decongestant — short-term only (NOT in OCP MA algorithm)",
+        "drugs": "Pseudoephedrine 60 mg q4–6h (max 5 days)",
+        "notes": "For acute nasal congestion only — do NOT use >5 days (rebound congestion). Avoid in hypertension, hyperthyroidism, BPH, MAOIs. Behind pharmacy counter (pseudoephedrine). IMPORTANT: Pseudoephedrine is NOT in the OCP Minor Ailments prescribing algorithm for allergic rhinitis — pharmacists should recommend or refer to physician, not prescribe under MA authority."
+      },
+      {
+        "name": "Montelukast (Singulair) — last resort only (NOT in OCP MA algorithm)",
+        "drugs": "Montelukast 10 mg OD",
+        "notes": "ARIA 2020 conditionally recommends AGAINST montelukast monotherapy for allergic rhinitis due to Health Canada/FDA Black Box Warning (BBW) for serious neuropsychiatric events (depression, suicidality, aggression, sleep disturbances). Reserve as last resort only when other options have failed and there is a clear indication (e.g., concurrent asthma + AR). IMPORTANT: Montelukast is NOT in the OCP Minor Ailments prescribing algorithm for AR — recommend or refer to physician only, do not prescribe under MA authority."
+      }
+    ],
+    "non_pharm": [
+      "Allergen avoidance: dust mite covers, HEPA filters, minimize outdoor exposure during high pollen",
+      "Nasal saline irrigation (Neti pot, NeilMed) — reduces symptoms and medication need",
+      "Monitor local pollen counts (Weather Network pollen forecast)",
+      "Shower/hair wash after outdoor exposure",
+      "Close windows during high pollen season, use air conditioning"
+    ],
+    "refer_when": [
+      "No response to adequate trial of INCS after 4–6 weeks",
+      "Suspected nasal polyps (unilateral obstruction, anosmia, recurrent sinusitis)",
+      "Concurrent asthma not controlled or worsening despite treatment",
+      "Immunotherapy candidacy (subcutaneous SCIT or sublingual SLIT — Oralair, Grastek, Acarizax available in Canada)",
+      "Severe uncontrolled symptoms despite adequate combination pharmacotherapy",
+      "Suspected sinusitis or anatomical obstruction (deviated septum)"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Allergic Rhinitis. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "CSACI (Canadian Society of Allergy and Clinical Immunology). Allergic Rhinitis — Canadian Clinical Practice Guidelines (2022).",
+    "Bernstein JA, et al. The diagnosis and management of rhinitis: An updated practice parameter. J Allergy Clin Immunol. 2022;150(6):1286–1341. (AAAAI/ACAAI)",
+    "Brozek JL, et al. Allergic Rhinitis and its Impact on Asthma (ARIA) Guidelines — 2016 revision. J Allergy Clin Immunol. 2017;140(4):950–958."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Cold Sores (Oral Herpes Simplex)",
+  "icon": "💋",
+  "category": "Oral/Dermatology",
+  "assessment": {
+    "key_questions": [
+      "Prodrome: tingling, burning, itching at site before vesicles appear (herpes-specific)?",
+      "Frequency of recurrence?",
+      "Stage: prodrome / vesicle / ulcer / crusting?",
+      "Immunocompromised? (HIV, transplant, high-dose steroids)?",
+      "Location: lip/perioral (cold sore) vs intraoral (aphthous ulcer)?",
+      "Eye symptoms — herpetic keratitis?"
+    ],
+    "red_flags": [
+      "Eye involvement (herpetic keratoconjunctivitis) → urgent ophthalmology (can cause blindness)",
+      "Eczema herpeticum: HSV + eczema → widespread vesicular eruption — emergency",
+      "Immunocompromised patient → disseminated herpes — systemic antiviral urgently",
+      "Herpes encephalitis: headache + fever + confusion after cold sore → emergency"
+    ],
+    "ddx": [
+      "Aphthous ulcers (intraoral, not on vermilion border, no prodrome)",
+      "Angular cheilitis (Candida/nutritional deficiency)",
+      "Contact dermatitis",
+      "Hand-foot-and-mouth disease (Coxsackie)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Ontario MA Scope Note",
+        "drugs": "",
+        "notes": "⭐ Pharmacists can prescribe oral antivirals for herpes labialis under Ontario MA (added Oct 2023). Most effective when started at prodrome (tingling/itching) — hours matter."
+      },
+      {
+        "name": "Topical Antiviral / Barrier Agent",
+        "drugs": "Docosanol 10% cream (Abreva) q2–3h while awake × 5 days (OTC) | Acyclovir 5% cream (Zovirax) 5× daily × 4 days",
+        "notes": "Best effect when applied at the PRODROME stage (tingling) before vesicles appear. Docosanol: OTC, blocks viral entry into cells. Acyclovir cream: modestly reduces duration by ~0.5–1 day. All topical agents: modest efficacy — reduce healing time by 1–2 days. Start at first symptom. Note: Penciclovir 1% cream (Denavir/Vectavir) is no longer marketed in Canada — do not recommend.",
+        "preferred_when": "Mild-moderate cold sore, infrequent recurrence, patient declines oral antiviral"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Oral Antiviral — Episodic Treatment (moderate-severe or frequent recurrence)",
+        "drugs": "Valacyclovir (Valtrex) 2 g BID × 1 day (single-day regimen — most convenient) | Valacyclovir 500 mg BID × 3 days (alternative episodic regimen) | Acyclovir 400 mg 5× per day × 5 days (every 4 hours while awake) OR Acyclovir 200 mg 5× per day × 5 days | Famciclovir 1500 mg single dose",
+        "notes": "Oral antivirals significantly more effective than topical — reduce healing by 1–2 days and reduce pain. Best if taken at prodrome (tingling/itching) — timing is critical. Valacyclovir 2 g BID × 1 day: most convenient (single-day). Acyclovir correct episodic dose for herpes labialis: 400 mg 5× daily OR 200 mg 5× daily × 5 days (NOT 400 mg TID — that is the genital HSV suppressive dose). Renal dose adjustment required for acyclovir and valacyclovir if CrCl <50 mL/min — reduce dose/frequency. Pregnancy: acyclovir and valacyclovir are generally considered safe in pregnancy (category B equivalent) — benefit usually outweighs risk."
+      },
+      {
+        "name": "Suppressive Therapy (frequent recurrence ≥6 outbreaks/year with significant impact)",
+        "drugs": "Valacyclovir 500 mg OD (preferred) | Acyclovir 400 mg BID (alternative)",
+        "notes": "Consider for patients with ≥6 outbreaks/year or significant psychosocial impact. Reduces recurrence frequency by ~70–80%. Annual reassessment to determine if ongoing suppression still needed. Renal dose adjustment required if CrCl <50 mL/min."
+      }
+    ],
+    "non_pharm": [
+      "Apply at first sign of tingling/prodrome — most effective intervention is early treatment",
+      "Keep lesion clean and dry; avoid picking/squeezing",
+      "Avoid kissing and sharing utensils/lip products during active outbreak",
+      "Sun protection (lip balm with SPF) — UV exposure is a common trigger",
+      "Stress management (stress is major trigger)",
+      "L-lysine 1 g OD (supplement) — low-quality evidence; some patients report benefit for reducing recurrence frequency; generally safe"
+    ],
+    "refer_when": [
+      "Eye involvement (herpetic keratoconjunctivitis) — urgent ophthalmology",
+      "Immunocompromised patient — systemic/disseminated herpes risk",
+      "Eczema herpeticum — dermatology emergency",
+      "First episode with severe or atypical lesions",
+      "Recurrent cold sores ≥6/year — consider suppressive therapy (pharmacist can initiate under Ontario MA)",
+      "Atypical presentation — unclear diagnosis",
+      "Failure to respond to standard antiviral therapy — consider acyclovir resistance (immunocompromised)"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Cold Sores (Herpes Labialis). OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "RxTx (Canadian Pharmacists Association). Herpes Labialis — Therapeutic Choices, 8th ed. (2023).",
+    "Workowski KA, et al. Sexually Transmitted Infections Treatment Guidelines (includes HSV). CDC/MMWR. 2021;70(4):1–187.",
+    "NICE. Herpes simplex — oral: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence (2023)."
+  ]
+}

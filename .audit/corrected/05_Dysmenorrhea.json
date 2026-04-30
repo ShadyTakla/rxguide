@@ -1,0 +1,81 @@
+{
+  "name": "Dysmenorrhea (Menstrual Pain)",
+  "icon": "🔵",
+  "category": "Womens Health",
+  "assessment": {
+    "key_questions": [
+      "Primary (no identifiable cause, onset with first menses) vs secondary (endometriosis, fibroids, IUD)?",
+      "Timing: does pain start before or at onset of flow?",
+      "Severity (NRS 0–10) and impact on daily activities?",
+      "Associated symptoms: heavy bleeding, pelvic pain non-cyclically, dyspareunia?",
+      "Current contraception (hormonal methods reduce dysmenorrhea)?",
+      "Screen for endometriosis: dyspareunia, dyschezia (painful defecation), cyclical bowel/bladder symptoms, or difficulty conceiving?",
+      "Allergy or contraindication to NSAIDs (PUD, renal impairment, asthma/ASA-sensitive, anticoagulant use, pregnancy)?"
+    ],
+    "red_flags": [
+      "Pain outside of menstruation or during intercourse → endometriosis/secondary cause",
+      "Heavy menstrual bleeding + pain → fibroids, adenomyosis",
+      "New onset of severe dysmenorrhea after age 25 → secondary dysmenorrhea (endometriosis, fibroids, adenomyosis) — refer",
+      "Fever + pelvic pain → pelvic inflammatory disease (PID)"
+    ],
+    "ddx": [
+      "Endometriosis",
+      "Adenomyosis",
+      "Uterine fibroids",
+      "Ovarian cyst",
+      "Pelvic inflammatory disease",
+      "IUD-related pain"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "NSAID",
+        "drugs": "Naproxen sodium: OTC Aleve 220 mg — 2 tabs (440 mg) loading then 1 tab (220 mg) q8–12h; Rx naproxen sodium 550 mg loading then 275 mg q6–8h (= naproxen base 500 mg/250 mg). Ibuprofen 400–600 mg q6h. Mefenamic acid (Ponstan) 500 mg loading then 250 mg QID up to 3 days. Celecoxib 200 mg once daily (COX-2 selective; useful when GI intolerance to traditional NSAIDs; on Ontario Schedule 4).",
+        "notes": "NSAIDs are first-line — inhibit prostaglandin synthesis (prostaglandins cause uterine contractions and pain). Start 24–48h BEFORE expected onset of pain (before prostaglandins peak) for best effect. Take with food. Continue for 2–3 days of flow. Mefenamic acid: also directly antagonizes prostaglandin receptors — useful for refractory cases. If no improvement after 3 menstrual cycles on optimized NSAID therapy, reassess and refer.",
+        "preferred_when": "Primary dysmenorrhea — first-line and most effective. Ontario Schedule 4 for dysmenorrhea includes NSAIDs (ASA, celecoxib, diclofenac, flurbiprofen, ibuprofen, ketoprofen, mefenamic acid, naproxen)."
+      },
+      {
+        "name": "Acetaminophen (NSAID alternative)",
+        "drugs": "Acetaminophen 650–1000 mg q6h (max 4 g/day; 3 g/day in elderly or hepatic impairment)",
+        "notes": "Use when NSAIDs are contraindicated (e.g., PUD, severe renal impairment, ASA-sensitive asthma, anticoagulant use, pregnancy). Less effective than NSAIDs for dysmenorrhea but a reasonable alternative.",
+        "preferred_when": "NSAID contraindication or intolerance"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Combined Oral Contraceptives (COC)",
+        "drugs": "Any combined OCP (e.g., Alesse, Yasmin, Tri-Cyclen) — taken cyclically or continuously",
+        "notes": "SCOPE NOTE: COC and hormonal IUS are NOT within Ontario pharmacist Minor Ailments prescribing scope — refer to physician or nurse practitioner for hormonal therapy. Ontario Schedule 4 for dysmenorrhea includes NSAIDs only. Hormonal contraception suppresses ovulation and reduces endometrial prostaglandin production — reduces pain severity by 70–80%. Continuous OCP use (skipping placebo week) eliminates menstruation and pain. Pharmacist role: counsel and refer, not prescribe under MA."
+      },
+      {
+        "name": "Hormonal IUS",
+        "drugs": "Mirena or Kyleena IUS",
+        "notes": "SCOPE NOTE: Hormonal IUS insertion and prescribing is NOT within Ontario pharmacist Minor Ailments scope — refer to physician or NP. Most effective long-term treatment — reduces menstrual flow 80–90% and dramatically reduces dysmenorrhea. Also provides contraception. Pharmacist role: counsel and refer."
+      }
+    ],
+    "non_pharm": [
+      "Topical heat (heating pad 40°C to abdomen): evidence-based — comparable to ibuprofen for mild dysmenorrhea",
+      "Exercise: reduces prostaglandin levels with regular aerobic activity",
+      "Omega-3 supplements: anti-inflammatory, modest evidence for dysmenorrhea reduction",
+      "TENS (transcutaneous electrical nerve stimulation): evidence for pain reduction",
+      "Magnesium supplementation 200–400 mg/day: may reduce uterine contractions — evidence is weak/inconsistent (Cochrane 2001; not strongly endorsed in SOGC 2025); low risk, reasonable adjunct"
+    ],
+    "refer_when": [
+      "Suspected secondary dysmenorrhea (endometriosis, fibroids, adenomyosis)",
+      "New severe dysmenorrhea after age 25",
+      "No improvement after 3 menstrual cycles of optimized NSAID therapy",
+      "Suspected endometriosis (dyspareunia, dyschezia, cyclical bowel/bladder symptoms, infertility)",
+      "Abnormal uterine bleeding or intermenstrual bleeding",
+      "Pain not responding to NSAIDs — refer for hormonal therapy (COC/IUS outside MA scope)",
+      "Fertility concerns",
+      "Suspected PID (fever, pelvic tenderness)"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Dysmenorrhea. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "SOGC (Society of Obstetricians and Gynaecologists of Canada). No. 345: Primary Dysmenorrhea Consensus Guideline. J Obstet Gynaecol Can. 2017;39(7):585–595.",
+    "ACOG Practice Bulletin No. 218: Chronic Pelvic Pain. Obstet Gynecol. 2020;135(3):e98–e109.",
+    "NICE. Dysmenorrhoea: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence (2023)."
+  ]
+}

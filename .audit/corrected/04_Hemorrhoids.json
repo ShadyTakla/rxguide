@@ -1,0 +1,85 @@
+{
+  "name": "Hemorrhoids",
+  "icon": "🩸",
+  "category": "GI",
+  "assessment": {
+    "key_questions": [
+      "Internal (painless bleeding) vs external (pain, prolapse)?",
+      "Bright red blood on toilet paper / in bowl — fresh bleeding?",
+      "Anal pain, itching, mucus discharge?",
+      "History of constipation or straining?",
+      "Age >40 and new-onset bleeding — has colorectal cancer been excluded?",
+      "Pregnancy status? (Very common precipitant during pregnancy; affects drug selection — avoid topical HC especially in first trimester)"
+    ],
+    "red_flags": [
+      "Dark blood, melena, or blood mixed with stool → upper GI bleeding, not hemorrhoidal",
+      "Weight loss, anemia, change in bowel habits → colorectal cancer until proven otherwise",
+      "Age >40 with new-onset rectal bleeding — colonoscopy/workup needed regardless of apparent hemorrhoidal cause",
+      "Severe acute pain + inability to sit → thrombosed external hemorrhoid (urgent care within 72h for excision)"
+    ],
+    "ddx": [
+      "Anal fissure (sharp tearing pain with bowel movement)",
+      "Colorectal cancer",
+      "IBD",
+      "Anorectal abscess",
+      "Rectal prolapse",
+      "Perianal hematoma (thrombosed external hemorrhoid — acutely painful, tense blue-purple lump at anal verge)",
+      "Condylomata acuminata (anal warts — HPV)",
+      "Pruritus ani (chronic perianal itch without structural cause)"
+    ]
+  },
+  "treatment": {
+    "notes": "Hemorrhoid Grading (directs referral decision): Grade I — internal, do not prolapse, bleeding only; Grade II — prolapse with defecation, reduce spontaneously; Grade III — prolapse with defecation, require manual reduction; Grade IV — permanently prolapsed, cannot be reduced. Grade I–II: conservative management (pharmacist scope). Grade III: refer for rubber band ligation. Grade IV: refer for surgical hemorrhoidectomy.",
+    "first_line": [
+      {
+        "name": "Topical Hemorrhoidal Preparations",
+        "drugs": "Anusol HC (Canada): hydrocortisone 0.5% + zinc sulfate + bismuth subgallate cream/suppository TID-QID × 5–7 days | Anusol Plus: pramoxine + zinc oxide (NO steroid — for pain/itch without inflammation) | Preparation H HC: hydrocortisone 0.5% cream | Proctosedyl (Rx only): hydrocortisone 0.5% + cinchocaine (dibucaine) + framycetin + esculin — requires prescription | Witch hazel pads (Tucks, Preparation H wipes) PRN for soothing relief",
+        "notes": "CRITICAL CANADIAN BRAND CLARIFICATION: Anusol HC in Canada = hydrocortisone 0.5% + zinc sulfate + bismuth subgallate (NOT HC 1% + pramoxine — this is the US formulation). Anusol Plus = pramoxine + zinc oxide (no steroid — useful for pain and itch). Proctosedyl = HC 0.5% + cinchocaine + framycetin + esculin (Rx only in Canada). Topical corticosteroid reduces inflammation and itch. Limit HC-containing products to 5–7 days (risk of skin atrophy with longer use). Apply after bowel movements and at bedtime. Witch hazel (astringent): reduces swelling and soothes — safe in pregnancy. PREGNANCY: Avoid topical HC especially in first trimester; prefer witch hazel, sitz baths, and psyllium. ONTARIO MA SCOPE: Topical HC ± local anesthetic is prescribable under OCP MA (Jan 2023); maximum duration typically 7 days.",
+        "preferred_when": "Symptomatic internal or external hemorrhoids Grade I–II with itch and inflammation"
+      },
+      {
+        "name": "Stool Softener + Fibre + Osmotic Laxative",
+        "drugs": "PEG 3350 (Restoralax, Lax-A-Day) 17 g dissolved in water daily — preferred osmotic | Psyllium (Metamucil) 1 tbsp in water OD–BID — first-line fibre | Docusate sodium (Colace) 100 mg BID — stool softener (limited evidence)",
+        "notes": "ADDRESS THE CAUSE. Softer stool reduces straining which causes hemorrhoid formation. PEG 3350 (Restoralax/Lax-A-Day 17 g daily): preferred osmotic laxative — well-tolerated, good evidence for constipation relief. Psyllium fibre: most evidence for reducing hemorrhoid bleeding and symptoms (Cochrane). Docusate sodium: commonly used stool softener; note limited independent evidence for hemorrhoid outcomes (Cochrane 2014 found insufficient evidence vs placebo). Adequate hydration (8+ glasses/day) essential with fibre.",
+        "preferred_when": "Constipation contributing to hemorrhoids — use in all patients"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Sitz Baths",
+        "drugs": "Warm water sitz bath 15–20 min 2–3× daily",
+        "notes": "Significant symptomatic relief for external hemorrhoid discomfort. Promotes healing. Can add Epsom salts (magnesium sulfate). Safe in pregnancy."
+      },
+      {
+        "name": "Micronized Purified Flavonoid Fraction (MPFF)",
+        "drugs": "Daflon 500 mg (micronized purified flavonoid fraction): 2 tablets BID with meals × 7–14 days for acute hemorrhoidal attack",
+        "notes": "Cochrane review (2018) demonstrates significant reduction in hemorrhoid bleeding, pain, itching, and discharge. Recommended in ASCRS 2018 guideline. Available in Canada as a natural health product. Mechanism: phlebotonic — increases venous tone, reduces capillary permeability. Well-tolerated. Consider for Grade I–II hemorrhoids with persistent bleeding despite conservative management."
+      }
+    ],
+    "non_pharm": [
+      "High-fibre diet (25–35 g/day) — fruits, vegetables, whole grains",
+      "Adequate hydration (8+ glasses water daily)",
+      "Avoid prolonged sitting on toilet (take phone elsewhere)",
+      "Avoid straining — do not hold breath while defecating (bear down gently)",
+      "Regular physical activity to promote regular bowel movements",
+      "Moist wipes instead of dry toilet paper (gentler cleansing)",
+      "Witch hazel pads (Tucks) or Preparation H wipes — astringent, soothing, safe in pregnancy"
+    ],
+    "refer_when": [
+      "No improvement after 2 weeks of appropriate conservative treatment",
+      "Significant or persistent rectal bleeding (rule out colorectal neoplasia)",
+      "Thrombosed external hemorrhoid — excision most effective within 72h of onset",
+      "Age >40 with first episode of rectal bleeding (rule out colorectal cancer — colonoscopy referral)",
+      "Grade III hemorrhoids — refer for rubber band ligation",
+      "Grade IV hemorrhoids (permanently prolapsed) — refer for surgical hemorrhoidectomy",
+      "Prolapsed hemorrhoid not reducing manually",
+      "Suspected anal warts, anal fissure, anorectal abscess, or rectal prolapse as alternative diagnosis"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Hemorrhoids. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "RxTx (Canadian Pharmacists Association). Hemorrhoids — Therapeutic Choices, 8th ed. (2023).",
+    "Maron DJ, Bhutiani N. ACG Clinical Guideline: Management of Hemorrhoids. Am J Gastroenterol. 2023;118(5):811–823.",
+    "NICE. Haemorrhoids: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence (2023)."
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "name": "Conjunctivitis (Pink Eye)",
+  "icon": "👁️",
+  "category": "Ophthalmology",
+  "assessment": {
+    "key_questions": [
+      "Discharge character: watery (viral/allergic) vs mucopurulent/purulent (bacterial)?",
+      "Unilateral or bilateral? Note: bacterial conjunctivitis is also commonly bilateral — laterality alone is not a reliable discriminator. Better discriminators: mucopurulent discharge + morning lid matting → bacterial; watery + itch + bilateral + seasonal → allergic; watery + recent viral illness + pre-auricular lymphadenopathy → viral.",
+      "Associated URI symptoms (viral — common cold)?",
+      "Seasonal pattern, known allergies (allergic)?",
+      "Contact lens wearer? — higher risk of Pseudomonas/serious infection — refer to physician/NP or ophthalmologist",
+      "Sexual history: gonorrhea risk (neonates, sexually active adults)?"
+    ],
+    "red_flags": [
+      "Significant eye pain or photophobia → keratitis, uveitis — urgent ophthalmology",
+      "Vision changes (blurring not cleared by blinking) → keratitis — urgent",
+      "Corneal opacity or infiltrate (white spot visible on cornea) → urgent",
+      "Neonatal (newborn) conjunctivitis → gonorrheal/chlamydial — emergency",
+      "Contact lens wearer with purulent discharge → Pseudomonas risk — refer immediately",
+      "HSV keratitis: unilateral, dendritic ulcer pattern, history of cold sores or periocular vesicles — emergent referral to ophthalmology"
+    ],
+    "ddx": [
+      "Viral (adenovirus — most common): watery discharge, follicular, URI, pre-auricular node",
+      "Allergic: bilateral, intense itch, stringy discharge, seasonal",
+      "Bacterial: mucopurulent, morning lid matting, unilateral or bilateral",
+      "Keratitis, iritis (URGENT)",
+      "Dry eye syndrome",
+      "Blepharitis (lid margin inflammation, crusting, recurrent)",
+      "Subconjunctival hemorrhage (painless, bright red patch — benign)",
+      "Episcleritis (sectoral redness, mild ache, no discharge)",
+      "Dacryocystitis (medial canthal swelling, tearing, discharge)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Bacterial Conjunctivitis — Topical Antibiotic",
+        "drugs": "Tobramycin 0.3% drops (Tobrex) 1–2 drops q4h × 7 days | Erythromycin 0.5% ointment QID × 7 days | Fusidic acid 1% gel (Fucithalmic) BID × 7 days | Polymyxin B/gramicidin (Polysporin Eye & Ear Drops) 1–2 drops q3–4h × 7 days | Polymyxin B/trimethoprim (Polytrim) 1 drop q3h × 7–10 days",
+        "notes": "Mild-moderate bacterial conjunctivitis is usually self-limiting (resolves within 7–10 days without treatment). Antibiotics shorten duration by 2–3 days. Fusidic acid gel: once or twice daily — most convenient. Tobramycin: broad coverage. Polymyxin B/gramicidin and polymyxin B/trimethoprim (Polytrim) are both on Ontario Schedule 4 and are appropriate first-line options. SCOPE NOTE: Ophthalmic fluoroquinolones (ofloxacin, ciprofloxacin, moxifloxacin) are OUTSIDE Ontario pharmacist MA prescribing scope. Contact lens wearers with purulent discharge MUST be referred to a physician/NP or ophthalmologist — do not prescribe under MA. Counsel patients to discontinue contact lens use during infection and replace lens case after recovery.",
+        "preferred_when": "Moderate mucopurulent discharge, significant morning lid matting, immunocompromised"
+      },
+      {
+        "name": "Allergic Conjunctivitis — Antihistamine Eye Drops",
+        "drugs": "Olopatadine (Pataday) 1 drop OD | Ketotifen (Zaditor, Alaway) 1 drop BID",
+        "notes": "Combination antihistamine/mast cell stabilizer drops: most effective for allergic conjunctivitis. SCOPE NOTE: Olopatadine (Pataday) and ketotifen (Zaditor, Alaway) are OTC products in Canada — pharmacist role is OTC recommendation and counselling, not MA prescribing. Olopatadine: once-daily (convenient). Ketotifen: OTC twice-daily. Significantly reduces itch and redness within minutes.",
+        "preferred_when": "Allergic conjunctivitis (itch, bilateral, seasonal, stringy discharge)"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Artificial Tears",
+        "drugs": "Preservative-free artificial tears q2–4h PRN",
+        "notes": "For viral conjunctivitis (self-limiting, no antibiotic benefit) and as adjunct for allergic. Cool compresses also helpful. Viral conjunctivitis is the most common type — supportive care and hand hygiene are the mainstay; antibiotics provide no benefit."
+      }
+    ],
+    "non_pharm": [
+      "Warm compresses (bacterial) or cool compresses (allergic/viral) QID",
+      "Clean eyelids gently with warm water and clean cloth",
+      "Highly contagious (viral/bacterial): frequent handwashing, avoid sharing towels, pillow cases",
+      "School/daycare exclusion: current Ontario and CDC guidance does not routinely require exclusion if the child is receiving treatment and good hand hygiene is practiced — discuss with school/daycare on a case-by-case basis",
+      "Discard mascara/eye makeup used during infection",
+      "Contact lens wearers: discontinue lens use until infection resolved; replace lens case after recovery",
+      "Allergic: allergen avoidance, sunglasses outdoors"
+    ],
+    "refer_when": [
+      "Contact lens wearer with conjunctivitis — refer to physician/NP or ophthalmologist (Pseudomonas risk; FQ required)",
+      "Vision changes or significant eye pain or photophobia — urgent ophthalmology",
+      "Corneal involvement (opacity, infiltrate, dendritic lesion)",
+      "Suspected HSV keratitis (unilateral, dendritic pattern, periocular vesicles, cold sore history) — emergent",
+      "Neonatal conjunctivitis (any age <28 days) — emergency",
+      "Suspected gonococcal or chlamydial conjunctivitis",
+      "No improvement in 48–72 hours after starting topical antibiotic treatment for bacterial conjunctivitis"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Conjunctivitis. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "Canadian Ophthalmological Society (COS). Evidence-based Clinical Practice Guidelines for Conjunctivitis (2021).",
+    "AAO (American Academy of Ophthalmology). Preferred Practice Pattern: Conjunctivitis (2018, reviewed 2023).",
+    "NICE. Conjunctivitis — infective: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence (2023)."
+  ]
+}

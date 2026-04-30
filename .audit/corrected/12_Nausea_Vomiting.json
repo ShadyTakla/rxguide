@@ -1,0 +1,108 @@
+{
+  "name": "Nausea & Vomiting",
+  "icon": "🤢",
+  "category": "GI",
+  "assessment": {
+    "key_questions": [
+      "Onset and duration? Associated with food/timing?",
+      "Possible causes: pregnancy (first trimester), viral gastroenteritis, medications, motion sickness, GERD, post-op?",
+      "Pregnancy test in women of reproductive age — mandatory",
+      "Signs of dehydration: dry mouth, decreased urine output, dizziness?",
+      "Recent food exposures (food poisoning), sick contacts (gastroenteritis)?"
+    ],
+    "red_flags": [
+      "Severe abdominal pain → appendicitis, bowel obstruction, pancreatitis — ER",
+      "Hematemesis (vomiting blood) or coffee-ground emesis → upper GI bleed — ER",
+      "Projectile vomiting (no nausea before) → central cause (raised ICP)",
+      "Signs of severe dehydration or electrolyte abnormality",
+      "Jaundice + vomiting → hepatitis, cholecystitis",
+      "Persistent vomiting >24–48h → dehydration risk",
+      "DKA: fruity breath, polyuria, polydipsia, history of T1DM → ER",
+      "Increased intracranial pressure: headache (especially morning/positional), papilledema, vomiting without nausea → ER"
+    ],
+    "ddx": [
+      "Viral gastroenteritis",
+      "Pregnancy / hyperemesis gravidarum",
+      "Medications (opioids, NSAIDs, antibiotics, chemo)",
+      "Food poisoning",
+      "Vestibular/motion sickness",
+      "GERD",
+      "Migraine",
+      "Anxiety",
+      "Cannabis hyperemesis syndrome (cyclical vomiting relieved by hot showers — ask about cannabis use frequency and pattern)",
+      "Cyclic vomiting syndrome (recurrent stereotyped episodes, often with migraine history)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Scope Note",
+        "drugs": "",
+        "notes": "⚠️ General nausea/vomiting and nausea/vomiting of pregnancy (NVP) are NOT in the Ontario MA prescribing scope. Pharmacists provide OTC counselling, referral, and adapt existing prescriptions."
+      },
+      {
+        "name": "Dimenhydrinate (Gravol)",
+        "drugs": "Dimenhydrinate (Gravol) 25–50 mg q4–6h PRN | Gravol Ginger (natural health product)",
+        "notes": "H1 antihistamine + anticholinergic — effective for motion sickness and general nausea. OTC. Sedating (use with caution in elderly — falls; Beers Criteria). Avoid in BPH, glaucoma. Pregnancy: dimenhydrinate 50 mg q4–6h has a long safety record and is included in the SOGC 2016 NVP algorithm after pyridoxine ± doxylamine. Acceptable if preferred by patient. Gravol Ginger: natural product, safe in pregnancy.",
+        "preferred_when": "Motion sickness, mild-moderate nausea from various causes, short-term use"
+      },
+      {
+        "name": "Pyridoxine (Vitamin B6) — NVP First Step",
+        "drugs": "Pyridoxine (vitamin B6) 10–25 mg q6–8h (up to 200 mg/day)",
+        "notes": "Per SOGC Guideline No. 344: pyridoxine alone is the FIRST pharmacological step for nausea and vomiting of pregnancy before adding doxylamine. OTC; safe in pregnancy. If insufficient, add doxylamine (Diclectin).",
+        "preferred_when": "First-line pharmacotherapy for NVP before escalating to doxylamine-pyridoxine combination"
+      },
+      {
+        "name": "Diclectin (Pregnancy-specific — PRESCRIPTION ONLY)",
+        "drugs": "Doxylamine 10 mg + pyridoxine 10 mg (Diclectin) — delayed-release tablets",
+        "notes": "⚠️ Diclectin is PRESCRIPTION-ONLY in Canada — it is not OTC. Pharmacists can recommend it be prescribed but CANNOT prescribe it under Ontario MA. Health Canada approved for nausea/vomiting of pregnancy. Standard titration: Day 1 — 2 tabs at bedtime; Day 2 — add 1 tab in AM; Day 3 — add 1 tab mid-afternoon (max 4 tabs/day = 2 qhs + 1 AM + 1 mid-afternoon). Take 30 min before bed on empty stomach (delayed-release formulation). Safe — extensive safety data in pregnancy.",
+        "preferred_when": "Nausea and vomiting of pregnancy (NVP) — after pyridoxine alone insufficient; requires physician/NP prescription"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Prochlorperazine",
+        "drugs": "Prochlorperazine (Stemetil) 5–10 mg TID–QID PO or PR",
+        "notes": "Dopamine antagonist (phenothiazine) — effective antiemetic widely used in Canada. EPS/dystonia risk — avoid in young patients if possible; use lowest effective dose. Available in oral and suppository formulations."
+      },
+      {
+        "name": "Promethazine",
+        "drugs": "Promethazine 12.5–25 mg q4–6h PO or IM",
+        "notes": "Phenothiazine antihistamine — effective for nausea/vomiting and motion sickness. Sedating. EPS and respiratory depression risk at higher doses. Available oral and injectable."
+      },
+      {
+        "name": "Metoclopramide",
+        "drugs": "Metoclopramide (Maxeran) 5–10 mg q6–8h PRN (max 30 mg/day)",
+        "notes": "Dopamine antagonist + prokinetic. Effective for gastroparesis, chemotherapy nausea, post-op nausea. ⚠️ BLACK BOX WARNING: risk of tardive dyskinesia — limit use to ≤12 weeks; do not exceed recommended dose. EPS risk — use short-term only. Avoid in patients with Parkinson's disease."
+      },
+      {
+        "name": "Ondansetron",
+        "drugs": "Ondansetron (Zofran) 4–8 mg q4–8h",
+        "notes": "5-HT3 antagonist — highly effective for chemotherapy and post-op nausea. Increasing use for NVP (modest safety data, generally considered low risk after first trimester). QTc prolongation concern at high doses. ⚠️ Serotonin syndrome caution: use with care when combined with other serotonergic drugs (SSRIs, SNRIs, tramadol, triptans) — monitor for agitation, tachycardia, hyperthermia, clonus."
+      }
+    ],
+    "non_pharm": [
+      "Oral rehydration: clear fluids in small sips (Pedialyte, diluted sports drink, clear broth)",
+      "Early refeeding: early resumption of normal age-appropriate diet is preferred — BRAT diet (Bananas, Rice, Applesauce, Toast) is outdated and provides inadequate nutrition (per AAP/CPS); bland foods acceptable initially but return to regular diet as tolerated",
+      "Ginger (tea, ginger ale, ginger candies): evidence-based for nausea in pregnancy and chemotherapy",
+      "Small frequent meals; avoid spicy/fatty foods",
+      "P6 (Neiguan) acupressure wristbands: modest evidence for motion sickness and pregnancy nausea",
+      "Fresh air, avoid strong smells, stay hydrated"
+    ],
+    "refer_when": [
+      "Severe dehydration — unable to keep any fluids down (IV fluids needed)",
+      "Hematemesis or coffee-ground emesis — upper GI bleed emergency",
+      "Severe abdominal pain — surgical emergency (appendicitis, obstruction, pancreatitis)",
+      "Hyperemesis gravidarum — weight loss >5%, ketonuria, dehydration — requires IV fluids and hospital assessment",
+      "Nausea and vomiting >48–72h without improvement",
+      "Suspected cannabis hyperemesis syndrome — refer for cessation counselling and medical follow-up",
+      "Signs of raised intracranial pressure or DKA — emergency"
+    ]
+  },
+  "references": [
+    "Ontario College of Pharmacists. Minor Ailments: Nausea and Vomiting. OCP Prescribing Standards, O. Reg. 256/24 (2025).",
+    "RxTx (Canadian Pharmacists Association). Nausea and Vomiting — Therapeutic Choices, 8th ed. (2023).",
+    "ACG (American College of Gastroenterology). ACG Clinical Guideline: Nausea and Vomiting of Pregnancy. Am J Gastroenterol. 2022;117(10):1538–1558.",
+    "NICE. Nausea/vomiting in pregnancy: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence (2023)."
+  ]
+}
