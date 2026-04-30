@@ -42519,6 +42519,400 @@ var DRUGS = {
     ],
     "source": "Health Canada PM. AMMI Canada. AASLD/IDSA HCV; IDSA Influenza guidelines."
   },
+  "gentamicin": {
+    "name": "Gentamicin",
+    "brand": "Garamycin (originator); generics widely available (IV/IM, ophthalmic, topical)",
+    "class": "Aminoglycoside Antibiotic",
+    "napra": "I",
+    "moa": "Binds irreversibly to the 30S ribosomal subunit, causing mRNA misreading and inhibiting protein synthesis → bactericidal. Concentration-dependent killing with significant post-antibiotic effect (PAE) — supports extended-interval dosing. Synergistic with cell wall-active agents (β-lactams, vancomycin) — cell wall damage enhances aminoglycoside penetration. Aerobic uptake required (no anaerobic activity).",
+    "indications": [
+      "Serious gram-negative infections (sepsis, hospital-acquired pneumonia, complicated UTI/pyelonephritis) — usually combined with a β-lactam",
+      "Enterococcal endocarditis — synergy with ampicillin or vancomycin",
+      "Listeria meningitis / bacteremia — synergy with ampicillin",
+      "Empiric therapy in febrile neutropenia (combined with antipseudomonal β-lactam)",
+      "Mycobacterial infections (MAC, TB — second-line)",
+      "Topical/ophthalmic: bacterial conjunctivitis, otitis externa (combination products)"
+    ],
+    "dosing": [
+      {
+        "indication": "Extended-interval (once-daily) — preferred for most adults with CrCl ≥60",
+        "dose": "5–7 mg/kg IV q24h (Hartford nomogram). Use ACTUAL body weight unless BMI >30, then adjusted body weight. First dose given empirically; subsequent doses adjusted using Hartford nomogram (drug level drawn 6–14 h after start of infusion).",
+        "renal": "CrCl 40–59: 5 mg/kg q36h; CrCl 20–39: 5 mg/kg q48h; CrCl <20 or hemodialysis: traditional dosing with TDM (extended-interval not recommended)."
+      },
+      {
+        "indication": "Traditional (multiple-daily) — endocarditis synergy or severe renal impairment",
+        "dose": "1–2 mg/kg IV q8h (synergy for enterococcal/streptococcal endocarditis: 1 mg/kg q8h or 3 mg/kg OD per AHA 2015). Target peak 5–10 µg/mL, trough <2 µg/mL.",
+        "renal": "CrCl 40–60: q12h; CrCl 20–40: q24h; CrCl <20 or HD: dose by levels (target trough <2 µg/mL); give post-HD."
+      },
+      {
+        "indication": "Single-dose pyelonephritis / urosepsis (uncomplicated, ED)",
+        "dose": "5 mg/kg IV × 1 dose plus oral step-down (e.g., cephalosporin or TMP-SMX per culture).",
+        "renal": "Same as extended-interval"
+      },
+      {
+        "indication": "Topical / ophthalmic",
+        "dose": "Ophthalmic: 0.3% solution 1–2 drops every 4 h (severe: every 1 h). Ointment 0.3% applied 2–3×/day. Topical cream/ointment 0.1%: thin layer to affected area 3–4×/day.",
+        "renal": "Negligible systemic absorption — no adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Phlebitis at IV site",
+        "Mild rash (uncommon)"
+      ],
+      "serious": [
+        "NEPHROTOXICITY — acute tubular necrosis, typically reversible if drug stopped early; risk factors: prolonged duration, high troughs, concurrent nephrotoxins (vancomycin, NSAIDs, contrast), volume depletion, elderly, pre-existing CKD",
+        "OTOTOXICITY — IRREVERSIBLE; vestibular (vertigo, oscillopsia) and cochlear (high-frequency hearing loss); cumulative dose-related; family history of aminoglycoside ototoxicity is a risk factor (mitochondrial m.1555A>G mutation)",
+        "Neuromuscular blockade — additive with anesthetics, neuromuscular blockers; may unmask myasthenia gravis (potentially fatal — avoid in MG)",
+        "Hypersensitivity reactions (rare)"
+      ]
+    },
+    "contraindications": [
+      "Myasthenia gravis (neuromuscular blockade)",
+      "Known hypersensitivity to aminoglycosides",
+      "Pregnancy (Category D — fetal ototoxicity / 8th cranial nerve damage; reserve for life-threatening infections only when no alternative)",
+      "Concurrent nephrotoxic agents — relative contraindication; minimize duration"
+    ],
+    "interactions": [
+      {
+        "drug": "Vancomycin IV",
+        "severity": "Major",
+        "mechanism": "Additive nephrotoxicity",
+        "management": "Avoid combination if possible; monitor SCr daily; consider alternative (e.g., cefepime + vancomycin for MRSA empiric)"
+      },
+      {
+        "drug": "Loop diuretics (furosemide, ethacrynic acid)",
+        "severity": "Major",
+        "mechanism": "Additive ototoxicity (especially ethacrynic acid)",
+        "management": "Avoid if possible; if combined, monitor audiology and Cr"
+      },
+      {
+        "drug": "Neuromuscular blockers / anesthetics",
+        "severity": "Major",
+        "mechanism": "Potentiate neuromuscular blockade — risk of prolonged paralysis/respiratory depression",
+        "management": "Communicate with anesthesia; monitor twitch response"
+      },
+      {
+        "drug": "Cisplatin / amphotericin B / cyclosporine / tacrolimus / IV contrast",
+        "severity": "Major",
+        "mechanism": "Additive nephrotoxicity",
+        "management": "Avoid concurrent use when possible; monitor renal function"
+      },
+      {
+        "drug": "β-Lactams (ampicillin, piperacillin)",
+        "severity": "Beneficial / Synergy",
+        "mechanism": "β-lactam disrupts cell wall → enhanced aminoglycoside uptake (used therapeutically for enterococcal endocarditis)",
+        "management": "Do NOT mix in same IV line (β-lactams chemically inactivate aminoglycosides — separate infusions)"
+      }
+    ],
+    "pregnancy": "Category D — 8th cranial nerve toxicity (fetal ototoxicity / deafness) reported with all aminoglycosides; cross placenta. Reserve for life-threatening maternal infections (e.g., severe pyelonephritis, sepsis) when safer alternatives are inadequate. Streptomycin and kanamycin have the strongest fetal ototoxicity signal; gentamicin has weaker but real risk. Lactation: minimal milk transfer and poor oral absorption — generally compatible with breastfeeding (LactMed).",
+    "pk": {
+      "absorption": "Negligible oral absorption (IV/IM only); ~100% bioavailability after IM",
+      "half_life": "2–3 h (normal renal function); markedly prolonged in CKD",
+      "elimination": "Renal — 90% unchanged within 24 h",
+      "onset": "Rapid (peak within 30–60 min after IV infusion)",
+      "peak": "30–60 min post-IV"
+    },
+    "canadian_notes": "Gentamicin is heavily used in Canadian hospitals as part of empiric regimens for sepsis, pyelonephritis, and febrile neutropenia. EXTENDED-INTERVAL DOSING (once-daily, Hartford nomogram) is the preferred approach for most adults with normal renal function — exploits concentration-dependent killing and post-antibiotic effect, allows a drug-free interval for renal recovery, and reduces nephrotoxicity vs traditional q8h dosing. AMMI Canada antimicrobial stewardship: limit aminoglycoside duration to 48–72 h whenever possible (definitive therapy with culture-guided narrow agents). Hospital pharmacists run aminoglycoside dosing services in many Canadian institutions — Bayesian software (DoseMeRx, InsightRx) is increasingly used for personalized dosing. Therapeutic drug monitoring is essential — irreversible ototoxicity is the most feared adverse effect; document baseline audiology and counsel patients to report any tinnitus, vertigo, or hearing change. Ophthalmic and topical gentamicin are widely available OTC and Rx in Canada.",
+    "pearls": [
+      "Extended-interval (once-daily) dosing is preferred over traditional q8h in most adults — equal/better efficacy with less nephrotoxicity",
+      "Synergy dosing for enterococcal endocarditis (1 mg/kg q8h or 3 mg/kg OD) targets a different goal — adjunct to β-lactam, not stand-alone bactericidal therapy",
+      "Use ACTUAL body weight for dosing unless BMI >30 (then use adjusted body weight) — using ideal body weight in obese patients underdoses",
+      "DO NOT mix aminoglycosides in the same IV line as β-lactams — chemical inactivation; separate infusions",
+      "Monitor SCr every 48–72 h during therapy; ototoxicity risk increases with cumulative dose and duration — limit to 48–72 h when possible",
+      "Avoid in myasthenia gravis (neuromuscular blockade) and pregnancy unless life-threatening infection",
+      "Therapeutic targets: traditional dosing peak 5–10 µg/mL, trough <2 µg/mL; extended-interval dosing — use Hartford nomogram"
+    ],
+    "source": "Health Canada PM. AMMI Canada Bugs & Drugs 2024. Public Health Ontario Antimicrobial Stewardship. AHA Endocarditis 2015. Hartford Nomogram (Nicolau et al, 1995)."
+  },
+  "mebendazole": {
+    "name": "Mebendazole",
+    "brand": "Vermox (Janssen Canada); generic available (OTC in some provinces, Schedule II behind-the-counter in others)",
+    "class": "Antiparasitic — Benzimidazole Anthelmintic",
+    "napra": "II (behind-the-counter; OTC in select provinces)",
+    "moa": "Selectively binds β-tubulin in invertebrate (helminth) cells, inhibiting microtubule polymerization. Disrupts glucose uptake by intestinal helminths → glycogen depletion and ATP depletion → worm death over 2–3 days. Selectivity for parasite over human tubulin (much lower affinity for mammalian tubulin); minimal systemic absorption (~5–10%) further limits host effects.",
+    "indications": [
+      "Enterobiasis (pinworm — Enterobius vermicularis): MOST COMMON helminth infection in Canada, especially school-age children",
+      "Ascariasis (roundworm — Ascaris lumbricoides)",
+      "Trichuriasis (whipworm — Trichuris trichiura)",
+      "Hookworm (Ancylostoma duodenale, Necator americanus)",
+      "Mixed intestinal helminth infections",
+      "Capillariasis, trichinosis, hydatid disease (off-label, higher-dose / longer-course; albendazole generally preferred)"
+    ],
+    "dosing": [
+      {
+        "indication": "Pinworm (Enterobius) — adult and children ≥2 years",
+        "dose": "100 mg PO × 1 dose, REPEAT in 2 weeks. Treat ALL household contacts simultaneously (entire household — symptomatic or not). Wash bedding, towels, and underwear in hot water on treatment days; trim and clean fingernails; emphasize hand hygiene.",
+        "renal": "No dose adjustment (poorly absorbed)"
+      },
+      {
+        "indication": "Roundworm (Ascaris) / hookworm / whipworm — adult and children ≥2 years",
+        "dose": "100 mg PO BID × 3 days OR 500 mg PO × 1 single-dose alternative. Cure rates ~70–95% for Ascaris/hookworm; lower for Trichuris (consider repeat or albendazole if persistent).",
+        "renal": "No adjustment"
+      },
+      {
+        "indication": "Hydatid disease / cysticercosis (specialist) — off-label",
+        "dose": "Hydatid: 40 mg/kg/day in divided doses for 1–6 months (specialist); cysticercosis: 200 mg PO BID × 4 weeks (consider albendazole as preferred alternative).",
+        "renal": "Caution; specialist guidance"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "GI upset — abdominal pain, diarrhea, nausea (usually mild and transient)",
+        "Rash (rare)"
+      ],
+      "serious": [
+        "Severe skin reactions (Stevens-Johnson syndrome, toxic epidermal necrolysis) — rare; seek medical attention immediately if widespread rash, blistering, or mucosal involvement",
+        "Hepatotoxicity (rare; transient transaminase elevation more common at high doses / prolonged courses)",
+        "Bone marrow suppression — rare, with high-dose / prolonged therapy (e.g., hydatid disease) — monitor CBC if course >1 week",
+        "Seizures — very rare; reported with high-dose or in patients with neurocysticercosis (inflammatory response to dying parasites)"
+      ]
+    },
+    "contraindications": [
+      "Pregnancy (Category C — animal teratogenicity at high doses; avoid in 1st trimester; benefits vs risks for severe maternal helminthiasis)",
+      "Children <2 years (insufficient safety data; pinworm in infants is rare — reassess diagnosis)",
+      "Hypersensitivity to mebendazole or other benzimidazoles (cross-reactivity with albendazole)",
+      "Severe hepatic impairment (relative — limited data)"
+    ],
+    "interactions": [
+      {
+        "drug": "Phenytoin / carbamazepine",
+        "severity": "Moderate",
+        "mechanism": "CYP enzyme induction reduces mebendazole plasma levels — minimal clinical impact for short pinworm courses but relevant for hydatid/cysticercosis (long courses)",
+        "management": "No adjustment for pinworm; for prolonged courses consider monitoring or alternative agent"
+      },
+      {
+        "drug": "Cimetidine",
+        "severity": "Minor",
+        "mechanism": "Increases mebendazole plasma concentrations (CYP inhibition) — generally clinically irrelevant",
+        "management": "No routine adjustment"
+      },
+      {
+        "drug": "Metronidazole",
+        "severity": "Major (rare)",
+        "mechanism": "Concurrent use has been associated with rare cases of Stevens-Johnson syndrome / toxic epidermal necrolysis",
+        "management": "Avoid concurrent use if possible; if combined therapy needed, counsel patient to report any rash immediately"
+      }
+    ],
+    "pregnancy": "Health Canada labelling: avoid in pregnancy, especially first trimester (animal teratogenicity at supratherapeutic doses; minimal human data). Pinworm infection itself is rarely a maternal/fetal risk and treatment can usually be deferred until after delivery; if treatment is essential during pregnancy, second/third trimester treatment is preferred and is supported by WHO for high-burden helminthiasis. Lactation: minimal milk transfer (poor systemic absorption) — generally compatible (LactMed).",
+    "pk": {
+      "absorption": "Poor oral absorption (~5–10%) — most drug remains in GI lumen (ideal for intestinal helminths). Absorption increased by fatty meals.",
+      "half_life": "1.5–9 h (highly variable; longer with fatty meals)",
+      "elimination": "Primarily fecal (unabsorbed); absorbed fraction undergoes hepatic metabolism (CYP) — renal excretion <2%",
+      "onset": "Effect over 2–3 days (worm death follows glucose depletion)",
+      "peak": "2–4 h"
+    },
+    "canadian_notes": "Mebendazole is the first-line agent for pinworm in Canada — by far the most common indication. AVAILABLE OTC in Ontario, BC, Alberta, and most provinces (Schedule II in some — pharmacist consultation). Single-tablet 100 mg pre-packaged with patient counselling insert. KEY COUNSELLING POINTS: (1) treat ENTIRE HOUSEHOLD on the same day — pinworm spreads readily between household members and asymptomatic carriers maintain reinfection; (2) repeat the dose at 14 days — kills worms that were in egg form during first dose (eggs hatch in 2 weeks); (3) hygiene measures: wash bedding/towels/underwear in hot water on treatment day, vacuum bedrooms, trim fingernails, emphasize handwashing especially after toileting and before meals; (4) reinfection is common — recurrent symptoms within months may not represent treatment failure. Albendazole (single 400 mg dose) is an alternative — better evidence for ascariasis/hookworm, similar efficacy for pinworm, but mebendazole has stronger Canadian availability/familiarity. PHARMACIST MINOR AILMENTS (Ontario O. Reg. 256/24): pinworm is a pharmacist-prescribable minor ailment — pharmacists can assess and recommend mebendazole.",
+    "pearls": [
+      "TREAT ALL HOUSEHOLD CONTACTS simultaneously — pinworm spreads readily; single-patient treatment leads to high reinfection rate",
+      "REPEAT DOSE AT 14 DAYS — original dose kills adult worms but not eggs; 2-week interval allows newly-hatched worms to be killed before they reproduce",
+      "Pinworm itch is worst at night (female worm migration to perianal area to lay eggs); diagnosis can be confirmed with morning Scotch-tape test if uncertain",
+      "Hygiene measures (hot wash bedding, fingernail trimming, hand hygiene) are essential adjuncts — drug therapy alone won't break reinfection cycle",
+      "Pharmacist-prescribable minor ailment in Ontario (O. Reg. 256/24) — pharmacists can assess and dispense without physician script",
+      "Minimal systemic absorption → very few drug interactions and low toxicity for typical pinworm courses",
+      "Albendazole 400 mg × 1 dose is an equivalent alternative, especially for hookworm/Ascaris (better cure rates)"
+    ],
+    "source": "Health Canada PM (Vermox). CDC Parasitic Diseases Branch. AMMI Canada / Bugs & Drugs 2024. WHO Guidelines for Preventive Chemotherapy of Soil-Transmitted Helminthiasis. OCP Minor Ailments O. Reg. 256/24."
+  },
+  "ivermectin": {
+    "name": "Ivermectin",
+    "brand": "Stromectol (oral — Merck Canada); Sklice 0.5% (topical lotion — Arbor Pharmaceuticals); Soolantra 1% (topical cream for rosacea — Galderma)",
+    "class": "Antiparasitic — Macrocyclic Lactone (Avermectin)",
+    "napra": "I (oral); Sklice 0.5% lotion is OTC; Soolantra 1% cream is Rx",
+    "moa": "Selective high-affinity agonist of glutamate-gated chloride channels (GluCl) in invertebrate nerve and muscle cells → sustained chloride influx → hyperpolarization → paralysis and death of the parasite. Also has weaker affinity for invertebrate GABA-gated channels. Mammalian GluCl receptors do not exist (and ivermectin does not normally cross the intact blood-brain barrier in mammals at therapeutic doses) → wide therapeutic index in humans. Topical formulations (Sklice, Soolantra) act locally with negligible systemic absorption.",
+    "indications": [
+      "Scabies (oral — first-line alternative to permethrin; preferred for crusted/Norwegian scabies and for institutional/household-wide outbreaks where compliance with topical permethrin is difficult)",
+      "Head lice (oral or 0.5% topical lotion — for permethrin-resistant cases)",
+      "Strongyloidiasis (Strongyloides stercoralis — first-line)",
+      "Onchocerciasis (river blindness — first-line, mass administration programs)",
+      "Filariasis (lymphatic — Wuchereria bancrofti)",
+      "Rosacea — papulopustular subtype (topical 1% cream Soolantra — anti-inflammatory + antiparasitic effect on Demodex mites)"
+    ],
+    "dosing": [
+      {
+        "indication": "Scabies (oral) — adult and children ≥15 kg",
+        "dose": "200 µg/kg PO × 1 dose; REPEAT day 7–14 (kills newly hatched mites — not ovicidal). CRUSTED SCABIES: multi-dose protocol — days 1, 2, 8, 9, 15 (± 22, 29) plus concurrent topical permethrin nightly initially. Take with water on empty stomach (or with fatty food to increase absorption ~2.5× — clinically used to enhance efficacy in some protocols).",
+        "renal": "No specific adjustment (poorly studied in CKD; minimal renal excretion)"
+      },
+      {
+        "indication": "Head lice (oral) — adult and children ≥15 kg",
+        "dose": "200 µg/kg PO × 1 dose; REPEAT day 7–10. Reserved for permethrin-resistant cases or institutional outbreaks.",
+        "renal": "No adjustment"
+      },
+      {
+        "indication": "Head lice — topical (Sklice 0.5% lotion)",
+        "dose": "Apply enough lotion to cover dry hair and scalp; leave on 10 minutes; rinse with water. SINGLE application typically curative (no repeat needed unlike permethrin). For ages ≥6 months. Avoid contact with eyes.",
+        "renal": "No adjustment (negligible systemic absorption)"
+      },
+      {
+        "indication": "Strongyloidiasis",
+        "dose": "200 µg/kg PO OD × 1–2 days. Disseminated/hyperinfection (immunocompromised): 200 µg/kg/day × 14 days ± thiabendazole (specialist).",
+        "renal": "No adjustment"
+      },
+      {
+        "indication": "Rosacea (topical Soolantra 1% cream)",
+        "dose": "Pea-sized amount applied to affected areas of face once daily at bedtime. Thin layer; avoid eyes/mouth. Improvement typically seen by 4 weeks; full effect by 12–16 weeks.",
+        "renal": "No adjustment (topical)"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Mazzotti reaction (in onchocerciasis/filariasis only) — pruritus, fever, lymphadenopathy due to dying microfilariae; not relevant for scabies/lice/Strongyloides",
+        "Mild GI upset (nausea, abdominal pain — usually transient)",
+        "Headache, dizziness",
+        "Topical: transient burning/stinging at application site (Soolantra)"
+      ],
+      "serious": [
+        "Severe encephalopathy in patients with HIGH Loa loa microfilarial burden (>30,000 mf/mL) — can be fatal; screen with quantitative loa filaria testing in patients from Loa-endemic areas of West/Central Africa BEFORE giving ivermectin for any indication",
+        "Severe dermatologic reactions (Stevens-Johnson syndrome, DRESS) — very rare",
+        "Hypotension and tachycardia (usually associated with Mazzotti reaction in heavy filarial infection)"
+      ]
+    },
+    "contraindications": [
+      "Pregnancy (Category C — animal teratogenicity at supratherapeutic doses; safety in 1st trimester not established; defer treatment to postpartum if possible for elective indications like rosacea or non-severe scabies)",
+      "Children <15 kg or younger than 5 years (oral — limited safety data; topical Sklice is approved from 6 months)",
+      "Loa loa co-infection with high microfilarial burden (encephalopathy risk)",
+      "Hypersensitivity to ivermectin or any component"
+    ],
+    "interactions": [
+      {
+        "drug": "Strong CYP3A4 inhibitors (clarithromycin, itraconazole, ritonavir)",
+        "severity": "Moderate",
+        "mechanism": "Increased ivermectin plasma levels via CYP3A4 inhibition — clinical impact minor for short courses",
+        "management": "No routine adjustment for short-course scabies/lice; monitor for adverse effects with prolonged courses"
+      },
+      {
+        "drug": "Warfarin",
+        "severity": "Moderate",
+        "mechanism": "Rare reports of INR elevation when ivermectin is added to chronic warfarin",
+        "management": "Recheck INR 5–7 days after starting ivermectin if on warfarin"
+      },
+      {
+        "drug": "GABAergic CNS depressants (benzodiazepines, barbiturates, valproate)",
+        "severity": "Theoretical / Minor",
+        "mechanism": "Ivermectin has weak GABA-receptor activity in mammals if blood-brain barrier disrupted (e.g., meningitis, neonates) — theoretical additive sedation",
+        "management": "Standard caution; clinically rare"
+      }
+    ],
+    "pregnancy": "Category C — Health Canada lists pregnancy as a relative contraindication for oral ivermectin. Most observational cohort data (large mass drug administration programs in West Africa for onchocerciasis) suggest no increased risk of major birth defects, but data are limited and labeling remains cautionary. Defer elective treatment (rosacea, mild scabies) until postpartum. For severe scabies or strongyloidiasis in pregnancy, treatment can be considered after specialist consultation, ideally in 2nd/3rd trimester. Lactation: minimal milk transfer (~2% of maternal dose) — generally compatible; oral absorption in breastfed infant is poor. Topical Sklice/Soolantra: negligible systemic absorption — compatible with pregnancy and lactation.",
+    "pk": {
+      "absorption": "Oral bioavailability ~50–80%; markedly increased (up to ~2.5×) when taken with high-fat meal (some clinicians use this to enhance scabies efficacy)",
+      "half_life": "~18 h (oral)",
+      "elimination": "Hepatic metabolism via CYP3A4; primarily fecal excretion (>90%); renal <2%",
+      "onset": "Paralysis of parasites within hours; clinical symptom resolution over days",
+      "peak": "4–5 h (oral)"
+    },
+    "canadian_notes": "Ivermectin oral (Stromectol) is increasingly used as first-line for scabies in Canada — easier compliance than full-body permethrin 5% cream applied for 8–14 hours, especially in institutional outbreaks (long-term care, shelters), in children old enough to swallow tablets, and in crusted scabies. SKLICE 0.5% topical lotion (single 10-minute application) is OTC in Canada for head lice and is more effective than permethrin for resistant cases — does NOT require repeat application. SOOLANTRA 1% cream is Rx-only for rosacea (anti-inflammatory + activity against Demodex mites — strong evidence base). KEY COUNSELLING: oral ivermectin for scabies must be REPEATED at day 7–14 (not ovicidal — kills hatched mites only); treat all close contacts simultaneously; wash bedding/clothing/towels in hot water (≥50°C) and dry on high heat or seal in plastic bag for 72 hours. The well-publicized off-label COVID-19 use of ivermectin is NOT supported by current evidence (multiple high-quality RCTs negative including TOGETHER and ACTIV-6); Health Canada and AMMI Canada explicitly advise against ivermectin for COVID-19. Counsel patients seeking it for COVID-19 about lack of evidence and risk of toxicity from veterinary formulations.",
+    "pearls": [
+      "Oral ivermectin for scabies: REPEAT dose at day 7–14 (not ovicidal — kills hatched mites only)",
+      "Crusted (Norwegian) scabies requires multi-dose protocol (days 1, 2, 8, 9, 15) PLUS topical permethrin — high parasite burden requires aggressive therapy",
+      "Take with fatty meal to enhance absorption ~2.5× (some clinicians use this for refractory scabies)",
+      "Topical Sklice 0.5% lotion: SINGLE 10-minute application typically curative for head lice — major advantage over permethrin (no repeat needed)",
+      "Soolantra 1% cream is approved for rosacea — addresses Demodex mite burden + anti-inflammatory effect",
+      "Loa loa screening required before mass administration in West/Central Africa (encephalopathy risk in heavy filariasis)",
+      "Health Canada and AMMI explicitly advise AGAINST ivermectin for COVID-19 — no efficacy in high-quality trials; counsel patients seeking veterinary formulations",
+      "Lice resistance to permethrin is rising in Canada — ivermectin is the preferred second-line agent"
+    ],
+    "source": "Health Canada PM (Stromectol, Sklice, Soolantra). CDC Parasitic Diseases Branch. AMMI Canada Bugs & Drugs 2024. CPS Position on Pediculosis. CADTH Scabies Treatment Review."
+  },
+  "cloxacillin": {
+    "name": "Cloxacillin",
+    "brand": "Orbenin (originator); generics widely available (oral capsules and IV powder)",
+    "class": "Anti-Staphylococcal Penicillin (β-Lactamase-Resistant Penicillin)",
+    "napra": "I",
+    "moa": "Binds penicillin-binding proteins (PBPs) on the bacterial cell wall, inhibiting transpeptidation in peptidoglycan synthesis → cell lysis. Bactericidal, time-dependent killing. The bulky isoxazolyl side chain confers resistance to staphylococcal β-lactamases — distinguishing feature vs. amoxicillin/penicillin V. NO activity against methicillin-resistant Staphylococcus aureus (MRSA — altered PBP2a) and NO activity against gram-negatives or anaerobes.",
+    "indications": [
+      "Methicillin-susceptible Staphylococcus aureus (MSSA) infections — first-line traditionally for: skin and soft tissue infections (cellulitis, abscess after I&D), bone and joint infections (oral step-down), endocarditis (IV), bacteremia (IV)",
+      "Streptococcal infections (cloxacillin is active but penicillin V or amoxicillin is preferred — narrower)",
+      "Surgical prophylaxis / step-down where MSSA coverage is required (oral)"
+    ],
+    "dosing": [
+      {
+        "indication": "MSSA skin/soft tissue infection (oral)",
+        "dose": "250–500 mg PO QID × 5–7 days (cellulitis); take ON EMPTY STOMACH (1 h before or 2 h after meals — food reduces absorption by ~50%). For severe SSTI consider cephalexin (better absorption with food, BID/TID dosing improves adherence).",
+        "renal": "No specific adjustment for normal courses; severe renal impairment (CrCl <10): no dose change typically required (predominantly biliary excretion)"
+      },
+      {
+        "indication": "MSSA bacteremia / endocarditis / bone & joint (IV)",
+        "dose": "2 g IV q4–6h (12 g/day max for adults). Endocarditis: 2 g IV q4h × 4–6 weeks per AHA/ESC guidelines. NOTE: cefazolin is increasingly preferred over cloxacillin for MSSA bacteremia (CefBacT and FIRST trial signals — equal efficacy, better tolerability, q8h dosing, less phlebitis).",
+        "renal": "No adjustment for IV dosing"
+      },
+      {
+        "indication": "Pediatric (oral)",
+        "dose": "50–100 mg/kg/day PO divided QID (max 4 g/day). Take on empty stomach. Suspension is poorly palatable — cephalexin is generally preferred for pediatric SSTI.",
+        "renal": "No adjustment"
+      },
+      {
+        "indication": "Pediatric (IV)",
+        "dose": "100–200 mg/kg/day IV divided q4–6h (max 12 g/day).",
+        "renal": "No adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "GI upset — nausea, diarrhea, abdominal pain (especially with food on empty stomach requirement)",
+        "Phlebitis at IV site (concentration- and duration-related)",
+        "Mild rash"
+      ],
+      "serious": [
+        "Hypersensitivity reactions including anaphylaxis (β-lactam class) — true IgE-mediated allergy ~0.01–0.05%",
+        "Acute interstitial nephritis — rare; AKI with eosinophilia/eosinophiluria; discontinue if suspected",
+        "Hepatotoxicity — rare cholestatic hepatitis; usually reversible",
+        "C. difficile colitis (all antibiotics; cloxacillin lower risk than broad-spectrum agents)",
+        "Severe cutaneous adverse reactions (SJS/TEN, DRESS) — very rare",
+        "Neutropenia / bone marrow suppression — rare with prolonged high-dose IV courses (e.g., endocarditis); monitor CBC weekly"
+      ]
+    },
+    "contraindications": [
+      "Penicillin allergy (true IgE-mediated — anaphylaxis, urticaria, angioedema)",
+      "History of cloxacillin- or methicillin-induced acute interstitial nephritis or DRESS",
+      "Severe hepatic impairment with prior cholestatic reaction to penicillins"
+    ],
+    "interactions": [
+      {
+        "drug": "Methotrexate",
+        "severity": "Moderate-Major",
+        "mechanism": "Penicillins reduce renal clearance of methotrexate → increased MTX levels → toxicity (especially with high-dose oncology MTX)",
+        "management": "Avoid combination with high-dose MTX; for low-dose RA/IMID MTX, monitor for toxicity if prolonged cloxacillin course"
+      },
+      {
+        "drug": "Probenecid",
+        "severity": "Pharmacokinetic — Beneficial",
+        "mechanism": "Probenecid blocks renal tubular secretion of penicillins → prolonged half-life and higher plasma levels",
+        "management": "Used therapeutically in some endocarditis protocols; otherwise no routine adjustment"
+      },
+      {
+        "drug": "Warfarin",
+        "severity": "Minor-Moderate",
+        "mechanism": "Possible mild INR fluctuation (mechanism unclear — gut flora alteration affecting vitamin K)",
+        "management": "Routine INR monitoring during course"
+      },
+      {
+        "drug": "Combined oral contraceptives",
+        "severity": "Minor (theoretical)",
+        "mechanism": "Theoretical reduction in COC efficacy via altered gut flora; current evidence does not support clinically significant interaction for non-rifampin antibiotics",
+        "management": "Backup contraception not routinely required for short courses; counsel patient"
+      }
+    ],
+    "pregnancy": "Considered safe in pregnancy and lactation (Health Canada — pregnancy benefit/risk acceptable). Penicillins including cloxacillin have decades of safety data in pregnancy. Lactation: small amounts in milk; generally compatible with breastfeeding (LactMed) — possible mild infant GI upset/loose stools.",
+    "pk": {
+      "absorption": "Oral bioavailability ~37–60% (highly variable — markedly reduced by food, hence empty-stomach requirement)",
+      "half_life": "0.5–1.5 h (longer in renal impairment but rarely clinically significant due to biliary excretion)",
+      "elimination": "Hepatic metabolism + biliary excretion (~60–70%); renal excretion ~25–30%",
+      "onset": "Peak levels within 1–2 h of oral dose, 30 min after IV",
+      "peak": "1 h (oral); 30 min (IV)"
+    },
+    "canadian_notes": "Cloxacillin is the traditional anti-staphylococcal penicillin in Canada — used for >50 years for MSSA infections. ORAL CLOXACILLIN is increasingly being replaced by CEPHALEXIN in community practice: cephalexin can be taken with food, has better oral bioavailability, requires less frequent dosing (TID-QID instead of QID), is better tolerated, and is similarly effective for MSSA SSTI and oral step-down therapy. IV CLOXACILLIN is also being challenged by CEFAZOLIN for MSSA bacteremia and endocarditis — multiple observational studies and the FIRST RCT (NEJM 2019 in development; multiple cohort studies show equivalent or superior outcomes) support cefazolin as a preferred alternative (q8h dosing, better tolerability, less phlebitis, less neutropenia in prolonged courses). Cloxacillin remains useful when: (1) cephalosporin allergy precludes cefazolin/cephalexin, (2) IV penicillin specifically required (e.g., MSSA endocarditis with allergic protocol), or (3) cost considerations. AMMI Canada Bugs & Drugs lists cloxacillin and cephalexin as equivalent first-line for MSSA SSTI but notes the trend toward cephalexin. NOT for MRSA — confirm methicillin susceptibility before using.",
+    "pearls": [
+      "Take on EMPTY STOMACH — food reduces absorption by ~50%; patient adherence often poor for QID empty-stomach regimens — cephalexin is increasingly preferred for oral MSSA",
+      "IV cefazolin is increasingly preferred over IV cloxacillin for MSSA bacteremia/endocarditis (q8h dosing, better tolerability, less phlebitis)",
+      "NO MRSA activity — confirm susceptibility before using; for empiric SSTI in CA-MRSA prevalent areas, doxycycline or TMP-SMX are preferred",
+      "Pediatric oral suspension is poorly palatable — cephalexin is more acceptable for children",
+      "Acute interstitial nephritis is rare but classically associated with anti-staph penicillins (methicillin > nafcillin > cloxacillin) — discontinue if AKI with eosinophilia",
+      "NOT a routine choice for streptococcal infection — penicillin V or amoxicillin is narrower-spectrum first-line for Strep"
+    ],
+    "source": "Health Canada PM. AMMI Canada Bugs & Drugs 2024. Public Health Ontario Antimicrobial Stewardship. AHA Endocarditis 2015. ESC Endocarditis 2023. IDSA SSTI 2014."
+  },
   "famciclovir": {
     "name": "Famciclovir",
     "brand": "Famvir",
@@ -85226,6 +85620,8 @@ var FAMILY_MAP = {
   "liraglutide": "GLP-1 Receptor Agonists",
   "exenatide": "GLP-1 Receptor Agonists",
   "sitagliptin": "DPP-4 Inhibitors",
+  "gentamicin": "Aminoglycosides",
+  "mebendazole": "Antiparasitic Agents",
   "gliclazide": "Sulfonylureas",
   "gliclazide mr": "Sulfonylureas",
   "glimepiride": "Sulfonylureas",
