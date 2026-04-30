@@ -1,0 +1,68 @@
+{
+  "name": "Allergic Rhinitis",
+  "icon": "🤧",
+  "category": "ENT",
+  "assessment": {
+    "key_questions": [
+      "Seasonal (tree/grass/ragweed) or perennial (dust mites, pet dander, mold)?",
+      "Duration and timing of symptoms — morning vs throughout day?",
+      "Previous allergy testing or immunotherapy?",
+      "Concurrent asthma, eczema (atopic triad)?",
+      "Current medications including nasal decongestants (rhinitis medicamentosa risk)?"
+    ],
+    "red_flags": [
+      "Unilateral nasal obstruction or bleeding → polyp or malignancy",
+      "Facial pain/pressure + fever + purulent discharge → sinusitis",
+      "Anosmia (new loss of smell)",
+      "Symptoms not responding to adequate trial of intranasal corticosteroids"
+    ],
+    "ddx": [
+      "Vasomotor rhinitis (non-allergic)",
+      "Rhinitis medicamentosa (decongestant overuse)",
+      "Nasal polyps",
+      "Sinusitis",
+      "Deviated septum"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Intranasal Corticosteroid",
+        "drugs": "Fluticasone (Flonase) 2 sprays each nostril OD | Mometasone (Nasonex) 2 sprays each nostril OD | Budesonide (Rhinocort)",
+        "notes": "Most effective pharmacotherapy for allergic rhinitis — superior to antihistamines for congestion and nasal symptoms. Takes 1–2 weeks for full effect. Spray toward outer ear, not nasal septum (prevents septum perforation). Can be used long-term.",
+        "preferred_when": "Persistent symptoms or predominantly nasal congestion"
+      },
+      {
+        "name": "Oral Non-Sedating Antihistamine",
+        "drugs": "Cetirizine (Reactine) 10 mg OD | Loratadine (Claritin) 10 mg OD | Fexofenadine (Allegra) 120–180 mg OD",
+        "notes": "First-line for mild-intermittent symptoms or sneezing/itch predominance. Non-sedating (second-generation). Take daily for seasonal allergies (continuous > PRN). Cetirizine: mildly sedating in some — take at night.",
+        "preferred_when": "Itching, sneezing, watery eyes as predominant symptoms"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Intranasal Antihistamine",
+        "drugs": "Azelastine (Astelin) nasal spray 1–2 sprays each nostril BID",
+        "notes": "Faster onset than oral antihistamines. Useful for breakthrough symptoms or when INCS insufficient."
+      },
+      {
+        "name": "Oral Decongestant (short-term only)",
+        "drugs": "Pseudoephedrine 60 mg q4–6h (max 5 days)",
+        "notes": "For acute nasal congestion only — do NOT use >5 days (rebound congestion). Avoid in hypertension, hyperthyroidism, BPH, MAOIs. Behind pharmacy counter (pseudoephedrine)."
+      },
+      {
+        "name": "Montelukast (Singulair)",
+        "drugs": "Montelukast 10 mg OD",
+        "notes": "Useful for allergic rhinitis + asthma combination. FDA/Health Canada BBW for neuropsychiatric events — reserve for clear indication."
+      }
+    ],
+    "non_pharm": [
+      "Allergen avoidance: dust mite covers, HEPA filters, minimize outdoor exposure during high pollen",
+      "Nasal saline irrigation (Neti pot, NeilMed) — reduces symptoms and medication need",
+      "Monitor local pollen counts (Weather Network pollen forecast)",
+      "Shower/hair wash after outdoor exposure",
+      "Close windows during high pollen season, use air conditioning"
+    ],
+    "refer_when": "Severe uncontrolled symptoms despite adequate pharmacotherapy; suspected polyps; immunotherapy consideration; suspected sinusitis or anatomical obstruction"
+  }
+}

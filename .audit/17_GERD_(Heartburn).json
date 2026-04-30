@@ -1,0 +1,59 @@
+{
+  "name": "GERD (Heartburn)",
+  "icon": "🔥",
+  "category": "GI",
+  "assessment": {
+    "key_questions": [
+      "Typical symptoms: retrosternal burning, regurgitation, worsened post-prandially/lying down?",
+      "Alarm symptoms (dysphagia, weight loss, GI bleeding, vomiting)?",
+      "Age >50 with new-onset symptoms (increased risk of Barrett's/cancer)?",
+      "Current medications worsening GERD (CCBs, nitrates, TCAs, bisphosphonates)?",
+      "Frequency: <2×/week (mild) vs >2×/week (moderate-frequent)?"
+    ],
+    "red_flags": [
+      "Dysphagia or odynophagia → structural pathology — endoscopy",
+      "Unintentional weight loss + GI symptoms → malignancy",
+      "GI bleeding (hematemesis, melena) → upper GI bleed — ER",
+      "Age >50 with new-onset symptoms → endoscopy to exclude Barrett's oesophagus/cancer"
+    ],
+    "ddx": [
+      "Peptic ulcer disease",
+      "Angina (cardiac chest pain)",
+      "Esophageal spasm",
+      "Gastroparesis",
+      "H. pylori gastritis",
+      "Eosinophilic esophagitis"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Proton Pump Inhibitor",
+        "drugs": "Omeprazole (Losec) 20 mg OD 30–60 min before breakfast × 4–8 weeks | Pantoprazole (Pantoloc) 20–40 mg OD before breakfast",
+        "notes": "Most effective acid suppression. Take 30–60 min BEFORE breakfast — proton pumps must be active for PPIs to work. Step down to lowest effective dose after 4–8 weeks. For on-demand GERD: omeprazole 20 mg when symptoms occur. Long-term: annual review of indication; step-down if possible.",
+        "preferred_when": "Moderate-frequent heartburn (>2×/week); erosive esophagitis"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "H2 Receptor Antagonist",
+        "drugs": "Famotidine (Pepcid) 10–20 mg PRN or BID",
+        "notes": "Faster onset than PPIs (30 min vs 1–4h) — useful for breakthrough or PRN. Less effective than PPI for severe or frequent GERD. Tachyphylaxis develops with regular use. Can use famotidine at bedtime + morning PPI for nocturnal breakthrough."
+      },
+      {
+        "name": "Antacids",
+        "drugs": "Calcium carbonate (Tums) | Aluminum/magnesium hydroxide (Gaviscon, Maalox) PRN",
+        "notes": "Immediate relief (minutes) but short duration (30–60 min). PRN for mild breakthrough. Gaviscon: forms raft over stomach contents — useful for regurgitation. Not for regular scheduled use."
+      }
+    ],
+    "non_pharm": [
+      "Head of bed elevation 15–20 cm (for nocturnal symptoms — most effective lifestyle intervention)",
+      "Avoid meals within 3h of bedtime",
+      "Lose weight if overweight (most evidence-based lifestyle intervention)",
+      "Avoid trigger foods (individualized): coffee, citrus, tomatoes, spicy foods, high-fat meals, chocolate, mint",
+      "Reduce alcohol and smoking",
+      "Small frequent meals rather than large meals"
+    ],
+    "refer_when": "Alarm symptoms (dysphagia, weight loss, bleeding); age >50 with new symptoms; failure to respond to PPI × 4–8 weeks; suspected atypical GERD (cough, hoarseness, asthma); recurrent GERD requiring ongoing PPI"
+  }
+}

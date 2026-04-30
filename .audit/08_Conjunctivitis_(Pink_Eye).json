@@ -1,0 +1,61 @@
+{
+  "name": "Conjunctivitis (Pink Eye)",
+  "icon": "👁️",
+  "category": "Ophthalmology",
+  "assessment": {
+    "key_questions": [
+      "Discharge character: watery (viral/allergic) vs mucopurulent/purulent (bacterial)?",
+      "Unilateral or bilateral (bilateral suggests viral or allergic)?",
+      "Associated URI symptoms (viral — common cold)?",
+      "Seasonal pattern, known allergies (allergic)?",
+      "Contact lens wearer (higher risk Pseudomonas — requires culture/prescription drops)?",
+      "Sexual history: gonorrhea risk (neonates, sexually active)?"
+    ],
+    "red_flags": [
+      "Significant eye pain or photophobia → keratitis, uveitis — urgent ophthalmology",
+      "Vision changes (blurring not cleared by blinking) → keratitis — urgent",
+      "Corneal opacity or infiltrate (white spot visible on cornea) → urgent",
+      "Neonatal (newborn) conjunctivitis → gonorrheal/chlamydial — emergency",
+      "Contact lens wearer with purulent discharge → Pseudomonas risk — refer immediately",
+      "No improvement after 7–10 days topical antibiotics"
+    ],
+    "ddx": [
+      "Viral (adenovirus — most common): watery discharge, follicular, URI, pre-auricular node",
+      "Allergic: bilateral, intense itch, stringy discharge, seasonal",
+      "Bacterial: mucopurulent, unilateral > bilateral, lids stuck morning",
+      "Keratitis, iritis (URGENT)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Bacterial Conjunctivitis — Topical Antibiotic",
+        "drugs": "Tobramycin 0.3% drops (Tobrex) 1–2 drops q4h | Erythromycin 0.5% ointment QID | Fusidic acid 1% gel (Fucithalmic) BID",
+        "notes": "Mild-moderate bacterial conjunctivitis is usually self-limiting (resolves within 7–10 days without treatment). Antibiotics shorten duration by 2–3 days. Fusidic acid gel: once or twice daily — most convenient. Tobramycin: broad coverage. Avoid fluoroquinolone drops (ofloxacin, ciprofloxacin) for simple bacterial conjunctivitis — reserve for contact lens wearers or more serious infections.",
+        "preferred_when": "Moderate mucopurulent discharge, significant bilateral involvement, immunocompromised"
+      },
+      {
+        "name": "Allergic Conjunctivitis — Antihistamine Eye Drops",
+        "drugs": "Olopatadine (Pataday) 1 drop OD | Ketotifen (Zaditor, Alaway) 1 drop BID",
+        "notes": "Combination antihistamine/mast cell stabilizer drops: most effective for allergic conjunctivitis. Olopatadine: once-daily (convenient). Ketotifen: OTC twice-daily. Significantly reduces itch and redness within minutes.",
+        "preferred_when": "Allergic conjunctivitis (itch, bilateral, seasonal, stringy discharge)"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Artificial Tears",
+        "drugs": "Preservative-free artificial tears q2–4h PRN",
+        "notes": "For viral conjunctivitis (self-limiting, no antibiotic benefit) and as adjunct for allergic. Cool compresses also helpful."
+      }
+    ],
+    "non_pharm": [
+      "Warm compresses (bacterial) or cool compresses (allergic) QID",
+      "Clean eyelids gently with warm water and clean cloth",
+      "Highly contagious (viral/bacterial): handwashing, avoid sharing towels, pillow cases",
+      "Stay home from work/school until discharge has resolved",
+      "Discard mascara/eye makeup used during infection",
+      "Allergic: allergen avoidance, sunglasses outdoors"
+    ],
+    "refer_when": "Contact lens wearer; vision changes; significant pain or photophobia; no improvement in 7 days; neonatal conjunctivitis; suspected gonococcal or chlamydial; corneal involvement"
+  }
+}

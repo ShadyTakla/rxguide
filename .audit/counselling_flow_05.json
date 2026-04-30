@@ -1,0 +1,26 @@
+{
+  "Dysmenorrhea (Menstrual Pain)": {
+    "patient_counselling": [
+      "PRELOAD NSAIDs for best effect: start 24–48 hours BEFORE expected period onset (or at the very first sign of pain/spotting), continue scheduled (not PRN) for the first 2–3 days of bleeding — preloading inhibits prostaglandin synthesis before peak release.",
+      "Naproxen 500 mg loading dose, then 250 mg every 6–8 hours (max 1250 mg/day) — longer half-life, fewer doses; OR ibuprofen 400–600 mg every 6 hours (max 2400 mg/day); OR mefenamic acid 500 mg loading then 250 mg every 6 hours (dual mechanism — COX inhibition + prostaglandin receptor antagonism — particularly effective).",
+      "Take NSAIDs WITH FOOD or milk to reduce stomach upset; do NOT exceed maximum daily dose; do not combine multiple NSAIDs.",
+      "NSAID cautions: avoid in active peptic ulcer disease, severe renal/hepatic impairment, history of NSAID-induced asthma, last trimester of pregnancy, anticoagulant use without medical guidance; use lowest effective dose; consider PPI co-therapy if high GI risk.",
+      "Topical heat (heating pad or hot water bottle on lower abdomen, 15–20 minutes at a time) is comparable to ibuprofen for mild dysmenorrhea — combine with NSAIDs for additive benefit.",
+      "Regular aerobic exercise (brisk walking, yoga, swimming 30 min, 3–5×/week) reduces dysmenorrhea over time per Cochrane review; reduce dietary salt and caffeine before/during periods.",
+      "If NSAIDs alone are insufficient or contraindicated: hormonal options (combined oral contraceptive pill — continuous or skip-placebo regimen; levonorgestrel IUS — Mirena/Kyleena) are second-line and require physician/NP prescription. Excellent long-term option for chronic dysmenorrhea.",
+      "Adjuncts with modest evidence: omega-3 (1000 mg/day), vitamin B1 (100 mg/day), magnesium (250 mg/day), TENS unit (high-frequency for pain relief). Discuss with pharmacist before starting.",
+      "Red flags — see physician: severe pain not responding to NSAIDs after 2–3 cycles, new-onset or worsening pain pattern (especially if previously stable — suggests secondary dysmenorrhea: endometriosis, fibroids, adenomyosis), pain outside of menstruation or during intercourse, heavy bleeding with clots, fever + pelvic pain (PID), suspected pregnancy.",
+      "Track your cycles and pain pattern (paper diary or app) — useful for ongoing management and for physician referral if needed."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident, typical primary dysmenorrhea presentation (cyclic pelvic pain coinciding with menstruation, onset usually within 1–2 years of menarche); verify ID/OHIP, obtain consent.",
+      "2. Focused history: pain characterization (timing, severity, duration, quality), age at menarche, cycle regularity, bleeding pattern (heavy, clots), associated symptoms (nausea, headache, diarrhea), prior treatments and response, current medications, contraceptive needs/use, pregnancy possibility.",
+      "3. Red flag screen: pain outside menstruation, dyspareunia (endometriosis), heavy menstrual bleeding with clots, fever + pelvic pain (PID), new-onset or worsening pain pattern after previously stable cycles (secondary dysmenorrhea), suspected pregnancy, NSAID contraindications — refer.",
+      "4. Differential diagnosis: rule out endometriosis, adenomyosis, fibroids, ovarian cysts, pelvic inflammatory disease, ectopic pregnancy, IBS, interstitial cystitis, copper IUD-related pain.",
+      "5. Therapy selection: NSAID preloading (naproxen, ibuprofen, or mefenamic acid) starting 24–48h before menses + scheduled dosing × 2–3 days; topical heat as adjunct; lifestyle measures; refer for hormonal options if NSAIDs contraindicated or insufficient.",
+      "6. Counsel on preloading concept, NSAID technique (with food, max dose, contraindications), heat therapy, exercise, cycle tracking, expected onset of relief, when to escalate.",
+      "7. Document the encounter per OCP standards: assessment findings, diagnosis (primary dysmenorrhea), therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess after 2–3 cycles; if inadequate response, refer for hormonal therapy (COC, LNG-IUS) consideration; if features of secondary dysmenorrhea emerge, refer to gynecology for workup (TVUS, lap)."
+    ]
+  }
+}

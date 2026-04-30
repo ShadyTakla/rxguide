@@ -1,0 +1,26 @@
+{
+  "Tick Bite (Lyme Prophylaxis)": {
+    "patient_counselling": [
+      "Doxycycline single-dose prophylaxis: 200 mg ONCE for adults; 4.4 mg/kg ONCE (max 200 mg) for children of all ages — per IDSA/AAN/ACR 2021 update, single-dose doxycycline is now safe and recommended for children <8 years (no clinically significant tooth staining at single dose).",
+      "Take with a FULL glass of water and remain upright (sitting or standing) for at least 30 minutes after dosing — prevents esophageal irritation/ulceration.",
+      "Can take with food to reduce GI upset; AVOID taking with dairy products, antacids, iron supplements, calcium, or magnesium within 2 hours of dose (chelates the drug, reduces absorption).",
+      "Photosensitivity warning: doxycycline causes severe sunburn — wear long sleeves, hat, sunscreen SPF 30+, avoid prolonged sun exposure for 1–2 days after dose.",
+      "Common side effects: mild nausea, GI upset (usually transient with single dose). Rare: severe skin reactions, anaphylaxis — seek care if rash, blistering, or breathing difficulty.",
+      "Tick removal technique: use fine-tipped tweezers, grasp the tick as close to skin as possible, pull straight up with steady gentle pressure — DO NOT twist, crush, burn, or apply petroleum jelly/nail polish. Clean the bite area with soap/water or alcohol after.",
+      "Save the tick if possible (in a sealed container or tape) — Public Health Ontario can identify the species via etick.ca submission to confirm if it was a black-legged tick (Ixodes scapularis).",
+      "Monitor the bite site for 30 days for signs of Lyme disease: expanding red rash with central clearing (erythema migrans / EM rash, often >5 cm), flu-like symptoms (fever, fatigue, headache, joint/muscle aches), swollen lymph nodes — see physician immediately if any of these occur (treatment with full antibiotic course needed).",
+      "Prevention going forward: wear light-coloured long pants/sleeves in wooded/grassy areas, tuck pants into socks, use DEET 20–30% repellent on skin (≤10% for children 2–12, avoid <2 years), permethrin-treated clothing, do full-body tick checks within 2 hours of being outdoors, shower within 2 hours, check pets.",
+      "Pregnancy: doxycycline is generally avoided throughout pregnancy in Canada — pregnant patients should be referred to physician for assessment (do not provide MA prophylaxis)."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident, presents within 72 hours of tick removal; verify ID/OHIP, obtain consent.",
+      "2. Apply ALL FOUR criteria for prophylaxis (must meet all): (a) tick is identified as black-legged (Ixodes scapularis) or high suspicion based on appearance/photo; (b) attached ≥36 hours (engorgement, history); (c) bite occurred in Lyme-endemic area (consult PHO Lyme risk map — updated annually); (d) prophylaxis can be started within 72 hours of tick removal.",
+      "3. Red flag / referral screen: pregnancy/breastfeeding, doxycycline/tetracycline allergy, current EM rash or flu-like symptoms (treatment course needed, not prophylaxis), criteria for prophylaxis NOT fully met (watchful waiting × 30 days instead), severe immunocompromise — refer to physician.",
+      "4. Differential / context check: tick species verification (deer tick vs other), endemic area confirmation (PHO map), assess timing precisely.",
+      "5. Therapy decision: if all 4 criteria met → doxycycline 200 mg PO once (adults); 4.4 mg/kg PO once (max 200 mg) for children of all ages per IDSA 2021. If criteria not met → watchful waiting × 30 days with patient education on EM rash and symptoms.",
+      "6. Counsel on dose, upright positioning, photosensitivity, what to monitor for over 30 days (EM rash, flu-like illness), tick prevention strategies, etick.ca submission.",
+      "7. Document the encounter per OCP standards: assessment findings (the 4 criteria), tick species/source, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: 30-day monitoring window for EM rash or systemic symptoms — if any develop, refer immediately for full antibiotic treatment course (doxycycline 100 mg BID × 14–21 days or amoxicillin in children/pregnancy)."
+    ]
+  }
+}

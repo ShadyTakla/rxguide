@@ -1,0 +1,26 @@
+{
+  "Impetigo": {
+    "patient_counselling": [
+      "Mupirocin 2% ointment: apply a thin layer to affected lesions THREE times daily (TID) for 5 days; gently soak crusts with warm water to soften before each application; cover with a non-stick dressing if needed (especially for children).",
+      "Fusidic acid 2% cream: apply TID for 5–7 days — equivalent efficacy to mupirocin; preferred where mupirocin resistance is a concern.",
+      "Wash hands thoroughly with soap and water before and after applying the cream; use a separate towel and do not share towels, washcloths, or bedding with others — impetigo is highly contagious by direct contact and fomites.",
+      "Gently clean lesions with mild soap and water once or twice daily; trim fingernails short and discourage scratching/picking — scratching spreads infection to other body sites and to other people.",
+      "Cover open lesions with light gauze if practical (especially in school/daycare); avoid contact sports and shared equipment until lesions are healed/crusted.",
+      "Stay home from school, daycare, or work for at least 24 hours after starting topical antibiotic therapy AND until lesions are crusted/healing per public health guidance.",
+      "Wash bedding, towels, and recently worn clothing in hot water and dry on high heat at the start of treatment; clean shared surfaces (door handles, taps, toys) with soap or disinfectant.",
+      "Symptoms typically improve within 3–5 days; complete the full 5–7 day course even if lesions look better — stopping early causes recurrence and resistance.",
+      "Red flags — return to pharmacy or see physician: lesions spreading rapidly, more than 5 lesions, deep/ulcerated lesions, lesions on the face near eyes/mouth, fever, lymphadenopathy, no improvement after 3–5 days, suspected MRSA (no response to topical), or post-streptococcal complications (dark urine, edema → glomerulonephritis).",
+      "Store mupirocin and fusidic acid at room temperature; do not freeze; discard at expiry."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident with localized non-bullous impetigo (typically ≤5 lesions, no systemic features); verify ID/OHIP, obtain consent.",
+      "2. Focused history: lesion onset and progression, location and number, contact exposures (school, daycare, sports, family), recent skin trauma/insect bites/eczema (predisposing factor), allergies, current medications, immune status.",
+      "3. Red flag screen: widespread/extensive lesions (>5 or large area), bullous impetigo, deep ulceration (ecthyma), facial lesions near eyes, systemic features (fever, lymphadenopathy), suspected MRSA, immunocompromised host, post-streptococcal red flags (recent throat infection, oliguria, edema) — refer to physician.",
+      "4. Differential diagnosis: rule out herpes simplex (vesicular, painful), eczema herpeticum (eczema base + vesicles — emergency), folliculitis, cellulitis, ecthyma, scabies with secondary infection, contact dermatitis.",
+      "5. Therapy selection: topical mupirocin 2% TID × 5 days OR fusidic acid 2% TID × 5–7 days; oral antibiotics (cephalexin, cloxacillin) are OUTSIDE Ontario MA scope — refer if widespread/bullous; if MRSA suspected → physician for TMP-SMX.",
+      "6. Counsel on cream application, hand hygiene, no-sharing rules, school/work exclusion (24h after treatment + crusted), laundry/disinfection, full course completion, when to return.",
+      "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 5–7 days; if no improvement, refer for oral antibiotic and culture/swab to rule out MRSA; review household for additional cases."
+    ]
+  }
+}

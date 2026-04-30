@@ -1,0 +1,26 @@
+{
+  "Herpes Zoster (Shingles)": {
+    "patient_counselling": [
+      "TIMING IS CRITICAL: start antiviral therapy WITHIN 72 HOURS of rash onset for maximum benefit (reduces severity and duration of acute pain; may reduce postherpetic neuralgia risk). Treatment can still be considered beyond 72h if new vesicles are still forming.",
+      "Valacyclovir 1000 mg three times daily for 7 days (preferred — TID is easier than acyclovir's 5×/day, equivalent efficacy, better bioavailability). Take with or without food; stay well hydrated.",
+      "Famciclovir 500 mg three times daily for 7 days OR acyclovir 800 mg five times daily for 7 days — alternatives.",
+      "Renal dose adjustment is important: valacyclovir CrCl 30–49 → 1000 mg BID; CrCl 10–29 → 1000 mg OD; CrCl <10 → 500 mg OD. Famciclovir CrCl 40–59 → 500 mg BID; <20 → 250 mg OD. Acyclovir CrCl 25–50 → 800 mg q8h; <10 → 800 mg OD. Confirm renal function.",
+      "Pain management: acetaminophen 500–1000 mg q4–6h; NSAIDs (naproxen 250–500 mg BID) if not contraindicated; for severe pain or postherpetic neuralgia (PHN) — refer for gabapentin (start 300 mg TID) or amitriptyline (10–25 mg at bedtime) — these are RX, outside MA scope.",
+      "Capsaicin 8% patch is a specialist option for established PHN.",
+      "Keep the rash clean and dry; cool compresses can soothe pain; avoid topical antibiotics (interfere with drying); calamine lotion may help itching.",
+      "CONTAGIOUSNESS: Shingles is contagious to people who have NEVER had chickenpox or are unvaccinated — the virus in vesicle fluid can cause primary chickenpox (varicella) in them. Avoid contact with: pregnant women without varicella immunity, infants, immunocompromised people, until ALL vesicles are crusted (typically 7–10 days). Cover the rash; practice strict hand hygiene.",
+      "SHINGRIX VACCINE (recombinant zoster vaccine, RZV) — recommended after acute episode resolves: NACI 2024 recommends for (a) adults ≥50 years, (b) immunocompromised adults ≥18 years. Two doses 2–6 months apart; 97% effective; preferred even if previous Zostavax was received. Ontario UIIP publicly funded for adults 65–70.",
+      "Red flags requiring URGENT referral: rash on the FACE near the eye or tip of nose (Hutchinson's sign — herpes zoster ophthalmicus → same-day ophthalmology to prevent vision loss), ear involvement with facial weakness or hearing loss (Ramsay Hunt syndrome → urgent ENT/neurology), severe disseminated rash (>1 dermatome), signs of CNS involvement (severe headache, confusion, neck stiffness), immunocompromised host."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident with typical unilateral dermatomal vesicular rash within 72h of onset; verify ID/OHIP, obtain consent.",
+      "2. Focused history: rash onset and timing (critical — within 72h?), location/dermatome involvement, prodromal pain (often 2–3 days before rash), severity of pain, prior episodes, immune status (HIV, chemo, transplant, prolonged steroids), age, vaccination history (Shingrix, Zostavax), pregnancy/lactation, current medications, renal function.",
+      "3. Red flag screen: ophthalmic involvement (Hutchinson's sign — vesicles on tip of nose, eye redness/pain — same-day ophthalmology), Ramsay Hunt syndrome (ear vesicles + facial palsy/hearing loss/vertigo — urgent ENT), disseminated zoster (>1 dermatome — immunocompromise consideration), CNS features (encephalitis), immunocompromised host, pregnancy — refer.",
+      "4. Differential diagnosis: rule out herpes simplex (smaller cluster, non-dermatomal), contact dermatitis, impetigo, cellulitis, drug eruption, eczema herpeticum, insect bites; confirm dermatomal pattern.",
+      "5. Therapy selection: oral antiviral within 72h — valacyclovir 1000 mg TID × 7 days preferred (renal dose adjusted) OR famciclovir OR acyclovir; pain control with acetaminophen ± NSAIDs; refer for gabapentin/amitriptyline if severe acute pain or PHN; address Shingrix vaccination after recovery.",
+      "6. Counsel on antiviral dosing (renal adjustment), 72h timing window, pain control, contagion precautions (until all crusted), Shingrix vaccination plan, red flag recognition (eye, ear, neuro).",
+      "7. Document the encounter per OCP standards: assessment findings (dermatome, immunocompetence, days from rash onset), diagnosis, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 7–10 days for resolution; if persistent pain >90 days post-rash → diagnose PHN, refer for management; ensure Shingrix vaccination scheduled after acute episode resolves; reinforce avoidance of contact with susceptible persons until crusted."
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "Nausea & Vomiting": {
+    "patient_counselling": [
+      "Dimenhydrinate (Gravol) 50–100 mg every 4–6 hours as needed (max 400 mg/day adults; weight-based for children ≥2 years). Onset in 15–30 minutes. Causes drowsiness — do not drive or operate machinery; avoid in older adults (Beers Criteria caution — falls, confusion, urinary retention).",
+      "For NAUSEA & VOMITING OF PREGNANCY (NVP): doxylamine 10 mg + pyridoxine 10 mg (Diclectin) — PRESCRIPTION required (not OTC; NOT prescribable under Ontario MA). Standard titration: Day 1 — 2 tablets at bedtime; Day 2 — add 1 tab in AM if needed; Day 3 — add 1 tab mid-afternoon (max 4 tabs/day = 2 qhs + 1 AM + 1 mid-afternoon). Take 30 minutes before bed on empty stomach (delayed-release).",
+      "Vitamin B6 (pyridoxine) 10–25 mg every 6–8 hours alone is first-line for mild NVP; add doxylamine if inadequate; SOGC No. 254 (reaffirmed 2024) supports stepwise approach.",
+      "Hydration is critical: small frequent sips of clear fluids (water, oral rehydration solution like Pedialyte, ginger ale, broth, weak tea) — avoid large volumes which can worsen nausea; aim 2 L/day; ice chips/popsicles if tolerating little.",
+      "Diet: small frequent bland meals (BRAT — bananas, rice, applesauce, toast; crackers, plain pasta); avoid fatty, fried, spicy, very sweet foods; cold foods often better tolerated than hot; eat dry crackers before getting out of bed (NVP).",
+      "Ginger (capsules 250 mg QID, ginger tea, ginger candies/chews) and P6 acupressure wristbands have modest evidence for mild nausea (especially NVP and motion sickness) — safe adjuncts.",
+      "Common side effects: dimenhydrinate — drowsiness, dry mouth, blurred vision, urinary retention, constipation; Diclectin — drowsiness (significant — driving caution); ondansetron (if prescribed) — headache, constipation, QTc prolongation.",
+      "For motion sickness: take dimenhydrinate 30–60 minutes BEFORE travel; alternative: meclizine 25–50 mg.",
+      "Red flags requiring urgent assessment: severe dehydration (decreased urination, dark urine, dizziness, dry mouth, ≥5% weight loss in pregnancy = hyperemesis gravidarum), persistent vomiting >24h adults / 12h infants, blood/coffee-grounds in vomit, severe abdominal pain, fever, headache + neck stiffness, suspected appendicitis, drug overdose suspected, pregnancy with HG features — refer.",
+      "Store dimenhydrinate at room temperature; keep out of reach of children. Check pregnancy safety category for any antinauseant — many require physician guidance in pregnancy."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident, identifiable benign cause (motion sickness, mild NVP, gastroenteritis); verify ID/OHIP, obtain consent. Note: Diclectin is OUTSIDE MA scope (Rx only) — pharmacist can recommend referral for prescription.",
+      "2. Focused history: onset, duration, frequency, character (vomiting blood/bile/coffee-grounds), associated symptoms (abdominal pain, fever, headache, diarrhea), recent food/travel/illness contacts, pregnancy possibility, medication history (chemotherapy, opioids, antibiotics), hydration status, weight loss, allergies.",
+      "3. Red flag screen: severe dehydration, hematemesis/melena, severe abdominal pain (appendicitis, bowel obstruction), fever + neck stiffness (meningitis), head trauma/severe headache (raised ICP), suspected pregnancy with HG (>5% weight loss), failure to keep fluids down >24h, suspected DKA/poisoning, infants with persistent vomiting — refer urgently.",
+      "4. Differential diagnosis: rule out gastroenteritis, food poisoning, medication-induced, pregnancy/HG, motion sickness, vestibular cause, migraine, gastroparesis, bowel obstruction, appendicitis, raised ICP, DKA, opioid-related.",
+      "5. Therapy selection: motion sickness/general nausea → dimenhydrinate; NVP mild → pyridoxine ± ginger; NVP moderate-severe → refer for Diclectin (Rx); persistent vomiting or red flags → refer for IV hydration, ondansetron, metoclopramide assessment.",
+      "6. Counsel on dose, timing (preload for motion sickness; bedtime for Diclectin), side effects (especially drowsiness), hydration strategies, dietary measures, ginger/P6 adjuncts, when to seek urgent care.",
+      "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen (or referral), counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 24–48 hours; persistent vomiting or worsening symptoms — refer for full workup; in pregnancy, monitor weight and hydration closely with primary care/obstetrics."
+    ]
+  }
+}

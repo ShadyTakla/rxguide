@@ -1,0 +1,26 @@
+{
+  "Oral Candidiasis (Thrush)": {
+    "patient_counselling": [
+      "Nystatin oral suspension 100,000 units/mL: shake well; take 4–6 mL, swish around the mouth for AT LEAST 1–2 minutes (longer is better — coats the lesions), then swallow. Do NOT eat or drink for 30 minutes after. Use 4 times daily for 7–14 days, continuing for at least 48 hours after symptoms resolve.",
+      "Clotrimazole troches/lozenges 10 mg: dissolve slowly in mouth (do NOT chew/swallow whole) — takes 15–30 min to dissolve. Use 5 times daily for 14 days. Avoid food/drink during dissolution.",
+      "If you wear dentures: remove and clean dentures BEFORE each medication dose; soak dentures overnight in chlorhexidine 0.12% solution or 1:10 dilute bleach (15 min, then rinse thoroughly) — dentures harbour Candida and cause re-infection if not disinfected.",
+      "Inhaled corticosteroid (ICS) users: ALWAYS rinse mouth with water and spit AFTER each ICS use; use a spacer with metered-dose inhalers; brush teeth after rinsing if possible — this prevents recurrence.",
+      "Common side effects: mild nausea, altered taste (clotrimazole troches can taste unpleasant). Rarely: GI upset. Side effects are usually mild and self-limiting.",
+      "Symptoms (white patches that wipe off, soreness, altered taste, redness) typically improve within 3–5 days; complete the full course even if you feel better — stopping early causes relapse.",
+      "Maintain good oral hygiene: brush teeth and tongue twice daily with a soft brush, replace toothbrush after symptoms clear, floss daily.",
+      "Limit dietary sugar during treatment — Candida thrives on sugar; reduce candies, sweetened beverages.",
+      "Red flags: difficulty swallowing or pain on swallowing (esophageal candidiasis), fever, white patches extending to the throat or unable to clear with topical therapy after 14 days, recurrent episodes, immunocompromised status (HIV, chemo, post-transplant) — see physician for systemic antifungal (fluconazole) and underlying workup.",
+      "Store nystatin suspension at room temperature; keep cap tight; discard remaining suspension after the prescribed course."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident with typical oral thrush presentation (white plaques, soreness, altered taste); verify ID/OHIP, obtain consent, identify proxy if applicable.",
+      "2. Focused history: symptom onset and duration, location (tongue, palate, buccal mucosa, angles of mouth), risk factors (recent antibiotics, ICS use, dentures, diabetes, dry mouth, immunosuppression, infancy/older age), prior episodes, current medications, pregnancy/lactation.",
+      "3. Red flag screen: difficulty/pain on swallowing (esophageal extension), fever, immunocompromised host (HIV, chemo, transplant, prolonged systemic steroids), neonate <1 month, treatment failure with topical therapy, recurrent episodes — refer to physician.",
+      "4. Differential diagnosis: rule out leukoplakia, lichen planus, geographic tongue, oral hairy leukoplakia, herpetic stomatitis, aphthous ulcers, denture stomatitis without Candida, milk residue (in infants — does NOT wipe off the same way).",
+      "5. Therapy selection: nystatin suspension 4–6 mL QID × 7–14 days (first-line, OTC eligible) OR clotrimazole troches 10 mg 5×/day × 14 days; identify and address underlying cause (ICS technique, denture hygiene, dry mouth).",
+      "6. Counsel on swish-and-swallow technique, troche dissolution, denture disinfection, ICS rinse practice, expected resolution timeline, completing full course; provide written instructions.",
+      "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 7–14 days; if no improvement or worsening, refer for systemic antifungal (fluconazole — outside MA scope) and assessment for underlying immunocompromise."
+    ]
+  }
+}

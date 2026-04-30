@@ -1,0 +1,26 @@
+{
+  "Urticaria (Hives)": {
+    "patient_counselling": [
+      "Take a non-sedating second-generation antihistamine DAILY (regularly, not just when itchy): cetirizine 10 mg OD, loratadine 10 mg OD, fexofenadine 120–180 mg OD, bilastine 20 mg OD, or rupatadine 10 mg OD. Daily prophylactic dosing is more effective than PRN.",
+      "If standard dose isn't controlling symptoms after 2–4 weeks, the antihistamine can be UP-DOSED up to 4× the standard dose (off-label but evidence-based per EAACI 2022 / CSACI) — confirm with pharmacist or physician before doing this.",
+      "Avoid first-generation antihistamines (diphenhydramine/Benadryl, hydroxyzine) for routine use — sedation, anticholinergic effects (dry mouth, urinary retention), and Beers Criteria caution in older adults; reserve for short-term sleep aid only.",
+      "Identify and avoid triggers if known: foods (shellfish, nuts, eggs, food additives), medications (NSAIDs, ASA, opioids, ACE inhibitors), infections (viral most common), physical triggers (cold, heat, pressure, sunlight, exercise), stress.",
+      "Cool compresses, loose cotton clothing, and lukewarm (not hot) showers help reduce itching. Avoid harsh soaps and skin irritants. Add colloidal oatmeal to bathwater for comfort.",
+      "Most acute urticaria resolves within 6 weeks. If hives persist longer than 6 weeks (chronic urticaria), referral to allergist/dermatologist is needed — may benefit from omalizumab (Xolair) third-line therapy.",
+      "Common antihistamine side effects: cetirizine — mild drowsiness in some (take at bedtime); loratadine/fexofenadine/bilastine — minimal sedation. Take fexofenadine on empty stomach (avoid with fruit juice). Bilastine: take 1 hour before or 2 hours after food.",
+      "Red flags — call 911 immediately: difficulty breathing or swallowing, throat tightness, swelling of lips/tongue/face (angioedema with airway risk), wheezing, dizziness/fainting, rapid pulse — these are signs of anaphylaxis, not simple urticaria.",
+      "Return to pharmacy if: hives persist >6 weeks despite up-dosed antihistamines, hives leave bruising/staining (suggests urticarial vasculitis — refer), individual lesions last >24 hours in one location.",
+      "Store antihistamines at room temperature; keep out of children's reach (especially cetirizine which is sometimes flavoured)."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident with typical urticarial presentation (transient, itchy, raised wheals); verify ID/OHIP, obtain consent.",
+      "2. Focused history: onset and duration (acute <6 weeks vs chronic ≥6 weeks), individual lesion duration (<24h favours urticaria; >24h or bruising suggests urticarial vasculitis), trigger identification, associated angioedema, prior episodes, atopy history, current medications, pregnancy/lactation.",
+      "3. Red flag screen: airway involvement (lip/tongue/throat swelling, dyspnea, stridor, wheezing — call 911), anaphylaxis features (cardiovascular collapse, GI symptoms), individual lesions >24h or with bruising/pigmentation (urticarial vasculitis — refer), suspected drug-induced angioedema (ACEi) — refer.",
+      "4. Differential diagnosis: rule out urticarial vasculitis, mastocytosis, contact dermatitis, drug eruption, viral exanthem, autoimmune urticaria, physical urticaria subtypes, hereditary angioedema.",
+      "5. Therapy selection: 2nd-generation H1-antihistamine at standard dose × 2–4 weeks; if inadequate, up-dose to 2–4× standard dose per EAACI 2022; identify/eliminate triggers; avoid NSAIDs/ASA which can worsen urticaria.",
+      "6. Counsel on daily dosing (not PRN), trigger avoidance, supportive measures (cool compresses, loose clothing), expected timeline, anaphylaxis warning signs, when to return.",
+      "7. Document the encounter per OCP standards: assessment findings (acute vs chronic, angioedema present or absent), diagnosis, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 2–4 weeks; if persistent ≥6 weeks (chronic urticaria) or refractory to up-dosed antihistamines, refer to allergist or dermatologist for omalizumab consideration."
+    ]
+  }
+}

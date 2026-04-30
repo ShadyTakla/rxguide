@@ -1,0 +1,26 @@
+{
+  "Insect Bites & Stings": {
+    "patient_counselling": [
+      "If a stinger is visible (bee sting): SCRAPE it sideways with a fingernail or credit card edge — do NOT squeeze with tweezers (squeezes more venom in). Speed of removal is more important than method.",
+      "Wash the bite/sting site with soap and water; apply a cold compress (ice wrapped in cloth) for 10–15 minutes to reduce swelling and pain.",
+      "Hydrocortisone 1% cream: apply a thin layer to the affected area 3–4 times daily for up to 5–7 days for itch and inflammation; do NOT use on broken skin or open lesions.",
+      "Cetirizine 10 mg once daily (or loratadine, fexofenadine, bilastine) for systemic itching from multiple bites — non-sedating preferred. Avoid topical diphenhydramine cream IF you are also taking oral antihistamines (additive systemic absorption / sensitization risk).",
+      "DEET INSECT REPELLENT (prevention): Adults — DEET 20–30%, up to 10 hours protection. Children 2–12 years — DEET ≤10% maximum (Health Canada / PMRA). Children under 2 years — DEET NOT recommended; use physical barriers (long sleeves, mosquito netting) only. Apply to exposed skin and outer clothing; avoid eyes, mouth, hands of young children.",
+      "Alternative repellent: Icaridin (Picaridin) 20% — equivalent efficacy to DEET, better skin tolerance, safe for children ≥6 months — preferred for younger children.",
+      "Avoid floral perfumes and brightly coloured clothing in wooded/grassy areas; avoid food odours outdoors (attracts wasps); inspect drinks before sipping; do not swat at flying stinging insects.",
+      "Most local reactions resolve in 3–7 days. Large local reactions (>10 cm of swelling) may benefit from a short course of oral prednisone (Rx — refer) but usually self-limit within 5–10 days.",
+      "ANAPHYLAXIS — call 911 IMMEDIATELY: hives spreading beyond the bite, lip/tongue/throat swelling, difficulty breathing or swallowing, wheezing, dizziness/fainting, vomiting, sense of impending doom; if you have an epinephrine auto-injector (EpiPen), USE IT FIRST then call 911 — even if symptoms improve, go to ER (biphasic reaction risk).",
+      "Patients with a history of systemic reaction to insect stings should: carry 2 epinephrine auto-injectors at all times, wear a MedicAlert bracelet, be referred to an allergist for venom immunotherapy assessment, and educate close contacts on epinephrine use."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident with localized insect bite or sting reaction (no systemic involvement); verify ID/OHIP, obtain consent.",
+      "2. Focused history: type of insect (mosquito, bee, wasp, tick, spider), number of bites/stings, time since exposure, local vs systemic symptoms, prior reactions to insect stings, atopic history, current medications (beta-blockers reduce epinephrine response — important for at-risk patients), allergies.",
+      "3. Red flag screen: ANAPHYLAXIS features (call 911) — generalized hives beyond bite site, angioedema, dyspnea, wheeze, hypotension, syncope, GI symptoms; large local reaction with airway compromise (face/neck stings); secondary infection (cellulitis); tick bite with criteria for Lyme prophylaxis (separate workflow); spider bite with necrosis (brown recluse, black widow); bite in immunocompromised — refer.",
+      "4. Differential diagnosis: rule out cellulitis (warm, expanding erythema, fever), allergic contact dermatitis, scabies (burrows, multiple sites, household contacts), bedbug bites (linear breakfast-lunch-dinner pattern), shingles (dermatomal vesicles).",
+      "5. Therapy selection: localized reaction → cool compress + topical hydrocortisone 1% × 5–7 days + oral non-sedating antihistamine if itching; large local reaction → consider referral for short oral prednisone course; secondary infection → topical or oral antibiotics (refer).",
+      "6. Counsel on stinger removal technique, topical application, antihistamine choice, DEET age-stratified prevention, anaphylaxis recognition, epinephrine use, MedicAlert.",
+      "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider; identify allergist referral needs.",
+      "8. Follow-up: reassess at 5–7 days for resolution; refer to allergist for venom immunotherapy assessment if any prior systemic reaction; reinforce epinephrine prescription and renewal."
+    ]
+  }
+}
