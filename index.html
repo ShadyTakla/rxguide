@@ -34493,16 +34493,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Strong CYP3A4 inhibitors (ketoconazole, clarithromycin, ritonavir, grapefruit juice)",
+        "drug": "Strong CYP3A4 inhibitors (ketoconazole, itraconazole, clarithromycin, ritonavir, cobicistat, grapefruit juice)",
         "severity": "Major",
-        "mechanism": "Inhibit first-pass metabolism of budesonide → dramatically increase systemic exposure → Cushing's-like effects, adrenal suppression",
-        "management": "Avoid combination; if necessary, reduce budesonide dose; avoid grapefruit juice"
+        "mechanism": "Oral budesonide (Entocort) relies on extensive first-pass CYP3A4 metabolism to minimize systemic exposure — this is the mechanism underlying its 'selective' GI action. Strong CYP3A4 inhibitors reduce first-pass metabolism → systemic budesonide levels increase 7-10x → Cushing's syndrome, adrenal suppression.",
+        "management": "AVOID strong CYP3A4 inhibitors with oral budesonide. HIV patients on ritonavir/cobicistat should use systemic prednisone instead (more predictable pharmacokinetics with CYP inhibition). Grapefruit juice CONTRAINDICATED. If unavoidable, reduce budesonide dose and monitor for Cushing's features."
       },
       {
-        "drug": "CYP3A4 inducers (rifampin, carbamazepine, phenytoin)",
+        "drug": "CYP3A4 inducers (rifampin, carbamazepine, phenytoin, phenobarbital, St. John's Wort)",
         "severity": "Moderate",
-        "mechanism": "Accelerate budesonide metabolism → reduced efficacy",
-        "management": "May need higher budesonide doses; consider switch to systemic corticosteroid"
+        "mechanism": "CYP3A4 inducers accelerate budesonide first-pass metabolism further, reducing systemic levels. While this might appear beneficial (less systemic exposure), it also reduces local GI mucosal concentration in Entocort formulation, potentially reducing anti-inflammatory efficacy for Crohn's disease.",
+        "management": "Monitor IBD disease activity when strong CYP3A4 inducers are co-prescribed. May need to increase budesonide dose or switch to systemic corticosteroids (prednisone) with CYP inducers for Crohn's flares. Rifampin: avoid concurrent use — virtually eliminates budesonide efficacy."
+      },
+      {
+        "drug": "Antifungal prophylaxis (fluconazole, itraconazole) in IBD patients on immunosuppressants",
+        "severity": "Major",
+        "mechanism": "IBD patients often receive concurrent immunosuppressants (azathioprine, biologics) requiring antifungal prophylaxis. Adding azole antifungals to budesonide creates significant CYP3A4 inhibition — systemic budesonide exposure markedly increased.",
+        "management": "If antifungal prophylaxis needed in budesonide-treated patients, use fluconazole with extreme caution (it also inhibits CYP3A4, though less than itraconazole) or switch to non-CYP3A4 antifungals (nystatin for oropharyngeal prophylaxis — minimal systemic absorption)."
+      },
+      {
+        "drug": "Cholestyramine and other bile acid sequestrants",
+        "severity": "Moderate",
+        "mechanism": "Budesonide undergoes enterohepatic recirculation. Cholestyramine binds bile acids and drugs in the GI tract, interrupting enterohepatic recirculation and reducing budesonide reabsorption. This can reduce budesonide levels and potentially affect anti-inflammatory efficacy.",
+        "management": "Separate budesonide and cholestyramine by at least 4h. If cholestyramine is used for bile acid diarrhea in Crohn's (common after ileal resection), timing the doses carefully is important. Monitor disease activity."
+      },
+      {
+        "drug": "Live vaccines — immunosuppression consideration",
+        "severity": "Moderate",
+        "mechanism": "Budesonide at GI doses (3-9mg/day Entocort) has modest systemic immunosuppressive effect. The immunosuppressive threshold for vaccine safety with budesonide alone is debated; however, IBD patients often receive concurrent biologics or immunomodulators that compound immunosuppression.",
+        "management": "Avoid live vaccines during high-dose budesonide (>3mg/day) or when combined with other immunosuppressants. Inactivated vaccines (influenza IM, pneumococcal, COVID-19, Shingrix) are safe. Update vaccinations before escalating therapy."
+      },
+      {
+        "drug": "Antidiabetic drugs and insulin — steroid-induced hyperglycemia",
+        "severity": "Moderate",
+        "mechanism": "With CYP3A4 inhibitors or at higher doses, systemic budesonide exposure increases enough to cause clinically significant steroid-induced hyperglycemia — particularly in T2DM or pre-diabetic patients. Even at standard doses, modest hyperglycemia is possible.",
+        "management": "Monitor blood glucose when starting oral budesonide in diabetic patients. If CYP3A4 inhibitor initiated simultaneously, monitor BG more intensively. Adjust insulin or oral hypoglycemic agent doses as needed. Effect reverses upon budesonide discontinuation."
       }
     ],
     "pregnancy": "Category C. Entocort EC: used when clearly needed for active Crohn's in pregnancy — local action with limited systemic exposure. Generally preferred over systemic prednisone if corticosteroid needed.",
@@ -43968,10 +43992,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Metoclopramide",
+        "drug": "Metoclopramide (Maxeran — prokinetic agent)",
         "severity": "Moderate",
-        "mechanism": "Accelerates gut motility, reduces fosfomycin absorption",
-        "management": "Avoid concurrent use"
+        "mechanism": "Metoclopramide accelerates GI transit (prokinetic effect), reducing contact time between fosfomycin and the intestinal mucosa. This decreases fosfomycin absorption by approximately 30-50%, potentially resulting in sub-therapeutic systemic and urinary levels.",
+        "management": "AVOID concurrent metoclopramide with oral fosfomycin. If nausea/vomiting requires antiemetic treatment around fosfomycin administration, use a non-prokinetic antiemetic (ondansetron, dimenhydrinate) instead. Separate by at least 2h if co-administration unavoidable."
+      },
+      {
+        "drug": "Antacids and calcium/magnesium-containing products",
+        "severity": "Minor",
+        "mechanism": "Fosfomycin is a phosphonic acid antibiotic — polyvalent metal cations (Ca2+, Mg2+, Al3+) may partially chelate fosfomycin in the GI tract, though the interaction is less severe than with fluoroquinolones and tetracyclines due to fosfomycin's ionic structure.",
+        "management": "Take fosfomycin granules dissolved in water at least 2h apart from antacids and mineral supplements. The single-dose regimen (Monurol 3g sachet) means this interaction is manageable with appropriate timing on the day of administration."
+      },
+      {
+        "drug": "Fluoroquinolones (ciprofloxacin, nitrofurantoin) — UTI treatment alternatives",
+        "severity": "Note (therapeutic choice, not DDI)",
+        "mechanism": "No pharmacokinetic interaction. Fosfomycin and fluoroquinolones/nitrofurantoin are all used for uncomplicated UTI. Fosfomycin has a unique mechanism (inhibits MurA — bacterial cell wall synthesis) with activity against ESBL-producing E. coli and MRSA UTI, making it valuable when fluoroquinolone resistance is present.",
+        "management": "Fosfomycin is a single-dose option (Monurol 3g) for uncomplicated cystitis — convenient for adherence. Canadian guidelines (AMMI/CADTH) recommend fosfomycin as first-line for uncomplicated UTI in regions with fluoroquinolone resistance rates >20%. Not effective for pyelonephritis — use only for lower UTI."
+      },
+      {
+        "drug": "Warfarin (anticoagulants) — general antibiotic interaction",
+        "severity": "Minor",
+        "mechanism": "Single-dose oral fosfomycin minimally affects gut flora (very short exposure). The INR-elevating effect seen with prolonged antibiotic courses is essentially absent with the standard single 3g dose. Systemic exposure is low and transient.",
+        "management": "No INR monitoring required for single-dose fosfomycin in warfarin patients. If prolonged IV fosfomycin is used (off-label for complicated UTI or multidrug-resistant infections), monitor INR after 5-7 days as with any prolonged antibiotic course."
+      },
+      {
+        "drug": "Renal impairment dose adjustment (not a DDI, but critical for safety)",
+        "severity": "Major (renal dosing)",
+        "mechanism": "Fosfomycin is renally eliminated — single-dose Monurol for uncomplicated UTI is appropriate in normal renal function. In severe renal impairment (CrCl <30 mL/min), fosfomycin accumulates and the urinary concentrations may paradoxically be insufficient for UTI treatment (reduced glomerular filtration of drug to urine).",
+        "management": "Health Canada: Monurol single-dose is acceptable in mild-to-moderate renal impairment. In severe renal impairment (CrCl <10 mL/min) or on dialysis, use alternative UTI antibiotics (nitrofurantoin is also contraindicated in severe CKD). No renal dose adjustment needed for the standard single 3g oral dose."
+      },
+      {
+        "drug": "IV fosfomycin (off-label use in Canada for MDR infections) — drug-drug interactions with IV formulation",
+        "severity": "Moderate",
+        "mechanism": "IV fosfomycin contains high sodium content (approximately 330mg sodium per gram). Combined with diuretics, salt-restricted diets, or heart failure management, the sodium load may cause volume overload and worsening of cardiac or renal status. This applies to IV formulations — not the standard oral Monurol.",
+        "management": "For IV fosfomycin in multidrug-resistant gram-negative infections (compassionate use): monitor serum sodium, fluid balance, and volume status. Restrict dietary sodium during prolonged IV courses. IV fosfomycin + meropenem combination is studied for carbapenem-resistant Enterobacteriaceae — consult infectious disease."
       }
     ],
     "pregnancy": "Category B. Commonly used for uncomplicated UTI in pregnancy — single dose, safe profile. Check sensitivity.",
@@ -49155,16 +49209,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "CYP3A4 inhibitors (ketoconazole, ritonavir)",
+        "drug": "Strong CYP3A4 inhibitors (ketoconazole, itraconazole, ritonavir, cobicistat, clarithromycin)",
         "severity": "Moderate",
-        "mechanism": "Increase ICS systemic levels — adrenal suppression risk",
-        "management": "Use with caution; consider alternative ICS less reliant on CYP3A4 (mometasone, ciclesonide)"
+        "mechanism": "Beclomethasone dipropionate is a prodrug converted to active beclomethasone-17-monopropionate by CYP3A4 in the lungs. Paradoxically, strong CYP3A4 inhibitors may reduce pulmonary activation AND increase systemic beclomethasone exposure — increasing adrenal suppression risk.",
+        "management": "Monitor for Cushing's syndrome and adrenal suppression (fatigue, weight gain, striae) when combining with ritonavir or cobicistat-based HIV regimens. Consider switching to ciclesonide (less systemic activation) or lowest effective ICS dose. Obtain morning cortisol if symptomatic."
       },
       {
-        "drug": "Other corticosteroids (oral)",
+        "drug": "Oral corticosteroids (prednisone, dexamethasone) — additive adrenal suppression",
         "severity": "Moderate",
-        "mechanism": "Additive adrenal suppression with systemic steroids",
-        "management": "Use lowest effective dose; taper systemic steroids carefully"
+        "mechanism": "Beclomethasone inhalation causes dose-dependent HPA axis suppression, particularly at higher doses (>400 mcg/day). Combined with systemic corticosteroids, additive suppression increases Cushing's syndrome risk and slows adrenal recovery after systemic steroid withdrawal.",
+        "management": "When transitioning from oral to inhaled corticosteroids, taper prednisone slowly (no faster than 2.5mg/week) while maintaining beclomethasone. Monitor morning cortisol during taper. Do not abruptly discontinue systemic steroids — risk of adrenal crisis."
+      },
+      {
+        "drug": "Antifungals used to treat oral candidiasis (nystatin, clotrimazole lozenges) — beclomethasone-associated candidiasis",
+        "severity": "Note (adverse effect, not DDI)",
+        "mechanism": "Beclomethasone ICS use causes oropharyngeal candidiasis in 5-10% of patients through local immunosuppression and altered oral flora. Nystatin or clotrimazole treatment for oropharyngeal candidiasis co-occurring with beclomethasone is common.",
+        "management": "Counsel patients to rinse mouth and gargle with water after every ICS dose. Use spacer device to reduce oropharyngeal deposition. If candidiasis occurs, treat with nystatin suspension or clotrimazole troches without stopping beclomethasone — ICS benefits outweigh candidiasis risk."
+      },
+      {
+        "drug": "Beta-2 agonists (salbutamol/albuterol, formoterol, salmeterol) — asthma combination therapy",
+        "severity": "Beneficial (standard combination)",
+        "mechanism": "Beclomethasone ICS reduces airway inflammation; SABA (salbutamol) provides rapid bronchodilation for rescue; LABA (formoterol, salmeterol) provides sustained 12-24h bronchodilation. ICS/LABA combination (e.g., Fostair = beclomethasone + formoterol) is standard step 3-4 asthma therapy.",
+        "management": "LABA should NEVER be used without concurrent ICS in asthma (increased asthma death risk from LABA monotherapy). ICS+LABA fixed combination inhalers ensure concordance. Beclomethasone + formoterol (Fostair) is an approved pMDI combination. Monitor PEFR and asthma control."
+      },
+      {
+        "drug": "Diuretics (furosemide, thiazides) and hypokalemia-causing drugs",
+        "severity": "Moderate",
+        "mechanism": "High-dose beclomethasone ICS (>1000 mcg/day) has mineralocorticoid effects → hypokalemia. Combined with loop or thiazide diuretics that independently cause hypokalemia, the risk of clinically significant hypokalemia and arrhythmias increases.",
+        "management": "Monitor potassium in patients on high-dose ICS + diuretics, especially in asthma exacerbations (where beta-2 agonist use is intensified — another cause of hypokalemia). Supplement potassium if K+ <3.5 mEq/L. Hydration and electrolyte monitoring during hospital admissions."
+      },
+      {
+        "drug": "Antidiabetic drugs (insulin, metformin, sulfonylureas, GLP-1 agonists)",
+        "severity": "Minor",
+        "mechanism": "High-dose inhaled corticosteroids (particularly with nebulization or at doses >800 mcg/day) can cause modest steroid-induced hyperglycemia — less pronounced than systemic steroids but clinically relevant in diabetes. Mechanism: mild peripheral insulin resistance.",
+        "management": "Monitor blood glucose when ICS dose is significantly increased. Effect is dose-dependent and less pronounced than oral corticosteroids. Standard inhaled doses (200-400 mcg/day) cause negligible glycemic impact. No routine antidiabetic dose adjustment needed for standard ICS doses."
       }
     ],
     "pregnancy": "Category C. ICS use in asthma in pregnancy is RECOMMENDED — uncontrolled asthma is riskier than ICS use. Budesonide has most pregnancy safety data (preferred ICS in pregnancy). Beclomethasone also considered safe.",
@@ -50869,22 +50947,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Iron",
+        "drug": "Iron supplements (ferrous sulphate, ferrous gluconate, ferrous fumarate)",
         "severity": "Moderate",
-        "mechanism": "Calcium reduces iron absorption",
-        "management": "Separate iron and calcium supplements by 2 hours"
+        "mechanism": "Calcium (as citrate or carbonate) inhibits iron absorption via competition at the intestinal DMT-1 transporter. The interaction is present regardless of calcium formulation — calcium citrate has the same absorption-blocking effect on iron as calcium carbonate.",
+        "management": "Separate ferrous iron supplements and calcium citrate by 2 hours. For women on prenatal vitamins: if both iron and calcium are needed, take iron in the morning with vitamin C, calcium citrate with lunch or dinner. Calcium citrate advantage over carbonate: better absorption in achlorhydria/PPIs."
       },
       {
-        "drug": "Bisphosphonates, levothyroxine, tetracyclines, fluoroquinolones",
+        "drug": "Fluoroquinolones (ciprofloxacin, levofloxacin) and tetracyclines (doxycycline, minocycline)",
         "severity": "Major",
-        "mechanism": "Calcium chelates these drugs — reduces their absorption",
-        "management": "Separate by 2 hours"
+        "mechanism": "Calcium cations chelate these antibiotics in the GI tract regardless of calcium formulation. Calcium citrate has the same chelation potential as calcium carbonate for fluoroquinolones and tetracyclines — absorption reduced 50-70%.",
+        "management": "Take fluoroquinolone or tetracycline 2h BEFORE or 6h AFTER calcium citrate. This applies to all calcium-containing products including dietary calcium (dairy). Consider IV antibiotic formulations in patients with complex supplement timing issues."
       },
       {
-        "drug": "Thiazide diuretics",
+        "drug": "Levothyroxine (thyroid hormone)",
+        "severity": "Major",
+        "mechanism": "Calcium forms chelates with levothyroxine regardless of calcium salt formulation (carbonate or citrate). Absorption of levothyroxine reduced by 20-40% with concurrent calcium intake.",
+        "management": "Take levothyroxine at least 4h before calcium citrate supplements. Optimal strategy: levothyroxine on awakening (empty stomach), calcium citrate with meals. Monitor TSH 6-8 weeks after starting/changing calcium supplementation."
+      },
+      {
+        "drug": "Thiazide diuretics (hydrochlorothiazide, indapamide, chlorthalidone) — hypercalcemia",
         "severity": "Moderate",
-        "mechanism": "Thiazides reduce renal calcium excretion — hypercalcemia risk with excess supplementation",
-        "management": "Monitor calcium if on thiazides plus calcium supplements"
+        "mechanism": "Thiazides reduce renal calcium excretion. Combined with calcium citrate supplementation and vitamin D, hypercalcemia and milk-alkali syndrome (especially with calcium carbonate — citrate has lower alkaline load). Risk is lower with calcium citrate than carbonate.",
+        "management": "Monitor serum calcium in patients on both thiazide diuretics and calcium supplements. Calcium citrate is preferred over calcium carbonate in patients on thiazides (lower alkaline load, lower hypercalcemia risk). Total calcium intake should not exceed 2500mg/day."
+      },
+      {
+        "drug": "Bisphosphonates (alendronate, risedronate — oral formulations)",
+        "severity": "Major",
+        "mechanism": "Calcium (any formulation) virtually eliminates bisphosphonate oral bioavailability by chelation. Even calcium citrate taken within minutes of bisphosphonate renders it ineffective.",
+        "management": "Bisphosphonates must be taken on an empty stomach with plain water ONLY — no calcium (food, dairy, supplements) within 30-60 minutes. Calcium supplements should be taken at a different meal. This timing requirement is non-negotiable for bisphosphonate efficacy."
+      },
+      {
+        "drug": "PPIs (omeprazole, pantoprazole) and H2 blockers — calcium citrate advantage",
+        "severity": "Note (beneficial for PPI users)",
+        "mechanism": "Calcium carbonate requires gastric acid for dissolution. PPIs and H2 blockers, which raise gastric pH, significantly reduce calcium carbonate absorption. Calcium CITRATE absorption is largely acid-independent — it is absorbed effectively even without gastric acid.",
+        "management": "Calcium CITRATE is the preferred calcium formulation for patients on chronic PPIs, H2 blockers, or with achlorhydria (atrophic gastritis, post-bariatric surgery). Switch from calcium carbonate to citrate in these patients to ensure adequate calcium absorption for bone health."
       }
     ],
     "pregnancy": "Safe; essential in pregnancy. Total recommended 1000 mg elemental calcium/day in pregnancy. Often part of prenatal vitamins.",
@@ -52116,16 +52212,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Systemic carbonic anhydrase inhibitors (acetazolamide)",
+        "drug": "Oral/systemic carbonic anhydrase inhibitors (acetazolamide — Diamox, methazolamide)",
         "severity": "Major",
-        "mechanism": "Additive systemic CAI effects — electrolyte disturbances, acidosis",
-        "management": "Avoid combination; Cosopt provides some topical CAI"
+        "mechanism": "Dorzolamide is absorbed systemically from the eye (bioavailability ~33% of topical dose). Combined with oral acetazolamide, there is additive systemic CAI inhibition → electrolyte disturbances (hypokalemia, metabolic acidosis), sulfonamide toxicity, and renal calculi risk.",
+        "management": "CONTRAINDICATED per Health Canada Trusopt PM: do NOT combine dorzolamide with systemic carbonic anhydrase inhibitors. If both ophthalmic and systemic CAI needed, use a different ophthalmic drug class (prostaglandin, beta-blocker, brimonidine) for IOP control."
       },
       {
-        "drug": "High-dose aspirin",
-        "severity": "Minor",
-        "mechanism": "Salicylate toxicity increased with CAI",
-        "management": "Monitor if high-dose ASA used"
+        "drug": "Timolol and other topical beta-blockers (betaxolol, levobunolol) — fixed combination",
+        "severity": "Beneficial (standard combination)",
+        "mechanism": "Dorzolamide reduces aqueous humor production via CAI mechanism; timolol reduces production via beta-2 blockade — complementary mechanisms provide additive IOP reduction. Fixed combination Cosopt (dorzolamide 2% + timolol 0.5%) is a widely used combination.",
+        "management": "Cosopt is Health Canada-approved and provides convenient BID dosing vs. separate drops. Apply 5 minutes apart if using separate preparations. Timolol from ophthalmic drops is absorbed systemically — monitor for bradycardia and bronchospasm, especially in COPD/asthma patients."
+      },
+      {
+        "drug": "High-dose aspirin (salicylates)",
+        "severity": "Moderate",
+        "mechanism": "Both dorzolamide (sulfonamide derivative) and high-dose aspirin competitively inhibit carbonic anhydrase. The combination may increase the risk of metabolic acidosis and salicylate toxicity by altering salicylate renal excretion and acid-base balance.",
+        "management": "Monitor for signs of metabolic acidosis (fatigue, rapid breathing, confusion) in patients on both dorzolamide eye drops and high-dose aspirin (>1g/day for rheumatologic indications). Low-dose aspirin (81-100mg/day cardioprotective) has minimal clinical interaction with dorzolamide."
+      },
+      {
+        "drug": "Renal impairment — dorzolamide contraindication",
+        "severity": "Major (dose adjustment / contraindication)",
+        "mechanism": "Dorzolamide and its active metabolite N-desethyldorzolamide accumulate extensively in red blood cells and require renal elimination. In severe renal impairment (CrCl <30 mL/min), accumulation causes systemic sulfonamide toxicity — electrolyte imbalances, metabolic acidosis, urolithiasis.",
+        "management": "Health Canada Trusopt PM: CONTRAINDICATED in severe renal impairment (CrCl <30 mL/min). Use alternative IOP-lowering agents (prostaglandin analogue, bimatoprost, brimonidine) in patients with CKD stage 4-5 or ESRD. Monitor SCr annually in all glaucoma patients."
+      },
+      {
+        "drug": "Sulfonamide cross-sensitivity (sulfa drugs: sulfamethoxazole, sulfasalazine, celecoxib — sulfonamide moiety)",
+        "severity": "Moderate",
+        "mechanism": "Dorzolamide is a sulfonamide derivative — patients with sulfonamide allergy may cross-react with dorzolamide. Local ocular hypersensitivity (conjunctivitis, eyelid reactions) or systemic reactions are possible in sulfa-allergic patients.",
+        "management": "Obtain sulfonamide allergy history before prescribing dorzolamide. If sulfa allergy is documented (especially Stevens-Johnson syndrome or anaphylaxis), AVOID dorzolamide. Prostaglandin analogues or brimonidine are sulfonamide-free alternatives. Mild sulfa reactions do not absolutely preclude use — assess risk individually."
+      },
+      {
+        "drug": "Latanoprost and other prostaglandin analogues — combination therapy",
+        "severity": "Beneficial (adjunctive IOP-lowering)",
+        "mechanism": "Dorzolamide (reduces aqueous production) combined with latanoprost (increases uveoscleral outflow) provides complementary IOP reduction. Triple therapy (latanoprost + dorzolamide + timolol) can be used for poorly controlled glaucoma unresponsive to dual therapy.",
+        "management": "Apply eye drops 5 minutes apart to prevent wash-out. Fixed combinations (Cosopt = dorzolamide+timolol; Xalacom = latanoprost+timolol) reduce drop burden. Target IOP depends on stage of glaucoma and baseline pressure — individualize therapy with ophthalmologist."
       }
     ],
     "pregnancy": "Category C. Avoid if possible. Sulfonamide effects and limited safety data.",
@@ -70043,10 +70163,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Oral iron supplements",
+        "drug": "Oral iron supplements (ferrous sulphate, ferrous gluconate, ferrous fumarate)",
         "severity": "Major",
-        "mechanism": "Reduces oral iron absorption",
-        "management": "Stop oral iron during IV iron course (5-7 days post)"
+        "mechanism": "Concurrent oral iron does not enhance IV iron therapy — the IV formulation saturates transferrin binding sites and reticuloendothelial uptake pathways. Oral iron taken concurrently is poorly absorbed in the presence of high transferrin saturation and may cause GI toxicity without benefit.",
+        "management": "STOP oral iron 5 days before IV ferric carboxymaltose infusion and do not restart until serum iron/TSAT has normalized (typically 7-14 days post-infusion). Health Canada Ferinject PM: do not co-administer oral iron with IV iron therapy."
+      },
+      {
+        "drug": "Hypophosphatemia risk — FGF23-mediated phosphaturia (unique to ferric carboxymaltose)",
+        "severity": "Major (adverse effect mechanism, not DDI)",
+        "mechanism": "Ferric carboxymaltose uniquely (more than other IV irons) increases FGF23 (fibroblast growth factor 23), causing phosphaturia and hypophosphatemia in up to 75% of patients after repeated dosing. Symptomatic hypophosphatemia causes fatigue, bone pain, muscle weakness, and osteomalacia.",
+        "management": "Monitor serum phosphate before each Ferinject infusion and at follow-up. If persistent hypophosphatemia (<0.6 mmol/L or symptomatic), switch to iron isomaltoside (Monofer) or iron sucrose — significantly less FGF23-mediated phosphaturia. Do not supplement phosphate without addressing underlying cause."
+      },
+      {
+        "drug": "Phosphate supplements and vitamin D therapy — hypophosphatemia management",
+        "severity": "Moderate",
+        "mechanism": "FGF23 from ferric carboxymaltose suppresses renal tubular phosphate reabsorption AND reduces 1-alpha hydroxylation of vitamin D → reduced active vitamin D → impaired intestinal phosphate absorption. A complete metabolic syndrome of hypophosphatemia may develop requiring both phosphate and activated vitamin D (calcitriol) treatment.",
+        "management": "For Ferinject-induced hypophosphatemia: replete with oral phosphate + calcitriol (activated vitamin D), not just oral phosphate alone. If hypophosphatemia recurs with repeated Ferinject doses, switch to iron isomaltoside. Document phosphate monitoring in all Ferinject patients."
+      },
+      {
+        "drug": "ACE inhibitors (enalapril, ramipril, lisinopril, captopril)",
+        "severity": "Moderate",
+        "mechanism": "IV iron infusions (including ferric carboxymaltose) have been reported to cause systemic hypersensitivity reactions, including flushing and hypotension. ACE inhibitors impair the metabolism of bradykinin and other vasoactive peptides — may amplify hypotension from infusion reactions.",
+        "management": "If the patient is on ACE inhibitor, perform IV iron infusion with careful BP monitoring. Have resuscitation equipment (epinephrine, antihistamine, corticosteroid) available for all IV iron infusions. If hypotension occurs during infusion, slow or stop and provide supportive care."
+      },
+      {
+        "drug": "Erythropoiesis-stimulating agents (EPO, darbepoetin, methoxy polyethylene glycol-epoetin beta)",
+        "severity": "Beneficial (essential combination for ESA response)",
+        "mechanism": "ESA therapy requires adequate iron stores to stimulate erythropoiesis. Functional iron deficiency is the most common cause of ESA hyporesponsiveness. IV iron supplementation combined with ESA significantly improves haemoglobin response and reduces ESA dose requirements.",
+        "management": "Assess iron status (ferritin, TSAT) before and during ESA therapy. If TSAT <20% or ferritin <100 mcg/L: replete with IV iron (ferric carboxymaltose preferred in CKD non-dialysis). Target ferritin 200-500 mcg/L + TSAT 20-40% for optimal ESA response. ODB covers IV iron for ESA-treated CKD patients."
+      },
+      {
+        "drug": "Antibiotics (doxycycline, ciprofloxacin, co-amoxiclav) — treatment of iron overload-associated infections",
+        "severity": "Minor",
+        "mechanism": "Excess free iron from IV supplementation can theoretically support bacterial growth (iron is a microbial growth factor). In septic patients or those with Yersinia enterocolitica infection (chelated by IV iron), active infection is a contraindication to IV iron infusion.",
+        "management": "Health Canada Ferinject PM: do NOT administer IV iron during active systemic infections — postpone until infection is treated. Yersinia species use iron as a virulence factor — IV iron during Yersinia bacteremia can cause fulminant infection. Screen for fever/infection before every infusion."
       }
     ],
     "pregnancy": "Used in 2nd/3rd trimester for iron deficiency anemia per SOGC; AVOID 1st trimester (limited data). Generally preferred over IV iron sucrose for convenience.",
@@ -71347,16 +71497,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "(Generally minimal — mAbs do not interact with CYP/transporters)",
-        "severity": "Minor",
-        "mechanism": "Not metabolized by CYP enzymes; cleared by reticuloendothelial system",
-        "management": "No clinically significant drug-drug interactions identified"
+        "drug": "No clinically significant pharmacokinetic drug interactions",
+        "severity": "None",
+        "mechanism": "Erenumab is a fully human IgG2 monoclonal antibody targeting the CGRP receptor (AMY1). As a mAb, it is not CYP450-metabolized and does not interact with drug transporters. It is cleared by proteolysis. No CYP, P-gp, or BCRP-based DDIs identified.",
+        "management": "No dose adjustment needed based on comedications. Erenumab subcutaneous injection can be administered regardless of other oral medications."
       },
       {
-        "drug": "Live vaccines",
-        "severity": "Minor (theoretical)",
-        "mechanism": "No documented immunosuppression with anti-CGRP mAbs",
-        "management": "Generally no contraindication; consider routine vaccinations as indicated"
+        "drug": "Other anti-CGRP agents (eptinezumab, fremanezumab, galcanezumab — CGRP ligand mAbs; rimegepant, ubrogepant, atogepant — gepants)",
+        "severity": "Major",
+        "mechanism": "Erenumab blocks the CGRP receptor. Other CGRP mAbs block the CGRP ligand. Gepants are small-molecule CGRP receptor antagonists. Combining two agents targeting the same CGRP pathway provides no proven additive benefit and doubles immunological/adverse effect burden.",
+        "management": "Do NOT combine erenumab with other CGRP-pathway preventives. When switching from erenumab to another CGRP mAb or gepant, washout is not strictly required but standard practice allows 3-4 months for antibody clearance. Gepants as acute treatment (rimegepant) can be used during erenumab prophylaxis."
+      },
+      {
+        "drug": "Triptans (sumatriptan, rizatriptan, eletriptan, almotriptan, zolmitriptan, frovatriptan, naratriptan)",
+        "severity": "Minor",
+        "mechanism": "Triptans are serotonin 5-HT1B/D agonists used for acute migraine — different mechanism from erenumab. The combination (erenumab prophylaxis + triptan for breakthrough) is common clinical practice. No pharmacokinetic or adverse pharmacodynamic interaction.",
+        "management": "Continue triptans for acute breakthrough migraines during erenumab prophylaxis. Reassess need for triptans at 3-6 months — successful erenumab therapy should reduce triptan use. If triptans used >10 days/month, medication overuse headache may develop — address simultaneously."
+      },
+      {
+        "drug": "Antihypertensives (propranolol, metoprolol, amitriptyline, topiramate, valproate) — migraine prophylaxis interactions",
+        "severity": "Minor",
+        "mechanism": "Traditional migraine preventives may be co-prescribed with erenumab. No pharmacokinetic interaction. Erenumab may allow gradual reduction of traditional preventives as CGRP pathway blockade takes effect. However, some preventives (propranolol, topiramate) have non-migraine indications — do not discontinue prematurely.",
+        "management": "If adding erenumab to existing preventive migraine therapy: continue current therapy initially, reassess response at 6 months, then consider tapering traditional preventives if migraine frequency has reduced. Do not abruptly stop topiramate (seizure risk) or propranolol (rebound hypertension)."
+      },
+      {
+        "drug": "Constipation-causing medications — erenumab constipation interaction",
+        "severity": "Moderate",
+        "mechanism": "Constipation is the most common adverse effect of erenumab (6-12% of patients vs. ~3% placebo). CGRP plays a role in GI motility — blocking CGRP receptor slows intestinal transit. Combined with other constipating medications (opioids, antimuscarinics, calcium supplements), constipation may become severe.",
+        "management": "Baseline bowel habits should be assessed before starting erenumab. If concurrent constipating medications: increase dietary fibre, hydration, and consider prophylactic laxative (PEG 3350, docusate). Severe constipation may require erenumab dose reduction or switch to alternative CGRP mAb with less constipation (fremanezumab)."
+      },
+      {
+        "drug": "Immunosuppressants (biologics, methotrexate, azathioprine) — injection site and immunogenicity",
+        "severity": "Minor",
+        "mechanism": "Erenumab is a fully human antibody — anti-drug antibody formation risk is low. Concurrent immunosuppression does not meaningfully increase or decrease the risk of anti-erenumab antibody formation. No pharmacokinetic interaction.",
+        "management": "Erenumab can be used in patients on immunosuppressants for comorbid conditions (psoriasis, IBD, RA) without dose adjustment. Advise on injection site rotation to minimize local reactions. Annual efficacy reassessment recommended to ensure continued CGRP pathway blockade."
       }
     ],
     "pregnancy": "Health Canada classification: limited human pregnancy data. Animal studies in cynomolgus monkeys at high exposures did not show embryofetal harm. Use only if benefit clearly outweighs risk; SOGC/Canadian Headache Society generally recommend discontinuation when planning pregnancy and during pregnancy unless severe migraine despite alternatives. Long half-life (~28 days) means residual exposure for ≥5 months after stopping. Excretion in breast milk: limited data; IgG2 antibodies generally have low milk-to-plasma transfer.",
@@ -71948,16 +72122,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Cyclosporine, tacrolimus",
+        "drug": "Cyclosporine, tacrolimus, and other P-glycoprotein inhibitors",
         "severity": "Moderate",
-        "mechanism": "P-gp inhibition by these drugs may modestly increase fidaxomicin systemic exposure; clinical relevance limited due to gut-confined activity",
-        "management": "Generally no dose adjustment; monitor for fidaxomicin-related GI side effects"
+        "mechanism": "Fidaxomicin and its active metabolite OP-1118 are substrates of P-glycoprotein (P-gp). P-gp inhibitors (cyclosporine, tacrolimus, verapamil, amiodarone) reduce fidaxomicin efflux in the intestinal epithelium, modestly increasing systemic absorption. Fidaxomicin is normally minimally absorbed (~60 ng/mL systemic levels).",
+        "management": "Health Canada Dificid PM: cyclosporine and tacrolimus increase fidaxomicin systemic exposure approximately 2-fold. No dose adjustment is required — the systemic increase is still well within the safety margin. Monitor for fidaxomicin-related adverse effects (nausea, vomiting, abdominal pain) in transplant patients on these immunosuppressants."
       },
       {
-        "drug": "(Generally minimal — minimal systemic absorption)",
-        "severity": "Minor",
-        "mechanism": "Drug confined to gut lumen",
-        "management": "No clinically significant pharmacokinetic interactions"
+        "drug": "Vancomycin oral (Vancocin) — comparison and sequential use for CDI",
+        "severity": "Note (therapeutic choice)",
+        "mechanism": "No pharmacokinetic or pharmacodynamic interaction between oral fidaxomicin and oral vancomycin. Both are poorly absorbed from the GI tract and act locally against C. difficile. Fidaxomicin has superior sustained clinical response vs. vancomycin in non-hypervirulent (non-ribotype 027) CDI — lower recurrence rates.",
+        "management": "Do NOT use both simultaneously — choose one drug per CDI episode. IDSA/SHEA 2021: fidaxomicin preferred over vancomycin for initial non-severe CDI due to lower recurrence rates. Reserve for patients at high recurrence risk (elderly, immunosuppressed, prior CDI). Health Canada: approved for CDI in adults."
+      },
+      {
+        "drug": "Metronidazole (Flagyl) — historical C. difficile treatment",
+        "severity": "Note (historical comparison)",
+        "mechanism": "No pharmacokinetic interaction. Metronidazole is no longer recommended for CDI by IDSA/SHEA 2021 due to inferior efficacy vs. vancomycin and fidaxomicin. Fidaxomicin is superior. Sequential use (metronidazole for mild CDI, escalating to fidaxomicin for recurrence) is not current standard.",
+        "management": "Fidaxomicin or vancomycin should be used for all CDI episodes — reserve fidaxomicin for high-recurrence-risk patients. Metronidazole may be used only if fidaxomicin/vancomycin are unavailable. Do not combine metronidazole with fidaxomicin — no benefit and added toxicity."
+      },
+      {
+        "drug": "Proton pump inhibitors (omeprazole, pantoprazole) — CDI risk factor",
+        "severity": "Moderate (disease interaction, not pharmacokinetic DDI)",
+        "mechanism": "PPIs reduce gastric acidity, enabling C. difficile spore germination and survival — a major modifiable CDI risk factor. This is not a drug-drug pharmacokinetic interaction with fidaxomicin, but PPI deprescribing is part of CDI management.",
+        "management": "Review PPI necessity in all CDI patients — deprescribe if not strictly indicated. PPI deprescribing can reduce CDI recurrence rates. If PPI required (confirmed GERD, ulcer, gastroprotection), use minimum effective dose for shortest duration. This is a CDI prevention strategy alongside fidaxomicin."
+      },
+      {
+        "drug": "Rifaximin (Xifaxan) — non-absorbable antibiotic combination",
+        "severity": "Moderate",
+        "mechanism": "Rifaximin has been studied as add-on 'chaser' therapy after fidaxomicin or vancomycin for CDI to reduce recurrence (rifaximin's minimal systemic absorption targets residual CDI spores in the colon). No pharmacokinetic interaction — both minimally absorbed. Limited clinical evidence.",
+        "management": "Rifaximin 'chaser' therapy (400mg BID x 20 days after CDI antibiotic course) is studied but not yet standard of care in Canada. Consult infectious disease for recurrent CDI management. Bezlotoxumab (Zinplava) is the Health Canada-approved adjunct to reduce CDI recurrence."
+      },
+      {
+        "drug": "Cholestyramine and other oral resins — C. difficile treatment interference",
+        "severity": "Major",
+        "mechanism": "Cholestyramine and colestipol (bile acid sequestrants) bind C. difficile toxins in the GI tract — historically used adjunctively for CDI toxin adsorption. However, these resins also bind vancomycin and fidaxomicin, reducing their local GI concentrations and antibiotic efficacy.",
+        "management": "AVOID cholestyramine or colestipol during fidaxomicin or vancomycin CDI treatment — they reduce local antibiotic concentrations and negate therapy. If bile acid sequestrant is required for another indication (bile acid diarrhea, post-cholecystectomy), separate timing by ≥2-4h."
       }
     ],
     "pregnancy": "Health Canada classification: limited human data; animal studies do not demonstrate fetotoxicity. Use only if benefit outweighs risk; CDI in pregnancy is itself dangerous (oral vancomycin or fidaxomicin preferred over metronidazole per AMMI Canada).",
@@ -73572,16 +73770,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "(Minimal — mAbs do not interact with CYP/transporters)",
-        "severity": "Minor",
-        "mechanism": "Cleared by reticuloendothelial system",
-        "management": "No clinically significant pharmacokinetic interactions"
+        "drug": "No clinically significant pharmacokinetic drug interactions",
+        "severity": "None",
+        "mechanism": "Eptinezumab is a humanized IgG1 monoclonal antibody targeting CGRP (calcitonin gene-related peptide). Like all therapeutic mAbs, it is not metabolized by CYP450 enzymes or drug transporters — it is cleared by proteolytic degradation in the reticuloendothelial system. No CYP or transporter DDIs.",
+        "management": "No dose adjustment needed based on comedications. Eptinezumab IV infusion can be administered with prophylactic antihistamines (diphenhydramine) or corticosteroids for infusion reactions without pharmacokinetic concern."
       },
       {
-        "drug": "Live vaccines",
-        "severity": "Minor (theoretical)",
-        "mechanism": "No documented immunosuppression",
-        "management": "Generally proceed with vaccinations as indicated"
+        "drug": "Other anti-CGRP pathway drugs (erenumab, fremanezumab, galcanezumab — subcutaneous mAbs; rimegepant, ubrogepant — gepants)",
+        "severity": "Major",
+        "mechanism": "Eptinezumab blocks CGRP ligand. Other anti-CGRP mAbs (erenumab blocks receptor; fremanezumab, galcanezumab block ligand like eptinezumab) target the same pathway. Gepants (small molecule CGRP receptor antagonists) also target CGRP-R. Combining two CGRP-pathway agents provides no proven additive benefit.",
+        "management": "Do NOT combine eptinezumab with other CGRP-pathway preventives. When switching from subcutaneous mAb to eptinezumab IV, ensure adequate washout. Standard washout: 3-4 months (one dosing cycle). Health Canada: combination of two CGRP-pathway drugs is not recommended."
+      },
+      {
+        "drug": "Triptans (sumatriptan, rizatriptan, eletriptan, naratriptan, zolmitriptan, almotriptan)",
+        "severity": "Minor",
+        "mechanism": "Triptans are used as acute migraine treatment while eptinezumab is a preventive therapy. No pharmacokinetic interaction. There is theoretical pharmacodynamic overlap (both target CGRP-related vasodilation), but clinical combination is safe and commonly used.",
+        "management": "Triptans can be continued for acute breakthrough migraines during eptinezumab preventive therapy — no dose adjustment required. If migraines persist despite eptinezumab, reassess after 2-3 doses (6-9 months) before declaring inadequate response."
+      },
+      {
+        "drug": "Infusion reaction premedication (diphenhydramine, methylprednisolone, acetaminophen)",
+        "severity": "Beneficial (premedication strategy)",
+        "mechanism": "Eptinezumab is administered as a 30-minute IV infusion and carries a small risk of infusion reactions (hypersensitivity). Premedication with antihistamines or corticosteroids can reduce infusion reaction risk. No pharmacokinetic interaction with eptinezumab.",
+        "management": "Health Canada Vyepti PM: consider premedication with diphenhydramine 25-50mg IV before infusion for patients with history of infusion reactions. Infusion rate can be slowed if reactions occur. Have epinephrine available. Mild reactions do not require permanent discontinuation."
+      },
+      {
+        "drug": "Hormone-based contraceptives and hormone therapies — CGRP context",
+        "severity": "Minor",
+        "mechanism": "Estrogens are known to affect CGRP pathway and migraine frequency (hormonal migraines are common). Hormonal contraceptives and HRT may modulate the clinical response to eptinezumab indirectly by altering hormonal migraine triggers. No direct pharmacokinetic interaction.",
+        "management": "No dose adjustment needed for eptinezumab with hormonal contraceptives or HRT. Document menstrual migraine patterns — hormonal management may be needed as adjunct. Combined hormonal contraceptives are associated with increased stroke risk in migraineurs with aura — coordinate with neurology."
+      },
+      {
+        "drug": "Ergotamine and dihydroergotamine (DHE) — acute migraine treatments",
+        "severity": "Minor",
+        "mechanism": "Ergot derivatives and eptinezumab target different mechanisms. Ergotamine causes vasoconstriction (5-HT1B/D agonism, alpha-adrenergic); eptinezumab blocks CGRP-mediated vasodilation. No direct pharmacokinetic or adverse pharmacodynamic interaction identified.",
+        "management": "Ergotamine use should be limited regardless — Health Canada: ergotamine should not be used more than 10 days/month (medication overuse headache risk). Patients on eptinezumab can use ergotamine for breakthrough migraines with standard precautions (avoid in cardiovascular disease, pregnancy)."
       }
     ],
     "pregnancy": "Health Canada classification: limited human pregnancy data; animal studies acceptable. Long half-life ~27 days — washout ~5 months when discontinuing. SOGC/Canadian Headache Society: discontinue when planning pregnancy unless severe migraine. Excretion in breast milk: minimal due to IgG1 properties.",
@@ -74793,16 +75015,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "(Generally minimal CYP/transporter interactions documented)",
+        "drug": "Limited CYP/transporter-based pharmacokinetic interactions",
         "severity": "Minor",
-        "mechanism": "Limited drug-interaction data; rapidly metabolized to sulfate and glucuronide",
-        "management": "No major DDIs documented"
+        "mechanism": "Edaravone is rapidly metabolized by sulfation and glucuronidation (Phase II enzymes, non-CYP) to sulfate and glucuronide conjugates. It does not significantly inhibit or induce CYP1A2, 2B6, 2C8, 2C9, 2C19, 2D6, or 3A4 at therapeutic concentrations. Minimal P-gp or BCRP transporter interactions.",
+        "management": "No CYP-based dose adjustments needed for edaravone. Health Canada Radicava PM: no clinically significant pharmacokinetic drug interactions identified. Focus monitoring on pharmacodynamic interactions."
       },
       {
-        "drug": "Riluzole",
-        "severity": "Notable (combination)",
-        "mechanism": "Both used in ALS; combination is standard practice — no negative interaction documented",
-        "management": "Often used together as part of ALS multimodal therapy"
+        "drug": "Riluzole (Rilutek — glutamate inhibitor for ALS) — concurrent ALS therapy",
+        "severity": "Moderate",
+        "mechanism": "Riluzole and edaravone are the two primary ALS medications. No significant pharmacokinetic interaction. Both are hepatically metabolized (riluzole via CYP1A2; edaravone via sulfation/glucuronidation). However, both cause hepatotoxicity — additive liver injury risk.",
+        "management": "Monitor LFTs (ALT, AST) every 3 months during concurrent riluzole + edaravone therapy. If ALT >5x ULN, investigate and consider discontinuing the more recently added agent. Both drugs individually carry liver toxicity warnings per Health Canada."
+      },
+      {
+        "drug": "Anticoagulants (warfarin, DOACs, heparin) — bleeding risk",
+        "severity": "Moderate",
+        "mechanism": "Edaravone has antioxidant and free radical scavenging properties that may affect platelet function in some patients. Additionally, ALS patients with dysphagia are at aspiration pneumonia risk and may require anticoagulation for DVT prevention — polypharmacy interactions are clinically important in this context.",
+        "management": "No direct pharmacokinetic interaction with anticoagulants established. Monitor for unusual bleeding. IV edaravone contains sodium bisulfite (preservative) — potential for sulfite hypersensitivity reactions in asthma patients, which may be misinterpreted as anticoagulant-related adverse effects."
+      },
+      {
+        "drug": "Cephalosporins (cefazolin, ceftriaxone, cefepime) — sulfite preservative interaction",
+        "severity": "Minor",
+        "mechanism": "IV edaravone (Radicava IV) contains sodium bisulfite as preservative. Bisulfite can interact with certain antibiotics (cephalosporins, penicillins) if administered through the same IV line — potential inactivation or precipitation.",
+        "management": "Administer edaravone IV through a dedicated line or flush IV line thoroughly before and after edaravone infusion if using a shared line. Do not mix edaravone with other medications in the same infusion bag. Use Y-site carefully — check specific compatibility data."
+      },
+      {
+        "drug": "Antioxidants (vitamin C, vitamin E, N-acetylcysteine, coenzyme Q10)",
+        "severity": "Minor",
+        "mechanism": "Edaravone's mechanism is free radical scavenging (antioxidant). Combined with other antioxidant supplements, there is theoretical additive antioxidant activity. Whether this provides additive neuroprotection or clinical benefit is not established in ALS trials.",
+        "management": "No formal contraindication to combining antioxidant supplements with edaravone. Counsel ALS patients about the limited evidence for supplement-based neuroprotection. High-dose antioxidants have not shown clinical benefit in ALS trials and should not replace edaravone therapy."
+      },
+      {
+        "drug": "Sulfite-sensitive patients — sodium bisulfite preservative warning",
+        "severity": "Major (IV formulation safety)",
+        "mechanism": "IV edaravone (Radicava) contains sodium bisulfite, a sulfite preservative. Sulfites can cause severe anaphylactic reactions and bronchospasm in sulfite-sensitive patients — particularly those with asthma (3-10% of asthmatics are sulfite-sensitive).",
+        "management": "Health Canada Radicava IV: screen patients for sulfite sensitivity (asthma, sulfite allergy history) before IV infusion. Have epinephrine and resuscitation equipment available during infusion. The oral suspension (Radicava ORS) does not contain sodium bisulfite — use in sulfite-sensitive patients."
       }
     ],
     "pregnancy": "Health Canada classification: limited human data; animal studies not concerning at clinical exposures. Use only if benefit clearly outweighs risk; ALS is rare in pregnancy. Excretion in breast milk: limited data — caution.",
