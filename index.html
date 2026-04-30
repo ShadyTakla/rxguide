@@ -25606,7 +25606,19 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Sertraline is a mild CYP2C9 inhibitor → may modestly increase warfarin levels; also additive bleeding risk via platelet serotonin depletion",
         "management": "Monitor INR within 5–7 days of starting or stopping sertraline; be alert to bruising or mucosal bleeding as early sign of elevated INR"
-      }
+      },
+        {
+          "drug": "Tricyclic antidepressants (amitriptyline, nortriptyline, imipramine, clomipramine)",
+          "severity": "Major",
+          "mechanism": "Two distinct mechanisms: (1) Serotonin syndrome risk — both sertraline and TCAs (especially clomipramine) increase serotonergic tone; (2) CYP2D6 inhibition — sertraline moderately inhibits CYP2D6, the primary enzyme metabolizing most TCAs; TCA plasma levels can increase 50–200% leading to cardiotoxicity (QTc prolongation, arrhythmia), anticholinergic crisis, and seizures",
+          "management": "Combination is generally avoided; if necessary for refractory depression (uncommon), start TCA at the lowest dose and titrate slowly; monitor TCA plasma levels (nortriptyline target 50–150 ng/mL); obtain ECG to monitor QTc; watch for serotonin syndrome signs (tachycardia, hyperthermia, myoclonus, clonus); Health Canada product monographs for sertraline list CYP2D6 inhibition and serotonergic drug combination as warnings"
+        },
+        {
+          "drug": "St. John's Wort (Hypericum perforatum)",
+          "severity": "Major",
+          "mechanism": "St. John's Wort has serotonergic activity via serotonin reuptake inhibition and MAO inhibition (weak); combined with sertraline (SSRI), the additive serotonergic effect substantially increases serotonin syndrome risk (agitation, diaphoresis, tremor, hyperthermia, clonus); St. John's Wort is also a potent CYP3A4 inducer via pregnane X receptor activation, but this interaction is less relevant for sertraline (CYP2D6/CYP2C19 substrate)",
+          "management": "Contraindicated; Health Canada and all major Canadian formularies identify St. John's Wort as contraindicated with SSRIs; advise patients to disclose herbal supplement use as this combination is frequently unrecognized by patients as dangerous; a 2-week washout period is recommended after stopping St. John's Wort before initiating sertraline (or vice versa)"
+        }
     ],
     "pregnancy": "Category C. Most studied SSRI in pregnancy. Generally preferred SSRI for pregnancy. Neonatal adaptation syndrome possible (jitteriness, feeding difficulty — resolves within days). Do not abruptly stop — depression relapse risk exceeds neonatal risk of continued treatment.",
     "pk": {
@@ -25839,7 +25851,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "CYP2D6 metabolizes venlafaxine to its active metabolite desvenlafaxine; inhibition increases venlafaxine parent compound levels → increased noradrenergic effects (hypertension, tachycardia, agitation)",
         "management": "Monitor blood pressure; use sertraline or escitalopram instead when SSRI combination being transitioned"
-      }
+      },
+        {
+          "drug": "St. John's Wort (Hypericum perforatum)",
+          "severity": "Major",
+          "mechanism": "Venlafaxine inhibits both serotonin and norepinephrine reuptake (SNRI); St. John's Wort also inhibits serotonin reuptake via hyperforin; the combination produces additive serotonin toxicity with high risk of serotonin syndrome; additionally, St. John's Wort (CYP3A4 inducer) reduces venlafaxine levels by ~40% (as venlafaxine is a CYP3A4 substrate), paradoxically creating unpredictable serotonergic risk from abrupt concentration changes",
+          "management": "Contraindicated; Health Canada product monograph for venlafaxine (Effexor XR) lists serotonergic agents including St. John's Wort as contraindicated; a washout period of at least 2 weeks is required; advise patients to check all herbal supplements for St. John's Wort before adding to venlafaxine therapy"
+        }
     ],
     "pregnancy": "Category C. Neonatal adaptation syndrome. Newborn may need monitoring for NE-mediated effects (tachycardia, irritability).",
     "pk": {
@@ -25967,7 +25985,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Secondary duloxetine pathway; moderate elevation of duloxetine levels → increased side effects",
         "management": "Monitor for side effects; use sertraline/escitalopram when an SSRI combination is being transitioned"
-      }
+      },
+        {
+          "drug": "St. John's Wort (Hypericum perforatum)",
+          "severity": "Major",
+          "mechanism": "Duloxetine is a balanced SNRI (serotonin ≈ norepinephrine reuptake inhibition); St. John's Wort adds serotonergic activity and weak MAO inhibition; additive serotonergic effect substantially increases serotonin syndrome risk; duloxetine is a moderate CYP2D6 inhibitor — St. John's Wort induction of CYP1A2 (relevant for duloxetine hepatic metabolism) may reduce duloxetine levels unpredictably",
+          "management": "Contraindicated; Health Canada product monograph for duloxetine (Cymbalta) lists serotonergic drugs as contraindicated; St. John's Wort is specifically mentioned; counsel patients with diabetic neuropathy, fibromyalgia, or depression (common duloxetine indications) against concurrent herbal serotonergic use; 2-week washout between agents is recommended"
+        }
     ],
     "pregnancy": "Category C. Similar SNRI considerations to venlafaxine.",
     "pk": {
@@ -35382,7 +35406,13 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Alcohol potentiates CNS depression (sedation, cognitive impairment, respiratory depression); increases seizure risk; also inhibits CYP2D6 acutely (increases tramadol levels) while chronic alcohol use induces CYP (reduces levels)",
         "management": "Counsel patients on ABSOLUTE AVOIDANCE of alcohol with tramadol; binge drinking particularly dangerous; document counselling"
-      }
+      },
+        {
+          "drug": "Gabapentinoids (gabapentin, pregabalin) — additive respiratory depression and seizure risk",
+          "severity": "Major",
+          "mechanism": "Tramadol combined with gabapentinoids has dual risk: (1) additive CNS/respiratory depression — gabapentinoids potentiate tramadol's opioid activity at μ-receptors, and (2) tramadol lowers seizure threshold — gabapentinoids are anticonvulsant, but this does not reliably prevent tramadol-induced seizures; Ontario pharmacoepidemiology data identifies gabapentinoid + opioid as a high-risk combination for overdose death",
+          "management": "Health Canada advises caution with all opioid + gabapentinoid combinations; tramadol's serotonergic activity adds further complexity; avoid combination in patients with history of seizures; if prescribed together, lowest effective doses, patient counselling, naloxone prescription, and regular reassessment are mandatory; CPSO prescribing guidance for opioids in Ontario specifically lists gabapentinoids as a drug class requiring combined-risk assessment"
+        }
     ],
     "pregnancy": "Category C — limited human data. AVOID 3rd trimester (neonatal opioid withdrawal syndrome — NOWS; respiratory depression in newborn). SOGC: opioids in pregnancy only when essential and benefit > risk; counsel withdrawal management for newborn. Lactation: tramadol enters breast milk; Health Canada warning re: ULTRA-RAPID CYP2D6 METABOLIZERS (mother converts to high active O-desmethyltramadol levels → infant respiratory depression risk). Generally AVOID in lactation; use acetaminophen + non-opioid first.",
     "pk": {
@@ -37501,7 +37531,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "CYP1A2 inhibition → increased caffeine levels (caffeine insomnia/agitation); CYP3A4/2C19 inhibition → increased levels of many benzodiazepines (triazolam, diazepam, alprazolam) → excess sedation",
         "management": "Counsel on caffeine reduction; with benzodiazepines, start very low doses and titrate carefully; consider lorazepam or oxazepam (glucuronide conjugation, not CYP)"
-      }
+      },
+        {
+          "drug": "St. John's Wort (Hypericum perforatum)",
+          "severity": "Major",
+          "mechanism": "Additive serotonergic activity between fluvoxamine (potent SSRI with additional sigma-1 receptor activity) and St. John's Wort (hypericin/hyperforin, which inhibits serotonin reuptake and has weak MAO inhibition); fluvoxamine is particularly implicated because it is the most potent CYP1A2 and CYP2C19 inhibitor among SSRIs — St. John's Wort induction of CYP1A2 may partially offset fluvoxamine levels, creating unpredictable pharmacokinetics",
+          "management": "Contraindicated; patients on fluvoxamine (commonly prescribed for OCD in Canada) should explicitly avoid all St. John's Wort products; allow 2-week washout when switching between these agents; educate patients that herbal 'natural' remedies can cause life-threatening drug interactions; CANMAT depression guidelines specifically warn against combining herbal serotonergic agents with SSRIs"
+        }
     ],
     "pregnancy": "SSRI use in pregnancy: generally considered relatively safe for mood/anxiety disorders when benefit outweighs risk. Neonatal adaptation syndrome (NAS) with third-trimester use (transient — jitteriness, feeding difficulty, respiratory changes). Persistent pulmonary hypertension of newborn (PPHN) — rare association with SSRI late pregnancy. Fluvoxamine: limited specific data; other SSRIs (sertraline, escitalopram) have more data. Breastfeeding: excreted in breast milk; sertraline preferred SSRI in breastfeeding (lowest infant exposure).",
     "pk": {
@@ -39755,7 +39791,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Codeine metabolizes to morphine (and small amounts of codeine with weak serotonergic properties); when combined with serotonergic drugs, particularly in ultra-rapid metabolizers, can trigger serotonin syndrome. MAOIs: high risk of serotonin syndrome + opioid toxicity (separate Major interaction)",
         "management": "Monitor for serotonin syndrome (agitation, tremor, diaphoresis, clonus, hyperthermia). Avoid tramadol + codeine combination (pharmacologically redundant). Consider hydromorphone as alternative opioid analgesic in patients on serotonergic medications"
-      }
+      },
+        {
+          "drug": "Gabapentinoids (gabapentin, pregabalin) — additive respiratory depression",
+          "severity": "Major",
+          "mechanism": "Gabapentin and pregabalin potentiate the respiratory depressant effects of codeine through additive central nervous system depression; codeine itself varies significantly by CYP2D6 phenotype (ultra-rapid metabolizers may produce high morphine levels), and gabapentinoids remove the protective arousal response to hypercapnia and hypoxia; observational data (including Ontario ICES studies) demonstrates increased opioid overdose deaths with co-prescription",
+          "management": "Health Canada 2017 advisory specifically addresses opioid + gabapentinoid risk; avoid prescribing codeine and gabapentin/pregabalin together when possible; if combination is needed, start at low doses and counsel patients and caregivers on respiratory depression warning signs; consider naloxone take-home prescription (available OTC in Ontario); reassess continuing indication for each drug regularly"
+        }
     ],
     "pregnancy": "Avoid in pregnancy if possible — use acetaminophen as first-line. If opioid analgesia required, use lowest effective dose for shortest duration. SHORT-TERM use: associated with neonatal opioid withdrawal syndrome if used near delivery; potential association with congenital defects at high doses (conflicting data — no firm teratogenicity evidence in humans). AVOID in first trimester at high doses; third trimester: neonatal adaptation syndrome (respiratory depression, withdrawal). Breastfeeding: AVOID — Health Canada warning (2008) following infant death in a breastfed baby of a CYP2D6 ultra-rapid metabolizer mother; morphine levels in breast milk unpredictably high in UMs; use acetaminophen or ibuprofen instead.",
     "pk": {
@@ -43356,7 +43398,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive hypotension",
         "management": "Monitor BP especially with IV use"
-      }
+      },
+        {
+          "drug": "Gabapentinoids (gabapentin, pregabalin) — additive respiratory depression",
+          "severity": "Major",
+          "mechanism": "Gabapentin and pregabalin act at voltage-gated calcium channels (α2-δ subunit), reducing excitatory neurotransmitter release; in combination with fentanyl, additive central respiratory depression occurs through complementary but non-overlapping mechanisms; multiple population-based studies (including Ontario data) show gabapentinoid co-prescription with opioids increases opioid-related death risk by 50–60% in a dose-dependent manner",
+          "management": "Health Canada and CADTH issued 2017 safety review identifying the opioid-gabapentinoid combination as a significant harm signal; if combination is clinically necessary (e.g., neuropathic pain + breakthrough pain), use minimum effective doses and educate patients on respiratory depression signs; avoid prescribing transdermal fentanyl dose increases while gabapentinoids are being titrated; naloxone take-home kit should be prescribed for all patients on this combination"
+        }
     ],
     "pregnancy": "Avoid chronic use during pregnancy. Single-dose IV/epidural fentanyl in labor is widely used and considered acceptable specialist practice. Chronic use (transdermal patch in cancer pain) leads to neonatal opioid withdrawal syndrome (NOWS) requiring NICU monitoring; not known to be teratogenic. Fentanyl is excreted in breast milk in small amounts; brief peripartum exposure is generally compatible with breastfeeding, but chronic maternal use warrants infant monitoring for sedation and respiratory depression.",
     "pk": {
@@ -46848,7 +46896,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Desvenlafaxine inhibits norepinephrine reuptake → increased sympathetic tone → elevates blood pressure and heart rate; new-onset or worsened hypertension occurs in ~3-4% of patients; diastolic BP elevation of 3-5 mmHg is common at higher doses (100 mg/day); this opposes antihypertensive therapy and may require dose adjustment of antihypertensives; conversely, in orthostatic hypotension desvenlafaxine may be beneficial",
         "management": "Monitor BP at baseline, 2 weeks, 4 weeks, then quarterly on desvenlafaxine; if BP rises >140/90 mmHg persistently, consider dose reduction or switching to SSRI (sertraline, escitalopram — minimal noradrenergic effect); in patients with existing hypertension: intensify antihypertensive regimen; avoid desvenlafaxine in uncontrolled hypertension"
-      }
+      },
+        {
+          "drug": "St. John's Wort (Hypericum perforatum)",
+          "severity": "Major",
+          "mechanism": "Desvenlafaxine (Pristiq), the active O-desmethyl metabolite of venlafaxine, inhibits serotonin and norepinephrine reuptake; combined with St. John's Wort (which has serotonergic and weak MAO-inhibiting activity), the risk of serotonin syndrome is significant; unlike venlafaxine, desvenlafaxine is minimally CYP-metabolized (mainly renal), so the pharmacokinetic induction effect of St. John's Wort is less pronounced, but the pharmacodynamic serotonergic interaction remains major",
+          "management": "Contraindicated; advise patients to disclose all herbal supplements; this combination is particularly risk-prone in patients who self-medicate depression with St. John's Wort before a formal prescription is given, then continue both; CANMAT guidelines recommend that all antidepressant patients be screened for concurrent herbal serotonergic supplement use"
+        }
     ],
     "pregnancy": "Category C. Neonatal withdrawal syndrome with 3rd trimester exposure (irritability, respiratory distress, feeding difficulty). Weigh benefit vs risk. SSRIs/SNRIs in pregnancy: individualized discussion with patient.",
     "pk": {
@@ -90268,7 +90322,13 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Opioid antagonists reverse tapentadol analgesia; naloxone reverses respiratory depression (therapeutic in overdose)",
         "management": "Naloxone is the antidote for tapentadol respiratory depression."
-      }
+      },
+        {
+          "drug": "Gabapentinoids (gabapentin, pregabalin) — additive CNS and respiratory depression",
+          "severity": "Major",
+          "mechanism": "Tapentadol (Nucynta) has dual mechanisms: μ-opioid agonism and norepinephrine reuptake inhibition; gabapentinoids (α2-δ calcium channel modulators) add CNS depressant effects; the combination produces additive respiratory depression; tapentadol is sometimes prescribed with pregabalin for neuropathic pain — this combination is high-risk and part of the polypharmacy opioid-gabapentinoid signal identified by Health Canada",
+          "management": "Health Canada 2017 safety advisory covers all opioids including tapentadol; if tapentadol + gabapentinoid combination is used for neuropathic pain (e.g., post-surgical), use minimum doses and provide explicit patient counselling; prescribe naloxone take-home (available OTC in Ontario without prescription); CADTH recommends ongoing reassessment of need for continued combination and consideration of non-pharmacological pain management alternatives"
+        }
     ],
     "pregnancy": "AVOID in pregnancy. Opioids cross the placenta → neonatal opioid withdrawal syndrome (NOWS) if chronic use in 3rd trimester; neonatal respiratory depression if taken near delivery. For pain management in pregnancy: acetaminophen preferred; limited short-term NSAID use (avoid ≥20 weeks). If chronic opioid use required in pregnancy (e.g., cancer pain): multidisciplinary approach; neonatal team at delivery for NOWS management. For OUD in pregnancy: OAT (buprenorphine-naloxone or methadone) preferred — significantly better outcomes. Breastfeeding: not recommended — opioid passes into breast milk; infant sedation and respiratory depression risk.",
     "pk": {
