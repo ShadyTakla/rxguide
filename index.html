@@ -54617,13 +54617,31 @@ var DRUGS = {
       "Contact dermatitis/allergy to local anesthetics or vasoconstrictors"
     ],
     "interactions": [
-      {
-        "drug": "MAO inhibitors (phenylephrine component)",
-        "severity": "Moderate",
-        "mechanism": "Systemic absorption of phenylephrine → pressor response enhanced by MAOIs",
-        "management": "Avoid with MAOIs"
-      }
-    ],
+        {
+          "drug": "MAO inhibitors (phenelzine, tranylcypromine, selegiline, linezolid)",
+          "severity": "Contraindicated",
+          "mechanism": "Phenylephrine is a direct alpha-1 adrenergic agonist; when MAO is inhibited, phenylephrine undergoes reduced monoamine oxidase degradation and catechol-O-methyltransferase becomes the primary metabolism pathway; systemic absorption from rectal mucosa (15–20%) can cause exaggerated hypertensive response, headache, and potential hypertensive crisis",
+          "management": "Contraindicated within 14 days of MAOI therapy; linezolid and IV methylene blue (weak MAO inhibitors) also warrant caution; use witch hazel or pramoxine-based hemorrhoid products as alternatives in MAOI-treated patients"
+        },
+        {
+          "drug": "Tricyclic antidepressants (amitriptyline, nortriptyline, imipramine)",
+          "severity": "Moderate",
+          "mechanism": "TCAs inhibit norepinephrine and serotonin reuptake transporters; phenylephrine absorption from rectal mucosa can trigger exaggerated sympathomimetic pressor response due to enhanced adrenergic sensitivity; the combination can produce significant blood pressure elevation",
+          "management": "Use with caution; monitor blood pressure if phenylephrine rectal product is used in a TCA-treated patient; prefer non-sympathomimetic hemorrhoid products (witch hazel, lidocaine, or hydrocortisone-based) in patients on TCAs or other adrenergic-sensitizing medications"
+        },
+        {
+          "drug": "Antihypertensives (beta-blockers, calcium channel blockers, ACE inhibitors)",
+          "severity": "Minor",
+          "mechanism": "Systemic phenylephrine from rectal absorption can partially antagonize antihypertensive therapy; beta-blockade (propranolol) blocks beta-mediated vasodilation, allowing unopposed alpha-1 pressor effect of phenylephrine, potentially raising blood pressure above baseline",
+          "management": "Short-term rectal phenylephrine use is generally acceptable in well-controlled hypertensive patients; advise to limit use to 7 days as directed; if persistent hemorrhoid symptoms require longer treatment, discuss with prescriber and use non-vasoconstrictive preparations; monitor BP if patient reports palpitations or headache"
+        },
+        {
+          "drug": "Thyroid disease / thyroid hormone replacement (levothyroxine)",
+          "severity": "Moderate",
+          "mechanism": "Hyperthyroid patients and those on thyroid hormone therapy have increased sensitivity to sympathomimetics due to enhanced beta-adrenergic responsiveness and increased catecholamine sensitivity; rectal phenylephrine absorption may cause exaggerated cardiovascular effects (tachycardia, palpitations, hypertension)",
+          "management": "Use phenylephrine rectal products with caution in hyperthyroid patients or those on thyroid replacement therapy; prefer non-sympathomimetic alternatives (witch hazel, hydrocortisone, local anesthetic formulations); if used, limit duration and monitor cardiovascular symptoms"
+        }
+      ],
     "pregnancy": "Topical rectal application: generally considered safe. Hemorrhoids are very common in pregnancy. Anusol (zinc oxide based) and witch hazel pads preferred in pregnancy over phenylephrine-containing products due to minimal systemic absorption.",
     "pk": {
       "absorption": "Topical: minimal systemic",
@@ -54678,13 +54696,31 @@ var DRUGS = {
       "Rectal bleeding of unknown cause"
     ],
     "interactions": [
-      {
-        "drug": "No drug-drug interactions",
-        "severity": "Minor",
-        "mechanism": "Local rectal action only",
-        "management": "N/A"
-      }
-    ],
+        {
+          "drug": "Stimulant laxatives (bisacodyl, senna, castor oil)",
+          "severity": "Minor",
+          "mechanism": "Glycerin suppositories act as osmotic and lubricant laxatives, drawing water into the rectum and stimulating defecation; combining with oral stimulant laxatives (bisacodyl, senna) produces additive laxative effects; excessive use of both increases risk of electrolyte imbalances, dehydration, and laxative dependence",
+          "management": "Avoid routine combination use; glycerin suppositories are appropriate for short-term occasional constipation; if oral stimulant laxative is needed simultaneously, ensure adequate fluid intake; reassess bowel regimen if combination is required repeatedly — investigate underlying cause and consider osmotic laxatives (PEG 3350) as first-line for chronic constipation per CADTH guidance"
+        },
+        {
+          "drug": "Digoxin (electrolyte interaction via laxative effect)",
+          "severity": "Moderate",
+          "mechanism": "Excessive or prolonged laxative use (including repeated glycerin suppositories) can cause hypokalemia and hypomagnesemia; digoxin toxicity is significantly enhanced by hypokalemia (potassium competes with digoxin for Na/K-ATPase binding sites); single, occasional use poses minimal risk but habitual laxative use in digoxin-treated patients is hazardous",
+          "management": "Counsel digoxin-treated patients to avoid habitual laxative use; for opioid-induced constipation (common in CHF patients on digoxin), use PEG 3350 as preferred bowel regimen; monitor potassium and magnesium if patient uses any laxatives regularly; target K+ >4.0 mmol/L and Mg²⁺ >0.8 mmol/L in digoxin-treated patients"
+        },
+        {
+          "drug": "Sodium polystyrene sulfonate (Kayexalate) and sorbitol — anorectal use",
+          "severity": "Moderate",
+          "mechanism": "SPS (Kayexalate) is administered rectally as a retention enema in sorbitol for hyperkalemia management; co-administration with glycerin suppository could stimulate defecation and shorten SPS contact time in the colon, reducing potassium binding efficacy",
+          "management": "Do not administer glycerin suppositories within 4–6 hours of an SPS retention enema; ensure adequate enema retention time (30–60 minutes) for maximum potassium exchange; if rectal SPS is given for acute hyperkalemia, glycerin suppository should be withheld until potassium has been remeasured and clinical goal achieved"
+        },
+        {
+          "drug": "Rectal formulations (enemas, other suppositories) — mechanical interaction",
+          "severity": "Minor",
+          "mechanism": "Glycerin suppositories and other rectal preparations (corticosteroid foam enemas, mesalamine suppositories, lidocaine anorectal creams) should be administered separately; simultaneous insertion or close timing may reduce contact time for each medication; glycerin's cathartic effect may expel other suppositories before absorption is complete",
+          "management": "Administer glycerin suppositories separately from therapeutic rectal formulations; if a medicated suppository (e.g., mesalamine for ulcerative proctitis) is required and constipation must also be managed, administer glycerin suppository first, allow complete evacuation, then administer the therapeutic suppository at a separate time"
+        }
+      ],
     "pregnancy": "Safe. Commonly used for constipation in pregnancy when oral laxatives are insufficient. Rectal use avoids any systemic absorption concerns. Safe for all trimesters.",
     "pk": {
       "absorption": "Minimal systemic (<10% absorbed rectally)",
@@ -54923,13 +54959,31 @@ var DRUGS = {
       "Pregnancy (high-concentration formulations — systemic absorption concerns)"
     ],
     "interactions": [
-      {
-        "drug": "Other keratolytics / retinoids",
-        "severity": "Moderate",
-        "mechanism": "Additive skin irritation",
-        "management": "Avoid concurrent application; alternate or use separate areas"
-      }
-    ],
+        {
+          "drug": "Aspirin / oral salicylates (ASA, choline salicylate)",
+          "severity": "Moderate",
+          "mechanism": "Large-area topical salicylic acid application (e.g., keratolytic body treatment) can result in significant systemic salicylate absorption (up to 20–30% with occlusion); additive salicylate toxicity with concurrent oral ASA, particularly in children where salicylate levels can reach toxic range (tinnitus, hyperventilation, metabolic acidosis)",
+          "management": "Avoid concurrent oral salicylates during large-area topical salicylic acid treatment; limit topical salicylic acid to small areas (<20% body surface area) in adults; contraindicate in children <2 years (risk of Reye-like syndrome and salicylate toxicity); use lowest effective concentration for keratolytic purposes"
+        },
+        {
+          "drug": "Retinoids (tretinoin, adapalene, isotretinoin) — acne context",
+          "severity": "Moderate",
+          "mechanism": "Both salicylic acid and retinoids are used in acne management; salicylic acid (keratolytic, comedolytic) combined with topical retinoids (tretinoin) increases local skin irritation, peeling, dryness, and barrier disruption; not a pharmacokinetic interaction but clinically significant adverse synergy",
+          "management": "Stagger application times (e.g., salicylic acid cleanser in morning, tretinoin at night); introduce one agent at a time and allow skin to acclimatize; recommend barrier moisturizer and SPF; combination is common in acne management but requires counselling on expected initial irritation"
+        },
+        {
+          "drug": "Benzoyl peroxide — combination keratolytic context",
+          "severity": "Minor",
+          "mechanism": "Benzoyl peroxide and salicylic acid are both comedolytic; combination use in acne is complementary but increases drying and irritation; no pharmacokinetic interaction; concurrent use on same area may cause more peeling and erythema",
+          "management": "Can be used together in acne regimens (morning/night alternation or different products); counsel on expected dryness; use non-comedogenic moisturizer; if significant irritation develops, reduce frequency of one agent"
+        },
+        {
+          "drug": "Methotrexate (high-dose systemic context)",
+          "severity": "Major",
+          "mechanism": "In patients receiving systemic methotrexate for psoriasis or rheumatoid arthritis, concurrent high-concentration topical salicylic acid over large psoriatic plaques adds to systemic salicylate burden; salicylates also displace methotrexate from protein binding and reduce renal clearance, potentially causing methotrexate toxicity",
+          "management": "Use topical salicylic acid cautiously and in limited areas in patients on systemic methotrexate; avoid high-strength preparations (>6%) over large body surface areas; monitor CBC and liver enzymes; for psoriasis management, coordinate topical regimen with dermatologist managing methotrexate"
+        }
+      ],
     "pregnancy": "Category C. Low-concentration (≤2%) spot treatment: generally considered safe for short-term acne use. High-concentration (17–40%): AVOID in pregnancy — systemic salicylate absorption possible. Benzoyl peroxide preferred for acne in pregnancy.",
     "pk": {
       "absorption": "Topical: variable; high-concentration/large area increases systemic absorption",
@@ -55170,13 +55224,31 @@ var DRUGS = {
       "Near open flame (flammable)"
     ],
     "interactions": [
-      {
-        "drug": "No drug-drug interactions (topical)",
-        "severity": "Minor",
-        "mechanism": "Minimal systemic absorption",
-        "management": "N/A"
-      }
-    ],
+        {
+          "drug": "G6PD deficiency (camphor component — hemolytic risk)",
+          "severity": "Contraindicated",
+          "mechanism": "Camphor generates reactive oxygen species that oxidize glutathione and cause Heinz body formation in red blood cells; G6PD-deficient erythrocytes cannot regenerate NADPH to neutralize this oxidative stress; even topical camphor-menthol products can cause hemolytic anemia via skin absorption, particularly in infants and children",
+          "management": "Contraindicated in G6PD-deficient patients; substitute menthol-only or ice-pack cooling for symptomatic relief; screen for G6PD deficiency in populations at risk (Mediterranean, African, Asian descent) before recommending camphor-containing products; absolutely contraindicated in neonates and infants"
+        },
+        {
+          "drug": "Warfarin (camphor-containing liniments)",
+          "severity": "Minor",
+          "mechanism": "Case reports suggest camphor applied over large surface areas with occlusion may weakly inhibit CYP1A2 and CYP2C9; minimal at standard topical doses; camphor also increases local skin blood flow which may slightly enhance absorption of transdermal patches applied nearby",
+          "management": "Standard camphor-menthol balms (e.g., Vicks VapoRub, Tiger Balm) applied per label do not significantly affect warfarin; advise against applying over transdermal medication patches (fentanyl, nitroglycerin, hormone patches) as warming/vasodilatory effect can increase patch drug absorption; monitor for drug effect changes"
+        },
+        {
+          "drug": "Children under 2 years — ingestion and inhalation risk",
+          "severity": "Major",
+          "mechanism": "Camphor is highly toxic in young children; even 1 g oral ingestion can cause seizures, CNS depression, hepatotoxicity, and death; skin application on the face or under the nose (to improve nasal breathing) can cause respiratory distress and seizure via inhalation; menthol at high doses also causes respiratory depression in infants",
+          "management": "Health Canada warning: do not apply camphor or menthol products to the face, nose, or under the nose of children under 2 years; store products out of reach; Vicks VapoRub labelling now restricts use to children 2+ years; for infant nasal congestion use saline drops only; treat camphor ingestion as a medical emergency (Poison Control 1-800-268-9017)"
+        },
+        {
+          "drug": "Topical corticosteroids / transdermal patches — occlusion enhancement",
+          "severity": "Moderate",
+          "mechanism": "Camphor and menthol act as penetration enhancers by disrupting stratum corneum lipid bilayers and increasing skin permeability; applying camphor-menthol preparations before or over topical corticosteroids can significantly increase steroid absorption, raising systemic exposure and HPA axis suppression risk",
+          "management": "Do not apply camphor-menthol products to the same skin area as topical steroids or transdermal patches; allow at least 2 hours between applications if both are needed for different purposes; counsel patients with chronic skin conditions using topical steroids not to apply counter-irritant balms to the treated area"
+        }
+      ],
     "pregnancy": "Category C. Topical chest/musculoskeletal use: generally safe in small amounts in pregnancy. Camphor crosses placenta — avoid large applications or prolonged use. Menthol component considered safe.",
     "pk": {
       "absorption": "Topical: small systemic amount; camphor readily absorbed",
@@ -55226,13 +55298,31 @@ var DRUGS = {
       "Asthma (menthol may rarely trigger bronchospasm in sensitized individuals)"
     ],
     "interactions": [
-      {
-        "drug": "No significant interactions",
-        "severity": "Minor",
-        "mechanism": "Topical local action",
-        "management": "N/A"
-      }
-    ],
+        {
+          "drug": "Homeopathic remedies (camphor-containing products)",
+          "severity": "Minor",
+          "mechanism": "Menthol activates TRPM8 (cold-sensitive transient receptor potential channel) producing cooling sensation; in homeopathic practice, menthol and camphor are believed to antidote homeopathic remedies; this is not a pharmacological interaction but relevant to patient counselling in those using homeopathic treatments",
+          "management": "No clinical pharmacological interaction; advise patients interested in homeopathic medicines to follow guidance of their homeopathic practitioner regarding menthol use; from an evidence-based standpoint, menthol lozenges are safe with all evidence-based medications"
+        },
+        {
+          "drug": "Cyclosporine (intestinal absorption, transient effect)",
+          "severity": "Minor",
+          "mechanism": "In vitro evidence suggests menthol may transiently inhibit intestinal P-glycoprotein and CYP3A4; at doses found in lozenges (1–10 mg menthol), this effect is likely negligible; high-dose topical menthol or concentrated peppermint oil preparations present higher risk",
+          "management": "Menthol lozenges at typical doses (1–2 lozenges) pose minimal risk to cyclosporine or other CYP3A4 substrate pharmacokinetics; concentrated peppermint oil supplements (several hundred mg) warrant more caution; advise transplant patients on immunosuppressants to inform their care team of herbal supplement use"
+        },
+        {
+          "drug": "Topical anesthetics / throat sprays (benzocaine, lidocaine)",
+          "severity": "Minor",
+          "mechanism": "Menthol produces counter-irritant analgesia via TRPM8 and weak local sodium channel modulation; when combined with topical anesthetics in combination throat products, additive local anesthetic effect may increase mucosal numbness; no pharmacokinetic interaction",
+          "management": "Combination is generally safe and provides enhanced symptomatic relief; counsel patient not to eat or drink immediately after using combination anesthetic-menthol throat sprays or lozenges due to impaired swallowing reflex; particularly important for the elderly and young children"
+        },
+        {
+          "drug": "G6PD deficiency — menthol safety",
+          "severity": "No interaction",
+          "mechanism": "Menthol (unlike camphor and naphthalene) does not cause clinically significant oxidative stress on red blood cells; menthol lozenges are safe in G6PD-deficient patients; this is an important negative interaction to document given patient confusion between menthol and camphor products",
+          "management": "Menthol lozenges are safe in G6PD deficiency; clarify for patients that menthol is distinct from camphor and naphthalene (mothballs), which ARE contraindicated in G6PD deficiency; reassure patients who may have avoided menthol unnecessarily"
+        }
+      ],
     "pregnancy": "Menthol lozenges: generally safe in pregnancy — minimal systemic absorption. Avoid benzocaine-containing lozenges in high frequency (methemoglobin risk). Saltwater gargles, honey-lemon tea equally effective.",
     "pk": {
       "absorption": "Minimal systemic",
@@ -55286,13 +55376,31 @@ var DRUGS = {
       "Contact dermatitis/allergy to witch hazel components"
     ],
     "interactions": [
-      {
-        "drug": "No drug-drug interactions",
-        "severity": "Minor",
-        "mechanism": "Topical use only",
-        "management": "N/A"
-      }
-    ],
+        {
+          "drug": "Topical corticosteroids (hydrocortisone, betamethasone)",
+          "severity": "Minor",
+          "mechanism": "Witch hazel (Hamamelis virginiana) contains tannins with astringent and mild anti-inflammatory activity; used concurrently with topical corticosteroids for anorectal symptoms, the combination may provide additive symptom relief; no pharmacokinetic interaction; tannins may slightly reduce corticosteroid absorption if applied simultaneously",
+          "management": "Apply witch hazel pads (Tucks) first as a cleanser/astringent, then apply topical corticosteroid after the area is dry; sequential application is appropriate; combination provides astringent anti-inflammatory and anti-pruritic effects; safe for concurrent use"
+        },
+        {
+          "drug": "Anticoagulants (warfarin, heparin) — tannin absorption context",
+          "severity": "Minor",
+          "mechanism": "Witch hazel tannins can bind to proteins and form complexes; large oral intake could theoretically affect drug absorption, but topical/rectal use produces minimal systemic tannin exposure; topical witch hazel is not expected to affect warfarin pharmacokinetics or INR",
+          "management": "Topical and rectal witch hazel products are safe in anticoagulated patients; witch hazel teas or oral preparations deserve more caution due to tannin-mediated iron and drug absorption interference; advise patients that Tucks pads do not require any anticoagulation monitoring changes"
+        },
+        {
+          "drug": "Topical local anesthetics (pramoxine, lidocaine, benzocaine) — hemorrhoid context",
+          "severity": "No interaction",
+          "mechanism": "Many hemorrhoid preparations combine witch hazel with local anesthetics (e.g., witch hazel + pramoxine in Anusol Plus); no pharmacokinetic interaction; additive symptomatic relief with different mechanisms (astringent/anti-inflammatory vs. sodium channel blockade)",
+          "management": "Combination products are clinically appropriate for hemorrhoid management; counsel patient to use after each bowel movement and at bedtime; limit benzocaine-containing combinations (see benzocaine interactions); prefer pramoxine-based combinations for prolonged use due to lower sensitization risk than benzocaine"
+        },
+        {
+          "drug": "Iron supplements / oral medications — tannin binding (oral witch hazel products)",
+          "severity": "Moderate",
+          "mechanism": "Witch hazel tannins form insoluble complexes with iron, reducing oral iron bioavailability; this is relevant for patients taking witch hazel tea or oral extracts concurrently with iron supplements; topical rectal preparations have negligible systemic tannin absorption",
+          "management": "Separate oral iron supplements from any oral witch hazel preparations by at least 2 hours; topical rectal witch hazel products (pads, creams) do not require timing separation from oral medications; counsel patients using witch hazel tea internally to separate from iron, calcium, and oral medications requiring high bioavailability"
+        }
+      ],
     "pregnancy": "Category A. Completely safe. One of the preferred topical agents for hemorrhoids in pregnancy (over phenylephrine-containing products). Very commonly used postpartum for perineal healing (episiotomy/lacerations) and hemorrhoids.",
     "pk": {
       "absorption": "Topical: minimal systemic",
@@ -55351,13 +55459,31 @@ var DRUGS = {
       "Broken skin"
     ],
     "interactions": [
-      {
-        "drug": "Sunscreen",
-        "severity": "Minor",
-        "mechanism": "Apply sunscreen first, DEET second; DEET reduces sunscreen SPF by ~35%",
-        "management": "Apply sunscreen first; increase sunscreen reapplication frequency; use SPF 50 if using DEET concurrently"
-      }
-    ],
+        {
+          "drug": "Sunscreen (oxybenzone, avobenzone, chemical UV filters)",
+          "severity": "Moderate",
+          "mechanism": "Concurrent application of DEET (N,N-diethyl-meta-toluamide) with chemical sunscreen significantly increases DEET dermal absorption by 34% according to FDA/Health Canada studies; oxybenzone acts as a penetration enhancer for DEET; increased systemic DEET exposure raises neurotoxicity and skin reaction risk, particularly in children",
+          "management": "Health Canada recommends applying sunscreen first, allowing it to absorb for 15–30 minutes, then applying DEET separately; avoid combination products (sunscreen + DEET); do not apply DEET under clothing or to broken skin; in children, use lowest effective DEET concentration (≤10% for children) and limit to exposed skin areas"
+        },
+        {
+          "drug": "Other insect repellents (picaridin, IR3535, permethrin clothing treatment)",
+          "severity": "No interaction",
+          "mechanism": "No pharmacokinetic interactions between DEET and other insect repellents applied topically; picaridin (icaridin) and IR3535 are often preferred in children due to similar efficacy with lower skin irritation potential and no penetration-enhancing effect with sunscreen; permethrin is applied to clothing (not skin) and does not interact with DEET applied to skin",
+          "management": "DEET and permethrin-treated clothing can be safely used together (DEET on skin, permethrin on clothing) for highest protection in high-risk areas (endemic Lyme, West Nile); this combination is recommended by Public Health Ontario for outdoor activities in high-tick environments"
+        },
+        {
+          "drug": "Plastic materials / synthetic fabrics — product interaction",
+          "severity": "Minor",
+          "mechanism": "DEET dissolves or damages certain plastics, synthetic fabrics, vinyl, spandex, and coated materials; this is a chemical (not pharmacological) interaction relevant to product counselling; damaged fabrics may then have enhanced DEET contact with skin",
+          "management": "Advise patients to apply DEET only to exposed skin or natural-fiber clothing (cotton, wool); avoid applying to watch bands, eyeglass frames, painted surfaces, leather, or synthetic athletic wear; wash treated skin after returning indoors"
+        },
+        {
+          "drug": "Cholinesterase inhibitors (physostigmine, pyridostigmine, donepezil, rivastigmine)",
+          "severity": "Moderate",
+          "mechanism": "DEET is a weak acetylcholinesterase inhibitor itself; concurrent use with pharmacological cholinesterase inhibitors (dementia therapy, myasthenia gravis treatment) theoretically enhances cholinergic effects; Gulf War Syndrome investigations examined synergistic neurotoxicity from DEET + pyridostigmine + permethrin combination",
+          "management": "Patients on cholinesterase inhibitors (donepezil, rivastigmine, galantamine for Alzheimer's; pyridostigmine for myasthenia gravis) should use the lowest effective DEET concentration; picaridin (icaridin) is a safer alternative with no cholinesterase activity; limit DEET exposure area and duration in this population"
+        }
+      ],
     "pregnancy": "Health Canada: DEET is SAFE and RECOMMENDED in pregnancy to prevent mosquito-borne diseases (Zika, malaria, West Nile). Use 10–30% concentration on exposed skin. Benefits of preventing disease far outweigh minimal DEET risk.",
     "pk": {
       "absorption": "Dermal absorption: 5–15% (higher through skin damaged or sunburned)",
@@ -55474,19 +55600,31 @@ var DRUGS = {
       "Previous complicated pregnancies (preterm birth, placenta previa)"
     ],
     "interactions": [
-      {
-        "drug": "Oxytocin / prostaglandins (induction agents)",
-        "severity": "Moderate",
-        "mechanism": "Additive uterotonic effects (theoretical)",
-        "management": "Disclose herbal supplement use to obstetric provider"
-      },
-      {
-        "drug": "Iron",
-        "severity": "Minor",
-        "mechanism": "Tannins in tea may bind iron — reduce absorption",
-        "management": "Separate raspberry leaf tea from iron supplements"
-      }
-    ],
+        {
+          "drug": "Oxytocin / cervical ripening agents (misoprostol, dinoprostone)",
+          "severity": "Major",
+          "mechanism": "Raspberry leaf (Rubus idaeus) contains fragarine and other uterotonic compounds that stimulate smooth muscle contractions; additive uterotonic effect with oxytocin or prostaglandins used for labour induction; risk of uterine hyperstimulation, fetal distress, and precipitous delivery",
+          "management": "Contraindicated concurrent use; advise women not to use raspberry leaf tea or supplements once cervical ripening or labour induction agents have been initiated; raspberry leaf is sometimes self-used in late pregnancy (36+ weeks) based on traditional practices, but no strong RCT data support efficacy and safety profile requires medical supervision"
+        },
+        {
+          "drug": "Antidiabetic agents (insulin, metformin, glyburide)",
+          "severity": "Moderate",
+          "mechanism": "Raspberry leaf extracts have shown modest hypoglycemic activity in animal studies; potential additive blood glucose lowering with antidiabetic medications; mechanism uncertain but may involve enhanced insulin secretion or improved peripheral insulin sensitivity",
+          "management": "Monitor blood glucose when patients with diabetes begin raspberry leaf supplementation; advise reporting of hypoglycemia symptoms; doses from tea (1–2 cups/day) are likely lower risk than concentrated extracts; counsel pregnant patients with gestational diabetes to avoid without medical guidance"
+        },
+        {
+          "drug": "Hormonal agents (estrogen, progesterone, hormonal contraceptives)",
+          "severity": "Moderate",
+          "mechanism": "Raspberry leaf contains phytoestrogenic compounds; may have weak estrogenic or antiestrogenic effects; theoretical potential to interfere with hormone-sensitive conditions or hormonal therapies, though clinical evidence is very limited",
+          "management": "Advise caution in patients with hormone-sensitive conditions (estrogen-receptor positive breast cancer, endometriosis, uterine fibroids) or those on hormonal therapy; avoid during pregnancy before 36 weeks without obstetrical guidance; limited evidence but precautionary principle applies"
+        },
+        {
+          "drug": "Anticoagulants / antiplatelets (warfarin, ASA, clopidogrel)",
+          "severity": "Minor",
+          "mechanism": "Raspberry leaf contains tannins and some compounds with mild antiplatelet activity; theoretical additive bleeding risk with anticoagulants or antiplatelets; clinical evidence is weak but the interaction is biologically plausible",
+          "management": "Monitor for increased bruising or bleeding in anticoagulated patients using raspberry leaf; advise disclosure to prescriber; INR should be checked if warfarin-treated patient begins raspberry leaf supplementation; advise stopping 1–2 weeks before elective surgery"
+        }
+      ],
     "pregnancy": "Evidence: limited — 1 small RCT showed modest reduction in labor stage 2 duration; no clear safety/efficacy evidence. Use only in 3rd trimester if at all. Avoid in 1st/2nd trimester. Disclose use to healthcare provider. SOGC: insufficient evidence to recommend.",
     "pk": {
       "absorption": "Variable — herbal constituents",
@@ -61082,13 +61220,31 @@ var DRUGS = {
       "Application to mucous membranes (nasal, oral interior, eye, genital)"
     ],
     "interactions": [
-      {
-        "drug": "None significant (topical, minimal systemic absorption)",
-        "severity": "None",
-        "mechanism": "N/A",
-        "management": "N/A"
-      }
-    ],
+        {
+          "drug": "Topical acyclovir / penciclovir — same indication, alternative agents",
+          "severity": "No interaction",
+          "mechanism": "Docosanol (Abreva) works by preventing viral fusion at the host cell membrane (lipid envelope fusion inhibitor); acyclovir/penciclovir work intracellularly by inhibiting viral DNA polymerase after thymidine kinase phosphorylation; completely different mechanisms with no pharmacokinetic interaction",
+          "management": "Not typically combined on the same lesion; if switching agents, either can be used independently; if one fails (e.g., acyclovir-resistant HSV-1, rare), docosanol may be tried but evidence for resistance-setting efficacy is limited; systemic antivirals (valacyclovir) preferred for frequent recurrences or immunocompromised patients"
+        },
+        {
+          "drug": "Oral antiviral therapy (valacyclovir, famciclovir) — combination context",
+          "severity": "No interaction",
+          "mechanism": "No pharmacokinetic interaction between topical docosanol and systemic antiherpetics; the combination is sometimes used when oral antivirals are initiated after lesion formation begins; docosanol targets early entry steps while oral antivirals reduce viral replication and duration",
+          "management": "Safe to use concurrently; for patients with frequent recurrences, prescribe episodic oral valacyclovir (2 g BID × 1 day or 1 g BID × 5 days); docosanol can be applied to lesion site simultaneously; counsel patient on early initiation of both agents at prodrome/first sign for best outcomes"
+        },
+        {
+          "drug": "Sunscreen / lip balm — product interaction consideration",
+          "severity": "Minor",
+          "mechanism": "Docosanol is formulated in an occlusive cream base; applying sunscreen or lip balm on top of docosanol cream may dilute the active ingredient or affect adherence to the oral mucosa/perioral skin, reducing contact time and efficacy",
+          "management": "Apply docosanol cream first and allow to absorb before applying lip balm or sunscreen over the area; UV exposure (sunlight) is a known cold sore trigger; recommend SPF-15+ lip protection to reduce recurrence frequency; docosanol has no photosensitizing properties"
+        },
+        {
+          "drug": "Immunosuppressed patients (transplant, HIV, high-dose corticosteroids)",
+          "severity": "Moderate",
+          "mechanism": "Docosanol is an OTC topical product designed for immunocompetent patients with occasional cold sores; in immunosuppressed individuals, HSV lesions are more extensive, slower to heal, and at risk of acyclovir-resistant strains; topical docosanol alone provides insufficient coverage",
+          "management": "Do not rely on OTC docosanol as primary therapy in immunosuppressed patients; refer to prescriber for systemic antiviral therapy (valacyclovir or famciclovir); for acyclovir-resistant HSV in immunocompromised, IV foscarnet is the standard of care; docosanol may be used as an adjunct but is not a substitute for systemic treatment"
+        }
+      ],
     "pregnancy": "No data — minimal absorption likely safe; counsel risk/benefit for cosmetic indication.",
     "pk": {
       "absorption": "Minimal systemic absorption",
@@ -91515,8 +91671,31 @@ var DRUGS = {
       "Avoid contact with eyes and mucous membranes"
     ],
     "interactions": [
-      "No clinically significant interactions"
-    ],
+        {
+          "drug": "CYP450-metabolized drugs (warfarin, carbamazepine, cyclosporine) — piperonyl butoxide inhibition",
+          "severity": "Minor",
+          "mechanism": "Piperonyl butoxide (PBO) is a potent CYP450 inhibitor used as a synergist to prevent pyrethrin breakdown; with topical scalp application, systemic absorption is low (~0.4%) but repeated or large-area use could theoretically inhibit CYP1A2, CYP2B6, and CYP3A4, increasing levels of co-administered substrates",
+          "management": "Single-treatment scalp applications (standard pediculicide use) carry negligible systemic PBO exposure; no dose adjustment needed for typical lice treatment; caution with extended or whole-body application in patients on narrow-therapeutic-index CYP substrates; prefer topical applications to scalp only per product labelling"
+        },
+        {
+          "drug": "Permethrin — resistance and combination context",
+          "severity": "No interaction",
+          "mechanism": "Pyrethrin/PBO and permethrin (a synthetic pyrethroid) share the same mechanism (sodium channel disruption in insect nerve membranes); cross-resistance is possible in Pediculus humanus capitis populations; combining them does not enhance efficacy when resistance is present",
+          "management": "If pyrethrin/PBO treatment fails (persistent live lice 9–10 days after two treatments), do not retry the same agent or switch to permethrin — consider resistance; use an alternative class (spinosad, ivermectin lotion, malathion) per current ACMG/provincial lice management guidelines"
+        },
+        {
+          "drug": "Organophosphate insecticides / malathion (mechanistic similarity context)",
+          "severity": "Moderate",
+          "mechanism": "Malathion (organophosphate) inhibits acetylcholinesterase; if malathion is used after failed pyrethrin treatment, there is no direct pharmacokinetic interaction, but concurrent household use of organophosphate pesticides with pyrethrin products may additively affect cholinesterase activity if significant systemic absorption occurs (e.g., in children with broken skin)",
+          "management": "Avoid simultaneous household use of pyrethrin pediculicides with organophosphate pesticides; sequential use is acceptable (pyrethrin first, then malathion for resistance) with appropriate washout and application per instructions; monitor for any cholinergic symptoms (lacrimation, salivation, bradycardia) if large-area exposure occurs"
+        },
+        {
+          "drug": "Pregnancy and neonates — safety profile",
+          "severity": "Minor",
+          "mechanism": "Pyrethrin is derived from chrysanthemum flowers; topical absorption is minimal; PBO has not been shown to be teratogenic in animal studies at low doses; however, data in first-trimester human exposure are limited; neonates and infants under 2 years have higher relative skin absorption",
+          "management": "Health Canada: pyrethrin/PBO (R&C shampoo) is not recommended for infants under 2 years; permethrin 1% (Nix) is preferred in young children; for pregnant women, permethrin is preferred over pyrethrin due to slightly more data; nit combing (wet combing) is the safest option when pharmacotherapy is to be avoided"
+        }
+      ],
     "monitoring": [
       "Nit and louse presence 7 days after treatment",
       "Re-treat if live lice found"
