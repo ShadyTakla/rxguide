@@ -23257,7 +23257,7 @@ var DRUGS = {
         "management": "Avoid simvastatin >20 mg with amiodarone. Use rosuvastatin or pravastatin (not CYP3A4 substrates) instead."
       },
       {
-        "drug": "QTc-prolonging drugs (sotalol, dofetilide, quinidine, haloperidol, methadone, cisapride, fluoroquinolones)",
+        "drug": "QTc-prolonging drugs (sotalol, dofetilide, quinidine, haloperidol, quetiapine, methadone, cisapride, moxifloxacin, azithromycin, clarithromycin, citalopram, escitalopram, domperidone, hydroxychloroquine, ondansetron)",
         "severity": "Major",
         "mechanism": "Additive QTc prolongation — torsades de pointes risk",
         "management": "Avoid concurrent QTc-prolonging agents with amiodarone. If unavoidable: ECG monitoring; correct electrolytes."
@@ -25789,7 +25789,7 @@ var DRUGS = {
         "management": "Contraindicated; 14-day washout in both directions; linezolid: stop escitalopram if elective use"
       },
       {
-        "drug": "QTc-prolonging drugs (antipsychotics, amiodarone, sotalol, methadone, azithromycin, domperidone, ondansetron)",
+        "drug": "QTc-prolonging drugs (amiodarone, sotalol, haloperidol, quetiapine, methadone, azithromycin, moxifloxacin, clarithromycin, citalopram, domperidone, hydroxychloroquine, ondansetron)",
         "severity": "Major",
         "mechanism": "Additive QTc prolongation — escitalopram prolongs QTc in a dose-dependent manner (Health Canada advisory: maximum dose 20 mg/day generally; 10 mg/day in elderly, hepatic impairment, or with CYP2C19 inhibitors); risk of torsades de pointes",
         "management": "Avoid combining with other QTc-prolonging drugs; limit escitalopram to 10 mg in elderly or on CYP2C19 inhibitors; obtain baseline ECG if multiple QT-prolonging drugs being combined"
@@ -27017,7 +27017,7 @@ var DRUGS = {
         "management": "Use lowest effective doses; avoid alcohol; monitor respiratory status"
       },
       {
-        "drug": "QTc-prolonging drugs (haloperidol, methadone, ondansetron, clarithromycin, antifungals, fluoroquinolones)",
+        "drug": "QTc-prolonging drugs (amiodarone, sotalol, haloperidol, methadone, azithromycin, moxifloxacin, clarithromycin, citalopram, escitalopram, domperidone, hydroxychloroquine, ondansetron, antifungals)",
         "severity": "Major",
         "mechanism": "Additive QTc prolongation → torsades de pointes risk",
         "management": "Avoid combinations; if necessary, monitor ECG; minimize quetiapine dose; correct hypokalemia/hypomagnesemia"
@@ -28132,7 +28132,7 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "QTc-prolonging drugs (azithromycin, methadone, TCAs, class IA antiarrhythmics, fluoroquinolones, ondansetron)",
+        "drug": "QTc-prolonging drugs (amiodarone, sotalol, azithromycin, moxifloxacin, clarithromycin, methadone, TCAs, class IA antiarrhythmics, citalopram, escitalopram, domperidone, hydroxychloroquine, quetiapine, ondansetron)",
         "severity": "Major",
         "mechanism": "Haloperidol blocks hERG potassium channels → dose-dependent QTc prolongation; additive with other QTc-prolonging drugs → torsades de pointes risk; IV haloperidol has greater QTc effect than oral; haloperidol is among the highest-risk antipsychotics for TdP",
         "management": "Avoid IV haloperidol with QTc-prolonging drugs; obtain baseline ECG before starting haloperidol; repeat ECG after dose initiation and increases; correct hypokalemia/hypomagnesemia (cofactors for TdP); maximum oral haloperidol 20 mg/day for QTc safety"
@@ -30443,7 +30443,8 @@ var DRUGS = {
           "severity": "Major",
           "mechanism": "Both methotrexate and leflunomide independently carry hepatotoxicity risk; combination use markedly increases liver enzyme elevation (3× ULN in up to 9% of patients in trials), hepatic fibrosis risk, and risk of life-threatening hepatic failure; the combination is generally discouraged outside of specialist-supervised protocols",
           "management": "CADTH and Canadian Rheumatology Association advise against routine combination methotrexate + leflunomide; if combination is used (e.g., inadequate response to either alone), monitor LFTs monthly for 6 months, then every 6–8 weeks; both drugs require baseline LFTs, CBC, and renal function; discontinue if ALT exceeds 3× ULN; a leflunomide cholestyramine washout procedure (cholestyramine 8 g TID × 11 days) is available for rapid drug elimination if toxicity occurs"
-        }
+        },
+        {"drug": "Azathioprine (AZA) — concurrent conventional DMARD", "severity": "Major", "mechanism": "Methotrexate and azathioprine are both immunosuppressants but work via different mechanisms (MTX: folate antagonist; AZA: thiopurine purine antimetabolite). Combination carries additive myelosuppression risk (leukopenia, thrombocytopenia) and additive hepatotoxicity (MTX → hepatic fibrosis; AZA → nodular regenerative hyperplasia). No direct pharmacokinetic interaction. ACR 2022 RA Guidelines: combination conventional DMARDs not recommended for RA due to increased toxicity without meaningful efficacy benefit vs MTX monotherapy or MTX + biologic.", "management": "ACR 2022 RA Guidelines: do not routinely combine methotrexate with azathioprine — inadequate response to MTX should prompt addition of a biologic or JAK inhibitor, not AZA. If combination clinically essential (e.g., transplant recipient with concurrent RA/IBD): rheumatology/GI/transplant co-management; CBC weekly initially then monthly; LFTs monthly; dose-reduce both agents. Monitor for opportunistic infections (dual DMARD immunosuppression). Azathioprine in IBD: if patient also on MTX for RA, require specialist coordination to avoid compounded toxicity."}
     ],
     "pregnancy": "ABSOLUTELY CONTRAINDICATED FOR FEMALES — TERATOGENIC; CATEGORY X. Methotrexate embryopathy: craniofacial abnormalities, limb defects, neural tube defects, fetal growth restriction, spontaneous abortion. FEMALES: effective contraception during therapy AND ≥3 months after stopping (1 ovulation cycle). MALES (UPDATED PER EULAR 2024 + Wallenius/Larsen studies): low-dose MTX (≤25 mg/wk for IMID) does NOT impair sperm quality/DNA, NOT increase miscarriage or birth defect risk in offspring. EULAR 2024: 'methotrexate may be continued in men trying to conceive.' Health Canada PM still has older 3-month male guidance — discuss latest evidence with male patients. PREGNANCY DETECTED ON THERAPY: stop immediately; folic acid 5 mg/day; refer obstetrics/genetics. Breastfeeding: CONTRAINDICATED — methotrexate excreted in breast milk.",
     "pk": {
@@ -30747,7 +30748,7 @@ var DRUGS = {
         "management": "Monitor digoxin levels when starting/stopping HCQ; reduce digoxin dose if levels rise."
       },
       {
-        "drug": "QTc-prolonging drugs (azithromycin, fluoroquinolones, methadone, ondansetron, antipsychotics)",
+        "drug": "QTc-prolonging drugs (amiodarone, sotalol, azithromycin, moxifloxacin, clarithromycin, methadone, haloperidol, quetiapine, citalopram, escitalopram, domperidone, ondansetron)",
         "severity": "Moderate-Major",
         "mechanism": "Additive QTc prolongation -> torsades de pointes (clinical concern reinforced during COVID-19; HCQ + azithromycin combination withdrawn)",
         "management": "Avoid concurrent QTc drugs; ECG if combination required; correct hypokalemia/hypomagnesemia"
@@ -31095,7 +31096,7 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "QTc-prolonging drugs (antipsychotics — haloperidol, quetiapine; methadone; amiodarone; fluoroquinolones; TCAs; ondansetron)",
+        "drug": "QTc-prolonging drugs (amiodarone, sotalol, haloperidol, quetiapine, methadone, moxifloxacin, clarithromycin, citalopram, escitalopram, domperidone, hydroxychloroquine, ondansetron, TCAs)",
         "severity": "Major",
         "mechanism": "Azithromycin prolongs QTc by hERG channel blockade; large cohort studies (Ray et al., NEJM 2012) showed increased cardiovascular mortality with azithromycin vs amoxicillin — partly attributable to QTc effects; additive with other QTc drugs → torsades de pointes; risk highest in pre-existing QTc prolongation, hypokalemia, elderly females",
         "management": "Avoid combination with known QTc-prolonging drugs; use amoxicillin-clavulanate or doxycycline as alternatives when QTc concern exists; obtain baseline ECG in high-risk patients (known LQT, on multiple QTc drugs, electrolyte abnormalities); correct hypokalemia/hypomagnesemia before treatment"
@@ -38480,7 +38481,7 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "QTc-prolonging drugs (antiarrhythmics — amiodarone, sotalol; antipsychotics — haloperidol, droperidol; fluoroquinolones; macrolides — azithromycin, erythromycin; TCAs; methadone)",
+        "drug": "QTc-prolonging drugs (amiodarone, sotalol, haloperidol, droperidol, quetiapine, moxifloxacin, azithromycin, clarithromycin, citalopram, escitalopram, domperidone, hydroxychloroquine, methadone, TCAs)",
         "severity": "Major",
         "mechanism": "Ondansetron prolongs QTc in a dose-dependent manner via hERG potassium channel blockade; IV ondansetron at 32 mg removed from market by FDA (2011) due to QTc risk; IV 32 mg dose now avoided everywhere; 8 mg IV is current maximum per-dose; additive with other QTc drugs → torsades de pointes risk",
         "management": "Avoid combinations with QTc-prolonging drugs; use alternative antiemetic (metoclopramide, prochlorperazine) in high-risk patients; obtain baseline ECG in patients with prolonged QTc or on multiple QTc drugs; maximum IV dose 8 mg per administration; correct hypokalemia/hypomagnesemia first"
@@ -39789,7 +39790,8 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Opioids reduce gastrointestinal motility via mu-opioid receptors — directly opposing domperidone's prokinetic mechanism.",
         "management": "Combination reduces domperidone's clinical effectiveness for gastroparesis and nausea. Consider dose adjustments or opioid rotation; add laxative therapy."
-      }
+      },
+        {"drug": "QTc-prolonging drugs (amiodarone, sotalol, haloperidol, quetiapine, methadone, azithromycin, moxifloxacin, clarithromycin, citalopram, escitalopram, hydroxychloroquine, ondansetron)", "severity": "Contraindicated", "mechanism": "Domperidone prolongs QTc via hERG K⁺ channel blockade — Health Canada 2012 Cardiac Safety Review led to risk minimization: maximum dose 30 mg/day (10 mg TID), shortest effective duration, avoid in cardiac patients and those on QTc-prolonging drugs. Unlike metoclopramide (CNS-penetrant), domperidone’s cardiac risk is significant despite minimal BBB penetration. CredibleMeds: domperidone = known TdP risk. Additive QTc with any other hERG-blocking drug. CYP3A4 inhibitors (clarithromycin, azole antifungals) also raise domperidone plasma levels.", "management": "Health Canada PM: CONTRAINDICATED with QTc-prolonging drugs AND with CYP3A4 inhibitors (clarithromycin, erythromycin, azole antifungals, HIV protease inhibitors) that raise domperidone levels. For nausea/gastroparesis in patients on QTc-prolonging antipsychotics or antiarrhythmics: substitute metoclopramide 10 mg TID short-course (lower QTc risk) or ondansetron 4 mg PRN with ECG monitoring. Maximum domperidone 30 mg/day, shortest duration. ECG before initiation if any QTc risk factor. Domperidone + clarithromycin/azithromycin: particularly dangerous — avoid combination entirely."}
     ],
     "pregnancy": "Generally avoided in pregnancy due to insufficient safety data — not recommended as first-line antiemetic. Nausea and vomiting of pregnancy (NVP) should first be managed with established first-line options: doxylamine/pyridoxine (Diclectin — 1st-line in Canada), pyridoxine (vitamin B6) alone, ginger, ondansetron 4–8 mg PRN, or metoclopramide. Domperidone is considered only if all first-line antiemetics have failed for severe NVP or hyperemesis gravidarum. Limited human pregnancy data — no well-controlled studies. Animal reproductive studies have not demonstrated teratogenicity at standard doses. Health Canada advises caution. The QTc prolongation risk also applies during pregnancy (pregnancy itself increases QTc slightly). Avoid in women with cardiac risk factors.",
     "pk": {
@@ -40741,7 +40743,8 @@ var DRUGS = {
           "severity": "Major",
           "mechanism": "Clarithromycin is a potent CYP3A4 inhibitor; carbamazepine is primarily metabolized by CYP3A4; co-administration increases carbamazepine plasma levels by 50–100%, leading to toxicity: diplopia, ataxia, nausea, vomiting, and at high levels, confusion and cardiac conduction abnormalities; carbamazepine also auto-induces its own CYP3A4 metabolism over time, partially limiting this effect, but the initial inhibitory phase causes clinically significant toxicity",
           "management": "Avoid combination where possible; if clarithromycin is required for a carbamazepine-treated patient (e.g., H. pylori eradication, atypical pneumonia), consider azithromycin as an alternative — azithromycin is a weaker CYP3A4 inhibitor with lower risk; if combination is unavoidable, reduce carbamazepine dose by 30–50%, monitor carbamazepine levels (therapeutic range 4–12 mg/L), and review for toxicity symptoms; Health Canada product monograph for clarithromycin specifically lists carbamazepine as a major CYP3A4 substrate interaction"
-        }
+        },
+        {"drug": "QTc-prolonging drugs (amiodarone, sotalol, haloperidol, quetiapine, methadone, azithromycin, moxifloxacin, citalopram, escitalopram, domperidone, hydroxychloroquine, ondansetron, TCAs)", "severity": "Major", "mechanism": "Clarithromycin has a dual QTc risk mechanism: (1) direct hERG K⁺ channel blockade → QTc prolongation; (2) potent CYP3A4 inhibition raises plasma concentrations of co-administered QTc-prolonging CYP3A4 substrates (quetiapine, haloperidol, methadone, citalopram, domperidone) → compounded QTc prolongation. Multiple Canadian and international case reports of torsades de pointes with clarithromycin + antipsychotic or domperidone. CredibleMeds: clarithromycin = known TdP risk. Among macrolides: clarithromycin > azithromycin > erythromycin for CYP3A4 inhibition, but all have direct QTc risk.", "management": "Health Canada PM: avoid clarithromycin with other QTc-prolonging drugs. If treating respiratory tract infection in a patient on antipsychotic or domperidone: use doxycycline 100 mg BID, amoxicillin, or levofloxacin (verify QTc-prolonging drug list) instead of clarithromycin. Domperidone + clarithromycin: CONTRAINDICATED (Health Canada advisory). If clarithromycin unavoidable: ECG before and 2–3 days into treatment; stop if QTc >500 ms. Azithromycin shares QTc risk (less CYP3A4 inhibition) — neither macrolide is ideal with QTc-prolonging drugs; consider non-macrolide alternatives."}
     ],
     "pregnancy": "Avoid in first trimester if possible — observational data suggest a small but inconsistent signal for cardiovascular malformations and miscarriage. Azithromycin is the preferred macrolide in pregnancy. Use clarithromycin only if benefit outweighs risk (e.g., MAC, severe infection without alternative). Compatible with breastfeeding in short courses (small amounts in milk; monitor infant for GI upset).",
     "pk": {
@@ -41237,7 +41240,8 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive sedation, psychomotor impairment",
         "management": "Counsel; minimize combinations; avoid alcohol"
-      }
+      },
+        {"drug": "QTc-prolonging drugs (amiodarone, sotalol, haloperidol, quetiapine, methadone, azithromycin, moxifloxacin, clarithromycin, domperidone, hydroxychloroquine, ondansetron, TCAs)", "severity": "Major", "mechanism": "Citalopram causes dose-dependent QTc prolongation via hERG K⁺ channel blockade — unique among SSRIs (not a class effect; sertraline, paroxetine have minimal QTc impact). Health Canada 2012 safety communication: citalopram dose cap 40 mg/day (20 mg/day in elderly ≥65, hepatic impairment, CYP2C19 poor metabolizers, co-use with omeprazole). Adding any other QTc-prolonging agent creates additive hERG blockade → torsades de pointes risk. CYP2C19 inhibitors (omeprazole, fluconazole) raise citalopram levels, compounding QTc risk.", "management": "Health Canada PM: avoid citalopram with other QTc-prolonging drugs. If combination clinically required: ECG monitoring for QTc, keep citalopram ≤20 mg/day. Antipsychotic + citalopram: highest-risk combination — switch to sertraline (no significant QTc effect; preferred SSRI in cardiac patients). Clarithromycin + citalopram: CYP2C19 inhibition raises citalopram levels AND additive QTc — avoid. Omeprazole already raises citalopram levels; do not add a second QTc drug to this combination. Stop citalopram if QTc >500 ms or increases >60 ms from baseline."}
     ],
     "pregnancy": "SSRIs are generally compatible with pregnancy when depression treatment is needed — untreated maternal depression carries significant risks (preterm birth, low birthweight, postpartum depression, impaired infant attachment). Citalopram has been associated in some studies with a small signal for cardiac (septal) malformations, though this finding is inconsistent across cohorts. Sertraline is the most commonly preferred SSRI in pregnancy and lactation among SSRI-naive patients. Patients already stable on citalopram are usually continued (avoiding relapse risk) after informed-consent discussion. Third-trimester exposure may produce neonatal adaptation syndrome (jitteriness, transient respiratory distress, feeding issues — usually self-limited over days) and a small absolute risk of persistent pulmonary hypertension of the newborn (PPHN, ~3 per 1000 vs background 1-2 per 1000).",
     "pk": {
@@ -45773,7 +45777,8 @@ var DRUGS = {
         "severity": "Major (rare)",
         "mechanism": "Concurrent use has been associated with rare cases of Stevens-Johnson syndrome / toxic epidermal necrolysis",
         "management": "Avoid concurrent use if possible; if combined therapy needed, counsel patient to report any rash immediately"
-      }
+      },
+        {"drug": "Rifampin (rifampicin) and other strong CYP inducers (carbamazepine, phenytoin, phenobarbital)", "severity": "Moderate", "mechanism": "Mebendazole undergoes extensive hepatic first-pass metabolism via CYP1A2, CYP2C9, and CYP3A4 with oral bioavailability ∼20% fasted state (higher with fatty food). Rifampin is a potent inducer of multiple CYP enzymes; carbamazepine and phenytoin are moderate inducers. Co-administration can reduce mebendazole plasma AUC by >50%, potentially to sub-therapeutic levels. For intestinal helminth infections (pinworms, roundworms), local GI drug action limits clinical impact. For systemic/tissue infections (hepatic echinococcosis, neurocysticercosis), treatment failure has been documented with enzyme-inducing drugs. Health Canada mebendazole PM: monitor closely.", "management": "For intestinal helminth infections (Enterobius vermicularis, Ascaris): single-dose or short-course mebendazole is likely adequate despite enzyme induction (local luminal drug action). For systemic/tissue disease (hepatic cyst echinococcosis): avoid rifampin co-administration during mebendazole therapy. If rifampin required for TB concurrent with systemic helminthiasis: consult infectious disease — albendazole (better bioavailability, less susceptible) preferred over mebendazole for systemic infections, or optimize fat content at time of mebendazole dose to maximize absorption. Phenytoin and carbamazepine: note these are also noted in the existing interaction entry above."}
     ],
     "pregnancy": "Health Canada labelling: avoid in pregnancy, especially first trimester (animal teratogenicity at supratherapeutic doses; minimal human data). Pinworm infection itself is rarely a maternal/fetal risk and treatment can usually be deferred until after delivery; if treatment is essential during pregnancy, second/third trimester treatment is preferred and is supported by WHO for high-burden helminthiasis. Lactation: minimal milk transfer (poor systemic absorption) — generally compatible (LactMed).",
     "pk": {
@@ -45873,7 +45878,8 @@ var DRUGS = {
         "severity": "Theoretical / Minor",
         "mechanism": "Ivermectin has weak GABA-receptor activity in mammals if blood-brain barrier disrupted (e.g., meningitis, neonates) — theoretical additive sedation",
         "management": "Standard caution; clinically rare"
-      }
+      },
+        {"drug": "P-glycoprotein (P-gp/ABCB1) inhibitors — verapamil, quinidine, amiodarone, cyclosporine, ritonavir, loperamide (high dose)", "severity": "Major", "mechanism": "Ivermectin is a substrate of P-glycoprotein (P-gp/ABCB1) efflux transporter, which actively pumps ivermectin out of the CNS at the blood-brain barrier — this is the primary mechanism preventing neurotoxicity in humans (contrast with collies/MDR1-mutant dogs). P-gp inhibitors (verapamil, quinidine, amiodarone, cyclosporine, ritonavir-based HIV regimens) reduce this efflux, increasing ivermectin CNS penetration → CNS toxicity: confusion, ataxia, tremor, somnolence, encephalopathy. In high-burden Loa loa co-infection (Central Africa), neurotoxicity risk is further compounded. Health Canada ivermectin PM: caution with P-gp inhibitors.", "management": "Health Canada PM: avoid co-administration of ivermectin with known P-gp inhibitors. If treatment essential: use lowest effective ivermectin dose; monitor for CNS toxicity (confusion, tremor, ataxia, hypotension). Temporarily hold P-gp inhibitor cardiovascular drugs (amiodarone, verapamil) if clinically safe during short-course ivermectin for scabies/strongyloidiasis. In HIV patients on ritonavir-boosted regimens: avoid ivermectin where possible — if required, consult HIV/tropical disease specialist. High-dose loperamide (antidiarrheal abuse doses) exhibits P-gp inhibition — use antidiarrheal doses only. Cyclosporine (transplant patients): significant P-gp inhibitor — avoid ivermectin combination."}
     ],
     "pregnancy": "Category C — Health Canada lists pregnancy as a relative contraindication for oral ivermectin. Most observational cohort data (large mass drug administration programs in West Africa for onchocerciasis) suggest no increased risk of major birth defects, but data are limited and labeling remains cautionary. Defer elective treatment (rosacea, mild scabies) until postpartum. For severe scabies or strongyloidiasis in pregnancy, treatment can be considered after specialist consultation, ideally in 2nd/3rd trimester. Lactation: minimal milk transfer (~2% of maternal dose) — generally compatible; oral absorption in breastfed infant is poor. Topical Sklice/Soolantra: negligible systemic absorption — compatible with pregnancy and lactation.",
     "pk": {
@@ -57897,7 +57903,7 @@ var DRUGS = {
         "mechanism": "Methadone is primarily metabolized by CYP3A4 (~50%) and CYP2B6 (~40%), with minor CYP2D6 contribution. Inhibition of either major pathway significantly increases methadone AUC and t½ — prolonging QTc and increasing respiratory depression risk. Fluconazole (CYP3A4/2C9 inhibitor): increases methadone ~35-40%. Voriconazole (strong CYP3A4 + 2C19): increases methadone up to 100%. HIV antiretrovirals (ritonavir, cobicistat boosted regimens): complex effects — ritonavir may initially inhibit then induce; NNRTIs (efavirenz, nevirapine) are major inducers causing opioid withdrawal. Fluvoxamine (CYP3A4 + 1A2 + 2C19 inhibitor): increases methadone significantly — most serotonergic SSRI risk.",
         "management": "Monitor QTc and clinical opioid effect when adding/changing drugs in methadone patients. Baseline ECG required before methadone initiation; repeat at dose >80 mg/day, when adding QTc drugs, and annually. If fluconazole required (e.g., oropharyngeal candidiasis in HIV), consider dose reduction or short course. HIV management on methadone: efavirenz causes opioid withdrawal (30-50% methadone reduction) — may need 20-40% dose increase; document in OAT chart. Avoid voriconazole if possible; substitute fluconazole for most fungal indications."      },
       {
-        "drug": "QTc-prolonging drugs (antipsychotics, clarithromycin, azithromycin, domperidone, ondansetron)",
+        "drug": "QTc-prolonging drugs (amiodarone, sotalol, haloperidol, quetiapine, clarithromycin, azithromycin, moxifloxacin, citalopram, escitalopram, domperidone, hydroxychloroquine, ondansetron)",
         "severity": "Major",
         "mechanism": "Methadone itself prolongs QTc via hERG K+ channel blockade — dose-dependent (risk increases significantly >100 mg/day). Adding QTc-prolonging drugs creates additive or synergistic TdP risk. Methadone is among the most QTc-prolonging opioids. Antipsychotics commonly co-prescribed in OAT patients (haloperidol, quetiapine, risperidone all prolong QTc). Clarithromycin (common community antibiotic) is a major risk — Health Canada has issued warnings about domperidone + methadone QTc deaths.",
         "management": "Baseline ECG at methadone start; repeat at dose milestones (100 mg, 150 mg), when adding QTc drugs, and annually. Action thresholds: QTc 450-500 ms — increase monitoring frequency, reduce QTc drug burden if possible; QTc >500 ms — reduce methadone dose or switch to buprenorphine-naloxone (Suboxone) which has less QTc effect. Azithromycin preferred over clarithromycin for community infections. Antipsychotic choice: aripiprazole has least QTc effect in OAT patients. Maintain K+ >3.5 mEq/L and Mg2+ >0.7 mmol/L."
@@ -58276,7 +58282,8 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Dysglycemia (especially hypoglycemia)",
         "management": "Monitor blood glucose more frequently"
-      }
+      },
+        {"drug": "QTc-prolonging drugs (amiodarone, sotalol, haloperidol, quetiapine, methadone, azithromycin, clarithromycin, citalopram, escitalopram, domperidone, hydroxychloroquine, ondansetron, TCAs)", "severity": "Contraindicated", "mechanism": "Moxifloxacin prolongs QTc more than other fluoroquinolones (ciprofloxacin, levofloxacin) via potent hERG K⁺ channel inhibition; mean QTc prolongation ∼6 ms at therapeutic doses, up to 30 ms in susceptible patients. Additive with other QTc-prolonging drugs → torsades de pointes risk. Health Canada moxifloxacin PM contraindicates co-use with drugs known to prolong QTc. CredibleMeds: moxifloxacin = known TdP risk. Among fluoroquinolones: moxifloxacin > levofloxacin > ciprofloxacin for QTc risk.", "management": "Health Canada PM: CONTRAINDICATED with class IA/III antiarrhythmics, antipsychotics, domperidone, citalopram/escitalopram, macrolides, hydroxychloroquine, and other known QTc-prolonging drugs. If respiratory/skin infection requires antibiotic in QTc-drug-treated patient: use levofloxacin (lower QTc risk) or amoxicillin/doxycycline instead of moxifloxacin. Correct hypokalemia/hypomagnesemia before use (electrolyte imbalance substantially amplifies QTc risk). If unavoidable: baseline ECG, stop if QTc >500 ms."}
     ],
     "pregnancy": "Avoid in pregnancy. Animal data show cartilage damage in juvenile animals; limited human data. Use only if benefits outweigh risks (severe infection without alternative). Health Canada Pregnancy Category C.",
     "pk": {
@@ -72585,7 +72592,8 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Reduce sotalol absorption ~25%",
         "management": "Separate doses by 2 hours"
-      }
+      },
+        {"drug": "QTc-prolonging drugs (amiodarone, haloperidol, quetiapine, methadone, azithromycin, moxifloxacin, clarithromycin, citalopram, escitalopram, domperidone, hydroxychloroquine, ondansetron, TCAs, class IA antiarrhythmics)", "severity": "Contraindicated", "mechanism": "Sotalol prolongs QTc via both class III antiarrhythmic effects (hERG K⁺ channel blockade) and beta-blockade — uniquely, sotalol’s QTc prolongation is reverse-use-dependent (greater at slower heart rates). Additive hERG blockade with any other QTc-prolonging agent dramatically increases torsades de pointes (TdP) risk. Sotalol is among the highest-risk antiarrhythmics for TdP. Health Canada sotalol PM explicitly contraindicates use with other QTc-prolonging drugs. CredibleMeds (AZCERT): sotalol = known TdP risk.", "management": "Health Canada PM: AVOID sotalol with any other QTc-prolonging agent. If combination unavoidable: baseline ECG required; monitor QTc during dose titration — discontinue if QTc >500 ms or increases >60 ms from baseline. Ensure K⁺ >4.0 mmol/L and Mg²⁺ >0.9 mmol/L before initiation. High-risk combinations: sotalol + antipsychotic, sotalol + clarithromycin, sotalol + domperidone — seek alternative agents. CADTH: in community pharmacies, flag sotalol + domperidone/antipsychotic as a priority drug-interaction alert."}
     ],
     "pregnancy": "Health Canada Pregnancy Category B. Crosses placenta — fetal/neonatal bradycardia, hypoglycemia. Used for fetal arrhythmias under maternal-fetal medicine guidance. Excreted in breast milk in significant amounts — caution in nursing.",
     "pk": {
