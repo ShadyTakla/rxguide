@@ -36458,10 +36458,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Other topical preparations",
+        "drug": "Systemic antibiotics (trimethoprim, fusidic acid, linezolid, clindamycin) for impetigo/SSTIs",
+        "severity": "Beneficial",
+        "mechanism": "Topical mupirocin for localized impetigo/SSTI complements systemic antibiotics by providing high local drug concentrations directly at the infection site; no pharmacokinetic interaction (mupirocin is not absorbed systemically); parallel use addresses both surface bacteria and deeper tissue infection simultaneously",
+        "management": "For simple localized impetigo without systemic signs, topical mupirocin alone is first-line per Canadian guidelines (avoids systemic antibiotic use and resistance pressure); add systemic antibiotic when: fever, lymphadenopathy, extensive lesions, or immunocompromise; do not restrict mupirocin use when systemic antibiotics are given"
+      },
+      {
+        "drug": "Chlorhexidine-based wound cleansers",
         "severity": "Minor",
-        "mechanism": "Vehicle incompatibility may reduce efficacy if mixed",
-        "management": "Apply separately; do not mix with other topical products in same area at same time"
+        "mechanism": "Chlorhexidine is cationic and may physically bind to mupirocin in the application area; in vitro evidence of partial mupirocin inactivation when mixed directly with chlorhexidine; however, sequential application (clean first, apply mupirocin after drying) avoids this interaction",
+        "management": "Cleanse wound with chlorhexidine solution first, allow to fully dry, THEN apply mupirocin ointment to the dried area; do not apply mupirocin to actively wet chlorhexidine-treated skin; avoid mixing in the same dropper/bottle"
+      },
+      {
+        "drug": "Rifampin (nasal decolonization protocols — MRSA carriers)",
+        "severity": "Minor",
+        "mechanism": "Mupirocin nasal ointment is used for MRSA nasal decolonization; for persistent MRSA carriage or decolonization failure, rifampin is sometimes added systemically to the regimen; no pharmacokinetic interaction (mupirocin negligible systemic absorption); concern is microbiological — rifampin resistance selection must be avoided by never using rifampin monotherapy",
+        "management": "When systemic rifampin is added to topical mupirocin decolonization, also include a companion antibiotic (doxycycline or TMP-SMX) to prevent rifampin resistance selection; duration typically 5–7 days; document decolonization attempts and outcomes; refer complex MRSA decolonization to infectious disease"
+      },
+      {
+        "drug": "Mupirocin resistance — cross-resistance with other antibiotics",
+        "severity": "Major",
+        "mechanism": "High-level mupirocin resistance (MuH; mupA gene) renders mupirocin completely ineffective and is increasingly prevalent in MRSA; extended or repeated mupirocin courses (>10 days, or multiple courses/year) select for resistance; low-level resistance can progress to high-level with repeated exposure; MRSA decolonization failure should prompt susceptibility testing",
+        "management": "Limit mupirocin courses to ≤5–10 days for impetigo; do not prescribe for >3 courses/year on same patient; if nasal decolonization fails, order mupirocin susceptibility testing before repeat course; reserve mupirocin for MSSA/MRSA decolonization and impetigo — do not use routinely for chronic wound management"
+      },
+      {
+        "drug": "Petrolatum-based wound ointments (Vaseline, Polysporin, zinc oxide creams) applied simultaneously",
+        "severity": "Minor",
+        "mechanism": "Mupirocin ointment vehicle is polyethylene glycol (PEG) or white soft paraffin; mixing with other ointments physically dilutes mupirocin concentration and may impair adhesion to the wound bed; petrolatum barrier can also reduce mupirocin penetration into bacterial biofilm",
+        "management": "Apply mupirocin alone to the infection site; use other protective ointments (petrolatum, zinc oxide) on surrounding normal skin to prevent maceration; do not mix or layer mupirocin with other ointments; if wound requires barrier protection, apply mupirocin directly to lesion and barrier cream only on surrounding skin"
+      },
+      {
+        "drug": "Immunosuppressants — cyclosporine, tacrolimus (transplant patients with wound infections)",
+        "severity": "Minor",
+        "mechanism": "No pharmacokinetic interaction between topical mupirocin and systemic immunosuppressants; immunosuppressed patients are more susceptible to SSTI with MRSA and may require mupirocin treatment or nasal decolonization; systemic immunosuppression does not affect mupirocin local efficacy (drug works directly on bacterial isoleucyl-tRNA synthetase)",
+        "management": "Mupirocin is safe to use in immunosuppressed patients; in transplant patients, monitor for treatment failure (immunosuppression impairs host immune clearance but does not reduce local antibiotic activity); swab for susceptibility if not improving within 5–7 days of correct mupirocin application"
       }
     ],
     "pregnancy": "Topical use — considered safe in pregnancy. Minimal systemic absorption through intact skin. No evidence of fetal harm. Use for indicated skin/nasal infection. Compatible with breastfeeding (avoid applying directly to nipple area).",
@@ -41688,10 +41718,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "No significant systemic drug interactions",
-        "severity": "N/A",
-        "mechanism": "Negligible systemic absorption from topical use",
-        "management": "No drug interactions relevant for topical clotrimazole"
+        "drug": "Warfarin (oral clotrimazole troches/lozenges)",
+        "severity": "Major",
+        "mechanism": "Oral clotrimazole troches (10 mg, used for oropharyngeal candidiasis) have moderate CYP3A4 inhibition activity; unlike topical skin/vaginal clotrimazole (negligible systemic absorption), oral troches have significant buccal absorption → CYP3A4-mediated warfarin metabolism inhibition → INR elevation; several case reports of significant INR elevation with oral clotrimazole troches + warfarin",
+        "management": "Monitor INR within 3–5 days of starting oral clotrimazole troches in patients on warfarin; anticipate INR increase; topical cream/pessary formulations have negligible systemic absorption and minimal warfarin interaction concern; nystatin suspension/pastilles are a CYP-inactive alternative for oral candidiasis in warfarin patients"
+      },
+      {
+        "drug": "Tacrolimus and cyclosporine (oral troche formulation)",
+        "severity": "Moderate",
+        "mechanism": "Oral clotrimazole troches inhibit intestinal and hepatic CYP3A4 and P-glycoprotein; tacrolimus and cyclosporine are CYP3A4/P-gp substrates — oral clotrimazole can increase their plasma levels by 30–50%; relevant in transplant patients receiving oral clotrimazole troches for antifungal prophylaxis",
+        "management": "Monitor calcineurin inhibitor trough levels closely when oral clotrimazole troches are initiated or discontinued; anticipate dose adjustment needs; some transplant protocols use oral clotrimazole troches deliberately as prophylaxis, building the interaction into management; topical/vaginal clotrimazole does not have this interaction"
+      },
+      {
+        "drug": "Vaginal clotrimazole + warfarin (topical vaginal formulations)",
+        "severity": "Minor",
+        "mechanism": "Vaginal clotrimazole (1% or 2% cream, 100–500 mg pessaries) has measurably higher systemic absorption (1–3%) compared to topical skin formulations; mild CYP2C9/CYP3A4 inhibition from absorbed drug is possible; less concerning than oral troche or miconazole vaginal formulations but still reported in isolated cases",
+        "management": "Monitor INR if vaginal clotrimazole is started in patients on warfarin (especially those with INR already above target range); single-dose (500 mg pessary) formulation more likely to cause transient INR elevation than multi-day lower-dose regimens; consider nystatin or oral fluconazole for vaginal candidiasis if anticoagulation is tightly managed"
+      },
+      {
+        "drug": "Topical clotrimazole cream + skin barrier considerations",
+        "severity": "No interaction",
+        "mechanism": "Topical clotrimazole 1% cream for skin (ringworm, athlete's foot, jock itch) has negligible systemic absorption (<0.5%) through intact skin; no clinically relevant drug interactions expected with topical formulations on intact skin",
+        "management": "No special monitoring required for topical clotrimazole cream on intact skin; if applied to large areas of broken, inflamed, or denuded skin, systemic absorption may increase but still remains clinically negligible; safe to use concurrently with systemic medications without dose adjustments"
+      },
+      {
+        "drug": "Concurrent topical antifungals (terbinafine, miconazole) on same area",
+        "severity": "Minor",
+        "mechanism": "Combining two topical azoles (clotrimazole + miconazole) on the same area provides no additional antifungal benefit — same azole mechanism (lanosterol 14-alpha-demethylase inhibition); clotrimazole and terbinafine have complementary mechanisms (azole vs. allylamine) — combination sometimes used for tinea pedis with mixed dermatophyte/Candida infection",
+        "management": "Do not combine two azole antifungals on the same area; if terbinafine (dermatophyte-preferred) and clotrimazole (Candida-preferred) are both indicated, they can be applied at different times or to different areas depending on infection pattern; single-agent therapy is usually sufficient for uncomplicated fungal skin infections"
+      },
+      {
+        "drug": "Condoms and diaphragms (vaginal formulations)",
+        "severity": "Major",
+        "mechanism": "Clotrimazole vaginal creams contain oil-based vehicles (mineral oil, petroleum jelly, cetyl alcohol) that degrade latex; application of vaginal clotrimazole cream weakens latex condoms and diaphragms, increasing failure rate; this is a device interaction, not a drug-drug interaction, but has significant contraceptive and STI-prevention implications",
+        "management": "CRITICAL counselling point: instruct patients NOT to use latex condoms or diaphragms for contraception or STI prevention while using vaginal clotrimazole cream (or for 24–48 hours after last application); use alternative barrier methods (polyurethane or polyisoprene condoms); vaginal tablets/pessaries may have less oil content than creams — check product labelling"
       }
     ],
     "pregnancy": "SAFE TOPICALLY IN PREGNANCY — topical azoles (clotrimazole, miconazole) are the PREFERRED treatment for VVC in pregnancy. No systemic absorption at therapeutic topical doses. Preferred over oral fluconazole for VVC in pregnancy. Use clotrimazole 7-day vaginal cream (longest course) or single tablet — OTC and widely used in pregnancy. Breastfeeding: topical application — minimal systemic absorption; generally safe.",
@@ -50824,10 +50884,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "No significant drug-drug interactions (topical)",
+        "drug": "Lindane (gamma-hexachlorocyclohexane) — alternative scabicide",
+        "severity": "Moderate",
+        "mechanism": "Both permethrin and lindane are topical ectoparasiticides; combination or close sequential use compounds neurotoxicity risk from lindane (lindane has significant CNS toxicity potential, especially in children and elderly); permethrin resistance in some scabies populations may lead to inappropriate lindane use",
+        "management": "PERMETHRIN IS FIRST-LINE for scabies and pediculosis in Canada (Health Canada); lindane is NOT recommended as first-line due to neurotoxicity; do not combine or use sequentially within the same treatment cycle; if permethrin fails (true treatment resistance vs. reinfestation), seek ID specialist guidance; oral ivermectin is preferred second-line"
+      },
+      {
+        "drug": "Ivermectin (oral or topical)",
+        "severity": "Beneficial",
+        "mechanism": "Permethrin (topical) and ivermectin (oral) have complementary mechanisms against Sarcoptes scabiei (scabies mites) and lice; permethrin kills mites on skin surface; ivermectin targets mites at all life stages including eggs; combination used for treatment-refractory or crusted (Norwegian) scabies",
+        "management": "Combination permethrin + oral ivermectin recommended for crusted scabies (Norwegian scabies) under infectious disease guidance; for ordinary scabies: repeat permethrin applications (days 1 and 8) is standard; oral ivermectin added for household contacts or failure cases; document institutional outbreak protocols"
+      },
+      {
+        "drug": "Seizure threshold medications (in context of permethrin neurotoxicity at high doses)",
         "severity": "Minor",
-        "mechanism": "Minimal systemic absorption",
-        "management": "N/A"
+        "mechanism": "Permethrin 5% cream has very low dermal absorption (~2%) under normal use; however, extensive application to broken/inflamed skin in patients with scabies may increase absorption; at high systemic levels, pyrethroids can cause CNS excitation; combined with medications that lower seizure threshold (bupropion, tricyclics, antipsychotics), theoretical risk increases",
+        "management": "No specific monitoring required for standard permethrin use (5% cream for scabies, two applications); rinse off after 8–14 hours as directed; avoid application to mucous membranes and eyes; in patients with seizure disorders, standard application protocols are safe with no additional precautions required"
+      },
+      {
+        "drug": "Other topical preparations and emollients applied before permethrin",
+        "severity": "Minor",
+        "mechanism": "Application of emollients, oils, or moisturizers immediately before permethrin cream may create a barrier that reduces permethrin skin penetration and efficacy; dilution of the active drug in the cream vehicle reduces local scabicidal drug concentration at the skin surface",
+        "management": "Apply permethrin to clean, dry skin — bathe first, then ensure skin is completely dry and cool before application; do not apply moisturizers, oils, or other topicals to skin before permethrin; standard application: full body from neck down (include scalp/hairline in elderly, infants, and immunocompromised), leave on 8–14 hours, then wash off"
+      },
+      {
+        "drug": "Topical corticosteroids (for post-scabies itch)",
+        "severity": "Beneficial",
+        "mechanism": "Post-scabies hypersensitivity (itch continuing for 2–4 weeks after successful treatment) is caused by immune sensitization to mite antigens, not live mites; topical corticosteroids (triamcinolone 0.1%, hydrocortisone 1%) effectively manage this post-treatment itch; combination of permethrin (curative) followed by corticosteroid (symptom management) is standard practice",
+        "management": "After confirming scabies treatment success (no new burrows, no new lesions), topical corticosteroid for 1–2 weeks manages post-scabies itch; distinguish treatment failure (new lesions, active burrows 1–2 weeks after treatment) from post-scabies sensitivity reaction (itch without new lesions); oral antihistamines for nighttime itch are additive"
+      },
+      {
+        "drug": "Condoms and contraceptive diaphragms (permethrin-treated clothing/bedding products)",
+        "severity": "Minor",
+        "mechanism": "Permethrin used for clothing/textile treatment (insect repellent for outdoor clothing, bed nets) is oil-based in some formulations and may degrade latex condoms or diaphragms if treated clothing or linens are in direct contact; this is a device interaction with treated textiles, not with permethrin cream",
+        "management": "Wash permethrin-treated clothing before use in intimate contexts; permethrin 5% cream for scabies/lice treatment should be completely washed off after treatment period before engaging in activities requiring latex protection; no interaction between permethrin as a drug and oral contraceptives or IUDs"
       }
     ],
     "pregnancy": "Category B. Preferred topical treatment for scabies in pregnancy (minimal systemic absorption, animal studies reassuring). Oral ivermectin not used in pregnancy.",
@@ -85417,16 +85507,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Photosensitizing drugs (tetracyclines, fluoroquinolones, thiazides)",
+        "drug": "Photosensitizing drugs (tetracyclines, fluoroquinolones, thiazides, phenothiazines, amiodarone)",
         "severity": "Moderate",
-        "mechanism": "Additive photosensitivity",
-        "management": "Sunscreen essential; avoid excessive UV exposure; counsel patient"
+        "mechanism": "Tazarotene causes significant photosensitivity by increasing skin cell turnover and reducing the stratum corneum barrier; concurrent photosensitizing drugs amplify UV-induced erythema and burning; risk greatest with fluoroquinolones and tetracyclines which are commonly used concurrently with tazarotene for acne treatment",
+        "management": "Apply SPF 30+ broad-spectrum sunscreen daily throughout tazarotene therapy; minimize direct sun exposure; if photosensitizing antibiotic (doxycycline, minocycline) used concurrently for acne, reinforce sun protection counselling; avoid tanning beds and prolonged UV exposure"
       },
       {
-        "drug": "Keratolytics (benzoyl peroxide, salicylic acid, alpha-hydroxy acids)",
+        "drug": "Keratolytics and exfoliants (benzoyl peroxide, salicylic acid, alpha-hydroxy acids, glycolic acid)",
         "severity": "Moderate",
-        "mechanism": "Additive skin irritation; may enhance tazarotene penetration",
-        "management": "Apply at separate times; monitor skin tolerance"
+        "mechanism": "Additive cutaneous irritation, erythema, dryness, and peeling; keratolytics disrupt stratum corneum and enhance tazarotene penetration — potentially increasing both efficacy and local toxicity; in acne treatment, combining retinoids and benzoyl peroxide on same area same time is a common cause of severe facial irritation",
+        "management": "Apply tazarotene and benzoyl peroxide/salicylic acid at different times of day (e.g., BPO in AM, tazarotene at night); start with low-frequency application (every other night) and increase as tolerated; allow complete drying between application of different actives; emollient moisturizer reduces irritation"
+      },
+      {
+        "drug": "Pregnancy (teratogenicity — systemic retinoid classification)",
+        "severity": "Contraindicated",
+        "mechanism": "Tazarotene is a topical retinoid with measurable systemic absorption (6–7% with 0.1% cream on large areas); tazarotene and its metabolite tazarotenic acid are teratogenic (Category X); even topical exposure in pregnancy is contraindicated due to risk of fetal retinoid embryopathy (craniofacial, cardiac, CNS malformations)",
+        "management": "CONTRAINDICATED in pregnancy and in women of childbearing potential without adequate contraception; confirm negative pregnancy test before initiating; use two forms of contraception; discuss with patients of reproductive age; if pregnancy occurs while on tazarotene, discontinue immediately and refer to maternal-fetal medicine; listed as contraindicated in Canadian product monograph"
+      },
+      {
+        "drug": "Oral isotretinoin or other systemic retinoids (acitretin)",
+        "severity": "Major",
+        "mechanism": "Combining topical tazarotene with oral retinoids (isotretinoin for acne, acitretin for psoriasis) creates additive retinoid toxicity — severely increased dryness, irritation, mucositis, and potential for cumulative teratogenicity (BOTH agents are individually Category X); dual retinoid use is generally irrational as one agent typically suffices",
+        "management": "Do NOT combine tazarotene with oral retinoids; if transitioning from isotretinoin to topical maintenance, wait until isotretinoin-induced mucocutaneous effects have resolved (typically 1–2 months after completion) before starting tazarotene; document retinoid history"
+      },
+      {
+        "drug": "Topical corticosteroids (psoriasis combination therapy)",
+        "severity": "Beneficial",
+        "mechanism": "For psoriasis, tazarotene (normalizes keratinocyte differentiation) + topical corticosteroid (reduces inflammation) is a well-established combination therapy; the steroid reduces tazarotene-induced irritation while tazarotene enhances and prolongs the corticosteroid effect; this is intentional co-prescription, not an adverse interaction",
+        "management": "Apply corticosteroid and tazarotene at different times of day (corticosteroid AM, tazarotene PM) for psoriasis plaque management; this combination is more effective and better tolerated than either agent alone; do not use high-potency corticosteroids long-term (atrophy risk) — use tazarotene as the maintenance agent after corticosteroid achieves control"
+      },
+      {
+        "drug": "Moisturizers and emollients — application timing",
+        "severity": "Beneficial",
+        "mechanism": "Tazarotene-induced irritation (burning, peeling, erythema) is significantly reduced by emollient application; applying a thick moisturizer before tazarotene (short-contact technique) or after provides barrier protection; emollients do not significantly impair tazarotene efficacy when applied correctly",
+        "management": "Apply emollient to clean skin, allow to absorb (5–10 min), then apply tazarotene for the 'short-contact' initiation technique (wash off after 1 hour initially); OR apply emollient 30 min after tazarotene has dried; avoid applying emollient immediately before tazarotene (may dilute); fragrance-free ceramide-based moisturizers preferred for retinoid-irritated skin"
       }
     ],
     "pregnancy": "CATEGORY X — CONTRAINDICATED. Topical retinoids have systemic absorption. All retinoids are teratogenic (similar mechanism to systemic isotretinoin). While topical levels are much lower than oral, risk cannot be excluded. Ensure adequate contraception before prescribing to women of childbearing age. Stop immediately if pregnancy suspected.",
@@ -88147,22 +88261,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Topical retinoids (tretinoin, adapalene)",
-        "severity": "Minor-Moderate",
-        "mechanism": "Additive irritation and skin barrier disruption; both keratolytic/exfoliating",
-        "management": "Use in separate AM/PM routines; avoid combining directly; start with lower frequency to assess tolerability."
+        "drug": "Topical retinoids (tretinoin, adapalene, tazarotene)",
+        "severity": "Moderate",
+        "mechanism": "Salicylic acid is a beta-hydroxy acid keratolytic that disrupts the stratum corneum; topical retinoids increase cell turnover and reduce corneocyte cohesion; combined application on the same area at the same time causes significant additive irritation, barrier disruption, erythema, peeling, and burning — more pronounced than either alone",
+        "management": "Use in separate AM/PM routines: salicylic acid in AM, retinoid at night (or alternate nights for sensitive skin); avoid applying directly on top of the other without drying first; start with lower frequency for each if using both; once tolerance established, combination can be an effective acne regimen"
       },
       {
-        "drug": "Topical benzoyl peroxide",
+        "drug": "Topical benzoyl peroxide (BPO)",
         "severity": "Minor",
-        "mechanism": "Additive dryness and irritation; benzoyl peroxide can oxidize and inactivate salicylic acid if combined directly",
-        "management": "Can be used on same skin area at different times of day; avoid mixing in palm."
+        "mechanism": "Additive dryness and irritation; BPO is an oxidizing agent that may partially inactivate salicylic acid through oxidation if applied simultaneously to same area; the combination is widely used in acne treatment but at separate application times to preserve each drug's activity and minimize irritation",
+        "management": "Separate application times (salicylic acid and BPO at different times of day); avoid mixing products in palm; both can be used on same face area at different times and are synergistic for comedonal + inflammatory acne when used correctly"
       },
       {
-        "drug": "Warfarin (theoretical — large area application)",
+        "drug": "Warfarin (high-concentration, large-area application)",
         "severity": "Minor",
-        "mechanism": "Theoretical systemic absorption of salicylate → mild antiplatelet + possible INR effect; not clinically significant with normal topical therapeutic use",
-        "management": "Standard therapeutic use poses no meaningful interaction; avoid extended large-area application under occlusion in anticoagulated patients."
+        "mechanism": "Standard topical salicylic acid (2–3% on small areas) poses negligible systemic absorption; high-concentration salicylic acid preparations (17–40% for wart treatment, plantar wart pads, psoriasis ointments) applied to large areas of skin or under occlusion can produce measurable salicylate blood levels; salicylates have antiplatelet activity and mild CYP2C9 inhibition that could theoretically increase warfarin effect",
+        "management": "No concern for low-concentration topical use (2–5%) on small areas; exercise caution with high-concentration formulations (17%+) applied to large areas in anticoagulated patients; monitor INR if extensive wart treatment or psoriasis management involves high-dose salicylic acid under occlusion"
+      },
+      {
+        "drug": "Methotrexate (high-concentration topical for psoriasis in MTX-treated patients)",
+        "severity": "Moderate",
+        "mechanism": "Topical salicylate absorption in high-concentration preparations can displace protein-bound methotrexate and inhibit MTX renal tubular secretion (salicylate competes with MTX for OAT transporters); this can increase free MTX levels and risk of toxicity (myelosuppression, mucositis); relevant for psoriasis patients using both topical salicylic acid (keratolytic for scale removal) and systemic MTX",
+        "management": "For psoriasis patients on methotrexate requiring salicylic acid scale removal, use lowest effective concentration and minimize treatment area; time salicylic acid application away from MTX dose day if possible; alert rheumatologist/dermatologist to total salicylate exposure; this interaction is more relevant for high-dose salicylate preparations than standard 2% products"
+      },
+      {
+        "drug": "Other topical acids (glycolic acid, lactic acid, azelaic acid, mandelic acid)",
+        "severity": "Minor",
+        "mechanism": "Combining multiple chemical exfoliants on the same skin area compounds acid load, pH disruption, and barrier impairment; cumulative acid exfoliation from multiple AHAs/BHAs applied simultaneously significantly increases risk of irritant contact dermatitis, burning, and post-inflammatory hyperpigmentation (especially in Fitzpatrick skin types IV–VI)",
+        "management": "Use ONE chemical exfoliant at a time in a routine; alternate different exfoliant actives on different nights rather than combining; if multiple exfoliants are needed (e.g., glycolic acid for AHA + salicylic for BHA), use on alternate days or in a complete separate AM/PM protocol; pH buffering (moisturizer between actives) reduces irritation"
+      },
+      {
+        "drug": "Sunscreens and UV protection (mandatory adjunct)",
+        "severity": "Beneficial",
+        "mechanism": "Salicylic acid increases photosensitivity by removing the UV-protective stratum corneum barrier; chemically exfoliated skin burns more easily in UV exposure; however, salicylic acid itself has UV-absorbing properties at certain wavelengths (it is a salicylate-based UV filter historically used in older sunscreen formulations)",
+        "management": "Daily broad-spectrum SPF 30+ sunscreen is mandatory with any chemical exfoliant including salicylic acid; apply sunscreen after salicylic acid product has absorbed; counsel patients that new skin exposed by exfoliation is more sun-sensitive; UV protection is especially important during the first 2–4 weeks of starting salicylic acid treatment"
       }
     ],
     "pregnancy": "CAUTION — avoid high concentrations (≥17%) on large body surface areas. Low-concentration OTC products (0.5–2% acne washes, spot treatments on limited areas) are generally considered low-risk in pregnancy based on minimal systemic absorption. AVOID salicylate-containing products ≥17% over large areas in pregnancy (potential for systemic salicylate absorption → theoretical fetal effects analogous to high-dose aspirin: premature closure of ductus arteriosus, neonatal bleeding). Health Canada recommends limited use, small areas, short duration. Acetaminophen preferred for analgesic. Breastfeeding: topical use on limited areas considered acceptable; avoid application to breast/nipple area; avoid large-area high-concentration use.",
@@ -92507,8 +92639,42 @@ var DRUGS = {
       "Hypersensitivity to nicotine"
     ],
     "interactions": [
-      "Acidic beverages reduce absorption (avoid 15 min before/after)",
-      "Smoking cessation drug interaction considerations (clozapine, theophylline)"
+      {
+        "drug": "Acidic beverages (coffee, tea, juice, carbonated drinks, alcohol)",
+        "severity": "Minor",
+        "mechanism": "Nicotine lozenge absorption depends on alkaline oral pH; acidic beverages reduce oral pH, significantly decreasing free-base nicotine absorption and reducing lozenge efficacy by 30–50%; this is the most commonly overlooked counselling point and a primary cause of apparent lozenge failure",
+        "management": "Avoid eating or drinking anything except water for 15 minutes before and during nicotine lozenge use; do not eat or drink during the 20–30-minute dissolution period; for patients who drink coffee throughout the day, schedule lozenge use between drinks rather than with them"
+      },
+      {
+        "drug": "Theophylline and aminophylline (CYP1A2 — smoking cessation effect)",
+        "severity": "Moderate",
+        "mechanism": "Tobacco smoke polycyclic aromatic hydrocarbons (PAHs) strongly induce CYP1A2; when patients quit smoking (assisted by NRT lozenge), smoke-based CYP1A2 induction is eliminated → theophylline plasma levels rise 30–40% within 1–2 weeks of successful cessation; nicotine lozenge itself does not affect CYP1A2",
+        "management": "Monitor theophylline plasma levels at 2 and 4 weeks after smoking cessation; anticipate dose reduction of approximately 30–40%; the interaction is caused by quitting smoking, not by the lozenge — do not adjust theophylline when lozenge is started, but do adjust as patient maintains smoke-free status"
+      },
+      {
+        "drug": "Clozapine and olanzapine (CYP1A2 — smoking cessation effect)",
+        "severity": "Major",
+        "mechanism": "Same CYP1A2 induction mechanism as theophylline; clozapine levels rise 50–100% when heavy smokers quit smoking; this can cause clozapine toxicity (seizures, excessive sedation, autonomic instability) if doses are not proactively reduced; nicotine lozenge provides nicotine without smoke-based CYP1A2 induction",
+        "management": "CRITICAL: Reduce clozapine dose by 30–50% when patient stops smoking; coordinate with psychiatrist before cessation attempt; weekly clozapine blood levels for first month of cessation; patients may resist dose reduction — explain that smoke cessation, not the drug, is the trigger"
+      },
+      {
+        "drug": "Nicotine patch (combination NRT — beneficial)",
+        "severity": "Beneficial",
+        "mechanism": "Patch provides steady background nicotine replacement; lozenge provides PRN acute dosing for breakthrough cravings; combination NRT with patch + lozenge doubles long-term quit rates compared to single NRT agent in highly nicotine-dependent smokers",
+        "management": "Combination NRT endorsed by CPS and Health Canada for high-dependence smokers (first cigarette within 30 min of waking; >20/day); use 14–21 mg patch daily with lozenge 2–4 mg PRN for cravings; taper both over 8–12 weeks"
+      },
+      {
+        "drug": "Insulin and oral antidiabetic agents",
+        "severity": "Minor",
+        "mechanism": "Nicotine-mediated catecholamine release impairs insulin sensitivity; smoking cessation (using NRT lozenge) gradually improves insulin sensitivity over weeks to months; early cessation period may also see transient weight gain that temporarily worsens glycemic control",
+        "management": "Monitor blood glucose frequently during cessation attempt; expect glucose improvement over 4–8 weeks; may need insulin or OAD dose reduction as cessation is maintained; NRT lozenge itself does not directly interact with antidiabetic medications"
+      },
+      {
+        "drug": "Antidepressants — bupropion (Wellbutrin/Zyban) for concurrent depression and cessation",
+        "severity": "Minor",
+        "mechanism": "Bupropion (dopamine/NE reuptake inhibitor and weak nicotinic receptor antagonist) is approved for both depression and smoking cessation; combination with NRT lozenge is used for highly dependent smokers or for those combining pharmacotherapy for depression with cessation support; no significant PK interaction; theoretical additive benefit for both indications",
+        "management": "Combination bupropion + NRT lozenge is acceptable; monitor blood pressure (bupropion can raise BP; nicotine is vasopressor); avoid in patients with seizure disorders; monitor mood changes carefully during cessation (nicotine withdrawal worsens depression transiently)"
+      }
     ],
     "monitoring": [
       "Mouth soreness",
@@ -92577,8 +92743,42 @@ var DRUGS = {
       "Hypersensitivity to nicotine or menthol"
     ],
     "interactions": [
-      "Same considerations as other NRTs (clozapine, theophylline with cessation)",
-      "Acidic beverages before use reduce absorption"
+      {
+        "drug": "Cold temperatures and indoor air quality (device performance)",
+        "severity": "Minor",
+        "mechanism": "Nicotine inhaler performance is temperature-dependent; nicotine delivery decreases significantly below 10°C — outdoor use in Canadian winters substantially reduces dose delivered per puff; patients using inhaler outdoors in cold weather receive insufficient nicotine, leading to apparent treatment failure or increased craving",
+        "management": "Advise patients to keep nicotine inhaler at room temperature (≥10°C) before use; warm the cartridge in the hand for 5 minutes before outdoor use in cold weather; indoor use preferred; this is a device-performance issue not a drug interaction but critically affects Canadian patients"
+      },
+      {
+        "drug": "Theophylline and clozapine (CYP1A2 — smoking cessation effect)",
+        "severity": "Major",
+        "mechanism": "Same mechanism as other NRT products: tobacco smoke cessation removes CYP1A2 induction → theophylline rises 30–40%; clozapine rises 50–100% within 2 weeks of smoke cessation; nicotine inhaler itself does not alter CYP1A2; the enzyme induction is from combustion-derived PAHs in smoke, not nicotine",
+        "management": "Monitor theophylline and clozapine levels at 2–4 weeks after smoke cessation; reduce clozapine by 30–50% proactively; coordinate with prescribing team; this interaction applies to ALL nicotine replacement therapies and any cessation method — it is smoke cessation, not the NRT product"
+      },
+      {
+        "drug": "Inhaled bronchodilators (salbutamol, ipratropium) and inhaled corticosteroids",
+        "severity": "Minor",
+        "mechanism": "Nicotine inhaler (mouthpiece-puffing device) delivers nicotine vapor to the oral cavity/upper airways, not directly to the lungs; however, patients with asthma or COPD using multiple inhalation devices may have device confusion, suboptimal technique with each, and potential nicotine-induced airway irritation (cough, mild bronchoconstriction) as a nicotine side effect",
+        "management": "For patients with asthma/COPD, nicotine patch or lozenge may be more appropriate NRT to avoid any potential airway irritation from inhaler use; if nicotine inhaler chosen, use after bronchodilator (not before); educate on technique differences between nicotine inhaler and metered-dose inhaler"
+      },
+      {
+        "drug": "Nicotine patch (combination NRT — beneficial)",
+        "severity": "Beneficial",
+        "mechanism": "Nicotine inhaler provides the behavioral ritual of smoking and addresses oral fixation, while the patch provides steady-state background nicotine; combination reduces psychological cravings (hand-to-mouth behavior) and physiological nicotine withdrawal simultaneously; higher quit rates with combination vs. inhaler alone",
+        "management": "Combination NRT endorsed for high-dependence smokers; nicotine inhaler is particularly useful for patients who miss the hand-to-mouth ritual of smoking; use patch (14–21 mg) daily with inhaler PRN for cravings/ritual satisfaction; taper both over 12 weeks"
+      },
+      {
+        "drug": "Beta-blockers and antihypertensives",
+        "severity": "Minor",
+        "mechanism": "Nicotine causes sympathomimetic effects (increased HR, BP, vasoconstriction); NRT maintains some nicotine exposure but at lower, more stable levels than cigarettes; overall, smoking cessation with NRT significantly IMPROVES long-term cardiovascular outcomes despite short-term nicotine effects",
+        "management": "Nicotine inhaler is safe in patients on antihypertensives; monitor BP during initial cessation period; successful smoking cessation typically allows reduction in antihypertensive doses over 3–6 months; nicotine inhaler can be used safely in stable cardiovascular disease (CCS class I-II recommendation)"
+      },
+      {
+        "drug": "Insulin (smoking cessation effect on insulin sensitivity)",
+        "severity": "Minor",
+        "mechanism": "Same mechanism as other NRT: smoking cessation improves insulin sensitivity over weeks to months; may require insulin dose reduction; early cessation may see transient glucose worsening from withdrawal stress and weight gain",
+        "management": "Increase SMBG frequency during cessation attempt; anticipate insulin dose reduction need within 4–8 weeks of maintained cessation; nutritional counselling to mitigate weight gain is important concurrent with cessation support"
+      }
     ],
     "monitoring": [
       "Throat irritation",
