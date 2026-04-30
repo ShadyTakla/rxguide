@@ -19956,7 +19956,13 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Topical absorption is minimal but theoretically increased systemic levels",
         "management": "Generally not clinically significant with topical use"
-      }
+      },
+        {
+          "drug": "Rifampin (Rifadin) and other potent CYP3A4/P-gp inducers (rifabutin, carbamazepine, St. John's Wort)",
+          "severity": "Major",
+          "mechanism": "Tacrolimus is extensively metabolized by CYP3A4 and is a substrate for P-glycoprotein; rifampin is the most potent inducer of both CYP3A4 and P-gp, reducing tacrolimus trough levels by up to 90% within days of initiation; this can precipitate acute allograft rejection in transplant recipients; conversely, rifampin discontinuation causes tacrolimus levels to rise dramatically (risk of nephrotoxicity and neurotoxicity)",
+          "management": "Avoid rifampin in tacrolimus-treated transplant patients whenever possible; use rifabutin as an alternative anti-TB agent (less potent inducer); if rifampin is unavoidable, increase tacrolimus dose by 3–5× with daily trough level monitoring until stable; upon rifampin discontinuation, promptly reduce tacrolimus dose and check trough levels within 24–48 hours; Health Canada tacrolimus product monograph identifies rifampin as a major interaction requiring dose adjustment"
+        }
     ],
     "pregnancy": "Limited human data; minimal systemic absorption from intact skin makes risk low. Generally considered acceptable when benefits outweigh risks; avoid extensive application.",
     "pk": {
@@ -22609,7 +22615,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Acute alcohol intake inhibits warfarin metabolism → increased INR; chronic heavy alcohol: induces CYP2E1 → increased warfarin clearance + increased hepatic damage (impaired coagulation factor synthesis) → unpredictable INR",
         "management": "Advise limiting to ≤2 standard drinks/day; binge drinking is particularly dangerous; monitor INR if alcohol use pattern changes"
-      }
+      },
+        {
+          "drug": "Clopidogrel (Plavix) and other P2Y12 inhibitors (ticagrelor, prasugrel) — dual antithrombotic therapy",
+          "severity": "Major",
+          "mechanism": "Combining warfarin with an antiplatelet agent (P2Y12 inhibitor) constitutes 'triple therapy' when also with ASA, or 'dual antithrombotic therapy' with warfarin + single antiplatelet; this combination significantly increases major bleeding risk (intracranial hemorrhage, GI bleeding) compared to either drug alone; clopidogrel also mildly inhibits CYP2C9, potentially elevating warfarin levels",
+          "management": "Triple therapy (warfarin + clopidogrel + ASA) should be limited to the shortest clinically necessary duration per CADTH and CCS 2018 AF guidelines; for AF patients post-PCI, prefer a DOAC over warfarin for the anticoagulation component; if warfarin + clopidogrel combination is used, maintain INR at the lower end of therapeutic range (INR 2.0–2.5); add PPI (pantoprazole, omeprazole) for GI protection; monitor INR closely as clopidogrel CYP2C9 inhibition may raise warfarin levels"
+        }
     ],
     "pregnancy": "WARFARIN CROSSES PLACENTA. FIRST TRIMESTER (6–12 weeks): WARFARIN EMBRYOPATHY — nasal hypoplasia, chondrodysplasia punctata, limb stippling (risk ~5–10%). THIRD TRIMESTER/delivery: fetal intracranial hemorrhage. GENERAL RULE: Use LMWH or UFH throughout pregnancy for VTE. MECHANICAL HEART VALVES IN PREGNANCY: Complex risk-benefit decision — warfarin <5 mg/day in first trimester is associated with lower embryopathy risk; options include (1) LMWH throughout, (2) warfarin throughout (lower maternal valve thrombosis risk but embryopathy risk), (3) LMWH in first trimester → warfarin 13–35 weeks → UFH near delivery. All options carry significant risk — mandate specialist management (thrombosis, maternal-fetal medicine, cardiology). Breastfeeding: SAFE — warfarin is the preferred oral anticoagulant for breastfeeding mothers (does not enter milk in significant amounts; infant has separate vitamin K status).",
     "pk": {
@@ -23012,7 +23024,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Increased statin exposure (CYP3A4)",
         "management": "Max simvastatin 40 mg"
-      }
+      },
+        {
+          "drug": "Aspirin (ASA) — dual antiplatelet therapy (DAPT) and dose-dependent interaction",
+          "severity": "Moderate",
+          "mechanism": "Ticagrelor (Brilinta) is approved for use with aspirin as dual antiplatelet therapy (DAPT) post-ACS; however, ticagrelor's benefit is paradoxically reduced by high-dose aspirin (>100 mg/day); high-dose ASA may competitively interfere with ticagrelor's mechanism at the P2Y12 receptor; the PLATO trial demonstrated ticagrelor superiority over clopidogrel was only apparent in patients on low-dose ASA (≤100 mg)",
+          "management": "Health Canada and CCS guidelines specify that ticagrelor must be used with low-dose ASA (75–100 mg/day); prescribe or confirm ASA ≤100 mg dose when initiating ticagrelor; do not use high-dose ASA (325 mg/day) with ticagrelor; the standard DAPT duration post-ACS is 12 months (ticagrelor 90 mg BID + ASA 80 mg daily); after 12 months, ticagrelor 60 mg BID + ASA 80 mg may be considered for extended therapy per CCS guidelines"
+        }
     ],
     "pregnancy": "Avoid.",
     "pk": {
@@ -23208,7 +23226,19 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Amiodarone inhibits CYP3A4 and P-gp → increases calcineurin inhibitor levels → nephrotoxicity, neurotoxicity",
         "management": "Reduce calcineurin inhibitor dose; intensive therapeutic drug monitoring"
-      }
+      },
+        {
+          "drug": "Azithromycin (and other macrolides: clarithromycin, erythromycin)",
+          "severity": "Major",
+          "mechanism": "Azithromycin prolongs the cardiac QT interval via hERG potassium channel blockade; amiodarone is itself a potent class III antiarrhythmic with QT-prolonging activity; combination produces additive QTc prolongation with substantially increased risk of torsades de pointes (TdP) and ventricular fibrillation",
+          "management": "Avoid concurrent use whenever possible; azithromycin is frequently prescribed for respiratory infections in patients already on amiodarone — consider doxycycline or amoxicillin-clavulanate as safer alternatives; if combination is unavoidable, obtain baseline ECG, confirm QTc <450 ms, and monitor QTc at 48–72 hours; CPS and Health Canada product monographs list macrolide co-administration as a contraindication or strong warning"
+        },
+        {
+          "drug": "Quetiapine (and other antipsychotics: olanzapine, ziprasidone, risperidone)",
+          "severity": "Major",
+          "mechanism": "Quetiapine prolongs QTc via hERG channel blockade; combined with amiodarone (which also blocks hERG plus has multiple electrophysiologic effects), the risk of QTc prolongation exceeding 500 ms — the threshold for high TdP risk — is substantially increased; quetiapine is among the highest QT-prolonging antipsychotics",
+          "management": "Avoid combination where possible; if a patient on amiodarone develops a psychiatric indication requiring an antipsychotic, consult with cardiology and psychiatry; consider aripiprazole (lower QT risk) or lurasidone as alternatives; obtain baseline and follow-up ECGs; correct hypokalemia and hypomagnesemia which independently increase TdP risk; document patient-specific benefit-risk assessment in chart"
+        }
     ],
     "pregnancy": "AVOID in pregnancy — significant fetal risks: (1) NEONATAL HYPOTHYROIDISM — amiodarone iodine load crosses placenta → inhibits fetal thyroid; neonatal hypothyroidism in 9-22% of exposed infants (can cause neurological damage if untreated); (2) PREMATURE BIRTH — 13-27%; (3) NEONATAL BRADYCARDIA — beta-blocking effect; (4) INTRAUTERINE GROWTH RESTRICTION. If used during pregnancy: neonatal TFTs mandatory at birth; cardiac monitoring. Breastfeeding: AVOID — amiodarone and active metabolite (desethylamiodarone) secreted in breast milk in significant amounts; infant hypothyroidism risk.",
     "pk": {
@@ -30230,7 +30260,19 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Additive hepatotoxicity → fibrosis, cirrhosis",
         "management": "Counsel patients to avoid or strictly limit alcohol while on MTX; monitor AST/ALT q1-3 months."
-      }
+      },
+        {
+          "drug": "Hydroxychloroquine (Plaquenil) — DMARD combination therapy",
+          "severity": "Moderate",
+          "mechanism": "Methotrexate plus hydroxychloroquine (HCQ) is a common dual DMARD combination in rheumatoid arthritis (RA); HCQ does not significantly increase methotrexate toxicity but the combination increases overall immunosuppressive burden; conversely, combination therapy improves RA outcomes without additive organ toxicity in most patients",
+          "management": "This combination is explicitly endorsed by ACR and Canadian Rheumatology Association (CRA) RA treatment guidelines; monitor CBC, LFTs, and creatinine every 3 months for the first year, then every 6 months; ensure HCQ annual ophthalmology monitoring (retinal toxicity risk); folic acid 5 mg weekly reduces methotrexate GI and hepatic adverse effects and should be prescribed with any MTX-containing regimen"
+        },
+        {
+          "drug": "Leflunomide (Arava) — dual DMARD hepatotoxicity risk",
+          "severity": "Major",
+          "mechanism": "Both methotrexate and leflunomide independently carry hepatotoxicity risk; combination use markedly increases liver enzyme elevation (3× ULN in up to 9% of patients in trials), hepatic fibrosis risk, and risk of life-threatening hepatic failure; the combination is generally discouraged outside of specialist-supervised protocols",
+          "management": "CADTH and Canadian Rheumatology Association advise against routine combination methotrexate + leflunomide; if combination is used (e.g., inadequate response to either alone), monitor LFTs monthly for 6 months, then every 6–8 weeks; both drugs require baseline LFTs, CBC, and renal function; discontinue if ALT exceeds 3× ULN; a leflunomide cholestyramine washout procedure (cholestyramine 8 g TID × 11 days) is available for rapid drug elimination if toxicity occurs"
+        }
     ],
     "pregnancy": "ABSOLUTELY CONTRAINDICATED FOR FEMALES — TERATOGENIC; CATEGORY X. Methotrexate embryopathy: craniofacial abnormalities, limb defects, neural tube defects, fetal growth restriction, spontaneous abortion. FEMALES: effective contraception during therapy AND ≥3 months after stopping (1 ovulation cycle). MALES (UPDATED PER EULAR 2024 + Wallenius/Larsen studies): low-dose MTX (≤25 mg/wk for IMID) does NOT impair sperm quality/DNA, NOT increase miscarriage or birth defect risk in offspring. EULAR 2024: 'methotrexate may be continued in men trying to conceive.' Health Canada PM still has older 3-month male guidance — discuss latest evidence with male patients. PREGNANCY DETECTED ON THERAPY: stop immediately; folic acid 5 mg/day; refer obstetrics/genetics. Breastfeeding: CONTRAINDICATED — methotrexate excreted in breast milk.",
     "pk": {
@@ -30562,7 +30604,19 @@ var DRUGS = {
         "severity": "Major (seizures)",
         "mechanism": "Additive lowering of seizure threshold",
         "management": "Avoid combination"
-      }
+      },
+        {
+          "drug": "Methotrexate — DMARD combination therapy",
+          "severity": "Moderate",
+          "mechanism": "Hydroxychloroquine (HCQ) combined with methotrexate is a foundational dual DMARD strategy in RA; HCQ has antimalarial and anti-inflammatory properties without direct hepatotoxic or myelosuppressive effects; adding HCQ to methotrexate improves ACR20/50/70 response rates versus either drug alone; no major pharmacokinetic interaction, but additive immunosuppression requires monitoring",
+          "management": "Endorsed by Canadian Rheumatology Association guidelines as a first-line dual DMARD option in moderate-to-severe RA; continue CBC, LFT, and renal function monitoring at the methotrexate-appropriate intervals; HCQ dose is typically 200–400 mg/day (≤5 mg/kg/day to minimize retinal risk); ensure annual ophthalmology review; folic acid 5 mg weekly prescribed with methotrexate component"
+        },
+        {
+          "drug": "Live attenuated vaccines (MMR, varicella/Zostavax, yellow fever, oral typhoid)",
+          "severity": "Contraindicated",
+          "mechanism": "Hydroxychloroquine produces modest immunosuppression via inhibition of toll-like receptor signaling and antigen presentation; while less immunosuppressive than biologics or methotrexate, HCQ may still reduce the immune response to live attenuated vaccines, and live vaccines carry theoretical risk of disseminated infection in immunosuppressed patients",
+          "management": "Administer all indicated live vaccines (MMR, varicella, yellow fever) before initiating hydroxychloroquine therapy; NACI and the Canadian Immunization Guide advise against live vaccines in patients on immunosuppressive therapy; recombinant zoster vaccine (Shingrix) is preferred over live Zostavax in all HCQ-treated patients; inactivated influenza and PCV vaccines are safe and recommended while on HCQ"
+        }
     ],
     "pregnancy": "COMPATIBLE in pregnancy — preferred DMARD for SLE in pregnancy. SLE outcomes IMPROVED with continued HCQ (reduces flares, preeclampsia, preterm birth, neonatal lupus, congenital heart block in anti-Ro/SSA positive mothers). DO NOT DISCONTINUE HCQ DURING PREGNANCY in SLE patients. No teratogenicity in extensive registry data. RA: HCQ acceptable in pregnancy. Breastfeeding: COMPATIBLE — small amounts in breast milk; long history of safe use.",
     "pk": {
@@ -44100,7 +44154,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "TMP inhibits phenytoin metabolism",
         "management": "Monitor phenytoin levels"
-      }
+      },
+        {
+          "drug": "Serum creatinine elevation — tubular secretion blockade (not true renal impairment)",
+          "severity": "Moderate",
+          "mechanism": "Trimethoprim competitively inhibits tubular secretion of creatinine via the organic cation transporter OCT2 in proximal renal tubules; this increases measured serum creatinine by approximately 0.1–0.2 mg/dL (9–18 μmol/L) without any true change in GFR or renal function; the same mechanism occurs with dolutegravir, cobicistat, and metformin; this can be misinterpreted as AKI in hospitalized patients",
+          "management": "Advise clinicians that TMP-SMX routinely elevates serum creatinine by 10–15% without true GFR change; do not dose-reduce other renally-cleared medications based solely on creatinine rise during TMP-SMX therapy; if concerned, compare with eGFR via cystatin C (not affected by tubular secretion) or urine output assessment; creatinine normalizes within days of TMP-SMX discontinuation; document this effect in discharge summaries to prevent misdiagnosis of AKI"
+        }
     ],
     "pregnancy": "Category C. Avoid in first trimester (folate antagonist — neural tube defect risk) and at term (kernicterus). Use cautiously mid-pregnancy only if clearly needed. Folic acid supplementation if used.",
     "pk": {
