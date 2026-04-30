@@ -42519,6 +42519,112 @@ var DRUGS = {
     ],
     "source": "Health Canada PM. AMMI Canada. AASLD/IDSA HCV; IDSA Influenza guidelines."
   },
+  "gentamicin": {
+    "name": "Gentamicin",
+    "brand": "Garamycin (originator); generics widely available (IV/IM, ophthalmic, topical)",
+    "class": "Aminoglycoside Antibiotic",
+    "napra": "I",
+    "moa": "Binds irreversibly to the 30S ribosomal subunit, causing mRNA misreading and inhibiting protein synthesis → bactericidal. Concentration-dependent killing with significant post-antibiotic effect (PAE) — supports extended-interval dosing. Synergistic with cell wall-active agents (β-lactams, vancomycin) — cell wall damage enhances aminoglycoside penetration. Aerobic uptake required (no anaerobic activity).",
+    "indications": [
+      "Serious gram-negative infections (sepsis, hospital-acquired pneumonia, complicated UTI/pyelonephritis) — usually combined with a β-lactam",
+      "Enterococcal endocarditis — synergy with ampicillin or vancomycin",
+      "Listeria meningitis / bacteremia — synergy with ampicillin",
+      "Empiric therapy in febrile neutropenia (combined with antipseudomonal β-lactam)",
+      "Mycobacterial infections (MAC, TB — second-line)",
+      "Topical/ophthalmic: bacterial conjunctivitis, otitis externa (combination products)"
+    ],
+    "dosing": [
+      {
+        "indication": "Extended-interval (once-daily) — preferred for most adults with CrCl ≥60",
+        "dose": "5–7 mg/kg IV q24h (Hartford nomogram). Use ACTUAL body weight unless BMI >30, then adjusted body weight. First dose given empirically; subsequent doses adjusted using Hartford nomogram (drug level drawn 6–14 h after start of infusion).",
+        "renal": "CrCl 40–59: 5 mg/kg q36h; CrCl 20–39: 5 mg/kg q48h; CrCl <20 or hemodialysis: traditional dosing with TDM (extended-interval not recommended)."
+      },
+      {
+        "indication": "Traditional (multiple-daily) — endocarditis synergy or severe renal impairment",
+        "dose": "1–2 mg/kg IV q8h (synergy for enterococcal/streptococcal endocarditis: 1 mg/kg q8h or 3 mg/kg OD per AHA 2015). Target peak 5–10 µg/mL, trough <2 µg/mL.",
+        "renal": "CrCl 40–60: q12h; CrCl 20–40: q24h; CrCl <20 or HD: dose by levels (target trough <2 µg/mL); give post-HD."
+      },
+      {
+        "indication": "Single-dose pyelonephritis / urosepsis (uncomplicated, ED)",
+        "dose": "5 mg/kg IV × 1 dose plus oral step-down (e.g., cephalosporin or TMP-SMX per culture).",
+        "renal": "Same as extended-interval"
+      },
+      {
+        "indication": "Topical / ophthalmic",
+        "dose": "Ophthalmic: 0.3% solution 1–2 drops every 4 h (severe: every 1 h). Ointment 0.3% applied 2–3×/day. Topical cream/ointment 0.1%: thin layer to affected area 3–4×/day.",
+        "renal": "Negligible systemic absorption — no adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Phlebitis at IV site",
+        "Mild rash (uncommon)"
+      ],
+      "serious": [
+        "NEPHROTOXICITY — acute tubular necrosis, typically reversible if drug stopped early; risk factors: prolonged duration, high troughs, concurrent nephrotoxins (vancomycin, NSAIDs, contrast), volume depletion, elderly, pre-existing CKD",
+        "OTOTOXICITY — IRREVERSIBLE; vestibular (vertigo, oscillopsia) and cochlear (high-frequency hearing loss); cumulative dose-related; family history of aminoglycoside ototoxicity is a risk factor (mitochondrial m.1555A>G mutation)",
+        "Neuromuscular blockade — additive with anesthetics, neuromuscular blockers; may unmask myasthenia gravis (potentially fatal — avoid in MG)",
+        "Hypersensitivity reactions (rare)"
+      ]
+    },
+    "contraindications": [
+      "Myasthenia gravis (neuromuscular blockade)",
+      "Known hypersensitivity to aminoglycosides",
+      "Pregnancy (Category D — fetal ototoxicity / 8th cranial nerve damage; reserve for life-threatening infections only when no alternative)",
+      "Concurrent nephrotoxic agents — relative contraindication; minimize duration"
+    ],
+    "interactions": [
+      {
+        "drug": "Vancomycin IV",
+        "severity": "Major",
+        "mechanism": "Additive nephrotoxicity",
+        "management": "Avoid combination if possible; monitor SCr daily; consider alternative (e.g., cefepime + vancomycin for MRSA empiric)"
+      },
+      {
+        "drug": "Loop diuretics (furosemide, ethacrynic acid)",
+        "severity": "Major",
+        "mechanism": "Additive ototoxicity (especially ethacrynic acid)",
+        "management": "Avoid if possible; if combined, monitor audiology and Cr"
+      },
+      {
+        "drug": "Neuromuscular blockers / anesthetics",
+        "severity": "Major",
+        "mechanism": "Potentiate neuromuscular blockade — risk of prolonged paralysis/respiratory depression",
+        "management": "Communicate with anesthesia; monitor twitch response"
+      },
+      {
+        "drug": "Cisplatin / amphotericin B / cyclosporine / tacrolimus / IV contrast",
+        "severity": "Major",
+        "mechanism": "Additive nephrotoxicity",
+        "management": "Avoid concurrent use when possible; monitor renal function"
+      },
+      {
+        "drug": "β-Lactams (ampicillin, piperacillin)",
+        "severity": "Beneficial / Synergy",
+        "mechanism": "β-lactam disrupts cell wall → enhanced aminoglycoside uptake (used therapeutically for enterococcal endocarditis)",
+        "management": "Do NOT mix in same IV line (β-lactams chemically inactivate aminoglycosides — separate infusions)"
+      }
+    ],
+    "pregnancy": "Category D — 8th cranial nerve toxicity (fetal ototoxicity / deafness) reported with all aminoglycosides; cross placenta. Reserve for life-threatening maternal infections (e.g., severe pyelonephritis, sepsis) when safer alternatives are inadequate. Streptomycin and kanamycin have the strongest fetal ototoxicity signal; gentamicin has weaker but real risk. Lactation: minimal milk transfer and poor oral absorption — generally compatible with breastfeeding (LactMed).",
+    "pk": {
+      "absorption": "Negligible oral absorption (IV/IM only); ~100% bioavailability after IM",
+      "half_life": "2–3 h (normal renal function); markedly prolonged in CKD",
+      "elimination": "Renal — 90% unchanged within 24 h",
+      "onset": "Rapid (peak within 30–60 min after IV infusion)",
+      "peak": "30–60 min post-IV"
+    },
+    "canadian_notes": "Gentamicin is heavily used in Canadian hospitals as part of empiric regimens for sepsis, pyelonephritis, and febrile neutropenia. EXTENDED-INTERVAL DOSING (once-daily, Hartford nomogram) is the preferred approach for most adults with normal renal function — exploits concentration-dependent killing and post-antibiotic effect, allows a drug-free interval for renal recovery, and reduces nephrotoxicity vs traditional q8h dosing. AMMI Canada antimicrobial stewardship: limit aminoglycoside duration to 48–72 h whenever possible (definitive therapy with culture-guided narrow agents). Hospital pharmacists run aminoglycoside dosing services in many Canadian institutions — Bayesian software (DoseMeRx, InsightRx) is increasingly used for personalized dosing. Therapeutic drug monitoring is essential — irreversible ototoxicity is the most feared adverse effect; document baseline audiology and counsel patients to report any tinnitus, vertigo, or hearing change. Ophthalmic and topical gentamicin are widely available OTC and Rx in Canada.",
+    "pearls": [
+      "Extended-interval (once-daily) dosing is preferred over traditional q8h in most adults — equal/better efficacy with less nephrotoxicity",
+      "Synergy dosing for enterococcal endocarditis (1 mg/kg q8h or 3 mg/kg OD) targets a different goal — adjunct to β-lactam, not stand-alone bactericidal therapy",
+      "Use ACTUAL body weight for dosing unless BMI >30 (then use adjusted body weight) — using ideal body weight in obese patients underdoses",
+      "DO NOT mix aminoglycosides in the same IV line as β-lactams — chemical inactivation; separate infusions",
+      "Monitor SCr every 48–72 h during therapy; ototoxicity risk increases with cumulative dose and duration — limit to 48–72 h when possible",
+      "Avoid in myasthenia gravis (neuromuscular blockade) and pregnancy unless life-threatening infection",
+      "Therapeutic targets: traditional dosing peak 5–10 µg/mL, trough <2 µg/mL; extended-interval dosing — use Hartford nomogram"
+    ],
+    "source": "Health Canada PM. AMMI Canada Bugs & Drugs 2024. Public Health Ontario Antimicrobial Stewardship. AHA Endocarditis 2015. Hartford Nomogram (Nicolau et al, 1995)."
+  },
   "famciclovir": {
     "name": "Famciclovir",
     "brand": "Famvir",
