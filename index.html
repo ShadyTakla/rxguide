@@ -43498,22 +43498,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Antacids / H2 blockers / PPIs",
+        "drug": "Antacids, H2 blockers (famotidine, ranitidine), and PPIs (omeprazole, pantoprazole)",
         "severity": "Moderate",
-        "mechanism": "Reduce gastric acid; decreased absorption of axetil prodrug",
-        "management": "Take with food; avoid concurrent antacids"
-      },
-      {
-        "drug": "Warfarin",
-        "severity": "Moderate",
-        "mechanism": "Broad-spectrum antibiotics alter gut flora, reduce vitamin K production",
-        "management": "Monitor INR more closely"
+        "mechanism": "Cefuroxime axetil (oral prodrug) requires gastric acid for hydrolysis to active cefuroxime. Elevated gastric pH from antacids, H2 blockers, or PPIs reduces oral bioavailability by 30-50%. IV cefuroxime is unaffected.",
+        "management": "Take cefuroxime axetil tablets WITH FOOD (food doubles absorption) and do not combine with antacids within 1-2h. If PPI or H2 blocker required concurrently, monitor clinical response — may need IV formulation for severe infections. No interaction with parenteral cefuroxime."
       },
       {
         "drug": "Probenecid",
+        "severity": "Moderate",
+        "mechanism": "Probenecid inhibits renal tubular secretion of cefuroxime via OAT transporters, increasing cefuroxime AUC by ~50% and extending half-life. Occasionally used intentionally to extend cefuroxime exposure.",
+        "management": "If co-prescribed, monitor for adverse effects (GI intolerance, C. difficile-associated diarrhea). Reduce cefuroxime dosing frequency if probenecid is used intentionally for pharmacokinetic enhancement. No routine adjustment needed when probenecid prescribed for gout."
+      },
+      {
+        "drug": "Warfarin and anticoagulants",
+        "severity": "Moderate",
+        "mechanism": "Cefuroxime reduces intestinal vitamin K-producing flora, potentially increasing INR. Effect is mild for short courses but relevant in elderly, malnourished, or high-INR patients.",
+        "management": "Monitor INR after 5-7 days of cefuroxime in warfarin patients. Adjust warfarin dose as needed. Effect typically reverses within 1-2 weeks of completing the antibiotic course."
+      },
+      {
+        "drug": "Oral contraceptives (combined OCP)",
         "severity": "Minor",
-        "mechanism": "Blocks renal tubular secretion, raises cefuroxime levels",
-        "management": "Monitor for toxicity; sometimes used intentionally"
+        "mechanism": "Historical concern about antibiotics reducing enterohepatic recirculation of ethinyl estradiol and reducing OCP efficacy. This has been disproven for non-enzyme-inducing antibiotics including cefuroxime. No CYP3A4 induction occurs.",
+        "management": "No additional contraceptive measures required with cefuroxime per current Health Canada and WHO guidelines. Counsel patients that additional contraception is not necessary for this antibiotic."
+      },
+      {
+        "drug": "Aminoglycosides (gentamicin, tobramycin) — IV combination",
+        "severity": "Moderate",
+        "mechanism": "Cefuroxime IV + aminoglycosides provides synergistic gram-negative bactericidal activity. Physical incompatibility if mixed in same IV bag/line. Both are renally eliminated — additive nephrotoxicity is possible though cefuroxime nephrotoxicity is minimal at standard doses.",
+        "management": "Administer via SEPARATE IV lines. Monitor SCr and aminoglycoside levels. Synergy is the clinical intent in polymicrobial or severe gram-negative infections. Adjust aminoglycoside doses for renal impairment."
+      },
+      {
+        "drug": "Metformin (biguanide) — renal interaction",
+        "severity": "Minor",
+        "mechanism": "Cefuroxime is partially secreted by renal OCT (organic cation transporter) — competition with metformin is theoretical. Clinical significance at standard doses is minimal. More relevant: antibiotic-related GI symptoms may mimic metformin GI intolerance.",
+        "management": "No dose adjustment required. Monitor for GI adverse effects from the antibiotic vs. metformin. If patient has CKD and is on metformin, check SCr before and after cefuroxime IV course — confirm renal function stable."
       }
     ],
     "pregnancy": "Category B. Safe in pregnancy; used for Lyme disease in pregnancy as preferred agent. GBS prophylaxis alternative.",
@@ -48561,16 +48579,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "CNS depressants",
+        "drug": "CNS depressants (alcohol, opioids, benzodiazepines, antihistamines, antipsychotics, muscle relaxants)",
         "severity": "Major",
-        "mechanism": "Additive sedation",
-        "management": "Avoid alcohol and sedatives"
+        "mechanism": "Doxylamine is a first-generation sedating antihistamine (H1 blocker) with significant CNS depression potential. Additive sedation with other CNS depressants can impair respiratory drive, cognition, and coordination — falls and vehicle accidents are major risks.",
+        "management": "Counsel pregnant patients to AVOID alcohol (also teratogenic) and minimize concurrent CNS depressants. Take at bedtime as directed. If other CNS depressants required during pregnancy, use minimum effective doses with close monitoring. Healthcare providers should screen for all sedating medications."
       },
       {
-        "drug": "MAO inhibitors",
-        "severity": "Major",
-        "mechanism": "Hypertensive crisis",
-        "management": "Contraindicated"
+        "drug": "MAOIs (phenelzine, tranylcypromine, moclobemide, selegiline, linezolid)",
+        "severity": "Contraindicated",
+        "mechanism": "Doxylamine has anticholinergic properties; MAOIs prolong and intensify anticholinergic drug effects. The combination can cause severe anticholinergic toxicity: hyperthermia, delirium, tachycardia, urinary retention. MAOIs are also contraindicated in pregnancy.",
+        "management": "CONTRAINDICATED. 14-day washout after irreversible MAOI before using doxylamine-pyridoxine. Note: MAOIs are essentially contraindicated in pregnancy regardless. If pre-pregnancy MAOI therapy is needed, plan medication transitions before conception."
+      },
+      {
+        "drug": "Anticholinergic drugs (scopolamine, antimuscarinics for OAB, TCAs, certain antihistamines)",
+        "severity": "Moderate",
+        "mechanism": "Doxylamine has significant anticholinergic activity (ACB score 3). Adding other anticholinergic drugs increases total anticholinergic burden → urinary retention, constipation, tachycardia, dry mouth, blurred vision, confusion. In pregnancy, constipation is already a common complaint.",
+        "management": "Minimize total anticholinergic burden. Review all medications for anticholinergic activity (ACB scoring). Scopolamine patches (for nausea) are not recommended with doxylamine — additive anticholinergic toxicity. Prefer non-anticholinergic alternatives for coincident symptoms."
+      },
+      {
+        "drug": "Metoclopramide (Maxeran — D2 antagonist antiemetic)",
+        "severity": "Moderate",
+        "mechanism": "No pharmacokinetic interaction. Metoclopramide is a second-line option for nausea of pregnancy. Combining with doxylamine-pyridoxine for refractory nausea may provide additive antiemetic benefit but increases sedation, extrapyramidal risk, and tardive dyskinesia risk (especially with prolonged metoclopramide use).",
+        "management": "Metoclopramide can be used as add-on for severe nausea/vomiting of pregnancy (hyperemesis gravidarum) alongside doxylamine-pyridoxine. Limit metoclopramide duration (<12 weeks per Health Canada) to reduce tardive dyskinesia risk. Short-term combination is reasonable under physician supervision."
+      },
+      {
+        "drug": "Ondansetron (Zofran — 5-HT3 antagonist antiemetic)",
+        "severity": "Moderate",
+        "mechanism": "No pharmacokinetic interaction between ondansetron and doxylamine-pyridoxine. Combination is commonly used for severe pregnancy nausea. Ondansetron may cause QT prolongation; limited first-trimester cardiovascular teratogenicity data have raised concerns (conflicting evidence).",
+        "management": "Combination with ondansetron is a common clinical practice for moderate-to-severe nausea of pregnancy. Health Canada updated labelling (2022): first-trimester use of ondansetron associated with small increased risk of cardiovascular defects in some studies — weigh against hyperemesis risks. Diclegis/Bonjesta remains first-line per SOGC."
+      },
+      {
+        "drug": "Pyridoxine (vitamin B6) supplementation — additive with combination product",
+        "severity": "Minor",
+        "mechanism": "Doxylamine-pyridoxine already contains pyridoxine (vitamin B6) 10mg per tablet. Additional vitamin B6 supplementation (from prenatal vitamins, standalone supplements) increases total pyridoxine dose. High doses of pyridoxine (>100-200mg/day long-term) cause peripheral neuropathy.",
+        "management": "Calculate total daily pyridoxine intake from all sources (Diclegis/Bonjesta + prenatal multivitamin + supplements). Standard prenatal vitamins contain 2-4mg B6 — no concern with 2-4 Diclegis tablets/day. Avoid high-dose standalone B6 supplements >50mg/day during pregnancy."
       }
     ],
     "pregnancy": "Category A (in Canada — specifically approved for NVP in pregnancy). Extensive safety data. Approved by Health Canada and FDA specifically for NVP. No increased birth defects in large cohort studies (Motherisk, OTIS data).",
@@ -50675,22 +50717,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Tetracyclines, fluoroquinolones, levothyroxine, bisphosphonates, levodopa",
+        "drug": "Tetracyclines (doxycycline, minocycline), fluoroquinolones (ciprofloxacin, levofloxacin), levothyroxine, bisphosphonates, levodopa",
         "severity": "Major",
-        "mechanism": "Iron chelates these drugs — markedly reduces their absorption",
-        "management": "Separate iron by 2 hours from these medications"
+        "mechanism": "Iron cations (Fe2+/Fe3+) chelate with all these drugs in the GI tract, forming insoluble unabsorbed complexes. The interaction is universal to all oral iron formulations — ferrous gluconate, fumarate, sulphate, and ferric formulations all cause this effect.",
+        "management": "Universal timing rule: take these drugs at least 2h BEFORE or 4-6h AFTER ferrous gluconate. Levothyroxine: 4h separation minimum. Bisphosphonates: plain water only, iron supplements at a different meal. Document timing instructions on all prescriptions co-prescribed with iron."
       },
       {
-        "drug": "Vitamin C (ascorbic acid)",
-        "severity": "Minor",
-        "mechanism": "Converts Fe3+ to Fe2+ — enhances iron absorption by up to 30%",
-        "management": "Co-administer vitamin C for better absorption"
-      },
-      {
-        "drug": "Calcium supplements / antacids",
+        "drug": "Calcium supplements, dairy products, antacids (Mg, Al, Ca), and zinc",
         "severity": "Moderate",
-        "mechanism": "Calcium and alkaline pH reduce iron absorption",
-        "management": "Separate iron from calcium/antacids by 2 hours"
+        "mechanism": "Polyvalent cations compete with iron at the intestinal DMT-1 transporter. Calcium is the most clinically significant competitor — simultaneous intake reduces iron absorption by 30-60%. Magnesium and zinc show similar but less pronounced effects.",
+        "management": "Separate ferrous gluconate from calcium supplements by 2h. Take iron preferably on an empty stomach with a small amount of vitamin C. Prenatal vitamins combining iron and calcium reduce both — supplementing separately is more effective for iron deficiency in pregnancy."
+      },
+      {
+        "drug": "Proton pump inhibitors (omeprazole, pantoprazole, esomeprazole) and H2 blockers",
+        "severity": "Moderate",
+        "mechanism": "Ferrous gluconate (Fe2+) absorption requires acidic gastric conditions for optimal dissolution. PPIs/H2 blockers raising gastric pH reduce ferrous iron absorption by 30-50% and impair reduction of dietary Fe3+ to absorbable Fe2+.",
+        "management": "Monitor haemoglobin response to oral iron in patients on chronic PPI therapy. If inadequate response after 8-12 weeks, consider IV iron (ferric carboxymaltose, iron sucrose) which bypasses GI absorption entirely. The ferrous gluconate/PPI interaction is less pronounced than ferrous sulphate/PPI."
+      },
+      {
+        "drug": "Vitamin C (ascorbic acid 100-200mg) — beneficial absorption enhancer",
+        "severity": "Beneficial interaction",
+        "mechanism": "Vitamin C enhances ferrous gluconate absorption by maintaining iron in the reduced Fe2+ state (preventing oxidation to poorly absorbed Fe3+) and forming soluble iron-ascorbate chelates. Particularly important in patients with reduced gastric acid or consuming plant-based diets.",
+        "management": "Take ferrous gluconate simultaneously with 100-200mg vitamin C (glass of orange juice or ascorbic acid supplement) for maximum absorption benefit. This is especially helpful in vegetarians, vegans, and patients on PPI therapy."
+      },
+      {
+        "drug": "Cholestyramine (bile acid sequestrant) and sucralfate",
+        "severity": "Moderate",
+        "mechanism": "Cholestyramine binds iron in the GI tract (as it binds other positively charged molecules), reducing absorption. Sucralfate forms insoluble sucralfate-iron complexes. Both reduce ferrous gluconate bioavailability.",
+        "management": "Administer ferrous gluconate at least 4h before or after cholestyramine. Separate from sucralfate by 2h. In patients on cholestyramine for hypercholesterolemia or bile acid diarrhea, iron supplementation timing requires careful scheduling."
+      },
+      {
+        "drug": "Mycophenolate mofetil (MMF) — reduced iron absorption bidirectional",
+        "severity": "Moderate",
+        "mechanism": "Iron supplements reduce mycophenolic acid absorption by 50-90% via chelation in the GI tract (mycophenolate contains a phenol that forms iron complexes). Conversely, MMF can cause GI inflammation affecting iron absorption. Transplant patients often need both.",
+        "management": "Administer ferrous gluconate at least 2h before or after mycophenolate mofetil. Monitor MMF levels (MPA AUC) and renal graft function closely. IV iron may be preferred in transplant patients requiring iron supplementation to avoid this interaction entirely."
       }
     ],
     "pregnancy": "Safe; essential for iron-deficiency anemia in pregnancy. Lower elemental iron content (12% vs 33% fumarate) — may cause less GI upset. Prenatal vitamins contain varying iron amounts.",
@@ -51856,22 +51916,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Timolol eye drops (concurrent same eye)",
+        "drug": "Timolol and other topical beta-blockers (betaxolol, levobunolol, carteolol) — same eye",
         "severity": "Moderate",
-        "mechanism": "Additive IOP-lowering effect when combined; used together as fixed-dose Xalacom or separately",
-        "management": "Allow 5 min between instillation of different eye drops; fixed combination (Xalacom) convenient"
+        "mechanism": "Additive IOP-lowering effect — prostaglandin analogues increase uveoscleral outflow while beta-blockers reduce aqueous humour production. The combination (e.g., Xalacom = latanoprost + timolol fixed combination) is used intentionally for better IOP control.",
+        "management": "Intentional combination — latanoprost + timolol is a standard glaucoma combination therapy. Apply drops 5 minutes apart to prevent wash-out of first drop. Monitor IOP response. Systemic timolol absorption from eye drops can cause bronchospasm in asthmatics and bradycardia in cardiac patients."
       },
       {
-        "drug": "NSAIDs (topical ophthalmic — ketorolac, diclofenac)",
-        "severity": "Minor",
-        "mechanism": "Theoretical: NSAIDs inhibit prostaglandin synthesis — may theoretically reduce efficacy of prostaglandin analogues; clinical evidence inconsistent",
-        "management": "Monitor IOP if concurrent topical NSAIDs used; separate instillation by 5 min"
+        "drug": "Systemic beta-blockers (propranolol, metoprolol, atenolol, bisoprolol)",
+        "severity": "Moderate",
+        "mechanism": "Topical ophthalmic beta-blockers (if co-prescribed) combined with systemic beta-blockers have additive beta-blockade. Even latanoprost itself has no systemic beta-blockade, but if patient is on both timolol eye drops AND oral beta-blockers, cumulative cardiovascular effects occur.",
+        "management": "Monitor HR and BP in patients on systemic beta-blockers who are also using ophthalmic beta-blockers (timolol). Bronchospasm, bradycardia, and hypotension can occur from ophthalmic beta-blocker systemic absorption. Cardioselective oral beta-blockers preferred if possible."
       },
       {
-        "drug": "Thimerosal-containing drops",
+        "drug": "Bimatoprost, travoprost, tafluprost (other prostaglandin analogues)",
+        "severity": "Moderate",
+        "mechanism": "Combining two prostaglandin analogues in the same eye provides no additional IOP-lowering effect and increases adverse effects: conjunctival hyperemia (red eye), increased iris pigmentation, eyelash growth, and periorbital fat atrophy.",
+        "management": "Do NOT combine two prostaglandin analogue eye drops. Switch to a different class (beta-blocker, CAI, alpha-2 agonist) rather than combining prostaglandins. If switching from latanoprost to bimatoprost, the wash-out period is not strictly required."
+      },
+      {
+        "drug": "NSAIDs (topical ophthalmic NSAIDs: ketorolac, diclofenac, bromfenac)",
         "severity": "Minor",
-        "mechanism": "Precipitation reaction between thimerosal and latanoprost in solution — avoid mixing in same bottle",
-        "management": "Use separately with 5 min interval"
+        "mechanism": "Topical ophthalmic NSAIDs inhibit prostaglandin synthesis via COX inhibition, theoretically reducing latanoprost's mechanism of action (which relies on FP receptor prostanoid signalling). Clinical IOP impact is debated — some studies show minimal interaction.",
+        "management": "If short-term ophthalmic NSAID required (post-cataract surgery, corneal inflammation), monitor IOP more closely. No formal dose adjustment established. Clinical significance appears minimal in most patients — maintain latanoprost dosing and monitor for IOP fluctuations."
+      },
+      {
+        "drug": "Thimerosal-containing eye drops — latanoprost preservative incompatibility",
+        "severity": "Moderate",
+        "mechanism": "Latanoprost (Xalatan) contains benzalkonium chloride (BAK) as preservative. Mixing with thimerosal-containing drops precipitates latanoprost — inactivating it. Benzalkonium chloride itself can damage corneal epithelium with chronic use.",
+        "management": "Do NOT mix latanoprost with thimerosal-containing eye drops. Administer different eye drops 5 minutes apart. For patients with BAK sensitivity, preservative-free latanoprost formulations are available. BAK toxicity is a concern with multiple eye drop regimens — minimize total BAK exposure."
+      },
+      {
+        "drug": "Adrenergic agonists (brimonidine, apraclonidine) and carbonic anhydrase inhibitors (dorzolamide, brinzolamide) — adjunctive combinations",
+        "severity": "Beneficial (standard adjunctive therapy)",
+        "mechanism": "Latanoprost (prostaglandin), alpha-2 agonists (brimonidine — reduces aqueous production and increases uveoscleral outflow), and carbonic anhydrase inhibitors (reduce aqueous production via different mechanism) have complementary IOP-lowering mechanisms. Combination therapy is standard in poorly controlled glaucoma.",
+        "management": "Multi-drug glaucoma therapy is common — apply drops at least 5 minutes apart to prevent wash-out of previous drop. Fixed-combination formulations available for convenience. Monitor IOP every 3-6 months. Systemic CAI (acetazolamide) is an option for acute angle-closure — no interaction with latanoprost."
       }
     ],
     "pregnancy": "AVOID in pregnancy — prostaglandins can stimulate uterine contractions; latanoprost may cause premature uterine contractions, miscarriage. Animal studies: embryotoxic at high systemic doses. Systemic absorption from ophthalmic drops is minimal, but prostaglandin uterotonic effect is a significant concern. Per ophthalmology guidelines: defer glaucoma treatment in pregnancy where possible; if IOP control essential, discuss risks; brimonidine and beta-blockers (timolol) have been used with monitoring. Breastfeeding: minimal systemic absorption from topical ophthalmic; likely safe but limited data.",
@@ -54631,22 +54709,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Fluoroquinolones",
+        "drug": "Fluoroquinolones (ciprofloxacin, levofloxacin, moxifloxacin) and tetracyclines (doxycycline, minocycline)",
         "severity": "Major",
-        "mechanism": "Chelation reduces absorption",
-        "management": "Separate by at least 2 hours"
+        "mechanism": "Magnesium (Mg2+) chelates fluoroquinolones and tetracyclines in the GI tract, forming insoluble complexes. This reduces antibiotic absorption by 50-90%, potentially causing treatment failure for serious infections including pneumonia, UTI, and skin infections.",
+        "management": "Take fluoroquinolone or tetracycline at least 2h BEFORE or 4-6h AFTER magnesium hydroxide. Document timing on prescriptions. IV antibiotic formulations are unaffected. This is the most clinically significant interaction with magnesium hydroxide."
       },
       {
-        "drug": "Bisphosphonates",
-        "severity": "Moderate",
-        "mechanism": "Reduces absorption",
-        "management": "Separate by at least 2 hours"
+        "drug": "Levothyroxine (thyroid hormone replacement)",
+        "severity": "Major",
+        "mechanism": "Magnesium hydroxide raises gastric pH, impairing levothyroxine dissolution. It also directly binds thyroxine — magnesium-thyroxine complexes are poorly absorbed. Chronic concurrent use leads to inadequate thyroid hormone replacement.",
+        "management": "Take levothyroxine at least 4h before or after magnesium hydroxide. Timing is critical — levothyroxine taken on an empty stomach first thing in the morning, antacid taken with meals or at bedtime. Monitor TSH every 6-12 months."
       },
       {
-        "drug": "Levothyroxine",
+        "drug": "Bisphosphonates (alendronate, risedronate), iron supplements, and other chelatable drugs",
+        "severity": "Major",
+        "mechanism": "Mg2+ chelates bisphosphonates, iron, and numerous other drugs with chelatable structures (quinolones, tetracyclines, levodopa) in the GI tract. Magnesium has the same chelation effect as calcium and aluminum on a wide range of medications.",
+        "management": "Universal antacid/mineral supplement timing rule: take all potentially chelatable drugs (antibiotics, iron, levothyroxine, bisphosphonates) at least 2h BEFORE or 4-6h AFTER magnesium hydroxide. Bisphosphonates particularly: plain water only, no antacids within 30-60 minutes."
+      },
+      {
+        "drug": "Digoxin (cardiac glycoside)",
         "severity": "Moderate",
-        "mechanism": "May reduce absorption",
-        "management": "Separate by at least 4 hours"
+        "mechanism": "Magnesium hydroxide raises GI pH, impairing digoxin absorption. Additionally, magnesium directly affects cardiac conduction — hypermagnesemia (from chronic use in renal impairment) reduces heart rate and slows AV conduction, potentially additive with digoxin.",
+        "management": "Administer digoxin and magnesium hydroxide 2h apart. Monitor digoxin levels and serum Mg2+ in patients with renal impairment. In CKD, accumulation of Mg2+ from chronic antacid use can cause symptomatic hypermagnesemia (lethargy, respiratory depression, bradycardia)."
+      },
+      {
+        "drug": "Neuromuscular blocking agents (vecuronium, rocuronium, cisatracurium, succinylcholine) — perioperative",
+        "severity": "Moderate",
+        "mechanism": "Magnesium ions are natural calcium antagonists at the neuromuscular junction — high systemic magnesium levels (from IV MgSO4 or excessive oral intake) potentiate neuromuscular blockade, prolong recovery from muscle relaxants, and increase respiratory paralysis risk.",
+        "management": "Inform anesthesiologist of magnesium use before surgery. In obstetric patients on IV magnesium sulfate (eclampsia prevention), neuromuscular blocking drug doses should be reduced and TOF (train-of-four) monitoring used. Oral magnesium hydroxide at standard doses rarely causes clinically significant hypermagnesemia in normal renal function."
+      },
+      {
+        "drug": "Gabapentin and pregabalin (gabapentinoids)",
+        "severity": "Moderate",
+        "mechanism": "Antacids (including magnesium hydroxide) reduce gabapentin oral bioavailability by ~20% — mechanism involves reduced gastric transit time and possible Mg2+ competition at intestinal gabapentin transporters (LAT, ASCT). Effect is time-dependent.",
+        "management": "Take gabapentin at least 2h after magnesium hydroxide to minimize absorption reduction. For patients on gabapentin for epilepsy, subtherapeutic levels due to antacid interaction can cause breakthrough seizures. Monitor gabapentin efficacy. Effect is less clinically significant for pregabalin (higher oral bioavailability)."
       }
     ],
     "pregnancy": "Category B. Occasional use considered safe; avoid chronic high-dose laxative use.",
@@ -55024,22 +55120,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Fluoroquinolones",
+        "drug": "Fluoroquinolones (ciprofloxacin, levofloxacin, moxifloxacin) and tetracyclines (doxycycline, minocycline)",
         "severity": "Major",
-        "mechanism": "Chelation significantly reduces antibiotic absorption",
-        "management": "Separate by 2–3 hours"
+        "mechanism": "Iron (Fe2+/Fe3+) chelates fluoroquinolones and tetracyclines in the GI tract, forming insoluble complexes that are not absorbed. Antibiotic absorption reduced by 30-90% — risk of treatment failure for serious infections including UTI, pneumonia, Lyme disease, malaria prophylaxis.",
+        "management": "Take fluoroquinolone or tetracycline at least 2h BEFORE or 4-6h AFTER oral iron. This applies to all iron formulations. IV antibiotics are unaffected. Document timing instructions prominently on prescriptions."
       },
       {
-        "drug": "Levothyroxine",
+        "drug": "Levothyroxine (thyroid hormone replacement)",
         "severity": "Major",
-        "mechanism": "Reduces levothyroxine absorption",
-        "management": "Separate by at least 4 hours"
+        "mechanism": "Iron forms insoluble ferric-thyroxine complexes in the GI tract, reducing levothyroxine absorption by 20-40%. Chronic concurrent use leads to inadequate thyroid hormone replacement → progressive hypothyroidism despite stable doses.",
+        "management": "Take levothyroxine on an empty stomach at least 4h before iron supplements (or 2h after). Optimal timing: levothyroxine at 7am, iron with lunch. Monitor TSH 6-8 weeks after starting/stopping iron supplementation."
       },
       {
-        "drug": "Calcium supplements",
+        "drug": "Calcium (dairy, calcium supplements), antacids (Mg, Al, Ca salts), and zinc supplements",
         "severity": "Moderate",
-        "mechanism": "Calcium inhibits iron absorption",
-        "management": "Separate by 2 hours"
+        "mechanism": "Polyvalent cations (Ca2+, Mg2+, Al3+, Zn2+) compete with iron for intestinal DMT-1 transporter absorption. Calcium is particularly effective at inhibiting iron absorption — reduces it by 30-60% when taken simultaneously.",
+        "management": "Separate ferrous fumarate from calcium supplements by 2h, antacids by 1-2h, and zinc by 2h. Take iron on an empty stomach with vitamin C (ascorbic acid) to maximize absorption. Iron in prenatal vitamins combined with calcium reduces both minerals' absorption — supplementing separately is more effective."
+      },
+      {
+        "drug": "Levodopa (Sinemet — Parkinson's disease therapy)",
+        "severity": "Major",
+        "mechanism": "Iron chelates levodopa in the GI tract, reducing its absorption by 50-75%. This significantly reduces levodopa brain delivery and dopamine production, worsening Parkinson's motor symptoms and potentially causing motor fluctuations.",
+        "management": "AVOID concurrent iron and levodopa. If iron supplementation necessary in Parkinson's patients, separate doses by at least 2-3h — levodopa and iron should never be taken at the same time. Monitor motor symptoms closely when initiating iron therapy."
+      },
+      {
+        "drug": "Proton pump inhibitors (omeprazole, pantoprazole) and H2 blockers",
+        "severity": "Moderate",
+        "mechanism": "Non-heme iron absorption requires gastric acid to reduce Fe3+ to the more soluble and absorbable Fe2+. PPIs and H2 blockers raise gastric pH, reducing iron absorption by 30-50%. Most relevant for patients with iron deficiency anaemia on chronic acid suppression therapy.",
+        "management": "Monitor haemoglobin response to iron supplementation in patients on chronic PPI therapy. May need higher oral iron doses or IV iron (ferric carboxymaltose, iron sucrose) to overcome the absorption barrier. Consider timing iron away from PPI dose."
+      },
+      {
+        "drug": "Vitamin C (ascorbic acid) — absorption enhancer",
+        "severity": "Beneficial interaction",
+        "mechanism": "Vitamin C reduces Fe3+ to Fe2+ (more absorbable form) and prevents re-oxidation in the GI tract. Also forms soluble chelates with iron that resist pH-dependent precipitation. Co-administration increases non-heme iron absorption 2-4 fold.",
+        "management": "Take ferrous fumarate with 200mg vitamin C (glass of orange juice or supplement) to maximize absorption. This is especially important for patients with reduced gastric acid, celiac disease, or suboptimal iron absorption. Most benefit when taken on an empty stomach."
       }
     ],
     "pregnancy": "Safe — iron supplementation essential during pregnancy. Ferrous fumarate commonly used prenatal iron supplement.",
@@ -55534,22 +55648,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "MAOIs",
+        "drug": "MAOIs (phenelzine, tranylcypromine, moclobemide, selegiline, linezolid, methylene blue)",
+        "severity": "Contraindicated",
+        "mechanism": "MAOIs prevent catecholamine (dopamine, norepinephrine) breakdown; dexmethylphenidate releases and blocks reuptake of these catecholamines → catastrophic hypertensive crisis, severe hyperthermia, seizures, and death.",
+        "management": "ABSOLUTELY CONTRAINDICATED. 14-day washout after irreversible MAOI before starting dexmethylphenidate. Moclobemide (reversible MAOI): 1-day washout. Linezolid and methylene blue: treat as MAOIs. Health Canada Focalin PM: absolute contraindication stated."
+      },
+      {
+        "drug": "Antihypertensives (clonidine, guanfacine, beta-blockers, ACE inhibitors, ARBs)",
+        "severity": "Moderate",
+        "mechanism": "Dexmethylphenidate increases sympathetic outflow → raises BP and HR. Counters antihypertensive therapy. Paradoxically, alpha-2 agonists (clonidine, guanfacine) are used adjunctively in ADHD to reduce stimulant-associated cardiovascular effects — but sudden discontinuation of clonidine can cause rebound hypertension.",
+        "management": "Monitor BP and HR at baseline and follow-up visits. Screen for cardiac history. If antihypertensives required concurrently, prefer alpha-2 agonists (guanfacine ER — Intuniv) as adjunctive ADHD agents. Never abruptly discontinue clonidine in patients on stimulants."
+      },
+      {
+        "drug": "Serotonergic drugs (SSRIs, SNRIs, tramadol, triptans, dextromethorphan)",
+        "severity": "Moderate",
+        "mechanism": "Methylphenidate/dexmethylphenidate has mild serotonin-releasing activity. Combined with serotonergic drugs, risk of serotonin syndrome. Fluoxetine and fluvoxamine also inhibit CYP2D6 → reduced methylphenidate metabolism → elevated stimulant levels.",
+        "management": "Monitor for serotonin syndrome signs when combining. Prefer escitalopram or sertraline (lower CYP2D6 inhibition) if SSRI required with dexmethylphenidate. Avoid tramadol co-prescription in ADHD patients on stimulants."
+      },
+      {
+        "drug": "Anticonvulsants (phenytoin, phenobarbital, primidone) — enzyme induction and inhibition bidirectional",
+        "severity": "Moderate",
+        "mechanism": "Dexmethylphenidate can inhibit CYP2C19 and potentially CYP2C9, increasing levels of phenytoin, phenobarbital, and some other anticonvulsants. Conversely, enzyme-inducing AEDs (carbamazepine) reduce dexmethylphenidate levels by accelerating catabolism.",
+        "management": "Monitor phenytoin/phenobarbital levels when adding dexmethylphenidate. Consider dexmethylphenidate dose increase if carbamazepine or phenytoin is added (enhanced dexmethylphenidate clearance). EEG monitoring for seizure threshold changes."
+      },
+      {
+        "drug": "Warfarin and coumarin anticoagulants",
+        "severity": "Moderate",
+        "mechanism": "Dexmethylphenidate inhibits CYP2C9 (moderate), reducing S-warfarin metabolism → elevated warfarin levels → increased INR and bleeding risk. Clinical data exist for methylphenidate and warfarin interaction.",
+        "management": "Monitor INR closely when starting or adjusting dexmethylphenidate in warfarin patients. INR may increase by 20-40%. Adjust warfarin dose accordingly. Health Canada Focalin PM advises caution with anticoagulants."
+      },
+      {
+        "drug": "Alcohol (ethanol) and CNS depressants (particularly with extended-release formulations)",
         "severity": "Major",
-        "mechanism": "Hypertensive crisis risk",
-        "management": "Contraindicated; 14-day washout"
-      },
-      {
-        "drug": "Antihypertensives",
-        "severity": "Moderate",
-        "mechanism": "Stimulant effect may counteract antihypertensive",
-        "management": "Monitor blood pressure"
-      },
-      {
-        "drug": "Anticoagulants / tricyclics",
-        "severity": "Moderate",
-        "mechanism": "Methylphenidate may inhibit their metabolism",
-        "management": "Monitor drug levels"
+        "mechanism": "Alcohol accelerates release of dexmethylphenidate from extended-release (XR) formulations — dose dumping — producing rapid, high plasma concentrations with risk of cardiovascular toxicity, euphoria (abuse potential), and CNS overstimulation.",
+        "management": "Strongly counsel patients on Focalin XR to AVOID alcohol. Dose dumping with alcohol is a major safety concern for all extended-release stimulant formulations. Immediate-release formulation is less susceptible to this effect. Document alcohol counselling."
       }
     ],
     "pregnancy": "Category C. Limited data; avoid if possible. Similar precautions to methylphenidate.",
@@ -57933,16 +58065,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Live vaccines",
+        "drug": "Live attenuated vaccines (MMR, varicella, yellow fever, nasal LAIV, live zoster Zostavax)",
         "severity": "Moderate",
-        "mechanism": "Theoretical reduced response or risk of vaccine-strain disease in immunocompromised host",
-        "management": "Defer live vaccines while on biologic; complete vaccinations 2–4 weeks pre-initiation"
+        "mechanism": "Mepolizumab reduces eosinophils and modulates type 2 innate immunity. Live vaccine immunogenicity may be reduced; theoretical risk of disseminated live vaccine infection. Less profound immunosuppression than B- or T-cell-depleting biologics.",
+        "management": "Complete live vaccine series before starting mepolizumab. Use inactivated vaccines during therapy: influenza IM, Shingrix (recombinant — preferred over Zostavax), pneumococcal, COVID-19. Annual inactivated influenza is recommended for all mepolizumab patients."
       },
       {
-        "drug": "Other immunosuppressants",
+        "drug": "Systemic corticosteroids (prednisone, methylprednisolone, hydrocortisone — OCS-dependent asthma/EGPA)",
+        "severity": "Beneficial (steroid-sparing) / Monitor",
+        "mechanism": "Mepolizumab dramatically reduces eosinophil-driven inflammation, allowing OCS reduction in OCS-dependent severe eosinophilic asthma (DREAM, MENSA, SIRIUS trials: 50% OCS reduction vs placebo). For EGPA (Churg-Strauss), mepolizumab enables corticosteroid taper.",
+        "management": "Do NOT abruptly stop OCS when starting mepolizumab — taper gradually over 3-6 months after confirming clinical response. Monitor for adrenal insufficiency (HPA axis suppression after long-term steroid use) during rapid taper. Health Canada: OCS taper should be supervised and gradual."
+      },
+      {
+        "drug": "Other biologics for severe asthma (benralizumab, omalizumab, dupilumab, tezepelumab)",
+        "severity": "Major",
+        "mechanism": "No pharmacokinetic interaction (all mAbs cleared proteolytically), but combining multiple biologics targeting overlapping Th2/eosinophilic pathways has no proven additive benefit, doubles cost, and increases adverse effect burden.",
+        "management": "Select ONE biologic based on biomarkers: eosinophils ≥300/µL favors mepolizumab or benralizumab; IgE elevation favors omalizumab; dupilumab for atopic comorbidities; tezepelumab for T2-low or T2-high regardless of eosinophil count. CADTH recommends sequential trials, not combination."
+      },
+      {
+        "drug": "Antiparasitic medications (albendazole, mebendazole, ivermectin) — eosinophilia diagnostic concern",
         "severity": "Minor",
-        "mechanism": "Additive immunosuppression",
-        "management": "Monitor for infections"
+        "mechanism": "Mepolizumab suppresses eosinophilia — the hallmark immune response against helminths. During antiparasitic treatment, eosinophil counts may not rise as expected to signal treatment response or Jarisch-Herxheimer-like reactions. Diagnosis and monitoring of helminthic infections is complicated.",
+        "management": "Screen for strongyloides and other endemic helminths before starting mepolizumab in high-risk patients (immigration from endemic areas, history of helminthic infection). Treat active infections before initiating biologic. Monitor by clinical response and stool ova/parasites, not eosinophil count."
+      },
+      {
+        "drug": "Hypereosinophilic syndrome (HES) treatment — imatinib for FIP1L1-PDGFRA+ HES",
+        "severity": "Note (therapeutic distinction)",
+        "mechanism": "Mepolizumab is approved for HES (idiopathic or not FIP1L1-PDGFRA-positive). Patients with FIP1L1-PDGFRA-positive HES should receive imatinib (tyrosine kinase inhibitor) as first-line — mepolizumab is NOT appropriate for this subtype and would not address the underlying mutation.",
+        "management": "Test for FIP1L1-PDGFRA fusion gene before prescribing mepolizumab for HES. FIP1L1-PDGFRA+ patients → imatinib (excellent response). FIP1L1-PDGFRA-negative HES → mepolizumab is Health Canada-approved. Combining imatinib + mepolizumab has no established indication."
+      },
+      {
+        "drug": "Immunoglobulins (IVIG, subcutaneous IG) — patient context in primary immunodeficiency with HES",
+        "severity": "Minor",
+        "mechanism": "No direct pharmacokinetic interaction (both are biologics cleared proteolytically). In patients with primary immunodeficiency requiring IVIG and also having eosinophilic conditions, mepolizumab does not impair humoral immunity from IVIG therapy.",
+        "management": "No dose adjustment needed for mepolizumab when co-administering IVIG. However, administer in separate sites. In primary immunodeficiency patients with HES, the underlying immunodeficiency must be managed alongside eosinophil suppression with mepolizumab."
       }
     ],
     "pregnancy": "Limited human data. IgG crosses placenta — potential infant immunomodulation. Use only if benefits outweigh risks. Compatible with breastfeeding (large molecular size limits transfer).",
@@ -77948,16 +78104,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Cytotoxic chemotherapy (bleomycin, cyclophosphamide, doxorubicin, etc.)",
+        "drug": "Cytotoxic chemotherapy (bleomycin, cyclophosphamide, doxorubicin, vincristine, paclitaxel, cisplatin)",
         "severity": "Major",
-        "mechanism": "G-CSF sensitizes rapidly dividing myeloid progenitors to cytotoxic agents → increased myelotoxicity if given simultaneously or within 24 h after/14 days before chemotherapy",
-        "management": "NEVER give within 14 days before or 24 h after chemotherapy. Start G-CSF 24–72 h post-chemotherapy. Stop ≥24 h before next chemotherapy cycle."
+        "mechanism": "Filgrastim administered within 24h of cytotoxic chemotherapy increases bone marrow proliferation — rapidly dividing progenitor cells are more susceptible to cytotoxic drugs. This sensitization dramatically increases myelosuppression, severe neutropenia, and thrombocytopenia.",
+        "management": "Health Canada Neupogen PM: do NOT administer filgrastim within 24h BEFORE or 24h AFTER cytotoxic chemotherapy. Timing window: start filgrastim 24-72h after chemotherapy completion and stop 24h before next cycle. Pegfilgrastim (Neulasta) given once per cycle >24h after last chemo dose."
       },
       {
-        "drug": "Topoisomerase II inhibitors (doxorubicin, etoposide)",
+        "drug": "Lithium (carbonate or citrate)",
         "severity": "Moderate",
-        "mechanism": "Long-term G-CSF in chronic neutropenia associated with increased risk of therapy-related myeloid neoplasms (t-AML/MDS) when combined with genotoxic agents",
-        "management": "Monitor CBC and bone marrow in chronic neutropenia patients on long-term G-CSF"
+        "mechanism": "Lithium independently stimulates bone marrow granulopoiesis via WBC-stimulating mechanisms. Combined with filgrastim, there is additive granulocyte stimulation — WBC counts may be excessively elevated, increasing leukostasis risk and thrombosis in high-count states.",
+        "management": "Monitor CBC more frequently in patients receiving both lithium and filgrastim. Dose adjustment of filgrastim may be needed if WBC counts exceed target ranges (typically keep ANC <10,000/µL). Lithium is occasionally used intentionally to enhance G-CSF response (rare oncology protocols)."
+      },
+      {
+        "drug": "Bleomycin — pulmonary toxicity potentiation",
+        "severity": "Major",
+        "mechanism": "G-CSF (filgrastim) combined with bleomycin chemotherapy dramatically increases bleomycin-related pulmonary toxicity (bleomycin-induced pneumonitis, pulmonary fibrosis). Mechanism involves G-CSF-mediated neutrophil activation in the lungs, amplifying oxidative bleomycin lung damage.",
+        "management": "AVOID filgrastim in bleomycin-containing regimens (ABVD for Hodgkin lymphoma, BEP for germ cell tumors) — fatal pulmonary toxicity has been reported. Use alternative growth factor strategies or accept the neutropenia risk vs. pulmonary toxicity risk. Consult oncology protocol guidelines."
+      },
+      {
+        "drug": "Corticosteroids (prednisone, dexamethasone) — neutrophilia interaction",
+        "severity": "Minor",
+        "mechanism": "Corticosteroids independently cause neutrophilia by mobilizing granulocytes from marginated pools and bone marrow. Combined with filgrastim, white blood cell counts may be additive — extremely high WBC counts are possible.",
+        "management": "Monitor CBC when filgrastim is used concurrently with corticosteroids (common in oncology protocols including CHOP with prednisone). No dose adjustment typically required, but extreme leukocytosis (WBC >50,000/µL) warrants filgrastim dose reduction."
+      },
+      {
+        "drug": "Topotecan and irinotecan (topoisomerase inhibitors)",
+        "severity": "Moderate",
+        "mechanism": "Filgrastim combined with topotecan may increase the severity of thrombocytopenia — the mechanism is not fully understood but may relate to altered bone marrow progenitor kinetics. Irinotecan combined with G-CSF has shown no clear additive toxicity but timing is important.",
+        "management": "Standard timing rules apply: filgrastim must not be given within 24h of topotecan administration. Monitor platelet counts carefully during topotecan cycles — platelet nadirs may be unpredictable with concurrent G-CSF."
+      },
+      {
+        "drug": "Sickle cell disease patients — vaso-occlusive crisis risk",
+        "severity": "Major",
+        "mechanism": "Filgrastim in sickle cell disease (SCD) can trigger severe vaso-occlusive crises and acute chest syndrome by mobilizing sickle erythrocyte precursors and increasing neutrophil-mediated vascular inflammation. Multiple deaths and severe events reported.",
+        "management": "Health Canada: filgrastim is CONTRAINDICATED in patients with sickle cell disease. If stem cell mobilization is required in SCD patients (rare), plerixafor (CXCR4 antagonist) may be a safer alternative under hematology specialist supervision. Never administer standard G-CSF protocols in SCD."
       }
     ],
     "pregnancy": "Category C (US FDA equivalent; Health Canada — use with caution). Limited human data. Filgrastim crosses placenta. Animal studies show no embryotoxicity at therapeutic doses. G-CSF is considered relatively safe in pregnancy when benefit outweighs risk (e.g., life-threatening FN in a pregnant cancer patient). Most experience from bone marrow transplantation and oncology — consult hematology/oncology + maternal-fetal medicine. Breastfeeding: filgrastim likely safe (large protein — minimal oral absorption by infant); use with caution.",
@@ -79000,22 +79180,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Strong CYP3A4 inducers (rifampin, rifabutin, phenytoin, carbamazepine, phenobarbital, primidone, topiramate ≥200 mg/day, St. John's wort)",
+        "drug": "Strong CYP3A4 inducers (rifampin, rifabutin, phenytoin, carbamazepine, phenobarbital, primidone, topiramate ≥200 mg/day, St. John's Wort)",
         "severity": "Major",
-        "mechanism": "Accelerate etonogestrel metabolism → significantly reduced circulating levels → potential contraceptive failure",
-        "management": "AVOID in patients requiring enzyme inducers; consider copper IUD (non-hormonal, unaffected by drug interactions) as alternative LARC per SOGC/WHO MEC"
+        "mechanism": "Etonogestrel is primarily metabolized by CYP3A4. Strong inducers markedly accelerate its metabolism → sub-therapeutic plasma levels → contraceptive failure. Clinical pregnancies have been documented with Nexplanon in patients on enzyme-inducing AEDs.",
+        "management": "Health Canada Nexplanon PM: do NOT rely on etonogestrel implant as primary contraception in patients on strong CYP3A4 inducers. Add barrier contraception or switch to copper IUD (completely unaffected by enzyme inducers). Discuss with epilepsy specialist before implant insertion."
       },
       {
-        "drug": "HIV antiretrovirals (efavirenz, nevirapine, lopinavir/ritonavir, darunavir/ritonavir)",
-        "severity": "Major",
-        "mechanism": "Many NNRTIs and some PIs are CYP3A4 inducers → reduced etonogestrel exposure; individual ARV interaction varies",
-        "management": "Review specific ARV interaction; some HIV regimens compatible — consult HIV pharmacist; integrase inhibitors (raltegravir, dolutegravir, bictegravir) are NOT inducers → safe"
+        "drug": "Moderate CYP3A4 inducers (oxcarbazepine, eslicarbazepine, topiramate <200 mg/day, aprepitant, bosentan)",
+        "severity": "Moderate",
+        "mechanism": "Moderate inducers reduce etonogestrel levels to a lesser but potentially clinically significant degree. The risk of contraceptive failure is lower than with strong inducers but not negligible, particularly with long-term use.",
+        "management": "Use with caution — barrier contraception is recommended during and for 28 days after moderate inducer use. For long-term moderate inducer therapy (epilepsy), copper IUD or DMPA (Depo-Provera) are preferred alternatives. Document risk discussion in clinical notes."
       },
       {
-        "drug": "Lamotrigine",
-        "severity": "Note",
-        "mechanism": "Progestin-only methods do NOT significantly affect lamotrigine levels (unlike combined OCP)",
-        "management": "Nexplanon generally preferred over combined OCP in epilepsy patients on lamotrigine"
+        "drug": "HIV protease inhibitors and NNRTIs (efavirenz, nevirapine, lopinavir/ritonavir)",
+        "severity": "Major",
+        "mechanism": "Most PIs and NNRTIs are CYP3A4 inducers or inhibitors — efavirenz reduces etonogestrel AUC by ~63%; lopinavir/ritonavir reduces by ~52%. Contraceptive failure in HIV-positive women on these regimens has been documented.",
+        "management": "Health Canada: Nexplanon should NOT be used in patients on hepatic enzyme-inducing antiretrovirals (efavirenz, nevirapine, ritonavir-boosted regimens). Copper IUD is the preferred contraceptive method in these patients — it is the most effective and completely interaction-free."
+      },
+      {
+        "drug": "Ulipristal acetate (ella emergency contraception, Fibristal) — progesterone receptor antagonism",
+        "severity": "Major",
+        "mechanism": "Ulipristal acetate is a selective progesterone receptor modulator that may reduce etonogestrel efficacy by competing at progesterone receptors. Additionally, etonogestrel may reduce ulipristal's emergency contraceptive efficacy by limiting its receptor antagonist effect.",
+        "management": "After using ulipristal acetate for emergency contraception: do not rely on etonogestrel implant for 7 days — use barrier contraception. Conversely, if patient has Nexplanon in situ and needs emergency contraception, use levonorgestrel EC (Plan B) rather than ella (ulipristal)."
+      },
+      {
+        "drug": "Lamotrigine (anticonvulsant — important bidirectional interaction)",
+        "severity": "Moderate",
+        "mechanism": "Progestins increase lamotrigine glucuronidation, reducing lamotrigine levels by 40-50% in some studies (similar to combined OCP effect but less pronounced). Subtherapeutic lamotrigine → increased seizure risk. Nexplanon does not induce CYP3A4, so lamotrigine levels are not reduced via that pathway.",
+        "management": "Monitor lamotrigine levels when Nexplanon is inserted or removed. Seizure frequency may increase after implant insertion — adjust lamotrigine dose (increase 25-30%) if levels drop. Remove and increase lamotrigine monitoring — levels may rise when implant removed. Neurology consultation recommended."
+      },
+      {
+        "drug": "Drugs that may be affected by etonogestrel-induced hormone changes (thyroid medications, corticosteroids, CBG-bound drugs)",
+        "severity": "Minor",
+        "mechanism": "Etonogestrel increases cortisol-binding globulin (CBG) and sex hormone-binding globulin (SHBG) — affecting free fractions of cortisol and sex hormones. In patients on thyroid replacement or adrenal hormone therapy, these CBG/SHBG changes may alter drug distribution.",
+        "management": "Monitor TSH after Nexplanon insertion in patients on levothyroxine. Monitor cortisol levels in patients on hydrocortisone for adrenal insufficiency. Adjustments are rarely needed but awareness of SHBG/CBG changes is important for monitoring free drug fractions."
       }
     ],
     "pregnancy": "CONTRAINDICATED. If pregnancy occurs with implant in situ (rare): remove implant. If implant placed inadvertently in early pregnancy: inadequate human data on fetal risk. Etonogestrel is a progestin — historical concern about masculinization unfounded with modern low-dose implants. RAPID RETURN TO FERTILITY after removal (mean ~3 weeks; ovulation resumes). Lactation: WHO MEC Category 1 (breastfeeding ≥6 weeks postpartum); minimal transfer to breast milk; no adverse effects on infant growth or development per SOGC/WHO. Preferred in breastfeeding patients.",
