@@ -22846,7 +22846,13 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "No PK interaction — combination used intentionally for additive LDL lowering; ezetimibe inhibits NPC1L1 intestinal cholesterol absorption while rosuvastatin inhibits hepatic cholesterol synthesis; generally well tolerated",
         "management": "Safe combination; monitor LFTs at baseline; combination reduces LDL by additional 20–25% over statin alone; per CCS Dyslipidemia Guidelines 2021"
-      }
+      },
+        {
+          "drug": "Macrolides (clarithromycin, erythromycin) — OATP transporter context",
+          "severity": "Minor",
+          "mechanism": "Unlike simvastatin and lovastatin (CYP3A4-metabolized statins significantly inhibited by macrolides), rosuvastatin is predominantly eliminated renally and minimally metabolized by CYP2C9; clarithromycin inhibits OATP1B1/1B3 hepatic uptake transporters, which may modestly increase rosuvastatin AUC (~30%); the myopathy risk is considerably lower than for CYP3A4-metabolized statins — rosuvastatin is often preferred when macrolide therapy is required",
+          "management": "Rosuvastatin is a safer statin choice when macrolide therapy (clarithromycin, azithromycin) is required; no dose suspension or adjustment is required for short-course azithromycin; for clarithromycin courses >7–10 days in patients on high-dose rosuvastatin (≥40 mg), monitoring for myalgia is prudent; document as a preferred statin choice in patients requiring frequent macrolide prescriptions (e.g., recurrent respiratory infections)"
+        }
     ],
     "pregnancy": "FDA removed pregnancy contraindication July 2021. Avoid routine use; acceptable for FH, severe LDL elevation, established ASCVD where benefits outweigh risks. Pravastatin or simvastatin preferred (more pregnancy data). CONTRAINDICATED in lactation.",
     "pk": {
@@ -24683,7 +24689,13 @@ var DRUGS = {
         "severity": "Contraindicated",
         "mechanism": "Sacubitril inhibits neprilysin, which degrades bradykinin. Combined with ACEi → massively elevated bradykinin → life-threatening angioedema. PARADIGM-HF trial: 36-hour washout period mandatory between stopping ACEi and starting sacubitril-valsartan",
         "management": "CONTRAINDICATED concurrently. Mandatory 36-hour ACEi washout before initiating sacubitril-valsartan (or 36h washout from sacubitril-valsartan before restarting ACEi). Use ARB + sacubitril-valsartan not applicable — sacubitril-valsartan contains valsartan"
-      }
+      },
+        {
+          "drug": "Trimethoprim (including TMP-SMX / co-trimoxazole)",
+          "severity": "Major",
+          "mechanism": "Trimethoprim blocks the epithelial sodium channel (ENaC) in the distal nephron, mimicking a potassium-sparing diuretic effect; combined with lisinopril (which suppresses aldosterone via ACE inhibition), the dual blockade of renal potassium excretion causes clinically significant hyperkalemia; this is the 'trimethoprim-as-potassium-sparing diuretic' interaction, well-documented in CMAJ and Canadian nephrology literature; risk is amplified in renal impairment, elderly patients, and those on concurrent NSAIDs",
+          "management": "Monitor serum potassium within 5–7 days of starting TMP-SMX in patients on lisinopril; avoid the combination in patients with CKD Stage 3+ (eGFR <45 mL/min) or baseline K+ >5.0 mmol/L; if combination is necessary, consider dose reduction of TMP-SMX; nitrofurantoin is a safer alternative for UTI treatment in ACEi-treated patients without severe renal impairment; this interaction has been associated with sudden cardiac death in population-based Canadian studies (Fralick, CMAJ 2014)"
+        }
     ],
     "pregnancy": "Contraindicated — teratogenic.",
     "pk": {
@@ -26921,7 +26933,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Quetiapine α1 antagonism → additive blood pressure lowering → excessive orthostatic hypotension",
         "management": "Monitor BP; advise patients to rise slowly; adjust antihypertensive if needed"
-      }
+      },
+        {
+          "drug": "Anticholinergic agents (benztropine, oxybutynin, tolterodine, solifenacin, TCAs, first-gen antihistamines)",
+          "severity": "Moderate",
+          "mechanism": "Quetiapine itself has moderate anticholinergic activity (muscarinic M1 blockade) — among the highest of second-generation antipsychotics; combining with other anticholinergics (bladder drugs, antihistamines, TCAs) produces additive anticholinergic toxicity: constipation, urinary retention, dry mouth, blurred vision, cognitive dysfunction, delirium, heat intolerance, and tachycardia; quetiapine's anticholinergic burden is particularly relevant in elderly patients",
+          "management": "Quantify total anticholinergic burden using the ACB scale before adding any anticholinergic to quetiapine; prefer non-anticholinergic alternatives for bladder symptoms (mirabegron), insomnia (melatonin, trazodone), and allergies (second-generation antihistamines); STOPP/START criteria and Canadian Choosing Wisely recommendations advise against anticholinergic polypharmacy in older adults; ECG monitoring warranted if adding TCAs"
+        }
     ],
     "pregnancy": "Limited data — second-generation antipsychotics generally considered relatively safer than first-generation for acute psychosis in pregnancy. Quetiapine: registry data (National Pregnancy Registry for Atypical Antipsychotics — Massachusetts General Hospital) suggests no significant increase in major malformations vs general population. Third trimester exposure: neonatal extrapyramidal symptoms, withdrawal (jitteriness, feeding difficulty, respiratory distress) — Health Canada black box on neonatal effects. Metabolic effects during pregnancy (gestational diabetes, weight gain) relevant. Benefit of treating psychotic/bipolar illness in pregnancy outweighs drug risk in most cases — consult psychiatry. Breastfeeding: quetiapine passes into breast milk (small amounts); relative infant dose ~0.1%; generally considered compatible — monitor infant for sedation.",
     "pk": {
@@ -27928,7 +27946,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive orthostatic hypotension",
         "management": "Monitor BP; rise slowly"
-      }
+      },
+        {
+          "drug": "Anticholinergic agents (benztropine, trihexyphenidyl, oxybutynin, tolterodine, diphenhydramine, tricyclics)",
+          "severity": "Moderate",
+          "mechanism": "Risperidone itself has low intrinsic anticholinergic activity; however, antipsychotic-induced extrapyramidal symptoms (EPS) are often treated with anticholinergic drugs (benztropine, trihexyphenidyl); combining risperidone with anticholinergics adds to total anticholinergic burden — increasing risk of urinary retention, constipation, cognitive impairment, tachycardia, delirium (particularly in elderly patients), and worsening of tardive dyskinesia",
+          "management": "Minimize concurrent anticholinergic medications; if EPS occur with risperidone, consider dose reduction or switching to a lower-EPS antipsychotic before adding anticholinergic; if anticholinergic must be added, use lowest effective dose for shortest duration; use the Anticholinergic Cognitive Burden Scale (ACB scale) to assess total burden; elderly patients are particularly vulnerable — STOPP criteria identify anticholinergic polypharmacy as a prescribing concern"
+        }
     ],
     "pregnancy": "Category C. Neonatal EPS and withdrawal. Prolactin elevation may impair fertility. Discuss risk-benefit.",
     "pk": {
@@ -28135,7 +28159,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Moderate CYP1A2 inhibition → increased clozapine levels (less severe than fluvoxamine but clinically significant with ciprofloxacin at standard doses)",
         "management": "Monitor for clozapine toxicity signs (sedation, hypotension, tachycardia); consider dose reduction; check plasma levels; use azithromycin or doxycycline instead of fluoroquinolones when possible"
-      }
+      },
+        {
+          "drug": "Anticholinergic agents (benztropine, hyoscine, oxybutynin, TCAs, antihistamines) — additive burden with clozapine's own anticholinergic activity",
+          "severity": "Major",
+          "mechanism": "Clozapine has the highest anticholinergic potency among antipsychotics (strong M1/M2/M3 muscarinic blockade); adding external anticholinergic drugs creates an extremely high total anticholinergic burden; consequences include paralytic ileus (clozapine bowel obstruction — a known life-threatening complication, with Health Canada advisories), urinary retention requiring catheterization, delirium, and severe constipation leading to bowel perforation",
+          "management": "Strongly avoid adding anticholinergic drugs to clozapine; clozapine-induced constipation is independently managed with osmotic laxatives (PEG 3350) and dietary fibre — not anticholinergics; if bladder symptoms occur, clozapine dose reduction or laxative management is preferred over adding oxybutynin/tolterodine; Health Canada product monograph for clozapine lists anticholinergic co-administration as a major interaction; bowel obstruction deaths have been reported with clozapine — routine bowel monitoring is standard in Canadian psychiatry"
+        }
     ],
     "pregnancy": "Category B. Limited data. Neonatal seizures and adaptation syndrome reported. Risk-benefit assessment required.",
     "pk": {
@@ -39257,7 +39287,13 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive blood pressure lowering — generally beneficial and intentional for BP control; however, first-dose hypotension risk is increased when adding ramipril to existing antihypertensives, especially diuretics",
         "management": "Start with low dose (1.25–2.5 mg). Consider holding or reducing diuretic dose before initiating ramipril in volume-depleted patients. Counsel patient to take first dose at bedtime."
-      }
+      },
+        {
+          "drug": "Trimethoprim (including TMP-SMX / co-trimoxazole)",
+          "severity": "Major",
+          "mechanism": "Trimethoprim blocks distal tubule potassium excretion via ENaC blockade (potassium-sparing diuretic mechanism); combined with ramipril (ACE inhibitor suppressing aldosterone), both drugs independently elevate potassium — additive hyperkalemia risk is substantial, particularly in patients with CKD, heart failure, or diabetes; Canadian CMAJ population-based studies document excess mortality from this combination",
+          "management": "Check serum K+ and creatinine within 7 days of adding TMP-SMX to ramipril; hold TMP-SMX if K+ ≥5.5 mmol/L; prefer nitrofurantoin for UTI in ramipril-treated patients with preserved renal function (eGFR >30 mL/min); if TMP-SMX is necessary (e.g., PCP prophylaxis), consider reducing dose to single-strength daily or monitoring more frequently; educate patients to report weakness, palpitations, muscle cramps"
+        }
     ],
     "pregnancy": "ABSOLUTE CONTRAINDICATION in 2nd and 3rd trimesters (Category D). ACE inhibitors cause ACE inhibitor fetopathy: fetal exposure leads to fetal renal tubular dysplasia → oligohydramnios → fetal pulmonary hypoplasia, fetal limb contractures, fetal skull hypoplasia (calvarial hypoplasia), neonatal anuria, and fetal/neonatal death. Risk is greatest in 2nd and 3rd trimesters when fetal kidneys are actively developing. First trimester: conflicting data on cardiovascular malformations — avoid if alternatives exist; if inadvertent exposure in first trimester only, fetal outcomes are generally reassuring but monitoring is warranted. Discontinue ramipril immediately upon pregnancy confirmation. Switch to methyldopa, labetalol, or nifedipine ER for hypertension management in pregnancy. Breastfeeding: avoid — limited safety data; enalapril or captopril are preferred ACE inhibitors if ACE inhibitor is specifically needed during breastfeeding (more published breastfeeding data).",
     "pk": {
@@ -59742,7 +59778,13 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Isoniazid inhibits CYP2C9 (and CYP2C19) → significantly reduces phenytoin metabolism → elevated phenytoin levels → toxicity; risk highest in slow acetylators (higher INH exposure); up to 27% of patients on both drugs develop phenytoin toxicity",
         "management": "Monitor phenytoin levels within 1–2 weeks of starting INH; reduce phenytoin dose if levels increase; slow acetylators (genotyping or clinical assessment) at highest risk; consider levetiracetam instead of phenytoin in TB patients on INH"
-      }
+      },
+        {
+          "drug": "Oral contraceptives (ethinyl estradiol-containing combined OCP, progestin-only pills)",
+          "severity": "Major",
+          "mechanism": "Phenytoin is a potent inducer of CYP3A4 and CYP2C9, the primary enzymes metabolizing ethinyl estradiol and progestins; co-administration reduces OCP hormone levels by up to 50%, causing contraceptive failure (unintended pregnancy); phenytoin also induces UDP-glucuronosyltransferases (UGT), increasing progestin conjugation and clearance",
+          "management": "Contraceptive failure is a significant concern; Health Canada and the Canadian Contraception Consensus advise: (1) use non-hormonal contraception (copper IUD as first choice) or (2) if hormonal contraception is preferred, use a higher-dose formulation (≥50 μg ethinyl estradiol) plus a barrier method — but note effectiveness may still be reduced; barrier methods alone (condom + diaphragm) are recommended; provide counselling that standard-dose OCPs are not reliable contraception with phenytoin; LARCs (levonorgestrel or copper IUD) are unaffected by enzyme inducers and are the safest option"
+        }
     ],
     "pregnancy": "Pregnancy Category D — teratogenic (fetal hydantoin syndrome: cleft lip/palate, cardiac defects, microcephaly, cognitive impairment ~10%). Folate supplementation (5 mg/day) required pre-conception and throughout pregnancy. Vitamin K 10 mg PO daily for the LAST month of pregnancy (prevents neonatal hemorrhagic disease). If possible, switch to safer AED (levetiracetam, lamotrigine) before pregnancy.",
     "pk": {
@@ -59850,7 +59892,13 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Initial small rise then sustained decrease in INR (induction)",
         "management": "Monitor INR closely with any dose change"
-      }
+      },
+        {
+          "drug": "Oral contraceptives (ethinyl estradiol-containing combined OCP, progestin-only pills)",
+          "severity": "Major",
+          "mechanism": "Phenobarbital is a broad-spectrum CYP450 inducer (CYP3A4, CYP2C9, CYP1A2, UGTs) via constitutive androstane receptor (CAR) activation; it markedly accelerates metabolism of ethinyl estradiol and progestins, reducing OCP hormone levels and causing contraceptive failure; the induction begins within days and is fully established within 2–3 weeks of regular phenobarbital use",
+          "management": "Standard OCPs are unreliable in patients on phenobarbital; Canadian Contraception Consensus recommendations: prefer a copper intrauterine device (copper IUD) for reliable non-hormonal contraception, or levonorgestrel-containing IUS (Mirena) which achieves local uterine contraceptive effect largely independent of systemic hormone levels; if an oral hormonal method is used, a higher-dose formulation with a barrier backup method is needed; counsel patients explicitly about this interaction at the time of prescribing or dispensing phenobarbital"
+        }
     ],
     "pregnancy": "Pregnancy Category D — teratogenic (cleft lip/palate, cardiac defects, neural tube defects ~5–10%). Folate 5 mg/day pre-conception and pregnancy. Vitamin K supplementation last month. Neonatal withdrawal (abstinence syndrome) common. Counsel about alternatives where possible. Excreted in breast milk — sedation risk in nursing infant; monitor.",
     "pk": {
@@ -77820,7 +77868,13 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Reduce pravastatin absorption",
         "management": "Take pravastatin ≥1 h before or ≥4 h after bile acid sequestrant"
-      }
+      },
+        {
+          "drug": "Macrolides (clarithromycin, azithromycin) — minimal pharmacokinetic interaction",
+          "severity": "No interaction",
+          "mechanism": "Pravastatin is minimally metabolized by CYP enzymes (mainly CYP3A4 with very low affinity) and is primarily eliminated unchanged in bile; macrolides (clarithromycin, azithromycin) that inhibit CYP3A4 have negligible impact on pravastatin pharmacokinetics; pravastatin is therefore the preferred statin when CYP3A4 inhibitors (macrolides, azole antifungals, protease inhibitors) are co-prescribed; FDA and Health Canada label pravastatin as not requiring dose adjustment with macrolide co-administration",
+          "management": "Pravastatin is a preferred statin when concurrent macrolide, azole antifungal, or HIV protease inhibitor therapy is needed; no dose adjustment or monitoring changes required for pravastatin + azithromycin or clarithromycin; document pravastatin as a safer alternative for patients who require frequent macrolide prescriptions to avoid the rhabdomyolysis risk associated with CYP3A4-metabolized statins (simvastatin, lovastatin)"
+        }
     ],
     "pregnancy": "PREFERRED STATIN in pregnancy when statin therapy essential. FDA removed Category X July 2021. Hydrophilic — does not cross placenta as readily as lipophilic statins. Most studied for pregnancy use (StAmP trial for severe preeclampsia prevention). Acceptable indications: familial hypercholesterolemia, severe LDL elevation, established ASCVD. CONTRAINDICATED in lactation.",
     "pk": {
@@ -77919,7 +77973,13 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Fluvastatin minimally metabolized by CYP3A4 — UNLIKE atorvastatin/simvastatin/lovastatin",
         "management": "Fluvastatin is alternative to pravastatin for patients on strong CYP3A4 inhibitors"
-      }
+      },
+        {
+          "drug": "Clarithromycin (and erythromycin) — CYP2C9 inhibition, minor interaction",
+          "severity": "Minor",
+          "mechanism": "Fluvastatin is primarily metabolized by CYP2C9; clarithromycin is a weak-to-moderate CYP2C9 inhibitor (in addition to its CYP3A4 inhibition); this may increase fluvastatin AUC by approximately 30–50%, potentially raising myopathy risk; the interaction is less severe than for CYP3A4-metabolized statins (simvastatin, lovastatin, atorvastatin) because fluvastatin's absolute bioavailability is lower and CYP2C9 inhibition by macrolides is modest",
+          "management": "No routine dose reduction required for short-course macrolide therapy with fluvastatin; for prolonged clarithromycin use (H. pylori eradication, MAC prophylaxis), consider reducing fluvastatin dose or temporarily switching to pravastatin or rosuvastatin; counsel patients to report muscle pain, weakness, or dark urine; monitor CK if myalgia develops during concurrent use"
+        }
     ],
     "pregnancy": "Pregnancy Category X — CONTRAINDICATED. Effective contraception during therapy. Excretion in breast milk: avoid.",
     "pk": {
