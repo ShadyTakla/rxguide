@@ -1,0 +1,26 @@
+{
+  "Acne Vulgaris": {
+    "patient_counselling": [
+      "Benzoyl peroxide (BPO) 2.5–5%: apply a thin layer to clean dry skin (pea-sized amount for the whole face) ONCE daily initially; can increase to twice daily if tolerated. 2.5% strength has equivalent efficacy to 5–10% with less irritation — start low.",
+      "Topical retinoid (adapalene 0.1% gel — Differin, OTC in Canada): apply a pea-sized amount to entire affected area once daily AT BEDTIME on dry skin (wait 20–30 min after washing). Use sparingly — more is NOT better and causes irritation.",
+      "Combine BPO (morning) and retinoid (evening) for synergy; do NOT apply at the same time (BPO can degrade older retinoids — this is less of an issue with adapalene but spacing reduces irritation).",
+      "Expect initial worsening or 'purge' for 2–6 weeks as deeper lesions surface; visible improvement typically takes 8–12 weeks of consistent use. Do NOT stop early.",
+      "Skin irritation (dryness, redness, peeling, stinging) is common in the first 2–4 weeks: use a non-comedogenic, fragrance-free moisturizer; reduce frequency to every other day if severe; avoid scrubs, harsh cleansers, alcohol-based toners.",
+      "Sunscreen SPF 30+ EVERY morning is mandatory — retinoids and BPO increase sun sensitivity, and sun worsens post-inflammatory hyperpigmentation. Use non-comedogenic mineral sunscreen.",
+      "BPO bleaches fabric — use white pillowcases/towels during treatment, allow product to fully absorb before contact with clothing.",
+      "Do NOT pick, squeeze, or pop pimples — causes scarring and post-inflammatory hyperpigmentation. Avoid heavy makeup; use only non-comedogenic ('won't clog pores') products.",
+      "Avoid topical antibiotics as monotherapy (resistance) — always combine with BPO (e.g., Benzaclin, Clindoxyl). Topical antibiotics + BPO combination is second-line.",
+      "Red flags — refer to physician: severe nodulocystic acne (deep painful lumps, scarring), no improvement after 12 weeks of correct use, signs of hyperandrogenism in women (irregular cycles, hirsutism, alopecia), psychosocial impact (mood, body image) — for oral antibiotics, hormonal therapy, or oral isotretinoin (Accutane — dermatologist-prescribed, requires pregnancy prevention)."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident with typical acne vulgaris (mild to moderate); verify ID/OHIP, obtain consent.",
+      "2. Focused history: severity assessment (mild = comedonal/few inflammatory; moderate = many papules/pustules; severe = nodulocystic, scarring), distribution (face, chest, back), duration, prior treatments and response, skin type/sensitivities, current medications (steroids, lithium, anticonvulsants, hormonal contraception), pregnancy/lactation, menstrual pattern in women, psychosocial impact.",
+      "3. Red flag screen: severe nodulocystic acne, scarring, fulminant acne, hyperandrogenism features (women), pregnancy (avoid retinoids — refer for safer options), suspected drug-induced acne — refer to physician/dermatology.",
+      "4. Differential diagnosis: rule out rosacea, perioral dermatitis, folliculitis (Pityrosporum, gram-negative), pseudofolliculitis barbae, hidradenitis suppurativa, acneiform drug eruption, cutaneous Cushing's signs.",
+      "5. Therapy selection: mild → BPO 2.5–5% OR adapalene 0.1% (combine for synergy); moderate → BPO + adapalene + topical antibiotic combination (Clindoxyl); refer for oral antibiotics, hormonal therapy, or isotretinoin if severe/refractory. Consider azelaic acid 15–20% as alternative for sensitive skin or pregnancy.",
+      "6. Counsel on application technique (pea-sized, dry skin, bedtime for retinoid), expected purge/timeline (8–12 weeks), irritation management, sunscreen, no picking, fabric-bleaching by BPO, when to escalate.",
+      "7. Document the encounter per OCP standards: assessment findings (severity grade), diagnosis, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 8–12 weeks; step up if inadequate response (add second agent, refer for oral therapy); monitor for irritation/treatment adherence; reinforce sunscreen use."
+    ]
+  }
+}

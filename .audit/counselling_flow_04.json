@@ -1,0 +1,26 @@
+{
+  "Hemorrhoids": {
+    "patient_counselling": [
+      "Anusol HC (hydrocortisone 0.5% + zinc sulfate) cream/ointment: apply a small amount to the affected area 2–4 times daily after bowel movements and at bedtime, for NO MORE than 5–7 days — prolonged use causes skin thinning and atrophy.",
+      "Apply with clean hands or applicator; for internal hemorrhoids use the applicator gently, lubricate first; clean the area gently with warm water and pat dry before each application.",
+      "Witch hazel pads (Tucks): use after each bowel movement to soothe and reduce inflammation — astringent and anti-inflammatory; safe for prolonged use.",
+      "Sitz baths: soak buttocks in plain warm (not hot) water for 10–15 minutes, 2–3 times daily and after each bowel movement — provides excellent symptomatic relief; do NOT add Epsom salts or soaps which can irritate.",
+      "Increase dietary fibre to 25–35 g/day (vegetables, fruits with skin, whole grains, legumes); add psyllium fibre supplement (Metamucil 3.4 g 1–3 times daily with at least 250 mL water) — psyllium is the most evidenced agent for reducing hemorrhoidal bleeding and symptoms.",
+      "Drink 2–3 L of water daily; avoid straining or prolonged sitting on the toilet (no reading/phone); respond promptly to the urge to defecate; consider a footstool to elevate knees (improves anorectal angle).",
+      "Stool softener (docusate sodium 100 mg BID) can help if stools are hard, but psyllium is preferred. Avoid stimulant laxatives long-term.",
+      "Symptoms (itching, bleeding, mild pain) typically improve within 7–10 days; if no improvement after 2 weeks of conservative measures, return to pharmacy or physician.",
+      "Red flags — see physician promptly: severe acute pain with inability to sit (thrombosed external hemorrhoid — excision most effective <72h), heavy or persistent bleeding, dark blood / blood mixed in stool / melena (suggests upper GI source), weight loss, change in bowel habits, anemia, or age ≥40 with first episode of rectal bleeding (need colonoscopy to rule out colorectal cancer).",
+      "Store creams/ointments at room temperature; do not share applicators; discard expired products."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident with typical hemorrhoidal symptoms (perianal itching, bleeding with stool, prolapse, mild pain); verify ID/OHIP, obtain consent.",
+      "2. Focused history: symptom characterization (bleeding pattern — bright red on paper/in toilet vs mixed with stool; prolapse — reducible vs not; pain), duration, bowel habits (constipation, straining, stool consistency), dietary fibre/water intake, prior episodes, pregnancy, current medications (anticoagulants, NSAIDs).",
+      "3. Red flag screen: dark blood / blood mixed with stool / melena (upper GI bleed — refer), weight loss, change in bowel habits, anemia, family history of colorectal cancer, age ≥40 with first bleeding episode, severe pain + inability to sit (thrombosed hemorrhoid), prolapsed irreducible hemorrhoid, suspected anal fissure or abscess — refer.",
+      "4. Differential diagnosis: rule out anal fissure, perianal abscess, anal/rectal cancer, inflammatory bowel disease, condyloma (warts), pruritus ani from other causes, rectal prolapse, fistula.",
+      "5. Therapy selection: topical Anusol HC ×5–7 days for symptomatic relief + witch hazel pads + sitz baths + psyllium fibre + lifestyle (hydration, no straining); avoid topical corticosteroids beyond 7 days.",
+      "6. Counsel on cream application technique, sitz bath instructions, fibre titration with adequate water, toileting habits, when to return; provide written instructions.",
+      "7. Document the encounter per OCP standards: assessment findings, diagnosis, grade if external/internal, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 2 weeks; if no improvement, persistent bleeding, or grade III/IV symptoms — refer for colorectal evaluation (rubber band ligation, hemorrhoidectomy) and colonoscopy if age/risk indicates."
+    ]
+  }
+}

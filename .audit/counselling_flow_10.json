@@ -1,0 +1,26 @@
+{
+  "Cold Sores (Oral Herpes Simplex)": {
+    "patient_counselling": [
+      "TIMING IS CRITICAL — start antiviral treatment at the FIRST sign of prodrome (tingling, burning, itching at the lip 12–24 hours before vesicles appear). Treatment is most effective in the prodrome and early vesicle stage; benefit drops significantly once ulcers form.",
+      "Valacyclovir 2 g BID × 1 day (single-day regimen — 4 tablets total): take 2 g (4× 500 mg) at first sign, then second 2 g dose 12 hours later. Most convenient evidence-based oral option.",
+      "Famciclovir 1500 mg single dose at first sign — also single-dose convenient option for immunocompetent adults.",
+      "Topical docosanol 10% (Abreva, OTC): apply at first sign of prodrome, then 5 times daily until healed (up to 10 days). Reduces healing time by ~1 day; less effective than oral antivirals but accessible.",
+      "Topical acyclovir 5% cream: apply 5 times daily for 4 days; modest efficacy (~0.5–1 day reduction in healing time).",
+      "L-lysine supplements are NOT recommended — Cochrane systematic review (2015) found insufficient evidence for meaningful benefit; do not rely on these.",
+      "Triggers to avoid/manage: UV exposure (use lip balm with SPF 30+ daily), stress, fever, fatigue, menstruation, dental procedures, immunosuppression. Identify your personal triggers.",
+      "While vesicles/ulcers are active, you ARE contagious by direct contact (kissing, oral sex) and shared utensils/towels/lip products: avoid contact with infants/newborns, immunocompromised people, and those with eczema (eczema herpeticum risk); replace lip balm and toothbrush after outbreak.",
+      "Common side effects of oral antivirals: mild headache, nausea — generally well tolerated. Renal dose adjustment needed for valacyclovir if CrCl <50.",
+      "Red flags — see physician urgently: vesicles or pain in or around the EYE (herpetic keratoconjunctivitis — same-day ophthalmology), eczema flare with vesicles (eczema herpeticum — emergency), immunocompromised host (HIV, chemo, transplant), recurrences ≥6 episodes/year (consider suppressive valacyclovir 500 mg OD), severe/atypical/widespread lesions, fever and lymphadenopathy with primary outbreak."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident with prior diagnosed recurrent herpes labialis or typical recurrent cold sore presentation; verify ID/OHIP, obtain consent.",
+      "2. Focused history: timing — currently in prodrome (best window) vs vesicle vs ulcer/crusting stage; recurrence frequency (≥6/year — consider suppression); identified triggers; pregnancy/lactation; immune status; current medications; renal function (for dose adjustment).",
+      "3. Red flag screen: eye involvement (herpetic keratitis — refer ophthalmology same day), eczema herpeticum (eczema base + vesicles — emergency), immunocompromise, neonatal exposure, primary infection with systemic symptoms, suspected herpes encephalitis (severe headache, neuro changes — emergency), atypical/widespread lesions — refer.",
+      "4. Differential diagnosis: rule out impetigo, angular cheilitis, aphthous ulcers (intra-oral, NOT herpes), contact dermatitis, primary herpes gingivostomatitis (children — different presentation), syphilitic chancre, perioral dermatitis.",
+      "5. Therapy selection: prodrome/early vesicle → oral antiviral preferred (valacyclovir 2 g BID × 1 day single-day OR famciclovir 1500 mg single dose); topical alternatives (docosanol 10% or acyclovir 5% cream) if oral not desired or for adjunct; suppressive valacyclovir 500 mg OD for ≥6 episodes/year (refer for assessment).",
+      "6. Counsel on prodrome recognition, timing-critical start, dose, contagion precautions, trigger avoidance, lip SPF, when to return for suppressive therapy or red flags.",
+      "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess if no improvement within 5–7 days; refer for assessment if frequent recurrences (≥6/year), worsening pattern, atypical features, or any red flag emergence."
+    ]
+  }
+}

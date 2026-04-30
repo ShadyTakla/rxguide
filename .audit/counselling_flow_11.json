@@ -1,0 +1,26 @@
+{
+  "Musculoskeletal Sprains": {
+    "patient_counselling": [
+      "PEACE & LOVE protocol (replaces RICE/POLICE): PROTECTION (relative rest 48–72h, avoid painful loading), ELEVATION (limb above heart level), AVOID anti-inflammatories early (limit NSAIDs/ice in first 48–72h — may impair healing), COMPRESSION (tensor or sleeve), EDUCATION (active recovery, optimism). Then → LOAD (gradual return to activity), OPTIMISM, VASCULARIZATION (cardio without aggravating), EXERCISE (proprioception/strength).",
+      "Acetaminophen 500–1000 mg every 4–6 hours (max 4 g/day, lower if liver disease/alcohol use) is preferred for pain control in the first 48–72 hours — does not impair tissue healing.",
+      "If using oral NSAIDs (ibuprofen 400 mg q6h or naproxen 250–500 mg BID): start AFTER the first 48–72h if needed; take WITH FOOD; use lowest effective dose for shortest duration; avoid if peptic ulcer history, severe renal/hepatic impairment, anticoagulation, last trimester pregnancy.",
+      "Topical diclofenac 1% gel (Voltaren Emulgel): apply 2–4 g (cherry-sized amount) to affected area 4 times daily; rub in gently; wash hands after application — fewer systemic side effects than oral NSAIDs, equivalent efficacy for localized MSK pain.",
+      "Ice for analgesia (not for healing): 15–20 minutes every 2–4 hours during the first 24–48h, wrapped in a towel (never directly on skin); after 48–72h, switch to gentle heat for stiffness.",
+      "Compression: tensor bandage or elastic ankle brace during the day for support; remove at night; do NOT wrap so tightly that fingers/toes go numb, blue, or cold.",
+      "Functional bracing (lace-up ankle brace, air stirrup) is preferred over rigid immobilization for ankle sprains — promotes earlier return to activity and reduces re-injury per AAOS 2023.",
+      "Begin gentle range-of-motion exercises after 24–48 hours as pain allows; progress to weight-bearing and proprioception (single-leg balance, wobble board) over 1–2 weeks; avoid complete rest beyond 72 hours.",
+      "Most grade I sprains improve in 1–2 weeks; grade II in 3–6 weeks; grade III may take months and need orthopedic care. Pain should improve daily — if pain worsens or plateaus, seek reassessment.",
+      "Red flags / Ottawa Ankle Rules positive (need X-ray): inability to bear weight 4 steps both immediately and in office, bone tenderness at posterior edge or tip of either malleolus, navicular, or base of 5th metatarsal; also: numbness/tingling, severe deformity, suspected fracture/dislocation, signs of DVT (unilateral calf swelling, warmth, redness, pain) if immobilized >72h, grade III sprain (complete rupture) — refer."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident with minor MSK sprain/strain (typically grade I–II); verify ID/OHIP, obtain consent.",
+      "2. Focused history: mechanism of injury, time since injury, location, severity (pain scale), weight-bearing ability, prior injuries, allergies, current medications (anticoagulants, NSAID contraindications), comorbidities (peptic ulcer, renal/hepatic disease, pregnancy).",
+      "3. Apply Ottawa Ankle/Knee Rules and red flag screen: inability to bear weight, bone tenderness over malleoli/navicular/5th metatarsal, severe deformity, neurovascular compromise (numbness, pulses), open wound, suspected fracture or grade III sprain, joint instability, suspected DVT — refer for X-ray/orthopedic assessment.",
+      "4. Differential diagnosis: rule out fracture, complete ligament rupture (grade III), tendon rupture (Achilles, biceps), joint dislocation, septic joint, gout/pseudogout, DVT, compartment syndrome, referred pain from spine.",
+      "5. Therapy selection: PEACE & LOVE non-pharm + analgesia — first 48–72h acetaminophen OR topical diclofenac; oral NSAIDs after 48–72h if needed; functional bracing for ankle sprains; refer to physiotherapy for grade II–III.",
+      "6. Counsel on PEACE & LOVE concept, NSAID timing/contraindications, topical application, brace use, progressive loading, proprioception, when to escalate, DVT awareness if immobilized.",
+      "7. Document the encounter per OCP standards: assessment findings (Ottawa Rules outcome, severity grade), diagnosis, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 1–2 weeks; if not improving, refer to physiotherapy or orthopedics; consider imaging if pain plateaus or worsens; encourage progressive return to activity guided by pain."
+    ]
+  }
+}

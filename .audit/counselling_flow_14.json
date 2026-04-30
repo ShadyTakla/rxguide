@@ -1,0 +1,26 @@
+{
+  "Uncomplicated UTI (Women)": {
+    "patient_counselling": [
+      "Nitrofurantoin (Macrobid) 100 mg twice daily for 5 days — TAKE WITH FOOD (improves absorption ~40%, reduces stomach upset). Complete the full 5-day course even if symptoms improve in 1–2 days — incomplete therapy causes treatment failure and resistance.",
+      "Common nitrofurantoin side effects: nausea, headache, brown-yellow urine discoloration (harmless and expected), occasional GI upset. Take with food to minimize.",
+      "TMP-SMX DS (160/800 mg) twice daily for 3 days (alternative first-line if nitrofurantoin contraindicated): take with full glass of water; drink plenty of fluids; avoid prolonged sun exposure (photosensitivity).",
+      "Drink plenty of water (2–3 L/day) during treatment to flush bacteria; urinate frequently and completely; void before and after intercourse; wipe front-to-back; avoid bubble baths and irritating soaps.",
+      "Cranberry products (cranberry capsule with PAC ≥36 mg/day) have modest evidence for prevention of recurrent UTI per Cochrane; cranberry juice is high in sugar — capsules preferred.",
+      "D-mannose is NOT recommended — MERIT trial (2024, JAMA) and Cochrane (2022) found no benefit over placebo for UTI prevention.",
+      "Phenazopyridine (pyridium) 200 mg three times daily for up to 2 days (OTC) for symptom relief during the first 24–48h while antibiotics take effect — note: this is a urinary analgesic, NOT an antibiotic; turns urine bright orange/red (will stain clothing/contact lenses); avoid in G6PD deficiency, pregnancy, severe renal impairment.",
+      "Symptoms (dysuria, frequency, urgency) typically improve within 24–48 hours of antibiotic; if no improvement after 48 hours or worsening, return to pharmacy or physician.",
+      "Important drug interactions for TMP-SMX: increases warfarin INR (bleeding risk), elevates potassium with ACEi/ARB/spironolactone (hyperkalemia), increases methotrexate toxicity, may increase phenytoin/sulfonylurea levels. Review all medications before prescribing.",
+      "Red flags requiring physician referral: fever >38°C, flank pain, nausea/vomiting (suggests pyelonephritis), pregnancy (refer for assessment), male, recurrent UTI (≥2 in 6 months or ≥3 in 12 months), recent antibiotic use, recent hospitalization or catheter, immunosuppression, structural urologic abnormalities, hematuria persisting after treatment, no improvement after 48 hours, suspected STI."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario female resident, age 16–65, with classic uncomplicated cystitis symptoms (dysuria, frequency, urgency, suprapubic discomfort) without complicating factors; verify ID/OHIP, obtain consent.",
+      "2. Focused history: symptom duration and severity, hematuria, prior UTI history (recurrent if ≥2/6 months or ≥3/12 months), pregnancy possibility (urine βhCG if uncertain), comorbidities (diabetes, immunosuppression, structural abnormalities), recent antibiotic use, allergies, current medications, sexual history (STI risk).",
+      "3. Red flag screen: fever, flank pain, nausea/vomiting, rigors (pyelonephritis); pregnancy or possible pregnancy; male sex; age <16 or >65; recurrent UTI; immunocompromise; recent catheter or hospitalization; structural abnormalities; severe symptoms; suspected STI (vaginal discharge, new partner) — refer.",
+      "4. Differential diagnosis: rule out vaginitis (Candida, BV, trichomonas), STI (chlamydia, gonorrhea — urethritis), interstitial cystitis, urethral irritation, atrophic vaginitis (postmenopausal), pyelonephritis, kidney stones.",
+      "5. Therapy selection per PHO Bugs & Drugs 2024: nitrofurantoin (Macrobid) 100 mg BID × 5 days first-line if eGFR ≥45; TMP-SMX DS BID × 3 days second-line if local resistance <20% and no allergy/interactions; fosfomycin 3 g single dose alternative; phenazopyridine 200 mg TID × 1–2 days for symptom relief.",
+      "6. Counsel on antibiotic timing (with food for nitrofurantoin), full course completion, hydration, voiding hygiene, expected timeline (improvement in 24–48h), recurrent UTI prevention (cranberry PAC, voiding habits), drug interactions (especially TMP-SMX), when to return for red flags.",
+      "7. Document the encounter per OCP standards: assessment findings, diagnosis (uncomplicated cystitis), therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 48 hours if no improvement (refer for urine culture and alternative therapy); reassess at end of course; if recurrent/relapsing pattern, refer for urological assessment and possible prophylaxis."
+    ]
+  }
+}
