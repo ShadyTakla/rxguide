@@ -32478,10 +32478,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Enzyme inducers (rifampin, carbamazepine, phenytoin, St. John's Wort)",
+        "drug": "Strong CYP3A4 inducers (rifampin, carbamazepine, phenytoin, phenobarbital, St. John's Wort, efavirenz, nevirapine)",
         "severity": "Major",
-        "mechanism": "Accelerate levonorgestrel metabolism — significantly reduced EC efficacy",
-        "management": "Use copper IUD (most effective EC regardless of medications) or double the levonorgestrel dose (4 levonorgestrel 0.75 mg tablets = 3 mg) if copper IUD not available"
+        "mechanism": "Levonorgestrel is metabolized by CYP3A4. Strong inducers accelerate its metabolism, potentially reducing levonorgestrel EC efficacy below the threshold needed to inhibit ovulation or fertilization. Rifampin reduces levonorgestrel AUC by approximately 50-70%.",
+        "management": "Health Canada: for patients on enzyme inducers, use a COPPER IUD as emergency contraception (>99.9% effective, completely unaffected by enzyme inducers). If copper IUD unavailable, double the levonorgestrel dose (3mg = two Plan B tablets) based on WHO/clinical guidance, though copper IUD remains strongly preferred."
+      },
+      {
+        "drug": "Ulipristal acetate (ella — 30mg progesterone receptor modulator EC)",
+        "severity": "Major",
+        "mechanism": "Ulipristal acetate is a selective progesterone receptor modulator that blocks progesterone receptors. If given after levonorgestrel EC, ulipristal's receptor antagonism can compete with/reduce levonorgestrel's progesterone agonist mechanism. Conversely, levonorgestrel given after ulipristal may reduce ella's efficacy.",
+        "management": "Do NOT use ulipristal acetate and levonorgestrel EC in the same menstrual cycle or within 5 days of each other — they interfere with each other's mechanisms. Choose ONE: levonorgestrel EC for <72h (up to 120h), ulipristal for <120h (up to 5 days — more effective at 72-120h window). Copper IUD is superior to both within 5 days."
+      },
+      {
+        "drug": "Combined oral contraceptives (OCP) — timing considerations after EC use",
+        "severity": "Moderate",
+        "mechanism": "After levonorgestrel EC, if hormonal contraception needs to be started or continued, the timing of OCP restart affects contraceptive efficacy. Levonorgestrel EC does not affect ongoing hormonal contraception pharmacokinetics, but the menstrual disruption from EC requires specific restart guidance.",
+        "management": "After Plan B: restart or continue OCP immediately (same day) — use barrier backup contraception for 7 days. If using the Quick Start method to initiate new OCP after EC, backup is required. Do not wait for next menstrual period to restart OCP — delayed restart increases pregnancy risk."
+      },
+      {
+        "drug": "Progestogen-only pills (Micronor, Camila — norethindrone; Slynd — drospirenone)",
+        "severity": "Moderate",
+        "mechanism": "Levonorgestrel EC is a high-dose progestogen — after EC use, if a progestogen-only pill is being started or continued, there may be progestogenic overlap effects (irregular bleeding, amenorrhea). No direct pharmacokinetic interaction, but timing of POP restart guidance applies.",
+        "management": "After Plan B, restart POP as soon as possible. Since Plan B's primary mechanism is ovulation inhibition (like POP), use barrier backup for 7 days to ensure contraceptive coverage. Continuing POP throughout the EC-treated cycle is standard practice."
+      },
+      {
+        "drug": "Antiemetics (dimenhydrinate, metoclopramide, ondansetron) — use with EC",
+        "severity": "Minor",
+        "mechanism": "Nausea occurs in approximately 20% of patients taking levonorgestrel EC. Vomiting within 2h of taking the EC tablet may reduce absorption and efficacy. Antiemetics taken before or with Plan B can reduce vomiting risk.",
+        "management": "For patients prone to nausea, pre-treat with dimenhydrinate or ondansetron 30-60 minutes before levonorgestrel EC. If vomiting occurs within 2h of EC dose, repeat the dose. Taking Plan B with food may reduce GI adverse effects. Document vomiting in medical record if it occurs."
+      },
+      {
+        "drug": "Copper IUD (Paragard, Flexi-T, Nova-T) — comparison as superior EC option",
+        "severity": "Note (clinical comparison, not DDI)",
+        "mechanism": "Copper IUD inserted within 5 days of unprotected intercourse is the most effective emergency contraception (>99.9% effective vs. 85-95% for levonorgestrel EC). Copper is spermicidal and prevents implantation. The IUD also provides ongoing contraception for up to 10 years.",
+        "management": "Offer copper IUD as first-choice EC for all eligible patients, especially those on enzyme inducers (where levonorgestrel EC may fail), BMI >75kg (reduced levonorgestrel EC efficacy at high body weight), or those seeking long-term contraception. Levonorgestrel EC is appropriate when copper IUD is declined or unavailable."
       }
     ],
     "pregnancy": "Not teratogenic if taken during unrecognized early pregnancy — will not harm established pregnancy but also will not terminate it.",
@@ -51046,16 +51076,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Immunosuppressants",
+        "drug": "Immunosuppressants (methotrexate, azathioprine, mycophenolate, prednisone, biologics: TNF inhibitors, B-cell depleting agents)",
         "severity": "Moderate",
-        "mechanism": "Reduced immunogenicity of vaccine in immunocompromised",
-        "management": "Still give vaccine — some protection better than none; time vaccination with lowest immunosuppressive state if possible"
+        "mechanism": "Immunosuppressants reduce vaccine immunogenicity — attenuated antibody responses to inactivated influenza vaccine. B-cell depleting agents (rituximab, ocrelizumab) virtually eliminate antibody response during active treatment. TNF inhibitors have moderate immunogenicity reduction.",
+        "management": "Administer inactivated influenza vaccine DESPITE immunosuppression — reduced immunogenicity is better than no immunity. Timing relative to rituximab: vaccinate at least 4-6 weeks before next rituximab cycle if possible for best response. Annual vaccination is still recommended and effective for most immunosuppressed patients."
       },
       {
-        "drug": "Antivirals (oseltamivir)",
+        "drug": "Live influenza vaccine (LAIV — FluMist nasal spray)",
+        "severity": "Major",
+        "mechanism": "Live attenuated influenza vaccine is contraindicated in immunocompromised patients — risk of attenuated vaccine strains causing disseminated influenza infection. Also contraindicated in household contacts of severely immunocompromised individuals in isolated hospital environments.",
+        "management": "Use ONLY inactivated IM influenza vaccine (Fluzone, Flucelvax, Fluad) in immunocompromised patients. Fluad (adjuvanted) may provide better immunogenicity in elderly and high-risk patients. FluMist (LAIV): contraindicated in immunocompromised patients, asthma, and during antiviral therapy."
+      },
+      {
+        "drug": "Antiviral medications for influenza (oseltamivir, zanamivir, baloxavir) — timing interaction",
+        "severity": "Major",
+        "mechanism": "Antivirals active against influenza (oseltamivir, zanamivir, baloxavir) can reduce the replication of live attenuated influenza vaccine (LAIV) strains, rendering LAIV ineffective. No interaction with inactivated IM influenza vaccine (not replication-dependent).",
+        "management": "Do NOT administer LAIV (FluMist) within 48h before or 2 weeks after antiviral use. Inactivated IM vaccine can be given at any time regardless of antiviral use — no interference with killed virus or subunit vaccine. This restriction applies specifically to LAIV."
+      },
+      {
+        "drug": "Warfarin (anticoagulants) — injection site and transient CYP1A2 effect",
+        "severity": "Minor",
+        "mechanism": "IM injection in anticoagulated patients: risk of haematoma at injection site. Additionally, some influenza vaccine batches have been associated with transient CYP1A2 inhibition, which could briefly increase theophylline and warfarin levels — clinical significance is generally minimal.",
+        "management": "IM vaccination can be performed in anticoagulated patients — use a 23-gauge or smaller needle, apply firm pressure for 2 minutes after injection. INR monitoring at standard intervals. Theophylline: check levels 3-7 days post-vaccination if patient has had prior sensitivity. These are minor and rarely clinically significant concerns."
+      },
+      {
+        "drug": "Corticosteroids (systemic — prednisone >20mg/day equivalent, methylprednisolone)",
         "severity": "Moderate",
-        "mechanism": "Oseltamivir may reduce LAIV replication — reduces efficacy",
-        "management": "Avoid LAIV within 48h before or 2 weeks after oseltamivir"
+        "mechanism": "High-dose systemic corticosteroids significantly reduce vaccine immunogenicity by suppressing lymphocyte proliferation and antibody production. The degree of impairment is dose-dependent — short-course steroids (<14 days, ≤20mg/day prednisone) have minimal impact.",
+        "management": "Administer influenza vaccine during periods of lower steroid doses if possible. Annual vaccination is still warranted even during corticosteroid therapy. High-dose pulse methylprednisolone (MS relapse treatment): wait 2-4 weeks after pulse before vaccinating for best response. Do not delay beyond influenza season."
+      },
+      {
+        "drug": "Thimerosal-preserved multi-dose vaccines — interaction with thimerosal-sensitive patients",
+        "severity": "Minor",
+        "mechanism": "Multi-dose influenza vaccine vials contain thimerosal (ethyl mercury) preservative. In patients with documented thimerosal allergy, preservative-free single-dose presentations must be used. This is not a drug-drug pharmacokinetic interaction.",
+        "management": "Identify thimerosal-allergic patients before vaccination. Use preservative-free single-dose influenza vaccine formulations. In Canada, preservative-free single-dose formulations are widely available (Fluzone, Fluviral single-dose presentations). No specific timing or interaction concerns with thimerosal-free preparations."
       }
     ],
     "pregnancy": "STRONGLY RECOMMENDED in all trimesters. IIV only (not LAIV). Influenza in pregnancy associated with severe illness. Maternal antibodies protect newborn. NACI and SOGC: influenza vaccine is one of the highest priority vaccines in pregnancy.",
@@ -51254,16 +51308,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Warfarin / anticoagulants",
+        "drug": "Warfarin and anticoagulants (DOACs: apixaban, rivaroxaban, dabigatran; heparin, LMWH)",
         "severity": "Moderate",
-        "mechanism": "High-dose omega-3 (>3 g/day) inhibits platelet aggregation + may potentiate anticoagulants",
-        "management": "Monitor INR at doses >3 g/day; OTC doses generally safe"
+        "mechanism": "High-dose omega-3 fatty acids (>3g/day EPA+DHA) inhibit platelet aggregation via thromboxane A2 suppression and may potentiate anticoagulant effects. Some case reports of elevated INR with omega-3 + warfarin. High-dose EPA (Vascepa 4g/day) in REDUCE-IT trial showed no increased bleeding vs. placebo despite higher stroke benefit.",
+        "management": "Monitor INR more closely when initiating high-dose omega-3 (>3g/day) in warfarin patients — INR may increase modestly. Standard fish oil supplements (1g/day) have minimal anticoagulant effect. Do not discontinue omega-3 before surgery without medical advice — benefit-risk assessment required."
       },
       {
-        "drug": "Antihypertensives",
+        "drug": "Antiplatelet drugs (aspirin, clopidogrel, ticagrelor, prasugrel, dipyridamole)",
+        "severity": "Moderate",
+        "mechanism": "Additive antiplatelet effects — omega-3 inhibits arachidonic acid-derived thromboxane A2 (similar to aspirin's mechanism). Combined with clopidogrel or ticagrelor (ADP-receptor blockade), bleeding time is further prolonged. High-dose omega-3 + dual antiplatelet therapy may increase bleeding risk.",
+        "management": "The REDUCE-IT trial (Vascepa 4g/day + statins ± antiplatelet agents) showed cardiovascular benefit without excessive bleeding. Standard fish oil doses (1-2g/day): minimal additive antiplatelet concern. High-dose EPA (Vascepa 4g/day): monitor for signs of bleeding in patients on DAPT. Consider GI prophylaxis (PPI)."
+      },
+      {
+        "drug": "Statins (rosuvastatin, atorvastatin, simvastatin, pravastatin) — triglyceride management",
+        "severity": "Beneficial (complementary lipid therapy)",
+        "mechanism": "Omega-3 fatty acids lower triglycerides by 20-45% (dose-dependent) via reduced hepatic VLDL synthesis and triglyceride secretion. Statins primarily lower LDL. The combination addresses different lipid parameters with complementary mechanisms — no adverse pharmacokinetic interaction.",
+        "management": "Omega-3 (Vascepa 4g EPA/day or Lovaza 4g EPA+DHA/day) is approved as adjunct to statin therapy for severe hypertriglyceridemia (TG >5.65 mmol/L) and cardiovascular risk reduction. Vascepa specifically combined with statin showed 25% relative risk reduction for MACE in REDUCE-IT. No dose adjustment of statin needed."
+      },
+      {
+        "drug": "Antidiabetic drugs (insulin, metformin, GLP-1 agonists, SGLT2 inhibitors) — glycemic effects",
         "severity": "Minor",
-        "mechanism": "Omega-3 has mild BP-lowering effect",
-        "management": "Benefit — monitor if significant"
+        "mechanism": "Omega-3 fatty acids have mild glycemic effects — high-dose DHA may slightly worsen glycemic control in T2DM patients (small increase in fasting glucose), while EPA appears glycemia-neutral. Overall effect on HbA1c is minimal at therapeutic doses.",
+        "management": "Monitor HbA1c and fasting glucose at routine intervals in diabetic patients taking high-dose omega-3 (Lovaza ≥4g/day). Pure EPA (Vascepa) does not worsen glycemic control. Standard fish oil supplements (1-2g/day) have negligible glycemic impact — no monitoring adjustment required."
+      },
+      {
+        "drug": "Blood pressure medications (ACE inhibitors, ARBs, calcium channel blockers) — hypotensive effects",
+        "severity": "Minor",
+        "mechanism": "Omega-3 fatty acids have mild vasodilatory and antihypertensive effects, reducing systolic BP by 2-5 mmHg at doses ≥3g/day. Combined with antihypertensive medications, small additive BP reduction is possible.",
+        "management": "Monitor BP when initiating high-dose omega-3 in patients on antihypertensives. The small additive hypotensive effect is generally beneficial (cardiovascular risk reduction) rather than harmful. No dose adjustment of antihypertensives required for standard supplement doses (1-2g/day)."
+      },
+      {
+        "drug": "Atrial fibrillation (AF) risk with high-dose EPA+DHA",
+        "severity": "Moderate",
+        "mechanism": "Clinical trials (STRENGTH, OMEMI, REDUCE-IT) have shown increased atrial fibrillation risk with high-dose omega-3 (4g/day EPA+DHA formulations — e.g., Lovaza). Pure EPA (Vascepa — icosapentaenoic acid only) has a smaller AF signal. Mechanism: possible direct electrophysiological effects of DHA.",
+        "management": "Health Canada/FDA 2021 safety update: high-dose omega-3 products (≥4g/day EPA+DHA) are associated with increased AF risk. For patients with AF history or AF risk factors, prefer pure EPA (Vascepa) over combined EPA+DHA products. Disclose AF risk when prescribing Lovaza. Monitor for AF symptoms (palpitations, dyspnea)."
       }
     ],
     "pregnancy": "DHA supplementation recommended in pregnancy for fetal brain/retina development. AHA recommends 200–300 mg DHA/day in pregnancy. Most prenatal vitamins contain some DHA. Safe at supplemental doses.",
@@ -52935,16 +53013,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "CNS depressants / anticholinergics",
+        "drug": "CNS depressants (opioids, benzodiazepines, alcohol, antihistamines, antipsychotics, gabapentinoids)",
         "severity": "Major",
-        "mechanism": "Additive CNS/anticholinergic effects",
-        "management": "Avoid in elderly on multiple anticholinergics — Beers list"
+        "mechanism": "Hyoscine hydrobromide (transdermal) crosses the blood-brain barrier — significant CNS anticholinergic and sedative effects. Additive with CNS depressants: enhanced sedation, respiratory depression, cognitive impairment, falls. Particularly dangerous in elderly.",
+        "management": "Avoid alcohol. Warn about driving impairment (transdermal hyoscine causes significant drowsiness). Use lowest effective dose. In elderly patients, hyoscine is a Beers 2023 high-risk medication — strongly prefer alternatives for motion sickness (dimenhydrinate is also sedating; domperidone for nausea with less CNS penetration)."
       },
       {
-        "drug": "MAO inhibitors",
+        "drug": "Other anticholinergic drugs (antihistamines, antimuscarinics, TCAs, antiparkinsonian agents, antipsychotics with anticholinergic properties)",
         "severity": "Major",
-        "mechanism": "Anticholinergic crisis",
-        "management": "Contraindicated"
+        "mechanism": "Hyoscine has very high anticholinergic activity (ACB score 3 for hydrobromide). Combined with other anticholinergic drugs, total anticholinergic burden escalates rapidly → urinary retention, cognitive impairment, tachycardia, xerostomia, constipation, hyperthermia, delirium.",
+        "management": "ACB scoring essential when prescribing hyoscine. Do NOT combine with other high-ACB medications (oxybutynin, diphenhydramine, amitriptyline) in elderly patients. If combination necessary, use butylbromide (Buscopan) form — peripherally acting, minimal CNS penetration."
+      },
+      {
+        "drug": "MAOIs (phenelzine, tranylcypromine, moclobemide, selegiline, linezolid)",
+        "severity": "Contraindicated",
+        "mechanism": "MAOIs prolong and intensify anticholinergic drug effects, including hyoscine. Combination causes severe anticholinergic toxicity: hyperthermia, delirium, tachycardia, urinary retention, dry mouth. Potentially life-threatening.",
+        "management": "CONTRAINDICATED. 14-day washout after irreversible MAOI before using hyoscine. Avoid all anticholinergic agents (including hyoscine patch or tablets) during MAOI therapy. If motion sickness prevention needed: non-anticholinergic options (ondansetron) may be considered."
+      },
+      {
+        "drug": "Levodopa (Sinemet) — Parkinson's disease management",
+        "severity": "Major",
+        "mechanism": "Hyoscine is a muscarinic antagonist — historically used for sialorrhea in Parkinson's. However, anticholinergic drugs reduce gastric motility, reducing levodopa absorption and causing delayed, erratic plasma levels → motor fluctuations and worsening Parkinsonism.",
+        "management": "AVOID hyoscine in Parkinson's disease if possible. For sialorrhea: prefer glycopyrrolate (butylbromide form) — more peripheral action, less GI motility effects. If hyoscine patch used, monitor levodopa response and consider dose timing adjustments. Use liquid levodopa formulations for more predictable absorption."
+      },
+      {
+        "drug": "Alcohol (ethanol) — enhanced CNS and cardiac effects",
+        "severity": "Major",
+        "mechanism": "Transdermal hyoscine combined with alcohol produces additive CNS depression, tachycardia, and anticholinergic effects. Hyoscine also causes orthostatic hypotension — alcohol potentiates this. 'Scopolamine/alcohol' combination was historically used in 'twilight sleep' obstetric anesthesia.",
+        "management": "Strongly advise against alcohol during transdermal hyoscine patch use. Remove patch before consuming alcohol. Increased fall risk in travel/cruise ship settings where both may be used together. Advise patients to replace patch with Gravol (dimenhydrinate) if significant alcohol consumption expected."
+      },
+      {
+        "drug": "Metoclopramide and domperidone (prokinetics) — opposing GI effects",
+        "severity": "Moderate",
+        "mechanism": "Hyoscine butylbromide (Buscopan) reduces GI motility (antispasmodic). Metoclopramide and domperidone increase GI motility (prokinetics). These drugs have opposing effects on GI smooth muscle — concurrent use nullifies both drugs' benefits.",
+        "management": "Avoid prescribing hyoscine butylbromide simultaneously with metoclopramide or domperidone. Choose one therapeutic goal: reduce GI spasm (hyoscine) OR improve GI motility (prokinetic) — not both. If both nausea and IBS symptoms need treatment, use different drug classes for each."
       }
     ],
     "pregnancy": "Transderm V: Category C. Used for severe NVP when other treatments fail. Buscopan: Category B — OTC use for cramping acceptable.",
@@ -62477,10 +62579,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Live vaccines",
+        "drug": "Live attenuated vaccines (MMR, varicella, yellow fever, nasal LAIV, Zostavax live zoster)",
         "severity": "Moderate",
-        "mechanism": "Theoretical (immunomodulator)",
-        "management": "Generally avoid live vaccines during therapy; review with neurology"
+        "mechanism": "Glatiramer modulates T-cell activity (shifts from Th1 to Th2 response) — a relatively mild immunomodulatory effect compared to other MS biologics. Reduced vaccine immunogenicity is possible; live vaccine infection risk is theoretically present but lower than with more potent immunosuppressants.",
+        "management": "Avoid live vaccines during glatiramer therapy as a precaution. Use inactivated vaccines: influenza IM, Shingrix (recombinant zoster), pneumococcal. Annual influenza vaccination is recommended. Update all vaccinations before initiating glatiramer where possible."
+      },
+      {
+        "drug": "Other MS disease-modifying therapies (natalizumab, fingolimod, alemtuzumab, ocrelizumab, cladribine)",
+        "severity": "Major",
+        "mechanism": "Combining glatiramer with potent immunosuppressive MS drugs provides no additional efficacy and dramatically increases infection risk and adverse effects. Sequential therapy with washout periods is the standard approach when switching DMTs.",
+        "management": "Glatiramer can be stopped abruptly before switching to more potent therapies — no significant rebound MS activity (unlike natalizumab). Washout period needed when starting a more potent DMT depends on the new agent's mechanism. Natalizumab: 2-4 week washout; alemtuzumab: 6-month washout recommended."
+      },
+      {
+        "drug": "Beta-interferons (interferon beta-1a: Avonex, Rebif; interferon beta-1b: Betaseron) — combination or alternative",
+        "severity": "Major",
+        "mechanism": "Combining glatiramer with beta-interferon showed no additive benefit in the CombiRx trial and increased injection site reactions. Both act as injectable MS therapies — no pharmacokinetic interaction but pharmacodynamic redundancy.",
+        "management": "Do NOT combine glatiramer with beta-interferon. Choose one first-line injectable DMT. If inadequate response to glatiramer after 12-24 months (new lesions on MRI, clinical relapses), switch to more potent therapy per Canadian MS Network guidelines."
+      },
+      {
+        "drug": "Corticosteroids (methylprednisolone IV — for MS relapses; prednisone oral)",
+        "severity": "Moderate",
+        "mechanism": "IV methylprednisolone is used for acute MS relapses without stopping glatiramer. Short-course steroids do not significantly affect glatiramer's long-term immunomodulatory mechanism. Prolonged corticosteroid use adds immunosuppression but glatiramer itself is not primarily immunosuppressive.",
+        "management": "Continue glatiramer during and after MS relapse steroid treatment. Glatiramer does not require dose adjustment when steroids are added for relapse. Long-term concurrent steroids are not recommended — address underlying MS disease activity with relapse prevention."
+      },
+      {
+        "drug": "NSAIDs (ibuprofen, naproxen, acetaminophen) — injection site management",
+        "severity": "Minor",
+        "mechanism": "Glatiramer subcutaneous injection causes local injection site reactions (erythema, induration, pain) in >70% of patients. Immediate post-injection reactions (flushing, chest tightness, palpitations) occur in 15% and are self-limiting (1-30 minutes). NSAIDs and antihistamines are used for symptomatic management.",
+        "management": "Pre-warm glatiramer vials to room temperature before injection to reduce local reactions. Rotate injection sites. Acetaminophen or ibuprofen before injection reduces injection-site discomfort. Antihistamines (cetirizine, loratadine) may reduce post-injection systemic reactions. These are not drug-drug pharmacokinetic interactions."
+      },
+      {
+        "drug": "Chloroquine and hydroxychloroquine (antimalarials/SLE/RA drugs)",
+        "severity": "Minor",
+        "mechanism": "In vitro data suggest that aminoquinolines may reduce glatiramer's immune-modulating effect by inhibiting antigen presentation pathways used by glatiramer for T-cell polarization. Clinical significance is unestablished.",
+        "management": "No formal contraindication to combining glatiramer with hydroxychloroquine. If patient has comorbid SLE or RA requiring hydroxychloroquine AND MS requiring glatiramer, both can be used — monitor MS disease activity (MRI, relapse rate) to ensure glatiramer remains effective."
       }
     ],
     "pregnancy": "Limited human data — APPEARS SAFE in pregnancy; multiple registry studies; preferred MS DMT in pregnant patients per Canadian Network of MS Clinics. Continue if needed.",
@@ -71596,16 +71728,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "(Minimal pharmacokinetic interactions)",
-        "severity": "Minor",
-        "mechanism": "mAb not metabolized by CYP",
-        "management": "No clinically significant drug-drug interactions"
+        "drug": "No clinically significant pharmacokinetic drug interactions",
+        "severity": "None",
+        "mechanism": "Galcanezumab is a humanized IgG4 monoclonal antibody targeting CGRP ligand. Not metabolized by CYP450 or drug transporters — cleared via proteolysis. No CYP, P-gp, BCRP, or transporter DDIs identified.",
+        "management": "No dose adjustments needed. Galcanezumab 120mg monthly SC (after 240mg loading dose) for migraine prevention; 300mg monthly SC for episodic cluster headache. Co-administered medications do not affect galcanezumab pharmacokinetics."
       },
       {
-        "drug": "Live vaccines",
-        "severity": "Minor (theoretical)",
-        "mechanism": "No documented immunosuppression",
-        "management": "Generally proceed with routine vaccinations as indicated"
+        "drug": "Other CGRP-pathway agents (erenumab, fremanezumab, eptinezumab — mAbs; atogepant, rimegepant, ubrogepant — gepants)",
+        "severity": "Major",
+        "mechanism": "Galcanezumab targets the CGRP ligand. Combining with other CGRP-pathway agents (receptor or ligand blockers) does not provide additive clinical benefit and may amplify constipation (the most notable CGRP-class adverse effect — erenumab > others). No proven synergy.",
+        "management": "Select ONE CGRP-pathway preventive. Acute gepants (rimegepant for breakthrough migraine) are acceptable during galcanezumab prophylaxis — short-term receptor antagonism is distinct from sustained preventive antibody therapy. Reassess response after 3-6 months before switching."
+      },
+      {
+        "drug": "Sumatriptan and other triptans (rizatriptan, zolmitriptan, almotriptan) — acute cluster headache treatment",
+        "severity": "Minor",
+        "mechanism": "For cluster headache: galcanezumab reduces attack frequency; subcutaneous sumatriptan or high-flow oxygen are acute cluster treatments. No pharmacokinetic interaction. Concurrent use is clinically appropriate.",
+        "management": "Continue sumatriptan SC for acute cluster headache attacks during galcanezumab prophylaxis. If galcanezumab reduces cluster frequency, sumatriptan use should decrease. NICE/Health Canada: both therapeutic strategies are complementary. Reassess at end of each cluster period."
+      },
+      {
+        "drug": "Ergotamine and dihydroergotamine (DHE) — acute migraine or cluster treatment",
+        "severity": "Minor",
+        "mechanism": "No pharmacokinetic interaction between ergotamines and galcanezumab. Ergotamines are acute options for both migraine and cluster headache. CGRP pathway blockade by galcanezumab does not interfere with ergotamine's serotonergic/adrenergic mechanisms.",
+        "management": "Standard ergotamine precautions apply — no additional restrictions with galcanezumab. Medication overuse: ergotamine >10 days/month causes rebound headache. Galcanezumab therapy provides an opportunity to reduce ergotamine dependence. Ergotamine is absolutely contraindicated in cardiovascular disease."
+      },
+      {
+        "drug": "Verapamil (first-line cluster headache prophylaxis) — combination preventive therapy",
+        "severity": "Minor",
+        "mechanism": "Verapamil and galcanezumab are both used for cluster headache prevention via completely different mechanisms. No pharmacokinetic interaction. The combination has been studied — galcanezumab provides add-on benefit when verapamil alone is insufficient.",
+        "management": "Galcanezumab can be used alongside verapamil for episodic or chronic cluster headache — approved as adjunct or monotherapy per Health Canada. Monitor verapamil ECG effects (PR prolongation) independently. No dose adjustment needed for either agent."
+      },
+      {
+        "drug": "Corticosteroids (prednisone, methylprednisolone) — cluster headache transitional therapy",
+        "severity": "Minor",
+        "mechanism": "Short-course oral steroids are used as transitional therapy to break active cluster cycles while preventive agents (verapamil, galcanezumab) take effect. No pharmacokinetic interaction between corticosteroids and galcanezumab.",
+        "management": "Galcanezumab onset of effect occurs within the first month. For immediate cluster attack suppression at cycle start, a short steroid bridge (prednisone 60-80mg tapering over 2-3 weeks) can be used concurrently with galcanezumab. No dose adjustment of either agent required."
       }
     ],
     "pregnancy": "Health Canada classification: limited human pregnancy data. Animal studies do not demonstrate fetotoxicity at clinically relevant exposures. Long half-life (~27 days) means residual exposure ≥5 months after stopping. SOGC/Canadian Headache Society: discontinue when planning pregnancy unless severe migraine; counsel washout period. Excretion in breast milk: limited data.",
@@ -71854,16 +72010,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "(Generally minimal — minimal systemic absorption)",
-        "severity": "Minor",
-        "mechanism": "Drug confined to gut lumen",
-        "management": "No clinically significant pharmacokinetic interactions"
+        "drug": "Minimal pharmacokinetic drug interactions (mechanism basis)",
+        "severity": "None",
+        "mechanism": "Linaclotide is a 14-amino acid peptide agonist of guanylate cyclase-C (GC-C) receptors on intestinal epithelial cells. It is not absorbed systemically (<1% bioavailability) and is proteolytically degraded in the GI tract to an active metabolite (MM-419447), also minimally absorbed. Not metabolized by CYP450 or transported by P-gp/BCRP.",
+        "management": "No CYP-based or transporter-based drug interactions occur with linaclotide. No dose adjustment based on comedications. The extremely minimal systemic absorption makes systemic interactions essentially impossible at therapeutic doses."
       },
       {
-        "drug": "Other laxatives",
+        "drug": "Other laxatives and prokinetics (PEG 3350, docusate, bisacodyl, lactulose, metoclopramide)",
         "severity": "Moderate",
-        "mechanism": "Additive diarrheal effect",
-        "management": "Discontinue routine laxatives when initiating; reintroduce as needed for breakthrough symptoms"
+        "mechanism": "Additive diarrhea risk — linaclotide's primary mechanism increases luminal fluid secretion and colonic motility, causing loose stools or diarrhea in 20% of patients. Adding other laxatives or prokinetics compounds the risk of severe diarrhea, dehydration, and electrolyte imbalances.",
+        "management": "Avoid routine combination with other laxative agents when linaclotide is used for IBS-C or CIC. If bowel preparation is required (colonoscopy), temporarily hold linaclotide. Use additional laxatives only during periods when linaclotide is temporarily insufficient — reassess regimen. Monitor for dehydration."
+      },
+      {
+        "drug": "Pediatric patients and child exposure — CRITICAL safety alert",
+        "severity": "Major",
+        "mechanism": "Linaclotide at doses equivalent to adult therapeutic doses caused fluid loss, dehydration, electrolyte imbalances, and death in young mice. Children have higher intestinal GC-C receptor expression, making them potentially much more sensitive.",
+        "management": "Health Canada CONTRAINDICATION: linaclotide is absolutely contraindicated in patients <6 years of age. Avoid in patients 6-17 years — no established safety/efficacy. KEEP CONSTELLA OUT OF REACH OF CHILDREN — accidental ingestion by children is a medical emergency. Store in child-resistant container."
+      },
+      {
+        "drug": "Antidiarrheal agents (loperamide, diphenoxylate/atropine, codeine)",
+        "severity": "Moderate",
+        "mechanism": "Antidiarrheals directly oppose linaclotide's mechanism — loperamide slows intestinal motility while linaclotide accelerates it. If diarrhea from linaclotide occurs, antidiarrheals treat the adverse effect rather than the indication. These drugs nullify each other's effects.",
+        "management": "If linaclotide causes diarrhea: reduce linaclotide dose or hold the dose that caused diarrhea (skip a day) per Health Canada PM. Use antidiarrheals only as temporary measures while dose adjusting. If persistent diarrhea continues, reassess the IBS-C/CIC diagnosis and treatment appropriateness."
+      },
+      {
+        "drug": "Oral medications requiring optimal GI absorption timing (levothyroxine, oral contraceptives, antiretrovirals)",
+        "severity": "Minor",
+        "mechanism": "Linaclotide accelerates GI transit — drugs requiring prolonged intestinal contact for absorption may have reduced absorption when taken simultaneously with linaclotide-induced rapid transit states.",
+        "management": "Take linaclotide 30 minutes before the first meal of the day as directed. Administer narrow-therapeutic-index or absorption-sensitive drugs (levothyroxine, certain ARTs) with appropriate timing relative to meals. Clinical impact of linaclotide on co-drug absorption is generally minimal for standard drugs at therapeutic doses."
+      },
+      {
+        "drug": "Diuretics (thiazides, loop diuretics) — dehydration risk",
+        "severity": "Moderate",
+        "mechanism": "Linaclotide causes fluid secretion into the GI lumen — patients already volume-depleted from diuretic therapy are at increased risk of clinically significant dehydration, electrolyte imbalances (hypokalemia, hyponatremia), and exacerbation of renal impairment.",
+        "management": "Monitor hydration status and electrolytes in patients taking both linaclotide and diuretics — particularly in hot weather or during illness. Dose linaclotide carefully (start at 72 mcg for CIC, 290 mcg for IBS-C). Reduce or temporarily hold linaclotide during episodes of gastroenteritis or vomiting while on diuretics."
       }
     ],
     "pregnancy": "Health Canada classification: limited human data. Animal studies show no fetotoxicity at maximum tested doses; minimal systemic absorption suggests low fetal exposure. Use only if benefit outweighs risk. Excretion in breast milk: minimal (non-absorbed).",
@@ -72327,16 +72507,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Other anticholinergic drugs (tiotropium, umeclidinium, aclidinium)",
+        "drug": "Other inhaled LAMAs (tiotropium, umeclidinium, aclidinium) — LAMA duplication",
         "severity": "Contraindicated",
-        "mechanism": "LAMA + LAMA — do not combine two LAMAs (additive anticholinergic toxicity, no additional bronchodilation benefit)",
-        "management": "Use only one LAMA at a time"
+        "mechanism": "Glycopyrronium is a long-acting muscarinic antagonist (LAMA). Combining two LAMAs provides no additional bronchodilation while doubling antimuscarinic adverse effects (urinary retention, constipation, dry mouth, cognitive effects in elderly).",
+        "management": "NEVER prescribe two inhaled LAMAs simultaneously. If patient is already on tiotropium, do not add glycopyrronium — or vice versa. Use LAMA + LABA combination (e.g., indacaterol/glycopyrronium = Ultibro) instead of LAMA + LAMA duplication."
       },
       {
-        "drug": "Anticholinergic systemic drugs (oxybutynin, tricyclic antidepressants, antipsychotics)",
+        "drug": "Systemic anticholinergics (oxybutynin, solifenacin, darifenacin, TCAs, antihistamines, antiparkinsonians)",
         "severity": "Moderate",
-        "mechanism": "Additive anticholinergic burden — urinary retention, dry mouth, constipation, cognitive impairment in elderly",
-        "management": "Review Anticholinergic Burden Score; minimize systemic anticholinergic load"
+        "mechanism": "Despite minimal systemic absorption of inhaled glycopyrronium, combination with systemic anticholinergic drugs increases total antimuscarinic burden. Risk of urinary retention, constipation, tachycardia, dry mouth, and cognitive impairment — especially in elderly patients.",
+        "management": "Use ACB (Anticholinergic Cognitive Burden) scoring to monitor total anticholinergic load in COPD patients on multiple medications. If urinary symptoms develop, consider switching OAB medication to mirabegron (beta-3 agonist) rather than combining two antimuscarinics. Beers 2023 guidance applicable."
+      },
+      {
+        "drug": "Indacaterol (LABA) — fixed combination therapy (Ultibro Breezhaler)",
+        "severity": "Beneficial (standard COPD combination)",
+        "mechanism": "Indacaterol/glycopyrronium (Ultibro) combines LABA (beta-2 agonist bronchodilation) and LAMA (muscarinic antagonist bronchodilation) for complementary, synergistic bronchodilatory effects. IGNITE trial series demonstrated superiority over each monocomponent.",
+        "management": "Ultibro (indacaterol 110mcg + glycopyrronium 50mcg OD) is a first-line GOLD Grade B or C COPD treatment. No pharmacokinetic interaction — the combination is a fixed-dose inhaler for convenience. If prescribed separately, ensure patient does NOT take additional standalone LAMA or LABA."
+      },
+      {
+        "drug": "Beta-blockers (non-selective: propranolol, carvedilol, labetalol) — bronchospasm antagonism",
+        "severity": "Major",
+        "mechanism": "Non-selective beta-blockers block the beta-2 receptor bronchodilatory effect of any beta-2 agonist co-prescribed with glycopyrronium (LABA in fixed combinations). While glycopyrronium itself is anticholinergic (not beta-agonist), its commonly prescribed combination partners (LABAs) are antagonized.",
+        "management": "Use only cardioselective beta-blockers (bisoprolol, metoprolol) in COPD patients. Avoid propranolol, carvedilol, nadolol, and other non-selective beta-blockers. Cardioselective agents at standard doses rarely cause clinically significant bronchospasm in mild-moderate COPD."
+      },
+      {
+        "drug": "Narrow-angle glaucoma — absolute contraindication",
+        "severity": "Contraindicated",
+        "mechanism": "Despite primarily pulmonary delivery, inhaled glycopyrronium has systemic antimuscarinic activity. Anticholinergic effects can precipitate acute angle-closure glaucoma in patients with anatomically narrow anterior chamber angles by impairing aqueous humor drainage.",
+        "management": "CONTRAINDICATED in untreated narrow-angle glaucoma per Health Canada Seebri/Enurev PM. Safe in open-angle glaucoma (confirm type before prescribing). Screen all new COPD patients for glaucoma history. If narrow-angle glaucoma present, treat glaucoma (laser iridotomy) before starting LAMA therapy."
+      },
+      {
+        "drug": "Bladder outlet obstruction (BPH) and urinary retention risk",
+        "severity": "Major",
+        "mechanism": "Antimuscarinic agents relax the detrusor muscle and can cause urinary retention in patients with bladder outlet obstruction (enlarged prostate, urethral stricture). Inhaled glycopyrronium has systemic absorption sufficient to cause clinically significant urinary retention in susceptible patients.",
+        "management": "Screen male COPD patients for BPH symptoms (IPSS score) before initiating LAMA therapy. If moderate-severe BPH (IPSS >8), consider alpha-blocker (tamsulosin) before or concurrent with LAMA initiation. Discontinue glycopyrronium if acute urinary retention occurs — switch to alternative COPD therapy."
       }
     ],
     "pregnancy": "Limited human data. Anticholinergic effects could theoretically impair fetal development. Avoid in pregnancy unless clearly necessary. Breastfeeding: limited data; avoid unless benefit outweighs risk.",
@@ -73700,16 +73904,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "(Minimal — mAbs do not interact with CYP/transporters)",
-        "severity": "Minor",
-        "mechanism": "Cleared by reticuloendothelial system, not CYP",
-        "management": "No clinically significant pharmacokinetic interactions"
+        "drug": "No clinically significant pharmacokinetic drug interactions",
+        "severity": "None",
+        "mechanism": "Fremanezumab is a fully human IgG2Δa monoclonal antibody targeting CGRP. As a mAb, it is not metabolized by CYP450 or drug transporters — cleared proteolytically. No CYP, P-gp, or other transporter-based drug interactions documented.",
+        "management": "No dose adjustments needed based on comedications. Monthly (225mg) or quarterly (675mg) SC dosing. Can be co-administered with standard oral migraine medications without pharmacokinetic concern."
       },
       {
-        "drug": "Live vaccines",
-        "severity": "Minor (theoretical)",
-        "mechanism": "No documented immunosuppression with anti-CGRP mAbs",
-        "management": "Generally proceed with vaccinations as indicated"
+        "drug": "Other CGRP-pathway drugs (erenumab, eptinezumab, galcanezumab — mAbs; atogepant, rimegepant, ubrogepant — gepants)",
+        "severity": "Major",
+        "mechanism": "Fremanezumab blocks CGRP ligand. Combining with other CGRP mAbs (whether targeting ligand or receptor) or gepants (CGRP receptor antagonists) provides no proven additive benefit — same pathway is blocked by multiple agents. May amplify adverse effects (constipation, injection site reactions).",
+        "management": "Do NOT combine with other CGRP-pathway preventive agents. Gepants (rimegepant) as acute rescue treatment during fremanezumab prophylaxis is acceptable (short-term acute use is distinct from preventive dosing). When switching CGRP mAbs, no strict washout period required."
+      },
+      {
+        "drug": "Traditional migraine preventives (propranolol, metoprolol, amitriptyline, nortriptyline, valproate, topiramate, candesartan)",
+        "severity": "Minor",
+        "mechanism": "No pharmacokinetic interactions. Fremanezumab may be added to existing preventive therapy or used as monotherapy. Combination with traditional preventives is well-studied and safe — may allow gradual tapering of traditional agents as fremanezumab takes effect.",
+        "management": "Continue traditional preventives when starting fremanezumab; reassess at 3-6 months. Do not abruptly stop topiramate (seizure risk in epilepsy) or valproate. Propranolol: taper slowly over weeks. Amitriptyline: taper to avoid withdrawal. Fremanezumab response is typically assessed after 3 monthly doses."
+      },
+      {
+        "drug": "NSAIDs (naproxen, ibuprofen, diclofenac) and triptans — acute migraine treatments",
+        "severity": "Minor",
+        "mechanism": "No pharmacokinetic interaction. NSAIDs and triptans used for acute migraine management are compatible with fremanezumab preventive therapy. Continued acute treatment use does not reduce fremanezumab efficacy.",
+        "management": "Patients can continue NSAIDs and triptans for breakthrough migraines. Monitor for medication overuse headache (>10 days/month triptan or NSAID use). Successful fremanezumab therapy should progressively reduce acute treatment needs over 3-6 months."
+      },
+      {
+        "drug": "Anticoagulants (warfarin, DOACs) — injection site bleeding risk",
+        "severity": "Minor",
+        "mechanism": "Fremanezumab is given as a subcutaneous injection. Patients on anticoagulants may have increased bleeding or bruising at the injection site — not a pharmacokinetic interaction, but a procedural concern.",
+        "management": "Subcutaneous injections are generally safe in anticoagulated patients when performed correctly (avoid injecting into areas with visible bruising). Rotate injection sites (abdomen, thigh, upper arm). Apply light pressure after injection. No dose adjustment of anticoagulant is needed."
+      },
+      {
+        "drug": "Hormonal contraceptives and menopausal hormone therapy — menstrual migraine context",
+        "severity": "Minor",
+        "mechanism": "No pharmacokinetic interaction. Hormonal fluctuations (estrogen withdrawal during pill-free intervals) trigger menstrual migraines in susceptible women. Fremanezumab may be particularly effective for menstrual migraine — CGRP rises during menstrual phases.",
+        "management": "No dose adjustment needed for fremanezumab with hormonal therapy. If menstrual migraine is the primary indication, discuss continuous hormonal contraceptive regimens (avoiding pill-free intervals) as a complementary strategy. Combined OCP in migraine with aura carries stroke risk — prefer progestogen-only or non-hormonal options."
       }
     ],
     "pregnancy": "Health Canada classification: limited human pregnancy data; animal studies acceptable at therapeutic exposures. Long half-life (~31 days) means residual exposure ≥5 months after stopping. SOGC/Canadian Headache Society: discontinue when planning pregnancy unless severe migraine; counsel washout period. Excretion in breast milk: minimal due to IgG2 properties.",
@@ -74742,16 +74970,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "ACE inhibitors",
-        "severity": "Major (theoretical)",
-        "mechanism": "ACE inhibitors increase endogenous bradykinin levels (ACE breakdown of bradykinin); icatibant antagonism may interact unpredictably with ACE inhibitor-induced angioedema events",
-        "management": "Per Health Canada: do NOT use icatibant in patients on ACE inhibitors; if HAE attack, consider C1-esterase inhibitor concentrate as alternative"
+        "drug": "ACE inhibitors (enalapril, ramipril, lisinopril, perindopril, captopril)",
+        "severity": "Major",
+        "mechanism": "ACE inhibitors prevent bradykinin degradation → bradykinin accumulation. This competes with icatibant at bradykinin B2 receptors — potentially reducing icatibant's efficacy in patients who need it for ACE inhibitor-induced angioedema. Also, icatibant is indicated for hereditary angioedema (HAE), but ACEi-induced angioedema is a separate mechanism.",
+        "management": "ACE inhibitors are CONTRAINDICATED in all HAE patients (they dramatically worsen HAE by increasing bradykinin). If patient requires antihypertensive therapy, substitute ARBs (valsartan, candesartan) — ARBs do not increase bradykinin. Icatibant has been used off-label for ACEi-induced angioedema with variable evidence."
       },
       {
-        "drug": "(Generally minimal CYP/transporter interactions)",
+        "drug": "Lanadelumab (Takhzyro — kallikrein inhibitor for HAE prophylaxis)",
+        "severity": "Note (complementary prevention and treatment)",
+        "mechanism": "Lanadelumab prevents HAE attacks by inhibiting plasma kallikrein upstream; icatibant treats acute attacks by blocking bradykinin B2 receptors downstream. These drugs work at different points in the same kinin pathway — no antagonism or pharmacokinetic interaction.",
+        "management": "Patients on lanadelumab prophylaxis should still carry icatibant (or C1-INH concentrate) for breakthrough attacks. The combination of preventive (lanadelumab) + rescue (icatibant) therapy is the standard HAE management approach. Coordinate with HAE specialist clinic."
+      },
+      {
+        "drug": "C1-esterase inhibitor concentrates (Berinert, Ruconest, Haegarda)",
+        "severity": "Note (alternative acute rescue therapy)",
+        "mechanism": "Both icatibant and C1-INH concentrates treat acute HAE attacks via different mechanisms. No pharmacokinetic interaction. C1-INH restores the inhibitor deficiency; icatibant blocks the downstream bradykinin B2 receptor. For very severe attacks, sequential use has been considered.",
+        "management": "Patients should have access to at least ONE acute rescue medication (icatibant OR C1-INH concentrate). For very severe attacks not responding to one agent, the other class can be tried under specialist guidance. Do not routinely combine without specialist oversight."
+      },
+      {
+        "drug": "Estrogen-containing products (combined OCP, HRT) — HAE exacerbation risk",
+        "severity": "Major (disease-level interaction)",
+        "mechanism": "Exogenous estrogens stimulate hepatic synthesis of kallikrein and bradykinin precursors, dramatically worsening HAE attack frequency and severity regardless of whether icatibant is available for acute rescue. This is a disease interaction, not a pharmacokinetic DDI with icatibant itself.",
+        "management": "Estrogen-containing contraceptives and HRT are CONTRAINDICATED in HAE. Use progestogen-only methods. Icatibant remains available for breakthrough attacks but estrogen removal is the primary intervention. Coordinate contraception management with HAE specialist."
+      },
+      {
+        "drug": "Anticoagulants (warfarin, DOACs, heparin) — subcutaneous injection site risk",
         "severity": "Minor",
-        "mechanism": "Peptide degraded by proteases",
-        "management": "No clinically significant pharmacokinetic interactions"
+        "mechanism": "Icatibant is administered as a subcutaneous injection (30mg SC). Anticoagulated patients may have increased bruising at the injection site but no significant pharmacokinetic interaction between icatibant and anticoagulants.",
+        "management": "Icatibant SC injection is safe in anticoagulated patients — apply firm pressure after injection, rotate sites. The risk of delaying treatment due to anticoagulation-related concerns is far greater than minor injection site bleeding. Icatibant should be administered promptly regardless of anticoagulation status."
+      },
+      {
+        "drug": "Beta-blockers (propranolol, atenolol) — theoretical interference with bradykinin-mediated vasodilation",
+        "severity": "Minor",
+        "mechanism": "Beta-blockers reduce catecholamine-mediated counter-regulation to bradykinin-induced hypotension. During severe acute HAE attacks, hypotension may occur — beta-blockers could blunt the reflex tachycardia response. This is a pharmacodynamic concern, not a pharmacokinetic interaction.",
+        "management": "No specific contraindication to beta-blockers with icatibant. If patient is on beta-blockers for cardiac indications, continue therapy — but monitor BP more closely during severe HAE attacks. Ensure IV access for volume support if needed. HAE management should not be delayed due to concomitant beta-blocker use."
       }
     ],
     "pregnancy": "Health Canada classification: limited human data. Animal studies do not show fetotoxicity at therapeutic exposures. Use in pregnancy when life-threatening HAE attack mandates treatment; weigh risk/benefit. Excretion in breast milk: limited data — caution.",
