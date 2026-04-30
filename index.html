@@ -54374,16 +54374,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "MAO inhibitors",
-        "severity": "Major",
-        "mechanism": "Hypertensive crisis (sympathomimetic + MAOI)",
-        "management": "Contraindicated"
+        "drug": "MAO inhibitors (phenelzine, tranylcypromine, moclobemide, selegiline, rasagiline)",
+        "severity": "Contraindicated",
+        "mechanism": "Naphazoline is an alpha-2 adrenergic agonist with indirect sympathomimetic properties; ophthalmic naphazoline has ~10% systemic absorption through nasolacrimal drainage; MAO inhibitors prevent catecholamine degradation — even small amounts of systemically absorbed sympathomimetics can cause life-threatening hypertensive crisis, hyperthermia, and cardiovascular collapse",
+        "management": "CONTRAINDICATED with MAO inhibitors (irreversible and reversible); allow 14-day washout after stopping irreversible MAOI before any sympathomimetic; for ophthalmic decongestant need, use antihistamine-only eye drops (olopatadine, ketotifen) or saline flush; phenylephrine ophthalmic for pupil dilation during eye examination also contraindicated with MAOIs — alert ophthalmology staff to MAOI therapy"
       },
       {
-        "drug": "Tricyclic antidepressants",
+        "drug": "Tricyclic antidepressants (amitriptyline, nortriptyline, imipramine, clomipramine)",
         "severity": "Moderate",
-        "mechanism": "Potentiate sympathomimetic pressor response",
-        "management": "Use cautiously in patients on TCAs"
+        "mechanism": "TCAs inhibit noradrenaline reuptake (NET), increasing synaptic noradrenaline availability; naphazoline stimulates alpha-adrenergic receptors; combined effect potentiates pressor response — risk of elevated blood pressure and cardiac arrhythmias; ophthalmic absorption is low but cumulative effect from nasolacrimal drainage is real",
+        "management": "Use naphazoline ophthalmic with caution in patients on TCAs; limit to minimum duration (3–5 days); monitor BP if systemic effects are suspected; use antihistamine-only eye drops (olopatadine, azelastine, ketotifen ophthalmic) as safer alternatives for allergic conjunctivitis in TCA-treated patients"
+      },
+      {
+        "drug": "Antihypertensive agents (beta-blockers, calcium channel blockers, ACE inhibitors)",
+        "severity": "Minor",
+        "mechanism": "Naphazoline's systemic alpha-adrenergic agonism (from ocular or nasal absorption) causes vasoconstriction that may partially antagonize antihypertensive medications; clinically relevant only with frequent, bilateral ophthalmic use or with nasal naphazoline spray; brief unilateral ophthalmic use provides minimal systemic absorption",
+        "management": "Short-term, unilateral ophthalmic naphazoline use for red eye relief: unlikely to cause significant BP increase in treated hypertension; limit to 3–5 days; patients with poorly controlled hypertension should use antihistamine eye drops or preservative-free lubricants instead; avoid nasal naphazoline sprays (higher absorption) in hypertensive patients on antihypertensives"
+      },
+      {
+        "drug": "Narrow-angle glaucoma — contraindication to alpha-adrenergic ocular agonists",
+        "severity": "Contraindicated",
+        "mechanism": "Naphazoline, like all sympathomimetic mydriatics, can cause pupillary dilation that precipitates acute angle-closure glaucoma in patients with shallow anterior chambers; sympathomimetic agents constrict iris dilator muscle, potentially blocking the trabecular meshwork in narrow-angle anatomy",
+        "management": "CONTRAINDICATED in patients with narrow-angle glaucoma or shallow anterior chamber; red eye from allergic conjunctivitis in a patient with glaucoma requires ophthalmology assessment before any decongestant eye drop; antihistamine-only drops (olopatadine) or saline flush are safer alternatives; document glaucoma diagnosis to alert future prescribers/dispensers"
+      },
+      {
+        "drug": "Rebound conjunctival hyperemia (overuse — rhinitis medicamentosa equivalence)",
+        "severity": "Moderate",
+        "mechanism": "Chronic use of naphazoline eye drops (>3–5 consecutive days) causes tachyphylaxis at alpha-2 receptors and rebound conjunctival vasodilation on drug cessation — 'conjunctival rhinitis medicamentosa'; red eyes worsen when drops are stopped, leading to escalating use; this is a pharmacological phenomenon, not a drug-drug interaction, but clinically critical",
+        "management": "Limit naphazoline ophthalmic use to 3–5 days maximum; warn patients at dispensing about rebound redness; discontinue gradually if significant dependence develops; switch to antihistamine eye drops (olopatadine 0.1% BID) for ongoing allergic conjunctivitis management; for rebound hyperemia, brief topical corticosteroid eye drops under ophthalmology supervision may help during weaning"
+      },
+      {
+        "drug": "Topical ophthalmic antihistamines (olopatadine, ketotifen, azelastine ophthalmic)",
+        "severity": "Beneficial",
+        "mechanism": "Naphazoline (decongestant: vasoconstriction) and ophthalmic antihistamines (H1 blockade) have complementary mechanisms for allergic conjunctivitis; combination products exist (Naphcon-A, Visine-A: naphazoline + pheniramine); however, naphazoline-only drops for red eye miss the histamine-mediated itch component, and histamine-only drops miss the congestion",
+        "management": "Naphazoline-antihistamine combination eye drops provide more complete relief than either alone for allergic conjunctivitis; however, naphazoline rebound risk still applies; modern dual-action antihistamine drops (olopatadine — mast cell stabilizer + antihistamine) are preferred for ongoing allergic conjunctivitis management as they do not cause rebound"
       }
     ],
     "pregnancy": "Category C. Avoid. Vasoconstriction may reduce ocular or nasal blood flow; limited pregnancy data. Saline eye drops and saline nasal spray are preferred in pregnancy.",
@@ -60393,10 +60417,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Other ophthalmic medications",
+        "drug": "Other ophthalmic medications (antihistamine drops, steroid eye drops, lubricant drops)",
         "severity": "Minor",
-        "mechanism": "No clinically significant interactions; physical separation between drops recommended",
-        "management": "Wait at least 5 minutes between different eye drops"
+        "mechanism": "Sodium cromoglycate ophthalmic (2% drops, 4% drops) is a mast cell stabilizer preventing allergic mediator release; when used concurrently with antihistamine eye drops (olopatadine, ketotifen) or steroid drops, additive ocular allergy control is achieved; no pharmacokinetic interactions between ophthalmic preparations; physical droplet displacement is the primary concern",
+        "management": "Administer different eye drops at least 5 minutes apart to allow adequate ocular contact time for each product and prevent washout; apply cromoglycate first (smaller molecule), then antihistamine or steroid drops after 5 minutes; remove contact lenses before any eye drop and reinsert after 15 minutes"
+      },
+      {
+        "drug": "Inhaled corticosteroids (budesonide, fluticasone, beclomethasone) — asthma management context",
+        "severity": "Beneficial",
+        "mechanism": "Inhaled sodium cromoglycate (Intal — largely discontinued in Canada and USA but still used in some paediatric asthma protocols) and inhaled corticosteroids have complementary mechanisms for asthma prevention; cromoglycate prevents mast cell degranulation (prophylactic); ICS reduces airway inflammation (anti-inflammatory); combination was used historically for paediatric asthma to reduce corticosteroid dose",
+        "management": "Sodium cromoglycate inhaler is largely replaced by ICS in Canada; if cromoglycate inhaler is used (very young children, certain paediatric protocols), it must be used PROPHYLACTICALLY 4 times/day — not PRN; it is NOT a rescue bronchodilator; administer 10–15 minutes before exercise for exercise-induced bronchoconstriction; ICS remains the cornerstone of persistent asthma therapy"
+      },
+      {
+        "drug": "Beta-2 agonists (salbutamol/albuterol, formoterol) — prophylactic context",
+        "severity": "Beneficial",
+        "mechanism": "For exercise-induced bronchospasm, both sodium cromoglycate (inhaled, prophylactically) and short-acting beta-agonist (salbutamol) can be used preventively 10–15 min before exercise; they have complementary mechanisms (cromoglycate: mast cell stabilization; SABA: bronchodilation); combination is more effective than either alone for exercise-induced bronchoconstriction",
+        "management": "For exercise prophylaxis: use cromoglycate inhaler 10–15 min before exercise AND salbutamol 100–200 mcg 10–15 min before if additional protection needed; salbutamol alone provides faster-onset bronchodilation; cromoglycate provides anti-allergic prophylaxis; ensure adequate technique for both inhaler devices; this combination is used primarily in children due to cromoglycate's better safety profile vs. ICS"
+      },
+      {
+        "drug": "Nasal cromoglycate (Nasalcrom) vs. nasal antihistamines (azelastine) — allergic rhinitis",
+        "severity": "Minor",
+        "mechanism": "Nasal sodium cromoglycate (2% nasal spray) prevents mast cell mediator release in nasal mucosa; intranasal antihistamines (azelastine 137 mcg/spray) block histamine H1 receptors; combination targets mast cell activation (cromoglycate) and histamine action (azelastine) providing complementary benefit; no pharmacokinetic interaction between topical nasal agents",
+        "management": "Combination nasal cromoglycate + azelastine provides additive benefit for moderate-severe allergic rhinitis; administer separately (5 min apart); nasal cromoglycate must be used 4–6 times/day (less convenient than once-daily antihistamines); fixed-dose Dymista (fluticasone + azelastine) may be more convenient for combined ICS + antihistamine therapy"
+      },
+      {
+        "drug": "Oral antihistamines (cetirizine, loratadine, fexofenadine) — allergic conjunctivitis",
+        "severity": "Beneficial",
+        "mechanism": "Topical ocular sodium cromoglycate prevents local mast cell release in the conjunctiva; oral antihistamines provide systemic H1 blockade that extends to ocular, nasal, and cutaneous allergic symptoms; combination addresses both local and systemic histamine-mediated allergy components; no pharmacokinetic interaction",
+        "management": "Ocular cromoglycate + oral antihistamine is a validated combination for seasonal allergic conjunctivitis; cromoglycate must be initiated before allergy season (prophylactic, not acute); start 1–2 weeks before anticipated allergen exposure; for acute relief, antihistamine eye drops (olopatadine, ketotifen) have faster onset than cromoglycate"
+      },
+      {
+        "drug": "Immunosuppressants (cyclosporine eye drops, tacrolimus ophthalmic — dry eye/ocular GVHD)",
+        "severity": "No interaction",
+        "mechanism": "Sodium cromoglycate ophthalmic and immunomodulating eye drops (cyclosporine 0.05%/0.1% — Restasis/Cequa, tacrolimus ophthalmic) target different ocular conditions (cromoglycate: allergic conjunctivitis; cyclosporine: dry eye disease/ocular GVHD); if patient has both conditions, both can be used; no pharmacokinetic interaction between ophthalmic preparations at standard doses",
+        "management": "Administer at least 15 minutes apart (cyclosporine eye drops require longer pre-dose interval due to emulsion vehicle); document each product, its indication, and frequency; contact lenses should be removed before any medicated eye drop and reinserted only after 15 minutes"
       }
     ],
     "pregnancy": "Considered SAFE in pregnancy and breastfeeding — minimal systemic absorption from topical ophthalmic use. Long history of safe use.",
@@ -85707,16 +85761,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Photosensitizing drugs (tetracyclines, fluoroquinolones, thiazide diuretics)",
+        "drug": "Photosensitizing drugs (tetracyclines — doxycycline, minocycline; fluoroquinolones; thiazides)",
         "severity": "Moderate",
-        "mechanism": "Additive photosensitivity",
-        "management": "Daily broad-spectrum SPF 30+ sunscreen essential; counsel on sun avoidance"
+        "mechanism": "Trifarotene (Aklief 0.005% cream) is a highly selective RAR-gamma retinoid; like all retinoids, it increases skin cell turnover and thins the stratum corneum, increasing UV sensitivity; concurrent photosensitizing drugs (doxycycline commonly co-prescribed for acne) compound sun sensitivity on trifarotene-treated skin",
+        "management": "Daily broad-spectrum SPF 30+ sunscreen is MANDATORY during trifarotene therapy; minimize direct UV exposure; patients on oral doxycycline/minocycline + trifarotene for acne face triple photosensitizer burden (retinoid + antibiotic + UV) — reinforce sun avoidance and reapplication of sunscreen every 2 hours during outdoor exposure"
       },
       {
-        "drug": "Keratolytics / exfoliants (benzoyl peroxide, salicylic acid, alpha-hydroxy acids)",
+        "drug": "Keratolytics and exfoliants (benzoyl peroxide, salicylic acid, alpha-hydroxy acids, glycolic acid)",
         "severity": "Moderate",
-        "mechanism": "Additive skin irritation; may disrupt skin barrier",
-        "management": "Apply at different times of day (retinoid at night); monitor tolerance"
+        "mechanism": "Additive cutaneous irritation and barrier disruption; trifarotene is designed for acne vulgaris on the face AND trunk; applying keratolytics and trifarotene simultaneously to the same skin area increases erythema, peeling, burning, and dryness — particularly in the trunk application context where larger surface area is involved",
+        "management": "Apply trifarotene at night (PM); apply benzoyl peroxide or other keratolytics in the morning (AM); separate by at least 4–6 hours; reduce keratolytic frequency if significant irritation occurs; emollient moisturizer applied 30 min after trifarotene reduces irritation without significantly reducing efficacy"
+      },
+      {
+        "drug": "Pregnancy — teratogenicity (topical retinoid)",
+        "severity": "Contraindicated",
+        "mechanism": "Trifarotene is a retinoid with RAR-gamma selectivity; all retinoids are teratogenic (Category X); topical trifarotene has low systemic absorption (~1.5% on face, ~3.6% on trunk), but retinoid-class teratogenicity risk is a concern even at low systemic levels; retinoid embryopathy (craniofacial, cardiac, CNS malformations) risk applies to the class",
+        "management": "CONTRAINDICATED in pregnancy; confirm negative pregnancy test before initiating in women of childbearing potential; prescribe adequate contraception; if pregnancy occurs while using trifarotene, discontinue immediately and refer to maternal-fetal medicine; OTC status in some markets means patients may self-initiate without contraception counselling — pharmacist counselling at dispensing is critical"
+      },
+      {
+        "drug": "Oral isotretinoin or other systemic retinoids (acitretin)",
+        "severity": "Major",
+        "mechanism": "Combining topical trifarotene with oral systemic retinoids (isotretinoin for acne, acitretin for psoriasis/ichthyosis) creates additive retinoid class effects: markedly increased dryness, mucocutaneous toxicity, photosensitivity, and cumulative teratogenic risk (both are individually teratogenic); no additional acne benefit over isotretinoin monotherapy",
+        "management": "Do NOT combine trifarotene with systemic retinoids; if transitioning from isotretinoin to maintenance therapy, allow mucocutaneous recovery (typically 1–2 months) before starting topical trifarotene; document retinoid therapy history at all acne consultations"
+      },
+      {
+        "drug": "Topical antibiotics (clindamycin, erythromycin) — retinoid + antibiotic combination for trunk acne",
+        "severity": "Beneficial",
+        "mechanism": "Trifarotene addresses comedonal and inflammatory acne through retinoid receptor activation; topical antibiotics target C. acnes bacteria; combination is rational and effective for moderate acne affecting both face and trunk; no chemical incompatibility when applied at different times; retinoid + antibiotic is a validated acne combination per Canadian Dermatology Association guidelines",
+        "management": "Apply topical antibiotic (clindamycin + BPO to prevent resistance) AM and trifarotene PM; combining retinoid + antibiotic + BPO on trunk and face provides comprehensive coverage of acne pathophysiology; always use BPO concurrently with topical antibiotic to prevent C. acnes resistance"
+      },
+      {
+        "drug": "Moisturizers and emollients — essential tolerability adjunct",
+        "severity": "Beneficial",
+        "mechanism": "Trifarotene-induced retinization (erythema, peeling, dryness, burning in first 4–6 weeks) is the primary cause of poor adherence; emollient moisturizers applied after trifarotene or as a buffer ('moisturizer sandwich' technique) substantially reduce irritation and improve long-term adherence without significantly compromising efficacy",
+        "management": "Prescribe emollient moisturizer alongside every trifarotene prescription; apply trifarotene to clean dry skin PM, then emollient 30 min later; alternatively, apply emollient first (allow to absorb), then trifarotene ('buffering technique') for very sensitive skin; fragrance-free ceramide-based moisturizers preferred; counsel patients that initial irritation is expected and typically resolves by week 4–6"
       }
     ],
     "pregnancy": "CONTRAINDICATED — Category X. All retinoids are teratogenic regardless of route. Systemic absorption occurs with topical application. Women of childbearing potential must use effective contraception. Discontinue immediately if pregnancy occurs.",
@@ -85774,10 +85852,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Topical corticosteroids (concurrent extensive application)",
+        "drug": "Topical corticosteroids (concurrent extensive application — HPA suppression)",
         "severity": "Moderate",
-        "mechanism": "Both agents structurally related to steroids; additive HPA suppression risk with extensive application",
-        "management": "Avoid concurrent use over extensive areas; monitor for signs of adrenal suppression"
+        "mechanism": "Clascoterone (Winlevi 1% cream) is a topical androgen receptor antagonist structurally related to cortisone; it has weak glucocorticoid receptor agonist activity at high systemic exposure; applied to large areas with other topical corticosteroids (betamethasone, clobetasol), additive HPA axis suppression may occur in pediatric patients (adolescents with extensive acne on trunk and face)",
+        "management": "Avoid concurrent application of clascoterone over extensive areas (>25% BSA) WITH potent topical corticosteroids on the same or adjacent areas; for localized acne treatment with standard application area, combination with low-potency corticosteroids (hydrocortisone 1%) is unlikely to cause clinically significant HPA suppression; monitor for Cushingoid features in adolescent patients using multiple corticosteroid-class compounds extensively"
+      },
+      {
+        "drug": "Oral spironolactone (systemic androgen receptor antagonist — same mechanism)",
+        "severity": "Moderate",
+        "mechanism": "Clascoterone is a topical androgen receptor antagonist that works locally at the pilosebaceous unit; spironolactone is a systemic androgen receptor antagonist used for acne in females; combining both topical and systemic androgen blockade provides theoretical synergistic acne treatment but may produce additive anti-androgenic effects (altered menstrual cycle, electrolyte changes from systemic spironolactone)",
+        "management": "Combining clascoterone + spironolactone has been explored in clinical practice; no documented pharmacokinetic interaction (different routes, minimal systemic clascoterone absorption); monitor for additive anti-androgenic effects and electrolyte changes from systemic spironolactone; the combination may allow lower spironolactone doses while maintaining efficacy, reducing systemic adverse effects"
+      },
+      {
+        "drug": "Oral isotretinoin (concurrent acne therapy — tolerability assessment)",
+        "severity": "Minor",
+        "mechanism": "No pharmacokinetic interaction between clascoterone and isotretinoin; both target different aspects of acne pathophysiology (clascoterone: androgen receptor; isotretinoin: sebum suppression, keratinocyte differentiation, anti-inflammatory); combination is unusual since isotretinoin typically provides complete acne control, but may be used for androgen-dependent acne resistant to isotretinoin alone",
+        "management": "Combining clascoterone with isotretinoin is clinically unusual since isotretinoin suppresses sebum and reduces hormonal acne independently; if combined, no dose adjustments needed; monitor for overall skin tolerability and ensure adequate moisturization and sun protection for both agents' photosensitivity risks"
+      },
+      {
+        "drug": "Topical retinoids (adapalene, tretinoin, tazarotene)",
+        "severity": "Minor",
+        "mechanism": "Clascoterone and topical retinoids address complementary acne pathways (androgen receptor vs. retinoid receptor/keratinocyte differentiation); no pharmacokinetic interaction between topical agents when applied sequentially; additive irritation possible when multiple actives applied to same area concurrently",
+        "management": "Separate application: clascoterone AM, retinoid PM; this combination addresses both comedonal (retinoid) and hormonal (clascoterone) acne components and is rational for hormonal acne; allow each product to dry before applying the next; emollient moisturizer reduces combined irritation from retinoid + clascoterone"
+      },
+      {
+        "drug": "Hormonal contraceptives (ethinyl estradiol + levonorgestrel, norgestimate) and combined OCP for acne",
+        "severity": "Beneficial",
+        "mechanism": "Clascoterone's topical anti-androgenic mechanism is complementary to combined OCPs that reduce circulating androgens (by increasing SHBG and reducing LH/FSH-driven androgen production); combination addresses both circulating androgen levels (OCP) and local tissue androgen receptor activation (clascoterone); may allow lower OCP doses for acne management",
+        "management": "Combination of clascoterone + combined OCP is an emerging approach for hormonal acne in females; no pharmacokinetic interaction; clascoterone is applied topically without affecting OCP absorption or efficacy; document combined anti-androgenic approach in acne management plan; effective alternative to spironolactone in females who prefer a non-systemic anti-androgenic approach"
+      },
+      {
+        "drug": "Benzoyl peroxide and topical antibiotics (acne combination regimens)",
+        "severity": "No interaction",
+        "mechanism": "Clascoterone targets hormonal acne pathways (androgen receptor on sebocytes); benzoyl peroxide and topical antibiotics target C. acnes bacteria; these are complementary, non-interacting mechanisms; combining clascoterone with BPO and/or topical clindamycin in a triple regimen for moderate-severe hormonal acne is rational and supported by acne guidelines",
+        "management": "Clascoterone can be incorporated into a standard acne regimen alongside BPO ± topical antibiotic; apply at separate times of day to minimize additive irritation; no chemical incompatibilities known; for patients with both comedonal and inflammatory hormonal acne, comprehensive regimen may include: clascoterone (AM) + adapalene (PM) + BPO (AM) + topical clindamycin (PM)"
       }
     ],
     "pregnancy": "Limited data. Animal studies show no teratogenicity at topical doses. Systemic absorption is minimal. Antiandrogen class theoretically concerns: avoid use in women with confirmed pregnancy. Classified as compatible in non-pregnant adults; if pregnancy occurs, discuss with prescriber.",
@@ -90682,7 +90790,42 @@ var DRUGS = {
       "Narrow-angle glaucoma (relative)"
     ],
     "interactions": [
-      "Additive anticholinergic effects with systemic anticholinergics"
+      {
+        "drug": "Other anticholinergic drugs (tiotropium, glycopyrronium, oxytrol, oxybutynin, solifenacin, tolterodine, tricyclic antidepressants, antihistamines, antipsychotics)",
+        "severity": "Major",
+        "mechanism": "Intranasal ipratropium (0.03%/0.06%) has low systemic absorption (~20%) but additive anticholinergic effects occur when combined with multiple anticholinergic agents; cumulative anticholinergic burden causes: urinary retention, constipation, dry mouth, cognitive impairment (especially in elderly), tachycardia, blurred vision; clinically important with the widespread use of multiple drugs with anticholinergic properties",
+        "management": "Use the Anticholinergic Cognitive Burden (ACB) scale to assess total anticholinergic burden; avoid adding nasal ipratropium to patients already on multiple anticholinergic medications (total ACB score >3); in elderly patients, consider ipratropium nasal as a LAST RESORT for rhinorrhea; saline nasal rinses, azelastine, or decongestants may be preferable; document all anticholinergic medications in the medication reconciliation"
+      },
+      {
+        "drug": "Narrow-angle glaucoma (absolute contraindication to any anticholinergic spray near eyes)",
+        "severity": "Contraindicated",
+        "mechanism": "Ipratropium blocks muscarinic receptors; if aerosolized ipratropium inadvertently contacts the eye (imprecise nasal spray delivery, squeezing pump too hard, sneezing), it can precipitate acute angle-closure glaucoma by causing pupillary dilation and increased intraocular pressure; patients with narrow-angle glaucoma are at particular risk",
+        "management": "CONTRAINDICATED with concurrent narrow-angle glaucoma without protective eyewear; use with extreme caution or avoid in patients with known narrow-angle glaucoma; instruct patients to close eyes when spraying; use vertically-delivered nasal pump (pointing straight back toward posterior turbinates, not upward toward eyes); acute glaucoma emergency: severe eye pain, nausea, halos around lights after nasal spray use = urgent ophthalmology consult"
+      },
+      {
+        "drug": "Beta-agonists (salbutamol, formoterol) and decongestants (pseudoephedrine, oxymetazoline) — additive nasal effect",
+        "severity": "Minor",
+        "mechanism": "Intranasal ipratropium reduces rhinorrhea through anticholinergic action on nasal mucus glands; decongestants (pseudoephedrine, oxymetazoline) reduce nasal congestion through vasoconstriction; these have complementary mechanisms for different nasal symptoms; combination is rational for viral rhinitis with both congestion and profuse rhinorrhea",
+        "management": "Combination is clinically appropriate for bothersome rhinitis with both congestion AND excessive rhinorrhea; no pharmacokinetic interaction; oxymetazoline: limit to 3–5 days (rebound congestion/rhinitis medicamentosa); pseudoephedrine: avoid in hypertension, CAD, hyperthyroidism; document indication and duration"
+      },
+      {
+        "drug": "Urinary retention risk (BPH, neurogenic bladder) — additive anticholinergic",
+        "severity": "Moderate",
+        "mechanism": "In men with benign prostatic hyperplasia (BPH) already at risk for urinary retention, adding intranasal ipratropium (even at low systemic absorption) may provide sufficient additional anticholinergic tone on the bladder neck and detrusor muscle to precipitate acute urinary retention; particularly relevant if patient also on alpha-1 antagonist for BPH and alpha-blocker therapy is being relied upon for urethral relaxation",
+        "management": "Use nasal ipratropium with caution in men with symptomatic BPH or history of urinary retention; use minimum duration and dose; warn patients to report difficulty urinating; saline nasal rinse or corticosteroid nasal spray (for allergic rhinitis component) are anticholinergic-free alternatives; if urinary retention occurs, stop ipratropium immediately"
+      },
+      {
+        "drug": "Cholinesterase inhibitors (donepezil, rivastigmine, galantamine) — dementia treatment",
+        "severity": "Major",
+        "mechanism": "Cholinesterase inhibitors increase cholinergic tone by inhibiting acetylcholinesterase — they are the exact pharmacological opposite of anticholinergic drugs; combining an anticholinergic (ipratropium nasal) with a cholinesterase inhibitor in a dementia patient directly antagonizes the therapeutic effect of the dementia medication and may worsen cognitive function",
+        "management": "AVOID all anticholinergic drugs including nasal ipratropium in patients with dementia on cholinesterase inhibitors; use saline nasal rinse (first-line), azelastine nasal spray, or intranasal corticosteroid for rhinorrhea/rhinitis in these patients; the anticholinergic burden-cognitive function relationship is well established in elderly patients with dementia"
+      },
+      {
+        "drug": "Atropine and ipratropium inhaled (overlapping formulations — spray vs. inhaler)",
+        "severity": "Moderate",
+        "mechanism": "Patients on ipratropium bromide inhaler (Atrovent HFA 17 mcg/puff) for COPD/asthma may also be prescribed ipratropium nasal spray for rhinitis; combined systemic anticholinergic burden from two ipratropium formulations compounds anticholinergic adverse effects; patients may not realize these are the same drug in different formulations",
+        "management": "When prescribing ipratropium nasal spray, check if patient is already on ipratropium inhaler (Atrovent) or tiotropium (Spiriva); document all ipratropium-containing products and consider total anticholinergic load; if both nasal and inhaled ipratropium are genuinely needed, use at minimum effective doses with monitoring for anticholinergic adverse effects (urinary retention, constipation, dry mouth, cognitive effects in elderly)"
+      }
     ],
     "monitoring": [
       "Rhinorrhea control",
@@ -90960,7 +91103,42 @@ var DRUGS = {
       "Hypersensitivity to ketoconazole or other azoles"
     ],
     "interactions": [
-      "Minimal with topical use"
+      {
+        "drug": "Warfarin (ketoconazole shampoo/foam — scalp or skin application)",
+        "severity": "Minor",
+        "mechanism": "Topical ketoconazole (2% shampoo, 2% cream, 2% foam) has low systemic absorption (~<0.5% from intact scalp skin with shampoo); however, ketoconazole is a potent CYP2C9 and CYP3A4 inhibitor in vitro; at topical doses, systemic exposure is insufficient for clinically significant CYP inhibition on intact skin; isolated case reports of INR elevation with extensive topical ketoconazole application have been published",
+        "management": "No routine INR monitoring required for standard topical ketoconazole use (shampoo once or twice weekly); if used extensively on large areas of inflamed or broken skin (seborrheic dermatitis affecting large body surface area), exercise vigilance; systemic ketoconazole tablets are CONTRAINDICATED for systemic fungal treatment (Canada withdrew oral ketoconazole for systemic indication due to hepatotoxicity/adrenal suppression) — this entry is for topical only"
+      },
+      {
+        "drug": "Cyclosporine and tacrolimus (transplant patients with seborrheic dermatitis — scalp)",
+        "severity": "Minor",
+        "mechanism": "Topical ketoconazole shampoo is commonly used for seborrheic dermatitis (malassezia-associated flaking) in transplant patients; systemic absorption from shampoo is minimal (brief contact, rinsed off); theoretical CYP3A4 inhibition from absorbed ketoconazole is negligible with shampoo use; no documented calcineurin inhibitor level changes with ketoconazole shampoo",
+        "management": "Ketoconazole 2% shampoo can be used safely in transplant patients on calcineurin inhibitors; leave on for 3–5 minutes before rinsing for best antifungal efficacy; no monitoring of calcineurin inhibitor levels required specifically for shampoo use; use 2–3 times per week for active seborrheic dermatitis, then reduce to once weekly for maintenance"
+      },
+      {
+        "drug": "Topical corticosteroids (combination products or concurrent use for seborrheic dermatitis)",
+        "severity": "Beneficial",
+        "mechanism": "Seborrheic dermatitis is both a fungal (Malassezia furfur) and inflammatory condition; combination of ketoconazole cream + low-potency topical corticosteroid (hydrocortisone 1%) addresses both components; some combination products available; ketoconazole treats the underlying fungal trigger while corticosteroid reduces the immune-mediated inflammation",
+        "management": "Combination ketoconazole + hydrocortisone cream is appropriate for inflamed seborrheic dermatitis on skin; alternate ketoconazole-only and combination phases to minimize total steroid use; avoid potent corticosteroids (betamethasone, clobetasol) on the face — use low-potency corticosteroid only; topical calcineurin inhibitors (tacrolimus, pimecrolimus) are alternatives to corticosteroids for facial seborrheic dermatitis"
+      },
+      {
+        "drug": "Other topical antifungals — clotrimazole, miconazole, terbinafine (tinea versicolor)",
+        "severity": "Minor",
+        "mechanism": "Ketoconazole topical is used for tinea versicolor (pityriasis versicolor — Malassezia globosa) and seborrheic dermatitis; clotrimazole, miconazole (azoles), and selenium sulfide shampoos are alternatives; combining two azoles on the same area provides no additional benefit — same mechanism; ketoconazole is more lipophilic and has better activity against Malassezia than clotrimazole for seborrheic conditions",
+        "management": "Use ONE antifungal preparation appropriate for the condition; for tinea versicolor, ketoconazole 2% shampoo applied to skin for 10 min then rinsed is curative; no benefit from combining with other topical antifungals; relapse is common (Malassezia is a normal skin commensal) — maintenance therapy with monthly ketoconazole shampoo prevents recurrence"
+      },
+      {
+        "drug": "Selenium sulfide shampoo (concurrent seborrheic dermatitis treatment)",
+        "severity": "Minor",
+        "mechanism": "Selenium sulfide (1–2.5%) reduces Malassezia by anti-fungal and cytostatic scalp effects; ketoconazole 2% has a more specific anti-Malassezia mechanism (ergosterol synthesis inhibition); alternating or combining is sometimes done for resistant seborrheic dermatitis; no known chemical incompatibility between selenium sulfide and ketoconazole when used at different times",
+        "management": "If ketoconazole shampoo is inadequate alone for seborrheic dermatitis, alternating with selenium sulfide (or zinc pyrithione) shampoos provides different mechanisms; do not mix in the same wash — apply separately; selenium sulfide can cause hair discoloration and damage with prolonged high-frequency use; ketoconazole shampoo is preferred for most patients"
+      },
+      {
+        "drug": "Photosensitizing medications (isotretinoin, tetracyclines) — seborrheic skin context",
+        "severity": "Minor",
+        "mechanism": "Patients on isotretinoin commonly develop seborrheic dermatitis-like flaking and dandruff; ketoconazole shampoo is a safe adjunct for seborrheic scalp symptoms during isotretinoin; no direct drug interaction; isotretinoin causes photosensitivity but this does not increase ketoconazole skin absorption",
+        "management": "Ketoconazole shampoo can be safely added for isotretinoin-related dandruff and scalp seborrheic dermatitis; standard sun precautions apply for isotretinoin independently; ketoconazole cream is not needed routinely during isotretinoin as isotretinoin suppresses sebum (reduces Malassezia substrate)"
+      }
     ],
     "monitoring": [
       "Clinical resolution",
