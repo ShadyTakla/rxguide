@@ -50298,13 +50298,31 @@ var DRUGS = {
       "Hypersensitivity to guaifenesin"
     ],
     "interactions": [
-      {
-        "drug": "No significant drug-drug interactions at standard doses",
-        "severity": "Minor",
-        "mechanism": "N/A",
-        "management": "Drink extra water to enhance mucociliary effect"
-      }
-    ],
+        {
+          "drug": "MAO inhibitors (phenelzine, tranylcypromine, selegiline)",
+          "severity": "Major",
+          "mechanism": "Some guaifenesin products contain sympathomimetics (e.g., pseudoephedrine, dextromethorphan) as combination ingredients; combined with MAOIs these can cause hypertensive crisis or serotonin syndrome; guaifenesin alone does not interact with MAOIs",
+          "management": "Check that guaifenesin product is a single-ingredient formulation before dispensing to MAOI-treated patients; avoid combination guaifenesin-DXM or guaifenesin-pseudoephedrine products within 14 days of MAOI use"
+        },
+        {
+          "drug": "Anticoagulants / antiplatelets (warfarin, heparin, aspirin)",
+          "severity": "Minor",
+          "mechanism": "High-dose guaifenesin (>2400 mg/day) has been reported to have mild antiplatelet activity; additive effect with anticoagulants is theoretical but supported by isolated case reports of increased bleeding tendency",
+          "management": "Typical OTC doses (200–400 mg q4h) are unlikely to cause clinically meaningful bleeding augmentation; advise patients on anticoagulants to use recommended doses and monitor for unusual bruising or bleeding; INR monitoring unchanged for standard doses"
+        },
+        {
+          "drug": "CNS depressants (alcohol, opioids, benzodiazepines)",
+          "severity": "Minor",
+          "mechanism": "Guaifenesin has mild sedative properties at high doses; additive CNS depression with central depressants; additionally, many guaifenesin combination products contain dextromethorphan or codeine which significantly enhance this interaction",
+          "management": "Single-ingredient guaifenesin poses minimal CNS interaction risk; advise against concurrent alcohol use (also dehydrating); for liquid formulations with alcohol vehicle (some syrups contain up to 3.5% ethanol), caution in patients avoiding alcohol"
+        },
+        {
+          "drug": "Adequate fluid intake (non-drug interaction, clinical note)",
+          "severity": "No interaction",
+          "mechanism": "Guaifenesin's expectorant mechanism depends on adequate hydration to thin respiratory tract secretions and facilitate mucociliary clearance; dehydration negates efficacy",
+          "management": "Advise patients to drink at least 8 glasses of water daily while taking guaifenesin; this non-drug interaction is a key counselling point for effective use; inadequate hydration is the most common reason for perceived lack of response"
+        }
+      ],
     "pregnancy": "Category C. Limited data but widely used. Considered safe in pregnancy. Not associated with birth defects in available studies. Adequate hydration more important.",
     "pk": {
       "absorption": "Well absorbed orally",
@@ -54071,19 +54089,43 @@ var DRUGS = {
       "Anticoagulant therapy (high doses >4 g/day)"
     ],
     "interactions": [
-      {
-        "drug": "Warfarin",
-        "severity": "Minor",
-        "mechanism": "High-dose ginger inhibits platelet aggregation; case reports of INR elevation",
-        "management": "Standard culinary doses safe; monitor INR if high-dose ginger supplements with warfarin"
-      },
-      {
-        "drug": "Antiplatelet drugs (ASA, clopidogrel)",
-        "severity": "Minor",
-        "mechanism": "Additive platelet inhibition at high doses",
-        "management": "Standard supplemental doses generally safe; avoid high-dose ginger"
-      }
-    ],
+        {
+          "drug": "Warfarin and oral anticoagulants (apixaban, rivaroxaban)",
+          "severity": "Moderate",
+          "mechanism": "Ginger (6-shogaol, 6-gingerol) inhibits thromboxane synthetase and platelet aggregation; may also weakly inhibit CYP2C9, potentially elevating warfarin levels; multiple case reports of elevated INR with concurrent use",
+          "management": "Monitor INR more frequently when starting or stopping ginger supplements in warfarin-treated patients; advise patients to disclose ginger use; clinical doses >4 g/day of ginger carry higher risk than culinary amounts; DOAC bleeding risk also increased"
+        },
+        {
+          "drug": "Antiplatelet agents (aspirin, clopidogrel, dipyridamole, NSAIDs)",
+          "severity": "Moderate",
+          "mechanism": "Additive antiplatelet effects; ginger inhibits thromboxane synthetase and reduces platelet aggregation through mechanisms overlapping with aspirin and ADP-receptor antagonists",
+          "management": "Combination use increases bleeding risk, particularly perioperatively; advise stopping high-dose ginger supplements 7–14 days before surgery; culinary ginger use is generally acceptable but inform surgical team of any supplement use"
+        },
+        {
+          "drug": "Antidiabetic agents (insulin, metformin, sulfonylureas)",
+          "severity": "Moderate",
+          "mechanism": "Ginger exhibits hypoglycemic effects via enhanced insulin secretion and improved insulin sensitivity; additive glucose-lowering effect may cause hypoglycemia, especially with sulfonylureas or insulin",
+          "management": "Monitor blood glucose more closely when patients add ginger supplements; reduce antidiabetic doses proactively if blood glucose trends downward; educate patients on hypoglycemia symptoms; culinary ginger is lower risk than medicinal doses"
+        },
+        {
+          "drug": "Calcium channel blockers (nifedipine, amlodipine)",
+          "severity": "Minor",
+          "mechanism": "In vitro and limited in vivo evidence suggests ginger may have mild vasodilatory effects that could additively lower blood pressure with calcium channel blockers; exact mechanism unclear",
+          "management": "Monitor blood pressure when patients on calcium channel blockers begin high-dose ginger supplementation; dose adjustment rarely needed; clinically significant hypotension is uncommon at culinary doses"
+        },
+        {
+          "drug": "Cyclosporine / tacrolimus",
+          "severity": "Minor",
+          "mechanism": "Ginger may mildly inhibit CYP3A4 and P-glycoprotein at high doses; theoretical potential to increase immunosuppressant levels; limited human data but pharmacokinetic interaction plausible",
+          "management": "Monitor cyclosporine/tacrolimus trough levels if patient initiates high-dose ginger supplements; standard culinary intake unlikely to be clinically significant; advise transplant patients to disclose all herbal supplement use"
+        },
+        {
+          "drug": "Nausea of pregnancy (NVP) — context of use",
+          "severity": "Beneficial",
+          "mechanism": "SOGC and Motherisk guidelines support ginger as a first-line non-pharmacologic option for nausea and vomiting of pregnancy (NVP); 250 mg QID of ginger root extract shown to reduce NVP severity in randomized trials; no known teratogenicity at therapeutic doses",
+          "management": "Ginger 250 mg QID or 1 g daily is recommended by SOGC as a complementary approach to NVP; can be used alongside doxylamine/B6 (Diclegis) or metoclopramide; advise against very high doses (>2 g/day) in first trimester due to theoretical antiplatelet effect"
+        }
+      ],
     "pregnancy": "Category B. Considered safe at ≤1 g/day. SOGC recommends ginger as first-line for mild NVP (before pharmacological therapy). Extensive use in pregnancy without teratogenicity reports.",
     "pk": {
       "absorption": "Well absorbed; metabolized hepatically",
@@ -54942,19 +54984,43 @@ var DRUGS = {
       "PABA allergy (benzocaine is PABA derivative)"
     ],
     "interactions": [
-      {
-        "drug": "Methemoglobin-producing agents (dapsone, sulfonamides, nitrates, antimalarials)",
-        "severity": "Major",
-        "mechanism": "Additive methemoglobinemia",
-        "management": "Avoid combination"
-      },
-      {
-        "drug": "Antimalarials (chloroquine, primaquine)",
-        "severity": "Major",
-        "mechanism": "Additive methemoglobin oxidation",
-        "management": "Avoid benzocaine with these agents"
-      }
-    ],
+        {
+          "drug": "Methemoglobin-inducing agents (dapsone, nitrates, sulfonamides)",
+          "severity": "Major",
+          "mechanism": "Additive oxidative stress on hemoglobin; benzocaine metabolite (o-toluidine analog) oxidizes Fe²⁺ to Fe³⁺ methemoglobin, synergizing with other agents sharing this mechanism",
+          "management": "Avoid concurrent use when possible; if co-prescribed, educate patient on cyanosis, dyspnea, and grey-blue skin discoloration as warning signs; treat methemoglobinemia with IV methylene blue 1–2 mg/kg"
+        },
+        {
+          "drug": "Prilocaine / EMLA cream (prilocaine + lidocaine)",
+          "severity": "Major",
+          "mechanism": "Prilocaine also generates methemoglobin-inducing metabolites (o-toluidine); combined with benzocaine, cumulative methemoglobin formation exceeds safe thresholds, particularly in neonates and infants with immature NADH-reductase",
+          "management": "Do not use benzocaine and EMLA concurrently in children under 12 months; Health Canada advises against benzocaine oral gels in children under 2 years due to methemoglobinemia risk; use lowest effective dose and shortest duration in adults"
+        },
+        {
+          "drug": "Glucose-6-phosphate dehydrogenase (G6PD) deficiency",
+          "severity": "Contraindicated",
+          "mechanism": "G6PD-deficient red blood cells cannot regenerate NADPH to reduce methemoglobin back to hemoglobin; even small benzocaine doses can precipitate severe, symptomatic methemoglobinemia",
+          "management": "Contraindicated; use lidocaine-based products as an alternative in G6PD-deficient patients; confirm G6PD status before benzocaine use in populations with high G6PD deficiency prevalence (Mediterranean, African, Asian descent)"
+        },
+        {
+          "drug": "Oral anticoagulants / antiplatelets (warfarin, aspirin, clopidogrel)",
+          "severity": "Minor",
+          "mechanism": "Benzocaine in hemorrhoid products or oral gels applied to traumatized mucous membranes increases systemic absorption; not a pharmacokinetic interaction but relevant context for mucosal bleeding risk management",
+          "management": "Topical benzocaine is generally safe; however, for rectal/mucosal preparations used in patients on anticoagulants, select products with minimal vasoconstrictive or mucosal-irritant excipients; monitor for occult mucosal bleeding"
+        },
+        {
+          "drug": "Cholinesterase inhibitors (neostigmine, pyridostigmine, edrophonium)",
+          "severity": "Moderate",
+          "mechanism": "Benzocaine is an ester-type local anesthetic hydrolyzed by plasma pseudocholinesterase (butyrylcholinesterase); cholinesterase inhibitors reduce enzyme availability, potentially prolonging benzocaine effect and accumulation",
+          "management": "Relevant primarily in high-dose or repeated applications; apply benzocaine cautiously in patients on cholinesterase inhibitors; consider amide-type alternatives (lidocaine) which are metabolized hepatically and not affected by this interaction"
+        },
+        {
+          "drug": "Infants and neonates (pharmacodynamic susceptibility)",
+          "severity": "Contraindicated",
+          "mechanism": "Neonates and infants under 2 years have fetal hemoglobin (more susceptible to oxidation), immature NADH-methemoglobin reductase activity, and higher body surface area–to–weight ratio increasing relative benzocaine absorption",
+          "management": "Health Canada and FDA black box warning: do not use benzocaine oral gels (e.g., Baby Orajel) in children under 2 years; for teething pain, Health Canada recommends cold teething rings or acetaminophen/ibuprofen in appropriate age groups"
+        }
+      ],
     "pregnancy": "Category C. Short-term oral or topical use for pain relief — generally considered acceptable. Avoid large-area or prolonged use. Avoid teething gels in infants.",
     "pk": {
       "absorption": "Topical: poor systemic absorption through intact skin; better through mucous membranes",
@@ -56367,13 +56433,31 @@ var DRUGS = {
       "Known hypersensitivity to bacitracin or polymyxin B"
     ],
     "interactions": [
-      {
-        "drug": "No significant systemic interactions",
-        "severity": "Minor",
-        "mechanism": "Minimal systemic absorption from topical use",
-        "management": "N/A"
-      }
-    ],
+        {
+          "drug": "Aminoglycoside antibiotics (gentamicin, tobramycin, neomycin) — topical context",
+          "severity": "Moderate",
+          "mechanism": "Bacitracin (gram-positive coverage) combined with polymyxin B (gram-negative coverage) is frequently used alongside neomycin (triple antibiotic ointment); neomycin carries a high contact sensitization rate (~10%) leading to allergic contact dermatitis; cross-reactivity within aminoglycosides is possible",
+          "management": "Avoid triple antibiotic (with neomycin) products in patients with known neomycin allergy; use bacitracin-polymyxin as the neomycin-free alternative; patch test if allergic contact dermatitis develops despite treatment; refer to dermatology if sensitization suspected"
+        },
+        {
+          "drug": "Topical corticosteroids (hydrocortisone, betamethasone combinations)",
+          "severity": "Minor",
+          "mechanism": "Combination products (e.g., bacitracin-polymyxin-hydrocortisone) are used for infected eczema; the steroid anti-inflammatory effect may mask local signs of spreading infection if the infecting organism is not susceptible to bacitracin or polymyxin",
+          "management": "Use combination steroid-antibiotic products for confirmed secondary infected eczema; reassess in 5–7 days; if no improvement, culture wound and consider broader spectrum systemic antibiotics; limit use to 7–10 days to avoid skin atrophy from the steroid component"
+        },
+        {
+          "drug": "Silver sulfadiazine / other topical antimicrobials",
+          "severity": "Minor",
+          "mechanism": "No pharmacokinetic interaction; using multiple topical antimicrobials simultaneously on the same wound is generally unnecessary and may alter wound healing environment; polymyxin B can be inactivated by organic material (pus, exudate)",
+          "management": "Select one topical antimicrobial appropriate to the wound type and pathogen spectrum; bacitracin-polymyxin is preferred for minor clean wounds; silver sulfadiazine or honey-based dressings preferred for larger or chronic wounds; combining topical antimicrobials not evidence-based"
+        },
+        {
+          "drug": "Contact lens solutions / ophthalmic formulations",
+          "severity": "Minor",
+          "mechanism": "Polymyxin B is used in ophthalmic preparations; when applying topical bacitracin-polymyxin ointment near the periorbital area, inadvertent ocular exposure may occur; BAK (benzalkonium chloride) in ophthalmic polymyxin products damages contact lenses",
+          "management": "Remove contact lenses before applying periorbital ophthalmic polymyxin-containing preparations; wait at least 15 minutes before reinserting soft contact lenses; for skin-use ointments near eyes, avoid direct ocular contact and use ophthalmic-specific formulations for eye infections"
+        }
+      ],
     "pregnancy": "Category C. Generally considered safe for topical use on small wounds; avoid extensive application.",
     "pk": {
       "absorption": "Minimal systemic absorption from intact skin; increased from wounds, mucosal surfaces",
@@ -91506,7 +91590,30 @@ var DRUGS = {
       "Hypersensitivity to mometasone"
     ],
     "interactions": [
-      "Additive skin atrophy with other topical corticosteroids"
+      {
+        "drug": "CYP3A4 inhibitors (ritonavir, cobicistat, itraconazole, ketoconazole) — Cushing syndrome risk",
+        "severity": "Major",
+        "mechanism": "Mometasone furoate is a highly potent topical corticosteroid (Class III — strong); it is a CYP3A4 substrate with low but non-zero systemic absorption (1–7% depending on skin site, disease state, and occlusion); potent CYP3A4 inhibitors markedly reduce mometasone clearance → systemic glucocorticoid excess → iatrogenic Cushing syndrome; risk is higher than with weaker topical steroids due to mometasone's high glucocorticoid receptor affinity",
+        "management": "AVOID combining mometasone topical with ritonavir, cobicistat (HIV regimens), or systemic ketoconazole/itraconazole; switch to lower-potency topical steroid (hydrocortisone 1%, triamcinolone 0.1%) if CYP3A4 inhibitor therapy is required; monitor for Cushing features (easy bruising, weight gain, striae, BP changes) with prolonged combination use"
+      },
+      {
+        "drug": "Occlusive dressings and techniques (saran wrap, compression garments)",
+        "severity": "Moderate",
+        "mechanism": "Mometasone 0.1% is already a potent Class III corticosteroid; occlusion dramatically increases skin absorption (up to 10-fold) by preventing evaporation and maintaining drug-skin contact; occluded mometasone can produce systemic levels sufficient for HPA suppression even from a relatively small surface area",
+        "management": "Do NOT apply mometasone topical under occlusion without dermatologist supervision; use occlusive techniques (wet wraps) only for severe psoriasis/hand eczema under specialist care with defined short-term protocols; avoid on face, axillae, and groin (naturally occluded areas with thin skin); limit to body areas with thick skin (palms, soles) if occlusion is clinically required"
+      },
+      {
+        "drug": "Systemic corticosteroids (additive HPA suppression) and other topical corticosteroids",
+        "severity": "Moderate",
+        "mechanism": "Combining systemic prednisone/methylprednisolone with topical mometasone compounds total glucocorticoid burden; applying mometasone to multiple body sites ('polypharmacy steroid dermatology') compounds HPA suppression risk; children are more susceptible due to higher BSA-to-weight ratio",
+        "management": "Calculate total corticosteroid exposure across all routes; use lowest potency topical steroid adequate for the condition; avoid mometasone on face and intertriginous areas — use hydrocortisone 1% for these sensitive sites; in patients on systemic steroids, prefer the weakest effective topical steroid for concurrent skin conditions; document all corticosteroid-class products at each visit"
+      },
+      {
+        "drug": "Skin infections — contraindication to use on infected skin",
+        "severity": "Major",
+        "mechanism": "Mometasone's potent anti-inflammatory and immunosuppressive local effect suppresses the immune response needed to fight skin infections; applying topical mometasone to bacterial, fungal, or viral skin infections worsens the infection — classic examples: tinea incognita (atypical tinea presentation from steroid immunosuppression), worsened impetigo, accelerated herpes simplex spread",
+        "management": "CONFIRM absence of infection before applying mometasone to any inflammatory skin lesion; any well-demarcated ring, scaling with central clearing, or pustular lesion should be scraped for KOH and/or cultured before steroid use; if infected skin is also inflamed, treat infection first then reassess whether steroid is needed; combined steroid-antifungal (Lotriderm) may be appropriate for confirmed mixed tinea + eczema"
+      }
     ],
     "monitoring": [
       "Skin atrophy signs",
@@ -91579,7 +91686,30 @@ var DRUGS = {
       "Hypersensitivity to desonide"
     ],
     "interactions": [
-      "No significant interactions at topical doses"
+      {
+        "drug": "Other topical corticosteroids (concurrent application — total steroid load)",
+        "severity": "Moderate",
+        "mechanism": "Desonide is a low-potency (Class V–VI) topical corticosteroid preferred for sensitive areas (face, eyelids, genitalia, skin folds, infants); applying additional topical corticosteroids simultaneously to adjacent or overlapping areas increases total glucocorticoid exposure; in infants and young children with extensive atopic dermatitis, this may reach HPA-suppressive levels",
+        "management": "Use desonide as the sole topical steroid on sensitive areas; if a potent steroid is needed elsewhere on the body, use them at separate sites without overlap; calculate total BSA treated when using multiple topical steroids in children; document combined steroid exposure and perform clinical assessment for HPA suppression in children on extensive steroid therapy"
+      },
+      {
+        "drug": "Topical calcineurin inhibitors (tacrolimus, pimecrolimus) — desonide as alternative for sensitive sites",
+        "severity": "Beneficial",
+        "mechanism": "Desonide is often used as an alternative to tacrolimus/pimecrolimus for sensitive skin areas in atopic dermatitis; sequential therapy (desonide for acute flares, TCI for maintenance) avoids cumulative steroid-induced skin atrophy at sensitive sites; no adverse pharmacokinetic interaction when these drugs are used at different times",
+        "management": "Standard management for facial AD: desonide 0.05% for flares (limit to 1–2 weeks), then transition to TCI (tacrolimus or pimecrolimus) for maintenance; this 'proactive' approach reduces total steroid exposure while maintaining AD control; do not apply both to the same area at the same time — use one agent at a time"
+      },
+      {
+        "drug": "Occlusion (eyelid, diaper area, skin fold application)",
+        "severity": "Moderate",
+        "mechanism": "Desonide is formulated for use on sensitive skin including eyelids, perioral, and diaper area; these body sites are naturally occluded (skin-on-skin contact) which increases steroid absorption by up to 10-fold compared to non-occluded areas; even low-potency desonide can cause local atrophy and systemic effects when used under occlusion for extended periods",
+        "management": "Use minimum quantity and shortest duration on eyelids and diaper area; maximum 2–4 weeks of continuous use without reassessment; in diaper area, change diapers frequently to reduce occlusion; do not use under occlusive dressings on already-occluded body sites; consider mupirocin or antifungal if secondary infection is contributing to periocular or diaper area inflammation"
+      },
+      {
+        "drug": "Immunosuppressants (systemic) and skin infections",
+        "severity": "Minor",
+        "mechanism": "Desonide's low potency means HPA axis suppression at standard application areas is unusual; in systemically immunosuppressed patients (transplant, cancer treatment, HIV), even low-potency topical steroids compound the overall immunosuppressive state and may exacerbate cutaneous infections; desonide's low potency makes this less concerning than stronger steroids but vigilance remains important",
+        "management": "Verify absence of cutaneous infection before applying desonide to any skin area in immunosuppressed patients; antifungal prophylaxis in transplant patients should prompt caution with any topical steroid even desonide; monitor for skin infections (tinea, staphylococcal) in immunosuppressed patients on chronic topical steroid"
+      }
     ],
     "monitoring": [
       "Resolution of inflammation",
@@ -91648,7 +91778,30 @@ var DRUGS = {
       "Hypersensitivity to hydrocortisone"
     ],
     "interactions": [
-      "Additive effects with other topical steroids"
+      {
+        "drug": "CYP3A4 inhibitors (ritonavir, cobicistat, itraconazole) — systemic absorption risk",
+        "severity": "Moderate",
+        "mechanism": "Hydrocortisone valerate (0.2% cream) is a mid-potency (Class IV) topical corticosteroid; hydrocortisone valerate undergoes CYP3A4-mediated hydrolysis and further metabolism; potent CYP3A4 inhibitors may reduce its clearance; risk lower than with mometasone or fluticasone propionate (which have higher glucocorticoid receptor affinity) but relevant with extensive application",
+        "management": "Use with caution in patients on potent CYP3A4 inhibitors; minimize treatment area; switch to hydrocortisone 1% (weakest corticosteroid) if CYP3A4 inhibitor is required long-term; monitor for signs of HPA suppression with extensive use"
+      },
+      {
+        "drug": "Other topical corticosteroids (total steroid burden)",
+        "severity": "Moderate",
+        "mechanism": "Hydrocortisone valerate 0.2% is more potent than hydrocortisone 1%; combining with other topical steroids compounds total corticosteroid exposure; particularly relevant in patients with multiple skin conditions being treated simultaneously at different body sites",
+        "management": "Use one topical corticosteroid at a time where possible; calculate total BSA treated and total steroid potency; use appropriate potency for body site (stronger for hands/feet, weaker for face/skin folds); document all topical corticosteroids at dermatology visits"
+      },
+      {
+        "drug": "Skin infections (bacterial, fungal, viral) — do not use on infected skin",
+        "severity": "Major",
+        "mechanism": "Mid-potency topical corticosteroids applied to infected skin suppress local immune defenses, allowing pathogen proliferation; tinea incognita (atypical tinea corpus that is not ring-shaped due to steroid immunosuppression) is a direct consequence of applying corticosteroids to undiagnosed fungal infections",
+        "management": "Confirm diagnosis before prescribing; scrape for KOH if fungal infection possible; do not apply to vesicular, weeping, or pustular lesions without diagnosis; if infection confirmed, treat infection first then reassess inflammatory component"
+      },
+      {
+        "drug": "Systemic corticosteroids — additive HPA suppression",
+        "severity": "Moderate",
+        "mechanism": "Topical hydrocortisone valerate adds measurable systemic corticosteroid burden when applied to large areas; combined with systemic prednisone or other systemic steroids, HPA suppression risk increases; cortisol replacement baseline is disrupted",
+        "management": "Use minimum effective area and duration; in patients on systemic corticosteroids, hydrocortisone 1% is preferable to hydrocortisone valerate (lower potency); monitor for HPA suppression signs during tapering of systemic steroids if significant topical steroid use is ongoing"
+      }
     ],
     "monitoring": [
       "Skin atrophy signs",
@@ -91716,7 +91869,30 @@ var DRUGS = {
       "Do not use longer than 2 weeks without reassessment"
     ],
     "interactions": [
-      "No significant systemic interactions"
+      {
+        "drug": "Statins (all — especially rosuvastatin, simvastatin) — fusidic acid component OATP1B1/B3 inhibition",
+        "severity": "Major",
+        "mechanism": "Fucidin H contains fusidic acid 2% + hydrocortisone 1%; the fusidic acid component inhibits OATP1B1/B3 hepatic uptake transporters (same mechanism as systemic fusidic acid); while topical fusidic acid has low systemic absorption, significant skin surface area and duration of treatment may produce sufficient systemic levels to impair statin transport; cases of rhabdomyolysis with topical fusidic acid + statin have been reported",
+        "management": "MONITOR for statin-associated myopathy (muscle pain, weakness, dark urine) when Fucidin H is prescribed to patients on statins; for extensive or prolonged topical fusidic acid use, consider statin hold as for systemic fusidic acid; short-course (7–10 days) application on a small area in statin patients is generally low risk; document statin therapy when prescribing any topical fusidic acid product"
+      },
+      {
+        "drug": "Warfarin — fusidic acid CYP2C9 inhibition and hydrocortisone vitamin K effects",
+        "severity": "Moderate",
+        "mechanism": "Topical fusidic acid can produce measurable systemic levels with extensive use; fusidic acid inhibits CYP2C9 which metabolizes warfarin; hydrocortisone in high systemic doses can also affect clotting factor synthesis; combined topical exposure may produce modest INR changes in warfarin patients on extensive Fucidin H use",
+        "management": "Monitor INR if Fucidin H is used extensively (>50 cm2 area) or for >2 weeks in a warfarin patient; short-course limited-area use poses minimal risk; document Fucidin H use in medication reconciliation for anticoagulated patients"
+      },
+      {
+        "drug": "Topical corticosteroids (combined HPA suppression — hydrocortisone component)",
+        "severity": "Minor",
+        "mechanism": "The hydrocortisone 1% component of Fucidin H is low potency; combining Fucidin H with other topical steroids on adjacent or same areas adds to total corticosteroid exposure; the fusidic acid component does not add to steroid burden",
+        "management": "Use Fucidin H for limited skin area and defined duration (typically 7–14 days for infected eczema); do not combine with potent topical corticosteroids on the same area; once infection is cleared, transition to plain corticosteroid for ongoing eczema management"
+      },
+      {
+        "drug": "Aminoglycoside topical antibiotics (neomycin — sensitization risk)",
+        "severity": "Minor",
+        "mechanism": "Fucidin H (fusidic acid + hydrocortisone) is sometimes used alongside neomycin-containing combination products (Neosporin); sensitization to either antibiotic can cross-react with structurally related agents; topical aminoglycoside sensitization (neomycin allergy) is common in patients with chronic eczema; the hydrocortisone in Fucidin H may mask sensitization reactions initially",
+        "management": "For eczema patients with known neomycin allergy, Fucidin H is a safe alternative antibiotic component for infected eczema; avoid using Fucidin H alongside neomycin-containing products; if worsening eczema on Fucidin H, consider patch testing for fusidic acid contact sensitization (rare but reported)"
+      }
     ],
     "monitoring": [
       "Culture if no improvement at 1 week",
@@ -91995,7 +92171,30 @@ var DRUGS = {
       "Do not use for non-Candida fungal infections (ineffective against dermatophytes)"
     ],
     "interactions": [
-      "None at topical doses"
+      {
+        "drug": "Topical corticosteroids (combined nystatin-steroid products — Mycolog, Kenacomb)",
+        "severity": "Beneficial",
+        "mechanism": "Fixed-dose nystatin + triamcinolone (Mycolog) or nystatin + neomycin + gramicidin + triamcinolone (Kenacomb) combinations address both fungal infection (Candida) and inflammatory reaction simultaneously; clinically useful for intertrigo or oral candidiasis with associated inflammatory component; nystatin has no CYP-mediated interaction with steroids",
+        "management": "Combined nystatin-steroid preparations are appropriate for confirmed candidal intertrigo with secondary inflammation; limit potent steroid component to 2 weeks; for facial candidiasis, use nystatin without potent steroid (risk of skin atrophy); transition to nystatin alone once inflammation is controlled"
+      },
+      {
+        "drug": "Topical azole antifungals (clotrimazole, miconazole) — efficacy comparison",
+        "severity": "Minor",
+        "mechanism": "Nystatin (polyene) and azole antifungals have different mechanisms (nystatin: binds ergosterol; azoles: inhibit ergosterol synthesis); nystatin is active against Candida but NOT dermatophytes (tinea); azoles cover both Candida and dermatophytes; combining both provides no benefit for Candida and nystatin adds nothing for dermatophyte infections",
+        "management": "Use nystatin for confirmed or suspected candidal infections (intertriginous, oral candidiasis, diaper rash); use azole (clotrimazole, miconazole) for tinea infections or when both Candida and dermatophyte are possible; do not combine two antifungals on the same area simultaneously; nystatin + azole combination rarely if ever clinically indicated"
+      },
+      {
+        "drug": "Oral nystatin suspension (concurrent topical + oral for oral candidiasis)",
+        "severity": "Beneficial",
+        "mechanism": "For oral candidiasis (thrush) or esophageal candidiasis, combination of topical nystatin cream (for skin folds around mouth in infants) and oral nystatin suspension (for oral mucosa) addresses both surfaces; oral nystatin is not systemically absorbed; no pharmacokinetic interaction between oral and topical nystatin formulations",
+        "management": "In infants with both oral thrush (nystatin oral suspension) and perianal/diaper candidiasis (nystatin cream), both formulations can be used simultaneously; oral nystatin suspension: 1 mL per side (100,000 units/mL) 4x/day; topical nystatin cream: apply to skin 2–3x/day; treat mother's nipples with topical nystatin cream concurrently if breastfeeding"
+      },
+      {
+        "drug": "Fluconazole (systemic) — when nystatin fails or esophageal candidiasis",
+        "severity": "Beneficial",
+        "mechanism": "Topical nystatin is first-line for uncomplicated oral or cutaneous candidiasis; fluconazole (systemic) is indicated when topical nystatin fails or for invasive/esophageal candidiasis; concurrent use of both has been explored for refractory oropharyngeal candidiasis in immunocompromised patients; nystatin does not inhibit fluconazole's CYP metabolism",
+        "management": "Transitioning from topical nystatin to oral fluconazole is the standard escalation for treatment-refractory candidiasis; combination of both is not standard but not harmful; for immunocompromised patients (HIV, transplant) with oropharyngeal candidiasis, fluconazole 100–200 mg/day is preferred over nystatin due to superior efficacy and once-daily dosing; nystatin prophylaxis in transplant patients is used at some centers"
+      }
     ],
     "monitoring": [
       "Clinical resolution",
@@ -92271,7 +92470,30 @@ var DRUGS = {
       "Hypersensitivity to ciclopirox"
     ],
     "interactions": [
-      "Minimal with topical use"
+      {
+        "drug": "Nail polish and nail hardeners (physical interaction — nail lacquer form)",
+        "severity": "Minor",
+        "mechanism": "Ciclopirox 8% nail lacquer (Penlac, Stieprox nail solution) penetrates through the nail plate to reach the nail bed where dermatophytes reside; conventional nail polish creates a physical barrier over the nail plate, preventing ciclopirox penetration and dramatically reducing efficacy; chemical removal products (acetone) are needed to remove old nail polish before ciclopirox application",
+        "management": "Remove all nail polish with non-acetone remover before applying ciclopirox nail lacquer; do not apply conventional nail polish over ciclopirox during treatment; nail hardeners and cosmetic treatments should be avoided during ciclopirox nail therapy; apply ciclopirox to clean nail surface and allow to dry; once-weekly professional debridement (filing) by podiatrist improves clinical outcomes"
+      },
+      {
+        "drug": "Oral antifungals (terbinafine, itraconazole) — combination or sequential therapy for onychomycosis",
+        "severity": "Beneficial",
+        "mechanism": "Ciclopirox nail lacquer (topical) and oral antifungals (terbinafine — gold standard for dermatophyte onychomycosis) address nail fungus through complementary mechanisms; oral terbinafine reaches nail via blood supply from the nail matrix; ciclopirox reaches nail via surface diffusion through nail plate; combination may address both new growth (terbinafine) and existing infected nail (ciclopirox)",
+        "management": "Ciclopirox alone is less effective than oral terbinafine for onychomycosis cure rates (25–40% vs. 70–80%); combination may be used for failed oral monotherapy or to prevent recurrence; oral terbinafine course (12 weeks for toenail) + concurrent ciclopirox lacquer provides the highest cure rates; cost and OHIP/insurance coverage considerations are relevant for combination prescribing"
+      },
+      {
+        "drug": "Ciclopirox shampoo (Stieprox 1%) — seborrheic dermatitis and drug interactions",
+        "severity": "No interaction",
+        "mechanism": "Ciclopirox 1% shampoo for seborrheic dermatitis/dandruff has negligible systemic absorption (brief contact time, rinse-off product); no significant CYP enzyme interactions; safe to use alongside any systemic medications including oral antifungals, immunosuppressants, and anticoagulants",
+        "management": "No drug interaction monitoring required for ciclopirox shampoo formulation; use twice weekly until dandruff controlled, then reduce to once weekly for maintenance; can be alternated with zinc pyrithione or ketoconazole shampoo for seborrheic dermatitis that responds to variety in antifungal mechanism"
+      },
+      {
+        "drug": "Warfarin and anticoagulants (systemic absorption consideration)",
+        "severity": "No interaction",
+        "mechanism": "Ciclopirox topical formulations (nail lacquer, shampoo, cream) have negligible systemic absorption; ciclopirox is not a CYP enzyme inhibitor or inducer at topical doses; no documented warfarin or DOAC interactions with topical ciclopirox formulations; reassurance appropriate for patients on anticoagulants who are also using ciclopirox for onychomycosis",
+        "management": "No INR monitoring or anticoagulant dose adjustment required for ciclopirox topical use; document topical antifungal therapy in medication list but this is for completeness rather than interaction management; oral terbinafine (if initiated for onychomycosis) has more relevant interactions — see terbinafine oral entry"
+      }
     ],
     "monitoring": [
       "Skin: resolution at 4 weeks",
