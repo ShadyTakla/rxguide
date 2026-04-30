@@ -90232,7 +90232,32 @@ var DRUGS = {
     "contraindications": [
       "Hypersensitivity to moxifloxacin or fluoroquinolones"
     ],
-    "interactions": [],
+    "interactions": [
+        {
+          "drug": "Contact lenses — preservative-free advantage of Vigamox",
+          "severity": "Minor",
+          "mechanism": "Moxifloxacin ophthalmic 0.5% (Vigamox) is uniquely formulated without benzalkonium chloride (BAK) preservative; this eliminates the lens absorption/corneal toxicity concern seen with BAK-containing fluoroquinolone drops; patients still should not wear contact lenses during active ocular infection",
+          "management": "Vigamox does not require the 15-minute contact lens removal wait that BAK-containing drops require; however, active bacterial conjunctivitis or keratitis contraindicates contact lens use regardless of preservative content; resume lenses only after infection resolution and prescriber clearance"
+        },
+        {
+          "drug": "QT-prolonging agents (systemic moxifloxacin, azithromycin, antiarrhythmics) — ophthalmic context",
+          "severity": "No interaction",
+          "mechanism": "Systemic moxifloxacin (Avelox PO/IV) prolongs the QT interval and is contraindicated with other QT-prolonging agents; ophthalmic moxifloxacin has negligible systemic absorption (<1 ng/mL plasma levels) and does not contribute to QTc prolongation; this well-known systemic interaction does NOT apply to the ophthalmic formulation",
+          "management": "No QT monitoring required for ophthalmic moxifloxacin; no timing separation from systemic QT-prolonging medications is needed; document this negative interaction to reassure prescribers who may confuse ophthalmic and systemic moxifloxacin contraindications"
+        },
+        {
+          "drug": "Other fluoroquinolone eye drops (ciprofloxacin, gatifloxacin)",
+          "severity": "Minor",
+          "mechanism": "Fluoroquinolone cross-resistance is clinically important; moxifloxacin, ciprofloxacin, and gatifloxacin all target bacterial DNA gyrase and topoisomerase IV; isolates with gyrA/parC mutations conferring resistance to one fluoroquinolone are often resistant to others",
+          "management": "If initial moxifloxacin ophthalmic treatment fails by day 3, switch to a different antibiotic class (polymyxin/trimethoprim, tobramycin, chloramphenicol where available) rather than switching to another fluoroquinolone; culture and sensitivity of the conjunctival discharge guides definitive therapy for refractory cases"
+        },
+        {
+          "drug": "Multiple eye drop regimens — instillation timing",
+          "severity": "Minor",
+          "mechanism": "When patients require multiple ophthalmic medications (e.g., moxifloxacin + lubricating drops + corticosteroid drops), administering drops simultaneously results in overflow, dilution, and reduced contact time for each agent; the nasolacrimal drainage of excess volume also increases risk of systemic absorption of any drug",
+          "management": "Administer each eye drop 5–10 minutes apart to allow absorption of the previous drop; instill the most important medications (antibiotics, glaucoma drops) first; apply lubricating or artificial tear preparations last; use punctal occlusion technique (pressing the inner corner of the eye) for 2 minutes after each drop to reduce systemic absorption"
+        }
+      ],
     "pregnancy": "Topical ophthalmic use — minimal systemic absorption; generally considered safe in pregnancy. Use only if clearly needed.",
     "pk": {
       "absorption": "Topical: minimal systemic absorption.",
@@ -90282,7 +90307,32 @@ var DRUGS = {
     "contraindications": [
       "Hypersensitivity to ciprofloxacin or fluoroquinolones"
     ],
-    "interactions": [],
+    "interactions": [
+        {
+          "drug": "Contact lenses — BAK preservative interaction",
+          "severity": "Moderate",
+          "mechanism": "Ciprofloxacin ophthalmic solution contains benzalkonium chloride (BAK), which is absorbed by soft contact lenses, accumulating on the lens surface and causing corneal epithelial damage and chronic irritation; patients should not wear contact lenses during active bacterial conjunctivitis or keratitis",
+          "management": "Remove soft contact lenses before instillation and wait at least 15 minutes before reinserting; advise patients not to wear contact lenses during active conjunctivitis or keratitis until infection is fully resolved; preservative-free single-dose units (if available) eliminate this concern; corneal infection itself contraindicates contact lens wear"
+        },
+        {
+          "drug": "Other fluoroquinolone ophthalmic agents (moxifloxacin, gatifloxacin)",
+          "severity": "Minor",
+          "mechanism": "Ciprofloxacin, moxifloxacin, and gatifloxacin are all 4th-generation-class fluoroquinolones targeting DNA gyrase and topoisomerase IV; they share partial cross-resistance, particularly in Pseudomonas aeruginosa and Staphylococcus aureus; switching between fluoroquinolone eye drops for treatment failure is generally ineffective",
+          "management": "If ophthalmic ciprofloxacin fails after 48–72 hours, do not substitute moxifloxacin or gatifloxacin — obtain conjunctival swab culture and sensitivity; consider polymyxin-B/trimethoprim as alternative for gram-negative coverage or tobramycin for broader gram-negative coverage; ophthalmology referral warranted for keratitis non-response"
+        },
+        {
+          "drug": "Oral ciprofloxacin / systemic quinolones (levofloxacin, moxifloxacin PO)",
+          "severity": "Minor",
+          "mechanism": "Concurrent ophthalmic and systemic ciprofloxacin provides overlapping antimicrobial coverage; for most ophthalmic infections the systemic contribution is not needed; ophthalmic ciprofloxacin achieves corneal concentrations of 200–600× MIC — far exceeding what systemic administration alone would achieve in the eye",
+          "management": "Ophthalmic and systemic ciprofloxacin can be used concurrently when clinically indicated (e.g., bacterial keratitis with risk of systemic spread, Neisseria gonorrhoeae conjunctivitis); no pharmacokinetic interaction; systemic dosing of ciprofloxacin need not be adjusted for concurrent ophthalmic use"
+        },
+        {
+          "drug": "Antacids / calcium, magnesium, iron — oral chelation irrelevant for ophthalmic",
+          "severity": "No interaction",
+          "mechanism": "Oral ciprofloxacin absorption is significantly reduced by divalent cation chelation (antacids, dairy, iron supplements, calcium); ophthalmic ciprofloxacin bypasses the gastrointestinal route entirely and is not subject to chelation; the well-known oral drug interaction does not apply to the ophthalmic formulation",
+          "management": "No timing separation from oral medications, antacids, dairy, or supplements is required for ophthalmic ciprofloxacin; this is an important negative interaction to document to avoid unnecessary patient counselling complexity"
+        }
+      ],
     "pregnancy": "Topical use — minimal absorption; generally considered safe. Use only if needed.",
     "pk": {
       "absorption": "Minimal systemic absorption topically.",
@@ -90328,7 +90378,32 @@ var DRUGS = {
     "contraindications": [
       "Hypersensitivity to gatifloxacin or fluoroquinolones"
     ],
-    "interactions": [],
+    "interactions": [
+        {
+          "drug": "Contact lenses — BAK preservative interaction",
+          "severity": "Moderate",
+          "mechanism": "Gatifloxacin 0.3% ophthalmic (Zymar) contains BAK preservative which accumulates in soft contact lens material, releasing continuously onto the cornea and causing chronic epithelial toxicity and stromal punctate keratopathy; active bacterial infection itself also contraindicates contact lens wear",
+          "management": "Remove soft contact lenses before instilling gatifloxacin eye drops; do not reinsert lenses until at least 15 minutes have passed; counsel patients that lenses should not be worn during active bacterial conjunctivitis; after infection resolution and prescriber clearance, thoroughly disinfect or replace contact lenses before resuming wear"
+        },
+        {
+          "drug": "Oral antidiabetics and gatifloxacin systemic interaction — ophthalmic context",
+          "severity": "No interaction",
+          "mechanism": "Systemic gatifloxacin (withdrawn from oral/IV market due to serious dysglycemia — both hypoglycemia and hyperglycemia) had significant interactions with antidiabetic agents; ophthalmic gatifloxacin has systemic bioavailability <1% and does not produce clinically meaningful plasma levels; the dysglycemia interaction from systemic gatifloxacin does NOT apply to the ophthalmic formulation",
+          "management": "Ophthalmic gatifloxacin is safe in diabetic patients; no blood glucose monitoring changes are required for ophthalmic use; document this negative interaction to prevent prescriber hesitation in diabetic patients requiring topical ophthalmic fluoroquinolone therapy"
+        },
+        {
+          "drug": "Fluoroquinolone cross-resistance (ciprofloxacin, moxifloxacin ophthalmic)",
+          "severity": "Minor",
+          "mechanism": "Gatifloxacin shares the fluoroquinolone mechanism (DNA gyrase/topoisomerase IV inhibition); organisms with gyrA or parC mutations causing fluoroquinolone resistance are typically resistant across the class; clinical failure with gatifloxacin is predictive of failure with other fluoroquinolone eye drops",
+          "management": "Switch to a non-fluoroquinolone antibiotic class if gatifloxacin treatment fails (polymyxin B/trimethoprim for gram-negative; bacitracin or erythromycin for gram-positive); culture and sensitivity testing guides refractory conjunctivitis or keratitis management"
+        },
+        {
+          "drug": "Multiple ophthalmic drops — administration spacing",
+          "severity": "Minor",
+          "mechanism": "Co-administration of gatifloxacin with other ophthalmic preparations (artificial tears, anti-allergic drops, glaucoma medications) without adequate spacing reduces individual drop efficacy; nasolacrimal overflow and dilution reduce active drug contact time with ocular tissues",
+          "management": "Allow 5–10 minutes between instillation of different eye drops; for patients with complex ophthalmic regimens, provide written medication schedules listing each drop and timing; instill anti-infective drops before lubricating drops for maximum antibacterial contact time"
+        }
+      ],
     "pregnancy": "Minimal topical absorption. Use only if needed.",
     "pk": {
       "absorption": "Minimal systemic topical absorption.",
@@ -90376,7 +90451,32 @@ var DRUGS = {
     "contraindications": [
       "Hypersensitivity to tobramycin or aminoglycosides"
     ],
-    "interactions": [],
+    "interactions": [
+        {
+          "drug": "Gentamicin / aminoglycoside allergy cross-reactivity",
+          "severity": "Contraindicated",
+          "mechanism": "Tobramycin and gentamicin are both aminoglycoside antibiotics; patients with a documented hypersensitivity to gentamicin (or other aminoglycosides: neomycin, framycetin, streptomycin) have significant cross-reactivity risk with tobramycin; local allergic reactions (conjunctival hyperemia, chemosis, eyelid edema, contact dermatitis) can occur",
+          "management": "Contraindicated in patients with known aminoglycoside allergy; document allergy class (aminoglycoside) rather than specific agent; use fluoroquinolone ophthalmic preparations (ciprofloxacin, moxifloxacin) as alternatives; erythromycin ointment for gram-positive coverage; polymyxin B combinations for gram-negative coverage"
+        },
+        {
+          "drug": "Contact lenses — BAK preservative",
+          "severity": "Moderate",
+          "mechanism": "Tobramycin ophthalmic 0.3% (Tobrex) contains benzalkonium chloride; BAK accumulates in soft contact lens material, releasing sustained epithelial toxicity; active conjunctivitis also contraindicates lens wear",
+          "management": "Remove soft contact lenses before instilling tobramycin drops; wait at least 15 minutes before reinserting; do not wear lenses during active bacterial infection; some tobramycin preparations are available as single-use preservative-free unit doses for patients with severe BAK sensitivity"
+        },
+        {
+          "drug": "Systemic aminoglycosides (IV gentamicin, tobramycin, amikacin)",
+          "severity": "Minor",
+          "mechanism": "Ophthalmic tobramycin has minimal systemic absorption (<10 ng/mL plasma); combined with systemic aminoglycosides, the contribution to total aminoglycoside exposure and nephrotoxicity/ototoxicity risk is negligible for standard ophthalmic dosing; relevant consideration if patient is on prolonged ophthalmic tobramycin for pseudomonal keratitis while also receiving IV tobramycin",
+          "management": "No dose adjustment needed for ophthalmic tobramycin in patients receiving systemic aminoglycosides; however, in patients with pre-existing hearing loss or renal impairment requiring systemic aminoglycoside monitoring, document all tobramycin routes; ophthalmology and infectious disease should coordinate when IV aminoglycosides are concurrent"
+        },
+        {
+          "drug": "Tobramycin-dexamethasone combination (TobraDex) — steroid component considerations",
+          "severity": "Minor",
+          "mechanism": "Tobramycin is available as a combination with dexamethasone (TobraDex); the steroid component adds the risk of elevated IOP (ocular hypertension, steroid-induced glaucoma) with prolonged use, and can mask infection progression or fungal superinfection; this applies only to combination products, not tobramycin alone",
+          "management": "Plain tobramycin (Tobrex, without steroid) does not carry IOP risk; for combination tobramycin-dexamethasone (TobraDex), monitor IOP if used beyond 10 days, particularly in patients with glaucoma or steroid-responder history; do not substitute TobraDex for Tobrex without awareness of the steroid-associated risks"
+        }
+      ],
     "pregnancy": "Minimal topical absorption. Generally considered safe.",
     "pk": {
       "absorption": "Minimal systemic absorption topically.",
@@ -90427,7 +90527,32 @@ var DRUGS = {
     "contraindications": [
       "Hypersensitivity to erythromycin or macrolides"
     ],
-    "interactions": [],
+    "interactions": [
+        {
+          "drug": "Contact lenses — ophthalmic ointment formulation and lens compatibility",
+          "severity": "Moderate",
+          "mechanism": "Erythromycin ophthalmic ointment (petrolatum base) is incompatible with contact lens wear; the petrolatum base coats the lens, causing visual blur, lens discoloration, and difficulty wearing lenses; additionally, active conjunctivitis contraindicates contact lens use regardless of antibiotic formulation",
+          "management": "Patients must not wear contact lenses while using erythromycin ophthalmic ointment; apply ointment at bedtime if day-time vision is required; erythromycin ointment is often preferred for neonatal prophylaxis (ophthalmia neonatorum) and for eyelid/corneal infections where sustained drug contact is beneficial; resume contact lenses only after infection resolution"
+        },
+        {
+          "drug": "Systemic macrolides (oral azithromycin, clarithromycin) — CYP3A4 irrelevance for ophthalmic use",
+          "severity": "No interaction",
+          "mechanism": "Systemic erythromycin is a potent CYP3A4 inhibitor causing clinically significant drug interactions (statins, warfarin, QT-prolonging agents, cyclosporine); ophthalmic erythromycin ointment has negligible systemic absorption and plasma levels too low to inhibit CYP3A4; the systemic drug interaction profile does NOT apply to the ophthalmic formulation",
+          "management": "No drug interaction monitoring or dose adjustments needed for ophthalmic erythromycin; document this negative interaction to prevent inappropriate application of systemic erythromycin interaction warnings to the topical ophthalmic formulation; patients on statins, warfarin, or other CYP3A4 substrates can safely use erythromycin ophthalmic ointment"
+        },
+        {
+          "drug": "Neonatal ophthalmia neonatorum prophylaxis — interaction with silver nitrate",
+          "severity": "Minor",
+          "mechanism": "Silver nitrate 1% drops (historically used for neonatal eye prophylaxis) have been replaced by erythromycin ointment in most Canadian provinces; silver nitrate is incompatible with many antibiotic solutions due to protein precipitation; erythromycin ointment is the standard Health Canada/CPS-recommended prophylaxis for Neisseria gonorrhoeae and Chlamydia trachomatis in newborns",
+          "management": "Use erythromycin 0.5% ophthalmic ointment for neonatal prophylaxis per PHAC/CPS guidelines (0.5 to 1 cm ribbon in lower conjunctival sac within 1 hour of birth); do not combine with silver nitrate; erythromycin does not cover HSV (acyclovir 3% ointment or IV acyclovir for neonatal HSV); document prophylaxis given and time of administration"
+        },
+        {
+          "drug": "Macrolide-resistant organisms (azithromycin-resistant Chlamydia, Haemophilus)",
+          "severity": "Moderate",
+          "mechanism": "Erythromycin shares macrolide class resistance mechanisms with azithromycin and clarithromycin; organisms with erm genes or efflux pump (mefA) mutations are cross-resistant to ophthalmic erythromycin; in particular, erythromycin-resistant Haemophilus influenzae and Staphylococcus aureus have increased prevalence",
+          "management": "Erythromycin ophthalmic ointment remains effective for Chlamydia and most gram-positive conjunctivitis; if treatment fails after 3 days, consider resistance and culture; for chlamydial conjunctivitis in adults, combine with systemic azithromycin 1 g single dose or doxycycline 100 mg BID × 7 days per PHAC STI guidelines regardless of ophthalmic treatment"
+        }
+      ],
     "pregnancy": "Safe in pregnancy — used as neonatal prophylaxis.",
     "pk": {
       "absorption": "Minimal systemic absorption topically.",
@@ -90473,7 +90598,32 @@ var DRUGS = {
     "contraindications": [
       "Hypersensitivity to polymyxin B, trimethoprim"
     ],
-    "interactions": [],
+    "interactions": [
+        {
+          "drug": "Contact lenses — BAK preservative",
+          "severity": "Moderate",
+          "mechanism": "Polymyxin B-trimethoprim ophthalmic (Polytrim) contains BAK preservative; BAK accumulates in soft contact lens material causing epithelial toxicity; active bacterial conjunctivitis additionally contraindicates contact lens use",
+          "management": "Remove soft contact lenses before instilling Polytrim; wait at least 15 minutes before reinserting; counsel patients to discard and replace disposable contact lenses after infection resolution; lenses worn during infection should be discarded (source of reinfection)"
+        },
+        {
+          "drug": "Systemic trimethoprim / trimethoprim-sulfamethoxazole (TMP-SMX) — ophthalmic context",
+          "severity": "No interaction",
+          "mechanism": "Systemic trimethoprim (Proloprim, TMP-SMX) inhibits dihydrofolate reductase and has significant drug interactions (methotrexate, dofetilide, phenytoin, warfarin); ophthalmic trimethoprim component of Polytrim has negligible systemic absorption; the systemic interaction profile does NOT apply to ophthalmic trimethoprim",
+          "management": "No drug interactions apply to the ophthalmic trimethoprim formulation; patients on methotrexate, warfarin, or other drugs interacting with systemic TMP can safely receive Polytrim eye drops; no monitoring changes required"
+        },
+        {
+          "drug": "Sulfonamide allergy — trimethoprim component cross-reactivity consideration",
+          "severity": "Minor",
+          "mechanism": "Trimethoprim is not a sulfonamide (it is a diaminopyrimidine); patients with sulfa allergy (TMP-SMX sensitivity) may have reacted to the sulfamethoxazole component rather than trimethoprim; trimethoprim alone cross-reactivity with true sulfonamide allergy is not established; however, cautious approach warranted",
+          "management": "Trimethoprim (in Polytrim) is generally safe in patients with documented sulfa allergy; if the patient specifically reacted to trimethoprim (unusual), an alternative ophthalmic antibiotic should be selected; fluoroquinolone drops are the most practical alternative; clarify exact allergy history before deciding"
+        },
+        {
+          "drug": "Multiple ophthalmic medications — administration spacing",
+          "severity": "Minor",
+          "mechanism": "Polytrim administered simultaneously with other ophthalmic drops results in dilution, reduced contact time, and nasolacrimal overflow; the polymyxin component is inactivated by anionic compounds and organic matter, further reducing efficacy if mixed with tear film proteins from other instilled drops",
+          "management": "Space Polytrim instillations at least 5–10 minutes from other eye drops; instill Polytrim first before lubricating drops or other formulations; for patients with complex ophthalmic regimens (glaucoma + infection), provide a written administration schedule"
+        }
+      ],
     "pregnancy": "Minimal systemic absorption from topical ophthalmic use. Use with caution; limited human data; generally considered low risk.",
     "pk": {
       "absorption": "Minimal systemic.",
@@ -90567,7 +90717,32 @@ var DRUGS = {
     "contraindications": [
       "Hypersensitivity to fusidic acid"
     ],
-    "interactions": [],
+    "interactions": [
+        {
+          "drug": "Statin drugs (simvastatin, atorvastatin, lovastatin) — systemic fusidic acid warning, ophthalmic irrelevance",
+          "severity": "No interaction",
+          "mechanism": "Systemic fusidic acid (oral/IV) is known to inhibit OATP1B1/1B3 transporters in the liver, markedly increasing statin plasma levels and causing severe rhabdomyolysis; fusidic acid ophthalmic viscous drops (Fucithalmic) have extremely low systemic absorption (plasma levels <1% of oral dose); the life-threatening statin-fusidic acid interaction does NOT apply to ophthalmic formulations",
+          "management": "Fucithalmic viscous eye drops are safe in patients on any statin; no dose adjustment, monitoring, or statin interruption is required; document this critical negative interaction prominently — pharmacists should be aware that the black box statin interaction applies only to systemic fusidic acid; patients need not discontinue statins during topical ophthalmic fusidic acid therapy"
+        },
+        {
+          "drug": "Contact lenses — viscous formulation interaction",
+          "severity": "Moderate",
+          "mechanism": "Fusidic acid 1% viscous ophthalmic gel (Fucithalmic) is formulated in a carbomer gel base that provides prolonged ocular contact time; the viscous formulation coats soft contact lenses and cannot be cleared by blinking; contact lens absorption of the gel vehicle and active ingredient causes lens discoloration and impaired optical clarity",
+          "management": "Remove contact lenses before instilling Fucithalmic; the viscous preparation requires a longer wait time (30 minutes) before reinsertion compared to aqueous drops; twice-daily dosing makes Fucithalmic convenient for staphylococcal conjunctivitis and blepharoconjunctivitis; resume lenses only after infection is fully resolved"
+        },
+        {
+          "drug": "Other topical ophthalmic antibiotics — spectrum complementarity",
+          "severity": "No interaction",
+          "mechanism": "Fusidic acid targets bacterial elongation factor G (EF-G), providing narrow-spectrum gram-positive coverage (Staphylococcus aureus, MRSA, Staphylococcus epidermidis); it has no activity against gram-negatives; when gram-negative coverage is also needed, fusidic acid and fluoroquinolone or tobramycin eye drops do not interact pharmacokinetically",
+          "management": "Fusidic acid is particularly useful for staphylococcal blepharitis and conjunctivitis; do not use as monotherapy for suspected gram-negative (Pseudomonas, Haemophilus) conjunctivitis — add tobramycin or a fluoroquinolone; document suspected pathogen based on patient risk factors and clinical presentation to guide empiric therapy selection"
+        },
+        {
+          "drug": "Antiseptic eye preparations (chlorhexidine, iodine) — acanthamoeba keratitis context",
+          "severity": "No interaction",
+          "mechanism": "Fusidic acid has no activity against Acanthamoeba; patients presenting with contact lens-related keratitis that is non-responsive to antibiotics may have acanthamoeba keratitis, which requires specific treatment (PHMB + propamidine isethionate); using fusidic acid alone in this context delays appropriate therapy",
+          "management": "Fusidic acid ophthalmic is not appropriate for acanthamoeba or fungal keratitis; if a contact lens wearer presents with keratitis not responding to fusidic acid within 48–72 hours, urgent ophthalmology referral is required; diagnosis of acanthamoeba requires confocal microscopy or culture on specialized media; early diagnosis is critical to prevent visual loss"
+        }
+      ],
     "pregnancy": "Minimal systemic absorption from topical ophthalmic. Generally considered low risk. Use only when needed.",
     "pk": {
       "absorption": "Minimal systemic absorption.",
@@ -90622,7 +90797,32 @@ var DRUGS = {
       "Acute purulent untreated bacterial infection without antibiotic coverage",
       "Hypersensitivity to tobramycin, dexamethasone"
     ],
-    "interactions": [],
+    "interactions": [
+        {
+          "drug": "Topical ophthalmic steroids / other IOP-raising agents (timolol, latanoprost context)",
+          "severity": "Major",
+          "mechanism": "Dexamethasone component of TobraDex raises intraocular pressure (IOP) by increasing trabecular meshwork resistance to aqueous outflow; steroid-induced ocular hypertension occurs in ~30% of the population (steroid responders); patients with open-angle glaucoma or ocular hypertension are at highest risk; prolonged use (>10 days) increases risk significantly",
+          "management": "Measure IOP at baseline and after 2 weeks of TobraDex use; contraindicated in untreated open-angle glaucoma; avoid use beyond the prescribed duration; if IOP rises, discontinue and consider plain tobramycin without steroid; steroid-induced ocular hypertension usually resolves within weeks of stopping; for patients with glaucoma requiring anti-infective/anti-inflammatory coverage, ophthalmology should direct therapy"
+        },
+        {
+          "drug": "Aminoglycoside allergy (tobramycin component)",
+          "severity": "Contraindicated",
+          "mechanism": "Tobramycin-dexamethasone (TobraDex) contains tobramycin; patients with aminoglycoside hypersensitivity (cross-reactive with gentamicin, neomycin, framycetin) may experience local allergic reactions including conjunctival chemosis, hyperemia, periorbital edema; the combination product cannot be used if tobramycin is contraindicated",
+          "management": "Contraindicated in aminoglycoside-allergic patients; for combined antibiotic-steroid ophthalmic coverage when aminoglycosides are contraindicated, use dexamethasone or prednisolone ophthalmic drops with a separate non-aminoglycoside antibiotic (fluoroquinolone); document aminoglycoside allergy class on patient profile"
+        },
+        {
+          "drug": "Antifungal/antiviral ophthalmic agents — fungal and viral superinfection risk",
+          "severity": "Moderate",
+          "mechanism": "Topical corticosteroids suppress local ocular immunity; using tobramycin-dexamethasone empirically without confirming bacterial diagnosis risks masking or worsening viral keratitis (herpes simplex), acanthamoeba keratitis, or fungal keratitis; corticosteroid use in HSV epithelial keratitis causes dendritic expansion and can lead to corneal perforation",
+          "management": "Do not prescribe TobraDex empirically for all red eyes; always confirm bacterial etiology before combining steroid; TobraDex is appropriate for bacterial conjunctivitis requiring both antibiotic and anti-inflammatory coverage (e.g., post-surgical); contraindicated if viral (HSV dendritic keratitis), fungal, or acanthamoeba keratitis is suspected; ophthalmology referral for any atypical or non-resolving keratitis"
+        },
+        {
+          "drug": "Systemic corticosteroids and total steroid burden",
+          "severity": "Minor",
+          "mechanism": "Ophthalmic dexamethasone (TobraDex) has higher BAK-facilitated corneal absorption than ophthalmic prednisolone; plasma dexamethasone levels after ophthalmic dosing are very low but measurable; in patients on systemic corticosteroids, inhaled steroids, and topical skin steroids simultaneously, additive HPA suppression is theoretically possible though clinically rarely significant in adults",
+          "management": "Document all concurrent steroid routes; standard TobraDex courses (7–14 days) do not require HPA monitoring in adults; in pediatric patients or immunosuppressed individuals receiving multiple concurrent steroids, coordinate prescribers and limit TobraDex to the shortest effective course; prefer plain tobramycin drops if anti-inflammatory effect is not required"
+        }
+      ],
     "pregnancy": "Use with caution — dexamethasone systemic absorption from ophthalmic is low; short-term use for clear indication generally low risk. Tobramycin minimal systemic absorption.",
     "pk": {
       "absorption": "Tobramycin: minimal systemic. Dexamethasone: small amount may be absorbed systemically, especially with frequent dosing or compromised epithelium.",
@@ -91425,8 +91625,31 @@ var DRUGS = {
       "Intact tympanic membrane with dexamethasone concern (use with caution)"
     ],
     "interactions": [
-      "No clinically significant systemic interactions at otic doses"
-    ],
+        {
+          "drug": "Perforated tympanic membrane — aminoglycoside ototoxicity context",
+          "severity": "No interaction",
+          "mechanism": "Ciprofloxacin-dexamethasone otic (Ciprodex) is a fluoroquinolone + corticosteroid; unlike aminoglycoside otic drops (gentamicin, tobramycin), fluoroquinolones are considered safe for use in ears with perforated tympanic membranes or tympanostomy tubes because they lack cochlear hair cell toxicity; this is a critical clinical distinction when choosing otic therapy",
+          "management": "Ciprodex is Health Canada-approved for acute otitis media with tympanostomy tubes (pediatric); safe to use in perforated TM acute otitis media; avoid aminoglycoside otic drops (gentamicin, tobramycin, neomycin) in patients with perforated TM or tubes; warm the drops to body temperature before instillation to prevent caloric vestibular stimulation"
+        },
+        {
+          "drug": "Systemic corticosteroids (prednisone, dexamethasone IV, budesonide inhaler)",
+          "severity": "Minor",
+          "mechanism": "Otic dexamethasone absorption into systemic circulation is very low (<1% of dose); however, in patients already on systemic corticosteroids, there is a theoretical additive HPA suppression; clinically, the otic steroid dose is so small that this interaction is rarely significant except in very young children with multiple corticosteroid exposure routes",
+          "management": "No dose adjustment required; document all corticosteroid routes (oral, inhaled, otic, topical skin) when assessing total steroid burden in pediatric patients; standard 7-day Ciprodex courses do not require systemic steroid monitoring; reassess if treatment courses are frequent or prolonged"
+        },
+        {
+          "drug": "Other fluoroquinolone therapies (oral ciprofloxacin, levofloxacin)",
+          "severity": "Minor",
+          "mechanism": "When systemic ciprofloxacin is co-prescribed for a concurrent infection, combined with otic ciprofloxacin, total ciprofloxacin exposure remains negligible from the otic component; no pharmacokinetic interaction; however, targeting the same organism with two formulations of the same drug is redundant for the ear",
+          "management": "If systemic fluoroquinolone is indicated for a serious concurrent infection, otic Ciprodex need not be discontinued but is likely unnecessary for the ear infection; coordinate otitis media management with the treating physician; otic administration achieves local concentrations far exceeding MIC without systemic contribution"
+        },
+        {
+          "drug": "Contact with eyes — formulation safety note",
+          "severity": "Minor",
+          "mechanism": "Ciprofloxacin-dexamethasone otic suspension contains benzalkonium chloride (BAK) and is NOT sterile for ophthalmic use; accidental ocular installation of the otic formulation causes irritation; conversely, ophthalmic ciprofloxacin drops should not substitute for otic Ciprodex as they have different preservative and pH profiles",
+          "management": "Clearly distinguish between otic and ophthalmic ciprofloxacin formulations at dispensing; counsel patients to use otic drops in the ear only; if accidental ophthalmic instillation of otic drops occurs, irrigate eye thoroughly with saline; store otic and ophthalmic products separately to prevent mix-ups"
+        }
+      ],
     "monitoring": [
       "Resolution of discharge and pain by day 7",
       "Tympanostomy tube patency"
@@ -91495,8 +91718,31 @@ var DRUGS = {
       "Hypersensitivity to aminoglycosides"
     ],
     "interactions": [
-      "Avoid concurrent systemic aminoglycosides (additive ototoxicity risk if tympanic perforation)"
-    ],
+        {
+          "drug": "Perforated tympanic membrane — aminoglycoside ototoxicity",
+          "severity": "Contraindicated",
+          "mechanism": "Framycetin (neomycin-class aminoglycoside) is ototoxic when it reaches the inner ear directly through a perforated tympanic membrane or tympanostomy tubes; aminoglycosides bind to cochlear hair cell ribosomes, causing irreversible sensorineural hearing loss; Sofradex (framycetin-gramicidin-dexamethasone) labelling contraindicates use with perforated TM",
+          "management": "Do not use Sofradex otic drops if the tympanic membrane is or may be perforated; obtain otoscopic confirmation before prescribing; for otitis media with perforation or tympanostomy tubes, use ciprofloxacin-dexamethasone otic (Ciprodex) or systemic antibiotics; this is the most critical clinical distinction for otic aminoglycosides"
+        },
+        {
+          "drug": "Neomycin / aminoglycoside allergy cross-reactivity",
+          "severity": "Contraindicated",
+          "mechanism": "Framycetin (also called neomycin B) is closely related to neomycin; patients with a documented neomycin contact allergy or aminoglycoside hypersensitivity (local or systemic) have a high rate of cross-reactivity with framycetin; allergic contact otitis with significant edema and inflammatory response can worsen the underlying otitis externa",
+          "management": "Contraindicated in patients with known neomycin allergy; this allergy is common (~10% of patients who have used neomycin-containing topical preparations); document neomycin/aminoglycoside allergy and choose fluoroquinolone-based otic preparations (ciprofloxacin-dexamethasone); verify allergy history before prescribing Sofradex"
+        },
+        {
+          "drug": "Systemic aminoglycosides (gentamicin IV, tobramycin IV)",
+          "severity": "Major",
+          "mechanism": "Concurrent systemic aminoglycoside therapy (for serious gram-negative infections) with otic aminoglycosides compounds total aminoglycoside exposure; systemic gentamicin is already renally monitored with trough levels; adding topical otic framycetin, while minimally absorbed, adds ototoxic burden in already high-risk patients (elderly, renally impaired)",
+          "management": "Avoid concurrent otic framycetin-containing preparations in patients receiving IV gentamicin, tobramycin, or amikacin; use fluoroquinolone otic drops as alternatives; ensure aminoglycoside ototoxicity monitoring (audiometry for prolonged therapy) is not compromised by additional aminoglycoside routes"
+        },
+        {
+          "drug": "Systemic corticosteroids (prednisone, inhaled budesonide, dermal betamethasone)",
+          "severity": "Minor",
+          "mechanism": "Otic dexamethasone has very low systemic absorption; however, in patients already receiving systemic corticosteroids plus inhaled corticosteroids plus topical skin steroids, the otic dexamethasone adds marginally to total steroid burden; more relevant in young children who may receive multiple steroid formulations simultaneously for different conditions",
+          "management": "Document all routes of corticosteroid administration to assess total steroid burden; standard Sofradex courses (7 days) are unlikely to cause clinically significant additive HPA suppression in adults; review full steroid exposure in pediatric patients; note that Sofradex is less commonly used for pediatric otitis media due to perforation/aminoglycoside concerns"
+        }
+      ],
     "monitoring": [
       "Symptom resolution",
       "Avoid prolonged use beyond 10 days",
