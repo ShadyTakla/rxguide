@@ -36498,22 +36498,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Statins (all HMG-CoA reductase inhibitors)",
+        "drug": "Statins (all — especially rosuvastatin, simvastatin, atorvastatin)",
         "severity": "Major",
-        "mechanism": "Fusidic acid inhibits OATP1B1/OATP1B3 hepatic transporters → increased statin plasma levels → rhabdomyolysis risk",
-        "management": "AVOID — suspend statin during fusidic acid course; resume statin 7 days after completing fusidic acid. Cases of severe rhabdomyolysis reported with rosuvastatin + fusidic acid."
+        "mechanism": "Fusidic acid potently inhibits OATP1B1 and OATP1B3 hepatic uptake transporters → marked increase in statin plasma concentrations → rhabdomyolysis. Multiple fatal and near-fatal cases reported in Canada and Europe, particularly with rosuvastatin + fusidic acid.",
+        "management": "SUSPEND statin for the entire duration of fusidic acid therapy PLUS 7 days after completion. Resume statin only after washout. If statin cannot be stopped (high-risk cardiovascular patient), avoid systemic fusidic acid and use an alternative antibiotic (clindamycin, TMP-SMX for SSTI). Document statin hold in chart."
       },
       {
         "drug": "Rifampin (rifampicin)",
         "severity": "Moderate",
-        "mechanism": "Rifampin may modestly increase fusidic acid metabolism; used together therapeutically for MRSA/osteomyelitis despite this interaction",
-        "management": "Monitor clinically; this combination is standard of care for MRSA osteomyelitis"
+        "mechanism": "Rifampin induces CYP3A4 and transporters that may modestly increase fusidic acid metabolism; however, this combination is used therapeutically for MRSA osteomyelitis/prosthetic joint infections as synergistic biofilm penetration combination",
+        "management": "Monitor clinical response; this combination is standard of care for bone/prosthetic joint MRSA infections (IDSA/ESCMID guidelines); the pharmacokinetic interaction does not preclude combined use but higher fusidic acid doses may be needed"
       },
       {
-        "drug": "Warfarin",
+        "drug": "Warfarin and vitamin K antagonists",
         "severity": "Moderate",
-        "mechanism": "Fusidic acid may inhibit CYP2C9 → increased warfarin levels → bleeding",
-        "management": "Monitor INR closely during and after course"
+        "mechanism": "Fusidic acid inhibits CYP2C9 (the primary enzyme metabolizing S-warfarin) → reduced warfarin clearance → elevated INR and bleeding risk; cases of supratherapeutic INR documented during fusidic acid courses",
+        "management": "Monitor INR within 3–5 days of starting fusidic acid and every 5–7 days during treatment; anticipate INR increase of 30–50%; reduce warfarin dose preemptively if clinically appropriate; recheck INR 1 week after fusidic acid completion"
+      },
+      {
+        "drug": "Cyclosporine and tacrolimus",
+        "severity": "Moderate",
+        "mechanism": "Fusidic acid inhibits OATP1B1/1B3 hepatic transporters and CYP3A4 → increased calcineurin inhibitor plasma levels → nephrotoxicity and toxicity risk; particularly relevant in post-transplant patients who may develop skin infections requiring fusidic acid",
+        "management": "Monitor cyclosporine/tacrolimus trough levels closely within 2–3 days of starting fusidic acid; anticipate 20–40% level increase; dose reduction of calcineurin inhibitor may be needed; use topical fusidic acid preparations when possible to minimize systemic interaction"
+      },
+      {
+        "drug": "Methotrexate",
+        "severity": "Moderate",
+        "mechanism": "Fusidic acid inhibits OATP1B1/1B3 → reduced hepatic uptake and biliary clearance of methotrexate → elevated methotrexate plasma levels → myelosuppression, mucositis, and nephrotoxicity; relevant for patients on weekly low-dose MTX for rheumatoid arthritis or psoriasis",
+        "management": "Avoid systemic fusidic acid in patients on methotrexate; if unavoidable, hold MTX dose during fusidic acid course and monitor CBC/renal function closely; topical fusidic acid is preferred to avoid systemic interaction"
+      },
+      {
+        "drug": "Linezolid",
+        "severity": "Minor",
+        "mechanism": "Both fusidic acid and linezolid target bacterial protein synthesis; combined use for complex/resistant MRSA infections (e.g., endocarditis, osteomyelitis) provides dual synergistic anti-staphylococcal activity via complementary mechanisms (fusidic acid: EF-G; linezolid: 50S ribosome); no pharmacokinetic interaction",
+        "management": "Combination used clinically for complicated MRSA infections under specialist guidance; monitor for linezolid-specific toxicities (myelosuppression, serotonin syndrome) independently of fusidic acid; avoid combination >2 weeks without hematologic monitoring"
       }
     ],
     "pregnancy": "Topical: generally considered safe — minimal systemic absorption. Systemic (oral/IV): limited data. Crosses placenta — avoid in first trimester if possible. Use only when clearly needed for confirmed staphylococcal infections. Breastfeeding: topical generally compatible; systemic — limited data, avoid if possible.",
@@ -36590,22 +36608,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Anticoagulants (warfarin, DOACs)",
+        "drug": "Anticoagulants (warfarin, DOACs — apixaban, rivaroxaban, dabigatran)",
         "severity": "Minor",
-        "mechanism": "Theoretical additive effect on platelet aggregation; no clinically significant interaction established in literature",
-        "management": "Generally safe to co-administer; monitor for unusual bruising; INR monitoring appropriate in warfarin patients starting MPFF."
+        "mechanism": "MPFF (diosmin + hesperidin) has mild venotonic and anti-inflammatory properties; in vitro evidence of minor antiplatelet activity via inhibition of platelet aggregation; theoretical additive effect with anticoagulants, but no clinically significant pharmacokinetic interaction identified in controlled studies",
+        "management": "Generally safe to co-administer; no dose adjustments required for anticoagulants; advise patients to report unusual bruising or bleeding; INR monitoring appropriate if starting MPFF in warfarin patients as a precaution"
       },
       {
-        "drug": "Antihypertensives",
+        "drug": "Antihypertensives (calcium channel blockers, ACE inhibitors, beta-blockers)",
         "severity": "Minor",
-        "mechanism": "Minimal vasodilatory effect of flavonoids; no clinically relevant interaction",
-        "management": "Generally safe; no dose adjustments required."
+        "mechanism": "Diosmin has mild vasodilatory properties at high concentrations in vitro; no clinically meaningful pharmacodynamic interaction with antihypertensive agents at standard therapeutic doses of MPFF (1000 mg/day)",
+        "management": "No dose adjustment needed; safe to co-administer with antihypertensives; monitor blood pressure clinically as usual"
       },
       {
-        "drug": "Hormonal therapies (OCPs, HRT)",
+        "drug": "Hormonal therapies (OCPs, progesterone supplements, HRT)",
         "severity": "No interaction",
-        "mechanism": "No pharmacokinetic or pharmacodynamic interaction identified",
-        "management": "No action needed."
+        "mechanism": "No pharmacokinetic or pharmacodynamic interaction identified between MPFF and estrogen/progesterone-containing medications; MPFF and hormonal therapy are frequently co-prescribed in chronic venous insufficiency and pelvic congestion",
+        "management": "No action needed; co-administration is safe"
+      },
+      {
+        "drug": "Iron supplements and non-heme dietary iron",
+        "severity": "Minor",
+        "mechanism": "Flavonoids including hesperidin and diosmin can chelate iron and inhibit non-heme iron absorption in the GI tract; relevant for patients with iron-deficiency anemia requiring concurrent iron supplementation",
+        "management": "Space MPFF and iron supplements by at least 2 hours to maximize iron absorption; take iron supplements first thing in the morning and MPFF with meals at different times; monitor hemoglobin/ferritin if iron levels are suboptimal despite supplementation"
+      },
+      {
+        "drug": "CYP3A4 substrates (cyclosporine, tacrolimus, some statins) — weak inhibition",
+        "severity": "Minor",
+        "mechanism": "Diosmin and hesperidin are weak inhibitors of CYP3A4 and P-glycoprotein in vitro; clinical relevance at standard MPFF doses (1000 mg/day) is minimal; theoretical minor increases in CYP3A4 substrate levels possible with very high flavonoid intake",
+        "management": "No clinically significant interaction at standard MPFF doses; no routine monitoring required; theoretical concern at very high flavonoid intake (e.g., concurrent multiple flavonoid supplements) in patients on narrow therapeutic index CYP3A4 substrates"
+      },
+      {
+        "drug": "NSAIDs and aspirin (symptomatic management of hemorrhoids/venous insufficiency)",
+        "severity": "Minor",
+        "mechanism": "MPFF and NSAIDs are often used concurrently for symptomatic management of acute hemorrhoidal episodes; MPFF reduces inflammation, edema, and pain; NSAIDs provide additional analgesia; combined antiplatelet effects (aspirin) theoretically additive but not clinically concerning at standard doses",
+        "management": "Co-administration is common clinical practice and generally well tolerated; no dose adjustment required; if patient is on therapeutic anticoagulation plus aspirin plus MPFF, monitor for signs of GI bleeding; MPFF may allow earlier dose reduction of NSAIDs due to its anti-edema effects"
       }
     ],
     "pregnancy": "Avoid in 1st trimester — insufficient human data for CVI indication. In 2nd–3rd trimester, some European guidelines permit short-course Daflon for hemorrhoid treatment (Grade C recommendation), but NOT recommended as standard therapy in Canada. Avoid for CVI indication during pregnancy. Compression stockings are safe and preferred for venous insufficiency in pregnancy.",
@@ -50914,16 +50950,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Levodopa (without carbidopa)",
+        "drug": "Levodopa without carbidopa (rare — older formulation)",
         "severity": "Major",
-        "mechanism": "B6 increases peripheral decarboxylation of levodopa → reduces CNS levodopa levels",
-        "management": "If using levodopa without carbidopa: avoid high-dose B6; not relevant with carbidopa/levodopa combination"
+        "mechanism": "Pyridoxine (B6) is a cofactor for DOPA decarboxylase — the enzyme that converts levodopa to dopamine in the peripheral nervous system. B6 markedly increases peripheral levodopa decarboxylation → less levodopa reaches the brain → dramatically reduced therapeutic effect for Parkinson's disease.",
+        "management": "CONTRAINDICATED with levodopa without carbidopa (rarely used). Vitamin B6 is SAFE with Sinemet (levodopa/carbidopa) or Stalevo — carbidopa blocks peripheral DOPA decarboxylase, preventing B6 from reducing CNS levodopa levels. Patients on Sinemet can safely take standard B6 doses."
       },
       {
-        "drug": "Isoniazid / cycloserine / hydralazine",
+        "drug": "Nausea of pregnancy (Diclegis/Bonjesta) — pyridoxine as an active component",
+        "severity": "Beneficial (active ingredient) / Monitor for overdose",
+        "mechanism": "Doxylamine-pyridoxine (Diclegis/Bonjesta) already contains 10mg pyridoxine per tablet. Additional vitamin B6 supplementation from prenatal vitamins and standalone B6 supplements adds to total daily pyridoxine intake. High doses (>100-200mg/day) cause sensory neuropathy.",
+        "management": "Calculate total daily pyridoxine intake: Diclegis (10mg/tablet) + prenatal vitamin (2-4mg) + any standalone B6 supplements. Standard doses are safe. AVOID standalone B6 supplements >50mg/day during pregnancy. Maximum safe long-term dose: 25-50mg/day for chronic use."
+      },
+      {
+        "drug": "Isoniazid (INH — tuberculosis treatment) and hydralazine",
+        "severity": "Major",
+        "mechanism": "Isoniazid is a pyridoxine antagonist — it inhibits pyridoxal phosphate formation and causes functional B6 deficiency. This leads to peripheral neuropathy (most common INH adverse effect) in slow acetylators. Supplemental B6 prevents isoniazid-induced neuropathy WITHOUT reducing anti-TB efficacy.",
+        "management": "Pyridoxine 25-50mg/day is standard co-administration with isoniazid in: elderly patients, pregnant/nursing women, diabetics, alcohol use disorder, malnourished patients, HIV-positive patients, and slow acetylators. Health Canada/WHO TB guidelines: pyridoxine supplementation recommended with INH in high-risk groups."
+      },
+      {
+        "drug": "Phenytoin (phenobarbital, primidone) — anticonvulsant interaction",
         "severity": "Moderate",
-        "mechanism": "These drugs increase B6 requirements (vitamin B6 antagonism)",
-        "management": "Always co-prescribe B6 25–50 mg/day with isoniazid"
+        "mechanism": "High-dose pyridoxine (>80-200mg/day) can significantly reduce phenytoin blood levels by accelerating phenytoin metabolism (mechanism not fully characterized — possibly CYP induction). Sub-therapeutic phenytoin may cause breakthrough seizures.",
+        "management": "Monitor phenytoin levels when high-dose vitamin B6 is initiated or stopped in phenytoin-treated epilepsy patients. Standard prenatal B6 doses (<50mg/day) do not affect phenytoin levels. High-dose therapeutic B6 (for B6-responsive seizures or pyridoxine deficiency) requires close phenytoin monitoring."
+      },
+      {
+        "drug": "Amiodarone (thyroid interaction) and other drugs affecting B6 metabolism",
+        "severity": "Minor",
+        "mechanism": "Amiodarone inhibits pyridoxal-5-phosphate kinase, potentially causing functional B6 deficiency contributing to peripheral neuropathy. Supplemental B6 may help prevent amiodarone-related neuropathy.",
+        "management": "Consider pyridoxine supplementation (25-50mg/day) in patients on long-term amiodarone experiencing peripheral neuropathy symptoms — after ruling out other causes (thyroid dysfunction from amiodarone itself). No pharmacokinetic interaction between B6 and amiodarone at standard doses."
+      },
+      {
+        "drug": "Cycloserine and penicillamine — B6 antagonists",
+        "severity": "Moderate",
+        "mechanism": "Cycloserine (second-line TB drug) and penicillamine (Wilson's disease, RA) are potent pyridoxine antagonists — they form inactive Schiff base complexes with pyridoxal phosphate, causing B6 deficiency → peripheral neuropathy, seizures (cycloserine), sideroblastic anaemia.",
+        "management": "Pyridoxine supplementation (50-100mg/day for cycloserine; 25-50mg/day for penicillamine) is standard co-administration with these drugs. Health Canada labelling for both drugs recommends pyridoxine supplementation to prevent neuropathy. Higher B6 doses may be needed for cycloserine-induced seizures."
       }
     ],
     "pregnancy": "Category A. First-line for NVP (Category A designation in pregnancy). Safe at doses used for NVP. Component of Diclegis. Recommended with isoniazid in pregnancy.",
@@ -53417,15 +53477,39 @@ var DRUGS = {
     "interactions": [
       {
         "drug": "Warfarin",
-        "severity": "Minor",
-        "mechanism": "High doses (>1 g/day) may reduce warfarin anticoagulant effect",
-        "management": "Monitor INR if patient on high-dose vitamin C"
+        "severity": "Moderate",
+        "mechanism": "High-dose vitamin C (>1 g/day) competes for sulfate conjugation pathways, possibly reducing vitamin K-dependent clotting factor synthesis; may paradoxically reduce INR at very high doses (>4 g/day)",
+        "management": "Monitor INR if patient starts, stops, or changes high-dose vitamin C; routine supplemental doses (200–500 mg) unlikely to be significant"
       },
       {
-        "drug": "Iron supplements",
+        "drug": "Iron supplements (ferrous salts)",
+        "severity": "Beneficial",
+        "mechanism": "Vitamin C reduces ferric iron (Fe3+) to ferrous form (Fe2+) in the gut, significantly enhancing non-heme iron absorption by 2–3x; particularly useful for iron-deficiency anemia",
+        "management": "Co-administer intentionally: 200 mg vitamin C with iron supplement optimizes absorption; standard practice in IDA management"
+      },
+      {
+        "drug": "Estrogens (oral contraceptives, HRT)",
         "severity": "Minor",
-        "mechanism": "Vitamin C enhances iron absorption — beneficial interaction",
-        "management": "Intentional co-administration recommended"
+        "mechanism": "High-dose vitamin C (≥1 g) competes with ethinyl estradiol for intestinal sulfation; may transiently increase estrogen absorption; discontinuing high-dose C may cause relative estrogen withdrawal",
+        "management": "Clinically relevant only at high supplemental doses (≥1 g/day); advise patients not to abruptly discontinue high-dose vitamin C while on OCPs or HRT"
+      },
+      {
+        "drug": "Aluminum-containing antacids",
+        "severity": "Moderate",
+        "mechanism": "Vitamin C significantly increases gastrointestinal absorption of aluminum; in patients with renal impairment, aluminum may accumulate causing neurotoxicity and bone disease",
+        "management": "Avoid co-administration of high-dose vitamin C with aluminum-containing antacids (e.g., Maalox, Gaviscon with aluminum) in patients with CKD or renal failure"
+      },
+      {
+        "drug": "Deferoxamine (iron chelation therapy)",
+        "severity": "Major",
+        "mechanism": "High-dose vitamin C (>500 mg/day) in iron-overloaded patients on deferoxamine may mobilize iron rapidly, causing acute cardiac toxicity (arrhythmias, cardiomyopathy) due to redistribution of iron",
+        "management": "CONTRAINDICATED: Do not give vitamin C >200 mg/day to patients on deferoxamine for iron overload (thalassemia, hemochromatosis) unless cardiac function confirmed normal; if used, start only after 1 month of chelation therapy"
+      },
+      {
+        "drug": "Statins (rosuvastatin) — high-dose antioxidants",
+        "severity": "Minor",
+        "mechanism": "Some evidence that high-dose antioxidant combinations (vitamin C + E) may blunt the HDL-raising effect of niacin-statin combinations; less clear for statins alone; antioxidant interference with statin pleiotropic effects debated",
+        "management": "Routine vitamin C supplementation (200–500 mg/day) poses no significant concern with statins; routine supplementation at physiologic doses is generally safe"
       }
     ],
     "pregnancy": "Category A. Safe and recommended. Component of all prenatal vitamins. Supports fetal development and collagen synthesis.",
@@ -53479,16 +53563,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Immunosuppressants (cyclosporine, tacrolimus, corticosteroids)",
+        "drug": "Immunosuppressants (cyclosporine, tacrolimus, mycophenolate, azathioprine, methotrexate, corticosteroids)",
         "severity": "Major",
-        "mechanism": "Echinacea immunostimulation may oppose immunosuppressive drugs",
-        "management": "Avoid in organ transplant recipients and immunosuppressed patients"
+        "mechanism": "Echinacea stimulates innate and adaptive immune responses (increases cytokine production, NK cell activity, macrophage activation). This immunostimulation directly opposes the mechanism of all immunosuppressive drugs, potentially triggering rejection episodes in transplant patients or disease flares in autoimmune conditions.",
+        "management": "CONTRAINDICATED in transplant patients, patients with autoimmune conditions (lupus, RA, MS, Crohn's, UC) on immunosuppressants, and patients on systemic corticosteroids. Inform transplant coordinators and rheumatologists about any Echinacea use. Natural health product stores frequently fail to advise about this critical interaction."
       },
       {
-        "drug": "CYP3A4 substrates",
+        "drug": "CYP3A4 and CYP1A2 substrates (midazolam, warfarin, caffeine, certain antiretrovirals)",
+        "severity": "Moderate",
+        "mechanism": "Echinacea contains alkylamides and polysaccharides that modulate CYP enzymes. Acute use inhibits CYP3A4 (like midazolam, ketoconazole); chronic use induces CYP1A2 and CYP3A4. The direction of interaction depends on duration of use — unpredictable effect on drug levels.",
+        "management": "Avoid Echinacea with narrow-therapeutic-index CYP substrates (warfarin, tacrolimus, antiretrovirals, cyclosporine). If patient insists on use, monitor drug levels more frequently. Health Canada NHP database: Echinacea labelling includes cautionary notes about immunosuppressant interactions."
+      },
+      {
+        "drug": "P-glycoprotein (P-gp) substrates (digoxin, loperamide, certain antiretrovirals)",
         "severity": "Minor",
-        "mechanism": "Some Echinacea products mildly inhibit CYP3A4",
-        "management": "Clinically significant interactions rare at standard doses"
+        "mechanism": "Echinacea purpurea alkylamides inhibit P-glycoprotein efflux transporter in vitro and in limited clinical studies. This could increase bioavailability of P-gp substrate drugs including digoxin, loperamide, and certain HIV medications.",
+        "management": "Monitor digoxin levels and clinical effects when Echinacea is started or stopped in digoxin-treated patients. Clinical significance is modest at standard supplement doses but relevant for narrow-TI drugs. Disclose all natural health product use to pharmacist."
+      },
+      {
+        "drug": "Antifungal azoles (ketoconazole, itraconazole, fluconazole) — combined effect on CYP",
+        "severity": "Minor",
+        "mechanism": "Echinacea and azole antifungals both affect CYP3A4 activity. Combined, the net effect on CYP substrates may be additive inhibition (higher drug levels) or complex modulation depending on timing, Echinacea species, and preparation.",
+        "management": "Avoid Echinacea during systemic azole antifungal therapy. If treating a fungal infection with azoles, advise patients to temporarily discontinue Echinacea to avoid unpredictable drug level changes for other medications."
+      },
+      {
+        "drug": "Hepatotoxic drugs (methotrexate, valproate, statins, isoniazid, alcohol) — liver toxicity",
+        "severity": "Moderate",
+        "mechanism": "Rare hepatotoxicity has been reported with Echinacea products (particularly certain Echinacea pallida preparations). Combined with other hepatotoxic drugs, the risk of drug-induced liver injury (DILI) may be additive.",
+        "management": "Monitor LFTs if Echinacea is used long-term with other hepatotoxic medications. Patients with pre-existing liver disease should avoid Echinacea. Clarify which Echinacea species and preparation — standardized E. purpurea aerial extracts have the best safety profile."
+      },
+      {
+        "drug": "Chemotherapy (cyclophosphamide, doxorubicin, 5-FU) — immune modulation concern",
+        "severity": "Moderate",
+        "mechanism": "Echinacea's immunostimulatory effects may theoretically interfere with the immunosuppressive mechanisms of certain chemotherapeutic agents that depend on immune suppression (e.g., cyclophosphamide). Additionally, antioxidant properties may reduce oxidative-stress-dependent chemotherapy efficacy.",
+        "management": "Oncologists generally advise STOPPING all herbal supplements including Echinacea during active chemotherapy. The oncology-Echinacea interaction is poorly studied but the theoretical risk of interfering with cancer immunotherapy, targeted therapy, or chemotherapy efficacy warrants avoidance."
       }
     ],
     "pregnancy": "Category C. Limited data. Some authorities advise caution in first trimester (theoretical immunostimulation). Generally avoided in pregnancy; benefit modest and uncertain.",
@@ -54290,14 +54398,38 @@ var DRUGS = {
       {
         "drug": "Levothyroxine, bisphosphonates, fluoroquinolones, tetracyclines",
         "severity": "Major",
-        "mechanism": "Iron and calcium in prenatal vitamins chelate these drugs — reduces absorption",
-        "management": "Take prenatal vitamin 2 hours away from these medications"
+        "mechanism": "Iron (from prenatal vitamins) chelates levothyroxine, bisphosphonates, fluoroquinolones, and tetracyclines in the GI tract → significantly reduced drug absorption and efficacy; calcium similarly chelates fluoroquinolones and bisphosphonates",
+        "management": "Take prenatal vitamin at LEAST 2 hours before or 4 hours after levothyroxine, bisphosphonates, fluoroquinolones, or tetracyclines; levothyroxine is best taken fasting, 30–60 min before prenatal vitamins"
       },
       {
-        "drug": "Warfarin (vitamin K in some prenatal vitamins)",
+        "drug": "Warfarin",
         "severity": "Minor",
-        "mechanism": "Vitamin K content varies by product — may affect INR minimally",
-        "management": "Use consistent product; monitor INR if INR changes unexpectedly"
+        "mechanism": "Vitamin K content in prenatal vitamins varies by product (some contain 90–120 mcg/day); consistent intake is key as vitamin K can antagonize warfarin anticoagulation",
+        "management": "Use the same prenatal vitamin brand throughout pregnancy; monitor INR if brand changes; counsel warfarin patients to maintain consistent vitamin K intake"
+      },
+      {
+        "drug": "Anticonvulsants (phenytoin, carbamazepine, valproate, phenobarbital)",
+        "severity": "Major",
+        "mechanism": "These anticonvulsants deplete folate (impair absorption, increase metabolism); prenatal folic acid (up to 5 mg/day) is critical to prevent neural tube defects; conversely, high-dose folic acid (>1 mg/day) may reduce phenytoin plasma levels by 20–30%",
+        "management": "Women on anticonvulsants require HIGH-DOSE folic acid (4–5 mg/day) pre-conception and through first trimester (SOGC/ACOG); monitor phenytoin levels if folic acid dose changes; specialist guidance essential"
+      },
+      {
+        "drug": "Metformin (vitamin B12 depletion)",
+        "severity": "Moderate",
+        "mechanism": "Long-term metformin reduces vitamin B12 absorption by ~30% via competitive inhibition of the calcium-dependent intrinsic factor-B12 cubilin receptor; B12 deficiency can mimic or worsen neuropathy",
+        "management": "Prenatal vitamins typically contain 2.6–8 mcg B12 (adequate for most); in gestational diabetes on metformin, check B12 levels annually; supplement additional B12 (500 mcg) if deficient"
+      },
+      {
+        "drug": "Additional iron supplements (prescribed separately)",
+        "severity": "Moderate",
+        "mechanism": "Prenatal vitamins contain 27–30 mg elemental iron; adding a separate iron supplement (150–200 mg ferrous sulfate = 30–65 mg elemental iron) may exceed daily requirements, increasing GI side effects and oxidative stress",
+        "management": "Assess TOTAL daily iron intake from all sources before prescribing additional iron; target 27 mg/day in uncomplicated pregnancy, 30–60 mg/day if iron-deficiency anemia; do not routinely add separate iron without serum ferritin assessment"
+      },
+      {
+        "drug": "Calcium supplements (additional)",
+        "severity": "Minor",
+        "mechanism": "Calcium (from prenatal vitamins) inhibits non-heme iron absorption when taken simultaneously; prenatal vitamins are often formulated to minimize this (separate Fe/Ca layers); supplemental calcium on top of prenatal vitamins may further reduce iron absorption",
+        "management": "Space calcium-only supplements 2 hours from prenatal vitamin; advise dietary calcium (dairy) rather than adding separate calcium supplement unless total calcium intake <1000 mg/day in pregnancy"
       }
     ],
     "pregnancy": "Category A. Essential — start ideally 3 months before conception. Neural tube defect prevention with folic acid requires adequate blood levels before conception (neural tube closes by day 28 of pregnancy).",
@@ -87348,22 +87480,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Other topical corticosteroids (higher potency)",
+        "drug": "Other topical corticosteroids (higher potency — betamethasone, clobetasol, mometasone)",
         "severity": "Major",
-        "mechanism": "Using multiple topical steroids simultaneously or sequentially on same area can increase total steroid dose and atrophy risk",
-        "management": "Use ONE topical corticosteroid at a time; select appropriate potency for body site"
+        "mechanism": "Concurrent or sequential application of multiple topical corticosteroids on the same body area compounds total glucocorticoid exposure, accelerating cutaneous atrophy, striae, telangiectasia, and HPA axis suppression — especially under occlusion or on thin skin (face, groin, axillae)",
+        "management": "Use ONE topical corticosteroid at a time on any given area; if transitioning from higher-potency to hydrocortisone (step-down approach), do not overlap application periods; document total body surface area treated to estimate systemic absorption"
       },
       {
-        "drug": "Systemic corticosteroids",
+        "drug": "Systemic corticosteroids (prednisone, dexamethasone, methylprednisolone)",
         "severity": "Moderate",
-        "mechanism": "Additive HPA suppression — topical corticosteroids add to systemic steroid burden",
-        "management": "Use lowest potency topical steroid possible in patients on systemic corticosteroids; monitor for HPA suppression"
+        "mechanism": "Topical hydrocortisone adds to systemic corticosteroid burden — while hydrocortisone 1% has low potency, extended use on large body surface areas or under occlusion produces measurable systemic absorption (up to 10–35% of dose); combined with oral/IV corticosteroids, risk of HPA suppression, Cushing features, and immunosuppression increases",
+        "management": "Minimize topical corticosteroid use in patients on systemic corticosteroids; use lowest potency and smallest quantity needed; avoid occlusion; monitor for signs of HPA suppression (fatigue, hypotension) in patients on combined topical + systemic steroids; taper systemic steroids before prolonged topical use if possible"
       },
       {
-        "drug": "CYP3A4 inhibitors (ritonavir, ketoconazole) — systemic absorption context",
+        "drug": "CYP3A4 inhibitors — ritonavir, itraconazole, ketoconazole (systemic absorption context)",
+        "severity": "Moderate",
+        "mechanism": "When significant systemic absorption of topical hydrocortisone occurs (large surface area, occluded dressings, thin skin, neonates/infants), strong CYP3A4 inhibitors can reduce hydrocortisone clearance, prolonging systemic exposure and increasing risk of iatrogenic Cushing syndrome and adrenal suppression",
+        "management": "Most relevant in infants, patients with extensive skin involvement, or those using medium/high-potency steroids under occlusion; for low-potency hydrocortisone 1% at standard use on small areas, interaction is clinically negligible; assess systemic absorption risk before combined use"
+      },
+      {
+        "drug": "Occlusive dressings (wet wraps, plastic films, compression bandages)",
+        "severity": "Moderate",
+        "mechanism": "Occlusive dressings increase cutaneous hydration and dramatically enhance percutaneous absorption of topical corticosteroids — up to 10-fold increase in systemic absorption; in children and infants, this can cause clinically significant HPA suppression with even low-potency preparations",
+        "management": "Use occlusive techniques (wet wraps for severe atopic dermatitis) only under specialist supervision and for short defined periods; use diluted preparations (hydrocortisone 0.5%) under occlusion in children; monitor for adrenal suppression if wet wrap therapy exceeds 3–5 days; avoid occlusion on the face, neck, and intertriginous areas"
+      },
+      {
+        "drug": "Topical calcineurin inhibitors (tacrolimus 0.03%/0.1%, pimecrolimus 1%)",
         "severity": "Minor",
-        "mechanism": "If significant systemic absorption occurs (large area, high potency, occlusion), CYP3A4 inhibition could increase corticosteroid systemic effects",
-        "management": "Relevance minimal for low-potency hydrocortisone at standard use; monitor if high-potency corticosteroids used extensively"
+        "mechanism": "Topical calcineurin inhibitors (TCIs) and topical corticosteroids are both indicated for atopic dermatitis but through different mechanisms (TCIs: calcineurin/IL-2 inhibition; steroids: broad anti-inflammatory); concurrent application on the same area is not recommended — not due to toxicity but due to lack of benefit and increased cost/complexity",
+        "management": "Use as alternatives, not simultaneously on the same lesion; TCIs are preferred for facial/periocular/intertriginous atopic dermatitis where chronic steroid use causes skin atrophy; hydrocortisone for acute flares; sequential use (corticosteroid for flare, TCI for maintenance) is a validated strategy in Canadian/international guidelines"
+      },
+      {
+        "drug": "Keratolytic agents (salicylic acid, urea) and topical retinoids",
+        "severity": "Minor",
+        "mechanism": "Keratolytics (salicylic acid 2–6%, urea 20–40%) and retinoids (tretinoin, adapalene) disrupt the stratum corneum and significantly enhance penetration of co-applied topical agents including corticosteroids; co-application increases both steroid efficacy and systemic absorption",
+        "management": "When therapeutically combining a keratolytic with hydrocortisone (e.g., hyperkeratotic hand eczema or scalp psoriasis), apply keratolytic first and allow absorption, then apply corticosteroid separately; this can be used intentionally for refractory lesions but monitor skin integrity; avoid combined use on the face"
       }
     ],
     "pregnancy": "GENERALLY SAFE for limited topical use. Low-potency hydrocortisone (0.5%, 1%): minimal systemic absorption → considered safe for short-term localized use in pregnancy. Preferred choice for mild eczema/inflammatory dermatoses in pregnancy — lowest potency, shortest duration, smallest area. Avoid: extensive use, occlusion, face for prolonged periods, high-potency corticosteroids. CDA guidelines: mild-moderate topical corticosteroids acceptable in pregnancy; high-potency (class I-II) — limited data. Breastfeeding: topical hydrocortisone at low potency on limited areas — safe; avoid applying to breast/nipple area.",
@@ -87432,16 +87582,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Warfarin / anticoagulants",
+        "drug": "Warfarin and other anticoagulants (DOACs: apixaban, rivaroxaban, dabigatran; heparin)",
         "severity": "Moderate",
-        "mechanism": "High-dose ginger (>2 g/day) inhibits thromboxane synthesis → mild antiplatelet effect; may increase INR",
-        "management": "Monitor INR if patient on warfarin takes regular high-dose ginger; dietary ginger amounts unlikely to be clinically significant"
+        "mechanism": "High-dose ginger (>2g/day) inhibits thromboxane synthase and platelet aggregation. Additionally, ginger components may weakly inhibit CYP1A2 and CYP3A4, potentially increasing warfarin levels. Multiple case reports of INR elevation with ginger supplementation.",
+        "management": "Monitor INR when high-dose ginger supplements (>1g/day) are started or stopped in warfarin patients. Culinary ginger amounts (<1g/day in food) are generally safe. Advise patients on anticoagulants to disclose ginger supplement use — often not considered a 'medication' by patients."
       },
       {
-        "drug": "Antiplatelets (ASA, clopidogrel)",
-        "severity": "Minor-Moderate",
-        "mechanism": "Additive antiplatelet effect at high ginger doses",
-        "management": "Counsel to limit ginger to therapeutic supplement doses; avoid combining with high-dose ginger supplements if on dual antiplatelet"
+        "drug": "Antiplatelet drugs (aspirin, clopidogrel, ticagrelor, dipyridamole, NSAIDs)",
+        "severity": "Moderate",
+        "mechanism": "Ginger has mild antiplatelet activity via thromboxane A2 synthesis inhibition (similar to aspirin mechanism). Combined with antiplatelet drugs, additive inhibition of platelet aggregation increases bleeding time and bruising risk.",
+        "management": "Limit high-dose ginger supplements (>2g/day) in patients on antiplatelet therapy. Stop ginger supplements 7-10 days before elective surgery. Culinary ginger use (<2g/day) does not require intervention. Disclose all herbal use when managing bleeding or thrombosis risk."
+      },
+      {
+        "drug": "Hypoglycemic drugs (insulin, metformin, sulfonylureas, GLP-1 agonists)",
+        "severity": "Minor",
+        "mechanism": "Ginger may have mild hypoglycemic effects — it enhances insulin receptor sensitivity and reduces fasting blood glucose in some studies. This may modestly potentiate hypoglycemic medications.",
+        "management": "Monitor blood glucose when high-dose ginger supplements are started in diabetic patients. Culinary ginger amounts are unlikely to be clinically significant. Benefit-risk is generally favorable — ginger for nausea of pregnancy is safe alongside standard prenatal care."
+      },
+      {
+        "drug": "Calcium channel blockers (nifedipine, amlodipine, verapamil) — nausea of pregnancy context",
+        "severity": "Minor",
+        "mechanism": "Ginger components (6-gingerol, 8-gingerol) have weak calcium channel blocking properties that may modestly enhance calcium channel blocker effects — particularly relevant for blood pressure lowering.",
+        "management": "Monitor blood pressure when high-dose ginger is used alongside calcium channel blockers. Culinary/supplement doses used for nausea of pregnancy (typically 250-1000mg/day) are unlikely to cause meaningful BP lowering. Ginger for nausea of pregnancy is classified as safe by SOGC."
+      },
+      {
+        "drug": "Ondansetron, metoclopramide (anti-nausea drugs) — ginger for nausea of pregnancy",
+        "severity": "Beneficial (complementary/alternative) / Note",
+        "mechanism": "No pharmacokinetic interaction between ginger and standard antiemetics. Ginger provides mild antiemetic benefit for nausea of pregnancy (NVP) via serotonin receptor modulation and gastric motility effects — can be used as first-line alongside doxylamine-pyridoxine (Diclegis) or as alternative.",
+        "management": "Ginger is recommended as first-line non-pharmacological treatment for mild NVP per SOGC guidelines. Ginger root 250mg QID or 1000mg daily is safe in pregnancy. Can be used alongside Diclegis for mild-moderate NVP. No dose adjustment of antiemetics required with ginger use."
+      },
+      {
+        "drug": "Cyclosporine and tacrolimus (calcineurin inhibitors) — CYP3A4/P-gp",
+        "severity": "Minor",
+        "mechanism": "Ginger may weakly inhibit CYP3A4 and P-glycoprotein at high doses — could modestly increase cyclosporine and tacrolimus bioavailability. Clinical significance at culinary/supplement doses (typically <2g/day) is uncertain.",
+        "management": "Transplant patients should disclose ginger supplement use and avoid high-dose ginger supplements (>2g/day). Monitor tacrolimus and cyclosporine trough levels when initiating ginger supplements. Culinary ginger use is generally acceptable — excessive ginger root teas or supplements warrant caution."
       }
     ],
     "pregnancy": "COMPATIBLE — first-line non-pharmacological therapy for mild NVP per SOGC and Motherisk NVP Guidelines. Multiple RCTs confirm superiority to placebo; no established teratogenicity. 250 mg QID standard. For moderate-severe NVP: step up to Diclectin (doxylamine-B6). Breastfeeding: Compatible — dietary and supplement amounts; minimal transfer; considered safe during lactation.",
@@ -88006,16 +88180,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Enzyme-inducing drugs (rifampin, carbamazepine, phenytoin, St. John's Wort, efavirenz, lopinavir)",
+        "drug": "Enzyme-inducing drugs (rifampin, carbamazepine, phenytoin, topiramate, St. John's Wort, efavirenz, nevirapine, lopinavir/ritonavir)",
         "severity": "Major",
-        "mechanism": "CYP3A4 inducers increase LNG metabolism → reduce blood levels → reduced efficacy of emergency contraception",
-        "management": "Use copper IUD (most effective EC regardless) or increase levonorgestrel to 3 mg (2 × 1.5 mg tablets) — though effectiveness still reduced; Ella (ulipristal acetate) also significantly affected by enzyme inducers. Copper IUD is preferred EC in these patients."
+        "mechanism": "CYP3A4 inducers substantially increase LNG metabolism, reducing peak plasma levels by up to 50%; efficacy of LNG emergency contraception is significantly reduced in patients on or recently stopped enzyme inducers",
+        "management": "FIRST CHOICE: Copper IUD inserted within 120 hours — 99%+ effective regardless of enzyme-inducing drugs. If IUD refused: double dose LNG 3 mg (2 tablets) within 72 hours — limited evidence but WHO-endorsed fallback. Ulipristal (Ella) is similarly compromised by enzyme inducers and is NOT a better alternative in these patients."
       },
       {
-        "drug": "Ulipristal acetate (Ella)",
-        "severity": "Major",
-        "mechanism": "LNG (progestin agonist) and ulipristal (progestin receptor modulator/antagonist) — combination reduces efficacy of ulipristal's mechanism",
-        "management": "Do not combine. If ulipristal used as EC, do not use hormonal contraception for 5 days after."
+        "drug": "Ulipristal acetate (Ella/EllaOne)",
+        "severity": "Contraindicated",
+        "mechanism": "LNG acts as a progestin receptor agonist; ulipristal is a selective progesterone receptor modulator — when taken sequentially or concurrently, LNG occupies progesterone receptors and blocks ulipristal's mechanism of action, rendering it ineffective",
+        "management": "NEVER combine in same EC episode. If using ulipristal as EC, do NOT start hormonal contraception (pills, patch, ring) for at least 5 days after ulipristal — start a barrier method immediately and use for 9 days. If LNG EC taken first, can start hormonal contraception same day."
+      },
+      {
+        "drug": "Antiemetics (domperidone, metoclopramide)",
+        "severity": "Beneficial",
+        "mechanism": "Nausea/vomiting occurs in ~20% of patients taking LNG EC; vomiting within 2 hours of dose significantly reduces absorption and efficacy; antiemetics pre-treatment or co-treatment improves adherence and likely efficacy",
+        "management": "Consider pre-treating with domperidone 10 mg or metoclopramide 10 mg 30–60 min before LNG EC in patients with known nausea sensitivity; if vomiting occurs within 2 hours of LNG dose, repeat the full dose as soon as tolerated"
+      },
+      {
+        "drug": "CYP3A4 inhibitors (azole antifungals, ritonavir-boosted HIV regimens)",
+        "severity": "Minor",
+        "mechanism": "CYP3A4 inhibitors may increase LNG plasma concentrations by reducing first-pass metabolism; potentially enhanced contraceptive effect but limited clinical data; ritonavir as a PK booster is complex as it also inhibits UGT enzymes",
+        "management": "No dose reduction needed; standard LNG EC dose appropriate; monitor for increased progestogenic side effects (nausea, breast tenderness) in patients on strong CYP3A4 inhibitors, though clinical significance is minimal for a single-dose regimen"
+      },
+      {
+        "drug": "Ongoing combined hormonal contraceptives (OCPs, patch, ring)",
+        "severity": "Minor",
+        "mechanism": "LNG EC does not impair the efficacy of ongoing hormonal contraception; continuing regular hormonal contraception is recommended immediately after LNG EC to maintain protection going forward",
+        "management": "Continue regular hormonal contraception as usual after taking LNG EC; LNG EC does not replace or interfere with regular contraception; use backup barrier method for 7 days after LNG EC as additional precaution"
+      },
+      {
+        "drug": "Body weight >75 kg (pharmacokinetic consideration)",
+        "severity": "Moderate",
+        "mechanism": "Observational data suggest LNG EC may have reduced efficacy at higher body weight (>75 kg) due to higher volume of distribution — BMI >25 kg/m2 associated with reduced peak LNG levels; not a true drug interaction but a clinically important pharmacokinetic factor",
+        "management": "Copper IUD preferred for patients >75 kg (or BMI >25) as EC — equally effective regardless of weight. If IUD declined, ulipristal acetate (Ella) may have better weight-independent efficacy than LNG EC; double-dose LNG 3 mg is an alternative though evidence is modest"
       }
     ],
     "pregnancy": "NOT indicated in known pregnancy. Does not terminate an established pregnancy. No known teratogenic effects if inadvertently taken in early pregnancy. Breastfeeding: single low dose generally considered compatible; minimal transfer to breast milk; some authorities recommend a 24-hour interruption of breastfeeding after dose (pump and discard) though evidence is limited. LactMed: small amounts in breast milk; AAP: compatible.",
@@ -89735,10 +89933,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Oral beta-blockers, calcium channel blockers",
+        "drug": "Systemic beta-blockers (propranolol, metoprolol, atenolol, bisoprolol, carvedilol) and calcium channel blockers (verapamil, diltiazem)",
         "severity": "Major",
-        "mechanism": "Additive systemic beta-blockade",
-        "management": "Monitor HR and BP; use nasolacrimal occlusion."
+        "mechanism": "Ophthalmic timolol is absorbed systemically (bioavailability ~80% — first-pass effect bypassed). Combined with oral beta-blockers or rate-limiting calcium channel blockers, additive negative chronotropic and dromotropic effects → bradycardia, AV block, hypotension.",
+        "management": "Monitor HR and BP when combining ophthalmic timolol with systemic beta-blockers or verapamil/diltiazem. ECG for AV block risk. Consider non-beta-blocker IOP alternatives (latanoprost, brimonidine, dorzolamide) in patients on cardioactive drugs. If combination unavoidable, use cardioselective beta-blockers at minimum doses."
+      },
+      {
+        "drug": "Asthma and COPD — bronchospasm contraindication",
+        "severity": "Contraindicated",
+        "mechanism": "Even ophthalmic timolol has sufficient systemic absorption (nasolacrimal duct absorption) to cause clinically significant bronchospasm in asthma and COPD patients — blocking beta-2 receptors in airway smooth muscle causes bronchoconstriction. Deaths from ophthalmic timolol-induced bronchospasm reported.",
+        "management": "CONTRAINDICATED in asthma and reactive airways disease per Health Canada Timoptic PM. Use alternative IOP-lowering agents: prostaglandin analogues (latanoprost, bimatoprost), alpha-2 agonists (brimonidine), or carbonic anhydrase inhibitors (dorzolamide, brinzolamide) in asthma/COPD patients. Non-selective beta-blockers in eye drops have the same contraindication as oral forms."
+      },
+      {
+        "drug": "Insulin and oral hypoglycemics — hypoglycemia masking",
+        "severity": "Moderate",
+        "mechanism": "Systemic beta-blockade from ophthalmic timolol blunts the sympathetic warning signs of hypoglycemia (tachycardia, tremor) while diaphoresis is preserved. Non-selective beta-blockade also impairs glycogenolysis, prolonging hypoglycemia recovery.",
+        "management": "Counsel diabetic patients on ophthalmic timolol to recognize diaphoresis (preserved with beta-blockade) as the primary hypoglycemia warning sign. Monitor blood glucose carefully. Inform endocrinologist about ophthalmic timolol use — it is often overlooked as a beta-blocker on the medication list."
+      },
+      {
+        "drug": "MAOIs (phenelzine, tranylcypromine, selegiline) — sympathomimetic hypertension risk",
+        "severity": "Major",
+        "mechanism": "Ophthalmic timolol absorbed systemically can block the reflex tachycardia response to MAOI-induced hypertension or other sympathomimetic crises — masking symptoms and preventing normal cardiovascular response to epinephrine-releasing stimuli.",
+        "management": "AVOID ophthalmic timolol in patients on MAOIs. Switch to prostaglandin or CAI eye drops. If MAOI therapy is necessary in a glaucoma patient, consult ophthalmology and psychiatry together for IOP management strategy."
+      },
+      {
+        "drug": "Systemic epinephrine (anaphylaxis treatment) — paradoxical hypertension risk",
+        "severity": "Major",
+        "mechanism": "In beta-blocked patients (including from ophthalmic timolol), epinephrine given for anaphylaxis stimulates only alpha-1 receptors (beta-2 receptors blocked) → paradoxical severe hypertension and reflex bradycardia. The anaphylaxis response is also attenuated.",
+        "management": "Higher epinephrine doses may be needed for anaphylaxis in beta-blocked patients — standard EpiPen may be insufficient. Consider IV epinephrine and glucagon (reverses beta-blockade) for severe anaphylaxis in ophthalmic timolol patients. Inform anesthesiologists and emergency departments about ophthalmic timolol use."
+      },
+      {
+        "drug": "Amiodarone and other antiarrhythmics (sotalol, flecainide) — conduction system effects",
+        "severity": "Major",
+        "mechanism": "Amiodarone has non-competitive beta-blocking activity. Combined with ophthalmic timolol's systemic beta-blockade, there is additive suppression of sinoatrial and atrioventricular node conduction → profound bradycardia, sinus arrest, complete heart block.",
+        "management": "CONTRAINDICATED combination unless absolutely necessary with close monitoring. If both required, use cardiac monitoring (telemetry). Consider alternative glaucoma medications in patients on amiodarone or sotalol. Prostaglandin analogues (latanoprost, bimatoprost) are safe alternatives with no cardiac effects."
       }
     ],
     "pregnancy": "Use with caution — systemic absorption possible; beta-blockers can cause fetal bradycardia, neonatal hypoglycemia. Use nasolacrimal occlusion. Discuss with ophthalmologist.",
