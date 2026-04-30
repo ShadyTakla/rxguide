@@ -50803,22 +50803,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Topical retinoids (tretinoin, adapalene, tazarotene) — if applied simultaneously",
+        "drug": "Topical tretinoin (but NOT adapalene or tazarotene)",
         "severity": "Moderate",
-        "mechanism": "Simultaneous application can increase irritation; tretinoin can be oxidized and inactivated by BPO if applied at same time. Adapalene (Epiduo combination) is oxidation-stable.",
-        "management": "Apply BPO and tretinoin at different times (AM BPO, PM tretinoin). Adapalene stable to BPO — Epiduo combination is acceptable."
+        "mechanism": "BPO is an oxidizing agent that degrades tretinoin on contact, rendering it inactive; adapalene is oxidation-stable (used in Epiduo fixed-dose combination); tazarotene is partially sensitive; applying BPO and tretinoin simultaneously inactivates the retinoid component",
+        "management": "Apply BPO (AM) and tretinoin (PM) at different times to preserve efficacy; Epiduo (adapalene 0.1%/BPO 2.5%) and Epiduo Forte (0.3%/2.5%) are fixed combinations where compatibility has been formulated; if using tretinoin separately from BPO, 4–6-hour separation is recommended"
       },
       {
-        "drug": "Hair bleaching or coloring products",
+        "drug": "Topical antibiotics — clindamycin and erythromycin (resistance prevention)",
+        "severity": "Beneficial",
+        "mechanism": "BPO prevents antibiotic resistance development: topical clindamycin or erythromycin alone selects for resistant C. acnes; BPO kills bacteria through oxidative mechanism that does not select for resistance; combination BPO + antibiotic maintains antibiotic efficacy long-term",
+        "management": "Standard of care: ALWAYS use BPO concurrently with topical antibiotics for acne; Clindoxyl gel (clindamycin + BPO) is a standard fixed-dose combination product in Canada; do not prescribe topical antibiotics for acne without concurrent BPO"
+      },
+      {
+        "drug": "Hair bleaching/coloring agents and fabric dyes",
         "severity": "Minor",
-        "mechanism": "BPO oxidizing agent interacts with hair dye chemicals near hairline",
-        "management": "Keep BPO away from hair and hairline; wash hands thoroughly"
+        "mechanism": "BPO is a potent oxidizing bleach; contact with hair dye (near hairline), clothing, towels, or pillow cases causes permanent bleaching of fabric and potential hair damage",
+        "management": "Counsel patients to apply BPO to facial skin carefully, avoiding hairline; use old towels/pillowcases or white bedding; wash hands after application; if used on trunk/back, use white T-shirts; this is the most common patient complaint about BPO and the primary cause of adherence failure"
       },
       {
-        "drug": "Topical clindamycin or erythromycin (combination use)",
-        "severity": "Beneficial — synergistic",
-        "mechanism": "BPO + antibiotic: additive antibacterial + prevents resistance. Standard of care for antibiotic-containing acne therapy is ALWAYS to add BPO.",
-        "management": "Concurrent use is recommended — prevents C. acnes resistance to topical antibiotics"
+        "drug": "Dapsone topical (Aczone) gel",
+        "severity": "Moderate",
+        "mechanism": "Dapsone gel + benzoyl peroxide applied simultaneously or in close sequence causes visible yellow-orange skin discoloration due to oxidation of dapsone to a yellow compound; this discoloration is cosmetically unacceptable and a commonly missed interaction in acne management",
+        "management": "If both topical dapsone and BPO are used, apply at completely different times of day (dapsone AM, BPO PM) to prevent co-localization; counsel patients about potential yellow staining if products overlap; wash face thoroughly between applications; dapsone + BPO combination not recommended due to this interaction — prefer clindamycin + BPO instead"
+      },
+      {
+        "drug": "UV light and photosensitivity",
+        "severity": "Minor",
+        "mechanism": "BPO does not directly cause photosensitivity but mild skin dryness and barrier disruption from BPO use can increase UV sensitivity; concomitant use with other photosensitizing medications (doxycycline, minocycline — commonly used systemically for acne) compounds sun sensitivity risk on BPO-treated skin",
+        "management": "Daily SPF 30+ sunscreen essential with BPO use, especially when also using oral tetracyclines for acne; apply sunscreen after BPO has absorbed in the morning; counsel patients that tetracycline (doxycycline) + BPO + sun exposure is a triple photosensitizer combination"
+      },
+      {
+        "drug": "Oral isotretinoin (potential dryness amplification)",
+        "severity": "Minor",
+        "mechanism": "Isotretinoin causes profound sebum suppression and mucocutaneous dryness; BPO has additional drying and potentially irritating properties; using BPO concurrently with isotretinoin may exacerbate dryness, cheilitis, and skin sensitivity beyond what isotretinoin alone causes; however, combination is sometimes used for acne flares during isotretinoin initiation",
+        "management": "Usually not necessary to continue BPO once isotretinoin is initiated (isotretinoin is definitive therapy); if BPO used during isotretinoin, use lowest concentration (2.5%), apply less frequently, and prioritize aggressive emollient use; reduce BPO frequency if dryness is intolerable"
       }
     ],
     "pregnancy": "GENERALLY SAFE TOPICALLY — limited systemic absorption. Topical BPO used for acne in pregnancy. No established teratogenicity in humans (limited data; animal studies not suggestive). Preferred over topical antibiotics (clindamycin acceptable but less preferred) and topical retinoids (avoid in pregnancy). Breastfeeding: topical BPO likely safe — avoid direct application to breasts/nipple area.",
@@ -54599,16 +54617,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Antiarrhythmics (mexiletine, flecainide)",
-        "severity": "Moderate",
-        "mechanism": "Additive sodium channel blockade if systemic absorption occurs",
-        "management": "Avoid large area/mucosal application in patients on antiarrhythmics"
+        "drug": "Class I antiarrhythmics (mexiletine, flecainide, tocainide, lidocaine IV)",
+        "severity": "Major",
+        "mechanism": "Lidocaine and class I antiarrhythmics share the same sodium channel blockade mechanism; systemic absorption from topical lidocaine (particularly mucous membranes, wounds, large skin areas) adds to the antiarrhythmic drug load; additive CNS toxicity (seizures, loss of consciousness) and cardiovascular toxicity (PR/QRS prolongation, bradycardia, hypotension) can occur",
+        "management": "Avoid extensive topical/mucosal lidocaine in patients on class I antiarrhythmics; for minor procedures (IV access, minor skin procedures), small amounts on intact skin are unlikely to cause systemic accumulation; limit mucous membrane application and use smallest effective dose; ECG monitoring recommended if larger doses required"
       },
       {
-        "drug": "Methemoglobin-inducing drugs (dapsone, sulfamethoxazole) + EMLA",
+        "drug": "Methemoglobin-inducing drugs (dapsone, sulfamethoxazole, prilocaine — EMLA contains prilocaine)",
         "severity": "Major",
-        "mechanism": "Additive methemoglobinemia risk",
-        "management": "Avoid EMLA in patients on dapsone or other met-Hb inducers, especially infants"
+        "mechanism": "EMLA cream (eutectic mixture of lidocaine 2.5% + prilocaine 2.5%) — the prilocaine component is metabolized to o-toluidine, which oxidizes hemoglobin to methemoglobin; concurrent medications that independently induce methemoglobinemia (dapsone, sulfonamides, nitrites, metoclopramide, benzocaine) create additive risk; neonates and infants are particularly vulnerable (fetal hemoglobin more susceptible to oxidation)",
+        "management": "Avoid EMLA in patients on dapsone or sulfonamides; for infants <3 months, limit EMLA application area and duration; use pure 4% lidocaine cream (without prilocaine) as alternative if methemoglobin risk exists; monitor for methemoglobinemia (cyanosis unresponsive to oxygen, SpO2 ~85% on pulse oximetry); treat with methylene blue 1–2 mg/kg IV"
+      },
+      {
+        "drug": "Beta-blockers (propranolol) — pharmacokinetic interaction",
+        "severity": "Moderate",
+        "mechanism": "Propranolol reduces hepatic blood flow and inhibits CYP1A2-mediated lidocaine metabolism → increased systemic lidocaine levels; relevant when topical lidocaine is used on large mucosal areas (lidocaine viscous for mucositis, lidocaine gel for urinary catheterization) where significant systemic absorption occurs",
+        "management": "Use minimum effective dose and contact area for mucosal lidocaine applications in patients on propranolol; monitor for CNS lidocaine toxicity signs (tinnitus, perioral numbness, dizziness, confusion) in patients on beta-blockers using large-area mucosal lidocaine"
+      },
+      {
+        "drug": "Cimetidine (H2 blocker) and other CYP1A2/CYP3A4 inhibitors",
+        "severity": "Moderate",
+        "mechanism": "Cimetidine inhibits both CYP1A2 and CYP3A4 and reduces hepatic blood flow — all three mechanisms reduce lidocaine clearance; significant increase in systemic lidocaine levels if large mucosal applications; more relevant for IV lidocaine but topical mucosal exposure in susceptible patients warrants attention",
+        "management": "For topical applications on intact skin (small area): no monitoring needed; for mucosal applications (oral, rectal, urethral) in patients on cimetidine: use lowest effective dose; avoid repeated applications; famotidine (does not inhibit CYP1A2) is a safer H2 blocker alternative in patients requiring frequent topical lidocaine"
+      },
+      {
+        "drug": "Prilocaine (in EMLA) — methemoglobin synergy with benzocaine",
+        "severity": "Major",
+        "mechanism": "Benzocaine is a potent methemoglobin inducer (used in oral gels, topical sprays, hemorrhoid products); prilocaine (in EMLA) also causes methemoglobin; lidocaine alone does not cause methemoglobin but if used in combination products containing prilocaine or benzocaine, co-administration with other methemoglobin inducers creates severe cumulative risk; spray-applied benzocaine for endoscopy has caused acute methemoglobinemia requiring emergency treatment",
+        "management": "Avoid concurrent use of different local anesthetic products on the same patient at the same time; do not use EMLA + benzocaine products concurrently; if topical anesthesia required for multiple procedures simultaneously, use ONE agent at minimum effective dose"
+      },
+      {
+        "drug": "Topical cocaine (compounding — ENT and nasal procedures)",
+        "severity": "Major",
+        "mechanism": "Topical cocaine (4–10%, used for ENT procedures) and lidocaine both cause sodium channel blockade; combined or rapid sequential use by ENT/anesthesia for nasal/oropharyngeal procedures represents additive anesthetic toxicity; cocaine adds sympathomimetic effects (cocaine inhibits catecholamine reuptake) — risk of hypertensive crisis when combined with epinephrine-containing lidocaine preparations",
+        "management": "Only one topical anesthetic agent should be used at a time for ENT procedures; if cocaine topical used (for vasoconstriction + anesthesia), do NOT add additional lidocaine; total dose of all local anesthetic agents must remain within safe systemic dose limits; documented intraoperative deaths from combined cocaine + lidocaine + epinephrine"
       }
     ],
     "pregnancy": "Category B. EMLA: safe for procedural use in pregnancy. Xylocaine viscous for mucositis: generally safe with appropriate dosing. Avoid excessive amounts.",
@@ -55680,10 +55722,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Other topical irritants (benzoyl peroxide, salicylic acid)",
+        "drug": "Benzoyl peroxide (BPO) — compatibility and Epiduo combination",
+        "severity": "Beneficial",
+        "mechanism": "Unlike tretinoin, adapalene is chemically stable to oxidation by BPO; Epiduo (adapalene 0.1% + BPO 2.5%) and Epiduo Forte (adapalene 0.3% + BPO 2.5%) are established fixed-dose combinations; adapalene addresses comedonal acne (normalizes follicular differentiation) while BPO kills C. acnes and prevents antibiotic resistance",
+        "management": "Epiduo is first-line combination therapy for moderate acne in Canada (CDA acne guidelines); if using separate products, apply adapalene at night and BPO in the morning to minimize potential irritation from combining; no inactivation interaction unlike tretinoin + BPO"
+      },
+      {
+        "drug": "Topical antibiotics (clindamycin, erythromycin) without BPO — resistance concern",
+        "severity": "Moderate",
+        "mechanism": "Using adapalene with topical antibiotic alone (without BPO) creates the antibiotic-resistance selection pressure that BPO prevents; adapalene combined with clindamycin without BPO is a regimen that should ideally incorporate BPO to prevent C. acnes resistance",
+        "management": "If topical antibiotic is used with adapalene, add BPO to the regimen to prevent resistance; Tactuo (adapalene + BPO + clindamycin triple combination) is an option for moderate-severe acne; do not use topical antibiotic for >3 months without reassessment and BPO co-prescription"
+      },
+      {
+        "drug": "Oral isotretinoin (concurrent use for breakthrough acne)",
         "severity": "Minor",
-        "mechanism": "Additive skin irritation",
-        "management": "Use at different times of day; introduce gradually"
+        "mechanism": "Adapalene is a retinoid; combining with isotretinoin (systemic retinoid) provides dual retinoid exposure — additive dryness, mucocutaneous irritation, and photosensitivity; generally unnecessary as isotretinoin suppresses sebum production definitively; risk of additive teratogenicity exposure is a concern in females",
+        "management": "Do not routinely combine topical adapalene with oral isotretinoin; if adapalene is used during early isotretinoin (for initial acne flares), minimize application frequency and area; both agents are Category X in pregnancy — ensure adequate contraception for female patients on either or both"
+      },
+      {
+        "drug": "Photosensitizing medications (doxycycline, minocycline, fluoroquinolones)",
+        "severity": "Moderate",
+        "mechanism": "Adapalene increases skin turnover and reduces UV-protective stratum corneum; concurrent use of photosensitizing systemic antibiotics (tetracyclines) commonly used for acne amplifies sun sensitivity on adapalene-treated skin; triple sensitivity (adapalene + tetracycline + UV) causes significant erythema and sunburn",
+        "management": "Daily SPF 30+ broad-spectrum sunscreen is mandatory with adapalene; this is especially important during the first 4–6 weeks when new skin is most vulnerable; counsel all patients starting adapalene + oral antibiotic regimen on strict sun protection"
+      },
+      {
+        "drug": "Pregnancy — teratogenicity risk",
+        "severity": "Major",
+        "mechanism": "Adapalene is a synthetic retinoid; retinoids are teratogenic (neural tube, craniofacial, cardiac malformations); although systemic absorption of topical adapalene is very low (<4 ng/mL), retinoid-class teratogenicity is a concern in pregnancy; Health Canada classifies adapalene as not recommended in pregnancy",
+        "management": "CONTRAINDICATED in pregnancy; ensure adequate contraception in women of childbearing potential; OTC adapalene (Differin) availability means patients may self-prescribe without receiving contraception counselling — pharmacists and prescribers should enquire about pregnancy status; if pregnancy occurs on topical adapalene, discontinue and refer to maternal-fetal medicine"
+      },
+      {
+        "drug": "Moisturizers and keratolytics — application timing for tolerability",
+        "severity": "Minor",
+        "mechanism": "Adapalene commonly causes dryness, peeling, erythema, and burning in the first 4–6 weeks of use (retinization); emollients significantly improve tolerability without significantly reducing efficacy; salicylic acid or AHA applied immediately before or after adapalene amplifies irritation and accelerates retinization discomfort",
+        "management": "Apply adapalene to clean, dry skin at bedtime; apply a fragrance-free moisturizer 30 minutes after adapalene or the following morning; avoid applying salicylic acid, AHAs, or other chemical exfoliants at the same time as adapalene; titrate to daily use over 2–4 weeks starting with every-other-night application"
       }
     ],
     "pregnancy": "Avoid — retinoids are teratogenic; while systemic absorption of topical adapalene is minimal, avoid during pregnancy as a precaution.",
@@ -60224,10 +60296,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Other topical irritants (retinoids, benzoyl peroxide, salicylic acid)",
+        "drug": "Topical retinoids (tretinoin, adapalene, tazarotene) and chemical exfoliants",
         "severity": "Moderate",
-        "mechanism": "Additive irritation, dryness",
-        "management": "Introduce gradually; alternate days initially; ensure good moisturization"
+        "mechanism": "Azelaic acid (20% cream, 15% gel) has mild keratolytic and anti-inflammatory properties; simultaneous application with retinoids or other exfoliants (salicylic acid, BHAs, AHAs) causes additive irritation, barrier disruption, and erythema; azelaic acid is less irritating than retinoids alone, making it a gentler alternative for sensitive skin or rosacea",
+        "management": "Separate application: retinoid at night, azelaic acid in the morning; or alternate evenings for very sensitive skin; azelaic acid is often used as a daytime retinoid alternative in rosacea patients who cannot tolerate retinoid irritation; combination can be effective for hyperpigmentation + acne when spaced correctly"
+      },
+      {
+        "drug": "Metronidazole gel (Metrogel — for rosacea)",
+        "severity": "Minor",
+        "mechanism": "Both azelaic acid 15% (Finacea) and topical metronidazole (0.75%, 1%) are first-line options for rosacea papulopustular component; combining both simultaneously on the same skin area may increase irritation; however, these are often used as alternatives rather than combinations in rosacea treatment",
+        "management": "Can be used sequentially (metronidazole in AM, azelaic acid in PM) for rosacea with inadequate single-agent response; allow each product to absorb before applying the next; some patients tolerate the combination well with good results"
+      },
+      {
+        "drug": "Warfarin (theoretical systemic absorption concern)",
+        "severity": "Minor",
+        "mechanism": "Azelaic acid has minimal systemic absorption (<4% through normal skin); it is not significantly metabolized by CYP enzymes; no clinical reports of warfarin INR changes with topical azelaic acid; theoretical concern at large-area application with impaired skin barrier",
+        "management": "No specific monitoring required for standard topical azelaic acid use; no INR adjustment or monitoring needed; this interaction is not clinically relevant at standard facial/localized application"
+      },
+      {
+        "drug": "Sunscreen and UV protection (mandatory adjunct for hyperpigmentation indication)",
+        "severity": "Beneficial",
+        "mechanism": "Azelaic acid is used for post-inflammatory hyperpigmentation (PIH) and melasma; UV exposure triggers melanogenesis and counteracts azelaic acid's inhibition of tyrosinase; without strict photoprotection, hyperpigmentation will recur despite effective azelaic acid treatment",
+        "management": "Daily broad-spectrum SPF 30+ sunscreen is MANDATORY for any patient using azelaic acid for PIH or melasma; physical (mineral) sunscreens (zinc oxide, titanium dioxide) preferred for rosacea-sensitive skin; apply sunscreen over azelaic acid after it has absorbed; reapply every 2 hours with UV exposure"
+      },
+      {
+        "drug": "Isotretinoin (systemic, for acne)",
+        "severity": "Minor",
+        "mechanism": "Isotretinoin suppresses sebum production and transforms the microenvironment of the pilosebaceous unit; starting or continuing topical azelaic acid during isotretinoin may cause increased dryness from the combined sebum-suppression + keratolytic effect; however, azelaic acid is gentler than retinoids topically and less concerning than combining oral + topical retinoids",
+        "management": "Generally safe to continue azelaic acid topically during isotretinoin if used for hyperpigmentation; reduce frequency to alternate nights if excessive dryness develops; azelaic acid may not be necessary for acne lesions during isotretinoin (isotretinoin provides adequate sebum and comedone suppression)"
+      },
+      {
+        "drug": "Calcineurin inhibitors (tacrolimus, pimecrolimus — rosacea overlap indication)",
+        "severity": "Minor",
+        "mechanism": "Topical calcineurin inhibitors (TCIs) are sometimes used off-label for granulomatous rosacea or steroid-rosacea; azelaic acid and TCIs address different aspects of rosacea (azelaic: antibacterial, antikeratinizing; TCIs: anti-inflammatory); no direct pharmacokinetic interaction; both have low systemic absorption",
+        "management": "Sequential or alternate-day application is acceptable; apply to different areas if different rosacea subtypes present on separate facial zones; routine monitoring not required; consider dermatology referral for complex rosacea requiring multiple agents"
       }
     ],
     "pregnancy": "Pregnancy Category B — generally considered SAFE in pregnancy and breastfeeding. One of the few acne/rosacea treatments acceptable during pregnancy (alongside topical clindamycin, topical erythromycin). Limited systemic absorption.",
@@ -90405,7 +90507,42 @@ var DRUGS = {
       "Hypersensitivity to fluticasone"
     ],
     "interactions": [
-      "Ritonavir/strong CYP3A4 inhibitors: increased systemic exposure (use caution)"
+      {
+        "drug": "Ritonavir and cobicistat (HIV PI boosters) — potent CYP3A4 inhibitors",
+        "severity": "Major",
+        "mechanism": "Fluticasone propionate is a highly potent CYP3A4 substrate; ritonavir and cobicistat dramatically inhibit CYP3A4, increasing fluticasone systemic exposure by 350-fold or more; even intranasal fluticasone (with normally <1% systemic bioavailability) reaches clinically toxic systemic levels → Cushing syndrome, adrenal suppression; multiple documented cases of iatrogenic Cushing syndrome in HIV patients on ritonavir + intranasal fluticasone",
+        "management": "CONTRAINDICATED: Do not use fluticasone (nasal or inhaled) with ritonavir or cobicistat-boosted HIV regimens; switch to beclomethasone (metabolized by esterases, not CYP3A4) for nasal or inhaled corticosteroid needs in HIV patients on PI boosters; if already combined, taper fluticasone carefully (HPA suppression may have developed); monitor for adrenal insufficiency after discontinuation"
+      },
+      {
+        "drug": "Other potent CYP3A4 inhibitors — itraconazole, ketoconazole (systemic), clarithromycin, voriconazole",
+        "severity": "Major",
+        "mechanism": "Same mechanism as ritonavir — potent CYP3A4 inhibition increases fluticasone systemic exposure substantially; fungal infections in immunocompromised patients may prompt use of systemic azoles while also on inhaled/nasal fluticasone — this combination carries Cushing syndrome risk; clarithromycin for respiratory infections in asthma patients on fluticasone inhaler is another common scenario",
+        "management": "Avoid systemic azole antifungals with fluticasone nasal/inhaled; use topical azoles (oral nystatin for thrush) rather than systemic agents when possible; if systemic azole unavoidable for a short course, consider switching to beclomethasone for the duration; clarithromycin: use azithromycin as alternative macrolide (weaker CYP3A4 inhibition)"
+      },
+      {
+        "drug": "Systemic corticosteroids (prednisone, dexamethasone, methylprednisolone)",
+        "severity": "Moderate",
+        "mechanism": "Additive HPA axis suppression; intranasal fluticasone at standard doses adds minimal systemic corticosteroid load, but in patients on systemic corticosteroids, combined HPA suppression increases; relevant during systemic steroid tapering — intranasal fluticasone continues to suppress HPA axis during the critical period when systemic steroids are being reduced",
+        "management": "Account for intranasal fluticasone in total corticosteroid calculation during systemic steroid taper; use lowest effective nasal dose; patients may have subclinical HPA suppression — test with ACTH stimulation if adrenal insufficiency suspected; do not abruptly stop intranasal fluticasone in patients who have been on combined topical + systemic corticosteroids long-term"
+      },
+      {
+        "drug": "Other inhaled/topical corticosteroids (ICS for asthma, intranasal for rhinitis, topical for skin)",
+        "severity": "Moderate",
+        "mechanism": "Total corticosteroid burden from multiple routes (nasal + inhaled + topical) compounds HPA suppression risk; patients with comorbid asthma AND allergic rhinitis often receive both nasal fluticasone and inhaled fluticasone (e.g., Advair or Flovent) — combined total ICS dose may approach HPA-suppressive range in susceptible patients (children, thin-skinned elderly)",
+        "management": "Calculate total daily fluticasone dose across all routes; switch to once-daily formulations to minimize total dose; consider combination products (Dymista = fluticasone + azelastine nasal) that reduce total steroid dose; in children, annual height monitoring is recommended for patients on any intranasal corticosteroid"
+      },
+      {
+        "drug": "Live attenuated vaccines (in context of systemic immunosuppression)",
+        "severity": "Minor",
+        "mechanism": "Standard-dose intranasal fluticasone does NOT cause clinically significant systemic immunosuppression and is NOT a contraindication to live vaccines; FluMist (live attenuated intranasal influenza vaccine) is a separate product — not a drug interaction with fluticasone nasal spray",
+        "management": "Patients on nasal fluticasone can receive all standard vaccines including live vaccines (MMR, varicella, FluMist); no delay needed; only high-dose inhaled/nasal corticosteroids in combination with other immunosuppressants requires modified vaccine scheduling"
+      },
+      {
+        "drug": "Moderate CYP3A4 inhibitors (fluconazole, erythromycin, diltiazem, verapamil, grapefruit juice)",
+        "severity": "Minor",
+        "mechanism": "Moderate CYP3A4 inhibitors cause smaller (2–5-fold) increases in fluticasone systemic exposure compared to ritonavir; at standard intranasal doses, this modest increase is unlikely to cause clinical Cushing syndrome but may produce subtle HPA suppression with prolonged combined use",
+        "management": "Routine monitoring not required for short-course moderate CYP3A4 inhibitors with nasal fluticasone; for chronic combined use (e.g., patient on daily fluconazole prophylaxis and nasal fluticasone), consider switching to mometasone nasal or beclomethasone to reduce CYP3A4-mediated interaction risk; advise against regular grapefruit juice consumption"
+      }
     ],
     "monitoring": [
       "Symptom relief",
@@ -91248,7 +91385,42 @@ var DRUGS = {
       "Rosacea"
     ],
     "interactions": [
-      "Calcium supplements/vitamin D: monitor calcium if using large amounts"
+      {
+        "drug": "Calcium supplements and vitamin D supplements (concurrent with large-area calcipotriol exposure)",
+        "severity": "Moderate",
+        "mechanism": "Calcipotriol (calcipotriene) is a vitamin D3 analogue; at doses exceeding the maximum recommended application (100 g/week or 15 g/day for Dovobet gel), systemic absorption produces hypercalcemia — particularly when combined with oral calcium supplements, vitamin D supplements, or calcitriol; therapeutic doses rarely cause clinically significant hypercalcemia, but monitoring is warranted in high-risk patients",
+        "management": "Do not exceed 100 g/week of betamethasone/calcipotriol combination; check serum calcium if using near maximum doses for extended periods; advise patients not to increase calcium or vitamin D supplements beyond dietary recommendations without medical supervision during calcipotriol treatment; monitor quarterly calcium/albumin in patients with renal impairment"
+      },
+      {
+        "drug": "Other topical corticosteroids (simultaneous application to same area)",
+        "severity": "Major",
+        "mechanism": "Dovobet/Xamiol already contains betamethasone dipropionate (potent Class III corticosteroid); adding additional topical corticosteroids to the same skin area compounds total steroid dose → accelerated cutaneous atrophy, striae, telangiectasia, and HPA axis suppression",
+        "management": "Do NOT apply additional topical corticosteroids to the same areas treated with betamethasone/calcipotriol; the betamethasone component is already a potent steroid; if additional anti-inflammatory effect needed, increase betamethasone/calcipotriol frequency or concentration; avoid on face, genitals, and skin folds where potent steroids cause rapid atrophy"
+      },
+      {
+        "drug": "Systemic corticosteroids and other immunosuppressants (psoriasis management)",
+        "severity": "Moderate",
+        "mechanism": "Betamethasone component adds to systemic steroid burden, particularly when applied to large body surface areas in patients already on systemic steroids or immunosuppressants (methotrexate, ciclosporin, biologics); calcipotriol has no additive immunosuppressive effect; betamethasone absorption is enhanced by psoriatic scale (increased permeability) and occlusive clothing",
+        "management": "Account for combined steroid exposure when assessing total corticosteroid burden in psoriasis patients; avoid abrupt discontinuation of high-dose topical betamethasone in patients on systemic corticosteroids (HPA suppression may unmask on combined taper); monitor for paradoxical psoriasis rebound if potent topical steroid abruptly stopped"
+      },
+      {
+        "drug": "CYP3A4 inhibitors (ritonavir, ketoconazole systemic, itraconazole) — betamethasone component",
+        "severity": "Major",
+        "mechanism": "Betamethasone is a CYP3A4 substrate; potent CYP3A4 inhibitors can increase systemic betamethasone exposure from topical application, particularly on extensive psoriatic skin (increased permeability) or under occlusion; same mechanism as Cushing syndrome cases reported with inhaled corticosteroid + ritonavir; the calcipotriol component also metabolized via CYP24A1 (not CYP3A4-dependent)",
+        "management": "Avoid potent CYP3A4 inhibitors (ritonavir-based HIV regimens) with extensive topical betamethasone/calcipotriol; if unavoidable, use minimum area and frequency; consider switching betamethasone component to a less CYP3A4-dependent corticosteroid for patients on ritonavir"
+      },
+      {
+        "drug": "PUVA (psoralen + UVA phototherapy) and narrow-band UVB — concurrent use",
+        "severity": "Moderate",
+        "mechanism": "Calcipotriol is photosensitive — UVA light degrades calcipotriol topically, reducing its efficacy; PUVA/UVB phototherapy + calcipotriol is used therapeutically (sequential or alternating) but timing matters; applying calcipotriol immediately before UV exposure reduces calcipotriol efficacy; betamethasone has no photosensitivity concern",
+        "management": "Apply betamethasone/calcipotriol AFTER UV phototherapy sessions, not before; if using morning phototherapy, apply the combination product in the evening; sequential calcipotriol + UVB is an effective combination for moderate psoriasis but requires correct timing (calcipotriol PM, UVB AM) to avoid photodegradation"
+      },
+      {
+        "drug": "Salicylic acid preparations (for psoriatic scale removal)",
+        "severity": "Minor",
+        "mechanism": "Salicylic acid keratolytics are sometimes used prior to or alongside topical psoriasis treatments to remove scale and improve drug penetration; salicylic acid is incompatible with calcipotriol (it degrades calcipotriol in the same formulation) and should not be mixed or applied immediately before calcipotriol; however, sequential use (salicylic acid to remove scale, then calcipotriol/betamethasone to treat skin) enhances calcipotriol penetration through cleared scale",
+        "management": "Do NOT mix salicylic acid with calcipotriol products; if scale removal is needed before Dovobet application, apply salicylic acid preparation, allow to clear, then wash and dry before applying Dovobet; sequential use (SA first, Dovobet later) is acceptable and can enhance efficacy"
+      }
     ],
     "monitoring": [
       "Serum calcium if extensive application (calcipotriol max 100 g/week)",
@@ -91318,7 +91490,42 @@ var DRUGS = {
       "History of C. difficile colitis (relative)"
     ],
     "interactions": [
-      "Benzoyl peroxide (synergistic — preferred combination)"
+      {
+        "drug": "Benzoyl peroxide (BPO) — resistance prevention combination",
+        "severity": "Beneficial",
+        "mechanism": "Clindamycin (topical) kills C. acnes by inhibiting 50S ribosomal peptidyl transferase; using topical clindamycin WITHOUT BPO selects for clindamycin-resistant C. acnes (CRKP resistance rates >50% in some regions after years of topical antibiotic monotherapy); BPO kills bacteria via oxidative mechanism that does not select for resistance and maintains clindamycin's long-term efficacy",
+        "management": "MANDATORY: Always prescribe topical clindamycin with concurrent BPO (Clindoxyl gel or Benzaclin are fixed combinations in Canada); never prescribe topical clindamycin for acne as monotherapy without BPO; limit course duration to 3 months maximum if possible; document BPO requirement in acne management plan"
+      },
+      {
+        "drug": "Oral clindamycin or other systemic antibiotics (additive C. difficile risk)",
+        "severity": "Major",
+        "mechanism": "Topical clindamycin has ~10% systemic absorption; combining with oral clindamycin for systemic infections provides additive systemic clindamycin levels and doubles C. difficile risk; concurrent oral antibiotics (quinolones, amoxicillin, tetracyclines) for unrelated infections further disrupt gut flora and increase CDI risk",
+        "management": "Do not co-prescribe topical and oral clindamycin simultaneously; if systemic clindamycin needed for infection, consider pausing topical clindamycin; patients on topical clindamycin developing diarrhea, especially after antibiotic exposure, should be tested for C. difficile toxin; counsel patients using topical antibiotics about antibiotic stewardship"
+      },
+      {
+        "drug": "Neuromuscular blocking agents (succinylcholine, vecuronium, rocuronium) — surgical context",
+        "severity": "Moderate",
+        "mechanism": "Systemic clindamycin inhibits presynaptic acetylcholine release at the neuromuscular junction and enhances neuromuscular blockade; topical clindamycin has limited relevance, but patients with significant topical absorption (large body surface area application, occlusion) presenting for surgery may have enhanced NMB susceptibility; clinically significant primarily with systemic clindamycin",
+        "management": "Anaesthesiologists should be aware if patient uses topical clindamycin over large areas; most relevant with IV clindamycin; for standard facial/small-area topical use, neuromuscular interaction risk is negligible; inform surgical team of all medications including topical antibiotics"
+      },
+      {
+        "drug": "Erythromycin (topical) — cross-resistance",
+        "severity": "Moderate",
+        "mechanism": "Topical clindamycin and erythromycin share the same MLSB resistance mechanism (methylation of 23S rRNA by erm genes); resistance to one confers resistance to the other; combining both topical antibiotics on the same lesion provides no additional antibacterial benefit and doubles resistance selection pressure",
+        "management": "Do not combine topical clindamycin and topical erythromycin; use one antibiotic with BPO; topical erythromycin is less preferred in Canada due to higher resistance rates; if switching between antibiotics, always maintain BPO to slow resistance emergence"
+      },
+      {
+        "drug": "Tretinoin or adapalene (combination acne regimens)",
+        "severity": "Minor",
+        "mechanism": "Combination of topical antibiotic + retinoid + BPO is a highly effective triple acne regimen; topical clindamycin + adapalene (Tactuo fixed combination) is standard; no pharmacokinetic interaction; retinoid normalizes follicular hyperkeratosis while antibiotic targets C. acnes; BPO prevents resistance",
+        "management": "Combination therapy endorsed in Canadian Acne Guidelines (CDA); Clindoxyl (clindamycin + BPO) at night + Differin (adapalene) at alternate nights is a common regimen; or Tactuo (adapalene + clindamycin) + BPO applied at separate times; monitor for irritation and counsel on proper application sequence"
+      },
+      {
+        "drug": "Isotretinoin (oral) — concurrent topical antibiotic use",
+        "severity": "Minor",
+        "mechanism": "Oral isotretinoin dramatically suppresses sebum, reduces pilosebaceous unit size, and changes the microenvironment such that C. acnes cannot thrive; continuing topical clindamycin during isotretinoin is typically unnecessary and adds to antibiotic resistance pressure without meaningful benefit; isotretinoin is the definitive therapy",
+        "management": "Discontinue topical antibiotics (including clindamycin) when isotretinoin is initiated; isotretinoin will control C. acnes more effectively; BPO can be continued if needed for superficial pustules during the early isotretinoin period; reinitiate topical antibiotic regimen only if acne recurs after isotretinoin completion"
+      }
     ],
     "monitoring": [
       "Acne response at 6–8 weeks",
@@ -91454,7 +91661,42 @@ var DRUGS = {
       "Hypersensitivity to terbinafine"
     ],
     "interactions": [
-      "Minimal with topical use"
+      {
+        "drug": "Oral terbinafine (systemic) — concurrent use",
+        "severity": "Moderate",
+        "mechanism": "Topical terbinafine 1% has very low systemic absorption (<5% under normal conditions); combining topical with oral terbinafine provides additive local antifungal concentration without meaningful additional systemic exposure; however, oral terbinafine significantly inhibits CYP2D6 — topical adds no CYP interactions; concurrent use for onychomycosis (oral) + tinea pedis (topical) is rational but not typically necessary",
+        "management": "Concurrent use is generally unnecessary — oral terbinafine systemic levels are adequate for all dermatophyte infections; topical terbinafine alone is curative for tinea pedis, corporis, and cruris; oral terbinafine indicated for onychomycosis and refractory tinea; combining both does not increase risk but is redundant cost-wise"
+      },
+      {
+        "drug": "Other topical antifungals (clotrimazole, miconazole, ketoconazole) on same area",
+        "severity": "Minor",
+        "mechanism": "Terbinafine (allylamine — squalene epoxidase inhibitor) has a different mechanism from azole antifungals (lanosterol 14-alpha-demethylase inhibitors); combined use in same area provides no additive benefit for dermatophyte infections; terbinafine is superior to azoles for dermatophytes (Tinea pedis, corporis, cruris); azoles are preferred for Candida",
+        "management": "Use ONE antifungal appropriate for the suspected organism; terbinafine topical for dermatophyte infections; azole (clotrimazole, miconazole) for Candida; if mixed infection suspected (tinea + Candida in interdigital space), azole may cover both organisms; do not use two topical antifungals simultaneously on same area"
+      },
+      {
+        "drug": "Topical corticosteroids (Lotriderm-type combinations — antifungal + steroid)",
+        "severity": "Moderate",
+        "mechanism": "Lotriderm (clotrimazole + betamethasone) is a fixed combination of antifungal + corticosteroid; terbinafine topical is sometimes applied to the same area as a corticosteroid for relief of inflammation and itching; potent corticosteroids (betamethasone) can suppress local immune response and paradoxically facilitate fungal spread if used without an antifungal; using terbinafine alone is preferred for uncomplicated tinea to avoid corticosteroid complications",
+        "management": "For inflamed tinea (tinea corporis with significant itch/erythema), short-term combination with mild topical corticosteroid (hydrocortisone 1%) is acceptable; avoid potent corticosteroids (betamethasone, clobetasol) with terbinafine — can cause 'tinea incognita' (atypical presentation making diagnosis difficult); never use corticosteroid-antifungal combination on the face without diagnosis confirmation"
+      },
+      {
+        "drug": "Nail lacquers (ciclopirox, amorolfine) for onychomycosis",
+        "severity": "Minor",
+        "mechanism": "Topical terbinafine cream and nail antifungal lacquers (ciclopirox 8% lacquer = Penlac, amorolfine lacquer = Loceryl) are sometimes used concurrently for onychomycosis with periungual skin involvement; no pharmacokinetic interaction; combination may address nail plate (lacquer) and surrounding skin (terbinafine cream) simultaneously",
+        "management": "Sequential or concurrent use is acceptable; apply nail lacquer to nail plate and terbinafine cream to surrounding skin if needed; oral terbinafine is preferred over topical regimens for confirmed onychomycosis — topical monotherapy has lower cure rates (25–40% vs. 70–80% with oral terbinafine)"
+      },
+      {
+        "drug": "Occlusive wound dressings over antifungal-treated skin",
+        "severity": "Minor",
+        "mechanism": "Occlusion (tight-fitting shoes, socks, gloves, bandages) increases terbinafine penetration into skin and nails; while this can enhance efficacy, prolonged occlusion on macerated skin (hyperhidrotic foot) with terbinafine may cause excess local irritation; also, maintaining moisture reduces terbinafine's efficacy against dermatophytes (terbinafine needs dry conditions for optimal activity)",
+        "management": "Treat hyperhidrosis (sweating) concurrently when managing tinea pedis — keep feet dry; use absorbing foot powder; wear moisture-wicking socks; allow feet to air-dry before applying terbinafine; avoid tight occlusive footwear during treatment course"
+      },
+      {
+        "drug": "Warfarin (minimal systemic absorption — reassurance)",
+        "severity": "No interaction",
+        "mechanism": "Topical terbinafine has negligible systemic absorption (<5%) and does not significantly inhibit CYP enzymes at topical doses; oral terbinafine inhibits CYP2D6 but topical does not reach plasma concentrations sufficient for CYP2D6 inhibition; no documented INR changes with topical terbinafine use",
+        "management": "No INR monitoring required for topical terbinafine in patients on warfarin; counsel patients that topical antifungals for skin/nail use do not interact with warfarin; if oral terbinafine is initiated for onychomycosis in a warfarin patient, then monitor INR (oral terbinafine may rarely affect CYP2C9 substrate warfarin)"
+      }
     ],
     "monitoring": [
       "Clinical resolution",
