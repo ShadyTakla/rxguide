@@ -48351,10 +48351,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Mineral oil",
-        "severity": "Major",
-        "mechanism": "Docusate enhances mineral oil absorption → systemic mineral oil (hepatic, lymph node deposition)",
-        "management": "Do NOT use together"
+        "drug": "Mineral oil (liquid paraffin)",
+        "severity": "Contraindicated",
+        "mechanism": "Docusate sodium is a surfactant (anionic detergent) that increases intestinal permeability and enhances absorption; mineral oil is a lipid laxative/emollient; docusate dramatically increases systemic absorption of mineral oil, causing mineral oil to deposit in mesenteric lymph nodes, liver, spleen, and lungs → lipid granulomas, lipid pneumonitis (aspiration risk), and hepatic lipogranulomas; multiple fatalities from combined use",
+        "management": "ABSOLUTELY CONTRAINDICATED: never combine docusate with mineral oil; if patient requires both laxative and stool softener, use docusate + PEG or docusate + senna; counsel patients and caregivers not to add mineral oil to docusate regimen; if mineral oil is on a medication list with docusate, discontinue mineral oil immediately"
+      },
+      {
+        "drug": "Phenolphthalein (historical stimulant laxative — no longer available) and other fat-soluble laxatives",
+        "severity": "Moderate",
+        "mechanism": "Docusate's surfactant action increases absorption of fat-soluble compounds applied concurrently to intestinal mucosa; this extends to other fat-soluble laxatives, fat-soluble drug vehicles, and any lipophilic compound co-present in the gut lumen; historical concern with phenolphthalein (withdrawn from market due to carcinogenicity) + docusate",
+        "management": "Docusate can be safely combined with bulk-forming laxatives (psyllium, methylcellulose), osmotic laxatives (PEG, lactulose), and stimulant laxatives (senna, bisacodyl); the specific contraindication is with fat-soluble products (mineral oil); no interaction with water-soluble laxatives"
+      },
+      {
+        "drug": "Opioids — docusate as standard stool softener co-prescription",
+        "severity": "Beneficial",
+        "mechanism": "Opioid-induced constipation (OIC) requires both motility-stimulating (senna) and stool-softening (docusate) agents; opioids reduce intestinal secretions AND motility, resulting in hard, dry stools; docusate reduces stool surface tension, allowing water to penetrate and soften stool independently of motility",
+        "management": "Docusate should be co-prescribed with senna when opioids are initiated; standard combination: senna 2 tabs BID + docusate 100 mg BID at opioid start; if OIC persists, escalate senna to 4 tabs BID + docusate + PEG; do not use docusate alone for OIC (motility component inadequately addressed); PAMORA (methylnaltrexone) for refractory OIC despite maximal laxative therapy"
+      },
+      {
+        "drug": "Antacids (calcium carbonate, aluminum hydroxide) — timing interaction",
+        "severity": "Minor",
+        "mechanism": "Docusate's anionic surfactant properties may interact with cationic compounds (calcium, aluminum, magnesium) in antacids, potentially reducing docusate efficacy through ionic complexation; this is primarily a theoretical concern based on surfactant chemistry",
+        "management": "Clinically relevant impact is minimal; no documented case reports of significant docusate-antacid interaction; if administering both, separate by 1–2 hours to be cautious; most patients tolerate concurrent use without issue"
+      },
+      {
+        "drug": "Aspirin and NSAIDs (in context of GI mucosal irritation)",
+        "severity": "Minor",
+        "mechanism": "Docusate's surfactant property increases intestinal epithelial permeability; there is theoretical concern that enhanced permeability could increase NSAID GI mucosal contact and GI irritation; however, clinical evidence for this interaction is not established; docusate is commonly used concurrently with NSAIDs in elderly patients without documented interaction problems",
+        "management": "No specific contraindication between docusate and NSAIDs; standard clinical practice includes both in elderly patients; for patients with NSAID-associated GI irritation, adding a PPI is more appropriate than avoiding docusate; if significant GI symptoms occur on NSAID + docusate, assess NSAID dose, formulation (enteric-coated), and consider PPI addition"
+      },
+      {
+        "drug": "Pregnancy safety — stool softener use",
+        "severity": "No interaction",
+        "mechanism": "Docusate sodium is classified as low risk in pregnancy; minimal systemic absorption; does not stimulate uterine contractions (unlike stimulant laxatives castor oil and bisacodyl in high doses); widely used for pregnancy-associated constipation and post-partum (after episiotomy, C-section) to avoid straining",
+        "management": "Docusate is considered safe in all trimesters of pregnancy and breastfeeding; standard first-line stool softener for pregnancy-associated constipation when dietary fiber and hydration are insufficient; preferred over mineral oil (systemic absorption risk) and stimulant laxatives for chronic constipation management in pregnancy"
       }
     ],
     "pregnancy": "Category C. Widely used in pregnancy for constipation prevention — generally considered safe. No teratogenicity in animal studies. Often first-line laxative in pregnancy.",
@@ -48615,10 +48645,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "No significant drug interactions",
+        "drug": "Oral medications with narrow therapeutic index — timing of co-administration",
+        "severity": "Moderate",
+        "mechanism": "PEG 3350 (Restoralax/MiraLax) is an osmotic laxative that retains water in the intestinal lumen; accelerated GI transit from osmotic effect may reduce absorption time for oral medications requiring prolonged GI contact; co-ingestion with PEG powder-water mixture (particularly high-volume prep) may physically dilute and wash out recently ingested drugs",
+        "management": "Separate oral medications by at least 2 hours from PEG 3350 ingestion; this is particularly important for levothyroxine, bisphosphonates, antiepileptics (phenytoin, valproate), oral anticoagulants, and antiretrovirals that require predictable absorption; for high-volume PEG bowel prep (colonoscopy), avoid all oral medications 4 hours before and during the prep"
+      },
+      {
+        "drug": "Electrolyte-lowering medications (loop diuretics, thiazides, ACE inhibitors in CKD) — polyethylene glycol bowel prep",
+        "severity": "Moderate",
+        "mechanism": "Standard PEG 3350 (MiraLax) is electrolyte-free — it does not cause significant electrolyte shifts at maintenance laxative doses; however, high-volume PEG bowel prep solutions (GoLYTELY, CoLyte: 4L PEG + electrolytes) can cause sodium/fluid loading in patients with heart failure, renal failure, or cirrhosis; concurrent diuretics may cause hyponatremia or electrolyte imbalance",
+        "management": "Standard PEG 3350 (17 g/day): safe electrolyte-wise with diuretics at maintenance doses; for colonoscopy prep with elderly, cardiac, or renal patients, split-dose protocol (2L PM + 2L AM) is preferred over single 4L dose; monitor electrolytes in high-risk patients after bowel prep; consider sodium picosulfate/magnesium citrate as alternative low-volume prep"
+      },
+      {
+        "drug": "Carbamazepine, oxcarbazepine, and other antiepileptics — bowel prep for epilepsy monitoring",
+        "severity": "Moderate",
+        "mechanism": "Colonoscopy bowel prep with PEG in patients on antiepileptics requires careful drug timing; prolonged GI cleansing reduces antiepileptic drug absorption from recently ingested doses; electrolyte imbalances (hyponatremia from large PEG prep volumes) lower seizure threshold; carbamazepine requires consistent plasma levels to prevent seizures",
+        "management": "For colonoscopy in epilepsy patients, coordinate antiepileptic dosing with bowel prep timing; administer morning antiepileptic 4+ hours before starting prep; if usual dose timing falls during prep, administer dose when prep is substantially complete and patient is no longer drinking prep solution; discuss with neurology for refractory epilepsy patients"
+      },
+      {
+        "drug": "Lithium — osmotic prep fluid shifts and lithium toxicity",
+        "severity": "Moderate",
+        "mechanism": "High-volume PEG prep causes significant fluid intake and potential electrolyte shifts; lithium has a narrow therapeutic index and its renal clearance is sodium-dependent; rapid fluid and sodium changes during colonoscopy prep can alter lithium renal handling, potentially increasing lithium levels; dehydration from restricted oral intake before colonoscopy also affects lithium clearance",
+        "management": "For colonoscopy prep in patients on lithium, check lithium level 1–2 days before procedure; maintain adequate sodium intake before NPO period; after procedure, monitor for lithium toxicity symptoms (tremor, nausea, polyuria, confusion); consider checking lithium level 24 hours post-procedure; consult psychiatry for complex management"
+      },
+      {
+        "drug": "Warfarin — bowel prep procedure anticoagulation management",
         "severity": "Minor",
-        "mechanism": "PEG may dilute oral medications if taken together",
-        "management": "Separate other medications by 2 hours"
+        "mechanism": "No direct PEG-warfarin pharmacokinetic interaction; however, colonoscopy procedures require NPO period and bowel prep that disrupts normal warfarin administration timing; concurrent dietary vitamin K changes (fasting, then post-procedure diet) affect INR; biopsy and polypectomy during colonoscopy requires appropriate anticoagulation management",
+        "management": "PEG bowel prep itself does not interact with warfarin; coordinate warfarin with procedure anticoagulation management (INR check pre-procedure; hold warfarin 5 days for high-bleeding-risk procedures per CCS guidelines); administer usual warfarin dose timing around the NPO period; restart warfarin evening of procedure or next day after high-risk polypectomy"
+      },
+      {
+        "drug": "Sodium phosphate bowel prep alternatives — electrolyte safety comparison",
+        "severity": "Beneficial",
+        "mechanism": "PEG 3350 (MiraLax/Restoralax) is the preferred low-risk osmotic laxative for long-term constipation management; sodium phosphate bowel preps (Fleet Phospho-Soda — largely withdrawn in Canada) caused severe acute phosphate nephropathy; PEG is the preferred alternative for patients with renal impairment, elderly, or those on ACE inhibitors/ARBs/diuretics who are high-risk for sodium phosphate nephrotoxicity",
+        "management": "Use PEG-based preps preferentially over sodium phosphate in: patients with CKD, elderly (≥65), patients on ACE inhibitors/ARBs, diuretics, or NSAIDs; Health Canada withdrew oral sodium phosphate bowel preps due to acute phosphate nephropathy deaths; current bowel prep standards favour PEG or sodium picosulfate/magnesium citrate (Pico-Salax) as safer alternatives"
       }
     ],
     "pregnancy": "Category C. Considered safe in pregnancy; commonly used for chronic constipation. Not absorbed systemically. Often preferred over stimulant laxatives in pregnancy.",
@@ -54952,16 +55012,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Docusate",
-        "severity": "Major",
-        "mechanism": "Docusate (surfactant) increases mineral oil absorption — systemic mineral oil deposits",
-        "management": "NEVER combine docusate and mineral oil"
+        "drug": "Docusate (stool softener)",
+        "severity": "Contraindicated",
+        "mechanism": "Docusate is an anionic surfactant that dramatically increases systemic absorption of mineral oil (liquid paraffin) when co-administered; systemic mineral oil deposits in mesenteric lymph nodes, liver, spleen, and pulmonary tissue causing lipogranulomatosis; lipid pneumonitis from inhaled mineral oil is also a documented hazard; multiple fatalities documented",
+        "management": "NEVER combine mineral oil and docusate in any form; if stool softener needed alongside laxative, use docusate + senna or PEG instead; if mineral oil is unavoidably used, use without any concurrent surfactant-type softener; educate caregivers and patients about this combination's dangers"
       },
       {
-        "drug": "Fat-soluble vitamins (A, D, E, K) / warfarin",
+        "drug": "Fat-soluble vitamins A, D, E, K and warfarin",
         "severity": "Major",
-        "mechanism": "Mineral oil impairs fat-soluble vitamin absorption → deficiency and reduced vitamin K → INR may rise",
-        "management": "Supplement fat-soluble vitamins; take separately from oil; monitor INR"
+        "mechanism": "Mineral oil traps fat-soluble vitamins (A, D, E, K) in its lipid phase, reducing their absorption from the GI tract; long-term mineral oil use causes deficiencies of these vitamins; vitamin K malabsorption reduces production of clotting factors II, VII, IX, X, potentially elevating INR in patients on warfarin or causing bleeding in non-anticoagulated patients (hypoprothrombinemia)",
+        "management": "Monitor fat-soluble vitamin levels (especially vitamins D and K) with chronic mineral oil use; supplement vitamin D and consider vitamin K supplementation; monitor INR if patient is on warfarin — INR may rise as vitamin K absorption is impaired; administer fat-soluble vitamins at least 2 hours before or after mineral oil dose; avoid long-term mineral oil use in patients on warfarin — switch to PEG or lactulose"
+      },
+      {
+        "drug": "Oral medications — absorption impairment (timing)",
+        "severity": "Moderate",
+        "mechanism": "Mineral oil traps lipophilic drugs in its lipid phase, reducing their absorption when co-ingested; affects many medications with significant lipophilicity including some antiretrovirals, antifungals, and fat-soluble vitamins; all oral medications should be separated from mineral oil dose",
+        "management": "Administer all oral medications at least 2 hours before or after mineral oil; mineral oil should ideally be given on an empty stomach to minimize contact with dietary fats and medications; use PEG laxative as a safer alternative for patients requiring multiple oral medications to avoid absorption variability"
+      },
+      {
+        "drug": "Aspiration risk — sedatives, opioids, dysphagia conditions",
+        "severity": "Major",
+        "mechanism": "Mineral oil, if aspirated, causes exogenous lipoid pneumonia (lipid pneumonitis) — a granulomatous lung reaction that can cause chronic respiratory symptoms, fever, and lung infiltrates; patients with dysphagia (neurological disease, elderly, stroke), reduced consciousness (sedatives, opioids, alcohol), or recumbent positioning are at high aspiration risk; oral mineral oil is contraindicated in these populations",
+        "management": "CONTRAINDICATED in patients with dysphagia, reflux disease, or those taking medications that cause sedation or reduce GI motility to the point of increasing aspiration risk; use PEG laxative or rectal glycerin suppository as safer alternatives in elderly, post-stroke, neurological disease patients; if mineral oil is used, patient must be upright and alert; small doses only"
+      },
+      {
+        "drug": "Anticoagulants — fat-soluble vitamin K depletion (rectal use context)",
+        "severity": "Moderate",
+        "mechanism": "Rectal mineral oil enemas used for impaction management or bowel prep have lower systemic absorption risk than oral preparations; however, repeated rectal mineral oil use in patients on warfarin can still impair intestinal vitamin K cycling to some degree; the vitamin K depletion mechanism applies regardless of administration route",
+        "management": "Single-use rectal mineral oil enema for fecal impaction is acceptable with warfarin — check INR within 1 week; avoid repeated rectal mineral oil courses in anticoagulated patients; PEG enema (Klean-Prep) or sodium chloride enema is a safer alternative for repeated rectal interventions in warfarin patients"
+      },
+      {
+        "drug": "Pregnancy — mineral oil use caution",
+        "severity": "Moderate",
+        "mechanism": "Chronic mineral oil use in pregnancy depletes fat-soluble vitamin K, increasing risk of hemorrhagic disease of the newborn if used throughout pregnancy; vitamin K deficiency in the mother near term reduces transplacental vitamin K transfer to the neonate; PEG, lactulose, and docusate are safer alternatives for pregnancy-associated constipation",
+        "management": "AVOID mineral oil for chronic constipation in pregnancy; use dietary fiber, hydration, docusate, or low-dose PEG instead; if mineral oil used briefly, supplement vitamin K and monitor coagulation status; administer neonatal vitamin K prophylaxis (IM vitamin K 1 mg at birth) to all neonates regardless, but document maternal mineral oil use on birth plan"
       }
     ],
     "pregnancy": "Avoid. Prolonged use causes fat-soluble vitamin malabsorption → vitamin K deficiency → neonatal hemorrhage risk. Rectal enema: occasional use safer than oral.",
@@ -88228,10 +88312,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Oxidizing agents, dapsone, nitrates, phenytoin, sulfamethoxazole",
+        "drug": "Methemoglobin-inducing agents (dapsone, sulfonamides — sulfamethoxazole/TMP; nitrates — glyceryl trinitrate, isosorbide; nitrites; metoclopramide; phenazopyridine)",
+        "severity": "Major",
+        "mechanism": "Benzocaine undergoes oxidation to form reactive species that oxidize hemoglobin iron from Fe2+ to Fe3+ (methemoglobin), which cannot carry oxygen; concurrent medications that independently induce methemoglobinemia produce additive methemoglobin accumulation; patients with G6PD deficiency are particularly vulnerable; FDA issued a black box warning for benzocaine gel/spray for teething, oral procedures, and endoscopy due to multiple infant deaths and serious adult cases",
+        "management": "AVOID benzocaine (particularly sprays and gels applied to mucous membranes) in patients on dapsone, sulfonamides, nitrates/nitrites, or metoclopramide; use lidocaine 4% cream or tetracaine as alternative topical anesthetics; if methemoglobinemia occurs (cyanosis, SpO2 ~85% pulse oximetry, PaO2 normal on ABG), treat with methylene blue 1–2 mg/kg IV; children and infants are at highest risk"
+      },
+      {
+        "drug": "Antimalarials (chloroquine, hydroxychloroquine, primaquine, quinine)",
+        "severity": "Major",
+        "mechanism": "Antimalarials cause dose-dependent methemoglobin production; primaquine is the most potent methemoglobin inducer among antimalarials; combined with benzocaine gel/spray (common for dental/endoscopy procedures), additive methemoglobin elevation; patients with G6PD deficiency are at extreme risk with this combination",
+        "management": "Do not use benzocaine sprays or oral gels in patients on antimalarials, especially primaquine; inform dentist and endoscopist of antimalarial therapy before any procedure requiring topical anesthesia; lidocaine is the safe alternative; for dental or procedural topical anesthesia in primaquine patients, lidocaine 4% rinse or topical gel is preferred"
+      },
+      {
+        "drug": "G6PD deficiency (pharmacogenomic contraindication — not strictly a drug interaction)",
+        "severity": "Major",
+        "mechanism": "Patients with glucose-6-phosphate dehydrogenase (G6PD) deficiency have reduced capacity to regenerate NADPH, limiting their ability to reduce methemoglobin back to functional hemoglobin; benzocaine-induced methemoglobin is particularly severe and prolonged in G6PD-deficient patients; hemolytic anemia may also occur",
+        "management": "Benzocaine oral sprays and gels are CONTRAINDICATED in patients with G6PD deficiency; screen patients of Mediterranean, African, Southeast Asian descent for G6PD deficiency before elective benzocaine exposure; use lidocaine-based alternative anesthetic; document G6PD status in medical and dental records"
+      },
+      {
+        "drug": "Prilocaine (EMLA cream component) — additive methemoglobin",
+        "severity": "Major",
+        "mechanism": "Prilocaine is metabolized to o-toluidine, which independently oxidizes hemoglobin to methemoglobin; EMLA cream (lidocaine + prilocaine) applied concurrently or sequentially with benzocaine (oral spray for endoscopy + EMLA for IV access) creates substantial cumulative methemoglobin risk; neonates are highly susceptible due to immature cytochrome b5 reductase (enzyme that reduces methemoglobin)",
+        "management": "Do not combine benzocaine with EMLA cream or any prilocaine-containing product; use single topical anesthetic at minimum effective dose; in neonates, avoid all benzocaine and limit EMLA to small surface areas with strict dose limits; methylene blue 1–2 mg/kg IV reverses methemoglobinemia"
+      },
+      {
+        "drug": "Antihypertensive nitrates and nitrites (glyceryl trinitrate, isosorbide mononitrate/dinitrate, amyl nitrite)",
         "severity": "Moderate",
-        "mechanism": "Additive methemoglobinemia risk",
-        "management": "Avoid combination in patients with G6PD deficiency or using large amounts of benzocaine"
+        "mechanism": "Nitrates/nitrites are reduced to nitric oxide but simultaneously generate reactive nitrogen species that oxidize hemoglobin; benzocaine oral spray used during cardiac procedures (TEE, endoscopy) in patients on chronic nitrate therapy for angina creates additive methemoglobin risk; the combination is underrecognized",
+        "management": "Inform cardiology/anesthesia if patient uses nitrates for angina before any procedure requiring benzocaine topical anesthesia; consider withholding as-needed nitrate on procedure day; lidocaine 4% oral rinse is a safe alternative for TEE/endoscopy local anesthesia in patients on nitrates; monitor SpO2 and ABG for methemoglobin if benzocaine used"
+      },
+      {
+        "drug": "Teething gel safety — benzocaine in infants and toddlers",
+        "severity": "Contraindicated",
+        "mechanism": "Health Canada and FDA have both issued warnings against using benzocaine oral gels (Orajel, Anbesol) for infant teething (<2 years); infant hemoglobin has higher proportional HbF that is MORE susceptible to methemoglobin formation; infant cytochrome b5 reductase is immature until ~6 months; multiple infant deaths from methemoglobinemia attributed to teething gel use",
+        "management": "DO NOT use benzocaine teething gels in children under 2 years; use cold teething rings, gentle gum massage, or acetaminophen/ibuprofen for teething discomfort; advise parents purchasing OTC benzocaine products for infants of this absolute contraindication; pharmacist counselling at the point of OTC purchase is critical and required by Health Canada"
       }
     ],
     "pregnancy": "Compatible (topical use, minimal systemic absorption). Short-term topical application to oral mucosa considered safe. Breastfeeding: Compatible — negligible systemic absorption from topical use.",
@@ -90328,7 +90442,44 @@ var DRUGS = {
       "Mycobacterial ocular infections",
       "Hypersensitivity to prednisolone"
     ],
-    "interactions": [],
+    "interactions": [
+      {
+        "drug": "Topical antifungals (voriconazole ophthalmic, natamycin) — fungal keratitis risk",
+        "severity": "Major",
+        "mechanism": "Topical corticosteroids (prednisolone ophthalmic) suppress local ocular immune defenses; when used in bacterial conjunctivitis that is actually fungal or in corneal disease, they worsen fungal keratitis by allowing fungal proliferation without immune control; similarly, using steroid drops in herpetic keratitis (HSV dendrites) without antiviral coverage causes viral proliferation and corneal scarring",
+        "management": "NEVER use topical ophthalmic corticosteroids without diagnosis confirmation; prednisolone ophthalmic is only appropriate for specific inflammatory conditions (post-surgical, uveitis, episcleritis); obtain slit-lamp examination and corneal cultures before steroid use in any corneal disease; for herpetic eye disease, antiviral (acyclovir ophthalmic or oral valacyclovir) must be prescribed before or concurrently with any steroid drops"
+      },
+      {
+        "drug": "CYP3A4 inhibitors (ritonavir, ketoconazole) — steroid systemic absorption",
+        "severity": "Moderate",
+        "mechanism": "Prednisolone ophthalmic has ~20–40% systemic absorption through nasolacrimal drainage and corneal absorption; CYP3A4 inhibitors reduce prednisolone clearance, increasing systemic prednisolone levels; with prolonged ophthalmic steroid use (post-cataract, uveitis treatment over weeks-months), this can contribute to systemic glucocorticoid burden",
+        "management": "Monitor for systemic steroid effects (IOP elevation, blood glucose, BP) with prolonged prednisolone ophthalmic courses in patients on potent CYP3A4 inhibitors; use minimum effective dose and frequency; consider switching to less CYP3A4-dependent ophthalmic steroid (loteprednol) if prolonged therapy needed in patients on ritonavir/ketoconazole"
+      },
+      {
+        "drug": "Intraocular pressure — elevated IOP risk (steroid response)",
+        "severity": "Major",
+        "mechanism": "Topical ophthalmic corticosteroids elevate IOP through trabecular meshwork glycosaminoglycan accumulation reducing aqueous outflow; ~30% of patients are 'steroid responders'; risk highest with prednisolone and dexamethasone (strong steroids); risk lower with loteprednol and fluorometholone; patients with glaucoma are at highest risk",
+        "management": "Check IOP baseline before starting prednisolone ophthalmic; monitor IOP at 2–4 weeks and every 4–6 weeks during therapy; if IOP rises ≥10 mmHg above baseline or exceeds 25 mmHg, taper/stop steroid and add IOP-lowering drops (beta-blocker, prostaglandin analogue); in glaucoma patients, consider softer steroids (loteprednol) or switch to topical NSAID for post-surgical inflammation"
+      },
+      {
+        "drug": "Antiglaucoma medications (timolol, latanoprost, brimonidine, dorzolamide)",
+        "severity": "Moderate",
+        "mechanism": "Patients on antiglaucoma drops who receive prednisolone ophthalmic post-cataract or for uveitis may develop steroid-induced IOP elevation that partially or fully overwhelms the IOP-lowering effect of their existing antiglaucoma regimen; more frequent IOP monitoring required",
+        "management": "Increase IOP monitoring frequency in glaucoma patients receiving ophthalmic steroids; target IOP remains the same as pre-steroid; may need to intensify antiglaucoma therapy (add or increase drops) during steroid course; complete IOP reassessment after prednisolone is discontinued to confirm IOP returns to pre-treatment baseline"
+      },
+      {
+        "drug": "Antiviral ophthalmic drops (ganciclovir gel, trifluridine/acyclovir — herpetic eye disease)",
+        "severity": "Beneficial",
+        "mechanism": "For herpetic stromal keratitis (HSV stromal disease causing corneal scarring), controlled use of prednisolone ophthalmic WITH concurrent antiviral coverage is standard therapy; the steroid reduces the immune-mediated corneal stromal damage while the antiviral prevents viral replication; this combination requires ophthalmology supervision",
+        "management": "CRITICAL: Prednisolone ophthalmic MUST be co-administered with antiviral eye drops (or oral antiviral) for any steroid use in herpetic eye disease; never use ophthalmic steroid in herpetic disease without antiviral cover; management requires ophthalmology expertise — inappropriate steroid use in HSV keratitis can cause corneal perforation; taper steroids slowly under supervision"
+      },
+      {
+        "drug": "Posterior subcapsular cataract risk — cumulative systemic and ophthalmic steroid use",
+        "severity": "Moderate",
+        "mechanism": "Prolonged topical ophthalmic corticosteroids (months to years for chronic uveitis) cause posterior subcapsular cataracts via lens epithelial cell effects; risk correlates with duration and potency of topical steroid; patients on concurrent systemic steroids have additive lens risk; patients with existing cataracts worsen with ophthalmic steroids",
+        "management": "Use ophthalmic prednisolone for minimum effective duration; use softer steroids (loteprednol) for chronic conditions requiring long-term therapy; slit-lamp monitoring for lens changes every 6–12 months in patients on chronic ophthalmic steroids; document cumulative steroid exposure in ophthalmic history; refer for cataract surgery assessment if significant posterior subcapsular lens opacity develops"
+      }
+    ],
     "pregnancy": "Limited systemic absorption from ophthalmic route. Short-term use for uveitis or post-surgical inflammation considered acceptable; risk of systemic fetal effect minimal with topical use. Long-term high-frequency use: more caution.",
     "pk": {
       "absorption": "Prednisolone acetate achieves significant intraocular penetration (aqueous humor). Systemic absorption is low with topical ophthalmic use.",
@@ -90378,7 +90529,44 @@ var DRUGS = {
     "contraindications": [
       "Hypersensitivity to olopatadine"
     ],
-    "interactions": [],
+    "interactions": [
+      {
+        "drug": "MAO inhibitors (phenelzine, tranylcypromine, moclobemide) — systemic absorption concern",
+        "severity": "Moderate",
+        "mechanism": "Olopatadine ophthalmic (0.1%, 0.2%, 0.77%) is a second-generation antihistamine + mast cell stabilizer; systemic absorption through nasolacrimal drainage is ~60%; olopatadine has some weak CNS antihistamine activity at systemic doses; combined with MAOIs, CNS effects (sedation) may be amplified; MAOIs inhibit MAO-mediated metabolism of histamine and some amines",
+        "management": "Use with caution in patients on MAOIs; prefer minimal systemicabsorption technique (nasolacrimal occlusion — press inner corner of eye for 60 seconds after instillation); for most patients on stable MAOI therapy, standard olopatadine ophthalmic 0.2% BID is acceptably safe; consult prescriber for patient-specific guidance"
+      },
+      {
+        "drug": "Other antihistamines (oral cetirizine, loratadine, fexofenadine, hydroxyzine)",
+        "severity": "Minor",
+        "mechanism": "Olopatadine ophthalmic contributes some systemic H1 antihistamine activity (~systemically absorbed ~60%); combining with oral antihistamines provides additive H1 blockade; clinical consequence is usually beneficial for combined allergic rhinoconjunctivitis (nasal + ocular symptoms controlled), with potential for additive CNS sedation from first-generation oral antihistamines",
+        "management": "Olopatadine ophthalmic + non-sedating oral antihistamine (cetirizine, loratadine) is a rational combination for combined allergic rhinoconjunctivitis; no dose adjustment needed; avoid combining with sedating antihistamines (hydroxyzine, diphenhydramine) before driving or operating machinery due to additive sedation; olopatadine 0.77% (Pazeo) once-daily provides better patient compliance than twice-daily 0.1%/0.2%"
+      },
+      {
+        "drug": "Intranasal corticosteroids (fluticasone, mometasone, budesonide nasal) — allergic rhinoconjunctivitis",
+        "severity": "Beneficial",
+        "mechanism": "Olopatadine ophthalmic addresses ocular allergic symptoms; intranasal corticosteroids address nasal allergic symptoms; for allergic rhinoconjunctivitis (simultaneous nasal + ocular symptoms), combination provides complete control of both components; no pharmacokinetic interaction between topical agents",
+        "management": "Combination is standard of care for moderate-severe allergic rhinoconjunctivitis with prominent ocular symptoms; olopatadine provides faster-acting H1 blockade and mast cell stabilization for eye symptoms; nasal steroid treats nasal congestion and post-nasal drip which can also worsen conjunctivitis; administer separately per each product's instructions"
+      },
+      {
+        "drug": "Contact lens wear (preservative interaction — BAK)",
+        "severity": "Minor",
+        "mechanism": "Olopatadine eye drops contain benzalkonium chloride (BAK) preservative; BAK adsorbs to soft contact lenses, potentially causing lens discoloration and ocular surface toxicity from accumulated BAK; patients wearing soft contact lenses should not instill BAK-preserved drops while lenses are in",
+        "management": "Remove soft contact lenses before olopatadine instillation; wait at least 15 minutes before reinserting contacts; for patients who cannot manage this (continuous lens wearers), preservative-free unit-dose alternatives or switching to ketotifen (some brands preservative-free) should be explored; hard (RGP) contact lenses are less susceptible to BAK adsorption"
+      },
+      {
+        "drug": "Naphazoline or other ocular decongestants (vasoconstrictor + antihistamine combination eye drops)",
+        "severity": "Minor",
+        "mechanism": "Olopatadine (antihistamine + mast cell stabilizer) can be combined with vasoconstrictor decongestant eye drops (naphazoline) for rapid relief of both histamine-mediated itch and vascular congestion/redness; however, naphazoline has rebound hyperemia risk with chronic use; olopatadine alone may be sufficient for most allergic conjunctivitis without vasoconstrictor",
+        "management": "Olopatadine alone is adequate for most allergic conjunctivitis; if naphazoline added for acute red eye relief, limit to 3–5 days to prevent rebound; for chronic allergic conjunctivitis management, olopatadine monotherapy (0.77% once daily or 0.1% BID) is preferred without vasoconstrictor"
+      },
+      {
+        "drug": "Cyclosporine 0.05% ophthalmic (Restasis) and other ocular immunomodulators",
+        "severity": "No interaction",
+        "mechanism": "Olopatadine (allergic conjunctivitis) and cyclosporine ophthalmic (dry eye disease) address different ocular conditions; occasionally a patient with dry eye + allergic conjunctivitis requires both; no pharmacokinetic interaction; administration timing is important for each product's efficacy",
+        "management": "Administer cyclosporine ophthalmic 15 minutes before or after olopatadine to allow adequate contact time for each product; cyclosporine requires 15-minute intervals before other drops; document each product's indication; patients with dry eye using olopatadine may develop additional ocular surface irritation — optimize dry eye management to improve olopatadine comfort"
+      }
+    ],
     "pregnancy": "Minimal systemic absorption. Limited human data. Use only if benefit clearly outweighs risk in pregnancy. Safe in breastfeeding at usual doses.",
     "pk": {
       "absorption": "Minimal systemic absorption from topical ophthalmic.",
@@ -90721,7 +90909,42 @@ var DRUGS = {
       "Hypersensitivity to mometasone"
     ],
     "interactions": [
-      "Ketoconazole: may slightly increase systemic mometasone levels"
+      {
+        "drug": "Ritonavir and cobicistat (potent CYP3A4 inhibitors) — Cushing syndrome risk",
+        "severity": "Major",
+        "mechanism": "Mometasone furoate nasal spray has <0.1% systemic bioavailability from nasal route; however, potent CYP3A4 inhibitors (ritonavir 100 mg boosting dose, cobicistat in HIV regimens) dramatically reduce mometasone clearance — even this minimal bioavailability produces clinically significant glucocorticoid excess; multiple case reports of iatrogenic Cushing syndrome with ritonavir + mometasone nasal in HIV patients",
+        "management": "AVOID mometasone nasal spray with ritonavir or cobicistat-boosted HIV regimens; switch to beclomethasone dipropionate aqueous nasal spray (Beconase, Qnasl) which is metabolized by esterases rather than CYP3A4 — minimal interaction with CYP3A4 inhibitors; if already combined, monitor for Cushingoid features (weight gain, buffalo hump, moon face, striae, easy bruising)"
+      },
+      {
+        "drug": "Other potent CYP3A4 inhibitors (systemic ketoconazole, itraconazole, clarithromycin, voriconazole)",
+        "severity": "Moderate",
+        "mechanism": "Potent CYP3A4 inhibitors increase systemic mometasone exposure from nasal formulation; less severe than ritonavir interaction but still clinically relevant with prolonged courses; clarithromycin often prescribed for respiratory infections in patients already using mometasone nasal for rhinosinusitis",
+        "management": "For short antibiotic courses (clarithromycin 5–7 days), mometasone nasal use is generally acceptable with monitoring; for systemic azole antifungal courses (ketoconazole, itraconazole for tinea unguium — 3 months), consider switching to beclomethasone nasal during treatment; azithromycin is a weaker CYP3A4 inhibitor and preferred over clarithromycin in patients on nasal mometasone if both clinically equivalent"
+      },
+      {
+        "drug": "Other intranasal and inhaled corticosteroids — total ICS dose assessment",
+        "severity": "Moderate",
+        "mechanism": "Patients with comorbid allergic rhinitis AND asthma often use BOTH nasal mometasone AND an inhaled corticosteroid; combined mometasone nasal (200 mcg/day) + mometasone inhaled (Asmanex 400 mcg/day) provides 600 mcg/day total mometasone — approaching doses associated with measurable HPA suppression, particularly in children",
+        "management": "Calculate total daily mometasone dose across all routes; in adults, combined nasal + inhaled mometasone at standard doses is generally safe; in children <12 years, consider switching to lowest-potency ICS (beclomethasone) for one route; annual height monitoring recommended for children on any intranasal corticosteroid + ICS combination"
+      },
+      {
+        "drug": "Live attenuated nasal influenza vaccine (FluMist) — timing consideration",
+        "severity": "Minor",
+        "mechanism": "FluMist is a live attenuated intranasal influenza vaccine; mometasone nasal spray creates a local nasal mucosa anti-inflammatory effect; theoretically, mometasone's local immunosuppressive effect could reduce immune response to intranasally administered live vaccine; however, standard-dose intranasal corticosteroids are not considered to cause clinically significant local immunosuppression sufficient to impair FluMist",
+        "management": "NACI does not recommend delaying FluMist based on intranasal corticosteroid use alone; however, if possible, administer FluMist before starting the day's mometasone nasal dose (temporal separation); if patient has significant nasal congestion from rhinitis, consider injected influenza vaccine instead (better absorption than FluMist through congested nasal mucosa); immunocompromised patients should receive injected influenza vaccine regardless of nasal steroid use"
+      },
+      {
+        "drug": "Antifungals (empirical nasal treatment in allergic fungal sinusitis — context-specific)",
+        "severity": "Minor",
+        "mechanism": "In allergic fungal sinusitis (AFRS), high-dose intranasal mometasone (off-label) is used to reduce eosinophilic mucin and edema; concurrent antifungal therapy for AFRS is controversial (itraconazole sometimes used); the CYP3A4 inhibition of itraconazole + mometasone nasal creates additional Cushing risk in this context",
+        "management": "For AFRS managed with high-dose intranasal mometasone + itraconazole, this combination requires specialist (rhinologist/otolaryngologist) supervision; monitor for iatrogenic adrenal suppression; consider mometasone dose reduction when itraconazole is added; beclomethasone may be preferable as the intranasal steroid in this combination"
+      },
+      {
+        "drug": "Vaccines — live attenuated (in context of systemic immunosuppression risk)",
+        "severity": "Minor",
+        "mechanism": "Standard-dose mometasone nasal spray at recommended doses does NOT cause clinically significant systemic immunosuppression and is NOT a contraindication to any vaccine including live vaccines (MMR, varicella, Shingrix); only high-dose mometasone combined with other immunosuppressants warrants vaccine schedule modification",
+        "management": "Patients on mometasone nasal spray can receive all vaccines on standard NACI schedule; no delay or dose modification needed; document nasal corticosteroid use in vaccination records; if high-dose nasal mometasone combined with other systemic immunosuppressants, follow immunocompromised vaccine schedule"
+      }
     ],
     "monitoring": [
       "Nasal symptom scores",
