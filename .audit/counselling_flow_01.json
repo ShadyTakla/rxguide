@@ -1,0 +1,26 @@
+{
+  "Allergic Rhinitis": {
+    "patient_counselling": [
+      "Intranasal corticosteroid (INCS) technique: shake bottle, prime if new/unused for >7 days, blow nose first, tilt head slightly forward, insert nozzle into nostril and aim toward the OUTER ear (away from the nasal septum) — this prevents nosebleeds and septum perforation; breathe in gently while spraying; do NOT sniff hard or blow nose immediately after.",
+      "Use INCS daily, not just when symptoms flare — full benefit takes 1–2 weeks of consistent use. Continue throughout allergy season for best control.",
+      "Common INCS side effects: mild nasal dryness, occasional small nosebleeds, sore throat. If persistent nosebleeds occur, stop briefly and review technique with the pharmacist.",
+      "Oral antihistamine (cetirizine, loratadine, fexofenadine, bilastine) — take once daily, ideally in the morning. Cetirizine can cause mild drowsiness in some — take at bedtime if so. Take fexofenadine on empty stomach or 1 hour before/2 hours after fruit juice (reduces absorption).",
+      "Avoid first-generation antihistamines (diphenhydramine/Benadryl, chlorpheniramine) for routine allergic rhinitis — sedation, anticholinergic effects, and impaired driving/cognition; not recommended per CSACI.",
+      "Allergen avoidance: keep windows closed during high pollen days, shower and change clothes after outdoor exposure, use HEPA filters, dust-mite covers on pillows/mattress, control pet dander exposure, monitor pollen forecast (Weather Network).",
+      "Nasal saline irrigation (NeilMed, Neti pot) once or twice daily reduces symptom burden and may reduce medication need — use distilled, sterile, or previously boiled water only (never tap water — risk of amoebic infection).",
+      "If symptoms persist after 4–6 weeks of correct INCS use, return to the pharmacy — may need step-up to combination therapy (azelastine/fluticasone — Dymista) or referral.",
+      "Red flags: unilateral nasal obstruction, persistent bleeding, new loss of smell, facial pain/pressure with fever (sinusitis), or worsening asthma — see physician.",
+      "Store INCS upright at room temperature; discard 2 months after opening (or per package). Track expiry on label."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm Minor Ailments eligibility: Ontario resident, age ≥2 years for OTC INCS (or per product monograph), typical seasonal/perennial allergic rhinitis presentation; obtain consent, verify ID/OHIP.",
+      "2. Focused history: symptom pattern (seasonal vs perennial), predominant symptom (congestion vs sneezing/itch vs ocular), trigger identification, duration, prior treatment trials and response, atopic comorbidities (asthma, eczema), pregnancy/lactation, current medications.",
+      "3. Red flag screen: unilateral obstruction or bleeding, anosmia, facial pain + fever (sinusitis), worsening asthma, suspected nasal polyps — refer to physician.",
+      "4. Differential diagnosis: rule out vasomotor (non-allergic) rhinitis, rhinitis medicamentosa (decongestant overuse), sinusitis, deviated septum, NSAID-exacerbated respiratory disease.",
+      "5. Therapy selection by predominant symptom: congestion → INCS first-line (fluticasone, mometasone, budesonide); itch/sneeze → 2nd-gen oral antihistamine; combined or moderate-severe → INCS + oral antihistamine, escalate to azelastine/fluticasone (Dymista) if needed.",
+      "6. Counsel on INCS technique (aim away from septum), daily use expectation, 1–2 week onset, allergen avoidance, saline irrigation; demonstrate technique; provide written info.",
+      "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider.",
+      "8. Follow-up: reassess at 2–4 weeks for response; step up if inadequate; refer to allergist for immunotherapy candidacy if severe/refractory or for allergy testing."
+    ]
+  }
+}

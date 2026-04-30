@@ -1,0 +1,96 @@
+{
+  "Pinworms (Enterobiasis)": {
+    "patient_counselling": [
+      "Take pyrantel pamoate as a single oral dose of 11 mg/kg (max 1 g) — chewable tablets or suspension can be taken with or without food; shake suspension well before measuring.",
+      "Repeat the same dose in 2 weeks to kill worms that hatched after the first dose, since the medication does not kill eggs.",
+      "Treat ALL household members at the same time (even if asymptomatic) to prevent reinfection — pinworms spread easily through shared bedding, bathrooms, and surfaces.",
+      "Common side effects are mild and short-lived: nausea, abdominal cramps, diarrhea, headache, or dizziness; take with a small snack if stomach upset occurs.",
+      "Reinforce hygiene for 2 weeks: wash hands with soap and water after toileting and before meals, keep fingernails short, discourage nail-biting and thumb-sucking, and shower in the morning to wash away eggs laid overnight.",
+      "Wash bedding, pyjamas, towels, and underwear in hot water and dry on high heat the morning of treatment; vacuum bedrooms and damp-dust hard surfaces; avoid shaking linens (this disperses eggs into the air).",
+      "Itching around the anus typically improves within a few days; if itching, abdominal pain, or visible worms persist beyond 2 weeks after the second dose, return to the pharmacy for reassessment.",
+      "Red flags: blood in stool, weight loss, persistent fever, severe abdominal pain, vaginal symptoms in girls, or symptoms in pregnancy/breastfeeding — seek physician assessment.",
+      "Store tablets and suspension at room temperature (15–30 °C), protected from light, and keep out of reach of children."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm eligibility under the Ontario Pharmacist Minor Ailments framework: patient (or proxy) ≥ 2 years old, presenting with perianal itching (especially nocturnal) ± visible worms; obtain consent and verify OHIP / identification.",
+      "2. Assessment: characterize symptoms (nocturnal pruritus ani, restless sleep, observed worms via tape test or visual confirmation), duration, household exposures (daycare, school, siblings), prior treatments, allergies, current medications, pregnancy/lactation status.",
+      "3. Red flag / referral screen: age < 2 years, pregnancy or breastfeeding, hepatic impairment, blood in stool, weight loss, vaginal/urinary symptoms, persistent abdominal pain, fever, immunocompromise, or failed prior treatment — refer to physician.",
+      "4. Differential diagnosis: rule out perianal candidiasis, contact/irritant dermatitis, hemorrhoids, anal fissure, eczema, lice, scabies, or other helminth infections.",
+      "5. Therapy selection: first-line pyrantel pamoate 11 mg/kg PO once (max 1 g), repeat in 2 weeks; treat all household contacts simultaneously. Consider mebendazole as alternative where available.",
+      "6. Counselling: dosing, repeat dose at 14 days, household-wide treatment, hygiene measures, laundering, hand and nail care, expected resolution, and side effects.",
+      "7. Documentation: record assessment, diagnosis, prescription, counselling provided, and notify primary care provider per OCP standards; submit MedsCheck/minor ailment claim if applicable.",
+      "8. Follow-up: advise return or telephone follow-up at 2–3 weeks; reassess if symptoms persist or recur after the second dose, and consider referral for parasitology workup."
+    ]
+  },
+  "GERD (Heartburn)": {
+    "patient_counselling": [
+      "Take your PPI (e.g., pantoprazole, omeprazole, esomeprazole, rabeprazole, lansoprazole) once daily, 30–60 minutes BEFORE breakfast on an empty stomach; swallow whole — do not crush or chew enteric-coated tablets/capsules.",
+      "Symptom relief usually begins within 1–4 days, but full benefit can take up to 2–4 weeks; complete the recommended course (typically 4–8 weeks for uncomplicated GERD) even if you feel better sooner.",
+      "Common side effects are usually mild: headache, diarrhea, nausea, abdominal pain, or flatulence; long-term use may be associated with low magnesium, B12, vitamin D/calcium absorption issues, and increased risk of C. difficile or pneumonia — use the lowest effective dose for the shortest duration.",
+      "Antacids (e.g., calcium carbonate, Maalox, Gaviscon) can be used as needed for breakthrough symptoms; H2-blockers (famotidine) can be used at bedtime if nighttime symptoms persist — separate antacids from other medications by 2 hours.",
+      "Lifestyle measures matter: avoid trigger foods (fatty/fried foods, chocolate, peppermint, citrus, tomato, coffee, alcohol, carbonated drinks), eat smaller meals, do not lie down for 3 hours after eating, elevate the head of the bed by 6–8 inches, lose weight if overweight, stop smoking, and avoid tight clothing.",
+      "Plan to step down: after 4–8 weeks of symptom control, taper to the lowest effective dose, on-demand use, or switch to an H2-blocker; abrupt discontinuation can cause rebound acid hypersecretion — taper gradually over 2–4 weeks.",
+      "Drug interactions: PPIs can reduce absorption of clopidogrel (especially omeprazole/esomeprazole — pantoprazole or rabeprazole are preferred), atazanavir, ketoconazole, iron, and may increase levels of methotrexate or digoxin — review all medications with your pharmacist.",
+      "ALARM symptoms requiring urgent assessment: dysphagia (trouble swallowing), odynophagia (painful swallowing), unintentional weight loss, GI bleeding (black/tarry stools, vomiting blood), persistent vomiting, anemia, chest pain radiating to arm/jaw, or symptoms not responding after 4–8 weeks of therapy.",
+      "Store at room temperature (15–25 °C) in the original container, protected from moisture and light."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm eligibility under Ontario minor ailment scope: adult ≥ 18 years (or per provincial guidance) with typical heartburn/regurgitation symptoms occurring ≥ 2 days/week and impacting quality of life; obtain consent, verify ID/OHIP.",
+      "2. Assessment: characterize symptoms (frequency, severity, timing — nocturnal vs postprandial, triggers), duration, dietary/lifestyle factors, prior antacid/H2/PPI trials, comorbidities (cardiac, pregnancy), full medication review including OTCs, NSAIDs, ASA, bisphosphonates.",
+      "3. Red flag / ALARM screen: dysphagia, odynophagia, GI bleed, unexplained weight loss, anemia, persistent vomiting, chest pain with cardiac features, age > 50 with new-onset symptoms, family history of upper GI malignancy — refer to physician.",
+      "4. Differential diagnosis: rule out cardiac chest pain, peptic ulcer disease, H. pylori, eosinophilic esophagitis, functional dyspepsia, biliary disease, pregnancy-related reflux, and medication-induced esophagitis.",
+      "5. Therapy selection: trial lifestyle modification + PPI standard dose once daily 30–60 min before breakfast for 4–8 weeks (e.g., pantoprazole 40 mg, omeprazole 20 mg, esomeprazole 40 mg); choose pantoprazole/rabeprazole if on clopidogrel.",
+      "6. Counselling: PPI timing and administration, lifestyle modifications, expected onset, step-down plan, drug interactions, side effects, and ALARM symptoms.",
+      "7. Documentation: record assessment, diagnosis, prescription, counselling, and notify primary care provider per OCP standards; submit minor ailment claim.",
+      "8. Follow-up: reassess at 4–8 weeks for response — if controlled, initiate step-down (taper, on-demand, or H2-blocker); if partial/no response, refer to physician for endoscopy, H. pylori testing, or specialist consultation."
+    ]
+  },
+  "Eczema (Atopic Dermatitis)": {
+    "patient_counselling": [
+      "Use the 'soak-and-seal' method: take a lukewarm (not hot) bath or shower for 5–10 minutes once daily with a mild fragrance-free cleanser, pat skin gently (leave damp), then apply emollient within 3 minutes to lock in moisture.",
+      "Apply a thick fragrance-free emollient (ointment or cream — e.g., petrolatum, CeraVe, Cetaphil, Glaxal Base, Aveeno) liberally at least twice daily and after every hand wash; ointments are most occlusive, creams are easier for daytime use.",
+      "Use topical corticosteroids (TCS) by potency matched to body site: low potency (hydrocortisone 0.5–1%, desonide 0.05%) for face, eyelids, neck, groin, and skin folds; medium potency (e.g., betamethasone valerate 0.1%, mometasone 0.1%, triamcinolone 0.1%) for trunk and limbs; reserve high potency for thick plaques or palms/soles.",
+      "Apply TCS using the fingertip unit (FTU) — one FTU = amount squeezed from the tip of an adult index finger to the first crease; one FTU covers an area equal to two adult palms. Apply once or twice daily to active eczema for 5–14 days, then taper or use proactively (twice weekly) on recurrent sites.",
+      "Apply TCS FIRST to the inflamed patches, wait 15–30 minutes, then apply emollient over the entire skin (or apply emollient first, wait, then TCS — whichever you'll be most consistent with); never use TCS as a moisturizer.",
+      "Side effects of TCS with appropriate use are minimal; prolonged or high-potency use can cause skin thinning, striae, telangiectasia, perioral dermatitis, or systemic absorption (especially in infants or under occlusion) — follow time limits and potency guidance.",
+      "Avoid triggers: harsh soaps, fragrances, wool, overheating/sweating, dust mites, pet dander, stress, very dry air (use a humidifier in winter), and known food triggers if confirmed; wear soft cotton clothing and use fragrance-free laundry detergent.",
+      "Expected response: itch and redness should improve within 3–7 days of starting TCS; if no improvement after 1–2 weeks, or if skin becomes weepy, crusted, painful, has yellow crusts/pustules (suggests bacterial superinfection) or punched-out vesicles (eczema herpeticum), return for reassessment.",
+      "Red flags: fever, rapidly spreading rash, severe pain, signs of infection, eye involvement, or failure to respond — seek medical care.",
+      "Store topicals at room temperature; do not share tubes, and discard ointments/creams after the expiry date or 6 months after opening if it appears separated or contaminated."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm eligibility under Ontario minor ailment scope for atopic/contact dermatitis: previous physician diagnosis of atopic dermatitis or clear clinical presentation; obtain consent and verify identification.",
+      "2. Assessment: characterize lesions (distribution — flexural in adults, face/extensor in infants; morphology — erythema, papules, vesicles, lichenification), duration, severity, triggers, sleep/QoL impact, prior treatments and response, personal/family atopy history.",
+      "3. Red flag / referral screen: signs of bacterial infection (honey-coloured crusts, pus, fever), eczema herpeticum (clustered punched-out vesicles, painful), eye/eyelid involvement, severe/widespread disease (>20% BSA), failure of OTC therapy, infants < 3 months, or suspected alternate diagnosis — refer to physician/dermatology.",
+      "4. Differential diagnosis: rule out contact dermatitis (irritant vs allergic), seborrheic dermatitis, psoriasis, scabies, tinea, impetigo, and drug eruption.",
+      "5. Therapy selection: bland emollients ≥ twice daily as foundation; TCS potency matched to site and severity (low for face/folds, medium for body, high for thick plaques) once-twice daily for 5–14 days, then taper or proactive twice-weekly application on recurrent sites; consider non-sedating antihistamine if sleep disruption.",
+      "6. Counselling: soak-and-seal technique, fingertip unit dosing, potency and site rules, duration of TCS, trigger avoidance, expected response, and infection signs.",
+      "7. Documentation: record assessment, diagnosis, prescription with potency/quantity/duration, counselling, and notify primary care provider per OCP standards; submit minor ailment claim.",
+      "8. Follow-up: reassess at 1–2 weeks; if improved, taper TCS and continue maintenance emollient ± proactive TCS twice weekly; if no improvement or worsening, refer for assessment of TCI (tacrolimus/pimecrolimus), crisaborole, phototherapy, or systemic therapy."
+    ]
+  },
+  "Smoking Cessation": {
+    "patient_counselling": [
+      "Set a quit date within the next 1–2 weeks; if using varenicline, start it 1 week BEFORE your quit date; if using bupropion, start 1–2 weeks before; NRT is started ON your quit date.",
+      "Varenicline titration: 0.5 mg once daily on days 1–3, 0.5 mg twice daily on days 4–7, then 1 mg twice daily from day 8 to week 12 (extend to 24 weeks for relapse prevention if successful); take with a full glass of water AFTER eating to reduce nausea.",
+      "NRT combination therapy is most effective: a long-acting patch (21 mg/24 h if smoking >10 cigarettes/day, 14 mg if ≤10) for steady baseline coverage, PLUS a short-acting form (gum 2 or 4 mg, lozenge, inhaler, or spray) used as needed for cravings — aim for 8–12 weeks with gradual taper.",
+      "NRT gum/lozenge technique: 'chew and park' the gum until you feel tingling, then rest it between cheek and gum; do not eat or drink (especially acidic drinks like coffee, juice, soft drinks) for 15 minutes before or during use, as this reduces absorption.",
+      "Common side effects: varenicline — nausea (take with food), vivid dreams, insomnia (take evening dose with dinner rather than at bedtime), headache, constipation; NRT — patch site irritation (rotate sites, remove at bedtime if vivid dreams), mouth/throat irritation with gum/lozenge; bupropion — insomnia, dry mouth, lowered seizure threshold.",
+      "EAGLES trial reassurance: varenicline and bupropion did NOT show increased serious neuropsychiatric events compared to placebo or NRT — they are first-line and safe in most patients, including those with stable psychiatric illness; still monitor for new mood changes, agitation, or suicidal thoughts and report immediately.",
+      "Smoking induces CYP1A2 — quitting REDUCES clearance of caffeine (expect more jitters/insomnia; halve your intake), clozapine, olanzapine, theophylline, ropinirole, tizanidine, fluvoxamine, and warfarin (INR may rise) — these may need dose adjustment after stopping; tell prescribers you have quit.",
+      "Behavioural support doubles success: identify triggers, plan coping strategies (delay, deep breathing, distraction, drink water), avoid alcohol early on, enlist social support, and consider Smokers' Helpline (1-877-513-5333) or STOP Program through CAMH.",
+      "Slips are common — one cigarette is not failure; resume your medication and quit plan immediately. Most people require multiple attempts before quitting permanently.",
+      "Store NRT and oral medications at room temperature (15–25 °C), keep patches in sealed pouches until use, and keep all products out of reach of children and pets (nicotine is highly toxic in small doses to both)."
+    ],
+    "therapeutic_flow": [
+      "1. Confirm eligibility for pharmacist-prescribed smoking cessation under Ontario scope (e.g., Smoking Cessation Program / minor ailment): patient willing to quit, ≥ 18 years, obtain consent, verify OHIP/identification, and document baseline tobacco use (pack-years, cigarettes/day, time to first cigarette — Fagerström / Heaviness of Smoking Index).",
+      "2. Assessment: 5 A's (Ask, Advise, Assess, Assist, Arrange); readiness to quit, prior quit attempts and what worked/didn't, comorbidities (cardiovascular, psychiatric, renal, seizure history), pregnancy/breastfeeding, current medications, alcohol/substance use, and patient preferences.",
+      "3. Red flag / contraindication screen: varenicline — caution in severe renal impairment (CrCl < 30 — reduce dose), monitor mood; bupropion — contraindicated in seizure disorders, eating disorders, MAOI use, abrupt alcohol/benzo withdrawal; NRT — caution within 2 weeks of MI, unstable angina, serious arrhythmia; pregnancy — NRT preferred over varenicline/bupropion after non-pharm approaches.",
+      "4. Differential / barrier assessment: identify mood disorders, other substance use, vaping/e-cigarette use, weight concerns, household smokers, and previous medication intolerances that may affect therapy choice.",
+      "5. Therapy selection: first-line options of equal efficacy — varenicline (highest efficacy as monotherapy), combination NRT (patch + short-acting), or bupropion SR; set a quit date; provide written quit plan; refer to behavioural support (Smokers' Helpline, STOP).",
+      "6. Counselling: titration schedule, administration technique, side-effect management, EAGLES safety data, CYP1A2 interactions (caffeine, clozapine, olanzapine, theophylline, warfarin), expected timeline, slip management, and combination NRT use.",
+      "7. Documentation: record assessment, Fagerström score, prescription with titration, counselling, and notify primary care provider; submit Pharmacy Smoking Cessation Program claim per OCP/MOH guidance.",
+      "8. Follow-up: scheduled check-ins at 1 week (post-quit-date), 2, 4, 8, 12, and 24 weeks — assess abstinence (CO monitor if available), tolerability, side effects, mood; extend varenicline to 24 weeks if successful at 12 weeks to prevent relapse; reattempt or switch agents if relapse occurs."
+    ]
+  }
+}
