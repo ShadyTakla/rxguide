@@ -1,0 +1,53 @@
+{
+  "name": "Smoking Cessation",
+  "icon": "🚬",
+  "category": "Prevention",
+  "assessment": {
+    "key_questions": [
+      "Fagerstrom Test for Nicotine Dependence: time to first cigarette after waking (<30 min = high dependence)?",
+      "Number of cigarettes per day (>20/day = high dependence)?",
+      "Previous quit attempts: what helped, what caused relapse?",
+      "Motivation to quit (stages of change: precontemplation, contemplation, preparation, action)?",
+      "Comorbid depression, anxiety, or other mental health conditions?"
+    ],
+    "red_flags": [
+      "Active cardiovascular disease: NRT is SAFE (nicotine without carcinogens is far safer than smoking) — do NOT withhold NRT",
+      "Pregnancy: NRT safe; varenicline/bupropion — discuss risk-benefit",
+      "Severe psychiatric illness: varenicline is safe (BBW was overestimated — EAGLES trial); address psychiatric stability",
+      "Current medications affected by smoking cessation: clozapine/theophylline levels rise dramatically when patient stops smoking (CYP1A2 induction reduced)"
+    ],
+    "ddx": []
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Varenicline (Champix)",
+        "drugs": "Varenicline (Champix): Week 1: 0.5 mg OD × 3 days → 0.5 mg BID × 4 days → Week 2+: 1 mg BID × 12 weeks",
+        "notes": "Most effective single cessation agent (NNT ~7). Partial nicotinic receptor agonist — reduces craving AND blocks reward. Take with food (reduces nausea). Set quit date at Day 8–14. Pharmacist can prescribe under Ontario minor ailments. EAGLES trial: neuropsychiatric risk lower than BBW suggested — safe in stable psychiatric patients.",
+        "preferred_when": "Most patients — most effective; also for patients with prior NRT failure"
+      },
+      {
+        "name": "Combination NRT",
+        "drugs": "Nicotine patch 14–21 mg (based on >/<10 cigarettes/day) + PRN short-acting (gum 2–4 mg, lozenge 2–4 mg, or inhaler)",
+        "notes": "Combination NRT (patch + short-acting) superior to monotherapy. Long-acting patch for baseline; short-acting PRN for breakthrough cravings. Pharmacist can prescribe. Safe in cardiovascular disease.",
+        "preferred_when": "Prefer non-prescription or prior varenicline failure; pregnancy (NRT > pharmacotherapy)"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Bupropion SR (Zyban)",
+        "drugs": "Bupropion SR (Zyban) 150 mg OD × 3 days then 150 mg BID (at least 8h apart) × 7–12 weeks — start 1–2 weeks before quit date",
+        "notes": "Cessation rate 2.0× placebo. Useful if comorbid depression. Avoid in seizure disorder, eating disorders, alcohol withdrawal. Pharmacist can prescribe under Ontario minor ailments."
+      }
+    ],
+    "non_pharm": [
+      "Smokers Helpline: 1-877-513-5333 (free Ontario service — coaches, text support)",
+      "Identify and plan for triggers (coffee, alcohol, stress, after meals)",
+      "Remove all cigarettes, lighters, ashtrays from home/car",
+      "Behavioral strategies: delay, distraction, deep breathing, drink water",
+      "Weight gain (4–5 kg average): counsel proactively — exercise, diet strategies",
+      "Average 8–14 quit attempts before sustained abstinence — every attempt builds skill"
+    ],
+    "refer_when": "Complex psychiatric comorbidity requiring specialist management; pregnancy (specialist input); significant cardiovascular disease (most can be managed by pharmacist with NRT); withdrawal seizure risk (alcohol or BZD co-dependence)"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Cold Sores (Oral Herpes Simplex)",
+  "icon": "💋",
+  "category": "Oral/Dermatology",
+  "assessment": {
+    "key_questions": [
+      "Prodrome: tingling, burning, itching at site before vesicles appear (herpes-specific)?",
+      "Frequency of recurrence?",
+      "Stage: prodrome / vesicle / ulcer / crusting?",
+      "Immunocompromised? (HIV, transplant, high-dose steroids)?",
+      "Location: lip/perioral (cold sore) vs intraoral (aphthous ulcer)?",
+      "Eye symptoms — herpetic keratitis?"
+    ],
+    "red_flags": [
+      "Eye involvement (herpetic keratoconjunctivitis) → urgent ophthalmology (can cause blindness)",
+      "Eczema herpeticum: HSV + eczema → widespread vesicular eruption — emergency",
+      "Immunocompromised patient → disseminated herpes — systemic antiviral urgently",
+      "Herpes encephalitis: headache + fever + confusion after cold sore → emergency"
+    ],
+    "ddx": [
+      "Aphthous ulcers (intraoral, not on vermilion border, no prodrome)",
+      "Angular cheilitis (Candida/nutritional deficiency)",
+      "Contact dermatitis",
+      "Hand-foot-and-mouth disease (Coxsackie)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Topical Acyclovir/Penciclovir",
+        "drugs": "Docosanol 10% cream (Abreva) q2–3h while awake × 5 days (OTC) | Acyclovir 5% cream (Zovirax) 5× daily × 4 days | Penciclovir 1% cream (Denavir) q2h × 4 days",
+        "notes": "Best effect when applied at the PRODROME stage (tingling) before vesicles appear. Docosanol: OTC, blocks viral entry into cells. Acyclovir cream: modestly reduces duration by ~0.5–1 day. All topical agents: modest efficacy — reduce healing time by 1–2 days. Start at first symptom.",
+        "preferred_when": "Mild-moderate cold sore, infrequent recurrence"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Oral Antiviral (moderate-severe or frequent recurrence)",
+        "drugs": "Valacyclovir (Valtrex) 2g BID × 1 day (single-day regimen) | Acyclovir 400 mg TID × 5 days | Famciclovir 1500 mg single dose",
+        "notes": "Oral antivirals significantly more effective than topical — reduce healing by 1–2 days and reduce pain. Valacyclovir 2g BID × 1 day: most convenient (single-day). Best if taken at prodrome. For frequent recurrences (≥6/year): suppressive therapy (valacyclovir 500 mg OD)."
+      }
+    ],
+    "non_pharm": [
+      "Apply at first sign of tingling/prodrome — most effective intervention is early treatment",
+      "Keep lesion clean and dry; avoid picking/squeezing",
+      "Avoid kissing and sharing utensils/lip products during active outbreak",
+      "Sun protection (lip balm with SPF) — UV exposure is a common trigger",
+      "Stress management (stress is major trigger)",
+      "L-lysine 1g OD (supplement) — weak evidence but safe; may reduce recurrence frequency"
+    ],
+    "refer_when": "Eye involvement; immunocompromised; eczema herpeticum; first episode with severe lesions; recurrent cold sores >6 per year (consider suppressive therapy); atypical presentation"
+  }
+}

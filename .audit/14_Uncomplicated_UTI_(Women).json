@@ -1,0 +1,57 @@
+{
+  "name": "Uncomplicated UTI (Women)",
+  "icon": "💧",
+  "category": "Womens Health",
+  "assessment": {
+    "key_questions": [
+      "Classic triad: dysuria + frequency + urgency (without fever/flank pain — lower tract only)?",
+      "Non-pregnant woman?",
+      "No structural urinary abnormality, immunosuppression, or renal disease?",
+      "Previous UTIs and response to nitrofurantoin?",
+      "Vaginal discharge or irritation (may suggest vaginitis vs UTI)?"
+    ],
+    "red_flags": [
+      "Fever ≥38°C, rigors, flank/CVA tenderness, nausea/vomiting → PYELONEPHRITIS — not minor ailment, needs full assessment",
+      "Pregnancy → complicated UTI — refer for culture + appropriate antibiotic",
+      "Male, elderly, immunocompromised, recurrent (>3/year) → complicated UTI — not minor ailment",
+      "Hematuria alone without classic UTI symptoms → other pathology (stones, cancer) — investigate"
+    ],
+    "ddx": [
+      "Pyelonephritis",
+      "Vaginitis/vaginosis (discharge, odour, external dysuria)",
+      "Urethritis/STI (chlamydia — especially young, sexually active)",
+      "Interstitial cystitis (frequency/urgency without bacteriuria)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Nitrofurantoin Macrobid",
+        "drugs": "Nitrofurantoin macrocrystals (Macrobid) 100 mg BID × 5 days WITH food",
+        "notes": "First-line for uncomplicated UTI in Ontario (Bugs & Drugs — low E. coli resistance <10%). Take with food — improves absorption and reduces GI side effects. Only for lower tract UTI — NOT for pyelonephritis (inadequate tissue penetration). Avoid if eGFR <30. Urine may turn brown/yellow — harmless.",
+        "preferred_when": "First-line uncomplicated UTI, non-pregnant women, eGFR ≥30"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "TMP-SMX DS",
+        "drugs": "TMP-SMX DS (160/800 mg) BID × 3 days",
+        "notes": "Use only if local E. coli resistance <20% (check Bugs & Drugs Ontario). Sulfonamide allergy contraindication. Drug interactions: hyperkalemia with ACEi/ARBs (monitor K+), INR elevation with warfarin."
+      },
+      {
+        "name": "Fosfomycin",
+        "drugs": "Fosfomycin 3g granules single oral dose (dissolve in water)",
+        "notes": "Single-dose — excellent adherence. Effective for uncomplicated UTI. ODB coverage limited. Take on empty stomach."
+      }
+    ],
+    "non_pharm": [
+      "Increase fluid intake (dilute urine reduces bacterial concentration)",
+      "Void after intercourse (reduces post-coital UTI)",
+      "Avoid spermicides and diaphragm (alter vaginal flora)",
+      "Phenazopyridine (pyridium) 200 mg TID × 2 days: bladder analgesic — relieves burning/urgency while antibiotics work; turns urine orange (warn patient); NOT an antibiotic",
+      "D-mannose 2g OD: prevention of recurrence",
+      "Cranberry (PAC 36 mg/day): modest prevention evidence"
+    ],
+    "refer_when": "Fever, flank pain, or systemically unwell (pyelonephritis); pregnancy; male patient; recurrent UTIs (≥3/year); no response to 48h antibiotics; hematuria without classic UTI symptoms; suspected STI"
+  }
+}

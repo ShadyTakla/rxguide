@@ -1,0 +1,43 @@
+{
+  "name": "Pinworms (Enterobiasis)",
+  "icon": "🪱",
+  "category": "Infectious",
+  "assessment": {
+    "key_questions": [
+      "Perianal itch (especially nocturnal — hallmark: female worms lay eggs at night)?",
+      "Child in daycare/school (highly transmissible in children)?",
+      "Household contacts symptomatic?",
+      "Scotch tape test: apply sticky tape to perianal area at night, examine microscopically for eggs"
+    ],
+    "red_flags": [
+      "Significant weight loss, diarrhea, or malabsorption → other parasitic infection",
+      "Abdominal pain + eosinophilia → other helminth",
+      "Pelvic symptoms in girls → pinworm migration to vagina/uterus (requires gynaecology)"
+    ],
+    "ddx": [
+      "Contact dermatitis (perianal)",
+      "Psoriasis (perianal — well-demarcated red plaque)",
+      "Threadworm",
+      "Anal fissure"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Mebendazole or Pyrantel Pamoate",
+        "drugs": "Pyrantel pamoate (Combantrin) 11 mg/kg single dose (max 1g) — repeat in 2 weeks | Mebendazole 100 mg single dose — repeat in 2 weeks",
+        "notes": "Single dose is effective — repeat in 2 weeks to kill worms hatched from eggs after first dose. TREAT THE ENTIRE HOUSEHOLD simultaneously (re-infection cycle). Pyrantel pamoate: OTC in Canada. Mebendazole: prescription. Both highly effective. Safe in children >1 year.",
+        "preferred_when": "All household contacts treated simultaneously"
+      }
+    ],
+    "second_line": [],
+    "non_pharm": [
+      "Treat ALL household members simultaneously — key to eradication",
+      "Wash all bedding, towels, underwear in hot water (day of treatment)",
+      "Trim fingernails short (eggs under nails are main transmission route)",
+      "Strict hand-washing especially after toilet use and before meals",
+      "Morning shower — removes eggs deposited overnight in perianal area"
+    ],
+    "refer_when": "Treatment failure after 2 courses; immunocompromised; ectopic infection (vaginal, peritoneal)"
+  }
+}

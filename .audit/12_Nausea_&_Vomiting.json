@@ -1,0 +1,69 @@
+{
+  "name": "Nausea & Vomiting",
+  "icon": "🤢",
+  "category": "GI",
+  "assessment": {
+    "key_questions": [
+      "Onset and duration? Associated with food/timing?",
+      "Possible causes: pregnancy (first trimester), viral gastroenteritis, medications, motion sickness, GERD, post-op?",
+      "Pregnancy test in women of reproductive age — mandatory",
+      "Signs of dehydration: dry mouth, decreased urine output, dizziness?",
+      "Recent food exposures (food poisoning), sick contacts (gastroenteritis)?"
+    ],
+    "red_flags": [
+      "Severe abdominal pain → appendicitis, bowel obstruction, pancreatitis — ER",
+      "Hematemesis (vomiting blood) or coffee-ground emesis → upper GI bleed — ER",
+      "Projectile vomiting (no nausea before) → central cause (raised ICP)",
+      "Signs of severe dehydration or electrolyte abnormality",
+      "Jaundice + vomiting → hepatitis, cholecystitis",
+      "Persistent vomiting >24–48h → dehydration risk"
+    ],
+    "ddx": [
+      "Viral gastroenteritis",
+      "Pregnancy",
+      "Medications (opioids, NSAIDs, antibiotics, chemo)",
+      "Food poisoning",
+      "Vestibular/motion sickness",
+      "GERD",
+      "Migraine",
+      "Anxiety"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Dimenhydrinate (Gravol)",
+        "drugs": "Dimenhydrinate (Gravol) 25–50 mg q4–6h PRN | Dimenhydrinate 25–50 mg PO/IM | Gravol Ginger (natural health product)",
+        "notes": "Dimenhydrinate: H1 antihistamine + anticholinergic — motion sickness and general nausea. OTC. Sedating (use with caution in elderly — falls; Beers Criteria). Avoid in BPH, glaucoma. Pregnancy: use cautiously (first trimester — prefer ginger or pyridoxine). Gravol Ginger: natural product, safe in pregnancy.",
+        "preferred_when": "Motion sickness, mild-moderate nausea from various causes, short-term use"
+      },
+      {
+        "name": "Diclectin (Pregnancy-specific)",
+        "drugs": "Doxylamine 10 mg + pyridoxine (B6) 10 mg (Diclectin) — 2 tabs at bedtime, can increase to QID",
+        "notes": "Health Canada approved for nausea/vomiting of pregnancy. First-line pharmacotherapy in pregnancy. Take 30 min before bed on empty stomach. Delayed-release formulation. Safe (extensive safety data).",
+        "preferred_when": "Nausea and vomiting of pregnancy (NVP)"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Metoclopramide",
+        "drugs": "Metoclopramide (Maxeran) 5–10 mg q6–8h PRN (max 30 mg/day)",
+        "notes": "Dopamine antagonist + prokinetic. Effective for gastroparesis, chemotherapy nausea, post-op nausea. Avoid long-term (tardive dyskinesia risk). EPS risk — use short-term only."
+      },
+      {
+        "name": "Ondansetron",
+        "drugs": "Ondansetron (Zofran) 4–8 mg q4–8h",
+        "notes": "5-HT3 antagonist — highly effective for chemotherapy and post-op nausea. Increasing use for NVP (modest safety data, generally considered low risk after first trimester). QTc prolongation concern at high doses."
+      }
+    ],
+    "non_pharm": [
+      "Oral rehydration: clear fluids in small sips (Pedialyte, diluted sports drink, clear broth)",
+      "BRAT diet (bland, easy to digest) once tolerating fluids: Bananas, Rice, Applesauce, Toast",
+      "Ginger (tea, ginger ale, ginger candies): evidence-based for nausea in pregnancy and chemotherapy",
+      "Small frequent meals; avoid spicy/fatty foods",
+      "P6 (Neiguan) acupressure wristbands: modest evidence for motion sickness and pregnancy nausea",
+      "Fresh air, avoid strong smells, stay hydrated"
+    ],
+    "refer_when": "Severe dehydration (unable to keep any fluids down); hematemesis; severe abdominal pain; pregnancy hyperemesis gravidarum (weight loss >5%, dehydration — requires IV fluids); nausea >48–72h without improvement"
+  }
+}

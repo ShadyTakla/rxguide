@@ -1,0 +1,59 @@
+{
+  "name": "Eczema / Contact Dermatitis",
+  "icon": "🔴",
+  "category": "Dermatology",
+  "assessment": {
+    "key_questions": [
+      "Atopic dermatitis (personal/family history of atopy, chronic/relapsing, typical distribution)?",
+      "Allergic contact dermatitis (ACD): exposure to latex, nickel, fragrances, preservatives, hair dye?",
+      "Irritant contact dermatitis (ICD): repeated exposure to water, detergents, solvents (most common — healthcare workers)?",
+      "Distribution matches exposure (hands for ICD/ACD; generalized for atopic)?",
+      "Current moisturizer use (type, frequency)?"
+    ],
+    "red_flags": [
+      "Secondary bacterial infection (weeping/yellow crusting, fever) → S. aureus",
+      "Eczema herpeticum (widespread punched-out vesicles in eczema) → HSV emergency",
+      "Generalized erythroderma (>90% BSA) → systemic treatment needed",
+      "Moderate-severe uncontrolled eczema → consider biologic (dupilumab) — specialist referral"
+    ],
+    "ddx": [
+      "Psoriasis (well-demarcated, extensor, silvery scale)",
+      "Tinea (active leading edge, KOH positive)",
+      "Scabies (burrows, nocturnal itch, webspaces)",
+      "Seborrheic dermatitis (scalp, nasolabial folds, greasy scale)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Emollient (Cornerstone)",
+        "drugs": "Cetaphil cream | CeraVe moisturizing cream | Eucerin | Aveeno — apply immediately after bathing ('soak and seal')",
+        "notes": "Liberal emollient use is THE cornerstone of eczema management. Apply to entire body immediately after bathing (within 3 minutes) to seal in moisture. Use unscented, fragrance-free products. Apply liberally QID. More is better. Can reduce topical steroid requirement significantly.",
+        "preferred_when": "All patients with eczema — baseline maintenance"
+      },
+      {
+        "name": "Topical Corticosteroid",
+        "drugs": "Hydrocortisone 1% (face/folds/children) | Betamethasone valerate 0.1% (trunk/limbs) | Betamethasone dipropionate 0.05% (palms/soles/thick skin)",
+        "notes": "Match potency to site: LOW (hydrocortisone 1%) for face, eyelids, groin, axilla; MODERATE (betamethasone valerate 0.1%) for trunk and extremities. Apply fingertip unit amount to affected areas BID during flare. Once-weekly proactive therapy reduces relapse. Do not use high-potency on face/skin folds.",
+        "preferred_when": "Acute flares — combine with emollient"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Topical Calcineurin Inhibitor",
+        "drugs": "Tacrolimus 0.03%/0.1% ointment (Protopic) BID | Pimecrolimus 1% cream (Elidel) BID",
+        "notes": "Non-steroidal for face, eyelids, skin folds (areas where TCS causes atrophy). Burning/stinging on application (transient, improves). Useful for maintenance in sensitive areas. FDA BBW (theoretical malignancy — reassure patients with decades of safety data showing no increased risk)."
+      }
+    ],
+    "non_pharm": [
+      "Identify and avoid triggers: soaps, detergents, fragrances, wool, extreme temperatures, stress, sweating",
+      "Lukewarm (not hot) bath/shower — brief; pat dry (do NOT rub)",
+      "Fragrance-free laundry detergent",
+      "Cotton clothing (avoid synthetic/wool)",
+      "Bleach bath 2× weekly (1/2 cup bleach in full tub) — reduces S. aureus colonization",
+      "Keep nails trimmed short (reduces scratch damage)",
+      "Humidity control (humidifier in winter)"
+    ],
+    "refer_when": "Moderate-severe eczema not controlled with TCS; suspected ACD (patch testing needed); secondary infection; consideration for dupilumab (Dupixent); eczema herpeticum"
+  }
+}

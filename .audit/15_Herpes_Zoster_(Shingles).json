@@ -1,0 +1,50 @@
+{
+  "name": "Herpes Zoster (Shingles)",
+  "icon": "⚡",
+  "category": "Infectious",
+  "assessment": {
+    "key_questions": [
+      "Classic prodrome: dermatomal pain/burning/tingling for 2–3 days before rash?",
+      "Rash: unilateral, dermatomal vesicular rash (does NOT cross midline)?",
+      "Age ≥50 or immunocompromised (highest risk for complications)?",
+      "Ophthalmic (forehead/eye) or otic (ear) distribution → urgent referral?",
+      "Time from rash onset: antivirals most effective within 72h"
+    ],
+    "red_flags": [
+      "Ophthalmic zoster (V1 — forehead/nose/eye rash) → same-day ophthalmology — corneal scarring risk",
+      "Ramsay Hunt syndrome: ear pain + vesicles in ear canal + facial palsy → urgent ENT/neurology",
+      "Disseminated zoster (>3 dermatomes or >20 lesions outside primary dermatome) → immunocompromised — antiviral IV urgently",
+      "Bacterial superinfection of vesicles (purulent, spreading cellulitis)"
+    ],
+    "ddx": [
+      "HSV type 2 (genital, sacral dermatome)",
+      "Impetigo (superficial, non-dermatomal)",
+      "Contact dermatitis",
+      "Zosteriform HSV (HSV-1 in dermatomal pattern — requires PCR to distinguish)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Oral Antiviral (within 72h of rash onset)",
+        "drugs": "Valacyclovir (Valtrex) 1000 mg TID × 7 days | Famciclovir 500 mg TID × 7 days | Acyclovir 800 mg 5× daily × 7 days",
+        "notes": "Most effective when started within 72h of rash onset (can still treat if new vesicles forming after 72h). Reduces severity, duration, and risk of postherpetic neuralgia (PHN). Valacyclovir preferred (BID absorption, high bioavailability, less frequent dosing than acyclovir). Dose reduce for eGFR <50.",
+        "preferred_when": "All patients ≥50, all immunocompromised, all with ophthalmic involvement — start within 72h"
+      },
+      {
+        "name": "Pain Management",
+        "drugs": "Gabapentin 300 mg TID (neuropathic pain) | Amitriptyline 10–25 mg at bedtime | NSAIDs / acetaminophen for acute pain",
+        "notes": "Postherpetic neuralgia (PHN) is the most important complication — burning, shooting pain persisting months after rash resolves. Gabapentin or amitriptyline started acutely may reduce PHN risk. Capsaicin 8% patch: for established PHN — specialist-applied."
+      }
+    ],
+    "second_line": [],
+    "non_pharm": [
+      "Cool compresses (calamine lotion) to vesicles — reduces itch and pain",
+      "Keep rash clean and dry; loose clothing",
+      "Contagious: avoid contact with non-immune (especially pregnant women and newborns) until vesicles fully crusted",
+      "Shingrix vaccine (recombinant zoster vaccine): 2 doses 2–6 months apart — 97% effective; recommended for all adults ≥50 regardless of prior shingles or Zostavax",
+      "Adequate sleep and stress management"
+    ],
+    "refer_when": "Ophthalmic distribution (same-day ophthalmology); Ramsay Hunt syndrome; disseminated/immunocompromised; rash >72h old in high-risk patients (can still benefit if new vesicles); bacterial superinfection; PHN requiring complex pain management"
+  }
+}
