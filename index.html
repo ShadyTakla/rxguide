@@ -24518,7 +24518,44 @@ var DRUGS = {
     "contraindications": [
       "Hypersensitivity to evolocumab or excipients"
     ],
-    "interactions": [],
+    "interactions": [
+      {
+        "drug": "Statins (atorvastatin, rosuvastatin, simvastatin)",
+        "severity": "Beneficial",
+        "mechanism": "PCSK9 inhibition (evolocumab) and HMG-CoA reductase inhibition (statins) are complementary mechanisms for LDL-C reduction; statins upregulate PCSK9 expression as a compensatory response, which evolocumab then blocks — synergistic ~50–60% additional LDL reduction on top of maximal statin therapy",
+        "management": "Combination is the standard of care for very high-risk CVHD patients; evolocumab indicated when LDL ≥1.8 mmol/L on maximally tolerated statin + ezetimibe (Ontario/CADTH criteria); no PK interaction — doses unchanged"
+      },
+      {
+        "drug": "Ezetimibe",
+        "severity": "Beneficial",
+        "mechanism": "Ezetimibe inhibits NPC1L1-mediated intestinal cholesterol absorption; evolocumab reduces hepatic PCSK9-mediated LDL receptor degradation; complementary non-overlapping mechanisms provide additive LDL-C lowering (~25% additional reduction); triple therapy (statin + ezetimibe + PCSK9i) achieves LDL <1.0 mmol/L in most patients",
+        "management": "Triple therapy (statin + ezetimibe + evolocumab) is recommended before initiating inclisiran; assess ODB/provincial coverage criteria; ezetimibe 10 mg/day should be tried before evolocumab eligibility in most provincial formularies"
+      },
+      {
+        "drug": "Warfarin and anticoagulants",
+        "severity": "Minor",
+        "mechanism": "No direct pharmacokinetic interaction identified; evolocumab is a monoclonal antibody not metabolized by CYP enzymes; lipid-lowering itself may theoretically affect warfarin binding to lipoproteins (very minor effect not clinically significant)",
+        "management": "No dose adjustment required; continue routine INR monitoring as usual in patients on warfarin"
+      },
+      {
+        "drug": "Cyclosporine (post-transplant hyperlipidemia)",
+        "severity": "Minor",
+        "mechanism": "Cyclosporine causes significant post-transplant hyperlipidemia; statin-cyclosporine interactions (CYP3A4/OATP1B1) limit statin dosing in transplant patients; evolocumab as a monoclonal antibody has no CYP-mediated interaction with cyclosporine — enables PCSK9 inhibition without statin-CsA interaction risk",
+        "management": "Evolocumab can be used in transplant patients on cyclosporine without dose adjustment; may allow significant LDL reduction in transplant patients who cannot tolerate high-dose statins due to cyclosporine interaction"
+      },
+      {
+        "drug": "Fibrates (fenofibrate, gemfibrozil) and niacin",
+        "severity": "Minor",
+        "mechanism": "Fibrates primarily reduce TG and modestly raise HDL; combined with evolocumab (primarily LDL-C effect), no pharmacokinetic interaction; additive cardiovascular risk reduction through complementary lipid effects; no increased myopathy risk (unlike fibrate-statin combinations)",
+        "management": "Combination is safe and can be used when both TG and LDL targets need to be addressed; evolocumab does not have the myopathy interaction risk that fibrates + statins carry"
+      },
+      {
+        "drug": "Other PCSK9 inhibitors (alirocumab) or inclisiran",
+        "severity": "Contraindicated",
+        "mechanism": "Using two PCSK9 inhibitors simultaneously (evolocumab + alirocumab, or evolocumab + inclisiran) provides no additional LDL-C benefit beyond a single agent and doubles injection site reaction risk and cost without clinical gain; no studied benefit and contradicts formulary coverage criteria",
+        "management": "Use ONE PCSK9 inhibitor or inclisiran at a time; if switching agents, no washout period required; document rationale for switch (tolerability vs. efficacy vs. formulary); ODB covers evolocumab or alirocumab, not both"
+      }
+    ],
     "pregnancy": "Insufficient data — avoid; LDL lowering not urgently needed during pregnancy.",
     "pk": {
       "absorption": "SC: 72% bioavailability",
@@ -59858,16 +59895,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Sun exposure / UV light therapy",
-        "severity": "Moderate",
-        "mechanism": "Theoretical increased skin cancer risk",
-        "management": "Sun protection (SPF 30+, protective clothing); avoid concurrent phototherapy"
+        "drug": "UV radiation / phototherapy (UVB, PUVA)",
+        "severity": "Major",
+        "mechanism": "Pimecrolimus inhibits calcineurin/T-cell activation and impairs local immune surveillance in treated skin; FDA and Health Canada black box warning for theoretical increased malignancy risk based on animal data and post-marketing case reports; concurrent phototherapy (UV exposure) + calcineurin inhibitor may compound this theoretical risk; also UV can cause inflammation that worsens atopic dermatitis despite treatment",
+        "management": "AVOID concurrent phototherapy and pimecrolimus; minimize sun exposure on treated areas — use SPF 30+ sunscreen and protective clothing daily; advise patients of the black box warning and obtain informed consent; pimecrolimus is preferred for facial/periocular eczema over phototherapy which is impractical for these areas"
       },
       {
-        "drug": "Strong CYP3A4 inhibitors (systemic — ketoconazole, ritonavir)",
+        "drug": "Systemic immunosuppressants (cyclosporine, azathioprine, mycophenolate, prednisone)",
+        "severity": "Major",
+        "mechanism": "Pimecrolimus is a topical calcineurin inhibitor with low but non-zero systemic absorption; combined immunosuppression with systemic agents (for severe AD or transplant patients) may compound overall immunosuppression — increased infection risk (especially cutaneous viral infections: molluscum contagiosum, eczema herpeticum) and theoretical malignancy risk",
+        "management": "AVOID pimecrolimus in patients on systemic immunosuppressants; if AD is severe enough to require systemic immunosuppression, dupilumab or systemic agents should be used instead; in transplant patients, use only after careful risk-benefit discussion with dermatology and transplant team"
+      },
+      {
+        "drug": "Strong CYP3A4 inhibitors — ketoconazole (systemic), itraconazole, ritonavir, clarithromycin",
         "severity": "Minor",
-        "mechanism": "Theoretical increased systemic levels (very low absorption — minimal clinical impact)",
-        "management": "Counsel; minimal effect"
+        "mechanism": "Pimecrolimus has very low systemic absorption (blood levels usually undetectable); CYP3A4 inhibitors could theoretically increase the minimal systemic exposure; clinical relevance is negligible for standard use on small areas, but potentially relevant in children with extensive skin involvement or under occlusion",
+        "management": "No dose adjustment typically required; monitor for increased local side effects (burning, pruritus) or rare systemic effects; if pimecrolimus used on extensive body surface area in children on systemic CYP3A4 inhibitors, consider minimizing application area and frequency"
+      },
+      {
+        "drug": "Tacrolimus topical (Protopic) — same drug class",
+        "severity": "Minor",
+        "mechanism": "Both pimecrolimus (Elidel) and tacrolimus (Protopic) are topical calcineurin inhibitors with identical mechanism; using both simultaneously on the same skin area provides no additional benefit and doubles the black box warning concerns; tacrolimus is more potent (0.03–0.1%) vs. pimecrolimus (1%)",
+        "management": "Use only ONE topical calcineurin inhibitor at a time; tacrolimus 0.1% is more effective for moderate-severe AD in adults; pimecrolimus preferred for mild disease and sensitive areas (face, neck, genitalia) due to lower potency and comparable safety profile; do not combine on the same area"
+      },
+      {
+        "drug": "Live attenuated vaccines (during systemic immunosuppression — context-dependent)",
+        "severity": "Moderate",
+        "mechanism": "Pimecrolimus topical alone does not cause systemic immunosuppression at standard use; however, if patient is systemically immunosuppressed (see above interaction), live vaccine administration is contraindicated; standard atopic dermatitis on pimecrolimus alone does NOT contraindicate live vaccines",
+        "management": "Patients on pimecrolimus ALONE (no systemic immunosuppression) can receive live vaccines normally; patients on pimecrolimus PLUS systemic immunosuppressants follow the vaccination contraindications of the systemic drug; document immunosuppression status at each vaccination visit"
+      },
+      {
+        "drug": "Emollients, moisturizers, and barrier creams",
+        "severity": "Beneficial",
+        "mechanism": "Emollients restore skin barrier function in atopic dermatitis, reducing the need for pimecrolimus and extending remission periods; applying emollients separately from pimecrolimus avoids potential dilution of the active drug; emollient-first then pimecrolimus-after ('wet emollient technique') or sequential application is recommended",
+        "management": "Apply emollient generously first, allow to absorb, then apply pimecrolimus to actively inflamed areas only; avoid applying pimecrolimus to unaffected skin; emollients should be used daily even when pimecrolimus is not needed (proactive barrier maintenance); avoid thick occluding emollients over pimecrolimus (increases absorption)"
       }
     ],
     "pregnancy": "Limited data. Topical use with low systemic absorption likely low risk; weigh benefits and avoid extensive application. Compatible with breastfeeding (do NOT apply to nipples).",
@@ -60384,16 +60445,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Anionic toothpastes (sodium lauryl sulfate)",
-        "severity": "Minor",
-        "mechanism": "Binds chlorhexidine — reduces efficacy",
-        "management": "Use chlorhexidine ≥30 min apart from toothpaste; rinse mouth before chlorhexidine"
+        "drug": "Sodium lauryl sulfate (SLS) toothpastes and oral hygiene products",
+        "severity": "Moderate",
+        "mechanism": "SLS is an anionic detergent that forms insoluble precipitates with chlorhexidine (a cationic molecule), significantly reducing the antimicrobial efficacy of chlorhexidine oral rinse; the interaction also causes yellow-brown staining of teeth and tongue when products are used close together",
+        "management": "Use chlorhexidine mouthwash at least 30 minutes after brushing with SLS-containing toothpaste; rinse mouth with water before chlorhexidine; SLS-free toothpastes (some Sensodyne, Colgate ProRelief) avoid this interaction; advise patients not to eat, drink, or rinse with water for 30 minutes after chlorhexidine"
       },
       {
-        "drug": "Topical antibiotics",
+        "drug": "Topical antibiotics (fusidic acid, mupirocin, neomycin, bacitracin)",
         "severity": "Minor",
-        "mechanism": "Possible neutralization",
-        "management": "Separate applications"
+        "mechanism": "Chlorhexidine is a broad-spectrum antiseptic that can bind to bacterial cell membranes and alter antibiotic penetration; anionic antibiotics (some formulations) may be partially inactivated by cationic chlorhexidine when applied simultaneously; however, evidence for clinically significant antagonism is primarily in vitro",
+        "management": "Separate application times when using both products on the same wound; allow chlorhexidine to fully dry before applying topical antibiotic; for wound care, chlorhexidine-based cleansing followed by topical antibiotic is common practice — minimal clinical concern at standard use"
+      },
+      {
+        "drug": "Iodine-based products (povidone-iodine / Betadine)",
+        "severity": "Major",
+        "mechanism": "Chlorhexidine and povidone-iodine are physically and chemically incompatible — mixing inactivates both antiseptics and may form cytotoxic compounds; both are commonly used in wound care and surgical prep, creating risk of inadvertent sequential exposure",
+        "management": "Do NOT use chlorhexidine and povidone-iodine on the same wound or body area simultaneously; if switching antiseptic agents, rinse/dry the area completely before applying the other; most hospital protocols standardize on ONE antiseptic for skin prep (chlorhexidine is now preferred for most surgical sites per Health Canada/surgical society guidelines)"
+      },
+      {
+        "drug": "Ototoxicity risk — instillation into the ear (perforated eardrum)",
+        "severity": "Major",
+        "mechanism": "Chlorhexidine is directly ototoxic to cochlear hair cells when it reaches the middle/inner ear; instillation into the external ear canal is CONTRAINDICATED if tympanic membrane perforation is present or suspected; chlorhexidine-containing wound irrigants and ear drops should never be used in the ear",
+        "management": "CONTRAINDICATED for ear canal use; ensure chlorhexidine-based wound irrigants are not inadvertently used to irrigate or clean the ear; for ear canal cleaning/irrigation, use saline or acetic acid solutions only; always assess tympanic membrane integrity before any ear instillation"
+      },
+      {
+        "drug": "Alcohol-based hand rubs and skin preparations (compatibility / application context)",
+        "severity": "Minor",
+        "mechanism": "Chlorhexidine and alcohol are compatible antiseptics; ChloraPrep (chlorhexidine gluconate 2% in isopropyl alcohol 70%) is the gold-standard pre-operative skin preparation in Canada; however, pooling of alcohol-chlorhexidine solution under surgical drapes has caused patient burns due to fire or skin irritation",
+        "management": "Allow ChloraPrep to fully dry (minimum 3 minutes) before draping; do not allow solution to pool in body cavities or under drapes; documentation of drying time required in surgical safety checklists per CPSI (Canadian Patient Safety Institute) guidelines"
+      },
+      {
+        "drug": "Corticosteroid-antibiotic combination products (for concurrent skin conditions)",
+        "severity": "Minor",
+        "mechanism": "Corticosteroids impair local immune defense and can increase susceptibility to infection in skin treated with topical steroids; chlorhexidine provides antiseptic coverage for secondary bacterial colonization in inflamed skin (e.g., atopic dermatitis, infected eczema); no direct pharmacokinetic interaction between chlorhexidine and corticosteroids",
+        "management": "Chlorhexidine wash/body wash is often used as adjunct to topical corticosteroids for atopic dermatitis with Staphylococcus aureus colonization; chlorhexidine 0.005% dilute bath or wash reduces bacterial burden and may reduce the frequency of steroid flare treatment needed; avoid applying concentrated chlorhexidine (4%) to large areas of inflamed skin due to irritation risk"
       }
     ],
     "pregnancy": "No systemic absorption with topical/oral rinse use — considered safe in pregnancy and lactation.",
@@ -89871,10 +89956,40 @@ var DRUGS = {
     ],
     "interactions": [
       {
-        "drug": "Timolol ophthalmic (or other antiglaucoma agents)",
-        "severity": "Beneficial combination",
-        "mechanism": "Complementary mechanisms (latanoprost: increases outflow; timolol: reduces production) → additive IOP reduction",
-        "management": "Xalacom combination product (latanoprost + timolol) simplifies administration; administer 5 min apart if separate drops."
+        "drug": "Timolol ophthalmic (beta-blocker antiglaucoma agents)",
+        "severity": "Beneficial",
+        "mechanism": "Complementary mechanisms for IOP reduction: latanoprost increases aqueous humor outflow via prostaglandin FP receptor agonism (uveoscleral pathway); timolol reduces aqueous humor production via beta-adrenergic blockade; additive IOP lowering of 5–7 mmHg additional reduction vs. monotherapy",
+        "management": "Combination therapy standard of care for uncontrolled IOP; Xalacom (fixed-dose latanoprost 0.005%/timolol 0.5%) available in Canada; administer separate drops at least 5 minutes apart (latanoprost PM, timolol AM) for greatest IOP lowering; remember timolol systemic absorption concerns (asthma, bradycardia)"
+      },
+      {
+        "drug": "Bimatoprost, travoprost (other prostaglandin analogues)",
+        "severity": "Major",
+        "mechanism": "Combining two prostaglandin analogues (latanoprost + bimatoprost or travoprost) does NOT provide additive IOP lowering — they act at the same FP receptor site and may actually reduce each other's efficacy through receptor competition or desensitization; no additional benefit over monotherapy",
+        "management": "Do NOT combine two prostaglandin analogues; if inadequate IOP control on latanoprost, switch to bimatoprost or travoprost rather than adding; if combination therapy needed, add a different class (timolol, brimonidine, dorzolamide); this is a frequent prescribing error in glaucoma management"
+      },
+      {
+        "drug": "Thimerosal-containing eye drops / preservative interactions",
+        "severity": "Minor",
+        "mechanism": "Latanoprost contains benzalkonium chloride (BAK) preservative, which can precipitate with thimerosal (used in some contact lens solutions); direct chemical interaction reduces efficacy of both products; BAK also denatures soft contact lenses",
+        "management": "Remove contact lenses before applying latanoprost and wait 15 minutes before reinserting; avoid mixing latanoprost with thimerosal-containing products in same dropper bottle; when multiple drops are needed, administer 5 minutes apart to prevent washout and chemical interactions"
+      },
+      {
+        "drug": "Brimonidine and dorzolamide (add-on antiglaucoma agents)",
+        "severity": "Beneficial",
+        "mechanism": "Latanoprost (outflow enhancement) + brimonidine (alpha-2 agonist: reduces production + increases uveoscleral outflow) or dorzolamide (carbonic anhydrase inhibitor: reduces production) provide additive IOP reduction through distinct complementary mechanisms; triple therapy (PGA + beta-blocker + brimonidine/CAI) achieves greatest IOP control in refractory glaucoma",
+        "management": "Combination widely used for medically refractory glaucoma; maintain 5-minute intervals between drops; fixed-combination products (e.g., DuoTrav, Ganfort) improve adherence; monitor for additive systemic effects of brimonidine (CNS depression in young children) and systemic beta-blocker effects from timolol"
+      },
+      {
+        "drug": "NSAIDs (oral or ophthalmic — ketorolac, diclofenac ophthalmic)",
+        "severity": "Minor",
+        "mechanism": "NSAIDs inhibit prostaglandin synthesis (COX-1/COX-2); latanoprost is a prostaglandin FP receptor agonist; systemic or ophthalmic NSAIDs could theoretically attenuate prostaglandin-mediated ocular effects, but clinical evidence for reduced latanoprost efficacy with systemic NSAID use is inconsistent and not clearly established",
+        "management": "Monitor IOP in patients starting or stopping NSAIDs while on latanoprost; if IOP worsens on systemic NSAID therapy, consider this potential interaction; ophthalmic NSAID formulations warrant caution with concurrent PGA drops — administer 5 minutes apart"
+      },
+      {
+        "drug": "Systemic beta-blockers (atenolol, metoprolol, propranolol)",
+        "severity": "Minor",
+        "mechanism": "Patients on systemic beta-blockers who are also given timolol ophthalmic for combination antiglaucoma therapy (latanoprost + timolol) receive additive systemic beta-blockade; the interaction is between systemic beta-blockers and the timolol component, not latanoprost itself",
+        "management": "If patient is already on systemic beta-blocker, adding timolol ophthalmic provides minimal additional IOP-lowering (beta receptors already blocked systemically); consider brimonidine or dorzolamide as the add-on agent instead of timolol in this scenario; monitor for excessive bradycardia/hypotension"
       }
     ],
     "pregnancy": "AVOID — prostaglandin analogue; prostaglandins can stimulate uterine contractions and increase abortion/preterm labor risk. Systemic absorption from ophthalmic route is low but prostaglandins are potent uterotonics. Use only if benefit clearly outweighs significant risk; discuss with ophthalmologist and obstetrician. Consider timolol ophthalmic with nasolacrimal occlusion as alternative. Breastfeeding: limited data; low systemic absorption; generally considered acceptable with caution.",
@@ -91357,7 +91472,42 @@ var DRUGS = {
       "Hypersensitivity to immunoglobulins"
     ],
     "interactions": [
-      "Attenuated live vaccines: delay vaccination 3–11 months post-IVIG (interference with immune response)"
+      {
+        "drug": "Live attenuated vaccines (MMR, varicella, rotavirus, yellow fever, live influenza)",
+        "severity": "Major",
+        "mechanism": "IVIg contains high-titer antibodies that can neutralize live vaccine viruses before the immune system generates its own response — effectively preventing seroconvaccination; passive antibody interference lasts 3–11 months depending on IVIg dose and vaccine type",
+        "management": "Defer live vaccines for 8–11 months after last IVIg infusion (dose-dependent: 400 mg/kg → 8 months; 1–2 g/kg → 10 months; ACIP table used in Canada); killed/subunit vaccines (influenza injectable, pneumococcal, Tdap, HPV) can be given any time but check immune response; document IVIg dose and timing in immunization records"
+      },
+      {
+        "drug": "Anticoagulants — heparin, warfarin, DOACs",
+        "severity": "Moderate",
+        "mechanism": "IVIg infusions can increase blood viscosity and alter platelet function; high-dose IVIg (1–2 g/kg over 2–5 days) is associated with thromboembolic events (DVT, PE, stroke, MI) — particularly in elderly patients, those with cardiovascular risk factors, or those with pre-existing hypercoagulable states",
+        "management": "Ensure adequate hydration before and during IVIg infusion; use lowest effective dose and slowest acceptable infusion rate in high-risk patients; for patients on anticoagulation therapy, maintain therapeutic levels throughout; monitor closely for thrombotic symptoms (leg swelling, chest pain, neurologic changes) for 24–48 hours post-infusion"
+      },
+      {
+        "drug": "Nephrotoxic drugs (aminoglycosides, NSAIDs, contrast media, cisplatin, ACE inhibitors in CKD)",
+        "severity": "Moderate",
+        "mechanism": "Sucrose-stabilized IVIg formulations (older products) can cause osmotic nephropathy and acute tubular necrosis; newer maltose/glycine/albumin-stabilized products are safer; combining IVIg with nephrotoxic drugs increases risk of acute kidney injury, particularly in patients with pre-existing CKD, diabetes, or volume depletion",
+        "management": "Use sucrose-free IVIg formulations (Privigen, Gamunex-C, Octagam) in patients at renal risk; avoid NSAIDs 48 hours before/after; hold nephrotoxic antibiotics during infusion if clinically feasible; ensure adequate hydration; monitor creatinine/eGFR 24–72 hours after large IVIg doses"
+      },
+      {
+        "drug": "Immunosuppressants (azathioprine, mycophenolate, rituximab, methotrexate) — therapeutic indication overlap",
+        "severity": "Moderate",
+        "mechanism": "IVIg is used for autoimmune conditions alongside immunosuppressants; no direct pharmacokinetic interaction; IVIg (passive immunoglobulin) and B-cell depleting therapies (rituximab) may affect endogenous IgG production — rituximab-treated patients may have prolonged benefit from IVIg (reduced FcRn-mediated clearance competition); IVIg may temporarily improve platelet counts in ITP even in patients on rituximab",
+        "management": "Combination under specialist guidance for autoimmune/inflammatory diseases; time IVIg infusions to maximize clinical response in context of immunosuppressant cycle (e.g., after rituximab infusion vs. before); monitor IgG levels regularly in patients requiring long-term IVIg"
+      },
+      {
+        "drug": "Diuretics (furosemide, hydrochlorothiazide) and ACE inhibitors",
+        "severity": "Minor",
+        "mechanism": "Volume depletion from diuretics increases risk of IVIg-associated thromboembolic events and acute kidney injury; ACE inhibitors impair renal autoregulation — in the setting of IVIg-induced fluid shifts and occasional hypotension from rapid infusion, risk of AKI increases",
+        "management": "Ensure adequate hydration before IVIg (500 mL NS unless fluid restricted); consider temporary hold of diuretics on infusion day in lower-risk patients; slow infusion rates in elderly patients on ACE inhibitors; monitor blood pressure during infusion — IVIg can cause acute hypotension, particularly with rapid infusion rates"
+      },
+      {
+        "drug": "Passive immune serum products (anti-D, tetanus immune globulin, HBIG, cytomegalovirus Ig)",
+        "severity": "Minor",
+        "mechanism": "Multiple immune globulin products can be given concurrently; no direct pharmacological interaction; however, using multiple products increases total protein load, infusion volume, and potential for adverse reactions (headache, fever, chills, anaphylaxis in IgA-deficient patients)",
+        "management": "Administer at different injection sites; monitor total immunoglobulin load; confirm IgA status before giving any immunoglobulin product to avoid anaphylaxis in IgA-deficient patients (use IgA-depleted formulations if needed)"
+      }
     ],
     "monitoring": [
       "IgG trough levels (immunodeficiency)",
@@ -91936,8 +92086,42 @@ var DRUGS = {
       "Hypersensitivity to adhesive"
     ],
     "interactions": [
-      "Smoking cessation alters metabolism of many drugs (e.g., clozapine, olanzapine, theophylline — levels increase when smoking stopped)",
-      "Caffeine: levels may increase after cessation"
+      {
+        "drug": "Theophylline (and aminophylline)",
+        "severity": "Moderate",
+        "mechanism": "Tobacco smoke is a potent inducer of CYP1A2 (the major enzyme metabolizing theophylline); when patients stop smoking and use NRT, smoke-based CYP1A2 induction is removed but nicotine itself does not significantly induce CYP1A2; theophylline levels rise 30–40% within 1–2 weeks of smoking cessation, risking toxicity (nausea, arrhythmias, seizures)",
+        "management": "Monitor theophylline plasma levels when patient quits smoking; anticipate dose reduction of 30–40% over 1–2 weeks of cessation; NRT itself does not cause the interaction — it is smoke cessation that removes CYP1A2 induction; do not adjust theophylline dose in response to NRT introduction, but do adjust as patient successfully quits"
+      },
+      {
+        "drug": "Clozapine (and olanzapine)",
+        "severity": "Major",
+        "mechanism": "Tobacco smoke is the strongest clinical inducer of CYP1A2; clozapine is metabolized 95% by CYP1A2; heavy smokers require 1.5–2x higher clozapine doses; when patients stop smoking (with or without NRT), CYP1A2 induction resolves over 1–2 weeks — clozapine levels rise 50–100% → seizures, excessive sedation, metabolic worsening, cardiovascular effects",
+        "management": "CRITICAL: Reduce clozapine dose by ~30–50% when patient quits smoking; monitor clozapine levels weekly for the first month of cessation; NRT (patch) maintains nicotine without smoke and therefore removes CYP1A2 induction — monitor closely; coordinate with psychiatry for dose adjustments"
+      },
+      {
+        "drug": "Warfarin",
+        "severity": "Moderate",
+        "mechanism": "Tobacco smoke induces CYP1A2, which metabolizes the R-enantiomer of warfarin (less potent); smoking cessation increases warfarin plasma levels with risk of supratherapeutic INR; however, the clinical impact on INR with warfarin is typically modest (10–15%) vs. clozapine/theophylline effects",
+        "management": "Monitor INR more frequently (weekly) for first 3–4 weeks after smoking cessation; adjust warfarin dose if INR rises above therapeutic range; NRT itself does not affect warfarin metabolism — the interaction is about removing smoke-induced CYP1A2 induction"
+      },
+      {
+        "drug": "Beta-blockers (metoprolol, propranolol) and other cardiovascular drugs",
+        "severity": "Minor",
+        "mechanism": "Nicotine causes sympathomimetic stimulation (increased HR, BP, vasoconstriction); NRT maintains some nicotine-mediated cardiovascular stimulation compared to abrupt cessation; however, nicotine patch delivers more stable levels than cigarettes — reduces cardiovascular spikes; overall cardiovascular benefit of quitting far outweighs NRT nicotine effects",
+        "management": "NRT can be used safely in patients with stable cardiovascular disease (CCS recommendation); avoid NRT immediately post-MI (within 2 weeks) unless cessation benefits outweigh risk; use NRT cautiously in acute coronary syndromes — combination of patch + short-acting NRT may be used for breakthrough cravings under physician supervision"
+      },
+      {
+        "drug": "Other nicotine replacement products (concurrent NRT combination therapy)",
+        "severity": "Beneficial",
+        "mechanism": "Combination NRT (patch for background nicotine replacement + short-acting form [gum, lozenge, inhaler] for breakthrough cravings) is more effective than single NRT — provides both sustained and acute nicotine delivery; combination doubles quit rates vs. patch alone in some studies",
+        "management": "Combination NRT is recommended for highly nicotine-dependent smokers (first cigarette within 30 min of waking, >20 cigarettes/day); use patch daily + gum/lozenge PRN for cravings; counselled to reduce total NRT over 8–12 weeks; endorsed by CPCA and Health Canada"
+      },
+      {
+        "drug": "Insulin and hypoglycemic agents (type 2 diabetes)",
+        "severity": "Minor",
+        "mechanism": "Nicotine impairs insulin sensitivity and increases cortisol/catecholamines that raise blood glucose; smoking cessation improves insulin sensitivity; when patients quit using NRT, blood glucose control typically improves over weeks to months, potentially requiring insulin/OAD dose reductions; transient glucose increases may occur early in cessation due to withdrawal stress",
+        "management": "Monitor blood glucose more frequently during smoking cessation; anticipate improving glucose control over 4–8 weeks of successful cessation; may need to reduce insulin or OAD doses as insulin sensitivity improves; short-term glucose increases common in early cessation — reassure patients and avoid premature dose increases"
+      }
     ],
     "monitoring": [
       "Cardiovascular symptoms",
@@ -92010,8 +92194,42 @@ var DRUGS = {
       "Hypersensitivity to nicotine"
     ],
     "interactions": [
-      "Same smoking cessation drug interaction considerations as patch (clozapine, theophylline)",
-      "Do not drink acidic beverages (coffee, juice) 15 min before or during use — reduces nicotine absorption"
+      {
+        "drug": "Acidic beverages (coffee, juice, carbonated drinks, alcohol)",
+        "severity": "Minor",
+        "mechanism": "Acidic drinks lower oral pH and reduce nicotine absorption from nicotine gum — nicotine is only absorbed as free base in alkaline/neutral pH; drinking coffee, juice, or soda within 15 minutes before or during chewing significantly reduces nicotine delivery by 30–50%",
+        "management": "Instruct patients to avoid eating, drinking (except water), or using mouthwash 15 minutes before and during nicotine gum use; this is a frequently overlooked counselling point that explains apparent 'gum failure' in many patients"
+      },
+      {
+        "drug": "Theophylline (CYP1A2 — smoking cessation effect)",
+        "severity": "Moderate",
+        "mechanism": "Like all NRT, nicotine gum assists smoking cessation; smoke cessation removes tobacco smoke-induced CYP1A2 induction → theophylline plasma levels rise 30–40% within weeks of quitting; NRT (gum/patch) provides nicotine without the smoke-based enzyme induction",
+        "management": "Monitor theophylline levels when patient quits smoking; reduce theophylline dose as cessation is maintained; the interaction is the REMOVAL of smoke CYP1A2 induction, not the nicotine gum itself"
+      },
+      {
+        "drug": "Clozapine and olanzapine (CYP1A2 — smoking cessation effect)",
+        "severity": "Major",
+        "mechanism": "Tobacco smoke (polycyclic aromatic hydrocarbons) strongly induces CYP1A2; cessation removes this induction; clozapine/olanzapine levels rise by 50–100% within 1–2 weeks of smoke cessation; NRT provides nicotine without the smoke-based induction; psychiatric decompensation or overdose risk if doses not adjusted",
+        "management": "Reduce clozapine/olanzapine dose by 30–50% when patient quits smoking; coordinate with psychiatry; monitor drug levels weekly for first month of cessation; do not delay dose reduction — toxicity can occur quickly"
+      },
+      {
+        "drug": "Concurrent nicotine patch (combination NRT)",
+        "severity": "Beneficial",
+        "mechanism": "Patch provides steady background nicotine replacement; gum provides acute PRN dosing for breakthrough cravings; combination NRT doubles quit rates vs. single agent in high-dependence smokers by addressing both tonic and phasic craving components",
+        "management": "Recommended for patients who smoke first cigarette within 30 min of waking (high nicotine dependence); patch + gum/lozenge endorsed by CPS, CCS, and Health Canada; total nicotine from combination should approximate daily cigarette consumption; taper both over 8–12 weeks"
+      },
+      {
+        "drug": "Insulin and oral antidiabetic agents",
+        "severity": "Minor",
+        "mechanism": "Smoking cessation (regardless of method) improves insulin sensitivity; expected glycemic improvement over weeks to months of successful cessation may require dose reductions; early cessation also causes transient weight gain which can worsen glycemic control temporarily",
+        "management": "Monitor SMBG more frequently during cessation; adjust insulin/OAD doses as glucose trends improve; address concurrent weight gain with dietary counselling; glucose improvement typically apparent within 4–8 weeks of maintained cessation"
+      },
+      {
+        "drug": "Varenicline (Champix) — if switching or combining therapies",
+        "severity": "Moderate",
+        "mechanism": "Varenicline is a partial nAChR agonist that partially blocks nicotine binding; combining NRT gum with varenicline may increase overall nicotinic stimulation and nausea/vomiting side effects; however, combination is sometimes used under supervision for highly dependent smokers in whom varenicline alone is insufficient",
+        "management": "Combination varenicline + NRT can be considered for highly motivated patients with prior cessation failure, but increases side effects (nausea, insomnia, vivid dreams); not recommended as first-line; if combining, use lowest NRT dose needed for breakthrough cravings; monitor blood pressure (BP elevations reported)"
+      }
     ],
     "monitoring": [
       "Technique review (chew-and-park)",
@@ -92225,9 +92443,42 @@ var DRUGS = {
       "Hypersensitivity to naltrexone or polylactide-co-glycolide"
     ],
     "interactions": [
-      "Opioid analgesics: blocked (avoid all opioid medications)",
-      "Thioridazine: increased somnolence (avoid combination)",
-      "Disulfiram: additive hepatotoxicity risk (monitor)"
+      {
+        "drug": "Opioid analgesics (morphine, oxycodone, hydromorphone, fentanyl, codeine)",
+        "severity": "Contraindicated",
+        "mechanism": "Naltrexone is a competitive mu-opioid receptor antagonist; co-administration with opioid agonists causes acute opioid withdrawal in opioid-dependent patients and completely blocks analgesic effects of opioids; administering naltrexone within 7–10 days of last opioid use precipitates severe withdrawal",
+        "management": "CONTRAINDICATED in active opioid use — confirm opioid-free for at least 7 days (ideally 10 days) before first injection; perform naloxone challenge test if uncertain; if acute pain management needed, opioids will be ineffective — use regional anesthesia, ketamine, NSAIDs, acetaminophen; emergency opioid use requires ICU-level monitoring and doses 2–5x higher than usual (high overdose risk on naltrexone discontinuation)"
+      },
+      {
+        "drug": "Buprenorphine (buprenorphine-naloxone / Suboxone)",
+        "severity": "Contraindicated",
+        "mechanism": "Buprenorphine is a partial mu-opioid receptor agonist; naltrexone LAI occupies and blocks opioid receptors, precipitating withdrawal if buprenorphine is present in the system; patients must be fully detoxified from buprenorphine (minimum 7–10 days off Suboxone) before naltrexone LAI initiation",
+        "management": "Transition from buprenorphine to naltrexone LAI requires complete buprenorphine discontinuation for at least 7–10 days with symptom management during the gap; low-dose naltrexone challenge (25 mg oral) can confirm tolerability before full LAI dose; this transition is a high-risk period for relapse — intensive psychosocial support essential"
+      },
+      {
+        "drug": "Thioridazine and other antipsychotics (somnolence interaction)",
+        "severity": "Moderate",
+        "mechanism": "Combination of naltrexone with certain antipsychotics (particularly older agents) may cause additive sedation and lethargy; naltrexone itself can cause dose-related somnolence and fatigue; opioid antagonism may alter dopamine pathway signaling relevant to antipsychotic mechanisms",
+        "management": "Monitor for excessive sedation; counsel patients about combined sedation risk; if significant somnolence, reduce antipsychotic dose under psychiatric supervision"
+      },
+      {
+        "drug": "Disulfiram (Antabuse — concurrent alcohol use disorder treatment)",
+        "severity": "Minor",
+        "mechanism": "No pharmacokinetic interaction; both disulfiram and naltrexone are used for alcohol use disorder through different mechanisms (disulfiram: acetaldehyde accumulation aversion; naltrexone: reward/craving reduction via opioid blockade); additive clinical benefit theoretically possible but increased adverse effect burden",
+        "management": "Combination is sometimes used under specialist supervision; monitor hepatotoxicity (both agents carry hepatic risk); LFTs at baseline and periodically; naltrexone is generally preferred over disulfiram as first-line in Canada due to better tolerability"
+      },
+      {
+        "drug": "Acamprosate (calcium acetylhomotaurinate — AUD treatment)",
+        "severity": "Minor",
+        "mechanism": "No pharmacokinetic interaction; complementary mechanisms for AUD (acamprosate: GABA/glutamate modulation; naltrexone: opioid-reward blockade); The COMBINE study showed no significant benefit of combination over monotherapy, but combination is sometimes used in treatment-refractory patients",
+        "management": "Safe to combine; no dose adjustments required; acamprosate dosing based on renal function (not affected by naltrexone); document rationale for combination therapy"
+      },
+      {
+        "drug": "Hepatotoxic drugs (isoniazid, methotrexate, azithromycin, high-dose acetaminophen)",
+        "severity": "Moderate",
+        "mechanism": "Naltrexone at doses >300 mg/day has been associated with dose-related hepatocellular injury (not a concern at standard 380 mg LAI monthly doses); however, in patients with pre-existing liver disease or concurrent hepatotoxic medications, cumulative hepatic risk warrants monitoring",
+        "management": "Check LFTs before initiation; do not use if AST/ALT >5x ULN; recheck LFTs at 3 months and annually; concurrent hepatotoxic drugs increase monitoring frequency; naltrexone LAI is contraindicated in acute hepatitis or liver failure"
+      }
     ],
     "monitoring": [
       "LFTs at baseline and periodically",
@@ -92304,9 +92555,42 @@ var DRUGS = {
       "Severe hepatic impairment"
     ],
     "interactions": [
-      "CNS depressants (benzodiazepines, alcohol): increased sedation and respiratory depression",
-      "CYP3A4 inhibitors (ketoconazole, ritonavir): increased buprenorphine exposure",
-      "CYP3A4 inducers: reduced buprenorphine levels"
+      {
+        "drug": "CNS depressants — benzodiazepines, alcohol, Z-drugs (zolpidem, zopiclone), gabapentin, pregabalin",
+        "severity": "Major",
+        "mechanism": "Buprenorphine is a partial mu-opioid agonist with ceiling effect on respiratory depression; however, combined with CNS/respiratory depressants — especially benzodiazepines — the combination causes additive respiratory depression with multiple fatal overdoses reported; buprenorphine extended-release maintains constant plasma levels that cannot be rapidly reversed",
+        "management": "AVOID concurrent benzodiazepines if at all possible — taper and discontinue before initiating buprenorphine ER; if co-prescription unavoidable (documented benzodiazepine dependence), prescribe minimum effective doses with close monitoring and naloxone co-prescription for patient and household; warn patients to avoid alcohol; Health Canada black-box warning"
+      },
+      {
+        "drug": "Opioid agonists (morphine, oxycodone, hydromorphone, fentanyl, heroin)",
+        "severity": "Major",
+        "mechanism": "Buprenorphine has very high mu-receptor affinity and partial agonism; if opioid-dependent patient uses full agonist opioids (street opioids) on top of buprenorphine ER, buprenorphine's receptor occupancy partially blocks the effect but does NOT fully prevent overdose — risk of precipitated withdrawal if initiated during active opioid use, and risk of respiratory depression from residual opioid effect",
+        "management": "Initiate only when patient has mild-moderate opioid withdrawal (COWS ≥8–12); buprenorphine ER (Sublocade) is injected monthly — cannot be stopped if precipitated withdrawal occurs; full mu-opioid agonists have markedly reduced effect due to receptor occupancy — do NOT increase opioid doses to overcome blockade (extreme overdose risk on buprenorphine discontinuation)"
+      },
+      {
+        "drug": "CYP3A4 inhibitors (azole antifungals, ritonavir/cobicistat, clarithromycin)",
+        "severity": "Moderate",
+        "mechanism": "Buprenorphine is primarily metabolized by CYP3A4 to active metabolite norbuprenorphine; potent CYP3A4 inhibitors increase buprenorphine AUC by 50–80%, potentially increasing CNS/respiratory depression risk at the higher constant exposure from the extended-release formulation",
+        "management": "Monitor for increased sedation, respiratory depression, and constipation; consider buprenorphine dose reduction if strong CYP3A4 inhibitor initiated; HIV patients on cobicistat-boosted regimens require careful monitoring; avoid abrupt CYP3A4 inhibitor discontinuation (risk of withdrawal as buprenorphine levels drop)"
+      },
+      {
+        "drug": "CYP3A4 inducers (rifampin, carbamazepine, phenytoin, efavirenz, St. John's Wort)",
+        "severity": "Moderate",
+        "mechanism": "CYP3A4 inducers significantly increase buprenorphine metabolism, reducing buprenorphine plasma concentrations by 40–70%; with extended-release formulation, this manifests as increased opioid craving and withdrawal symptoms between doses that cannot be addressed by dose titration until next injection",
+        "management": "Avoid strong CYP3A4 inducers (rifampin most significant — reduces buprenorphine AUC by ~70%); if antibiotic required, use alternative to rifampin for TB treatment; sublingual/buccal buprenorphine allows more flexible dose adjustment when enzyme inducers needed; document drug interaction in chart"
+      },
+      {
+        "drug": "MAO inhibitors (phenelzine, tranylcypromine, selegiline, linezolid, methylene blue)",
+        "severity": "Major",
+        "mechanism": "Buprenorphine has serotonergic properties; combination with MAO inhibitors (irreversible or reversible) carries risk of serotonin syndrome — agitation, hyperthermia, clonus, diaphoresis; also additive CNS/respiratory depression; limited data but similar mechanism to opioid-MAOI interaction",
+        "management": "Contraindicated with irreversible MAOIs; allow 14-day washout after stopping irreversible MAOI before starting buprenorphine; for linezolid (reversible MAOI) or methylene blue, monitor closely; selegiline at anti-Parkinson doses may be cautiously used with close monitoring"
+      },
+      {
+        "drug": "Naltrexone (oral or LAI) — competing opioid antagonist",
+        "severity": "Contraindicated",
+        "mechanism": "Naltrexone is a competitive opioid receptor antagonist that fully displaces buprenorphine from mu receptors, precipitating acute opioid withdrawal; this reaction is particularly severe and prolonged with buprenorphine ER due to the sustained-release depot formulation that cannot be stopped",
+        "management": "NEVER administer naltrexone to a patient with buprenorphine ER in depot (lasts ~1 month after last injection); transition from buprenorphine ER to naltrexone LAI requires waiting full depot washout (4–6 weeks after last Sublocade injection); bridging with SL buprenorphine during transition is not possible — full opioid detox gap required"
+      }
     ],
     "monitoring": [
       "Injection site integrity (do not massage)",
@@ -92384,8 +92668,42 @@ var DRUGS = {
       "Pregnancy (insufficient safety data)"
     ],
     "interactions": [
-      "No well-established significant drug interactions (limited pharmacokinetic data)",
-      "Theoretical: additive effects with other nicotinic agents"
+      {
+        "drug": "Other nicotine replacement therapies (patch, gum, lozenge, inhaler)",
+        "severity": "Major",
+        "mechanism": "Cytisine is a partial nicotinic acetylcholine receptor (nAChR) agonist (similar mechanism to varenicline); concurrent nicotine replacement therapy (NRT) may partially compete with cytisine at nAChRs, reducing cytisine's efficacy in blocking nicotine reward; also risks combined nicotine/cytisine toxicity (nausea, vomiting, hypertension)",
+        "management": "Generally avoid concurrent NRT; set a quit date when starting cytisine and discontinue smoking/nicotine products; if NRT is used briefly to manage breakthrough cravings, monitor for nicotine toxicity symptoms; combination not supported by current Canadian/WHO evidence"
+      },
+      {
+        "drug": "Varenicline (Champix/Chantix) — same nAChR mechanism",
+        "severity": "Contraindicated",
+        "mechanism": "Cytisine and varenicline both act as partial agonists at alpha-4-beta-2 nicotinic acetylcholine receptors; combining two partial agonists at the same receptor offers no additional benefit and may cause excessive receptor stimulation with increased nausea, vomiting, and neuropsychiatric effects",
+        "management": "Do not combine; use one agent at a time; cytisine course is 25 days (shorter and cheaper than varenicline); if cytisine fails, can consider varenicline after completing cytisine course; some jurisdictions have limited cytisine availability"
+      },
+      {
+        "drug": "Bupropion (Zyban) — dopaminergic smoking cessation agent",
+        "severity": "Minor",
+        "mechanism": "Bupropion (dopamine/noradrenaline reuptake inhibitor) and cytisine (nAChR partial agonist) have complementary mechanisms for smoking cessation; no significant pharmacokinetic interaction; combination theoretically may enhance cessation rates but clinical evidence for cytisine-bupropion combination is limited",
+        "management": "Combination not standard practice; bupropion lowers seizure threshold — monitor if combined; no specific contraindication but limited evidence for superior efficacy vs. monotherapy; avoid in patients with seizure history or eating disorders"
+      },
+      {
+        "drug": "Antidepressants — SSRIs, SNRIs, TCAs",
+        "severity": "Minor",
+        "mechanism": "Cytisine has some serotonergic properties; however, clinically significant interactions with antidepressants are not established; patients with depression are more likely to be on antidepressants and to smoke — cytisine is generally safe in this population",
+        "management": "No dose adjustments required; monitor for mood changes during smoking cessation (nicotine withdrawal itself causes irritability, depression, and anxiety regardless of pharmacotherapy); cytisine may be an option in patients who cannot afford varenicline"
+      },
+      {
+        "drug": "Antihypertensives (calcium channel blockers, beta-blockers, ACE inhibitors)",
+        "severity": "Minor",
+        "mechanism": "Smoking itself causes significant nicotine-mediated sympathomimetic effects (vasoconstriction, tachycardia, hypertension); stopping smoking with cytisine-assisted cessation will reduce nicotine-driven BP elevation over weeks — patients on antihypertensives may find their BP drops as cessation is maintained",
+        "management": "Monitor blood pressure during smoking cessation — may need antihypertensive dose reduction after successful quit; counsel patients that BP improvement occurs 1–3 months after quitting; no direct drug interaction with cytisine itself"
+      },
+      {
+        "drug": "Theophylline and clozapine (CYP1A2 induction by tobacco smoke)",
+        "severity": "Moderate",
+        "mechanism": "Tobacco smoke (not nicotine itself) strongly induces CYP1A2 — the enzyme that metabolizes theophylline and clozapine; when patients STOP smoking (with cytisine or any other method), CYP1A2 induction diminishes over 1–2 weeks → theophylline and clozapine plasma levels rise significantly → toxicity risk (seizures with theophylline, sedation/metabolic syndrome with clozapine)",
+        "management": "CRITICAL: Reduce theophylline dose by ~30–40% and clozapine dose by ~30% when patient quits smoking; monitor drug levels closely in first 2–4 weeks of cessation; this interaction applies to any smoking cessation method (not cytisine-specific) — it is the smoke induction, not the drug, that causes the interaction"
+      }
     ],
     "monitoring": [
       "Quit attempt success at 4 weeks",
