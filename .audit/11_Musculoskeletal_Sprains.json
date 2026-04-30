@@ -1,0 +1,58 @@
+{
+  "name": "Musculoskeletal Sprains",
+  "icon": "🦵",
+  "category": "MSK",
+  "assessment": {
+    "key_questions": [
+      "Mechanism of injury: inversion sprain (lateral ankle), fall, overuse?",
+      "Ability to weight-bear (Ottawa Rules: cannot bear weight × 4 steps → X-ray)?",
+      "Location of pain: bone tenderness (Ottawa Rules) vs ligament?",
+      "Ottawa Ankle Rules: bony tenderness at posterior tip/base of lateral malleolus or medial malleolus, or navicular, or base of 5th metatarsal → X-ray required",
+      "Timing since injury: acute (<48h) vs subacute/chronic?"
+    ],
+    "red_flags": [
+      "Ottawa Rules positive → X-ray to rule out fracture before treating as sprain",
+      "Significant swelling + inability to weight bear → possible fracture",
+      "Knee: inability to extend knee, joint effusion → ACL/meniscus tear — ortho",
+      "Neurovascular compromise (numbness, pallor, decreased pulse)",
+      "Recurrent 'sprain' in same location → ligament laxity, instability"
+    ],
+    "ddx": [
+      "Fracture (Ottawa Rules — X-ray)",
+      "Tendon rupture (Achilles — Thompson test)",
+      "Septic arthritis (hot, swollen joint + fever — emergency)",
+      "Gout (podagra — first MTP)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "POLICE Protocol + Analgesia",
+        "drugs": "Ibuprofen 400–600 mg q6–8h with food × 5–7 days | Naproxen 500 mg BID × 5–7 days | Acetaminophen 650–1000 mg q6h (if NSAID contraindicated)",
+        "notes": "POLICE: Protection (support), Optimal Loading (early gentle movement), Ice, Compression, Elevation. Replace old RICE with POLICE — early controlled loading prevents stiffness. Ice 15–20 min q1–2h for first 48h. NSAIDs: reduce pain and swelling — superior to acetaminophen for acute musculoskeletal injury. Take with food.",
+        "preferred_when": "Acute sprain (grade I–II): POLICE + NSAID"
+      },
+      {
+        "name": "Topical NSAID",
+        "drugs": "Diclofenac gel 1% (Voltaren Emulgel) QID to affected area",
+        "notes": "Topical diclofenac: equivalent efficacy to oral NSAIDs for local musculoskeletal pain with minimal systemic absorption. Preferred in elderly, renal disease, GI risk."
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Compression + Splinting",
+        "drugs": "Tensor bandage / elastic support | Air stirrup brace (ankle) for Grade II–III",
+        "notes": "Compression reduces swelling. Ankle brace/splint: allows early ambulation while protecting ligaments. Grade III (complete tear): ortho referral."
+      }
+    ],
+    "non_pharm": [
+      "Ice 15–20 min every 1–2 hours for first 48h (not directly on skin — towel wrap)",
+      "Elevation: keep injured limb above heart level",
+      "Early controlled movement (POLICE): begin gentle ROM exercises after 24–48h",
+      "Proprioception rehabilitation exercises: prevent re-injury",
+      "Physiotherapy: for grade II–III sprains — significantly reduces re-injury risk",
+      "Return to activity progressively — pain is the guide"
+    ],
+    "refer_when": "Ottawa Rules positive (X-ray needed); complete ligament rupture (grade III); joint effusion; suspected fracture; significant functional impairment not improving in 2–3 weeks; recurrent instability"
+  }
+}

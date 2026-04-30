@@ -1,0 +1,51 @@
+{
+  "name": "Tick Bite (Lyme Prophylaxis)",
+  "icon": "🦟",
+  "category": "Infectious",
+  "assessment": {
+    "key_questions": [
+      "Geographic risk: known Lyme-endemic area (Southern Ontario, BC, NS, NB, QC, MB)?",
+      "Tick species: black-legged tick (deer tick, Ixodes scapularis) — the vector for Lyme in Canada?",
+      "Tick attachment time: ≥36h attached = significant transmission risk (must be engorged)",
+      "Time since tick removal: <72h = prophylaxis window",
+      "Ability to identify tick (black-legged vs dog tick)?"
+    ],
+    "red_flags": [
+      "Bull's eye rash (erythema migrans, ≥5 cm expanding) → early Lyme disease — requires treatment not just prophylaxis",
+      "Flu-like symptoms (fever, fatigue, myalgia, headache, neck stiffness) after tick bite → treat for Lyme",
+      "Neurological symptoms or cardiac symptoms (palpitations, syncope) → disseminated Lyme — urgent refer",
+      "Rash at any other body site after tick bite in endemic area"
+    ],
+    "ddx": [
+      "Early Lyme disease (erythema migrans)",
+      "Rocky Mountain spotted fever (rare in Canada)",
+      "Cellulitis at bite site",
+      "Local allergic reaction to tick bite"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Doxycycline Prophylaxis (single dose)",
+        "drugs": "Doxycycline 200 mg single oral dose (adults) | 4.4 mg/kg single dose (children ≥8 years, max 200 mg)",
+        "notes": "Indication: all 4 criteria must be met — (1) black-legged tick (Ixodes scapularis) confirmed; (2) attached ≥36h; (3) in endemic area (check Ontario Lyme disease risk map — Public Health Ontario); (4) prophylaxis started within 72h of tick removal. Efficacy: 87% reduction in Lyme disease if criteria met. Take with food (GI side effects). Avoid in pregnancy (<8 weeks) and children <8 years.",
+        "preferred_when": "All 4 prophylaxis criteria met (tick species + attachment time + endemic area + within 72h)"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Watchful Waiting (if criteria not fully met)",
+        "drugs": "No prophylaxis — monitor for symptoms × 30 days",
+        "notes": "If prophylaxis criteria not all met (dog tick, <36h attached, non-endemic area): observe only. Advise patient to return immediately if erythema migrans rash or flu-like symptoms develop within 30 days."
+      }
+    ],
+    "non_pharm": [
+      "Proper tick removal: fine-tipped tweezers, grasp close to skin surface, pull upward steadily — no twisting, no petroleum jelly/fire",
+      "Save the tick (sealed container or tape to paper) for identification",
+      "Photograph the rash if present",
+      "Report tick bite to public health if in endemic area",
+      "Prevention: light-coloured clothing, long pants/sleeves in wooded areas, DEET insect repellent (20–30%), check for ticks after outdoor activity"
+    ],
+    "refer_when": "Erythema migrans rash (expanding bull's eye, ≥5 cm); flu-like illness after tick bite; neurological or cardiac symptoms; child <8 years requiring prophylaxis; pregnancy; prophylaxis criteria not met but uncertain"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Oral Candidiasis (Thrush)",
+  "icon": "🦷",
+  "category": "Oral",
+  "assessment": {
+    "key_questions": [
+      "Inhaled corticosteroid use (most common cause — rinsing mouth after?)",
+      "Recent antibiotic use?",
+      "Dentures (fit and cleaning regimen)?",
+      "Immunosuppression, diabetes, HIV?",
+      "Dry mouth (Sjogren's, medications)?",
+      "Denture hygiene?"
+    ],
+    "red_flags": [
+      "Difficulty swallowing (odynophagia) → esophageal candidiasis (refer)",
+      "Unresponsive to antifungal → resistant Candida or alternative diagnosis",
+      "Immunocompromised patient — systemic infection risk",
+      "Unusual appearance (one-sided, ulcerated) → malignancy"
+    ],
+    "ddx": [
+      "Leukoplakia (cannot be wiped off)",
+      "Geographic tongue",
+      "Aphthous ulcers",
+      "Lichen planus",
+      "Chemical burn"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Nystatin Suspension",
+        "drugs": "Nystatin 100,000 units/mL: 4–6 mL swish and swallow QID × 7–14 days",
+        "notes": "Topical antifungal — swish vigorously throughout mouth for 2 min, then swallow. Effective and cheap. Continue 48h after symptoms resolve. Works by binding ergosterol in fungal cell membrane.",
+        "preferred_when": "Mild-moderate thrush; first-line for most patients"
+      },
+      {
+        "name": "Clotrimazole Troches",
+        "drugs": "Clotrimazole 10 mg lozenge: dissolve slowly in mouth 5× daily × 14 days",
+        "notes": "Good compliance. Dissolve slowly — do not chew. More convenient than nystatin for some patients."
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Fluconazole (systemic)",
+        "drugs": "Fluconazole 150 mg single dose OR 100 mg OD × 7–14 days",
+        "notes": "For moderate-severe or refractory oral candidiasis, or denture-associated. Check drug interactions (many CYP3A4 interactions). Use if topical agents fail or patient unable to use topical."
+      }
+    ],
+    "non_pharm": [
+      "ICS users: ALWAYS rinse mouth and gargle with water after each puffer use — prevent recurrence",
+      "Denture hygiene: remove dentures at night, soak in antifungal solution (nystatin) or dilute bleach",
+      "Good oral hygiene: soft toothbrush twice daily",
+      "Address predisposing factors (diabetes control, dry mouth treatment)",
+      "Spacer device for ICS — reduces oropharyngeal deposition"
+    ],
+    "refer_when": "Odynophagia/dysphagia (esophageal involvement); unresponsive to treatment; immunocompromised patients; recurrent thrush without clear cause"
+  }
+}

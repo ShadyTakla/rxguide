@@ -1,0 +1,63 @@
+{
+  "name": "Acne Vulgaris",
+  "icon": "😶",
+  "category": "Dermatology",
+  "assessment": {
+    "key_questions": [
+      "Severity: mild (comedones, <20 papules), moderate (20–100 papules, some pustules, nodules), severe (nodules >5, cysts, scarring)?",
+      "Distribution: face, chest, back?",
+      "Current treatments tried (OTC retinoids, benzoyl peroxide, niacinamide)?",
+      "Female: relation to menstrual cycle? PCOS features?",
+      "Medications worsening acne: corticosteroids, lithium, iodides, androgens?"
+    ],
+    "red_flags": [
+      "Acne fulminans: sudden onset severe nodular acne + fever + arthralgia → urgent dermatology",
+      "Scarring (pitting, ice-pick scars) → escalate treatment",
+      "Signs of PCOS in women: irregular menses, hirsutism → appropriate investigation",
+      "Psychological impact (anxiety, depression, social withdrawal) — address actively"
+    ],
+    "ddx": [
+      "Rosacea (flushing, no comedones, central face)",
+      "Perioral dermatitis",
+      "Folliculitis (hot tub, trunk, uniform papules)",
+      "Milia (superficial white cysts)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Benzoyl Peroxide",
+        "drugs": "Benzoyl peroxide 2.5–5% gel/cream (PanOxyl, Benzagel) OD–BID",
+        "notes": "Most effective OTC acne treatment. Bactericidal (no resistance), comedolytic, anti-inflammatory. Start with 2.5% (less irritating than 5% or 10% — same efficacy). Apply to entire affected area (not just spots). Bleaches fabrics — warn patient. Takes 6–8 weeks for full benefit.",
+        "preferred_when": "Mild inflammatory acne (papules/pustules); also prevents antibiotic resistance when combined with topical antibiotics"
+      },
+      {
+        "name": "Topical Retinoid",
+        "drugs": "Adapalene 0.1% gel (Differin — OTC) OD at bedtime | Tretinoin 0.025–0.05% cream (Retin-A — prescription)",
+        "notes": "Normalize follicular keratinization, reduce comedones, anti-inflammatory. Adapalene 0.1% (Differin): OTC in Canada — excellent tolerability. Tretinoin: prescription, slightly more potent. Apply pea-sized amount to ENTIRE face (not spot treatment) at bedtime. Initial irritation (dryness, peeling) peaks weeks 2–4 then improves. Sun protection essential. Takes 12+ weeks for full benefit.",
+        "preferred_when": "Comedonal acne (blackheads/whiteheads); moderate acne; long-term maintenance"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Topical Antibiotic + BPO Combination",
+        "drugs": "Clindamycin 1% + benzoyl peroxide 5% gel (Benzaclin, Clindoxyl) OD–BID",
+        "notes": "Clindamycin 1% topical: anti-inflammatory, reduces P. acnes. ALWAYS combine with benzoyl peroxide to prevent antibiotic resistance. Never use topical antibiotic alone (without BPO) — resistance risk."
+      },
+      {
+        "name": "Combined OCP (females)",
+        "drugs": "Ethinyl estradiol + drospirenone (Yaz, Yasmin) | EE + norgestimate (Tri-Cyclen)",
+        "notes": "For women with acne ± PCOS — reduces androgenic stimulation of sebaceous glands. Health Canada approved for acne. Takes 3+ months for full benefit."
+      }
+    ],
+    "non_pharm": [
+      "Gentle non-comedogenic cleanser BID (not scrubbing — worsens inflammation)",
+      "Non-comedogenic SPF 30+ sunscreen (especially with retinoid use)",
+      "Do not pick or squeeze (causes scarring, spreads bacteria)",
+      "Oil-free makeup and skincare products",
+      "Change pillowcase frequently (every 2–3 days)",
+      "Manage psychological impact — refer if significant mental health effect"
+    ],
+    "refer_when": "Moderate-severe acne unresponsive to topicals; nodular/cystic acne; scarring; consideration for oral isotretinoin (Accutane) — requires dermatologist; acne with significant psychological distress"
+  }
+}

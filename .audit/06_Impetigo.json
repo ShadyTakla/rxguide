@@ -1,0 +1,53 @@
+{
+  "name": "Impetigo",
+  "icon": "🦠",
+  "category": "Dermatology",
+  "assessment": {
+    "key_questions": [
+      "Number of lesions and extent of involvement?",
+      "Non-bullous (honey-crusted) vs bullous (large fluid-filled blisters)?",
+      "Contagious setting: school/daycare, family members affected?",
+      "Prior antibiotic use (resistance)?",
+      "Underlying skin condition (eczema — common portal of entry)?"
+    ],
+    "red_flags": [
+      "Systemic symptoms (fever, lymphadenopathy) → systemic infection/cellulitis",
+      "Rapidly spreading or worsening despite treatment → MRSA, cellulitis",
+      "Bullous impetigo in infant — more serious (systemic S. aureus)",
+      "Post-strep glomerulonephritis risk (hematuria, edema) — with nephritogenic strains"
+    ],
+    "ddx": [
+      "Herpes simplex (grouped vesicles, tingling)",
+      "Tinea (ringworm — KOH positive)",
+      "Contact dermatitis",
+      "Chickenpox (generalized, pruritic)",
+      "Cellulitis"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Topical Antibiotic (localized)",
+        "drugs": "Mupirocin 2% ointment (Bactroban) TID × 5 days | Fusidic acid 2% cream (Fucidin) TID × 5 days",
+        "notes": "Topical therapy equivalent to oral for localized non-bullous impetigo (≤5 lesions). Reduces systemic antibiotic exposure and resistance risk. Pharmacist can prescribe under Ontario minor ailments. Clean crusts with warm water before applying. Both mupirocin and fusidic acid cover S. aureus and Group A Strep.",
+        "preferred_when": "Localized (≤5 lesions), non-bullous impetigo"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Oral Antibiotic (widespread/bullous)",
+        "drugs": "Cephalexin 500 mg QID × 7 days (children: 25 mg/kg/day ÷ QID) | Amoxicillin-clavulanate 500/125 mg TID × 7 days",
+        "notes": "For widespread impetigo (>5 lesions), bullous type, or treatment failure with topical. Cephalexin covers S. aureus (MSSA) and Strep. If MRSA suspected (no response to cephalexin): TMP-SMX DS BID × 7 days."
+      }
+    ],
+    "non_pharm": [
+      "Keep lesions covered with gauze to prevent spread",
+      "Wash hands frequently — highly contagious",
+      "Child should stay home from school/daycare until 24–48h after starting antibiotic AND lesions crusted",
+      "Do not share towels, washcloths, or bedding",
+      "Wash linens/clothing in hot water",
+      "Trim nails to prevent scratching and autoinoculation"
+    ],
+    "refer_when": "Widespread impetigo; bullous impetigo in infant; systemic symptoms (fever); failure to improve after 48–72h; facial impetigo near eyes; suspected MRSA; immunocompromised patient"
+  }
+}

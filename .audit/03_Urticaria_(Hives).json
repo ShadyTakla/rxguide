@@ -1,0 +1,57 @@
+{
+  "name": "Urticaria (Hives)",
+  "icon": "🔴",
+  "category": "Dermatology",
+  "assessment": {
+    "key_questions": [
+      "Acute (<6 weeks) vs chronic (>6 weeks)?",
+      "Triggers: food, medication, infection, exercise, stress, cold, pressure?",
+      "Angioedema (swelling of lips, tongue, throat)?",
+      "New medications in past 6 weeks (especially NSAIDs, ACE inhibitors, antibiotics)?",
+      "Recent infection (viral URI, strep throat)?"
+    ],
+    "red_flags": [
+      "Angioedema of tongue/throat or stridor → anaphylaxis/airway emergency — CALL 911",
+      "Wheeze, hypotension, systemic symptoms → anaphylaxis",
+      "Systemic symptoms (fever, arthralgia, lymphadenopathy) → vasculitis, autoinflammatory",
+      "Chronic urticaria >6 weeks → requires investigation, refer to allergist"
+    ],
+    "ddx": [
+      "Anaphylaxis",
+      "Contact dermatitis",
+      "Erythema multiforme",
+      "Mastocytosis",
+      "Hereditary angioedema (no urticaria)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "Non-Sedating Oral Antihistamine",
+        "drugs": "Cetirizine (Reactine) 10 mg OD–BID | Fexofenadine (Allegra) 180 mg OD | Loratadine (Claritin) 10 mg OD",
+        "notes": "Non-sedating H1 antihistamines: first-line for acute urticaria. Can be used up to 4× standard dose in refractory urticaria. Take regularly (not PRN) for better effect. Cetirizine 10 mg OD–BID: most commonly used. Continue until urticaria fully resolved.",
+        "preferred_when": "First-line for all acute urticaria"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Sedating Antihistamine (short-term add-on)",
+        "drugs": "Diphenhydramine (Benadryl) 25–50 mg q6h (avoid in elderly — Beers Criteria)",
+        "notes": "For severe acute urticaria — short-term use. High sedation and anticholinergic burden. Avoid in elderly (falls, confusion). Not for chronic urticaria."
+      },
+      {
+        "name": "Short-Course Prednisone",
+        "drugs": "Prednisone 30–40 mg OD × 3–5 days",
+        "notes": "For severe acute urticaria not responding to antihistamines. Do not use for chronic urticaria (no long-term benefit; significant side effects)."
+      }
+    ],
+    "non_pharm": [
+      "Identify and avoid triggers (food diary, medication review)",
+      "Cool compresses for symptomatic relief",
+      "Loose fitting clothing",
+      "Avoid ASA and NSAIDs (worsen urticaria)",
+      "Avoid alcohol (vasodilator — worsens itch)"
+    ],
+    "refer_when": "Chronic urticaria >6 weeks; angioedema; suspected hereditary angioedema (no wheals, family history); urticaria + systemic symptoms; failure to respond to antihistamines"
+  }
+}

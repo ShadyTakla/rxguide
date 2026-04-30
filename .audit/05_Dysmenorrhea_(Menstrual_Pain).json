@@ -1,0 +1,58 @@
+{
+  "name": "Dysmenorrhea (Menstrual Pain)",
+  "icon": "🔵",
+  "category": "Womens Health",
+  "assessment": {
+    "key_questions": [
+      "Primary (no identifiable cause, onset with first menses) vs secondary (endometriosis, fibroids, IUD)?",
+      "Timing: does pain start before or at onset of flow?",
+      "Severity (NRS 0–10) and impact on daily activities?",
+      "Associated symptoms: heavy bleeding, pelvic pain non-cyclically, dyspareunia?",
+      "Current contraception (hormonal methods reduce dysmenorrhea)?"
+    ],
+    "red_flags": [
+      "Pain outside of menstruation or during intercourse → endometriosis/secondary cause",
+      "Heavy menstrual bleeding + pain → fibroids, adenomyosis",
+      "New severe pain > age 25 (secondary dysmenorrhea more likely)",
+      "Fever + pelvic pain → pelvic inflammatory disease (PID)"
+    ],
+    "ddx": [
+      "Endometriosis",
+      "Adenomyosis",
+      "Uterine fibroids",
+      "Ovarian cyst",
+      "Pelvic inflammatory disease",
+      "IUD-related pain"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      {
+        "name": "NSAID",
+        "drugs": "Naproxen sodium (Aleve) 500 mg loading then 250 mg q6–8h | Ibuprofen 400–600 mg q6h | Mefenamic acid (Ponstan) 500 mg TID",
+        "notes": "NSAIDs are first-line — inhibit prostaglandin synthesis (prostaglandins cause uterine contractions and pain). Start 24–48h BEFORE expected onset of pain (before prostaglandins peak) for best effect. Take with food. Continue for 2–3 days. Mefenamic acid: also directly antagonizes prostaglandin receptors — useful for refractory cases.",
+        "preferred_when": "Primary dysmenorrhea — first-line and most effective"
+      }
+    ],
+    "second_line": [
+      {
+        "name": "Combined Oral Contraceptives",
+        "drugs": "Any combined OCP (e.g., Alesse, Yasmin, Tri-Cyclen) — taken cyclically or continuously",
+        "notes": "Hormonal contraception suppresses ovulation and reduces endometrial prostaglandin production — reduces pain severity by 70–80%. Continuous OCP use (skipping placebo week) eliminates menstruation and pain."
+      },
+      {
+        "name": "Hormonal IUS",
+        "drugs": "Mirena or Kyleena IUS",
+        "notes": "Most effective long-term treatment — reduces menstrual flow 80–90% and dramatically reduces dysmenorrhea. Also provides contraception."
+      }
+    ],
+    "non_pharm": [
+      "Topical heat (heating pad 40°C to abdomen): evidence-based — comparable to ibuprofen for mild dysmenorrhea",
+      "Exercise: reduces prostaglandin levels with regular aerobic activity",
+      "Omega-3 supplements: anti-inflammatory, modest evidence for dysmenorrhea reduction",
+      "TENS (transcutaneous electrical nerve stimulation): evidence for pain reduction",
+      "Magnesium supplementation 200–400 mg/day: reduces uterine contractions"
+    ],
+    "refer_when": "Suspected secondary dysmenorrhea (endometriosis, fibroids); pain not responding to NSAID + hormonal therapy; intermenstrual bleeding or abnormal gynecological exam; suspected PID; fertility concerns"
+  }
+}
