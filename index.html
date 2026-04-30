@@ -106405,9 +106405,47 @@ var intDrugList = [];
 function initInteractions() {
   var inp = document.getElementById('int-input');
   if (!inp) return;
-  inp.addEventListener('keypress', function(e) { if (e.key === 'Enter') addIntDrug(); });
-  // Autocomplete dropdown
+  var activeIdx = -1;
+
+  function getDropdownItems() {
+    var dd = document.getElementById('int-autocomplete');
+    if (!dd || dd.style.display === 'none') return [];
+    return dd.querySelectorAll('.int-ac-item');
+  }
+
+  function setActiveItem(items, idx) {
+    activeIdx = idx;
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.toggle('sr-active', i === idx);
+    }
+    if (idx >= 0 && items[idx]) items[idx].scrollIntoView({ block: 'nearest' });
+  }
+
+  inp.addEventListener('keydown', function(e) {
+    var items = getDropdownItems();
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (items.length) setActiveItem(items, Math.min(activeIdx + 1, items.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (items.length) setActiveItem(items, Math.max(activeIdx - 1, 0));
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (items.length && activeIdx >= 0 && items[activeIdx]) {
+        var key = items[activeIdx].getAttribute('data-key');
+        if (key) { pickIntDrug(key); activeIdx = -1; return; }
+      }
+      addIntDrug();
+      activeIdx = -1;
+    } else if (e.key === 'Escape') {
+      var dd = document.getElementById('int-autocomplete');
+      if (dd) dd.style.display = 'none';
+      activeIdx = -1;
+    }
+  });
+
   inp.addEventListener('input', function() {
+    activeIdx = -1;
     var q = inp.value.trim().toLowerCase();
     var dropdown = document.getElementById('int-autocomplete');
     if (!dropdown) {
@@ -106429,7 +106467,7 @@ function initInteractions() {
     var h = '';
     for (var i = 0; i < Math.min(matches.length, 8); i++) {
       var m = matches[i];
-      h += '<div class="int-ac-item" onmousedown="pickIntDrug(\''+m.key+'\')">';
+      h += '<div class="int-ac-item" data-key="' + m.key + '" onmousedown="pickIntDrug(\'' + m.key + '\')">';
       h += '<span style="font-weight:600;color:var(--text);font-size:0.84rem;">' + m.name + '</span>';
       if (m.brand) h += '<span style="color:var(--muted);font-size:0.74rem;margin-left:6px;">' + m.brand + '</span>';
       h += '</div>';
@@ -106437,10 +106475,12 @@ function initInteractions() {
     dropdown.innerHTML = h;
     dropdown.style.display = 'block';
   });
+
   inp.addEventListener('blur', function() {
     setTimeout(function() {
       var dropdown = document.getElementById('int-autocomplete');
       if (dropdown) dropdown.style.display = 'none';
+      activeIdx = -1;
     }, 200);
   });
 }
