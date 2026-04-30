@@ -42815,6 +42815,104 @@ var DRUGS = {
     ],
     "source": "Health Canada PM (Stromectol, Sklice, Soolantra). CDC Parasitic Diseases Branch. AMMI Canada Bugs & Drugs 2024. CPS Position on Pediculosis. CADTH Scabies Treatment Review."
   },
+  "cloxacillin": {
+    "name": "Cloxacillin",
+    "brand": "Orbenin (originator); generics widely available (oral capsules and IV powder)",
+    "class": "Anti-Staphylococcal Penicillin (β-Lactamase-Resistant Penicillin)",
+    "napra": "I",
+    "moa": "Binds penicillin-binding proteins (PBPs) on the bacterial cell wall, inhibiting transpeptidation in peptidoglycan synthesis → cell lysis. Bactericidal, time-dependent killing. The bulky isoxazolyl side chain confers resistance to staphylococcal β-lactamases — distinguishing feature vs. amoxicillin/penicillin V. NO activity against methicillin-resistant Staphylococcus aureus (MRSA — altered PBP2a) and NO activity against gram-negatives or anaerobes.",
+    "indications": [
+      "Methicillin-susceptible Staphylococcus aureus (MSSA) infections — first-line traditionally for: skin and soft tissue infections (cellulitis, abscess after I&D), bone and joint infections (oral step-down), endocarditis (IV), bacteremia (IV)",
+      "Streptococcal infections (cloxacillin is active but penicillin V or amoxicillin is preferred — narrower)",
+      "Surgical prophylaxis / step-down where MSSA coverage is required (oral)"
+    ],
+    "dosing": [
+      {
+        "indication": "MSSA skin/soft tissue infection (oral)",
+        "dose": "250–500 mg PO QID × 5–7 days (cellulitis); take ON EMPTY STOMACH (1 h before or 2 h after meals — food reduces absorption by ~50%). For severe SSTI consider cephalexin (better absorption with food, BID/TID dosing improves adherence).",
+        "renal": "No specific adjustment for normal courses; severe renal impairment (CrCl <10): no dose change typically required (predominantly biliary excretion)"
+      },
+      {
+        "indication": "MSSA bacteremia / endocarditis / bone & joint (IV)",
+        "dose": "2 g IV q4–6h (12 g/day max for adults). Endocarditis: 2 g IV q4h × 4–6 weeks per AHA/ESC guidelines. NOTE: cefazolin is increasingly preferred over cloxacillin for MSSA bacteremia (CefBacT and FIRST trial signals — equal efficacy, better tolerability, q8h dosing, less phlebitis).",
+        "renal": "No adjustment for IV dosing"
+      },
+      {
+        "indication": "Pediatric (oral)",
+        "dose": "50–100 mg/kg/day PO divided QID (max 4 g/day). Take on empty stomach. Suspension is poorly palatable — cephalexin is generally preferred for pediatric SSTI.",
+        "renal": "No adjustment"
+      },
+      {
+        "indication": "Pediatric (IV)",
+        "dose": "100–200 mg/kg/day IV divided q4–6h (max 12 g/day).",
+        "renal": "No adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "GI upset — nausea, diarrhea, abdominal pain (especially with food on empty stomach requirement)",
+        "Phlebitis at IV site (concentration- and duration-related)",
+        "Mild rash"
+      ],
+      "serious": [
+        "Hypersensitivity reactions including anaphylaxis (β-lactam class) — true IgE-mediated allergy ~0.01–0.05%",
+        "Acute interstitial nephritis — rare; AKI with eosinophilia/eosinophiluria; discontinue if suspected",
+        "Hepatotoxicity — rare cholestatic hepatitis; usually reversible",
+        "C. difficile colitis (all antibiotics; cloxacillin lower risk than broad-spectrum agents)",
+        "Severe cutaneous adverse reactions (SJS/TEN, DRESS) — very rare",
+        "Neutropenia / bone marrow suppression — rare with prolonged high-dose IV courses (e.g., endocarditis); monitor CBC weekly"
+      ]
+    },
+    "contraindications": [
+      "Penicillin allergy (true IgE-mediated — anaphylaxis, urticaria, angioedema)",
+      "History of cloxacillin- or methicillin-induced acute interstitial nephritis or DRESS",
+      "Severe hepatic impairment with prior cholestatic reaction to penicillins"
+    ],
+    "interactions": [
+      {
+        "drug": "Methotrexate",
+        "severity": "Moderate-Major",
+        "mechanism": "Penicillins reduce renal clearance of methotrexate → increased MTX levels → toxicity (especially with high-dose oncology MTX)",
+        "management": "Avoid combination with high-dose MTX; for low-dose RA/IMID MTX, monitor for toxicity if prolonged cloxacillin course"
+      },
+      {
+        "drug": "Probenecid",
+        "severity": "Pharmacokinetic — Beneficial",
+        "mechanism": "Probenecid blocks renal tubular secretion of penicillins → prolonged half-life and higher plasma levels",
+        "management": "Used therapeutically in some endocarditis protocols; otherwise no routine adjustment"
+      },
+      {
+        "drug": "Warfarin",
+        "severity": "Minor-Moderate",
+        "mechanism": "Possible mild INR fluctuation (mechanism unclear — gut flora alteration affecting vitamin K)",
+        "management": "Routine INR monitoring during course"
+      },
+      {
+        "drug": "Combined oral contraceptives",
+        "severity": "Minor (theoretical)",
+        "mechanism": "Theoretical reduction in COC efficacy via altered gut flora; current evidence does not support clinically significant interaction for non-rifampin antibiotics",
+        "management": "Backup contraception not routinely required for short courses; counsel patient"
+      }
+    ],
+    "pregnancy": "Considered safe in pregnancy and lactation (Health Canada — pregnancy benefit/risk acceptable). Penicillins including cloxacillin have decades of safety data in pregnancy. Lactation: small amounts in milk; generally compatible with breastfeeding (LactMed) — possible mild infant GI upset/loose stools.",
+    "pk": {
+      "absorption": "Oral bioavailability ~37–60% (highly variable — markedly reduced by food, hence empty-stomach requirement)",
+      "half_life": "0.5–1.5 h (longer in renal impairment but rarely clinically significant due to biliary excretion)",
+      "elimination": "Hepatic metabolism + biliary excretion (~60–70%); renal excretion ~25–30%",
+      "onset": "Peak levels within 1–2 h of oral dose, 30 min after IV",
+      "peak": "1 h (oral); 30 min (IV)"
+    },
+    "canadian_notes": "Cloxacillin is the traditional anti-staphylococcal penicillin in Canada — used for >50 years for MSSA infections. ORAL CLOXACILLIN is increasingly being replaced by CEPHALEXIN in community practice: cephalexin can be taken with food, has better oral bioavailability, requires less frequent dosing (TID-QID instead of QID), is better tolerated, and is similarly effective for MSSA SSTI and oral step-down therapy. IV CLOXACILLIN is also being challenged by CEFAZOLIN for MSSA bacteremia and endocarditis — multiple observational studies and the FIRST RCT (NEJM 2019 in development; multiple cohort studies show equivalent or superior outcomes) support cefazolin as a preferred alternative (q8h dosing, better tolerability, less phlebitis, less neutropenia in prolonged courses). Cloxacillin remains useful when: (1) cephalosporin allergy precludes cefazolin/cephalexin, (2) IV penicillin specifically required (e.g., MSSA endocarditis with allergic protocol), or (3) cost considerations. AMMI Canada Bugs & Drugs lists cloxacillin and cephalexin as equivalent first-line for MSSA SSTI but notes the trend toward cephalexin. NOT for MRSA — confirm methicillin susceptibility before using.",
+    "pearls": [
+      "Take on EMPTY STOMACH — food reduces absorption by ~50%; patient adherence often poor for QID empty-stomach regimens — cephalexin is increasingly preferred for oral MSSA",
+      "IV cefazolin is increasingly preferred over IV cloxacillin for MSSA bacteremia/endocarditis (q8h dosing, better tolerability, less phlebitis)",
+      "NO MRSA activity — confirm susceptibility before using; for empiric SSTI in CA-MRSA prevalent areas, doxycycline or TMP-SMX are preferred",
+      "Pediatric oral suspension is poorly palatable — cephalexin is more acceptable for children",
+      "Acute interstitial nephritis is rare but classically associated with anti-staph penicillins (methicillin > nafcillin > cloxacillin) — discontinue if AKI with eosinophilia",
+      "NOT a routine choice for streptococcal infection — penicillin V or amoxicillin is narrower-spectrum first-line for Strep"
+    ],
+    "source": "Health Canada PM. AMMI Canada Bugs & Drugs 2024. Public Health Ontario Antimicrobial Stewardship. AHA Endocarditis 2015. ESC Endocarditis 2023. IDSA SSTI 2014."
+  },
   "famciclovir": {
     "name": "Famciclovir",
     "brand": "Famvir",
