@@ -107783,8 +107783,8 @@ var MINOR_AILMENTS = [
             "start": "n1",
             "nodes": {
                 "n1": {
-                    "q": "ANAPHYLAXIS / AIRWAY EMERGENCY: Any of (a) tongue, throat, or laryngeal swelling with stridor, voice change, drooling, or difficulty swallowing; (b) respiratory distress, wheeze, or chest tightness; (c) hypotension, dizziness, syncope, or feeling of impending doom; (d) severe widespread urticaria + GI symptoms (vomiting, severe abdominal pain) following allergen exposure?",
-                    "ctx": "Anaphylaxis is a clinical diagnosis — does NOT require all features. CALL 911 IMMEDIATELY. If patient has an EpiPen, USE IT NOW (epinephrine 0.3 mg IM adult / 0.15 mg IM pediatric, anterolateral thigh) and call 911 — go to ER even if symptoms improve (biphasic reactions in 5–15%, can occur up to 72h later).",
+                    "q": "ANAPHYLAXIS / AIRWAY EMERGENCY — ANY ONE of these features alone is sufficient (do NOT require all): (a) tongue, throat, or laryngeal swelling, stridor, voice change, drooling, OR difficulty swallowing; (b) respiratory distress, wheeze, OR chest tightness; (c) HYPOTENSION, dizziness, lightheadedness, syncope, OR feeling of impending doom (cardiovascular involvement is enough on its own); (d) urticaria PLUS GI symptoms (vomiting, severe abdominal pain) following allergen exposure; (e) progressive symptoms with rapid onset (minutes to ~2 hours)?",
+                    "ctx": "ANY ONE feature meets anaphylaxis criteria. Isolated hypotension + urticaria post-allergen IS anaphylaxis. CALL 911 IMMEDIATELY. If patient has an EpiPen, USE IT NOW (epinephrine 0.3 mg IM for ≥25 kg / 0.15 mg IM for 7.5–25 kg, anterolateral mid-thigh) and call 911 — go to ER even if symptoms improve (biphasic reactions in 5–15%, can occur up to 72h later).",
                     "crumb": "Anaphylaxis?",
                     "yes": "rx_anaphylaxis",
                     "no": "n2"
@@ -107797,8 +107797,8 @@ var MINOR_AILMENTS = [
                     "no": "rx_atypical"
                 },
                 "n3": {
-                    "q": "Any RED FLAGS: (1) angioedema of FACE, LIPS, TONGUE, or PERIORBITAL region (without anaphylaxis features at n1) — needs close monitoring; (2) WITHOUT urticaria — recurrent isolated angioedema (consider hereditary angioedema, ACEi-induced — both NOT MA scope); (3) urticaria persisting WELL beyond 6 weeks (chronic urticaria); (4) systemic features — fever, joint pain, malaise (urticarial vasculitis, autoimmune disease); (5) suspected DRUG REACTION — recently started new medication (β-lactam antibiotics, NSAIDs, ACEi, opioids, biologics) where withdrawal may be needed?",
-                    "ctx": "Angioedema without anaphylaxis still requires careful monitoring (can progress); angioedema without urticaria suggests ACEi-induced or hereditary (C1-INH deficiency) — distinct treatment pathways. Suspected drug reaction may require rapid drug withdrawal under physician guidance.",
+                    "q": "Any RED FLAGS: (1) angioedema of FACE, LIPS, TONGUE, or PERIORBITAL region (without anaphylaxis features at n1) — needs close monitoring; (2) WITHOUT urticaria — recurrent isolated angioedema (consider hereditary angioedema with family history + abdominal attacks, ACEi-induced — both NOT MA scope); (3) systemic features — fever, joint pain, malaise (urticarial vasculitis, autoimmune disease); (4) suspected DRUG REACTION — recently started new medication (β-lactam antibiotics, NSAIDs, ACEi, opioids, biologics) where withdrawal may be needed; (5) MAST CELL DISORDER features — recurrent flushing + syncope/hypotension episodes, persistent reddish-brown pigmented macules (urticaria pigmentosa), positive Darier's sign (wheal on stroking lesion), unexplained recurrent GI/cardiovascular symptoms (mastocytosis or MCAS); (6) PHYSICAL URTICARIA with prior SYSTEMIC reaction — cold urticaria with cold-water immersion symptoms (anaphylaxis risk), exercise-induced anaphylaxis, solar/heat-induced systemic reactions; (7) FIRST severe reaction with identifiable trigger (food, drug, venom) — needs allergist referral + EpiPen Rx even if current symptoms have resolved?",
+                    "ctx": "Angioedema without anaphylaxis still requires close monitoring (can progress). Angioedema without urticaria suggests ACEi-induced or hereditary (C1-INH deficiency) — distinct treatment. Mastocytosis/MCAS warrants hematology + allergy workup with serum tryptase. Physical urticaria with prior systemic reaction needs EpiPen + allergist. First severe trigger reaction → allergist referral + EpiPen Rx even after resolution.",
                     "crumb": "Red flags?",
                     "yes": "rx_redflag",
                     "no": "n4"
@@ -107807,20 +107807,27 @@ var MINOR_AILMENTS = [
                     "q": "Duration: have hives been present LESS than 6 weeks (acute urticaria)?",
                     "ctx": "Acute urticaria (<6 weeks) is within Ontario MA scope for non-sedating H1 antihistamine prescribing. Chronic urticaria (≥6 weeks) is OUTSIDE MA scope and requires specialist (allergist/dermatologist) input — though pharmacist can extend antihistamine while awaiting referral.",
                     "crumb": "Acute (<6wk)?",
-                    "yes": "n5",
+                    "yes": "n4b",
                     "no": "rx_chronic"
+                },
+                "n4b": {
+                    "q": "Is the patient an INFANT under 6 months of age?",
+                    "ctx": "Most 2nd-gen antihistamines have age restrictions. Infants <6 months should be assessed by physician/pediatrician — most agents not approved or limited safety data; underlying cause (food allergy, viral exanthem, neonatal cutaneous mastocytosis) needs assessment.",
+                    "crumb": "Infant <6mo?",
+                    "yes": "rx_pedi_young",
+                    "no": "n5"
                 },
                 "n5": {
                     "q": "Is the patient pregnant or breastfeeding?",
-                    "ctx": "AR pharmacotherapy in pregnancy/lactation requires agent selection with strongest safety data. Loratadine and cetirizine have the most pregnancy data; second-line agents have less.",
+                    "ctx": "Pharmacotherapy in pregnancy/lactation requires agent selection with strongest safety data. Loratadine and cetirizine have the most pregnancy data; second-line agents have less.",
                     "crumb": "Pregnant/BF?",
                     "yes": "tx_preg",
                     "no": "n6"
                 },
                 "n6": {
-                    "q": "Has the patient already tried a 2nd-generation H1 antihistamine at STANDARD dose for at least 2 weeks without adequate symptom control?",
-                    "ctx": "If standard-dose 2nd-gen antihistamine has failed, EAACI 2022 / CSACI 2020 step-up is to up-dose to 2–4× the standard dose (off-label but evidence-based and within Ontario MA scope per OCP).",
-                    "crumb": "Standard dose failed?",
+                    "q": "Has the patient already tried a 2nd-generation H1 antihistamine at STANDARD dose, taken DAILY (not PRN), for at least 2 weeks without adequate symptom control?",
+                    "ctx": "If properly-trialled standard-dose 2nd-gen antihistamine has failed, EAACI 2022 / CSACI 2020 step-up is to up-dose to 2–4× the standard dose (off-label but evidence-based and within Ontario MA scope per OCP). PRN dosing or sub-2-week trials do NOT count as failure — most failures are dosing-frequency errors.",
+                    "crumb": "Daily standard dose failed?",
                     "yes": "tx_updose",
                     "no": "tx_standard"
                 },
@@ -107844,6 +107851,11 @@ var MINOR_AILMENTS = [
                     "msg": "Chronic urticaria (≥6 weeks) is OUTSIDE Ontario MA prescribing scope — refer to allergist or dermatologist. While awaiting referral, pharmacist may prescribe or extend 2nd-gen H1 antihistamine at standard or up-dosed regimen (per EAACI 2022 / CSACI 2020) to maintain symptom control.",
                     "detail": "CHRONIC SPONTANEOUS URTICARIA (CSU) workup includes: CBC, ESR/CRP, TSH, ANA, total IgE, autologous serum skin test, baseline tryptase if mastocytosis suspected. Step-up therapy (under specialist care): (1) 2nd-gen H1 AH standard → up-dose 2–4×; (2) Add 2nd 2nd-gen AH or H2 blocker (limited evidence); (3) OMALIZUMAB (Xolair) 300 mg SC q4 weeks — anti-IgE, Health Canada-approved for CSU, very effective; covered by Ontario EAP with documented antihistamine failure; (4) Cyclosporine, dupilumab (off-label). Counsel: avoid known triggers (stress, NSAIDs, alcohol, heat/cold per subtype); keep symptom diary."
                 },
+                "rx_pedi_young": {
+                    "type": "refer",
+                    "msg": "Infant under 6 months — refer to physician/pediatrician for assessment.",
+                    "detail": "Possible causes in young infants: food allergy (often cow's milk protein), viral exanthem misidentified as urticaria, neonatal cutaneous mastocytosis (urticaria pigmentosa, mastocytoma), erythema toxicum neonatorum, atopic dermatitis. Most 2nd-gen antihistamines not approved <6 months: cetirizine syrup ≥6 months; desloratadine syrup ≥6 months; loratadine syrup ≥2 years; fexofenadine ≥2 years (24 mg BID for 2–11y); bilastine ≥6 years; rupatadine ≥6 years. While awaiting assessment: identify and remove suspected triggers; cool compresses; safe baseline care."
+                },
                 "tx_preg": {
                     "type": "treat",
                     "msg": "PREGNANCY/LACTATION FIRST-LINE: Loratadine 10 mg PO OD OR Cetirizine 10 mg PO OD — most extensive human pregnancy data and accepted by SOGC, Motherisk, LactMed. May up-dose to 2× standard if needed (cetirizine 20 mg/day or loratadine 20 mg/day) under same MA pathway; up to 4× standard requires obstetric consultation. AVOID 1st-gen antihistamines (diphenhydramine, hydroxyzine) routinely — sedation, anticholinergic load. Cool compresses + trigger avoidance for all.",
@@ -107851,12 +107863,12 @@ var MINOR_AILMENTS = [
                 },
                 "tx_standard": {
                     "type": "treat",
-                    "msg": "First-Line: 2nd-generation H1 antihistamine, DAILY (not PRN — prophylactic dosing more effective), continued until urticaria fully resolved. Choose ONE: cetirizine 10 mg OD; loratadine 10 mg OD; fexofenadine 120–180 mg OD; bilastine 20 mg OD; rupatadine 10 mg OD; OR desloratadine 5 mg OD. Reassess at 2 weeks.",
-                    "detail": "EAACI 2022 / CSACI 2020 / AAAAI-ACAAI 2023: 2nd-gen non-sedating H1 antihistamines are first-line for both acute and chronic urticaria. DAILY DOSING (not PRN) is significantly more effective. Continue until urticaria fully resolved (often 1–2 weeks beyond symptom resolution).\n\nCHOICE: largely patient preference and side-effect profile. Cetirizine — mild sedation in some (take at bedtime); fexofenadine — empty stomach (avoid fruit juice — reduces absorption); bilastine — 1h before or 2h after food. AVOID 1st-gen antihistamines (diphenhydramine/Benadryl, hydroxyzine, chlorpheniramine) for routine use — sedation, anticholinergic effects, Beers Criteria caution in elderly; reserve for short-term sleep aid only at bedtime.\n\nADJUNCTS: cool compresses, loose cotton clothing, lukewarm showers, colloidal oatmeal baths; avoid identified triggers (foods, NSAIDs, ASA, opioids, infections, physical triggers — cold/heat/pressure/sunlight/exercise/stress). Most acute urticaria resolves within 6 weeks. If inadequate at 2 weeks → up-dose (next path)."
+                    "msg": "First-Line: 2nd-generation H1 antihistamine, DAILY (not PRN — prophylactic dosing more effective), continued until urticaria fully resolved. AGE-STRATIFIED CANADIAN DOSING below. Reassess at 2 weeks.",
+                    "detail": "ADULTS & ADOLESCENTS (≥12y): cetirizine 10 mg OD; loratadine 10 mg OD; fexofenadine 120–180 mg OD; bilastine 20 mg OD; rupatadine 10 mg OD; OR desloratadine 5 mg OD.\n\nCHILDREN 6–11y: cetirizine 5–10 mg OD; loratadine 10 mg OD (5 mg if <30 kg); fexofenadine 30–60 mg BID; rupatadine 5 mg OD (≥6 y); desloratadine 2.5 mg OD. (Bilastine ≥12y only in Canada.)\n\nCHILDREN 2–5y: cetirizine 2.5 mg OD or BID; loratadine 5 mg OD; desloratadine 1.25 mg OD; fexofenadine 30 mg BID. (Rupatadine and bilastine not approved <6y/<12y respectively.)\n\nCHILDREN 6 mo – 23 mo: cetirizine syrup 2.5 mg OD; desloratadine syrup 1 mg OD. Most other 2nd-gen agents not approved.\n\nEAACI 2022 / CSACI 2020 / AAAAI-ACAAI 2023: 2nd-gen non-sedating H1 antihistamines are first-line for both acute and chronic urticaria. DAILY DOSING (not PRN) is significantly more effective. Continue until urticaria fully resolved (often 1–2 weeks beyond symptom resolution).\n\nCHOICE FACTORS: cetirizine — mild sedation in some (take at bedtime); fexofenadine — empty stomach (avoid fruit juice — reduces absorption); bilastine — 1h before or 2h after food. AVOID 1st-gen antihistamines (diphenhydramine/Benadryl, hydroxyzine, chlorpheniramine) for routine use — sedation, anticholinergic effects, Beers Criteria caution in elderly; reserve for short-term sleep aid only at bedtime.\n\nADJUNCTS: cool compresses, loose cotton clothing, lukewarm showers, colloidal oatmeal baths; avoid identified triggers (foods, NSAIDs, ASA, opioids, infections, physical triggers — cold/heat/pressure/sunlight/exercise/stress).\n\nNSAID-INDUCED URTICARIA (NECD/AERD): if prior reaction confirmed, AVOID ALL COX-1 NSAIDs (ibuprofen, naproxen, ASA, ketorolac); selective COX-2 (celecoxib) usually tolerated but should be tested under physician supervision. Use acetaminophen for pain/fever.\n\nMost acute urticaria resolves within 6 weeks. If inadequate at 2 weeks → up-dose (next path)."
                 },
                 "tx_updose": {
                     "type": "treat",
-                    "msg": "Step-Up: Up-dose 2nd-generation H1 antihistamine to 2–4× the standard dose (EAACI 2022 / CSACI 2020 — within Ontario MA scope per OCP). Examples: cetirizine 20 mg → 40 mg/day in divided doses; loratadine 20 mg/day; fexofenadine 360–720 mg/day; bilastine 40 mg/day; desloratadine 10 mg/day.",
+                    "msg": "Step-Up: Up-dose 2nd-generation H1 antihistamine to 2–4× the standard dose (EAACI 2022 / CSACI 2020 — within Ontario MA scope per OCP). Examples: cetirizine 20 mg BID (= 40 mg/day) or 10 mg QID; loratadine 20 mg/day; fexofenadine 180 mg BID–QID (360–720 mg/day); bilastine 40 mg/day; rupatadine 20 mg/day; desloratadine 10 mg/day.",
                     "detail": "UP-DOSING is OFF-LABEL but evidence-based — EAACI 2022 strongly recommends as the next step before second-line therapies. Stay with the SAME 2nd-gen agent (do not mix multiple 2nd-gen AH initially); up-dose in stepwise fashion (e.g., 2× × 1 week, then 4× if still uncontrolled). Maintain DAILY dosing (not PRN). Reassess at 2 weeks at each step.\n\nMAX DOSE GUIDANCE: cetirizine 40 mg/day (2 tabs BID); loratadine 20 mg/day; fexofenadine 720 mg/day (180 mg QID or 360 mg BID); bilastine 40 mg/day (off-label, limited data above 20 mg); rupatadine 20 mg/day. SIDE EFFECTS: cetirizine sedation increases at higher doses (consider switch to loratadine/fexofenadine if drowsy); QTc prolongation rare but considered (avoid in long-QT, on QT-prolonging drugs).\n\nIF STILL INADEQUATE after 2–4 weeks at up-dosed regimen, OR symptoms persist beyond 6 weeks total: REFER to allergist/dermatologist for assessment (omalizumab Xolair candidacy under EAP, cyclosporine, dupilumab). Prednisone short courses (30–40 mg × 3–5 days, max 10 days) may be used by physician for severe acute exacerbations — OUTSIDE Ontario MA scope."
                 }
             }
