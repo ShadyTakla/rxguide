@@ -110087,22 +110087,36 @@ var MINOR_AILMENTS = [
             "start": "n1",
             "nodes": {
                 "n1": {
-                    "q": "Presentation consistent with ATOPIC DERMATITIS (eczema): dry, ITCHY (cardinal feature), erythematous, scaly patches/plaques in classic distribution (infants — face/scalp/extensor; older children/adults — flexural folds, hands, neck); chronic-relapsing course; personal/family history of atopy (eczema, asthma, hay fever, food allergy)?",
-                    "ctx": "Itch is the hallmark of AD ('it's not eczema if it doesn't itch'). Lichenification (thickening) develops with chronic scratching. Distribution shifts with age. If features atypical, consider differentials before treating.",
+                    "q": "Presentation consistent with ATOPIC DERMATITIS (eczema): dry, ITCHY (cardinal feature), erythematous, scaly patches/plaques in CLASSIC ATOPIC DISTRIBUTION (infants — face/scalp/extensor; older children/adults — flexural folds, hands, neck); chronic-relapsing course; personal/family history of atopy (eczema, asthma, hay fever, food allergy)?",
+                    "ctx": "Atopic dermatitis is the only Ontario MA-listed eczema diagnosis. Allergic CONTACT dermatitis (geometric distribution matching contact, occupational, jewellery, cosmetics, plants) is OUT of MA scope and requires patch testing. Itch is the hallmark of AD ('it's not eczema if it doesn't itch'). If presentation is geometric/linear or matches a contact pattern, route to ACD/contact pathway.",
                     "crumb": "AD features?",
-                    "yes": "n2",
+                    "yes": "n1b",
                     "no": "rx_atypical"
                 },
+                "n1b": {
+                    "q": "Distribution check: is the rash GEOMETRIC, LINEAR, or ASYMMETRIC in a pattern matching a contact (jewellery on neck/wrist, watch band, ring, cosmetics on face, hair dye on scalp, soap/detergent on hands, plants/poison ivy on exposed skin, occupational chemicals)?",
+                    "ctx": "Geometric/contact-pattern distribution is ALLERGIC or IRRITANT CONTACT DERMATITIS — outside Ontario MA scope. Pharmacist may recommend trigger removal + emollient + short-course low-potency TCS as supportive care, but definitive diagnosis (patch testing) and long-term management require physician/dermatology referral.",
+                    "crumb": "Contact pattern?",
+                    "yes": "rx_contact",
+                    "no": "n1c"
+                },
+                "n1c": {
+                    "q": "Scabies screen: any of (a) intense NOCTURNAL itch (worse at night, often disturbing sleep); (b) household contacts or sexual partner ALSO itching; (c) BURROWS (small linear marks) in finger webspaces, wrists, axillae, waistline, genitals/groin, breasts; (d) hyperkeratotic crusted plaques in immunocompromised (crusted/Norwegian scabies); (e) rash worsening despite OTC moisturizers/TCS?",
+                    "ctx": "Scabies is an itchy mimic of eczema; topical corticosteroids do NOT treat scabies and may worsen it. Requires permethrin 5% cream (or oral ivermectin in severe/crusted cases) + treatment of all close contacts simultaneously + decontamination of bedding/clothing.",
+                    "crumb": "Scabies features?",
+                    "yes": "rx_scabies",
+                    "no": "n2"
+                },
                 "n2": {
-                    "q": "Any URGENT red flags requiring same-day assessment: (a) widespread monomorphic vesicles/punched-out erosions on eczema (ECZEMA HERPETICUM — fever, malaise — emergency); (b) rapidly spreading bacterial infection with fever/pustules (impetiginization with sepsis risk); (c) erythroderma — ≥90% body surface area redness/scaling (medical emergency — fluid loss, hypothermia); (d) failure of skin barrier in infant <3 months with severe widespread disease?",
-                    "ctx": "Eczema herpeticum is HSV superinfection of eczematous skin — punched-out vesicles, fever, can cause bacteremia, keratoconjunctivitis, encephalitis if untreated. Erythroderma is a medical emergency. Severe AD in young infant warrants pediatric input.",
+                    "q": "Any URGENT red flags requiring same-day assessment: (a) ECZEMA HERPETICUM — clustered punched-out vesicles or monomorphic small vesicles (even if localized), sudden painful worsening of existing eczema, recent HSV exposure or active cold sore, ± fever/malaise (do NOT apply TCS until EH excluded); (b) rapidly spreading bacterial infection with fever/pustules (sepsis risk); (c) ERYTHRODERMA — ≥80–90% body surface area redness/scaling (medical emergency — fluid loss, hypothermia); (d) infant <3 months with severe widespread disease; (e) any rash with rapidly evolving systemic symptoms?",
+                    "ctx": "Eczema herpeticum may present early as a localized cluster of small vesicles or unexpectedly painful flare WITHOUT systemic features. Threshold for suspicion should be LOW — TCS can disseminate HSV. Distinguished from severe AD flare by morphology (uniform 'punched-out' lesions). Erythroderma is a medical emergency. Severe AD in young infant warrants pediatric input.",
                     "crumb": "Urgent flags?",
                     "yes": "rx_urgent",
                     "no": "n3"
                 },
                 "n3": {
-                    "q": "Any NON-URGENT red flags: (1) signs of bacterial superinfection (yellow honey-coloured crusting, pustules, weeping, increasing redness — but no systemic symptoms); (2) periocular/eyelid involvement (TCS-related glaucoma/cataract risk — needs caution); (3) suspected ALLERGIC CONTACT DERMATITIS with unclear trigger (geometric/asymmetric distribution, occupational exposure — needs patch testing); (4) severe widespread AD covering >20% body surface area (may need systemic therapy — dupilumab, JAK inhibitors); (5) child <3 months with new-onset rash; (6) failure of optimised topical therapy after 2–4 weeks?",
-                    "ctx": "Bacterial superinfection without sepsis can be co-managed with topical antibiotic + TCS. Severe AD or treatment failure warrants dermatology referral for advanced therapies (dupilumab Dupixent, abrocitinib, upadacitinib — all OUTSIDE Ontario MA scope).",
+                    "q": "Any NON-URGENT red flags: (1) signs of bacterial superinfection (yellow honey-coloured crusting, pustules, weeping, increasing redness — but no systemic symptoms); (2) CHRONIC/RECURRENT periocular/eyelid involvement OR known glaucoma/cataract history (acute mild eyelid AD without these can be treated with low-potency TCS — see tx_sensitive); (3) severe widespread AD covering >20% body surface area (may need systemic therapy — dupilumab, JAK inhibitors); (4) child <3 months with new-onset rash; (5) PRIOR FAILED course of optimised topical TCS within past 2–4 weeks; (6) infant 3–11 months with moderate-severe AD requiring more than low-potency TCS?",
+                    "ctx": "Bacterial superinfection without sepsis can be co-managed with topical antibiotic + TCS (mupirocin under MA Impetigo scope while waiting). Severe AD, treatment failure, or chronic eyelid AD warrants dermatology referral for advanced therapies (dupilumab Dupixent, JAK inhibitors abrocitinib/upadacitinib, TCI tacrolimus — all OUTSIDE Ontario MA scope). Acute first-time mild eyelid AD without prior TCS exposure can be managed with HC 1% × ≤7 days under MA scope.",
                     "crumb": "Non-urgent flags?",
                     "yes": "rx_redflag",
                     "no": "n4"
@@ -110127,6 +110141,16 @@ var MINOR_AILMENTS = [
                     "crumb": "Severe/lichenified?",
                     "yes": "tx_severe",
                     "no": "tx_moderate"
+                },
+                "rx_contact": {
+                    "type": "refer",
+                    "msg": "ALLERGIC or IRRITANT CONTACT DERMATITIS suspected — OUTSIDE Ontario MA scope. Refer to physician for assessment; dermatology referral for patch testing if chronic/recurrent.",
+                    "detail": "ACD vs ICD: both present with itchy/burning erythematous rash in geometric distribution matching exposure. ACD is delayed (T-cell-mediated) hypersensitivity; ICD is direct chemical irritation. Common ACD triggers: nickel (jewellery, belt buckle), fragrance, preservatives (methylisothiazolinone, formaldehyde-releasers), rubber accelerators (gloves), neomycin (topical antibiotic), poison ivy/oak/sumac (urushiol). Common ICD: soaps/detergents (hands), occupational solvents, frequent hand-washing, diaper area in infants.\n\nPHARMACIST INTERIM CARE (supportive, while awaiting referral): (1) IDENTIFY and AVOID the trigger (most important — definitive treatment); (2) Liberal emollients (CeraVe, Cetaphil, Vaseline) ≥3×/day; (3) Cool compresses for acute weeping; (4) SHORT-COURSE LOW-POTENCY TCS (HC 1% BID × 5–7 days) acceptable for supportive symptom relief while awaiting MD assessment — but NOT a substitute for trigger identification.\n\nFOR PATCH TESTING REFERRAL: dermatology with patch testing capability; standard panel (TRUE Test or expanded series) reads at 48h and 96h. ACD with severe/widespread/face involvement may need physician-prescribed mid-potency TCS or oral prednisone — outside MA scope."
+                },
+                "rx_scabies": {
+                    "type": "refer",
+                    "msg": "Possible SCABIES — outside Ontario MA scope (current). Refer to physician for permethrin 5% cream prescription + simultaneous treatment of household/sexual contacts + bedding/clothing decontamination.",
+                    "detail": "DIAGNOSIS: skin scraping with mineral oil → mites/eggs/feces under microscopy (gold standard, often not done in primary care); dermoscopy can visualize burrows. Empiric treatment is acceptable when clinical suspicion is high.\n\nTREATMENT (physician/NP-prescribed): PERMETHRIN 5% cream — apply head-to-toe (avoid eyes/mouth) overnight × 8–14h, wash off; REPEAT in 7–14 days. ALL household and sexual contacts should be treated SIMULTANEOUSLY (asymptomatic carriers transmit). Wash all bedding, clothing, towels in hot water; bag non-washable items for 72h. Itch may persist 2–6 weeks AFTER successful treatment (post-scabetic itch — antihistamine + emollient + low-potency TCS for symptomatic relief).\n\nCRUSTED/NORWEGIAN SCABIES (immunocompromised, elderly, institutional settings): hyperkeratotic plaques with millions of mites — highly contagious; requires combination permethrin + ORAL IVERMECTIN 200 mcg/kg × 2 doses 1 week apart (sometimes weekly × 4–6 weeks); contact precautions; refer urgently to dermatology/infectious disease.\n\nDO NOT: apply topical corticosteroids alone (worsens scabies, can cause crusted scabies in immunocompromised — 'masked scabies' or 'incognito scabies')."
                 },
                 "rx_atypical": {
                     "type": "caution",
@@ -110160,7 +110184,7 @@ var MINOR_AILMENTS = [
                 },
                 "tx_severe": {
                     "type": "treat",
-                    "msg": "SEVERE/LICHENIFIED AD on trunk/limbs OR palms/soles: HIGH-POTENCY TCS short course — Betamethasone dipropionate 0.05% cream/ointment BID × 1–2 weeks (NOT to be used >2 weeks continuous), OR Clobetasol propionate 0.05% cream/ointment BID × MAX 2 weeks (super-potent — limit duration strictly). After clearance, step DOWN to medium-potency for maintenance.",
+                    "msg": "SEVERE/LICHENIFIED AD on trunk/limbs OR palms/soles in ADULTS/ADOLESCENTS (NOT infants/children <12 — refer): PREFERRED — Betamethasone dipropionate 0.05% cream/ointment BID × 1–2 weeks (high potency, Class II–III). CLOBETASOL propionate 0.05% (super-potent, Class I) MAX 2 weeks ONLY for resistant lichenified plaques on thick skin (palms/soles); CONSIDER DERMATOLOGY REFERRAL before initiating clobetasol if available. After clearance, step DOWN to medium-potency for maintenance.",
                     "detail": "HIGH POTENCY = Class II-III (US): betamethasone dipropionate 0.05%, fluocinonide 0.05%, halobetasol 0.05%, clobetasol propionate 0.05% (Class I/super-potent — clobetasol). Use short course only; tachyphylaxis develops with continuous use; rebound flare on abrupt cessation. NEVER use on face, eyelids, axilla, groin, or infant skin.\n\nLICHENIFICATION (chronic thickened leathery skin) often requires high-potency TCS short-course to break the itch-scratch cycle, then step DOWN. Occlusion (wet wraps, plastic occlusion) increases TCS potency 10×; do NOT do this with high-potency TCS without dermatology guidance.\n\nLIMITS: clobetasol max 50 g/week; betamethasone dipropionate max 45–60 g/week; do not exceed 2 weeks continuous. After clearance: STEP DOWN to medium-potency 2×/week proactive for 1–2 months.\n\nIF SEVERE/REFRACTORY DESPITE OPTIMISED TCS: refer to dermatology for assessment of dupilumab (≥6 months Health Canada), JAK inhibitors (≥12 years), narrowband UVB, or systemic immunosuppression. All OUTSIDE Ontario MA scope.\n\nSCALP AD: high-potency lotion/solution (clobetasol 0.05% scalp solution, betamethasone valerate 0.1% lotion) BID × 1–2 weeks; antifungal shampoo (ketoconazole 2%) if seborrheic overlap. Consider oral cephalexin if impetiginized — refer."
                 }
             }
