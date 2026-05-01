@@ -109422,7 +109422,113 @@ var MINOR_AILMENTS = [
             "6. Counsel on dose, timing (preload for motion sickness; bedtime for Diclectin), side effects (especially drowsiness), hydration strategies, dietary measures, ginger/P6 adjuncts, when to seek urgent care.",
             "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen (or referral), counselling provided, notify primary care provider.",
             "8. Follow-up: reassess at 24–48 hours; persistent vomiting or worsening symptoms — refer for full workup; in pregnancy, monitor weight and hydration closely with primary care/obstetrics."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Any URGENT red flags requiring SAME-DAY/ED assessment: (1) HEMATEMESIS — vomiting blood (bright red or coffee-ground); (2) MELENA or hematochezia + vomiting (GI bleed); (3) SEVERE ABDOMINAL PAIN (peritonitis, appendicitis, bowel obstruction, pancreatitis); (4) SIGNS OF DEHYDRATION — orthostatic dizziness, decreased urine output (<once in 8h), dry mucous membranes, sunken eyes, lethargy in child; (5) MENINGITIS features — fever + headache + neck stiffness + photophobia ± rash; (6) RAISED INTRACRANIAL PRESSURE — projectile vomiting + severe headache + papilledema/vision change/altered consciousness; (7) HEAD TRAUMA in past 72h with vomiting; (8) DIABETIC KETOACIDOSIS features — diabetic + abdominal pain + Kussmaul breathing + fruity breath + polyuria; (9) HYPEREMESIS GRAVIDARUM — pregnant with weight loss >5%, ketonuria, dehydration, electrolyte derangement; (10) bloody/black stool concurrent with vomiting?",
+                    "ctx": "These are not minor ailment presentations. Refer urgently — many require IV hydration, imaging, lab workup, or surgical/emergency intervention. Empirical antiemetic risks masking serious pathology.",
+                    "crumb": "Urgent flags?",
+                    "yes": "rx_urgent",
+                    "no": "n2"
+                },
+                "n2": {
+                    "q": "Is the patient PREGNANT or trying to become pregnant?",
+                    "ctx": "Nausea and vomiting of pregnancy (NVP) is the only specific N&V indication within Ontario MA scope per O. Reg. 256/24. Pharmacists may prescribe doxylamine/pyridoxine (Diclectin/Bonjesta) for confirmed NVP. General N&V (non-pregnancy) is OTC counselling only.",
+                    "crumb": "Pregnant?",
+                    "yes": "n2b",
+                    "no": "n3"
+                },
+                "n2b": {
+                    "q": "Symptoms consistent with NAUSEA AND VOMITING OF PREGNANCY (NVP): nausea ± vomiting starting in 1st trimester (typically 4–9 weeks gestation), worse on awakening or with smells/foods, peaks 9–13 weeks, usually resolves by 16–20 weeks (rarely persists into 2nd/3rd trimester); WITHOUT severe weight loss, ketonuria, or electrolyte derangement (those = hyperemesis gravidarum)?",
+                    "ctx": "PUQE (Pregnancy-Unique Quantification of Emesis) score helps stratify: mild (≤6), moderate (7–12), severe ≥13. Severe → likely HG → refer (already covered in n1).",
+                    "crumb": "NVP features?",
+                    "yes": "n2c",
+                    "no": "rx_atypical_preg"
+                },
+                "n2c": {
+                    "q": "Has the patient already tried PYRIDOXINE (vitamin B6) 10–25 mg PO TID–QID alone for at least 1–2 days WITHOUT adequate symptom relief?",
+                    "ctx": "Per SOGC CPG No. 254 (reaffirmed 2024), pyridoxine alone is the recommended FIRST pharmacological step for mild NVP before adding doxylamine. Pyridoxine is OTC, safe, and effective for mild-moderate NVP.",
+                    "crumb": "Pyridoxine tried?",
+                    "yes": "tx_diclectin",
+                    "no": "tx_pyridoxine"
+                },
+                "n3": {
+                    "q": "Cause/trigger of N&V — is it MOTION SICKNESS, anticipatory nausea (e.g., before a journey), or vestibular cause (vertigo, Meniere's)?",
+                    "ctx": "Motion sickness/vestibular nausea responds best to antihistamines (dimenhydrinate, meclizine, cyclizine) taken 30–60 minutes BEFORE travel. These are OTC NAPRA Schedule II/III in Canada — pharmacist OTC counselling, not MA prescribing.",
+                    "crumb": "Motion sickness?",
+                    "yes": "tx_motion",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Is N&V from a MEDICATION known to cause it (chemotherapy, opioids, antibiotics, GLP-1 agonists, metformin, iron, antidepressants, anticonvulsants)?",
+                    "ctx": "Medication-induced N&V often improves with timing/dose adjustments or specific anti-emetics matched to mechanism. Chemotherapy-induced N&V (CINV) requires specialist management with 5-HT3 antagonists, NK1 antagonists, etc. — outside MA scope.",
+                    "crumb": "Drug-induced?",
+                    "yes": "rx_drug_induced",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Likely cause is acute viral GASTROENTERITIS or food poisoning (sudden onset of vomiting ± diarrhea, lasting <72h, often with household contacts also affected, low-grade fever)?",
+                    "ctx": "Viral gastroenteritis is self-limited; primary management is rehydration with oral rehydration solution (ORS — Pedialyte, Hydralyte, WHO ORS). Antiemetics provide symptomatic relief but are not curative; ondansetron has best evidence in adults but is OUTSIDE Ontario MA scope (physician). Dimenhydrinate is OTC adjunct option.",
+                    "crumb": "Gastroenteritis?",
+                    "yes": "tx_gastro",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Symptoms have been present for MORE THAN 48–72 HOURS without improvement, OR are recurring/cyclical?",
+                    "ctx": "Persistent N&V beyond 72h or cyclical patterns warrant physician workup — could be cannabis hyperemesis syndrome (CHS), cyclic vomiting syndrome, gastroparesis, bowel obstruction, intracranial pathology, metabolic, or psychiatric.",
+                    "crumb": "Persistent/cyclical?",
+                    "yes": "rx_persistent",
+                    "no": "tx_general_otc"
+                },
+                "rx_urgent": {
+                    "type": "refer-urgent",
+                    "msg": "URGENT — same-day ED/physician assessment. Empirical antiemetics may mask serious pathology.",
+                    "detail": "HEMATEMESIS / GI BLEED → ED for endoscopy, IV access, transfusion if needed.\n\nSEVERE ABDOMINAL PAIN: appendicitis (RLQ migration, peritoneal signs), bowel obstruction (distension, no flatus, vomiting feculent material), pancreatitis (epigastric → back, lipase), cholecystitis (RUQ, Murphy sign), perforation (rigid abdomen, free air on imaging) — surgical evaluation.\n\nDEHYDRATION: orthostatic vital changes, low urine output, dry mucous membranes — IV fluids; pediatric dehydration (no tears, sunken fontanelle in infant, lethargy, capillary refill >3s) is more time-critical.\n\nMENINGITIS: fever + headache + neck stiffness + photophobia ± petechial rash (meningococcemia) → ED for LP, IV antibiotics + dexamethasone.\n\nRAISED ICP: projectile vomiting, severe headache, papilledema, vision change, altered consciousness → ED for CT/MRI.\n\nHEAD TRAUMA + vomiting: ED for CT to rule out intracranial bleed (especially if anticoagulated or elderly).\n\nDKA: diabetic + abdominal pain + Kussmaul respirations + fruity breath + polyuria → ED for blood glucose, ketones, ABG, IV fluids + insulin.\n\nHYPEREMESIS GRAVIDARUM: pregnant + weight loss >5% pre-pregnancy + ketonuria + dehydration → ER/OB for IV fluids, antiemetics, electrolyte correction; may require hospitalization."
+                },
+                "rx_atypical_preg": {
+                    "type": "refer",
+                    "msg": "Pregnancy + N&V not consistent with typical NVP pattern — refer to physician/OB for evaluation.",
+                    "detail": "Atypical features: onset AFTER 9 weeks gestation; persistent past 16–20 weeks; severe/intractable; weight loss; right upper quadrant pain (consider HELLP syndrome, acute fatty liver of pregnancy in 2nd/3rd trimester); fever; headache + visual symptoms (preeclampsia); dehydration; electrolyte derangement. Hyperemesis gravidarum (HG) requires assessment for ketonuria, electrolytes, weight loss; may need IV hydration + antiemetics ± hospital admission. Other 2nd/3rd trimester causes: gastroparesis, GERD, cholestasis of pregnancy, preeclampsia. Refer for OB assessment."
+                },
+                "rx_drug_induced": {
+                    "type": "refer",
+                    "msg": "Medication-induced N&V — refer to prescribing physician for dose/timing adjustment, drug switch, or specialty antiemetic. Pharmacist may provide supportive OTC counselling.",
+                    "detail": "PHARMACIST INTERIM ADVICE (while awaiting prescriber):\n\nOPIOID-INDUCED N&V: usually transient (resolves in 3–7 days as tolerance develops); take with food; consider switching to less emetogenic opioid; physician may add dimenhydrinate or metoclopramide for short courses.\n\nCHEMOTHERAPY-INDUCED N&V (CINV): outside MA scope — oncologist directs prophylaxis (ondansetron + dexamethasone ± aprepitant + olanzapine for highly emetogenic chemo per ASCO/MASCC guidelines).\n\nGLP-1 AGONIST (semaglutide, liraglutide, dulaglutide, tirzepatide): nausea peaks during dose escalation — slow titration, smaller meals, avoid fatty/spicy foods; usually improves by week 4–8.\n\nMETFORMIN: take with food; switch to extended-release formulation (Glumetza, Glucophage XR) reduces GI side effects.\n\nIRON SUPPLEMENT: take with food, smaller divided doses, switch ferrous fumarate ↔ gluconate ↔ bisglycinate, alternate-day dosing improves tolerability AND absorption.\n\nANTIBIOTICS: take with food; complete the course; review with physician if intolerable.\n\nANTIDEPRESSANT/ANTICONVULSANT-INDUCED: usually transient — counsel persistence in first 1–2 weeks; physician for dose split or alternative agent if persists."
+                },
+                "rx_persistent": {
+                    "type": "refer",
+                    "msg": "Persistent (>48–72h) or CYCLICAL N&V — refer to physician for workup. Common diagnoses include cannabis hyperemesis syndrome, cyclic vomiting syndrome, gastroparesis, bowel obstruction, intracranial pathology, metabolic disorder, or eating disorder.",
+                    "detail": "DIFFERENTIAL CONSIDERATIONS:\n\nCANNABIS HYPEREMESIS SYNDROME (CHS): chronic regular cannabis use (often daily for years) + cyclic episodes of severe N&V + diagnostic pearl — RELIEF FROM HOT SHOWERS/BATHS (compulsive bathing). Treatment: CESSATION of cannabis (curative); supportive care during episodes; haloperidol or capsaicin cream as adjuncts in ED.\n\nCYCLIC VOMITING SYNDROME: episodic stereotyped vomiting episodes with symptom-free intervals, often associated with migraine; family history; abdominal migraine in children.\n\nGASTROPARESIS: delayed gastric emptying — diabetic, post-surgical, idiopathic; gastric scintigraphy; metoclopramide or domperidone (limited Health Canada availability) under physician.\n\nBOWEL OBSTRUCTION: distension, constipation, feculent vomiting — surgical assessment urgently.\n\nINTRACRANIAL PATHOLOGY: tumor, hydrocephalus, vestibular pathology — MRI.\n\nEATING DISORDER (bulimia, ARFID): self-induced vomiting, dental erosion, body image preoccupation — psychiatric/multidisciplinary.\n\nMETABOLIC: hypercalcemia, uremia, adrenal insufficiency, thyroid storm — labs.\n\nReferral to family physician or specialist depending on suspected etiology."
+                },
+                "tx_pyridoxine": {
+                    "type": "treat",
+                    "msg": "MILD NVP FIRST-LINE: Pyridoxine (vitamin B6) 10–25 mg PO TID–QID (e.g., 25 mg every 8 hours). OTC. Continue for 2–3 days; if inadequate after that trial, return for doxylamine/pyridoxine combination (Diclectin/Bonjesta).",
+                    "detail": "EVIDENCE: SOGC CPG No. 254 (reaffirmed 2024) recommends pyridoxine as first pharmacological step for mild NVP. Effective for mild-moderate symptoms. NICE 2023 and ACOG 2024 concur.\n\nPYRIDOXINE SAFETY: avoid chronic doses >200 mg/day (peripheral neuropathy risk with prolonged high-dose use). Standard NVP dose is well below this threshold.\n\nNON-PHARMACOLOGICAL ADJUNCTS:\n• GINGER 250 mg PO QID — Cochrane evidence for nausea reduction in pregnancy; safe.\n• P6 (NEIGUAN) ACUPRESSURE wristbands (Sea-Bands) — modest evidence.\n• Eat small frequent BLAND meals; avoid empty stomach (often worsens nausea).\n• AVOID triggers (smells, fatty/spicy foods, prenatal vitamins on empty stomach — take with food or move to bedtime).\n• Hydration: small frequent sips of water, ginger ale, electrolyte drinks; ice chips.\n• Some patients tolerate cold/bland foods better (crackers, dry toast).\n\nIf symptoms worsen, ketonuria develops, weight loss occurs, or dehydration sets in → refer (HG concern). Reassess in 2–3 days."
+                },
+                "tx_diclectin": {
+                    "type": "treat",
+                    "msg": "MODERATE NVP (pyridoxine alone insufficient): Doxylamine succinate 10 mg + Pyridoxine 10 mg (DICLECTIN delayed-release) — within Ontario MA scope per O. Reg. 256/24 (pharmacist may prescribe). TITRATION: Day 1 — 2 tabs at bedtime; Day 2 — add 1 tab in AM if needed; Day 3 — add 1 tab mid-afternoon if needed. MAX 4 tabs/day. Take on empty stomach 30 min before bedtime (delayed-release). Bonjesta 20 mg/20 mg ER once daily is an alternative.",
+                    "detail": "ONTARIO MA SCOPE: NVP was added to OCP MA list effective Jan 2023 (O. Reg. 256/24). Pharmacist may prescribe Diclectin or Bonjesta — this is NOT requires-physician-Rx.\n\nSAFETY: extensive Canadian human safety data in pregnancy (Diclectin is the most-studied antiemetic in pregnancy globally — Health Canada-approved specifically for NVP). Compatible with breastfeeding (LactMed).\n\nSIDE EFFECTS: drowsiness (~10%) — caution with driving; dry mouth; constipation. Take at bedtime to leverage drowsiness for sleep.\n\nCOUNSELLING:\n• Delayed-release: SWALLOW WHOLE — do not crush, chew, or split.\n• Take 30 minutes BEFORE bedtime (allows release timed for AM nausea peak).\n• Do not take with antacids within 1h (decreases absorption).\n• Continue daily until symptoms resolve, then taper gradually (typically discontinue around 16–20 weeks gestation when NVP naturally resolves).\n\nIF DICLECTIN/BONJESTA INADEQUATE at max dose (4 tabs/day) for 2–3 days → refer to OB. Next-line options under physician care: dimenhydrinate 50–100 mg PO/PR q4–6h; metoclopramide 5–10 mg PO TID (≤12 weeks per Health Canada to limit tardive dyskinesia risk); ondansetron 4–8 mg PO q8h (some controversy regarding cleft palate signal in 1st trimester — risk-benefit individualized; SOGC accepts when other options inadequate).\n\nDISCONTINUE and refer if HG features develop (>5% weight loss, ketonuria, dehydration)."
+                },
+                "tx_motion": {
+                    "type": "treat",
+                    "msg": "MOTION SICKNESS / VESTIBULAR N&V (NOT in Ontario MA prescribing scope — OTC counselling only): Dimenhydrinate (Gravol) 50–100 mg PO 30–60 minutes BEFORE travel and q4–6h thereafter PRN; OR Meclizine (Bonine) 25–50 mg PO 1 hour before travel; non-drowsy alternatives: Bonjela ginger lozenges, P6 acupressure bands.",
+                    "detail": "DIMENHYDRINATE (Gravol): NAPRA Schedule II/III OTC. Side effects: drowsiness (significant in many patients — caution driving, alcohol), dry mouth, urinary retention in BPH, anticholinergic load (Beers Criteria caution in elderly — paradoxical excitation, falls, confusion). AVOID 1st-gen antihistamines in elderly when alternatives exist.\n\nMECLIZINE (Bonine, Antivert): less sedating than dimenhydrinate; longer-acting. Health Canada-approved for motion sickness. NAPRA OTC.\n\nSCOPOLAMINE TRANSDERMAL PATCH (Transderm-V): apply behind ear 4h before travel; effective for prolonged trips (cruise, long flights); NAPRA Schedule I (Rx required); anticholinergic side effects.\n\nNON-PHARMACOLOGICAL: face forward in vehicle/aircraft (window seat over wing); fix gaze on horizon; avoid reading; cool air; ginger 250 mg before travel; P6 wristbands; small bland meals before travel; avoid alcohol.\n\nVESTIBULAR PATHOLOGY (BPPV, Meniere's, vestibular neuritis): if recurrent vertigo episodes or hearing changes, refer for ENT/audiology assessment — long-term antihistamine use is not appropriate management."
+                },
+                "tx_gastro": {
+                    "type": "treat",
+                    "msg": "ACUTE VIRAL GASTROENTERITIS (NOT in Ontario MA prescribing scope — OTC counselling): REHYDRATION is primary — Oral Rehydration Solution (Pedialyte, Hydralyte, WHO ORS) in small frequent sips; AVOID sports drinks and juice (too much sugar — worsens diarrhea). Symptomatic adjuncts: dimenhydrinate 50–100 mg PO q4–6h PRN (OTC); BRAT diet (bananas, rice, applesauce, toast) once tolerating fluids; loperamide 4 mg load → 2 mg after each loose stool (max 16 mg/day) for adult diarrhea WITHOUT fever or bloody stool; probiotics (Lactobacillus, Saccharomyces boulardii — Cochrane: modest reduction in duration).",
+                    "detail": "REFERRAL CRITERIA: persistent vomiting >48h, signs of dehydration (orthostatic dizziness, decreased urine output, dry mucous membranes), bloody stool, high fever, severe abdominal pain, immunocompromise, age <2y or ≥65y, recent travel to high-risk areas, recent antibiotic use (consider C. difficile), pregnancy.\n\nPEDIATRIC: ORS is essential — replace ongoing losses (estimate 50–100 mL/kg over 4h, then maintain). Avoid antiemetics in young children (extrapyramidal risk with prochlorperazine, metoclopramide; ondansetron acceptable in ED). Dehydration assessment: skin turgor, mucous membranes, capillary refill, urine output, fontanelle in infants.\n\nC. DIFFICILE: recent antibiotic + watery diarrhea + fever + abdominal cramping → physician for stool toxin test, vancomycin or fidaxomicin.\n\nFOOD POISONING (acute toxin-mediated): preformed toxin (S. aureus, B. cereus) — vomiting prominent, rapid onset 1–6h, resolves <24h. Bacterial enterocolitis (Salmonella, Campylobacter, EHEC) — diarrhea prominent, longer course, may need physician for EHEC (avoid antibiotics — HUS risk).\n\nONDANSETRON 4 mg PO q8h is highly effective for adult viral gastroenteritis but is OUTSIDE Ontario MA scope (physician/ED prescribing). Refer if severe."
+                },
+                "tx_general_otc": {
+                    "type": "treat",
+                    "msg": "GENERAL N&V (no specific cause identified, <48h, not in Ontario MA prescribing scope — OTC counselling only): Symptomatic relief: dimenhydrinate (Gravol) 50–100 mg PO q4–6h PRN (OTC); ginger 250 mg PO QID; P6 acupressure; small frequent bland meals; hydration with ORS or sips of clear fluids.",
+                    "detail": "GENERAL N&V (not pregnancy, not motion sickness, not drug-induced, not gastroenteritis, <48h) is a clinical scenario where pharmacist-OTC counselling applies — pharmacist does NOT prescribe under MA in Ontario for general N&V (only NVP is in MA scope).\n\nSYMPTOMATIC OPTIONS:\n• Dimenhydrinate (Gravol): NAPRA OTC; sedating; useful at bedtime; caution in elderly (Beers Criteria) and BPH.\n• Ginger: 250 mg PO QID — Cochrane evidence for nausea (best evidence in pregnancy); few interactions.\n• P6 (Neiguan) acupressure wristbands.\n• Small frequent bland meals; avoid empty stomach; avoid trigger foods (fatty, spicy, strong odours).\n• Hydration: ORS, clear fluids in small sips; avoid juice, sports drinks (too much sugar).\n• Cool environment, fresh air.\n\nIF SYMPTOMS PERSIST >48h, DEVELOP NEW FEATURES, OR DEHYDRATION DEVELOPS → refer to physician. Common subtle causes that emerge: pregnancy (consider βhCG in any reproductive-age woman), GERD/dyspepsia, gastroparesis, anxiety, vestibular pathology, or early signs of more significant illness."
+                }
+            }
+        }
     },
     {
         "name": "Insect Bites & Stings",
