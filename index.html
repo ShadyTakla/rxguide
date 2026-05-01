@@ -226,6 +226,39 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .ma-tx-first{background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.25);border-radius:8px;padding:10px 12px;margin-bottom:8px;}
 .ma-tx-second{background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.2);border-radius:8px;padding:10px 12px;margin-bottom:8px;}
 
+/* MINOR AILMENTS — Therapeutic Flow Chart */
+.ma-flow-chart{display:flex;flex-direction:column;align-items:stretch;gap:0;margin-top:6px;}
+.ma-flow-row{display:flex;align-items:stretch;gap:14px;justify-content:flex-start;}
+.ma-flow-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;}
+.ma-flow-box{background:linear-gradient(135deg,rgba(6,182,212,0.13),rgba(6,182,212,0.04));border:1px solid rgba(6,182,212,0.42);border-radius:10px;padding:10px 14px;display:flex;align-items:flex-start;gap:10px;}
+.ma-flow-box.is-gate{border-color:rgba(245,158,11,0.55);background:linear-gradient(135deg,rgba(245,158,11,0.14),rgba(245,158,11,0.04));}
+.ma-flow-box.is-end{border-color:rgba(52,211,153,0.5);background:linear-gradient(135deg,rgba(52,211,153,0.13),rgba(52,211,153,0.04));}
+.ma-flow-num{flex:0 0 24px;background:#06b6d4;color:#0e1525;font-weight:800;border-radius:50%;width:24px;height:24px;text-align:center;line-height:24px;font-size:0.78rem;margin-top:1px;}
+.ma-flow-box.is-gate .ma-flow-num{background:#f59e0b;color:#0e1525;}
+.ma-flow-box.is-end .ma-flow-num{background:#34d399;color:#0e1525;}
+.ma-flow-body{flex:1 1 auto;min-width:0;}
+.ma-flow-title{font-size:0.88rem;font-weight:700;color:#e0f2fe;line-height:1.35;}
+.ma-flow-box.is-gate .ma-flow-title{color:#fde68a;}
+.ma-flow-box.is-end .ma-flow-title{color:#d1fae5;}
+.ma-flow-detail{font-size:0.78rem;color:#bae6fd;margin-top:5px;line-height:1.5;}
+.ma-flow-box.is-gate .ma-flow-detail{color:#fde68a;}
+.ma-flow-box.is-end .ma-flow-detail{color:#bbf7d0;}
+.ma-flow-arrow-down{font-size:1.1rem;color:#06b6d4;line-height:1;padding:5px 0 5px 30px;}
+.ma-flow-arrow-right{flex:0 0 auto;align-self:center;font-size:1.6rem;color:#ef4444;font-weight:900;line-height:1;}
+.ma-flow-refer{flex:0 0 230px;background:linear-gradient(135deg,rgba(239,68,68,0.16),rgba(239,68,68,0.05));border:1px solid rgba(239,68,68,0.5);border-radius:10px;padding:10px 12px;align-self:center;}
+.ma-flow-refer-title{color:#fca5a5;font-weight:800;font-size:0.74rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+.ma-flow-refer ul{padding-left:14px;margin:0;}
+.ma-flow-refer li{font-size:0.73rem;color:#fecaca;margin-bottom:3px;line-height:1.35;}
+.ma-flow-refer-summary{font-size:0.73rem;color:#fecaca;line-height:1.4;}
+.ma-flow-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:0.72rem;color:#94a3b8;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);}
+.ma-flow-legend span{display:inline-flex;align-items:center;gap:5px;}
+.ma-flow-legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;}
+@media (max-width:760px){
+  .ma-flow-row{flex-direction:column;gap:8px;}
+  .ma-flow-arrow-right{transform:rotate(90deg);align-self:flex-start;padding-left:32px;}
+  .ma-flow-refer{flex:1 1 100%;align-self:stretch;}
+}
+
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
@@ -113038,6 +113071,111 @@ function jumpToMaSection(id, linkEl) {
   }
 }
 
+// Build a visual therapeutic flow chart from MINOR_AILMENTS data.
+// Renders each therapeutic_flow step as a numbered box, with red REFER
+// branch boxes hanging off any step that contains red-flag/refer language.
+// First step is highlighted as Start (cyan), refer-gates as amber, last step as End (green).
+function buildTherapeuticFlowChart(ma){
+  var steps = (ma && ma.therapeutic_flow) || [];
+  var redFlags = (ma && ma.assessment && ma.assessment.red_flags) || [];
+  var referWhen = (ma && ma.treatment && ma.treatment.refer_when) || [];
+  if (!steps.length) return '';
+
+  // Helpers
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+  function shortFlag(s){
+    // Take leading clause up to en/em-dash, " — ", colon, or first " (" — keep it punchy
+    var t = String(s).split(/—|–| - |:| \(/)[0].trim();
+    if (t.length > 90) t = t.slice(0, 87) + '…';
+    return escapeHtml(t);
+  }
+  function splitTitleDetail(stepText){
+    var clean = String(stepText).replace(/^\s*\d+[\.\)]\s*/, '');
+    // Title = up to first colon, en-dash, em-dash, or full stop followed by space
+    var m = clean.match(/^([^:.—–]{2,80}?)(\s*[:—–.]\s+|$)([\s\S]*)$/);
+    var title, detail;
+    if (m){ title = m[1].trim(); detail = (m[3]||'').trim(); }
+    else { title = clean.slice(0,80); detail = clean.slice(80).trim(); }
+    return { title: title, detail: detail };
+  }
+
+  var html = '<div class="ma-flow-chart">';
+  for (var i = 0; i < steps.length; i++) {
+    var step = steps[i];
+    var parts = splitTitleDetail(step);
+    // Gate detection: only steps whose TITLE is itself a screening/triage gate trigger
+    // a refer-out branch. This avoids over-flagging counselling steps that merely
+    // mention red flags as a teaching point.
+    var titleLower = parts.title.toLowerCase();
+    var isReferGate = /red[\s-]?flag\s*(screen|screening|assessment|check)?|triage|exclusion|rule[- ]?out|eligibilit/i.test(parts.title)
+                      || /^\s*screen|^\s*assess.*(red[\s-]?flag|severity|urgenc)/i.test(parts.title);
+    var isFollowUp = /follow[-\s]?up|reassess/i.test(parts.title);
+    var isFirst = (i === 0);
+    var isLast = (i === steps.length - 1);
+
+    var boxClasses = 'ma-flow-box';
+    if (isReferGate) boxClasses += ' is-gate';
+    else if (isLast) boxClasses += ' is-end';
+
+    html += '<div class="ma-flow-row">';
+    html +=   '<div class="ma-flow-main">';
+    html +=     '<div class="' + boxClasses + '">';
+    html +=       '<div class="ma-flow-num">' + (i+1) + '</div>';
+    html +=       '<div class="ma-flow-body">';
+    html +=         '<div class="ma-flow-title">' + escapeHtml(parts.title) + '</div>';
+    if (parts.detail) {
+      html +=       '<div class="ma-flow-detail">' + escapeHtml(parts.detail) + '</div>';
+    }
+    html +=       '</div>';
+    html +=     '</div>';
+    html +=   '</div>';
+
+    // Refer-exit branch — show on red-flag screens (uses red_flags) and on follow-up step (uses refer_when)
+    if (isReferGate && redFlags.length) {
+      html += '<div class="ma-flow-arrow-right" aria-label="Refer if any of these">→</div>';
+      html += '<div class="ma-flow-refer">';
+      html +=   '<div class="ma-flow-refer-title">📤 Refer if any</div>';
+      html +=   '<ul>';
+      var flagsToShow = Math.min(redFlags.length, 5);
+      for (var j = 0; j < flagsToShow; j++) {
+        html += '<li>' + shortFlag(redFlags[j]) + '</li>';
+      }
+      if (redFlags.length > flagsToShow) {
+        html += '<li style="color:#f87171;font-style:italic;">+ ' + (redFlags.length - flagsToShow) + ' more — see Red Flags above</li>';
+      }
+      html +=   '</ul>';
+      html += '</div>';
+    } else if (isFollowUp && isLast) {
+      html += '<div class="ma-flow-arrow-right" aria-label="Refer if no improvement">→</div>';
+      html += '<div class="ma-flow-refer">';
+      html +=   '<div class="ma-flow-refer-title">📤 Refer if</div>';
+      html +=   '<div class="ma-flow-refer-summary">No improvement at reassessment, worsening symptoms, or any new red-flag features develop → escalate to physician/NP.</div>';
+      html += '</div>';
+    }
+
+    html += '</div>'; // end row
+
+    if (i < steps.length - 1) {
+      html += '<div class="ma-flow-arrow-down" aria-hidden="true">▼</div>';
+    }
+  }
+
+  // Legend
+  html += '<div class="ma-flow-legend">';
+  html +=   '<span><span class="dot" style="background:#06b6d4;"></span> Assessment / Therapy step</span>';
+  html +=   '<span><span class="dot" style="background:#f59e0b;"></span> Decision gate (refer trigger)</span>';
+  html +=   '<span><span class="dot" style="background:#34d399;"></span> Endpoint / follow-up</span>';
+  html +=   '<span><span class="dot" style="background:#ef4444;"></span> Refer exit</span>';
+  html += '</div>';
+
+  html += '</div>'; // end chart
+  return html;
+}
+
 function showMA(idx) {
   var ma = MINOR_AILMENTS[idx];
   document.getElementById('ma-grid').style.display = 'none';
@@ -113073,14 +113211,12 @@ function showMA(idx) {
     h += '</ul></div>';
   }
 
-  // SECTION: Therapeutic Flow (moved above Treatment Options)
+  // SECTION: Therapeutic Flow Chart (visual flowchart with refer-out branches)
   if (ma.therapeutic_flow && ma.therapeutic_flow.length) {
     h += '<div id="ma-sec-flow" class="ma-detail-section" style="border-left:3px solid #06b6d4;margin-bottom:12px;scroll-margin-top:12px;">';
-    h += '<div class="ma-detail-title" style="color:#67e8f9;">🧭 Therapeutic Flow — Pharmacist Assessment Guide</div>';
-    h += '<ol style="padding-left:20px;margin:0;list-style:none;">';
-    for (var i=0;i<ma.therapeutic_flow.length;i++)
-      h += '<li style="font-size:0.82rem;color:#cffafe;margin-bottom:7px;line-height:1.5;">' + ma.therapeutic_flow[i] + '</li>';
-    h += '</ol></div>';
+    h += '<div class="ma-detail-title" style="color:#67e8f9;">🧭 Therapeutic Flow — Visual Decision Map</div>';
+    h += buildTherapeuticFlowChart(ma);
+    h += '</div>';
   }
 
   // SECTION: Treatment Options
