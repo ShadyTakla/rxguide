@@ -45018,6 +45018,398 @@ var DRUGS = {
     ],
     "source": "Health Canada PM. AMMI Canada Bugs & Drugs 2024. Public Health Ontario Antimicrobial Stewardship. IDSA infection-specific guidelines."
   },
+  "pyrazinamide": {
+    "name": "Pyrazinamide (PZA)",
+    "brand": "Tebrazid (originator); generic available",
+    "class": "First-Line Anti-TB Agent (Nicotinamide Analogue)",
+    "napra": "I",
+    "moa": "Pro-drug — converted to pyrazinoic acid (POA) by mycobacterial pyrazinamidase (pncA gene). POA disrupts membrane transport and energy metabolism at acidic pH within macrophages → kills slowly metabolizing INTRACELLULAR bacilli (sterilizing activity unique to PZA — eliminates persisters). Active ONLY at acidic pH; inactive at neutral pH (limits activity to phagolysosomes). Resistance via pncA mutations.",
+    "indications": [
+      "Active pulmonary and extrapulmonary tuberculosis (M. tuberculosis) — INTENSIVE PHASE of standard 6-month RIPE regimen (rifampin + isoniazid + PZA + ethambutol × 2 months, then RIF/INH × 4 months)",
+      "Multidrug-resistant TB (MDR-TB) — added to optimized background regimen if susceptibility confirmed",
+      "Latent TB: NOT recommended (short-course rifampin/PZA was withdrawn due to severe hepatotoxicity in 2003)"
+    ],
+    "dosing": [
+      {
+        "indication": "Active TB (adult, RIPE intensive phase)",
+        "dose": "Weight-based daily dosing per CTS 2022: 40-55 kg → 1000 mg PO OD; 56-75 kg → 1500 mg PO OD; 76-90 kg → 2000 mg PO OD (max). Typical range 20-25 mg/kg/day. Continue × 2 months (intensive phase only).",
+        "renal": "CrCl <30 or hemodialysis: 25-35 mg/kg 3× weekly (post-dialysis on HD days). Discuss with TB specialist."
+      },
+      {
+        "indication": "Active TB (paediatric)",
+        "dose": "30-40 mg/kg PO OD (max 2 g/day). Same 2-month duration in intensive phase.",
+        "renal": "Specialist consultation"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Hyperuricemia — UNIVERSAL (~80%); often asymptomatic, but may precipitate gout flare",
+        "Arthralgias — non-gouty (~40%); usually self-limiting; respond to NSAIDs",
+        "GI upset (nausea, anorexia, vomiting) — take with food",
+        "Photosensitivity (rare) — counsel sun protection"
+      ],
+      "serious": [
+        "Hepatotoxicity — MOST hepatotoxic of first-line TB agents; risk increases with age, alcohol use, viral hepatitis, INH co-administration; monitor LFTs at baseline + monthly",
+        "Hypersensitivity reactions (rare) — rash, fever, eosinophilia",
+        "Acute gout (in patients with prior gout history)"
+      ]
+    },
+    "contraindications": [
+      "Active hepatitis or severe hepatic disease",
+      "Acute gout (relative — pyrazinamide-induced hyperuricemia may precipitate flare)",
+      "Pregnancy (relative — WHO does NOT recommend in pregnancy due to limited safety data; CTS Canada permits use in active TB when benefits outweigh risks)",
+      "Hypersensitivity to pyrazinamide"
+    ],
+    "interactions": [
+      {
+        "drug": "Allopurinol / febuxostat (urate-lowering therapy)",
+        "severity": "Moderate",
+        "mechanism": "Pyrazinamide metabolite (pyrazinoic acid) competes with uric acid for renal tubular secretion → reduces urate-lowering efficacy",
+        "management": "Monitor urate; allopurinol typically not effective in PZA-induced hyperuricemia (mechanism differs from XO inhibition)"
+      },
+      {
+        "drug": "Cyclosporine, tacrolimus (calcineurin inhibitors)",
+        "severity": "Moderate",
+        "mechanism": "PZA may increase calcineurin inhibitor levels (variable)",
+        "management": "Monitor cyclosporine/tacrolimus levels weekly during PZA initiation"
+      },
+      {
+        "drug": "Other hepatotoxic drugs (acetaminophen high-dose, methotrexate, isoniazid)",
+        "severity": "Moderate",
+        "mechanism": "Additive hepatotoxicity",
+        "management": "Monitor LFTs more frequently; counsel alcohol avoidance"
+      }
+    ],
+    "pregnancy": "WHO classifies as relative contraindication in pregnancy (limited human safety data); however, Canadian Thoracic Society 2022 and CDC permit use during pregnancy in active TB (benefits of effective TB treatment outweigh theoretical risks; alternatives extend treatment duration significantly). Lactation: low milk levels (RID ~1-2%) — compatible with breastfeeding; preferred TB regimens in lactation include PZA per WHO. Discuss with TB specialist for individualized plan.",
+    "pk": {
+      "absorption": "Well absorbed orally (~90%); peak 2 h",
+      "half_life": "9-10 h",
+      "elimination": "Hepatic metabolism (pyrazinamide deaminase) → pyrazinoic acid → renal excretion",
+      "renal_adjustment": "CrCl <30: extend interval to 3× weekly"
+    },
+    "canadian_notes": "ODB-covered for TB indications. Public Health Ontario TB program coordinates directly observed therapy (DOT) — pharmacy-administered or community health-administered observed dosing standard for active TB. Baseline LFTs + uric acid required; monthly LFT monitoring. STOP at any sign of hepatotoxicity (>5× ULN ALT or >3× ULN with symptoms). Discontinue at end of intensive phase (2 months) — continued use beyond 2 months adds toxicity without benefit. Source: Canadian Thoracic Society/Public Health Agency of Canada TB Standards 2022.",
+    "pearls": [
+      "INTENSIVE PHASE ONLY — discontinue at end of month 2 (continuation phase is RIF/INH only)",
+      "Hyperuricemia universal but rarely clinically significant; arthralgias respond to NSAIDs (do NOT discontinue PZA for asymptomatic hyperuricemia)",
+      "MOST hepatotoxic of first-line TB drugs — baseline + monthly LFTs essential",
+      "Sterilizing activity within macrophages is the major contribution to 6-month TB regimens (without PZA, treatment duration extends to 9-12 months)",
+      "Direct observed therapy (DOT) standard in Canada — coordinate with provincial TB programs"
+    ],
+    "source": "Health Canada PM Tebrazid. CTS/CTHA/PHAC Canadian Tuberculosis Standards 2022 (8th edition). WHO TB Treatment Guidelines 2022. AMMI Canada Bugs & Drugs 2024."
+  },
+  "rifabutin": {
+    "name": "Rifabutin",
+    "brand": "Mycobutin (Pfizer Canada)",
+    "class": "Rifamycin (Antimycobacterial)",
+    "napra": "I",
+    "moa": "Inhibits bacterial DNA-dependent RNA polymerase (β-subunit, rpoB gene) → blocks mRNA synthesis (same MOA as rifampin). LESS POTENT CYP3A4 inducer than rifampin (~40% reduction in induction) — preferred rifamycin in HIV-infected patients on protease inhibitors, cobicistat-boosted regimens, or NNRTIs. Active against M. tuberculosis (including some rifampin-resistant strains via rare cross-resistance), MAC complex, M. leprae, M. kansasii.",
+    "indications": [
+      "MAC (Mycobacterium avium complex) PROPHYLAXIS in HIV with CD4 <50 (alternative to azithromycin/clarithromycin)",
+      "MAC TREATMENT in HIV — combination therapy (azithromycin or clarithromycin + ethambutol + rifabutin)",
+      "Active TB in HIV-infected patients on protease inhibitors or cobicistat-boosted ART (PREFERRED over rifampin — less ART level reduction)",
+      "Helicobacter pylori salvage therapy (rare — rifabutin-based regimen for multi-drug resistant H. pylori)",
+      "M. kansasii, atypical mycobacteria infections"
+    ],
+    "dosing": [
+      {
+        "indication": "MAC prophylaxis (HIV CD4 <50)",
+        "dose": "300 mg PO OD with food",
+        "renal": "No specific adjustment for routine doses"
+      },
+      {
+        "indication": "Active TB in HIV on PIs or cobicistat",
+        "dose": "150 mg PO OD with EFV-based ART; 150 mg every other day or 3× weekly with PI/cobicistat-based ART; 450-600 mg OD with NVP. ALWAYS coordinate with HIV pharmacist/specialist — dose depends on co-administered ART.",
+        "renal": "CrCl <30: reduce dose by 50%"
+      },
+      {
+        "indication": "MAC treatment (combination)",
+        "dose": "300 mg PO OD with macrolide + ethambutol",
+        "renal": "Specialist consultation"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Orange-red discolouration of urine, tears, sweat, saliva (harmless — STAINS contact lenses; counsel before initiation)",
+        "GI upset (nausea, abdominal pain) — take with food",
+        "Rash (5-10%)",
+        "Headache"
+      ],
+      "serious": [
+        "UVEITIS — dose-related, especially with macrolide co-administration (clarithromycin >> azithromycin); monitor visual symptoms; stop and refer to ophthalmology if eye pain, redness, photophobia",
+        "Neutropenia (~25% in HIV — generally mild)",
+        "Hepatotoxicity (less than rifampin but possible)",
+        "Hypersensitivity reactions"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to rifamycins (cross-reactivity with rifampin, rifapentine)",
+      "Severe leukopenia (ANC <1000) or thrombocytopenia (<50,000)",
+      "Active uveitis"
+    ],
+    "interactions": [
+      {
+        "drug": "Clarithromycin (or other macrolides)",
+        "severity": "Major",
+        "mechanism": "Clarithromycin inhibits CYP3A4 → 4-fold increase in rifabutin levels → increased uveitis risk",
+        "management": "Reduce rifabutin to 150 mg OD or every other day if combined with clarithromycin in MAC treatment"
+      },
+      {
+        "drug": "HIV protease inhibitors (darunavir/r, atazanavir/r, lopinavir/r, cobicistat)",
+        "severity": "Major",
+        "mechanism": "PIs/cobicistat inhibit CYP3A4 → increase rifabutin levels (toxicity); rifabutin induces CYP3A4 → may reduce PI levels (less than rifampin)",
+        "management": "Rifabutin 150 mg every other day or 3× weekly with PI/cobicistat. PREFERRED rifamycin in HIV (vs rifampin — would render PIs subtherapeutic)"
+      },
+      {
+        "drug": "DOACs (apixaban, rivaroxaban, dabigatran)",
+        "severity": "Major",
+        "mechanism": "Rifabutin induces CYP3A4 + P-gp → reduces DOAC levels (less than rifampin but still clinically significant)",
+        "management": "Avoid combination; use warfarin or LMWH if anticoagulation required"
+      },
+      {
+        "drug": "Oral contraceptives (estrogen + progestin)",
+        "severity": "Major",
+        "mechanism": "CYP3A4 induction reduces contraceptive efficacy",
+        "management": "Use alternative or additional non-hormonal contraception during AND for 1 month after rifabutin course"
+      },
+      {
+        "drug": "Warfarin",
+        "severity": "Moderate",
+        "mechanism": "CYP induction reduces warfarin levels (less than rifampin)",
+        "management": "Monitor INR weekly during initiation and discontinuation"
+      }
+    ],
+    "pregnancy": "Limited human data; FDA Category B (animal studies show no risk; no controlled studies in pregnant women). PHAC and WHO permit rifabutin use in pregnancy when needed for MAC or TB. Lactation: limited data — likely small amounts in milk; benefit-risk discussion advised. Discuss with TB/HIV specialist.",
+    "pk": {
+      "absorption": "~20% oral bioavailability (with food increases absorption); peak 3-4 h",
+      "half_life": "16-69 h (long; allows OD or every-other-day dosing)",
+      "elimination": "Hepatic CYP3A4 metabolism; ~50% renal excretion",
+      "renal_adjustment": "CrCl <30: 50% dose reduction"
+    },
+    "canadian_notes": "ODB Special Authorization for MAC prophylaxis/treatment in HIV (LU criteria). Hospital formulary in TB centres. PREFERRED rifamycin in HIV-TB co-infection on PI- or cobicistat-based ART (vs rifampin which markedly reduces ART levels). Monthly CBC + LFT monitoring. Counsel orange body fluid discolouration (same as rifampin — but often less intense). Monitor visual symptoms when combined with clarithromycin (uveitis risk). Source: Health Canada PM Mycobutin. CTS Canadian TB Standards 2022. IDSA Opportunistic Infections (HIV) 2022.",
+    "pearls": [
+      "PREFERRED rifamycin in HIV-TB co-infection (less CYP induction than rifampin → preserves ART efficacy)",
+      "UVEITIS is the dose-limiting toxicity, especially with concurrent clarithromycin — counsel patient to report eye symptoms",
+      "Reduce dose to 150 mg OD or every-other-day with PIs/cobicistat-boosted ART",
+      "DOAC interaction less severe than rifampin, but still clinically significant — use warfarin or LMWH",
+      "Same orange body fluid discolouration as rifampin (counsel + contact lens warning)"
+    ],
+    "source": "Health Canada PM Mycobutin (Pfizer). CTS/CTHA/PHAC Canadian Tuberculosis Standards 2022. IDSA Opportunistic Infections in HIV 2022. AMMI Canada 2024."
+  },
+  "albendazole": {
+    "name": "Albendazole",
+    "brand": "Albenza (US — limited Canadian availability — typically Health Canada Special Access Programme)",
+    "class": "Anthelmintic (Benzimidazole)",
+    "napra": "I",
+    "moa": "Selectively binds β-tubulin in helminth cells (much higher affinity for parasite vs mammalian tubulin) → inhibits microtubule polymerization → impairs glucose uptake and cellular energy metabolism → parasite starvation/death. Active metabolite (albendazole sulfoxide) achieves systemic levels (vs mebendazole — minimal absorption). Effective against intestinal nematodes, tissue helminths (Strongyloides, hydatid disease, neurocysticercosis), and microsporidia.",
+    "indications": [
+      "Roundworm (Ascaris lumbricoides), pinworm (Enterobius vermicularis), hookworm (Necator/Ancylostoma), whipworm (Trichuris)",
+      "Strongyloidiasis (Strongyloides stercoralis — preferred over mebendazole due to systemic absorption)",
+      "Cutaneous larva migrans",
+      "Neurocysticercosis (with praziquantel + corticosteroids)",
+      "Hydatid disease / cystic echinococcosis (Echinococcus granulosus)",
+      "Microsporidiosis (immunocompromised/HIV)",
+      "Giardia (alternative to metronidazole)"
+    ],
+    "dosing": [
+      {
+        "indication": "Pinworm / Roundworm / Hookworm",
+        "dose": "400 mg PO single dose; repeat in 2 weeks for pinworm",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Strongyloidiasis",
+        "dose": "400 mg PO BID × 7 days",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Neurocysticercosis",
+        "dose": "7.5 mg/kg PO BID (max 800 mg/day) × 8-30 days WITH corticosteroids (dexamethasone) AND praziquantel — specialist managed",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Hydatid disease",
+        "dose": "10-15 mg/kg/day PO divided BID × 1-6 months (often multiple cycles with rest periods); monitor LFTs + CBC monthly",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Giardia (alternative)",
+        "dose": "400 mg PO OD × 5 days",
+        "renal": "No specific adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "GI upset (nausea, abdominal pain — especially with high parasite burden as worms die)",
+        "Headache",
+        "Reversible alopecia (with prolonged courses for hydatid disease)",
+        "Mild transaminase elevations"
+      ],
+      "serious": [
+        "Hepatotoxicity (especially with prolonged courses >30 days — monitor LFTs monthly)",
+        "Bone marrow suppression — neutropenia, thrombocytopenia (rare; monitor CBC for prolonged courses)",
+        "Severe inflammatory response in heavy CNS parasitism (neurocysticercosis — manage with concurrent corticosteroids)",
+        "Stevens-Johnson syndrome (very rare)"
+      ]
+    },
+    "contraindications": [
+      "Pregnancy (animal teratogenicity — Category C/D depending on indication; mass drug administration programs avoid 1st trimester; avoid entirely if possible)",
+      "Hypersensitivity to benzimidazoles",
+      "Severe hepatic impairment (relative)",
+      "Caution in retinopathy or pre-existing hematologic abnormalities"
+    ],
+    "interactions": [
+      {
+        "drug": "Dexamethasone",
+        "severity": "Moderate",
+        "mechanism": "Increases albendazole sulfoxide levels by ~50% (CYP3A4 inhibition) — clinically beneficial in neurocysticercosis (intentional combination)",
+        "management": "Standard combination in neurocysticercosis; no adjustment required"
+      },
+      {
+        "drug": "Cimetidine",
+        "severity": "Moderate",
+        "mechanism": "Increases albendazole levels — useful in hydatid disease (intentional)",
+        "management": "Sometimes used adjunctively"
+      },
+      {
+        "drug": "Strong CYP3A4 inducers (rifampin, carbamazepine, phenytoin, St John's Wort)",
+        "severity": "Moderate",
+        "mechanism": "Reduce albendazole levels",
+        "management": "Avoid; if necessary, monitor clinical response"
+      },
+      {
+        "drug": "Other hepatotoxic drugs",
+        "severity": "Moderate",
+        "mechanism": "Additive hepatotoxicity",
+        "management": "Monitor LFTs more frequently"
+      }
+    ],
+    "pregnancy": "Pregnancy Category C (animal teratogenicity at therapeutic doses — bone, vertebral, cardiac defects in rats/rabbits). Mass drug administration programs (WHO) AVOID 1st trimester; permit use in 2nd/3rd trimester for severe parasitic infections when benefit outweighs risk. AVOID elective treatment of mild infections in pregnancy — defer to postpartum. Lactation: low milk levels (RID <2%) — generally compatible. Strongyloides in pregnancy: ivermectin alternative, also caution. Source: WHO Mass Drug Administration Guidelines; CDC Parasites in Pregnancy.",
+    "pk": {
+      "absorption": "Poor oral absorption (5%); markedly increased with FATTY MEAL (up to 5×)",
+      "half_life": "Albendazole sulfoxide (active metabolite): 8-12 h",
+      "elimination": "Hepatic CYP3A4/2C19 metabolism → albendazole sulfoxide; biliary excretion",
+      "renal_adjustment": "No specific adjustment"
+    },
+    "canadian_notes": "Albendazole is NOT routinely available in Canada — typically obtained via Health Canada Special Access Programme (SAP) through travel medicine clinics or infectious disease specialists. Mebendazole (Vermox) is the preferred benzimidazole for routine intestinal nematodes in Canada. Albendazole is preferred for Strongyloides, neurocysticercosis, and hydatid disease (better systemic absorption). WHO essential medicine for soil-transmitted helminth control programs. Source: Health Canada SAP. CDC Parasites Treatment 2024. Canadian Travel Medicine Society.",
+    "pearls": [
+      "Take with FATTY MEAL — increases absorption ~5× (essential for tissue infections like hydatid disease, neurocysticercosis)",
+      "Preferred over mebendazole for Strongyloides (better systemic absorption needed for tissue penetration)",
+      "Neurocysticercosis: ALWAYS combine with corticosteroids to prevent inflammatory response from dying parasites — and praziquantel for cysts",
+      "Hydatid disease: prolonged course (months) with monitoring; surgical resection often still required",
+      "Available in Canada via Health Canada Special Access Programme — plan ahead; mebendazole preferred for routine intestinal helminths"
+    ],
+    "source": "Health Canada SAP. CDC Parasites — Albendazole. WHO Essential Medicines List 2024. Canadian Travel Medicine."
+  },
+  "praziquantel": {
+    "name": "Praziquantel",
+    "brand": "Biltricide (Bayer — limited Canadian availability via Health Canada Special Access Programme)",
+    "class": "Anthelmintic (Pyrazinoisoquinoline — Trematodes/Cestodes)",
+    "napra": "I",
+    "moa": "Increases membrane permeability to calcium (Ca²⁺) in trematodes and cestodes → muscle contraction and spastic paralysis + tegument disruption (exposes worm antigens to host immune system → immune-mediated killing). Active against schistosomes (all species), most flukes, and most tapeworms. NOT active against most nematodes (worms). Stereoselective: only the (R)-enantiomer (levo-praziquantel) is active.",
+    "indications": [
+      "Schistosomiasis (DRUG OF CHOICE — all species: S. mansoni, S. haematobium, S. japonicum, S. mekongi, S. intercalatum)",
+      "Intestinal tapeworms (Taenia saginata, Taenia solium, Diphyllobothrium latum, Hymenolepis nana, Dipylidium caninum)",
+      "Liver flukes (Clonorchis sinensis, Opisthorchis viverrini)",
+      "Lung fluke (Paragonimus westermani)",
+      "Neurocysticercosis (with albendazole + corticosteroids)",
+      "Cysticercosis (extracerebral)"
+    ],
+    "dosing": [
+      {
+        "indication": "Schistosomiasis (all species)",
+        "dose": "20 mg/kg PO TID × 1 day (3 doses 4-6 hours apart, total 60 mg/kg) for S. mansoni/haematobium/intercalatum. S. japonicum/mekongi: 25 mg/kg TID × 1 day. Take WITH food.",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Intestinal tapeworms (Taenia, Diphyllobothrium)",
+        "dose": "5-10 mg/kg PO single dose",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Hymenolepis nana (dwarf tapeworm)",
+        "dose": "25 mg/kg PO single dose",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Liver flukes (Clonorchis, Opisthorchis)",
+        "dose": "25 mg/kg PO TID × 1-2 days",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Neurocysticercosis (with albendazole + steroids)",
+        "dose": "50 mg/kg/day PO divided TID × 14-28 days (specialist managed)",
+        "renal": "No specific adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "GI upset (nausea, abdominal pain — often related to dying worms)",
+        "Drowsiness, dizziness, headache (CNS effects — counsel against driving/operating machinery on day of treatment)",
+        "Malaise, fever (related to worm kill — Mazzotti-like reaction)",
+        "Urticaria (rare)"
+      ],
+      "serious": [
+        "Severe inflammatory CNS response in OCULAR cysticercosis or massive CNS cysticercosis — vision-threatening or seizures (use corticosteroids; specialist managed)",
+        "Seizures in heavy CNS parasitism",
+        "Hepatic effects (rare; transient transaminase elevation)"
+      ]
+    },
+    "contraindications": [
+      "OCULAR CYSTICERCOSIS — worm death triggers inflammatory response that can cause irreversible vision loss",
+      "Hypersensitivity to praziquantel",
+      "Pregnancy (limited data — generally avoided in 1st trimester; WHO permits in mass treatment programs in 2nd/3rd trimester due to public health benefit in endemic areas)",
+      "Concurrent strong CYP3A4 inducers (rifampin reduces praziquantel levels by >80% — contraindicated within 4 weeks of rifampin)"
+    ],
+    "interactions": [
+      {
+        "drug": "Rifampin",
+        "severity": "Major (avoid)",
+        "mechanism": "Strong CYP3A4 induction reduces praziquantel AUC by >80% — therapeutic failure",
+        "management": "AVOID — wait at least 4 weeks after rifampin discontinuation; alternative agent if rifampin needed"
+      },
+      {
+        "drug": "Carbamazepine, phenytoin, phenobarbital",
+        "severity": "Major",
+        "mechanism": "CYP3A4 induction reduces praziquantel levels",
+        "management": "Increase praziquantel dose (consult specialist) or use alternative"
+      },
+      {
+        "drug": "Cimetidine",
+        "severity": "Moderate",
+        "mechanism": "Increases praziquantel levels — sometimes used intentionally in CNS parasitism",
+        "management": "Sometimes adjunctive in neurocysticercosis"
+      },
+      {
+        "drug": "Albendazole",
+        "severity": "Beneficial combination",
+        "mechanism": "Synergistic in neurocysticercosis; albendazole increases praziquantel levels modestly",
+        "management": "Standard combination in neurocysticercosis (with corticosteroids)"
+      },
+      {
+        "drug": "Grapefruit juice",
+        "severity": "Moderate",
+        "mechanism": "CYP3A4 inhibition increases praziquantel levels (~1.6×)",
+        "management": "No clinical adjustment generally needed for short single-day courses"
+      }
+    ],
+    "pregnancy": "Limited human data; WHO has reviewed mass drug administration data and permits use in pregnancy (especially 2nd/3rd trimester) in schistosomiasis-endemic areas (public health benefit outweighs theoretical risk). FDA Category B. Animal data show no teratogenicity. Defer elective treatment of asymptomatic infections to postpartum. AVOID 1st trimester if possible. Lactation: low milk levels (RID ~3%) — WHO permits during breastfeeding; some authorities recommend pumping and discarding milk for 72 h after dose. Source: WHO Schistosomiasis Guidelines 2022; CDC Parasites in Pregnancy.",
+    "pk": {
+      "absorption": "Well absorbed orally (~80%); first-pass effect dramatic — bioavailability ~30%; food increases absorption",
+      "half_life": "0.8-1.5 h (parent); active metabolites 4-5 h",
+      "elimination": "Hepatic CYP3A4/2B6/1A2 metabolism → multiple inactive metabolites; renal excretion",
+      "renal_adjustment": "No specific adjustment"
+    },
+    "canadian_notes": "Praziquantel is NOT routinely available in Canadian community pharmacies — obtained via Health Canada Special Access Programme (SAP) through travel medicine clinics or infectious disease specialists. WHO essential medicine — used in mass drug administration for schistosomiasis control in endemic countries. Patient counselling: take with food (water + meal); do NOT drive or operate machinery on treatment day; mild side effects expected from worm kill. For neurocysticercosis: hospital admission typical (specialist managed with corticosteroids). Source: Health Canada SAP. WHO Schistosomiasis Treatment Guidelines 2022. CDC Parasites — Praziquantel.",
+    "pearls": [
+      "DRUG OF CHOICE for schistosomiasis (all species) and most trematodes/cestodes",
+      "OCULAR cysticercosis is an absolute contraindication — worm death threatens vision irreversibly",
+      "RIFAMPIN reduces praziquantel >80% — wait 4 weeks after rifampin before treatment",
+      "Take WITH FOOD for absorption; counsel against driving day-of-treatment (drowsiness)",
+      "Available in Canada via Health Canada SAP — plan ahead for travel medicine indications",
+      "Neurocysticercosis: combine with albendazole + corticosteroids (specialist managed)"
+    ],
+    "source": "Health Canada SAP. WHO Schistosomiasis Treatment Guidelines 2022. CDC Parasites — Praziquantel. Canadian Travel Medicine Society."
+  },
   "itraconazole": {
     "name": "Itraconazole",
     "brand": "Sporanox (Johnson & Johnson / Janssen Canada — capsules, oral solution); generics (Apo-Itraconazole)",
@@ -97651,7 +98043,11 @@ var FAMILY_MAP = {
   "shingles_vaccine": "Vaccines",
   "simethicone": "Antidiarrheals",
   "ciprofloxacin_dexamethasone_otic": "Topical Otic Antibiotics",
-  "framycetin_gramicidin_dexamethasone_otic": "Topical Otic Antibiotics"
+  "framycetin_gramicidin_dexamethasone_otic": "Topical Otic Antibiotics",
+  "pyrazinamide": "Antimycobacterial Agents",
+  "rifabutin": "Antimycobacterial Agents",
+  "albendazole": "Anthelmintics",
+  "praziquantel": "Anthelmintics"
 };
 var NAPRA_ODB_DATA = {
   "amoxicillin": {
@@ -101414,6 +101810,42 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "Active TB: free through Ontario Public Health TB Program. Confirm via Public Health Ontario.",
     "luCode": null,
     "notes": "Bacteriostatic component of intensive-phase RIPE regimen. 15–20 mg/kg PO daily (max 1.6 g/day) × 2 months. Renal dose adjustment essential (CrCl-based). Distinctive SE: OPTIC NEURITIS (~1–5% — dose- and duration-dependent; baseline + monthly visual acuity AND COLOUR VISION testing; counsel any visual change or colour discrimination loss → STOP immediately and refer; usually reversible if caught early). Hyperuricemia (asymptomatic — usually no treatment required unless gout). Per Public Health Ontario / Canadian TB Standards."
+  },
+  "pyrazinamide": {
+    "name": "Pyrazinamide (PZA; Tebrazid)",
+    "napra": "I",
+    "napraDetail": "Prescription required (NAPRA Schedule I). Public Health TB Program supplies for active TB.",
+    "odbStatus": "Free",
+    "odbDetail": "Active TB: free through Ontario Public Health TB Program (drugs supplied directly by provincial program — no ODB billing). Confirm via Public Health Ontario.",
+    "luCode": null,
+    "notes": "Sterilizing component of intensive phase RIPE × 2 months ONLY (discontinue at month 2). Weight-based: 40-55 kg → 1000 mg OD; 56-75 kg → 1500 mg OD; 76-90 kg → 2000 mg OD. MOST hepatotoxic of first-line TB drugs — baseline + monthly LFTs essential. Hyperuricemia universal (~80%) — usually asymptomatic; arthralgias respond to NSAIDs (do NOT discontinue PZA). Renal dose adjustment for CrCl <30 (3× weekly post-dialysis on HD days). Per Canadian TB Standards 2022."
+  },
+  "rifabutin": {
+    "name": "Rifabutin (Mycobutin)",
+    "napra": "I",
+    "napraDetail": "Prescription required (NAPRA Schedule I).",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB Special Authorization for MAC prophylaxis/treatment in HIV (LU criteria — CD4 <50 for prophylaxis; documented MAC for treatment). HIV-TB co-infection on PIs/cobicistat-boosted ART: covered (preferred over rifampin). LU code per indication.",
+    "luCode": "LU code per indication (MAC prophylaxis/treatment, HIV-TB)",
+    "notes": "PREFERRED rifamycin in HIV-TB co-infection on PI- or cobicistat-boosted ART (less CYP3A4 induction than rifampin → preserves ART levels). MAC prophylaxis 300 mg OD; with PI/cobicistat: 150 mg OD or every-other-day (refer to HIV-TB DDI tables). Same orange body fluid discolouration as rifampin (counsel + contact lens warning). UVEITIS risk especially with concurrent clarithromycin — counsel eye symptoms. Monthly CBC + LFTs."
+  },
+  "albendazole": {
+    "name": "Albendazole (Albenza)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Limited routine availability in Canadian community pharmacies — typically obtained via Health Canada Special Access Programme (SAP) through travel medicine clinic or infectious disease specialist.",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "Not on standard ODB formulary (limited Canadian availability). SAP-obtained doses provided by treating clinician/program; cost may be patient-funded depending on indication.",
+    "luCode": "SAP indication-specific",
+    "notes": "Preferred over mebendazole for TISSUE helminths (Strongyloides, neurocysticercosis, hydatid disease) due to better systemic absorption (~5× with fatty meal). 400 mg single dose for routine intestinal nematodes (alternative to mebendazole where available). Plan ahead — SAP turnaround typically 1-2 weeks. Avoid 1st trimester pregnancy. Take with FATTY meal for absorption."
+  },
+  "praziquantel": {
+    "name": "Praziquantel (Biltricide)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Limited routine availability — typically obtained via Health Canada Special Access Programme (SAP) through travel medicine clinic or infectious disease specialist.",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "Not on standard ODB formulary. SAP-obtained; specialist coordinated. Cost may be patient-funded for some indications.",
+    "luCode": "SAP indication-specific",
+    "notes": "Drug of choice for schistosomiasis (all species) and most trematodes/cestodes. Schistosomiasis: 20 mg/kg TID × 1 day with food. Tapeworms: 5-10 mg/kg single dose. Counsel against driving on treatment day (drowsiness). OCULAR cysticercosis is absolute contraindication. AVOID concurrent rifampin (>80% reduction in praziquantel — wait 4 weeks after rifampin)."
   },
   "atovaquone_proguanil": {
     "name": "Atovaquone / proguanil (Malarone)",
@@ -112271,6 +112703,50 @@ var PREG_DATA = {
     "bfDetail": "Low milk levels; compatible.",
     "alternatives": "Standard 4-drug TB therapy.",
     "source": "PHAC TB Standards"
+  },
+  "pyrazinamide": {
+    "name": "Pyrazinamide (PZA)",
+    "pregRisk": "Moderate",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Low",
+    "bfColor": "#10b981",
+    "pregDetail": "Limited human safety data — WHO classifies as relative contraindication in pregnancy. Canadian Thoracic Society 2022 and CDC PERMIT use for active TB in pregnancy when benefits outweigh theoretical risks (alternative regimens significantly extend treatment duration). 9-month INH/RIF/EMB regimen is alternative if PZA avoided.",
+    "bfDetail": "Low milk levels (RID ~1-2%); compatible with breastfeeding. WHO-preferred TB regimens in lactation include PZA.",
+    "alternatives": "If PZA avoided in 1st trimester: extended 9-month INH/RIF/EMB regimen. Consult TB specialist.",
+    "source": "Canadian TB Standards 2022; WHO TB Treatment Guidelines; LactMed"
+  },
+  "rifabutin": {
+    "name": "Rifabutin (Mycobutin)",
+    "pregRisk": "Low",
+    "pregColor": "#10b981",
+    "bfRisk": "Moderate",
+    "bfColor": "#fbbf24",
+    "pregDetail": "FDA Category B (animal studies show no risk). Limited human data but PHAC and WHO permit rifabutin in pregnancy for MAC or active TB when needed (preferred over rifampin in HIV-TB co-infection on PIs/cobicistat). No teratogenicity signal.",
+    "bfDetail": "Limited milk data; small amounts likely transferred. Discuss benefit-risk; consider monitoring infant for orange body fluid discolouration. LactMed: compatible with monitoring.",
+    "alternatives": "Rifampin (more pregnancy data); azithromycin for MAC (preferred macrolide in pregnancy).",
+    "source": "Health Canada PM Mycobutin; PHAC TB Standards 2022; LactMed"
+  },
+  "albendazole": {
+    "name": "Albendazole (Albenza)",
+    "pregRisk": "Avoid",
+    "pregColor": "#f97316",
+    "bfRisk": "Low",
+    "bfColor": "#10b981",
+    "pregDetail": "AVOID in 1st trimester (animal teratogenicity — bone, vertebral, cardiac defects in rats/rabbits at therapeutic doses; FDA Category C/D). WHO mass drug administration programs avoid 1st trimester; permit in 2nd/3rd trimester for severe parasitic infections when benefit outweighs risk. Defer ELECTIVE treatment of mild infections to postpartum.",
+    "bfDetail": "Low milk levels (RID <2%); generally compatible with breastfeeding for short courses. Single-dose for routine deworming considered safe.",
+    "alternatives": "Mebendazole (similar concerns but less systemic absorption — preferred for intestinal helminths in pregnancy when treatment unavoidable). Pyrantel pamoate (no teratogenicity signal — preferred in pregnancy for pinworm/roundworm).",
+    "source": "WHO Mass Drug Administration Guidelines; CDC Parasites in Pregnancy; LactMed"
+  },
+  "praziquantel": {
+    "name": "Praziquantel (Biltricide)",
+    "pregRisk": "Moderate",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Low",
+    "bfColor": "#10b981",
+    "pregDetail": "FDA Category B (no animal teratogenicity). WHO has reviewed mass drug administration data and PERMITS praziquantel in pregnancy (especially 2nd/3rd trimester) in schistosomiasis-endemic areas — public health benefit outweighs theoretical risk. AVOID 1st trimester if possible. Defer elective treatment of asymptomatic infections to postpartum.",
+    "bfDetail": "Low milk levels (RID ~3%); WHO permits during breastfeeding. Some authorities recommend pumping/discarding milk for 72 hours after dose for high-precision indications. LactMed: generally compatible.",
+    "alternatives": "No good alternatives for schistosomiasis or trematodes — defer treatment to postpartum if possible; treat at WHO-recommended interval (≥12 weeks postpartum).",
+    "source": "WHO Schistosomiasis Guidelines 2022; CDC Parasites in Pregnancy; LactMed"
   },
   "daptomycin": {
     "name": "Daptomycin (Cubicin)",
