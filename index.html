@@ -107889,7 +107889,113 @@ var MINOR_AILMENTS = [
             "6. Counsel on cream application technique, sitz bath instructions, fibre titration with adequate water, toileting habits, when to return; provide written instructions.",
             "7. Document the encounter per OCP standards: assessment findings, diagnosis, grade if external/internal, therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess at 2 weeks; if no improvement, persistent bleeding, or grade III/IV symptoms — refer for colorectal evaluation (rubber band ligation, hemorrhoidectomy) and colonoscopy if age/risk indicates."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Symptoms consistent with hemorrhoids: BRIGHT RED bleeding on toilet paper or stool surface (not mixed in stool), perianal itching/discomfort, sensation of fullness, mucus discharge, soft tissue prolapse with bowel movement, OR severe perianal pain (suggests thrombosed external hemorrhoid)?",
+                    "ctx": "Hemorrhoid bleeding is BRIGHT RED and on the toilet paper or stool surface — NOT mixed throughout the stool, NOT dark/black/melena. Atypical bleeding patterns mandate alternative-diagnosis workup before any topical therapy.",
+                    "crumb": "Hemorrhoid features?",
+                    "yes": "n2",
+                    "no": "rx_atypical"
+                },
+                "n2": {
+                    "q": "Any RED FLAGS: (1) DARK/BLACK BLOOD or melena (upper GI bleed); (2) blood MIXED throughout stool (not just on surface); (3) unintentional WEIGHT LOSS, change in bowel calibre, or persistent change in bowel habits; (4) IRON DEFICIENCY ANEMIA, fatigue, pallor; (5) FAMILY HISTORY of colorectal cancer or IBD; (6) AGE >40 with first-ever rectal bleeding; (7) fever + severe perianal pain (abscess); (8) purulent perianal drainage (fistula-in-ano); (9) abdominal mass or persistent abdominal pain?",
+                    "ctx": "Hemorrhoidal bleeding NEVER causes melena. Any of these features mandates physician/GI evaluation including colonoscopy before attributing bleeding to hemorrhoids — colorectal cancer can mimic hemorrhoidal bleeding and presents in younger patients with increasing frequency.",
+                    "crumb": "Red flags?",
+                    "yes": "rx_redflag",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Does the patient have SEVERE acute perianal pain with a tender, firm, blue-purple lump at the anal verge (suggesting thrombosed external hemorrhoid)?",
+                    "ctx": "Thrombosed external hemorrhoid presents as sudden severe perianal pain with a visible/palpable firm bluish lump. Within 72 hours of onset, surgical excision provides faster relief than conservative care; after 72h, conservative care is preferred.",
+                    "crumb": "Thrombosed?",
+                    "yes": "n3b",
+                    "no": "n4"
+                },
+                "n3b": {
+                    "q": "Has onset of severe pain been WITHIN the last 72 hours?",
+                    "ctx": "Within 72h: surgical excision is preferred (faster relief, lower recurrence). After 72h: conservative care while clot resolves over 1–2 weeks.",
+                    "crumb": "<72h pain?",
+                    "yes": "rx_thrombosed_acute",
+                    "no": "tx_thrombosed_late"
+                },
+                "n4": {
+                    "q": "Is the patient currently pregnant or in the immediate postpartum period?",
+                    "ctx": "Hemorrhoids are very common in pregnancy and postpartum. Most pregnancy-safe approaches are non-pharmacological + topical agents; some agents (lidocaine, certain steroids) need caution.",
+                    "crumb": "Pregnant/postpartum?",
+                    "yes": "tx_preg",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Does the patient have INTERNAL HEMORRHOID PROLAPSE that does NOT reduce spontaneously, that requires manual reduction, OR that remains permanently prolapsed (Grade III or IV)?",
+                    "ctx": "Hemorrhoid grading: Grade I (no prolapse, bleeds), Grade II (prolapse with straining, reduces spontaneously), Grade III (prolapses, requires manual reduction), Grade IV (permanently prolapsed, irreducible). Grade III/IV typically requires procedural therapy (rubber band ligation, hemorrhoidectomy) — beyond pharmacist scope.",
+                    "crumb": "Grade III/IV?",
+                    "yes": "rx_high_grade",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Is the patient currently SYMPTOMATIC with pain, itching, burning, swelling, or active bleeding (i.e., needs an acute treatment course)?",
+                    "ctx": "Symptomatic flare warrants topical therapy (under MA scope). Asymptomatic patients with mild internal hemorrhoids benefit from prevention measures only — topical steroids are not for prevention.",
+                    "crumb": "Symptomatic flare?",
+                    "yes": "n6b",
+                    "no": "tx_chronic"
+                },
+                "n6b": {
+                    "q": "Any contraindication to topical hydrocortisone ± local anesthetic? (perianal infection — including untreated genital HSV, fungal infection, perianal abscess, allergy to lidocaine/benzocaine)",
+                    "ctx": "Topical corticosteroids should not be applied over active untreated infection. Benzocaine has higher contact-sensitisation rate than lidocaine — prefer lidocaine if available.",
+                    "crumb": "Contraindications?",
+                    "yes": "rx_contraind",
+                    "no": "tx_acute"
+                },
+                "rx_atypical": {
+                    "type": "caution",
+                    "msg": "Symptoms not typical of hemorrhoids — reassess differential. If diagnosis uncertain after reassessment, REFER to physician.",
+                    "detail": "Consider: ANAL FISSURE (severe pain WITH defecation, sentinel skin tag, posterior midline crack — sitz baths, GTN ointment, nifedipine cream); IBD (Crohn's, UC — diarrhea, blood mixed in stool, abdominal pain, weight loss, systemic symptoms); COLORECTAL CANCER (>40, weight loss, change in bowel habits, family history, anemia); CONDYLOMATA ACUMINATA (perianal warts, HPV); RECTAL PROLAPSE (full-thickness mucosal extrusion through anus); PERIANAL ABSCESS or FISTULA (fever, induration, purulent discharge); PRURITUS ANI (chronic itch without other features — hygiene/dietary causes, contact dermatitis, candida, parasitic). Refer to physician/NP if not clearly hemorrhoidal."
+                },
+                "rx_redflag": {
+                    "type": "refer",
+                    "msg": "Red flag features — refer to physician/NP for assessment INCLUDING colonoscopy. Do NOT prescribe topical hemorrhoid therapy yet.",
+                    "detail": "Hemorrhoidal bleeding is bright red, on stool surface or paper only. Dark/melenic blood, blood mixed in stool, weight loss, anemia, age >40 with first bleed, change in bowel habits, family history of CRC/IBD all warrant GI workup including colonoscopy BEFORE attributing bleeding to hemorrhoids — colorectal cancer can present with rectal bleeding in patients of any age and is being diagnosed at increasingly younger ages (USPSTF lowered screening to age 45 in 2021, and Canadian guidelines under review). Fever + severe perianal pain (abscess) or purulent drainage (fistula-in-ano) → urgent surgical/ED referral. Symptomatic anemia → ER if severe."
+                },
+                "rx_thrombosed_acute": {
+                    "type": "refer-urgent",
+                    "msg": "Thrombosed external hemorrhoid within 72h — refer SAME-DAY for surgical excision (provides faster relief and lower recurrence than conservative care within this window).",
+                    "detail": "Thrombosed external hemorrhoid <72h benefits from prompt elliptical excision under local anesthesia (typically performed by family physician with surgical skills, ED, or general surgery). Excision provides immediate pain relief; conservative care leads to slow resolution over 1–2 weeks with possible residual skin tag. While arranging referral: cool packs, sitz baths, acetaminophen ± topical lidocaine 5% for pain relief. AVOID NSAIDs if bleeding. Counsel: do NOT attempt to lance at home (infection, bleeding risk)."
+                },
+                "tx_thrombosed_late": {
+                    "type": "treat",
+                    "msg": "Thrombosed external hemorrhoid >72h: conservative management — surgical excision is no longer time-sensitive. Symptoms resolve over 1–2 weeks.",
+                    "detail": "MEASURES: (1) Sitz baths in plain warm water 10–15 min, 2–3×/day and after BMs (do NOT add Epsom salts/soaps — irritates perianal tissue). (2) Cool compresses for first 24h. (3) Topical lidocaine 5% ointment for pain (avoid >7 days continuous use — sensitization). (4) Acetaminophen for pain; avoid NSAIDs if bleeding. (5) Stool softener: psyllium (Metamucil) 1 tbsp in 250 mL water OD–TID with adequate fluids; OR PEG 3350 17 g OD. (6) Avoid prolonged sitting on toilet; do not strain. EXPECTED COURSE: pain peaks day 2–3, resolves over 7–14 days; residual skin tag may remain (cosmetic only). REFER if pain worsens, fever develops (abscess), or persistent bleeding."
+                },
+                "tx_preg": {
+                    "type": "treat",
+                    "msg": "PREGNANCY/POSTPARTUM SAFE: (1) Sitz baths in plain warm water 2–3×/day; (2) Psyllium fibre + adequate hydration; (3) Topical hydrocortisone 1% ± pramoxine (Anusol HC equivalent) — short course ≤7 days is acceptable per pregnancy data; (4) Witch hazel pads (Tucks) — safe; (5) Acetaminophen for pain.",
+                    "detail": "PREGNANCY SAFETY: Topical hydrocortisone for short courses (≤1 week) on limited area has minimal systemic absorption — accepted in pregnancy (CFP, Briggs). Topical lidocaine in small amounts is acceptable; AVOID benzocaine (sensitization, methemoglobinemia risk in infants if breastfeeding). AVOID systemic flavonoids (Daflon/MPFF) in pregnancy — limited safety data. NON-PHARM IS FIRST-LINE: increase fluid intake to 2–3 L/day, dietary fibre 25–30 g/day, psyllium supplement, avoid straining, do not delay defecation, regular activity (walking), pelvic floor exercises postpartum. Most pregnancy-related hemorrhoids resolve within weeks of delivery. Refer to OB if severe symptoms, prolonged bleeding, or thrombosis."
+                },
+                "rx_high_grade": {
+                    "type": "refer",
+                    "msg": "Grade III (manual reduction needed) or Grade IV (permanently prolapsed) hemorrhoids — beyond Ontario MA pharmacist scope. Refer to physician for procedural management.",
+                    "detail": "Grade III/IV hemorrhoids typically require procedural therapy: RUBBER BAND LIGATION (most common office procedure for Grade II/III — outpatient, well-tolerated); INFRARED COAGULATION; SCLEROTHERAPY; or HEMORRHOIDECTOMY (Grade IV, large recurrent, mixed internal-external — surgical procedure with longer recovery). Topical therapy can provide interim symptom relief while awaiting procedure (under physician supervision), but does not resolve high-grade hemorrhoids. Pharmacist may recommend conservative supportive care (sitz baths, fibre, hydration, hygiene) while patient awaits referral."
+                },
+                "rx_contraind": {
+                    "type": "refer",
+                    "msg": "Contraindication to topical hydrocortisone or local anesthetic (active perianal infection, abscess, fistula, or known allergy) — refer to physician.",
+                    "detail": "Topical corticosteroids over active infection can mask and worsen disease. Perianal abscess or fistula requires surgical management. True allergy to lidocaine is rare; benzocaine sensitization is more common — try lidocaine alternative if benzocaine reaction. While awaiting referral: sitz baths, oral acetaminophen for pain, fibre and hydration are still appropriate."
+                },
+                "tx_acute": {
+                    "type": "treat",
+                    "msg": "First-Line ACUTE SYMPTOMATIC FLARE (Ontario MA): Topical hydrocortisone 0.5–1% ± pramoxine 1% (Anusol HC, Proctosedyl) — apply thin layer to perianal area BID–TID after BMs and at bedtime × 5–7 days MAX. PLUS: sitz baths 2–3×/day in plain warm water + psyllium fibre + adequate hydration.",
+                    "detail": "OCP MA SCOPE: pharmacist may prescribe topical hydrocortisone ± local anesthetic (pramoxine, lidocaine) for acute hemorrhoid symptoms — duration LIMITED TO 7 DAYS (longer use causes mucosal atrophy, telangiectasia, perianal dermatitis). FORMULATIONS: Anusol HC (hydrocortisone 0.5% + zinc sulfate); Proctosedyl (hydrocortisone 0.5% + cinchocaine); Proctol (hydrocortisone + lidocaine). NOTE: Anusol-HC PLUS in Canada is hydrocortisone 1% + pramoxine 1%.\n\nADJUNCTS: (1) Sitz baths 10–15 min, 2–3×/day and after BMs — plain warm water only (no Epsom salts/soaps — irritate tissue); (2) Psyllium (Metamucil) 1 tbsp in 250 mL water OD–TID with adequate fluids OR PEG 3350 17 g OD; (3) MPFF (Daflon 500 mg) BID × 7 days — Cochrane evidence for symptom relief, particularly bleeding (NAPRA Schedule II OTC; not pharmacist-prescribed but appropriate to recommend); (4) Witch hazel pads (Tucks) for itching; (5) Cool compresses for swelling.\n\nLIFESTYLE: increase dietary fibre 25–30 g/day, fluid 2–3 L/day, avoid straining, do not delay defecation, do not sit on toilet >5 min reading/phone, regular physical activity. REASSESS at 7 days — if symptoms persist or worsen, refer. AVOID NSAIDs if active bleeding."
+                },
+                "tx_chronic": {
+                    "type": "treat",
+                    "msg": "PREVENTION/CHRONIC MANAGEMENT (asymptomatic or low-grade): Non-pharmacological measures — fibre, hydration, lifestyle, sitz baths PRN. Topical steroids are NOT for prevention.",
+                    "detail": "DIETARY FIBRE: target 25–30 g/day from food (whole grains, legumes, fruits, vegetables) PLUS psyllium supplement (Metamucil) 1 tbsp in 250 mL water OD–TID with adequate fluids — Cochrane: fibre supplementation reduces bleeding and symptom recurrence by ~50%. HYDRATION: 2–3 L water/day. TOILETING: respond promptly to urge, do not delay BM, do not sit on toilet >5 min, no phone/reading on toilet (prolonged sitting + straining worsen hemorrhoids). EXERCISE: regular physical activity reduces constipation and venous stasis. SITZ BATHS: PRN in plain warm water 10–15 min for any flare. WEIGHT: if overweight, weight loss reduces intra-abdominal pressure. AVOID: heavy lifting + Valsalva, prolonged standing/sitting, low-fibre diet, dehydration. RETURN if active flare for short topical course; do NOT use topical steroids prophylactically."
+                }
+            }
+        }
     },
     {
         "name": "Dysmenorrhea (Menstrual Pain)",
