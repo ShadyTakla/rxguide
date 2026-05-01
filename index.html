@@ -109178,10 +109178,16 @@ var MINOR_AILMENTS = [
                 "Comorbid depression, anxiety, or other mental health conditions?"
             ],
             "red_flags": [
-                "Active cardiovascular disease: NRT is SAFE (nicotine without carcinogens is far safer than smoking) — do NOT withhold NRT",
-                "Pregnancy: behavioural support first-line; intermittent NRT (gum or lozenge, NOT patch) preferred if pharmacotherapy needed; varenicline and bupropion NOT recommended in pregnancy (insufficient safety data per CAN-ADAPTT, SOGC) — discuss risk-benefit with obstetric team",
-                "Severe psychiatric illness: varenicline is safe (BBW was overestimated — EAGLES trial); address psychiatric stability",
-                "Current medications affected by smoking cessation: on quitting, smoking-induced CYP1A2 induction is lost — monitor and reduce doses of clozapine, olanzapine, theophylline, caffeine, fluvoxamine, R-warfarin by ~25–50% over 1–2 weeks post-cessation"
+                "Active suicidal ideation, severe depression, or unstable psychiatric illness → refer for psychiatric assessment before initiating cessation pharmacotherapy (CAN-ADAPTT 2011/2023)",
+                "Pregnancy or planning pregnancy → refer to obstetric team if pharmacotherapy contemplated; varenicline and bupropion NOT recommended in pregnancy per SOGC and CAN-ADAPTT (insufficient safety data); behavioural support is first-line",
+                "Active or recent (<2 weeks) MI, unstable angina, or life-threatening arrhythmia → cardiology input before nicotinic agonist therapy; NRT still preferable to continued smoking but coordinate with cardiologist",
+                "Seizure disorder, current/prior eating disorder, or active alcohol/sedative withdrawal → bupropion CONTRAINDICATED (lowers seizure threshold) — refer for alternative regimen",
+                "Severe hepatic or renal impairment → bupropion and high-dose varenicline contraindicated/dose-adjusted — refer for prescriber assessment",
+                "Concurrent smoking-affected medications (clozapine, olanzapine, theophylline, fluvoxamine, R-warfarin, caffeine) → refer for medication review at quit date; smoking-induced CYP1A2 induction is lost on cessation, requiring proactive dose reduction"
+            ],
+            "clinical_considerations": [
+                "NRT is SAFE in cardiovascular disease — nicotine without combustion by-products is far safer than continued smoking; do NOT withhold NRT in stable CVD (CAN-ADAPTT 2011/2023, USPHS 2020).",
+                "Severe psychiatric illness — EAGLES trial (Anthenelli, Lancet 2016) showed varenicline neuropsychiatric risk LOWER than the original FDA boxed warning suggested; varenicline is safe in stable psychiatric patients with appropriate monitoring (Health Canada removed comparable boxed warning 2017)."
             ],
             "ddx": []
         },
@@ -113157,10 +113163,10 @@ function buildTherapeuticFlowChart(ma){
       return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
     });
   }
-  function shortFlag(s){
-    // Take leading clause up to en/em-dash, " — ", colon, or first " (" — keep it punchy
-    var t = String(s).split(/—|–| - |:| \(/)[0].trim();
-    if (t.length > 90) t = t.slice(0, 87) + '…';
+  function fullFlag(s){
+    // Preserve full clinical context (urgency cues like "→ ER", "— urgent" must remain visible).
+    var t = String(s).trim();
+    if (t.length > 220) t = t.slice(0, 217) + '…';
     return escapeHtml(t);
   }
   function splitTitleDetail(stepText){
@@ -113217,18 +113223,28 @@ function buildTherapeuticFlowChart(ma){
     html +=     '</div>';
     html +=   '</div>';
 
-    // Refer-exit branch — show on red-flag screens (uses red_flags) and on follow-up step (uses refer_when)
-    if (isReferGate && redFlags.length) {
-      html += '<div class="ma-flow-arrow-right" aria-label="Refer if any of these">→</div>';
+    // Refer-exit branch logic — three distinct gate types with DIFFERENT exit criteria:
+    //   (a) Eligibility gate (step 1)  → refer if patient does NOT meet MA scope criteria.
+    //   (b) Red-flag screen gate       → refer if ANY red flag is present (full list, untrimmed).
+    //   (c) Follow-up gate (last step) → refer if no improvement / new red flags arise.
+    // Avoiding the previous bug where eligibility and red-flag screens both showed the same
+    // red_flags list, which could prompt referrals for the wrong reason.
+    var isEligibilityGate = isReferGate && /eligibilit|outside\s+(MA|scope)|pharmacist[- ]?prescrib/i.test(parts.title);
+    if (isEligibilityGate) {
+      html += '<div class="ma-flow-arrow-right" aria-label="Refer if outside MA scope">→</div>';
+      html += '<div class="ma-flow-refer">';
+      html +=   '<div class="ma-flow-refer-title">📤 Refer if</div>';
+      html +=   '<div class="ma-flow-refer-summary">Patient does not meet Ontario MA eligibility (age, pregnancy, recurrence, comorbidity, or other condition-specific scope criteria listed in this step) → physician / NP assessment.</div>';
+      html += '</div>';
+    } else if (isReferGate && redFlags.length) {
+      html += '<div class="ma-flow-arrow-right" aria-label="Refer if any red flag">→</div>';
       html += '<div class="ma-flow-refer">';
       html +=   '<div class="ma-flow-refer-title">📤 Refer if any</div>';
       html +=   '<ul>';
-      var flagsToShow = Math.min(redFlags.length, 5);
-      for (var j = 0; j < flagsToShow; j++) {
-        html += '<li>' + shortFlag(redFlags[j]) + '</li>';
-      }
-      if (redFlags.length > flagsToShow) {
-        html += '<li style="color:#f87171;font-style:italic;">+ ' + (redFlags.length - flagsToShow) + ' more — see Red Flags above</li>';
+      // Show ALL red flags untrimmed — every red flag is potentially life-threatening
+      // and must remain visible. Pagination/truncation here previously hid DKA, raised ICP, etc.
+      for (var j = 0; j < redFlags.length; j++) {
+        html += '<li>' + fullFlag(redFlags[j]) + '</li>';
       }
       html +=   '</ul>';
       html += '</div>';
