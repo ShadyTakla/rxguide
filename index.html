@@ -49099,95 +49099,43 @@ var DRUGS = {
   },
   "docusate": {
     "name": "Docusate sodium",
-    "brand": "Colace, Soflax",
-    "class": "Gastrointestinal",
-    "napra": "U",
-    "moa": "Stool softener (surfactant/emollient laxative); decreases surface tension of stool → allows water and lipids to penetrate stool → softens consistency; does NOT stimulate intestinal motility",
+    "brand": "Colace, Soflax, Surfak, generic",
+    "class": "Stool softener (anionic surfactant — wetting agent)",
+    "napra": "OTC",
+    "moa": "Anionic surfactant that lowers surface tension at the oil/water interface of stool, allowing water and lipids to penetrate the fecal mass — softening stool consistency. Does NOT stimulate intestinal motility (not a true laxative). Onset 1–3 days. Limited evidence for clinical efficacy compared to placebo per Cochrane reviews; psyllium and PEG generally preferred for constipation. May still have role in preventing straining (post-MI, post-surgical, hemorrhoids).",
     "indications": [
-      "Constipation prevention (not treatment of established constipation)",
-      "Post-surgical/anorectal conditions (hemorrhoids, fissures — prevent straining)",
-      "Opioid-induced constipation (adjunct — less effective alone)",
-      "Preparation for rectal procedures"
+      "Prevention of stool straining (post-surgical, post-MI, hemorrhoids, anal fissure)",
+      "Mild constipation prevention (limited efficacy — psyllium/PEG preferred)",
+      "Adjunct to opioid-induced constipation regimens (combine with stimulant — senna)"
     ],
     "dosing": [
       {
-        "route": "Oral (adult)",
-        "dose": "50–500 mg/day in 1–4 divided doses",
-        "notes": "Effect takes 1–3 days"
-      },
-      {
-        "route": "Oral (pediatric)",
-        "dose": "10–40 mg/day (infants); 20–60 mg/day (children)",
-        "notes": ""
+        "indication": "Stool softening (adults)",
+        "dose": "Docusate sodium 100 mg PO BID (range 50–500 mg/day). Can be taken with food. Adequate fluid intake (2 L/day) is essential for effect. Onset 1–3 days; maximum effect at 3–5 days.",
+        "notes": "Discontinue if no improvement after 1 week. Note: Cochrane evidence does not support docusate as effective constipation treatment compared to psyllium or PEG — reserve for stool-softening role only. Pediatric: 10–40 mg/day in divided doses (children <3 years) up to 40–150 mg/day (12 years)."
       }
     ],
-    "side_effects": {
-      "common": [
-        "Abdominal cramping (mild)",
-        "Diarrhea with excessive doses",
-        "Bitter taste (liquid formulations)"
-      ],
-      "serious": [
-        "No serious side effects at standard doses"
-      ]
-    },
     "contraindications": [
-      "Intestinal obstruction",
-      "Nausea/vomiting/acute abdomen (all laxatives)",
-      "Concurrent mineral oil (increases mineral oil absorption)"
+      "Intestinal obstruction or ileus",
+      "Acute abdominal pain (rule out surgical cause first)",
+      "Concurrent mineral oil use (increases mineral oil absorption — toxic accumulation)"
+    ],
+    "side_effects": [
+      "Generally well tolerated",
+      "Mild abdominal cramping, diarrhea (high doses)",
+      "Throat irritation (liquid form — bitter taste)",
+      "Rare: hypersensitivity rash"
     ],
     "interactions": [
-      {
-        "drug": "Mineral oil (liquid paraffin)",
-        "severity": "Contraindicated",
-        "mechanism": "Docusate sodium is a surfactant (anionic detergent) that increases intestinal permeability and enhances absorption; mineral oil is a lipid laxative/emollient; docusate dramatically increases systemic absorption of mineral oil, causing mineral oil to deposit in mesenteric lymph nodes, liver, spleen, and lungs → lipid granulomas, lipid pneumonitis (aspiration risk), and hepatic lipogranulomas; multiple fatalities from combined use",
-        "management": "ABSOLUTELY CONTRAINDICATED: never combine docusate with mineral oil; if patient requires both laxative and stool softener, use docusate + PEG or docusate + senna; counsel patients and caregivers not to add mineral oil to docusate regimen; if mineral oil is on a medication list with docusate, discontinue mineral oil immediately"
-      },
-      {
-        "drug": "Phenolphthalein (historical stimulant laxative — no longer available) and other fat-soluble laxatives",
-        "severity": "Moderate",
-        "mechanism": "Docusate's surfactant action increases absorption of fat-soluble compounds applied concurrently to intestinal mucosa; this extends to other fat-soluble laxatives, fat-soluble drug vehicles, and any lipophilic compound co-present in the gut lumen; historical concern with phenolphthalein (withdrawn from market due to carcinogenicity) + docusate",
-        "management": "Docusate can be safely combined with bulk-forming laxatives (psyllium, methylcellulose), osmotic laxatives (PEG, lactulose), and stimulant laxatives (senna, bisacodyl); the specific contraindication is with fat-soluble products (mineral oil); no interaction with water-soluble laxatives"
-      },
-      {
-        "drug": "Opioids — docusate as standard stool softener co-prescription",
-        "severity": "Beneficial",
-        "mechanism": "Opioid-induced constipation (OIC) requires both motility-stimulating (senna) and stool-softening (docusate) agents; opioids reduce intestinal secretions AND motility, resulting in hard, dry stools; docusate reduces stool surface tension, allowing water to penetrate and soften stool independently of motility",
-        "management": "Docusate should be co-prescribed with senna when opioids are initiated; standard combination: senna 2 tabs BID + docusate 100 mg BID at opioid start; if OIC persists, escalate senna to 4 tabs BID + docusate + PEG; do not use docusate alone for OIC (motility component inadequately addressed); PAMORA (methylnaltrexone) for refractory OIC despite maximal laxative therapy"
-      },
-      {
-        "drug": "Antacids (calcium carbonate, aluminum hydroxide) — timing interaction",
-        "severity": "Minor",
-        "mechanism": "Docusate's anionic surfactant properties may interact with cationic compounds (calcium, aluminum, magnesium) in antacids, potentially reducing docusate efficacy through ionic complexation; this is primarily a theoretical concern based on surfactant chemistry",
-        "management": "Clinically relevant impact is minimal; no documented case reports of significant docusate-antacid interaction; if administering both, separate by 1–2 hours to be cautious; most patients tolerate concurrent use without issue"
-      },
-      {
-        "drug": "Aspirin and NSAIDs (in context of GI mucosal irritation)",
-        "severity": "Minor",
-        "mechanism": "Docusate's surfactant property increases intestinal epithelial permeability; there is theoretical concern that enhanced permeability could increase NSAID GI mucosal contact and GI irritation; however, clinical evidence for this interaction is not established; docusate is commonly used concurrently with NSAIDs in elderly patients without documented interaction problems",
-        "management": "No specific contraindication between docusate and NSAIDs; standard clinical practice includes both in elderly patients; for patients with NSAID-associated GI irritation, adding a PPI is more appropriate than avoiding docusate; if significant GI symptoms occur on NSAID + docusate, assess NSAID dose, formulation (enteric-coated), and consider PPI addition"
-      },
-      {
-        "drug": "Pregnancy safety — stool softener use",
-        "severity": "No interaction",
-        "mechanism": "Docusate sodium is classified as low risk in pregnancy; minimal systemic absorption; does not stimulate uterine contractions (unlike stimulant laxatives castor oil and bisacodyl in high doses); widely used for pregnancy-associated constipation and post-partum (after episiotomy, C-section) to avoid straining",
-        "management": "Docusate is considered safe in all trimesters of pregnancy and breastfeeding; standard first-line stool softener for pregnancy-associated constipation when dietary fiber and hydration are insufficient; preferred over mineral oil (systemic absorption risk) and stimulant laxatives for chronic constipation management in pregnancy"
-      }
+      "Mineral oil: avoid combination (enhances mineral oil absorption — granulomatous reactions)",
+      "May enhance absorption of other oral medications (theoretical)"
     ],
-    "pregnancy": "Category C. Widely used in pregnancy for constipation prevention — generally considered safe. No teratogenicity in animal studies. Often first-line laxative in pregnancy.",
-    "pk": {
-      "absorption": "Minimal systemic",
-      "half_life": "N/A",
-      "renal_adjustment": "No adjustment needed"
-    },
-    "canadian_notes": "OTC (Unscheduled). Not ODB-covered. Inexpensive. Important: docusate is a stool SOFTENER, not a stimulant laxative — does not increase bowel movement frequency. Often insufficient alone for opioid-induced constipation; combine with senna for better efficacy.",
-    "pearls": [
-      "Stool softener only — does NOT increase frequency; add senna for opioid constipation",
-      "Takes 1–3 days to work — not for immediate relief",
-      "AVOID with mineral oil (increases absorption of mineral oil — toxic)",
-      "Safe in pregnancy and elderly; Beers list: combination docusate+senna appropriate in elderly on opioids"
+    "monitoring": [
+      "Bowel pattern, stool consistency",
+      "Discontinue when not needed (avoid laxative dependence)",
+      "Reassess at 1 week — switch to psyllium/PEG if ineffective"
     ],
-    "source": "Health Canada PM Colace/Soflax (multiple manufacturers); CFP/CAG Constipation Reviews (Choosing Wisely Canada — limited evidence vs PEG); CPS Compendium."
+    "source": "Health Canada Colace Product Monograph; Cochrane reviews on stool softeners; RxTx Constipation 2024"
   },
   "senna": {
     "name": "Senna (Sennosides)",
