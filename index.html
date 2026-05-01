@@ -108377,7 +108377,101 @@ var MINOR_AILMENTS = [
             "6. Counsel on dose, upright positioning, photosensitivity, what to monitor for over 30 days (EM rash, flu-like illness), tick prevention strategies, etick.ca submission.",
             "7. Document the encounter per OCP standards: assessment findings (the 4 criteria), tick species/source, therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: 30-day monitoring window for EM rash or systemic symptoms — if any develop, refer immediately for full antibiotic treatment course (doxycycline 100 mg BID × 14–21 days or amoxicillin in children/pregnancy)."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Any URGENT red flags from the tick bite or aftermath: (1) ERYTHEMA MIGRANS (EM) RASH already present — expanding annular/bull's-eye rash ≥5 cm at bite site, typically 3–30 days post-bite (this is EARLY LYME DISEASE, not prophylaxis territory); (2) flu-like illness — fever, myalgia, arthralgia, headache, fatigue (early disseminated Lyme); (3) NEUROLOGIC features — facial palsy (Bell-like), meningitis-type headache, radiculopathy, peripheral neuropathy (neuroborreliosis); (4) CARDIAC features — palpitations, syncope, chest pain, conduction block (Lyme carditis — emergency); (5) ACUTE arthritis with joint swelling; (6) ANAPHYLAXIS or significant allergic reaction to the bite itself?",
+                    "ctx": "These are NOT prophylaxis indications — they are early or disseminated Lyme disease (or unrelated emergency) requiring full TREATMENT course, not single-dose prophylaxis. Refer to physician/ED. Lyme carditis with high-grade AV block can be life-threatening.",
+                    "crumb": "Already symptomatic?",
+                    "yes": "rx_active_lyme",
+                    "no": "n2"
+                },
+                "n2": {
+                    "q": "Was the attached tick identified as a BLACKLEGGED TICK (Ixodes scapularis in eastern Canada / Ixodes pacificus on the west coast)? Helpful identification: black legs, no white markings on body (unlike American dog tick which has ornate white markings), nymph the size of a poppy seed, adult the size of a sesame seed.",
+                    "ctx": "Only Ixodes ticks transmit Borrelia burgdorferi. The American dog tick (Dermacentor variabilis), lone star tick (Amblyomma americanum), and brown dog tick (Rhipicephalus sanguineus) do NOT transmit Lyme disease in Canada — though they can transmit other pathogens. Submit photo to eTick.ca for free expert identification (24-72h turnaround). PHO maintains the Ontario Lyme risk area map.",
+                    "crumb": "Blacklegged tick?",
+                    "yes": "n3",
+                    "no": "rx_non_ixodes"
+                },
+                "n3": {
+                    "q": "Was the tick bite acquired in a LYME-ENDEMIC AREA? Ontario endemic regions per PHO: most of southern/eastern Ontario including Kingston, Ottawa, eastern shore of Lake Ontario, Long Point, Turkey Point, parts of southwestern Ontario, GTA conservation areas. Other endemic Canadian areas: Nova Scotia, southern New Brunswick, southern Manitoba, parts of southern Quebec, southern BC. (Use PHO Lyme risk map at publichealthontario.ca for current areas — risk areas have expanded year-over-year.)",
+                    "ctx": "If tick bite was in a NON-endemic area, prophylaxis is NOT indicated regardless of attachment time. AMMI Canada / IDSA recommend prophylaxis only when local Borrelia infection rate in ticks is ≥20% (Ontario endemic areas meet this).",
+                    "crumb": "Endemic area?",
+                    "yes": "n4",
+                    "no": "rx_non_endemic"
+                },
+                "n4": {
+                    "q": "Estimated TICK ATTACHMENT TIME — has the tick been attached for ≥36 hours (or attachment time uncertain but tick was engorged/swollen suggesting prolonged feeding)?",
+                    "ctx": "Borrelia transmission requires sustained feeding — risk is very low if attachment <24 hours, increases significantly at 36–48h, and is highest at >72h. IDSA/AMMI prophylaxis criteria require ≥36h attachment OR engorged tick of uncertain duration. If attachment <36h and tick not engorged, prophylaxis is NOT indicated — observe only.",
+                    "crumb": "≥36h attached?",
+                    "yes": "n5",
+                    "no": "rx_short_attach"
+                },
+                "n5": {
+                    "q": "Time since TICK REMOVAL: was the tick removed within the past 72 HOURS?",
+                    "ctx": "Doxycycline prophylaxis is effective ONLY if started within 72h of tick REMOVAL (not bite exposure). Beyond 72h, single-dose prophylaxis is no longer recommended; observe for symptoms instead and treat at first sign of EM rash or flu-like illness.",
+                    "crumb": "<72h since removal?",
+                    "yes": "n6",
+                    "no": "rx_late"
+                },
+                "n6": {
+                    "q": "Is the patient PREGNANT or BREASTFEEDING?",
+                    "ctx": "Doxycycline (the only recommended single-dose prophylactic) is generally avoided in pregnancy and lactation by traditional teaching, though IDSA 2020 noted single-dose use is acceptable when benefit > risk. PHO and SOGC traditionally avoid in pregnancy. Most Ontario practice: refer pregnant patients to physician for individualized decision (usually observation; treat actively if EM develops).",
+                    "crumb": "Pregnant/BF?",
+                    "yes": "rx_preg",
+                    "no": "n7"
+                },
+                "n7": {
+                    "q": "Any contraindication to doxycycline: known hypersensitivity, severe hepatic impairment, OR concurrent oral retinoid (isotretinoin/Accutane) — pseudotumor cerebri risk?",
+                    "ctx": "IDSA 2020 update REMOVED the historic age <8 restriction — single-dose doxycycline 200 mg is acceptable for all ages including young children. The traditional concern (tooth staining) is dose- and duration-dependent; single-dose is below the threshold. Allergy or significant hepatic disease are the remaining absolute contraindications.",
+                    "crumb": "Doxycycline CI?",
+                    "yes": "rx_contraind",
+                    "no": "tx_doxy"
+                },
+                "rx_active_lyme": {
+                    "type": "refer-urgent",
+                    "msg": "EM rash, systemic, neurologic, or cardiac features — this is EARLY/DISSEMINATED LYME DISEASE, not prophylaxis territory. Refer urgently for full antibiotic TREATMENT course. Cardiac involvement with conduction block → ED.",
+                    "detail": "EARLY LOCALIZED LYME (EM rash without neurologic/cardiac involvement): Doxycycline 100 mg PO BID × 10–14 days (preferred); OR amoxicillin 500 mg PO TID × 14 days (children, pregnancy); OR cefuroxime axetil 500 mg PO BID × 14 days. Outside Ontario MA scope — physician/NP needed for full treatment course.\n\nEARLY DISSEMINATED LYME (multiple EM, flu-like, facial palsy, mild AV block): Doxycycline 100 mg BID × 14–21 days; longer for neuroborreliosis (oral 14–21d for early, IV ceftriaxone 2 g OD for severe neuro/late). Cardiac involvement with high-grade AV block → ED for IV ceftriaxone + cardiac monitoring (may need temporary pacing).\n\nLATE LYME (months-years later, often arthritis): doxycycline or amoxicillin × 28 days; refractory → IV ceftriaxone.\n\nDIAGNOSIS: serology (2-tier: ELISA → Western blot if positive) — but ANTIBIODY TESTING IS UNRELIABLE EARLY (false negative <4 weeks post-exposure); EM rash is a clinical diagnosis and warrants empirical treatment WITHOUT serology. Refer to physician for assessment + serology timing + treatment course."
+                },
+                "rx_non_ixodes": {
+                    "type": "caution",
+                    "msg": "Tick is NOT a blacklegged (Ixodes) tick — Lyme prophylaxis is NOT indicated. American dog tick, lone star tick, and other species do not transmit Lyme in Canada. Reassure; observe site for any rash; submit photo to eTick.ca for confirmation.",
+                    "detail": "TICK IDENTIFICATION RESOURCES:\n• eTick.ca — submit photos for free expert ID (24–72h turnaround); funded by Bishop's University and partners.\n• PHO Tick Identification: provincial public health lab via local PHU.\n• AMERICAN DOG TICK (Dermacentor variabilis): ornate white/cream markings on dorsum, larger than Ixodes. Can transmit Rocky Mountain spotted fever (rare in Canada) and tularemia.\n• LONE STAR TICK (Amblyomma americanum): single white dot on adult female back; rare but expanding in Canada with climate change. Can cause alpha-gal syndrome (red meat allergy), STARI rash. Does NOT transmit Lyme.\n• BROWN DOG TICK: narrow body, tan/brown.\n\nCOUNSEL: clean bite site with soap and water; topical antibiotic ointment NOT routinely needed; observe for any rash, itching, or systemic symptoms over the next 30 days; if rash develops or if uncertainty remains about species → physician assessment. Consider photo documentation."
+                },
+                "rx_non_endemic": {
+                    "type": "caution",
+                    "msg": "Tick bite NOT in a Lyme-endemic area — single-dose prophylaxis is NOT indicated regardless of attachment time. Observe site and monitor for symptoms over 30 days.",
+                    "detail": "AMMI Canada and IDSA prophylaxis criteria require ALL of: (1) blacklegged tick, (2) attached ≥36h, (3) acquired in endemic area (≥20% local infection rate), (4) within 72h of removal. Failing any criterion = no prophylaxis indication. PHO maintains Ontario Lyme risk area map (publichealthontario.ca) with current endemic regions. The map is updated as Lyme expands geographically — patient may benefit from rechecking if uncertain.\n\nCounsel: even in non-endemic areas, observe bite site for 30 days for EM rash (expanding annular rash ≥5 cm) or flu-like symptoms; if any develop → physician assessment regardless of perceived risk (rare cases of imported infection or undetected local risk). Submit tick to eTick.ca if not already done. Education: tick prevention measures for future exposures."
+                },
+                "rx_short_attach": {
+                    "type": "caution",
+                    "msg": "Tick attached <36 hours and not engorged — single-dose prophylaxis is NOT indicated. Borrelia transmission rarely occurs with short attachment. Observe site and monitor for symptoms over 30 days.",
+                    "detail": "Transmission risk by attachment time (animal model + epidemiology): <24h ~0%; 36h ~7%; 48h ~25%; 72h ~50%. Engorgement (visible swelling/feeding) is a clinical clue suggesting prolonged attachment of uncertain start time. The IDSA/AMMI prophylaxis threshold is ≥36h or engorged.\n\nCOUNSEL: clean site with soap and water; observe for rash or symptoms over 30 days; if EM rash, fever, headache, joint pain, or any concerning features → physician immediately for treatment course. Submit tick to eTick.ca for ID. Patient education: tick checks within 24h of outdoor activity prevent most transmission."
+                },
+                "rx_late": {
+                    "type": "caution",
+                    "msg": "More than 72 hours since tick removal — single-dose prophylaxis is no longer effective. Recommend 30-day OBSERVATION with prompt physician referral if any symptoms develop (EM rash, flu-like illness, etc.).",
+                    "detail": "Doxycycline single-dose prophylaxis efficacy (~87%, Nadelman 2001 NEJM trial) was demonstrated for treatment within 72h of tick removal. Beyond this window, observation with EM-rash and symptom monitoring is preferred — early treatment of any developing infection is highly effective.\n\nMONITORING (30 days post-removal):\n• EM RASH: typically appears 3–30 days post-bite; expanding annular, ≥5 cm, classic 'bull's-eye' (central clearing) is variable; may be uniform red.\n• FLU-LIKE: fever, myalgia, headache, fatigue, lymphadenopathy.\n• Less common: facial palsy, arthralgia, palpitations.\n\nPATIENT INSTRUCTIONS: photograph any rash that develops; record date of tick removal; return to pharmacist or physician promptly if any symptoms appear; submit tick to eTick.ca if not yet done. Tick-borne disease testing should NOT be done in asymptomatic patients (low pretest probability + high false-negative rate early)."
+                },
+                "rx_preg": {
+                    "type": "refer",
+                    "msg": "Pregnancy or breastfeeding — refer to physician/OB for individualized risk-benefit decision on doxycycline prophylaxis. Most Ontario practice: AVOID doxycycline in pregnancy; OBSERVE and treat actively only if EM rash or symptoms develop.",
+                    "detail": "DOXYCYCLINE IN PREGNANCY: traditional teaching avoids doxycycline due to historic tetracycline-class concerns (dental staining, bone effects). Modern data: short-course (≤7 days) doxycycline appears safer than older long-course tetracyclines, but routine prophylaxis is still typically avoided per SOGC. IDSA 2020: 'Use should be individualized; observation may be preferable.'\n\nLACTATION: doxycycline minimal milk transfer for short courses; LactMed considers short-course compatible. Single dose for prophylaxis arguably reasonable but practice varies.\n\nALTERNATIVE if EM develops in pregnancy: AMOXICILLIN 500 mg PO TID × 14–21 days OR cefuroxime axetil 500 mg PO BID × 14–21 days — both safe in pregnancy and effective for early Lyme. Avoid doxycycline if possible.\n\nPATHWAY: defer prophylaxis decision to OB; observe for 30 days; if any EM rash or symptoms → urgent referral for amoxicillin or cefuroxime treatment course (not just prophylaxis). PHO Ontario has pregnancy-specific Lyme guidance."
+                },
+                "rx_contraind": {
+                    "type": "refer",
+                    "msg": "Doxycycline contraindication (allergy, severe hepatic impairment, or concurrent oral retinoid) — refer to physician. Single-dose alternatives are limited; OBSERVATION with prompt treatment of any developing infection is the typical approach.",
+                    "detail": "ALLERGY: true tetracycline allergy is rare; verify history (often confused with side effects). No other antibiotic has demonstrated efficacy for SINGLE-DOSE prophylaxis — alternative regimens (amoxicillin or cefuroxime as full course) are reserved for treatment of confirmed EM/early Lyme.\n\nSEVERE HEPATIC IMPAIRMENT: doxycycline excretion is partly hepatobiliary; single dose is generally tolerated but physician input prudent.\n\nORAL RETINOID (isotretinoin/Accutane, acitretin) + doxycycline: pseudotumor cerebri (idiopathic intracranial hypertension) risk — AVOID combination. Stop retinoid and consult prescriber, or defer prophylaxis and observe.\n\nPATHWAY: physician will likely recommend OBSERVATION over prophylaxis given limited alternatives; treat actively only if EM/symptoms develop with amoxicillin 500 mg TID × 14 days or cefuroxime 500 mg BID × 14 days."
+                },
+                "tx_doxy": {
+                    "type": "treat",
+                    "msg": "PROPHYLAXIS INDICATED — All 4 criteria met: (1) blacklegged tick, (2) endemic area, (3) ≥36h attachment, (4) within 72h of removal. PRESCRIBE: Doxycycline 200 mg PO single dose (adults). PEDIATRIC: 4.4 mg/kg PO single dose, MAX 200 mg. Take with full glass of water + remain UPRIGHT for 30 minutes (esophagitis prevention). Take with food to reduce GI upset (food does NOT significantly reduce doxycycline absorption — minor effect, acceptable).",
+                    "detail": "EVIDENCE: Nadelman 2001 NEJM RCT showed 87% reduction in EM rash with single 200 mg dose given within 72h.\n\nIDSA 2020 / AMMI Canada 2024 / PHO 2023: single-dose 200 mg for adults; 4.4 mg/kg (max 200 mg) for ALL pediatric ages including infants — historic <8 year restriction was REMOVED in IDSA 2020 (the duration-dependent dental staining risk does not apply to single-dose use).\n\nCOUNSELLING:\n• Take WITH FULL GLASS OF WATER (250 mL); remain UPRIGHT (sitting or standing) for at least 30 minutes after — prevents esophagitis/esophageal ulceration.\n• Can take with food (slight absorption decrease ~20%, clinically acceptable; reduces GI upset). AVOID dairy, antacids (Mg/Al/Ca), iron, multivitamins with minerals within 2 hours before or after — chelates and reduces absorption significantly.\n• PHOTOSENSITIVITY: avoid prolonged sun exposure for 1–2 days after dose; sunscreen SPF 30+; can cause severe sunburn-like reaction.\n• Side effects: nausea, GI upset, photosensitivity (1–2 days). Single dose is generally well-tolerated.\n\n30-DAY MONITORING (essential — efficacy is 87%, not 100%):\n• Watch for EM rash at bite site (expanding annular ≥5 cm, 3–30 days post-bite).\n• Flu-like illness, fever, joint pain, neurologic symptoms, palpitations.\n• If ANY symptoms develop → physician immediately for full treatment course (doxycycline 100 mg BID × 14–21 days or alternative).\n\nALSO: submit tick to eTick.ca for species confirmation if not already done; review tick prevention strategies (DEET 20–30%, picaridin/icaridin 20%, permethrin-treated clothing, avoid tall grass, post-activity tick checks within 24h, prompt removal with fine-tipped tweezers grasping at skin level)."
+                }
+            }
+        }
     },
     {
         "name": "Conjunctivitis (Pink Eye)",
