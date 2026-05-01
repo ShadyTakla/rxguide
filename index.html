@@ -107897,14 +107897,28 @@ var MINOR_AILMENTS = [
                     "q": "Symptoms consistent with hemorrhoids: BRIGHT RED bleeding on toilet paper or stool surface (not mixed in stool), perianal itching/discomfort, sensation of fullness, mucus discharge, soft tissue prolapse with bowel movement, OR severe perianal pain (suggests thrombosed external hemorrhoid)?",
                     "ctx": "Hemorrhoid bleeding is BRIGHT RED and on the toilet paper or stool surface — NOT mixed throughout the stool, NOT dark/black/melena. Atypical bleeding patterns mandate alternative-diagnosis workup before any topical therapy.",
                     "crumb": "Hemorrhoid features?",
-                    "yes": "n2",
+                    "yes": "n1b",
                     "no": "rx_atypical"
                 },
+                "n1b": {
+                    "q": "Is the patient under 12 years of age?",
+                    "ctx": "Hemorrhoids are RARE in children. Pediatric rectal bleeding requires workup for juvenile polyps, Meckel's diverticulum, IBD, intussusception, allergic colitis, or anal fissure — NOT empirical hemorrhoid treatment.",
+                    "crumb": "Age <12?",
+                    "yes": "rx_pedi",
+                    "no": "n2"
+                },
                 "n2": {
-                    "q": "Any RED FLAGS: (1) DARK/BLACK BLOOD or melena (upper GI bleed); (2) blood MIXED throughout stool (not just on surface); (3) unintentional WEIGHT LOSS, change in bowel calibre, or persistent change in bowel habits; (4) IRON DEFICIENCY ANEMIA, fatigue, pallor; (5) FAMILY HISTORY of colorectal cancer or IBD; (6) AGE >40 with first-ever rectal bleeding; (7) fever + severe perianal pain (abscess); (8) purulent perianal drainage (fistula-in-ano); (9) abdominal mass or persistent abdominal pain?",
-                    "ctx": "Hemorrhoidal bleeding NEVER causes melena. Any of these features mandates physician/GI evaluation including colonoscopy before attributing bleeding to hemorrhoids — colorectal cancer can mimic hemorrhoidal bleeding and presents in younger patients with increasing frequency.",
+                    "q": "Any RED FLAGS: (1) DARK/BLACK BLOOD or melena (upper GI bleed); (2) blood MIXED throughout stool (not just on surface); (3) unintentional WEIGHT LOSS, change in bowel calibre, or persistent change in bowel habits; (4) IRON DEFICIENCY ANEMIA, fatigue, pallor; (5) FAMILY HISTORY of colorectal cancer or IBD; (6) AGE >40 with first-ever rectal bleeding; (7) fever + severe perianal pain (abscess); (8) purulent perianal drainage (fistula-in-ano); (9) abdominal mass or persistent abdominal pain; (10) IMMUNOCOMPROMISED with perianal symptoms (chemo/neutropenia, transplant, advanced HIV, biologics); (11) anticoagulant or antiplatelet use with significant bleeding?",
+                    "ctx": "Hemorrhoidal bleeding NEVER causes melena. Immunocompromised patients with perianal symptoms have lowered infection threshold (neutropenic perirectal infection can be life-threatening). Any flag mandates physician/GI evaluation including colonoscopy if applicable.",
                     "crumb": "Red flags?",
                     "yes": "rx_redflag",
+                    "no": "n2b"
+                },
+                "n2b": {
+                    "q": "Is pain triggered specifically by passing stool — sharp/tearing pain DURING defecation that lingers for minutes to hours after, often disproportionate to bleeding, sometimes with a small visible skin tag at posterior midline (anal fissure features)?",
+                    "ctx": "ANAL FISSURE classically presents as severe defecation-associated pain that lingers, with bright red blood on paper. This is NOT a hemorrhoid — topical hydrocortisone is the WRONG therapy. Fissure requires sitz baths + fibre + topical nitrate/CCB (e.g., diltiazem 2%, nifedipine 0.3%) — outside MA scope.",
+                    "crumb": "Fissure features?",
+                    "yes": "rx_fissure",
                     "no": "n3"
                 },
                 "n3": {
@@ -107929,9 +107943,9 @@ var MINOR_AILMENTS = [
                     "no": "n5"
                 },
                 "n5": {
-                    "q": "Does the patient have INTERNAL HEMORRHOID PROLAPSE that does NOT reduce spontaneously, that requires manual reduction, OR that remains permanently prolapsed (Grade III or IV)?",
-                    "ctx": "Hemorrhoid grading: Grade I (no prolapse, bleeds), Grade II (prolapse with straining, reduces spontaneously), Grade III (prolapses, requires manual reduction), Grade IV (permanently prolapsed, irreducible). Grade III/IV typically requires procedural therapy (rubber band ligation, hemorrhoidectomy) — beyond pharmacist scope.",
-                    "crumb": "Grade III/IV?",
+                    "q": "Has the patient noticed soft tissue protruding from the anus that EITHER (a) needs to be physically pushed back in by hand to reduce, OR (b) cannot be pushed back / stays out all the time?",
+                    "ctx": "Behavioural proxy for grading (more reliable than asking pharmacist to grade). Grade I = no prolapse. Grade II = prolapse reduces spontaneously. Grade III = needs manual reduction (answer 'a' yes). Grade IV = permanently prolapsed, irreducible (answer 'b' yes). Grade III/IV typically requires procedural therapy (rubber band ligation, hemorrhoidectomy) — beyond pharmacist scope.",
+                    "crumb": "Manual reduction?",
                     "yes": "rx_high_grade",
                     "no": "n6"
                 },
@@ -107949,6 +107963,16 @@ var MINOR_AILMENTS = [
                     "yes": "rx_contraind",
                     "no": "tx_acute"
                 },
+                "rx_pedi": {
+                    "type": "refer",
+                    "msg": "Child under 12 with rectal bleeding or perianal symptoms — REFER to physician/pediatrician. Hemorrhoids are rare in children.",
+                    "detail": "Pediatric rectal bleeding workup considerations: JUVENILE POLYPS (most common cause of painless bright red rectal bleeding in toddlers/young children — endoscopic removal); MECKEL'S DIVERTICULUM (painless bleeding, may cause anemia); IBD (Crohn's, UC — diarrhea, weight loss, growth failure); INTUSSUSCEPTION (intermittent abdominal pain, currant-jelly stool — emergency); ALLERGIC PROCTOCOLITIS (infants on cow's milk protein); ANAL FISSURE (most common cause in infants/toddlers — straining, painful BMs); INFECTIOUS COLITIS. Empirical topical hydrocortisone is INAPPROPRIATE — physician assessment and possibly GI referral required."
+                },
+                "rx_fissure": {
+                    "type": "refer",
+                    "msg": "Features suggest ANAL FISSURE rather than hemorrhoids. Topical hydrocortisone is NOT appropriate — refer to physician for proper management.",
+                    "detail": "ANAL FISSURE management: (1) NON-PHARM FIRST-LINE (and pharmacist-recommendable while awaiting MD): sitz baths in plain warm water 10–15 min 2–3×/day, especially after BMs; psyllium fibre 1 rounded tsp (3.4 g) in 250 mL water OD–TID; adequate hydration 2–3 L/day; do not strain or delay defecation; topical lidocaine 5% ointment for pain (short-term, ≤7 days, sparing application). (2) Rx THERAPY (physician-prescribed, OUTSIDE Ontario MA scope): topical glyceryl trinitrate (GTN/nitroglycerin) 0.4% ointment BID × 6–8 weeks (heals 50–60% — counsel re headache); OR topical diltiazem 2% TID × 6–8 weeks (heals ~70%, fewer headaches); OR topical nifedipine 0.3% (compounded). (3) BOTOX injection or LATERAL INTERNAL SPHINCTEROTOMY for chronic fissures (>6 weeks) failing topical therapy. KEY: topical HYDROCORTISONE is INAPPROPRIATE — does not address the underlying internal anal sphincter spasm and may delay healing."
+                },
                 "rx_atypical": {
                     "type": "caution",
                     "msg": "Symptoms not typical of hemorrhoids — reassess differential. If diagnosis uncertain after reassessment, REFER to physician.",
@@ -107956,13 +107980,13 @@ var MINOR_AILMENTS = [
                 },
                 "rx_redflag": {
                     "type": "refer",
-                    "msg": "Red flag features — refer to physician/NP for assessment INCLUDING colonoscopy. Do NOT prescribe topical hemorrhoid therapy yet.",
-                    "detail": "Hemorrhoidal bleeding is bright red, on stool surface or paper only. Dark/melenic blood, blood mixed in stool, weight loss, anemia, age >40 with first bleed, change in bowel habits, family history of CRC/IBD all warrant GI workup including colonoscopy BEFORE attributing bleeding to hemorrhoids — colorectal cancer can present with rectal bleeding in patients of any age and is being diagnosed at increasingly younger ages (USPSTF lowered screening to age 45 in 2021, and Canadian guidelines under review). Fever + severe perianal pain (abscess) or purulent drainage (fistula-in-ano) → urgent surgical/ED referral. Symptomatic anemia → ER if severe."
+                    "msg": "Red flag features — refer to physician/NP for assessment INCLUDING colonoscopy when applicable. URGENT presentations (melena, severe anemia, fever + abscess, purulent drainage) → ED. NON-URGENT bleeding red flags (e.g., age >40 first bleed, family history): refer for outpatient workup BUT pharmacist may offer interim conservative + short topical relief if no signs of severe/active bleeding (parity with rx_high_grade pathway).",
+                    "detail": "Hemorrhoidal bleeding is bright red, on stool surface or paper only. Dark/melenic blood, blood mixed in stool, weight loss, anemia, change in bowel habits, family history of CRC/IBD all warrant GI workup including colonoscopy BEFORE definitively attributing bleeding to hemorrhoids — colorectal cancer can present with rectal bleeding at any age and is being diagnosed at increasingly younger ages (USPSTF lowered screening to age 45 in 2021).\n\nURGENT (→ ED): melena/upper GI bleed features, symptomatic anemia, fever + severe perianal pain (abscess), purulent perianal drainage (fistula), hemodynamic instability.\n\nNON-URGENT (→ outpatient referral with interim relief acceptable): age >40 first bleed without anemia, family history of CRC, mild changes in bowel habits — pharmacist may provide interim symptomatic relief if symptoms are mild and consistent with hemorrhoids superimposed on a workup-warranting situation: sitz baths in plain warm water, psyllium fibre, hygiene; SHORT topical hydrocortisone 0.5% ± pramoxine ≤7 days IF the bleeding is consistent with hemorrhoidal pattern (bright red, on surface, small volume) AND is not actively heavy. Counsel: complete the colonoscopy/GI workup regardless of symptom relief."
                 },
                 "rx_thrombosed_acute": {
                     "type": "refer-urgent",
-                    "msg": "Thrombosed external hemorrhoid within 72h — refer SAME-DAY for surgical excision (provides faster relief and lower recurrence than conservative care within this window).",
-                    "detail": "Thrombosed external hemorrhoid <72h benefits from prompt elliptical excision under local anesthesia (typically performed by family physician with surgical skills, ED, or general surgery). Excision provides immediate pain relief; conservative care leads to slow resolution over 1–2 weeks with possible residual skin tag. While arranging referral: cool packs, sitz baths, acetaminophen ± topical lidocaine 5% for pain relief. AVOID NSAIDs if bleeding. Counsel: do NOT attempt to lance at home (infection, bleeding risk)."
+                    "msg": "Thrombosed external hemorrhoid within 72h — phone-screen SAME-DAY for surgical excision (general surgery, walk-in with surgical capability, or ED). Excision within 72h provides faster relief and lower recurrence than conservative care. IF excision is NOT accessible within the window, default to aggressive conservative management (see detail).",
+                    "detail": "Excision (elliptical, under local anesthesia) is preferred within 72h but is NOT universally available — many family physicians and walk-in clinics in Ontario do not perform this procedure, and ED wait times can exceed the window.\n\nPATHWAY: (1) Patient calls or pharmacist phones same-day: general surgery clinic (CCSO directory), urgent walk-in clinic with surgical capability, or local ED. (2) IF excision available within 72h: refer for excision. (3) IF excision NOT available: pivot to aggressive conservative management — topical lidocaine 5% ointment 4×/day after sitz baths (≤7 days); sitz baths in plain warm water 15 min 3–4×/day and after every BM; cool packs first 24h; acetaminophen ± avoid NSAIDs if bleeding; psyllium fibre to soften stools; expect resolution over 7–14 days with possible residual skin tag.\n\nDO NOT attempt to lance at home (bleeding, infection risk). Reassess at 1 week — if pain worsens, fever develops, or persistent bleeding → physician/ED."
                 },
                 "tx_thrombosed_late": {
                     "type": "treat",
@@ -107971,8 +107995,8 @@ var MINOR_AILMENTS = [
                 },
                 "tx_preg": {
                     "type": "treat",
-                    "msg": "PREGNANCY/POSTPARTUM SAFE: (1) Sitz baths in plain warm water 2–3×/day; (2) Psyllium fibre + adequate hydration; (3) Topical hydrocortisone 1% ± pramoxine (Anusol HC equivalent) — short course ≤7 days is acceptable per pregnancy data; (4) Witch hazel pads (Tucks) — safe; (5) Acetaminophen for pain.",
-                    "detail": "PREGNANCY SAFETY: Topical hydrocortisone for short courses (≤1 week) on limited area has minimal systemic absorption — accepted in pregnancy (CFP, Briggs). Topical lidocaine in small amounts is acceptable; AVOID benzocaine (sensitization, methemoglobinemia risk in infants if breastfeeding). AVOID systemic flavonoids (Daflon/MPFF) in pregnancy — limited safety data. NON-PHARM IS FIRST-LINE: increase fluid intake to 2–3 L/day, dietary fibre 25–30 g/day, psyllium supplement, avoid straining, do not delay defecation, regular activity (walking), pelvic floor exercises postpartum. Most pregnancy-related hemorrhoids resolve within weeks of delivery. Refer to OB if severe symptoms, prolonged bleeding, or thrombosis."
+                    "msg": "PREGNANCY/POSTPARTUM — TIERED APPROACH:\n• ALL TRIMESTERS — FIRST-LINE NON-PHARM: Sitz baths in plain warm water 10–15 min 2–3×/day; psyllium 1 rounded tsp (3.4 g) in 250 mL water OD–TID + adequate fluids 2–3 L/day; witch hazel pads (Tucks) — safe; acetaminophen for pain; AVOID NSAIDs in 3rd trimester (constriction of fetal ductus arteriosus).\n• 1ST TRIMESTER: AVOID topical hydrocortisone if possible — non-pharm and witch hazel preferred. Topical lidocaine 5% acceptable short-term for severe pain.\n• 2ND/3RD TRIMESTER + POSTPARTUM: Topical hydrocortisone 0.5% ± pramoxine 1% (e.g., Anusol HC, Proctosedyl) is acceptable for SHORT courses ≤7 days when symptomatic flare requires it (limited area, minimal systemic absorption per Briggs/LactMed/CFP).",
+                    "detail": "AVOID: benzocaine (sensitization, methemoglobinemia risk in infants if breastfeeding); systemic flavonoids (Daflon/MPFF — limited pregnancy safety data); NSAIDs in 3rd trimester. Most pregnancy-related hemorrhoids resolve within weeks of delivery — emphasize non-pharm; symptomatic topical use should be brief and targeted. Refer to OB if severe symptoms, prolonged bleeding, signs of thrombosis, or any uncertainty in 1st trimester. POSTPARTUM: aggressive non-pharm + topical HC ≤7d acceptable; address postpartum constipation (iron supplementation often a contributor — consider PEG 3350 17 g OD)."
                 },
                 "rx_high_grade": {
                     "type": "refer",
@@ -107986,8 +108010,8 @@ var MINOR_AILMENTS = [
                 },
                 "tx_acute": {
                     "type": "treat",
-                    "msg": "First-Line ACUTE SYMPTOMATIC FLARE (Ontario MA): Topical hydrocortisone 0.5–1% ± pramoxine 1% (Anusol HC, Proctosedyl) — apply thin layer to perianal area BID–TID after BMs and at bedtime × 5–7 days MAX. PLUS: sitz baths 2–3×/day in plain warm water + psyllium fibre + adequate hydration.",
-                    "detail": "OCP MA SCOPE: pharmacist may prescribe topical hydrocortisone ± local anesthetic (pramoxine, lidocaine) for acute hemorrhoid symptoms — duration LIMITED TO 7 DAYS (longer use causes mucosal atrophy, telangiectasia, perianal dermatitis). FORMULATIONS: Anusol HC (hydrocortisone 0.5% + zinc sulfate); Proctosedyl (hydrocortisone 0.5% + cinchocaine); Proctol (hydrocortisone + lidocaine). NOTE: Anusol-HC PLUS in Canada is hydrocortisone 1% + pramoxine 1%.\n\nADJUNCTS: (1) Sitz baths 10–15 min, 2–3×/day and after BMs — plain warm water only (no Epsom salts/soaps — irritate tissue); (2) Psyllium (Metamucil) 1 tbsp in 250 mL water OD–TID with adequate fluids OR PEG 3350 17 g OD; (3) MPFF (Daflon 500 mg) BID × 7 days — Cochrane evidence for symptom relief, particularly bleeding (NAPRA Schedule II OTC; not pharmacist-prescribed but appropriate to recommend); (4) Witch hazel pads (Tucks) for itching; (5) Cool compresses for swelling.\n\nLIFESTYLE: increase dietary fibre 25–30 g/day, fluid 2–3 L/day, avoid straining, do not delay defecation, do not sit on toilet >5 min reading/phone, regular physical activity. REASSESS at 7 days — if symptoms persist or worsen, refer. AVOID NSAIDs if active bleeding."
+                    "msg": "First-Line ACUTE SYMPTOMATIC FLARE (Ontario MA, hard 7-day cap, no auto-refill): Topical hydrocortisone 0.5% ± local anesthetic (pramoxine 1% or cinchocaine) — apply thin layer to perianal area BID–TID after BMs and at bedtime × 5–7 days MAX. PLUS: sitz baths in plain warm water 15 min 2–3×/day + psyllium fibre + adequate hydration.",
+                    "detail": "OCP MA SCOPE: pharmacist may prescribe topical hydrocortisone ± local anesthetic (pramoxine, lidocaine, cinchocaine) for acute hemorrhoid symptoms — DURATION HARD-CAPPED AT 7 DAYS (no auto-refill; longer use causes mucosal atrophy, telangiectasia, perianal dermatitis).\n\nCANADIAN FORMULATIONS: (1) Anusol HC (hydrocortisone 0.5% + zinc sulfate + bismuth subgallate) — Schedule I, the standard Canadian formulation; (2) Proctosedyl (hydrocortisone 0.5% + cinchocaine 0.5% + framycetin + esculin) — Schedule I; (3) Proctodan-HC (hydrocortisone 0.5% + lidocaine + zinc) — Schedule I. (NOTE: 'Anusol-HC PLUS' with HC 1% + pramoxine is a US product — verify availability before recommending in Canada.)\n\nADJUNCTS: (1) Sitz baths 15 min, 2–3×/day and after BMs — plain warm water only (no Epsom salts/soaps — irritate tissue); (2) Psyllium (Metamucil) 1 rounded teaspoon (3.4 g) in 250 mL water OD–TID with adequate fluids OR PEG 3350 17 g OD; (3) MPFF (Daflon 500 mg) for ACUTE attack — 3 tabs PO BID × 4 days then 2 tabs BID × 3 days (Godeberge protocol per Cochrane/ASCRS) — bleeding/symptom relief; OR maintenance 1 tab BID × ≥1 month for chronic symptoms (NAPRA Schedule II OTC; pharmacist may recommend); (4) Witch hazel pads (Tucks) for itching; (5) Cool compresses for swelling.\n\nLIFESTYLE: dietary fibre 25–30 g/day, fluid 2–3 L/day, avoid straining, do not delay defecation, do not sit on toilet >5 min reading/phone, regular physical activity. REASSESS at 7 days — if symptoms persist or worsen, refer (do NOT extend topical steroid). AVOID NSAIDs if active bleeding."
                 },
                 "tx_chronic": {
                     "type": "treat",
