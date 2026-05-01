@@ -110082,7 +110082,89 @@ var MINOR_AILMENTS = [
             "6. Counselling: soak-and-seal technique, fingertip unit dosing, potency and site rules, duration of TCS, trigger avoidance, expected response, and infection signs.",
             "7. Documentation: record assessment, diagnosis, prescription with potency/quantity/duration, counselling, and notify primary care provider per OCP standards; submit minor ailment claim.",
             "8. Follow-up: reassess at 1–2 weeks; if improved, taper TCS and continue maintenance emollient ± proactive TCS twice weekly; if no improvement or worsening, refer for assessment of TCI (tacrolimus/pimecrolimus), crisaborole, phototherapy, or systemic therapy."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Presentation consistent with ATOPIC DERMATITIS (eczema): dry, ITCHY (cardinal feature), erythematous, scaly patches/plaques in classic distribution (infants — face/scalp/extensor; older children/adults — flexural folds, hands, neck); chronic-relapsing course; personal/family history of atopy (eczema, asthma, hay fever, food allergy)?",
+                    "ctx": "Itch is the hallmark of AD ('it's not eczema if it doesn't itch'). Lichenification (thickening) develops with chronic scratching. Distribution shifts with age. If features atypical, consider differentials before treating.",
+                    "crumb": "AD features?",
+                    "yes": "n2",
+                    "no": "rx_atypical"
+                },
+                "n2": {
+                    "q": "Any URGENT red flags requiring same-day assessment: (a) widespread monomorphic vesicles/punched-out erosions on eczema (ECZEMA HERPETICUM — fever, malaise — emergency); (b) rapidly spreading bacterial infection with fever/pustules (impetiginization with sepsis risk); (c) erythroderma — ≥90% body surface area redness/scaling (medical emergency — fluid loss, hypothermia); (d) failure of skin barrier in infant <3 months with severe widespread disease?",
+                    "ctx": "Eczema herpeticum is HSV superinfection of eczematous skin — punched-out vesicles, fever, can cause bacteremia, keratoconjunctivitis, encephalitis if untreated. Erythroderma is a medical emergency. Severe AD in young infant warrants pediatric input.",
+                    "crumb": "Urgent flags?",
+                    "yes": "rx_urgent",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Any NON-URGENT red flags: (1) signs of bacterial superinfection (yellow honey-coloured crusting, pustules, weeping, increasing redness — but no systemic symptoms); (2) periocular/eyelid involvement (TCS-related glaucoma/cataract risk — needs caution); (3) suspected ALLERGIC CONTACT DERMATITIS with unclear trigger (geometric/asymmetric distribution, occupational exposure — needs patch testing); (4) severe widespread AD covering >20% body surface area (may need systemic therapy — dupilumab, JAK inhibitors); (5) child <3 months with new-onset rash; (6) failure of optimised topical therapy after 2–4 weeks?",
+                    "ctx": "Bacterial superinfection without sepsis can be co-managed with topical antibiotic + TCS. Severe AD or treatment failure warrants dermatology referral for advanced therapies (dupilumab Dupixent, abrocitinib, upadacitinib — all OUTSIDE Ontario MA scope).",
+                    "crumb": "Non-urgent flags?",
+                    "yes": "rx_redflag",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Is the patient pregnant or breastfeeding?",
+                    "ctx": "Most AD therapy in pregnancy is the same as non-pregnant — emollients are safe; low-to-mid potency TCS to limited areas have minimal systemic absorption. High-potency TCS to large areas, TCI, crisaborole, and systemic agents need physician input.",
+                    "crumb": "Pregnant/BF?",
+                    "yes": "tx_preg",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Body location: is the affected area predominantly on the FACE, EYELIDS, NECK, AXILLA, GROIN, or other thin/sensitive skin areas?",
+                    "ctx": "Skin thickness varies by site → potency must be matched. Face, eyelids, neck, axilla, groin, infant skin: LOW potency only (HC 1%, desonide 0.05%). Trunk/limbs: MEDIUM-HIGH potency. Palms/soles/lichenified plaques: HIGH potency.",
+                    "crumb": "Sensitive site?",
+                    "yes": "tx_sensitive",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Severity: does the patient have moderate-severe AD with signs of LICHENIFICATION (thickened, leathery skin from chronic scratching), thick plaques, palmar/plantar disease, OR significant flare requiring stronger therapy?",
+                    "ctx": "Mild AD on trunk/limbs: medium-potency TCS (betamethasone valerate 0.05–0.1%, mometasone 0.1%, triamcinolone 0.1%). Severe/lichenified/palms/soles: high-potency TCS (betamethasone dipropionate 0.05%, clobetasol 0.05% short course only).",
+                    "crumb": "Severe/lichenified?",
+                    "yes": "tx_severe",
+                    "no": "tx_moderate"
+                },
+                "rx_atypical": {
+                    "type": "caution",
+                    "msg": "Features not typical of atopic dermatitis — reassess differential. If diagnosis uncertain, REFER to physician.",
+                    "detail": "Consider: PSORIASIS (well-demarcated plaques with silvery scale, extensor surfaces, scalp, nails — different management); SEBORRHEIC DERMATITIS (greasy yellowish scale on scalp, eyebrows, nasolabial folds — antifungal ± mild TCS); TINEA / FUNGAL (annular with central clearing, scaly border — KOH or trial topical antifungal); SCABIES (intense itch, especially nocturnal; burrows in webspaces, axillae, groin; family/contact members affected — permethrin); ALLERGIC CONTACT DERMATITIS (geographic distribution matching contact, often acute onset — patch testing for chronic); IRRITANT CONTACT DERMATITIS (occupational, on hands — barrier repair); STASIS DERMATITIS (lower legs, varicose veins, edema — compression + TCS); CUTANEOUS T-CELL LYMPHOMA / MYCOSIS FUNGOIDES (chronic patches/plaques in adult, refractory — biopsy); DRUG ERUPTION (recent new medication); BULLOUS PEMPHIGOID PRODROME (elderly, urticarial then bullae develop). Refer to physician/dermatology if diagnosis unclear."
+                },
+                "rx_urgent": {
+                    "type": "refer-urgent",
+                    "msg": "URGENT — same-day assessment: (1) ECZEMA HERPETICUM → ED for IV/oral acyclovir (15 mg/kg IV q8h or oral acyclovir 400 mg 5×/day); (2) Severe bacterial infection with sepsis features → ED for IV antibiotics + cultures; (3) ERYTHRODERMA → hospital admission for fluid/electrolyte support, temperature regulation, identification of underlying cause; (4) Severe AD in infant <3 months → pediatrics same-day.",
+                    "detail": "ECZEMA HERPETICUM: punched-out monomorphic vesicles/erosions on eczematous skin, often clustered, with systemic features (fever, lymphadenopathy, malaise) — distinguished from severe AD flare by morphology. Treat with systemic acyclovir; if eye involvement → same-day ophthalmology. Topical corticosteroids should NOT be applied to active EH (paradoxically can worsen).\n\nERYTHRODERMA: ≥90% BSA involvement with widespread erythema and scaling — emergency due to massive fluid/heat loss, electrolyte derangement, sepsis risk. Causes include severe AD, drug eruption, psoriasis erythroderma, mycosis fungoides, paraneoplastic.\n\nWhile awaiting assessment: emollients are still safe; do NOT apply TCS to suspected EH; gentle clean cool water; no occlusive dressings."
+                },
+                "rx_redflag": {
+                    "type": "refer",
+                    "msg": "Non-urgent red flags — refer to physician. May continue baseline emollient + standard TCS therapy at appropriate potency for site while awaiting assessment.",
+                    "detail": "BACTERIAL SUPERINFECTION (impetiginization) without sepsis: typically S. aureus; mild/localized → topical mupirocin 2% TID × 5 days (within Ontario MA Impetigo scope) PLUS continued TCS for AD; widespread → physician for oral cephalexin or cloxacillin (outside MA scope). Bleach baths (1/4 to 1/2 cup household bleach in full tub × 5–10 min, 2×/week) reduce S. aureus colonization in chronic AD.\n\nPERIOCULAR/EYELID AD: ophthalmology check if chronic eyelid TCS use considered (glaucoma, cataracts). Use lowest potency (HC 1% or desonide 0.05%) for shortest duration; consider TCI (tacrolimus 0.03% — outside MA scope) for steroid-sparing maintenance.\n\nSUSPECTED CONTACT DERMATITIS: patch testing referral (dermatology) to identify allergens (nickel, fragrance, preservatives, rubber accelerators); avoidance is curative.\n\nSEVERE WIDESPREAD AD or TREATMENT FAILURE: dermatology referral for systemic therapy assessment — DUPILUMAB (Dupixent, IL-4Rα antagonist, SC q2w; Health Canada-approved ≥6 months for AD; ODB EAP coverage); JAK inhibitors (abrocitinib Cibinqo, upadacitinib Rinvoq — oral, BBW for serious infection/MACE/malignancy); cyclosporine (short-term); narrowband UVB phototherapy. All OUTSIDE Ontario MA scope."
+                },
+                "tx_preg": {
+                    "type": "treat",
+                    "msg": "PREGNANCY/LACTATION: Emollients are first-line and safe at any volume. Low-to-mid potency TCS (hydrocortisone 1%, desonide 0.05%, betamethasone valerate 0.05%, mometasone 0.1%, triamcinolone 0.1%) are accepted for limited areas, short courses (≤2 weeks active treatment, then maintenance 2×/week). AVOID high-potency TCS (clobetasol, halobetasol) over large areas/prolonged courses; AVOID TCI (tacrolimus), crisaborole, dupilumab, JAK inhibitors during pregnancy without specialist input.",
+                    "detail": "PREGNANCY DATA: Topical corticosteroids in pregnancy — large meta-analyses (Chi 2015 Cochrane) found no overall increased risk of birth defects, preterm delivery, or fetal death; very high cumulative doses (>300 g of potent/very potent TCS during pregnancy) associated with low birth weight — limit total quantity. SOGC/Motherisk: emollients liberal; mid-potency TCS for active disease is acceptable.\n\nLACTATION: TCS are LactMed-compatible; do NOT apply to areola/breast immediately before nursing — wash off and reapply after feeding. Tacrolimus 0.03% ointment is also LactMed-compatible (minimal absorption) for limited areas.\n\nAVOID in pregnancy without OB/dermatology consult: high-potency TCS (clobetasol) for large areas, TCI long-term, crisaborole (limited data), dupilumab (consider with specialist — emerging data suggest acceptable but not first-line), oral systemic therapy.\n\nOTHER: bleach baths safe; cool compresses; preservative-free moisturizers; oatmeal baths; ensure adequate fluid/skin care during pregnancy-related skin changes."
+                },
+                "tx_sensitive": {
+                    "type": "treat",
+                    "msg": "SENSITIVE SKIN (face, eyelids, neck, axilla, groin, infant): LOW-POTENCY TCS only — Hydrocortisone 1% cream BID × 7–14 days OR Desonide 0.05% cream/lotion BID × 7–14 days. PLUS liberal emollient (≥3 times daily, immediately after bathing — soak-and-seal). Do NOT use medium/high-potency TCS in these areas without dermatology guidance.",
+                    "detail": "Skin atrophy, telangiectasia, striae, perioral dermatitis, glaucoma/cataracts (eyelid), tachyphylaxis, and rosacea-like reactions are TCS adverse effects more likely on thin skin and with potent agents. LOW potency = Class 7 (US) / Class VII = HC 0.5%, HC 1%, HC 2.5%, desonide 0.05%, fluocinolone 0.01%.\n\nFINGERTIP UNIT (FTU) GUIDE: 1 FTU = ribbon from fingertip to first crease (~0.5 g); covers 2 adult palms (~2% BSA). Face & neck = 2.5 FTU; one hand = 1 FTU; eyelids = 0.25 FTU each.\n\nDURATION: 7–14 days active treatment; if improvement, taper to alternate days then 2×/week proactive maintenance for 1–2 months. If no improvement at 2 weeks → refer for tacrolimus 0.03% (TCI, OUTSIDE MA scope) which is steroid-sparing for face/folds.\n\nADJUNCTS: liberal emollients (CeraVe, Cetaphil, Eucerin, Aveeno, Glaxal Base) ≥3×/day and after bathing; lukewarm baths/showers ≤10 min; avoid soaps with fragrances/sulfates; avoid known triggers (wool, overheating, harsh detergents, dust mites); cotton clothing.\n\nBLEACH BATHS for chronic AD: 1/4 to 1/2 cup household bleach in full bath × 5–10 min, 2×/week — reduces S. aureus colonization, AAD strong recommendation."
+                },
+                "tx_moderate": {
+                    "type": "treat",
+                    "msg": "MILD-MODERATE AD on trunk/limbs (NOT lichenified): MEDIUM-POTENCY TCS — Betamethasone valerate 0.05–0.1% cream/ointment BID × 7–14 days, OR Mometasone 0.1% cream/ointment OD–BID × 7–14 days, OR Triamcinolone 0.1% cream/ointment BID × 7–14 days. PLUS soak-and-seal emollient ≥3×/day.",
+                    "detail": "MEDIUM POTENCY = Class IV-V (US) / Class III-IV (UK) = betamethasone valerate 0.05–0.1%, mometasone 0.1%, triamcinolone 0.025–0.1%, fluticasone 0.05%, prednicarbate 0.1%. Mometasone and prednicarbate have lower atrophy risk than triamcinolone — preferable for prolonged use.\n\nFINGERTIP UNIT (FTU) DOSING: ~0.5 g per FTU covers 2 adult palms. One arm = 3 FTU; one leg = 6 FTU; trunk (front or back) = 7 FTU; total body = ~30 FTU. Provide enough product (typically 30 g for 1 week of trunk/limbs treatment in an adult).\n\nDURATION: 7–14 days active treatment; if improvement, taper to OD or alternate days, then 2×/week PROACTIVE maintenance on previously-affected sites for 1–2 months (AAD 2023 strong recommendation — reduces flares).\n\nADJUNCTS as in tx_sensitive: liberal emollients, lukewarm short baths, fragrance-free cleansers, trigger avoidance, bleach baths for chronic colonization. NO oral antihistamines for AD itch — itch is IL-31/Th2 mediated, NOT histamine; oral AH ineffective for AD pruritus per AAD 2023 (may help if comorbid AR or for sleep at bedtime — sedating short-term only).\n\nReassess at 1–2 weeks; if no improvement or worsening, refer."
+                },
+                "tx_severe": {
+                    "type": "treat",
+                    "msg": "SEVERE/LICHENIFIED AD on trunk/limbs OR palms/soles: HIGH-POTENCY TCS short course — Betamethasone dipropionate 0.05% cream/ointment BID × 1–2 weeks (NOT to be used >2 weeks continuous), OR Clobetasol propionate 0.05% cream/ointment BID × MAX 2 weeks (super-potent — limit duration strictly). After clearance, step DOWN to medium-potency for maintenance.",
+                    "detail": "HIGH POTENCY = Class II-III (US): betamethasone dipropionate 0.05%, fluocinonide 0.05%, halobetasol 0.05%, clobetasol propionate 0.05% (Class I/super-potent — clobetasol). Use short course only; tachyphylaxis develops with continuous use; rebound flare on abrupt cessation. NEVER use on face, eyelids, axilla, groin, or infant skin.\n\nLICHENIFICATION (chronic thickened leathery skin) often requires high-potency TCS short-course to break the itch-scratch cycle, then step DOWN. Occlusion (wet wraps, plastic occlusion) increases TCS potency 10×; do NOT do this with high-potency TCS without dermatology guidance.\n\nLIMITS: clobetasol max 50 g/week; betamethasone dipropionate max 45–60 g/week; do not exceed 2 weeks continuous. After clearance: STEP DOWN to medium-potency 2×/week proactive for 1–2 months.\n\nIF SEVERE/REFRACTORY DESPITE OPTIMISED TCS: refer to dermatology for assessment of dupilumab (≥6 months Health Canada), JAK inhibitors (≥12 years), narrowband UVB, or systemic immunosuppression. All OUTSIDE Ontario MA scope.\n\nSCALP AD: high-potency lotion/solution (clobetasol 0.05% scalp solution, betamethasone valerate 0.1% lotion) BID × 1–2 weeks; antifungal shampoo (ketoconazole 2%) if seborrheic overlap. Consider oral cephalexin if impetiginized — refer."
+                }
+            }
+        }
     },
     {
         "name": "Smoking Cessation",
