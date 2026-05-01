@@ -109893,7 +109893,96 @@ var MINOR_AILMENTS = [
             "6. Counsel on antiviral dosing (renal adjustment), 72h timing window, pain control, contagion precautions (until all crusted), Shingrix vaccination plan, red flag recognition (eye, ear, neuro).",
             "7. Document the encounter per OCP standards: assessment findings (dermatome, immunocompetence, days from rash onset), diagnosis, therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess at 7–10 days for resolution; if persistent pain >90 days post-rash → diagnose PHN, refer for management; ensure Shingrix vaccination scheduled after acute episode resolves; reinforce avoidance of contact with susceptible persons until crusted."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Presentation consistent with HERPES ZOSTER: PRODROMAL pain/burning/tingling/itching for 1–3 days BEFORE rash, followed by UNILATERAL DERMATOMAL grouped vesicles on erythematous base that DOES NOT cross the midline; rash progresses through papules → vesicles → pustules → crusts over 7–10 days; often thoracic, lumbar, or facial dermatomes?",
+                    "ctx": "DERMATOMAL UNILATERAL distribution that respects the midline is the hallmark of zoster. Zosteriform HSV (HSV-1 in dermatomal pattern) can mimic — typically smaller area, recurrent at same site, milder; PCR distinguishes if uncertain. Bilateral or crossing midline = NOT zoster (consider other diagnoses).",
+                    "crumb": "Dermatomal rash?",
+                    "yes": "n2",
+                    "no": "rx_atypical"
+                },
+                "n2": {
+                    "q": "Any URGENT red flags requiring SAME-DAY referral: (1) OPHTHALMIC ZOSTER (V1) — rash on forehead, scalp anterior to ear, side of nose, OR HUTCHINSON SIGN (vesicles on tip/side of nose) — needs SAME-DAY ophthalmology (corneal scarring/blindness risk); (2) RAMSAY HUNT SYNDROME — ear pain + vesicles in/around ear canal + facial palsy ± hearing loss/vertigo (CN VII); (3) DISSEMINATED ZOSTER — ≥20 lesions OUTSIDE primary or adjacent dermatomes (suggests immunocompromise — needs IV antiviral); (4) ENCEPHALITIS features — confusion, severe headache, neck stiffness, focal neurologic deficit, seizure; (5) MYELITIS / motor radiculopathy — limb weakness, bowel/bladder dysfunction; (6) bacterial superinfection of vesicles with fever?",
+                    "ctx": "Ophthalmic zoster requires same-day ophthalmology — keratitis, uveitis, retinitis, optic neuritis can cause permanent vision loss. Ramsay Hunt → urgent ENT/neurology + steroids may improve facial nerve outcomes if started early. Disseminated → ID/admission for IV acyclovir. CNS involvement → ED.",
+                    "crumb": "Urgent flags?",
+                    "yes": "rx_urgent",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Is the patient SIGNIFICANTLY IMMUNOCOMPROMISED — HIV/AIDS, current cancer chemotherapy, post-organ-transplant, biologics (TNF/IL/JAK inhibitors), high-dose systemic corticosteroids ≥20 mg/day prednisone equivalent, post-stem-cell transplant, or post-splenectomy?",
+                    "ctx": "Immunocompromised patients have a higher risk of dissemination, prolonged course, severe PHN, and end-organ involvement. Outside Ontario MA scope — physician needed for higher-dose oral or IV antiviral, longer course, and closer monitoring.",
+                    "crumb": "Immunocompromised?",
+                    "yes": "rx_immunocomp",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Is the patient PREGNANT?",
+                    "ctx": "Zoster in pregnancy is uncommon (most adults are VZV-immune from prior chickenpox). When it occurs, antiviral therapy is generally given (acyclovir/valacyclovir have extensive pregnancy safety data) but is best coordinated with OB. Maternal zoster does NOT cause fetal varicella syndrome (FVS) — only PRIMARY varicella (chickenpox) in the mother does.",
+                    "crumb": "Pregnant?",
+                    "yes": "rx_preg",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Time from rash onset: did the rash start ≤72 HOURS ago, OR are there NEW vesicles still appearing (suggesting active viral replication continues beyond 72h)?",
+                    "ctx": "Antivirals are most effective when started within 72h of rash onset. After 72h with no new vesicles forming and lesions crusting, antiviral benefit is minimal — manage symptomatically. If new vesicles still forming (immunocompromised, severe disease), antiviral may still help.",
+                    "crumb": "Within 72h?",
+                    "yes": "n6",
+                    "no": "n5b"
+                },
+                "n5b": {
+                    "q": "Despite >72h since rash onset, are NEW VESICLES STILL FORMING (active replication continues)?",
+                    "ctx": "Continuing new vesicle formation beyond 72h indicates ongoing viral replication and patient may still benefit from antiviral, especially with severe pain or risk factors.",
+                    "crumb": "New vesicles still?",
+                    "yes": "n6",
+                    "no": "tx_late"
+                },
+                "n6": {
+                    "q": "Any contraindication to oral antivirals: known hypersensitivity to acyclovir/valacyclovir/famciclovir, OR severe renal impairment (CrCl <10 mL/min)?",
+                    "ctx": "All three antivirals (valacyclovir preferred, famciclovir and acyclovir alternatives) require renal dose adjustment. Severe renal impairment (CrCl <10) needs significantly reduced doses with neurotoxicity risk — physician supervision preferred.",
+                    "crumb": "Antiviral CI?",
+                    "yes": "rx_contraind",
+                    "no": "tx_acute"
+                },
+                "rx_atypical": {
+                    "type": "caution",
+                    "msg": "Rash not consistent with herpes zoster — reassess differential. If diagnosis uncertain, REFER to physician.",
+                    "detail": "Consider: ZOSTERIFORM HSV-1 (dermatomal pattern but recurrent, typically smaller area, milder — PCR distinguishes); CONTACT DERMATITIS (geometric, itchy not painful); IMPETIGO (honey crusts, not dermatomal); HSV-2 SACRAL (genital/sacral dermatome — different pathway); CHICKENPOX/VARICELLA (multiple lesions in different stages, generalized, fever); INSECT BITES; CELLULITIS (not vesicular, no dermatomal pattern); URTICARIA (transient, blanching, no vesicles); FOLLICULITIS; BURNS. If features are unclear or significant pain, refer to physician for evaluation including HSV/VZV PCR testing if available."
+                },
+                "rx_urgent": {
+                    "type": "refer-urgent",
+                    "msg": "URGENT — same-day referral. Ophthalmic zoster → SAME-DAY ophthalmology (start oral antiviral while arranging if no contraindications); Ramsay Hunt → URGENT ENT/neurology; disseminated → ED for IV acyclovir; CNS/encephalitis → ED. Do NOT delay.",
+                    "detail": "OPHTHALMIC ZOSTER (V1 distribution including Hutchinson sign): vision-threatening — corneal scarring, uveitis, retinitis, optic neuritis. Same-day ophthalmology + oral antiviral (valacyclovir 1 g TID × 7 days) typically initiated by ophthalmology. Pharmacist can co-prescribe valacyclovir under Ontario MA scope ONLY if same-day ophthalmology is NOT immediately available (do not delay; antiviral within 72h reduces ocular complications).\n\nRAMSAY HUNT SYNDROME (CN VII zoster — herpes zoster oticus): ear pain + ear/auditory canal vesicles + facial palsy ± hearing loss/vertigo. Antiviral + corticosteroid (prednisone 60 mg OD × 5 days then taper) within 72h improves facial nerve outcomes — physician/ENT urgently.\n\nDISSEMINATED ZOSTER (≥20 lesions outside primary/adjacent dermatomes): suggests undiagnosed immunocompromise — workup including HIV testing, malignancy screen. IV acyclovir 10 mg/kg q8h. Admission usually required.\n\nCNS COMPLICATIONS (encephalitis, myelitis, vasculopathy): ED for LP, MRI, IV acyclovir 10–15 mg/kg q8h × 14–21 days. Permanent neurologic deficit possible if treatment delayed.\n\nIN ALL: do NOT delay referral with delays in topical/oral therapy. Pharmacist may initiate oral antiviral concurrently while patient travels to specialist (within 72h window) if no other contraindications."
+                },
+                "rx_immunocomp": {
+                    "type": "refer",
+                    "msg": "Immunocompromised host — outside Ontario MA scope. Refer to physician for higher-dose oral or IV antiviral, longer course, and closer monitoring.",
+                    "detail": "MANAGEMENT (physician-directed): mild-moderate zoster in moderately immunocompromised: oral valacyclovir 1 g TID × 7–10 days OR famciclovir 500 mg TID × 7–10 days (longer than standard 7d). Severely immunocompromised or extensive zoster: IV acyclovir 10 mg/kg q8h × 7–10 days, often hospital admission. Switch to oral when clinically improving.\n\nMONITORING: signs of dissemination (new lesions outside primary dermatomes), CNS involvement, ophthalmic spread, bacterial superinfection. Keep on antiviral until ALL lesions crusted.\n\nVACCINATION (post-acute): RZV (Shingrix) 2-dose series recommended ≥6–12 months after acute episode; immunocompromised ≥18y eligible per NACI 2024; Ontario UIIP funds for adults ≥65 (no upper cap) AND immunocompromised ≥18 — but typically given after acute episode resolved. While awaiting referral: pharmacist may not initiate oral antiviral under MA — refer."
+                },
+                "rx_preg": {
+                    "type": "refer",
+                    "msg": "Zoster in pregnancy — refer to physician/OB for management coordination. Acyclovir/valacyclovir are accepted in pregnancy when needed; OB consultation ensures appropriate dosing, monitoring, and decision on initiation.",
+                    "detail": "MATERNAL ZOSTER does NOT cause fetal varicella syndrome (FVS — that risk is only with primary maternal varicella before 28 weeks gestation). However, antiviral therapy is recommended for active zoster in pregnancy — most experts treat with acyclovir 800 mg PO 5×/day × 7 days OR valacyclovir 1 g TID × 7 days within the 72h window.\n\nSAFETY: acyclovir and valacyclovir have extensive pregnancy safety data (LactMed; SOGC HSV/VZV in Pregnancy). Famciclovir less data. NSAIDs avoided in 3rd trimester (ductus arteriosus). Acetaminophen ± weak opioids for pain in pregnancy.\n\nNEONATAL EXPOSURE: a mother with zoster lesions should AVOID direct skin contact with non-immune neonates and pregnant women (lesion fluid contains VZV). Safe to breastfeed if lesions covered. Dispose of dressings in sealed bags.\n\nSHINGRIX in pregnancy: NOT recommended (live attenuated vaccines contraindicated; Shingrix is non-live but pregnancy data limited — defer until postpartum)."
+                },
+                "rx_contraind": {
+                    "type": "refer",
+                    "msg": "Contraindication to standard oral antivirals (true allergy to acyclovir/valacyclovir/famciclovir, OR severe renal impairment CrCl <10 mL/min) — refer to physician for alternative regimen or IV with monitoring.",
+                    "detail": "TRUE ALLERGY: acyclovir, valacyclovir, and famciclovir share structural similarities — cross-reactivity possible. Physician needed to assess severity, consider desensitization, or use alternative agents (foscarnet — IV, nephrotoxic, ID consultation).\n\nSEVERE RENAL IMPAIRMENT (CrCl <10 mL/min, dialysis): all antivirals require significant dose reduction with neurotoxicity risk (acyclovir-induced encephalopathy in elderly/dialysis especially); physician + nephrology supervision needed for safe dosing. Acyclovir 200 mg PO q12h or 5 mg/kg IV q24h are typical reduced doses for CrCl <10.\n\nWhile awaiting referral: supportive care — acetaminophen, cool compresses, do not pop vesicles, keep clean, contagion precautions (cover lesions). Do NOT delay referral."
+                },
+                "tx_acute": {
+                    "type": "treat",
+                    "msg": "First-Line ACUTE ZOSTER (within 72h of rash, OR new vesicles still forming): Choose ONE oral antiviral × 7 days. PREFERRED: Valacyclovir 1 g PO TID × 7 days (best bioavailability, simplest regimen). ALTERNATIVES: Famciclovir 500 mg PO TID × 7 days; Acyclovir 800 mg PO 5×/day × 7 days (cheaper but more frequent dosing). RENAL DOSE ADJUSTMENT REQUIRED — see detail.",
+                    "detail": "TIMING: maximum benefit within 72h of rash onset; reduces acute pain, accelerates lesion healing, reduces PHN incidence by ~25%. Beyond 72h, benefit diminishes unless new vesicles still forming.\n\nRENAL DOSE ADJUSTMENT (acyclovir CrCl-based; valacyclovir/famciclovir similar pattern):\n• VALACYCLOVIR for zoster: CrCl ≥50 → 1 g TID × 7d; 30–49 → 1 g BID × 7d; 10–29 → 1 g OD × 7d; <10 → 500 mg OD × 7d.\n• FAMCICLOVIR: CrCl ≥60 → 500 mg TID; 40–59 → 500 mg BID; 20–39 → 500 mg OD; 10–19 → 250 mg OD; <10 → 250 mg q48h.\n• ACYCLOVIR: CrCl ≥25 → 800 mg 5×/day; 10–24 → 800 mg q8h; <10 → 800 mg q12h.\n\nPAIN CONTROL: acetaminophen ± NSAIDs first-line. Moderate-severe acute pain → consider gabapentin or pregabalin (refer for prescribing — outside Ontario MA scope) or short-course tramadol/codeine (physician). Topical lidocaine 5% patch for localized pain (after lesions crust). Capsaicin AVOIDED on active lesions; consider for residual PHN.\n\nVESICLE CARE: keep clean and dry; do NOT pop or scratch; cover with non-stick dressing if practical; cool compresses for itch.\n\nCONTAGION: ZOSTER lesions contain VZV; can transmit varicella (chickenpox) to non-immune individuals via direct contact with vesicle fluid. Cover lesions; avoid contact with non-immune pregnant women, infants, and immunocompromised individuals until ALL lesions crusted (typically 7–10 days). Once fully crusted, no longer contagious. Casual contact (intact skin, talking, coughing) is NOT a transmission route for zoster (different from primary varicella which is airborne).\n\nFOLLOW-UP: reassess at 7–10 days; if persistent pain >90 days post-rash → POST-HERPETIC NEURALGIA (PHN) — refer for gabapentin/pregabalin/TCAs (gabapentinoids outside MA scope).\n\nSHINGRIX VACCINE: schedule 2-dose series ≥6–12 months after this acute episode — recurrence is possible (8–20% lifetime risk after first episode); Shingrix 2-dose >90% effective at preventing zoster and PHN. Ontario UIIP publicly funds for immunocompetent adults ≥65 (no upper age cap) and immunocompromised ≥18; pharmacists can prescribe and administer."
+                },
+                "tx_late": {
+                    "type": "treat",
+                    "msg": "LATE PRESENTATION (>72h since rash onset, NO new vesicles forming, lesions crusting): Antiviral benefit is MINIMAL — primary management is symptomatic. Pain control + vesicle care + contagion precautions. Antiviral is OPTIONAL but reasonable for severe pain, ophthalmic zoster, or immunocompromise (refer if these apply).",
+                    "detail": "PAIN CONTROL: acetaminophen ± NSAIDs first-line. For more severe acute pain, refer for gabapentin/pregabalin/TCA (outside MA scope). Topical lidocaine 5% patch for localized pain after lesions crust. Cool compresses.\n\nVESICLE CARE: keep clean and dry; no popping/scratching; non-stick dressing PRN; gentle cleanser; lukewarm baths.\n\nCONTAGION: cover lesions; avoid non-immune pregnant women, infants, immunocompromised contacts until ALL lesions crusted.\n\nMONITOR FOR PHN: pain persisting >90 days post-rash → diagnose POST-HERPETIC NEURALGIA — refer for gabapentin/pregabalin/TCA. PHN risk factors: age >50, severe acute pain, ophthalmic zoster, prodromal pain, immunocompromise.\n\nSHINGRIX: schedule 2-dose series ≥6–12 months after this episode (Ontario UIIP funds ≥65 immunocompetent + ≥18 immunocompromised)."
+                }
+            }
+        }
     },
     {
         "name": "Pinworms (Enterobiasis)",
