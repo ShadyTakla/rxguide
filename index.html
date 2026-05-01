@@ -98347,7 +98347,7 @@ var DRUGS = {
     "name": "Phenazopyridine",
     "brand": "Pyridium, Phenazo, generic",
     "class": "Urinary tract analgesic (azo dye)",
-    "napra": "Schedule I (Prescription-only in Canada — unlike US where it is OTC)",
+    "napra": "NAPRA Schedule III (behind-the-counter OTC in Canada — 95 mg tablet; pharmacist-accessible without prescription). Note: 200 mg US Rx strength is not the Canadian OTC strength.",
     "moa": "Topical analgesic action on the urinary tract mucosa. Exact mechanism unknown but believed to exert a local anesthetic/analgesic effect on the urothelium of the lower urinary tract through unknown direct action. Provides symptomatic relief of dysuria, urgency, frequency, and burning. NOT an antibiotic — does NOT treat the underlying infection; used adjunctively while antibiotics take effect (typically first 24–48 hours).",
     "indications": [
       "Symptomatic relief of urinary tract pain, burning, urgency, frequency in lower UTI (cystitis) — adjunct to definitive antibiotic therapy",
@@ -107297,12 +107297,12 @@ var NAPRA_ODB_DATA = {
   },
   "phenazopyridine": {
     "name": "Phenazopyridine (Pyridium, Phenazo)",
-    "napra": "I",
-    "napraDetail": "NAPRA Schedule I — prescription required in Canada (unlike US, where it is OTC). Available as 100 mg and 200 mg tablets (Pyridium, Phenazo, generic).",
-    "odbStatus": "General Benefit",
-    "odbDetail": "ODB General Benefit. Generic phenazopyridine 200 mg tablets ODB-covered. Use limited to 2 days as adjunct to UTI antibiotic therapy.",
+    "napra": "III",
+    "napraDetail": "NAPRA Schedule III — behind-the-counter OTC in Canada (no prescription required, but pharmacist-accessible only). Available as 95 mg tablet OTC (Pyridium 95, Phenazo, generic). The 200 mg tablet is the US Rx strength and is not the Canadian OTC strength.",
+    "odbStatus": "Not covered (OTC)",
+    "odbDetail": "Not covered by ODB (OTC behind-the-counter). Use limited to 2 days as adjunct to UTI antibiotic therapy.",
     "luCode": null,
-    "notes": "Urinary tract analgesic — symptomatic relief only (NOT antibacterial). 200 mg PO TID after meals × maximum 48 hours. Avoid in G6PD deficiency, pregnancy, severe renal/hepatic impairment. Counsel about orange-red urine staining (lenses, clothing). Source: Health Canada Pyridium PM; PHO Bugs & Drugs 2024."
+    "notes": "Urinary tract analgesic — symptomatic relief only (NOT antibacterial). 190 mg (two 95 mg tablets) PO TID after meals × max 48 hours. Avoid in G6PD deficiency, pregnancy, severe renal/hepatic impairment. Counsel about orange-red urine staining (lenses, clothing). Source: Health Canada Pyridium 95 PM; NAPRA Drug Schedules; PHO Bugs & Drugs 2024."
   },
   "pyrantel": {
     "name": "Pyrantel pamoate (Combantrin)",
@@ -107337,10 +107337,11 @@ var MINOR_AILMENTS = [
                 "Current medications including nasal decongestants (rhinitis medicamentosa risk)?"
             ],
             "red_flags": [
-                "Unilateral nasal obstruction or bleeding → polyp or malignancy",
-                "Facial pain/pressure + fever + purulent discharge → sinusitis",
-                "Anosmia (new loss of smell)",
-                "Symptoms not responding to adequate trial of intranasal corticosteroids"
+                "Unilateral nasal obstruction or persistent epistaxis → polyp or sinonasal malignancy — refer to ENT",
+                "Facial pain/pressure + fever + purulent discharge → bacterial sinusitis — refer for assessment",
+                "Anosmia (new persistent loss of smell unrelated to acute viral illness) → sinonasal pathology, malignancy, or neurodegenerative cause — refer",
+                "Unilateral purulent rhinorrhea in a child → suspect nasal foreign body — refer to physician/ENT (CSACI 2022)",
+                "Clear unilateral nasal discharge after head trauma → suspect CSF rhinorrhea — urgent ER"
             ],
             "ddx": [
                 "Vasomotor rhinitis (non-allergic)",
@@ -107354,13 +107355,13 @@ var MINOR_AILMENTS = [
             "first_line": [
                 {
                     "name": "Intranasal Corticosteroid (INCS)",
-                    "drugs": "Fluticasone propionate (Flonase) 50 mcg/spray: 2 sprays each nostril OD | Fluticasone furoate (Flonase Sensimist) 27.5 mcg/spray: 2 sprays each nostril OD | Mometasone (Nasonex) 50 mcg/spray: 2 sprays each nostril OD (OTC since 2022) | Budesonide (Rhinocort) 2 sprays each nostril OD | Ciclesonide (Omnaris) 200 mcg/day (2 sprays each nostril OD)",
+                    "drugs": "Fluticasone propionate (Flonase) 50 mcg/spray: 2 sprays each nostril OD | Fluticasone furoate (Flonase Sensimist) 27.5 mcg/spray: 2 sprays each nostril OD | Mometasone (Nasonex) 50 mcg/spray: 2 sprays each nostril OD (OTC since 2022) | Budesonide (Rhinocort) 2 sprays each nostril OD",
                     "notes": "Most effective pharmacotherapy for allergic rhinitis — superior to antihistamines for congestion and nasal symptoms. Takes 1–2 weeks for full effect. Spray toward outer ear, not nasal septum (prevents septum perforation). Can be used long-term. Note: Flonase = fluticasone propionate 50 mcg/spray; Flonase Sensimist = fluticasone furoate 27.5 mcg/spray — different molecules and strengths.",
                     "preferred_when": "Persistent symptoms or predominantly nasal congestion"
                 },
                 {
                     "name": "Oral Non-Sedating Antihistamine (2nd-generation)",
-                    "drugs": "Cetirizine (Reactine) 10 mg OD | Loratadine (Claritin) 10 mg OD | Fexofenadine (Allegra) 120 mg OD (seasonal AR) | Bilastine (Blexten) 20 mg OD | Rupatadine (Rupall) 10 mg OD | Levocetirizine (Xyzal) 5 mg OD",
+                    "drugs": "Cetirizine (Reactine) 10 mg OD | Loratadine (Claritin) 10 mg OD | Fexofenadine (Allegra) 120 mg OD (seasonal AR) or 180 mg OD (perennial AR / chronic urticaria) | Bilastine (Blexten) 20 mg OD | Rupatadine (Rupall) 10 mg OD | Levocetirizine (Xyzal) 5 mg OD | Desloratadine (Aerius) 5 mg OD",
                     "notes": "First-line for mild-intermittent symptoms or sneezing/itch predominance. Non-sedating (second-generation). Take daily for seasonal allergies (continuous > PRN). Cetirizine: mildly sedating in some — take at night. Bilastine, rupatadine, and levocetirizine are Canadian-available options endorsed by CSACI.",
                     "preferred_when": "Itching, sneezing, watery eyes as predominant symptoms"
                 }
@@ -107573,9 +107574,9 @@ var MINOR_AILMENTS = [
             ],
             "second_line": [
                 {
-                    "name": "Sedating Antihistamine (short-term add-on — use with caution)",
-                    "drugs": "Diphenhydramine (Benadryl) 25–50 mg q6h (avoid in elderly — Beers Criteria)",
-                    "notes": "IMPORTANT — CURRENT GUIDELINE POSITION: EAACI/GA2LEN/WAO 2022 and CSACI recommend AGAINST first-generation sedating antihistamines as routine add-on therapy for urticaria, due to significant anticholinergic burden and impaired sleep architecture. The preferred approach when standard-dose non-sedating antihistamine is insufficient is to UP-TITRATE the non-sedating agent to up to 4× the licensed dose. Use a first-generation antihistamine (e.g., diphenhydramine) only if sedation is explicitly needed for severe nocturnal pruritus interfering with sleep, and only for short-term use. Avoid in elderly (falls, confusion, cognitive impairment). Not appropriate for chronic urticaria."
+                    "name": "Up-titrate the 2nd-gen antihistamine (preferred per EAACI/GA²LEN/AEF/WAO 2022)",
+                    "drugs": "Cetirizine 10 mg → up to 40 mg/day | Loratadine 10 mg → up to 40 mg/day | Fexofenadine 180 mg → up to 720 mg/day | Bilastine 20 mg → up to 80 mg/day | Desloratadine 5 mg → up to 20 mg/day",
+                    "notes": "EAACI/GA²LEN/AEF/WAO 2022 and AAAAI/ACAAI 2023 explicitly recommend up-dosing the 2nd-generation H1 antihistamine to as much as 4× the licensed dose BEFORE adding any other agent. Off-label but evidence-based. First-generation sedating antihistamines (diphenhydramine, hydroxyzine, chlorpheniramine) are NOT recommended for routine add-on — anticholinergic burden, impaired sleep architecture, falls/confusion in older adults (Beers Criteria). Reserve first-gen only for severe nocturnal pruritus where sedation is explicitly desired, short-term."
                 },
                 {
                     "name": "Short-Course Prednisone (NOT in Ontario MA scope — physician referral required)",
@@ -107608,7 +107609,8 @@ var MINOR_AILMENTS = [
         "references": [
             "Ontario College of Pharmacists. Minor Ailments Prescribing: Urticaria. OCP Standards, O. Reg. 256/24 (2025).",
             "CSACI (Canadian Society of Allergy and Clinical Immunology). Chronic Urticaria Guidelines — Canadian Consensus (2020).",
-            "Bernstein JA, et al. The diagnosis and management of acute and chronic urticaria: 2014 update (AAAAI/ACAAI Joint Task Force). J Allergy Clin Immunol. 2014;133(5):1270–1277.",
+            "Zuraw BL, Bernstein JA, et al. The Diagnosis and Management of Acute and Chronic Urticaria: 2023 Update (AAAAI/ACAAI Joint Task Force on Practice Parameters). Ann Allergy Asthma Immunol. 2023 (replaces Bernstein 2014).",
+            "Zuberbier T, Aberer W, et al. The international EAACI/GA²LEN/AEF/WAO guideline for the definition, classification, diagnosis and management of urticaria — 2022 revision. Allergy. 2022;77(3):734–766.",
             "Zuberbier T, et al. The EAACI/GA²LEN/AEF/WAO Guideline for the definition, classification, diagnosis and management of urticaria. Allergy. 2022;77(3):734–766."
         ],
         "patient_counselling": [
@@ -107648,10 +107650,13 @@ var MINOR_AILMENTS = [
                 "Pregnancy status? (Very common precipitant during pregnancy; affects drug selection — avoid topical HC especially in first trimester)"
             ],
             "red_flags": [
-                "Dark blood, melena, or blood mixed with stool → upper GI bleeding, not hemorrhoidal",
-                "Weight loss, anemia, change in bowel habits → colorectal cancer until proven otherwise",
+                "Dark blood, melena, or blood mixed with stool → upper GI bleeding source, NOT hemorrhoidal — urgent referral",
+                "Weight loss, anemia, change in bowel habits → colorectal cancer until proven otherwise — refer for colonoscopy",
                 "Age >40 with new-onset rectal bleeding — colonoscopy/workup needed regardless of apparent hemorrhoidal cause",
-                "Severe acute pain + inability to sit → thrombosed external hemorrhoid (urgent care within 72h for excision)"
+                "Fever + perianal pain, fluctuant mass, or systemic features → perianal/ischiorectal/perirectal abscess — urgent surgical referral (ASCRS 2018; ACG 2021 Wald)",
+                "Severe constant perianal pain + induration or purulent drainage → fistula-in-ano or anal abscess — refer to colorectal surgery",
+                "Pregnant patient with severe persistent bleeding, severe pain, or signs of strangulated prolapse → urgent OB/colorectal assessment",
+                "Immunocompromised patient with perianal infection signs → broaden differential, urgent referral"
             ],
             "ddx": [
                 "Anal fissure (sharp tearing pain with bowel movement)",
@@ -107715,7 +107720,8 @@ var MINOR_AILMENTS = [
         "references": [
             "Ontario College of Pharmacists. Minor Ailments Prescribing: Hemorrhoids. OCP Standards, O. Reg. 256/24 (2025).",
             "RxTx (Canadian Pharmacists Association). Hemorrhoids — Therapeutic Choices. CPhA; 2024.",
-            "Trylovich C, et al. ACG Clinical Guideline: Management of Benign Anorectal Disorders. Am J Gastroenterol. 2021;116(10):2005–2022.",
+            "Wald A, Bharucha AE, Limketkai B, et al. ACG Clinical Guideline: Management of Benign Anorectal Disorders. Am J Gastroenterol. 2021;116(10):1987–2008.",
+            "American Society of Colon and Rectal Surgeons (ASCRS). Clinical Practice Guidelines for the Management of Anorectal Abscess, Fistula-in-Ano, and Rectovaginal Fistula. Dis Colon Rectum. 2022 (update of 2016).",
             "NICE. Haemorrhoids: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence; updated 2023."
         ],
         "patient_counselling": [
@@ -107774,9 +107780,9 @@ var MINOR_AILMENTS = [
             "first_line": [
                 {
                     "name": "NSAID",
-                    "drugs": "Naproxen sodium: OTC Aleve 220 mg — 2 tabs (440 mg) loading then 1 tab (220 mg) q8–12h; Rx naproxen sodium 550 mg loading then 275 mg q6–8h (= naproxen base 500 mg/250 mg). Ibuprofen 400–600 mg q6h. Mefenamic acid (Ponstan) 500 mg loading then 250 mg QID up to 3 days. Celecoxib 200 mg once daily (COX-2 selective; useful when GI intolerance to traditional NSAIDs; on Ontario Schedule 4).",
+                    "drugs": "Naproxen sodium: OTC (NAPRA Schedule III, Aleve 220 mg) — 2 tabs (440 mg) loading then 1 tab (220 mg) q8–12h, max 660 mg/24h OTC. Rx (NAPRA Schedule I) naproxen sodium 550 mg loading then 275 mg q6–8h (= naproxen base 500 mg / 250 mg). Ibuprofen 400–600 mg q6h. Mefenamic acid (Ponstan, Rx Schedule I) 500 mg loading then 250 mg QID up to 3 days. Celecoxib 200 mg once daily (COX-2 selective; Rx NAPRA Schedule I; useful when GI intolerance to traditional NSAIDs).",
                     "notes": "NSAIDs are first-line — inhibit prostaglandin synthesis (prostaglandins cause uterine contractions and pain). Start 24–48h BEFORE expected onset of pain (before prostaglandins peak) for best effect. Take with food. Continue for 2–3 days of flow. Mefenamic acid: also directly antagonizes prostaglandin receptors — useful for refractory cases. If no improvement after 3 menstrual cycles on optimized NSAID therapy, reassess and refer.",
-                    "preferred_when": "Primary dysmenorrhea — first-line and most effective. Ontario Schedule 4 for dysmenorrhea includes NSAIDs (ASA, celecoxib, diclofenac, flurbiprofen, ibuprofen, ketoprofen, mefenamic acid, naproxen)."
+                    "preferred_when": "Primary dysmenorrhea — first-line and most effective. Ontario MA scope (O. Reg. 256/24) for dysmenorrhea allows pharmacist prescribing of NSAIDs (ASA, celecoxib, diclofenac, flurbiprofen, ibuprofen, ketoprofen, mefenamic acid, naproxen) — note these are NAPRA Schedule I (Rx) agents, not Schedule III OTC."
                 },
                 {
                     "name": "Acetaminophen (NSAID alternative)",
@@ -107824,7 +107830,7 @@ var MINOR_AILMENTS = [
         ],
         "patient_counselling": [
             "PRELOAD NSAIDs for best effect: start 24–48 hours BEFORE expected period onset (or at the very first sign of pain/spotting), continue scheduled (not PRN) for the first 2–3 days of bleeding — preloading inhibits prostaglandin synthesis before peak release.",
-            "Naproxen 500 mg loading dose, then 250 mg every 6–8 hours (max 1250 mg/day) — longer half-life, fewer doses; OR ibuprofen 400–600 mg every 6 hours (max 2400 mg/day); OR mefenamic acid 500 mg loading then 250 mg every 6 hours (dual mechanism — COX inhibition + prostaglandin receptor antagonism — particularly effective).",
+            "Naproxen base — Rx (NAPRA Schedule I): 500 mg loading then 250 mg q6–8h (max 1250 mg/day for short courses). Naproxen sodium OTC (Aleve 220 mg, NAPRA Schedule III): 2 tabs (440 mg) loading then 1 tab (220 mg) q8–12h, max 660 mg/24h OTC. Ibuprofen 400–600 mg q6h (max 2400 mg/day Rx; 1200 mg/day OTC). Mefenamic acid 500 mg loading then 250 mg q6h (dual mechanism — COX inhibition + prostaglandin receptor antagonism — particularly effective for dysmenorrhea).",
             "Take NSAIDs WITH FOOD or milk to reduce stomach upset; do NOT exceed maximum daily dose; do not combine multiple NSAIDs.",
             "NSAID cautions: avoid in active peptic ulcer disease, severe renal/hepatic impairment, history of NSAID-induced asthma, last trimester of pregnancy, anticoagulant use without medical guidance; use lowest effective dose; consider PPI co-therapy if high GI risk.",
             "Topical heat (heating pad or hot water bottle on lower abdomen, 15–20 minutes at a time) is comparable to ibuprofen for mild dysmenorrhea — combine with NSAIDs for additive benefit.",
@@ -108008,7 +108014,7 @@ var MINOR_AILMENTS = [
             "NICE. Lyme disease: NICE guideline [NG95]. National Institute for Health and Care Excellence; updated 2023."
         ],
         "patient_counselling": [
-            "Doxycycline single-dose prophylaxis: 200 mg ONCE for adults; 4.4 mg/kg ONCE (max 200 mg) for children. While IDSA/AAN/ACR 2021 supports single-dose use in children of all ages (no clinically significant tooth staining at single dose), Ontario pharmacist Minor Ailments scope may restrict prophylaxis to adults and children ≥8 years — refer to physician for younger children if unclear.",
+            "Doxycycline single-dose prophylaxis: 200 mg ONCE for adults; 4.4 mg/kg ONCE (max 200 mg) for children. IDSA/AAN/ACR 2020 and PHO 2023 algorithm support single-dose doxycycline for ALL ages — no clinically significant tooth staining at this single dose. The historic <8y restriction has been removed; pharmacists may prescribe under Ontario MA for any age provided all four PHO criteria are met.",
             "Take with a FULL glass of water and remain upright (sitting or standing) for at least 30 minutes after dosing — prevents esophageal irritation/ulceration.",
             "Can take with food to reduce GI upset; AVOID taking with dairy products, antacids, iron supplements, calcium, or magnesium within 2 hours of dose (chelates the drug, reduces absorption).",
             "Photosensitivity warning: doxycycline causes severe sunburn — wear long sleeves, hat, sunscreen SPF 30+, avoid prolonged sun exposure for 1–2 days after dose.",
@@ -108067,7 +108073,7 @@ var MINOR_AILMENTS = [
             "first_line": [
                 {
                     "name": "Bacterial Conjunctivitis — Topical Antibiotic",
-                    "drugs": "Tobramycin 0.3% drops (Tobrex) 1–2 drops q4h × 7 days | Fusidic acid 1% gel (Fucithalmic) BID × 7 days [NOTE: discontinued in Canada 2023 — verify availability] | Polymyxin B/trimethoprim (Polytrim) 1 drop q3h × 7–10 days | Polymyxin B/gramicidin (Polysporin Eye & Ear Drops) 1–2 drops q3–4h × 7 days | Erythromycin 0.5% ophthalmic ointment QID × 7 days [primarily for neonatal ocular prophylaxis; not preferred for routine adult/pediatric bacterial conjunctivitis due to resistance — use above agents first]",
+                    "drugs": "Tobramycin 0.3% drops (Tobrex) 1–2 drops q4h while awake × 5–7 days | Polymyxin B/trimethoprim (Polytrim) 1 drop q3h while awake × 7–10 days | Polymyxin B/gramicidin (Polysporin Eye & Ear Drops, OTC) 1–2 drops q3–4h while awake × 5–7 days | Erythromycin 0.5% ophthalmic ointment QID × 5–7 days [reserved for neonatal ocular prophylaxis or where above agents contraindicated; emerging resistance limits routine use per AAO PPP 2023]",
                     "notes": "Mild-moderate bacterial conjunctivitis is usually self-limiting (resolves within 7–10 days without treatment). Antibiotics shorten duration by 2–3 days. Fusidic acid gel: once or twice daily — most convenient. Tobramycin: broad coverage. Polymyxin B/gramicidin and polymyxin B/trimethoprim (Polytrim) are both on Ontario Schedule 4 and are appropriate first-line options. SCOPE NOTE: Ophthalmic fluoroquinolones (ofloxacin, ciprofloxacin, moxifloxacin) are OUTSIDE Ontario pharmacist MA prescribing scope. Contact lens wearers with purulent discharge MUST be referred to a physician/NP or ophthalmologist — do not prescribe under MA. Counsel patients to discontinue contact lens use during infection and replace lens case after recovery.",
                     "preferred_when": "Moderate mucopurulent discharge, significant morning lid matting, immunocompromised"
                 },
@@ -108117,7 +108123,7 @@ var MINOR_AILMENTS = [
             "For BACTERIAL conjunctivitis (purulent yellow/green discharge, eyelids stuck together in morning): use the prescribed antibiotic drop/ointment for 5–7 days; symptoms typically improve within 2–3 days.",
             "For VIRAL conjunctivitis (watery discharge, often unilateral spread to other eye, frequent in adults): no antibiotic needed — self-limiting, resolves in 1–2 weeks; cool compresses and lubricating drops (preservative-free artificial tears) help symptoms.",
             "For ALLERGIC conjunctivitis (bilateral itching, watery discharge, often with rhinitis): olopatadine (Pataday) once daily or ketotifen (Zaditor) twice daily; cool compresses, allergen avoidance, OTC antihistamine if associated rhinitis.",
-            "Hygiene: wash hands frequently; do NOT share towels, pillowcases, eye makeup, or contact lenses; discard makeup and contact lens cases used during infection; replace contact lenses; do not wear contact lenses until 24 hours after symptoms resolve.",
+            "Hygiene: wash hands frequently; do NOT share towels, pillowcases, eye makeup, or contact lenses; discard makeup and contact lens cases used during infection; replace contact lenses. Do NOT resume contact lens wear until BOTH symptoms have fully resolved AND the antibiotic course is complete (per AAO Conjunctivitis PPP 2023) — premature reinsertion risks corneal infection.",
             "Stay home from school/work until discharge resolves (typically 24 hours after starting antibiotics for bacterial; symptoms manageable for viral) per public health guidance.",
             "Red flags — seek urgent eye care: vision changes/loss, severe eye pain, photophobia, corneal opacity, severe redness, contact lens wearer with red eye (risk of bacterial keratitis from Pseudomonas), neonates with eye discharge (gonococcal/chlamydial — emergency), trauma, foreign body sensation, herpes vesicles around eye (HSV keratitis).",
             "Store eye drops at room temperature (or per label — some require refrigeration); discard 28 days after opening (preservative-containing) or per single-use vial directions; do not touch dropper tip."
@@ -108298,7 +108304,7 @@ var MINOR_AILMENTS = [
                 {
                     "name": "Oral Antiviral — Episodic Treatment (moderate-severe or frequent recurrence)",
                     "drugs": "Valacyclovir (Valtrex) 2 g BID × 1 day (single-day regimen — most convenient) | Valacyclovir 500 mg BID × 3 days (alternative episodic regimen) | Acyclovir 400 mg 5× per day × 5 days (every 4 hours while awake) OR Acyclovir 200 mg 5× per day × 5 days | Famciclovir 1500 mg single dose",
-                    "notes": "Oral antivirals significantly more effective than topical — reduce healing by 1–2 days and reduce pain. Best if taken at prodrome (tingling/itching) — timing is critical. Valacyclovir 2 g BID × 1 day: most convenient (single-day). Acyclovir correct episodic dose for herpes labialis: 400 mg 5× daily OR 200 mg 5× daily × 5 days (NOT 400 mg TID — that is the genital HSV suppressive dose). Renal dose adjustment required for acyclovir and valacyclovir if CrCl <50 mL/min — reduce dose/frequency. Pregnancy: acyclovir and valacyclovir are generally considered safe in pregnancy (category B equivalent) — benefit usually outweighs risk."
+                    "notes": "Oral antivirals significantly more effective than topical — reduce healing by 1–2 days and reduce pain. Best if taken at prodrome (tingling/itching) — timing is critical. Valacyclovir 2 g BID × 1 day: most convenient (single-day). Acyclovir correct episodic dose for herpes labialis: 400 mg 5× daily OR 200 mg 5× daily × 5 days (NOT 400 mg TID — that is the genital HSV suppressive dose). Famciclovir alternative: 1500 mg single dose OR 750 mg PO BID × 1 day per Health Canada PM. Renal dose adjustment required for acyclovir and valacyclovir if CrCl <50 mL/min — reduce dose/frequency. Pregnancy: acyclovir and valacyclovir have extensive human safety data and are considered acceptable when benefit > risk (LactMed; SOGC HSV in Pregnancy). FDA letter pregnancy categories were eliminated in 2015 (Pregnancy and Lactation Labeling Rule, PLLR) — use narrative risk assessment instead."
                 },
                 {
                     "name": "Suppressive Therapy (frequent recurrence ≥6 outbreaks/year with significant impact)",
@@ -108374,10 +108380,16 @@ var MINOR_AILMENTS = [
                 "Recurrent 'sprain' in same location → ligament laxity, instability"
             ],
             "ddx": [
-                "Fracture (Ottawa Rules — X-ray)",
-                "Tendon rupture (Achilles — Thompson test)",
+                "Fracture (Ottawa Ankle/Foot/Knee Rules positive → X-ray)",
+                "Tendon rupture (Achilles — Thompson test; quadriceps/patellar)",
                 "Septic arthritis (hot, swollen joint + fever — emergency)",
-                "Gout (podagra — first MTP)"
+                "Gout (podagra — first MTP, sudden onset, erythema)",
+                "Syndesmotic 'high ankle' sprain (squeeze test, external rotation pain — slower recovery)",
+                "Lisfranc midfoot injury (plantar bruising, midfoot tenderness — surgical referral)",
+                "Peroneal tendon subluxation (lateral ankle clicking, recurrent giving way)",
+                "Osteochondral lesion of the talus (persistent pain after typical sprain recovery — MRI)",
+                "ACL/meniscus tear (knee — effusion, joint line tenderness, McMurray test)",
+                "DVT (calf swelling, warmth — Wells score; Doppler if suspected)"
             ]
         },
         "treatment": {
@@ -108435,7 +108447,7 @@ var MINOR_AILMENTS = [
         "patient_counselling": [
             "PEACE & LOVE protocol (replaces RICE/POLICE): PROTECTION (relative rest 48–72h, avoid painful loading), ELEVATION (limb above heart level), AVOID anti-inflammatories early (limit NSAIDs/ice in first 48–72h — may impair healing), COMPRESSION (tensor or sleeve), EDUCATION (active recovery, optimism). Then → LOAD (gradual return to activity), OPTIMISM, VASCULARIZATION (cardio without aggravating), EXERCISE (proprioception/strength).",
             "Acetaminophen 500–1000 mg every 4–6 hours (max 4 g/day, lower if liver disease/alcohol use) is preferred for pain control in the first 48–72 hours — does not impair tissue healing.",
-            "If using oral NSAIDs (ibuprofen 400 mg q6h or naproxen 250–500 mg BID): start AFTER the first 48–72h if needed; take WITH FOOD; use lowest effective dose for shortest duration; avoid if peptic ulcer history, severe renal/hepatic impairment, anticoagulation, last trimester pregnancy.",
+            "If using oral NSAIDs (ibuprofen 400 mg PO q6h, max 2400 mg/day Rx; or naproxen base 250–500 mg PO BID Rx, OR naproxen sodium OTC 220 mg q8–12h max 660 mg/24h): per BJSM 2019 PEACE & LOVE protocol, AVOID routine NSAIDs in the first 48–72h (may impair tissue healing); use only if pain control essential. Take WITH FOOD; use lowest effective dose for shortest duration; avoid if peptic ulcer history, severe renal/hepatic impairment, anticoagulation, ≥20-week pregnancy.",
             "Topical diclofenac 1% gel (Voltaren Emulgel): apply 2–4 g (cherry-sized amount) to affected area 4 times daily; rub in gently; wash hands after application — fewer systemic side effects than oral NSAIDs, equivalent efficacy for localized MSK pain.",
             "Ice for analgesia (not for healing): 15–20 minutes every 2–4 hours during the first 24–48h, wrapped in a towel (never directly on skin); after 48–72h, switch to gentle heat for stiffness.",
             "Compression: tensor bandage or elastic ankle brace during the day for support; remove at night; do NOT wrap so tightly that fingers/toes go numb, blue, or cold.",
@@ -108603,11 +108615,13 @@ var MINOR_AILMENTS = [
                 "Lyme disease risk (tick bite — see Tick Bite protocol)?"
             ],
             "red_flags": [
-                "Systemic symptoms (hives beyond bite site, wheezing, hypotension, dizziness, throat tightness) → ANAPHYLAXIS — CALL 911, epinephrine",
-                "Large local reaction expanding rapidly over hours → cellulitis vs severe local reaction",
-                "Fever + expanding warmth/redness at bite site → secondary infection",
-                "Multiple bee/wasp stings → systemic toxicity risk",
-                "If anaphylaxis symptoms — prescribe/recommend EpiPen auto-injector, teach technique, advise carry 2, call 911 even after epinephrine use"
+                "ANAPHYLAXIS — generalized hives beyond bite site, wheezing, dyspnea, lip/tongue/throat swelling, hypotension, syncope, GI symptoms → CALL 911 immediately; epinephrine IM 0.3 mg adult / 0.15 mg pediatric (CSACI 2024)",
+                "Large local reaction expanding rapidly over hours, especially face/neck stings with airway risk → ER",
+                "Fever + expanding warmth/redness/streaking at bite site → secondary cellulitis — refer for systemic antibiotic",
+                "Multiple stings — adults >50, children >10 — risk of systemic toxicity (envenomation) → urgent ER evaluation",
+                "Patient with prior systemic reaction to insect sting → counsel on epinephrine auto-injector (carry 2), MedicAlert; refer to allergist for venom immunotherapy assessment",
+                "Tick bite meeting Lyme prophylaxis criteria — separate Ontario MA workflow (see Tick Bite condition)",
+                "Necrotic ulcer/eschar suggesting brown recluse or systemic features after black-widow exposure → ER"
             ],
             "ddx": [
                 "Anaphylaxis",
@@ -108653,10 +108667,11 @@ var MINOR_AILMENTS = [
             ]
         },
         "references": [
-            "Ontario College of Pharmacists. Minor Ailments Prescribing: Insect Bites and Stings. OCP Standards, O. Reg. 256/24 (2025).",
-            "Health Canada / PMRA. Personal Insect Repellents Containing DEET — Safety and Efficacy. Pest Management Regulatory Agency; updated 2023.",
-            "CSACI (Canadian Society of Allergy and Clinical Immunology). Anaphylaxis — Recognition and Management (2023).",
-            "RxTx (Canadian Pharmacists Association). Insect Bites and Stings — Therapeutic Choices. CPhA; 2024."
+            "Ontario College of Pharmacists. Note: insect bites and stings are NOT a designated Ontario Minor Ailment under O. Reg. 256/24 (May 2025). Pharmacist role is OTC counselling, anaphylaxis recognition, and referral.",
+            "Health Canada / Pest Management Regulatory Agency (PMRA). Personal Insect Repellents Containing DEET and Icaridin — Safety and Efficacy Guidance; updated 2023.",
+            "CSACI (Canadian Society of Allergy and Clinical Immunology). Anaphylaxis: Recognition and Management — 2024 Position Statement.",
+            "RxTx (Canadian Pharmacists Association). Insect Bites and Stings — Therapeutic Choices. CPhA; 2024.",
+            "NICE. Insect bites and stings: Clinical Knowledge Summary (CKS); updated 2023."
         ],
         "patient_counselling": [
             "If a stinger is visible (bee sting): SCRAPE it sideways with a fingernail or credit card edge — do NOT squeeze with tweezers (squeezes more venom in). Speed of removal is more important than method.",
@@ -108692,7 +108707,7 @@ var MINOR_AILMENTS = [
                 "No structural urinary abnormality, immunosuppression, or renal disease?",
                 "Previous UTIs and response to nitrofurantoin?",
                 "Vaginal discharge or irritation (may suggest vaginitis vs UTI)?",
-                "Ontario MA UTI criteria: non-pregnant female aged 16–64, no fever/flank pain/systemic symptoms (i.e., no upper UTI), no recurrent UTI (≥2 in 6 months or ≥3 in 12 months), no antibiotics for UTI in past 3 months, no urinary catheter, no known urinary structural/functional abnormality",
+                "Ontario MA UTI criteria per OCP O. Reg. 256/24 (May 2025): non-pregnant female aged 16–64 inclusive, no fever/flank pain/systemic symptoms (i.e., no upper UTI), no recurrent UTI (≥2 in 6 months or ≥3 in 12 months), no antibiotics for UTI in past 3 months, no urinary catheter, no known urinary structural/functional abnormality, no immunosuppression, no diabetes with poor control",
                 "Pregnancy test recommended before initiating treatment (Ontario MA requirement)",
                 "Document and notify primary care provider of MA prescribing (Ontario MA requirement)"
             ],
@@ -108714,8 +108729,8 @@ var MINOR_AILMENTS = [
                 {
                     "name": "Nitrofurantoin Macrobid",
                     "drugs": "Nitrofurantoin macrocrystals (Macrobid) 100 mg BID × 5 days WITH food",
-                    "notes": "First-line for uncomplicated UTI in Ontario (Bugs & Drugs — low E. coli resistance <10%). Take with food — improves absorption and reduces GI side effects. Only for lower tract UTI — NOT for pyelonephritis (inadequate tissue penetration). Avoid if eGFR <45 mL/min. Urine may turn brown/yellow — harmless. Fluoroquinolones (ciprofloxacin, levofloxacin) are EXCLUDED from Ontario MA UTI algorithm (Health Canada/FDA black box; reserve for complicated UTI/pyelonephritis under physician care).",
-                    "preferred_when": "First-line uncomplicated UTI, non-pregnant women, eGFR ≥30"
+                    "notes": "First-line for uncomplicated UTI in Ontario (PHO Bugs & Drugs 2024 — low E. coli resistance <10%). Take with food — improves absorption and reduces GI side effects. Only for lower tract UTI — NOT for pyelonephritis (inadequate tissue penetration). RENAL: avoid if eGFR <30 mL/min (Beers Criteria 2023; AMMI Canada 2024 — short 5-day courses acceptable down to eGFR 30 if no alternative). Urine may turn brown/yellow — harmless. Fluoroquinolones (ciprofloxacin, levofloxacin) are EXCLUDED from Ontario MA UTI algorithm (Health Canada/FDA black box; reserve for complicated UTI/pyelonephritis under physician care).",
+                    "preferred_when": "First-line uncomplicated UTI, non-pregnant women, eGFR ≥30 mL/min"
                 }
             ],
             "second_line": [
@@ -108739,7 +108754,7 @@ var MINOR_AILMENTS = [
                 "Increase fluid intake (dilute urine reduces bacterial concentration)",
                 "Void after intercourse (reduces post-coital UTI)",
                 "Avoid spermicides and diaphragm (alter vaginal flora)",
-                "Phenazopyridine (pyridium) 95 mg tablets — OTC dose: 190 mg (2 tablets) TID × maximum 2 days: bladder analgesic — relieves burning/urgency while antibiotics work; turns urine orange (warn patient); NOT an antibiotic. Note: 200 mg TID is US Rx strength — Canadian OTC tablet is 95 mg.",
+                "Phenazopyridine (Pyridium, Phenazo) for symptom relief while antibiotic takes effect: NAPRA Schedule III behind-the-counter OTC in Canada — 95 mg tablets, 190 mg (2 tabs) PO TID × max 2 days. Note: 200 mg TID is the US Rx tablet strength; Canadian OTC tablet is 95 mg. Turns urine orange/red (will stain clothing, contact lenses); contraindicated in G6PD deficiency, severe renal/hepatic impairment, pregnancy. NOT an antibiotic — must be combined with definitive UTI antibiotic.",
                 "D-mannose: Evidence controversial; MERIT trial 2024 (JAMA) showed no benefit over placebo for recurrence prevention. Low-quality evidence only.",
                 "Cranberry (PAC 36 mg/day): modest prevention evidence"
             ],
@@ -108801,7 +108816,7 @@ var MINOR_AILMENTS = [
             "red_flags": [
                 "Ophthalmic zoster (V1 — forehead/nose/eye rash) → same-day ophthalmology — corneal scarring risk",
                 "Ramsay Hunt syndrome: ear pain + vesicles in ear canal + facial palsy → urgent ENT/neurology",
-                "Disseminated zoster (>3 dermatomes or >20 lesions outside primary dermatome) → immunocompromised — antiviral IV urgently",
+                "Disseminated zoster: ≥20 lesions outside the primary or adjacent dermatomes (CDC/IDSA definition) → consider underlying immunocompromise — IV antiviral, urgent referral",
                 "Bacterial superinfection of vesicles (purulent, spreading cellulitis)"
             ],
             "ddx": [
@@ -108838,13 +108853,13 @@ var MINOR_AILMENTS = [
                 "Keep rash clean and dry; loose clothing",
                 "Contagious: avoid contact with non-immune (especially pregnant women and newborns) until vesicles fully crusted",
                 "Lidocaine 5% patch: for established postherpetic neuralgia (PHN — pain >90 days post-rash onset)",
-                "Shingrix vaccine (recombinant zoster vaccine, RZV): NACI (2022) recommends for: (1) adults ≥50 years, (2) immunocompromised adults ≥18 years. 2 doses 2–6 months apart — 97% effective. Ontario UIIP publicly funds Shingrix for ages 65–70. Wait ≥6–12 months after acute zoster episode before vaccinating.",
+                "Shingrix vaccine (recombinant zoster vaccine, RZV): NACI 2024 update recommends for (1) all adults ≥50 years and (2) immunocompromised adults ≥18 years (separate guidance). 2 doses 2–6 months apart — ~90–97% effective. Ontario UIIP publicly funds Shingrix for ages 65–70 (verify current Ontario eligibility annually — eligibility has expanded over time). Wait ≥6–12 months after acute zoster episode before vaccinating.",
                 "Adequate sleep and stress management"
             ],
             "refer_when": [
                 "Ophthalmic involvement (V1 distribution, tip of nose — Hutchinson sign) → urgent same-day ophthalmology (corneal scarring risk)",
                 "Ear/otic involvement (Ramsay Hunt syndrome: ear pain + vesicles in ear canal + facial palsy) → urgent ENT/neurology",
-                "Disseminated zoster (>3 dermatomes or bilateral) → immunocompromised — IV antiviral urgently",
+                "Disseminated zoster (≥20 lesions outside primary/adjacent dermatomes per CDC/IDSA, or bilateral) → suspect immunocompromise — IV antiviral, urgent referral",
                 "Immunocompromised patient",
                 "Pregnancy",
                 "No improvement at 72h on antivirals",
