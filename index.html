@@ -42218,6 +42218,464 @@ var DRUGS = {
     ],
     "source": "Health Canada PM Mycobutin (Pfizer). CTS/CTHA/PHAC Canadian Tuberculosis Standards 2022. IDSA Opportunistic Infections in HIV 2022. AMMI Canada 2024."
   },
+  "bedaquiline": {
+    "name": "Bedaquiline",
+    "brand": "Sirturo (Janssen Canada)",
+    "class": "Diarylquinoline (Anti-MDR-TB)",
+    "napra": "I",
+    "moa": "Inhibits mycobacterial ATP synthase (FoF1 ATPase) — binds the c-subunit of ATP synthase, blocks proton translocation → energy depletion → bactericidal. FIRST NEW MOA in TB drug development in over 40 years (FDA 2012; HC 2014). Active against MDR-TB, XDR-TB. Resistance via atpE and Rv0678 mutations.",
+    "indications": [
+      "Multidrug-resistant pulmonary tuberculosis (MDR-TB — resistant to ≥INH + RIF) — combination with optimized background regimen",
+      "Pre-XDR-TB and XDR-TB — component of WHO 6-month BPaL/BPaLM regimen (Bedaquiline + Pretomanid + Linezolid ± Moxifloxacin)",
+      "Per WHO 2022 + CTS 2024: PREFERRED component of all-oral MDR-TB regimens (replaces injectables)"
+    ],
+    "dosing": [
+      {
+        "indication": "MDR-TB / pre-XDR / XDR-TB (adult)",
+        "dose": "Loading: 400 mg PO OD × 2 weeks. Maintenance: 200 mg PO 3× weekly × 22 weeks. TOTAL course = 24 weeks. Take WITH food (food increases absorption ~2×). TB specialist managed.",
+        "renal": "Mild-moderate: no adjustment. Severe (CrCl <30): use with caution; limited data."
+      },
+      {
+        "indication": "Paediatric (age ≥5 years, ≥15 kg)",
+        "dose": "Weight-based per WHO 2022 — specialist managed",
+        "renal": "Specialist consultation"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Nausea, arthralgia, headache",
+        "Increased transaminases",
+        "Hyperuricemia"
+      ],
+      "serious": [
+        "QTc PROLONGATION (Black Box) — ECG baseline + monthly; greater with concurrent fluoroquinolones, clofazimine, delamanid",
+        "Increased mortality (Black Box from Phase 2b — not confirmed in Phase 3)",
+        "Hepatotoxicity",
+        "Pancreatitis (rare)"
+      ]
+    },
+    "contraindications": [
+      "Baseline QTc >500 ms (Bazett) — Black Box",
+      "Concurrent strong CYP3A4 inducers (rifampin reduces bedaquiline ~50% — therapeutic failure)",
+      "Severe hepatic impairment (Child-Pugh C)",
+      "Hypersensitivity to bedaquiline"
+    ],
+    "interactions": [
+      {
+        "drug": "Rifampin (and other strong CYP3A4 inducers)",
+        "severity": "Major (avoid)",
+        "mechanism": "CYP3A4 induction reduces bedaquiline ~50% — therapeutic failure",
+        "management": "AVOID — use rifabutin if rifamycin needed"
+      },
+      {
+        "drug": "QTc-prolonging drugs (fluoroquinolones, clofazimine, delamanid, ondansetron)",
+        "severity": "Major",
+        "mechanism": "Additive QTc prolongation",
+        "management": "Monitor ECG; adjust regimen; use Bazett-corrected QTc"
+      },
+      {
+        "drug": "Strong CYP3A4 inhibitors (clarithromycin, itraconazole, ketoconazole)",
+        "severity": "Moderate",
+        "mechanism": "Increase bedaquiline levels — toxicity",
+        "management": "Avoid prolonged co-administration >2 weeks; monitor ECG"
+      }
+    ],
+    "pregnancy": "Limited human data; animal studies show no teratogenicity. WHO permits in pregnancy when MDR-TB treatment essential and benefits outweigh risks (alternatives have worse outcomes). CTS Canada 2022 permits with TB specialist guidance. Lactation: low milk levels; permitted with infant monitoring (hepatic, ECG if available).",
+    "pk": {
+      "absorption": "Oral; food increases absorption ~2×",
+      "half_life": "Terminal: 5.5 months (very long — resistance risk if abruptly discontinued)",
+      "elimination": "CYP3A4 metabolism; biliary excretion",
+      "renal_adjustment": "Severe renal impairment: caution; limited data"
+    },
+    "canadian_notes": "Health Canada-approved 2014. Hospital formulary at TB referral centres only. Dispensed via provincial TB programs (free to patients via Public Health). CTS Canadian TB Standards 2022 + WHO 2022 recommend bedaquiline as PREFERRED component of all-oral MDR-TB regimens. BPaL regimen approved for pre-XDR-TB. Specialist managed — NOT for general practice. ECG monitoring (baseline + monthly) mandatory.",
+    "pearls": [
+      "FIRST new MOA in TB drug development in 40+ years — game-changing for MDR-TB",
+      "BLACK BOX: QTc prolongation + Phase 2b mortality signal — ECG baseline + monthly",
+      "VERY LONG terminal half-life (5.5 months) → resistance risk if abruptly stopped",
+      "AVOID rifampin (>50% reduction in bedaquiline) — use rifabutin",
+      "Standard component of WHO 6-month BPaL/BPaLM all-oral MDR-TB regimens (replaces 18-24 month conventional regimens)",
+      "Specialist-managed — refer to provincial TB program"
+    ],
+    "source": "Health Canada PM Sirturo (Janssen). WHO MDR-TB Guidelines 2022. CTS/CTHA/PHAC Canadian TB Standards 2022. NIX-TB Trial (Conradie F et al, NEJM 2020 — BPaL regimen)."
+  },
+  "pretomanid": {
+    "name": "Pretomanid",
+    "brand": "(component of BPaL/BPaLM regimens — TB Alliance / Mylan)",
+    "class": "Nitroimidazole (Anti-MDR-TB)",
+    "napra": "I",
+    "moa": "Bicyclic 4-nitroimidazole pro-drug — bioactivated by mycobacterial deazaflavin-dependent nitroreductase (Ddn). Dual MOA: (1) inhibits mycolic acid synthesis in actively replicating bacilli (aerobic); (2) generates reactive nitrogen species (NO) that poison the electron transport chain in non-replicating bacilli under hypoxic/anaerobic conditions (intracellular dormant bacilli). Active against MDR/XDR M. tuberculosis. Resistance: ddn, fbiA/B/C, fgd1 mutations.",
+    "indications": [
+      "Pulmonary multidrug-resistant TB (MDR-TB), pre-extensively drug-resistant TB (pre-XDR-TB), and extensively drug-resistant TB (XDR-TB) — ALWAYS in combination as part of BPaL (Bedaquiline + Pretomanid + Linezolid) ± moxifloxacin (BPaLM) regimen",
+      "Specialist-managed with confirmed susceptibility testing"
+    ],
+    "dosing": [
+      {
+        "indication": "MDR-TB / pre-XDR / XDR-TB (BPaL/BPaLM regimen)",
+        "dose": "200 mg PO OD WITH food × 6 months. ALWAYS combined with bedaquiline + linezolid ± moxifloxacin. Specialist-managed via provincial TB program.",
+        "renal": "Severe renal impairment (CrCl <30): caution; limited data"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Peripheral neuropathy (additive with linezolid component)",
+        "Hepatotoxicity (additive with bedaquiline component)",
+        "Acne, rash",
+        "Nausea, vomiting, headache"
+      ],
+      "serious": [
+        "Hepatic injury (transaminase elevation; rarely fatal hepatic injury — monitor LFTs baseline + monthly)",
+        "Optic neuritis (cumulative with linezolid)",
+        "Reproductive toxicity (animal — testicular effects; counsel contraception)",
+        "QTc prolongation (additive with bedaquiline)",
+        "Lactic acidosis (additive with linezolid)"
+      ]
+    },
+    "contraindications": [
+      "Severe hepatic impairment (Child-Pugh B or C)",
+      "Pregnancy (animal reproductive toxicity)",
+      "Hypersensitivity to nitroimidazoles",
+      "Concurrent strong CYP3A4 inducers (rifampin — reduces pretomanid)"
+    ],
+    "interactions": [
+      {
+        "drug": "Linezolid (BPaL component)",
+        "severity": "Beneficial (intentional combination) but additive toxicity",
+        "mechanism": "Synergistic anti-TB; additive peripheral neuropathy, optic neuritis, myelosuppression",
+        "management": "Standard combination; monitor neuropathy/visual acuity weekly; CBC weekly"
+      },
+      {
+        "drug": "Bedaquiline (BPaL component)",
+        "severity": "Beneficial (intentional combination) but additive QTc",
+        "mechanism": "Synergistic; additive QTc prolongation",
+        "management": "ECG baseline + monthly during BPaL"
+      },
+      {
+        "drug": "Rifampin",
+        "severity": "Major (avoid)",
+        "mechanism": "CYP3A4 induction reduces pretomanid",
+        "management": "AVOID — alternative rifamycin or specialist-designed regimen"
+      }
+    ],
+    "pregnancy": "AVOID in pregnancy (animal reproductive toxicity — testicular atrophy in rats; insufficient human data). Counsel effective contraception during AND for 14 days after course (males and females). If MDR-TB diagnosis during pregnancy, alternative regimens (without pretomanid) preferred until specialist consultation. Lactation: limited data — generally avoided.",
+    "pk": {
+      "absorption": "Oral; food increases absorption ~70%",
+      "half_life": "16-17 h",
+      "elimination": "CYP3A4 metabolism + non-CYP pathways",
+      "renal_adjustment": "Caution if CrCl <30"
+    },
+    "canadian_notes": "Health Canada-approved 2022 for adults with pulmonary pre-XDR-TB or XDR-TB or treatment-intolerant/non-responsive MDR-TB. Hospital formulary at TB referral centres only. Available through provincial TB programs as part of BPaL/BPaLM regimen. Revolutionized MDR-TB treatment — 6-month all-oral regimen vs traditional 18-24 month injectable-containing regimens (90% cure rate with BPaL vs ~50% historical). Specialist managed.",
+    "pearls": [
+      "Component of WHO BPaL/BPaLM regimen — 6-month all-oral MDR-TB cure (90% vs 50% historical)",
+      "ALWAYS combined with bedaquiline + linezolid; never monotherapy (resistance)",
+      "Take WITH food (~70% absorption increase)",
+      "Hepatotoxicity + peripheral neuropathy + optic neuritis monitoring required",
+      "Reproductive toxicity — counsel effective contraception during course + 14 days after",
+      "Specialist managed via provincial TB program"
+    ],
+    "source": "Health Canada PM (TB Alliance). WHO MDR-TB Guidelines 2022. NIX-TB Trial (Conradie F, NEJM 2020). ZeNix Trial (Conradie F, NEJM 2022 — BPaL dosing optimization)."
+  },
+  "delamanid": {
+    "name": "Delamanid",
+    "brand": "Deltyba (Otsuka — Health Canada Special Access Programme)",
+    "class": "Nitroimidazo-oxazole (Anti-MDR-TB)",
+    "napra": "I",
+    "moa": "Inhibits mycobacterial cell wall mycolic acid biosynthesis (methoxy- and keto-mycolic acid). Pro-drug bioactivated by Ddn nitroreductase. Active against MDR-TB. Less robust evidence than bedaquiline; reserved as alternative or in combination.",
+    "indications": [
+      "Pulmonary MDR-TB — combination with optimized background regimen (alternative to bedaquiline; can be combined with bedaquiline in select MDR/XDR cases per WHO 2022 with specialist guidance)"
+    ],
+    "dosing": [
+      {
+        "indication": "MDR-TB pulmonary disease",
+        "dose": "100 mg PO BID WITH food × 24 weeks. Add to optimized background regimen.",
+        "renal": "CrCl <30: 50 mg BID; specialist managed"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "QTc prolongation (less than bedaquiline)",
+        "Nausea, vomiting, headache",
+        "Insomnia",
+        "Hyperuricemia"
+      ],
+      "serious": [
+        "QTc prolongation — additive with bedaquiline; monitor ECG",
+        "Hepatotoxicity",
+        "Hypoalbuminemia <2.8 g/dL increases delamanid metabolite (DM-6705) → toxicity risk"
+      ]
+    },
+    "contraindications": [
+      "Albumin <2.8 g/dL (toxicity risk)",
+      "Baseline QTc >500 ms",
+      "Pregnancy",
+      "Hypersensitivity"
+    ],
+    "interactions": [
+      {
+        "drug": "Bedaquiline",
+        "severity": "Major (caution)",
+        "mechanism": "Additive QTc prolongation",
+        "management": "Combination requires close ECG monitoring; specialist managed only"
+      },
+      {
+        "drug": "Strong CYP3A4 inducers (rifampin, carbamazepine)",
+        "severity": "Major",
+        "mechanism": "Reduce delamanid levels",
+        "management": "Avoid; alternative regimen"
+      }
+    ],
+    "pregnancy": "Limited human data; avoid in pregnancy unless no alternatives (animal reproductive toxicity). Specialist-managed if essential. Lactation: avoid.",
+    "pk": {
+      "absorption": "Oral; food increases absorption",
+      "half_life": "30-38 h",
+      "elimination": "Plasma albumin-mediated (non-CYP); slow",
+      "renal_adjustment": "CrCl <30: 50 mg BID"
+    },
+    "canadian_notes": "Available in Canada via Health Canada Special Access Programme (SAP) — reserved for select MDR-TB cases with bedaquiline intolerance/resistance or as combination with bedaquiline in pre-XDR/XDR-TB per specialist judgment. Less robust evidence base than bedaquiline.",
+    "pearls": [
+      "Alternative to bedaquiline for MDR-TB; can be combined with bedaquiline in select cases (WHO 2022)",
+      "ALBUMIN <2.8 g/dL increases toxicity — avoid; monitor albumin",
+      "QTc prolongation — additive with bedaquiline; ECG monitoring",
+      "Available via HC SAP — specialist-coordinated",
+      "Less robust trial evidence than bedaquiline (Trial 213 cohort study)"
+    ],
+    "source": "Health Canada SAP. WHO MDR-TB Guidelines 2022. CTS Canadian TB Standards 2022. Trial 213 (Skripconoka V et al)."
+  },
+  "cycloserine": {
+    "name": "Cycloserine",
+    "brand": "Seromycin (Eli Lilly — Health Canada SAP); generic terizidone (combination dimer)",
+    "class": "D-Alanine Analogue (Anti-MDR-TB, Second-Line)",
+    "napra": "I",
+    "moa": "Structural analogue of D-alanine — inhibits two enzymes in bacterial cell wall synthesis: alanine racemase (alr) and D-alanyl-D-alanine ligase (ddl) → blocks peptidoglycan synthesis. Bacteriostatic. Limited use due to neuropsychiatric toxicity. Resistance: alr/ddl mutations.",
+    "indications": [
+      "Multidrug-resistant TB (MDR-TB) — second-line oral, reserved for cases without bedaquiline/linezolid alternatives",
+      "Atypical mycobacteria (rare)"
+    ],
+    "dosing": [
+      {
+        "indication": "MDR-TB (adult)",
+        "dose": "Start 250 mg PO BID; titrate up to 500-1000 mg/day divided BID-TID over 1-2 weeks. Therapeutic drug monitoring (TDM) recommended (target peak 25-35 mg/L)",
+        "renal": "CrCl <30: dose reduction (250 mg OD or BID — TDM essential)"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "CNS effects ~30% — anxiety, depression, agitation, dizziness, headache, confusion",
+        "Drowsiness, lethargy",
+        "Peripheral neuropathy (mitigated with pyridoxine)"
+      ],
+      "serious": [
+        "PSYCHOSIS, suicidal ideation, severe depression — discontinue immediately",
+        "SEIZURES (~30% in epilepsy patients; lower in non-epileptics) — especially at high doses or renal impairment",
+        "Megaloblastic anemia",
+        "Hepatotoxicity"
+      ]
+    },
+    "contraindications": [
+      "Severe psychiatric disease (depression with suicidality, psychosis)",
+      "SEIZURE DISORDER",
+      "Severe renal impairment (CrCl <30) without dose adjustment",
+      "Active alcohol use disorder (additive CNS toxicity)",
+      "Hypersensitivity"
+    ],
+    "interactions": [
+      {
+        "drug": "Isoniazid",
+        "severity": "Moderate",
+        "mechanism": "Additive CNS toxicity (peripheral neuropathy, dizziness)",
+        "management": "Standard combination in MDR-TB; pyridoxine 100-300 mg/day mandatory"
+      },
+      {
+        "drug": "Ethanol",
+        "severity": "Major",
+        "mechanism": "Greatly increases seizure risk",
+        "management": "Strict alcohol avoidance"
+      },
+      {
+        "drug": "Phenytoin",
+        "severity": "Moderate",
+        "mechanism": "Cycloserine increases phenytoin levels",
+        "management": "Monitor phenytoin; dose reduction may be needed"
+      }
+    ],
+    "pregnancy": "Limited human data; FDA Category C. Generally AVOID unless MDR-TB requires and no alternatives (TB specialist judgment). Lactation: present in milk; generally avoid.",
+    "pk": {
+      "absorption": "Oral ~80%",
+      "half_life": "10 h (longer in renal impairment)",
+      "elimination": "Renal (~70% unchanged)",
+      "renal_adjustment": "CrCl 30-50: 50% dose; CrCl <30: 25% dose with TDM"
+    },
+    "canadian_notes": "Available via Health Canada Special Access Programme. Provincial TB programs coordinate. Reserved for MDR-TB without alternatives. Pyridoxine (B6) 100-300 mg/day mandatory to reduce CNS toxicity. Mental health screening + monitoring essential. TDM recommended (peak 25-35 mg/L).",
+    "pearls": [
+      "NEUROPSYCHIATRIC TOXICITY (~30%) — psychosis, depression, suicidal ideation; mental health screening + monitoring essential",
+      "SEIZURE risk — contraindicated in seizure disorder",
+      "Pyridoxine 100-300 mg/day MANDATORY to reduce neurotoxicity",
+      "Strict alcohol avoidance (additive seizure risk)",
+      "TDM recommended — peak 25-35 mg/L",
+      "Reserved for MDR-TB without alternatives"
+    ],
+    "source": "Health Canada SAP. WHO MDR-TB Guidelines 2022. CTS Canadian TB Standards 2022. AMMI Canada."
+  },
+  "ethionamide": {
+    "name": "Ethionamide",
+    "brand": "Trecator (Wyeth — Health Canada SAP); prothionamide (analogue)",
+    "class": "Thioamide (Anti-MDR-TB, Second-Line)",
+    "napra": "I",
+    "moa": "Structural analogue of isoniazid — pro-drug bioactivated by EthA monooxygenase → forms NAD adduct that inhibits InhA (enoyl-ACP reductase) → blocks mycolic acid synthesis. Partial cross-resistance with INH (inhA mutations). Bacteriostatic.",
+    "indications": [
+      "Multidrug-resistant TB (MDR-TB) — second-line",
+      "Leprosy (alternative when dapsone/rifampin not tolerated)"
+    ],
+    "dosing": [
+      {
+        "indication": "MDR-TB (adult)",
+        "dose": "15-20 mg/kg/day PO (max 1 g) divided BID-TID. Start LOW (250 mg BID) and titrate over 1-2 weeks (severe GI intolerance). Take with food.",
+        "renal": "CrCl <30: 50% dose; specialist managed"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "SEVERE GI INTOLERANCE — nausea, vomiting, anorexia (~50%+; often dose-limiting)",
+        "Metallic taste",
+        "Headache, drowsiness",
+        "Peripheral neuropathy",
+        "Postural hypotension"
+      ],
+      "serious": [
+        "Hepatotoxicity (~5%)",
+        "HYPOTHYROIDISM (especially with PAS — monitor TSH every 3 months)",
+        "Optic neuritis (rare)",
+        "Hypoglycemia",
+        "Gynecomastia, menstrual disturbances"
+      ]
+    },
+    "contraindications": [
+      "Severe hepatic disease",
+      "PREGNANCY (teratogenic — avoid)",
+      "Hypersensitivity to thioamides"
+    ],
+    "interactions": [
+      {
+        "drug": "Para-aminosalicylic acid (PAS)",
+        "severity": "Moderate (intentional combination but additive toxicity)",
+        "mechanism": "Synergistic anti-TB; additive HYPOTHYROIDISM (~50% incidence with combination)",
+        "management": "Monitor TSH every 3 months; levothyroxine PRN"
+      },
+      {
+        "drug": "Isoniazid",
+        "severity": "Moderate",
+        "mechanism": "Partial cross-resistance (both target InhA); additive CNS/peripheral neuropathy",
+        "management": "Combination uncommon — generally not used together if alternatives available"
+      },
+      {
+        "drug": "Cycloserine",
+        "severity": "Moderate",
+        "mechanism": "Additive neurotoxicity",
+        "management": "Pyridoxine supplementation; monitor mental status"
+      }
+    ],
+    "pregnancy": "TERATOGENIC — animal and human reports of CNS and skeletal defects. AVOID in pregnancy unless absolutely no alternatives (specialist consultation). Effective contraception during therapy. Lactation: insufficient data; generally avoid.",
+    "pk": {
+      "absorption": "Oral ~80%; food does not significantly affect absorption",
+      "half_life": "2-3 h",
+      "elimination": "Hepatic metabolism",
+      "renal_adjustment": "CrCl <30: 50% dose"
+    },
+    "canadian_notes": "Available via Health Canada SAP. Reserved for MDR-TB. Severe GI intolerance limits use — start low, titrate slowly, take with food, antiemetic premedication useful. Pyridoxine (B6) co-administration. Monitor TSH every 3 months (hypothyroidism, especially with PAS). LFTs baseline + monthly.",
+    "pearls": [
+      "SEVERE GI intolerance often dose-limiting (50%+) — start low, titrate slowly",
+      "HYPOTHYROIDISM common with PAS combination — monitor TSH q3 months",
+      "TERATOGENIC — avoid in pregnancy",
+      "Partial cross-resistance with INH (inhA mutations)",
+      "Pyridoxine supplementation reduces neurotoxicity"
+    ],
+    "source": "Health Canada SAP. WHO MDR-TB Guidelines 2022. CTS Canadian TB Standards 2022."
+  },
+  "clofazimine": {
+    "name": "Clofazimine",
+    "brand": "Lamprene (Novartis — Health Canada SAP / WHO leprosy MDT)",
+    "class": "Phenazine Dye (Antimycobacterial / Anti-Leprosy)",
+    "napra": "I",
+    "moa": "Binds preferentially to mycobacterial DNA (G-rich sequences) → inhibits replication; generates reactive oxygen species (H₂O₂, singlet O₂); membrane destabilization. Anti-inflammatory effects (especially relevant in leprosy reactions). Active against M. leprae, MAC, M. abscessus, M. tuberculosis (MDR/XDR). Slow onset of action (months for full effect).",
+    "indications": [
+      "Leprosy (Hansen's disease) — backbone of WHO multibacillary multidrug therapy (MDT) regimen (rifampin + clofazimine + dapsone)",
+      "Leprosy reactions — Type 2 (erythema nodosum leprosum/ENL) — anti-inflammatory effect",
+      "Mycobacterium abscessus pulmonary disease — combination therapy (continuation phase)",
+      "MAC salvage therapy",
+      "MDR-TB — background regimen component (per WHO 2022)"
+    ],
+    "dosing": [
+      {
+        "indication": "Leprosy (multibacillary MDT)",
+        "dose": "50 mg PO OD + 300 mg supervised monthly × 12 months (WHO MDT — combined with rifampin 600 mg monthly + dapsone 100 mg OD)",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Leprosy Type 2 reaction (ENL)",
+        "dose": "100 mg PO TID × 12 weeks, then 100 mg BID × 12 weeks, then 100 mg OD (specialist managed)",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "MAC / M. abscessus / MDR-TB",
+        "dose": "100 mg PO OD as part of combination regimen",
+        "renal": "No specific adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "RED-BROWN/BLACK PIGMENTATION of skin, conjunctiva, body fluids — UNIVERSAL; reversible (months to years to fade after discontinuation); MAJOR psychosocial impact — counsel before initiation",
+        "GI — abdominal pain, cramps, diarrhea (~50%)",
+        "Dry skin, ichthyosis",
+        "Photosensitivity"
+      ],
+      "serious": [
+        "QTc prolongation (additive with bedaquiline, fluoroquinolones)",
+        "Crystal deposits in tissues (eosinophilic enteritis with high doses — abdominal pain, intestinal obstruction)",
+        "Splenic infarction (rare)"
+      ]
+    },
+    "contraindications": [
+      "Severe GI disease (relative)",
+      "Hypersensitivity",
+      "Pregnancy (limited data — generally continued through pregnancy in leprosy due to public health benefit)"
+    ],
+    "interactions": [
+      {
+        "drug": "Bedaquiline",
+        "severity": "Major",
+        "mechanism": "Additive QTc prolongation",
+        "management": "Combination requires ECG monitoring; specialist managed"
+      },
+      {
+        "drug": "Rifampin",
+        "severity": "Beneficial (intentional combination in leprosy)",
+        "mechanism": "Synergistic anti-mycobacterial",
+        "management": "Standard WHO leprosy MDT regimen"
+      },
+      {
+        "drug": "Dapsone",
+        "severity": "Beneficial (intentional combination)",
+        "mechanism": "Synergistic anti-mycobacterial; reduces dapsone resistance",
+        "management": "Standard WHO leprosy MDT regimen"
+      }
+    ],
+    "pregnancy": "Limited human data; animal studies suggest mild fetotoxicity at high doses. WHO PERMITS continued use during pregnancy in leprosy (public health benefit; untreated leprosy worse for mother and infant). Discontinue elective non-leprosy use during pregnancy. Lactation: appears in milk in small amounts; infant may develop reversible skin discolouration (cosmetic only) — generally compatible with monitoring.",
+    "pk": {
+      "absorption": "Variable oral absorption (~50%); food increases absorption (recommended)",
+      "half_life": "~70 days (very long — accumulates in fat; pigmentation reflects tissue accumulation)",
+      "elimination": "Minimal hepatic metabolism; primarily fecal (unchanged)",
+      "renal_adjustment": "No specific adjustment"
+    },
+    "canadian_notes": "Available in Canada via Health Canada Special Access Programme (SAP). WHO leprosy multidrug therapy (MDT) is FREE worldwide via Novartis-WHO partnership for endemic country distribution. Canadian patients with leprosy can access via SAP — coordinate with provincial public health and infectious disease specialist. Counsel pigmentation BEFORE initiation — major adherence issue. Slow onset (months) — clinical improvement gradual.",
+    "pearls": [
+      "RED-BROWN/BLACK PIGMENTATION universal — counsel before initiation (major psychosocial impact)",
+      "VERY LONG half-life (~70 days) — drug accumulates in fat; pigmentation persists months-years after stopping",
+      "WHO leprosy MDT free worldwide via Novartis-WHO partnership",
+      "Anti-inflammatory effects useful in Type 2 leprosy reactions (ENL)",
+      "Take with food (variable absorption)",
+      "Component of all-oral MDR-TB regimens per WHO 2022"
+    ],
+    "source": "Health Canada SAP. WHO Leprosy Treatment Guidelines 2018 + 2022 update. WHO MDR-TB Guidelines 2022. Novartis-WHO Leprosy MDT donation programme."
+  },
   "albendazole": {
     "name": "Albendazole",
     "brand": "Albenza (US — limited Canadian availability — typically Health Canada Special Access Programme)",
@@ -42432,6 +42890,662 @@ var DRUGS = {
       "Neurocysticercosis: combine with albendazole + corticosteroids (specialist managed)"
     ],
     "source": "Health Canada SAP. WHO Schistosomiasis Treatment Guidelines 2022. CDC Parasites — Praziquantel. Canadian Travel Medicine Society."
+  },
+  "pyrantel": {
+    "name": "Pyrantel pamoate",
+    "brand": "Combantrin (Johnson & Johnson — OTC in Canada); generic available",
+    "class": "Anthelmintic (Depolarizing Neuromuscular Blocker)",
+    "napra": "Unscheduled (OTC)",
+    "moa": "Depolarizing nicotinic acetylcholine receptor agonist at parasite neuromuscular junctions → sustained depolarization → paralysis of intestinal worms → expelled in stool. Active against pinworm, roundworm, hookworm. NOT active against whipworm, Strongyloides, tapeworms. Poorly absorbed → minimal systemic toxicity (acts locally in GI tract).",
+    "indications": [
+      "Pinworm (Enterobius vermicularis) — most common helminth in Canadian children",
+      "Roundworm (Ascaris lumbricoides)",
+      "Hookworm (Necator americanus, Ancylostoma duodenale)"
+    ],
+    "dosing": [
+      {
+        "indication": "Pinworm",
+        "dose": "11 mg/kg PO single dose (max 1 g); REPEAT in 2 weeks (kills newly hatched worms from eggs that survived first dose). TREAT ALL household members simultaneously.",
+        "renal": "No adjustment (poorly absorbed)"
+      },
+      {
+        "indication": "Roundworm / Hookworm",
+        "dose": "11 mg/kg PO single dose (max 1 g); for hookworm consider repeat in 2 weeks if heavy infection",
+        "renal": "No adjustment"
+      },
+      {
+        "indication": "Paediatric",
+        "dose": "11 mg/kg PO single dose; OTC suspension (50 mg/mL) commonly used. Dose: <12 kg consult HCP; 12-22 kg → 125 mg; 23-45 kg → 250 mg; 46-67 kg → 500 mg; >67 kg → 750 mg",
+        "renal": "No adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "GI upset — mild nausea, abdominal cramps, diarrhea (usually transient, single dose)",
+        "Headache",
+        "Dizziness",
+        "Rash (rare)"
+      ],
+      "serious": [
+        "Hepatotoxicity (very rare — transaminase elevation)",
+        "Hypersensitivity reactions (rare)"
+      ]
+    },
+    "contraindications": [
+      "Severe hepatic disease (relative — minimal absorption)",
+      "Concurrent piperazine (antagonistic mechanisms — both target NMJ)",
+      "Hypersensitivity to pyrantel"
+    ],
+    "interactions": [
+      {
+        "drug": "Piperazine (antagonist anthelmintic)",
+        "severity": "Major (avoid)",
+        "mechanism": "Antagonistic — piperazine hyperpolarizes worm NMJ; pyrantel depolarizes; effects cancel",
+        "management": "Avoid concurrent use; choose one or the other"
+      },
+      {
+        "drug": "Theophylline",
+        "severity": "Moderate",
+        "mechanism": "Pyrantel may increase theophylline levels (rare report)",
+        "management": "Monitor theophylline levels"
+      }
+    ],
+    "pregnancy": "Pregnancy Category C (limited human data). Minimal systemic absorption (~50% of dose excreted unchanged in feces) suggests low fetal exposure. WHO and CDC PERMIT use in pregnancy when treatment essential (preferred over benzimidazoles in 1st trimester due to better safety profile). Lactation: not detected in milk in clinically significant amounts; compatible.",
+    "pk": {
+      "absorption": "Poorly absorbed (~50% excreted unchanged in feces); minimal systemic exposure",
+      "half_life": "Plasma half-life clinically irrelevant (acts in GI lumen)",
+      "elimination": "Fecal (unchanged); minor hepatic metabolism for absorbed fraction",
+      "renal_adjustment": "No adjustment"
+    },
+    "canadian_notes": "OTC at Canadian pharmacies (Combantrin liquid, chewable tablets) — pharmacist-recommended for pinworm. Ontario pharmacist-recommended for minor ailments under expanded scope. Single-dose convenience makes it preferred OTC option. Treat ENTIRE household simultaneously for pinworm. REPEAT dose at 2 weeks essential. Wash bedding/clothing in hot water (≥50°C) on treatment day. Source: Health Canada PM Combantrin; Canadian Pharmacists Association.",
+    "pearls": [
+      "OTC in Canada — pharmacist-recommended for pinworm",
+      "TREAT ALL household members simultaneously (pinworm — high reinfection rate)",
+      "REPEAT dose at 2 weeks (kills newly hatched from surviving eggs)",
+      "Preferred over benzimidazoles in PREGNANCY (better safety profile, OTC convenience)",
+      "Wash bedding/clothing/towels in HOT water (≥50°C) on treatment day",
+      "AVOID concurrent piperazine (antagonistic)"
+    ],
+    "source": "Health Canada PM Combantrin (J&J). CDC Parasites — Pyrantel. Canadian Pharmacists Association — Minor Ailments. SOGC Pregnancy Antiparasitic Guidance."
+  },
+  "nitazoxanide": {
+    "name": "Nitazoxanide",
+    "brand": "Alinia (Romark — limited Canadian availability — typically Health Canada SAP)",
+    "class": "Antiprotozoal (Thiazolide)",
+    "napra": "I",
+    "moa": "Inhibits pyruvate-ferredoxin oxidoreductase (PFOR) — essential anaerobic energy metabolism enzyme in protozoa, anaerobic bacteria, helminths. Pro-drug → active metabolite tizoxanide. Broad spectrum: Cryptosporidium parvum (only effective therapy in immunocompetent hosts), Giardia lamblia, Entamoeba histolytica, Ascaris, Hymenolepis. Limited efficacy in immunocompromised cryptosporidiosis (HIV).",
+    "indications": [
+      "Cryptosporidium parvum diarrhea in immunocompetent patients (only effective therapy)",
+      "Giardia lamblia (alternative to metronidazole)",
+      "Ascaris, Hymenolepis nana (alternative)"
+    ],
+    "dosing": [
+      {
+        "indication": "Cryptosporidium / Giardia (adult)",
+        "dose": "500 mg PO BID × 3 days WITH FOOD",
+        "renal": "Limited data; caution"
+      },
+      {
+        "indication": "Paediatric",
+        "dose": "1-3 years: 100 mg BID × 3 days. 4-11 years: 200 mg BID × 3 days. ≥12 years: adult dose. Take with food.",
+        "renal": "Limited data"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "GI upset — abdominal pain, diarrhea (paradoxically), nausea (~7%)",
+        "Yellow discolouration of urine and sclera (transient, harmless — counsel)",
+        "Headache"
+      ],
+      "serious": [
+        "Hypersensitivity reactions (rare)",
+        "Hepatic enzyme elevation (rare)"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to nitazoxanide",
+      "Severe hepatic impairment (limited data)"
+    ],
+    "interactions": [
+      {
+        "drug": "Highly protein-bound drugs (warfarin, phenytoin)",
+        "severity": "Moderate",
+        "mechanism": "Tizoxanide is highly protein-bound — competitive displacement (theoretical)",
+        "management": "Monitor INR with warfarin"
+      },
+      {
+        "drug": "Antacids",
+        "severity": "Minor",
+        "mechanism": "Reduce absorption",
+        "management": "Separate by 2 hours"
+      }
+    ],
+    "pregnancy": "Limited human data; FDA Category B (animal studies show no risk). AVOID 1st trimester (precautionary); 2nd/3rd trimester: use if needed and benefit outweighs risk. Lactation: limited data — generally avoid.",
+    "pk": {
+      "absorption": "Oral; food increases absorption ~2×",
+      "half_life": "Tizoxanide (active metabolite): 1.5-2 h",
+      "elimination": "Hepatic metabolism + renal/biliary excretion",
+      "renal_adjustment": "Limited data"
+    },
+    "canadian_notes": "NOT routinely available in Canada — typically Health Canada Special Access Programme (SAP). Cryptosporidium in immunocompetent is generally self-limiting (5-10 days) — supportive care often sufficient. In HIV/immunocompromised cryptosporidiosis: ART optimization (CD4 recovery) is more important than nitazoxanide (which has limited efficacy in immunocompromised). Source: Health Canada SAP.",
+    "pearls": [
+      "Only effective therapy for Cryptosporidium in IMMUNOCOMPETENT hosts",
+      "Limited efficacy in HIV/immunocompromised cryptosporidiosis — focus on ART optimization",
+      "Yellow urine/sclera (harmless, transient) — counsel",
+      "Take WITH food (~2× absorption increase)",
+      "HC SAP availability — plan ahead for travel medicine"
+    ],
+    "source": "Health Canada SAP. CDC Cryptosporidiosis Treatment Guidelines. IDSA HIV Opportunistic Infections 2022."
+  },
+  "paromomycin": {
+    "name": "Paromomycin",
+    "brand": "Humatin (Health Canada SAP)",
+    "class": "Aminoglycoside (Luminal — Antiprotozoal)",
+    "napra": "I",
+    "moa": "Aminoglycoside that inhibits 30S ribosomal subunit (same MOA as gentamicin/tobramycin) — but POORLY absorbed orally → acts locally in GI tract. No systemic toxicity in healthy GI (unless mucosal damage from IBD allows absorption). Active against Entamoeba histolytica luminal form, Giardia, Cryptosporidium, taenia. Used after metronidazole/tinidazole tissue treatment.",
+    "indications": [
+      "Intestinal amoebiasis luminal phase — eliminates cysts AFTER metronidazole/tinidazole tissue treatment",
+      "Asymptomatic intestinal amoebiasis (Entamoeba histolytica cyst passers)",
+      "Giardiasis IN PREGNANCY (preferred — not absorbed; safe)",
+      "Cryptosporidiosis (limited efficacy)",
+      "Visceral leishmaniasis (parenteral — specialist)",
+      "Topical: cutaneous leishmaniasis (specialist)"
+    ],
+    "dosing": [
+      {
+        "indication": "Amoebiasis luminal / Giardia",
+        "dose": "25-35 mg/kg/day PO divided TID × 5-10 days",
+        "renal": "No specific adjustment for healthy GI; caution if IBD or bowel mucosal damage (systemic absorption)"
+      },
+      {
+        "indication": "Giardia in pregnancy",
+        "dose": "25-35 mg/kg/day PO divided TID × 5-10 days",
+        "renal": "No adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "GI — diarrhea (paradoxical), abdominal cramps, nausea",
+        "Steatorrhea (with high doses)"
+      ],
+      "serious": [
+        "Aminoglycoside systemic toxicity ONLY if absorbed (IBD, intestinal obstruction, mucosal disease) — nephrotoxicity, ototoxicity, neuromuscular blockade",
+        "C. difficile colitis (rare, eliminating normal flora)"
+      ]
+    },
+    "contraindications": [
+      "Inflammatory bowel disease (mucosal damage → systemic absorption → aminoglycoside toxicity)",
+      "Intestinal obstruction",
+      "Concurrent neuromuscular blockers (theoretical NMJ block if absorbed)",
+      "Hypersensitivity to aminoglycosides"
+    ],
+    "interactions": [
+      {
+        "drug": "Other oral aminoglycosides",
+        "severity": "Major",
+        "mechanism": "Additive gut flora suppression",
+        "management": "Avoid; use one"
+      },
+      {
+        "drug": "Digoxin",
+        "severity": "Moderate",
+        "mechanism": "Paromomycin reduces digoxin absorption (bowel flora effect)",
+        "management": "Monitor digoxin levels"
+      }
+    ],
+    "pregnancy": "FDA Category C (formal); minimal systemic absorption in healthy GI suggests low fetal exposure. PREFERRED for giardiasis IN PREGNANCY (metronidazole avoided 1st trimester). Lactation: not detectable in milk — compatible.",
+    "pk": {
+      "absorption": "Poorly absorbed (<5%) in healthy GI; significant absorption with mucosal damage (IBD)",
+      "half_life": "Plasma half-life clinically irrelevant",
+      "elimination": "Fecal (unchanged for unabsorbed); renal for absorbed fraction",
+      "renal_adjustment": "Caution if absorbed"
+    },
+    "canadian_notes": "Available via Health Canada SAP. Standard adjunct after metronidazole tissue phase for amoebiasis. PREFERRED giardia treatment IN PREGNANCY (metronidazole avoided 1st trimester). Source: Health Canada SAP; CDC Amoebiasis.",
+    "pearls": [
+      "PREFERRED giardia treatment IN PREGNANCY (not absorbed; safer than metronidazole 1st trimester)",
+      "Used AFTER metronidazole/tinidazole tissue phase for amoebiasis (eliminates cysts)",
+      "AVOID in IBD or bowel mucosal damage (systemic absorption → aminoglycoside toxicity)",
+      "HC SAP availability"
+    ],
+    "source": "Health Canada SAP. CDC Amoebiasis Treatment. SOGC Antiparasitics in Pregnancy."
+  },
+  "pentamidine": {
+    "name": "Pentamidine",
+    "brand": "Pentam (parenteral); Nebupent (inhaled — limited Canadian availability via SAP)",
+    "class": "Antiprotozoal / Anti-PCP (Aromatic Diamidine)",
+    "napra": "I",
+    "moa": "Aromatic diamidine — binds DNA at AT-rich sites, inhibits dihydrofolate reductase, RNA/protein synthesis, oxidative phosphorylation. Active against Pneumocystis jirovecii (PCP), Trypanosoma spp. (African trypanosomiasis early stage), Leishmania (visceral). Toxic — reserved for cases when alternatives (TMP-SMX) not tolerated.",
+    "indications": [
+      "Pneumocystis jirovecii pneumonia (PCP) — TREATMENT (severe — second-line when TMP-SMX intolerant or treatment failure)",
+      "PCP PROPHYLAXIS — INHALED (preferred when TMP-SMX intolerant in HIV)",
+      "African trypanosomiasis (early-stage T. brucei gambiense — alternative)",
+      "Visceral leishmaniasis (kala-azar) — alternative"
+    ],
+    "dosing": [
+      {
+        "indication": "PCP treatment",
+        "dose": "4 mg/kg IV OD × 21 days (slow infusion ≥1 h to reduce hypotension). Pre-medicate with IV fluids.",
+        "renal": "CrCl <10: 4 mg/kg q24-36h; severe renal impairment: extend interval"
+      },
+      {
+        "indication": "PCP prophylaxis (inhaled)",
+        "dose": "300 mg INHALED via Respirgard II nebulizer every 4 weeks",
+        "renal": "No adjustment (minimal systemic absorption)"
+      },
+      {
+        "indication": "Trypanosomiasis / Leishmaniasis",
+        "dose": "Specialist managed",
+        "renal": "Specialist consultation"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "NEPHROTOXICITY (~25% — increased creatinine, electrolyte abnormalities)",
+        "PANCREATITIS — with HYPOGLYCEMIA (β-cell toxicity → insulin release) followed by HYPERGLYCEMIA (β-cell destruction → diabetes mellitus)",
+        "Neutropenia, thrombocytopenia",
+        "Hypotension (infusion-related — slow)",
+        "Hepatotoxicity",
+        "Inhaled: cough, bronchospasm"
+      ],
+      "serious": [
+        "QTc PROLONGATION → torsades de pointes",
+        "Severe hypoglycemia → coma",
+        "Diabetes mellitus (irreversible β-cell loss)",
+        "Severe hypotension",
+        "Sterile abscess at IM injection sites",
+        "Anaphylaxis"
+      ]
+    },
+    "contraindications": [
+      "QTc prolongation",
+      "Severe pancreatitis history",
+      "Severe diabetes (hypoglycemia + hyperglycemia risk)",
+      "Severe renal impairment (relative)",
+      "Concurrent QT-prolonging drugs (relative)"
+    ],
+    "interactions": [
+      {
+        "drug": "QT-prolonging drugs (azoles, fluoroquinolones, ondansetron, methadone, amiodarone)",
+        "severity": "Major",
+        "mechanism": "Additive QTc prolongation → torsades",
+        "management": "Avoid; if essential, ECG monitoring"
+      },
+      {
+        "drug": "Nephrotoxic drugs (aminoglycosides, cisplatin, amphotericin, foscarnet)",
+        "severity": "Major",
+        "mechanism": "Additive nephrotoxicity",
+        "management": "Avoid concurrent; monitor SCr"
+      },
+      {
+        "drug": "Insulin / sulfonylureas",
+        "severity": "Major",
+        "mechanism": "Additive hypoglycemia (pentamidine releases insulin)",
+        "management": "Adjust diabetes therapy; monitor glucose closely"
+      }
+    ],
+    "pregnancy": "FDA Category C; limited data. AVOID unless no alternatives (PCP treatment in pregnant HIV+ when TMP-SMX intolerant — specialist consultation). Lactation: not detected in milk; small amounts.",
+    "pk": {
+      "absorption": "Not orally bioavailable (IV/IM/inhaled only); inhaled has minimal systemic absorption",
+      "half_life": "5-9 h IV; 6-9 weeks tissue retention",
+      "elimination": "Renal + tissue accumulation",
+      "renal_adjustment": "Severe renal impairment: extend interval"
+    },
+    "canadian_notes": "Hospital formulary in Canada. Inhaled pentamidine for PCP prophylaxis available via Health Canada SAP; less commonly used than oral dapsone or atovaquone alternatives in TMP-SMX-intolerant HIV patients. IV pentamidine for PCP treatment: hospital ICU/specialist managed (close monitoring of glucose, electrolytes, renal function, ECG).",
+    "pearls": [
+      "Reserved for PCP when TMP-SMX intolerant — significant toxicity (nephro, pancreatitis, hypo→hyperglycemia, QTc)",
+      "INHALED form low systemic toxicity (PCP prophylaxis only, not treatment)",
+      "MONITOR BLOOD GLUCOSE — hypoglycemia (early) then irreversible hyperglycemia/diabetes",
+      "QTc prolongation — avoid concurrent QT drugs; ECG baseline + during therapy",
+      "Hospital/specialist managed — not for routine outpatient"
+    ],
+    "source": "Health Canada PM Pentam. IDSA HIV Opportunistic Infections 2022. AMMI Canada. CDC PCP Treatment Guidelines."
+  },
+  "tafenoquine": {
+    "name": "Tafenoquine",
+    "brand": "Krintafel (radical cure — GSK); Arakoda (prophylaxis — 60 Degrees Pharmaceuticals)",
+    "class": "8-Aminoquinoline (Antimalarial — Hypnozoite-Active)",
+    "napra": "I",
+    "moa": "8-aminoquinoline analogue of primaquine — generates reactive oxygen species (H₂O₂) that damage hypnozoite mitochondria → kills DORMANT liver-stage hypnozoites of P. vivax and P. ovale (radical cure — prevents relapse). Also gametocytocidal. Long half-life (~14 days) enables single-dose radical cure (vs primaquine 14-day course — major adherence advantage).",
+    "indications": [
+      "P. vivax MALARIA RADICAL CURE (single-dose hypnozoite eradication after blood-stage treatment with chloroquine) — eliminates relapse risk",
+      "Malaria PROPHYLAXIS for travelers to chloroquine-resistant areas (Arakoda formulation)",
+      "Specialist consultation recommended for both indications"
+    ],
+    "dosing": [
+      {
+        "indication": "P. vivax radical cure (Krintafel)",
+        "dose": "300 mg PO SINGLE DOSE on day of (or after) chloroquine treatment for blood-stage P. vivax. WITH FOOD",
+        "renal": "Limited data in renal impairment; specialist"
+      },
+      {
+        "indication": "Malaria prophylaxis (Arakoda)",
+        "dose": "Loading: 200 mg PO OD × 3 days starting 3 days before travel. Maintenance: 200 mg PO weekly during travel + 200 mg PO 7 days after last maintenance dose. Take with food.",
+        "renal": "Limited data"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Nausea, vomiting, headache",
+        "Dizziness",
+        "Mild hemolysis (G6PD-normal patients)"
+      ],
+      "serious": [
+        "ACUTE HEMOLYTIC ANEMIA in G6PD-DEFICIENT patients — LIFE-THREATENING; QUANTITATIVE G6PD testing MANDATORY before ANY dose (require >70% normal activity for treatment; >70% for prophylaxis per FDA/HC)",
+        "Methemoglobinemia",
+        "Psychiatric effects — anxiety, insomnia, depression (less than mefloquine but reported)",
+        "Vortex keratopathy (corneal deposits — reversible; ophthalmology screening for prophylaxis use)"
+      ]
+    },
+    "contraindications": [
+      "G6PD DEFICIENCY (mandatory QUANTITATIVE testing — qualitative inadequate)",
+      "G6PD status UNKNOWN",
+      "Pregnancy (G6PD status of fetus unknown — risk of fetal hemolysis)",
+      "Breastfeeding if infant G6PD-deficient",
+      "Psychotic disorders (relative)",
+      "Hypersensitivity to 8-aminoquinolines"
+    ],
+    "interactions": [
+      {
+        "drug": "Other oxidant drugs (sulfonamides, dapsone, primaquine)",
+        "severity": "Moderate",
+        "mechanism": "Additive hemolytic risk",
+        "management": "Caution; G6PD testing critical"
+      },
+      {
+        "drug": "OCT2/MATE substrates (metformin, dofetilide)",
+        "severity": "Moderate",
+        "mechanism": "Tafenoquine inhibits OCT2 → increases substrate levels",
+        "management": "Monitor; consider alternative"
+      }
+    ],
+    "pregnancy": "CONTRAINDICATED in pregnancy — fetal G6PD status unknown; potential for fetal hemolysis. Effective contraception during AND for 3 months after dose (long half-life). Lactation: avoid if infant G6PD status unknown; if infant G6PD-normal, compatible after weighing benefit-risk.",
+    "pk": {
+      "absorption": "Oral; food increases absorption ~40%",
+      "half_life": "~14 days (very long — single-dose convenience)",
+      "elimination": "Hepatic metabolism + excretion",
+      "renal_adjustment": "Limited data"
+    },
+    "canadian_notes": "Health Canada-approved 2018 (Krintafel — radical cure) and 2019 (Arakoda — prophylaxis). Available at travel medicine clinics. Cost: significant ($150-300 per single radical cure dose; weekly prophylaxis ~$200/month). QUANTITATIVE G6PD activity testing MANDATORY (not just qualitative — quantitative ELISA or spectrophotometric required, ~$100). Major advance over 14-day primaquine for P. vivax radical cure (single-dose adherence). For prophylaxis: alternative to atovaquone-proguanil (daily) or doxycycline (daily) — weekly dosing convenience.",
+    "pearls": [
+      "SINGLE-DOSE radical cure for P. vivax (vs primaquine 14 days) — major adherence advantage",
+      "QUANTITATIVE G6PD testing MANDATORY (>70% activity) — qualitative inadequate due to fatal hemolysis risk",
+      "VERY LONG half-life (~14 days) — counsel contraception 3 months post-dose for women",
+      "Take WITH FOOD (~40% absorption increase)",
+      "Travel medicine clinic prescribed; significant cost",
+      "Vortex keratopathy with prolonged use (reversible)"
+    ],
+    "source": "Health Canada PM Krintafel/Arakoda. CDC Malaria Treatment Guidelines 2024. WHO Malaria Guidelines 2023. Lacerda MV et al, NEJM 2019 (DETECTIVE — single-dose radical cure)."
+  },
+  "artemether_lumefantrine": {
+    "name": "Artemether-lumefantrine",
+    "brand": "Coartem (Novartis — Health Canada SAP)",
+    "class": "Artemisinin-Combination Therapy (ACT — Antimalarial)",
+    "napra": "I",
+    "moa": "Combination ACT for uncomplicated P. falciparum (and other species). ARTEMETHER (artemisinin derivative): activated by Fe²⁺ in heme to generate reactive species → alkylate parasite proteins → rapid parasite killing (kills all blood stages including gametocytes). LUMEFANTRINE: aryl amino alcohol — disrupts heme detoxification → parasite death; long half-life provides post-treatment protection. Synergistic combination prevents resistance.",
+    "indications": [
+      "Uncomplicated P. falciparum malaria — FIRST-LINE worldwide per WHO",
+      "Uncomplicated malaria due to other species (P. vivax, P. ovale, P. malariae — pangenotypic)",
+      "Use within 48-72 hours of symptom onset; severe malaria requires IV artesunate"
+    ],
+    "dosing": [
+      {
+        "indication": "Uncomplicated P. falciparum (adult ≥35 kg)",
+        "dose": "4 tablets (artemether 80 mg + lumefantrine 480 mg) PO at 0, 8, 24, 36, 48, 60 hours (6 doses over 60 h, total 24 tabs). Take WITH FATTY MEAL (lumefantrine absorption requires fat — major increase >16×)",
+        "renal": "No specific adjustment"
+      },
+      {
+        "indication": "Paediatric (weight-based)",
+        "dose": "5-14 kg: 1 tab/dose; 15-24 kg: 2 tabs/dose; 25-34 kg: 3 tabs/dose; ≥35 kg: 4 tabs/dose. Same 6-dose schedule. Crush tabs for young children. Take with food/milk.",
+        "renal": "No adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Headache, dizziness",
+        "Anorexia, nausea, abdominal pain",
+        "Sleep disturbance",
+        "Asthenia"
+      ],
+      "serious": [
+        "QTc PROLONGATION (lumefantrine) — caution with QT-prolonging drugs",
+        "Hepatic enzyme elevation (rare)",
+        "Hypersensitivity reactions",
+        "Hemolysis (rare)"
+      ]
+    },
+    "contraindications": [
+      "QTc >450 ms baseline or congenital long QT syndrome",
+      "Concurrent strong CYP3A4 inducers (rifampin, carbamazepine, phenytoin — reduce levels)",
+      "Severe malaria (use IV artesunate instead)",
+      "1st trimester pregnancy (relative — limited data)",
+      "Hypersensitivity"
+    ],
+    "interactions": [
+      {
+        "drug": "QT-prolonging drugs (azoles, fluoroquinolones, ondansetron, mefloquine)",
+        "severity": "Major",
+        "mechanism": "Additive QTc prolongation",
+        "management": "Avoid; if essential, ECG monitoring"
+      },
+      {
+        "drug": "Strong CYP3A4 inducers (rifampin, carbamazepine, efavirenz)",
+        "severity": "Major",
+        "mechanism": "Reduce lumefantrine levels — therapeutic failure",
+        "management": "Avoid; alternative therapy"
+      },
+      {
+        "drug": "Strong CYP3A4 inhibitors (clarithromycin, ketoconazole, ritonavir)",
+        "severity": "Moderate",
+        "mechanism": "Increase lumefantrine — QTc risk",
+        "management": "Monitor ECG"
+      },
+      {
+        "drug": "Hormonal contraceptives",
+        "severity": "Moderate",
+        "mechanism": "Lumefantrine may reduce efficacy",
+        "management": "Use barrier method during AND for 1 month after course"
+      }
+    ],
+    "pregnancy": "AVOID 1st trimester (limited data; theoretical artemisinin embryotoxicity in animals). 2nd/3rd trimester: WHO PERMITS for uncomplicated P. falciparum (benefit-risk favorable; severe malaria in pregnancy carries high mortality). Mefloquine or quinine + clindamycin alternatives in 1st trimester. Lactation: limited data — generally compatible (small amounts in milk).",
+    "pk": {
+      "absorption": "Artemether ~95%; lumefantrine VARIABLE (>16× INCREASE with FATTY meal — without food, treatment failure)",
+      "half_life": "Artemether: 2-3 h; lumefantrine: 3-6 days",
+      "elimination": "Hepatic CYP3A4 metabolism",
+      "renal_adjustment": "No adjustment"
+    },
+    "canadian_notes": "Available in Canada via Health Canada Special Access Programme (SAP) through travel medicine clinics or hospital pharmacies. WHO-preferred ACT for P. falciparum globally. Artemisinin RESISTANCE emerging in Southeast Asia (K13 Kelch mutations) — surveillance important. Take with FAT/FOOD (peanut butter, milk) — lumefantrine absorption requires fat; without food, treatment failure rate increases dramatically.",
+    "pearls": [
+      "WHO FIRST-LINE for uncomplicated P. falciparum — ACT (artemisinin-combination therapy)",
+      "Take with FATTY MEAL — lumefantrine absorption increases >16× with fat",
+      "QTc PROLONGATION — avoid concurrent QT drugs",
+      "Pangenotypic — covers P. falciparum + non-falciparum species",
+      "AVOID 1st trimester pregnancy (limited data); permitted 2nd/3rd",
+      "Artemisinin resistance emerging in SE Asia (K13 mutations)"
+    ],
+    "source": "Health Canada SAP. WHO Malaria Guidelines 2023. CDC Malaria Treatment Guidelines 2024. Novartis Coartem PM."
+  },
+  "artesunate": {
+    "name": "Artesunate (IV)",
+    "brand": "IV artesunate (CDC malaria drug supply / Health Canada SAP)",
+    "class": "Artemisinin Derivative (Antimalarial — Severe Malaria)",
+    "napra": "I",
+    "moa": "Water-soluble artemisinin derivative — activated by Fe²⁺ in parasite heme → reactive radical species → rapid parasite killing across all blood stages. FASTEST-acting antimalarial available. Hydrolyzed in vivo to dihydroartemisinin (DHA — active metabolite). Drug of choice for SEVERE/COMPLICATED malaria globally.",
+    "indications": [
+      "SEVERE/COMPLICATED MALARIA (cerebral malaria, severe anemia, ARDS, AKI, hypoglycemia, acidosis, hyperparasitemia >5%, jaundice, shock) — DRUG OF CHOICE per WHO 2023 + CDC 2024",
+      "Superior to IV quinine — lower mortality (35% reduction in adults; 22% in children — SEAQUAMAT/AQUAMAT trials)",
+      "Transition to oral ACT (Coartem) when patient can tolerate oral medication"
+    ],
+    "dosing": [
+      {
+        "indication": "Severe malaria (adult and paediatric)",
+        "dose": "2.4 mg/kg IV at 0, 12, 24 hours, then 2.4 mg/kg IV OD until oral therapy possible (max 7 days). Switch to oral ACT (Coartem) when patient can tolerate. Children <20 kg: 3 mg/kg IV at same intervals.",
+        "renal": "No initial adjustment; monitor"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Mild GI upset",
+        "Mild transaminase elevation"
+      ],
+      "serious": [
+        "POST-ARTESUNATE DELAYED HEMOLYSIS — occurs 7-21 DAYS after treatment in 13-22% of patients (often hyperparasitemic); monitor CBC weekly × 1 month after artesunate; transfusion may be needed",
+        "Hypersensitivity reactions (rare)",
+        "Bradycardia (rare)"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to artemisinins",
+      "1st trimester pregnancy (relative — life-threatening malaria typically overrides)"
+    ],
+    "interactions": [
+      {
+        "drug": "QT-prolonging drugs",
+        "severity": "Moderate",
+        "mechanism": "Possible additive QTc",
+        "management": "ECG if other QT drugs used"
+      },
+      {
+        "drug": "CYP2A6 substrates",
+        "severity": "Moderate",
+        "mechanism": "Artesunate is CYP2A6 substrate — inducers reduce levels",
+        "management": "Limited clinical relevance for short courses"
+      }
+    ],
+    "pregnancy": "1st trimester: WHO PERMITS in life-threatening severe malaria (alternatives — IV quinine — also have fetal risks; severe malaria has very high maternal/fetal mortality untreated). 2nd/3rd trimester: PREFERRED for severe malaria (lower mortality than quinine). Lactation: small amounts in milk; compatible with monitoring.",
+    "pk": {
+      "absorption": "IV (parenteral); oral form less commonly used",
+      "half_life": "Artesunate: minutes; DHA (active metabolite): 1-2 h",
+      "elimination": "Plasma esterase hydrolysis → DHA; hepatic metabolism + biliary excretion",
+      "renal_adjustment": "No adjustment"
+    },
+    "canadian_notes": "Distributed in Canada via CDC malaria drug supply through Public Health Ontario/provincial public health emergency stockpile / Health Canada Special Access Programme. ICU-managed for severe malaria. Switch to oral ACT (Coartem) when patient stable + tolerating oral. Post-artesunate delayed hemolysis monitoring (CBC weekly × 1 month post-treatment). Source: Health Canada SAP. CDC Malaria Hotline: 1-770-488-7788.",
+    "pearls": [
+      "DRUG OF CHOICE for SEVERE/COMPLICATED malaria globally — superior to IV quinine (35% mortality reduction)",
+      "Fastest-acting antimalarial — major mortality benefit in cerebral malaria, hyperparasitemia",
+      "POST-ARTESUNATE DELAYED HEMOLYSIS — monitor CBC weekly × 1 month (transfusion may be needed)",
+      "ICU/specialist managed; transition to oral ACT when stable",
+      "Available via CDC malaria drug supply through provincial public health (1-770-488-7788)",
+      "Permitted in 1st trimester pregnancy for severe malaria (life-threatening — overrides relative concerns)"
+    ],
+    "source": "CDC Malaria Treatment Guidelines 2024. WHO Malaria Guidelines 2023. SEAQUAMAT Trial (Dondorp AM et al, Lancet 2005). AQUAMAT Trial (Dondorp AM et al, Lancet 2010)."
+  },
+  "malathion": {
+    "name": "Malathion",
+    "brand": "Ovide (Taro Pharmaceuticals)",
+    "class": "Ectoparasiticide (Organophosphate)",
+    "napra": "I",
+    "moa": "Organophosphate cholinesterase inhibitor — irreversibly binds acetylcholinesterase in arthropod nervous system → ACh accumulation → sustained nerve firing → paralysis and death. Mammalian cholinesterase relatively spared at therapeutic topical doses (low systemic absorption). OVICIDAL — kills lice eggs (advantage over permethrin).",
+    "indications": [
+      "Head lice (Pediculus humanus capitis) — second-line for permethrin-resistant cases",
+      "Pubic lice (Phthirus pubis) — alternative"
+    ],
+    "dosing": [
+      {
+        "indication": "Head lice (adult and children ≥6 years)",
+        "dose": "0.5% lotion applied liberally to DRY hair until completely wet, leave on 8-12 HOURS (or overnight), then rinse with shampoo. Repeat at day 7-9 if active lice persist (often single application sufficient — ovicidal).",
+        "renal": "No adjustment (topical, minimal absorption)"
+      },
+      {
+        "indication": "Paediatric (≥2 years)",
+        "dose": "Same as adult; not recommended <2 years (limited safety data)",
+        "renal": "No adjustment"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Scalp irritation, mild burning at application",
+        "Strong odour (organophosphate — counsel before initiation)"
+      ],
+      "serious": [
+        "FLAMMABILITY — alcoholic vehicle; SEVERE BURNS reported when patient encountered open flames, hair dryers, smoking during/before rinsing — keep away from heat/flame until rinsed and hair completely dry",
+        "Systemic organophosphate toxicity (rare with topical use; concern with massive overuse, ingestion, or open scalp wounds — cholinergic syndrome: SLUDGE — salivation, lacrimation, urination, defecation, GI cramps, emesis; DUMBBELS)"
+      ]
+    },
+    "contraindications": [
+      "Children <2 years (limited safety data; <6 months absolute)",
+      "Active scalp dermatitis or open wounds (systemic absorption)",
+      "Hypersensitivity to malathion",
+      "Pregnancy (relative)"
+    ],
+    "interactions": [
+      {
+        "drug": "Other cholinesterase inhibitors (donepezil, rivastigmine, organophosphate insecticides)",
+        "severity": "Moderate",
+        "mechanism": "Additive cholinesterase inhibition (theoretical with topical use; relevant if systemically absorbed)",
+        "management": "Generally not clinically relevant for routine topical use"
+      }
+    ],
+    "pregnancy": "Limited human data; minimal systemic absorption from topical use suggests low fetal exposure. Defer treatment to postpartum if possible (use permethrin if treatment essential — better safety data). Lactation: minimal absorption; compatible.",
+    "pk": {
+      "absorption": "Topical — minimal systemic absorption (~1%) through intact skin",
+      "half_life": "Plasma half-life clinically irrelevant",
+      "elimination": "Hepatic carboxyesterase metabolism",
+      "renal_adjustment": "No adjustment"
+    },
+    "canadian_notes": "Health Canada-approved 2009 (Ovide). Prescription-only in Canada. ODB-covered for head lice. KEY COUNSELLING: FLAMMABILITY (alcoholic vehicle) — keep AWAY from cigarettes, hair dryers, open flames during AND until hair completely dry after rinsing. Strong odour. OVICIDAL advantage — single application often curative (vs need to repeat with permethrin). Reserved for permethrin-resistant cases (~50-70% in some Canadian regions). Source: Health Canada PM Ovide; Canadian Paediatric Society Pediculosis 2023.",
+    "pearls": [
+      "OVICIDAL — kills eggs (advantage over permethrin); single application often curative",
+      "FLAMMABILITY — alcoholic vehicle; severe burn risk if exposed to flame/heat before rinsing",
+      "STRONG ODOUR — counsel patient; mask if needed",
+      "Reserved for permethrin-resistant lice (~50-70% in Canada)",
+      "Children <2 years: avoid; <6 months: contraindicated",
+      "Wash bedding/combs in hot water on treatment day"
+    ],
+    "source": "Health Canada PM Ovide (Taro). Canadian Paediatric Society Pediculosis Position Statement 2023. CDC Parasites — Lice."
+  },
+  "spinosad": {
+    "name": "Spinosad",
+    "brand": "Natroba (US — limited Canadian availability via Health Canada SAP)",
+    "class": "Ectoparasiticide (Macrocyclic Lactone — Naturally Derived)",
+    "napra": "I",
+    "moa": "Naturally derived from Saccharopolyspora spinosa fermentation. Activates nicotinic acetylcholine receptors AND GABA receptors at unique allosteric site → arthropod hyperexcitation → exhaustion → paralysis and death. Active against head lice including permethrin-resistant strains. OVICIDAL.",
+    "indications": [
+      "Head lice (Pediculus humanus capitis) — alternative for permethrin-resistant cases"
+    ],
+    "dosing": [
+      {
+        "indication": "Head lice (adult and children ≥6 months)",
+        "dose": "0.9% topical suspension applied to DRY hair, completely cover hair and scalp (start at scalp, work to ends) — leave on 10 MINUTES, then rinse with warm water. Single application typically curative. Repeat at day 7 only if live lice still present.",
+        "renal": "No adjustment (topical, minimal absorption)"
+      }
+    ],
+    "side_effects": {
+      "common": [
+        "Application site reactions — erythema, irritation (~3%)",
+        "Eye irritation (avoid contact)"
+      ],
+      "serious": [
+        "Allergic contact dermatitis (rare)"
+      ]
+    },
+    "contraindications": [
+      "Children <6 months (Natroba contains benzyl alcohol — avoid in neonates)",
+      "Hypersensitivity to spinosad"
+    ],
+    "interactions": [
+      {
+        "drug": "Other topical pediculicides",
+        "severity": "Minor",
+        "mechanism": "Theoretical additive irritation",
+        "management": "Use one product"
+      }
+    ],
+    "pregnancy": "Limited human data; minimal systemic absorption from topical use. FDA Category B (animal studies show no risk). Generally compatible with pregnancy when treatment essential. Lactation: minimal absorption; compatible.",
+    "pk": {
+      "absorption": "Topical — minimal systemic absorption",
+      "half_life": "Clinically irrelevant",
+      "elimination": "Local metabolism",
+      "renal_adjustment": "No adjustment"
+    },
+    "canadian_notes": "Limited Canadian availability — typically Health Canada Special Access Programme (SAP). FDA-approved 2011 (Natroba); not routinely on Canadian shelves. Single-application advantage over permethrin (no repeat dose typically needed) and safer alternative to malathion (no flammability concern). Naturally derived (Saccharopolyspora spinosa fermentation product). Source: Health Canada SAP; CDC Parasites — Lice.",
+    "pearls": [
+      "Single application typically curative — major convenience over permethrin (no repeat needed)",
+      "Naturally derived (Saccharopolyspora spinosa) — favored when patients want non-synthetic option",
+      "Safer than malathion — no flammability concern",
+      "Limited Canadian availability — HC SAP",
+      "Avoid <6 months (benzyl alcohol vehicle in Natroba formulation)"
+    ],
+    "source": "Health Canada SAP. FDA PI Natroba. CDC Parasites — Head Lice. AAP Head Lice 2022."
   },
   "itraconazole": {
     "name": "Itraconazole",
@@ -87197,8 +88311,23 @@ var FAMILY_MAP = {
   "framycetin_gramicidin_dexamethasone_otic": "Topical Otic Antibiotics",
   "pyrazinamide": "Antimycobacterial Agents",
   "rifabutin": "Antimycobacterial Agents",
+  "bedaquiline": "Antimycobacterial Agents",
+  "pretomanid": "Antimycobacterial Agents",
+  "delamanid": "Antimycobacterial Agents",
+  "cycloserine": "Antimycobacterial Agents",
+  "ethionamide": "Antimycobacterial Agents",
+  "clofazimine": "Antimycobacterial Agents",
   "albendazole": "Anthelmintics",
-  "praziquantel": "Anthelmintics"
+  "praziquantel": "Anthelmintics",
+  "pyrantel": "Anthelmintics",
+  "nitazoxanide": "Antiprotozoals",
+  "paromomycin": "Antiprotozoals",
+  "pentamidine": "Antiprotozoals",
+  "tafenoquine": "Antimalarials",
+  "artemether_lumefantrine": "Antimalarials",
+  "artesunate": "Antimalarials",
+  "malathion": "Ectoparasiticides",
+  "spinosad": "Ectoparasiticides"
 };
 var NAPRA_ODB_DATA = {
   "amoxicillin": {
@@ -90997,6 +92126,141 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "Not on standard ODB formulary. SAP-obtained; specialist coordinated. Cost may be patient-funded for some indications.",
     "luCode": "SAP indication-specific",
     "notes": "Drug of choice for schistosomiasis (all species) and most trematodes/cestodes. Schistosomiasis: 20 mg/kg TID × 1 day with food. Tapeworms: 5-10 mg/kg single dose. Counsel against driving on treatment day (drowsiness). OCULAR cysticercosis is absolute contraindication. AVOID concurrent rifampin (>80% reduction in praziquantel — wait 4 weeks after rifampin)."
+  },
+  "bedaquiline": {
+    "name": "Bedaquiline (Sirturo)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Hospital formulary at TB referral centres; dispensed via provincial TB programs.",
+    "odbStatus": "Free",
+    "odbDetail": "MDR-TB: drugs supplied FREE through provincial TB program (Public Health Ontario coordinates with TB referral centres).",
+    "luCode": null,
+    "notes": "PREFERRED component of WHO 6-month BPaL/BPaLM all-oral MDR-TB regimens. 400 mg OD × 2 weeks loading, then 200 mg 3× weekly × 22 weeks. ECG baseline + monthly (Black Box: QTc prolongation). Avoid rifampin (>50% reduction). Specialist managed."
+  },
+  "pretomanid": {
+    "name": "Pretomanid",
+    "napra": "I",
+    "napraDetail": "Prescription required. Hospital formulary at TB referral centres only.",
+    "odbStatus": "Free",
+    "odbDetail": "MDR/XDR-TB: drugs supplied through provincial TB program at no cost to patient.",
+    "luCode": null,
+    "notes": "Component of WHO BPaL/BPaLM regimen for MDR/pre-XDR/XDR-TB (6-month all-oral cure ~90%). 200 mg PO OD with food × 6 months. ALWAYS combined with bedaquiline + linezolid. AVOID pregnancy (reproductive toxicity). Specialist managed."
+  },
+  "delamanid": {
+    "name": "Delamanid (Deltyba)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Health Canada Special Access Programme (SAP) — TB referral centres.",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "MDR-TB: HC SAP through provincial TB program; cost coverage via TB program.",
+    "luCode": "SAP indication",
+    "notes": "Alternative to bedaquiline for MDR-TB; can be combined per WHO 2022 with specialist guidance. 100 mg BID with food × 24 weeks. Albumin <2.8 g/dL → toxicity risk. ECG monitoring (additive QTc with bedaquiline)."
+  },
+  "cycloserine": {
+    "name": "Cycloserine (Seromycin)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Health Canada Special Access Programme (SAP).",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "MDR-TB: HC SAP through provincial TB program; cost via TB program.",
+    "luCode": "SAP indication",
+    "notes": "Reserved for MDR-TB without alternatives. NEUROPSYCHIATRIC TOXICITY ~30% (psychosis, depression, suicidal ideation, seizures). Pyridoxine 100-300 mg/day MANDATORY. TDM recommended (peak 25-35 mg/L). Strict alcohol avoidance."
+  },
+  "ethionamide": {
+    "name": "Ethionamide (Trecator)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Health Canada Special Access Programme (SAP).",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "MDR-TB: HC SAP; provincial TB program coordinated.",
+    "luCode": "SAP indication",
+    "notes": "MDR-TB second-line. SEVERE GI intolerance often dose-limiting (~50%+) — start low, titrate. Hepatotoxicity, hypothyroidism (especially with PAS — monitor TSH q3 months), peripheral neuropathy. TERATOGENIC — avoid pregnancy. Pyridoxine supplementation."
+  },
+  "clofazimine": {
+    "name": "Clofazimine (Lamprene)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Health Canada Special Access Programme (SAP). WHO leprosy MDT free worldwide via Novartis-WHO partnership.",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "Leprosy/MAC/MDR-TB: HC SAP; specialist-coordinated. Leprosy: WHO MDT free distribution.",
+    "luCode": "SAP indication",
+    "notes": "Backbone of WHO leprosy MDT (50 mg OD + 300 mg supervised monthly × 12 months MB regimen). Also MAC/M. abscessus/MDR-TB combination. RED-BROWN/BLACK PIGMENTATION universal — counsel before initiation (psychosocial impact). Very long half-life (~70 days)."
+  },
+  "pyrantel": {
+    "name": "Pyrantel pamoate (Combantrin)",
+    "napra": "Unscheduled (OTC)",
+    "napraDetail": "OTC at Canadian pharmacies — pharmacist-recommended for pinworm. Liquid suspension (50 mg/mL) and chewable tablets. Ontario pharmacist-recommended under expanded scope.",
+    "odbStatus": "OTC",
+    "odbDetail": "Patient purchase OTC (~$15-20). Not typically billed through ODB.",
+    "luCode": null,
+    "notes": "OTC alternative to mebendazole for pinworm/roundworm/hookworm. 11 mg/kg PO single dose; REPEAT in 2 weeks. Treat ALL household members simultaneously. Preferred over benzimidazoles in PREGNANCY (better safety). AVOID concurrent piperazine."
+  },
+  "nitazoxanide": {
+    "name": "Nitazoxanide (Alinia)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Limited Canadian availability — Health Canada SAP.",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "Cryptosporidiosis/Giardia: HC SAP-obtained. Cost may be patient-funded.",
+    "luCode": "SAP indication",
+    "notes": "Only effective therapy for Cryptosporidium in IMMUNOCOMPETENT hosts (limited efficacy in HIV/immunocompromised — focus on ART optimization). 500 mg BID × 3 days WITH FOOD. Yellow urine/sclera (harmless, transient)."
+  },
+  "paromomycin": {
+    "name": "Paromomycin (Humatin)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Health Canada Special Access Programme (SAP).",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "Amoebiasis luminal phase, giardiasis (especially pregnancy): HC SAP-obtained.",
+    "luCode": "SAP indication",
+    "notes": "Standard adjunct after metronidazole tissue phase for amoebiasis. PREFERRED giardia treatment IN PREGNANCY (not absorbed). 25-35 mg/kg/day divided TID × 5-10 days. AVOID in IBD (mucosal damage → systemic absorption → aminoglycoside toxicity)."
+  },
+  "pentamidine": {
+    "name": "Pentamidine (Pentam, Nebupent)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Hospital formulary; inhaled (Nebupent) via SAP.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "Inhaled for PCP prophylaxis (HIV) where TMP-SMX intolerant: ODB Limited Use criteria. IV for PCP treatment: hospital-administered.",
+    "luCode": "LU code per indication (PCP prophylaxis)",
+    "notes": "Reserved for PCP when TMP-SMX intolerant — significant toxicity (nephro, pancreatitis, hypo→hyperglycemia, QTc). 4 mg/kg IV OD × 21 days (treatment); 300 mg INHALED q4 weeks (prophylaxis). Hospital/specialist managed."
+  },
+  "tafenoquine": {
+    "name": "Tafenoquine (Krintafel; Arakoda)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Travel medicine clinic typically prescribes.",
+    "odbStatus": "Not Covered",
+    "odbDetail": "Not ODB-covered (travel medicine indication). Patient-funded (~$150-300 single radical cure dose; ~$200/month prophylaxis).",
+    "luCode": null,
+    "notes": "Single-dose P. vivax radical cure (300 mg × 1) — MAJOR adherence advantage over 14-day primaquine. Weekly prophylaxis (Arakoda) for travelers to chloroquine-resistant areas. QUANTITATIVE G6PD testing MANDATORY (>70% activity). CONTRAINDICATED in pregnancy. Long half-life (~14 days) → contraception 3 months post-dose."
+  },
+  "artemether_lumefantrine": {
+    "name": "Artemether-lumefantrine (Coartem)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Health Canada Special Access Programme (SAP) through travel medicine clinics or hospital pharmacies.",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "Travel medicine: HC SAP-obtained. Cost via travel clinic or hospital ID.",
+    "luCode": "SAP indication",
+    "notes": "WHO FIRST-LINE for uncomplicated P. falciparum (ACT — artemisinin-combination therapy). 4 tabs at 0, 8, 24, 36, 48, 60 hours WITH FATTY MEAL (lumefantrine absorption increases >16× with fat — without food, treatment failure). QTc prolongation. AVOID 1st trimester pregnancy."
+  },
+  "artesunate": {
+    "name": "Artesunate (IV)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Hospital pharmacy / Public Health emergency stockpile / CDC malaria drug supply / Health Canada SAP.",
+    "odbStatus": "Free",
+    "odbDetail": "Severe malaria: distributed free through CDC malaria drug supply / Public Health emergency stockpile.",
+    "luCode": null,
+    "notes": "DRUG OF CHOICE for SEVERE/COMPLICATED malaria globally — superior to IV quinine (35% mortality reduction). 2.4 mg/kg IV at 0, 12, 24 hours, then OD until oral therapy possible. ICU/specialist managed. POST-ARTESUNATE DELAYED HEMOLYSIS — monitor CBC weekly × 1 month. CDC Malaria Hotline: 1-770-488-7788."
+  },
+  "malathion": {
+    "name": "Malathion (Ovide)",
+    "napra": "I",
+    "napraDetail": "Prescription required (NAPRA Schedule I).",
+    "odbStatus": "General Benefit",
+    "odbDetail": "ODB-covered for head lice. Generic substitution applies.",
+    "luCode": null,
+    "notes": "Second-line for permethrin-resistant head lice. 0.5% lotion applied to dry hair × 8-12 hours, rinse. OVICIDAL — single application often curative. KEY COUNSELLING: FLAMMABILITY (alcoholic vehicle) — keep AWAY from flames, hair dryers until rinsed. Strong odour. Children <2 years: avoid."
+  },
+  "spinosad": {
+    "name": "Spinosad (Natroba)",
+    "napra": "I",
+    "napraDetail": "Prescription required. Limited Canadian availability — Health Canada SAP.",
+    "odbStatus": "Not Routinely Available",
+    "odbDetail": "Permethrin-resistant head lice: HC SAP-obtained or US import.",
+    "luCode": "SAP indication",
+    "notes": "Alternative for permethrin-resistant head lice. 0.9% suspension applied to dry hair × 10 minutes, rinse. SINGLE application typically curative. Naturally derived (Saccharopolyspora spinosa). Avoid <6 months (benzyl alcohol vehicle). Safer than malathion (no flammability)."
   },
   "atovaquone_proguanil": {
     "name": "Atovaquone / proguanil (Malarone)",
@@ -101678,6 +102942,171 @@ var PREG_DATA = {
     "bfDetail": "Low milk levels (RID ~3%); WHO permits during breastfeeding. Some authorities recommend pumping/discarding milk for 72 hours after dose for high-precision indications. LactMed: generally compatible.",
     "alternatives": "No good alternatives for schistosomiasis or trematodes — defer treatment to postpartum if possible; treat at WHO-recommended interval (≥12 weeks postpartum).",
     "source": "WHO Schistosomiasis Guidelines 2022; CDC Parasites in Pregnancy; LactMed"
+  },
+  "bedaquiline": {
+    "name": "Bedaquiline (Sirturo)",
+    "pregRisk": "Moderate",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Moderate",
+    "bfColor": "#fbbf24",
+    "pregDetail": "Limited human data; animal studies show no teratogenicity. WHO PERMITS bedaquiline in pregnancy when MDR-TB treatment essential and benefits outweigh risks (alternatives have worse outcomes). CTS Canadian TB Standards 2022 permits with TB specialist guidance. Long terminal half-life (5.5 months) — counsel about extended exposure.",
+    "bfDetail": "Limited milk data; expected low transfer due to large molecule. WHO permits with infant monitoring (hepatic function, ECG if available). Alternatives generally not better.",
+    "alternatives": "MDR-TB in pregnancy requires specialist regimen; bedaquiline often included given superior outcomes vs alternatives.",
+    "source": "Health Canada PM Sirturo; WHO MDR-TB Guidelines 2022; CTS Canadian TB Standards 2022"
+  },
+  "pretomanid": {
+    "name": "Pretomanid",
+    "pregRisk": "Avoid",
+    "pregColor": "#f97316",
+    "bfRisk": "Avoid",
+    "bfColor": "#f97316",
+    "pregDetail": "AVOID in pregnancy — animal reproductive toxicity (testicular atrophy in rats); insufficient human data. If MDR-TB diagnosed during pregnancy, alternative regimens (without pretomanid) preferred until specialist consultation. Counsel effective contraception during AND for 14 days after course (males and females).",
+    "bfDetail": "Insufficient data; generally avoided. Specialist consultation if essential.",
+    "alternatives": "MDR-TB regimens without pretomanid (bedaquiline + linezolid + other agents) — TB specialist managed.",
+    "source": "Health Canada PM; WHO MDR-TB Guidelines 2022"
+  },
+  "delamanid": {
+    "name": "Delamanid (Deltyba)",
+    "pregRisk": "Avoid",
+    "pregColor": "#f97316",
+    "bfRisk": "Avoid",
+    "bfColor": "#f97316",
+    "pregDetail": "Limited human data; animal reproductive toxicity. AVOID unless no alternatives (specialist managed). Effective contraception during therapy.",
+    "bfDetail": "Insufficient data; avoid.",
+    "alternatives": "Bedaquiline (more pregnancy data among newer MDR-TB drugs).",
+    "source": "Health Canada SAP; WHO MDR-TB Guidelines 2022"
+  },
+  "cycloserine": {
+    "name": "Cycloserine (Seromycin)",
+    "pregRisk": "Moderate",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Moderate",
+    "bfColor": "#fbbf24",
+    "pregDetail": "Limited human data; FDA Category C. Generally AVOID unless MDR-TB requires and no alternatives (TB specialist judgment). Crosses placenta. Pyridoxine supplementation mandatory for mother.",
+    "bfDetail": "Present in milk; generally avoid. If essential, monitor infant for CNS effects.",
+    "alternatives": "Other MDR-TB regimens (bedaquiline, linezolid combinations) generally preferred.",
+    "source": "Health Canada SAP; WHO MDR-TB Guidelines 2022; CTS Canadian TB Standards 2022"
+  },
+  "ethionamide": {
+    "name": "Ethionamide (Trecator)",
+    "pregRisk": "Avoid",
+    "pregColor": "#f97316",
+    "bfRisk": "Moderate",
+    "bfColor": "#fbbf24",
+    "pregDetail": "TERATOGENIC — animal AND human reports of CNS and skeletal defects. AVOID in pregnancy unless absolutely no alternatives (specialist consultation only). Effective contraception during therapy.",
+    "bfDetail": "Insufficient data; generally avoid.",
+    "alternatives": "Other MDR-TB second-line agents preferred (linezolid, clofazimine, levofloxacin).",
+    "source": "Health Canada SAP; WHO MDR-TB Guidelines 2022"
+  },
+  "clofazimine": {
+    "name": "Clofazimine (Lamprene)",
+    "pregRisk": "Low",
+    "pregColor": "#10b981",
+    "bfRisk": "Moderate",
+    "bfColor": "#fbbf24",
+    "pregDetail": "Limited human data; animal studies suggest mild fetotoxicity at high doses. WHO PERMITS continued use during pregnancy in leprosy (public health benefit; untreated leprosy worse for mother and infant). Discontinue elective non-leprosy use during pregnancy.",
+    "bfDetail": "Appears in milk in small amounts; infant may develop reversible skin discolouration (cosmetic only). LactMed: compatible with monitoring (note pigmentation potential).",
+    "alternatives": "Leprosy: continue WHO MDT including clofazimine (untreated leprosy worse). MAC: alternatives exist (rifabutin + macrolide + ethambutol).",
+    "source": "Health Canada SAP; WHO Leprosy Treatment Guidelines 2018; LactMed"
+  },
+  "pyrantel": {
+    "name": "Pyrantel pamoate (Combantrin)",
+    "pregRisk": "Low",
+    "pregColor": "#10b981",
+    "bfRisk": "Low",
+    "bfColor": "#10b981",
+    "pregDetail": "Pregnancy Category C (formal); minimal systemic absorption (~50% excreted unchanged in feces) suggests low fetal exposure. WHO and CDC PERMIT use in pregnancy when treatment essential. PREFERRED over benzimidazoles in 1st trimester due to better safety profile.",
+    "bfDetail": "Not detected in milk in clinically significant amounts; compatible.",
+    "alternatives": "PREFERRED in pregnancy over mebendazole/albendazole (which are 1st-trimester avoid).",
+    "source": "Health Canada PM Combantrin; CDC Parasites in Pregnancy; WHO Soil-Transmitted Helminths"
+  },
+  "nitazoxanide": {
+    "name": "Nitazoxanide (Alinia)",
+    "pregRisk": "Moderate",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Moderate",
+    "bfColor": "#fbbf24",
+    "pregDetail": "Limited human data; FDA Category B (animal studies show no risk). AVOID 1st trimester (precautionary); 2nd/3rd trimester: use if needed and benefit outweighs risk. Cryptosporidiosis is generally self-limiting in immunocompetent — supportive care often sufficient.",
+    "bfDetail": "Limited milk data; generally avoid.",
+    "alternatives": "Cryptosporidium in immunocompetent: self-limiting, supportive care. Giardia: paromomycin (preferred in pregnancy — not absorbed).",
+    "source": "Health Canada SAP; CDC Cryptosporidiosis"
+  },
+  "paromomycin": {
+    "name": "Paromomycin (Humatin)",
+    "pregRisk": "Low",
+    "pregColor": "#10b981",
+    "bfRisk": "Low",
+    "bfColor": "#10b981",
+    "pregDetail": "FDA Category C (formal); minimal systemic absorption in healthy GI suggests low fetal exposure. PREFERRED for giardiasis IN PREGNANCY (metronidazole avoided 1st trimester). Standard adjunct after metronidazole tissue phase for amoebiasis.",
+    "bfDetail": "Not detectable in milk — compatible.",
+    "alternatives": "Tinidazole/metronidazole avoided 1st trimester for giardia → paromomycin preferred. Amoebiasis: paromomycin completes treatment after tissue phase.",
+    "source": "Health Canada SAP; CDC Amoebiasis; SOGC Antiparasitics in Pregnancy"
+  },
+  "pentamidine": {
+    "name": "Pentamidine (Pentam, Nebupent)",
+    "pregRisk": "Moderate",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Moderate",
+    "bfColor": "#fbbf24",
+    "pregDetail": "FDA Category C; limited data. AVOID unless no alternatives (PCP treatment in pregnant HIV+ when TMP-SMX intolerant — specialist consultation). HIV+ pregnant: TMP-SMX preferred for PCP prophylaxis/treatment.",
+    "bfDetail": "Not detected in milk in clinically significant amounts; small amounts.",
+    "alternatives": "TMP-SMX (preferred for PCP prophylaxis/treatment in pregnancy); dapsone (PCP prophylaxis alternative if TMP-SMX intolerant); atovaquone (PCP prophylaxis alternative).",
+    "source": "Health Canada PM Pentam; IDSA HIV Opportunistic Infections 2022"
+  },
+  "tafenoquine": {
+    "name": "Tafenoquine (Krintafel; Arakoda)",
+    "pregRisk": "Avoid",
+    "pregColor": "#f97316",
+    "bfRisk": "Avoid",
+    "bfColor": "#f97316",
+    "pregDetail": "CONTRAINDICATED in pregnancy — fetal G6PD status unknown; potential for fetal hemolysis. Effective contraception during AND for 3 months after dose (long half-life ~14 days).",
+    "bfDetail": "Avoid if infant G6PD status unknown; if infant G6PD-normal, compatible after benefit-risk discussion. Long half-life requires extended consideration.",
+    "alternatives": "P. vivax radical cure: defer to postpartum + 3 months when G6PD testing and tafenoquine appropriate. Suppressive chloroquine until postpartum to prevent relapse.",
+    "source": "Health Canada PM Krintafel/Arakoda; CDC Malaria 2024"
+  },
+  "artemether_lumefantrine": {
+    "name": "Artemether-lumefantrine (Coartem)",
+    "pregRisk": "Moderate",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Low",
+    "bfColor": "#10b981",
+    "pregDetail": "AVOID 1st trimester (limited data; theoretical artemisinin embryotoxicity in animals). 2nd/3rd trimester: WHO PERMITS for uncomplicated P. falciparum (benefit-risk favorable; severe malaria in pregnancy carries high mortality). Mefloquine or quinine + clindamycin alternatives in 1st trimester.",
+    "bfDetail": "Limited data — generally compatible (small amounts in milk). LactMed: low risk.",
+    "alternatives": "1st trimester P. falciparum: mefloquine (chloroquine-resistant areas) or quinine + clindamycin.",
+    "source": "Health Canada SAP; WHO Malaria Guidelines 2023; CDC Malaria"
+  },
+  "artesunate": {
+    "name": "Artesunate (IV)",
+    "pregRisk": "Low",
+    "pregColor": "#10b981",
+    "bfRisk": "Low",
+    "bfColor": "#10b981",
+    "pregDetail": "1st trimester: WHO PERMITS in life-threatening severe malaria (alternatives — IV quinine — also have fetal risks; severe malaria has very high maternal/fetal mortality untreated). 2nd/3rd trimester: PREFERRED for severe malaria (lower mortality than quinine).",
+    "bfDetail": "Small amounts in milk; compatible with monitoring.",
+    "alternatives": "IV quinine (older alternative; lower efficacy; cinchonism, hypoglycemia).",
+    "source": "CDC Malaria Treatment Guidelines 2024; WHO Malaria Guidelines 2023"
+  },
+  "malathion": {
+    "name": "Malathion (Ovide)",
+    "pregRisk": "Moderate",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Low",
+    "bfColor": "#10b981",
+    "pregDetail": "Limited human data; minimal systemic absorption from topical use suggests low fetal exposure. Defer treatment to postpartum if possible (use permethrin if treatment essential — better safety data).",
+    "bfDetail": "Minimal absorption; compatible with breastfeeding (avoid contact between treated scalp and infant during application/rinsing).",
+    "alternatives": "Permethrin (preferred in pregnancy — better safety data, lower flammability concern).",
+    "source": "Health Canada PM Ovide; CDC Parasites; CPS Pediculosis 2023"
+  },
+  "spinosad": {
+    "name": "Spinosad (Natroba)",
+    "pregRisk": "Low",
+    "pregColor": "#10b981",
+    "bfRisk": "Low",
+    "bfColor": "#10b981",
+    "pregDetail": "Limited human data; minimal systemic absorption from topical use. FDA Category B (animal studies show no risk). Generally compatible with pregnancy when treatment essential.",
+    "bfDetail": "Minimal absorption; compatible (avoid contact between treated scalp and infant).",
+    "alternatives": "Permethrin (more pregnancy data); pyrantel does not apply (not for lice).",
+    "source": "Health Canada SAP; FDA Natroba PI; CDC Parasites"
   },
   "daptomycin": {
     "name": "Daptomycin (Cubicin)",
