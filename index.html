@@ -109820,6 +109820,58 @@ function renderFamilyBadge(familyName) {
 // ══════════════════════════════════════════════
 // DRUG PANEL (right drawer)
 // ══════════════════════════════════════════════
+// ── Interaction severity helpers (display-only normalization) ──────────────
+// Maps the 200+ free-form severity strings used in DRUGS.interactions into 6
+// canonical tiers for sorting and color coding. Underlying string values are
+// preserved as-is — these helpers only affect display.
+function normalizeSeverity(s) {
+  if (!s) return 'Note';
+  var t = String(s).toLowerCase().trim();
+  if (/^benefic/.test(t) || /^synergist/.test(t) || /^used intentionally/.test(t) ||
+      /pharmacokinetic.*benefic/.test(t) || /none.*benefic/.test(t) ||
+      /n\/a.*antidote/.test(t) || / [—\-\/] benefic/.test(t)) return 'Beneficial';
+  if (/contraindicat/.test(t) || /^avoid/.test(t) || /absolute/.test(t)) return 'Contraindicated';
+  if (/^major/.test(t) || / major$/.test(t) || /black\s*box/.test(t) ||
+      /^moderate.major/.test(t) || /^cumulative/.test(t) ||
+      /^class warning/.test(t)) return 'Major';
+  if (/^moderate/.test(t) || /^minor.{0,3}moderate/.test(t) || /minor to moderate/.test(t) ||
+      /^notable/.test(t) || /^variable/.test(t) || /^indication/.test(t)) return 'Moderate';
+  if (/^minor/.test(t) || /^mild/.test(t) || /^low/.test(t) ||
+      /^minimal/.test(t) || /^theoretical/.test(t)) return 'Minor';
+  return 'Note';
+}
+
+function severityRank(s) {
+  switch (normalizeSeverity(s)) {
+    case 'Beneficial':       return 0;
+    case 'Contraindicated':  return 1;
+    case 'Major':            return 2;
+    case 'Moderate':         return 3;
+    case 'Minor':            return 4;
+    default:                 return 5; // Note
+  }
+}
+
+function severityColor(s) {
+  switch (normalizeSeverity(s)) {
+    case 'Beneficial':       return '#10b981'; // green
+    case 'Contraindicated':  return '#b91c1c'; // dark red
+    case 'Major':            return '#ef4444'; // red
+    case 'Moderate':         return '#f59e0b'; // amber
+    case 'Minor':            return '#3b82f6'; // blue
+    default:                 return '#94a3b8'; // grey
+  }
+}
+
+function toggleIntRow(id) {
+  var detail = document.getElementById(id + '-detail');
+  var chev   = document.getElementById(id + '-chev');
+  if (!detail) return;
+  var open = detail.style.display !== 'none';
+  detail.style.display = open ? 'none' : 'block';
+  if (chev) chev.textContent = open ? '▸' : '▾';
+}
+
 function showDrugPanel(drugKey) {
   var drug = DRUGS[drugKey] || (typeof VACCINES !== 'undefined' ? VACCINES[drugKey] : null);
   if (!drug) return;
@@ -109919,18 +109971,28 @@ function showDrugPanel(drugKey) {
     h += '</ul></div>';
   }
   if (drug.interactions && drug.interactions.length) {
-    h += '<div class="dp-section"><div class="dp-section-title">⚡ Drug Interactions</div>';
-    for (var i = 0; i < drug.interactions.length; i++) {
-      var ix = drug.interactions[i];
-      var sevClass = 'int-' + (ix.severity || 'Minor');
-      var sevCol = ix.severity === 'Major' ? '#ef4444' : ix.severity === 'Moderate' ? '#f59e0b' : '#10b981';
-      h += '<div class="interaction-row ' + sevClass + '">';
-      h += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">';
-      h += '<span style="font-size:0.83rem;font-weight:700;color:var(--text);">' + (ix.drug || '') + '</span>';
-      h += '<span style="font-size:0.68rem;font-weight:700;color:' + sevCol + ';background:' + sevCol + '22;padding:1px 6px;border-radius:3px;">' + (ix.severity || '') + '</span>';
+    // Stable-sort by canonical severity rank (Beneficial → Contraindicated → Major → Moderate → Minor → Note)
+    var ints = drug.interactions.map(function (ix, idx) { return { ix: ix, idx: idx }; });
+    ints.sort(function (a, b) {
+      var ra = severityRank(a.ix.severity), rb = severityRank(b.ix.severity);
+      return ra !== rb ? ra - rb : a.idx - b.idx;
+    });
+    h += '<div class="dp-section"><div class="dp-section-title">⚡ Drug Interactions <span style="font-size:0.7rem;font-weight:500;color:var(--muted);">(' + ints.length + ' — click to expand)</span></div>';
+    for (var i = 0; i < ints.length; i++) {
+      var ix = ints[i].ix;
+      var sevCol = severityColor(ix.severity);
+      var sevLabel = ix.severity || normalizeSeverity(ix.severity);
+      var rowId = 'dp-int-' + drugKey + '-' + i;
+      h += '<div class="interaction-row int-' + normalizeSeverity(ix.severity) + '" style="border-left:3px solid ' + sevCol + ';padding:6px 10px;margin-bottom:5px;border-radius:0 6px 6px 0;background:rgba(148,163,184,0.04);">';
+      h += '<div onclick="toggleIntRow(\'' + rowId + '\')" style="display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;">';
+      h += '<span id="' + rowId + '-chev" style="font-size:0.7rem;color:' + sevCol + ';width:10px;flex-shrink:0;">▸</span>';
+      h += '<span style="font-size:0.68rem;font-weight:700;color:' + sevCol + ';background:' + sevCol + '22;padding:1px 6px;border-radius:3px;white-space:nowrap;">' + sevLabel + '</span>';
+      h += '<span style="font-size:0.83rem;font-weight:700;color:var(--text);flex:1;">' + (ix.drug || '') + '</span>';
       h += '</div>';
-      if (ix.mechanism) h += '<div style="font-size:0.78rem;color:#94a3b8;margin-bottom:3px;line-height:1.45;">' + ix.mechanism + '</div>';
+      h += '<div id="' + rowId + '-detail" style="display:none;margin-top:6px;padding-left:18px;">';
+      if (ix.mechanism)  h += '<div style="font-size:0.78rem;color:#94a3b8;margin-bottom:4px;line-height:1.45;">' + ix.mechanism + '</div>';
       if (ix.management) h += '<div style="font-size:0.78rem;color:#86efac;line-height:1.45;">→ ' + ix.management + '</div>';
+      h += '</div>';
       h += '</div>';
     }
     h += '</div>';
@@ -110267,17 +110329,29 @@ function checkInteractions() {
     out.innerHTML = '<div class="no-int">✓ No significant interactions found between: ' + names + '. Always verify with current clinical references.</div>';
     return;
   }
-  // Sort by severity
-  var sevOrder = { Major: 0, Moderate: 1, Minor: 2 };
-  found.sort(function(a, b) { return (sevOrder[a.severity] || 3) - (sevOrder[b.severity] || 3); });
-  var h = '<div style="font-size:0.8rem;color:var(--muted);margin-bottom:10px;">Found ' + found.length + ' interaction(s):</div>';
+  // Stable-sort by canonical severity rank (Beneficial → Contraindicated → Major → Moderate → Minor → Note)
+  found = found.map(function(f, idx) { return { f: f, idx: idx }; });
+  found.sort(function(a, b) {
+    var ra = severityRank(a.f.severity), rb = severityRank(b.f.severity);
+    return ra !== rb ? ra - rb : a.idx - b.idx;
+  });
+  found = found.map(function(x) { return x.f; });
+  var h = '<div style="font-size:0.8rem;color:var(--muted);margin-bottom:10px;">Found ' + found.length + ' interaction(s) — click any row to expand mechanism + management:</div>';
   for (var i = 0; i < found.length; i++) {
     var ix = found[i];
-    var sev = ix.severity === 'Major' ? '#ef4444' : ix.severity === 'Moderate' ? '#f59e0b' : '#10b981';
-    h += '<div class="int-card" style="border-left:4px solid ' + sev + ';">';
-    h += '<div class="int-card-title"><span style="color:' + sev + ';">⚡ ' + (ix.severity || '') + '</span> — ' + ix.pair + '</div>';
-    h += '<div class="int-card-detail">' + (ix.mechanism || '') + '</div>';
-    if (ix.management) h += '<div class="int-card-mgmt">→ ' + ix.management + '</div>';
+    var sev = severityColor(ix.severity);
+    var sevLabel = ix.severity || normalizeSeverity(ix.severity);
+    var rowId = 'int-tab-row-' + i;
+    h += '<div class="int-card" style="border-left:4px solid ' + sev + ';padding:8px 12px;margin-bottom:6px;border-radius:0 6px 6px 0;background:rgba(148,163,184,0.04);">';
+    h += '<div onclick="toggleIntRow(\'' + rowId + '\')" style="display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;">';
+    h += '<span id="' + rowId + '-chev" style="font-size:0.75rem;color:' + sev + ';width:10px;flex-shrink:0;">▸</span>';
+    h += '<span style="font-size:0.7rem;font-weight:700;color:' + sev + ';background:' + sev + '22;padding:2px 7px;border-radius:3px;white-space:nowrap;">⚡ ' + sevLabel + '</span>';
+    h += '<span style="font-size:0.85rem;font-weight:700;color:var(--text);flex:1;">' + ix.pair + '</span>';
+    h += '</div>';
+    h += '<div id="' + rowId + '-detail" style="display:none;margin-top:8px;padding-left:18px;">';
+    if (ix.mechanism)  h += '<div class="int-card-detail" style="font-size:0.8rem;color:#cbd5e1;line-height:1.5;margin-bottom:4px;">' + ix.mechanism + '</div>';
+    if (ix.management) h += '<div class="int-card-mgmt" style="font-size:0.8rem;color:#86efac;line-height:1.5;">→ ' + ix.management + '</div>';
+    h += '</div>';
     h += '</div>';
   }
   out.innerHTML = h;
