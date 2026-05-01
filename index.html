@@ -108123,7 +108123,89 @@ var MINOR_AILMENTS = [
             "6. Counsel on preloading concept, NSAID technique (with food, max dose, contraindications), heat therapy, exercise, cycle tracking, expected onset of relief, when to escalate.",
             "7. Document the encounter per OCP standards: assessment findings, diagnosis (primary dysmenorrhea), therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess after 2–3 cycles; if inadequate response, refer for hormonal therapy (COC, LNG-IUS) consideration; if features of secondary dysmenorrhea emerge, refer to gynecology for workup (TVUS, lap)."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Cyclical pelvic/lower abdominal pain that begins 1–2 days BEFORE menses or AT onset of menses, typically lasts 1–3 days, cramping/spasmodic in character, may radiate to lower back/thighs, may have associated nausea/headache/fatigue?",
+                    "ctx": "Primary dysmenorrhea is cyclical, predictable, time-locked to menses, and typically begins in adolescence within 6–12 months of menarche. Non-cyclical or atypical pain patterns suggest secondary causes.",
+                    "crumb": "Cyclical menstrual pain?",
+                    "yes": "n2",
+                    "no": "rx_atypical"
+                },
+                "n2": {
+                    "q": "Any RED FLAGS suggesting SECONDARY dysmenorrhea or other pathology: (1) NEW ONSET or significantly WORSENING pattern (especially after years of mild/no pain); (2) pain NOT cyclical (continuous, present between periods, or worsening over the cycle); (3) DYSPAREUNIA (deep pain with intercourse); (4) DYSCHEZIA / cyclical bowel or bladder symptoms (endometriosis features); (5) HEAVY MENSTRUAL BLEEDING (>80 mL/cycle, soaking through pad/tampon hourly, large clots — fibroids/adenomyosis); (6) intermenstrual or postcoital BLEEDING; (7) FEVER + pelvic pain (PID); (8) IUD recently inserted (consider IUD-related pain/infection); (9) INFERTILITY history; (10) progressive weight loss, mass, or systemic symptoms?",
+                    "ctx": "These features mandate physician/gynecology workup before attributing pain to primary dysmenorrhea. Secondary dysmenorrhea (endometriosis, adenomyosis, fibroids, PID, IUD complication, ovarian pathology) requires investigation including pelvic exam ± transvaginal ultrasound ± laparoscopy.",
+                    "crumb": "Red flags?",
+                    "yes": "rx_redflag",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Could the patient be pregnant? (sexually active, late or missed period, breast tenderness, nausea — and pain might be ectopic or threatened miscarriage)",
+                    "ctx": "Lower abdominal pain in pregnancy can be ectopic (life-threatening rupture), threatened miscarriage, or complicating gynecological pathology. Empirical NSAID treatment is contraindicated in pregnancy (especially 3rd trimester — ductus arteriosus closure).",
+                    "crumb": "Possibly pregnant?",
+                    "yes": "rx_preg",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Any contraindication to NSAIDs: (1) known allergy/asthma exacerbation by NSAIDs (NSAID-exacerbated respiratory disease, Samter's triad); (2) active or history of peptic ulcer/GI bleed; (3) chronic kidney disease (eGFR <30) or current AKI; (4) heart failure, recent MI/stroke; (5) currently on anticoagulant (warfarin, DOAC) or recent major surgery; (6) severe hepatic impairment; (7) on lithium, methotrexate, ACEi+ARB+diuretic 'triple whammy'?",
+                    "ctx": "NSAIDs are first-line for primary dysmenorrhea (block prostaglandin synthesis — the mechanism of pain). Contraindications mandate alternative or refer.",
+                    "crumb": "NSAID CI?",
+                    "yes": "n4b",
+                    "no": "n5"
+                },
+                "n4b": {
+                    "q": "Is the contraindication MILD/RELATIVE (e.g., mild dyspepsia, occasional reflux, on SSRI alone) such that a SHORT course with PPI cover is acceptable?",
+                    "ctx": "Some relative contraindications can be managed pharmacologically (PPI co-prescription) for short menstrual NSAID courses; others (true allergy, active GI bleed, eGFR <30, anticoagulation) cannot.",
+                    "crumb": "Mild CI manageable?",
+                    "yes": "tx_nsaid_ppi",
+                    "no": "rx_nsaid_ci"
+                },
+                "n5": {
+                    "q": "Has the patient previously TRIED NSAID monotherapy with adequate dose, started 24–48h before expected menses (preloading), and used round-the-clock for 2–3 days, for at least 2–3 cycles, WITHOUT adequate relief?",
+                    "ctx": "Most primary dysmenorrhea responds to properly-used NSAIDs. 'NSAID failure' often reflects suboptimal dosing or timing (PRN rather than preloaded/scheduled). Confirm adequate trial before escalating to hormonal therapy.",
+                    "crumb": "Adequate NSAID trial failed?",
+                    "yes": "rx_hormonal",
+                    "no": "tx_nsaid"
+                },
+                "rx_atypical": {
+                    "type": "caution",
+                    "msg": "Pain pattern not typical of primary dysmenorrhea — reassess differential. If diagnosis unclear, REFER to physician.",
+                    "detail": "Consider: ENDOMETRIOSIS (cyclical pain extending beyond menses, dyspareunia, dyschezia, infertility — refer to gynecology); ADENOMYOSIS (heavy menses + worsening dysmenorrhea, multiparous, age >40 — TVUS); UTERINE FIBROIDS (heavy bleeding, bulk symptoms — TVUS); PID (fever, discharge, dyspareunia, sexually active — STI screen, antibiotics under MD); OVARIAN CYST (acute unilateral pain, may have torsion — emergency if severe sudden onset); ECTOPIC PREGNANCY (always rule out in any reproductive-age woman with pelvic pain — βhCG); INTERSTITIAL CYSTITIS (chronic pelvic pain + urinary symptoms); PELVIC FLOOR DYSFUNCTION; IBS (cyclical with menses but predominant GI symptoms); MUSCULOSKELETAL (low back/hip pathology). Refer to physician/NP for pelvic exam and appropriate workup."
+                },
+                "rx_redflag": {
+                    "type": "refer",
+                    "msg": "Red flag features for SECONDARY dysmenorrhea or other pathology — refer to physician or gynecology for workup. Pelvic exam, possibly transvaginal ultrasound, STI screening, or laparoscopy may be indicated.",
+                    "detail": "ENDOMETRIOSIS workup: pelvic exam, TVUS for endometriomas, MRI for deep infiltrating disease, definitive Dx by laparoscopy with histology — gynecology referral. ADENOMYOSIS / FIBROIDS: TVUS, MRI; treatment options include hormonal suppression, LNG-IUS, uterine artery embolization, hysterectomy. PID: STI screen (chlamydia, gonorrhea NAATs), empirical antibiotics under physician (ceftriaxone + doxycycline + metronidazole — all OUTSIDE MA scope). HEAVY MENSTRUAL BLEEDING: CBC for anemia, ferritin, TSH, coagulopathy screen if indicated. While awaiting referral: pharmacist may offer NSAID for symptomatic pain relief if no other contraindications (still helpful for secondary dysmenorrhea symptom relief, though does not address underlying pathology). Counsel: complete the workup; menstrual diary helps physician characterize pattern."
+                },
+                "rx_preg": {
+                    "type": "refer-urgent",
+                    "msg": "Possible pregnancy with lower abdominal pain — REFER same-day for evaluation. Could be ectopic pregnancy (life-threatening) or threatened miscarriage.",
+                    "detail": "ECTOPIC PREGNANCY classic features: missed period + unilateral pelvic pain ± vaginal bleeding ± shoulder tip pain (referred from diaphragm with hemoperitoneum) ± hypotension/tachycardia. Mortality: rupture is leading cause of 1st-trimester maternal death. Workup: urine βhCG (often positive but may be early-low), serum quantitative βhCG, TVUS to localize pregnancy, OB consultation. THREATENED MISCARRIAGE: vaginal bleeding ± cramping with closed cervix in 1st trimester; needs OB. Do NOT prescribe NSAIDs to a possibly-pregnant patient — both contraindicated in confirmed pregnancy and hazardous in undiagnosed ectopic. Refer to ED if hemodynamic concerns, severe pain, syncope; otherwise same-day OB or family physician."
+                },
+                "rx_nsaid_ci": {
+                    "type": "refer",
+                    "msg": "NSAID contraindication — refer to physician for alternative therapy (acetaminophen monotherapy is suboptimal for primary dysmenorrhea; hormonal therapy or other options may be needed).",
+                    "detail": "Acetaminophen 1 g QID is LESS effective than NSAIDs for primary dysmenorrhea (Cochrane: NSAID NNT ≈3, acetaminophen NNT ≈8) but is reasonable for patients with absolute NSAID contraindications. Hormonal options (combined oral contraceptive, LNG-IUS, depo-provera) are second-line per SOGC and OUTSIDE Ontario MA scope — physician/NP needed for prescription. NON-PHARM ADJUNCTS (within pharmacist scope): heat therapy (heating pad/patch — equivalent or superior to ibuprofen in some trials, Cochrane); regular aerobic exercise; magnesium 200–400 mg/day (modest evidence, low risk); thiamine 100 mg/day (some evidence in adolescents); TENS unit; omega-3 supplements. Refer for hormonal therapy assessment if symptoms moderate-severe."
+                },
+                "tx_nsaid": {
+                    "type": "treat",
+                    "msg": "First-Line: NSAID, started 24–48h BEFORE expected menses (PRELOADING) and continued ROUND-THE-CLOCK for the first 2–3 days of menses. Choose ONE: (1) Naproxen 500 mg load, then 250–500 mg PO BID with food; OR (2) Naproxen sodium 550 mg load, then 275 mg q6–8h; OR (3) Ibuprofen 400–600 mg PO TID–QID with food (max 2400 mg/day for short courses); OR (4) Mefenamic acid (Ponstan) 500 mg load, then 250 mg q6h × 3 days (up to 7 days max).",
+                    "detail": "MECHANISM: NSAIDs inhibit COX → reduce prostaglandin (PGF2α) production → reduces uterine contractility, ischemia, and pain. SOGC CPG No. 345 (2017, current Canadian guideline): NSAIDs are first-line; preloading 24–48h before menses + scheduled dosing significantly outperforms PRN. Mefenamic acid has the strongest evidence specifically for dysmenorrhea but more GI side effects than ibuprofen/naproxen.\n\nALTERNATIVES (if GI sensitivity but not contraindicated): Celecoxib 200 mg BID for short menstrual courses — COX-2 selective, less GI risk, similar efficacy.\n\nADJUNCTS: (1) HEAT THERAPY — heating pad/patch (Thermacare) on lower abdomen — Cochrane evidence shows equivalence to ibuprofen and additive when combined; (2) REGULAR AEROBIC EXERCISE — modest evidence for reducing pain frequency/severity (Cochrane); (3) MAGNESIUM 200–400 mg/day — modest evidence (Cochrane); (4) Omega-3 1000–2000 mg/day — modest evidence; (5) TENS unit; (6) Yoga, mindfulness.\n\nCOUNSELLING: take WITH FOOD or milk; complete the full 2–3 day course (do not stop when pain eases on day 1 — pain returns); track cycle to optimize preloading start. Reassess after 2–3 cycles; if inadequate, refer for hormonal therapy (COC, LNG-IUS — outside MA scope)."
+                },
+                "tx_nsaid_ppi": {
+                    "type": "treat",
+                    "msg": "First-Line with GI Cover: NSAID + PPI for short menstrual courses. Naproxen 500 mg load → 250–500 mg BID with food + omeprazole 20 mg OD (or pantoprazole 40 mg OD) for the duration of NSAID use (2–3 days/cycle).",
+                    "detail": "Indicated for patients with mild dyspepsia, occasional reflux, age >65, or other relative GI risk — PPI co-prescription reduces NSAID-induced GI injury. Same NSAID dosing as standard tx_nsaid pathway. STOP NSAID + PPI at end of menses each cycle (no chronic use unless physician-directed). Reassess after 2–3 cycles. Same adjuncts as tx_nsaid (heat, exercise, magnesium). If GI symptoms develop despite PPI cover or efficacy inadequate → refer to physician for hormonal alternatives or further workup."
+                },
+                "rx_hormonal": {
+                    "type": "refer",
+                    "msg": "Adequate NSAID trial has failed — refer to physician for HORMONAL therapy assessment (combined oral contraceptive, LNG-IUS, or other hormonal options). Hormonal therapy is OUTSIDE Ontario MA scope.",
+                    "detail": "Second-line options requiring physician/NP prescription:\n• COMBINED ORAL CONTRACEPTIVE (COC): suppresses ovulation, thins endometrium, reduces prostaglandin production. Continuous (no placebo week) or extended-cycle (84/7) regimens further reduce dysmenorrhea by minimizing menses. Effective for ~80% of patients. Contraindications: smoker ≥35y, migraine with aura, history of VTE, hypertension uncontrolled, breast cancer, etc.\n• LEVONORGESTREL IUD (Mirena, Jaydess, Kyleena): highly effective, particularly for adenomyosis, fibroids; reduces or stops menses in 50% by 12 months.\n• PROGESTIN-ONLY OPTIONS: depot medroxyprogesterone (Depo-Provera) IM q12 weeks, oral norethindrone, dienogest (specifically for endometriosis).\n• CONTINUE NSAID alongside hormonal therapy as needed during transition.\n\nIf endometriosis is suspected (cyclical pain + dyspareunia + dyschezia + infertility), refer to GYNECOLOGY for definitive workup including consideration of laparoscopy (SOGC No. 437, 2023). While awaiting referral: continue NSAIDs + non-pharm; reassure that effective treatment exists."
+                }
+            }
+        }
     },
     {
         "name": "Impetigo",
