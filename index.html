@@ -108513,18 +108513,32 @@ var MINOR_AILMENTS = [
                     "no": "rx_atypical"
                 },
                 "n2": {
-                    "q": "Any RED FLAGS: vesicles or pain in or around the EYE (corneal involvement, photophobia), eczema flare with widespread vesicles (eczema herpeticum), immunocompromised host (HIV, chemotherapy, transplant, high-dose systemic steroids), severe/widespread/disseminated lesions, or fever + lymphadenopathy with primary outbreak?",
-                    "ctx": "Ocular HSV → same-day ophthalmology (corneal scarring/blindness risk). Eczema herpeticum → emergency. Immunocompromised → systemic infection risk. Primary HSV with systemic features → physician.",
+                    "q": "Any RED FLAGS: (1) NEUROLOGIC — severe headache, confusion, altered mental status, focal neurological deficit, seizure, or neck stiffness (HSV encephalitis); (2) OCULAR — vesicles in/around the eye, photophobia, vision change (herpetic keratitis); (3) ECZEMA HERPETICUM — widespread vesicles on eczematous skin + fever; (4) SEVERE/disseminated/extensive lesions, OR fever + lymphadenopathy with apparent primary outbreak in adult?",
+                    "ctx": "HSV encephalitis is a neurologic emergency requiring IV acyclovir. Ocular HSV → same-day ophthalmology. Eczema herpeticum → ER/dermatology. Severe primary or systemic HSV in adults → physician.",
                     "crumb": "Red flags?",
                     "yes": "rx_redflag",
+                    "no": "n2b"
+                },
+                "n2b": {
+                    "q": "Any IMMUNE COMPROMISE, including: HIV/AIDS, current chemotherapy, post-organ-transplant, biologics (TNF inhibitors, IL inhibitors, JAK inhibitors), DMARDs (methotrexate, azathioprine, mycophenolate, cyclosporine), systemic corticosteroids (any dose ongoing or high-dose recent), post-splenectomy, advanced or poorly controlled diabetes, or other significant immunosuppression?",
+                    "ctx": "Even partial immune compromise (low-dose steroids, methotrexate, biologics) increases risk of severe/disseminated HSV. These patients require physician-supervised therapy at higher doses or longer courses; not within MA scope.",
+                    "crumb": "Immune compromise?",
+                    "yes": "rx_immunocomp",
+                    "no": "n2c"
+                },
+                "n2c": {
+                    "q": "Is this a FIRST-EVER (primary) HSV outbreak with extensive lesions, intraoral ulceration (gingivostomatitis), systemic symptoms (fever, malaise, lymphadenopathy), or significant feeding/swallowing difficulty?",
+                    "ctx": "Primary HSV is more severe than recurrence and requires LONGER courses (e.g., valacyclovir 1 g BID × 10 days OR acyclovir 400 mg TID × 7–10 days), not the single-day recurrent regimens. Severe primary with systemic features → refer.",
+                    "crumb": "Severe primary?",
+                    "yes": "rx_primary",
                     "no": "n3"
                 },
                 "n3": {
-                    "q": "Is the patient immunocompetent and aged ≥12 years?",
-                    "ctx": "Ontario MA prescribing for herpes labialis applies to immunocompetent adults and adolescents ≥12y. Children <12y with first or severe outbreak should be assessed by physician for primary herpetic gingivostomatitis (often more extensive intraoral involvement).",
-                    "crumb": "Adult/adolescent immunocompetent?",
+                    "q": "Is the patient aged ≥12 years?",
+                    "ctx": "Ontario MA scope for cold sores allows pharmacist judgment on age — children <12 with clearly TYPICAL recurrent labialis can be managed with topical docosanol (OTC); but ANY child with primary outbreak, severe presentation, or first episode warrants physician assessment.",
+                    "crumb": "Age ≥12?",
                     "yes": "n4",
-                    "no": "rx_pedi_immune"
+                    "no": "rx_pedi"
                 },
                 "n4": {
                     "q": "Recurrence frequency: does the patient experience ≥6 cold sore episodes per year, OR is this episode causing significant disruption (e.g., before a major event, immunosuppressed period, complications)?",
@@ -108578,10 +108592,20 @@ var MINOR_AILMENTS = [
                     "msg": "Red flag features — refer urgently. Do NOT prescribe under MA scope.",
                     "detail": "OCULAR INVOLVEMENT (vesicles around eye, photophobia, vision change): same-day ophthalmology — herpetic keratitis is leading infectious cause of corneal blindness; requires topical and/or systemic antiviral with ophthalmologist guidance. ECZEMA HERPETICUM (widespread vesicular eruption on eczematous skin, fever, malaise): emergency — IV acyclovir typically required; ER/dermatology referral. IMMUNOCOMPROMISED (HIV/AIDS, chemotherapy, post-transplant, high-dose systemic steroids, biologics): systemic dissemination risk — physician for systemic high-dose acyclovir. PRIMARY HSV WITH FEVER + LYMPHADENOPATHY in adults: severe disease — physician evaluation."
                 },
-                "rx_pedi_immune": {
+                "rx_immunocomp": {
                     "type": "refer",
-                    "msg": "Child under 12 years OR immunocompromised — refer to physician for assessment.",
-                    "detail": "Children <12y: differentiate primary herpetic gingivostomatitis (extensive intraoral ulceration, fever, dehydration risk — supportive ± oral acyclovir 15 mg/kg 5×/day × 7 days under physician care) from recurrent labialis (less common in young children, often milder). Immunocompromised: needs physician for systemic high-dose acyclovir or longer course. Topical OTC docosanol 10% (Abreva) is acceptable as adjunctive supportive care while awaiting assessment."
+                    "msg": "Immunocompromised patient — outside MA scope. Refer to physician for systemic high-dose antiviral therapy.",
+                    "detail": "Even partial immunosuppression (low-dose steroids, methotrexate, biologics, DMARDs, post-transplant, advanced diabetes) increases risk of severe, prolonged, or disseminated HSV. Physician-supervised regimens may include: acyclovir 400 mg 5×/day × 7–10 days, valacyclovir 1 g BID × 7–10 days, or IV acyclovir for severe disease. Topical docosanol 10% (Abreva) is acceptable as adjunct while awaiting assessment but is NOT sufficient monotherapy in immunocompromised hosts."
+                },
+                "rx_primary": {
+                    "type": "refer",
+                    "msg": "Severe primary (first-ever) HSV outbreak with extensive lesions or systemic features — refer to physician.",
+                    "detail": "Primary HSV-1 (especially gingivostomatitis in adolescents/young adults with extensive intraoral ulceration, fever, lymphadenopathy, dehydration risk) is MORE severe than recurrent labialis and requires LONGER antiviral courses than the single-day recurrent regimens. Standard primary HSV-1 dosing per IDSA/Health Canada: valacyclovir 1 g PO BID × 10 days OR acyclovir 400 mg PO TID × 7–10 days OR famciclovir 250 mg PO TID × 7–10 days. Physician assessment also confirms diagnosis and assesses need for hydration support, pain management, and workup for any predisposing factors."
+                },
+                "rx_pedi": {
+                    "type": "refer",
+                    "msg": "Child under 12 years — refer for any FIRST/PRIMARY outbreak, SEVERE presentation, or extensive intraoral involvement. For TYPICAL RECURRENT mild labialis in a child with prior diagnosis: topical docosanol 10% (Abreva) is OTC and acceptable as supportive care.",
+                    "detail": "PRIMARY HERPETIC GINGIVOSTOMATITIS (most common HSV-1 presentation in young children): extensive painful intraoral ulceration, fever, drooling, dehydration risk — supportive care + oral acyclovir 15 mg/kg 5×/day × 7 days (max 200 mg/dose for younger children) under PHYSICIAN care. RECURRENT LABIALIS in children with established diagnosis: topical docosanol 10% (Abreva) 5×/day from first sign — OTC, acceptable as pharmacist recommendation. Oral antivirals in children for recurrent labialis are off-label without specialist input. If unsure or any severity, refer."
                 },
                 "tx_oral": {
                     "type": "treat",
@@ -108590,8 +108614,8 @@ var MINOR_AILMENTS = [
                 },
                 "tx_late": {
                     "type": "treat",
-                    "msg": "LATE PRESENTATION (>24h, lesions active not crusted): Reduced antiviral benefit but still reasonable. Use a short oral antiviral course (e.g., valacyclovir 2 g BID × 1 day OR acyclovir 400 mg 5×/day × 5 days) PLUS topical and supportive care.",
-                    "detail": "Greatest benefit when started within 24h — but moderate benefit may still be obtained while vesicles are active. Once fully crusted/scabbed, antivirals offer no benefit. Adjuncts: topical docosanol 10% (Abreva) — apply 5×/day from first sign until healed; cool compresses; lip balm with SPF 30+; acetaminophen/ibuprofen for pain. Counsel: patient education for FUTURE outbreaks — start antiviral at FIRST tingling, not after vesicles appear."
+                    "msg": "LATE PRESENTATION (>24h, lesions still active and not yet crusted): Antiviral benefit is SMALL — primary management is supportive. If significant active disease, a 5-day acyclovir course may be considered; the single-day valacyclovir regimen has minimal evidence beyond 24h.",
+                    "detail": "PREFERRED APPROACH: (1) Topical docosanol 10% (Abreva) 5×/day until healed (OTC); (2) Cool compresses; (3) Lip balm with SPF 30+; (4) Acetaminophen/ibuprofen for pain; (5) Topical lidocaine 2% gel (avoid in young children — methemoglobinemia risk); (6) Avoid sharing utensils/lip products until crusted. CONSIDER SHORT ORAL COURSE if substantial active disease: acyclovir 400 mg 5×/day × 5 days (better evidence than single-day regimens beyond 24h). The single-day valacyclovir 2 g BID regimen has its evidence base in prodrome/<24h initiation — it offers little beyond 24h. PATIENT EDUCATION FOR NEXT OUTBREAK: keep antiviral on hand; start at FIRST prodromal tingling/burning — do not wait for vesicle. Single-day valacyclovir 2 g BID × 1 day is most convenient when initiated promptly."
                 },
                 "tx_supportive": {
                     "type": "treat",
@@ -108600,13 +108624,13 @@ var MINOR_AILMENTS = [
                 },
                 "tx_suppress": {
                     "type": "treat",
-                    "msg": "SUPPRESSIVE THERAPY (≥6 episodes/year and episodic Rx inadequate): Valacyclovir 500 mg PO OD ongoing (preferred) OR acyclovir 400 mg PO BID ongoing. Reassess at 6–12 months.",
-                    "detail": "Within Ontario MA scope per OCP. Valacyclovir 500 mg OD is preferred (better adherence, less variable absorption). For very frequent recurrences (>10/year) or severe episodes, valacyclovir 1000 mg OD may be used. Reassess at 6–12 months — 25–50% of patients have reduced recurrence frequency long-term and can stop. Renal dose adjust as per renal table. Counsel: not a cure — herpes virus remains latent in trigeminal ganglion; reduces recurrence frequency by ~50–80%; stop if no benefit after 3 months. Encourage trigger avoidance (UV, stress, fatigue, illness)."
+                    "msg": "SUPPRESSIVE THERAPY (≥6 episodes/year and episodic Rx inadequate): Valacyclovir 500 mg PO OD ongoing (preferred) OR acyclovir 400 mg PO BID ongoing. IF a current outbreak is also active, ALSO prescribe acute episodic Rx (suppression alone does not treat the active episode).",
+                    "detail": "Within Ontario MA scope per OCP. Valacyclovir 500 mg OD is preferred (better adherence, less variable absorption). For very frequent recurrences (>10/year) or severe episodes, valacyclovir 1000 mg OD may be used.\n\nIMPORTANT: If the patient has an ACTIVE OUTBREAK at this visit, treat the current episode acutely (valacyclovir 2 g BID × 1 day OR acyclovir 400 mg 5×/day × 5 days as per timing) AND start the suppressive regimen — suppression takes 1–2 weeks to reach steady state and does not abort an active episode.\n\nReassess at 6–12 months — 25–50% of patients have reduced recurrence frequency long-term and can stop. Renal dose adjust as per renal table. Counsel: not a cure — herpes virus remains latent in trigeminal ganglion; reduces recurrence frequency by ~50–80%; stop if no benefit after 3 months. Encourage trigger avoidance (UV, stress, fatigue, illness)."
                 },
                 "tx_preg": {
                     "type": "treat",
-                    "msg": "PREGNANCY — Mild outbreak: Topical docosanol 10% (Abreva) 5×/day from first sign + supportive care. Severe/disseminated outbreak or first primary infection: refer to physician/OB — oral acyclovir or valacyclovir may be used at standard episodic doses (extensive human safety data; LactMed and SOGC HSV in Pregnancy support use when benefit > risk).",
-                    "detail": "Acyclovir and valacyclovir have decades of human pregnancy data without teratogenicity signals (LactMed; SOGC HSV in Pregnancy). For RECURRENT herpes labialis in pregnancy, topical docosanol is reasonable first-line for mild outbreaks. For severe/frequent outbreaks or PRIMARY infection (more severe disease), oral antivirals are appropriate but PHARMACIST should consult with OB or physician before prescribing to confirm risk-benefit and gestational considerations. Famciclovir has less pregnancy data — prefer acyclovir/valacyclovir. Avoid in 1st trimester unless clearly indicated. Lactation: acyclovir/valacyclovir compatible with breastfeeding (LactMed)."
+                    "msg": "PREGNANCY — TIERED APPROACH:\n• MILD RECURRENT outbreak (any trimester): Topical docosanol 10% (Abreva) 5×/day from first sign + supportive care.\n• MODERATE RECURRENT outbreak in 2nd/3rd trimester: Acyclovir or valacyclovir at standard episodic doses ARE acceptable — extensive human safety data (LactMed, SOGC HSV in Pregnancy).\n• 1st TRIMESTER recurrent outbreak: Prefer topical docosanol; reserve oral antivirals for substantial outbreaks; consult physician/OB before prescribing oral antiviral in 1st trimester.\n• PRIMARY INFECTION at any trimester, OR severe/disseminated outbreak: REFER to physician/OB — primary HSV is more severe, may require longer course, and warrants OB input on neonatal transmission risk.",
+                    "detail": "Acyclovir and valacyclovir have decades of human pregnancy data without teratogenicity signals (LactMed, Sandberg-Wollheim, SOGC HSV in Pregnancy). Famciclovir has LESS pregnancy data — prefer acyclovir/valacyclovir. Avoid systemic antivirals in 1st trimester unless clearly indicated. LACTATION: acyclovir and valacyclovir are compatible with breastfeeding (LactMed). NEONATAL HSV RISK: primary or active genital HSV near delivery requires obstetric planning (suppressive valacyclovir from 36 weeks; potential C-section if active lesions at labor) — labial HSV alone does not change delivery plan but caution with neonatal kissing/contact during active outbreak. Refer to OB if any uncertainty."
                 },
                 "rx_contraind": {
                     "type": "refer",
