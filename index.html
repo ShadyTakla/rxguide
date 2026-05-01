@@ -108501,7 +108501,120 @@ var MINOR_AILMENTS = [
             "6. Counsel on prodrome recognition, timing-critical start, dose, contagion precautions, trigger avoidance, lip SPF, when to return for suppressive therapy or red flags.",
             "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess if no improvement within 5–7 days; refer for assessment if frequent recurrences (≥6/year), worsening pattern, atypical features, or any red flag emergence."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Classic herpes labialis presentation: prodromal tingling/burning/itching at lip border (24–48h before), followed by clustered vesicles on the lip vermilion border or perioral skin, progressing to ulcer and crust over 7–10 days?",
+                    "ctx": "Atypical lesions (intraoral ulcers, isolated tongue/palate, persistent >2 weeks, scattered non-clustered vesicles) suggest alternative diagnoses.",
+                    "crumb": "Classic HSV-1 features?",
+                    "yes": "n2",
+                    "no": "rx_atypical"
+                },
+                "n2": {
+                    "q": "Any RED FLAGS: vesicles or pain in or around the EYE (corneal involvement, photophobia), eczema flare with widespread vesicles (eczema herpeticum), immunocompromised host (HIV, chemotherapy, transplant, high-dose systemic steroids), severe/widespread/disseminated lesions, or fever + lymphadenopathy with primary outbreak?",
+                    "ctx": "Ocular HSV → same-day ophthalmology (corneal scarring/blindness risk). Eczema herpeticum → emergency. Immunocompromised → systemic infection risk. Primary HSV with systemic features → physician.",
+                    "crumb": "Red flags?",
+                    "yes": "rx_redflag",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Is the patient immunocompetent and aged ≥12 years?",
+                    "ctx": "Ontario MA prescribing for herpes labialis applies to immunocompetent adults and adolescents ≥12y. Children <12y with first or severe outbreak should be assessed by physician for primary herpetic gingivostomatitis (often more extensive intraoral involvement).",
+                    "crumb": "Adult/adolescent immunocompetent?",
+                    "yes": "n4",
+                    "no": "rx_pedi_immune"
+                },
+                "n4": {
+                    "q": "Recurrence frequency: does the patient experience ≥6 cold sore episodes per year, OR is this episode causing significant disruption (e.g., before a major event, immunosuppressed period, complications)?",
+                    "ctx": "Frequent recurrences (≥6/year) are within Ontario MA scope for SUPPRESSIVE therapy assessment. Pre-trigger short prophylaxis (e.g., before dental work, sun exposure) is also considered.",
+                    "crumb": "Frequent (≥6/yr)?",
+                    "yes": "n4b",
+                    "no": "n5"
+                },
+                "n4b": {
+                    "q": "Has the patient already trialled adequate episodic therapy (prompt antiviral at prodrome) without satisfactory control of frequency?",
+                    "ctx": "Episodic therapy at prodrome is preferred first-line. Suppressive therapy is added when episodic management is inadequate.",
+                    "crumb": "Episodic Rx tried?",
+                    "yes": "tx_suppress",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Is the patient currently in the PRODROMAL phase (tingling/itching/burning, no vesicle yet) OR within the FIRST 24 HOURS of vesicle appearance?",
+                    "ctx": "Antivirals are most effective when started within 24h — ideally at prodrome. After lesions are well-established (>48h, crusted), antivirals provide minimal benefit.",
+                    "crumb": "Within 24h of onset?",
+                    "yes": "n6",
+                    "no": "n5b"
+                },
+                "n5b": {
+                    "q": "Are lesions still active (vesicular or ulcerated, NOT yet fully crusted)?",
+                    "ctx": "If lesions are >48h old but still active, oral antivirals offer reduced but some benefit. If fully crusted/healing, supportive care only.",
+                    "crumb": "Active lesions?",
+                    "yes": "tx_late",
+                    "no": "tx_supportive"
+                },
+                "n6": {
+                    "q": "Any contraindication to oral antivirals: known hypersensitivity to acyclovir/valacyclovir/famciclovir, severe renal impairment (CrCl <10 mL/min — needs significant dose adjustment), or pregnancy?",
+                    "ctx": "Pregnancy: acyclovir and valacyclovir have extensive human safety data and ARE acceptable when benefit > risk (LactMed, SOGC) — but pharmacist should verify trimester and risk-benefit before prescribing.",
+                    "crumb": "Contraindications?",
+                    "yes": "n6b",
+                    "no": "tx_oral"
+                },
+                "n6b": {
+                    "q": "Is the contraindication PREGNANCY only (no allergy, no severe renal impairment)?",
+                    "ctx": "Pregnancy alone is not an absolute contraindication; topical agents remain an option, and oral antivirals may be considered after physician/OB consultation.",
+                    "crumb": "Pregnancy only?",
+                    "yes": "tx_preg",
+                    "no": "rx_contraind"
+                },
+                "rx_atypical": {
+                    "type": "caution",
+                    "msg": "Atypical features — reassess differential. If diagnosis uncertain, REFER to physician.",
+                    "detail": "Consider: Aphthous ulcers (intraoral, painful, no vesicular phase, no prodrome — recurrent canker sores); Angular cheilitis (corner-of-mouth fissures, often Candida or bacterial — different management); Impetigo (honey-coloured crusts, spreading, S. aureus/Strep — topical mupirocin); Contact dermatitis (lipstick, lip balm, foods — pruritic, eczematous, not vesicular); Primary herpetic gingivostomatitis (extensive intraoral ulcers, fever, drooling, refusal to eat — usually children, more severe than recurrent labialis); Hand-foot-mouth disease (multi-site, palms/soles); Erythema multiforme (target lesions, often post-HSV); Oral cancer (persistent non-healing ulcer >2 weeks — refer to dentist/ENT)."
+                },
+                "rx_redflag": {
+                    "type": "refer-urgent",
+                    "msg": "Red flag features — refer urgently. Do NOT prescribe under MA scope.",
+                    "detail": "OCULAR INVOLVEMENT (vesicles around eye, photophobia, vision change): same-day ophthalmology — herpetic keratitis is leading infectious cause of corneal blindness; requires topical and/or systemic antiviral with ophthalmologist guidance. ECZEMA HERPETICUM (widespread vesicular eruption on eczematous skin, fever, malaise): emergency — IV acyclovir typically required; ER/dermatology referral. IMMUNOCOMPROMISED (HIV/AIDS, chemotherapy, post-transplant, high-dose systemic steroids, biologics): systemic dissemination risk — physician for systemic high-dose acyclovir. PRIMARY HSV WITH FEVER + LYMPHADENOPATHY in adults: severe disease — physician evaluation."
+                },
+                "rx_pedi_immune": {
+                    "type": "refer",
+                    "msg": "Child under 12 years OR immunocompromised — refer to physician for assessment.",
+                    "detail": "Children <12y: differentiate primary herpetic gingivostomatitis (extensive intraoral ulceration, fever, dehydration risk — supportive ± oral acyclovir 15 mg/kg 5×/day × 7 days under physician care) from recurrent labialis (less common in young children, often milder). Immunocompromised: needs physician for systemic high-dose acyclovir or longer course. Topical OTC docosanol 10% (Abreva) is acceptable as adjunctive supportive care while awaiting assessment."
+                },
+                "tx_oral": {
+                    "type": "treat",
+                    "msg": "FIRST-LINE EPISODIC: Oral antiviral started ASAP (ideally at prodrome, within 24h). Choose ONE: (1) Valacyclovir 2 g PO BID × 1 day (single-day regimen — most convenient); OR (2) Famciclovir 1500 mg PO single dose; OR (3) Acyclovir 400 mg PO 5×/day × 5 days.",
+                    "detail": "ONSET-TIMING IS CRITICAL — antivirals only effective if started within 24h of prodrome/symptom onset. Reduces healing time by 1–2 days, reduces pain, may abort lesion if started at prodrome.\n\nRENAL DOSING (CrCl mL/min):\n• Valacyclovir: ≥50 → standard 2 g BID ×1d; 30–49 → 1 g BID ×1d; 10–29 → 500 mg BID ×1d; <10 → 500 mg single dose.\n• Famciclovir: ≥60 → 1500 mg single; 40–59 → 750 mg single; 20–39 → 500 mg single; <20 → 250 mg single.\n• Acyclovir: ≥25 → 400 mg 5×/day; 10–24 → 200 mg 5×/day; <10 → 200 mg q12h.\n\nCounsel: take with adequate hydration; common side effects nausea/headache (usually mild); start at FIRST tingling/itching — do not wait for vesicles. Topical adjunct (docosanol 10% Abreva) is OPTIONAL — modest additional benefit. Penciclovir cream is no longer marketed in Canada — do not recommend. L-lysine is NOT supported by Cochrane evidence."
+                },
+                "tx_late": {
+                    "type": "treat",
+                    "msg": "LATE PRESENTATION (>24h, lesions active not crusted): Reduced antiviral benefit but still reasonable. Use a short oral antiviral course (e.g., valacyclovir 2 g BID × 1 day OR acyclovir 400 mg 5×/day × 5 days) PLUS topical and supportive care.",
+                    "detail": "Greatest benefit when started within 24h — but moderate benefit may still be obtained while vesicles are active. Once fully crusted/scabbed, antivirals offer no benefit. Adjuncts: topical docosanol 10% (Abreva) — apply 5×/day from first sign until healed; cool compresses; lip balm with SPF 30+; acetaminophen/ibuprofen for pain. Counsel: patient education for FUTURE outbreaks — start antiviral at FIRST tingling, not after vesicles appear."
+                },
+                "tx_supportive": {
+                    "type": "treat",
+                    "msg": "SUPPORTIVE CARE: Lesions are crusted/healing — antivirals provide no benefit at this stage. Symptomatic management only.",
+                    "detail": "MEASURES: Keep lesion clean and dry; do not pick crusts; topical lidocaine 2% gel for pain (avoid in young children — methemoglobinemia risk per Health Canada); cool compresses; lip balm with SPF 30+ (UV is a major trigger); acetaminophen/ibuprofen if needed. Avoid sharing utensils, towels, lip products, or kissing while lesions present (contagious until fully crusted). EDUCATION FOR NEXT OUTBREAK: keep an antiviral on hand at home; start at FIRST PRODROMAL tingling/burning — do not wait for vesicle. Single-day valacyclovir 2 g BID × 1 day is most convenient. Discuss suppressive therapy if ≥6 episodes/year."
+                },
+                "tx_suppress": {
+                    "type": "treat",
+                    "msg": "SUPPRESSIVE THERAPY (≥6 episodes/year and episodic Rx inadequate): Valacyclovir 500 mg PO OD ongoing (preferred) OR acyclovir 400 mg PO BID ongoing. Reassess at 6–12 months.",
+                    "detail": "Within Ontario MA scope per OCP. Valacyclovir 500 mg OD is preferred (better adherence, less variable absorption). For very frequent recurrences (>10/year) or severe episodes, valacyclovir 1000 mg OD may be used. Reassess at 6–12 months — 25–50% of patients have reduced recurrence frequency long-term and can stop. Renal dose adjust as per renal table. Counsel: not a cure — herpes virus remains latent in trigeminal ganglion; reduces recurrence frequency by ~50–80%; stop if no benefit after 3 months. Encourage trigger avoidance (UV, stress, fatigue, illness)."
+                },
+                "tx_preg": {
+                    "type": "treat",
+                    "msg": "PREGNANCY — Mild outbreak: Topical docosanol 10% (Abreva) 5×/day from first sign + supportive care. Severe/disseminated outbreak or first primary infection: refer to physician/OB — oral acyclovir or valacyclovir may be used at standard episodic doses (extensive human safety data; LactMed and SOGC HSV in Pregnancy support use when benefit > risk).",
+                    "detail": "Acyclovir and valacyclovir have decades of human pregnancy data without teratogenicity signals (LactMed; SOGC HSV in Pregnancy). For RECURRENT herpes labialis in pregnancy, topical docosanol is reasonable first-line for mild outbreaks. For severe/frequent outbreaks or PRIMARY infection (more severe disease), oral antivirals are appropriate but PHARMACIST should consult with OB or physician before prescribing to confirm risk-benefit and gestational considerations. Famciclovir has less pregnancy data — prefer acyclovir/valacyclovir. Avoid in 1st trimester unless clearly indicated. Lactation: acyclovir/valacyclovir compatible with breastfeeding (LactMed)."
+                },
+                "rx_contraind": {
+                    "type": "refer",
+                    "msg": "Contraindication to standard oral antivirals (allergy or severe renal impairment, CrCl <10 mL/min) — refer to physician for alternative or monitored therapy.",
+                    "detail": "Known hypersensitivity: cross-reactivity between acyclovir/valacyclovir/famciclovir is possible; physician needed to assess severity and consider desensitisation or alternative. Severe renal impairment (CrCl <10 or dialysis): requires significant dose reduction with risk of neurotoxicity (acyclovir-induced encephalopathy, especially in elderly/dialysis patients) — physician supervision needed. Topical docosanol 10% (Abreva) is OTC and may be used adjunctively while awaiting assessment."
+                }
+            }
+        }
     },
     {
         "name": "Musculoskeletal Sprains",
