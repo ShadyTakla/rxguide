@@ -107470,7 +107470,101 @@ var MINOR_AILMENTS = [
             "6. Counsel on INCS technique (aim away from septum), daily use expectation, 1–2 week onset, allergen avoidance, saline irrigation; demonstrate technique; provide written info.",
             "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess at 2–4 weeks for response; step up if inadequate; refer to allergist for immunotherapy candidacy if severe/refractory or for allergy testing."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Symptoms consistent with allergic rhinitis? (sneezing, itchy nose/eyes/throat, clear watery rhinorrhea, nasal congestion — typically triggered by allergens such as pollen, dust mites, animal dander, or mould)",
+                    "ctx": "Diagnosis is clinical. Without typical AR features, consider non-allergic rhinitis, viral URI, or sinusitis.",
+                    "crumb": "AR features?",
+                    "yes": "n2",
+                    "no": "rx_nonAR"
+                },
+                "n2": {
+                    "q": "Any RED FLAGS: unilateral nasal obstruction, persistent unilateral discharge, recurrent epistaxis without trauma, anosmia, facial pain or pressure with fever, vision changes, OR clear watery discharge after head trauma (CSF leak)?",
+                    "ctx": "Unilateral findings, anosmia, or post-traumatic clear discharge can indicate nasal polyps, malignancy, sinusitis, or CSF leak — requires physician/ENT assessment, not allergy treatment.",
+                    "crumb": "Red flags?",
+                    "yes": "rx_redflag",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Has the patient been using a topical nasal decongestant (oxymetazoline/Drixoral, xylometazoline/Otrivin, phenylephrine) for MORE than 5–7 days?",
+                    "ctx": "Prolonged use of topical nasal decongestants causes rhinitis medicamentosa (rebound congestion) — a different problem requiring decongestant taper alongside INCS therapy.",
+                    "crumb": "Decongestant overuse?",
+                    "yes": "rx_medic",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Is the patient pregnant or breastfeeding?",
+                    "ctx": "AR in pregnancy/lactation is treatable but requires agent selection with the safest pregnancy profile.",
+                    "crumb": "Pregnant/BF?",
+                    "yes": "tx_preg",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Is the patient a child under 2 years of age?",
+                    "ctx": "Most INCS and oral 2nd-gen antihistamines are not approved or have limited safety data under age 2.",
+                    "crumb": "Age <2?",
+                    "yes": "rx_pedi",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Severity: are symptoms PERSISTENT (≥4 days/week AND ≥4 consecutive weeks) OR moderate-severe (sleep disturbance, impairment of school/work/leisure activities, troublesome symptoms)?",
+                    "ctx": "ARIA 2020 classification: mild intermittent vs persistent / moderate-severe. INCS is preferred for persistent or moderate-severe AR.",
+                    "crumb": "Persistent or mod-severe?",
+                    "yes": "n7",
+                    "no": "tx_AH"
+                },
+                "n7": {
+                    "q": "Has the patient already used an INCS at adequate dose with correct technique for ≥2 weeks without adequate symptom control?",
+                    "ctx": "If INCS monotherapy has failed despite correct use, ARIA 2020 step-up is INCS + intranasal antihistamine combination (Dymista).",
+                    "crumb": "INCS failure?",
+                    "yes": "tx_combo",
+                    "no": "tx_INCS"
+                },
+                "rx_nonAR": {
+                    "type": "caution",
+                    "msg": "Symptoms not typical of allergic rhinitis — reassess differential before treating.",
+                    "detail": "Consider: Non-allergic rhinitis (vasomotor — triggered by temperature change, irritants, food, no allergic features); Viral URI (acute onset, fever, sore throat — self-limiting); Acute or chronic rhinosinusitis (facial pain, purulent discharge, ≥10 days); Nasal polyps (unilateral or bilateral persistent obstruction, anosmia); Deviated septum (chronic unilateral obstruction); NSAID-exacerbated respiratory disease (asthma + nasal polyps + ASA sensitivity). Refer to physician if uncertain."
+                },
+                "rx_redflag": {
+                    "type": "refer",
+                    "msg": "Red flag features present — refer to physician or ENT for assessment, not for AR treatment.",
+                    "detail": "Unilateral findings (obstruction, discharge, recurrent epistaxis): consider nasal polyps, foreign body, malignancy. Anosmia: chronic rhinosinusitis with polyps, post-viral, neurological. Facial pain + fever: bacterial sinusitis or orbital complications. Clear discharge after head trauma: CSF leak — emergency. Vision changes: orbital/intracranial extension — urgent. Do NOT prescribe AR treatment until alternative diagnoses are excluded."
+                },
+                "rx_medic": {
+                    "type": "caution",
+                    "msg": "Likely rhinitis medicamentosa (rebound congestion from prolonged topical decongestant use). STOP the topical decongestant and start INCS for the underlying AR — withdrawal congestion improves over 1–4 weeks.",
+                    "detail": "MANAGEMENT: (1) Discontinue oxymetazoline/xylometazoline/phenylephrine completely (gradual taper of one nostril at a time can ease withdrawal). (2) Start INCS — fluticasone propionate 50 mcg, 2 sprays each nostril OD (or mometasone, budesonide). (3) Saline irrigation BID. (4) Reassure that congestion will improve over 1–4 weeks but may worsen initially. (5) Counsel: never use topical nasal decongestants for >3–5 days. (6) Add oral pseudoephedrine ONLY if needed short-term (BTC, NAPRA Schedule II) — but verify no contraindications (HTN, CAD, BPH, MAOI). If severe rebound or persistent symptoms after 4 weeks, refer."
+                },
+                "tx_preg": {
+                    "type": "treat",
+                    "msg": "PREGNANCY/LACTATION SAFE FIRST-LINE: (1) Saline nasal irrigation TID + (2) Budesonide nasal spray (Rhinocort Aqua) 64 mcg/spray, 1–2 sprays each nostril OD — Health Canada Pregnancy Category B (only INCS with this label).",
+                    "detail": "ORAL ANTIHISTAMINE if needed: loratadine 10 mg OD or cetirizine 10 mg OD — both extensive human safety data in pregnancy and lactation (preferred over fexofenadine and bilastine which have less pregnancy data). AVOID: pseudoephedrine in 1st trimester (small risk of gastroschisis); intranasal/oral decongestants in 1st trimester. AVOID 1st-generation antihistamines (diphenhydramine, chlorpheniramine) due to anticholinergic load. Refer to physician/OB if symptoms severe, uncontrolled after 2–4 weeks, or coexisting asthma. SOGC and CSACI 2020 endorse this approach. Note: budesonide is also preferred during lactation."
+                },
+                "rx_pedi": {
+                    "type": "refer",
+                    "msg": "Child under 2 years — refer to physician/pediatrician for assessment.",
+                    "detail": "Most INCS approved ≥2 years (mometasone, fluticasone furoate ≥2 years; fluticasone propionate ≥4 years). Oral 2nd-gen antihistamines: cetirizine and loratadine syrup ≥2 years. Under 2 years requires physician assessment to confirm AR diagnosis (vs viral URI, immune deficiency, anatomical issues) and select age-appropriate therapy. Saline irrigation and allergen avoidance are safe at any age while awaiting assessment."
+                },
+                "tx_AH": {
+                    "type": "treat",
+                    "msg": "First-Line for mild intermittent AR: Second-generation oral antihistamine — cetirizine 10 mg OD, loratadine 10 mg OD, fexofenadine 120–180 mg OD, bilastine 20 mg OD, OR rupatadine 10 mg OD.",
+                    "detail": "All effective; choose based on patient preference and side-effect profile. Cetirizine: mild sedation in some (take at bedtime). Fexofenadine: take on empty stomach (avoid fruit juice — reduces absorption). Bilastine: 1h before or 2h after food. AVOID 1st-generation antihistamines (diphenhydramine, chlorpheniramine — sedation, anticholinergic, Beers). Add saline irrigation BID and allergen avoidance counselling. If inadequate after 2 weeks, escalate to INCS. Counsel that daily prophylactic dosing during allergen exposure is more effective than PRN."
+                },
+                "tx_INCS": {
+                    "type": "treat",
+                    "msg": "First-Line for persistent or moderate-severe AR: Intranasal corticosteroid — fluticasone propionate (Flonase) 50 mcg/spray, 2 sprays each nostril OD; OR mometasone (Nasonex) 50 mcg/spray, 2 sprays each nostril OD; OR budesonide (Rhinocort) OD.",
+                    "detail": "INCS is the most effective single therapy for moderate-severe or persistent AR — superior to oral antihistamines for congestion. ONSET: 12 hours; FULL EFFECT: 1–2 weeks of daily use. CRITICAL technique: aim spray nozzle toward outer ear (away from nasal septum) to prevent septal irritation/perforation; gentle inhalation during spray; do NOT blow nose immediately after. Daily use, NOT PRN. Saline irrigation 30 min BEFORE INCS improves drug delivery. May add oral 2nd-gen antihistamine for breakthrough sneezing/itch. Reassess at 2–4 weeks. Note: Flonase Sensimist starts at 2 sprays each nostril OD, then step down to 1 spray OD once controlled."
+                },
+                "tx_combo": {
+                    "type": "treat",
+                    "msg": "Step-Up Therapy (ARIA 2020): Azelastine 0.137% + fluticasone propionate 0.05% combination spray (Dymista) — 1 spray each nostril BID. OR add oral 2nd-gen antihistamine to existing INCS.",
+                    "detail": "Dymista is superior to either component alone for moderate-severe AR not controlled on INCS monotherapy (CSACI 2020). Dymista: NAPRA Schedule I (Rx — within Ontario MA scope to prescribe). Onset is faster than INCS alone (~30 min for azelastine). Common: bitter taste (10–15%) — counsel to keep head forward, not tilted back, during administration to minimise. ALTERNATIVE if Dymista not preferred: continue INCS + add oral cetirizine/loratadine/bilastine OD. If still inadequate after 4 weeks of optimised therapy → refer to allergist for skin testing and consideration of subcutaneous or sublingual immunotherapy. Verify INCS technique before assuming therapy failure (most failures are technique-related)."
+                }
+            }
+        }
     },
     {
         "name": "Oral Candidiasis (Thrush)",
