@@ -107436,6 +107436,7 @@ var MINOR_AILMENTS = [
         "name": "Oral Candidiasis (Thrush)",
         "icon": "🦷",
         "category": "Oral",
+        "ontario_ma_scope": "⚠️ Oral candidiasis (thrush) is NOT in the Ontario Minor Ailments designated list under O. Reg. 256/24 (May 2025). Pharmacist role is OTC counselling and referral. Nystatin oral suspension is NAPRA Schedule II/III (behind-the-counter, no prescription required); miconazole 2% buccal tablets (Oravig) are Schedule I. Topical/oral azoles for systemic therapy and esophageal extension require physician/dentist prescribing.",
         "assessment": {
             "key_questions": [
                 "Inhaled corticosteroid use (most common cause — rinsing mouth after?)",
@@ -107446,12 +107447,12 @@ var MINOR_AILMENTS = [
                 "Infant (<4 months) or breastfeeding mother-infant pair (treat both)?"
             ],
             "red_flags": [
-                "Difficulty swallowing (odynophagia) → esophageal candidiasis (refer)",
-                "Unresponsive to antifungal → resistant Candida or alternative diagnosis",
-                "Immunocompromised patient — systemic infection risk",
-                "Unusual appearance (one-sided, ulcerated) → malignancy",
-                "Infant <4 months with oral thrush — refer to physician",
-                "Breastfeeding mother-infant dyad — treat both (infant oral nystatin AND maternal nipples with miconazole or clotrimazole cream) to prevent ping-pong reinfection"
+                "Difficulty swallowing (odynophagia) → esophageal candidiasis — physician referral",
+                "Unresponsive to topical antifungal after 7–14 days → resistant Candida or alternative diagnosis (lichen planus, leukoplakia, malignancy)",
+                "Immunocompromised host (HIV, chemotherapy, transplant, prolonged corticosteroid) → systemic candidiasis risk; physician assessment for systemic azole",
+                "Unilateral, fixed plaque, induration, or ulceration → malignancy (oral SCC) — dental/ENT referral",
+                "Infant <4 months with refractory or extensive thrush → pediatrician referral",
+                "Severe pain, fever, or systemic symptoms → invasive infection — urgent referral"
             ],
             "ddx": [
                 "Leukoplakia (cannot be wiped off)",
@@ -107815,9 +107816,10 @@ var MINOR_AILMENTS = [
             ]
         },
         "references": [
-            "Ontario College of Pharmacists. Minor Ailments Prescribing: Dysmenorrhea. OCP Standards, O. Reg. 256/24 (2025).",
+            "Ontario College of Pharmacists. Minor Ailments Prescribing: Dysmenorrhea. OCP Standards, O. Reg. 256/24 (May 2025).",
             "Burnett M, et al. (SOGC). Primary Dysmenorrhea Consensus Guideline. SOGC Clinical Practice Guideline No. 345. J Obstet Gynaecol Can. 2017;39(7):585–595.",
-            "ACOG Practice Bulletin No. 218: Dysmenorrhea and Endometriosis in the Adolescent. Obstet Gynecol. 2018;132(6):e249–e258.",
+            "Singh SS, Suen MWH, et al. (SOGC). Endometriosis: Diagnosis and Impact. SOGC Clinical Practice Guideline No. 437. J Obstet Gynaecol Can. 2023 (chronic pelvic pain / endometriosis pathway including dysmenorrhea).",
+            "ACOG Clinical Consensus No. 11: Management of Acute Pain From Non-Operative Conditions. Obstet Gynecol. 2024 (replaces ACOG Practice Bulletin No. 218 on adolescent dysmenorrhea/endometriosis).",
             "NICE. Dysmenorrhoea: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence; updated 2023."
         ],
         "patient_counselling": [
@@ -107879,7 +107881,7 @@ var MINOR_AILMENTS = [
                 {
                     "name": "Topical Antibiotic (localized)",
                     "drugs": "Mupirocin 2% ointment (Bactroban) BID × 5 days | Fusidic acid 2% cream (Fucidin) TID × 5–7 days | Ozenoxacin 1% cream (Ozanex) BID × 5 days",
-                    "notes": "Topical therapy equivalent to oral for localized non-bullous impetigo. Reduces systemic antibiotic exposure and resistance risk. Pharmacist can prescribe under Ontario Minor Ailments (topical antibiotics only). SCOPE NOTE: Typically ≤3 localized lesions in one body area for topical-only MA management per OPA guidance. Clean crusts with warm water before applying. Mupirocin and fusidic acid cover S. aureus and Group A Strep. Ozenoxacin (Ozanex) 1% cream: Health Canada-approved 2017 for impetigo in patients ≥2 months; on Ontario Schedule 4 — a notable Canadian option for mupirocin-resistant cases.",
+                    "notes": "Topical therapy equivalent to oral for localized non-bullous impetigo. Reduces systemic antibiotic exposure and resistance risk. Pharmacist can prescribe under Ontario Minor Ailments (topical antibiotics only). SCOPE NOTE: Typically ≤5 localized lesions in one body area for topical-only MA management per OPA guidance. Clean crusts with warm water before applying. Mupirocin and fusidic acid cover S. aureus and Group A Strep. Ozenoxacin (Ozanex) 1% cream: Health Canada-approved 2017 for impetigo in patients ≥2 months; NAPRA Schedule I — a notable Canadian option for mupirocin-resistant cases.",
                     "preferred_when": "Localized (≤3 lesions, one body area), non-bullous impetigo"
                 }
             ],
@@ -107916,7 +107918,7 @@ var MINOR_AILMENTS = [
             "NICE. Impetigo: Clinical Knowledge Summary (CKS). National Institute for Health and Care Excellence; updated 2023."
         ],
         "patient_counselling": [
-            "Mupirocin 2% ointment: apply a thin layer to affected lesions THREE times daily (TID) for 5 days; gently soak crusts with warm water to soften before each application; cover with a non-stick dressing if needed (especially for children).",
+            "Mupirocin 2% ointment: apply a thin layer to affected lesions TWICE daily (BID) for 5 days per IDSA 2014 SSTI Guidelines; gently soak crusts with warm water to soften before each application; cover with a non-stick dressing if needed (especially for children). Note: Fusidic acid (Fucidin) is dosed TID; do not confuse the two regimens.",
             "Fusidic acid 2% cream: apply TID for 5–7 days — equivalent efficacy to mupirocin; preferred where mupirocin resistance is a concern.",
             "Wash hands thoroughly with soap and water before and after applying the cream; use a separate towel and do not share towels, washcloths, or bedding with others — impetigo is highly contagious by direct contact and fomites.",
             "Gently clean lesions with mild soap and water once or twice daily; trim fingernails short and discourage scratching/picking — scratching spreads infection to other body sites and to other people.",
@@ -108223,10 +108225,11 @@ var MINOR_AILMENTS = [
             ]
         },
         "references": [
-            "Ontario College of Pharmacists. Minor Ailments Prescribing: Acne. OCP Standards, O. Reg. 256/24 (2025).",
-            "Canadian Dermatology Association (CDA). Acne Management Guidelines. J Cutan Med Surg. 2015;19(2):101–108 (with current CDA updates).",
-            "Zaenglein AL, et al. Guidelines of care for the management of acne vulgaris (AAD). J Am Acad Dermatol. 2016;74(5):945–973. Reaffirmed 2024.",
-            "NICE. Acne vulgaris: management. NICE guideline [NG198]. National Institute for Health and Care Excellence; 2021."
+            "Ontario College of Pharmacists. Note: Acne vulgaris is NOT a designated condition under O. Reg. 256/24 (May 2025) — pharmacist role is OTC counselling and referral.",
+            "Reynolds RV, Yeung H, Cheng CE, et al. Guidelines of care for the management of acne vulgaris (AAD). J Am Acad Dermatol. 2024;90(5):1006.e1–1006.e30. (Replaces Zaenglein 2016 AAD guideline.)",
+            "Canadian Dermatology Association (CDA). Acne Management Position Statement (2023 update).",
+            "Asai Y, Baibergenova A, Dutil M, et al. Management of acne: Canadian clinical practice guideline. CMAJ. 2016;188(2):118–126 (Canadian-context reference).",
+            "NICE. Acne vulgaris: management. NICE guideline [NG198] (2021, updated 2023). National Institute for Health and Care Excellence."
         ],
         "patient_counselling": [
             "Benzoyl peroxide (BPO) 2.5–5%: apply a thin layer to clean dry skin (pea-sized amount for the whole face) ONCE daily initially; can increase to twice daily if tolerated. 2.5% strength has equivalent efficacy to 5–10% with less irritation — start low.",
@@ -108456,6 +108459,7 @@ var MINOR_AILMENTS = [
         "name": "Nausea & Vomiting",
         "icon": "🤢",
         "category": "GI",
+        "ontario_ma_scope": "Nausea and vomiting of pregnancy (NVP) IS in the Ontario Minor Ailments designated list per O. Reg. 256/24 (added Jan 2023; consolidated under O. Reg. 256/24 May 2025). Pharmacists may prescribe doxylamine/pyridoxine (Diclectin, Bonjesta) for confirmed NVP. General nausea/vomiting from other causes (motion sickness, gastroenteritis, medication-induced) is NOT in MA scope — pharmacist provides OTC counselling and referral.",
         "assessment": {
             "key_questions": [
                 "Onset and duration? Associated with food/timing?",
@@ -108467,12 +108471,15 @@ var MINOR_AILMENTS = [
             "red_flags": [
                 "Severe abdominal pain → appendicitis, bowel obstruction, pancreatitis — ER",
                 "Hematemesis (vomiting blood) or coffee-ground emesis → upper GI bleed — ER",
-                "Projectile vomiting (no nausea before) → central cause (raised ICP)",
-                "Signs of severe dehydration or electrolyte abnormality",
-                "Jaundice + vomiting → hepatitis, cholecystitis",
-                "Persistent vomiting >24–48h → dehydration risk",
+                "Projectile vomiting (no nausea before) → central cause (raised ICP) — urgent assessment",
+                "Severe headache + neck stiffness, photophobia, fever → meningitis — ER",
+                "Recent head trauma + vomiting, focal neurological deficit, or altered mental status → intracranial pathology — ER",
+                "Signs of severe dehydration (≥5% weight loss, decreased urine output, postural hypotension) or electrolyte abnormality — ER for IV fluids",
+                "Jaundice + vomiting → hepatitis, cholecystitis, biliary obstruction — urgent",
+                "Persistent vomiting >24h adults / >12h infants without keeping fluids down → dehydration risk — referral",
                 "DKA: fruity breath, polyuria, polydipsia, history of T1DM → ER",
-                "Increased intracranial pressure: headache (especially morning/positional), papilledema, vomiting without nausea → ER"
+                "Increased intracranial pressure: morning/positional headache, papilledema, vomiting without nausea → ER",
+                "Hyperemesis gravidarum (>5% weight loss, ketonuria, refractory vomiting in pregnancy) → urgent OB assessment"
             ],
             "ddx": [
                 "Viral gastroenteritis",
@@ -108492,18 +108499,18 @@ var MINOR_AILMENTS = [
                 {
                     "name": "Scope Note",
                     "drugs": "",
-                    "notes": "⚠️ General nausea/vomiting and nausea/vomiting of pregnancy (NVP) are NOT in the Ontario MA prescribing scope. Pharmacists provide OTC counselling, referral, and adapt existing prescriptions."
+                    "notes": "✅ Nausea and vomiting of PREGNANCY (NVP) IS in Ontario MA scope (O. Reg. 256/24 — added Jan 2023): pharmacists may prescribe doxylamine/pyridoxine. General nausea/vomiting from other causes (motion sickness, gastroenteritis, medication-induced) is NOT in MA scope — pharmacist provides OTC counselling, referral, and adapts existing prescriptions."
                 },
                 {
                     "name": "Dimenhydrinate (Gravol)",
-                    "drugs": "Dimenhydrinate (Gravol) 25–50 mg q4–6h PRN | Gravol Ginger (natural health product)",
-                    "notes": "H1 antihistamine + anticholinergic — effective for motion sickness and general nausea. OTC. Sedating (use with caution in elderly — falls; Beers Criteria). Avoid in BPH, glaucoma. Pregnancy: dimenhydrinate 50 mg q4–6h has a long safety record and is included in the SOGC 2016 NVP algorithm after pyridoxine ± doxylamine. Acceptable if preferred by patient. Gravol Ginger: natural product, safe in pregnancy.",
+                    "drugs": "Dimenhydrinate (Gravol) 50–100 mg PO q4–6h PRN (max 400 mg/day, adults) | Gravol Ginger (natural health product)",
+                    "notes": "H1 antihistamine + anticholinergic — effective for motion sickness and general nausea. OTC (NAPRA Schedule III). Sedating (use with caution in elderly — falls; Beers Criteria). Avoid in BPH, glaucoma. Pregnancy: dimenhydrinate 50 mg q4–6h has a long safety record and is included in the SOGC No. 254 (reaffirmed 2024) NVP algorithm after pyridoxine ± doxylamine. Acceptable if preferred by patient. Gravol Ginger: natural product, safe in pregnancy.",
                     "preferred_when": "Motion sickness, mild-moderate nausea from various causes, short-term use"
                 },
                 {
                     "name": "Pyridoxine (Vitamin B6) — NVP First Step",
-                    "drugs": "Pyridoxine (vitamin B6) 10–25 mg q6–8h (up to 200 mg/day)",
-                    "notes": "Per SOGC Guideline No. 344: pyridoxine alone is the FIRST pharmacological step for nausea and vomiting of pregnancy before adding doxylamine. OTC; safe in pregnancy. If insufficient, add doxylamine (Diclectin).",
+                    "drugs": "Pyridoxine (vitamin B6) 10–25 mg PO q6–8h (max 200 mg/day in pregnancy)",
+                    "notes": "Per SOGC CPG No. 254 (reaffirmed 2024): pyridoxine alone is the FIRST pharmacological step for nausea and vomiting of pregnancy before adding doxylamine. OTC; safe in pregnancy. If insufficient after 2–3 days, add doxylamine (Diclectin). Avoid chronic doses >200 mg/day (peripheral neuropathy risk).",
                     "preferred_when": "First-line pharmacotherapy for NVP before escalating to doxylamine-pyridoxine combination"
                 },
                 {
@@ -108813,12 +108820,19 @@ var MINOR_AILMENTS = [
                     "preferred_when": "All patients ≥50, all immunocompromised, all with ophthalmic involvement — start within 72h"
                 },
                 {
-                    "name": "Pain Management",
-                    "drugs": "Gabapentin: start 100–300 mg at bedtime, titrate to 100–300 mg TID as tolerated (especially in elderly — start low) | Pregabalin 75 mg BID (titrate to 150 mg BID) as alternative | Amitriptyline 10 mg at bedtime (max 25–50 mg) — use with caution in elderly | NSAIDs / acetaminophen for acute pain",
-                    "notes": "Postherpetic neuralgia (PHN) is the most important complication — burning, shooting pain persisting months after rash resolves (defined as pain >90 days post-rash onset). Gabapentin or amitriptyline started acutely may reduce PHN risk. Amitriptyline: use with caution in elderly (anticholinergic effects, fall risk, QTc prolongation) — start 10 mg at bedtime; max 25–50 mg. Capsaicin 8% patch: for established PHN — specialist-applied."
+                    "name": "Acute Pain Management (within MA scope)",
+                    "drugs": "Acetaminophen 500–1000 mg PO q4–6h (max 4 g/day) | Ibuprofen 400 mg PO q6–8h or naproxen 250–500 mg PO BID with food (if no contraindications) | Topical capsaicin 0.025–0.075% TID-QID for localized residual pain (low-strength only — not the 8% Qutenza patch)",
+                    "notes": "These are the within-MA-scope analgesic options. Use scheduled (not PRN) for the first few days for best effect. Avoid NSAIDs in CKD, active PUD, last trimester pregnancy, severe HF. Add a topical for adjunctive relief.",
+                    "preferred_when": "Acute zoster pain, mild to moderate, no contraindications to NSAID/acetaminophen"
                 }
             ],
-            "second_line": [],
+            "second_line": [
+                {
+                    "name": "Neuropathic Pain Adjuncts (Rx — OUTSIDE Ontario MA scope; refer to physician/NP)",
+                    "drugs": "Gabapentin 100–300 mg at bedtime, titrate to 100–300 mg TID (start low in elderly) | Pregabalin 75 mg BID, titrate to 150 mg BID | Amitriptyline 10 mg at bedtime (max 25–50 mg in older adults; QTc + anticholinergic caution) | Lidocaine 5% patch (specialty Rx) — for established PHN | Capsaicin 8% patch (Qutenza, specialist-applied) — for established PHN",
+                    "notes": "These are PRESCRIPTION agents for severe acute zoster pain or postherpetic neuralgia (PHN — pain >90 days post-rash). They are NOT prescribable by pharmacists under the Ontario MA scope (O. Reg. 256/24) — refer to physician/NP. Started acutely, gabapentin or amitriptyline MAY reduce PHN risk (Cochrane evidence weak). PHN is the most important long-term complication of shingles."
+                }
+            ],
             "non_pharm": [
                 "Cool compresses (calamine lotion) to vesicles — reduces itch and pain",
                 "Keep rash clean and dry; loose clothing",
@@ -108875,16 +108889,22 @@ var MINOR_AILMENTS = [
         "ontario_ma_scope": "⚠️ Pinworms/enterobiasis is NOT a designated Ontario MA condition. Pyrantel pamoate (Combantrin) is OTC — pharmacist provides OTC counselling only.",
         "assessment": {
             "key_questions": [
-                "Perianal itch (especially nocturnal — hallmark: female worms lay eggs at night)?",
-                "Child in daycare/school (highly transmissible in children)?",
-                "Household contacts symptomatic?",
-                "In practice, empirical treatment is standard in Canada when classic symptoms (nocturnal perianal itch, especially in children) are present — confirm diagnosis not always required.",
-                "Scotch tape (pinworm paddle) test: apply sticky tape to perianal area in morning before bathing, examine microscopically for eggs — highest sensitivity when done before bathing or defecation"
+                "Perianal itch, especially nocturnal (hallmark — female worms lay eggs at night)?",
+                "Visualization of small white threadlike worms in perianal area, stool, or pajamas?",
+                "Child attending daycare or school (highly transmissible in children)?",
+                "Other household contacts with similar symptoms?",
+                "Patient or household member pregnant or breastfeeding?",
+                "Patient age (pyrantel labelling ≥1 year per Combantrin Canadian PM; conservative cutoff ≥2 years)?",
+                "Prior treatment attempts and outcome (recurrence is common — re-infection from environment)?",
+                "Recent travel or exposure to other parasitic risk factors?"
             ],
             "red_flags": [
-                "Significant weight loss, diarrhea, or malabsorption → other parasitic infection",
-                "Abdominal pain + eosinophilia → other helminth",
-                "Pelvic symptoms in girls → pinworm migration to vagina/uterus (requires gynaecology)"
+                "Significant weight loss, chronic diarrhea, or malabsorption → other parasitic infection (Giardia, Strongyloides) — physician referral",
+                "Abdominal pain + eosinophilia → other helminth (Ascaris, hookworm) — physician referral and stool ova/parasite testing",
+                "Pelvic symptoms in girls (vaginal discharge, pelvic pain) → pinworm migration to vagina/uterus — gynaecology",
+                "Pregnancy or breastfeeding → defer pharmacotherapy where possible (hygiene measures alone often sufficient); benzimidazoles (mebendazole, albendazole) avoid 1st trimester (animal teratogenicity); pyrantel preferred if treatment essential — physician/midwife consult",
+                "Age <2 years → pyrantel safety data limited below 2 years; refer for pediatric assessment (CPS Position Statement on Enterobiasis 2018, reaffirmed 2023)",
+                "Failure of two consecutive treatment courses → refer for parasitology stool/tape workup"
             ],
             "ddx": [
                 "Contact dermatitis (perianal)",
@@ -108970,13 +108990,13 @@ var MINOR_AILMENTS = [
                 "Age ≥60 with new-onset symptoms (increased risk of Barrett's/cancer — ACG 2022 threshold)?",
                 "Current medications worsening GERD (CCBs, nitrates, TCAs, bisphosphonates)?",
                 "Frequency: <2×/week (mild) vs >2×/week (moderate-frequent)?",
-                "Heaviness of Smoking Index (HSI) if applicable; long-term PPI use — reassess indication?"
+                "Long-term PPI use — reassess indication and consider deprescribing per Choosing Wisely Canada / RxFiles 2024?"
             ],
             "red_flags": [
                 "Dysphagia or odynophagia → structural pathology — endoscopy",
                 "Unintentional weight loss + GI symptoms → malignancy",
                 "GI bleeding (hematemesis, melena) → upper GI bleed — ER",
-                "Age ≥50 with new-onset symptoms OR chronic GERD (>5 years) with multiple risk factors (male sex, obesity, smoking, white ethnicity, hiatal hernia) → endoscopy to assess for Barrett's oesophagus (ACG 2022 risk-factor-based screening)",
+                "Age ≥60 with new-onset symptoms (per ACG 2022 alarm threshold), OR chronic GERD (>5 years) plus multiple risk factors (age >50, male sex, obesity, smoking, white ethnicity, hiatal hernia, family history of esophageal adenocarcinoma) → endoscopy to assess for Barrett's esophagus",
                 "Iron deficiency anaemia without clear cause → upper GI workup",
                 "Persistent vomiting → structural or motility pathology"
             ],
@@ -109048,9 +109068,9 @@ var MINOR_AILMENTS = [
             "Store at room temperature (15–25 °C) in the original container, protected from moisture and light."
         ],
         "therapeutic_flow": [
-            "1. Confirm eligibility under Ontario minor ailment scope: adult ≥ 18 years (or per provincial guidance) with typical heartburn/regurgitation symptoms occurring ≥ 2 days/week and impacting quality of life; obtain consent, verify ID/OHIP.",
+            "1. Confirm OTC counselling eligibility (GERD is NOT in Ontario MA scope per O. Reg. 256/24 — pharmacist provides OTC counselling, Rx adaptation, or referral): adult with typical heartburn/regurgitation occurring ≥2 days/week affecting quality of life; obtain consent, verify ID/OHIP for Rx adaptation if applicable.",
             "2. Assessment: characterize symptoms (frequency, severity, timing — nocturnal vs postprandial, triggers), duration, dietary/lifestyle factors, prior antacid/H2/PPI trials, comorbidities (cardiac, pregnancy), full medication review including OTCs, NSAIDs, ASA, bisphosphonates.",
-            "3. Red flag / ALARM screen: dysphagia, odynophagia, GI bleed, unexplained weight loss, anemia, persistent vomiting, chest pain with cardiac features, age > 50 with new-onset symptoms, family history of upper GI malignancy — refer to physician.",
+            "3. Red flag / ALARM screen: dysphagia, odynophagia, GI bleed, unexplained weight loss, anemia, persistent vomiting, chest pain with cardiac features, age ≥60 with new-onset symptoms (per ACG 2022), family history of upper GI malignancy — refer to physician.",
             "4. Differential diagnosis: rule out cardiac chest pain, peptic ulcer disease, H. pylori, eosinophilic esophagitis, functional dyspepsia, biliary disease, pregnancy-related reflux, and medication-induced esophagitis.",
             "5. Therapy selection: trial lifestyle modification + PPI standard dose once daily 30–60 min before breakfast for 4–8 weeks (e.g., pantoprazole 40 mg, omeprazole 20 mg, esomeprazole 40 mg); choose pantoprazole/rabeprazole if on clopidogrel.",
             "6. Counselling: PPI timing and administration, lifestyle modifications, expected onset, step-down plan, drug interactions, side effects, and ALARM symptoms.",
@@ -109072,19 +109092,24 @@ var MINOR_AILMENTS = [
                 "Current moisturizer use (type, frequency)?"
             ],
             "red_flags": [
-                "Secondary bacterial infection (weeping/yellow crusting, fever) → S. aureus",
-                "Eczema herpeticum (widespread punched-out vesicles in eczema) → HSV emergency — urgent referral",
-                "Erythroderma (≥90% BSA) = emergency referral to ER",
-                "Moderate-severe uncontrolled eczema not responding to optimized topical therapy → refer for dupilumab (Dupixent) or JAK inhibitor consideration"
+                "Secondary bacterial infection (weeping, yellow/honey crusting, surrounding warmth, fever) → S. aureus impetiginization or cellulitis — refer for systemic antibiotic",
+                "Eczema herpeticum (widespread monomorphic punched-out vesicles, fever, lymphadenopathy) → HSV emergency — urgent referral",
+                "Erythroderma (≥90% BSA involvement) → emergency — ER for IV fluids, temperature regulation, infection workup",
+                "Severe widespread disease (>20% BSA involvement) or persistent moderate-severe eczema not responding to optimized topical therapy → dermatology for dupilumab, tralokinumab, or JAK inhibitor (upadacitinib, abrocitinib)",
+                "Infants <3 months with eczema → pediatric assessment (rule out seborrheic dermatitis, scabies, immunodeficiency)",
+                "Eyelid/periocular involvement → ophthalmology assessment; only low-potency topical steroid (hydrocortisone 1%) on eyelids and only briefly — risk of glaucoma, cataract",
+                "Allergic contact dermatitis with unclear trigger or recurrent → dermatology for patch testing"
             ],
             "ddx": [
-                "Psoriasis (well-demarcated, extensor, silvery scale)",
-                "Tinea (active leading edge, KOH positive)",
-                "Scabies (burrows, nocturnal itch, webspaces)",
-                "Seborrheic dermatitis (scalp, nasolabial folds, greasy scale)",
-                "Atopic dermatitis: personal/family history of atopy, flexural distribution, chronic pruritus",
-                "Irritant contact dermatitis: exposure history (water, detergents, solvents), no sensitization, common on hands, resolves with avoidance",
-                "Allergic contact dermatitis: sensitization required, patch test positive, resolves with allergen avoidance (nickel, fragrance, methylisothiazolinone most common)"
+                "Psoriasis (well-demarcated extensor plaques, silvery scale, nail pitting)",
+                "Tinea corporis (active leading edge with central clearing, KOH positive)",
+                "Scabies (burrows, nocturnal itch, household contacts affected, webspaces)",
+                "Seborrheic dermatitis (scalp, nasolabial folds, retroauricular, greasy yellow scale)",
+                "Cutaneous T-cell lymphoma / mycosis fungoides (persistent patch/plaque, biopsy-confirmed — consider in adults with atypical chronic eczema)",
+                "Drug eruption (recent new medication, morbilliform pattern)",
+                "Nummular dermatitis (coin-shaped plaques — often confused with tinea)",
+                "Pityriasis rosea (herald patch + Christmas-tree truncal distribution)",
+                "Stasis dermatitis (lower legs, venous insufficiency context)"
             ]
         },
         "treatment": {
@@ -109180,9 +109205,9 @@ var MINOR_AILMENTS = [
             "red_flags": [
                 "Active suicidal ideation, severe depression, or unstable psychiatric illness → refer for psychiatric assessment before initiating cessation pharmacotherapy (CAN-ADAPTT 2011/2023)",
                 "Pregnancy or planning pregnancy → refer to obstetric team if pharmacotherapy contemplated; varenicline and bupropion NOT recommended in pregnancy per SOGC and CAN-ADAPTT (insufficient safety data); behavioural support is first-line",
-                "Active or recent (<2 weeks) MI, unstable angina, or life-threatening arrhythmia → cardiology input before nicotinic agonist therapy; NRT still preferable to continued smoking but coordinate with cardiologist",
-                "Seizure disorder, current/prior eating disorder, or active alcohol/sedative withdrawal → bupropion CONTRAINDICATED (lowers seizure threshold) — refer for alternative regimen",
-                "Severe hepatic or renal impairment → bupropion and high-dose varenicline contraindicated/dose-adjusted — refer for prescriber assessment",
+                "Active or recent (<2 weeks) MI, unstable angina, or life-threatening arrhythmia → cardiology coordination before initiating VARENICLINE specifically; note NRT itself remains preferable to continued smoking even in stable CVD (see clinical_considerations) and should not be withheld",
+                "Seizure disorder, current/prior eating disorder, or active alcohol/sedative withdrawal → BUPROPION CONTRAINDICATED (lowers seizure threshold) — refer for varenicline or NRT instead",
+                "Severe hepatic impairment (Child-Pugh C — bupropion contraindicated) or severe renal impairment (CrCl <30 mL/min — varenicline max 1 mg OD; ESRD on HD — max 0.5 mg OD per Health Canada PM) → refer for prescriber dose adjustment",
                 "Concurrent smoking-affected medications (clozapine, olanzapine, theophylline, fluvoxamine, R-warfarin, caffeine) → refer for medication review at quit date; smoking-induced CYP1A2 induction is lost on cessation, requiring proactive dose reduction"
             ],
             "clinical_considerations": [
@@ -109234,10 +109259,12 @@ var MINOR_AILMENTS = [
                 "Average 8–14 quit attempts before sustained abstinence — every attempt builds skill"
             ],
             "refer_when": [
-                "Complex psychiatric comorbidity requiring specialist management",
-                "Pregnancy — specialist/obstetric input required; behavioural support first-line, then intermittent NRT with team input",
-                "Significant cardiovascular disease (most can be managed by pharmacist with NRT — do NOT withhold NRT)",
-                "Withdrawal seizure risk (alcohol or BZD co-dependence)"
+                "Complex psychiatric comorbidity requiring specialist management (active suicidal ideation, severe untreated depression, schizophrenia destabilization)",
+                "Pregnancy — refer to obstetric team for shared decision-making on pharmacotherapy; behavioural support first-line; intermittent NRT (gum/lozenge, not patch) preferred if pharmacotherapy required (varenicline and bupropion NOT recommended in pregnancy per CAN-ADAPTT, SOGC)",
+                "Recent (<2 weeks) MI, unstable angina, or life-threatening arrhythmia — coordinate varenicline initiation with cardiology (note: NRT itself is SAFE in stable CVD — see clinical_considerations)",
+                "Active alcohol or sedative-hypnotic withdrawal, history of seizure disorder, current/prior eating disorder — bupropion contraindicated (lowers seizure threshold)",
+                "Severe hepatic impairment (Child-Pugh C — bupropion contraindicated; varenicline use with caution) or severe renal impairment (CrCl <30 mL/min — varenicline max 1 mg OD; ESRD on HD — max 0.5 mg OD per Health Canada PM)",
+                "Failure of two or more pharmacotherapy attempts at adequate dose/duration — refer for STOP Program / specialist behavioural support"
             ],
             "drug_interactions_on_cessation": "On quitting, smoking-induced CYP1A2 induction is lost — monitor and reduce doses of: clozapine, olanzapine, theophylline, caffeine, fluvoxamine, R-warfarin by ~25–50% over 1–2 weeks post-cessation."
         },
