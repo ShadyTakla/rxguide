@@ -98196,41 +98196,6 @@ var DRUGS = {
     ],
     "pregnancy": "Avoid in pregnancy — limited human data. Behavioural cessation preferred; NRT acceptable if cessation efforts fail."
   },
-  "tobramycin": {
-    "name": "Tobramycin",
-    "brand": "Tobrex (ophthalmic), TOBI (inhaled), generic",
-    "class": "Aminoglycoside antibiotic",
-    "napra": "I",
-    "moa": "Bactericidal aminoglycoside that binds irreversibly to the 30S ribosomal subunit, causing misreading of mRNA and inhibiting bacterial protein synthesis. Active against most Gram-negative aerobes (including Pseudomonas aeruginosa) and some Gram-positives (including S. aureus). Topical ophthalmic formulation (Tobrex) provides high local concentration with minimal systemic absorption. Inhaled formulation (TOBI) used for chronic Pseudomonas suppression in cystic fibrosis.",
-    "indications": [
-      "Bacterial conjunctivitis (ophthalmic — topical)",
-      "Bacterial keratitis (ophthalmic — topical, often with fortified formulation)",
-      "Chronic Pseudomonas aeruginosa infection in cystic fibrosis (inhaled — TOBI)",
-      "Serious Gram-negative infections (IV — hospital use)"
-    ],
-    "dosing": [
-      {
-        "indication": "Bacterial conjunctivitis",
-        "dose": "Tobramycin 0.3% ophthalmic drops: 1–2 drops in affected eye(s) every 4 hours × 5–7 days. For severe infection: 2 drops every hour, taper as improves. Ointment 0.3%: small ribbon (0.5 cm) into lower conjunctival sac BID–TID × 5–7 days.",
-        "notes": "Discard 28 days after opening. Apply with proper eye drop technique — punctal occlusion reduces systemic absorption."
-      }
-    ],
-    "contraindications": [
-      "Hypersensitivity to tobramycin or other aminoglycosides",
-      "Avoid in viral or fungal eye infections (no antibacterial role)"
-    ],
-    "side_effects": [
-      "Ophthalmic: transient burning/stinging on instillation, eyelid itching, conjunctival irritation",
-      "Rare: superinfection with prolonged use, hypersensitivity",
-      "Systemic absorption from ophthalmic use is minimal"
-    ],
-    "monitoring": [
-      "Symptom resolution within 5–7 days",
-      "Watch for hypersensitivity reactions",
-      "If no improvement in 48–72h, reassess for resistance or alternative diagnosis"
-    ],
-    "source": "Health Canada Tobrex Product Monograph; AAO Conjunctivitis PPP 2023; PHO Bugs & Drugs 2024"
-  },
   "olopatadine": {
     "name": "Olopatadine",
     "brand": "Pataday, Patanol, Pazeo",
@@ -98260,6 +98225,32 @@ var DRUGS = {
     "monitoring": [
       "Symptom relief within minutes; sustained over 8–24h depending on concentration",
       "If no improvement after 1 week, reassess diagnosis (rule out infectious cause)"
+    ],
+    "interactions": [
+      {
+        "drug": "Other ophthalmic medications",
+        "severity": "Minor",
+        "mechanism": "Concurrent ophthalmic drops can wash out olopatadine before it absorbs",
+        "management": "Separate ophthalmic medications by ≥5 minutes; instill olopatadine first if other drops are required"
+      },
+      {
+        "drug": "Soft contact lenses (preservative — benzalkonium chloride)",
+        "severity": "Minor",
+        "mechanism": "Preservative in 0.1%/0.2% multi-dose bottles is absorbed by soft contact lenses, causing irritation and lens discoloration",
+        "management": "Remove contact lenses before instillation; wait ≥10 minutes before reinserting. Pataday Once Daily preservative-free unit dose is contact-lens-compatible."
+      },
+      {
+        "drug": "Oral H1 antihistamines (cetirizine, fexofenadine, loratadine)",
+        "severity": "Minor",
+        "mechanism": "Theoretical additive antihistamine effect (negligible systemic absorption from ophthalmic olopatadine)",
+        "management": "No clinical adjustment needed; combination commonly used for allergic conjunctivitis with concurrent allergic rhinitis"
+      },
+      {
+        "drug": "Topical ocular corticosteroids",
+        "severity": "Beneficial",
+        "mechanism": "Complementary mechanisms — antihistamine/mast cell stabilizer (olopatadine) + anti-inflammatory (steroid) for severe vernal/atopic keratoconjunctivitis",
+        "management": "Combination acceptable under ophthalmologist guidance for severe disease; monitor IOP with chronic steroid use"
+      }
     ],
     "source": "Health Canada Pataday/Patanol Product Monograph; AAO Conjunctivitis PPP 2023; ARIA 2022"
   },
@@ -98299,49 +98290,6 @@ var DRUGS = {
     ],
     "pregnancy": "ACCEPTABLE in pregnancy as ophthalmic — minimal systemic absorption from 0.025% ocular drops. Limited human data but non-sedating 2nd-gen mast cell stabilizer/antihistamine class is well tolerated. Loratadine and cetirizine (oral) remain preferred for systemic allergic rhinitis in pregnancy if oral therapy required (more extensive safety data). Breastfeeding: compatible — minimal systemic absorption; no documented adverse effects in nursing infants.",
     "source": "Health Canada Zaditor Product Monograph; AAO Conjunctivitis PPP 2023; ARIA 2022; LactMed"
-  },
-  "pyrantel": {
-    "name": "Pyrantel pamoate",
-    "brand": "Combantrin, generic",
-    "class": "Anthelmintic (depolarizing neuromuscular blocker)",
-    "napra": "OTC (Schedule III — General Sale in Canada)",
-    "moa": "Acts as a depolarizing neuromuscular blocking agent in helminths — causes spastic paralysis of the worm by stimulating nicotinic cholinergic receptors and inhibiting cholinesterase. Paralyzed worms are then expelled in stool through normal peristalsis. Does NOT kill ova/eggs — hence the need for repeat dose at 2 weeks to catch newly hatched worms. Poorly absorbed orally (acts locally in GI tract); minimal systemic exposure.",
-    "indications": [
-      "Pinworm infection (Enterobius vermicularis / enterobiasis) — first-line in Canada",
-      "Roundworm infection (Ascaris lumbricoides)",
-      "Hookworm infection (Necator, Ancylostoma)",
-      "Trichostrongylus infection"
-    ],
-    "dosing": [
-      {
-        "indication": "Pinworm infection (enterobiasis)",
-        "dose": "Single oral dose: 11 mg/kg (max 1 g = 1000 mg). Repeat the same dose 2 weeks later to kill newly hatched worms. Treat all household members simultaneously to prevent reinfection. Available as 250 mg/5 mL suspension or 125 mg chewable tablets.",
-        "notes": "Can be taken with or without food. Shake suspension well before measuring. Safe in children ≥1 year (consult for younger). Hygiene measures (handwashing, short fingernails, hot-water laundry) are essential adjuncts."
-      }
-    ],
-    "contraindications": [
-      "Hypersensitivity to pyrantel pamoate",
-      "Severe hepatic impairment (use with caution — minimal data)",
-      "Pregnancy: limited data; refer for assessment"
-    ],
-    "side_effects": [
-      "Mild GI: nausea, abdominal cramps, diarrhea, anorexia (transient)",
-      "Headache, dizziness, drowsiness (uncommon)",
-      "Rash, fever (rare hypersensitivity)",
-      "Mild transient transaminase elevations"
-    ],
-    "monitoring": [
-      "Symptom resolution (perianal pruritus) within days of treatment",
-      "Repeat dose at 14 days is standard",
-      "If symptoms persist after second dose, refer for parasitology workup"
-    ],
-    "interactions": [
-      "Piperazine: pharmacologic antagonism (opposite mechanisms — piperazine causes flaccid paralysis, pyrantel spastic paralysis) — DO NOT combine",
-      "Theophylline: theoretical increase in theophylline serum levels (limited clinical relevance)",
-      "No clinically significant CYP-mediated interactions (minimal systemic absorption)"
-    ],
-    "pregnancy": "Limited human pregnancy data. Minimal systemic absorption (acts locally in GI tract) suggests low fetal exposure. Pinworm infection itself is benign in pregnancy and can often be managed with hygiene measures alone (handwashing, hot-water laundry, treatment of household members) — defer pharmacotherapy to postpartum if possible. If treatment is required, pyrantel is generally preferred over mebendazole/albendazole in pregnancy (avoid 1st trimester benzimidazoles). Breastfeeding: compatible — minimal absorption; LactMed: no special precautions needed.",
-    "source": "Health Canada Combantrin Product Monograph; CPS Position Statement on Enterobiasis (2018, reaffirmed 2023); RxTx 2024; LactMed"
   },
   "phenazopyridine": {
     "name": "Phenazopyridine",
@@ -98493,7 +98441,45 @@ var DRUGS = {
       "Side effects suggesting overdose (nausea, dizziness, palpitations) — reduce dose",
       "REMINDER: NRT is SAFE in cardiovascular disease — do NOT withhold (CAN-ADAPTT)"
     ],
-    "source": "Health Canada NRT Product Monographs; CAN-ADAPTT Canadian Smoking Cessation CPG (CAMH 2011, updated 2023); USPHS 2020; OCP Smoking Cessation Prescribing Authority O. Reg. 202/94 (2024)"
+    "interactions": [
+      {
+        "drug": "Caffeine, theophylline, clozapine, olanzapine, ropinirole, tacrine, tizanidine (CYP1A2 substrates)",
+        "severity": "Major",
+        "mechanism": "Smoking induces CYP1A2 — when smoking STOPS (with or without NRT), CYP1A2 induction reverses over 1–2 weeks, increasing serum levels of CYP1A2 substrates. Clinically critical for clozapine and olanzapine (psychiatric decompensation, sedation, falls, toxicity).",
+        "management": "BIDIRECTIONAL: When patient quits smoking, expect ↑ levels of CYP1A2 substrates → reduce clozapine 10% per week post-quit (to ~50% of baseline by 4 weeks); reduce olanzapine 30–50%; reduce theophylline 25–35%; halve caffeine. NRT does not reverse de-induction (smoking COMBUSTION products, not nicotine, induce CYP1A2). Document smoking status in chart and reassess CYP1A2 substrate doses at quit attempt."
+      },
+      {
+        "drug": "Insulin and oral hypoglycemics",
+        "severity": "Moderate",
+        "mechanism": "Smoking is anti-insulin (catecholamine-mediated insulin resistance, lipolysis). Smoking cessation IMPROVES insulin sensitivity within days–weeks → may precipitate hypoglycemia in tightly-controlled diabetic patients.",
+        "management": "Monitor blood glucose more frequently in first 2–4 weeks post-quit; anticipate insulin/sulfonylurea dose reductions of 10–30% over time. Counsel on hypoglycemia recognition."
+      },
+      {
+        "drug": "Beta-blockers (propranolol, metoprolol)",
+        "severity": "Moderate",
+        "mechanism": "Smoking enhances catecholamine release and beta-blocker clearance (CYP1A2). Cessation may ↑ beta-blocker effect (bradycardia, hypotension).",
+        "management": "Monitor BP and HR in first 2–4 weeks post-quit; consider dose reduction if symptomatic."
+      },
+      {
+        "drug": "Warfarin",
+        "severity": "Moderate",
+        "mechanism": "Smoking induces CYP1A2 (which contributes to R-warfarin metabolism). Cessation may modestly ↑ INR.",
+        "management": "Check INR at 1 and 4 weeks post-quit; small warfarin dose reductions may be needed."
+      },
+      {
+        "drug": "Combined hormonal contraceptives (estrogen-containing)",
+        "severity": "Beneficial",
+        "mechanism": "Smoking + estrogen-containing OCP/patch/ring is a well-established VTE/MI/stroke risk multiplier (especially age ≥35 → estrogen-containing methods are CONTRAINDICATED with smoking ≥15 cigs/day). Smoking cessation removes this risk multiplier.",
+        "management": "Encourage smoking cessation as a CV risk-reduction strategy in patients on combined hormonal contraception. NRT use during transition is appropriate."
+      },
+      {
+        "drug": "Bupropion (Zyban) and varenicline (Champix)",
+        "severity": "Beneficial",
+        "mechanism": "Combination smoking-cessation pharmacotherapy. Bupropion + NRT modestly improves quit rates over either alone (Cochrane). Varenicline + NRT during pre-quit run-in or for extended duration is also acceptable per CAN-ADAPTT.",
+        "management": "Combination acceptable; monitor BP with bupropion + nicotine combination (additive sympathomimetic effect)."
+      }
+    ],
+    "source": "Health Canada NRT Product Monographs; CAN-ADAPTT Canadian Smoking Cessation CPG (CAMH 2011, updated 2023); USPHS 2020; OCP Smoking Cessation Prescribing Authority O. Reg. 202/94 (2024); Lippincott Drug Information; Briggs 12th ed."
   },
   "penciclovir": {
     "name": "Penciclovir (topical)",
@@ -99748,233 +99734,7 @@ var FAMILY_MAP = {
   "twynsta": "Fixed-Dose Antihypertensive Combinations",
   "perindoprilindapamide": "Fixed-Dose Antihypertensive Combinations",
   "coversyl_plus": "Fixed-Dose Antihypertensive Combinations",
-  "coversyl": "ACE Inhibitors",
-  "ipratropium_nasal": {
-    "generic": "ipratropium_nasal",
-    "brand": [
-      "Atrovent Nasal"
-    ],
-    "class": "Anticholinergic Nasal"
-  },
-  "saline_nasal": {
-    "generic": "saline_nasal",
-    "brand": [
-      "HydraSense",
-      "Salinex",
-      "Simply Saline"
-    ],
-    "class": "Nasal Saline"
-  },
-  "ciprofloxacin_dexamethasone_otic": {
-    "generic": "ciprofloxacin_dexamethasone_otic",
-    "brand": [
-      "Ciprodex"
-    ],
-    "class": "Otic Antibiotic + Corticosteroid"
-  },
-  "framycetin_gramicidin_dexamethasone_otic": {
-    "generic": "framycetin_gramicidin_dexamethasone_otic",
-    "brand": [
-      "Sofradex"
-    ],
-    "class": "Otic/Ophthalmic Antibiotic + Corticosteroid"
-  },
-  "ketoconazole_topical": {
-    "generic": "ketoconazole_topical",
-    "brand": [
-      "Nizoral",
-      "Ketoderm"
-    ],
-    "class": "Topical Antifungals"
-  },
-  "pyrethrin_piperonyl_butoxide": {
-    "generic": "pyrethrin_piperonyl_butoxide",
-    "brand": [
-      "R&C Shampoo",
-      "Pronto"
-    ],
-    "class": "Pediculicide"
-  },
-  "mometasone_topical": {
-    "generic": "mometasone_topical",
-    "brand": [
-      "Elocom"
-    ],
-    "class": "Topical Corticosteroids"
-  },
-  "desonide": {
-    "generic": "desonide",
-    "brand": [
-      "Desocort"
-    ],
-    "class": "Topical Corticosteroids"
-  },
-  "hydrocortisone_valerate": {
-    "generic": "hydrocortisone_valerate",
-    "brand": [
-      "Westcort"
-    ],
-    "class": "Topical Corticosteroids"
-  },
-  "fusidic_acid_hydrocortisone": {
-    "generic": "fusidic_acid_hydrocortisone",
-    "brand": [
-      "Fucidin H"
-    ],
-    "class": "Topical Antibiotic + Corticosteroid"
-  },
-  "betamethasone_calcipotriol": {
-    "generic": "betamethasone_calcipotriol",
-    "brand": [
-      "Dovobet",
-      "Enstilar"
-    ],
-    "class": "Topical Corticosteroid + Vitamin D Analogue"
-  },
-  "clindamycin_topical": {
-    "generic": "clindamycin_topical",
-    "brand": [
-      "Dalacin T",
-      "Clindoxyl"
-    ],
-    "class": "Topical Antibiotic"
-  },
-  "nystatin_topical": {
-    "generic": "nystatin_topical",
-    "brand": [
-      "Nyaderm",
-      "Mycostatin"
-    ],
-    "class": "Topical Antifungals"
-  },
-  "terbinafine_topical": {
-    "generic": "terbinafine_topical",
-    "brand": [
-      "Lamisil AT"
-    ],
-    "class": "Topical Antifungals"
-  },
-  "palivizumab": {
-    "generic": "palivizumab",
-    "brand": [
-      "Synagis"
-    ],
-    "class": "RSV Monoclonal Antibody"
-  },
-  "ivig": {
-    "generic": "ivig",
-    "brand": [
-      "Gamunex-C",
-      "Privigen",
-      "Gammagard"
-    ],
-    "class": "Intravenous Immunoglobulin"
-  },
-  "hep_b_vaccine": {
-    "generic": "hep_b_vaccine",
-    "brand": [
-      "Engerix-B",
-      "Recombivax HB"
-    ],
-    "class": "Hepatitis B Vaccine"
-  },
-  "hep_a_b_vaccine": {
-    "generic": "hep_a_b_vaccine",
-    "brand": [
-      "Twinrix"
-    ],
-    "class": "Hepatitis A+B Combined Vaccine"
-  },
-  "tdap_vaccine": {
-    "generic": "tdap_vaccine",
-    "brand": [
-      "Adacel",
-      "Boostrix"
-    ],
-    "class": "Tdap Vaccine"
-  },
-  "hpv_vaccine": {
-    "generic": "hpv_vaccine",
-    "brand": [
-      "Gardasil 9",
-      "Cervarix"
-    ],
-    "class": "HPV Vaccine"
-  },
-  "pneumococcal_conjugate_vaccine": {
-    "generic": "pneumococcal_conjugate_vaccine",
-    "brand": [
-      "Prevnar 13",
-      "Prevnar 20"
-    ],
-    "class": "Pneumococcal Conjugate Vaccine"
-  },
-  "shingles_vaccine": {
-    "generic": "shingles_vaccine",
-    "brand": [
-      "Shingrix",
-      "Zostavax II"
-    ],
-    "class": "Herpes Zoster Vaccine"
-  },
-  "tetanus_immune_globulin": {
-    "generic": "tetanus_immune_globulin",
-    "brand": [
-      "HyperTET S/D"
-    ],
-    "class": "Tetanus Immune Globulin"
-  },
-  "nicotine_patch": {
-    "generic": "nicotine_patch",
-    "brand": [
-      "Nicoderm",
-      "Habitrol"
-    ],
-    "class": "Nicotine Replacement Therapy"
-  },
-  "nicotine_gum": {
-    "generic": "nicotine_gum",
-    "brand": [
-      "Nicorette",
-      "Thrive"
-    ],
-    "class": "Nicotine Replacement Therapy"
-  },
-  "nicotine_lozenge": {
-    "generic": "nicotine_lozenge",
-    "brand": [
-      "Nicorette Lozenge"
-    ],
-    "class": "Nicotine Replacement Therapy"
-  },
-  "nicotine_inhaler": {
-    "generic": "nicotine_inhaler",
-    "brand": [
-      "Nicorette Inhaler"
-    ],
-    "class": "Nicotine Replacement Therapy"
-  },
-  "naltrexone_lai": {
-    "generic": "naltrexone_lai",
-    "brand": [
-      "Vivitrol"
-    ],
-    "class": "Opioid Antagonist (Long-Acting Injectable)"
-  },
-  "buprenorphine_extended_release": {
-    "generic": "buprenorphine_extended_release",
-    "brand": [
-      "Sublocade"
-    ],
-    "class": "Partial Opioid Agonist (Extended-Release Injectable)"
-  },
-  "cytisine": {
-    "generic": "cytisine",
-    "brand": [
-      "Cravv"
-    ],
-    "class": "Nicotinic Receptor Partial Agonist (Smoking Cessation)"
-  }
+  "coversyl": "ACE Inhibitors"
 ,
   "alfuzosin": "Alpha-1 Blockers",
   "amphetamine": "CNS Stimulants — Amphetamines",
@@ -107304,15 +107064,6 @@ var NAPRA_ODB_DATA = {
     "luCode": null,
     "notes": "Urinary tract analgesic — symptomatic relief only (NOT antibacterial). 200 mg PO TID after meals × maximum 48 hours. Avoid in G6PD deficiency, pregnancy, severe renal/hepatic impairment. Counsel about orange-red urine staining (lenses, clothing). Source: Health Canada Pyridium PM; PHO Bugs & Drugs 2024."
   },
-  "pyrantel": {
-    "name": "Pyrantel pamoate (Combantrin)",
-    "napra": "U",
-    "napraDetail": "NAPRA Unscheduled (general sale, OTC) in Canada. Available as 250 mg/5 mL suspension and 125 mg chewable tablets (Combantrin — Johnson & Johnson Canada; generic).",
-    "odbStatus": "Not covered (OTC)",
-    "odbDetail": "Not covered by ODB (OTC general sale). Cost ~$10–20 per course.",
-    "luCode": null,
-    "notes": "First-line anthelmintic for pinworms (enterobiasis) in Canada — preferred over mebendazole due to consistent supply. Single dose 11 mg/kg (max 1 g), repeat at 14 days. Treat all household members. Hygiene measures (handwashing, hot-water laundry, short fingernails) essential. Source: Health Canada Combantrin PM; CPS 2018 (reaffirmed 2023)."
-  },
   "ketotifen": {
     "name": "Ketotifen (ophthalmic 0.025%)",
     "napra": "II",
@@ -109872,6 +109623,35 @@ function toggleIntRow(id) {
   if (chev) chev.textContent = open ? '▸' : '▾';
 }
 
+// Detect interaction CATEGORY (Drug-Drug / Drug-Food / Drug-Supplement /
+// Drug-Disease / Drug-Genetic / Drug-Lab / Drug-Class) heuristically from the
+// `drug`, `mechanism`, and `management` fields of an interaction entry.
+function categorizeInteraction(ix) {
+  if (!ix) return 'Drug-Drug';
+  var txt = ((ix.drug || '') + ' ' + (ix.mechanism || '') + ' ' + (ix.management || '')).toLowerCase();
+  var d = (ix.drug || '').toLowerCase();
+  if (/lab interference|false positive|false negative|interferes? with assay|alters? laboratory|urinary diagnostic|urine.*dipstick/.test(txt)) return 'Drug-Lab';
+  if (/hla-b\*|hla\s*b\s*5701|hla\s*b\s*1502|cyp2d6 poor|cyp2c19 poor|g6pd|tpmt|dpyd|ugt1a1|vkorc1|polymorphism|nat2 (slow|fast)/.test(txt)) return 'Drug-Genetic';
+  if (/(kidney|renal|liver|hepatic|cardiac|heart) (disease|impairment|failure)|asthma|copd|gout|epilepsy|seizure disorder|diabetes mellitus|psychiatric (history|disorder)|pregnancy|breastfeeding|history of/.test(d)) return 'Drug-Disease';
+  if (/grapefruit|alcohol|tyramine|dairy|cranberry|licorice|^food$|caffeine|tobacco smoke|smoking|kale|spinach|high-fat meal|high.calorie meal|with food|on empty stomach/.test(d)) return 'Drug-Food';
+  if (/st\.?\s*john'?s\s*wort|ginkgo|garlic|ginger|fish oil|coq10|valerian|kava|echinacea|ashwagandha|melatonin|saw palmetto|black cohosh|herbal|cannabis|cbd|thc|ginseng|turmeric|milk thistle/.test(d)) return 'Drug-Supplement';
+  if (/duplicate therapy|same class|class effect|same therapeutic class/.test((ix.mechanism || '').toLowerCase())) return 'Drug-Class';
+  return 'Drug-Drug';
+}
+
+function categoryColor(cat) {
+  switch (cat) {
+    case 'Drug-Drug':       return '#6366f1'; // indigo
+    case 'Drug-Class':      return '#a855f7'; // purple
+    case 'Drug-Food':       return '#16a34a'; // green
+    case 'Drug-Supplement': return '#059669'; // emerald
+    case 'Drug-Disease':    return '#dc2626'; // red
+    case 'Drug-Genetic':    return '#0891b2'; // cyan
+    case 'Drug-Lab':        return '#ca8a04'; // yellow-amber
+    default:                return '#6366f1';
+  }
+}
+
 function showDrugPanel(drugKey) {
   var drug = DRUGS[drugKey] || (typeof VACCINES !== 'undefined' ? VACCINES[drugKey] : null);
   if (!drug) return;
@@ -109984,10 +109764,13 @@ function showDrugPanel(drugKey) {
       var sevLabel = ix.severity || normalizeSeverity(ix.severity);
       var rowId = 'dp-int-' + drugKey + '-' + i;
       h += '<div class="interaction-row int-' + normalizeSeverity(ix.severity) + '" style="border-left:3px solid ' + sevCol + ';padding:6px 10px;margin-bottom:5px;border-radius:0 6px 6px 0;background:rgba(148,163,184,0.04);">';
-      h += '<div onclick="toggleIntRow(\'' + rowId + '\')" style="display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;">';
+      var cat = categorizeInteraction(ix);
+      var catCol = categoryColor(cat);
+      h += '<div onclick="toggleIntRow(\'' + rowId + '\')" style="display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;flex-wrap:wrap;">';
       h += '<span id="' + rowId + '-chev" style="font-size:0.7rem;color:' + sevCol + ';width:10px;flex-shrink:0;">▸</span>';
       h += '<span style="font-size:0.68rem;font-weight:700;color:' + sevCol + ';background:' + sevCol + '22;padding:1px 6px;border-radius:3px;white-space:nowrap;">' + sevLabel + '</span>';
-      h += '<span style="font-size:0.83rem;font-weight:700;color:var(--text);flex:1;">' + (ix.drug || '') + '</span>';
+      h += '<span style="font-size:0.62rem;font-weight:600;color:' + catCol + ';border:1px solid ' + catCol + '55;padding:0 5px;border-radius:3px;white-space:nowrap;letter-spacing:0.02em;">' + cat + '</span>';
+      h += '<span style="font-size:0.83rem;font-weight:700;color:var(--text);flex:1;min-width:0;">' + (ix.drug || '') + '</span>';
       h += '</div>';
       h += '<div id="' + rowId + '-detail" style="display:none;margin-top:6px;padding-left:18px;">';
       if (ix.mechanism)  h += '<div style="font-size:0.78rem;color:#94a3b8;margin-bottom:4px;line-height:1.45;">' + ix.mechanism + '</div>';
@@ -110343,10 +110126,13 @@ function checkInteractions() {
     var sevLabel = ix.severity || normalizeSeverity(ix.severity);
     var rowId = 'int-tab-row-' + i;
     h += '<div class="int-card" style="border-left:4px solid ' + sev + ';padding:8px 12px;margin-bottom:6px;border-radius:0 6px 6px 0;background:rgba(148,163,184,0.04);">';
-    h += '<div onclick="toggleIntRow(\'' + rowId + '\')" style="display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;">';
+    var cat = categorizeInteraction(ix);
+    var catCol = categoryColor(cat);
+    h += '<div onclick="toggleIntRow(\'' + rowId + '\')" style="display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;flex-wrap:wrap;">';
     h += '<span id="' + rowId + '-chev" style="font-size:0.75rem;color:' + sev + ';width:10px;flex-shrink:0;">▸</span>';
     h += '<span style="font-size:0.7rem;font-weight:700;color:' + sev + ';background:' + sev + '22;padding:2px 7px;border-radius:3px;white-space:nowrap;">⚡ ' + sevLabel + '</span>';
-    h += '<span style="font-size:0.85rem;font-weight:700;color:var(--text);flex:1;">' + ix.pair + '</span>';
+    h += '<span style="font-size:0.62rem;font-weight:600;color:' + catCol + ';border:1px solid ' + catCol + '55;padding:0 5px;border-radius:3px;white-space:nowrap;letter-spacing:0.02em;">' + cat + '</span>';
+    h += '<span style="font-size:0.85rem;font-weight:700;color:var(--text);flex:1;min-width:0;">' + ix.pair + '</span>';
     h += '</div>';
     h += '<div id="' + rowId + '-detail" style="display:none;margin-top:8px;padding-left:18px;">';
     if (ix.mechanism)  h += '<div class="int-card-detail" style="font-size:0.8rem;color:#cbd5e1;line-height:1.5;margin-bottom:4px;">' + ix.mechanism + '</div>';
@@ -124571,17 +124357,6 @@ var PREG_DATA = {
     "bfDetail": "Avoid — possible methemoglobinemia in nursing infants (immature methemoglobin reductase, especially neonates). If 48-hour course is essential for severe symptoms, consider temporarily pumping and discarding milk; consult LactMed for current guidance.",
     "alternatives": "Acetaminophen 500–1000 mg q4–6h for UTI pain — safe in pregnancy/lactation. Definitive antibiotic therapy for the underlying UTI (e.g., nitrofurantoin 100 mg BID × 7 days in 2nd trimester; cephalexin 500 mg QID × 7 days throughout pregnancy) typically resolves symptoms within 24–48h.",
     "source": "Health Canada Pyridium PM; PHO Bugs & Drugs 2024; Briggs 12th ed.; LactMed"
-  },
-  "pyrantel": {
-    "name": "Pyrantel pamoate (Combantrin)",
-    "pregRisk": "Caution",
-    "pregColor": "#f59e0b",
-    "bfRisk": "Low",
-    "bfColor": "#10b981",
-    "pregDetail": "Limited human pregnancy data. Minimal systemic absorption (acts locally in GI tract) suggests low fetal exposure. Pinworm infection itself is benign in pregnancy and can often be managed with hygiene measures alone (handwashing, hot-water laundry, treatment of household members) — defer pharmacotherapy to postpartum if possible. If treatment is required, pyrantel is generally PREFERRED over benzimidazoles (mebendazole/albendazole — avoid 1st trimester due to animal teratogenicity).",
-    "bfDetail": "Compatible — minimal systemic absorption; LactMed: no special precautions needed for nursing infants.",
-    "alternatives": "Strict hygiene measures (handwashing, hot-water laundry, short fingernails, treat all household contacts) — often sufficient. Defer treatment to postpartum if asymptomatic. Mebendazole 100 mg single dose × 1 if needed in 2nd/3rd trimester (avoid 1st trimester).",
-    "source": "Health Canada Combantrin PM; CPS Position Statement on Enterobiasis (2018, reaffirmed 2023); LactMed"
   },
   "ketotifen": {
     "name": "Ketotifen (ophthalmic 0.025%)",
