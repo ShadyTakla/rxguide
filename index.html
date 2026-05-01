@@ -83,6 +83,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 #ma-jumpnav a{display:block;padding:6px 10px;color:#c8cadc;text-decoration:none;border-radius:6px;border-left:2px solid transparent;margin-bottom:2px;transition:all .12s;cursor:pointer;line-height:1.35;}
 #ma-jumpnav a:hover{background:rgba(99,102,241,0.10);color:var(--text);border-left-color:var(--accent);}
 #ma-jumpnav a.active{background:rgba(99,102,241,0.15);color:var(--accent2);border-left-color:var(--accent2);}
+#ma-flow-aside{flex:0 0 360px;position:sticky;top:0;align-self:flex-start;background:var(--card);border:1px solid var(--border);border-left:3px solid #06b6d4;border-radius:12px;padding:14px 14px;max-height:calc(100vh - 80px);overflow-y:auto;}
+.ma-flow-aside-title{font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#67e8f9;margin-bottom:2px;}
+.ma-flow-aside-sub{font-size:0.7rem;color:var(--muted);margin-bottom:10px;letter-spacing:0.5px;}
+@media (max-width:1400px){#ma-flow-aside{flex:0 0 320px;}}
+@media (max-width:1280px){#ma-flow-aside{display:none;}}
 @media (max-width:1080px){#ma-jumpnav{display:none;}#ma-content{max-width:none;}}
 #home-categories{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
 .cat-tile{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
@@ -258,6 +263,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   .ma-flow-arrow-right{transform:rotate(90deg);align-self:flex-start;padding-left:32px;}
   .ma-flow-refer{flex:1 1 100%;align-self:stretch;}
 }
+/* Compact, always-stacked layout when chart is rendered inside the right aside */
+#ma-flow-aside .ma-flow-row{flex-direction:column;gap:6px;align-items:stretch;}
+#ma-flow-aside .ma-flow-arrow-right{transform:rotate(90deg);align-self:flex-start;padding-left:30px;font-size:1.3rem;}
+#ma-flow-aside .ma-flow-refer{flex:1 1 100%;align-self:stretch;padding:8px 10px;}
+#ma-flow-aside .ma-flow-arrow-down{padding-left:18px;font-size:1rem;}
+#ma-flow-aside .ma-flow-box{padding:8px 10px;}
+#ma-flow-aside .ma-flow-title{font-size:0.81rem;}
+#ma-flow-aside .ma-flow-detail{font-size:0.72rem;line-height:1.4;}
+#ma-flow-aside .ma-flow-refer li{font-size:0.7rem;}
+#ma-flow-aside .ma-flow-num{flex:0 0 22px;width:22px;height:22px;line-height:22px;font-size:0.72rem;}
+#ma-flow-aside .ma-flow-legend{font-size:0.66rem;gap:8px;flex-direction:column;align-items:flex-start;}
 
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:transparent;}
@@ -113049,7 +113065,6 @@ function buildMaJumpNav(ma) {
   var sections = [];
   sections.push({id:'ma-sec-assessment', label:'🔍 Assessment & Red Flags'});
   if (ma.assessment.ddx && ma.assessment.ddx.length) sections.push({id:'ma-sec-ddx', label:'🔄 Differential Diagnosis'});
-  if (ma.therapeutic_flow && ma.therapeutic_flow.length) sections.push({id:'ma-sec-flow', label:'🧭 Therapeutic Flow'});
   sections.push({id:'ma-sec-treatment', label:'💊 Treatment Options'});
   if (ma.treatment.non_pharm && ma.treatment.non_pharm.length) sections.push({id:'ma-sec-nonpharm', label:'🌿 Non-Pharmacological'});
   sections.push({id:'ma-sec-refer', label:'📤 Refer / Escalate'});
@@ -113215,13 +113230,7 @@ function showMA(idx) {
     h += '</ul></div>';
   }
 
-  // SECTION: Therapeutic Flow Chart (visual flowchart with refer-out branches)
-  if (ma.therapeutic_flow && ma.therapeutic_flow.length) {
-    h += '<div id="ma-sec-flow" class="ma-detail-section" style="border-left:3px solid #06b6d4;margin-bottom:12px;scroll-margin-top:12px;">';
-    h += '<div class="ma-detail-title" style="color:#67e8f9;">🧭 Therapeutic Flow — Visual Decision Map</div>';
-    h += buildTherapeuticFlowChart(ma);
-    h += '</div>';
-  }
+  // (Therapeutic Flow Chart is rendered as a side panel outside ma-content — see #ma-flow-aside below)
 
   // SECTION: Treatment Options
   h += '<div id="ma-sec-treatment" class="ma-detail-section" style="scroll-margin-top:12px;"><div class="ma-detail-title" style="color:var(--accent2);">💊 Treatment Options (Pharmacist-Prescribable)</div>';
@@ -113291,6 +113300,13 @@ function showMA(idx) {
 
   h += '</div>';  // close ma-content
   h += '<aside id="ma-jumpnav" aria-label="Jump to section">' + buildMaJumpNav(ma) + '</aside>';
+  if (ma.therapeutic_flow && ma.therapeutic_flow.length) {
+    h += '<aside id="ma-flow-aside" aria-label="Therapeutic Flow">';
+    h += '<div class="ma-flow-aside-title">🧭 Therapeutic Flow</div>';
+    h += '<div class="ma-flow-aside-sub">Visual Decision Map</div>';
+    h += buildTherapeuticFlowChart(ma);
+    h += '</aside>';
+  }
   h += '</div>';  // close flex container
 
   det.innerHTML = h;
