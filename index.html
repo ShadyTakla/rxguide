@@ -78,16 +78,45 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 #disease-jumpnav a:hover{background:rgba(99,102,241,0.10);color:var(--text);border-left-color:var(--accent);}
 #disease-jumpnav a.active{background:rgba(99,102,241,0.15);color:var(--accent2);border-left-color:var(--accent2);}
 @media (max-width:1080px){#disease-jumpnav{display:none;}#disease-content{max-width:none;}}
-#ma-jumpnav{flex:0 0 220px;position:sticky;top:0;align-self:flex-start;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 12px;font-size:0.82rem;max-height:calc(100vh - 80px);overflow-y:auto;}
-#ma-jumpnav h4{font-size:0.68rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:0 0 10px 6px;font-weight:700;}
-#ma-jumpnav a{display:block;padding:6px 10px;color:#c8cadc;text-decoration:none;border-radius:6px;border-left:2px solid transparent;margin-bottom:2px;transition:all .12s;cursor:pointer;line-height:1.35;}
+#ma-jumpnav{flex:0 0 220px;position:sticky;top:0;align-self:flex-start;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 12px;font-size:0.82rem;max-height:calc(100vh - 80px);overflow-y:auto;transition:flex-basis .25s ease,padding .25s ease;}
+#ma-jumpnav .ma-jn-h4{font-size:0.68rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:0 0 10px 6px;font-weight:700;}
+#ma-jumpnav a{display:flex;align-items:center;gap:8px;padding:6px 10px;color:#c8cadc;text-decoration:none;border-radius:6px;border-left:2px solid transparent;margin-bottom:2px;transition:all .12s;cursor:pointer;line-height:1.35;}
 #ma-jumpnav a:hover{background:rgba(99,102,241,0.10);color:var(--text);border-left-color:var(--accent);}
 #ma-jumpnav a.active{background:rgba(99,102,241,0.15);color:var(--accent2);border-left-color:var(--accent2);}
-#ma-flow-aside{flex:0 0 360px;position:sticky;top:0;align-self:flex-start;background:var(--card);border:1px solid var(--border);border-left:3px solid #06b6d4;border-radius:12px;padding:14px 14px;max-height:calc(100vh - 80px);overflow-y:auto;}
+#ma-jumpnav .ma-jn-icon{flex:0 0 auto;font-size:1rem;line-height:1;}
+#ma-jumpnav .ma-jn-text{flex:1 1 auto;min-width:0;}
+
+#ma-flow-aside{flex:0 0 360px;position:sticky;top:0;align-self:flex-start;background:var(--card);border:1px solid var(--border);border-left:3px solid #06b6d4;border-radius:12px;padding:14px 14px;max-height:calc(100vh - 80px);overflow-y:auto;transition:flex-basis .25s ease;}
+.ma-flow-aside-header{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;}
 .ma-flow-aside-title{font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#67e8f9;margin-bottom:2px;}
-.ma-flow-aside-sub{font-size:0.7rem;color:var(--muted);margin-bottom:10px;letter-spacing:0.5px;}
-@media (max-width:1400px){#ma-flow-aside{flex:0 0 320px;}}
-@media (max-width:1280px){#ma-flow-aside{display:none;}}
+.ma-flow-aside-sub{font-size:0.7rem;color:var(--muted);letter-spacing:0.5px;}
+.ma-flow-expand-btn{background:rgba(6,182,212,0.12);border:1px solid rgba(6,182,212,0.4);color:#67e8f9;border-radius:6px;cursor:pointer;font-size:1rem;padding:3px 9px;line-height:1;transition:all .15s;}
+.ma-flow-expand-btn:hover{background:rgba(6,182,212,0.22);border-color:#06b6d4;color:#cffafe;}
+.ma-flow-bullets{list-style:disc;padding-left:18px;margin:5px 0 0;}
+.ma-flow-bullets li{font-size:0.78rem;color:#bae6fd;margin-bottom:3px;line-height:1.4;}
+.ma-flow-box.is-gate .ma-flow-bullets li{color:#fde68a;}
+.ma-flow-box.is-end .ma-flow-bullets li{color:#bbf7d0;}
+
+/* EXPANDED MODE — collapse jump-nav to icons only and widen the flow aside */
+#ma-layout.ma-flow-expanded #ma-jumpnav{flex:0 0 50px;padding:14px 4px;}
+#ma-layout.ma-flow-expanded #ma-jumpnav .ma-jn-h4{display:none;}
+#ma-layout.ma-flow-expanded #ma-jumpnav .ma-jn-text{display:none;}
+#ma-layout.ma-flow-expanded #ma-jumpnav a{justify-content:center;padding:8px 6px;}
+#ma-layout.ma-flow-expanded #ma-jumpnav .ma-jn-icon{font-size:1.2rem;}
+#ma-layout.ma-flow-expanded #ma-flow-aside{flex:1 1 auto;}
+/* Restore horizontal step+refer layout when expanded */
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-row{flex-direction:row;align-items:stretch;gap:14px;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-arrow-right{transform:none;align-self:center;padding:0;font-size:1.6rem;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-refer{flex:0 0 260px;align-self:center;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-arrow-down{padding-left:30px;font-size:1.1rem;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-box{padding:10px 14px;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-title{font-size:0.88rem;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-bullets li{font-size:0.8rem;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-num{flex:0 0 24px;width:24px;height:24px;line-height:24px;font-size:0.78rem;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-legend{flex-direction:row;flex-wrap:wrap;gap:14px;font-size:0.72rem;}
+
+@media (max-width:1400px){#ma-layout:not(.ma-flow-expanded) #ma-flow-aside{flex:0 0 320px;}}
+@media (max-width:1280px){#ma-layout:not(.ma-flow-expanded) #ma-flow-aside{display:none;}}
 @media (max-width:1080px){#ma-jumpnav{display:none;}#ma-content{max-width:none;}}
 #home-categories{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
 .cat-tile{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
@@ -113063,16 +113092,20 @@ function linkifyMaDrugs(drugsStr) {
 
 function buildMaJumpNav(ma) {
   var sections = [];
-  sections.push({id:'ma-sec-assessment', label:'🔍 Assessment & Red Flags'});
-  if (ma.assessment.ddx && ma.assessment.ddx.length) sections.push({id:'ma-sec-ddx', label:'🔄 Differential Diagnosis'});
-  sections.push({id:'ma-sec-treatment', label:'💊 Treatment Options'});
-  if (ma.treatment.non_pharm && ma.treatment.non_pharm.length) sections.push({id:'ma-sec-nonpharm', label:'🌿 Non-Pharmacological'});
-  sections.push({id:'ma-sec-refer', label:'📤 Refer / Escalate'});
-  if (ma.patient_counselling && ma.patient_counselling.length) sections.push({id:'ma-sec-counsel', label:'💬 Patient Counselling'});
-  if (ma.references && ma.references.length) sections.push({id:'ma-sec-refs', label:'📚 References'});
-  var h = '<h4>Jump To</h4>';
+  sections.push({id:'ma-sec-assessment', icon:'🔍', label:'Assessment & Red Flags'});
+  if (ma.assessment.ddx && ma.assessment.ddx.length) sections.push({id:'ma-sec-ddx', icon:'🔄', label:'Differential Diagnosis'});
+  sections.push({id:'ma-sec-treatment', icon:'💊', label:'Treatment Options'});
+  if (ma.treatment.non_pharm && ma.treatment.non_pharm.length) sections.push({id:'ma-sec-nonpharm', icon:'🌿', label:'Non-Pharmacological'});
+  sections.push({id:'ma-sec-refer', icon:'📤', label:'Refer / Escalate'});
+  if (ma.patient_counselling && ma.patient_counselling.length) sections.push({id:'ma-sec-counsel', icon:'💬', label:'Patient Counselling'});
+  if (ma.references && ma.references.length) sections.push({id:'ma-sec-refs', icon:'📚', label:'References'});
+  var h = '<h4 class="ma-jn-h4">Jump To</h4>';
   for (var i = 0; i < sections.length; i++) {
-    h += '<a data-target="' + sections[i].id + '" onclick="jumpToMaSection(\'' + sections[i].id + '\', this)">' + sections[i].label + '</a>';
+    var s = sections[i];
+    h += '<a data-target="' + s.id + '" onclick="jumpToMaSection(\'' + s.id + '\', this)" title="' + s.label + '">';
+    h +=   '<span class="ma-jn-icon">' + s.icon + '</span>';
+    h +=   '<span class="ma-jn-text">' + s.label + '</span>';
+    h += '</a>';
   }
   return h;
 }
@@ -113094,6 +113127,24 @@ function jumpToMaSection(id, linkEl) {
 // Renders each therapeutic_flow step as a numbered box, with red REFER
 // branch boxes hanging off any step that contains red-flag/refer language.
 // First step is highlighted as Start (cyan), refer-gates as amber, last step as End (green).
+function toggleMaFlowExpand(){
+  var layout = document.getElementById('ma-layout');
+  var panel  = document.getElementById('ma-panel');
+  var btn = document.querySelector('.ma-flow-expand-btn');
+  if (!layout) return;
+  var nowExpanded = layout.classList.toggle('ma-flow-expanded');
+  if (panel){
+    // Let the panel grow to fill the available viewport when expanded so the
+    // chart can fit its refer-branches beside each step.
+    panel.style.maxWidth = nowExpanded ? 'none' : '';
+  }
+  if (btn){
+    btn.textContent = nowExpanded ? '⤡' : '⤢';
+    btn.title = nowExpanded ? 'Collapse chart' : 'Expand chart (collapse Jump-To)';
+    btn.setAttribute('aria-label', nowExpanded ? 'Collapse therapeutic flow' : 'Expand therapeutic flow');
+  }
+}
+
 function buildTherapeuticFlowChart(ma){
   var steps = (ma && ma.therapeutic_flow) || [];
   var redFlags = (ma && ma.assessment && ma.assessment.red_flags) || [];
@@ -113147,7 +113198,20 @@ function buildTherapeuticFlowChart(ma){
     html +=       '<div class="ma-flow-body">';
     html +=         '<div class="ma-flow-title">' + escapeHtml(parts.title) + '</div>';
     if (parts.detail) {
-      html +=       '<div class="ma-flow-detail">' + escapeHtml(parts.detail) + '</div>';
+      // Split detail into clinical bullet points on semicolons or "→"; keep parens with their parent bullet.
+      var bullets = parts.detail
+        .split(/;\s+|\s+→\s+/)
+        .map(function(s){ return s.trim().replace(/[.;]+$/, ''); })
+        .filter(function(s){ return s.length > 1; });
+      if (bullets.length > 1) {
+        html += '<ul class="ma-flow-bullets">';
+        for (var b = 0; b < bullets.length; b++) {
+          html += '<li>' + escapeHtml(bullets[b]) + '</li>';
+        }
+        html += '</ul>';
+      } else {
+        html += '<ul class="ma-flow-bullets"><li>' + escapeHtml(parts.detail) + '</li></ul>';
+      }
     }
     html +=       '</div>';
     html +=     '</div>';
@@ -113202,7 +113266,7 @@ function showMA(idx) {
   det.style.display = 'block';
   det.scrollTop = 0;
 
-  var h = '<div style="display:flex;gap:18px;align-items:flex-start;">';
+  var h = '<div id="ma-layout" style="display:flex;gap:18px;align-items:flex-start;">';
   h += '<div id="ma-content" style="flex:1 1 auto;min-width:0;max-width:900px;">';
 
   h += '<button onclick="closeMA()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82rem;margin-bottom:16px;">← Back to All Conditions</button>';
@@ -113302,8 +113366,13 @@ function showMA(idx) {
   h += '<aside id="ma-jumpnav" aria-label="Jump to section">' + buildMaJumpNav(ma) + '</aside>';
   if (ma.therapeutic_flow && ma.therapeutic_flow.length) {
     h += '<aside id="ma-flow-aside" aria-label="Therapeutic Flow">';
-    h += '<div class="ma-flow-aside-title">🧭 Therapeutic Flow</div>';
-    h += '<div class="ma-flow-aside-sub">Visual Decision Map</div>';
+    h += '<div class="ma-flow-aside-header">';
+    h +=   '<div>';
+    h +=     '<div class="ma-flow-aside-title">🧭 Therapeutic Flow</div>';
+    h +=     '<div class="ma-flow-aside-sub">Visual Decision Map</div>';
+    h +=   '</div>';
+    h +=   '<button type="button" class="ma-flow-expand-btn" onclick="toggleMaFlowExpand()" aria-label="Expand therapeutic flow" title="Expand chart (collapse Jump-To)">⤢</button>';
+    h += '</div>';
     h += buildTherapeuticFlowChart(ma);
     h += '</aside>';
   }
