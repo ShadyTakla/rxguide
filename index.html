@@ -109600,8 +109600,7 @@ function showMA(idx) {
   det.scrollTop = 0;
 
   var h = '<div style="display:flex;gap:18px;align-items:flex-start;">';
-  h += '<aside id="ma-jumpnav" aria-label="Jump to section">' + buildMaJumpNav(ma) + '</aside>';
-  h += '<div id="ma-content" style="flex:1;min-width:0;">';
+  h += '<div id="ma-content" style="flex:1 1 auto;min-width:0;max-width:900px;">';
 
   h += '<button onclick="closeMA()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82rem;margin-bottom:16px;">← Back to All Conditions</button>';
   h += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">';
@@ -109704,7 +109703,9 @@ function showMA(idx) {
     h += '</ol></div>';
   }
 
-  h += '</div></div>';  // close ma-content and flex container
+  h += '</div>';  // close ma-content
+  h += '<aside id="ma-jumpnav" aria-label="Jump to section">' + buildMaJumpNav(ma) + '</aside>';
+  h += '</div>';  // close flex container
 
   det.innerHTML = h;
 }
