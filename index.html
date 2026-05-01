@@ -78,6 +78,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 #disease-jumpnav a:hover{background:rgba(99,102,241,0.10);color:var(--text);border-left-color:var(--accent);}
 #disease-jumpnav a.active{background:rgba(99,102,241,0.15);color:var(--accent2);border-left-color:var(--accent2);}
 @media (max-width:1080px){#disease-jumpnav{display:none;}#disease-content{max-width:none;}}
+#ma-jumpnav{flex:0 0 220px;position:sticky;top:0;align-self:flex-start;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 12px;font-size:0.82rem;max-height:calc(100vh - 80px);overflow-y:auto;}
+#ma-jumpnav h4{font-size:0.68rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:0 0 10px 6px;font-weight:700;}
+#ma-jumpnav a{display:block;padding:6px 10px;color:#c8cadc;text-decoration:none;border-radius:6px;border-left:2px solid transparent;margin-bottom:2px;transition:all .12s;cursor:pointer;line-height:1.35;}
+#ma-jumpnav a:hover{background:rgba(99,102,241,0.10);color:var(--text);border-left-color:var(--accent);}
+#ma-jumpnav a.active{background:rgba(99,102,241,0.15);color:var(--accent2);border-left-color:var(--accent2);}
+@media (max-width:1080px){#ma-jumpnav{display:none;}#ma-content{max-width:none;}}
 #home-categories{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
 .cat-tile{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
 .cat-tile-header{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);transition:background .12s;}
@@ -109342,6 +109348,36 @@ function linkifyMaDrugs(drugsStr) {
   return result;
 }
 
+function buildMaJumpNav(ma) {
+  var sections = [];
+  sections.push({id:'ma-sec-assessment', label:'🔍 Assessment & Red Flags'});
+  if (ma.assessment.ddx && ma.assessment.ddx.length) sections.push({id:'ma-sec-ddx', label:'🔄 Differential Diagnosis'});
+  if (ma.therapeutic_flow && ma.therapeutic_flow.length) sections.push({id:'ma-sec-flow', label:'🧭 Therapeutic Flow'});
+  sections.push({id:'ma-sec-treatment', label:'💊 Treatment Options'});
+  if (ma.treatment.non_pharm && ma.treatment.non_pharm.length) sections.push({id:'ma-sec-nonpharm', label:'🌿 Non-Pharmacological'});
+  sections.push({id:'ma-sec-refer', label:'📤 Refer / Escalate'});
+  if (ma.patient_counselling && ma.patient_counselling.length) sections.push({id:'ma-sec-counsel', label:'💬 Patient Counselling'});
+  if (ma.references && ma.references.length) sections.push({id:'ma-sec-refs', label:'📚 References'});
+  var h = '<h4>Jump To</h4>';
+  for (var i = 0; i < sections.length; i++) {
+    h += '<a data-target="' + sections[i].id + '" onclick="jumpToMaSection(\'' + sections[i].id + '\', this)">' + sections[i].label + '</a>';
+  }
+  return h;
+}
+
+function jumpToMaSection(id, linkEl) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({behavior:'smooth', block:'start'});
+  if (linkEl) {
+    var nav = document.getElementById('ma-jumpnav');
+    if (nav) {
+      nav.querySelectorAll('a').forEach(function(a){ a.classList.remove('active'); });
+      linkEl.classList.add('active');
+    }
+  }
+}
+
 function showMA(idx) {
   var ma = MINOR_AILMENTS[idx];
   document.getElementById('ma-grid').style.display = 'none';
@@ -109349,13 +109385,18 @@ function showMA(idx) {
   det.style.display = 'block';
   det.scrollTop = 0;
 
-  var h = '<button onclick="closeMA()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82rem;margin-bottom:16px;">← Back to All Conditions</button>';
+  var h = '<div style="display:flex;gap:18px;align-items:flex-start;">';
+  h += '<aside id="ma-jumpnav" aria-label="Jump to section">' + buildMaJumpNav(ma) + '</aside>';
+  h += '<div id="ma-content" style="flex:1;min-width:0;">';
+
+  h += '<button onclick="closeMA()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82rem;margin-bottom:16px;">← Back to All Conditions</button>';
   h += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">';
   h += '<span style="font-size:2rem;">' + ma.icon + '</span>';
   h += '<div><h2 style="font-size:1.2rem;font-weight:800;margin:0;">' + ma.name + '</h2>';
   h += '<span style="font-size:0.75rem;padding:2px 8px;border-radius:4px;background:rgba(99,102,241,0.15);color:var(--accent2);">' + ma.category + '</span></div></div>';
 
-  h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">';
+  // SECTION: Assessment & Red Flags
+  h += '<div id="ma-sec-assessment" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;scroll-margin-top:12px;">';
   h += '<div class="ma-detail-section"><div class="ma-detail-title" style="color:var(--accent2);">🔍 Key Assessment Questions</div><ul style="padding-left:18px;">';
   for (var i=0;i<ma.assessment.key_questions.length;i++)
     h += '<li style="font-size:0.83rem;color:#c8cadc;margin-bottom:5px;">' + ma.assessment.key_questions[i] + '</li>';
@@ -109365,14 +109406,26 @@ function showMA(idx) {
     h += '<li style="font-size:0.83rem;color:#fca5a5;margin-bottom:5px;">' + ma.assessment.red_flags[i] + '</li>';
   h += '</ul></div></div>';
 
+  // SECTION: DDx
   if (ma.assessment.ddx && ma.assessment.ddx.length) {
-    h += '<div class="ma-detail-section" style="margin-bottom:12px;"><div class="ma-detail-title" style="color:#f59e0b;">🔄 Differential Diagnosis</div><ul style="padding-left:18px;">';
+    h += '<div id="ma-sec-ddx" class="ma-detail-section" style="margin-bottom:12px;scroll-margin-top:12px;"><div class="ma-detail-title" style="color:#f59e0b;">🔄 Differential Diagnosis</div><ul style="padding-left:18px;">';
     for (var i=0;i<ma.assessment.ddx.length;i++)
       h += '<li style="font-size:0.83rem;color:#c8cadc;margin-bottom:4px;">' + ma.assessment.ddx[i] + '</li>';
     h += '</ul></div>';
   }
 
-  h += '<div class="ma-detail-section"><div class="ma-detail-title" style="color:var(--accent2);">💊 Treatment Options (Pharmacist-Prescribable)</div>';
+  // SECTION: Therapeutic Flow (moved above Treatment Options)
+  if (ma.therapeutic_flow && ma.therapeutic_flow.length) {
+    h += '<div id="ma-sec-flow" class="ma-detail-section" style="border-left:3px solid #06b6d4;margin-bottom:12px;scroll-margin-top:12px;">';
+    h += '<div class="ma-detail-title" style="color:#67e8f9;">🧭 Therapeutic Flow — Pharmacist Assessment Guide</div>';
+    h += '<ol style="padding-left:20px;margin:0;list-style:none;">';
+    for (var i=0;i<ma.therapeutic_flow.length;i++)
+      h += '<li style="font-size:0.82rem;color:#cffafe;margin-bottom:7px;line-height:1.5;">' + ma.therapeutic_flow[i] + '</li>';
+    h += '</ol></div>';
+  }
+
+  // SECTION: Treatment Options
+  h += '<div id="ma-sec-treatment" class="ma-detail-section" style="scroll-margin-top:12px;"><div class="ma-detail-title" style="color:var(--accent2);">💊 Treatment Options (Pharmacist-Prescribable)</div>';
   if (ma.treatment.first_line && ma.treatment.first_line.length) {
     h += '<div style="font-size:0.73rem;text-transform:uppercase;letter-spacing:1px;color:#34d399;font-weight:700;margin-bottom:8px;">First-Line</div>';
     for (var i=0;i<ma.treatment.first_line.length;i++) {
@@ -109398,12 +109451,14 @@ function showMA(idx) {
   }
   h += '</div>';
 
-  h += '<div class="ma-detail-section"><div class="ma-detail-title" style="color:#4ade80;">🌿 Non-Pharmacological</div><ul style="padding-left:18px;">';
+  // SECTION: Non-Pharmacological
+  h += '<div id="ma-sec-nonpharm" class="ma-detail-section" style="scroll-margin-top:12px;"><div class="ma-detail-title" style="color:#4ade80;">🌿 Non-Pharmacological</div><ul style="padding-left:18px;">';
   for (var i=0;i<ma.treatment.non_pharm.length;i++)
     h += '<li style="font-size:0.83rem;color:#c8cadc;margin-bottom:5px;">' + ma.treatment.non_pharm[i] + '</li>';
   h += '</ul></div>';
 
-  h += '<div class="ma-detail-section" style="border-left:3px solid #f59e0b;">';
+  // SECTION: Refer / Escalate
+  h += '<div id="ma-sec-refer" class="ma-detail-section" style="border-left:3px solid #f59e0b;scroll-margin-top:12px;">';
   h += '<div class="ma-detail-title" style="color:#f59e0b;">📤 Refer / Escalate When</div>';
   var rw = ma.treatment.refer_when;
   if (Array.isArray(rw)) {
@@ -109415,17 +109470,9 @@ function showMA(idx) {
   }
   h += '</div>';
 
-  if (ma.therapeutic_flow && ma.therapeutic_flow.length) {
-    h += '<div class="ma-detail-section" style="border-left:3px solid #06b6d4;margin-top:12px;">';
-    h += '<div class="ma-detail-title" style="color:#67e8f9;">🧭 Therapeutic Flow — Pharmacist Assessment Guide</div>';
-    h += '<ol style="padding-left:20px;margin:0;list-style:none;">';
-    for (var i=0;i<ma.therapeutic_flow.length;i++)
-      h += '<li style="font-size:0.82rem;color:#cffafe;margin-bottom:7px;line-height:1.5;">' + ma.therapeutic_flow[i] + '</li>';
-    h += '</ol></div>';
-  }
-
+  // SECTION: Patient Counselling
   if (ma.patient_counselling && ma.patient_counselling.length) {
-    h += '<div class="ma-detail-section" style="border-left:3px solid #10b981;margin-top:12px;">';
+    h += '<div id="ma-sec-counsel" class="ma-detail-section" style="border-left:3px solid #10b981;margin-top:12px;scroll-margin-top:12px;">';
     h += '<div class="ma-detail-title" style="color:#6ee7b7;">💬 Patient Counselling Points</div>';
     h += '<ul style="padding-left:18px;margin:0;">';
     for (var i=0;i<ma.patient_counselling.length;i++)
@@ -109433,14 +109480,17 @@ function showMA(idx) {
     h += '</ul></div>';
   }
 
+  // SECTION: References
   if (ma.references && ma.references.length) {
-    h += '<div class="ma-detail-section" style="border-left:3px solid #6366f1;margin-top:12px;">';
+    h += '<div id="ma-sec-refs" class="ma-detail-section" style="border-left:3px solid #6366f1;margin-top:12px;scroll-margin-top:12px;">';
     h += '<div class="ma-detail-title" style="color:#a5b4fc;">📚 References</div>';
     h += '<ol style="padding-left:20px;margin:0;">';
     for (var i=0;i<ma.references.length;i++)
       h += '<li style="font-size:0.76rem;color:#94a3b8;margin-bottom:5px;line-height:1.4;">' + ma.references[i] + '</li>';
     h += '</ol></div>';
   }
+
+  h += '</div></div>';  // close ma-content and flex container
 
   det.innerHTML = h;
 }
