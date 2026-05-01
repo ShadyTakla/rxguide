@@ -108878,6 +108878,13 @@ var MINOR_AILMENTS = [
                     "ctx": "Without the classic triad, empirical treatment risks over-treating vaginitis, STI, or interstitial cystitis.",
                     "crumb": "Classic triad?",
                     "yes": "n7",
+                    "no": "n6b"
+                },
+                "n6b": {
+                    "q": "Vaginal discharge, pelvic pain, or new/recent sexual partner (features suggesting STI or vaginitis)?",
+                    "ctx": "STI (chlamydia, gonorrhea) and vaginitis (Candida, BV) require different treatment — empirical UTI antibiotics will not resolve them and may delay correct diagnosis.",
+                    "crumb": "STI/vaginitis features?",
+                    "yes": "rx_sti",
                     "no": "rx_ddx"
                 },
                 "n7": {
@@ -108890,14 +108897,35 @@ var MINOR_AILMENTS = [
                     "q": "Antibiotics used in the past 3 months?",
                     "crumb": "Recent antibiotics?",
                     "yes": "n8b",
-                    "no": "n9"
+                    "no": "n8c"
                 },
                 "n8b": {
                     "q": "Are symptoms clearly NEW (not relapse of the same recent episode)?",
                     "ctx": "Recent antibiotics raise resistance risk. If this is the same episode returning, a culture is needed before re-treating.",
                     "crumb": "New episode?",
-                    "yes": "n9",
+                    "yes": "n8c",
                     "no": "rx_relapse"
+                },
+                "n8c": {
+                    "q": "Immunocompromised? (systemic corticosteroids, chemotherapy, biologics, HIV with low CD4, or solid organ transplant recipient?)",
+                    "ctx": "Immunocompromised patients are excluded from Ontario MA UTI scope — they are at high risk of upper tract involvement and unusual organisms requiring specialist management.",
+                    "crumb": "Immunocompromised?",
+                    "yes": "rx_immunocomp",
+                    "no": "n8d"
+                },
+                "n8d": {
+                    "q": "Current or recently removed urinary catheter, or recent urinary tract instrumentation or procedure?",
+                    "ctx": "Catheter-associated UTI (CAUTI) requires culture-directed therapy and is explicitly excluded from Ontario MA prescribing scope.",
+                    "crumb": "Catheter/instrumentation?",
+                    "yes": "rx_cath",
+                    "no": "n8e"
+                },
+                "n8e": {
+                    "q": "Known structural or functional urinary tract abnormality? (neurogenic bladder, vesicoureteral reflux, urologic surgery, single kidney, or obstructive uropathy?)",
+                    "ctx": "Structural abnormalities predispose to complicated UTI, unusual organisms, and treatment failure — require physician assessment.",
+                    "crumb": "Structural abnormality?",
+                    "yes": "rx_structural",
+                    "no": "n9"
                 },
                 "n9": {
                     "q": "Contraindication to nitrofurantoin? (eGFR <30 mL/min, pulmonary fibrosis, G6PD deficiency, or known allergy)",
@@ -108906,7 +108934,8 @@ var MINOR_AILMENTS = [
                     "no": "tx_nitro"
                 },
                 "n10": {
-                    "q": "Contraindication to TMP-SMX? (allergy, on warfarin, ACEi+ARB+diuretic triple, methotrexate, or local resistance ≥20%)",
+                    "q": "Contraindication to TMP-SMX? (allergy, on warfarin, on any ACEi or ARB with or without diuretic, on methotrexate, or local resistance ≥20%)",
+                    "ctx": "TMP-SMX + any RAAS agent (ACEi or ARB alone is sufficient) causes clinically significant hyperkalemia — not only the triple combination. Spironolactone/eplerenone also a risk.",
                     "crumb": "TMP-SMX CI?",
                     "yes": "tx_fosfo",
                     "no": "tx_tmp"
@@ -108931,10 +108960,30 @@ var MINOR_AILMENTS = [
                     "msg": "UTI in pregnancy requires physician or NP management — outside Ontario MA scope.",
                     "detail": "Asymptomatic bacteriuria in pregnancy must also be treated (risk of pyelonephritis and preterm labour). Safe agent selection depends on gestational age: nitrofurantoin contraindicated at ≥38 weeks; TMP-SMX teratogenic in first trimester and risky near term. Physician assessment is required."
                 },
+                "rx_sti": {
+                    "type": "refer",
+                    "msg": "Suspected STI or vaginitis — refer to physician or NP for STI screening and appropriate treatment.",
+                    "detail": "Do not prescribe UTI antibiotics empirically. Chlamydia and gonorrhea require specific antibiotic regimens (azithromycin, doxycycline, cefixime) and partner notification. Candida/BV require antifungal or metronidazole. Empirical UTI treatment will not resolve these conditions and may delay diagnosis."
+                },
                 "rx_ddx": {
                     "type": "caution",
-                    "msg": "Classic UTI triad (dysuria + frequency/urgency) not confirmed — reassess before prescribing.",
-                    "detail": "Consider: Vaginal Candidiasis (external dysuria, cottage-cheese discharge, odour), Bacterial Vaginosis (thin grey discharge, fishy odour, clue cells), STI/Urethritis (Chlamydia, Gonorrhea — new partner, discharge), Interstitial Cystitis (chronic pelvic pain, no infection), Atrophic Vaginitis (postmenopausal — dyspareunia, dryness), Urethral Irritant (soaps, spermicide). Reassess symptom pattern; consider STI screening if risk factors present."
+                    "msg": "Classic UTI triad (dysuria + frequency/urgency) not confirmed and STI/vaginitis features absent — reassess before prescribing.",
+                    "detail": "Consider: Interstitial Cystitis (chronic pelvic pain, sterile pyuria, no infection), Atrophic Vaginitis (postmenopausal — dyspareunia, dryness, alkaline pH), Urethral Irritant (soaps, spermicide, bubble bath), Urethral Syndrome. If symptoms persist or worsen, refer to physician for further assessment including urine culture."
+                },
+                "rx_immunocomp": {
+                    "type": "refer",
+                    "msg": "Immunocompromised patient — outside Ontario MA UTI prescribing scope. Refer to physician or NP.",
+                    "detail": "Immunocompromised patients are at high risk of upper tract involvement, atypical organisms, and treatment failure. Physician assessment, urine culture, and close follow-up are required. Do not prescribe empirically under MA scope."
+                },
+                "rx_cath": {
+                    "type": "refer",
+                    "msg": "Catheter-associated or instrumentation-related UTI — outside Ontario MA prescribing scope. Refer to physician or NP.",
+                    "detail": "CAUTI requires urine culture and sensitivity to guide therapy. Empirical treatment is inappropriate without culture results. If catheter is still in place, catheter removal or replacement before starting antibiotics improves outcomes. Refer to physician or NP for management."
+                },
+                "rx_structural": {
+                    "type": "refer",
+                    "msg": "Known structural or functional urinary tract abnormality — outside Ontario MA UTI prescribing scope. Refer to physician or NP.",
+                    "detail": "Structural abnormalities predispose to complicated UTI with unusual organisms and treatment failure. Urine culture, imaging, and specialist input may be required. Empirical treatment under MA scope is inappropriate."
                 },
                 "rx_recur": {
                     "type": "refer",
@@ -108954,7 +109003,7 @@ var MINOR_AILMENTS = [
                 "tx_tmp": {
                     "type": "treat",
                     "msg": "Second-Line: TMP-SMX DS (trimethoprim 160 mg / sulfamethoxazole 800 mg) PO BID × 3 days.",
-                    "detail": "Verify local resistance rates <20% (PHO Bugs & Drugs data). Take with a full glass of water; avoid prolonged sun exposure (photosensitivity). Key interactions: increases warfarin INR significantly, hyperkalemia with ACEi/ARB/spironolactone triple whammy, methotrexate toxicity. Return if no improvement at 48h."
+                    "detail": "Verify local resistance rates <20% (PHO Bugs & Drugs data). Take with a full glass of water; avoid prolonged sun exposure (photosensitivity). Key interactions: significantly increases warfarin INR; hyperkalemia with any RAAS agent (ACEi or ARB — even without diuretic; spironolactone/eplerenone also a risk); methotrexate toxicity (blocks renal tubular secretion). Return if no improvement at 48h."
                 },
                 "tx_fosfo": {
                     "type": "treat",
