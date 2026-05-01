@@ -109536,7 +109536,8 @@ function buildMinorAilments() {
 
 function linkifyMaDrugs(drugsStr) {
   if (!drugsStr) return drugsStr;
-  var result = drugsStr;
+  // Build a list of (name, key) pairs sorted longest-first to prefer specific names
+  var matchers = [];
   for (var key in DRUGS) {
     var d = DRUGS[key];
     var names = [d.name];
@@ -109544,21 +109545,38 @@ function linkifyMaDrugs(drugsStr) {
       var brands = d.brand.split(/[,\/]/);
       for (var b=0;b<brands.length;b++) {
         var bn = brands[b].trim().split('(')[0].trim().split(' ')[0];
-        if (bn.length > 3) names.push(bn);
+        if (bn.length >= 4) names.push(bn);
       }
     }
     for (var n=0;n<names.length;n++) {
       var nm = names[n];
       if (!nm || nm.length < 4) continue;
-      var escaped = nm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      var re = new RegExp('(?<![a-zA-Z])(' + escaped + ')(?![a-zA-Z])', 'i');
-      if (re.test(result)) {
-        var capturedKey = key;
-        result = result.replace(re, '<span onclick="showDrugPanel(\'' + capturedKey + '\')" style="color:#a5b4fc;text-decoration:underline;cursor:pointer;font-weight:600;" title="View ' + d.name.replace(/'/g,"\'") + ' monograph">$1</span>');
-        break;
-      }
+      matchers.push({name: nm, key: key, displayName: d.name});
     }
   }
+  matchers.sort(function(a,b){ return b.name.length - a.name.length; });
+
+  // Use placeholder markers (control chars) so replaced text is not re-matched
+  var placeholders = [];
+  var result = drugsStr;
+  for (var i = 0; i < matchers.length; i++) {
+    var m = matchers[i];
+    var escaped = m.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    var re = new RegExp('(?<![a-zA-Z])(' + escaped + ')(?![a-zA-Z])', 'gi');
+    result = result.replace(re, (function(key, displayName){
+      return function(_, captured){
+        placeholders.push({text: captured, key: key, name: displayName});
+        return '' + (placeholders.length - 1) + '';
+      };
+    })(m.key, m.displayName));
+  }
+
+  // Convert placeholders to clickable spans
+  result = result.replace(/(\d+)/g, function(_, idx){
+    var p = placeholders[parseInt(idx, 10)];
+    var safeName = p.name.replace(/'/g, "\\'");
+    return '<span onclick="showDrugPanel(\'' + p.key + '\')" style="color:#a5b4fc;text-decoration:underline;cursor:pointer;font-weight:600;" title="View ' + safeName + ' monograph">' + p.text + '</span>';
+  });
   return result;
 }
 
