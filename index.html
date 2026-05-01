@@ -108411,7 +108411,101 @@ var MINOR_AILMENTS = [
             "6. Counsel on eye drop technique (punctal occlusion, no contamination), hygiene, contact lens precautions, school/work exclusion, expected timeline, when to seek urgent care.",
             "7. Document the encounter per OCP standards: assessment findings (type of conjunctivitis), diagnosis, therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess at 5–7 days for bacterial; if no improvement or vision changes, refer to ophthalmology; viral cases monitored for 1–2 weeks self-resolution."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Any RED FLAGS for serious eye disease: (1) PAIN deeper than gritty/foreign-body sensation (sharp, deep, severe); (2) VISION CHANGES — blurring not cleared by blinking, halos, photophobia; (3) corneal opacity, white spot, or hazy cornea; (4) NEONATE (≤30 days old) with any conjunctivitis (gonococcal/chlamydial — sight-threatening); (5) CONTACT LENS WEARER with purulent discharge (Pseudomonas keratitis risk); (6) HSV signs — vesicles around eye/lid, dendritic ulcer suspicion, recent cold sore + eye involvement; (7) HYPOPYON (pus level in anterior chamber); (8) ZOSTER on forehead/nose (V1, Hutchinson sign); (9) recent eye trauma or chemical exposure; (10) IMMUNOCOMPROMISED with severe presentation?",
+                    "ctx": "Conjunctivitis is benign; pain/vision change/corneal involvement are NOT typical and indicate keratitis, uveitis, acute angle-closure glaucoma, HSV keratitis, or other sight-threatening pathology requiring SAME-DAY ophthalmology.",
+                    "crumb": "Red flags?",
+                    "yes": "rx_redflag",
+                    "no": "n2"
+                },
+                "n2": {
+                    "q": "Type classification — does the presentation fit ALLERGIC conjunctivitis: BILATERAL, ITCHING is the dominant symptom, watery/clear discharge, often with rhinitis or atopic features, triggered by allergens (pollen, dust, animal dander)?",
+                    "ctx": "Itching is the hallmark of allergic conjunctivitis. Without itching, allergic is unlikely. Most non-allergic adult conjunctivitis is viral.",
+                    "crumb": "Allergic features?",
+                    "yes": "tx_allergic",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Does the presentation fit VIRAL conjunctivitis: recent URI symptoms (cold, sore throat, fever), bilateral or starting unilateral and spreading, watery/serous discharge, preauricular lymphadenopathy, gritty/burning sensation, often very contagious in household/work?",
+                    "ctx": "Viral conjunctivitis (most often adenovirus) is self-limiting in 7–14 days. Antibiotics are NOT helpful and contribute to resistance. AAO PPP 2023 explicitly debunks the old teaching that bacterial = unilateral and viral = bilateral — laterality alone is unreliable.",
+                    "crumb": "Viral features?",
+                    "yes": "tx_viral",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Does the presentation fit BACTERIAL conjunctivitis: MUCOPURULENT (yellow/green) thick discharge, eyelid matting on waking (lashes stuck together), unilateral or bilateral, mild discomfort but NO significant pain, NO vision change?",
+                    "ctx": "Most bacterial conjunctivitis is also self-limiting (~65% resolve in 5 days without treatment, ~74% by 7 days per Cochrane). Antibiotics shorten symptom duration by ~1–2 days and may reduce contagion. Choice is between observation and short topical antibiotic.",
+                    "crumb": "Bacterial features?",
+                    "yes": "n5",
+                    "no": "rx_unclear"
+                },
+                "n5": {
+                    "q": "Is the patient a CONTACT LENS wearer who has had any contact lens use in the past 7 days?",
+                    "ctx": "Contact lens wearers with conjunctivitis have an elevated risk of Pseudomonas aeruginosa keratitis — sight-threatening and requires urgent ophthalmology. Standard MA-scope antibiotics (tobramycin, Polysporin, fusidic acid, Polytrim) do NOT reliably cover Pseudomonas; ophthalmic fluoroquinolones (which DO cover Pseudomonas) are OUTSIDE Ontario MA scope.",
+                    "crumb": "Contact lens?",
+                    "yes": "rx_lens",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Is the patient ≥2 years of age? (younger pediatric conjunctivitis often viral or chemical irritation; bacterial in this group warrants pediatric input)",
+                    "ctx": "OCP MA scope for bacterial conjunctivitis includes pediatric and adult patients ≥2 years; <2 should be assessed by physician/pediatrician. Neonates already excluded at n1.",
+                    "crumb": "Age ≥2?",
+                    "yes": "n7",
+                    "no": "rx_pedi"
+                },
+                "n7": {
+                    "q": "Does the patient have a known allergy to all of: aminoglycosides (tobramycin), polymyxin (Polytrim/Polysporin), AND fusidic acid?",
+                    "ctx": "Multiple class allergies limit topical options under MA scope. If only one or two classes are off-limits, an alternative within scope exists.",
+                    "crumb": "Multi-allergy?",
+                    "yes": "rx_allergy",
+                    "no": "tx_bacterial"
+                },
+                "rx_redflag": {
+                    "type": "refer-urgent",
+                    "msg": "Red flag for sight-threatening eye disease — REFER SAME-DAY to ophthalmology (or ED if after-hours / no ophthalmology access). Do NOT prescribe under MA scope.",
+                    "detail": "TIME-CRITICAL POSSIBILITIES: KERATITIS (bacterial, HSV, Acanthamoeba in contact lens wearers — corneal scarring/perforation if untreated); ANTERIOR UVEITIS/IRITIS (autoimmune, infectious — needs steroid drops + workup); ACUTE ANGLE-CLOSURE GLAUCOMA (severe pain, halos, fixed mid-dilated pupil, nausea — emergency); HSV KERATITIS (dendritic ulcer — needs topical antiviral, NOT steroid); HERPES ZOSTER OPHTHALMICUS (V1 distribution, Hutchinson sign — same-day ophthalmology + oral antiviral); GONOCOCCAL/CHLAMYDIAL OPHTHALMIA (neonate or sexually active adult with hyperacute purulent discharge — emergency); HYPOPYON (pus in anterior chamber — endophthalmitis); CONTACT LENS + PURULENT (Pseudomonas keratitis — same-day ophthalmology). Counsel: stop contact lens wear immediately; do not patch the eye; take cell phone photo of affected eye to share with ophthalmology if useful. Topical anesthetic must NOT be dispensed for ongoing use (corneal toxicity)."
+                },
+                "tx_allergic": {
+                    "type": "treat",
+                    "msg": "ALLERGIC CONJUNCTIVITIS: First-line topical dual-action H1-antihistamine + mast cell stabilizer — Olopatadine 0.1% (Patanol) 1 drop BID OR Olopatadine 0.2% (Pataday) 1 drop OD OR Olopatadine 0.7% (Pazeo) 1 drop OD OR Ketotifen 0.025% (Zaditor) 1 drop BID–TID (OTC). Plus allergen avoidance + cool compresses + preservative-free artificial tears.",
+                    "detail": "MECHANISM: dual-action drops block H1 histamine receptors AND stabilize mast cells — superior to oral antihistamines for ocular symptoms (less drying than systemic AH). CANADIAN AVAILABILITY: Pataday 0.2% recently switched to OTC in Canada; Patanol 0.1% Schedule I (Rx — within Ontario MA scope to prescribe); Zaditor (ketotifen) OTC. Do NOT use ophthalmic decongestants (naphazoline, Visine) chronically — rebound hyperemia. Do NOT use topical corticosteroid drops (cataracts, glaucoma, infection masking — OUTSIDE Ontario MA scope; reserve for ophthalmologist).\n\nADJUNCTS: (1) Allergen avoidance and reduce indoor allergens; (2) Cool compresses 10 min 2–3×/day; (3) PRESERVATIVE-FREE artificial tears 4–6×/day to dilute allergens; (4) Oral 2nd-gen antihistamine if AR co-existing. INSTILLATION TECHNIQUE: wash hands; tilt head back; pull lower lid down to form pocket; instill 1 drop without dropper touching eye; close eye + punctal occlusion (press inner corner) for 1 min; do not blink hard. CONTACT LENS: remove before instillation, wait 10–15 min before reinserting (lens absorbs preservative). Reassess at 2 weeks; if inadequate, refer for stronger ophthalmic agents (mast cell stabilizers like nedocromil, or topical steroid by ophthalmology)."
+                },
+                "tx_viral": {
+                    "type": "treat",
+                    "msg": "VIRAL CONJUNCTIVITIS: SUPPORTIVE CARE ONLY — antibiotics provide no benefit. Cool compresses 10 min 2–3×/day, preservative-free artificial tears PRN for comfort, strict hygiene to prevent spread.",
+                    "detail": "VIRAL (most often adenovirus) is self-limiting over 7–14 days. NO antibiotic, NO antiviral (unless HSV — which has different presentation: vesicles, dendritic ulcer, unilateral). HIGHLY CONTAGIOUS: handwashing; do NOT share towels, pillowcases, eye drops, makeup; replace makeup after recovery; wipe shared surfaces with disinfectant. School/work exclusion: 1–2 weeks or until discharge resolves per public health (often allowed back when discharge stops). EXPECTED COURSE: starts unilateral, often spreads to other eye in 24–48h; preauricular lymphadenopathy common; symptoms peak 4–7 days, resolve 7–14 days. RED FLAG MONITORING: any pain, vision change, photophobia, or corneal opacity → ophthalmology immediately (epidemic keratoconjunctivitis can cause corneal subepithelial infiltrates and prolonged visual symptoms). REFER if no improvement at 2 weeks or worsening course."
+                },
+                "tx_bacterial": {
+                    "type": "treat",
+                    "msg": "BACTERIAL CONJUNCTIVITIS: First-line topical antibiotic × 5–7 days. Choose ONE: (1) Tobramycin 0.3% drops (Tobrex) 1–2 drops q4h while awake × 5–7 days; (2) Polymyxin B/trimethoprim (Polytrim) 1 drop q3h while awake × 7–10 days; (3) Polymyxin B/gramicidin (Polysporin Eye & Ear, OTC) 1–2 drops q3–4h × 5–7 days; (4) Erythromycin 0.5% ophthalmic ointment QID × 5–7 days; (5) Fusidic acid 1% ophthalmic gel (Fucithalmic, Schedule I) BID × 7 days — most convenient but Rx-only (prescribe under MA authority).",
+                    "detail": "Many cases self-resolve (Cochrane: ~65% by 5 days without treatment); antibiotics shorten duration by ~1–2 days and reduce contagion. Discuss observation vs antibiotic if mild and patient prefers.\n\nFLUOROQUINOLONES (ofloxacin, ciprofloxacin, moxifloxacin, gatifloxacin, levofloxacin) are OUTSIDE Ontario MA scope — reserve for contact lens wearers, suspected serious infection (Pseudomonas), or ophthalmologist guidance. Do NOT prescribe under MA pathway.\n\nINSTILLATION TECHNIQUE: wash hands; pull lower lid down; 1 drop without contact; close eye + punctal occlusion 1 min; wipe overflow with clean tissue; do not share dropper. Discard remaining product after course (no leftover use).\n\nCONTACT LENS: STOP contact lens wear during infection AND throughout antibiotic course; do NOT resume until symptoms fully resolved AND antibiotic complete; replace lens case and discard contact lenses worn while symptomatic. SCHOOL/DAYCARE: typically may return 24h after starting antibiotic per Ontario PHU; check local PHU.\n\nREASSESS at 48–72h — if no improvement or worsening, refer (could be viral, allergic, contact lens-related keratitis, or resistant organism). Refer if no improvement at 5–7 days completed."
+                },
+                "rx_lens": {
+                    "type": "refer-urgent",
+                    "msg": "Contact lens wearer with conjunctivitis (especially purulent) — SAME-DAY ophthalmology referral for slit-lamp exam to rule out Pseudomonas keratitis. Do NOT prescribe topical antibiotics under MA scope — fluoroquinolone coverage required, which is OUTSIDE Ontario MA scope.",
+                    "detail": "Pseudomonas aeruginosa keratitis is sight-threatening and progresses rapidly — corneal melt, perforation, scarring within 24–48h. Contact lens wearers have elevated risk regardless of hygiene. Standard MA-scope antibiotics (tobramycin, Polysporin, fusidic acid, Polytrim) do NOT reliably cover Pseudomonas. Ophthalmic fluoroquinolones (moxifloxacin, gatifloxacin) — first-line, but OUTSIDE Ontario MA scope. STOP CONTACT LENS WEAR IMMEDIATELY. Counsel: keep lenses to bring to ophthalmology (may be cultured); replace lens case; do not resume contact lens wear until cleared by ophthalmology; consider switching to daily disposable lenses going forward; do NOT sleep in lenses."
+                },
+                "rx_pedi": {
+                    "type": "refer",
+                    "msg": "Child <2 years (excluding neonates already refer-urgent at n1) — refer to physician/pediatrician for assessment.",
+                    "detail": "Conjunctivitis in young children may be viral, bacterial (often Streptococcus pneumoniae, Haemophilus influenzae, Moraxella), allergic, or due to nasolacrimal duct obstruction (dacryostenosis — common in infants). Pediatric assessment recommended for: appropriate diagnosis, dose-by-weight, exclusion of more serious etiologies, and to address common comorbidities (otitis media often co-exists with bacterial conjunctivitis caused by H. influenzae — 'conjunctivitis–otitis syndrome'). Counsel non-pharm: warm compresses, eye hygiene, hand washing while awaiting assessment."
+                },
+                "rx_unclear": {
+                    "type": "caution",
+                    "msg": "Conjunctivitis type unclear from history — reassess. If features remain ambiguous or atypical, REFER to physician/optometrist.",
+                    "detail": "Consider: DRY EYE (gritty, worse late in day, intermittent — preservative-free artificial tears, lid hygiene); BLEPHARITIS (lid margin inflammation — warm compresses, lid scrubs with diluted baby shampoo); SUBCONJUNCTIVAL HEMORRHAGE (painless red patch, no discharge — self-limiting, reassure); EPISCLERITIS / SCLERITIS (deep redness, pain — refer); PTERYGIUM (chronic, slow-growing fleshy tissue from conjunctiva onto cornea — refer); FOREIGN BODY (mechanical irritation, often unilateral — refer if not easily flushed); CHEMICAL EXPOSURE (immediate copious irrigation 15+ min, then ER); DACRYOCYSTITIS (medial canthus tenderness/swelling — bacterial, refer)."
+                },
+                "rx_allergy": {
+                    "type": "refer",
+                    "msg": "Multiple class allergies (aminoglycosides + polymyxin + fusidic acid) — alternative agents are outside Ontario MA scope. Refer to physician for ophthalmic fluoroquinolone or ophthalmologist input.",
+                    "detail": "Erythromycin ophthalmic ointment may be an option if no macrolide allergy and willing to tolerate ointment (transient blurry vision). Otherwise, ophthalmic fluoroquinolones (moxifloxacin, ciprofloxacin) are first-line alternatives but OUTSIDE Ontario MA scope. Counsel non-pharm: warm compresses 5–10 min QID, lash-line cleaning with baby shampoo, eye hygiene, hand washing. Most bacterial conjunctivitis is self-limiting (~65% resolved by day 5) — observation may be reasonable while accessing physician/NP."
+                }
+            }
+        }
     },
     {
         "name": "Acne Vulgaris",
