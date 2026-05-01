@@ -108416,10 +108416,17 @@ var MINOR_AILMENTS = [
             "start": "n1",
             "nodes": {
                 "n1": {
-                    "q": "Any RED FLAGS for serious eye disease: (1) PAIN deeper than gritty/foreign-body sensation (sharp, deep, severe); (2) VISION CHANGES — blurring not cleared by blinking, halos, photophobia; (3) corneal opacity, white spot, or hazy cornea; (4) NEONATE (≤30 days old) with any conjunctivitis (gonococcal/chlamydial — sight-threatening); (5) CONTACT LENS WEARER with purulent discharge (Pseudomonas keratitis risk); (6) HSV signs — vesicles around eye/lid, dendritic ulcer suspicion, recent cold sore + eye involvement; (7) HYPOPYON (pus level in anterior chamber); (8) ZOSTER on forehead/nose (V1, Hutchinson sign); (9) recent eye trauma or chemical exposure; (10) IMMUNOCOMPROMISED with severe presentation?",
-                    "ctx": "Conjunctivitis is benign; pain/vision change/corneal involvement are NOT typical and indicate keratitis, uveitis, acute angle-closure glaucoma, HSV keratitis, or other sight-threatening pathology requiring SAME-DAY ophthalmology.",
+                    "q": "Any RED FLAGS for sight-threatening eye disease: (1) PAIN deeper than gritty/foreign-body sensation (sharp, deep, severe, boring); (2) VISION CHANGES — blurring not cleared by blinking, decreased acuity, halos around lights; (3) PHOTOPHOBIA (significant light sensitivity); (4) corneal opacity, white spot, or hazy cornea; (5) ACUTE ANGLE-CLOSURE GLAUCOMA features — severe eye/brow ache + halos + nausea/vomiting + mid-dilated unreactive pupil; (6) SCLERITIS features — deep boring pain that wakes from sleep, violaceous deep redness not blanching with topical decongestant; (7) NEONATE (≤30 days old) with any conjunctivitis; (8) HSV signs — vesicles around eye/lid, dendritic ulcer suspicion, recent cold sore + eye involvement, OR unilateral persistent red eye with photophobia not responding to supportive care; (9) HYPOPYON (visible pus level in anterior chamber); (10) ZOSTER on forehead/nose (V1, Hutchinson sign); (11) recent eye trauma or CHEMICAL EXPOSURE (immediate copious irrigation 15+ min, then ER); (12) IMMUNOCOMPROMISED with severe presentation?",
+                    "ctx": "Conjunctivitis itself is benign; ANY pain/vision change/photophobia/corneal involvement indicates keratitis, uveitis, acute angle-closure glaucoma, scleritis, HSV keratitis, or endophthalmitis — sight-threatening, requires SAME-DAY ophthalmology.",
                     "crumb": "Red flags?",
                     "yes": "rx_redflag",
+                    "no": "n1b"
+                },
+                "n1b": {
+                    "q": "Is the patient a CONTACT LENS WEARER with any contact lens use in the past 7 days?",
+                    "ctx": "Per AAO PPP 2023, ANY contact lens wearer with red eye warrants urgent ophthalmology evaluation to rule out microbial keratitis (Pseudomonas, Acanthamoeba, contact lens-induced acute red eye / CLARE) — even without obviously purulent discharge or red-flag features. Standard MA-scope antibiotics do NOT reliably cover Pseudomonas; ophthalmic fluoroquinolones are OUTSIDE Ontario MA scope.",
+                    "crumb": "Contact lens?",
+                    "yes": "rx_lens",
                     "no": "n2"
                 },
                 "n2": {
@@ -108431,33 +108438,26 @@ var MINOR_AILMENTS = [
                 },
                 "n3": {
                     "q": "Does the presentation fit VIRAL conjunctivitis: recent URI symptoms (cold, sore throat, fever), bilateral or starting unilateral and spreading, watery/serous discharge, preauricular lymphadenopathy, gritty/burning sensation, often very contagious in household/work?",
-                    "ctx": "Viral conjunctivitis (most often adenovirus) is self-limiting in 7–14 days. Antibiotics are NOT helpful and contribute to resistance. AAO PPP 2023 explicitly debunks the old teaching that bacterial = unilateral and viral = bilateral — laterality alone is unreliable.",
+                    "ctx": "Viral conjunctivitis (most often adenovirus) is self-limiting in 7–14 days. Antibiotics are NOT helpful. AAO PPP 2023 explicitly debunks the laterality teaching — laterality alone is unreliable. WATCH FOR EKC (epidemic keratoconjunctivitis): severe photophobia, marked preauricular adenopathy, pseudomembranes, hemorrhagic conjunctivitis, foreign-body sensation severe enough to suggest subepithelial infiltrates — these warrant urgent ophthalmology even within the 'viral' bucket.",
                     "crumb": "Viral features?",
                     "yes": "tx_viral",
                     "no": "n4"
                 },
                 "n4": {
-                    "q": "Does the presentation fit BACTERIAL conjunctivitis: MUCOPURULENT (yellow/green) thick discharge, eyelid matting on waking (lashes stuck together), unilateral or bilateral, mild discomfort but NO significant pain, NO vision change?",
+                    "q": "Does the presentation fit BACTERIAL conjunctivitis: MUCOPURULENT (yellow/green) thick discharge, eyelid matting on waking (lashes stuck together), unilateral or bilateral, mild discomfort but NO significant pain, NO vision change, NO photophobia?",
                     "ctx": "Most bacterial conjunctivitis is also self-limiting (~65% resolve in 5 days without treatment, ~74% by 7 days per Cochrane). Antibiotics shorten symptom duration by ~1–2 days and may reduce contagion. Choice is between observation and short topical antibiotic.",
                     "crumb": "Bacterial features?",
                     "yes": "n5",
                     "no": "rx_unclear"
                 },
                 "n5": {
-                    "q": "Is the patient a CONTACT LENS wearer who has had any contact lens use in the past 7 days?",
-                    "ctx": "Contact lens wearers with conjunctivitis have an elevated risk of Pseudomonas aeruginosa keratitis — sight-threatening and requires urgent ophthalmology. Standard MA-scope antibiotics (tobramycin, Polysporin, fusidic acid, Polytrim) do NOT reliably cover Pseudomonas; ophthalmic fluoroquinolones (which DO cover Pseudomonas) are OUTSIDE Ontario MA scope.",
-                    "crumb": "Contact lens?",
-                    "yes": "rx_lens",
-                    "no": "n6"
-                },
-                "n6": {
-                    "q": "Is the patient ≥2 years of age? (younger pediatric conjunctivitis often viral or chemical irritation; bacterial in this group warrants pediatric input)",
-                    "ctx": "OCP MA scope for bacterial conjunctivitis includes pediatric and adult patients ≥2 years; <2 should be assessed by physician/pediatrician. Neonates already excluded at n1.",
+                    "q": "Is the patient ≥2 years of age?",
+                    "ctx": "OCP MA scope for bacterial conjunctivitis includes patients ≥2 years; <2 should be assessed by physician/pediatrician. Neonates excluded at n1; contact lens wearers excluded at n1b.",
                     "crumb": "Age ≥2?",
-                    "yes": "n7",
+                    "yes": "n6",
                     "no": "rx_pedi"
                 },
-                "n7": {
+                "n6": {
                     "q": "Does the patient have a known allergy to all of: aminoglycosides (tobramycin), polymyxin (Polytrim/Polysporin), AND fusidic acid?",
                     "ctx": "Multiple class allergies limit topical options under MA scope. If only one or two classes are off-limits, an alternative within scope exists.",
                     "crumb": "Multi-allergy?",
@@ -108471,13 +108471,13 @@ var MINOR_AILMENTS = [
                 },
                 "tx_allergic": {
                     "type": "treat",
-                    "msg": "ALLERGIC CONJUNCTIVITIS: First-line topical dual-action H1-antihistamine + mast cell stabilizer — Olopatadine 0.1% (Patanol) 1 drop BID OR Olopatadine 0.2% (Pataday) 1 drop OD OR Olopatadine 0.7% (Pazeo) 1 drop OD OR Ketotifen 0.025% (Zaditor) 1 drop BID–TID (OTC). Plus allergen avoidance + cool compresses + preservative-free artificial tears.",
-                    "detail": "MECHANISM: dual-action drops block H1 histamine receptors AND stabilize mast cells — superior to oral antihistamines for ocular symptoms (less drying than systemic AH). CANADIAN AVAILABILITY: Pataday 0.2% recently switched to OTC in Canada; Patanol 0.1% Schedule I (Rx — within Ontario MA scope to prescribe); Zaditor (ketotifen) OTC. Do NOT use ophthalmic decongestants (naphazoline, Visine) chronically — rebound hyperemia. Do NOT use topical corticosteroid drops (cataracts, glaucoma, infection masking — OUTSIDE Ontario MA scope; reserve for ophthalmologist).\n\nADJUNCTS: (1) Allergen avoidance and reduce indoor allergens; (2) Cool compresses 10 min 2–3×/day; (3) PRESERVATIVE-FREE artificial tears 4–6×/day to dilute allergens; (4) Oral 2nd-gen antihistamine if AR co-existing. INSTILLATION TECHNIQUE: wash hands; tilt head back; pull lower lid down to form pocket; instill 1 drop without dropper touching eye; close eye + punctal occlusion (press inner corner) for 1 min; do not blink hard. CONTACT LENS: remove before instillation, wait 10–15 min before reinserting (lens absorbs preservative). Reassess at 2 weeks; if inadequate, refer for stronger ophthalmic agents (mast cell stabilizers like nedocromil, or topical steroid by ophthalmology)."
+                    "msg": "ALLERGIC CONJUNCTIVITIS — AGE-STRATIFIED: AGES ≥3y: Olopatadine 0.2% (Pataday) 1 drop OD (NAPRA Schedule II OTC in Canada since ~2020) OR Olopatadine 0.1% (Patanol/Patanol-S) 1 drop BID (verify current NAPRA schedule — historically Schedule I/Rx; some products reclassified) OR Ketotifen 0.025% (Zaditor) 1 drop BID (OTC). AGES <3y: refer to physician — most ophthalmic antihistamines not approved or limited safety data. Plus allergen avoidance + cool compresses + preservative-free artificial tears for all ages.",
+                    "detail": "MECHANISM: dual-action drops block H1 histamine receptors AND stabilize mast cells — superior to oral antihistamines for ocular symptoms.\n\nCANADIAN PRODUCT NOTES: Pataday 0.2% (olopatadine) — NAPRA Schedule II (behind-the-counter, no Rx required). Patanol 0.1% — verify current NAPRA classification before prescribing under MA. Pazeo 0.7% — limited/inconsistent Canadian availability; verify with patient's pharmacy before recommending. Ketotifen (Zaditor) — Health Canada-approved ≥3 years, BID dosing per current Canadian PM (older labels listed TID).\n\nDo NOT use ophthalmic decongestants (naphazoline, Visine) for >3 days — rebound hyperemia. Do NOT use topical corticosteroid drops (cataracts, glaucoma, infection masking — OUTSIDE Ontario MA scope; reserve for ophthalmologist).\n\nADJUNCTS: (1) Allergen avoidance and indoor allergen reduction; (2) Cool compresses 10 min 2–3×/day; (3) PRESERVATIVE-FREE artificial tears 4–6×/day to dilute allergens; (4) Oral 2nd-gen antihistamine if AR co-existing. INSTILLATION TECHNIQUE: wash hands; tilt head back; pull lower lid down to form pocket; instill 1 drop without dropper touching eye; close eye + punctal occlusion (press inner corner) for 1 min. CONTACT LENS: STRONGLY consider stopping lens wear during active symptoms; if continuing, remove before instillation, wait 10–15 min before reinserting (lens absorbs preservative). Reassess at 2 weeks; if inadequate, refer for stronger ophthalmic agents (mast cell stabilizers like nedocromil, or topical steroid by ophthalmology)."
                 },
                 "tx_viral": {
                     "type": "treat",
                     "msg": "VIRAL CONJUNCTIVITIS: SUPPORTIVE CARE ONLY — antibiotics provide no benefit. Cool compresses 10 min 2–3×/day, preservative-free artificial tears PRN for comfort, strict hygiene to prevent spread.",
-                    "detail": "VIRAL (most often adenovirus) is self-limiting over 7–14 days. NO antibiotic, NO antiviral (unless HSV — which has different presentation: vesicles, dendritic ulcer, unilateral). HIGHLY CONTAGIOUS: handwashing; do NOT share towels, pillowcases, eye drops, makeup; replace makeup after recovery; wipe shared surfaces with disinfectant. School/work exclusion: 1–2 weeks or until discharge resolves per public health (often allowed back when discharge stops). EXPECTED COURSE: starts unilateral, often spreads to other eye in 24–48h; preauricular lymphadenopathy common; symptoms peak 4–7 days, resolve 7–14 days. RED FLAG MONITORING: any pain, vision change, photophobia, or corneal opacity → ophthalmology immediately (epidemic keratoconjunctivitis can cause corneal subepithelial infiltrates and prolonged visual symptoms). REFER if no improvement at 2 weeks or worsening course."
+                    "detail": "VIRAL (most often adenovirus) is self-limiting over 7–14 days. NO antibiotic. HIGHLY CONTAGIOUS: handwashing; do NOT share towels, pillowcases, eye drops, makeup; replace makeup after recovery; wipe shared surfaces with disinfectant. School/work exclusion: 1–2 weeks or until discharge resolves per public health (often allowed back when discharge stops). EXPECTED COURSE: starts unilateral, often spreads to other eye in 24–48h; preauricular lymphadenopathy common; symptoms peak 4–7 days, resolve 7–14 days.\n\nMANDATORY RED-FLAG MONITORING (re-route to urgent ophthalmology if ANY develop):\n• Any new or worsening eye PAIN (deeper than gritty)\n• Decreased VISUAL ACUITY or persistent blurring\n• PHOTOPHOBIA (especially severe or worsening)\n• Foreign-body sensation persistent beyond 1 week\n• Pseudomembranes or hemorrhagic conjunctivitis (EKC features)\n• Unilateral persistence beyond 1 week — possible HSV keratitis (subtle: may have minimal/no vesicles); dendritic corneal staining if examined\n• No improvement at 2 weeks or worsening course\n\nEKC (epidemic keratoconjunctivitis) can cause subepithelial infiltrates and prolonged visual symptoms — these patients need ophthalmology even if initial routing was to supportive care. HSV KERATITIS may present without obvious vesicles — unilateral red eye with photophobia not improving warrants ophthalmology to rule out dendritic ulcer."
                 },
                 "tx_bacterial": {
                     "type": "treat",
@@ -108495,9 +108495,9 @@ var MINOR_AILMENTS = [
                     "detail": "Conjunctivitis in young children may be viral, bacterial (often Streptococcus pneumoniae, Haemophilus influenzae, Moraxella), allergic, or due to nasolacrimal duct obstruction (dacryostenosis — common in infants). Pediatric assessment recommended for: appropriate diagnosis, dose-by-weight, exclusion of more serious etiologies, and to address common comorbidities (otitis media often co-exists with bacterial conjunctivitis caused by H. influenzae — 'conjunctivitis–otitis syndrome'). Counsel non-pharm: warm compresses, eye hygiene, hand washing while awaiting assessment."
                 },
                 "rx_unclear": {
-                    "type": "caution",
-                    "msg": "Conjunctivitis type unclear from history — reassess. If features remain ambiguous or atypical, REFER to physician/optometrist.",
-                    "detail": "Consider: DRY EYE (gritty, worse late in day, intermittent — preservative-free artificial tears, lid hygiene); BLEPHARITIS (lid margin inflammation — warm compresses, lid scrubs with diluted baby shampoo); SUBCONJUNCTIVAL HEMORRHAGE (painless red patch, no discharge — self-limiting, reassure); EPISCLERITIS / SCLERITIS (deep redness, pain — refer); PTERYGIUM (chronic, slow-growing fleshy tissue from conjunctiva onto cornea — refer); FOREIGN BODY (mechanical irritation, often unilateral — refer if not easily flushed); CHEMICAL EXPOSURE (immediate copious irrigation 15+ min, then ER); DACRYOCYSTITIS (medial canthus tenderness/swelling — bacterial, refer)."
+                    "type": "refer",
+                    "msg": "Atypical or unclear presentation — REFER to physician or optometrist within 24–72 hours for slit-lamp examination. Atypical presentations can be early scleritis, episcleritis, anterior uveitis, HSV keratitis, or other conditions requiring active rule-out (NOT just generic 'reassess').",
+                    "detail": "Differential considerations:\n• DRY EYE (gritty, worse late in day, intermittent — preservative-free artificial tears, lid hygiene; pharmacist-recommendable while awaiting assessment)\n• BLEPHARITIS (lid margin inflammation, scaling — warm compresses, lid scrubs with diluted baby shampoo or commercial lid wipes)\n• SUBCONJUNCTIVAL HEMORRHAGE (painless red patch, no discharge — self-limiting, reassure)\n• EPISCLERITIS (sectoral redness, mild ache — usually self-limiting but refer for confirmation)\n• SCLERITIS (deep boring pain wakes from sleep, violaceous deep redness, often vasculitis-associated — OCULAR EMERGENCY, urgent ophthalmology)\n• ANTERIOR UVEITIS / IRITIS (photophobia, ciliary flush, poor response to lubricants — requires steroid drops + workup)\n• HSV KERATITIS (unilateral, photophobia, may lack vesicles — fluorescein dendritic staining diagnostic)\n• PTERYGIUM (chronic fleshy growth onto cornea — refer)\n• FOREIGN BODY (mechanical irritation, often unilateral — refer if not easily flushed)\n• CHEMICAL EXPOSURE (immediate copious irrigation 15+ min, then ER)\n• DACRYOCYSTITIS (medial canthus tenderness/swelling — bacterial, refer urgently)\n\nWhile awaiting assessment: preservative-free artificial tears are safe; do not start topical antibiotic or steroid empirically; do not patch; counsel return immediately if pain, vision change, or photophobia develop."
                 },
                 "rx_allergy": {
                     "type": "refer",
