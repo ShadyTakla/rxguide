@@ -108418,7 +108418,108 @@ var MINOR_AILMENTS = [
             "6. Counsel on cream application, hand hygiene, no-sharing rules, school/work exclusion (24h after treatment + crusted), laundry/disinfection, full course completion, when to return.",
             "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess at 5–7 days; if no improvement, refer for oral antibiotic and culture/swab to rule out MRSA; review household for additional cases."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Presentation consistent with IMPETIGO: superficial skin lesions starting as red macules/papules → small vesicles or pustules → rupture leaving GOLDEN/HONEY-COLOURED CRUSTS, typically painless or mildly itchy, on EXPOSED skin (face — perinasal/perioral/around mouth, hands, arms, legs); spreads by direct contact and autoinoculation; common in children 2–5y but any age?",
+                    "ctx": "Honey-coloured crust on exposed skin is the hallmark. Non-bullous impetigo = ~70% of cases (S. aureus and/or Group A Strep). Bullous impetigo (S. aureus exfoliative toxin) = thin-walled flaccid bullae that rupture leaving thin brown crust with collarette of scale, common in infants/young children — outside Ontario MA scope (oral antibiotics required).",
+                    "crumb": "Honey crusts?",
+                    "yes": "n2",
+                    "no": "rx_atypical"
+                },
+                "n2": {
+                    "q": "Any URGENT red flags: (a) systemic features — fever, malaise, tachycardia, lymphangitis (red streaking), signs of sepsis; (b) RAPIDLY SPREADING cellulitis with marked surrounding erythema, warmth, tenderness extending beyond the impetigo lesions; (c) STAPHYLOCOCCAL SCALDED SKIN SYNDROME (SSSS) features — widespread erythema with painful skin, NIKOLSKY SIGN positive (skin slides off with light pressure), often in young children; (d) NECROTIZING FASCIITIS features — pain disproportionate to exam, bullae with dusky/black skin, crepitus, rapidly progressive?",
+                    "ctx": "Systemic features, rapid cellulitis, SSSS, or necrotizing fasciitis are emergencies requiring immediate physician/ED. Topical therapy is contraindicated; IV antibiotics needed.",
+                    "crumb": "Urgent flags?",
+                    "yes": "rx_urgent",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Lesion type and extent: are lesions BULLOUS (large flaccid blisters > 1 cm with collarette of scale after rupture, often on infant trunk/extremities)?",
+                    "ctx": "Bullous impetigo (S. aureus exfoliative toxin-mediated) requires ORAL antibiotics, NOT topical alone — outside Ontario MA scope (oral antibiotic prescribing). Refer to physician/NP.",
+                    "crumb": "Bullous?",
+                    "yes": "rx_bullous",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Number of lesions: are there 3 OR FEWER lesions, all in ONE body area, without rapidly spreading or worsening course?",
+                    "ctx": "Ontario MA scope for IMPETIGO is limited to LOCALIZED non-bullous impetigo with ≤3 lesions in one body area per OCP/OPA guidance. >3 lesions or multiple body areas requires oral antibiotic course (cephalexin or cloxacillin × 7 days) — outside MA scope.",
+                    "crumb": "≤3 lesions, 1 area?",
+                    "yes": "n5",
+                    "no": "rx_widespread"
+                },
+                "n5": {
+                    "q": "Location concern: are lesions on the FACE close to the EYES, lips, or mucous membranes (perioral involvement OK; periocular needs caution); OR in the diaper area of an infant; OR on HANDS where contamination risk is high?",
+                    "ctx": "Periocular involvement carries risk of conjunctivitis/keratoconjunctivitis; needs ophthalmology consideration if discharge or eye involvement. Face/hand lesions are most common impetigo sites and treatable under MA, but counsel hygiene carefully.",
+                    "crumb": "Sensitive site?",
+                    "yes": "n5b",
+                    "no": "n6"
+                },
+                "n5b": {
+                    "q": "Periocular (around the eye) involvement WITH eye discharge, conjunctival redness, or visual symptoms?",
+                    "ctx": "Periocular impetigo with conjunctival involvement requires ophthalmology assessment and possibly ophthalmic antibiotics, not just topical impetigo treatment.",
+                    "crumb": "Eye involved?",
+                    "yes": "rx_periocular",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Any RISK FACTORS for MRSA: prior MRSA infection or colonization, household member with MRSA, recent hospitalization or LTC stay (past 90 days), recent IV drug use, contact with athletes/military/correctional populations, HIV/immunocompromised, recurrent boils/abscesses?",
+                    "ctx": "Standard topical therapy (mupirocin, fusidic acid, ozenoxacin) covers MSSA and Group A Strep but may not cover MRSA. Suspected MRSA requires culture + alternative therapy (often TMP-SMX DS BID × 7 days or doxycycline) — outside Ontario MA scope.",
+                    "crumb": "MRSA risk?",
+                    "yes": "rx_mrsa_risk",
+                    "no": "n7"
+                },
+                "n7": {
+                    "q": "Is the patient pregnant or breastfeeding?",
+                    "ctx": "Topical mupirocin and fusidic acid have minimal systemic absorption and are considered safe in pregnancy/lactation (Briggs, LactMed). Ozenoxacin has less pregnancy data.",
+                    "crumb": "Pregnant/BF?",
+                    "yes": "tx_preg",
+                    "no": "tx_topical"
+                },
+                "rx_atypical": {
+                    "type": "caution",
+                    "msg": "Lesion features not typical of impetigo — reassess differential. If diagnosis uncertain, REFER to physician.",
+                    "detail": "Consider: HSV (clustered grouped vesicles on erythematous base, recurrent at same site, prodromal tingling — antiviral; cold sores in MA Cold Sores pathway); CHICKENPOX/VARICELLA (multiple lesions in different stages — papules, vesicles, crusts — fever, generalized); SHINGLES (dermatomal vesicles, unilateral, painful — MA Shingles pathway); CONTACT DERMATITIS (itchy, eczematous, geographic); ECZEMA (chronic itch, atopic distribution); SCABIES (intense nocturnal itch, burrows, household contacts — refer); TINEA (annular with central clearing, scaly border — topical antifungal); FOLLICULITIS (small pustules at hair follicles — topical antibiotic ± lifestyle); INSECT BITES (papular, distribution matches exposure); ECTHYMA (deeper, ulcerated, slow-healing — refer); CANDIDIASIS (intertriginous, satellite pustules — topical azole). If diagnosis unclear or lesions persist, refer to physician for assessment ± culture."
+                },
+                "rx_urgent": {
+                    "type": "refer-urgent",
+                    "msg": "URGENT — same-day ED/physician assessment. Systemic features, rapid cellulitis, suspected SSSS, or necrotizing fasciitis → ED for IV antibiotics, cultures, and possible imaging/surgery. Topical therapy is INADEQUATE.",
+                    "detail": "SEPSIS / TOXIC SHOCK: fever, tachycardia, hypotension, mental status change → ED for IV antibiotics (e.g., vancomycin + clindamycin for toxin suppression).\n\nCELLULITIS rapidly spreading: needs oral or IV antibiotics (cephalexin or cefazolin/cloxacillin/clindamycin); risk of bacteremia, especially with diabetes, lymphedema, or immunocompromise.\n\nSTAPHYLOCOCCAL SCALDED SKIN SYNDROME (SSSS): toxin-mediated; pediatric patients; positive Nikolsky sign; risk of dehydration, electrolyte imbalance, secondary infection. ICU / pediatric admission for IV antibiotics + supportive care.\n\nNECROTIZING FASCIITIS: surgical emergency; pain disproportionate to exam, dusky skin, crepitus, systemic toxicity → urgent surgical debridement + broad-spectrum IV antibiotics (vancomycin + piperacillin-tazobactam + clindamycin); high mortality.\n\nDO NOT DELAY referral with topical therapy."
+                },
+                "rx_bullous": {
+                    "type": "refer",
+                    "msg": "BULLOUS IMPETIGO requires ORAL antibiotic course — OUTSIDE Ontario MA scope (only TOPICAL prescribing for non-bullous limited impetigo is in MA scope). Refer to physician or NP.",
+                    "detail": "BULLOUS IMPETIGO is mediated by S. aureus EXFOLIATIVE TOXIN (acts on desmoglein-1). Lesions are thin-walled flaccid bullae on red base, rupture leaving thin brown crust with collarette of scale. Common in infants/young children (face, trunk, buttocks). Topical antibiotics are inadequate — systemic absorption is needed to address the toxigenic strain.\n\nPHYSICIAN treatment options: cephalexin 25–50 mg/kg/day in 4 divided doses (max 500 mg QID) × 7 days; OR cloxacillin 25–50 mg/kg/day in 4 divided doses × 7 days. Penicillin allergy: clindamycin 30 mg/kg/day in 3 divided doses (anaphylaxis risk) or macrolide if local susceptibilities support. NOT amoxicillin-clavulanate (unnecessarily broad).\n\nWhile awaiting referral: hygiene measures (handwashing, no sharing towels, cover lesions, separate laundry), but do NOT prescribe topical alone."
+                },
+                "rx_widespread": {
+                    "type": "refer",
+                    "msg": "Widespread impetigo (>3 lesions OR multiple body areas) — OUTSIDE Ontario MA scope. ORAL antibiotic course required. Refer to physician or NP.",
+                    "detail": "PHYSICIAN-PRESCRIBED options for non-bullous widespread impetigo: cephalexin 25–50 mg/kg/day (max 500 mg QID) × 7 days OR cloxacillin 500 mg QID × 7 days. NOT amoxicillin-clavulanate (unnecessarily broad, more side effects). Penicillin-allergic: clindamycin 30 mg/kg/day (max 600 mg QID) × 7 days — verify local clindamycin S. aureus susceptibility.\n\nPharmacist interim role: hygiene counselling (handwashing, cover lesions, no sharing of towels/bedding/clothing, wash linens hot, trim nails), school/daycare exclusion (24h after starting antibiotic AND lesions covered per Ontario PHU), screen household contacts for additional cases. Do NOT initiate topical alone for widespread disease."
+                },
+                "rx_periocular": {
+                    "type": "refer",
+                    "msg": "Periocular impetigo with eye involvement — refer to physician/optometrist. Topical impetigo therapy (mupirocin) is NOT appropriate for ocular surface; ophthalmic antibiotics may be needed.",
+                    "detail": "Periocular skin lesions with conjunctival redness, eye discharge, or visual symptoms suggest concomitant bacterial conjunctivitis, blepharitis, or hordeolum. Mupirocin and fusidic acid SKIN preparations are NOT formulated for ocular use. Ophthalmic preparations (tobramycin, Polysporin Eye, fusidic acid OPHTHALMIC gel/Fucithalmic — within MA Conjunctivitis pathway if isolated bacterial conjunctivitis) are different products. Eyelid margin involvement → blepharitis treatment (lid hygiene, warm compresses, ± topical antibiotic). Refer for proper eye exam to determine appropriate therapy. While awaiting: warm compresses to crusts, gentle eyelid cleaning."
+                },
+                "rx_mrsa_risk": {
+                    "type": "refer",
+                    "msg": "MRSA risk factors present — standard MA-scope topical therapy may be inadequate. Refer to physician for culture + sensitivity-guided therapy (TMP-SMX DS BID × 7 days OR doxycycline 100 mg BID × 7 days OR clindamycin per local susceptibility).",
+                    "detail": "MRSA RISK FACTORS: prior MRSA infection/colonization, household contact with MRSA, recent hospitalization or LTC stay (past 90 days), IV drug use, athletes/military/correctional contacts, HIV or other immunocompromise, recurrent skin/soft tissue abscesses, frequent antibiotic use.\n\nPHYSICIAN-PRESCRIBED for MRSA-suspected impetigo: TMP-SMX DS (160/800 mg) BID × 7 days; OR doxycycline 100 mg BID × 7 days (NOT in pregnancy or children <8y); OR clindamycin 30 mg/kg/day in 3 divided doses (verify local susceptibility — clindamycin resistance increasing). Mupirocin 2% intranasal BID × 5 days for decolonization if recurrent. Bleach baths (1/4–1/2 cup in full tub, 2×/week) for chronic colonization. Consider screening household for asymptomatic colonization.\n\nWhile awaiting referral: strict hygiene; cover lesions; do NOT share personal items; trim nails; wash linens hot."
+                },
+                "tx_preg": {
+                    "type": "treat",
+                    "msg": "PREGNANCY/LACTATION: Mupirocin 2% ointment (Bactroban) TID × 5 days OR Fusidic acid 2% cream (Fucidin) TID × 5–7 days. Both have minimal systemic absorption — accepted in pregnancy and lactation (Briggs, LactMed). PLUS hygiene measures.",
+                    "detail": "MUPIROCIN: Health Canada Pregnancy Category B; minimal absorption from intact or broken skin; LactMed-compatible (apply after nursing if on areola; wipe off before next feed). Apply thin layer to lesions TID × 5 days.\n\nFUSIDIC ACID 2%: limited human pregnancy data but minimal systemic absorption; LactMed-compatible. Apply TID × 5–7 days.\n\nOZENOXACIN 1% (Ozanex): less pregnancy data — prefer mupirocin or fusidic acid in pregnancy/lactation unless mupirocin/fusidic resistance suspected.\n\nNON-PHARM: gently soak crusts with warm water before applying ointment; cover with non-stick dressing if practical; handwashing before/after; do NOT share towels/washcloths; trim nails to prevent autoinoculation/scratching; wash linens in hot water; school/daycare exclusion 24h after starting antibiotic + lesions covered.\n\nReassess at 5–7 days. If no improvement, refer (consider culture for resistance/MRSA, or oral antibiotic — physician needed)."
+                },
+                "tx_topical": {
+                    "type": "treat",
+                    "msg": "First-Line TOPICAL TREATMENT (non-bullous, ≤3 lesions, one body area): Choose ONE: (1) Mupirocin 2% ointment (Bactroban) — apply thin layer TID × 5 days; OR (2) Fusidic acid 2% cream (Fucidin) — apply TID × 5–7 days; OR (3) Ozenoxacin 1% cream (Ozanex) — apply BID × 5 days (Health Canada-approved for impetigo in patients ≥2 months; useful for mupirocin-resistant cases). PLUS hygiene measures and school/daycare exclusion.",
+                    "detail": "OCP MA SCOPE: pharmacist may prescribe topical antibiotic for localized non-bullous impetigo. Reduces systemic antibiotic exposure and resistance pressure compared to oral therapy (Cochrane: equivalent efficacy for limited impetigo).\n\nAGENT CHOICE:\n• Mupirocin 2% ointment: standard first-line; covers MSSA and Group A Strep; mupirocin resistance increasing in some populations. NOT recommended for use >5–7 days due to resistance.\n• Fusidic acid 2% cream: alternative first-line; equal efficacy to mupirocin; similar resistance concerns.\n• Ozenoxacin 1% cream: novel non-fluorinated quinolone, Health Canada-approved 2017; good option for mupirocin-resistant cases or if patient previously failed mupirocin.\n\nAPPLICATION: gently soak crusts with warm water before each application to soften and remove (improves drug penetration); apply thin layer to all lesions and immediately surrounding skin; cover with non-stick dressing if practical (especially in children).\n\nHYGIENE MEASURES (essential for cure and prevention of spread):\n• Handwashing before and after applying medication\n• Do NOT share towels, washcloths, bedding, clothing\n• Wash linens, towels, clothes in HOT water\n• Trim nails to prevent autoinoculation and scratching/spread\n• School/daycare/work exclusion: may return 24h AFTER starting antibiotic AND lesions are covered (per Ontario PHU)\n• Screen household members for additional cases\n\nREASSESS at 5–7 days: if not improving, refer (consider culture/swab for resistance/MRSA, oral antibiotic — outside MA scope). If improving but not fully healed, may extend topical to total 7 days max (do NOT exceed 7 days mupirocin/fusidic — resistance)."
+                }
+            }
+        }
     },
     {
         "name": "Tick Bite (Lyme Prophylaxis)",
