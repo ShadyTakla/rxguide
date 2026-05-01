@@ -280,6 +280,13 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .amr-category { border-radius: 10px; }
 .amr-cat-header:hover { opacity: 0.85; }
 .amr-fam-header:hover h3 { opacity: 0.8; }
+.amr-agent { transition: border-color .15s, box-shadow .15s; }
+.amr-match { border-color: rgba(99,102,241,0.5) !important; background: rgba(99,102,241,0.06) !important; }
+.amr-active { border-color: #a5b4fc !important; background: rgba(99,102,241,0.13) !important; box-shadow: 0 0 0 2px rgba(165,180,252,0.35) !important; }
+.amr-family-link { font-size:0.75rem; color:#6366f1; cursor:pointer; font-weight:600; margin-left:6px; opacity:0.85; vertical-align:middle; white-space:nowrap; }
+.amr-family-link:hover { opacity:1; text-decoration:underline; }
+.amr-drug-link { color:#a5b4fc; cursor:pointer; font-weight:800; font-size:0.92rem; }
+.amr-drug-link:hover { text-decoration:underline; color:#c4b5fd; }
 </style>
 </head>
 <body>
@@ -387,7 +394,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 <!-- Antimicrobials Tab -->
 <div id="tab-antimicrobials" class="tab-panel">
   <h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 6px;">🦠 Antimicrobial Reference</h2>
-  <p style="font-size:0.83rem;color:var(--muted);margin-bottom:16px;">Comprehensive antimicrobial guide: families, coverage, dosing, and clinical pearls for community pharmacy practice.</p>
+  <p style="font-size:0.83rem;color:var(--muted);margin-bottom:12px;">Comprehensive antimicrobial guide: families, coverage, dosing, and clinical pearls for community pharmacy practice.</p>
+  <div style="position:sticky;top:0;z-index:20;background:var(--bg);padding:0 0 10px;">
+    <div style="display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:9px 14px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <span style="font-size:1rem;opacity:0.6;">🔍</span>
+      <input id="amr-search-input" type="text" placeholder="Search drug, family, coverage, uses…"
+        style="flex:1;background:transparent;border:none;outline:none;color:var(--text);font-size:0.88rem;"
+        oninput="amrSearch(this.value)" onkeydown="amrSearchNav(event)">
+      <span id="amr-search-count" style="color:var(--muted);font-size:0.78rem;white-space:nowrap;min-width:4em;text-align:right;"></span>
+      <button id="amr-search-clear" onclick="amrSearchClear()" style="display:none;background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.9rem;padding:0 2px;" title="Clear search">✕</button>
+    </div>
+  </div>
   <div id="amr-grid"></div>
 </div>
 
@@ -109651,6 +109668,142 @@ function amrBullets(text) {
   return h;
 }
 
+// AMR family name → DRUG_FAMILIES key lookup
+var AMR_TO_FAMILY_KEY = {
+  'Penicillins': 'Penicillin Antibiotics',
+  'Macrolides': 'Macrolide Antibiotics',
+  'TMP-SMX (Folate Antagonists)': 'Folate Antagonist Antibiotics',
+  'Glycopeptides': 'Glycopeptide Antibiotics',
+  'Cyclic Lipopeptides': 'Anti-MRSA Antibiotics',
+  'Oxazolidinones': 'Anti-MRSA Antibiotics',
+  'Phosphonic Antibiotics (Urinary Antiseptic)': 'Urinary Antiseptics',
+  'Polyenes': 'Polyene Antifungals',
+  'Azoles (Systemic)': 'Azole Antifungals',
+  'Topical Antifungals (Azoles & Other)': 'Topical Antifungals',
+  'Nucleoside Analogues (Herpes)': 'Nucleoside Analogues',
+  'Nucleoside Analogues (CMV)': 'CMV Antivirals',
+  'HIV NRTIs': 'HIV NRTIs (Nucleoside/Nucleotide Reverse Transcriptase Inhibitors)',
+  'HIV NNRTIs': 'HIV NNRTIs (Non-Nucleoside Reverse Transcriptase Inhibitors)',
+  'HIV INSTIs': 'HIV INSTIs (Integrase Strand Transfer Inhibitors)',
+  'Antimycobacterials': 'Antimycobacterial Agents'
+};
+
+function amrGetFamilyKey(famName) {
+  return AMR_TO_FAMILY_KEY[famName] || famName;
+}
+
+function amrDrugKey(drugName) {
+  // Normalize drug name to a DRUGS key (same logic as renderDrugLink)
+  var base = drugName.replace(/\s*\(.*?\)/g, '').trim();
+  var words = base.toLowerCase().split(/\s+/);
+  var k1 = base.toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/_+/g,'_').replace(/^_|_$/g,'');
+  if (DRUGS[k1]) return k1;
+  for (var key in DRUGS) {
+    if (key === words[0] || key.indexOf(words[0]) === 0) return key;
+  }
+  return null;
+}
+
+function amrDrugHtml(drugName) {
+  var key = amrDrugKey(drugName);
+  if (key) {
+    return '<span class="amr-drug-link" onclick="showDrugPanel(\'' + key + '\')" title="Open drug card: ' + drugName.replace(/'/g,"&#39;") + '">' + drugName + '</span>';
+  }
+  return '<span style="font-weight:800;color:var(--text);font-size:0.92rem;">' + drugName + '</span>';
+}
+
+// ── AMR Search ──────────────────────────────────────────────────────────────
+var _amrSearchMatches = [];
+var _amrSearchIdx = -1;
+
+function amrSearch(q) {
+  q = (q || '').trim().toLowerCase();
+  var countEl = document.getElementById('amr-search-count');
+  var clearBtn = document.getElementById('amr-search-clear');
+  if (clearBtn) clearBtn.style.display = q ? 'block' : 'none';
+
+  // Remove previous state
+  document.querySelectorAll('.amr-match,.amr-active').forEach(function(el){
+    el.classList.remove('amr-match','amr-active');
+  });
+  _amrSearchMatches = [];
+  _amrSearchIdx = -1;
+
+  if (!q) {
+    // Reset: hide all family bodies, show all families
+    document.querySelectorAll('.amr-family').forEach(function(el){ el.style.display=''; });
+    document.querySelectorAll('.amr-fam-body').forEach(function(el){ el.style.display='none'; });
+    document.querySelectorAll('.amr-category').forEach(function(el){ el.style.display=''; });
+    if (countEl) countEl.textContent = '';
+    return;
+  }
+
+  // Collect all agent cards that match
+  document.querySelectorAll('.amr-agent').forEach(function(el){
+    if (el.getAttribute('data-search') && el.getAttribute('data-search').indexOf(q) >= 0) {
+      el.classList.add('amr-match');
+      _amrSearchMatches.push(el);
+    }
+  });
+
+  // Show/hide families based on whether they have matching agents
+  document.querySelectorAll('.amr-family').forEach(function(famEl){
+    var hasMatch = famEl.querySelector('.amr-match');
+    var famNameEl = famEl.querySelector('.amr-fam-name');
+    var famMatches = famNameEl && famNameEl.textContent.toLowerCase().indexOf(q) >= 0;
+    if (hasMatch || famMatches) {
+      famEl.style.display = '';
+      var body = famEl.querySelector('.amr-fam-body');
+      if (body) body.style.display = 'block';
+    } else {
+      famEl.style.display = 'none';
+    }
+  });
+
+  // Hide categories with no visible families
+  document.querySelectorAll('.amr-category').forEach(function(catEl){
+    var hasFam = catEl.querySelector('.amr-family[style*="none"]') !== null;
+    var allHidden = true;
+    catEl.querySelectorAll('.amr-family').forEach(function(f){
+      if (f.style.display !== 'none') allHidden = false;
+    });
+    catEl.style.display = allHidden ? 'none' : '';
+    if (!allHidden) {
+      var body = catEl.querySelector('.amr-cat-body');
+      if (body) body.style.display = 'block';
+    }
+  });
+
+  // Activate first result
+  if (_amrSearchMatches.length > 0) {
+    _amrSearchIdx = 0;
+    _amrSearchMatches[0].classList.add('amr-active');
+    _amrSearchMatches[0].scrollIntoView({behavior:'smooth', block:'center'});
+  }
+  if (countEl) countEl.textContent = _amrSearchMatches.length ? (_amrSearchIdx+1)+'/'+_amrSearchMatches.length : '0 results';
+}
+
+function amrSearchNav(e) {
+  if (e.key === 'Escape') { amrSearchClear(); return; }
+  if (!_amrSearchMatches.length) return;
+  if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+  e.preventDefault();
+  _amrSearchMatches[_amrSearchIdx].classList.remove('amr-active');
+  _amrSearchIdx = e.key === 'ArrowDown'
+    ? (_amrSearchIdx + 1) % _amrSearchMatches.length
+    : (_amrSearchIdx - 1 + _amrSearchMatches.length) % _amrSearchMatches.length;
+  _amrSearchMatches[_amrSearchIdx].classList.add('amr-active');
+  _amrSearchMatches[_amrSearchIdx].scrollIntoView({behavior:'smooth', block:'center'});
+  var countEl = document.getElementById('amr-search-count');
+  if (countEl) countEl.textContent = (_amrSearchIdx+1)+'/'+_amrSearchMatches.length;
+}
+
+function amrSearchClear() {
+  var inp = document.getElementById('amr-search-input');
+  if (inp) { inp.value = ''; inp.focus(); }
+  amrSearch('');
+}
+
 var _amrBuilt = false;
 function buildAMR() {
   if (_amrBuilt) return;
@@ -109966,12 +110119,31 @@ function buildAMR() {
     ]}
   ];
 
+  // Helper to build a single agent card
+  function buildAgentCard(ag) {
+    var searchStr = [ag.drug, ag.brand||'', ag.uses||'', ag.dose||'', ag.notes||'', ag.ci||''].join(' ').toLowerCase();
+    var drugHtml = amrDrugHtml(ag.drug);
+    var s = '<div class="amr-agent" style="border:1px solid var(--border);border-radius:8px;padding:12px;margin:10px 0;background:rgba(255,255,255,0.02);" data-search="' + searchStr.replace(/"/g,'&quot;') + '">';
+    s += '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;">';
+    s += drugHtml;
+    s += '<span style="font-size:0.75rem;color:var(--muted);">' + (ag.brand || '') + '</span></div>';
+    s += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">';
+    s += '<div><div style="font-weight:600;font-size:0.72rem;color:#93c5fd;">DOSING</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.dose + '</div></div>';
+    s += '<div><div style="font-weight:600;font-size:0.72rem;color:#fbbf24;">USES</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.uses + '</div></div>';
+    s += '</div>';
+    s += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">';
+    s += '<div><div style="font-weight:600;font-size:0.72rem;color:#f87171;">CONTRAINDICATIONS</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + (ag.ci||'') + '</div></div>';
+    s += '<div><div style="font-weight:600;font-size:0.72rem;color:#86efac;">CLINICAL NOTES</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + (ag.notes||'') + '</div></div>';
+    s += '</div></div>';
+    return s;
+  }
+
   // Render the antimicrobial reference
   var h = '';
   for (var ci = 0; ci < data.length; ci++) {
     var cat = data[ci];
     h += '<div class="amr-category" style="margin-bottom:24px;">';
-    h += '<div class="amr-cat-header" style="background:' + cat.color + '22;border-left:4px solid ' + cat.color + ';padding:12px 16px;border-radius:0 8px 8px 0;margin-bottom:12px;cursor:pointer;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display===\'none\'?\'block\':\'none\'">';
+    h += '<div class="amr-cat-header" style="background:' + cat.color + '22;border-left:4px solid ' + cat.color + ';padding:12px 16px;border-radius:0 8px 8px 0;margin-bottom:12px;cursor:pointer;" onclick="var cb=this.nextElementSibling;cb.style.display=cb.style.display===\'none\'?\'block\':\'none\'">';
     h += '<span style="font-size:1.3rem;margin-right:8px;">' + cat.icon + '</span>';
     h += '<span style="font-size:1.1rem;font-weight:800;color:var(--text);">' + cat.category + '</span>';
     h += '<span style="float:right;color:var(--muted);">▾</span></div>';
@@ -109979,9 +110151,13 @@ function buildAMR() {
 
     for (var fi = 0; fi < cat.families.length; fi++) {
       var fam = cat.families[fi];
+      var famKey = amrGetFamilyKey(fam.name);
+      var famCardBtn = (DRUG_FAMILIES && DRUG_FAMILIES[famKey])
+        ? ' <span class="amr-family-link" onclick="event.stopPropagation();showFamilyPanel(\'' + famKey.replace(/'/g,"\\'") + '\')" title="Open family comparison card">↗ Family Card</span>'
+        : '';
       h += '<div class="amr-family" style="background:var(--card);border-radius:10px;padding:16px;margin-bottom:14px;border:1px solid var(--border);">';
       h += '<div class="amr-fam-header" style="cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'block\':\'none\'">';
-      h += '<h3 style="font-size:1rem;font-weight:700;color:var(--accent2);margin:0 0 4px;">' + fam.name + ' <span style="color:var(--muted);font-size:0.8rem;">▾</span></h3>';
+      h += '<h3 style="font-size:1rem;font-weight:700;color:var(--accent2);margin:0 0 4px;display:flex;align-items:center;flex-wrap:wrap;gap:4px;"><span class="amr-fam-name">' + fam.name + '</span>' + famCardBtn + ' <span style="color:var(--muted);font-size:0.8rem;margin-left:auto;">▾</span></h3>';
       h += '</div>';
       h += '<div class="amr-fam-body" style="display:none;">';
 
@@ -110008,43 +110184,16 @@ function buildAMR() {
           h += '<div style="font-weight:700;font-size:0.72rem;color:#6ee7b7;margin-bottom:4px;">🎯 GENERATION COVERAGE</div>';
           h += '<ul style="margin:0;padding-left:18px;">' + amrBullets(gen.genCoverage) + '</ul></div>';
           for (var ai = 0; ai < gen.agents.length; ai++) {
-            var ag = gen.agents[ai];
-            h += '<div style="border:1px solid var(--border);border-radius:8px;padding:12px;margin:10px 0;background:rgba(255,255,255,0.02);">';
-            h += '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;">';
-            h += '<span style="font-weight:800;color:var(--text);font-size:0.92rem;">' + ag.drug + '</span>';
-            h += '<span style="font-size:0.75rem;color:var(--muted);">' + (ag.brand || '') + '</span></div>';
-            h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">';
-            h += '<div><div style="font-weight:600;font-size:0.72rem;color:#93c5fd;">DOSING</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.dose + '</div></div>';
-            h += '<div><div style="font-weight:600;font-size:0.72rem;color:#fbbf24;">USES</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.uses + '</div></div>';
-            h += '</div>';
-            h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">';
-            h += '<div><div style="font-weight:600;font-size:0.72rem;color:#f87171;">CONTRAINDICATIONS</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.ci + '</div></div>';
-            h += '<div><div style="font-weight:600;font-size:0.72rem;color:#86efac;">CLINICAL NOTES</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.notes + '</div></div>';
-            h += '</div></div>';
+            h += buildAgentCard(gen.agents[ai]);
           }
           h += '</div></div>';
         }
       }
 
-      // Standard agents table
+      // Standard agents
       if (fam.agents && fam.agents.length) {
         for (var ai = 0; ai < fam.agents.length; ai++) {
-          var ag = fam.agents[ai];
-          h += '<div style="border:1px solid var(--border);border-radius:8px;padding:12px;margin:10px 0;background:rgba(255,255,255,0.02);">';
-          h += '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;">';
-          h += '<span style="font-weight:800;color:var(--text);font-size:0.92rem;">' + ag.drug + '</span>';
-          h += '<span style="font-size:0.75rem;color:var(--muted);">' + (ag.brand || '') + '</span></div>';
-
-          h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">';
-          h += '<div><div style="font-weight:600;font-size:0.72rem;color:#93c5fd;">DOSING</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.dose + '</div></div>';
-          h += '<div><div style="font-weight:600;font-size:0.72rem;color:#fbbf24;">USES</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.uses + '</div></div>';
-          h += '</div>';
-
-          h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">';
-          h += '<div><div style="font-weight:600;font-size:0.72rem;color:#f87171;">CONTRAINDICATIONS</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.ci + '</div></div>';
-          h += '<div><div style="font-weight:600;font-size:0.72rem;color:#86efac;">CLINICAL NOTES</div><div style="font-size:0.8rem;color:#c8cadc;line-height:1.5;">' + ag.notes + '</div></div>';
-          h += '</div>';
-          h += '</div>';
+          h += buildAgentCard(fam.agents[ai]);
         }
       }
       h += '</div></div>';
