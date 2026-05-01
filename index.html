@@ -287,6 +287,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .amr-family-link:hover { opacity:1; text-decoration:underline; }
 .amr-drug-link { color:#a5b4fc; cursor:pointer; font-weight:800; font-size:0.92rem; }
 .amr-drug-link:hover { text-decoration:underline; color:#c4b5fd; }
+.amr-subgroup-header { display:flex; align-items:center; gap:8px; padding:9px 14px; border-radius:8px; margin:10px 0 6px; cursor:pointer; user-select:none; }
+.amr-subgroup-header:hover { opacity:0.88; }
+.amr-subgroup-name { font-size:0.92rem; font-weight:800; letter-spacing:0.01em; }
+.amr-subgroup-link { font-size:0.72rem; font-weight:700; cursor:pointer; opacity:0.85; padding:2px 7px; border-radius:4px; border:1px solid currentColor; white-space:nowrap; }
+.amr-subgroup-link:hover { opacity:1; }
+.amr-subgroup-body { padding-left:12px; border-left:2px solid var(--border); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -109805,6 +109811,50 @@ function amrGetFamilyKey(famName) {
   return AMR_TO_FAMILY_KEY[famName] || famName;
 }
 
+// Subgroup definitions: map category name → ordered list of subgroups
+// Each subgroup groups related antibiotic families for visual hierarchy
+var AMR_SUBGROUPS = {
+  'Antibacterials': [
+    {name:'β-Lactam Antibiotics', famKey:'Beta-Lactam Antibiotics', color:'#1d4ed8',
+     families:['Penicillins','Cephalosporins','Carbapenems','Monobactams']},
+    {name:'Glycopeptides & Anti-MRSA Agents', famKey:'Anti-MRSA Antibiotics', color:'#7c3aed',
+     families:['Glycopeptides','Oxazolidinones','Cyclic Lipopeptides']},
+    {name:'Protein Synthesis Inhibitors — 50S', famKey:null, color:'#0369a1',
+     families:['Macrolides','Lincosamides','Macrocyclic Antibiotics']},
+    {name:'Protein Synthesis Inhibitors — 30S', famKey:null, color:'#0369a1',
+     families:['Tetracyclines','Aminoglycosides']},
+    {name:'Fluoroquinolones', famKey:'Fluoroquinolones', color:'#b45309',
+     families:['Fluoroquinolones']},
+    {name:'Folate Antagonists', famKey:'Folate Antagonist Antibiotics', color:'#15803d',
+     families:['TMP-SMX (Folate Antagonists)']},
+    {name:'Nitroimidazoles', famKey:'Nitroimidazoles', color:'#9d174d',
+     families:['Nitroimidazoles']},
+    {name:'Urinary Antiseptics', famKey:'Urinary Antiseptics', color:'#0f766e',
+     families:['Nitrofurans','Phosphonic Antibiotics (Urinary Antiseptic)']},
+    {name:'Topical Antibiotics', famKey:'Topical Antibiotics', color:'#4b5563',
+     families:['Topical Antibiotics']}
+  ],
+  'Antivirals': [
+    {name:'Herpesvirus & CMV Antivirals', famKey:'Nucleoside Analogues', color:'#6d28d9',
+     families:['Nucleoside Analogues (Herpes/VZV)','CMV Antivirals']},
+    {name:'HIV Antiretrovirals', famKey:null, color:'#dc2626',
+     families:['HIV Nucleoside/Nucleotide Reverse Transcriptase Inhibitors (NRTIs)',
+               'HIV Non-Nucleoside Reverse Transcriptase Inhibitors (NNRTIs)',
+               'HIV Integrase Strand Transfer Inhibitors (INSTIs)',
+               'HIV Protease Inhibitors (PIs)']},
+    {name:'Respiratory Antivirals', famKey:null, color:'#0891b2',
+     families:['Neuraminidase Inhibitors (Influenza)','SARS-CoV-2 Antivirals']},
+    {name:'Hepatitis Antivirals', famKey:'HCV Direct-Acting Antivirals', color:'#b45309',
+     families:['HBV Antivirals (Nucleos(t)ide)','HCV Direct-Acting Antivirals (DAAs)']}
+  ],
+  'Antifungals': [
+    {name:'Systemic Antifungals', famKey:'Azole Antifungals', color:'#0891b2',
+     families:['Azole Antifungals','Polyenes','Echinocandins']},
+    {name:'Topical & Nail Antifungals', famKey:'Topical Antifungals', color:'#15803d',
+     families:['Allylamines','Topical Antifungals (Azoles & Other)']}
+  ]
+};
+
 function amrDrugKey(drugName) {
   var base = drugName.replace(/\s*\(.*?\)/g, '').trim();
   var words = base.toLowerCase().split(/\s+/);
@@ -109849,9 +109899,11 @@ function amrSearch(q) {
   _amrSearchIdx = -1;
 
   if (!q) {
-    // Reset: hide all family bodies, show all families
+    // Reset: restore all, collapse family bodies
     document.querySelectorAll('.amr-family').forEach(function(el){ el.style.display=''; });
     document.querySelectorAll('.amr-fam-body').forEach(function(el){ el.style.display='none'; });
+    document.querySelectorAll('.amr-subgroup').forEach(function(el){ el.style.display=''; });
+    document.querySelectorAll('.amr-subgroup-body').forEach(function(el){ el.style.display='flex'; });
     document.querySelectorAll('.amr-category').forEach(function(el){ el.style.display=''; });
     if (countEl) countEl.textContent = '';
     return;
@@ -109877,6 +109929,14 @@ function amrSearch(q) {
     } else {
       famEl.style.display = 'none';
     }
+  });
+
+  // Hide subgroups with no visible families
+  document.querySelectorAll('.amr-subgroup').forEach(function(sgEl){
+    var allHidden = true;
+    sgEl.querySelectorAll('.amr-family').forEach(function(f){ if (f.style.display !== 'none') allHidden = false; });
+    sgEl.style.display = allHidden ? 'none' : '';
+    if (!allHidden) { var sb = sgEl.querySelector('.amr-subgroup-body'); if (sb) sb.style.display = 'flex'; }
   });
 
   // Hide categories with no visible families
@@ -110257,6 +110317,46 @@ function buildAMR() {
     return s;
   }
 
+  // Helper: render a single antibiotic family block
+  function renderAmrFamily(fam) {
+    var fh = '';
+    var famKey = amrGetFamilyKey(fam.name);
+    var famCardBtn = (DRUG_FAMILIES && DRUG_FAMILIES[famKey])
+      ? ' <span class="amr-family-link" onclick="event.stopPropagation();showFamilyPanel(\'' + famKey.replace(/'/g,"\\'") + '\')" title="Open family comparison card">↗ Family Card</span>'
+      : '';
+    fh += '<div class="amr-family" style="background:var(--card);border-radius:10px;padding:16px;margin-bottom:14px;border:1px solid var(--border);">';
+    fh += '<div class="amr-fam-header" style="cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'block\':\'none\'">';
+    fh += '<h3 style="font-size:1rem;font-weight:700;color:var(--accent2);margin:0 0 4px;display:flex;align-items:center;flex-wrap:wrap;gap:4px;"><span class="amr-fam-name">' + fam.name + '</span>' + famCardBtn + ' <span style="color:var(--muted);font-size:0.8rem;margin-left:auto;">▾</span></h3>';
+    fh += '</div>';
+    fh += '<div class="amr-fam-body" style="display:none;">';
+    fh += '<div style="margin:10px 0;padding:10px;background:rgba(99,102,241,0.06);border-radius:6px;">';
+    fh += '<div style="font-weight:700;font-size:0.78rem;color:#a5b4fc;margin-bottom:4px;">⚙️ MECHANISM</div>';
+    fh += '<ul style="margin:0;padding-left:18px;">' + amrBullets(fam.moa) + '</ul></div>';
+    fh += '<div style="margin:10px 0;padding:10px;background:rgba(52,211,153,0.06);border-radius:6px;">';
+    fh += '<div style="font-weight:700;font-size:0.78rem;color:#6ee7b7;margin-bottom:4px;">🎯 COVERAGE</div>';
+    fh += '<ul style="margin:0;padding-left:18px;">' + amrBullets(fam.coverage) + '</ul></div>';
+    if (fam.generations && fam.generations.length) {
+      for (var gi = 0; gi < fam.generations.length; gi++) {
+        var gen = fam.generations[gi];
+        fh += '<div style="margin:12px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;">';
+        fh += '<div style="background:rgba(99,102,241,0.1);padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'block\':\'none\'">';
+        fh += '<span style="font-weight:800;font-size:0.9rem;color:var(--accent2);">' + gen.gen + '</span>';
+        fh += '<span style="color:var(--muted);font-size:0.8rem;float:right;">▾</span></div>';
+        fh += '<div style="padding:10px 14px;">';
+        fh += '<div style="margin-bottom:8px;padding:8px;background:rgba(52,211,153,0.06);border-radius:6px;">';
+        fh += '<div style="font-weight:700;font-size:0.72rem;color:#6ee7b7;margin-bottom:4px;">🎯 GENERATION COVERAGE</div>';
+        fh += '<ul style="margin:0;padding-left:18px;">' + amrBullets(gen.genCoverage) + '</ul></div>';
+        for (var ai2 = 0; ai2 < gen.agents.length; ai2++) fh += buildAgentCard(gen.agents[ai2]);
+        fh += '</div></div>';
+      }
+    }
+    if (fam.agents && fam.agents.length) {
+      for (var ai3 = 0; ai3 < fam.agents.length; ai3++) fh += buildAgentCard(fam.agents[ai3]);
+    }
+    fh += '</div></div>';
+    return fh;
+  }
+
   // Render the antimicrobial reference
   var h = '';
   for (var ci = 0; ci < data.length; ci++) {
@@ -110268,59 +110368,58 @@ function buildAMR() {
     h += '<span style="float:right;color:var(--muted);">▾</span></div>';
     h += '<div class="amr-cat-body">';
 
-    for (var fi = 0; fi < cat.families.length; fi++) {
-      var fam = cat.families[fi];
-      var famKey = amrGetFamilyKey(fam.name);
-      var famCardBtn = (DRUG_FAMILIES && DRUG_FAMILIES[famKey])
-        ? ' <span class="amr-family-link" onclick="event.stopPropagation();showFamilyPanel(\'' + famKey.replace(/'/g,"\\'") + '\')" title="Open family comparison card">↗ Family Card</span>'
-        : '';
-      h += '<div class="amr-family" style="background:var(--card);border-radius:10px;padding:16px;margin-bottom:14px;border:1px solid var(--border);">';
-      h += '<div class="amr-fam-header" style="cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'block\':\'none\'">';
-      h += '<h3 style="font-size:1rem;font-weight:700;color:var(--accent2);margin:0 0 4px;display:flex;align-items:center;flex-wrap:wrap;gap:4px;"><span class="amr-fam-name">' + fam.name + '</span>' + famCardBtn + ' <span style="color:var(--muted);font-size:0.8rem;margin-left:auto;">▾</span></h3>';
-      h += '</div>';
-      h += '<div class="amr-fam-body" style="display:none;">';
-
-      // MOA
-      h += '<div style="margin:10px 0;padding:10px;background:rgba(99,102,241,0.06);border-radius:6px;">';
-      h += '<div style="font-weight:700;font-size:0.78rem;color:#a5b4fc;margin-bottom:4px;">⚙️ MECHANISM</div>';
-      h += '<ul style="margin:0;padding-left:18px;">' + amrBullets(fam.moa) + '</ul></div>';
-
-      // Coverage
-      h += '<div style="margin:10px 0;padding:10px;background:rgba(52,211,153,0.06);border-radius:6px;">';
-      h += '<div style="font-weight:700;font-size:0.78rem;color:#6ee7b7;margin-bottom:4px;">🎯 COVERAGE</div>';
-      h += '<ul style="margin:0;padding-left:18px;">' + amrBullets(fam.coverage) + '</ul></div>';
-
-      // Generation-based layout (cephalosporins)
-      if (fam.generations && fam.generations.length) {
-        for (var gi = 0; gi < fam.generations.length; gi++) {
-          var gen = fam.generations[gi];
-          h += '<div style="margin:12px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;">';
-          h += '<div style="background:rgba(99,102,241,0.1);padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'block\':\'none\'">';
-          h += '<span style="font-weight:800;font-size:0.9rem;color:var(--accent2);">' + gen.gen + '</span>';
-          h += '<span style="color:var(--muted);font-size:0.8rem;float:right;">▾</span></div>';
-          h += '<div style="padding:10px 14px;">';
-          h += '<div style="margin-bottom:8px;padding:8px;background:rgba(52,211,153,0.06);border-radius:6px;">';
-          h += '<div style="font-weight:700;font-size:0.72rem;color:#6ee7b7;margin-bottom:4px;">🎯 GENERATION COVERAGE</div>';
-          h += '<ul style="margin:0;padding-left:18px;">' + amrBullets(gen.genCoverage) + '</ul></div>';
-          for (var ai = 0; ai < gen.agents.length; ai++) {
-            h += buildAgentCard(gen.agents[ai]);
+    var subgroupDefs = AMR_SUBGROUPS[cat.category];
+    if (subgroupDefs) {
+      // Build map: family name → subgroup def
+      var famToSg = {};
+      for (var si = 0; si < subgroupDefs.length; si++) {
+        var sgd = subgroupDefs[si];
+        for (var sfi = 0; sfi < sgd.families.length; sfi++) famToSg[sgd.families[sfi]] = sgd;
+      }
+      // Render families grouped under subgroup headers
+      var lastSgName = null;
+      for (var fi = 0; fi < cat.families.length; fi++) {
+        var fam = cat.families[fi];
+        var sg = famToSg[fam.name] || null;
+        var sgName = sg ? sg.name : null;
+        if (sgName !== lastSgName) {
+          // Close previous subgroup
+          if (lastSgName !== null) h += '</div></div>';
+          // Open new subgroup
+          if (sg) {
+            var sgFamBtn = (sg.famKey && DRUG_FAMILIES && DRUG_FAMILIES[sg.famKey])
+              ? '<span class="amr-subgroup-link" style="color:' + sg.color + ';border-color:' + sg.color + '66;" onclick="event.stopPropagation();showFamilyPanel(\'' + sg.famKey.replace(/'/g,"\\'") + '\')" title="Open class overview card">↗ Class Card</span>'
+              : '';
+            h += '<div class="amr-subgroup" style="margin-bottom:16px;">';
+            h += '<div class="amr-subgroup-header" style="background:' + sg.color + '18;border-left:3px solid ' + sg.color + ';cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'flex\':\'none\'">';
+            h += '<span class="amr-subgroup-name" style="color:' + sg.color + ';">' + sg.name + '</span>';
+            h += sgFamBtn;
+            h += '<span style="margin-left:auto;color:var(--muted);font-size:0.8rem;">▾</span></div>';
+            h += '<div class="amr-subgroup-body" style="display:flex;flex-direction:column;">';
+          } else {
+            // ungrouped family — render without subgroup wrapper
+            h += '<div class="amr-subgroup" style="margin-bottom:16px;">';
+            h += '<div class="amr-subgroup-body" style="display:flex;flex-direction:column;padding-left:0;border-left:none;margin-left:0;">';
           }
-          h += '</div></div>';
+          lastSgName = sgName;
         }
+        h += renderAmrFamily(fam);
       }
-
-      // Standard agents
-      if (fam.agents && fam.agents.length) {
-        for (var ai = 0; ai < fam.agents.length; ai++) {
-          h += buildAgentCard(fam.agents[ai]);
-        }
+      if (lastSgName !== null) h += '</div></div>';
+    } else {
+      // No subgroups for this category — render families directly
+      for (var fi2 = 0; fi2 < cat.families.length; fi2++) {
+        h += renderAmrFamily(cat.families[fi2]);
       }
-      h += '</div></div>';
     }
+
     h += '</div></div>';
+    // (old family loop replaced above — see renderAmrFamily helper)
+    continue; // skip old rendering block below
   }
   grid.innerHTML = h;
 }
+
 
 // ══════════════════════════════════════════════
 // PREGNANCY & BREASTFEEDING TAB
