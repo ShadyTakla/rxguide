@@ -110370,42 +110370,43 @@ function buildAMR() {
 
     var subgroupDefs = AMR_SUBGROUPS[cat.category];
     if (subgroupDefs) {
-      // Build map: family name → subgroup def
-      var famToSg = {};
+      // Collect all families for each subgroup (data order may be non-contiguous)
+      var famToSgName = {};
       for (var si = 0; si < subgroupDefs.length; si++) {
         var sgd = subgroupDefs[si];
-        for (var sfi = 0; sfi < sgd.families.length; sfi++) famToSg[sgd.families[sfi]] = sgd;
+        for (var sfi = 0; sfi < sgd.families.length; sfi++) famToSgName[sgd.families[sfi]] = sgd.name;
       }
-      // Render families grouped under subgroup headers
-      var lastSgName = null;
+      var sgBuckets = {}; // sgName → [fam, ...]
+      var ungrouped = [];
       for (var fi = 0; fi < cat.families.length; fi++) {
         var fam = cat.families[fi];
-        var sg = famToSg[fam.name] || null;
-        var sgName = sg ? sg.name : null;
-        if (sgName !== lastSgName) {
-          // Close previous subgroup
-          if (lastSgName !== null) h += '</div></div>';
-          // Open new subgroup
-          if (sg) {
-            var sgFamBtn = (sg.famKey && DRUG_FAMILIES && DRUG_FAMILIES[sg.famKey])
-              ? '<span class="amr-subgroup-link" style="color:' + sg.color + ';border-color:' + sg.color + '66;" onclick="event.stopPropagation();showFamilyPanel(\'' + sg.famKey.replace(/'/g,"\\'") + '\')" title="Open class overview card">↗ Class Card</span>'
-              : '';
-            h += '<div class="amr-subgroup" style="margin-bottom:16px;">';
-            h += '<div class="amr-subgroup-header" style="background:' + sg.color + '18;border-left:3px solid ' + sg.color + ';cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'flex\':\'none\'">';
-            h += '<span class="amr-subgroup-name" style="color:' + sg.color + ';">' + sg.name + '</span>';
-            h += sgFamBtn;
-            h += '<span style="margin-left:auto;color:var(--muted);font-size:0.8rem;">▾</span></div>';
-            h += '<div class="amr-subgroup-body" style="display:flex;flex-direction:column;">';
-          } else {
-            // ungrouped family — render without subgroup wrapper
-            h += '<div class="amr-subgroup" style="margin-bottom:16px;">';
-            h += '<div class="amr-subgroup-body" style="display:flex;flex-direction:column;padding-left:0;border-left:none;margin-left:0;">';
-          }
-          lastSgName = sgName;
+        var sgName = famToSgName[fam.name];
+        if (sgName) {
+          if (!sgBuckets[sgName]) sgBuckets[sgName] = [];
+          sgBuckets[sgName].push(fam);
+        } else {
+          ungrouped.push(fam);
         }
-        h += renderAmrFamily(fam);
       }
-      if (lastSgName !== null) h += '</div></div>';
+      // Render subgroups in the order defined in AMR_SUBGROUPS (not data order)
+      for (var si2 = 0; si2 < subgroupDefs.length; si2++) {
+        var sg = subgroupDefs[si2];
+        var bucket = sgBuckets[sg.name];
+        if (!bucket || !bucket.length) continue;
+        var sgFamBtn = (sg.famKey && DRUG_FAMILIES && DRUG_FAMILIES[sg.famKey])
+          ? '<span class="amr-subgroup-link" style="color:' + sg.color + ';border-color:' + sg.color + '66;" onclick="event.stopPropagation();showFamilyPanel(\'' + sg.famKey.replace(/'/g,"\\'") + '\')" title="Open class overview card">↗ Class Card</span>'
+          : '';
+        h += '<div class="amr-subgroup" style="margin-bottom:16px;">';
+        h += '<div class="amr-subgroup-header" style="background:' + sg.color + '18;border-left:3px solid ' + sg.color + ';cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'flex\':\'none\'">';
+        h += '<span class="amr-subgroup-name" style="color:' + sg.color + ';">' + sg.name + '</span>';
+        h += sgFamBtn;
+        h += '<span style="margin-left:auto;color:var(--muted);font-size:0.8rem;">▾</span></div>';
+        h += '<div class="amr-subgroup-body" style="display:flex;flex-direction:column;">';
+        for (var bi = 0; bi < bucket.length; bi++) h += renderAmrFamily(bucket[bi]);
+        h += '</div></div>';
+      }
+      // Render any families not assigned to a subgroup
+      for (var ui = 0; ui < ungrouped.length; ui++) h += renderAmrFamily(ungrouped[ui]);
     } else {
       // No subgroups for this category — render families directly
       for (var fi2 = 0; fi2 < cat.families.length; fi2++) {
