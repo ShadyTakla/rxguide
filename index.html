@@ -109157,7 +109157,101 @@ var MINOR_AILMENTS = [
             "6. Counsel on PEACE & LOVE concept, NSAID timing/contraindications, topical application, brace use, progressive loading, proprioception, when to escalate, DVT awareness if immobilized.",
             "7. Document the encounter per OCP standards: assessment findings (Ottawa Rules outcome, severity grade), diagnosis, therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess at 1–2 weeks; if not improving, refer to physiotherapy or orthopedics; consider imaging if pain plateaus or worsens; encourage progressive return to activity guided by pain."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Mechanism and presentation consistent with a SPRAIN/STRAIN: acute injury within past 1–4 weeks from twist/inversion/sudden movement, with localized pain, swelling, ecchymosis, and limited range of motion at a JOINT (sprain — ligament) or muscle/tendon (strain); typically ankle, knee, wrist, finger, low back?",
+                    "ctx": "Acute musculoskeletal sprain/strain is the MA-eligible presentation. Chronic pain (>4 weeks), fracture-suggestive findings, neurovascular compromise, or non-traumatic joint pain require different evaluation pathways.",
+                    "crumb": "MSK sprain/strain?",
+                    "yes": "n2",
+                    "no": "rx_atypical"
+                },
+                "n2": {
+                    "q": "Any URGENT red flags requiring same-day imaging/assessment: (1) NEUROVASCULAR COMPROMISE — pale/cool/cyanotic distal limb, absent pulses, paresthesia/numbness, motor weakness; (2) OBVIOUS DEFORMITY — angulation, dislocation appearance, gross instability; (3) SUSPECTED FRACTURE — bone tenderness over a specific point, audible 'pop' at injury, inability to bear ANY weight; (4) OPEN WOUND with bone exposure or significant bleeding; (5) COMPARTMENT SYNDROME features — pain out of proportion, pallor, paresthesia, paralysis, pulselessness; (6) HIGH-ENERGY mechanism — fall from height, motor vehicle collision, sports impact?",
+                    "ctx": "These suggest fracture, dislocation, open injury, or vascular/nerve damage requiring urgent ED assessment + imaging — not pharmacist MA management.",
+                    "crumb": "Urgent flags?",
+                    "yes": "rx_urgent",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Location-specific OTTAWA RULES screen — does the patient meet criteria for X-ray? OTTAWA ANKLE: pain in malleolar zone PLUS bone tenderness at posterior edge or tip of LATERAL or MEDIAL malleolus, OR inability to weight-bear (4 steps) immediately AND in ED. OTTAWA FOOT: midfoot pain PLUS bone tenderness at base of 5th metatarsal or navicular, OR inability to weight-bear. OTTAWA KNEE: knee injury PLUS any of: age ≥55, isolated patellar tenderness, fibular head tenderness, inability to flex 90°, OR inability to bear weight (4 steps) immediately AND in ED.",
+                    "ctx": "Ottawa Rules are validated decision rules with ~99% sensitivity for clinically significant fracture. Positive result = X-ray needed before proceeding to MA management. Pittsburgh Knee Rules are an alternative for knee but Ottawa is most common in Canada.",
+                    "crumb": "Ottawa Rules positive?",
+                    "yes": "rx_xray",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Joint involved — is this a HIGH-RISK JOINT requiring more cautious management: HIP, SHOULDER (especially with rotator cuff suspicion), CERVICAL/THORACIC SPINE, OR knee with suspected ACL/meniscal injury (giving way, locking, large effusion)?",
+                    "ctx": "Hip pain in older adults can be occult femoral neck fracture. Shoulder injuries with rotator cuff tear or labral injury benefit from imaging. Spinal trauma needs Canadian C-spine Rule assessment. Knee with mechanical symptoms (locking, giving way, effusion) needs orthopedic assessment.",
+                    "crumb": "High-risk joint?",
+                    "yes": "rx_specialist",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Severity grading — does the patient have GRADE III features (complete ligament/tendon rupture): gross instability, marked positive stress test, severe pain with attempted use, large effusion, OR complete tendon retraction?",
+                    "ctx": "Grade I = mild stretch, no laxity, full function preserved. Grade II = partial tear, mild laxity, some functional limitation. Grade III = complete rupture, gross instability, requires orthopedic assessment ± surgical consideration.",
+                    "crumb": "Grade III?",
+                    "yes": "rx_grade3",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Is the patient PREGNANT or BREASTFEEDING?",
+                    "ctx": "NSAIDs are first-line for MSK sprain pain but have pregnancy/lactation considerations. AVOID systemic NSAIDs in 3rd trimester (ductus arteriosus closure); 1st-2nd trimester use may be acceptable for short courses. Topical NSAIDs and acetaminophen are alternatives. Lactation: ibuprofen and diclofenac are LactMed-compatible.",
+                    "crumb": "Pregnant/BF?",
+                    "yes": "tx_preg",
+                    "no": "n7"
+                },
+                "n7": {
+                    "q": "Any contraindication to oral NSAIDs: (1) active or history of peptic ulcer/GI bleed; (2) CKD with eGFR <30 mL/min; (3) decompensated heart failure or recent MI/stroke; (4) full-dose anticoagulation; (5) NSAID allergy or NERD/Samter's triad; (6) severe hepatic impairment?",
+                    "ctx": "Absolute oral NSAID contraindications mandate alternative. Topical NSAIDs (diclofenac gel) have minimal systemic absorption and are acceptable for most of these patients except direct allergy. Acetaminophen is a less effective but renal/CV-safe alternative.",
+                    "crumb": "Oral NSAID CI?",
+                    "yes": "tx_topical_acetaminophen",
+                    "no": "tx_standard"
+                },
+                "rx_atypical": {
+                    "type": "caution",
+                    "msg": "Presentation not consistent with acute MSK sprain/strain — reassess. If chronic pain, non-traumatic, or systemic features, REFER to physician.",
+                    "detail": "Consider:\n• CHRONIC PAIN >4 weeks: outside MA scope; refer for physiotherapy, imaging, or specialty assessment.\n• NON-TRAUMATIC joint pain — septic arthritis (joint pain + fever + warmth + decreased ROM, monoarticular — emergency); gout (sudden severe pain, often great toe, redness, warmth, ± fever); pseudogout; rheumatoid or other inflammatory arthritis; reactive arthritis post-infection.\n• REFERRED PAIN — radicular (back to leg via L5/S1; neck to arm via C5–T1); abdominal pain referred to back/shoulder.\n• SOFT TISSUE: bursitis, tendinopathy (chronic > 6 weeks), epicondylitis (tennis/golfer's elbow), De Quervain tenosynovitis.\n• OVERUSE INJURIES: stress fracture (insidious onset, point bone tenderness, weight-bearing exacerbates).\n• DERMATOLOGIC mimics: cellulitis presenting near a joint, herpes zoster prodrome.\n• MEDICATION-INDUCED: fluoroquinolone or statin tendinopathy/myopathy.\nIf diagnosis unclear or symptoms persist beyond 1–2 weeks despite conservative measures, refer to physician/NP."
+                },
+                "rx_urgent": {
+                    "type": "refer-urgent",
+                    "msg": "URGENT — same-day ED assessment + imaging. Suspected fracture, dislocation, neurovascular compromise, or compartment syndrome.",
+                    "detail": "WHILE AWAITING TRANSPORT: immobilize in position of injury (do NOT attempt reduction); ice through cloth (10–15 min on/off); elevate above heart level if possible; NPO (nothing by mouth) in case OR needed; document neurovascular status (capillary refill, distal pulses, sensation, motor function) and trend.\n\nCOMPARTMENT SYNDROME (pain out of proportion, pallor, paresthesia, paralysis, pulselessness — though pulses preserved until late): emergency fasciotomy required; do NOT delay. Most common: anterior compartment of leg, forearm, foot.\n\nNEUROVASCULAR COMPROMISE: cool/pale/pulseless distal limb requires emergency vascular consult.\n\nDISLOCATION (especially shoulder, patella, finger): formal reduction needed in ED with sedation.\n\nFRACTURE: obvious deformity, point bone tenderness, inability to bear ANY weight all warrant X-ray. Open fractures require urgent debridement + IV antibiotics.\n\nDo NOT prescribe NSAIDs/analgesics under MA scope when emergency assessment is needed."
+                },
+                "rx_xray": {
+                    "type": "refer",
+                    "msg": "Ottawa Rules POSITIVE — refer for X-ray BEFORE proceeding with MA management. The Ottawa Rules have ~99% sensitivity for clinically significant fracture; positive screen mandates imaging.",
+                    "detail": "REFERRAL OPTIONS: (1) Walk-in clinic with X-ray on-site, (2) Urgent care, (3) ED if clinically severe. Outpatient X-ray within 24h is acceptable for stable presentations.\n\nWHILE AWAITING X-RAY: pharmacist may recommend interim conservative care — relative rest, ice, compression bandage if comfortable, elevation, acetaminophen for pain (avoid NSAIDs in case fracture is confirmed and bleeding is a concern); avoid weight-bearing on suspected fracture site.\n\nIF X-RAY NEGATIVE: return to pharmacy for MA assessment of confirmed sprain — proceed through wizard steps.\n\nIF X-RAY POSITIVE for fracture: physician will initiate fracture management (immobilization, possibly ortho consult, follow-up); MA pathway not appropriate.\n\nNOTE: even with negative X-ray, if pain plateaus or worsens at 1–2 weeks, consider OCCULT FRACTURE (especially scaphoid in wrist injuries — CT or MRI may be needed)."
+                },
+                "rx_specialist": {
+                    "type": "refer",
+                    "msg": "High-risk joint or mechanical features — refer to physician for assessment ± imaging ± physiotherapy/orthopedic referral.",
+                    "detail": "HIP PAIN IN OLDER ADULTS (≥65): occult femoral neck fracture is a key concern; X-ray and possibly MRI to rule out non-displaced fracture. Refer for assessment.\n\nSHOULDER injuries with suspected ROTATOR CUFF TEAR (weakness, painful arc, drop arm sign, age ≥40): MRI ± physiotherapy ± orthopedic if surgical candidate.\n\nKNEE INJURIES with mechanical symptoms (locking, giving way, large effusion, positive McMurray) — meniscal or ACL injury suspected; MRI and orthopedic assessment.\n\nCERVICAL/THORACIC SPINE TRAUMA: Canadian C-spine Rule assessment + X-ray. NEXUS criteria as alternative.\n\nINTERIM PHARMACIST CARE: PEACE & LOVE protocol (Protect, Elevate, Avoid anti-inflammatories early, Compress, Educate; then Load, Optimism, Vascularization, Exercise) per BJSM 2019; acetaminophen for pain (NSAIDs deferred for first 48h per PEACE & LOVE evidence). Reassess after physician evaluation."
+                },
+                "rx_grade3": {
+                    "type": "refer",
+                    "msg": "Grade III injury (complete rupture) — refer to physician/orthopedic for assessment; surgical management may be needed.",
+                    "detail": "GRADE III SPRAIN: complete ligament rupture — gross instability on stress testing. May require surgical reconstruction depending on joint and patient activity level (e.g., ACL in active patients).\n\nGRADE III STRAIN (complete tendon rupture): Achilles tendon rupture (positive Thompson test — no plantar flexion when calf squeezed); biceps tendon rupture; quadriceps/patellar tendon — surgical repair often indicated, especially in younger active patients.\n\nWHILE AWAITING ASSESSMENT: immobilization in position that minimizes tension on injured structure (e.g., plantar-flexed boot for Achilles); crutches for non-weight-bearing on lower extremity; PEACE & LOVE protocol; acetaminophen for pain.\n\nBoth Grade III injuries and significant tendon ruptures benefit from EARLY orthopedic assessment (within days) — surgical outcomes better with early intervention."
+                },
+                "tx_preg": {
+                    "type": "treat",
+                    "msg": "PREGNANCY/LACTATION-SAFE MSK SPRAIN MANAGEMENT: PEACE & LOVE protocol + ACETAMINOPHEN 500–1000 mg PO q6h PRN (max 4 g/day; ≤3 g/day in 3rd trimester or hepatic concerns) + topical DICLOFENAC 1.16% (Voltaren Emulgel) QID for localized application (avoid in 3rd trimester per Health Canada).",
+                    "detail": "ACETAMINOPHEN: first-line analgesic in pregnancy and lactation; LactMed-compatible at standard doses; some recent observational signals for prenatal acetaminophen and neurodevelopmental outcomes are inconsistent — use lowest effective dose and shortest duration but do not avoid for legitimate pain.\n\nTOPICAL NSAIDs (diclofenac gel/patch): minimal systemic absorption; acceptable in 1st-2nd trimester for localized application. AVOID topical NSAIDs in 3rd trimester (Health Canada labeling) due to small but non-zero systemic absorption + ductus arteriosus concern.\n\nORAL NSAIDs: AVOID in 3rd trimester; use cautiously and short-course in 1st-2nd if needed. Ibuprofen 200–400 mg q6h × ≤72h is often used pre-3rd-trimester. AVOID at any gestational age if oligohydramnios suspected.\n\nLACTATION: ibuprofen, diclofenac, naproxen all LactMed-compatible. Acetaminophen first-line.\n\nNON-PHARM is the mainstay: relative rest in early phase; gentle range-of-motion; gradual return to activity; ice/heat per patient preference; compression bandage for swelling; elevation. PEACE & LOVE protocol applies. Refer to physician/OB if severe pain, suspected fracture, or no improvement in 1–2 weeks."
+                },
+                "tx_topical_acetaminophen": {
+                    "type": "treat",
+                    "msg": "Oral NSAID contraindicated → ALTERNATIVES: (1) TOPICAL DICLOFENAC 1.16% gel (Voltaren Emulgel) 2–4 g (gram, ~1 tsp ribbon) QID to affected area × ≤7 days OR diclofenac 2.32% gel (Voltaren Extra Strength) BID; (2) PLUS ACETAMINOPHEN 500–1000 mg PO q6h PRN (max 4 g/day; ≤3 g/day if hepatic concerns or chronic use); (3) PEACE & LOVE protocol non-pharm.",
+                    "detail": "TOPICAL DICLOFENAC: minimal systemic absorption (<10% of oral); safe for most patients with oral NSAID contraindications including age ≥65, mild GI history, mild renal/cardiac concerns. Counsel: apply to clean, intact skin; wash hands after; do NOT cover with occlusive dressing; avoid sun on treated area (mild photosensitivity); do NOT use on broken skin or near eyes/mucous membranes.\n\nWARNING: even topical NSAID is contraindicated in true NSAID allergy/Samter's triad. AVOID in 3rd trimester pregnancy. eGFR <30 + topical NSAID is acceptable for short courses (minimal systemic absorption) but caution + monitoring.\n\nACETAMINOPHEN: less effective for inflammatory pain than NSAIDs but renal/CV-safe. Combine with topical for synergy.\n\nNON-PHARM MAINSTAY: PEACE & LOVE — Protect (relative rest, off-load), Elevate, Avoid Anti-inflammatories first 48h, Compress (elastic bandage), Educate; then Load (graded weight-bearing), Optimism (positive expectations improve outcomes), Vascularization (gentle aerobic exercise), Exercise (progressive ROM and strength).\n\nIf pain inadequately controlled, refer to physician for next-line analgesic options (gabapentinoid for neuropathic component, tramadol short-course, physiotherapy)."
+                },
+                "tx_standard": {
+                    "type": "treat",
+                    "msg": "First-Line for ACUTE Grade I/II MSK Sprain/Strain: PEACE & LOVE protocol + Choose ONE: (1) IBUPROFEN 400 mg PO q6–8h with food × 3–7 days (max 1200 mg/day OTC self-care or 2400 mg/day under MA Rx); OR (2) NAPROXEN 250 mg PO q8–12h with food × 5–7 days (max 1000 mg/day; PREFERRED CV-SAFE per PRECISION trial); OR (3) DICLOFENAC 50 mg PO TID with food × 5–7 days; PLUS topical diclofenac 1.16% gel QID for localized application (synergistic).",
+                    "detail": "PEACE & LOVE PROTOCOL (BJSM 2019, replacing RICE/POLICE):\n• PROTECT — restrict movement first 24–48h to limit further injury; do NOT prolong (extended rest delays recovery).\n• ELEVATE — limb above heart level when possible.\n• AVOID ANTI-INFLAMMATORIES first 48h — emerging evidence suggests inflammation is part of healing; ice/NSAIDs should be reserved for analgesia, not anti-inflammatory effect (controversial; if pain severe, NSAIDs are reasonable from outset).\n• COMPRESS — elastic bandage to reduce swelling.\n• EDUCATE — recovery expectations, return to activity timeline, importance of progressive loading.\n• LOAD — early controlled loading promotes tissue remodeling.\n• OPTIMISM — positive expectations correlate with better outcomes.\n• VASCULARIZATION — pain-free aerobic activity for blood flow.\n• EXERCISE — progressive ROM and strength.\n\nNSAID CHOICE: NAPROXEN is preferred in patients with cardiovascular concerns (PRECISION trial showed lower CV risk vs ibuprofen). IBUPROFEN is most accessible (OTC up to 1200 mg/day, Schedule I higher). DICLOFENAC has highest CV risk among NSAIDs — avoid in CVD.\n\nDURATION: 3–7 days for acute pain; reassess at 1 week. Avoid prolonged use (chronic NSAID risks: GI, renal, CV).\n\nADJUNCTS: TOPICAL diclofenac gel QID adds anti-inflammatory effect with minimal systemic burden; CRYOTHERAPY 10–15 min q2h first 48h for pain relief; HEAT after 48h for muscle relaxation.\n\nIF SYMPTOMS PERSIST OR WORSEN at 1–2 weeks → refer to physician for assessment, possible imaging, or physiotherapy.\n\nFUNCTIONAL RECOVERY GUIDANCE: pain-free movement progressively; no lasting return to high-impact activity until pain-free with full ROM and strength (typically 2–6 weeks for Grade I, 4–8 weeks for Grade II)."
+                }
+            }
+        }
     },
     {
         "name": "Nausea & Vomiting",
