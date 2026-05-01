@@ -108423,17 +108423,31 @@ var MINOR_AILMENTS = [
             "start": "n1",
             "nodes": {
                 "n1": {
-                    "q": "Presentation consistent with IMPETIGO: superficial skin lesions starting as red macules/papules → small vesicles or pustules → rupture leaving GOLDEN/HONEY-COLOURED CRUSTS, typically painless or mildly itchy, on EXPOSED skin (face — perinasal/perioral/around mouth, hands, arms, legs); spreads by direct contact and autoinoculation; common in children 2–5y but any age?",
-                    "ctx": "Honey-coloured crust on exposed skin is the hallmark. Non-bullous impetigo = ~70% of cases (S. aureus and/or Group A Strep). Bullous impetigo (S. aureus exfoliative toxin) = thin-walled flaccid bullae that rupture leaving thin brown crust with collarette of scale, common in infants/young children — outside Ontario MA scope (oral antibiotics required).",
-                    "crumb": "Honey crusts?",
+                    "q": "Presentation consistent with non-bullous IMPETIGO: superficial skin lesions starting as red macules/papules → small vesicles or pustules → rupture leaving GOLDEN/HONEY-COLOURED CRUSTS, typically painless or mildly itchy, on EXPOSED skin (face — perinasal/perioral/around mouth, hands, arms, legs); spreads by direct contact and autoinoculation; common in children 2–5y but any age?",
+                    "ctx": "Honey-coloured crust on exposed skin is the hallmark. ALSO consider before answering YES: (1) ECTHYMA — deeper, ulcerated, 'punched-out' lesions extending into dermis with thick adherent crust → requires ORAL antibiotics, NOT topical (refer); (2) IMPETIGINIZED SCABIES — if intense nocturnal pruritus, burrows in webspaces/wrists/genitals, household contacts also itching → topical antibiotic alone will fail; refer for permethrin; (3) HSV (clustered grouped vesicles, recurrent at same site, prodromal tingling) vs scattered crusts. If lesions are deep/ulcerated, clustered/grouped, or scabies features present → answer NO and route via rx_atypical for proper diagnosis.",
+                    "crumb": "Honey crusts (superficial)?",
                     "yes": "n2",
                     "no": "rx_atypical"
                 },
                 "n2": {
-                    "q": "Any URGENT red flags: (a) systemic features — fever, malaise, tachycardia, lymphangitis (red streaking), signs of sepsis; (b) RAPIDLY SPREADING cellulitis with marked surrounding erythema, warmth, tenderness extending beyond the impetigo lesions; (c) STAPHYLOCOCCAL SCALDED SKIN SYNDROME (SSSS) features — widespread erythema with painful skin, NIKOLSKY SIGN positive (skin slides off with light pressure), often in young children; (d) NECROTIZING FASCIITIS features — pain disproportionate to exam, bullae with dusky/black skin, crepitus, rapidly progressive?",
-                    "ctx": "Systemic features, rapid cellulitis, SSSS, or necrotizing fasciitis are emergencies requiring immediate physician/ED. Topical therapy is contraindicated; IV antibiotics needed.",
+                    "q": "Any URGENT red flags: (a) systemic features — fever, malaise, tachycardia, lymphangitis (red streaking), signs of sepsis; (b) RAPIDLY SPREADING cellulitis with marked surrounding erythema, warmth, tenderness extending beyond the impetigo lesions; (c) STAPHYLOCOCCAL SCALDED SKIN SYNDROME (SSSS) features — widespread erythema with painful skin, NIKOLSKY SIGN positive (skin slides off with light pressure), often in young children; (d) NECROTIZING FASCIITIS features — pain disproportionate to exam, bullae with dusky/black skin, crepitus, rapidly progressive; (e) DEEP/ULCERATED 'punched-out' lesions extending below surface (ECTHYMA — requires oral antibiotics)?",
+                    "ctx": "Systemic features, rapid cellulitis, SSSS, necrotizing fasciitis, or ecthyma are NOT topical-treatable. Refer for IV (urgent) or oral (ecthyma) antibiotics.",
                     "crumb": "Urgent flags?",
                     "yes": "rx_urgent",
+                    "no": "n2b"
+                },
+                "n2b": {
+                    "q": "Any HOST-RISK factor that escalates progression risk: (a) significant IMMUNOCOMPROMISE (HIV, chemotherapy, post-transplant, biologics, high-dose systemic steroids); (b) POORLY-CONTROLLED DIABETES (HbA1c >9% or recurrent skin infections); (c) significant LYMPHEDEMA in the affected area; (d) chronic kidney disease on dialysis?",
+                    "ctx": "Even ≤3 localized lesions can rapidly progress to cellulitis or bacteremia in immunocompromised, brittle diabetic, or lymphedematous patients. Topical-only therapy may be inadequate. Refer for oral antibiotic ± closer monitoring.",
+                    "crumb": "Host risk?",
+                    "yes": "rx_host_risk",
+                    "no": "n2c"
+                },
+                "n2c": {
+                    "q": "RECURRENCE or TREATMENT FAILURE: is this the patient's 3rd or more episode in the past 6 months, OR did topical mupirocin/fusidic acid recently fail (within past 4 weeks) for the current or a similar episode?",
+                    "ctx": "Recurrence or recent treatment failure suggests resistant organism (often MRSA), persistent S. aureus carriage requiring decolonization, or alternative diagnosis. Empiric re-treatment with the same topical risks selecting resistance and failing again. Refer for swab/culture-guided therapy and decolonization assessment.",
+                    "crumb": "Recurrent/failed?",
+                    "yes": "rx_recurrent",
                     "no": "n3"
                 },
                 "n3": {
@@ -108451,21 +108465,14 @@ var MINOR_AILMENTS = [
                     "no": "rx_widespread"
                 },
                 "n5": {
-                    "q": "Location concern: are lesions on the FACE close to the EYES, lips, or mucous membranes (perioral involvement OK; periocular needs caution); OR in the diaper area of an infant; OR on HANDS where contamination risk is high?",
-                    "ctx": "Periocular involvement carries risk of conjunctivitis/keratoconjunctivitis; needs ophthalmology consideration if discharge or eye involvement. Face/hand lesions are most common impetigo sites and treatable under MA, but counsel hygiene carefully.",
-                    "crumb": "Sensitive site?",
-                    "yes": "n5b",
-                    "no": "n6"
-                },
-                "n5b": {
                     "q": "Periocular (around the eye) involvement WITH eye discharge, conjunctival redness, or visual symptoms?",
-                    "ctx": "Periocular impetigo with conjunctival involvement requires ophthalmology assessment and possibly ophthalmic antibiotics, not just topical impetigo treatment.",
+                    "ctx": "Periocular impetigo with conjunctival involvement requires ophthalmology assessment and possibly ophthalmic antibiotics, not skin-impetigo cream alone.",
                     "crumb": "Eye involved?",
                     "yes": "rx_periocular",
                     "no": "n6"
                 },
                 "n6": {
-                    "q": "Any RISK FACTORS for MRSA: prior MRSA infection or colonization, household member with MRSA, recent hospitalization or LTC stay (past 90 days), recent IV drug use, contact with athletes/military/correctional populations, HIV/immunocompromised, recurrent boils/abscesses?",
+                    "q": "Any STRONG MRSA risk factor: PERSONAL history of MRSA infection or colonization, HOUSEHOLD member with confirmed MRSA, recent hospitalization or LTC stay (past 90 days), IV drug use, OR recurrent boils/abscesses? (Background population risk — athletes, military, correctional contacts — may proceed to topical with vigilant follow-up if no personal/household history.)",
                     "ctx": "Standard topical therapy (mupirocin, fusidic acid, ozenoxacin) covers MSSA and Group A Strep but may not cover MRSA. Suspected MRSA requires culture + alternative therapy (often TMP-SMX DS BID × 7 days or doxycycline) — outside Ontario MA scope.",
                     "crumb": "MRSA risk?",
                     "yes": "rx_mrsa_risk",
@@ -108477,6 +108484,16 @@ var MINOR_AILMENTS = [
                     "crumb": "Pregnant/BF?",
                     "yes": "tx_preg",
                     "no": "tx_topical"
+                },
+                "rx_host_risk": {
+                    "type": "refer",
+                    "msg": "Significant immunocompromise, poorly-controlled diabetes, lymphedema, or dialysis — topical-only therapy may be inadequate even for ≤3 lesions. Refer to physician for oral antibiotic + closer follow-up.",
+                    "detail": "RATIONALE: these patients are at elevated risk for rapid progression to cellulitis, deep tissue infection, or bacteremia even from limited skin infection. Standard ORAL options (physician-prescribed): cephalexin 500 mg QID × 7 days OR cloxacillin 500 mg QID × 7 days. Consider TMP-SMX DS BID × 7 days if MRSA risk.\n\nWhile awaiting referral: pharmacist may apply hygiene measures (handwashing, cover lesions, do not share towels, hot-water laundry) AND start topical mupirocin 2% TID as an interim adjunct (does not replace oral therapy in this group). Counsel on warning signs (spreading erythema, fever, increasing pain → ED). Coordinate with primary care or diabetes management for overall control."
+                },
+                "rx_recurrent": {
+                    "type": "refer",
+                    "msg": "Recurrent (≥3 episodes in 6 months) OR recent treatment failure — refer to physician for SWAB/CULTURE + sensitivity-guided antibiotic ± S. aureus decolonization assessment.",
+                    "detail": "RECURRENT IMPETIGO suggests: (1) PERSISTENT NASAL CARRIAGE of S. aureus (most common reservoir — anterior nares); (2) MRSA colonization; (3) HOUSEHOLD source (untreated contact); (4) underlying skin condition (eczema, scabies). \n\nPHYSICIAN MANAGEMENT: swab nares ± lesions for culture and sensitivities. DECOLONIZATION: mupirocin 2% intranasal BID × 5 days + chlorhexidine 4% body wash daily × 5–7 days; consider treating household contacts. BLEACH BATHS for chronic colonization (1/4–1/2 cup household bleach in full tub, 5–10 min, 2×/week). Sensitivity-guided oral antibiotic (cephalexin if MSSA; TMP-SMX DS or doxycycline if MRSA).\n\nWhile awaiting referral: hygiene; do NOT re-treat with same topical that failed; counsel on autoinoculation prevention (no nail-biting, do not pick crusts, separate towels)."
                 },
                 "rx_atypical": {
                     "type": "caution",
@@ -108490,7 +108507,7 @@ var MINOR_AILMENTS = [
                 },
                 "rx_bullous": {
                     "type": "refer",
-                    "msg": "BULLOUS IMPETIGO requires ORAL antibiotic course — OUTSIDE Ontario MA scope (only TOPICAL prescribing for non-bullous limited impetigo is in MA scope). Refer to physician or NP.",
+                    "msg": "BULLOUS IMPETIGO — Ontario MA scope is limited to TOPICAL prescribing for non-bullous localized impetigo only. Bullous impetigo (toxin-mediated, often more widespread) is OUTSIDE MA scope and typically warrants ORAL antibiotic course. Refer to physician or NP.",
                     "detail": "BULLOUS IMPETIGO is mediated by S. aureus EXFOLIATIVE TOXIN (acts on desmoglein-1). Lesions are thin-walled flaccid bullae on red base, rupture leaving thin brown crust with collarette of scale. Common in infants/young children (face, trunk, buttocks). Topical antibiotics are inadequate — systemic absorption is needed to address the toxigenic strain.\n\nPHYSICIAN treatment options: cephalexin 25–50 mg/kg/day in 4 divided doses (max 500 mg QID) × 7 days; OR cloxacillin 25–50 mg/kg/day in 4 divided doses × 7 days. Penicillin allergy: clindamycin 30 mg/kg/day in 3 divided doses (anaphylaxis risk) or macrolide if local susceptibilities support. NOT amoxicillin-clavulanate (unnecessarily broad).\n\nWhile awaiting referral: hygiene measures (handwashing, no sharing towels, cover lesions, separate laundry), but do NOT prescribe topical alone."
                 },
                 "rx_widespread": {
@@ -108510,8 +108527,8 @@ var MINOR_AILMENTS = [
                 },
                 "tx_preg": {
                     "type": "treat",
-                    "msg": "PREGNANCY/LACTATION: Mupirocin 2% ointment (Bactroban) TID × 5 days OR Fusidic acid 2% cream (Fucidin) TID × 5–7 days. Both have minimal systemic absorption — accepted in pregnancy and lactation (Briggs, LactMed). PLUS hygiene measures.",
-                    "detail": "MUPIROCIN: Health Canada Pregnancy Category B; minimal absorption from intact or broken skin; LactMed-compatible (apply after nursing if on areola; wipe off before next feed). Apply thin layer to lesions TID × 5 days.\n\nFUSIDIC ACID 2%: limited human pregnancy data but minimal systemic absorption; LactMed-compatible. Apply TID × 5–7 days.\n\nOZENOXACIN 1% (Ozanex): less pregnancy data — prefer mupirocin or fusidic acid in pregnancy/lactation unless mupirocin/fusidic resistance suspected.\n\nNON-PHARM: gently soak crusts with warm water before applying ointment; cover with non-stick dressing if practical; handwashing before/after; do NOT share towels/washcloths; trim nails to prevent autoinoculation/scratching; wash linens in hot water; school/daycare exclusion 24h after starting antibiotic + lesions covered.\n\nReassess at 5–7 days. If no improvement, refer (consider culture for resistance/MRSA, or oral antibiotic — physician needed)."
+                    "msg": "PREGNANCY/LACTATION: Mupirocin 2% ointment (Bactroban) TID × 5 days OR Fusidic acid 2% cream (Fucidin) TID × 5–7 days. Both have minimal systemic absorption — accepted in pregnancy and lactation (Briggs: 'Compatible'; LactMed). PLUS hygiene measures.",
+                    "detail": "MUPIROCIN: Briggs lists as 'Compatible' in pregnancy (Health Canada does not assign letter categories — letter categories were retired by FDA in 2015 under PLLR). Minimal systemic absorption from intact or broken skin; LactMed-compatible (apply after nursing if on areola; wipe off before next feed). Apply thin layer to lesions TID × 5 days.\n\nFUSIDIC ACID 2%: limited but reassuring human pregnancy data, minimal systemic absorption; LactMed-compatible. Apply TID × 5–7 days.\n\nOZENOXACIN 1% (Ozanex): less pregnancy data — prefer mupirocin or fusidic acid in pregnancy/lactation unless mupirocin/fusidic resistance suspected.\n\nNON-PHARM: gently soak crusts with warm water before applying ointment; cover with non-stick dressing if practical; handwashing before/after; do NOT share towels/washcloths; trim nails to prevent autoinoculation/scratching; wash linens in hot water; school/daycare exclusion 24h after starting antibiotic + lesions covered.\n\nReassess at 5–7 days. If no improvement, refer (consider culture for resistance/MRSA, or oral antibiotic — physician needed)."
                 },
                 "tx_topical": {
                     "type": "treat",
