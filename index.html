@@ -118,6 +118,45 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 @media (max-width:1400px){#ma-layout:not(.ma-flow-expanded) #ma-flow-aside{flex:0 0 320px;}}
 @media (max-width:1280px){#ma-layout:not(.ma-flow-expanded) #ma-flow-aside{display:none;}}
 @media (max-width:1080px){#ma-jumpnav{display:none;}#ma-content{max-width:none;}}
+
+/* INTERACTIVE WIZARD */
+.ma-wiz{background:#0f1623;border:1px solid rgba(6,182,212,0.3);border-radius:10px;padding:14px;margin-bottom:14px;}
+.ma-wiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.ma-wiz-title{font-size:0.72rem;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#67e8f9;}
+.ma-wiz-reset-link{font-size:0.72rem;color:var(--muted);cursor:pointer;background:none;border:none;padding:2px 6px;border-radius:4px;transition:color .12s;}
+.ma-wiz-reset-link:hover{color:#c8cadc;}
+.ma-wiz-hist{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.07);}
+.ma-wiz-crumb{font-size:0.68rem;color:var(--muted);background:rgba(255,255,255,0.05);border-radius:3px;padding:2px 6px;max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ma-wiz-crumb.active{color:#c8cadc;background:rgba(99,102,241,0.15);}
+.ma-wiz-step{font-size:0.68rem;color:var(--muted);margin-bottom:6px;letter-spacing:0.5px;}
+.ma-wiz-ctx{font-size:0.75rem;color:#94a3b8;background:rgba(255,255,255,0.04);border-radius:5px;padding:6px 8px;margin-bottom:8px;line-height:1.4;}
+.ma-wiz-q{font-size:0.88rem;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:12px;}
+.ma-wiz-btns{display:flex;gap:8px;margin-bottom:8px;}
+.ma-wiz-btn{flex:1;padding:8px 10px;border-radius:7px;font-size:0.83rem;font-weight:700;cursor:pointer;border:none;transition:all .15s;line-height:1.2;}
+.ma-wiz-btn.yes{background:rgba(52,211,153,0.18);color:#34d399;border:1px solid rgba(52,211,153,0.35);}
+.ma-wiz-btn.yes:hover{background:rgba(52,211,153,0.3);border-color:#34d399;}
+.ma-wiz-btn.no{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3);}
+.ma-wiz-btn.no:hover{background:rgba(239,68,68,0.25);border-color:#ef4444;}
+.ma-wiz-btn.cont{background:rgba(99,102,241,0.18);color:#a5b4fc;border:1px solid rgba(99,102,241,0.3);}
+.ma-wiz-btn.cont:hover{background:rgba(99,102,241,0.28);border-color:#818cf8;}
+.ma-wiz-back{font-size:0.72rem;color:var(--muted);background:none;border:none;cursor:pointer;padding:2px 4px;transition:color .12s;}
+.ma-wiz-back:hover{color:#c8cadc;}
+.ma-wiz-outcome{border-radius:8px;padding:12px 14px;margin-bottom:8px;}
+.ma-wiz-outcome.treat{background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.35);}
+.ma-wiz-outcome.refer{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.35);}
+.ma-wiz-outcome.refer-urgent{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.4);}
+.ma-wiz-outcome.caution{background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.3);}
+.ma-wiz-out-icon{font-size:1.2rem;margin-bottom:4px;}
+.ma-wiz-out-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:4px;}
+.ma-wiz-outcome.treat .ma-wiz-out-label{color:#34d399;}
+.ma-wiz-outcome.refer .ma-wiz-out-label{color:#f59e0b;}
+.ma-wiz-outcome.refer-urgent .ma-wiz-out-label{color:#ef4444;}
+.ma-wiz-outcome.caution .ma-wiz-out-label{color:#fbbf24;}
+.ma-wiz-out-msg{font-size:0.83rem;font-weight:600;color:var(--text);margin-bottom:6px;line-height:1.4;}
+.ma-wiz-out-detail{font-size:0.76rem;color:#94a3b8;line-height:1.5;}
+.ma-wiz-out-actions{display:flex;gap:8px;margin-top:10px;}
+.ma-wiz-restart-btn{flex:1;padding:7px;border-radius:6px;font-size:0.78rem;font-weight:600;cursor:pointer;background:rgba(99,102,241,0.15);color:#a5b4fc;border:1px solid rgba(99,102,241,0.25);transition:all .15s;}
+.ma-wiz-restart-btn:hover{background:rgba(99,102,241,0.25);}
 #home-categories{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
 .cat-tile{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
 .cat-tile-header{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);transition:background .12s;}
@@ -107355,7 +107394,7 @@ var MINOR_AILMENTS = [
             "first_line": [
                 {
                     "name": "Intranasal Corticosteroid (INCS)",
-                    "drugs": "Fluticasone propionate (Flonase) 50 mcg/spray: 2 sprays each nostril OD | Fluticasone furoate (Flonase Sensimist) 27.5 mcg/spray: 2 sprays each nostril OD | Mometasone (Nasonex) 50 mcg/spray: 2 sprays each nostril OD (OTC since 2022) | Budesonide (Rhinocort) 2 sprays each nostril OD",
+                    "drugs": "Fluticasone propionate (Flonase) 50 mcg/spray: 2 sprays each nostril OD | Fluticasone furoate (Flonase Sensimist) 27.5 mcg/spray: INITIAL: 2 sprays each nostril OD; MAINTENANCE once controlled: step down to 1 spray each nostril OD | Mometasone (Nasonex) 50 mcg/spray: 2 sprays each nostril OD (OTC since 2022) | Budesonide (Rhinocort) 2 sprays each nostril OD",
                     "notes": "Most effective pharmacotherapy for allergic rhinitis — superior to antihistamines for congestion and nasal symptoms. Takes 1–2 weeks for full effect. Spray toward outer ear, not nasal septum (prevents septum perforation). Can be used long-term. Note: Flonase = fluticasone propionate 50 mcg/spray; Flonase Sensimist = fluticasone furoate 27.5 mcg/spray — different molecules and strengths.",
                     "preferred_when": "Persistent symptoms or predominantly nasal congestion"
                 },
@@ -107610,8 +107649,7 @@ var MINOR_AILMENTS = [
             "Ontario College of Pharmacists. Minor Ailments Prescribing: Urticaria. OCP Standards, O. Reg. 256/24 (2025).",
             "CSACI (Canadian Society of Allergy and Clinical Immunology). Chronic Urticaria Guidelines — Canadian Consensus (2020).",
             "Zuraw BL, Bernstein JA, et al. The Diagnosis and Management of Acute and Chronic Urticaria: 2023 Update (AAAAI/ACAAI Joint Task Force on Practice Parameters). Ann Allergy Asthma Immunol. 2023 (replaces Bernstein 2014).",
-            "Zuberbier T, Aberer W, et al. The international EAACI/GA²LEN/AEF/WAO guideline for the definition, classification, diagnosis and management of urticaria — 2022 revision. Allergy. 2022;77(3):734–766.",
-            "Zuberbier T, et al. The EAACI/GA²LEN/AEF/WAO Guideline for the definition, classification, diagnosis and management of urticaria. Allergy. 2022;77(3):734–766."
+            "Zuberbier T, Aberer W, et al. The international EAACI/GA²LEN/AEF/WAO guideline for the definition, classification, diagnosis and management of urticaria — 2022 revision. Allergy. 2022;77(3):734–766."
         ],
         "patient_counselling": [
             "Take a non-sedating second-generation antihistamine DAILY (regularly, not just when itchy): cetirizine 10 mg OD, loratadine 10 mg OD, fexofenadine 120–180 mg OD, bilastine 20 mg OD, or rupatadine 10 mg OD. Daily prophylactic dosing is more effective than PRN.",
@@ -108304,7 +108342,7 @@ var MINOR_AILMENTS = [
                 {
                     "name": "Oral Antiviral — Episodic Treatment (moderate-severe or frequent recurrence)",
                     "drugs": "Valacyclovir (Valtrex) 2 g BID × 1 day (single-day regimen — most convenient) | Valacyclovir 500 mg BID × 3 days (alternative episodic regimen) | Acyclovir 400 mg 5× per day × 5 days (every 4 hours while awake) OR Acyclovir 200 mg 5× per day × 5 days | Famciclovir 1500 mg single dose",
-                    "notes": "Oral antivirals significantly more effective than topical — reduce healing by 1–2 days and reduce pain. Best if taken at prodrome (tingling/itching) — timing is critical. Valacyclovir 2 g BID × 1 day: most convenient (single-day). Acyclovir correct episodic dose for herpes labialis: 400 mg 5× daily OR 200 mg 5× daily × 5 days (NOT 400 mg TID — that is the genital HSV suppressive dose). Famciclovir alternative: 1500 mg single dose OR 750 mg PO BID × 1 day per Health Canada PM. Renal dose adjustment required for acyclovir and valacyclovir if CrCl <50 mL/min — reduce dose/frequency. Pregnancy: acyclovir and valacyclovir have extensive human safety data and are considered acceptable when benefit > risk (LactMed; SOGC HSV in Pregnancy). FDA letter pregnancy categories were eliminated in 2015 (Pregnancy and Lactation Labeling Rule, PLLR) — use narrative risk assessment instead."
+                    "notes": "Oral antivirals significantly more effective than topical — reduce healing by 1–2 days and reduce pain. Best if taken at prodrome (tingling/itching) — timing is critical. Valacyclovir 2 g BID × 1 day: most convenient (single-day). Acyclovir correct episodic dose for herpes labialis: 400 mg 5× daily × 5 days (alternative: 200 mg 5× daily × 5 days). Note: acyclovir 400 mg BID or TID is used for HSV SUPPRESSION (oral or genital) — do not confuse with the 5×/day episodic dose for acute outbreaks. Famciclovir alternative: 1500 mg single dose OR 750 mg PO BID × 1 day per Health Canada PM. Renal dose adjustment required for acyclovir and valacyclovir if CrCl <50 mL/min — reduce dose/frequency. Pregnancy: acyclovir and valacyclovir have extensive human safety data and are considered acceptable when benefit > risk (LactMed; SOGC HSV in Pregnancy). FDA letter pregnancy categories were eliminated in 2015 (Pregnancy and Lactation Labeling Rule, PLLR) — use narrative risk assessment instead."
                 },
                 {
                     "name": "Suppressive Therapy (frequent recurrence ≥6 outbreaks/year with significant impact)",
@@ -108674,7 +108712,7 @@ var MINOR_AILMENTS = [
             "NICE. Insect bites and stings: Clinical Knowledge Summary (CKS); updated 2023."
         ],
         "patient_counselling": [
-            "If a stinger is visible (bee sting): SCRAPE it sideways with a fingernail or credit card edge — do NOT squeeze with tweezers (squeezes more venom in). Speed of removal is more important than method.",
+            "If a stinger is visible (bee sting): remove it by any quick method — scraping sideways with a fingernail or card is fine, but so is grasping with tweezers or fingers. Speed of removal matters far more than method (the venom sac empties in seconds regardless of how it is removed — Cochrane 2009). The old teaching 'never use tweezers' is NOT evidence-based.",
             "Wash the bite/sting site with soap and water; apply a cold compress (ice wrapped in cloth) for 10–15 minutes to reduce swelling and pain.",
             "Hydrocortisone 1% cream: apply a thin layer to the affected area 3–4 times daily for up to 5–7 days for itch and inflammation; do NOT use on broken skin or open lesions.",
             "Cetirizine 10 mg once daily (or loratadine, fexofenadine, bilastine) for systemic itching from multiple bites — non-sedating preferred. Avoid topical diphenhydramine cream IF you are also taking oral antihistamines (additive systemic absorption / sensitization risk).",
@@ -108798,7 +108836,133 @@ var MINOR_AILMENTS = [
             "6. Counsel on antibiotic timing (with food for nitrofurantoin), full course completion, hydration, voiding hygiene, expected timeline (improvement in 24–48h), recurrent UTI prevention (cranberry PAC, voiding habits), drug interactions (especially TMP-SMX), when to return for red flags.",
             "7. Document the encounter per OCP standards: assessment findings, diagnosis (uncomplicated cystitis), therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess at 48 hours if no improvement (refer for urine culture and alternative therapy); reassess at end of course; if recurrent/relapsing pattern, refer for urological assessment and possible prophylaxis."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Is the patient female?",
+                    "ctx": "Ontario MA eligibility for uncomplicated UTI is limited to non-pregnant females aged 16–64.",
+                    "crumb": "Female?",
+                    "yes": "n2",
+                    "no": "rx_male"
+                },
+                "n2": {
+                    "q": "Is she aged 16–64 (inclusive)?",
+                    "crumb": "Age 16–64?",
+                    "yes": "n3",
+                    "no": "rx_age"
+                },
+                "n3": {
+                    "q": "Fever ≥38°C, flank or costovertebral angle (CVA) tenderness, or back pain?",
+                    "ctx": "These features suggest upper UTI (pyelonephritis) — outside MA scope regardless of other criteria.",
+                    "crumb": "Fever/flank pain?",
+                    "yes": "rx_pyelo",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Nausea, vomiting, or rigors present?",
+                    "ctx": "Systemic features also suggest pyelonephritis or bacteremia.",
+                    "crumb": "Nausea/rigors?",
+                    "yes": "rx_pyelo",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Currently pregnant or possibly pregnant?",
+                    "crumb": "Pregnant?",
+                    "yes": "rx_preg",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Classic UTI triad present: dysuria AND (frequency or urgency)?",
+                    "ctx": "Without the classic triad, empirical treatment risks over-treating vaginitis, STI, or interstitial cystitis.",
+                    "crumb": "Classic triad?",
+                    "yes": "n7",
+                    "no": "rx_ddx"
+                },
+                "n7": {
+                    "q": "Recurrent UTI? (≥2 episodes in past 6 months OR ≥3 in past 12 months)",
+                    "crumb": "Recurrent UTI?",
+                    "yes": "rx_recur",
+                    "no": "n8"
+                },
+                "n8": {
+                    "q": "Antibiotics used in the past 3 months?",
+                    "crumb": "Recent antibiotics?",
+                    "yes": "n8b",
+                    "no": "n9"
+                },
+                "n8b": {
+                    "q": "Are symptoms clearly NEW (not relapse of the same recent episode)?",
+                    "ctx": "Recent antibiotics raise resistance risk. If this is the same episode returning, a culture is needed before re-treating.",
+                    "crumb": "New episode?",
+                    "yes": "n9",
+                    "no": "rx_relapse"
+                },
+                "n9": {
+                    "q": "Contraindication to nitrofurantoin? (eGFR <30 mL/min, pulmonary fibrosis, G6PD deficiency, or known allergy)",
+                    "crumb": "Nitrofurantoin CI?",
+                    "yes": "n10",
+                    "no": "tx_nitro"
+                },
+                "n10": {
+                    "q": "Contraindication to TMP-SMX? (allergy, on warfarin, ACEi+ARB+diuretic triple, methotrexate, or local resistance ≥20%)",
+                    "crumb": "TMP-SMX CI?",
+                    "yes": "tx_fosfo",
+                    "no": "tx_tmp"
+                },
+                "rx_male": {
+                    "type": "refer",
+                    "msg": "Males with UTI symptoms are outside Ontario MA prescribing scope — refer to physician or NP.",
+                    "detail": "Consider: prostatitis, epididymitis, urethritis/STI, structural abnormality. Physician or NP assessment is required. Provide red-flag counselling (fever, urinary retention, severe pain → ER)."
+                },
+                "rx_age": {
+                    "type": "refer",
+                    "msg": "Age <16 or ≥65 is outside Ontario MA eligibility for uncomplicated UTI under O. Reg. 256/24 — refer to physician or NP.",
+                    "detail": "Elderly patients (≥65) have higher rates of asymptomatic bacteriuria, atypical presentations, and antibiotic complications. Younger patients (<16) may have anatomical issues warranting further investigation."
+                },
+                "rx_pyelo": {
+                    "type": "refer-urgent",
+                    "msg": "Signs of pyelonephritis (upper UTI) — refer urgently to physician or ER. Do NOT prescribe empirically.",
+                    "detail": "Fever ≥38°C, flank/CVA pain, nausea, vomiting, or rigors indicate upper tract infection. Requires urine culture, possible blood cultures, and IV/high-dose oral antibiotics. Do not prescribe outpatient empirical therapy for suspected pyelonephritis under MA scope."
+                },
+                "rx_preg": {
+                    "type": "refer",
+                    "msg": "UTI in pregnancy requires physician or NP management — outside Ontario MA scope.",
+                    "detail": "Asymptomatic bacteriuria in pregnancy must also be treated (risk of pyelonephritis and preterm labour). Safe agent selection depends on gestational age: nitrofurantoin contraindicated at ≥38 weeks; TMP-SMX teratogenic in first trimester and risky near term. Physician assessment is required."
+                },
+                "rx_ddx": {
+                    "type": "caution",
+                    "msg": "Classic UTI triad (dysuria + frequency/urgency) not confirmed — reassess before prescribing.",
+                    "detail": "Consider: Vaginal Candidiasis (external dysuria, cottage-cheese discharge, odour), Bacterial Vaginosis (thin grey discharge, fishy odour, clue cells), STI/Urethritis (Chlamydia, Gonorrhea — new partner, discharge), Interstitial Cystitis (chronic pelvic pain, no infection), Atrophic Vaginitis (postmenopausal — dyspareunia, dryness), Urethral Irritant (soaps, spermicide). Reassess symptom pattern; consider STI screening if risk factors present."
+                },
+                "rx_recur": {
+                    "type": "refer",
+                    "msg": "Recurrent UTI is outside Ontario MA prescribing scope — refer to physician.",
+                    "detail": "Physician assessment should include: urine culture and sensitivity, investigation for structural/anatomical cause, assessment for antibiotic prophylaxis (post-coital or daily), vaginal estrogen (if postmenopausal atrophy), and methenamine hippurate as a non-antibiotic prevention option."
+                },
+                "rx_relapse": {
+                    "type": "refer",
+                    "msg": "Likely treatment failure or relapse of a recent UTI episode — refer for urine culture before re-treating.",
+                    "detail": "Empirical re-treatment of a relapse without culture data risks selecting for multi-drug resistant organisms. A urine culture and sensitivity test is essential to guide antibiotic choice. Refer to physician or NP."
+                },
+                "tx_nitro": {
+                    "type": "treat",
+                    "msg": "First-Line: Nitrofurantoin monohydrate/macrocrystals (Macrobid) 100 mg PO BID × 5 days.",
+                    "detail": "Take WITH FOOD (improves absorption ~40%, reduces GI side effects). Complete the full 5-day course even if symptoms improve in 24–48h. Brown-yellow urine discolouration is harmless and expected — warn patients. Counsel: phenazopyridine 95 mg × 2 tabs (190 mg) TID × max 2 days available OTC (NAPRA Schedule III) for dysuria relief while antibiotics take effect. Return if no improvement at 48h."
+                },
+                "tx_tmp": {
+                    "type": "treat",
+                    "msg": "Second-Line: TMP-SMX DS (trimethoprim 160 mg / sulfamethoxazole 800 mg) PO BID × 3 days.",
+                    "detail": "Verify local resistance rates <20% (PHO Bugs & Drugs data). Take with a full glass of water; avoid prolonged sun exposure (photosensitivity). Key interactions: increases warfarin INR significantly, hyperkalemia with ACEi/ARB/spironolactone triple whammy, methotrexate toxicity. Return if no improvement at 48h."
+                },
+                "tx_fosfo": {
+                    "type": "treat",
+                    "msg": "Alternative: Fosfomycin trometamol (Monurol) 3 g PO single dose — dissolve sachet in 90–120 mL water and drink immediately.",
+                    "detail": "Single-dose maximises adherence. Minimal significant drug interactions — preferred when multiple contraindications to other agents exist. Active against most E. coli and Enterococcus faecalis; not reliably active against Klebsiella or Proteus. Higher cost than nitrofurantoin/TMP-SMX. Counsel: return if symptoms do not improve within 48–72h (single dose may fail in some strains)."
+                }
+            }
+        }
     },
     {
         "name": "Herpes Zoster (Shingles)",
@@ -109066,7 +109230,7 @@ var MINOR_AILMENTS = [
             ]
         },
         "references": [
-            "Ontario College of Pharmacists. Minor Ailments Prescribing: GERD. OCP Standards, O. Reg. 256/24 (2025).",
+            "Ontario College of Pharmacists. OCP Practice Standards — Pharmacist Role in OTC/Self-Care Counselling for GERD/Heartburn. Note: GERD/heartburn is NOT a designated minor ailment under O. Reg. 256/24; pharmacist role is OTC counselling, Rx adaptation, and referral.",
             "RxTx (Canadian Pharmacists Association). Gastroesophageal Reflux Disease — Therapeutic Choices. CPhA; 2024.",
             "Katz PO, et al. ACG Clinical Guideline for the Diagnosis and Management of Gastroesophageal Reflux Disease. Am J Gastroenterol. 2022;117(1):27–56.",
             "NICE. Gastro-oesophageal reflux disease and dyspepsia in adults. NICE guideline [CG184]. National Institute for Health and Care Excellence; updated 2023."
@@ -109286,8 +109450,9 @@ var MINOR_AILMENTS = [
         "references": [
             "Ontario College of Pharmacists. Smoking Cessation Prescribing Authority under the Pharmacy Act, O. Reg. 202/94 (amended 2024). OCP Practice Policy (2024).",
             "CAN-ADAPTT. Canadian Smoking Cessation Clinical Practice Guideline. Toronto: CAMH; 2011 (with 2023 updates). / RxTx (CPhA). Smoking Cessation. CPhA; 2024.",
-            "Fiore MC, et al. Treating Tobacco Use and Dependence: 2008 Update. Clinical Practice Guideline. USDHHS/PHS; 2008. Supplemented by VA/DoD CPG (2020).",
-            "Hartmann-Boyce J, et al. Nicotine replacement therapy versus control for smoking cessation. Cochrane Database Syst Rev. 2018;5:CD000146."
+            "Hartmann-Boyce J, et al. Nicotine replacement therapy versus control for smoking cessation. Cochrane Database Syst Rev. 2022;6:CD000146. [Updated 2022 — supports combination NRT superiority over monotherapy; over 150 trials included]",
+            "Cahill K, et al. Pharmacological interventions for smoking cessation: an overview and network meta-analysis. Cochrane Database Syst Rev. 2022;3:CD009329.",
+            "Fiore MC, et al. Treating Tobacco Use and Dependence: 2008 Update. USDHHS/PHS; 2008. [Foundational US guideline; supplemented by VA/DoD CPG (2020) and current Cochrane evidence above]"
         ],
         "patient_counselling": [
             "Set a quit date within the next 1–2 weeks; if using varenicline, start it 1 week BEFORE your quit date; if using bupropion, start 1–2 weeks before; NRT is started ON your quit date.",
@@ -113175,6 +113340,115 @@ function jumpToMaSection(id, linkEl) {
 // Renders each therapeutic_flow step as a numbered box, with red REFER
 // branch boxes hanging off any step that contains red-flag/refer language.
 // First step is highlighted as Start (cyan), refer-gates as amber, last step as End (green).
+// ── INTERACTIVE DECISION WIZARD ──────────────────────────────────────────────
+// State: keyed by condition index. Each entry is array of visited node IDs.
+var _maWiz = {};
+
+function maWizReset(idx) {
+  var ma = MINOR_AILMENTS[idx];
+  var flow = ma && ma.interactive_flow;
+  if (!flow) return;
+  _maWiz[idx] = [flow.start];
+  _renderMaWiz(idx);
+}
+
+function maWizGo(idx, nextId) {
+  if (!_maWiz[idx]) maWizReset(idx);
+  _maWiz[idx].push(nextId);
+  _renderMaWiz(idx);
+}
+
+function maWizBack(idx) {
+  if (_maWiz[idx] && _maWiz[idx].length > 1) {
+    _maWiz[idx].pop();
+    _renderMaWiz(idx);
+  }
+}
+
+function _renderMaWiz(idx) {
+  var el = document.getElementById('ma-wiz-' + idx);
+  if (!el) return;
+  var ma = MINOR_AILMENTS[idx];
+  var flow = ma && ma.interactive_flow;
+  if (!flow) return;
+  var hist = _maWiz[idx] || [flow.start];
+  var curId = hist[hist.length - 1];
+  var node = flow.nodes[curId];
+  if (!node) return;
+
+  function esc(s){ return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+
+  var h = '';
+
+  // Breadcrumb trail (show question labels for visited nodes)
+  if (hist.length > 1) {
+    h += '<div class="ma-wiz-hist">';
+    for (var i = 0; i < hist.length; i++) {
+      var crumbNode = flow.nodes[hist[i]];
+      var crumbLabel = crumbNode ? (crumbNode.crumb || (crumbNode.q ? crumbNode.q.slice(0,40)+'…' : hist[i])) : hist[i];
+      h += '<span class="ma-wiz-crumb' + (i === hist.length-1 ? ' active' : '') + '">' + esc(crumbLabel) + '</span>';
+      if (i < hist.length-1) h += '<span style="color:var(--muted);font-size:0.65rem;">›</span>';
+    }
+    h += '</div>';
+  }
+
+  if (node.type) {
+    // Terminal outcome node
+    var typeMap = {treat:'✅',refer:'📤','refer-urgent':'🚨',caution:'⚠️'};
+    var labelMap = {treat:'Treatment Recommendation',refer:'Refer to Physician / NP','refer-urgent':'Urgent — Refer / 911',caution:'Reassess Before Prescribing'};
+    h += '<div class="ma-wiz-outcome ' + esc(node.type) + '">';
+    h += '<div class="ma-wiz-out-icon">' + (typeMap[node.type]||'ℹ️') + '</div>';
+    h += '<div class="ma-wiz-out-label">' + esc(labelMap[node.type]||node.type) + '</div>';
+    h += '<div class="ma-wiz-out-msg">' + esc(node.msg) + '</div>';
+    if (node.detail) h += '<div class="ma-wiz-out-detail">' + esc(node.detail) + '</div>';
+    h += '<div class="ma-wiz-out-actions">';
+    if (hist.length > 1) h += '<button class="ma-wiz-restart-btn" onclick="maWizBack(' + idx + ')">← Back</button>';
+    h += '<button class="ma-wiz-restart-btn" onclick="maWizReset(' + idx + ')">↺ Start Over</button>';
+    h += '</div>';
+    h += '</div>';
+  } else {
+    // Question node
+    h += '<div class="ma-wiz-step">Step ' + hist.length + '</div>';
+    if (node.ctx) h += '<div class="ma-wiz-ctx">' + esc(node.ctx) + '</div>';
+    h += '<div class="ma-wiz-q">' + esc(node.q) + '</div>';
+    h += '<div class="ma-wiz-btns">';
+    h += '<button class="ma-wiz-btn yes" onclick="maWizGo(' + idx + ',\'' + esc(node.yes) + '\')">✓ ' + esc(node.yes_label||'Yes') + '</button>';
+    h += '<button class="ma-wiz-btn no" onclick="maWizGo(' + idx + ',\'' + esc(node.no) + '\')">✗ ' + esc(node.no_label||'No') + '</button>';
+    h += '</div>';
+    if (hist.length > 1) h += '<button class="ma-wiz-back" onclick="maWizBack(' + idx + ')">← Back</button>';
+  }
+
+  el.innerHTML = h;
+}
+
+function buildInteractiveWizard(ma, idx) {
+  if (!ma || !ma.interactive_flow) return '';
+  _maWiz[idx] = [ma.interactive_flow.start];
+  var h = '<div class="ma-wiz">';
+  h += '<div class="ma-wiz-header">';
+  h += '<span class="ma-wiz-title">🧭 Decision Wizard</span>';
+  h += '<button class="ma-wiz-reset-link" onclick="maWizReset(' + idx + ')">↺ Reset</button>';
+  h += '</div>';
+  h += '<div id="ma-wiz-' + idx + '">';
+  // Render initial state inline
+  var flow = ma.interactive_flow;
+  var startNode = flow.nodes[flow.start];
+  function esc(s){ return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  if (startNode && !startNode.type) {
+    h += '<div class="ma-wiz-step">Step 1</div>';
+    if (startNode.ctx) h += '<div class="ma-wiz-ctx">' + esc(startNode.ctx) + '</div>';
+    h += '<div class="ma-wiz-q">' + esc(startNode.q) + '</div>';
+    h += '<div class="ma-wiz-btns">';
+    h += '<button class="ma-wiz-btn yes" onclick="maWizGo(' + idx + ',\'' + esc(startNode.yes) + '\')">✓ ' + esc(startNode.yes_label||'Yes') + '</button>';
+    h += '<button class="ma-wiz-btn no" onclick="maWizGo(' + idx + ',\'' + esc(startNode.no) + '\')">✗ ' + esc(startNode.no_label||'No') + '</button>';
+    h += '</div>';
+  }
+  h += '</div>';
+  h += '</div>';
+  return h;
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 function toggleMaFlowExpand(){
   var layout = document.getElementById('ma-layout');
   var panel  = document.getElementById('ma-panel');
@@ -113424,13 +113698,25 @@ function showMA(idx) {
   h += '<aside id="ma-jumpnav" aria-label="Jump to section">' + buildMaJumpNav(ma) + '</aside>';
   if (ma.therapeutic_flow && ma.therapeutic_flow.length) {
     h += '<aside id="ma-flow-aside" aria-label="Therapeutic Flow">';
-    h += '<div class="ma-flow-aside-header">';
-    h +=   '<div>';
-    h +=     '<div class="ma-flow-aside-title">🧭 Therapeutic Flow</div>';
-    h +=     '<div class="ma-flow-aside-sub">Visual Decision Map</div>';
-    h +=   '</div>';
-    h +=   '<button type="button" class="ma-flow-expand-btn" onclick="toggleMaFlowExpand()" aria-label="Expand therapeutic flow" title="Expand chart (collapse Jump-To)">⤢</button>';
-    h += '</div>';
+    // Interactive wizard (if condition has decision tree data)
+    if (ma.interactive_flow) {
+      h += buildInteractiveWizard(ma, idx);
+      h += '<div class="ma-flow-aside-header" style="margin-top:4px;">';
+      h +=   '<div>';
+      h +=     '<div class="ma-flow-aside-title">📋 Therapeutic Flow</div>';
+      h +=     '<div class="ma-flow-aside-sub">Step-by-step reference map</div>';
+      h +=   '</div>';
+      h +=   '<button type="button" class="ma-flow-expand-btn" onclick="toggleMaFlowExpand()" aria-label="Expand therapeutic flow" title="Expand chart (collapse Jump-To)">⤢</button>';
+      h += '</div>';
+    } else {
+      h += '<div class="ma-flow-aside-header">';
+      h +=   '<div>';
+      h +=     '<div class="ma-flow-aside-title">🧭 Therapeutic Flow</div>';
+      h +=     '<div class="ma-flow-aside-sub">Visual Decision Map</div>';
+      h +=   '</div>';
+      h +=   '<button type="button" class="ma-flow-expand-btn" onclick="toggleMaFlowExpand()" aria-label="Expand therapeutic flow" title="Expand chart (collapse Jump-To)">⤢</button>';
+      h += '</div>';
+    }
     h += buildTherapeuticFlowChart(ma);
     h += '</aside>';
   }
