@@ -97,23 +97,33 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .ma-flow-box.is-gate .ma-flow-bullets li{color:#fde68a;}
 .ma-flow-box.is-end .ma-flow-bullets li{color:#bbf7d0;}
 
-/* EXPANDED MODE — collapse jump-nav to icons only and widen the flow aside */
+/* EXPANDED MODE — collapse jump-nav to icons only, shrink ma-content to ~25% min, expand flow aside to fit step + refer side-by-side */
 #ma-layout.ma-flow-expanded #ma-jumpnav{flex:0 0 50px;padding:14px 4px;}
 #ma-layout.ma-flow-expanded #ma-jumpnav .ma-jn-h4{display:none;}
 #ma-layout.ma-flow-expanded #ma-jumpnav .ma-jn-text{display:none;}
 #ma-layout.ma-flow-expanded #ma-jumpnav a{justify-content:center;padding:8px 6px;}
 #ma-layout.ma-flow-expanded #ma-jumpnav .ma-jn-icon{font-size:1.2rem;}
-#ma-layout.ma-flow-expanded #ma-flow-aside{flex:1 1 auto;}
+/* Shrink ma-content so the right aside has enough room for step + refer side-by-side without feeling tight.
+   Override the inline max-width:900px (set in showMA) and constrain ma-content. */
+#ma-layout.ma-flow-expanded #ma-content{flex:0 1 280px !important;max-width:280px !important;min-width:240px;}
+#ma-layout.ma-flow-expanded #ma-content .ma-detail-section,
+#ma-layout.ma-flow-expanded #ma-content .ma-tx-first,
+#ma-layout.ma-flow-expanded #ma-content .ma-tx-second{font-size:0.78rem;}
+#ma-layout.ma-flow-expanded #ma-content [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+#ma-layout.ma-flow-expanded #ma-flow-aside{flex:1 1 auto;min-width:0;}
 /* Restore horizontal step+refer layout when expanded */
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-row{flex-direction:row;align-items:stretch;gap:14px;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-arrow-right{transform:none;align-self:center;padding:0;font-size:1.6rem;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-refer{flex:0 0 260px;align-self:center;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-row{flex-direction:row;align-items:stretch;gap:18px;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-main{flex:1 1 auto;min-width:0;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-arrow-right{transform:none;align-self:center;padding:0;font-size:1.6rem;flex:0 0 auto;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-refer{flex:0 0 320px;align-self:stretch;}
 #ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-arrow-down{padding-left:30px;font-size:1.1rem;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-box{padding:10px 14px;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-title{font-size:0.88rem;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-bullets li{font-size:0.8rem;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-num{flex:0 0 24px;width:24px;height:24px;line-height:24px;font-size:0.78rem;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-box{padding:12px 16px;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-title{font-size:0.92rem;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-bullets li{font-size:0.82rem;}
+#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-num{flex:0 0 26px;width:26px;height:26px;line-height:26px;font-size:0.82rem;}
 #ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-legend{flex-direction:row;flex-wrap:wrap;gap:14px;font-size:0.72rem;}
+/* Loosen ma-panel cap when expanded so flow aside truly extends */
+#ma-panel:has(#ma-layout.ma-flow-expanded){max-width:none;}
 
 @media (max-width:1400px){#ma-layout:not(.ma-flow-expanded) #ma-flow-aside{flex:0 0 320px;}}
 @media (max-width:1280px){#ma-layout:not(.ma-flow-expanded) #ma-flow-aside{display:none;}}
