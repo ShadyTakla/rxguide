@@ -108962,6 +108962,46 @@ function showFamilyPanel(famName) {
     for (var i = 0; i < fam.class_contraindications.length; i++) h += '<li style="font-size:0.82rem;color:#f87171;margin-bottom:5px;line-height:1.45;">' + fam.class_contraindications[i] + '</li>';
     h += '</ul></div>';
   }
+  // Umbrella subfamilies — render each child family with its representative agents
+  if (typeof FAMILY_UMBRELLA_CHILDREN !== 'undefined' && FAMILY_UMBRELLA_CHILDREN[famName]) {
+    var children = FAMILY_UMBRELLA_CHILDREN[famName];
+    h += '<div class="dp-section"><div class="dp-section-title">🌳 Subfamilies & Agents</div>';
+    h += '<div style="font-size:0.78rem;color:var(--muted);margin-bottom:10px;line-height:1.5;">This is an umbrella class — each subfamily below has its own detailed card. Click a subfamily header to open it.</div>';
+    for (var ci = 0; ci < children.length; ci++) {
+      var childKey = children[ci];
+      var child = DRUG_FAMILIES[childKey];
+      if (!child) continue;
+      var childCol = child.class_color || col;
+      h += '<div style="border:1px solid var(--border);border-radius:8px;margin-bottom:12px;background:var(--card);overflow:hidden;">';
+      h += '<div style="padding:10px 14px;background:' + childCol + '1a;border-left:3px solid ' + childCol + ';cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;" onclick="showFamilyPanel(\'' + childKey.replace(/'/g,"\\'") + '\')" title="Open ' + childKey.replace(/'/g,'&#39;') + ' family card">';
+      h += '<div><div style="font-weight:800;font-size:0.92rem;color:' + childCol + ';">' + childKey + '</div>';
+      if (child.abbrev) h += '<div style="font-size:0.74rem;color:var(--muted);margin-top:2px;">' + child.abbrev + '</div>';
+      h += '</div><span style="color:var(--muted);font-size:0.72rem;white-space:nowrap;">↗ Open card</span></div>';
+      if (child.comparison && child.comparison.length) {
+        h += '<div style="overflow-x:auto;"><table class="treatment-table" style="margin:0;font-size:0.78rem;"><thead><tr>';
+        h += '<th>Agent</th><th>Brand</th><th>Dose</th><th>Key advantage</th></tr></thead><tbody>';
+        var lastChildCat = null;
+        for (var ri = 0; ri < child.comparison.length; ri++) {
+          var rr = child.comparison[ri];
+          if (rr.category && rr.category !== lastChildCat) {
+            h += '<tr><td colspan="4" style="background:' + childCol + '1f;font-weight:700;color:' + childCol + ';padding:6px 12px;font-size:0.74rem;letter-spacing:0.3px;">▸ ' + rr.category + '</td></tr>';
+            lastChildCat = rr.category;
+          }
+          if (!rr.drug) continue;
+          var cellH = '';
+          if (rr.key && DRUGS[rr.key]) cellH = '<span class="drug-link" onclick="event.stopPropagation();showDrugPanel(\'' + rr.key + '\')">' + rr.drug + '</span>';
+          else cellH = renderDrugLink(rr.drug);
+          h += '<tr><td style="padding:6px 10px;">' + cellH + '</td>';
+          h += '<td style="font-size:0.72rem;color:var(--muted);">' + (rr.brand||'') + '</td>';
+          h += '<td style="font-size:0.72rem;color:#c8cadc;">' + (rr.dose||'') + '</td>';
+          h += '<td style="font-size:0.72rem;color:#86efac;line-height:1.4;">' + (rr.advantages||'') + '</td></tr>';
+        }
+        h += '</tbody></table></div>';
+      }
+      h += '</div>';
+    }
+    h += '</div>';
+  }
   if (fam.comparison && fam.comparison.length) {
     h += '<div class="dp-section"><div class="dp-section-title">📊 Drug Comparison</div>';
     h += '<div style="overflow-x:auto;"><table class="treatment-table"><thead><tr>';
@@ -112519,6 +112559,20 @@ var AMR_TO_FAMILY_KEY = {
 function amrGetFamilyKey(famName) {
   return AMR_TO_FAMILY_KEY[famName] || famName;
 }
+
+// Umbrella family → child DRUG_FAMILIES keys. The umbrella card auto-renders a
+// "Subfamilies" section listing each child + their representative agents (drawn
+// from the child's own comparison table) so the umbrella is a true overview card.
+var FAMILY_UMBRELLA_CHILDREN = {
+  'Beta-Lactam Antibiotics': ['Penicillin Antibiotics','Cephalosporins','Carbapenems','Monobactams'],
+  'Anti-MRSA Antibiotics': ['Glycopeptide Antibiotics','Oxazolidinones','Cyclic Lipopeptides'],
+  'Antipsychotics': ['Typical Antipsychotics','Atypical Antipsychotics'],
+  'Hepatitis Antivirals': ['HBV Antivirals','HCV Direct-Acting Antivirals'],
+  'Respiratory Antivirals': ['Neuraminidase Inhibitors','SARS-CoV-2 Antivirals'],
+  'HIV Antiretrovirals': ['HIV NRTIs (Nucleoside/Nucleotide Reverse Transcriptase Inhibitors)','HIV NNRTIs (Non-Nucleoside Reverse Transcriptase Inhibitors)','HIV INSTIs (Integrase Strand Transfer Inhibitors)','HIV Protease Inhibitors','Complete HIV Regimens (INSTI-based)'],
+  'Short-Acting Bronchodilators': ['Short-Acting Beta-2 Agonists (SABAs)','Short-Acting Muscarinic Antagonists (SAMAs)'],
+  'Antimycobacterial Agents': ['First-Line Anti-TB Agents','Anti-Leprosy Agents']
+};
 
 // Subgroup definitions: map category name → ordered list of subgroups
 // Each subgroup groups related antibiotic families for visual hierarchy
