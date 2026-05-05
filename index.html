@@ -48,8 +48,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 /* MAIN LAYOUT */
 #main{display:flex;flex:1;overflow:hidden;}
 
-/* SIDEBAR */
-#sidebar{width:240px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:10px 0;display:none;}
+/* SIDEBAR — global disease navigation drawer; overlays content on all tabs */
+#sidebar{position:fixed;top:60px;left:0;bottom:0;width:240px;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:10px 0;display:none;z-index:90;box-shadow:2px 0 12px rgba(0,0,0,0.25);}
 #sidebar.visible{display:block;}
 .cat-header{padding:8px 14px;font-size:0.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;}
 .cat-header:hover{background:var(--border);}
@@ -58,8 +58,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .disease-link{display:block;padding:6px 14px 6px 28px;font-size:0.83rem;cursor:pointer;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:all .15s;}
 .disease-link:hover{color:var(--text);background:rgba(99,102,241,0.08);}
 .disease-link.active{color:var(--accent2);background:rgba(99,102,241,0.15);font-weight:600;}
-#show-sidebar-btn{display:none;position:fixed;left:0;top:50%;transform:translateY(-50%);background:var(--card);border:1px solid var(--border);border-left:none;border-radius:0 8px 8px 0;padding:12px 6px;cursor:pointer;color:var(--accent2);z-index:50;writing-mode:vertical-rl;font-size:0.72rem;letter-spacing:1px;}
-#sidebar-reveal-btn{display:none;position:fixed;left:0;top:50%;transform:translateY(-50%);background:var(--card);border:1px solid var(--border);border-left:none;border-radius:0 8px 8px 0;padding:12px 6px;cursor:pointer;color:var(--accent2);z-index:100;writing-mode:vertical-rl;font-size:0.72rem;letter-spacing:1px;font-weight:600;}
+/* Disease nav reveal — always visible across all tabs (hidden only when sidebar drawer is open) */
+#sidebar-reveal-btn{display:block;position:fixed;left:0;top:50%;transform:translateY(-50%);background:var(--card);border:1px solid var(--border);border-left:none;border-radius:0 8px 8px 0;padding:12px 6px;cursor:pointer;color:var(--accent2);z-index:100;writing-mode:vertical-rl;font-size:0.72rem;letter-spacing:1px;font-weight:600;}
+#sidebar-reveal-btn:hover{background:var(--accent2);color:#fff;}
 
 /* CONTENT */
 #content-wrap{flex:1;overflow:hidden;display:flex;flex-direction:column;}
@@ -460,9 +461,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 </div>
 
 <div id="main">
-  <button id="sidebar-reveal-btn" onclick="revealSidebar()" title="Show sidebar">▶ Nav</button>
-  <button id="show-sidebar-btn" onclick="showSidebar()">MENU ▶</button>
-  <button id="sidebar-reveal-btn" onclick="revealSidebar()" title="Show navigation">▶ Nav</button>
+  <button id="sidebar-reveal-btn" onclick="revealSidebar()" title="Show disease navigation">▶ Nav</button>
 <div id="sidebar"><button id="sidebar-collapse-btn" onclick="toggleSidebar()" style="display:block;width:100%;background:none;border:none;border-bottom:1px solid var(--border);padding:7px 12px;color:var(--muted);font-size:0.72rem;cursor:pointer;text-align:right;letter-spacing:0.5px;" title="Collapse sidebar">◀ Collapse</button></div>
   <div id="content-wrap">
     <div id="tab-content">
@@ -110196,6 +110195,9 @@ function isOnHome() {
 // ══════════════════════════════════════════════
 // SIDEBAR — collapse / reveal
 // ══════════════════════════════════════════════
+// Sidebar overlay drawer — accessible from any tab. Reveal button (▶ Nav) is
+// always visible on every tab; it disappears only while the sidebar drawer
+// itself is open (collapse button shows it again).
 function toggleSidebar() {
   var sb = document.getElementById('sidebar');
   var rev = document.getElementById('sidebar-reveal-btn');
@@ -110212,19 +110214,19 @@ function revealSidebar() {
   sb.style.display = 'block';
   if (rev) rev.style.display = 'none';
 }
+// Backwards-compat aliases — older code calls these. Both now route to the
+// drawer toggle so reveal-button stays visible globally regardless of tab.
 function hideSidebar() {
   var sb = document.getElementById('sidebar');
   if (sb) { sb.classList.remove('visible'); sb.style.display = 'none'; }
-  var btn = document.getElementById('show-sidebar-btn');
-  if (btn) btn.style.display = 'none';
   var rev = document.getElementById('sidebar-reveal-btn');
-  if (rev) rev.style.display = 'none';
+  if (rev) rev.style.display = 'block';
 }
 function showSidebar() {
   var sb = document.getElementById('sidebar');
   if (sb) { sb.classList.add('visible'); sb.style.display = 'block'; }
-  var btn = document.getElementById('show-sidebar-btn');
-  if (btn) btn.style.display = 'none';
+  var rev = document.getElementById('sidebar-reveal-btn');
+  if (rev) rev.style.display = 'none';
 }
 
 // ══════════════════════════════════════════════
@@ -110383,13 +110385,18 @@ function showDisease(catKey, diseaseId) {
   }
   if (!cond) return;
 
+  // Switch to Diseases tab if invoked from another tab (sidebar drawer is global)
+  var dxPanel = document.getElementById('tab-diseases');
+  if (dxPanel && !dxPanel.classList.contains('active')) {
+    switchTab('diseases');
+  }
+
   document.getElementById('home-view').style.display = 'none';
   document.getElementById('disease-view').style.display = 'block';
 
-  // Show sidebar
-  document.getElementById('sidebar').classList.add('visible');
-  document.getElementById('sidebar').style.display = 'block';
-  document.getElementById('show-sidebar-btn').style.display = 'none';
+  // Sidebar visibility — keep drawer open while user clicks through diseases
+  var sb = document.getElementById('sidebar');
+  if (sb) { sb.classList.add('visible'); sb.style.display = 'block'; }
   var rev = document.getElementById('sidebar-reveal-btn');
   if (rev) rev.style.display = 'none';
 
