@@ -125997,6 +125997,11 @@ function showFormularyResult(key) {
 // ══════════════════════════════════════════════
 document.addEventListener('keydown', function(e) {
   if (e.key !== 'Escape') return;
+  var sb = document.getElementById('sidebar');
+  if (sb && sb.classList.contains('visible')) {
+    hideSidebar();
+    return;
+  }
   var dp = document.getElementById('drug-panel');
   var fp = document.getElementById('family-panel');
   if (dp && dp.classList.contains('open')) {
