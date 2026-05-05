@@ -98,32 +98,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .ma-flow-box.is-gate .ma-flow-bullets li{color:#fde68a;}
 .ma-flow-box.is-end .ma-flow-bullets li{color:#bbf7d0;}
 
-/* EXPANDED MODE — collapse jump-nav to icons only, shrink ma-content to ~25% min, expand flow aside to fit step + refer side-by-side */
-#ma-layout.ma-flow-expanded #ma-jumpnav{flex:0 0 50px;padding:14px 4px;}
-#ma-layout.ma-flow-expanded #ma-jumpnav .ma-jn-h4{display:none;}
-#ma-layout.ma-flow-expanded #ma-jumpnav .ma-jn-text{display:none;}
-#ma-layout.ma-flow-expanded #ma-jumpnav a{justify-content:center;padding:8px 6px;}
-#ma-layout.ma-flow-expanded #ma-jumpnav .ma-jn-icon{font-size:1.2rem;}
-/* Shrink ma-content so the right aside has enough room for step + refer side-by-side without feeling tight.
-   Override the inline max-width:900px (set in showMA) and constrain ma-content. */
-#ma-layout.ma-flow-expanded #ma-content{flex:0 1 1180px !important;max-width:1180px !important;min-width:960px;}
-#ma-layout.ma-flow-expanded #ma-flow-aside{flex:1 1 auto;min-width:0;}
-/* Restore horizontal step+refer layout when expanded */
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-row{flex-direction:row;align-items:stretch;gap:18px;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-main{flex:1 1 auto;min-width:0;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-arrow-right{transform:none;align-self:center;padding:0;font-size:1.6rem;flex:0 0 auto;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-refer{flex:0 0 320px;align-self:stretch;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-arrow-down{padding-left:30px;font-size:1.1rem;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-box{padding:12px 16px;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-title{font-size:0.92rem;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-bullets li{font-size:0.82rem;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-num{flex:0 0 26px;width:26px;height:26px;line-height:26px;font-size:0.82rem;}
-#ma-layout.ma-flow-expanded #ma-flow-aside .ma-flow-legend{flex-direction:row;flex-wrap:wrap;gap:14px;font-size:0.72rem;}
-/* Loosen ma-panel cap when expanded so flow aside truly extends */
-#ma-panel:has(#ma-layout.ma-flow-expanded){max-width:none;}
-
-@media (max-width:1400px){#ma-layout:not(.ma-flow-expanded) #ma-flow-aside{flex:0 0 320px;}}
-@media (max-width:1280px){#ma-layout:not(.ma-flow-expanded) #ma-flow-aside{display:none;}}
+/* Therapeutic Flow + Decision Wizard now open in a side panel (#ma-flow-panel) — see openMaFlowPanel JS */
 @media (max-width:1080px){#ma-jumpnav{display:none;}#ma-content{max-width:none;}}
 
 /* INTERACTIVE WIZARD */
@@ -223,6 +198,21 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 #overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;}
 #drug-panel{position:fixed;right:-520px;top:0;bottom:0;width:500px;background:var(--surface);border-left:1px solid var(--border);z-index:300;overflow-y:auto;transition:right .25s ease;display:flex;flex-direction:column;}
 #drug-panel.open{right:0;}
+#ma-flow-panel{position:fixed;right:-720px;top:0;bottom:0;width:700px;max-width:95vw;background:var(--surface);border-left:1px solid var(--border);z-index:300;overflow-y:auto;transition:right .25s ease;display:flex;flex-direction:column;}
+#ma-flow-panel.open{right:0;}
+#mfp-header{padding:14px 18px;border-bottom:1px solid var(--border);background:var(--card);flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+#mfp-title{font-size:1.05rem;font-weight:800;color:var(--text);}
+#mfp-sub{font-size:0.74rem;color:var(--muted);margin-top:2px;}
+#mfp-close{background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;padding:0 4px;line-height:1;}
+#mfp-close:hover{color:var(--text);}
+#mfp-body{padding:16px 18px;flex:1;}
+.ma-flow-trigger{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,rgba(6,182,212,0.12),rgba(99,102,241,0.10));border:1px solid rgba(6,182,212,0.4);border-left:4px solid #06b6d4;border-radius:12px;padding:14px 18px;margin-bottom:16px;cursor:pointer;transition:all .15s;width:100%;text-align:left;}
+.ma-flow-trigger:hover{background:linear-gradient(135deg,rgba(6,182,212,0.18),rgba(99,102,241,0.14));border-color:#06b6d4;transform:translateY(-1px);box-shadow:0 4px 12px rgba(6,182,212,0.15);}
+.ma-flow-trigger-icon{font-size:1.6rem;flex-shrink:0;}
+.ma-flow-trigger-text{flex:1;min-width:0;}
+.ma-flow-trigger-title{font-size:0.95rem;font-weight:800;color:#67e8f9;margin-bottom:2px;}
+.ma-flow-trigger-sub{font-size:0.78rem;color:#a8b6cf;line-height:1.4;}
+.ma-flow-trigger-arrow{font-size:1.3rem;color:#67e8f9;flex-shrink:0;}
 #dp-header{padding:18px 20px;border-bottom:1px solid var(--border);background:var(--card);flex-shrink:0;}
 #dp-close{float:right;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;}
 #dp-name{font-size:1.3rem;font-weight:800;color:var(--text);}
@@ -564,7 +554,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 </div>
 
 <!-- Drug Panel -->
-<div id="overlay" onclick="closeDrugPanel()"></div>
+<div id="overlay" onclick="closeAllPanels()"></div>
+<div id="ma-flow-panel" aria-hidden="true">
+  <div id="mfp-header">
+    <div>
+      <div id="mfp-title">🧭 Therapeutic Flow & Decision Wizard</div>
+      <div id="mfp-sub"></div>
+    </div>
+    <button id="mfp-close" onclick="closeMaFlowPanel()" aria-label="Close panel">✕</button>
+  </div>
+  <div id="mfp-body"></div>
+</div>
 <div id="drug-panel">
   <div id="dp-header">
     <button id="dp-close" onclick="closeDrugPanel()">✕</button>
@@ -114211,6 +114211,60 @@ function closeDrugPanel() {
   var ov = document.getElementById('overlay'); if (ov) ov.style.display = 'none';
 }
 
+// ── MA FLOW PANEL (Therapeutic Flow + Decision Wizard side panel) ────────────
+function openMaFlowPanel(idx) {
+  var ma = MINOR_AILMENTS[idx];
+  if (!ma) return;
+  var panel = document.getElementById('ma-flow-panel');
+  var body  = document.getElementById('mfp-body');
+  var sub   = document.getElementById('mfp-sub');
+  var ov    = document.getElementById('overlay');
+  if (!panel || !body) return;
+
+  if (sub) sub.textContent = ma.icon + ' ' + ma.name;
+
+  var html = '';
+  // Interactive wizard first (if available)
+  if (ma.interactive_flow) {
+    html += buildInteractiveWizard(ma, idx);
+    html += '<div style="margin:18px 0 8px;padding-top:14px;border-top:1px solid var(--border);">';
+    html += '<div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#67e8f9;margin-bottom:2px;">📋 Therapeutic Flow</div>';
+    html += '<div style="font-size:0.7rem;color:var(--muted);letter-spacing:0.5px;margin-bottom:8px;">Step-by-step reference map</div>';
+    html += '</div>';
+  }
+  // Static therapeutic flow chart
+  if (ma.therapeutic_flow && ma.therapeutic_flow.length) {
+    html += buildTherapeuticFlowChart(ma);
+  }
+
+  body.innerHTML = html;
+  body.scrollTop = 0;
+  panel.classList.add('open');
+  panel.setAttribute('aria-hidden', 'false');
+  if (ov) ov.style.display = 'block';
+}
+
+function closeMaFlowPanel() {
+  var panel = document.getElementById('ma-flow-panel');
+  if (panel) {
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+  }
+  // Only hide overlay if no other panel is open
+  var dp = document.getElementById('drug-panel');
+  var fp = document.getElementById('family-panel');
+  var stillOpen = (dp && dp.classList.contains('open')) || (fp && fp.classList.contains('open'));
+  if (!stillOpen) {
+    var ov = document.getElementById('overlay'); if (ov) ov.style.display = 'none';
+  }
+}
+
+function closeAllPanels() {
+  closeDrugPanel();
+  closeMaFlowPanel();
+  if (typeof closeFamilyPanel === 'function') closeFamilyPanel();
+}
+
 // ══════════════════════════════════════════════
 // FAMILY PANEL (left drawer)
 // ══════════════════════════════════════════════
@@ -117671,13 +117725,26 @@ function showMA(idx) {
   det.scrollTop = 0;
 
   var h = '<div id="ma-layout" style="display:flex;gap:18px;align-items:flex-start;">';
-  h += '<div id="ma-content" style="flex:1 1 auto;min-width:0;max-width:900px;">';
+  h += '<div id="ma-content" style="flex:1 1 auto;min-width:0;max-width:1100px;">';
 
   h += '<button onclick="closeMA()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82rem;margin-bottom:16px;">← Back to All Conditions</button>';
   h += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">';
   h += '<span style="font-size:2rem;">' + ma.icon + '</span>';
   h += '<div><h2 style="font-size:1.2rem;font-weight:800;margin:0;">' + ma.name + '</h2>';
   h += '<span style="font-size:0.75rem;padding:2px 8px;border-radius:4px;background:rgba(99,102,241,0.15);color:var(--accent2);">' + ma.category + '</span></div></div>';
+
+  // TRIGGER: open Therapeutic Flow + Decision Wizard in side panel
+  if ((ma.therapeutic_flow && ma.therapeutic_flow.length) || ma.interactive_flow) {
+    var hasWiz = ma.interactive_flow ? 'Decision Wizard + Therapeutic Flow' : 'Therapeutic Flow';
+    h += '<button class="ma-flow-trigger" onclick="openMaFlowPanel(' + idx + ')" aria-label="Open therapeutic flow panel">';
+    h +=   '<span class="ma-flow-trigger-icon">🧭</span>';
+    h +=   '<span class="ma-flow-trigger-text">';
+    h +=     '<div class="ma-flow-trigger-title">Open ' + hasWiz + ' →</div>';
+    h +=     '<div class="ma-flow-trigger-sub">Click to launch the side-panel — interactive Yes/No decision tree, full step-by-step reference map, and refer triggers.</div>';
+    h +=   '</span>';
+    h +=   '<span class="ma-flow-trigger-arrow">⤢</span>';
+    h += '</button>';
+  }
 
   // SECTION: Assessment & Red Flags
   h += '<div id="ma-sec-assessment" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;scroll-margin-top:12px;">';
@@ -117768,30 +117835,7 @@ function showMA(idx) {
 
   h += '</div>';  // close ma-content
   h += '<aside id="ma-jumpnav" aria-label="Jump to section">' + buildMaJumpNav(ma) + '</aside>';
-  if (ma.therapeutic_flow && ma.therapeutic_flow.length) {
-    h += '<aside id="ma-flow-aside" aria-label="Therapeutic Flow">';
-    // Interactive wizard (if condition has decision tree data)
-    if (ma.interactive_flow) {
-      h += buildInteractiveWizard(ma, idx);
-      h += '<div class="ma-flow-aside-header" style="margin-top:4px;">';
-      h +=   '<div>';
-      h +=     '<div class="ma-flow-aside-title">📋 Therapeutic Flow</div>';
-      h +=     '<div class="ma-flow-aside-sub">Step-by-step reference map</div>';
-      h +=   '</div>';
-      h +=   '<button type="button" class="ma-flow-expand-btn" onclick="toggleMaFlowExpand()" aria-label="Expand therapeutic flow" title="Expand chart (collapse Jump-To)">⤢</button>';
-      h += '</div>';
-    } else {
-      h += '<div class="ma-flow-aside-header">';
-      h +=   '<div>';
-      h +=     '<div class="ma-flow-aside-title">🧭 Therapeutic Flow</div>';
-      h +=     '<div class="ma-flow-aside-sub">Visual Decision Map</div>';
-      h +=   '</div>';
-      h +=   '<button type="button" class="ma-flow-expand-btn" onclick="toggleMaFlowExpand()" aria-label="Expand therapeutic flow" title="Expand chart (collapse Jump-To)">⤢</button>';
-      h += '</div>';
-    }
-    h += buildTherapeuticFlowChart(ma);
-    h += '</aside>';
-  }
+  // (Therapeutic Flow + Decision Wizard now open in a slide-in panel — see openMaFlowPanel / closeMaFlowPanel)
   h += '</div>';  // close flex container
 
   det.innerHTML = h;
@@ -129295,7 +129339,10 @@ document.addEventListener('keydown', function(e) {
   }
   var dp = document.getElementById('drug-panel');
   var fp = document.getElementById('family-panel');
-  if (dp && dp.classList.contains('open')) {
+  var mfp = document.getElementById('ma-flow-panel');
+  if (mfp && mfp.classList.contains('open')) {
+    closeMaFlowPanel();
+  } else if (dp && dp.classList.contains('open')) {
     closeDrugPanel();
   } else if (fp && fp.classList.contains('open')) {
     closeFamilyPanel();
