@@ -107427,7 +107427,89 @@ var MINOR_AILMENTS = [
             "6. Counsel on swish-and-swallow technique, troche dissolution, denture disinfection, ICS rinse practice, expected resolution timeline, completing full course; provide written instructions.",
             "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider.",
             "8. Follow-up: reassess at 7–14 days; if no improvement or worsening, refer for systemic antifungal (fluconazole — outside MA scope) and assessment for underlying immunocompromise."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "Presentation consistent with ORAL CANDIDIASIS: white/cream-coloured creamy plaques on tongue, buccal mucosa, palate, OR gums that CAN be scraped off (often leaving an erythematous or bleeding base — diagnostic feature); OR erythematous (atrophic) form with red, smooth, painful tongue/palate; OR angular cheilitis (cracks at corners of mouth)?",
+                    "ctx": "Pseudomembranous candidiasis (white plaques that scrape off) is the classic presentation. Plaques that DO NOT scrape off suggest leukoplakia, lichen planus, oral hairy leukoplakia (HIV), or oral squamous cell carcinoma — different management.",
+                    "crumb": "Thrush features?",
+                    "yes": "n2",
+                    "no": "rx_atypical"
+                },
+                "n2": {
+                    "q": "Any URGENT red flags: (1) ODYNOPHAGIA (painful swallowing) or DYSPHAGIA — suggests ESOPHAGEAL CANDIDIASIS (extends beyond oral cavity, AIDS-defining illness in HIV patients, requires systemic fluconazole — OUTSIDE MA scope); (2) UNILATERAL FIXED PLAQUE or INDURATION that does not scrape off (oral cancer suspicion); (3) SEVERE PAIN out of proportion, refusal to eat/drink, dehydration risk; (4) FEVER + systemic symptoms?",
+                    "ctx": "Esophageal involvement requires systemic antifungal — topical alone is inadequate. Suspected oral malignancy requires biopsy by oral medicine/ENT/dentistry. Severe disease in any patient warrants physician.",
+                    "crumb": "Urgent flags?",
+                    "yes": "rx_urgent",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Is the patient SIGNIFICANTLY IMMUNOCOMPROMISED — HIV/AIDS (especially with low CD4), current chemotherapy or post-chemo, post-organ-transplant on immunosuppressants, biologics (TNF/IL/JAK inhibitors), high-dose systemic corticosteroids, or untreated/poorly-controlled diabetes?",
+                    "ctx": "Immunocompromised patients with oral thrush often have more extensive disease, higher risk of esophageal extension, and may need systemic antifungal. Pharmacist may still treat with topical nystatin under MA but with low threshold for referral if no improvement at 5–7 days.",
+                    "crumb": "Immunocompromised?",
+                    "yes": "rx_immunocomp",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Patient age: is the patient an INFANT under 4 months OR are you assessing a breastfeeding mother-infant pair?",
+                    "ctx": "Oral thrush in infants <4 months and breastfeeding pairs require coordinated dyad treatment (mother's nipples + infant's mouth) to prevent ping-pong reinfection. Infants <4 months have specific dosing considerations.",
+                    "crumb": "Infant <4mo / BF dyad?",
+                    "yes": "tx_infant",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Likely cause/contributor — INHALED CORTICOSTEROID (ICS) for asthma/COPD use without rinsing mouth after use?",
+                    "ctx": "ICS-induced oral candidiasis is the most common cause in adults. Rinsing mouth + spitting after each ICS dose dramatically reduces incidence. Use of spacer further reduces oral deposition. Treat current episode AND fix underlying cause.",
+                    "crumb": "ICS-related?",
+                    "yes": "tx_standard_ics",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Other contributing factor — DENTURE WEARER with poor denture hygiene, OR recent broad-spectrum antibiotic use, OR XEROSTOMIA (dry mouth from medications, Sjögren's, head/neck radiation)?",
+                    "ctx": "Address the underlying cause alongside antifungal treatment for sustained resolution. Denture stomatitis (chronic erythema under denture) is a chronic candida form requiring denture disinfection nightly + topical antifungal.",
+                    "crumb": "Dentures/abx/dry mouth?",
+                    "yes": "tx_standard_factor",
+                    "no": "tx_standard"
+                },
+                "rx_atypical": {
+                    "type": "caution",
+                    "msg": "Lesion features atypical for thrush — reassess differential. If diagnosis uncertain, REFER to physician/dentist/oral medicine.",
+                    "detail": "Consider:\n• LEUKOPLAKIA — white patch that does NOT scrape off; pre-malignant; biopsy needed.\n• ORAL LICHEN PLANUS — Wickham's striae (lacy white pattern), often bilateral buccal mucosa; chronic; sometimes erosive.\n• ORAL HAIRY LEUKOPLAKIA — corrugated white patches on lateral tongue, EBV-related, HIV/immunocompromised.\n• ORAL SQUAMOUS CELL CARCINOMA — persistent ulcer >2 weeks, induration, irregular border, lateral tongue/floor of mouth — biopsy urgently.\n• APHTHOUS ULCERS — painful, well-defined ulcers, recurrent, NOT plaques.\n• HERPETIC GINGIVOSTOMATITIS (primary HSV) — clustered vesicles + ulcers, fever, lymphadenopathy.\n• GEOGRAPHIC TONGUE — migratory, asymptomatic erythematous patches with white border on tongue.\n• CHEMICAL BURN — aspirin or other irritant.\n• ANGULAR CHEILITIS without intraoral disease — may be candidal, bacterial, or nutritional (B12, iron, riboflavin deficiency).\n\nIf persistent ulcer >2 weeks, induration, fixed plaque, or unexplained features → refer for oral exam + possible biopsy."
+                },
+                "rx_urgent": {
+                    "type": "refer-urgent",
+                    "msg": "Esophageal candidiasis suspected (odynophagia/dysphagia), suspected oral cancer, severe disease with dehydration, OR fever with systemic features — refer urgently. Topical nystatin alone is INADEQUATE for esophageal involvement.",
+                    "detail": "ESOPHAGEAL CANDIDIASIS: requires SYSTEMIC fluconazole 200 mg PO loading dose, then 100–200 mg PO OD × 14–21 days (per IDSA 2016) — OUTSIDE Ontario MA scope. In HIV patients, AIDS-defining illness; check CD4 if not known. Refer to physician/NP.\n\nORAL CANCER suspicion (unilateral fixed plaque, induration, persistent ulcer >2 weeks, lateral tongue/floor of mouth): refer to oral medicine, ENT, or dentist with surgical capability for biopsy. Risk factors: tobacco, alcohol, HPV, age. DO NOT delay.\n\nSEVERE DISEASE with dehydration / refusal to eat: hospital assessment may be needed; IV fluids and systemic antifungal under physician care.\n\nPharmacist interim: gentle oral hygiene, soft cool foods, hydration encouragement, avoid topical anesthetic (lidocaine viscous can mask aspiration risk in elderly/dysphagia)."
+                },
+                "rx_immunocomp": {
+                    "type": "refer",
+                    "msg": "Significantly immunocompromised — pharmacist may initiate topical nystatin under MA, BUT low threshold for referral if no improvement at 5–7 days OR if symptoms suggest esophageal extension. Recommend coordinating with primary care.",
+                    "detail": "IMMUNOCOMPROMISED PATIENTS often need:\n• Longer course of topical (10–14 days vs 7–14 in immunocompetent).\n• Earlier escalation to systemic fluconazole 100–200 mg PO OD × 7–14 days (OUTSIDE MA scope).\n• Workup for underlying cause if not known: HIV testing, CD4 if HIV+, blood glucose for diabetes, immunoglobulin levels.\n• Maintenance suppression for recurrent disease (HIV with frequent thrush): fluconazole 100 mg 3×/week or 200 mg weekly under physician.\n• AZOLE RESISTANCE concerns in patients with multiple prior fluconazole courses (HIV, hematology) — non-albicans Candida (C. glabrata, C. krusei) may need echinocandin (specialist).\n\nPharmacist may PRESCRIBE NYSTATIN UNDER MA SCOPE per OCP O. Reg. 256/24 with the caveats above. Refer if no improvement at 5–7 days, worsening, or odynophagia develops."
+                },
+                "tx_infant": {
+                    "type": "treat",
+                    "msg": "INFANT <4 months OR BF DYAD: NYSTATIN ORAL SUSPENSION 100,000 units/mL — INFANT: 1 mL (1 dropperful) applied to EACH cheek and tongue 4×/day after feeds × 7–14 days. BREASTFEEDING MOTHER (treat simultaneously to prevent reinfection): nystatin cream apply to nipples after each feed × 14 days; gently wipe off (or just leave) before next feed. Continue 2–3 days after symptoms clear.",
+                    "detail": "DYAD TREATMENT IS ESSENTIAL: untreated mother nipple candidiasis or untreated infant thrush will cause ping-pong reinfection. Nipple candidiasis in mother: pink/red shiny areola, sharp shooting pains during/after feeds, sometimes radiating into breast.\n\nAPPLICATION TECHNIQUE (infant): use clean finger or cotton-tip applicator to gently apply nystatin to ALL oral surfaces (cheeks, gums, tongue) AFTER feeds — not just squirted into mouth where it gets swallowed without contact. Pharmacist counselling on technique is the #1 determinant of cure. Do not feed for 30 min after application.\n\nNON-PHARM (essential):\n• STERILIZE bottle nipples, pacifiers, breast pump parts daily during treatment + first week after.\n• Wash mother's bra, breast pads daily in hot water with bleach if possible.\n• Identify and treat any concurrent diaper Candida (often co-exists; topical clotrimazole or nystatin diaper cream).\n• Consider mother's nipple thrush risk factors: recent maternal antibiotics, vaginal candidiasis history, cracked nipples allowing entry.\n\nINFANT >4 MONTHS: standard adult dose adjusted by weight (typically 4–6 mL QID × 7–14 days). Refer if no improvement at 7 days or if infant refuses feeds, becomes lethargic, or develops fever."
+                },
+                "tx_standard_ics": {
+                    "type": "treat",
+                    "msg": "ICS-RELATED ORAL THRUSH: NYSTATIN oral suspension 100,000 units/mL — 4–6 mL SWISH AND SWALLOW QID × 7–14 days (OR Miconazole 50 mg buccal tablet (Oravig) OD × 7–14 days IF available — limited Canadian availability). PLUS critical lifestyle change: RINSE MOUTH WITH WATER (and SPIT) after EVERY ICS dose; use a SPACER device with metered-dose inhalers — both reduce thrush recurrence dramatically.",
+                    "detail": "ICS COUNSELLING (NON-NEGOTIABLE — recurrence rate without rinsing is high):\n• Rinse mouth thoroughly with water and SPIT (do not swallow) after each ICS dose.\n• Use a SPACER (Aerochamber) with MDI — reduces oropharyngeal deposition by ~50%.\n• Consider switching to dry powder inhaler if tolerated (no spacer needed; less oropharyngeal deposition with proper technique).\n• Lowest effective ICS dose; review asthma/COPD control (well-controlled patients may step down).\n• CICLESONIDE (Alvesco) is a prodrug activated in the lung — minimal oropharyngeal exposure, lowest thrush rate; switch consideration if recurrent.\n\nNYSTATIN ADMINISTRATION (key for cure):\n• 4–6 mL of 100,000 units/mL suspension QID; SWISH for at least 1 minute (timer recommended) before swallowing — contact time is critical.\n• Do not eat or drink for 30 minutes after dose.\n• Do not dilute the suspension.\n• Continue full course even if symptoms improve early.\n\nNOTE: clotrimazole troches are NOT currently marketed in Canada (formulary gap). Miconazole 50 mg buccal tablet (Oravig) is Health Canada-approved but availability varies — Schedule I, prescribable under MA. Nystatin oral suspension is the dominant Canadian first-line.\n\nReassess at 7–14 days. If no improvement or recurrent, refer for fluconazole assessment (OUTSIDE MA scope)."
+                },
+                "tx_standard_factor": {
+                    "type": "treat",
+                    "msg": "ORAL THRUSH WITH IDENTIFIED CONTRIBUTING FACTOR (dentures, recent antibiotics, dry mouth): NYSTATIN oral suspension 100,000 units/mL 4–6 mL SWISH AND SWALLOW QID × 7–14 days. PLUS address underlying factor.",
+                    "detail": "DENTURE STOMATITIS (Candida-associated denture stomatitis):\n• Remove dentures EVERY night — soak overnight in 0.12% chlorhexidine solution OR diluted bleach (1:50 in water) 1×/week + plain water nightly other days; or commercial denture cleaner.\n• Brush dentures with soft brush daily.\n• Apply nystatin cream/ointment to denture-fitting surface 4×/day if topical-on-mucosa is impractical.\n• Brush gums and palate gently with soft toothbrush 2×/day.\n• Consider denture refit if poor fit (causes friction + Candida proliferation).\n\nPOST-ANTIBIOTIC THRUSH:\n• Self-limiting once antibiotic course completes; nystatin accelerates resolution.\n• Probiotic (Lactobacillus, Saccharomyces boulardii) may help restore oral/GI flora.\n\nXEROSTOMIA (dry mouth):\n• Address cause — review medications (anticholinergics, antihistamines, antidepressants, diuretics, antihypertensives are common offenders).\n• Salivary substitutes (Biotene mouth rinse, Oasis), sugarless gum/candy (xylitol), frequent sips of water.\n• If Sjögren's syndrome suspected, refer to rheumatology.\n• Head/neck radiation patients: pilocarpine 5 mg PO TID may help (physician).\n\nNYSTATIN administration as in tx_standard_ics. Reassess at 7–14 days; refer if no improvement."
+                },
+                "tx_standard": {
+                    "type": "treat",
+                    "msg": "FIRST-LINE ORAL THRUSH (no specific contributing factor identified): NYSTATIN oral suspension 100,000 units/mL — 4–6 mL SWISH AND SWALLOW QID × 7–14 days. Continue for 48 hours after symptoms resolve to prevent recurrence.",
+                    "detail": "ONTARIO MA SCOPE: Oral candidiasis IS in the OCP MA designated list per O. Reg. 256/24. Pharmacist may prescribe nystatin oral suspension. Systemic fluconazole (for refractory or esophageal disease) is OUTSIDE MA scope.\n\nNYSTATIN ADMINISTRATION (key for cure):\n• 4–6 mL of 100,000 units/mL suspension QID (every 6 hours).\n• SWISH for at least 1 minute (use a timer — most patients underestimate). Contact time is what kills the Candida; just squirting and swallowing fails.\n• SWALLOW after swishing (not just spit) — provides activity against any pharyngeal extension.\n• Do not eat or drink for 30 minutes after dose.\n• Use after meals if possible (no food residue diluting the contact).\n• Continue 7–14 days; do not stop early.\n\nMICONAZOLE 50 MG BUCCAL TABLET (Oravig): Health Canada-approved, Schedule I (prescribable under MA). Place against upper canine fossa OD; dissolves slowly. Limited Canadian availability. Drug interaction caution: warfarin (significantly elevates INR — avoid), sulfonylureas (hypoglycemia), phenytoin (toxicity), simvastatin/lovastatin (myopathy).\n\nCLOTRIMAZOLE TROCHES: NOT currently marketed in Canada (formulary gap as of 2024).\n\nIDENTIFY UNDERLYING CAUSE: even when no specific factor was identified at n6, ask again about hidden ICS use (some patients forget about Flonase Sensimist or low-dose ICS), recent antibiotic use, denture status. Recurrent thrush in apparently healthy adult should prompt HIV/diabetes screening.\n\nReassess at 7–14 days. If no improvement, worsening, or recurrence shortly after — refer for fluconazole assessment + immunocompromise workup (OUTSIDE MA scope)."
+                }
+            }
+        }
     },
     {
         "name": "Urticaria (Hives)",
