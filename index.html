@@ -110489,13 +110489,14 @@ function renderDisease(cat, cond) {
       }
       h += '</td>';
 
-      // Agents
+      // Agents — rendered as a bulleted list (one bullet per agent line)
       h += '<td>';
       if (tx.agents && tx.agents.length) {
+        h += '<ul style="margin:0;padding-left:18px;list-style-type:disc;">';
         for (var j = 0; j < tx.agents.length; j++) {
-          h += renderDrugLink(tx.agents[j]);
-          if (j < tx.agents.length - 1) h += '<br>';
+          h += '<li style="margin-bottom:4px;line-height:1.45;">' + renderDrugLink(tx.agents[j]) + '</li>';
         }
+        h += '</ul>';
       }
       h += '</td>';
 
