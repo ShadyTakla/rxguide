@@ -115283,18 +115283,28 @@ function buildAMR() {
     return s;
   }
 
-  // Helper: render a single antibiotic family block
-  function renderAmrFamily(fam) {
+  // Helper: render a single antibiotic family block.
+  // opts.inline === true: omit the family header/wrapper (subgroup acts as the header — used
+  // when subgroup name === single family name to avoid duplication while keeping subgroup color).
+  function renderAmrFamily(fam, opts) {
+    opts = opts || {};
     var fh = '';
-    var famKey = amrGetFamilyKey(fam.name);
-    var famCardBtn = (DRUG_FAMILIES && DRUG_FAMILIES[famKey])
-      ? ' <span class="amr-family-link" onclick="event.stopPropagation();showFamilyPanel(\'' + famKey.replace(/'/g,"\\'") + '\')" title="Open family comparison card">↗ Family Card</span>'
-      : '';
-    fh += '<div class="amr-family" style="background:var(--card);border-radius:10px;padding:16px;margin-bottom:14px;border:1px solid var(--border);">';
-    fh += '<div class="amr-fam-header" style="cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'block\':\'none\'">';
-    fh += '<h3 style="font-size:1rem;font-weight:700;color:var(--accent2);margin:0 0 4px;display:flex;align-items:center;flex-wrap:wrap;gap:4px;"><span class="amr-fam-name">' + fam.name + '</span>' + famCardBtn + ' <span style="color:var(--muted);font-size:0.8rem;margin-left:auto;">▾</span></h3>';
-    fh += '</div>';
-    fh += '<div class="amr-fam-body" style="display:none;">';
+    if (opts.inline) {
+      // Merged with parent subgroup — render content only, no extra header/card chrome.
+      fh += '<div class="amr-family amr-family-merged">';
+      fh += '<span class="amr-fam-name" style="display:none;">' + fam.name + '</span>';
+      fh += '<div class="amr-fam-body" style="display:block;padding:0 4px;">';
+    } else {
+      var famKey = amrGetFamilyKey(fam.name);
+      var famCardBtn = (DRUG_FAMILIES && DRUG_FAMILIES[famKey])
+        ? ' <span class="amr-family-link" onclick="event.stopPropagation();showFamilyPanel(\'' + famKey.replace(/'/g,"\\'") + '\')" title="Open family comparison card">↗ Family Card</span>'
+        : '';
+      fh += '<div class="amr-family" style="background:var(--card);border-radius:10px;padding:16px;margin-bottom:14px;border:1px solid var(--border);">';
+      fh += '<div class="amr-fam-header" style="cursor:pointer;" onclick="var b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'block\':\'none\'">';
+      fh += '<h3 style="font-size:1rem;font-weight:700;color:var(--accent2);margin:0 0 4px;display:flex;align-items:center;flex-wrap:wrap;gap:4px;"><span class="amr-fam-name">' + fam.name + '</span>' + famCardBtn + ' <span style="color:var(--muted);font-size:0.8rem;margin-left:auto;">▾</span></h3>';
+      fh += '</div>';
+      fh += '<div class="amr-fam-body" style="display:none;">';
+    }
     fh += '<div style="margin:10px 0;padding:10px;background:rgba(99,102,241,0.06);border-radius:6px;">';
     fh += '<div style="font-weight:700;font-size:0.78rem;color:#a5b4fc;margin-bottom:4px;">⚙️ MECHANISM</div>';
     fh += '<ul style="margin:0;padding-left:18px;">' + amrBullets(fam.moa) + '</ul></div>';
@@ -115368,7 +115378,10 @@ function buildAMR() {
         h += sgFamBtn;
         h += '<span style="margin-left:auto;color:var(--muted);font-size:0.8rem;">▾</span></div>';
         h += '<div class="amr-subgroup-body" style="display:flex;flex-direction:column;">';
-        for (var bi = 0; bi < bucket.length; bi++) h += renderAmrFamily(bucket[bi]);
+        // When subgroup wraps a single family of the same name, merge them so content
+        // appears directly under the colored subgroup header (no duplicate family card).
+        var mergeInline = bucket.length === 1 && bucket[0].name === sg.name;
+        for (var bi = 0; bi < bucket.length; bi++) h += renderAmrFamily(bucket[bi], {inline: mergeInline});
         h += '</div></div>';
       }
       // Render any families not assigned to a subgroup
