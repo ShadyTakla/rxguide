@@ -110780,7 +110780,107 @@ var MINOR_AILMENTS = [
             "6. Counselling: titration schedule, administration technique, side-effect management, EAGLES safety data, CYP1A2 interactions (caffeine, clozapine, olanzapine, theophylline, warfarin), expected timeline, slip management, and combination NRT use.",
             "7. Documentation: record assessment, Fagerström score, prescription with titration, counselling, and notify primary care provider; submit Pharmacy Smoking Cessation Program claim per OCP/MOH guidance.",
             "8. Follow-up: scheduled check-ins at 1 week (post-quit-date), 2, 4, 8, 12, and 24 weeks — assess abstinence (CO monitor if available), tolerability, side effects, mood; extend varenicline to 24 weeks if successful at 12 weeks to prevent relapse; reattempt or switch agents if relapse occurs."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "READINESS ASSESSMENT — is the patient ready to make a quit attempt now (within the next month) or definitely committed to quitting (5A's: ASK, ADVISE, ASSESS, ASSIST, ARRANGE)?",
+                    "ctx": "Pharmacotherapy works best alongside genuine readiness. For patients NOT ready, pharmacist role is BRIEF ADVICE (every encounter), motivational interviewing, and offering to revisit at any time. For patients ready, proceed to safety screen.",
+                    "crumb": "Ready to quit?",
+                    "yes": "n2",
+                    "no": "rx_not_ready"
+                },
+                "n2": {
+                    "q": "Any URGENT psychiatric red flags: ACTIVE SUICIDAL IDEATION with intent or plan, ACUTE PSYCHOSIS, severe untreated depression, OR recent self-harm?",
+                    "ctx": "Acute suicidality or untreated severe psychiatric illness requires psychiatric stabilization before initiating cessation pharmacotherapy. Smoking cessation can transiently worsen mood/anxiety; needs psychiatric coordination.",
+                    "crumb": "Urgent psych?",
+                    "yes": "rx_psych_urgent",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Is the patient PREGNANT or planning pregnancy in the near term?",
+                    "ctx": "PREGNANCY: behavioural support is first-line per SOGC and CAN-ADAPTT. NRT may be considered if behavioural alone fails (intermittent forms — gum/lozenge — preferred over continuous patch). Varenicline and bupropion are NOT recommended in pregnancy (insufficient safety data).",
+                    "crumb": "Pregnant?",
+                    "yes": "tx_preg",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "Active or recent CARDIOVASCULAR EVENT — myocardial infarction, unstable angina, stroke, or major arrhythmia within the past 2 weeks?",
+                    "ctx": "Within 2 weeks of acute CV event, NRT is generally avoided. After 2 weeks, NRT IS SAFE in stable CVD (CAN-ADAPTT, USPHS) — do NOT withhold NRT in stable cardiac patients (continued smoking is far worse than nicotine without combustion). Varenicline post-MI: small CV signal in some studies but EAGLES + CV outcomes trials reassuring; consult prescriber.",
+                    "crumb": "Recent CV event <2wk?",
+                    "yes": "rx_recent_cv",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Patient PREFERENCE / suitability — does the patient prefer FIRST-LINE PRESCRIPTION agent (varenicline — most effective single agent, NNT ~7), OR prefer COMBINATION NRT (also first-line, OTC accessible), OR have specific factors making one agent preferred?",
+                    "ctx": "VARENICLINE: most effective monotherapy; preferred for highly nicotine-dependent smokers (HSI ≥4, smokes within 30 min of waking). NRT COMBINATION (long-acting patch + short-acting gum/lozenge/inhaler/spray): equally effective in some trials, OTC accessible, easier to start. BUPROPION: less effective than varenicline; useful if comorbid depression. CYTISINE: short course (25 days), Health Canada approved, similar efficacy to varenicline per Cochrane 2023.",
+                    "crumb": "Preference?",
+                    "yes_label": "Varenicline",
+                    "no_label": "Other / NRT first",
+                    "yes": "n6_varen",
+                    "no": "n7_nrt"
+                },
+                "n6_varen": {
+                    "q": "Any contraindication to VARENICLINE: severe renal impairment (CrCl <30 mL/min — dose reduce to 0.5 mg OD; ESRD on HD — max 0.5 mg OD per Health Canada PM); known hypersensitivity; ANGIOEDEMA history with varenicline; active suicidality (covered at n2 already, but verify)?",
+                    "ctx": "Most patients tolerate varenicline well. EAGLES trial (Lancet 2016) showed neuropsychiatric risk LOWER than the original FDA boxed warning suggested; Health Canada removed comparable boxed warning in 2017. Counselling on insomnia/vivid dreams + early quit-date and dose adjustment for nausea is key.",
+                    "crumb": "Varenicline CI?",
+                    "yes": "n7_nrt",
+                    "no": "tx_varenicline"
+                },
+                "n7_nrt": {
+                    "q": "BUPROPION CONSIDERATION — does the patient have any of: comorbid DEPRESSION (bupropion may double-treat), prefers oral non-nicotine option, OR prior NRT failure with intolerance? AND any contraindication: SEIZURE history/risk (low threshold from medications, head injury, eating disorder, abrupt alcohol/BZD withdrawal, brain tumour); current/prior EATING DISORDER (anorexia/bulimia); MAOI within 14 days; severe hepatic impairment (Child-Pugh C)?",
+                    "ctx": "BUPROPION: useful in comorbid depression (one drug, two indications). Seizure risk is the main contraindication — even moderate risk factors (mild head injury, mild alcohol use disorder) warrant caution. Bupropion contraindicated in active eating disorder.",
+                    "crumb": "Bupropion suitable?",
+                    "yes_label": "Try bupropion",
+                    "no_label": "NRT instead",
+                    "yes": "n7b_bup_ci",
+                    "no": "tx_nrt_combo"
+                },
+                "n7b_bup_ci": {
+                    "q": "Are bupropion CONTRAINDICATIONS present (seizure history/risk, eating disorder, MAOI within 14 days, severe hepatic impairment Child-Pugh C, abrupt alcohol/BZD withdrawal)?",
+                    "ctx": "Verify CIs explicitly before prescribing bupropion.",
+                    "crumb": "Bupropion CI?",
+                    "yes": "tx_nrt_combo",
+                    "no": "tx_bupropion"
+                },
+                "rx_not_ready": {
+                    "type": "caution",
+                    "msg": "Patient NOT ready to quit currently — appropriate role is BRIEF MOTIVATIONAL ADVICE at every encounter + offer to revisit when ready. Do NOT prescribe pharmacotherapy without commitment.",
+                    "detail": "5 A's framework — for patients not ready:\n• ASK about smoking at every encounter (smoking status as a vital sign).\n• ADVISE all smokers to quit (clear, strong, personalized — link to specific patient health, family, finances).\n• ASSESS readiness using stages of change (precontemplation, contemplation, preparation, action, maintenance).\n• ASSIST with motivation: 5 R's — Relevance (why does it matter to this patient), Risks, Rewards, Roadblocks, Repetition.\n• ARRANGE follow-up — schedule a return visit; offer that the door is always open.\n\nMOTIVATIONAL INTERVIEWING approach: open questions, affirmations, reflective listening, summaries (OARS); explore ambivalence; do not lecture or argue.\n\nRESOURCES to offer:\n• SMOKERS' HELPLINE: 1-877-513-5333 (Canadian Cancer Society) — free phone counselling.\n• ONTARIO STOP PROGRAM via Centre for Addiction and Mental Health (CAMH): free NRT to eligible patients via partner sites.\n• My Quit Plan / online tools.\n• Self-help books (Allen Carr).\n\nEVERY ATTEMPT COUNTS — most successful quitters require multiple attempts. Reassure patient that previous failed attempts are NORMAL and informative for next attempt."
+                },
+                "rx_psych_urgent": {
+                    "type": "refer-urgent",
+                    "msg": "Active suicidality, acute psychosis, severe untreated depression, or recent self-harm — refer URGENTLY to mental health services / ED. Smoking cessation pharmacotherapy is NOT appropriate during acute psychiatric crisis.",
+                    "detail": "Smoking cessation can transiently worsen mood/anxiety in vulnerable patients (likely in part due to nicotine withdrawal). Stable psychiatric illness is NOT a contraindication to cessation pharmacotherapy — EAGLES trial demonstrated varenicline and bupropion are safe in stable depression/anxiety.\n\nFor ACUTE psychiatric crisis: stabilization first. Once stable (typically several weeks of consistent treatment + monitoring), cessation pharmacotherapy can be reconsidered with psychiatry coordination.\n\nNOTE: smoking has SIGNIFICANT pharmacokinetic interactions via CYP1A2 induction — clozapine, olanzapine, theophylline, warfarin, fluvoxamine doses must be REDUCED upon cessation (typically 20–50% over 1–2 weeks) to avoid toxicity. This is a critical pharmacist counselling point even for stable psychiatric patients.\n\nIf any emergency: 911 / Mobile Crisis / hospital ER."
+                },
+                "tx_preg": {
+                    "type": "treat",
+                    "msg": "PREGNANCY: BEHAVIOURAL SUPPORT is first-line (Smokers' Helpline 1-877-513-5333; CBT/MI). NRT may be considered if behavioural alone fails — preferred forms: gum 2 mg or lozenge 2 mg PRN (intermittent dosing minimizes fetal nicotine exposure). AVOID continuous-release patch in pregnancy when possible (continuous nicotine exposure). Varenicline and bupropion are NOT recommended in pregnancy.",
+                    "detail": "PREGNANCY-SPECIFIC GUIDANCE (CAN-ADAPTT, SOGC, USPHS):\n• Continued smoking has well-established fetal harms: low birth weight, preterm delivery, placental abruption, stillbirth, SIDS, childhood asthma — these MUST be weighed against any nicotine concerns.\n• Behavioural support (counselling, CBT, MI, referral to specialized pregnancy cessation services) is first-line and modestly effective.\n• NRT EVIDENCE in pregnancy: SNAP trial showed no significant benefit from continuous patch; intermittent NRT (gum, lozenge) is preferred for ad hoc craving control with lower total daily nicotine exposure than continuous smoking.\n• AVOID HIGH-DOSE NRT in pregnancy. If patch used, lower-dose patch (7 mg or 14 mg) may be preferred over 21 mg.\n• REMOVE PATCH AT BEDTIME (overnight) in pregnancy — reduces fetal exposure during sleep when patient does not feel cravings.\n• NICOTINE GUM in pregnancy: 2 mg only (not 4 mg). Use PRN for acute cravings. Counsel chew-and-park technique (15–30 min per piece).\n• VARENICLINE: NOT recommended in pregnancy (limited safety data; not formally contraindicated but conservative practice).\n• BUPROPION: NOT recommended (cardiac malformation signal in some cohorts though data inconsistent).\n\nLACTATION: NRT compatible (LactMed); use intermittent forms; remove patch when nursing if possible. Bupropion and varenicline have less lactation data; pump-and-discard not typically required but specialist input prudent.\n\nREFER to OB and primary care for coordination; consider specialized pregnancy cessation clinic if available."
+                },
+                "rx_recent_cv": {
+                    "type": "refer",
+                    "msg": "Recent (<2 weeks) acute cardiovascular event — refer to physician/cardiologist for cessation plan coordination. NRT typically deferred until ≥2 weeks post-event; behavioural support immediately.",
+                    "detail": "WHY THE 2-WEEK RULE: NRT is conservatively held in the immediate post-MI/post-stroke period (first 2 weeks) due to theoretical concerns about catecholaminergic effects, though evidence is limited.\n\nAFTER 2 WEEKS: NRT IS SAFE in stable CVD per CAN-ADAPTT, USPHS, and AHA — do NOT withhold; smoking cessation provides massive CV benefit (50% reduction in MI recurrence within 1–2 years). Combination NRT (patch + short-acting) is reasonable.\n\nVARENICLINE post-MI: EAGLES + CATS trials and the EAGLES post-cardiac analysis showed no significant CV signal vs placebo. Some prescribers still prefer to defer 2–4 weeks; cardiologist coordination is reasonable.\n\nBUPROPION: small BP elevation possible; monitor BP; not contraindicated in stable CVD.\n\nPharmacist BRIDGING ROLE while awaiting MD/cardiologist:\n• BEHAVIOURAL support immediately — Smokers' Helpline 1-877-513-5333.\n• Quit-date planning.\n• Identify and address concurrent stressors.\n• Hospital admission was an opportunity for ABSTINENCE start — encourage continued abstinence; even 24h smoke-free post-discharge significantly improves long-term quit rates."
+                },
+                "tx_varenicline": {
+                    "type": "treat",
+                    "msg": "VARENICLINE — most effective single agent (NNT ~7). Generic varenicline available (Champix off Canadian market; generic returned 2023). TITRATION: 0.5 mg PO OD × 3 days → 0.5 mg PO BID × 4 days → 1 mg PO BID × 12 weeks (extend to 24 weeks for relapse prevention if successful at 12 weeks). SET QUIT DATE for Day 8–14 (allows steady-state before quit). Take WITH FOOD (reduces nausea). Renal: CrCl <30 → 0.5 mg OD; ESRD on HD → max 0.5 mg OD per Health Canada PM.",
+                    "detail": "ONTARIO PHARMACIST PRESCRIBING AUTHORITY: varenicline is prescribable under the Ontario Smoking Cessation Prescribing Authority (separate from Minor Ailments — under O. Reg. 202/94, expanded 2021). ODB covers 12 weeks/year of cessation pharmacotherapy for eligible patients.\n\nMECHANISM: partial nicotinic acetylcholine receptor agonist (α4β2). Reduces craving (partial agonist at receptor) AND blocks reward (prevents nicotine binding) — dual action.\n\nCOUNSELLING:\n• NAUSEA (~30%): take with food and a full glass of water; usually resolves over first 2–4 weeks; if persistent/severe, reduce to 0.5 mg BID + reassess.\n• INSOMNIA / VIVID/UNUSUAL DREAMS (~10–20%): take EVENING dose with dinner rather than at bedtime; usually resolves in 2–4 weeks.\n• CONSTIPATION, headache, dyspepsia common.\n• EAGLES TRIAL (Anthenelli, Lancet 2016): neuropsychiatric risk NOT statistically increased vs placebo, NRT, or bupropion. Health Canada removed boxed warning 2017. Stable psychiatric patients can use varenicline safely with monitoring.\n• Counsel patient + partner/family to monitor for unusual mood, agitation, suicidal thoughts (rare but report immediately if concerning).\n\nQUIT DATE STRATEGIES: traditional fixed quit date Day 8–14; 'flexible quit' approach (start medication, choose quit date when ready within first month) also effective per recent trials. 'Reduce-to-quit' schedule (gradual reduction supported by varenicline over 12 weeks) is an alternative.\n\nFOLLOW-UP: 1 week post-quit-date, then 2, 4, 8, 12 weeks. Extend to 24 weeks if quit at 12 weeks (DOUBLES long-term abstinence). Combination with NRT not routinely recommended (data limited; some increased side-effect concern; reserve for highly dependent or refractory cases under physician supervision)."
+                },
+                "tx_bupropion": {
+                    "type": "treat",
+                    "msg": "BUPROPION SR — useful when comorbid depression (one drug, two indications) or NRT/varenicline not suitable. DOSE: 150 mg PO OD × 3 days → 150 mg PO BID × 7–12 weeks (max 300 mg/day). SET QUIT DATE for week 2 (Day 8–14). Take morning + late afternoon (NOT bedtime — insomnia). Maintenance up to 6 months for relapse prevention. Cessation rate ~2× placebo.",
+                    "detail": "ONTARIO PHARMACIST PRESCRIBING AUTHORITY: bupropion (for smoking cessation indication) prescribable under Ontario Smoking Cessation Prescribing Authority. ODB covers 12 weeks/year. Ontario MA Program does NOT cover smoking cessation (separate program).\n\nMECHANISM: norepinephrine + dopamine reuptake inhibitor; weak nicotinic receptor antagonist. Reduces craving and withdrawal. Less effective than varenicline (NNT ~12 vs ~7).\n\nCONTRAINDICATIONS (must verify):\n• Seizure history or low threshold (head injury, eating disorder, brain tumour, abrupt alcohol/BZD withdrawal — additive seizure risk).\n• Current or PRIOR eating disorder (bulimia, anorexia).\n• MAOI within 14 days.\n• Severe hepatic impairment (Child-Pugh C).\n• Hypersensitivity.\n\nINTERACTIONS:\n• Tamoxifen — bupropion is a strong CYP2D6 inhibitor; reduces tamoxifen activation (active metabolite endoxifen) — AVOID in patients with current/prior breast cancer on tamoxifen.\n• Other CYP2D6 substrates: SSRIs, TCAs, beta-blockers (metoprolol), opioids (oxycodone, codeine, tramadol — codeine/tramadol activation reduced).\n• Digoxin — bupropion may reduce digoxin levels.\n• Linezolid, methylene blue (MAOI-like) — avoid.\n\nCOUNSELLING:\n• Insomnia (~30%): take SECOND dose in late afternoon (not at bedtime); separate doses by ≥8 hours.\n• Dry mouth, headache, dizziness common.\n• Lowers seizure threshold — counsel to report any seizure-like episode.\n• Mood monitoring (rare suicidal ideation — Health Canada warning).\n• AVOID alcohol (additive seizure risk + GI upset).\n\nFOLLOW-UP: 1 week, 2, 4, 8, 12 weeks; consider extension to 6 months for relapse prevention."
+                },
+                "tx_nrt_combo": {
+                    "type": "treat",
+                    "msg": "NRT COMBINATION (most effective NRT approach — Cochrane Hartmann-Boyce 2022): LONG-ACTING — Nicotine PATCH 21 mg/24h (if smoking >10 cigarettes/day) OR 14 mg/24h (if ≤10) — apply daily, rotate sites; PLUS SHORT-ACTING — Nicotine GUM 2 or 4 mg, LOZENGE 2 or 4 mg, INHALER 10 mg cartridges, OR ORAL SPRAY 1 mg/spray — use as needed for cravings (typically 8–12 pieces/day initially). Duration: 8–12 weeks with gradual taper. ALL OTC.",
+                    "detail": "NRT IS OTC (NAPRA Schedule III/unscheduled depending on form/province) but pharmacist may recommend specific combinations. Ontario STOP Program (CAMH) provides FREE NRT to eligible patients via partner pharmacies.\n\nDOSE SELECTION:\n• PATCH: 21 mg if smoking >10 cig/day or first cigarette within 30 min of waking; 14 mg if smoking ≤10/day or first cigarette >30 min after waking; 7 mg for taper.\n• GUM/LOZENGE: 4 mg if first cigarette within 30 min of waking; 2 mg if >30 min.\n• Use SHORT-ACTING (gum, lozenge, inhaler, spray) PRN for cravings on top of patch — combination is significantly more effective than patch alone.\n\nADMINISTRATION COUNSELLING:\n• PATCH: apply to clean dry hairless skin (upper arm, chest, back); rotate sites daily; remove old patch before new; can leave on overnight (continuous craving control) OR remove at bedtime if vivid dreams (also for pregnancy).\n• GUM: 'CHEW AND PARK' — chew until tingling/peppery taste, then park between cheek and gum; chew again when taste fades; one piece lasts 30 min. AVOID acidic drinks (coffee, soft drinks, juice) for 15 minutes BEFORE/DURING use — reduces absorption.\n• LOZENGE: same buccal absorption principle; do NOT chew or swallow; let dissolve over 20–30 min; same acidic drink avoidance.\n• INHALER: short puffs over 20 min; absorbed buccally not in lung.\n• ORAL SPRAY: 1–2 sprays under tongue or against cheek; do NOT inhale or swallow immediately.\n\nDURATION: 8–12 weeks typical; longer use is acceptable and safer than continued smoking. Taper: reduce dose stepwise (21 → 14 → 7 mg patch) over the final 2–4 weeks.\n\nSIDE EFFECTS: patch site irritation (rotate sites, brief topical HC if severe); mouth/throat irritation with gum/lozenge/spray; vivid dreams with overnight patch (remove at bedtime).\n\nNRT IS SAFE IN STABLE CARDIOVASCULAR DISEASE — far safer than continued smoking. Do NOT withhold NRT in cardiac patients beyond the immediate 2-week post-event window.\n\nFOLLOW-UP: 1 week post-quit, 2, 4, 8, 12 weeks. Reattempt or switch agent if relapse."
+                }
+            }
+        }
     }
 ];
 
