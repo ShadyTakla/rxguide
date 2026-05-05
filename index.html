@@ -5149,14 +5149,23 @@ var DISEASES = {
             "guideline": "CAMH AUD 2020"
           },
           {
-            "line": "Second-Line",
+            "line": "Second-Line — Gabapentinoid",
             "type": "Drug",
-            "family": "Anticonvulsant Mood Stabilizers",
+            "family": "Gabapentinoids",
             "agents": [
-              "gabapentin",
+              "gabapentin"
+            ],
+            "notes": "Gabapentin 900–1800 mg/day divided TID — evidence for both alcohol withdrawal and relapse prevention (Mason 2014). Good tolerability; no hepatic metabolism (useful in liver disease); not a controlled substance. Counsel sedation, dizziness, possible dependence at high doses.",
+            "guideline": "CANMAT AUD 2020"
+          },
+          {
+            "line": "Second-Line — Anticonvulsant",
+            "type": "Drug",
+            "family": "Anticonvulsants",
+            "agents": [
               "topiramate"
             ],
-            "notes": "Gabapentin 900–1800 mg/day: evidence for both withdrawal and relapse prevention; good tolerability; no liver toxicity; not a controlled substance (unlike benzodiazepines). Topiramate 200–300 mg/day: reduces heavy drinking days — evidence from RCTs but significant cognitive side effects ('Dopamax' — word-finding difficulty, cognitive slowing).",
+            "notes": "Topiramate 200–300 mg/day divided BID — reduces heavy drinking days (TOP RCT). Significant cognitive side effects ('Dopamax' — word-finding difficulty, cognitive slowing) and paresthesias often limit tolerability. Titrate slowly. Useful weight-loss adjunct for AUD with overweight.",
             "guideline": "CANMAT AUD 2020"
           },
           {
@@ -5347,16 +5356,20 @@ var DISEASES = {
         ],
         "treatment": [
           {
-            "line": "First-Line",
+            "line": "First-Line — Lithium",
             "type": "Drug",
             "family": "Mood Stabilizers",
-            "agents": [
-              "lithium",
-              "valproate (divalproex)",
-              "lamotrigine"
-            ],
-            "notes": "Foundation of bipolar treatment. Lithium: best long-term evidence, anti-suicide, bipolar depression + mania + maintenance. Divalproex (Epival): acute mania first-line, rapid onset, better tolerated acutely than lithium; NOT for bipolar depression; teratogenic (NTD). Lamotrigine: bipolar depression and maintenance (NOT acute mania); requires slow titration to prevent SJS; first-line for BD-II.",
+            "agents": ["lithium"],
+            "notes": "Best long-term evidence, anti-suicide effect, effective for bipolar depression + mania + maintenance. Narrow therapeutic index (target 0.6–1.0 mmol/L maintenance, 0.8–1.2 acute mania). Monitor levels q3–6 months and after dose change, with TSH, SCr/eGFR, calcium baseline + annually. Many drug interactions (NSAIDs, ACEi/ARB, thiazides — increase levels). Teratogenic (Ebstein's anomaly).",
             "guideline": "CANMAT/ISBD 2018 Bipolar Guidelines | RxFiles Mood Stabilizers"
+          },
+          {
+            "line": "First-Line — Anticonvulsant Mood Stabilizers",
+            "type": "Drug",
+            "family": "Anticonvulsant Mood Stabilizers",
+            "agents": ["valproate (divalproex)","lamotrigine"],
+            "notes": "Divalproex (Epival): acute mania first-line, rapid onset, better tolerated acutely than lithium; NOT for bipolar depression; teratogenic (NTD risk highest of mood stabilizers). Lamotrigine: bipolar depression + maintenance (NOT acute mania); requires slow titration to prevent SJS; first-line for BD-II maintenance.",
+            "guideline": "CANMAT/ISBD 2018 | RxFiles Mood Stabilizers"
           },
           {
             "line": "First-Line",
@@ -5374,18 +5387,32 @@ var DISEASES = {
             "guideline": "CANMAT/ISBD 2018 | RxFiles Mood Stabilizers"
           },
           {
-            "line": "First-Line (Bipolar Depression)",
+            "line": "First-Line (Bipolar Depression) — Atypical Antipsychotics",
             "type": "Drug",
             "family": "Atypical Antipsychotics",
             "agents": [
               "quetiapine (Seroquel) 50–300 mg OD",
               "lurasidone (Latuda) + lithium/valproate",
-              "cariprazine (Vraylar) 1.5–3 mg OD",
-              "lithium (bipolar depression)",
-              "lamotrigine"
+              "cariprazine (Vraylar) 1.5–3 mg OD"
             ],
-            "notes": "Bipolar depression (distinct from unipolar MDD — different treatment approach): Quetiapine monotherapy: strongest evidence (BOLDER I/II trials); most used. Lurasidone: adjunct to Li/VPA or monotherapy (PREVAIL trials) — lower metabolic burden than quetiapine. Cariprazine (Vraylar) 1.5–3 mg OD: HC-approved for bipolar I depression (CANMAT/ISBD 2023 first-line) — D3/D2 partial agonist; effective for depressive mixed features; may reduce negative symptoms; lower weight gain than quetiapine. Lithium: evidence for bipolar depression monotherapy. Lamotrigine: slower onset; better for longer-term prevention of depressive episodes. ALWAYS AVOID antidepressant monotherapy — risk of mania switching and rapid cycling.",
+            "notes": "Quetiapine monotherapy: strongest evidence (BOLDER I/II trials). Lurasidone: adjunct to Li/VPA or monotherapy (PREVAIL trials) — lower metabolic burden. Cariprazine 1.5–3 mg OD: HC-approved bipolar I depression (CANMAT/ISBD 2023 first-line) — D3/D2 partial agonist; effective for depressive mixed features; lower weight gain than quetiapine. NEVER use antidepressant monotherapy in bipolar — risk of mania switching.",
             "guideline": "CANMAT/ISBD 2023 Bipolar Depression Update | Health Canada Vraylar Bipolar I Depression PM"
+          },
+          {
+            "line": "First-Line (Bipolar Depression) — Mood Stabilizers",
+            "type": "Drug",
+            "family": "Mood Stabilizers",
+            "agents": ["lithium"],
+            "notes": "Lithium monotherapy has evidence for bipolar depression (slower onset than quetiapine; effective for maintenance + suicide prevention). Target level 0.6–0.8 mmol/L for maintenance. Useful when atypical antipsychotic side effects unacceptable.",
+            "guideline": "CANMAT/ISBD 2023 Bipolar Depression Update"
+          },
+          {
+            "line": "First-Line (Bipolar Depression) — Anticonvulsant Mood Stabilizer",
+            "type": "Drug",
+            "family": "Anticonvulsant Mood Stabilizers",
+            "agents": ["lamotrigine"],
+            "notes": "Lamotrigine slower onset; best for longer-term prevention of depressive episodes (BD-II maintenance). Slow titration over 6 weeks to prevent Stevens-Johnson syndrome. Less effective for acute manic episodes.",
+            "guideline": "CANMAT/ISBD 2023 Bipolar Depression Update"
           },
           {
             "line": "Second-Line",
@@ -5400,15 +5427,27 @@ var DISEASES = {
             "guideline": "CANMAT/ISBD 2018"
           },
           {
-            "line": "Alternative (adjunctive antidepressants — use only WITH mood stabilizer)",
+            "line": "Alternative — Atypical Antidepressant adjunct (with mood stabilizer)",
             "type": "Drug",
             "family": "Atypical Antidepressants",
-            "agents": [
-              "bupropion (lowest switch risk)",
-              "sertraline",
-              "lamotrigine"
-            ],
-            "notes": "Antidepressants: use only WITH mood stabilizer — NEVER as monotherapy in bipolar. Risk of mania switch (especially TCAs > SNRIs > SSRIs/bupropion). Consider only if: clear bipolar depression, inadequate response to quetiapine/lurasidone/lithium/lamotrigine. Short-term use preferred — taper when euthymic.",
+            "agents": ["bupropion (lowest switch risk)"],
+            "notes": "Bupropion has the LOWEST switch-to-mania risk among antidepressants. Use ONLY WITH a concurrent mood stabilizer — never as monotherapy in bipolar. Reserve for inadequate response to quetiapine/lurasidone/lithium/lamotrigine. Short-term use preferred — taper when euthymic.",
+            "guideline": "CANMAT/ISBD 2018"
+          },
+          {
+            "line": "Alternative — SSRI adjunct (with mood stabilizer)",
+            "type": "Drug",
+            "family": "SSRIs",
+            "agents": ["sertraline"],
+            "notes": "SSRIs (sertraline preferred — lowest switch risk among SSRIs) — use ONLY WITH a mood stabilizer. NEVER monotherapy in bipolar (mania switch, rapid cycling risk). Avoid in mixed features. Avoid TCAs and venlafaxine (highest switch risk).",
+            "guideline": "CANMAT/ISBD 2018"
+          },
+          {
+            "line": "Alternative — Lamotrigine adjunct (longer-term depression prevention)",
+            "type": "Drug",
+            "family": "Anticonvulsant Mood Stabilizers",
+            "agents": ["lamotrigine"],
+            "notes": "Lamotrigine adjunct for longer-term prevention of depressive episodes when single mood stabilizer inadequate. Slow titration; SJS risk. See first-line bipolar depression entries.",
             "guideline": "CANMAT/ISBD 2018"
           },
           {
@@ -6214,19 +6253,60 @@ var DISEASES = {
             "guideline": "MS Society Canada | MIMS trial"
           },
           {
-            "line": "Symptomatic",
+            "line": "Symptomatic — Spasticity (Muscle Relaxant)",
             "type": "Drug",
-            "family": null,
-            "agents": [
-              "baclofen (spasticity)",
-              "modafinil/amantadine (fatigue)",
-              "oxybutynin/solifenacin (neurogenic bladder)",
-              "dalfampridine (Ampyra — walking speed)",
-              "cannabinoids (Sativex — spasticity/pain)",
-              "SNRIs/TCAs (neuropathic pain, depression)"
-            ],
-            "notes": "Symptomatic therapy is as important as DMTs for quality of life. Spasticity: baclofen (muscle relaxant, GABA-B agonist) — start low, titrate; Sativex (THC/CBD oromucosal spray) for refractory spasticity. Fatigue: amantadine 100 mg BID or modafinil 100–200 mg OD. Bladder: oxybutynin or solifenacin (neurogenic urgency); CIC (clean intermittent catheterization) for incomplete emptying.",
-            "guideline": "MS Society of Canada | Health Canada DMT PMs"
+            "family": "Centrally-Acting Muscle Relaxants",
+            "agents": ["baclofen","tizanidine"],
+            "notes": "Baclofen 5 mg PO TID, titrate to max 80 mg/day divided (GABA-B agonist). Tizanidine 2–4 mg PO TID alternative (α2 agonist — sedating, hepatotoxicity monitoring). Intrathecal baclofen for refractory severe spasticity (specialty).",
+            "guideline": "MS Society of Canada"
+          },
+          {
+            "line": "Symptomatic — Fatigue (Wakefulness-Promoting)",
+            "type": "Drug",
+            "family": "Wakefulness-Promoting Agents",
+            "agents": ["modafinil"],
+            "notes": "Modafinil 100–200 mg PO OD — wakefulness-promoting; useful for severe MS fatigue. Counsel reduces OCP efficacy (use additional contraception). Schedule IV — avoid in CV disease.",
+            "guideline": "MS Society of Canada | Cochrane Fatigue Review 2018"
+          },
+          {
+            "line": "Symptomatic — Fatigue (Antiparkinson Agent)",
+            "type": "Drug",
+            "family": "Antiparkinson Agents",
+            "agents": ["amantadine"],
+            "notes": "Amantadine 100 mg PO BID — first-line for MS fatigue (low cost, well-tolerated). NMDA antagonist with dopaminergic effects. Renal dose adjustment.",
+            "guideline": "MS Society of Canada"
+          },
+          {
+            "line": "Symptomatic — Neurogenic Bladder",
+            "type": "Drug",
+            "family": "Antimuscarinics",
+            "agents": ["oxybutynin","solifenacin"],
+            "notes": "Oxybutynin 5 mg PO BID-TID (or transdermal patch — fewer anticholinergic effects); solifenacin 5–10 mg PO daily. β3-agonist mirabegron 25–50 mg PO daily is alternative. CIC (clean intermittent catheterization) for incomplete emptying — coordinate urology referral.",
+            "guideline": "MS Society of Canada"
+          },
+          {
+            "line": "Symptomatic — Walking Speed (K⁺ Channel Blocker)",
+            "type": "Drug",
+            "family": "MS Disease-Modifying Therapies",
+            "agents": ["dalfampridine"],
+            "notes": "Dalfampridine (Ampyra) 10 mg PO BID — selective K⁺ channel blocker; improves walking speed in 30–40% of MS patients (MS-WALK responders). Avoid if seizure history (lowers threshold). Renal dose adjustment (CrCl >50 only).",
+            "guideline": "MS Society of Canada | Health Canada Ampyra PM"
+          },
+          {
+            "line": "Symptomatic — Refractory Spasticity / Pain",
+            "type": "Drug",
+            "family": "Synthetic Cannabinoids",
+            "agents": ["nabiximols"],
+            "notes": "Nabiximols (Sativex — THC/CBD oromucosal spray) — adjunct for refractory MS spasticity in adults. Health Canada-approved. Titrate gradually. Counsel impaired driving, dependence. Reserve for failure of conventional antispasmodics.",
+            "guideline": "Health Canada Sativex PM | MS Society of Canada"
+          },
+          {
+            "line": "Symptomatic — Neuropathic Pain",
+            "type": "Drug",
+            "family": "Tricyclic Antidepressants",
+            "agents": ["amitriptyline","nortriptyline"],
+            "notes": "TCAs (amitriptyline 10–75 mg HS, nortriptyline 10–50 mg HS) — first-line for MS-related neuropathic pain. Anticholinergic side effects limit dose. SNRIs (duloxetine 30–60 mg OD) alternative — fewer anticholinergic effects, also helps comorbid depression.",
+            "guideline": "Canadian Pain Society Neuropathic Pain Guidelines"
           }
         ],
         "pearls": [
@@ -6419,16 +6499,35 @@ var DISEASES = {
             "guideline": "CRISM 2023"
           },
           {
-            "line": "First-Line",
+            "line": "Withdrawal — Alpha-2 Agonist",
             "type": "Drug",
-            "family": "Withdrawal Management",
-            "agents": [
-              "clonidine",
-              "loperamide",
-              "NSAIDs",
-              "dimenhydrinate"
-            ],
-            "notes": "Symptomatic withdrawal management (not OAT): clonidine 0.1–0.3 mg TID (alpha-2 agonist — reduces noradrenergic hyperactivation; BP must be monitored); loperamide for diarrhea; NSAIDs/acetaminophen for myalgia; dimenhydrinate for nausea. Non-OAT withdrawal management has very high relapse rate — always offer and encourage OAT.",
+            "family": "Alpha-2 Agonists",
+            "agents": ["clonidine"],
+            "notes": "Clonidine 0.1–0.3 mg PO TID — α2 agonist that reduces noradrenergic hyperactivation during opioid withdrawal (anxiety, sweating, hypertension, tachycardia). Monitor BP — orthostatic hypotension common. Lofexidine (Lucemyra) is FDA-approved purpose-specific α2 agonist (not in Canada).",
+            "guideline": "CRISM 2023"
+          },
+          {
+            "line": "Withdrawal — Antidiarrheal",
+            "type": "Drug",
+            "family": "Antidiarrheals",
+            "agents": ["loperamide"],
+            "notes": "Loperamide 4 mg PO initial then 2 mg PRN (max 16 mg/day) for diarrhea. AVOID high-dose loperamide misuse (cardiotoxicity — QT prolongation). Patient counseling on appropriate dosing.",
+            "guideline": "CRISM 2023"
+          },
+          {
+            "line": "Withdrawal — NSAID for myalgia",
+            "type": "Drug",
+            "family": "NSAIDs",
+            "agents": ["NSAIDs"],
+            "notes": "Ibuprofen 400 mg q6–8h or naproxen 500 mg BID for myalgia, body aches. Acetaminophen 1000 mg q6h alternative. Avoid NSAIDs in CKD or active GI bleeding.",
+            "guideline": "CRISM 2023"
+          },
+          {
+            "line": "Withdrawal — Antiemetic",
+            "type": "Drug",
+            "family": "Vestibular Suppressants",
+            "agents": ["dimenhydrinate"],
+            "notes": "Dimenhydrinate 50 mg PO/IM q4–6h PRN for nausea/vomiting. Sedating — counsel about driving. Non-OAT withdrawal management has very high relapse rate — always offer OAT (buprenorphine/methadone) as the cornerstone.",
             "guideline": "CRISM 2023"
           },
           {
@@ -6794,15 +6893,22 @@ var DISEASES = {
             "guideline": "CANMAT PTSD 2018"
           },
           {
-            "line": "Second-Line",
+            "line": "Second-Line — Atypical Antipsychotic adjunct",
             "type": "Drug",
-            "family": "Augmentation Strategies",
+            "family": "Atypical Antipsychotics",
             "agents": [
               "quetiapine XR (adjunct)",
-              "risperidone (adjunct for hyperarousal)",
-              "lamotrigine"
+              "risperidone (adjunct for hyperarousal)"
             ],
-            "notes": "Atypical antipsychotics as adjuncts: quetiapine XR low-dose (50–150 mg) for refractory hyperarousal, nightmares, sleep. Evidence strongest for quetiapine and risperidone in treatment-resistant PTSD. Lamotrigine: evidence for emotional numbing cluster. Use as augmentation only.",
+            "notes": "Atypical antipsychotic adjuncts: quetiapine XR low-dose (50–150 mg) for refractory hyperarousal, nightmares, sleep. Risperidone evidence in treatment-resistant PTSD with prominent dissociative or psychotic features. Use as augmentation only — never replace SSRI/SNRI first-line.",
+            "guideline": "CANMAT PTSD 2018"
+          },
+          {
+            "line": "Second-Line — Anticonvulsant Mood Stabilizer adjunct",
+            "type": "Drug",
+            "family": "Anticonvulsant Mood Stabilizers",
+            "agents": ["lamotrigine"],
+            "notes": "Lamotrigine adjunct: evidence for emotional numbing cluster and re-experiencing symptoms in PTSD. Slow titration over 6 weeks to avoid SJS. Limited but supportive evidence in CANMAT 2018; consider when atypical antipsychotic poorly tolerated.",
             "guideline": "CANMAT PTSD 2018"
           },
           {
@@ -7121,16 +7227,42 @@ var DISEASES = {
             "guideline": "CCSA 2024 / CPA 2023"
           },
           {
-            "line": "Pharmacotherapy (off-label — limited evidence)",
+            "line": "Off-label — Gabapentinoid (withdrawal/craving)",
             "type": "Drug",
-            "agents": [
-              "gabapentin 300–1200 mg/day (may reduce withdrawal symptoms and craving — small RCTs)",
-              "NAC (N-acetylcysteine) 1200 mg BID (adolescents — one positive RCT; adults — mixed results)",
-              "nabilone 0.5–1 mg BID (synthetic THC agonist — may reduce withdrawal; paradoxical use of cannabinoid for CUD)",
-              "sleep aids: melatonin 3–5 mg, trazodone 25–100 mg, quetiapine 25–100 mg QHS (insomnia is the most persistent withdrawal symptom — lasts weeks)"
-            ],
-            "notes": "No medication is proven effective for CUD — all pharmacotherapy is off-label and adjunctive to behavioral treatment; gabapentin has the most promising data for reducing withdrawal symptoms and promoting abstinence; insomnia is the most treatment-resistant withdrawal symptom and the most common reason for relapse — address aggressively; avoid benzodiazepines (cross-dependence risk)",
-            "family": null,
+            "family": "Gabapentinoids",
+            "agents": ["gabapentin 300–1200 mg/day (may reduce withdrawal symptoms and craving — small RCTs)"],
+            "notes": "Gabapentin has the most promising off-label data for reducing cannabis withdrawal symptoms and promoting abstinence (Mason 2012 RCT). Titrate to 1200 mg/day divided TID. Avoid in eGFR <30 without dose adjustment.",
+            "guideline": "CCSA 2024"
+          },
+          {
+            "line": "Off-label — Antioxidant (adolescents)",
+            "type": "Action",
+            "agents": ["N-acetylcysteine (NAC) 1200 mg PO BID — one positive adolescent RCT; mixed results in adults. Modest effect via glutamatergic modulation. Generally well-tolerated; available OTC. Limited evidence; not a class-defined intervention."],
+            "notes": "NAC has weak evidence as a non-class adjunct for cannabis use disorder. Adolescent RCT positive, adult studies mixed. Counsel as off-label, supplement-style use.",
+            "guideline": "CCSA 2024"
+          },
+          {
+            "line": "Off-label — Synthetic Cannabinoid (paradoxical, withdrawal)",
+            "type": "Drug",
+            "family": "Synthetic Cannabinoids",
+            "agents": ["nabilone 0.5–1 mg BID"],
+            "notes": "Nabilone (synthetic THC agonist) — paradoxical use of cannabinoid for CUD; may reduce withdrawal in selected patients. Counsel sedation, dizziness, dependence concerns. Health Canada-scheduled.",
+            "guideline": "CCSA 2024"
+          },
+          {
+            "line": "Off-label — Insomnia (Atypical Antidepressant)",
+            "type": "Drug",
+            "family": "Atypical Antidepressants",
+            "agents": ["trazodone 25–100 mg QHS"],
+            "notes": "Trazodone 25–100 mg QHS — sedating 5-HT2 antagonist for cannabis withdrawal insomnia (most persistent withdrawal symptom — lasts weeks). Adjunct to behavioral treatment. AVOID benzodiazepines (cross-dependence risk).",
+            "guideline": "CCSA 2024"
+          },
+          {
+            "line": "Off-label — Insomnia (Atypical Antipsychotic / Melatonin)",
+            "type": "Drug",
+            "family": "Atypical Antipsychotics",
+            "agents": ["quetiapine 25–100 mg QHS"],
+            "notes": "Low-dose quetiapine 25–100 mg QHS for severe withdrawal insomnia. Counsel weight gain, metabolic effects with chronic use. Melatonin 3–5 mg QHS is a safer non-pharmacologic-feeling alternative. Insomnia is often the most relapse-driving withdrawal symptom.",
             "guideline": "CCSA 2024"
           },
           {
@@ -7213,7 +7345,7 @@ var DISEASES = {
           },
           {
             "line": "Prevention (high-risk patients)",
-            "type": "Drug",
+            "type": "Action",
             "agents": [
               "HELP protocol (Hospital Elder Life Program): orientation, early mobilization, sleep promotion (earplugs, eye mask, minimize nighttime interventions), hydration, nutrition, hearing/vision aids",
               "medication reconciliation on admission: identify and reduce high-risk medications (anticholinergics, benzodiazepines, opioids)",
@@ -7222,7 +7354,6 @@ var DISEASES = {
               "pharmacist role: anticholinergic burden assessment, medication review, deprescribing high-risk medications"
             ],
             "notes": "Prevention is far more effective than treatment — HELP protocol has the strongest evidence of any delirium intervention. Pharmacist anticholinergic burden assessment should be routine for all hospitalized elderly patients. Tools: Anticholinergic Burden Scale (ABS), Anticholinergic Risk Scale (ARS), Beer's Criteria. Even 'mild' anticholinergics (cetirizine, ranitidine, metoclopramide) contribute to cumulative burden in elderly polypharmacy.",
-            "family": null,
             "guideline": "CCSMH 2024 / AGS Beers 2023"
           }
         ],
@@ -7731,7 +7862,7 @@ var DISEASES = {
             ],
             "notes": "Reserve for severe, refractory RLS unresponsive to gabapentinoids/iron/lifestyle. Specialty sleep/pain clinic management. Counsel on dependence, constipation, sedation, MVAs. Adheres to Canadian Opioid Guideline 2017 — informed consent, treatment agreement, monitor.",
             "guideline": "Canadian Guideline on Opioids for Chronic Non-Cancer Pain 2017",
-            "family": "Opioids"
+            "family": "Opioid Analgesics"
           },
           {
             "line": "Lifestyle / Non-Drug",
@@ -7830,11 +7961,11 @@ var DISEASES = {
             ],
             "notes": "Antiviral monotherapy is NOT recommended (no benefit). Antiviral + steroid in SEVERE Bell's palsy may modestly improve recovery (NNT ~10–20); routinely added in many Canadian practices for severe paralysis or HSV/VZV suspicion. Required addition for Ramsay Hunt syndrome. Renal dose adjustment.",
             "guideline": "AAN Bell's Palsy 2012 (Level C — possibly effective); Canadian Otolaryngology",
-            "family": "Antivirals"
+            "family": "Nucleoside Analogues"
           },
           {
             "line": "EYE PROTECTION (CRITICAL — every Bell's palsy patient with incomplete eye closure)",
-            "type": "Drug",
+            "type": "Non-Drug",
             "agents": [
               "Preservative-free artificial tears (Refresh Optive UD, Systane Ultra UD, TheraTears) — q1–2 h while awake; more frequent if exposed",
               "Lubricating eye ointment at bedtime (Lacrilube, Refresh PM, Systane Nighttime) — protects overnight",
