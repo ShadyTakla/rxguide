@@ -298,7 +298,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 
 /* MINOR AILMENTS */
 #ma-panel{max-width:1520px;width:100%;flex:1;}
-.ma-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;cursor:pointer;transition:border-color .18s,transform .18s;}
+.ma-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px;cursor:pointer;transition:border-color .18s,transform .18s;break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;margin-bottom:10px;display:block;}
 .ma-card:hover{border-color:var(--accent);transform:translateY(-1px);}
 .ma-detail-section{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:12px;}
 .ma-detail-title{font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:8px;}
@@ -521,7 +521,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
         <div id="ma-panel">
           <h2 style="font-size:1.1rem;font-weight:800;margin-bottom:4px;">🩺 Ontario Minor Ailments Prescribing</h2>
           <p style="font-size:0.83rem;color:var(--muted);margin-bottom:16px;">All 19 conditions pharmacists can independently assess and prescribe for in Ontario. Click any condition for a guided assessment.</p>
-          <div id="ma-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:16px;"></div>
+          <div id="ma-grid" style="column-count:3;column-gap:12px;margin-bottom:16px;"></div>
           <div id="ma-detail" style="display:none;"></div>
         </div>
       </div>
