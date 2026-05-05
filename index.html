@@ -114968,7 +114968,9 @@ function buildMinorAilments() {
   for (var i=0;i<MINOR_AILMENTS.length;i++) {
     var ma = MINOR_AILMENTS[i];
     var col = catColors[ma.category] || '#6366f1';
-    html += '<div class="ma-card" style="border-top:3px solid ' + col + ';" onclick="showMA(' + i + ')">';
+    // Force column breaks at items 6 and 13 → 6/7/6 split (19 items)
+    var colBreak = (i === 6 || i === 13) ? 'break-before:column;-webkit-column-break-before:always;page-break-before:column;' : '';
+    html += '<div class="ma-card" style="border-top:3px solid ' + col + ';' + colBreak + '" onclick="showMA(' + i + ')">';
     html += '<div style="font-size:1.3rem;margin-bottom:4px;">' + ma.icon + '</div>';
     html += '<div style="font-size:0.87rem;font-weight:700;color:var(--text);margin-bottom:2px;">' + ma.name + '</div>';
     html += '<div style="font-size:0.72rem;color:var(--muted);">' + ma.category + '</div>';
