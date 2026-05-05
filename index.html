@@ -109699,7 +109699,89 @@ var MINOR_AILMENTS = [
             "6. Counsel on stinger removal technique, topical application, antihistamine choice, DEET age-stratified prevention, anaphylaxis recognition, epinephrine use, MedicAlert.",
             "7. Document the encounter per OCP standards: assessment findings, diagnosis, therapy chosen, counselling provided, notify primary care provider; identify allergist referral needs.",
             "8. Follow-up: reassess at 5–7 days for resolution; refer to allergist for venom immunotherapy assessment if any prior systemic reaction; reinforce epinephrine prescription and renewal."
-        ]
+        ],
+        "interactive_flow": {
+            "start": "n1",
+            "nodes": {
+                "n1": {
+                    "q": "ANAPHYLAXIS / SYSTEMIC REACTION? ANY ONE feature is sufficient: (a) tongue/throat/laryngeal swelling, stridor, voice change, drooling; (b) respiratory distress, wheeze, chest tightness; (c) generalized urticaria spreading beyond bite site; (d) hypotension, dizziness, syncope, feeling of impending doom; (e) GI symptoms — vomiting, severe abdominal pain, diarrhea after sting; (f) progressive symptoms with rapid onset (minutes to ~2 hours after sting/bite)?",
+                    "ctx": "Anaphylaxis is a clinical diagnosis — does NOT require all features. Hymenoptera (bees, wasps, hornets, fire ants) cause most anaphylactic insect reactions. CALL 911 IMMEDIATELY. If patient has an EpiPen, USE IT NOW (epinephrine 0.3 mg IM ≥25 kg / 0.15 mg IM 7.5–25 kg, anterolateral mid-thigh).",
+                    "crumb": "Anaphylaxis?",
+                    "yes": "rx_anaphylaxis",
+                    "no": "n2"
+                },
+                "n2": {
+                    "q": "Tick bite specifically — was the bite from a TICK (with attachment to skin)?",
+                    "ctx": "Tick bites have a separate Lyme prophylaxis pathway (see Tick Bite wizard) — different criteria, different management. This Insect Bites wizard is for non-tick arthropod bites (mosquitoes, bees, wasps, ants, spiders, fleas, bed bugs, etc.).",
+                    "crumb": "Tick bite?",
+                    "yes": "rx_tick",
+                    "no": "n3"
+                },
+                "n3": {
+                    "q": "Any URGENT red flags (other than anaphylaxis): (1) PERSONAL HISTORY of anaphylaxis to insect stings (warrants EpiPen + allergist referral even for current local reaction); (2) MULTIPLE STINGS — >50 in adults, >10 in children, >5 in infants (toxic envenomation, hemolysis, rhabdomyolysis); (3) STING in airway-threatening location (mouth, tongue, throat) with significant swelling; (4) FEVER + worsening pain + spreading erythema with red streaking after 24–48h (cellulitis or lymphangitis); (5) SUSPECTED VENOMOUS SPIDER bite (black widow, brown recluse — though rare in Canada) with severe muscle cramping, necrotic skin, systemic features; (6) MOSQUITO bite in traveller returning from tropical region with febrile illness (malaria, dengue, Zika, chikungunya, yellow fever)?",
+                    "ctx": "These warrant urgent assessment. Toxic envenomation from multiple stings ≠ allergic reaction; treat with hospital observation, IV fluids, and supportive care. Travel-associated febrile illness in mosquito-bite context needs urgent infectious disease workup.",
+                    "crumb": "Other urgent flags?",
+                    "yes": "rx_urgent_other",
+                    "no": "n4"
+                },
+                "n4": {
+                    "q": "LARGE LOCAL REACTION present — diameter of swelling/induration >10 cm at the bite/sting site, extending well beyond the bite, lasting >24h, with significant inflammation but NO systemic features (i.e., not anaphylaxis)?",
+                    "ctx": "Large local reactions are IgE-mediated but do not constitute anaphylaxis. Most resolve in 5–10 days. Patients with large local reactions to bees/wasps have lower (but non-zero) future anaphylaxis risk than those with prior systemic reactions — discuss EpiPen consideration with physician but not routinely indicated.",
+                    "crumb": "Large local (>10 cm)?",
+                    "yes": "tx_large_local",
+                    "no": "n5"
+                },
+                "n5": {
+                    "q": "Signs of secondary BACTERIAL INFECTION at the bite site — increasing pain/redness/warmth/purulent discharge after 48–72h (when the typical local reaction should be improving), spreading erythema, fever, lymphangitis (red streaks), regional lymphadenopathy?",
+                    "ctx": "Most insect bites do NOT become infected. Suspected secondary bacterial infection (typically S. aureus or Group A Strep) is OUTSIDE OTC scope and may need topical or oral antibiotics. Limited impetigo-like superficial infection at bite may be eligible for MA Impetigo pathway (≤3 lesions).",
+                    "crumb": "Bacterial infection?",
+                    "yes": "rx_infected",
+                    "no": "n6"
+                },
+                "n6": {
+                    "q": "Patient age — is this an INFANT under 6 months OR child under 2 years (DEET restrictions, antihistamine age limits)?",
+                    "ctx": "DEET and many antihistamines have age restrictions in young children. Health Canada PMRA: DEET NOT recommended <6 months; <2 years use ≤10% DEET maximum and limit to once daily. Icaridin/picaridin 20% acceptable from 6 months.",
+                    "crumb": "Infant <2y?",
+                    "yes": "tx_infant",
+                    "no": "tx_standard"
+                },
+                "rx_anaphylaxis": {
+                    "type": "refer-urgent",
+                    "msg": "ANAPHYLAXIS — CALL 911 IMMEDIATELY. If EpiPen available, ADMINISTER NOW (epinephrine 0.3 mg IM ≥25 kg or 0.15 mg IM 7.5–25 kg, anterolateral mid-thigh; can repeat in 5–15 min if no response). Patient must go to ER even if symptoms improve.",
+                    "detail": "EPINEPHRINE IM is FIRST-LINE for any anaphylaxis. Position supine with legs elevated (unless vomiting/respiratory distress requires sitting). Adjuncts (in ED): cetirizine 10 mg PO or diphenhydramine 50 mg IV/PO; methylprednisolone 125 mg IV; supplemental O2; IV fluids if hypotensive.\n\nBIPHASIC REACTIONS occur in 5–15% of anaphylaxis 1–72h after initial treatment — observation in ED 4–6h minimum.\n\nDISCHARGE PLAN (essential):\n• Prescribe TWO EpiPens (carry at all times; biphasic + transport time considerations).\n• MedicAlert bracelet identifying insect-venom allergy.\n• Allergist referral for VENOM IMMUNOTHERAPY (VIT) — highly effective (~95% reduction in future anaphylaxis); 3–5 year course.\n• Written anaphylaxis action plan.\n• Counsel partner/family/coworkers/school on EpiPen use and recognition of symptoms.\n• REVIEW CONCURRENT MEDICATIONS — β-blockers can complicate epinephrine response (consider alternatives if possible); ACEi can amplify reactions.\n• AVOID HYMENOPTERA in future: long sleeves outdoors, no perfumes/florals, no bright clothing in bee areas, do not swat; if stung, leave the area calmly (alarm pheromones attract more).\n\nFollow-up with allergist within 4–6 weeks for skin/specific IgE testing (not earlier — refractory period after acute event)."
+                },
+                "rx_tick": {
+                    "type": "refer",
+                    "msg": "TICK BITE — different management pathway. See the dedicated Tick Bite (Lyme Prophylaxis) wizard for the 4-criteria algorithm (blacklegged tick + endemic area + ≥36h attachment + ≤72h since removal). Also screens for Powassan virus and other tick-borne diseases.",
+                    "detail": "Use the Tick Bite wizard for proper Lyme prophylaxis decision-making. Key tick-bite-specific points NOT addressed in this insect-bites wizard:\n• Lyme prophylaxis: doxycycline 200 mg single dose if all 4 criteria met.\n• Powassan virus: transmits in ~15 minutes (no antibiotic prophylaxis); watch for encephalitis.\n• Anaplasmosis (doxy-responsive), babesiosis (NOT doxy — atovaquone/azithro).\n• EM rash monitoring 3–30 days post-bite.\n• Tick removal technique: fine-tipped tweezers grasp at skin level, steady upward traction, no twisting/burning/petroleum jelly.\n• Submit tick to eTick.ca for species ID.\n\nReturn to the appropriate Tick Bite wizard."
+                },
+                "rx_urgent_other": {
+                    "type": "refer-urgent",
+                    "msg": "Urgent assessment needed (other than anaphylaxis): prior anaphylaxis history, multiple stings (toxic envenomation), airway-threatening sting location, suspected secondary cellulitis with red streaking/fever, suspected venomous spider, OR febrile illness in returning traveller. Refer to ED or same-day physician.",
+                    "detail": "PRIOR ANAPHYLAXIS HISTORY + current local sting reaction: requires same-day physician for EpiPen prescription verification, possible prophylactic observation (small risk of biphasic recurrence to subsequent stings even if current local), and referral to allergist for venom immunotherapy if not already in place.\n\nMULTIPLE STINGS (>50 adults / >10 children / >5 infants): toxic envenomation can cause hemolysis, rhabdomyolysis, acute kidney injury, hepatic toxicity. Hospital observation with IV fluids, urinalysis (myoglobinuria), CBC, BMP, LDH, CK, hepatic enzymes. Severe envenomation may require ICU.\n\nAIRWAY-THREATENING STING LOCATION (mouth, tongue, throat): rapid swelling can cause airway obstruction even without anaphylaxis. ED for monitoring + airway management; consider intubation if progressive.\n\nSECONDARY CELLULITIS/LYMPHANGITIS: red streaking up the limb, fever, increasing systemic features → ED for IV antibiotics if severe (cellulitis with sepsis features) or oral antibiotic course (cephalexin 500 mg QID × 7 days, OUTSIDE MA scope).\n\nVENOMOUS SPIDER BITES (rare in Canada):\n• Black widow (Latrodectus): rare in southern Canada; severe muscle cramping, abdominal pain, hypertension; antivenom available in major centres.\n• Brown recluse (Loxosceles): not endemic in Canada; necrotic ulcer, supportive care.\n\nTRAVEL-ASSOCIATED FEBRILE ILLNESS (post-mosquito): malaria suspicion in ANY traveller from endemic area with fever — rapid diagnostic test + thick/thin smear within hours; dengue/Zika/chikungunya — supportive + monitoring; yellow fever rare. ED or travel medicine referral."
+                },
+                "rx_infected": {
+                    "type": "refer",
+                    "msg": "Suspected secondary bacterial infection (cellulitis or impetiginization) at bite site — refer to physician for oral antibiotics, OR if limited to ≤3 lesions and meets impetigo criteria, route to MA Impetigo pathway for topical antibiotic.",
+                    "detail": "BACTERIAL INFECTION SUSPECTED if (24–48h after the typical local reaction should be resolving): increasing pain/redness/warmth/swelling rather than improving; purulent discharge; honey-coloured crusts (impetiginization); spreading erythema with red streaks (lymphangitis); fever; regional lymphadenopathy.\n\nLIMITED IMPETIGO-LIKE INFECTION (≤3 lesions, one body area, no systemic): pharmacist may prescribe topical mupirocin 2% ointment TID × 5 days under MA Impetigo pathway. Typically S. aureus or Group A Strep.\n\nCELLULITIS or WIDESPREAD INFECTION: oral cephalexin 500 mg QID × 7 days OR cloxacillin 500 mg QID × 7 days (OUTSIDE MA scope — refer). MRSA risk factors → TMP-SMX DS BID or doxycycline 100 mg BID.\n\nSEVERE FEATURES (sepsis, rapid spread, immunocompromised): ED for IV antibiotics.\n\nPharmacist interim while awaiting referral: warm compresses for localized inflammation; mark border of erythema with skin marker for spread monitoring; analgesia (acetaminophen ± ibuprofen); elevation if extremity. Counsel return to pharmacy/ED if worsening or systemic symptoms develop."
+                },
+                "tx_large_local": {
+                    "type": "treat",
+                    "msg": "LARGE LOCAL REACTION (>10 cm, no systemic features): (1) HYDROCORTISONE 1% cream applied 3–4×/day to affected area × 5–7 days; (2) ORAL 2nd-gen antihistamine — cetirizine 10 mg OD or loratadine 10 mg OD × 5–7 days; (3) Cool compresses 10–15 min several times/day; (4) Acetaminophen or ibuprofen for pain/swelling; (5) Elevate the limb if extremity. Most resolve in 5–10 days.",
+                    "detail": "LARGE LOCAL REACTIONS (LLR) are IgE-mediated but distinct from anaphylaxis. Lifetime risk of future systemic reaction in patients with LLR to bee/wasp is ~5–10% (vs ~30–60% in patients with prior systemic reaction).\n\nIF SEVERE/RAPIDLY PROGRESSIVE LLR (>20 cm, marked swelling, prolonged): physician may add oral PREDNISONE 40–60 mg PO OD × 3–5 days (taper not needed for short course); OUTSIDE pharmacist OTC/MA scope — refer.\n\nEPI PEN PRESCRIPTION FOR LLR: not routinely indicated, but discuss with allergist for high-risk professions (beekeepers, outdoor workers) or strong patient preference; SHARED DECISION-MAKING.\n\nIDENTIFY THE INSECT if possible (counsel observation, photo, capture if safely possible without further sting risk). Bee leaves a stinger; wasps/hornets do not. Fire ants leave clustered pustules. This guides allergy testing and immunotherapy planning if needed.\n\nREFERRAL CONSIDERATIONS:\n• Allergist if high-risk profession + LLR concern.\n• Physician if reaction progresses, systemic features develop, or fails to improve in 7 days.\n• ED if any systemic features develop (refer back to anaphylaxis pathway)."
+                },
+                "tx_infant": {
+                    "type": "treat",
+                    "msg": "INFANT <2 YEARS — limited pharmacotherapy options; emphasize NON-PHARM and prevention. (1) Cool compresses for itch/swelling; (2) HYDROCORTISONE 1% cream small amount BID × ≤5 days for severe local reactions ≥6 months age; (3) Cetirizine syrup 2.5 mg OD age 6 months–2 years (Health Canada-approved ≥6 months); (4) AVOID DEET <6 months; ≥6 months use ICARIDIN/PICARIDIN 20% (Health Canada PMRA preferred for infants).",
+                    "detail": "AGE-STRATIFIED PHARMACOTHERAPY for infants:\n• HYDROCORTISONE 1% topical: ≥6 months acceptable for short-course (≤5 days) limited area; AVOID under 6 months without physician input (skin thinness, systemic absorption concern).\n• CETIRIZINE SYRUP: Health Canada-approved ≥6 months at 2.5 mg OD; ≥1 year may use 2.5 mg BID for severe symptoms.\n• LORATADINE SYRUP: Health Canada-approved ≥2 years.\n• DIPHENHYDRAMINE: AVOID in young children (paradoxical excitation, sedation, anticholinergic; some provinces issue specific warnings ≤6 years).\n\nAGE-STRATIFIED REPELLENTS (Health Canada PMRA):\n• <6 months: NO repellents recommended; physical barriers only (mosquito netting, long sleeves/pants, avoid dawn/dusk peak times).\n• 6 months–2 years: Icaridin/picaridin 20% preferred; if DEET, ≤10% maximum, ONCE daily, limited area.\n• 2–12 years: DEET ≤10% maximum, up to 3×/day; or icaridin 20%.\n• >12 years/adults: DEET 20–30%, icaridin 20%.\n• AVOID combination sunscreen+DEET products (different reapplication frequencies).\n\nNON-PHARM mainstay for infants: cool compresses; mosquito netting on stroller/crib; avoid dawn/dusk outdoor; long lightweight clothing; remove standing water near home.\n\nREFER if: significant systemic features, fever >38°C, signs of infection, infant becomes lethargic or refuses feeds, multiple bites with extensive swelling."
+                },
+                "tx_standard": {
+                    "type": "treat",
+                    "msg": "STANDARD INSECT BITE/STING (NOT in Ontario MA prescribing scope — OTC counselling only): (1) STINGER REMOVAL if visible (bee sting) — by ANY quick method (scrape with card or fingernail, OR grasp with tweezers/fingers — speed > method per Cochrane 2009); the venom sac empties in seconds regardless. (2) Cool compress 10–15 min for swelling/itch. (3) HYDROCORTISONE 1% cream 3–4×/day to affected area × 3–5 days. (4) ORAL 2nd-gen antihistamine — cetirizine 10 mg OD or loratadine 10 mg OD for systemic itch. (5) Acetaminophen or ibuprofen for pain.",
+                    "detail": "STINGER REMOVAL: the old teaching 'never use tweezers' is NOT evidence-based — Cochrane 2009 and subsequent reviews found that SPEED of removal is what matters, not method. Remove ASAP by whatever means is convenient.\n\nDO NOT use TOPICAL DIPHENHYDRAMINE cream/spray when also taking ORAL antihistamines (additive systemic absorption + sensitization risk causing later contact dermatitis with topical diphenhydramine — a known issue).\n\nMOST LOCAL REACTIONS resolve in 3–7 days. Itching tends to be the dominant symptom; non-sedating 2nd-gen oral antihistamine is more effective than topical for diffuse pruritus.\n\nWHEN TO RETURN/REFER:\n• Anaphylaxis features (urticaria spreading, wheeze, hypotension, GI symptoms) → 911.\n• Worsening at 48–72h (when normal reaction should be improving) → physician (cellulitis suspicion).\n• Tick bite specifically → Tick Bite wizard.\n• Multiple stings (>50 adult, >10 child) → ED for envenomation observation.\n• Prior systemic reaction history → discuss EpiPen renewal with physician.\n\nPREVENTION COUNSELLING:\n• DEET 20–30% (adult), icaridin 20%, oil of lemon eucalyptus (≥3 years).\n• Long sleeves/pants in mosquito areas (treat clothing with permethrin for outdoor work/camping — NOT for skin).\n• Avoid floral perfumes and brightly-coloured clothing in bee areas.\n• Inspect drinks before sipping (wasps in beverage cans).\n• Do NOT swat at flying stinging insects (alarm pheromones attract more).\n• Eliminate standing water near home (mosquito breeding).\n• Bed bug bites: linear or clustered red pruritic papules on exposed skin overnight; pest control needed for definitive resolution; reassure that they do NOT transmit infectious disease."
+                }
+            }
+        }
     },
     {
         "name": "Uncomplicated UTI (Women)",
