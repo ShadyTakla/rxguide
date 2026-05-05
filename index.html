@@ -115342,7 +115342,7 @@ function buildAMR() {
     h += '<span style="font-size:1.3rem;margin-right:8px;">' + cat.icon + '</span>';
     h += '<span style="font-size:1.1rem;font-weight:800;color:var(--text);">' + cat.category + '</span>';
     h += '<span style="float:right;color:var(--muted);">▾</span></div>';
-    h += '<div class="amr-cat-body">';
+    h += '<div class="amr-cat-body" style="display:none;">';
 
     var subgroupDefs = AMR_SUBGROUPS[cat.category];
     if (subgroupDefs) {
@@ -115377,7 +115377,7 @@ function buildAMR() {
         h += '<span class="amr-subgroup-name" style="color:' + sg.color + ';">' + sg.name + '</span>';
         h += sgFamBtn;
         h += '<span style="margin-left:auto;color:var(--muted);font-size:0.8rem;">▾</span></div>';
-        h += '<div class="amr-subgroup-body" style="display:flex;flex-direction:column;">';
+        h += '<div class="amr-subgroup-body" style="display:none;flex-direction:column;">';
         // When subgroup wraps a single family of the same name, merge them so content
         // appears directly under the colored subgroup header (no duplicate family card).
         var mergeInline = bucket.length === 1 && bucket[0].name === sg.name;
