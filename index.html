@@ -125472,18 +125472,25 @@ function initPregSearch() {
     }
     if (q.length < 3) { dropdown.style.display = 'none'; return; }
     var matches = [];
-    // Search PREG_DATA
+    // Search PREG_DATA — match key, name, OR brand (from DRUGS[key] when available)
     for (var key in PREG_DATA) {
       var d = PREG_DATA[key];
       var n = pregNormalize(d, key);
-      if (key.indexOf(q) >= 0 || (n.name && n.name.toLowerCase().indexOf(q) >= 0)) {
+      var brand = (typeof DRUGS !== 'undefined' && DRUGS[key] && DRUGS[key].brand) ? DRUGS[key].brand.toLowerCase() : '';
+      if (key.indexOf(q) >= 0 ||
+          (n.name && n.name.toLowerCase().indexOf(q) >= 0) ||
+          (brand && brand.indexOf(q) >= 0)) {
         matches.push({key: key, name: n.name, pregRisk: n.pregRisk, pregColor: n.pregColor});
       }
     }
-    // Also search DRUGS for matches not in PREG_DATA
+    // Also search DRUGS for matches not in PREG_DATA — match key, name, OR brand
     for (var key in DRUGS) {
       var d = DRUGS[key];
-      if ((key.indexOf(q) >= 0 || (d.name && d.name.toLowerCase().indexOf(q) >= 0)) && !PREG_DATA[key]) {
+      var brand = (d.brand || '').toLowerCase();
+      if (PREG_DATA[key]) continue;
+      if (key.indexOf(q) >= 0 ||
+          (d.name && d.name.toLowerCase().indexOf(q) >= 0) ||
+          (brand && brand.indexOf(q) >= 0)) {
         matches.push({key: key, name: d.name, pregRisk: 'No data available', pregColor: '#94a3b8', noData: true});
       }
     }
@@ -125646,31 +125653,41 @@ function initFormularySearch() {
     if (q.length < 3) { dropdown.style.display = 'none'; return; }
     var matches = [];
     var seen = {};
-    // Search NAPRA_ODB_DATA
+    // Search NAPRA_ODB_DATA — match key, name, OR brand (from DRUGS[key] when available;
+    // some NAPRA name fields already include brand in parens, but DRUGS.brand is the canonical source)
     if (typeof NAPRA_ODB_DATA !== 'undefined') {
       for (var key in NAPRA_ODB_DATA) {
         var d = NAPRA_ODB_DATA[key];
-        if (key.indexOf(q) >= 0 || (d.name && d.name.toLowerCase().indexOf(q) >= 0)) {
+        var brand = (typeof DRUGS !== 'undefined' && DRUGS[key] && DRUGS[key].brand) ? DRUGS[key].brand.toLowerCase() : '';
+        if (key.indexOf(q) >= 0 ||
+            (d.name && d.name.toLowerCase().indexOf(q) >= 0) ||
+            (brand && brand.indexOf(q) >= 0)) {
           matches.push({key: key, name: d.name, napra: d.napra, odbStatus: d.odbStatus});
           seen[key] = true;
         }
       }
     }
-    // Search DRUGS next — infer ODB status from canadian_notes (Option A fallback)
+    // Search DRUGS next — match key, name, OR brand; infer ODB status from canadian_notes
     for (var key in DRUGS) {
       if (seen[key]) continue;
       var d = DRUGS[key];
-      if (key.indexOf(q) >= 0 || (d.name && d.name.toLowerCase().indexOf(q) >= 0)) {
+      var brand = (d.brand || '').toLowerCase();
+      if (key.indexOf(q) >= 0 ||
+          (d.name && d.name.toLowerCase().indexOf(q) >= 0) ||
+          (brand && brand.indexOf(q) >= 0)) {
         var inferred = inferOdbStatus(d.canadian_notes);
         matches.push({key: key, name: d.name, napra: d.napra || '?', odbStatus: inferred || 'See pharmacist notes', noData: !inferred});
         seen[key] = true;
       }
     }
-    // Finally PREG_DATA-only entries (no ODB context)
+    // Finally PREG_DATA-only entries (no ODB context) — match key, name, OR brand
     for (var key in PREG_DATA) {
       if (seen[key]) continue;
       var d = PREG_DATA[key];
-      if (key.indexOf(q) >= 0 || (d.name && d.name.toLowerCase().indexOf(q) >= 0)) {
+      var brand = (typeof DRUGS !== 'undefined' && DRUGS[key] && DRUGS[key].brand) ? DRUGS[key].brand.toLowerCase() : '';
+      if (key.indexOf(q) >= 0 ||
+          (d.name && d.name.toLowerCase().indexOf(q) >= 0) ||
+          (brand && brand.indexOf(q) >= 0)) {
         matches.push({key: key, name: d.name, napra: '?', odbStatus: 'No data', noData: true});
         seen[key] = true;
       }
