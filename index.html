@@ -1398,7 +1398,7 @@ var DISEASES = {
             ],
             "notes": "Non-steroidal selective MRA — Health Canada-approved 2022 for CKD with T2DM. FIDELIO-DKD + FIGARO-DKD: reduced HF hosp and CV events. Useful in HF + CKD + T2DM where steroidal MRA (spironolactone/eplerenone) limited by hyperkalemia. Dose 10–20 mg OD based on eGFR/K+.",
             "guideline": "CCS HF 2025; FIDELIO-DKD (NEJM 2020); FIGARO-DKD (NEJM 2021)",
-            "family": "Non-Steroidal MRAs"
+            "family": "MRAs (Mineralocorticoid Receptor Antagonists)"
           },
           {
             "line": "Adjunct (Iron Deficiency)",
@@ -1817,7 +1817,7 @@ var DISEASES = {
             "agents": ["azathioprine","IVIG"],
             "notes": "AZATHIOPRINE 1–2 mg/kg/day PO — steroid-sparing purine antimetabolite (CORP study). Check TPMT before initiation. Monitor CBC/LFTs. IVIG 0.5–2 g/kg over 3–5 days — reserved for autoimmune-mediated or pediatric refractory pericarditis. Both require specialist (cardiology/rheumatology) management.",
             "guideline": "ESC Pericardial Diseases 2023; CORP study",
-            "family": "Immunomodulators"
+            "family": "Conventional Synthetic DMARDs"
           },
           {
             "line": "Alternative",
@@ -4856,29 +4856,60 @@ var DISEASES = {
             "family": null
           },
           {
-            "line": "Step 4a — MILD Diabetic Foot Infection (cellulitis ≤2 cm, no systemic features)",
+            "line": "Step 4a — MILD DFI — Cephalosporin",
             "type": "Drug",
-            "agents": [
-              "cephalexin",
-              "amoxicillin_clavulanate",
-              "tmp_smx"
-            ],
-            "notes": "Empirical oral antibiotic for 1-2 weeks. CEPHALEXIN 500 mg PO QID (covers Staph/Strep; not MRSA). AMOXICILLIN-CLAVULANATE 875/125 mg PO BID (broader; Strep/Staph + anaerobes). TMP-SMX DS 1 tab PO BID (covers MRSA; alternative for sulfa-tolerant). Clindamycin 300-450 mg PO QID for PCN allergy (covers MRSA per local susceptibility). Adjust based on culture and clinical response (48-72 h reassessment).",
+            "agents": ["cephalexin"],
+            "notes": "CEPHALEXIN 500 mg PO QID × 7–14 days. First-line for mild DFI without recent antibiotic exposure or MRSA risk. Covers MSSA + Streptococcus; does NOT cover MRSA.",
             "guideline": "IDSA Diabetic Foot Infection 2023",
             "family": "Cephalosporins"
           },
           {
-            "line": "Step 4b — MODERATE Diabetic Foot Infection (>2 cm OR deep OR abscess, no systemic)",
+            "line": "Step 4a — MILD DFI — Penicillin/BLI",
             "type": "Drug",
-            "agents": [
-              "amoxicillin_clavulanate",
-              "moxifloxacin",
-              "ciprofloxacin (+ metronidazole if anaerobic)",
-              "clindamycin (+ ciprofloxacin)"
-            ],
-            "notes": "Empirical broad-spectrum oral or IV-to-PO step-down for 2-4 weeks. AMOXICILLIN-CLAVULANATE PO/IV. MOXIFLOXACIN 400 mg PO daily (single agent, broad spectrum incl anaerobes; FQ tendinopathy/aortic warning). CIPROFLOXACIN 500-750 mg PO BID + METRONIDAZOLE 500 mg PO TID (combo for FQ + anaerobic coverage). If MRSA risk: add VANCOMYCIN, LINEZOLID, or DAPTOMYCIN. WOUND CULTURE for targeted therapy. INFECTIOUS DISEASES consult often appropriate. SURGICAL DEBRIDEMENT/DRAINAGE for abscess.",
-            "guideline": "IDSA 2023",
+            "agents": ["amoxicillin_clavulanate"],
+            "notes": "AMOXICILLIN-CLAVULANATE 875/125 mg PO BID × 7–14 days. Broader than cephalexin — adds anaerobic + better gram-negative coverage. Use if recent antibiotic exposure or wound suggests mixed flora.",
+            "guideline": "IDSA Diabetic Foot Infection 2023",
+            "family": "Penicillin Antibiotics"
+          },
+          {
+            "line": "Step 4a — MILD DFI — Folate Antagonist (MRSA risk)",
+            "type": "Drug",
+            "agents": ["tmp_smx"],
+            "notes": "TMP-SMX 1 DS PO BID × 7–14 days. Add when MRSA risk (prior MRSA, hospitalization, IVDU). Covers community MRSA. Avoid sulfa allergy, severe CKD, late pregnancy (kernicterus), G6PD deficiency.",
+            "guideline": "IDSA Diabetic Foot Infection 2023",
+            "family": "Folate Antagonist Antibiotics"
+          },
+          {
+            "line": "Step 4b — MODERATE DFI — Penicillin/BLI",
+            "type": "Drug",
+            "agents": ["amoxicillin_clavulanate"],
+            "notes": "AMOXICILLIN-CLAVULANATE 875/125 mg PO BID × 14–21 days (oral) for moderate DFI without MRSA risk. IV piperacillin-tazobactam if hospitalized.",
+            "guideline": "IDSA 2023 / AMMI Canada 2024",
+            "family": "Penicillin Antibiotics"
+          },
+          {
+            "line": "Step 4b — MODERATE DFI — Fluoroquinolone",
+            "type": "Drug",
+            "agents": ["moxifloxacin","ciprofloxacin"],
+            "notes": "MOXIFLOXACIN 400 mg PO daily × 14–21 days (broader spectrum including anaerobes — single-agent). CIPROFLOXACIN 500–750 mg PO BID combined with metronidazole for anaerobic coverage. Avoid in pregnancy, age <18, tendinopathy/aortic dissection risk.",
+            "guideline": "IDSA 2023 / Health Canada FQ Advisory",
             "family": "Fluoroquinolones"
+          },
+          {
+            "line": "Step 4b — MODERATE DFI — Lincosamide (PCN-allergic + MRSA-active)",
+            "type": "Drug",
+            "agents": ["clindamycin"],
+            "notes": "CLINDAMYCIN 300–450 mg PO QID × 14–21 days — alternative for penicillin allergy + MRSA-active; combine with ciprofloxacin for gram-negative coverage. Counsel C. difficile risk.",
+            "guideline": "IDSA 2023",
+            "family": "Lincosamides"
+          },
+          {
+            "line": "Step 4b — MODERATE DFI — Anaerobic Coverage",
+            "type": "Drug",
+            "agents": ["metronidazole"],
+            "notes": "METRONIDAZOLE 500 mg PO TID — added to FQ-based regimen for anaerobic coverage in deep/foul-smelling/necrotic DFI. Counsel disulfiram-like reaction with alcohol.",
+            "guideline": "IDSA 2023",
+            "family": "Nitroimidazoles"
           },
           {
             "line": "Step 4c — SEVERE Diabetic Foot Infection (systemic — sepsis, severe deep)",
@@ -4895,15 +4926,14 @@ var DISEASES = {
           },
           {
             "line": "Osteomyelitis (probe-to-bone, MRI confirmed)",
-            "type": "Drug",
+            "type": "Action",
             "agents": [
               "Targeted antibiotics by bone biopsy culture",
               "Long-course IV/PO 4-6 weeks (sometimes 6-12 weeks)",
               "Surgical debridement of necrotic bone often required"
             ],
             "notes": "Refer to INFECTIOUS DISEASES + ORTHO for osteomyelitis. Bone biopsy culture-directed therapy. Some cases require partial amputation for cure.",
-            "guideline": "IDSA 2023",
-            "family": null
+            "guideline": "IDSA 2023"
           },
           {
             "line": "Charcot Foot (acute neuropathic arthropathy)",
@@ -6535,7 +6565,7 @@ var DISEASES = {
           {
             "line": "Withdrawal — Antiemetic",
             "type": "Drug",
-            "family": "Vestibular Suppressants",
+            "family": "Antihistamines",
             "agents": ["dimenhydrinate"],
             "notes": "Dimenhydrinate 50 mg PO/IM q4–6h PRN for nausea/vomiting. Sedating — counsel about driving. Non-OAT withdrawal management has very high relapse rate — always offer OAT (buprenorphine/methadone) as the cornerstone.",
             "guideline": "CRISM 2023"
@@ -8826,6 +8856,7 @@ var DISEASES = {
           {
             "line": "Symptomatic — Cough Suppressant (Adult)",
             "type": "Drug",
+            "family": "Antitussives",
             "agents": [
               "Dextromethorphan 15–30 mg PO q4–8h PRN (max 120 mg/day, adult)",
               "Codeine NOT recommended (Health Canada 2016 advisory restricts in <12 yrs and breastfeeding; modest benefit)"
@@ -8836,6 +8867,7 @@ var DISEASES = {
           {
             "line": "Symptomatic — Mucolytic / Expectorant",
             "type": "Drug",
+            "family": "Antitussives",
             "agents": [
               "Guaifenesin 200–400 mg PO q4h PRN (max 2.4 g/day, adult)"
             ],
@@ -8853,18 +8885,25 @@ var DISEASES = {
             "family": "Short-Acting Beta-2 Agonists (SABAs)"
           },
           {
-            "line": "Symptomatic — Analgesic / Antipyretic",
+            "line": "Symptomatic — Acetaminophen",
             "type": "Drug",
-            "agents": [
-              "Acetaminophen 500–1000 mg PO q4–6h PRN (max 4 g/day)",
-              "Ibuprofen 400 mg PO q6–8h PRN with food (caution in CKD, GI bleed risk, HF)"
-            ],
+            "family": "Non-Opioid Analgesics",
+            "agents": ["Acetaminophen 500–1000 mg PO q4–6h PRN (max 4 g/day)"],
             "notes": "For sore throat, chest discomfort, fever, headache.",
             "guideline": "Health Canada OTC monograph"
           },
           {
-            "line": "Antiviral (specific viral cause)",
+            "line": "Symptomatic — NSAID",
             "type": "Drug",
+            "family": "NSAIDs",
+            "agents": ["Ibuprofen 400 mg PO q6–8h PRN with food (caution in CKD, GI bleed risk, HF)"],
+            "notes": "Ibuprofen for fever/pain; with food. Avoid in CKD, GI bleed history, severe HF, 3rd-trimester pregnancy.",
+            "guideline": "BTS / Choosing Wisely Canada"
+          },
+          {
+            "line": "Antiviral — Influenza (Neuraminidase Inhibitor)",
+            "type": "Drug",
+            "family": "Neuraminidase Inhibitors",
             "agents": [
               "Oseltamivir 75 mg PO BID × 5 days — confirmed/suspected influenza, within 48 h of symptom onset (high-risk groups)",
               "Nirmatrelvir/ritonavir (Paxlovid) — confirmed COVID-19 within 5 days, high-risk patients (per provincial criteria)"
@@ -8874,7 +8913,7 @@ var DISEASES = {
           },
           {
             "line": "DO NOT USE",
-            "type": "Drug",
+            "type": "Action",
             "agents": [
               "Routine antibiotics (azithromycin, amoxicillin, etc.)"
             ],
@@ -10180,7 +10219,7 @@ var DISEASES = {
             ],
             "notes": "Reserve opioids for refractory PHN unresponsive to gabapentinoids/TCAs/SNRIs/topicals. Risk-benefit weighing per Canadian Opioid Guideline. Cannabinoids have weak evidence; selective use.",
             "guideline": "Canadian Guideline on Opioids for Chronic Non-Cancer Pain 2017; Moulin 2014",
-            "family": "Opioids"
+            "family": "Opioid Analgesics"
           }
         ],
         "monitoring": [
@@ -13334,14 +13373,23 @@ var DISEASES = {
             "family": "Direct Thrombin Inhibitors"
           },
           {
-            "line": "STEP 3 — Transition to Oral Anticoagulant after Platelet Recovery",
+            "line": "STEP 3 — Oral Transition — VKA",
             "type": "Drug",
             "agents": [
-              "warfarin",
+              "warfarin"
+            ],
+            "notes": "WARFARIN: do NOT initiate until PLATELET COUNT ≥150 × 10⁹/L (warfarin during thrombocytopenia → WARFARIN-INDUCED SKIN NECROSIS due to protein C depletion before factor II/X reduction). Overlap with non-heparin anticoagulant ≥5 days AND INR in target ≥24 hours before stopping bridge. Initial dose 5 mg PO OD; titrate to INR 2–3. Duration: ≥3 months for venous thrombosis; longer for arterial; lifetime if recurrent. Avoid heparin-containing flush solutions for life.",
+            "guideline": "ASH HIT 2018 / Thrombosis Canada / CHEST 2021",
+            "family": "Vitamin K Antagonists"
+          },
+          {
+            "line": "STEP 3 — Oral Transition — DOAC",
+            "type": "Drug",
+            "agents": [
               "apixaban",
               "rivaroxaban"
             ],
-            "notes": "WARFARIN: do NOT initiate until PLATELET COUNT ≥150 (warfarin during thrombocytopenia → WARFARIN-INDUCED SKIN NECROSIS due to protein C depletion before factor II/X reduction). Overlap with non-heparin anticoagulant ≥5 days AND INR in target ≥24 hours before stopping bridge. Initial dose 5 mg PO OD; titrate to INR 2-3. APIXABAN/RIVAROXABAN: emerging 1st-line for HIT after platelet recovery (per ASH 2018) — avoid bridge protocols, no warfarin INR complications, fixed dosing. DURATION: at least 3 months for venous thrombosis; longer for arterial; lifetime if recurrent. Avoid heparin-containing flush solutions for life.",
+            "notes": "APIXABAN/RIVAROXABAN: emerging 1st-line for HIT after platelet recovery (per ASH 2018) — avoid bridge protocols, no warfarin INR complications, fixed dosing. APIXABAN 10 mg PO BID × 7 days then 5 mg PO BID. RIVAROXABAN 15 mg PO BID × 21 days then 20 mg PO daily. Initiate only after platelets ≥150 × 10⁹/L recovery. Duration: ≥3 months venous; lifetime if recurrent. Avoid heparin-containing flush solutions for life.",
             "guideline": "ASH HIT 2018 / Thrombosis Canada / CHEST 2021",
             "family": "Direct Oral Anticoagulants"
           },
@@ -13469,13 +13517,13 @@ var DISEASES = {
             "guideline": "CUA BPH 2022"
           },
           {
-            "line": "Second-Line (combination)",
+            "line": "Second-Line — α1 Blocker + 5-ARI Combination",
             "type": "Drug",
-            "family": null,
+            "family": "Uroselective Alpha-1 Blockers",
             "agents": [
               "tamsulosin + dutasteride (Jalyn — fixed combination)"
             ],
-            "notes": "Combination alpha-1 blocker + 5-ARI (CombAT trial): superior to either monotherapy for symptom relief AND prevention of disease progression. Jalyn (dutasteride 0.5 mg + tamsulosin 0.4 mg) once-daily — simplifies adherence. Indicated for moderate-severe LUTS with enlarged prostate (>40 mL).",
+            "notes": "Combination α1 blocker + 5-α reductase inhibitor (CombAT trial): superior to either monotherapy for symptom relief AND prevention of disease progression. Jalyn (dutasteride 0.5 mg + tamsulosin 0.4 mg) once-daily — simplifies adherence. Indicated for moderate-severe LUTS with enlarged prostate (>40 mL).",
             "guideline": "CombAT Trial | CUA 2022"
           },
           {
@@ -15939,9 +15987,9 @@ var DISEASES = {
             "guideline": "CDA | CADTH | AAD Psoriasis 2023"
           },
           {
-            "line": "Alternative (moderate–severe — oral)",
+            "line": "Alternative (moderate–severe — oral TYK2)",
             "type": "Drug",
-            "family": null,
+            "family": "JAK Inhibitors",
             "agents": [
               "deucravacitinib (Sotyktu) 6 mg OD"
             ],
@@ -17371,17 +17419,17 @@ var DISEASES = {
             "family": "Anti-IL-17 Biologics"
           },
           {
-            "line": "Severe / Refractory — Other Therapies",
-            "type": "Drug",
+            "line": "Severe / Refractory — Other Therapies (specialist-managed)",
+            "type": "Action",
             "agents": [
-              "Bimekizumab (IL-17A/F dual inhibitor) — Health Canada approved 2024+; maintenance dosing similar to psoriasis",
-              "Isotretinoin 0.5–1 mg/kg/day — limited evidence in HS specifically (more useful in associated severe acne); pregnancy CONTRAINDICATED (Health Canada Risk Management Programme, RAMP)",
-              "Hormonal therapy in women (combined oral contraceptives, spironolactone 50–200 mg/day, finasteride) — useful in hyperandrogenic phenotype, perimenstrual flares",
+              "Bimekizumab (Anti-IL-17A/F dual inhibitor) — Health Canada approved 2024+; maintenance dosing similar to psoriasis",
+              "Isotretinoin 0.5–1 mg/kg/day — limited evidence in HS specifically (more useful in associated severe acne); pregnancy CONTRAINDICATED (Health Canada RAMP)",
+              "Hormonal therapy in women (combined OCPs, spironolactone 50–200 mg/day, finasteride) — useful in hyperandrogenic phenotype, perimenstrual flares",
               "Metformin 500–2000 mg/day — modest benefit in PCOS/insulin-resistant phenotype",
               "Dapsone 50–100 mg/day — limited evidence; G6PD screen required",
               "Cyclosporine 2–5 mg/kg/day — short-term refractory disease bridging to surgery"
             ],
-            "notes": "Refractory HS often requires multidisciplinary management — dermatology, surgery, mental health. Newer biologics evolving.",
+            "notes": "Refractory HS often requires multidisciplinary management — dermatology, surgery, mental health. Each agent listed is fully described under its primary class card (Anti-IL-17 Biologics, Retinoids, MRAs, Biguanides, Folate Antagonists, Calcineurin Inhibitors).",
             "guideline": "CHSF Canadian Guidelines; emerging trial evidence"
           },
           {
@@ -17398,15 +17446,15 @@ var DISEASES = {
             "guideline": "CHSF Canadian Guidelines"
           },
           {
-            "line": "Pain Management",
-            "type": "Drug",
+            "line": "Pain Management — Multimodal (cross-class)",
+            "type": "Action",
             "agents": [
               "Acetaminophen 500–1000 mg PO q4–6h PRN (max 4 g/day)",
               "NSAIDs (naproxen 500 mg BID, ibuprofen 400 mg q6h) — caution with concurrent biologics, CKD",
               "Topical lidocaine, clinic-administered lidocaine injection for acute painful nodule",
               "Tramadol or low-dose opioid for severe acute flares (per Canadian Opioid Guideline 2017 — short-term)"
             ],
-            "notes": "Pain is severely under-treated in HS. Multimodal approach. Address comorbid mental health and chronic-pain coping (CBT)",
+            "notes": "Pain is severely under-treated in HS. Multimodal approach across multiple analgesic classes (Non-Opioid Analgesics, NSAIDs, Topical Anesthetics, Opioid Analgesics). Address comorbid mental health and chronic-pain coping (CBT).",
             "guideline": "Canadian Pain Society"
           }
         ],
@@ -18975,13 +19023,27 @@ var DISEASES = {
             "type": "Drug",
             "agents": [
               "polymyxin_b_trimethoprim (Polytrim) eye drops",
-              "moxifloxacin",
-              "erythromycin",
               "fusidic_acid"
             ],
-            "notes": "POLYMYXIN B-TRIMETHOPRIM (Polytrim) eye drops 1-2 drops q3-6h x 5-7 days — FIRST-LINE; on Ontario MAC list (pharmacist may prescribe). MOXIFLOXACIN 0.5% (Vigamox) 1 drop TID x 5-7 days — broad spectrum; reserve for severe or refractory. ERYTHROMYCIN 0.5% ophthalmic ointment QID — alternative. FUSIDIC ACID (Fucithalmic) 1 drop BID — alternative. NOTE: Most uncomplicated bacterial conjunctivitis self-resolves; Cochrane shows topical antibiotics shorten duration by 1-2 days. Avoid in: contact lens wearer with red eye (refer — possible bacterial keratitis), severe symptoms, pediatric <1 month (refer for ophthalmia neonatorum workup), suspected gonococcal/chlamydial.",
+            "notes": "POLYMYXIN B-TRIMETHOPRIM (Polytrim) eye drops 1–2 drops q3–6h × 5–7 days — FIRST-LINE; on Ontario MAC list (pharmacist may prescribe). FUSIDIC ACID (Fucithalmic) 1 drop BID — alternative. Most uncomplicated bacterial conjunctivitis self-resolves; Cochrane shows topical antibiotics shorten duration by 1–2 days. Avoid in contact lens wearer with red eye (possible bacterial keratitis — refer), severe symptoms, pediatric <1 month (refer for ophthalmia neonatorum workup), suspected gonococcal/chlamydial.",
             "guideline": "Ontario MAC List 2023 / Cochrane Bacterial Conjunctivitis",
             "family": "Topical Antibiotics"
+          },
+          {
+            "line": "Bacterial Conjunctivitis — Topical Fluoroquinolone (severe/refractory)",
+            "type": "Drug",
+            "agents": ["moxifloxacin"],
+            "notes": "MOXIFLOXACIN 0.5% (Vigamox) eye drops 1 drop TID × 5–7 days — broad spectrum; reserve for severe or refractory bacterial conjunctivitis. Cross-references Fluoroquinolones family.",
+            "guideline": "Ontario MAC List 2023 / Cochrane",
+            "family": "Fluoroquinolones"
+          },
+          {
+            "line": "Bacterial Conjunctivitis — Topical Macrolide",
+            "type": "Drug",
+            "agents": ["erythromycin"],
+            "notes": "ERYTHROMYCIN 0.5% ophthalmic ointment QID — alternative for bacterial conjunctivitis, especially neonatal prophylaxis. Cross-references Macrolide Antibiotics family.",
+            "guideline": "Ontario MAC List 2023",
+            "family": "Macrolide Antibiotics"
           },
           {
             "line": "Dry Eye — Artificial Tears + Risk Factor Modification",
@@ -19195,6 +19257,7 @@ var DISEASES = {
           {
             "line": "Demodex Infestation (Collarettes)",
             "type": "Drug",
+            "family": "Ectoparasiticides",
             "agents": [
               "Lotilaner 0.25% ophthalmic solution (Xdemvy, US-approved 2023; Health Canada submission pending)",
               "Tea-tree-oil-based lid scrubs (Cliradex 50%, OcuSoft Demodex)",
@@ -19921,49 +19984,60 @@ var DISEASES = {
             "family": "Non-Opioid Analgesics"
           },
           {
-            "line": "Topical Adjunct (mild pain or pre-dental)",
+            "line": "Topical Adjunct — Topical Anesthetic",
             "type": "Drug",
-            "agents": [
-              "benzocaine",
-              "chlorhexidine"
-            ],
-            "notes": "BENZOCAINE 7.5-20% gel topical — temporary numbing (2-3 min onset, 30-60 min duration); SHORT-TERM only; NOT in <2 yr (methemoglobinemia risk). CHLORHEXIDINE 0.12% MOUTHWASH 15 mL swish/spit BID — antiseptic for periodontal abscess adjunct (NOT a substitute for dental drainage). CLOVE OIL (eugenol) — historical home remedy; modest evidence; one drop on cotton applied to cavity.",
+            "agents": ["benzocaine"],
+            "notes": "BENZOCAINE 7.5–20% gel topical — temporary numbing (2–3 min onset, 30–60 min duration); SHORT-TERM only; NOT in <2 yr (methemoglobinemia risk per Health Canada).",
             "guideline": "CDA / Health Canada OTC monograph",
             "family": "Topical Anesthetics"
           },
           {
-            "line": "Antibiotic — ONLY if SYSTEMIC SIGNS (fever, swelling, malaise) or immunocompromised",
+            "line": "Topical Adjunct — Topical Antiseptic",
             "type": "Drug",
-            "agents": [
-              "amoxicillin",
-              "penicillin"
-            ],
-            "notes": "AMOXICILLIN 500 mg PO TID x 3-7 days (1st-line per ADA 2019 guidelines) — covers oral streptococci and most anaerobes. PENICILLIN V 300-600 mg PO QID x 3-7 days — alternative; narrower spectrum. Do NOT use antibiotic without source control (drainage by dentist). DURATION: shortest effective (3-5 days often adequate when source controlled) — minimize stewardship concerns.",
-            "guideline": "ADA 2019 Antibiotic Use in Dental Pain (ADA Council on Scientific Affairs)",
-            "family": "Aminopenicillins"
+            "agents": ["chlorhexidine"],
+            "notes": "CHLORHEXIDINE 0.12% MOUTHWASH 15 mL swish/spit BID — antiseptic for periodontal abscess adjunct (NOT a substitute for dental drainage). Counsel staining of teeth/dental restorations.",
+            "guideline": "CDA / Health Canada OTC monograph",
+            "family": "Topical Antiseptics"
           },
           {
-            "line": "Antibiotic — Severe infection or no response to amoxicillin",
+            "line": "Antibiotic — Penicillin (systemic signs / immunocompromised)",
             "type": "Drug",
-            "agents": [
-              "amoxicillin-clavulanate",
-              "metronidazole"
-            ],
-            "notes": "AMOXICILLIN-CLAVULANATE 875/125 mg PO BID x 5-7 days — broader anaerobic coverage; severe abscess. METRONIDAZOLE 500 mg PO TID x 5-7 days — added to amoxicillin if severe anaerobic infection (combination amoxicillin + metronidazole = excellent oral anaerobic coverage). AVOID alcohol with metronidazole (disulfiram reaction).",
+            "agents": ["amoxicillin","penicillin"],
+            "notes": "AMOXICILLIN 500 mg PO TID × 3–7 days (1st-line per ADA 2019) — covers oral streptococci and most anaerobes. PENICILLIN V 300–600 mg PO QID × 3–7 days — alternative; narrower spectrum. Do NOT use antibiotic without source control (drainage by dentist).",
+            "guideline": "ADA 2019 Antibiotic Use in Dental Pain",
+            "family": "Penicillin Antibiotics"
+          },
+          {
+            "line": "Antibiotic — Penicillin/BLI (severe abscess)",
+            "type": "Drug",
+            "agents": ["amoxicillin-clavulanate"],
+            "notes": "AMOXICILLIN-CLAVULANATE 875/125 mg PO BID × 5–7 days — broader anaerobic coverage; severe abscess or no response to amoxicillin alone.",
             "guideline": "ADA 2019 / CDA",
-            "family": "Aminopenicillins"
+            "family": "Penicillin Antibiotics"
           },
           {
-            "line": "Antibiotic — Penicillin Allergy",
+            "line": "Antibiotic — Anaerobic coverage (Nitroimidazole)",
             "type": "Drug",
-            "agents": [
-              "azithromycin",
-              "clarithromycin",
-              "clindamycin"
-            ],
-            "notes": "Per ADA 2019 update: AZITHROMYCIN 500 mg PO day 1 then 250 mg OD x 4 days OR CLARITHROMYCIN 500 mg PO BID x 5 days are PREFERRED over clindamycin (lower C. diff risk). CLINDAMYCIN 300-450 mg PO QID x 5-7 days — ONLY if macrolide intolerance/contraindication (significant C. difficile risk; ADA recommends restricting). Counsel C. diff symptoms (severe diarrhea — STOP and seek medical attention).",
-            "guideline": "ADA 2019 (downgraded clindamycin)",
+            "agents": ["metronidazole"],
+            "notes": "METRONIDAZOLE 500 mg PO TID × 5–7 days — added to amoxicillin if severe anaerobic infection (amoxicillin + metronidazole = excellent oral anaerobic coverage). AVOID alcohol (disulfiram-like reaction).",
+            "guideline": "ADA 2019 / CDA",
+            "family": "Nitroimidazoles"
+          },
+          {
+            "line": "Antibiotic — PCN Allergy (Macrolide preferred)",
+            "type": "Drug",
+            "agents": ["azithromycin","clarithromycin"],
+            "notes": "Per ADA 2019 update: AZITHROMYCIN 500 mg PO day 1 then 250 mg OD × 4 days OR CLARITHROMYCIN 500 mg PO BID × 5 days are PREFERRED over clindamycin (lower C. diff risk).",
+            "guideline": "ADA 2019",
             "family": "Macrolide Antibiotics"
+          },
+          {
+            "line": "Antibiotic — PCN Allergy (Lincosamide — restricted)",
+            "type": "Drug",
+            "agents": ["clindamycin"],
+            "notes": "CLINDAMYCIN 300–450 mg PO QID × 5–7 days — ONLY if macrolide intolerance/contraindication (significant C. difficile risk; ADA 2019 recommends restricting). Counsel C. diff symptoms (severe diarrhea — STOP and seek medical attention).",
+            "guideline": "ADA 2019 (downgraded clindamycin)",
+            "family": "Lincosamides"
           },
           {
             "line": "DENTAL REFERRAL — MANDATORY for definitive treatment",
@@ -19977,28 +20051,52 @@ var DISEASES = {
             "family": null
           },
           {
-            "line": "Pediatric Dental Pain (verified weight-based dosing)",
+            "line": "Pediatric Dental Pain — NSAID",
             "type": "Drug",
-            "agents": [
-              "ibuprofen",
-              "acetaminophen",
-              "amoxicillin"
-            ],
-            "notes": "IBUPROFEN 10 mg/kg PO q6-8h PRN (max 40 mg/kg/day). ACETAMINOPHEN 15 mg/kg PO q4-6h PRN (max 75 mg/kg/day; 5 doses/24h). AMOXICILLIN (if antibiotic indicated): 50 mg/kg/day PO divided BID-TID x 5-7 days. AVOID benzocaine in <2 yr (methemoglobinemia). Refer to PEDIATRIC DENTIST. Healthy Smiles Ontario covers eligible children.",
+            "agents": ["ibuprofen"],
+            "notes": "IBUPROFEN 10 mg/kg PO q6–8h PRN (max 40 mg/kg/day). With food. NOT for infants <6 months. AVOID benzocaine in <2 yr (methemoglobinemia).",
             "guideline": "Canadian Pediatric Society / CDA Pediatric",
             "family": "NSAIDs"
           },
           {
-            "line": "Endocarditis Prophylaxis (selected high-risk patients only)",
+            "line": "Pediatric Dental Pain — Acetaminophen",
             "type": "Drug",
-            "agents": [
-              "amoxicillin",
-              "clindamycin",
-              "azithromycin"
-            ],
-            "notes": "Per AHA/CCS 2021: ANTIBIOTIC PROPHYLAXIS before INVASIVE DENTAL PROCEDURES (involving gingival or periapical tissue or perforating oral mucosa) for HIGH-RISK CARDIAC patients ONLY: prosthetic valves, prior IE, congenital cyanotic disease, transplant valve. AMOXICILLIN 2 g PO 30-60 min before procedure (50 mg/kg pediatric). PCN allergy: AZITHROMYCIN 500 mg or CLINDAMYCIN 600 mg PO 30-60 min pre-procedure. NOT routinely indicated for most patients (e.g., MVP, bicuspid aortic valve do not require prophylaxis).",
+            "agents": ["acetaminophen"],
+            "notes": "ACETAMINOPHEN 15 mg/kg PO q4–6h PRN (max 75 mg/kg/day; 5 doses/24 h). Combination with ibuprofen alternating q3–4 h is more effective than either alone.",
+            "guideline": "Canadian Pediatric Society / CDA Pediatric",
+            "family": "Non-Opioid Analgesics"
+          },
+          {
+            "line": "Pediatric Dental Pain — Antibiotic (if indicated)",
+            "type": "Drug",
+            "agents": ["amoxicillin"],
+            "notes": "AMOXICILLIN (if antibiotic indicated): 50 mg/kg/day PO divided BID-TID × 5–7 days. Refer to PEDIATRIC DENTIST. Healthy Smiles Ontario covers eligible children.",
+            "guideline": "Canadian Pediatric Society / CDA Pediatric",
+            "family": "Penicillin Antibiotics"
+          },
+          {
+            "line": "Endocarditis Prophylaxis — Penicillin (high-risk cardiac)",
+            "type": "Drug",
+            "agents": ["amoxicillin"],
+            "notes": "Per AHA/CCS 2021: AMOXICILLIN 2 g PO 30–60 min before invasive dental procedures (gingival/periapical tissue or perforating oral mucosa) — HIGH-RISK CARDIAC patients ONLY (prosthetic valve, prior IE, congenital cyanotic disease, transplant valve). 50 mg/kg pediatric. NOT routinely indicated for MVP or bicuspid aortic valve.",
             "guideline": "AHA/CCS 2021 Endocarditis Prophylaxis",
-            "family": "Aminopenicillins"
+            "family": "Penicillin Antibiotics"
+          },
+          {
+            "line": "Endocarditis Prophylaxis — Macrolide (PCN allergy)",
+            "type": "Drug",
+            "agents": ["azithromycin"],
+            "notes": "AZITHROMYCIN 500 mg PO 30–60 min before procedure (15 mg/kg pediatric). Per AHA/CCS 2021 — preferred over clindamycin for PCN-allergic patients undergoing endocarditis prophylaxis.",
+            "guideline": "AHA/CCS 2021 Endocarditis Prophylaxis",
+            "family": "Macrolide Antibiotics"
+          },
+          {
+            "line": "Endocarditis Prophylaxis — Lincosamide (PCN allergy + macrolide intolerance)",
+            "type": "Drug",
+            "agents": ["clindamycin"],
+            "notes": "CLINDAMYCIN 600 mg PO 30–60 min pre-procedure (20 mg/kg pediatric). Reserve for macrolide intolerance — C. difficile risk; AHA/CCS 2021 has downgraded clindamycin for routine endocarditis prophylaxis.",
+            "guideline": "AHA/CCS 2021 (downgraded clindamycin)",
+            "family": "Lincosamides"
           }
         ],
         "pearls": [
@@ -20119,19 +20217,51 @@ var DISEASES = {
             "family": "Topical Antiseptics"
           },
           {
-            "line": "Severe / Refractory — Specialist Referral (oral medicine, dermatology)",
+            "line": "Severe / Refractory — Systemic Corticosteroid",
             "type": "Drug",
-            "agents": [
-              "systemic corticosteroids (prednisone short-course)",
-              "colchicine",
-              "dapsone",
-              "thalidomide",
-              "azathioprine",
-              "tetracycline mouthwash"
-            ],
-            "notes": "PREDNISONE 25-50 mg PO daily x 5-7 days then taper — for major RAS or severe outbreaks. COLCHICINE 0.5-0.6 mg PO BID — for recurrent RAS prevention (off-label; specialty). DAPSONE — for refractory; G6PD test before. THALIDOMIDE — refractory HIV-associated RAS or severe Behçet's (TERATOGENIC — strict pregnancy prevention program). TETRACYCLINE 250 mg/5 mL mouthwash 4× daily — off-label for herpetiform RAS. ALL these require SPECIALIST oversight (oral medicine, dermatology, rheumatology if Behçet's).",
+            "agents": ["prednisone (short-course)"],
+            "notes": "PREDNISONE 25–50 mg PO daily × 5–7 days then taper — for major RAS or severe outbreaks (Behçet's, complex aphthosis). Specialist (oral medicine/dermatology) referral.",
             "guideline": "Cochrane / Specialty oral medicine guidelines",
-            "family": "Corticosteroids"
+            "family": "Systemic Corticosteroids"
+          },
+          {
+            "line": "Severe / Refractory — Anti-inflammatory (Colchicine)",
+            "type": "Drug",
+            "agents": ["colchicine"],
+            "notes": "COLCHICINE 0.5–0.6 mg PO BID × ≥6 months — useful for recurrent/complex aphthous ulcers, Behçet's. GI side effects limit dose. Renal/hepatic adjustment.",
+            "guideline": "Cochrane / Specialty oral medicine guidelines",
+            "family": "Colchicine"
+          },
+          {
+            "line": "Severe / Refractory — Folate Antagonist (Dapsone)",
+            "type": "Drug",
+            "agents": ["dapsone"],
+            "notes": "DAPSONE 50–150 mg PO daily — option for refractory complex aphthosis. CHECK G6PD before initiation (severe hemolysis risk). Monitor CBC + methemoglobin level. Specialist (dermatology).",
+            "guideline": "Specialty oral medicine guidelines",
+            "family": "Folate Antagonist Antibiotics"
+          },
+          {
+            "line": "Severe / Refractory — Immunomodulator (Azathioprine)",
+            "type": "Drug",
+            "agents": ["azathioprine"],
+            "notes": "AZATHIOPRINE 1–2 mg/kg/day PO — steroid-sparing for refractory severe disease (Behçet's). Check TPMT before initiation. Monitor CBC, LFTs. Specialist (rheumatology/dermatology).",
+            "guideline": "Specialty oral medicine guidelines",
+            "family": "Conventional Synthetic DMARDs"
+          },
+          {
+            "line": "Severe / Refractory — Tetracycline Mouthwash",
+            "type": "Drug",
+            "agents": ["tetracycline mouthwash"],
+            "notes": "TETRACYCLINE 250 mg/5 mL mouthwash 4× daily — off-label for herpetiform recurrent aphthous stomatitis. Reduces ulcer pain and duration. Counsel staining of teeth (avoid in children <8 years, pregnancy).",
+            "guideline": "Cochrane Aphthous Ulcers",
+            "family": "Tetracyclines"
+          },
+          {
+            "line": "Severe / Refractory — Thalidomide (specialist only)",
+            "type": "Action",
+            "agents": ["thalidomide — Health Canada SAP; pregnancy ABSOLUTE contraindication"],
+            "notes": "Thalidomide for resistant Behçet's / HIV-related aphthous ulcers. Health Canada Special Access Programme. ABSOLUTE pregnancy contraindication (Health Canada teratogenicity warnings — strict pregnancy prevention program). Specialty referral required.",
+            "guideline": "Health Canada SAP"
           },
           {
             "line": "Underlying Cause Treatment",
@@ -20873,7 +21003,7 @@ var DISEASES = {
             ],
             "notes": "Mixed amphetamine salts (Adderall XR — 5/10/15/20/25/30 mg OD; 10-12h duration). Lisdexamfetamine (Vyvanse — 10/20/30/40/50/60 mg OD; PRODRUG hydrolyzed to dextroamphetamine in RBCs — 13-14h duration; less divertible due to prodrug; CAN open and dissolve in water/juice). Start LOW (0.3-0.5 mg/kg/day amphetamine equivalent); titrate to response. Same Schedule I requirements. AMPHETAMINE class often reserved for methylphenidate non-response. Vyvanse is highest-prescribed pediatric stimulant in Canada (smoothness, longer duration, lower abuse liability). PHARMACIST COUNSELLING: same as methylphenidate; Vyvanse can be DISSOLVED in water/juice for younger children; AVOID acidic beverages (orange juice, vitamin C) within 1h of dose (decreases amphetamine absorption); appetite suppression and insomnia common — eat big breakfast pre-dose.",
             "guideline": "CADDRA 2020 | CPS ADHD",
-            "family": "CNS Stimulants (ADHD)"
+            "family": "CNS Stimulants — Amphetamines"
           },
           {
             "line": "Second-Line — Non-Stimulants (selective NE reuptake inhibitor)",
@@ -21017,6 +21147,7 @@ var DISEASES = {
           {
             "line": "Probiotics — adjunct (limited evidence)",
             "type": "Drug",
+            "family": "Probiotics",
             "agents": [
               "Saccharomyces boulardii (Florastor) OR Lactobacillus rhamnosus GG — variable doses"
             ],
@@ -21119,6 +21250,7 @@ var DISEASES = {
           {
             "line": "Symptomatic — Topical Oral Pain Relief (older children)",
             "type": "Drug",
+            "family": "Topical Anesthetics",
             "agents": [
               "Topical lidocaine 2% viscous solution — apply with cotton swab BEFORE meals (children ≥3 years; avoid swallowing — risk of seizure with overdose)",
               "Magic mouthwash compounded — diphenhydramine + aluminum/magnesium hydroxide ± lidocaine (variable formulations) — older children",
@@ -21129,7 +21261,7 @@ var DISEASES = {
           },
           {
             "line": "DO NOT USE",
-            "type": "Drug",
+            "type": "Action",
             "agents": [
               "ANTIBIOTICS — viral; NO role unless secondary bacterial infection",
               "Topical/oral acyclovir — NOT effective against enteroviruses (only HSV/VZV)",
@@ -21216,15 +21348,34 @@ var DISEASES = {
             "family": null
           },
           {
-            "line": "Step 2 — Chemoprophylaxis Selection (CATMAT-recommended by destination)",
+            "line": "Step 2 — Chemoprophylaxis — Atovaquone-Proguanil",
             "type": "Drug",
-            "agents": [
-              "atovaquone_proguanil",
-              "doxycycline",
-              "mefloquine",
-              "chloroquine"
-            ],
-            "notes": "FIRST-LINE for chloroquine-resistant zones (most of Africa, SE Asia, Oceania, Amazon, India): ATOVAQUONE-PROGUANIL (Malarone) — daily, 7d post-travel, food, well-tolerated; OR DOXYCYCLINE 100 mg PO daily — cheap, daily, 4 wk post-travel, photosensitivity; OR MEFLOQUINE 250 mg PO weekly — long-trip convenience, 4 wk post-travel, NEUROPSYCHIATRIC concerns (BLACK BOX). CHLOROQUINE 500 mg salt weekly — only for sensitive zones (Central America W of Panama Canal, Haiti, Dominican Republic, parts of Mexico).",
+            "agents": ["atovaquone_proguanil"],
+            "notes": "MALARONE (atovaquone 250 mg + proguanil 100 mg) PO daily, start 1–2 days before travel, continue 7 days post-travel. Take with food (atovaquone absorption ↑3× with fat). Best tolerated antimalarial; minimal AEs. Most expensive. ODB-covered with travel medicine prescription. CrCl <30 contraindicated.",
+            "guideline": "PHAC CATMAT 2023",
+            "family": "Antimalarials"
+          },
+          {
+            "line": "Step 2 — Chemoprophylaxis — Doxycycline",
+            "type": "Drug",
+            "agents": ["doxycycline"],
+            "notes": "DOXYCYCLINE 100 mg PO daily — cheap, daily, start 1–2 days before travel, continue 4 weeks post-travel. Photosensitivity; take with full glass of water (esophagitis); avoid lying down 30 min. Pregnancy/breastfeeding/age <8 years CONTRAINDICATED. Cross-references Tetracyclines family.",
+            "guideline": "PHAC CATMAT 2023",
+            "family": "Tetracyclines"
+          },
+          {
+            "line": "Step 2 — Chemoprophylaxis — Mefloquine",
+            "type": "Drug",
+            "agents": ["mefloquine"],
+            "notes": "MEFLOQUINE 250 mg PO weekly — long-trip convenience, 4 wk post-travel. NEUROPSYCHIATRIC concerns (BLACK BOX — Health Canada strengthened warning 2017): vivid dreams, anxiety, depression, psychosis, suicidal ideation. Contraindicated in psychiatric history, seizure disorder, cardiac conduction abnormalities. Cross-references Antimalarials family.",
+            "guideline": "PHAC CATMAT 2023; Health Canada BBW",
+            "family": "Antimalarials"
+          },
+          {
+            "line": "Step 2 — Chemoprophylaxis — Chloroquine (sensitive zones only)",
+            "type": "Drug",
+            "agents": ["chloroquine"],
+            "notes": "CHLOROQUINE 500 mg salt weekly — only for sensitive zones (Central America W of Panama Canal, Haiti, Dominican Republic, parts of Mexico). Most P. falciparum globally is now CHLOROQUINE-RESISTANT — limited geographic utility. Cross-references Antimalarials family.",
             "guideline": "PHAC CATMAT 2023",
             "family": "Antimalarials"
           },
@@ -21370,17 +21521,18 @@ var DISEASES = {
             "family": "Corticosteroids"
           },
           {
-            "line": "TREATMENT — Mild AMS (headache + non-specific)",
-            "type": "Drug",
+            "line": "TREATMENT — Mild AMS — Multimodal (cross-class)",
+            "type": "Action",
             "agents": [
-              "ibuprofen",
-              "acetaminophen",
-              "ondansetron",
-              "acetazolamide"
+              "STOP ASCENT — do not go higher until symptoms resolve",
+              "Headache (NSAID): ibuprofen 400–600 mg PO q6h",
+              "Headache (Acetaminophen): 500–1000 mg PO q4–6h",
+              "Nausea (5-HT3 antagonist): ondansetron 4–8 mg PO/SL",
+              "Speed resolution (Carbonic Anhydrase Inhibitor): acetazolamide 250 mg PO BID",
+              "Hydrate; avoid alcohol/sedatives"
             ],
-            "notes": "STOP ASCENT — do not go higher until symptoms resolve. IBUPROFEN 400-600 mg PO q6h or ACETAMINOPHEN 500-1000 mg PO q4-6h for headache. ONDANSETRON 4-8 mg PO/SL for nausea. ACETAZOLAMIDE 250 mg PO BID can speed resolution. HYDRATE; avoid alcohol/sedatives.",
-            "guideline": "Wilderness Medical Society 2019",
-            "family": "NSAIDs"
+            "notes": "Multi-class symptomatic protocol for mild AMS. Each agent referenced under its primary class card (NSAIDs, Non-Opioid Analgesics, 5-HT3 Receptor Antagonists, Carbonic Anhydrase Inhibitors).",
+            "guideline": "Wilderness Medical Society 2019"
           },
           {
             "line": "TREATMENT — Moderate-Severe AMS or any HACE/HAPE = DESCENT IS PRIMARY",
@@ -21395,30 +21547,31 @@ var DISEASES = {
             "family": null
           },
           {
-            "line": "TREATMENT — HACE (suspected high-altitude cerebral edema)",
-            "type": "Drug",
+            "line": "TREATMENT — HACE — Emergency Protocol (cross-class)",
+            "type": "Action",
             "agents": [
-              "dexamethasone",
-              "acetazolamide",
-              "supplemental oxygen"
+              "DESCENT IMMEDIATELY (life-saving)",
+              "Corticosteroid: dexamethasone 8 mg PO/IM/IV × 1, then 4 mg q6h",
+              "Carbonic Anhydrase Inhibitor: acetazolamide 250 mg PO BID adjunct",
+              "Supplemental O2 if available",
+              "Portable hyperbaric (Gamow bag) if descent not immediately possible; evacuate to hospital"
             ],
-            "notes": "DESCENT IMMEDIATELY. DEXAMETHASONE 8 mg PO/IM/IV ×1 then 4 mg q6h. ACETAZOLAMIDE 250 mg PO BID adjunct. SUPPLEMENTAL O2 if available. PORTABLE HYPERBARIC (Gamow bag) if descent not immediately possible. Evacuate to hospital.",
-            "guideline": "Wilderness Medical Society 2019",
-            "family": "Corticosteroids"
+            "notes": "Multi-class emergency protocol — descent is definitive. Each drug referenced under primary class card (Corticosteroids, Carbonic Anhydrase Inhibitors).",
+            "guideline": "Wilderness Medical Society 2019"
           },
           {
-            "line": "TREATMENT — HAPE (suspected high-altitude pulmonary edema)",
-            "type": "Drug",
+            "line": "TREATMENT — HAPE — Emergency Protocol (cross-class)",
+            "type": "Action",
             "agents": [
-              "nifedipine",
-              "tadalafil",
-              "sildenafil",
-              "supplemental oxygen",
-              "dexamethasone"
+              "DESCENT IMMEDIATELY",
+              "DHP CCB: nifedipine 30 mg sustained-release PO q12h (reduces PA pressure — first-line)",
+              "PDE5 inhibitor: tadalafil 10 mg PO BID or sildenafil 50 mg PO q8h (alternative)",
+              "Supplemental O2",
+              "Corticosteroid: dexamethasone 8 mg PO + 4 mg q6h adjunct",
+              "Portable hyperbaric if descent not immediately possible; AVOID exertion; evacuate"
             ],
-            "notes": "DESCENT IMMEDIATELY. NIFEDIPINE 30 mg sustained-release PO q12h (reduces pulmonary artery pressure — first-line). TADALAFIL 10 mg PO BID or SILDENAFIL 50 mg PO q8h (PDE5 inhibitor — reduces PA pressure; alternative). SUPPLEMENTAL O2. DEXAMETHASONE 8 mg PO + 4 mg q6h adjunct. PORTABLE HYPERBARIC if descent not immediately possible. AVOID exertion. Evacuate.",
-            "guideline": "Wilderness Medical Society 2019",
-            "family": "DHP Calcium Channel Blockers"
+            "notes": "Multi-class emergency protocol — descent is definitive. Each drug referenced under primary class card (DHP Calcium Channel Blockers, PDE5 Inhibitors, Corticosteroids).",
+            "guideline": "Wilderness Medical Society 2019"
           },
           {
             "line": "Pediatric High-Altitude Travel",
@@ -21542,27 +21695,44 @@ var DISEASES = {
             "family": "Antihistamines"
           },
           {
-            "line": "Pregnancy-Safe Options",
+            "line": "Pregnancy-Safe — H1 Antihistamine",
             "type": "Drug",
-            "agents": [
-              "dimenhydrinate",
-              "ginger",
-              "doxylamine_pyridoxine"
-            ],
-            "notes": "DIMENHYDRINATE 50-100 mg PO q4-6h PRN — safe in pregnancy; first-line. GINGER 250 mg PO QID — evidence-based, safe in pregnancy. DOXYLAMINE-PYRIDOXINE (Diclectin) — used for pregnancy nausea; off-label for motion sickness in pregnant patients. AVOID scopolamine (limited data). Avoid first-generation H1 in 1st trimester at high doses if avoidable.",
+            "agents": ["dimenhydrinate"],
+            "notes": "DIMENHYDRINATE 50–100 mg PO q4–6h PRN — safe in pregnancy; first-line antihistamine for motion sickness in pregnancy.",
             "guideline": "SOGC / Motherisk",
             "family": "Antihistamines"
           },
           {
-            "line": "Pediatric Motion Sickness (≥2 yr)",
+            "line": "Pregnancy-Safe — Antihistamine/Vitamin Combination",
             "type": "Drug",
-            "agents": [
-              "dimenhydrinate",
-              "ginger"
-            ],
-            "notes": "DIMENHYDRINATE 1 mg/kg PO q6h PRN (max 50 mg/dose age 2-6; 100 mg/dose age 6-12). Take 30-60 min before travel. GINGER 250-500 mg PO before travel (chewable, gummies). AVOID scopolamine <12 yr; AVOID promethazine <2 yr (BLACK BOX). Behavioural strategies prominent (front seat, fix gaze, no reading).",
+            "agents": ["doxylamine_pyridoxine"],
+            "notes": "DOXYLAMINE-PYRIDOXINE (Diclectin) — Health Canada-approved for pregnancy nausea; off-label for motion sickness in pregnant patients. Combines H1 antihistamine + vitamin B6.",
+            "guideline": "SOGC / Motherisk",
+            "family": "Antihistamine/Vitamin Combinations"
+          },
+          {
+            "line": "Pregnancy-Safe — Phytotherapeutic",
+            "type": "Drug",
+            "agents": ["ginger"],
+            "notes": "GINGER 250 mg PO QID — evidence-based, safe in pregnancy. Capsules, tea, or candy. Limit concentrated doses >1 g/day to ≤4 days. AVOID scopolamine in pregnancy (limited data). Avoid first-generation H1 in 1st trimester at high doses if avoidable.",
+            "guideline": "SOGC / Motherisk",
+            "family": "Phytotherapeutics"
+          },
+          {
+            "line": "Pediatric Motion Sickness (≥2 yr) — H1 Antihistamine",
+            "type": "Drug",
+            "agents": ["dimenhydrinate"],
+            "notes": "DIMENHYDRINATE 1 mg/kg PO q6h PRN (max 50 mg/dose age 2–6; 100 mg/dose age 6–12). Take 30–60 min before travel. AVOID scopolamine <12 yr; AVOID promethazine <2 yr (BLACK BOX).",
             "guideline": "Canadian Pediatric Society / Health Canada OTC",
             "family": "Antihistamines"
+          },
+          {
+            "line": "Pediatric Motion Sickness (≥2 yr) — Phytotherapeutic",
+            "type": "Drug",
+            "agents": ["ginger"],
+            "notes": "GINGER 250–500 mg PO before travel (chewable, gummies). Generally well-tolerated. Behavioural strategies prominent (front seat, fix gaze, no reading).",
+            "guideline": "Canadian Pediatric Society / Health Canada OTC",
+            "family": "Phytotherapeutics"
           }
         ],
         "pearls": [
@@ -21993,16 +22163,28 @@ var DISEASES = {
             "family": "Antidiarrheals"
           },
           {
-            "line": "Step 6 — Antibiotics (only specific indications)",
+            "line": "Step 6 — Antibiotic — Fluoroquinolone",
             "type": "Drug",
-            "agents": [
-              "ciprofloxacin",
-              "azithromycin",
-              "metronidazole (Giardia, C. difficile)"
-            ],
-            "notes": "MOST acute gastroenteritis is VIRAL — antibiotics NOT indicated. Antibiotics for: traveller's diarrhea (severe — azithromycin 1 g ×1 or 500 mg daily ×3 days), confirmed bacterial pathogen with severity (Shigella, severe Campylobacter, traveller's diarrhea), C. difficile (vancomycin PO or fidaxomicin), Giardia (metronidazole or tinidazole). EHEC (E. coli O157:H7) — DO NOT use antibiotics or anti-motility (HUS risk).",
+            "agents": ["ciprofloxacin"],
+            "notes": "CIPROFLOXACIN 500 mg PO BID × 3 days for confirmed bacterial pathogen with severity (Shigella, severe Campylobacter); NOT for traveller's diarrhea in regions with high FQ resistance (SE/South Asia). EHEC (E. coli O157:H7) — DO NOT use (HUS risk).",
             "guideline": "AMMI Canada / IDSA Diarrhea",
             "family": "Fluoroquinolones"
+          },
+          {
+            "line": "Step 6 — Antibiotic — Macrolide (traveller's diarrhea)",
+            "type": "Drug",
+            "agents": ["azithromycin"],
+            "notes": "AZITHROMYCIN 1 g PO × 1 dose OR 500 mg daily × 3 days — preferred for traveller's diarrhea in S/SE Asia (FQ resistance) and pregnancy. Also confirmed Campylobacter, Shigella with FQ resistance.",
+            "guideline": "AMMI Canada / IDSA Diarrhea / CATMAT",
+            "family": "Macrolide Antibiotics"
+          },
+          {
+            "line": "Step 6 — Antibiotic — Nitroimidazole (Giardia / C. difficile)",
+            "type": "Drug",
+            "agents": ["metronidazole"],
+            "notes": "METRONIDAZOLE 500 mg PO TID × 5–10 days for Giardia (or tinidazole single dose). For C. difficile: vancomycin PO 125 mg QID × 10 days or fidaxomicin (preferred per IDSA 2021 — metronidazole no longer first-line for CDI). MOST acute gastroenteritis is VIRAL — antibiotics NOT indicated.",
+            "guideline": "AMMI Canada / IDSA CDI 2021",
+            "family": "Nitroimidazoles"
           },
           {
             "line": "Step 7 — When to Seek Medical Care",
@@ -22304,14 +22486,22 @@ var DISEASES = {
             "guideline": "CSACI; WAO 2020"
           },
           {
-            "line": "Adjunct — Antihistamines (NOT first-line; do NOT delay epinephrine)",
+            "line": "Adjunct — H1 Antihistamine (urticaria/pruritus only)",
             "type": "Drug",
+            "family": "Antihistamines",
             "agents": [
               "Diphenhydramine 25–50 mg PO/IV/IM (adult); 1 mg/kg (peds, max 50 mg)",
-              "Cetirizine 10 mg PO (adult; less sedating; growing evidence as alternative)",
-              "H₂ blocker (separate row): famotidine 20–40 mg IV (less commonly used now; famotidine 20 mg IV alternative)"
+              "Cetirizine 10 mg PO (adult; less sedating; growing evidence as alternative)"
             ],
-            "notes": "Antihistamines treat URTICARIA AND PRURITUS only — they do NOT treat respiratory or cardiovascular features and MUST NOT delay epinephrine. WAO 2020 emphasizes that antihistamines are NOT a substitute for epinephrine.",
+            "notes": "H1 antihistamines treat URTICARIA AND PRURITUS only — they do NOT treat respiratory or cardiovascular features and MUST NOT delay epinephrine. WAO 2020 emphasizes that antihistamines are NOT a substitute for epinephrine.",
+            "guideline": "CSACI 2024; WAO 2020"
+          },
+          {
+            "line": "Adjunct — H2 Antihistamine (selected use)",
+            "type": "Drug",
+            "family": "H2 Receptor Antagonists",
+            "agents": ["famotidine 20 mg IV"],
+            "notes": "Famotidine 20–40 mg IV may be added to H1 antihistamine for cutaneous symptoms — additive effect for urticaria. Less commonly used now in protocolized anaphylaxis care. Not a substitute for epinephrine.",
             "guideline": "CSACI 2024; WAO 2020"
           },
           {
@@ -22326,15 +22516,15 @@ var DISEASES = {
             "family": "Corticosteroids"
           },
           {
-            "line": "Refractory Anaphylaxis (β-blocker patient or severe)",
-            "type": "Drug",
+            "line": "Refractory Anaphylaxis (β-blocker patient or severe — ICU)",
+            "type": "Action",
             "agents": [
               "Glucagon 1–5 mg IV bolus, then 5–15 mcg/min infusion — bypasses β-blockade",
               "Dopamine or norepinephrine infusion — refractory shock, ICU level",
               "Atropine for symptomatic bradycardia",
               "Methylene blue (rare; refractory hypotension after standard measures)"
             ],
-            "notes": "β-blocker use BLUNTS epinephrine response (functional epinephrine resistance). Glucagon bypasses the β-receptor blockade. ICU management for refractory cases.",
+            "notes": "β-blocker use BLUNTS epinephrine response (functional epinephrine resistance). Glucagon bypasses the β-receptor blockade. ICU management for refractory cases — multiple distinct drug classes used together; treat as advanced resuscitation step.",
             "guideline": "CSACI 2024; WAO 2020"
           },
           {
@@ -101870,7 +102060,7 @@ var FAMILY_MAP = {
   "azathioprine": "Conventional Synthetic DMARDs",
   "vedolizumab": "Anti-Integrin Biologics",
   "ustekinumab": "Anti-IL-12/23 Biologics",
-  "amoxicillin": "Aminopenicillins",
+  "amoxicillin": "Penicillin Antibiotics",
   "ceftriaxone": "Cephalosporins",
   "ampicillin": "Aminopenicillins",
   "trimethoprim": "Folate Antagonist Antibiotics",
@@ -101929,7 +102119,7 @@ var FAMILY_MAP = {
   "nitroglycerin": "Organic Nitrates",
   "alirocumab": "PCSK9 Inhibitors",
   "budesonide_gi": "Corticosteroids",
-  "amoxicillin_clavulanate": "Penicillin/Beta-Lactamase Inhibitor Combinations",
+  "amoxicillin_clavulanate": "Penicillin Antibiotics",
   "ezetimibe": "Cholesterol Absorption Inhibitors",
   "evolocumab": "PCSK9 Inhibitors",
   "amiodarone": "Antiarrhythmics",
@@ -102130,13 +102320,13 @@ var FAMILY_MAP = {
   "argatroban": "Direct Thrombin Inhibitors",
   "bivalirudin": "Direct Thrombin Inhibitors",
   "fondaparinux": "Direct Thrombin Inhibitors",
-  "penicillin": "Natural Penicillins",
+  "penicillin": "Penicillin Antibiotics",
   "chlorhexidine": "Topical Antiseptics",
   "docosanol": "Topical Antivirals",
   "atovaquone_proguanil": "Antimalarials",
-  "mefloquine": "4-Aminoquinolines",
-  "chloroquine": "4-Aminoquinolines",
-  "primaquine": "8-Aminoquinolines",
+  "mefloquine": "Antimalarials",
+  "chloroquine": "Antimalarials",
+  "primaquine": "Antimalarials",
   "scopolamine_transdermal": "Antimuscarinics",
   "clomiphene_male": "Selective Estrogen Receptor Modulators",
   "anastrozole": "Aromatase Inhibitors",
