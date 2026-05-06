@@ -117072,11 +117072,8 @@ function showDisease(catKey, diseaseId) {
   document.getElementById('home-view').style.display = 'none';
   document.getElementById('disease-view').style.display = 'block';
 
-  // Sidebar visibility — keep drawer open while user clicks through diseases
-  var sb = document.getElementById('sidebar');
-  if (sb) { sb.classList.add('visible'); sb.style.display = 'block'; }
-  var rev = document.getElementById('sidebar-reveal-btn');
-  if (rev) rev.style.display = 'none';
+  // Sidebar stays in its current state — do NOT auto-open. User opens via reveal button (▶ Nav).
+  // Reveal button visibility is independent of disease selection.
 
   // Mark active
   document.querySelectorAll('.disease-link').forEach(function(el){ el.classList.remove('active'); });
