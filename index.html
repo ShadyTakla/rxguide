@@ -65545,8 +65545,8 @@ var DRUGS = {
       "Rare: hypersensitivity rash"
     ],
     "interactions": [
-      "Mineral oil: avoid combination (enhances mineral oil absorption — granulomatous reactions)",
-      "May enhance absorption of other oral medications (theoretical)"
+      { "drug": "Mineral oil", "severity": "Major", "mechanism": "Docusate enhances mineral oil absorption", "management": "Avoid combination — risk of granulomatous reactions in mucosa/lymphoid tissue" },
+      { "drug": "Other oral medications", "severity": "Note", "mechanism": "Surfactant action may theoretically enhance absorption of co-administered oral drugs", "management": "Theoretical concern; clinical significance limited — separate dosing if a narrow-therapeutic-index drug is involved" }
     ],
     "monitoring": [
       "Bowel pattern, stool consistency",
@@ -111484,8 +111484,8 @@ var DRUGS = {
       "Rule out infectious conjunctivitis if symptoms worsen or change character"
     ],
     "interactions": [
-      "No clinically significant systemic drug interactions (ophthalmic, minimal systemic absorption)",
-      "Avoid concurrent use of soft contact lenses during instillation (preservative absorption)"
+      { "drug": "No clinically significant systemic drug interactions", "severity": "Note", "mechanism": "Ophthalmic use with minimal systemic absorption", "management": "No specific monitoring required" },
+      { "drug": "Soft contact lenses", "severity": "Minor", "mechanism": "Benzalkonium chloride preservative is absorbed by soft contact lenses", "management": "Remove contact lenses before instillation; reinsert ≥10 min after" }
     ],
     "pregnancy": "ACCEPTABLE in pregnancy as ophthalmic — minimal systemic absorption from 0.025% ocular drops. Limited human data but non-sedating 2nd-gen mast cell stabilizer/antihistamine class is well tolerated. Loratadine and cetirizine (oral) remain preferred for systemic allergic rhinitis in pregnancy if oral therapy required (more extensive safety data). Breastfeeding: compatible — minimal systemic absorption; no documented adverse effects in nursing infants.",
     "source": "Health Canada Zaditor Product Monograph; AAO Conjunctivitis PPP 2023; ARIA 2022; LactMed",
@@ -111532,10 +111532,10 @@ var DRUGS = {
       "Counsel about urine discoloration to prevent unnecessary alarm"
     ],
     "interactions": [
-      "No clinically significant CYP-mediated interactions",
-      "May interfere with urinary diagnostic tests (urinalysis dipsticks for glucose, protein, ketones, bilirubin) due to urine color",
-      "Other oxidizing agents (dapsone, primaquine, sulfonamides): additive methemoglobinemia risk — caution",
-      "Antacids: limited data on absorption; clinically minor"
+      { "drug": "No clinically significant CYP-mediated interactions", "severity": "Note", "mechanism": "Minimal CYP metabolism", "management": "No specific monitoring required" },
+      { "drug": "Urinary diagnostic tests", "severity": "Note", "mechanism": "Orange-red urine color interferes with dipstick tests for glucose, protein, ketones, bilirubin", "management": "Inform lab; use alternative testing methods or hold drug before urinalysis" },
+      { "drug": "Other oxidizing agents (dapsone, primaquine, sulfonamides)", "severity": "Moderate", "mechanism": "Additive methemoglobinemia risk", "management": "Caution with combination; monitor for cyanosis/hypoxia" },
+      { "drug": "Antacids", "severity": "Minor", "mechanism": "Limited data on absorption interaction", "management": "Clinically minor; no separation typically required" }
     ],
     "pregnancy": "AVOID in pregnancy unless clearly needed — limited human safety data; risk of methemoglobinemia (especially in 3rd trimester near term and in fetuses with G6PD deficiency). Symptomatic UTI in pregnancy generally responds rapidly (24–48h) to appropriate antibiotic alone — adjunctive analgesic usually unnecessary. Acetaminophen is safer for pain in pregnancy. Breastfeeding: insufficient data; possible methemoglobinemia in nursing infants (especially neonates with immature methemoglobin reductase) — avoid; if treatment essential, consider temporary cessation of breastfeeding for the 48-hour course.",
     "source": "Health Canada Pyridium Product Monograph; PHO Bugs & Drugs 2024 (UTI symptomatic relief); LactMed; Briggs 12th ed.",
@@ -111591,12 +111591,12 @@ var DRUGS = {
       "Hyponatremia (SIADH)"
     ],
     "interactions": [
-      "Warfarin: significantly increases INR (bleeding risk) — monitor closely or avoid",
-      "ACEi/ARB/spironolactone: hyperkalemia risk — monitor potassium",
-      "Methotrexate: increased toxicity (folate antagonism) — avoid combination",
-      "Phenytoin: increased phenytoin levels",
-      "Sulfonylureas: hypoglycemia",
-      "Digoxin: increased digoxin levels (elderly)"
+      { "drug": "Warfarin", "severity": "Major", "mechanism": "CYP2C9 inhibition + protein-binding displacement; significantly increases INR", "management": "Monitor INR closely or avoid combination; consider alternative antibiotic" },
+      { "drug": "ACE inhibitors / ARBs / spironolactone", "severity": "Major", "mechanism": "Trimethoprim component blocks ENaC → hyperkalemia risk", "management": "Monitor potassium, especially in elderly or renal impairment" },
+      { "drug": "Methotrexate", "severity": "Contraindicated", "mechanism": "Additive folate antagonism — pancytopenia, mucositis", "management": "Avoid combination" },
+      { "drug": "Phenytoin", "severity": "Major", "mechanism": "CYP2C9 inhibition increases phenytoin levels", "management": "Monitor phenytoin levels and for toxicity" },
+      { "drug": "Sulfonylureas", "severity": "Moderate", "mechanism": "CYP2C9 inhibition increases sulfonylurea levels — hypoglycemia", "management": "Monitor blood glucose closely" },
+      { "drug": "Digoxin", "severity": "Moderate", "mechanism": "Increases digoxin levels (especially in elderly)", "management": "Monitor digoxin levels and signs of toxicity" }
     ],
     "monitoring": [
       "CBC, electrolytes (K+, Na+), creatinine if prolonged use",
@@ -111726,7 +111726,7 @@ var DRUGS = {
       "If no improvement, transition to oral antiviral (valacyclovir, famciclovir)"
     ],
     "interactions": [
-      "No clinically significant drug interactions (topical with minimal systemic absorption)"
+      { "drug": "No clinically significant drug interactions", "severity": "Note", "mechanism": "Topical use with minimal systemic absorption", "management": "No specific monitoring required" }
     ],
     "pregnancy": "Topical penciclovir 1% cream — minimal systemic absorption from intact skin; limited human pregnancy data, considered low risk when needed. Acyclovir cream 5% (also Schedule I in Canada) and oral valacyclovir/acyclovir have substantially more human pregnancy safety data and are preferred for symptomatic herpes labialis in pregnancy. Breastfeeding: minimal absorption; compatible; avoid direct nipple/areolar application.",
     "source": "Health Canada/FDA Denavir Product Monograph; IDSA HSV Guidelines; SOGC HSV/VZV in Pregnancy; LactMed",
@@ -111768,7 +111768,7 @@ var DRUGS = {
       "Wash off when returning indoors / no longer needed"
     ],
     "interactions": [
-      "No known clinically significant drug interactions (topical, minimal systemic absorption)"
+      { "drug": "No known clinically significant drug interactions", "severity": "Note", "mechanism": "Topical insect repellent with minimal systemic absorption", "management": "No specific monitoring required" }
     ],
     "pregnancy": "ACCEPTABLE in pregnancy per Health Canada / PMRA — topical insect repellent with minimal systemic absorption when used as directed. Pregnancy carries elevated risk from mosquito-borne illness (West Nile, Zika) and Lyme disease, which can cause significant fetal harm; effective bite prevention is important. Icaridin 20% is a preferred alternative to DEET in pregnancy due to lower absorption and longer history of skin tolerability. Breastfeeding: compatible — apply away from areas of infant contact (breast/hands); wash hands before nursing.",
     "source": "Health Canada / Pest Management Regulatory Agency (PMRA) Insect Repellent Safety Guidance 2023; CDC Pregnancy Travel Health",
@@ -111818,7 +111818,7 @@ var DRUGS = {
       "Hemorrhoidal use beyond 2 weeks should prompt physician assessment"
     ],
     "interactions": [
-      "No clinically significant systemic drug interactions (negligible absorption from intact skin/anorectal mucosa with short-term use)"
+      { "drug": "No clinically significant systemic drug interactions", "severity": "Note", "mechanism": "Negligible absorption from intact skin/anorectal mucosa with short-term use", "management": "No specific monitoring required" }
     ],
     "pregnancy": "COMPATIBLE in pregnancy — topical local anesthetic with minimal systemic absorption from intact skin or anorectal mucosa with short-term use. Useful option for hemorrhoidal symptom relief in pregnancy where systemic agents are undesirable. Breastfeeding: compatible — minimal absorption; avoid direct nipple application. Health Canada Anusol Product Monograph supports use in pregnancy when needed.",
     "source": "Health Canada Anusol Product Monograph; RxTx Hemorrhoids 2024; LactMed",
@@ -111864,9 +111864,9 @@ var DRUGS = {
       "GI upset (mild)"
     ],
     "interactions": [
-      "Levodopa (without carbidopa): reduces efficacy",
-      "Phenytoin/phenobarbital: pyridoxine may reduce serum levels",
-      "Hydralazine, isoniazid, cycloserine, penicillamine: all increase pyridoxine requirements"
+      { "drug": "Levodopa (without carbidopa)", "severity": "Major", "mechanism": "Pyridoxine accelerates peripheral decarboxylation of levodopa, reducing CNS availability", "management": "Avoid; not relevant when levodopa is combined with carbidopa or benserazide" },
+      { "drug": "Phenytoin / phenobarbital", "severity": "Moderate", "mechanism": "Pyridoxine may reduce serum levels of these anticonvulsants", "management": "Monitor anticonvulsant levels and seizure control" },
+      { "drug": "Hydralazine, isoniazid, cycloserine, penicillamine", "severity": "Moderate", "mechanism": "These agents antagonize pyridoxine — increase B6 requirements", "management": "Supplement pyridoxine to prevent neuropathy" }
     ],
     "monitoring": [
       "NVP symptom relief within 1–3 days",
@@ -111911,9 +111911,9 @@ var DRUGS = {
       "QT prolongation (theoretical — minor effect at therapeutic doses)"
     ],
     "interactions": [
-      "Strong CYP3A4 inhibitors (ketoconazole, erythromycin, ritonavir): increase rupatadine levels — avoid or monitor",
-      "Grapefruit juice: increases rupatadine levels — avoid",
-      "Other QT-prolonging agents: caution"
+      { "drug": "Strong CYP3A4 inhibitors (ketoconazole, erythromycin, ritonavir)", "severity": "Major", "mechanism": "CYP3A4 inhibition increases rupatadine levels", "management": "Avoid combination or monitor for sedation/QT prolongation" },
+      { "drug": "Grapefruit juice", "severity": "Moderate", "mechanism": "Inhibits intestinal CYP3A4, increases rupatadine levels", "management": "Avoid grapefruit juice during therapy" },
+      { "drug": "Other QT-prolonging agents", "severity": "Moderate", "mechanism": "Additive QT prolongation risk", "management": "Caution with combination; consider ECG monitoring" }
     ],
     "monitoring": [
       "Symptom response within 30 minutes; sustained over 24 hours",
@@ -111970,9 +111970,9 @@ var DRUGS = {
       "BP during 8% patch application"
     ],
     "interactions": [
-      "No clinically significant systemic drug interactions for low-strength topical (minimal systemic absorption)",
-      "ACE inhibitors: theoretical exacerbation of cough if accidentally inhaled during application (rare)",
-      "8% patch (Qutenza): transient BP elevation during application — caution with antihypertensives, monitor BP"
+      { "drug": "No clinically significant systemic drug interactions (low-strength topical)", "severity": "Note", "mechanism": "Minimal systemic absorption from low-strength OTC topical", "management": "No specific monitoring required" },
+      { "drug": "ACE inhibitors", "severity": "Minor", "mechanism": "Theoretical exacerbation of ACEi-induced cough if accidentally inhaled during application", "management": "Wash hands after application; avoid contact with face/airways" },
+      { "drug": "Antihypertensives (8% patch / Qutenza)", "severity": "Moderate", "mechanism": "Transient BP elevation during patch application", "management": "Monitor BP during and after Qutenza application" }
     ],
     "pregnancy": "Low-strength capsaicin (0.025–0.075%) cream: minimal systemic absorption, considered acceptable in pregnancy when benefit > risk; limited human data. 8% patch (Qutenza): AVOID in pregnancy — insufficient data, transient BP elevation during application. Breastfeeding: low-strength topical compatible (avoid nipple/breast application); avoid 8% patch.",
     "source": "Health Canada Zostrix/Qutenza Product Monographs; CNPS Neuropathic Pain Guidelines (2014, partially updated 2022); Cochrane reviews; LactMed",
@@ -112014,7 +112014,7 @@ var DRUGS = {
       "Reassess if no improvement after 7 days"
     ],
     "interactions": [
-      "No clinically significant systemic drug interactions (negligible absorption from intact skin)"
+      { "drug": "No clinically significant systemic drug interactions", "severity": "Note", "mechanism": "Negligible absorption from intact skin", "management": "No specific monitoring required" }
     ],
     "pregnancy": "COMPATIBLE in pregnancy and lactation. Topical zinc oxide/ferric oxide preparation with negligible systemic absorption from intact skin. Long history of use without reported teratogenicity. Avoid application to broken skin or large surface areas. LactMed: compatible with breastfeeding (avoid nipple application if breastfeeding).",
     "source": "Health Canada OTC Monograph; RxTx Pruritus 2024; LactMed (NCBI)",
@@ -112062,8 +112062,8 @@ var DRUGS = {
       "Watch for hypersensitivity"
     ],
     "interactions": [
-      "No clinically significant systemic drug interactions for ophthalmic combinations (negligible absorption)",
-      "Polytrim (polymyxin B + trimethoprim): trimethoprim component theoretical interactions (warfarin, K+-sparing) but ophthalmic dose insufficient to be clinically relevant"
+      { "drug": "No clinically significant systemic drug interactions (ophthalmic)", "severity": "Note", "mechanism": "Negligible systemic absorption from ophthalmic application", "management": "No specific monitoring required" },
+      { "drug": "Polytrim (with trimethoprim)", "severity": "Note", "mechanism": "Trimethoprim component has theoretical interactions (warfarin, K+-sparing diuretics) but ophthalmic dose is insufficient to be clinically relevant", "management": "No specific monitoring required for ophthalmic use" }
     ],
     "pregnancy": "ACCEPTABLE in pregnancy as ophthalmic combination drops — negligible systemic absorption. Polysporin Eye & Ear Drops (polymyxin B + gramicidin) is OTC and pharmacist-prescribable for bacterial conjunctivitis under Ontario MA. Polytrim (polymyxin B + trimethoprim, Schedule I) — avoid in 1st trimester only as theoretical caution due to trimethoprim's folate antagonism (kernicterus near term); ophthalmic dose negligible. Breastfeeding: compatible — no detectable systemic absorption from ophthalmic dose.",
     "source": "Health Canada Polysporin/Polytrim Product Monographs; AAO Conjunctivitis PPP 2023; PHO Bugs & Drugs 2024; LactMed",
@@ -112104,7 +112104,7 @@ var DRUGS = {
       "Reassess at 48–72h if no improvement"
     ],
     "interactions": [
-      "No clinically significant systemic drug interactions (topical/ophthalmic, negligible systemic absorption)"
+      { "drug": "No clinically significant systemic drug interactions", "severity": "Note", "mechanism": "Topical/ophthalmic use with negligible systemic absorption", "management": "No specific monitoring required" }
     ],
     "pregnancy": "COMPATIBLE in pregnancy as topical/ophthalmic combination (Polysporin Eye & Ear Drops) — gramicidin has negligible ocular surface absorption. Long history of OTC use without reported teratogenicity. Bacterial conjunctivitis in pregnancy is a benign condition; pharmacist-prescribable under Ontario MA. Breastfeeding: compatible — no detectable systemic absorption.",
     "source": "Health Canada Polysporin Eye & Ear Drops Product Monograph; AAO Conjunctivitis PPP 2023; LactMed",
@@ -112145,8 +112145,8 @@ var DRUGS = {
       "If no improvement after 3–4 days, consider alternative diagnosis or oral therapy"
     ],
     "interactions": [
-      "No clinically significant systemic drug interactions (topical, minimal absorption ~1% from intact skin)",
-      "Avoid concurrent application of other topical agents at the same site (efficacy/irritation)"
+      { "drug": "No clinically significant systemic drug interactions", "severity": "Note", "mechanism": "Topical use with minimal absorption (~1% from intact skin)", "management": "No specific monitoring required" },
+      { "drug": "Other topical agents (same site)", "severity": "Minor", "mechanism": "Concurrent topical agents at same site may reduce efficacy or increase irritation", "management": "Avoid concurrent application of other topical products at the treated site" }
     ],
     "pregnancy": "Limited human pregnancy data. Topical 1% ointment with minimal systemic absorption (<1%) from intact skin. Animal reproductive studies have not shown teratogenicity. Use only when clearly needed and preferred topical agents (mupirocin, fusidic acid) are unsuitable. Breastfeeding: minimal systemic exposure; avoid direct nipple/areolar application.",
     "source": "FDA/Health Canada Altabax Product Monograph; AAD Impetigo Guideline 2014; Stevens IDSA 2014; LactMed",
@@ -113875,7 +113875,7 @@ var DRUGS = {
       },
       {
         "drug": "Rabies vaccine itself",
-        "severity": "Critical-management",
+        "severity": "Major",
         "mechanism": "HRIG and rabies vaccine MUST be given at DIFFERENT anatomic sites — HRIG infiltrated at wound, vaccine in contralateral deltoid or thigh.",
         "management": "Anatomic separation prevents HRIG from neutralizing the vaccine antigen at vaccine site."
       }
@@ -114629,7 +114629,7 @@ var DRUGS = {
       },
       {
         "drug": "Blood typing / Coombs tests",
-        "severity": "Major (Lab Interference)",
+        "severity": "Major",
         "mechanism": "Daratumumab binds CD38 on RBCs → INTERFERES with indirect antiglobulin (IAT) and Coombs testing — false-positive cross-matches.",
         "management": "BASELINE blood typing + phenotype/genotype BEFORE first dose; notify blood bank patient is on daratumumab; specialty assays (DTT-treated cells) for compatibility testing."
       }
@@ -115423,7 +115423,7 @@ var DRUGS = {
       },
       {
         "drug": "Concurrent docetaxel (in ARASENS triplet)",
-        "severity": "Major (intentional)",
+        "severity": "Note",
         "mechanism": "Triplet therapy — additive hematologic toxicity.",
         "management": "Monitor cytopenias; standard supportive care."
       }
@@ -115540,7 +115540,7 @@ var DRUGS = {
       },
       {
         "drug": "Other immune checkpoint inhibitors (pembrolizumab, nivolumab, ipilimumab)",
-        "severity": "Major (intentional)",
+        "severity": "Note",
         "mechanism": "Combination IO regimens (durvalumab + tremelimumab) — increased efficacy + AEs.",
         "management": "Specific combination protocols; monitor closely."
       }
