@@ -137830,15 +137830,58 @@ function renderDisease(cat, cond) {
       var lc = line.indexOf('First') >= 0 || line.indexOf('Corner') >= 0 || line.indexOf('Highly') >= 0 ? 'line-first' :
                line.indexOf('Emergency') >= 0 ? 'line-alt' : 'line-second';
 
-      // NEW SCHEMA fallback: if treatment entry has only {line, details} prose, render full-width detail row
+      // NEW SCHEMA: parse {line, details} prose into 5-column structure
       if (tx.details !== undefined && tx.agents === undefined && tx.notes === undefined) {
-        h += '<tr><td><span class="line-badge ' + lc + '">' + line + '</span></td>';
-        h += '<td colspan="4" style="line-height:1.55;font-size:0.85rem;color:#cbd5e1;padding:10px;">';
+        var parsed = parseProseDetails(tx.details);
+        var inferredFamily = null;
+        if (parsed.agents.length) {
+          var k1 = parsed.agents[0].toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
+          if (FAMILY_MAP[k1]) inferredFamily = FAMILY_MAP[k1];
+        }
+        h += '<tr>';
+        h += '<td><span class="line-badge ' + lc + '">' + line + '</span></td>';
+        // Type / Family
+        h += '<td>';
+        if (inferredFamily && DRUG_FAMILIES[inferredFamily]) {
+          var fam = DRUG_FAMILIES[inferredFamily];
+          var fcol = fam.class_color || '#6366f1';
+          h += '<span class="family-badge" style="background:' + fcol + '22;border:1px solid ' + fcol + '44;color:' + fcol + ';cursor:pointer;display:inline-block;white-space:normal;line-height:1.3;font-size:0.72rem;padding:3px 9px;border-radius:5px;font-weight:600;" onclick="showFamilyPanel(\'' + inferredFamily.replace(/'/g, "\\'") + '\')">' + inferredFamily + ' ↗</span>';
+        } else if (parsed.agents.length === 0) {
+          h += '<span class="type-badge type-nondrug" style="white-space:normal;line-height:1.3;">Non-Drug</span>';
+        } else {
+          h += '<span class="type-badge type-drug" style="white-space:normal;line-height:1.3;">Drug</span>';
+        }
+        h += '</td>';
+        // Agents
+        h += '<td>';
+        if (parsed.agents.length) {
+          h += '<ul style="margin:0;padding-left:18px;list-style-type:disc;">';
+          parsed.agents.forEach(function(a) {
+            h += '<li style="margin-bottom:4px;line-height:1.45;">' + renderDrugLink(a) + '</li>';
+          });
+          h += '</ul>';
+        } else {
+          h += '<span style="color:#94a3b8;font-style:italic;font-size:0.78rem;">—</span>';
+        }
+        h += '</td>';
+        // Contraindications
+        h += '<td>';
+        if (parsed.contraindications.length) {
+          h += '<ul style="margin:0;padding-left:14px;font-size:0.75rem;color:#fca5a5;">';
+          parsed.contraindications.slice(0, 5).forEach(function(c) { h += '<li style="margin-bottom:2px;">' + c + '</li>'; });
+          h += '</ul>';
+        } else {
+          h += '<span style="color:#94a3b8;font-style:italic;font-size:0.78rem;">—</span>';
+        }
+        h += '</td>';
+        // Notes (formatted prose)
+        h += '<td style="line-height:1.55;font-size:0.83rem;color:#cbd5e1;">';
         var prose = tx.details
           .replace(/\*\*([^*]+)\*\*/g, '<strong style="color:#fde68a;">$1</strong>')
           .replace(/\n/g, '<br>');
         h += renderDrugLinksInProse(prose);
-        h += '</td></tr>';
+        h += '</td>';
+        h += '</tr>';
         continue;
       }
 
@@ -138003,18 +138046,37 @@ function renderDrugLink(agentStr) {
 // Scan a prose paragraph for known drug names (DRUGS keys) and wrap each occurrence
 // in a clickable span. Used by new-schema treatment rows ({line, details} format).
 var _drugRegexCache = null;
+// Generic English / pharmacology words to NEVER treat as drug links (false-positive guard)
+var _DRUG_LINK_BLOCKLIST = {
+  'oral':1,'rectal':1,'topical':1,'sublingual':1,'inhaled':1,'intravenous':1,
+  'intramuscular':1,'subcutaneous':1,'intrathecal':1,'intranasal':1,'transdermal':1,
+  'sodium':1,'calcium':1,'potassium':1,'magnesium':1,'iron':1,'zinc':1,'water':1,
+  'salt':1,'fluid':1,'fluids':1,'glucose':1,'dextrose':1,'saline':1,
+  'high':1,'low':1,'low-dose':1,'high-dose':1,'protein':1,'lipid':1,'normal':1,
+  'platelet':1,'platelets':1,'plasma':1,'blood':1,'serum':1,'urine':1,'stool':1,
+  'oxygen':1,'air':1,'gas':1,
+  'standard':1,'dose':1,'doses':1,'dosing':1,'tablet':1,'tablets':1,'capsule':1,
+  'cream':1,'ointment':1,'spray':1,'drops':1,'injection':1,'infusion':1,
+  'preparation':1,'formulation':1,'solution':1,'suspension':1,
+  'general':1,'specific':1,'limited':1,'maximum':1,'minimum':1,'target':1,
+  'first':1,'second':1,'third':1,'fourth':1,'fifth':1,'sixth':1,
+  'class':1,'group':1,'type':1,'level':1,'cycle':1,'cycles':1,
+  'food':1,'meal':1,'meals':1,'diet':1,'water':1,'milk':1,'juice':1,
+  'rest':1,'rest':1,'ice':1,'heat':1
+};
 function _buildDrugRegex() {
   if (_drugRegexCache) return _drugRegexCache;
-  // Build alternation of all drug keys + first-word-of-name (deduplicated, length-sorted desc for greedy)
+  // Use ONLY drug keys (not name-first-words) — keys are unambiguous identifiers
+  // Require slug length ≥ 6 + not in blocklist for stricter matching
   var tokens = {};
   for (var key in DRUGS) {
-    var slug = key.replace(/_/g, ' ');
-    if (slug.length >= 4) tokens[slug] = key;
-    var d = DRUGS[key];
-    if (d && d.name) {
-      var first = d.name.toLowerCase().split(/[\s(,/\-]/)[0].replace(/[^a-z0-9]/g, '');
-      if (first.length >= 4) tokens[first] = key;
-    }
+    var slug = key.replace(/_/g, ' ').trim().toLowerCase();
+    if (slug.length < 6) continue;
+    if (_DRUG_LINK_BLOCKLIST[slug]) continue;
+    // Also skip if first word is a blocklisted generic
+    var firstWord = slug.split(' ')[0];
+    if (_DRUG_LINK_BLOCKLIST[firstWord] && slug.split(' ').length === 1) continue;
+    tokens[slug] = key;
   }
   var sorted = Object.keys(tokens).sort(function(a,b){ return b.length - a.length; });
   var pattern = '\\b(' + sorted.map(function(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\b';
@@ -138029,6 +138091,44 @@ function renderDrugLinksInProse(prose) {
     if (!key) return match;
     return '<span class="drug-link" onclick="showDrugPanel(\'' + key + '\')">' + match + '</span>';
   });
+}
+
+// Parse new-schema treatment {line, details} prose into structured columns:
+//  - agents: array of unique drug names (resolved from DRUGS db); preserves order of appearance
+//  - contraindications: aggregated from each identified drug's contraindications array (top 5 unique)
+function parseProseDetails(details) {
+  if (!details) return { agents: [], contraindications: [] };
+  var dr = _buildDrugRegex();
+  var seen = {};
+  var agents = [];
+  var contraSet = {};
+  var match;
+  // Reset regex (g flag stateful)
+  var rx = new RegExp(dr.regex.source, 'gi');
+  while ((match = rx.exec(details)) !== null) {
+    var token = match[1] || match[0];
+    var key = dr.map[token.toLowerCase()];
+    if (!key || seen[key]) continue;
+    seen[key] = true;
+    var drug = DRUGS[key];
+    var displayName = drug && drug.name ? drug.name.split(/[(,/]/)[0].trim() : token;
+    agents.push(displayName);
+    if (drug && drug.contraindications && drug.contraindications.length) {
+      drug.contraindications.slice(0, 3).forEach(function(c) {
+        var key2 = c.toLowerCase().slice(0, 60);
+        if (!contraSet[key2]) {
+          contraSet[key2] = true;
+        }
+      });
+    }
+  }
+  // Build deduplicated contraindications list (truncate each to 80 chars)
+  var contras = [];
+  for (var k in contraSet) {
+    contras.push(k.length > 78 ? k.slice(0, 78) + '…' : k);
+    if (contras.length >= 5) break;
+  }
+  return { agents: agents, contraindications: contras };
 }
 
 function renderFamilyBadge(familyName) {
