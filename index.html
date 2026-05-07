@@ -137830,6 +137830,18 @@ function renderDisease(cat, cond) {
       var lc = line.indexOf('First') >= 0 || line.indexOf('Corner') >= 0 || line.indexOf('Highly') >= 0 ? 'line-first' :
                line.indexOf('Emergency') >= 0 ? 'line-alt' : 'line-second';
 
+      // NEW SCHEMA fallback: if treatment entry has only {line, details} prose, render full-width detail row
+      if (tx.details !== undefined && tx.agents === undefined && tx.notes === undefined) {
+        h += '<tr><td><span class="line-badge ' + lc + '">' + line + '</span></td>';
+        h += '<td colspan="4" style="line-height:1.55;font-size:0.85rem;color:#cbd5e1;padding:10px;">';
+        var prose = tx.details
+          .replace(/\*\*([^*]+)\*\*/g, '<strong style="color:#fde68a;">$1</strong>')
+          .replace(/\n/g, '<br>');
+        h += renderDrugLinksInProse(prose);
+        h += '</td></tr>';
+        continue;
+      }
+
       // Type label: Drug → family name (or drug class); Non-Drug → lifestyle classification
       var typeLabel, typeClass;
       if (tx.type === 'Drug' || !tx.type) {
@@ -137986,6 +137998,37 @@ function renderDrugLink(agentStr) {
     return '<span class="drug-link" onclick="showDrugPanel(\'' + foundKey + '\')">' + agentStr + '</span>';
   }
   return '<span class="drug-name">' + agentStr + '</span>';
+}
+
+// Scan a prose paragraph for known drug names (DRUGS keys) and wrap each occurrence
+// in a clickable span. Used by new-schema treatment rows ({line, details} format).
+var _drugRegexCache = null;
+function _buildDrugRegex() {
+  if (_drugRegexCache) return _drugRegexCache;
+  // Build alternation of all drug keys + first-word-of-name (deduplicated, length-sorted desc for greedy)
+  var tokens = {};
+  for (var key in DRUGS) {
+    var slug = key.replace(/_/g, ' ');
+    if (slug.length >= 4) tokens[slug] = key;
+    var d = DRUGS[key];
+    if (d && d.name) {
+      var first = d.name.toLowerCase().split(/[\s(,/\-]/)[0].replace(/[^a-z0-9]/g, '');
+      if (first.length >= 4) tokens[first] = key;
+    }
+  }
+  var sorted = Object.keys(tokens).sort(function(a,b){ return b.length - a.length; });
+  var pattern = '\\b(' + sorted.map(function(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\b';
+  _drugRegexCache = { regex: new RegExp(pattern, 'gi'), map: tokens };
+  return _drugRegexCache;
+}
+function renderDrugLinksInProse(prose) {
+  if (!prose) return '';
+  var dr = _buildDrugRegex();
+  return prose.replace(dr.regex, function(match) {
+    var key = dr.map[match.toLowerCase()];
+    if (!key) return match;
+    return '<span class="drug-link" onclick="showDrugPanel(\'' + key + '\')">' + match + '</span>';
+  });
 }
 
 function renderFamilyBadge(familyName) {
