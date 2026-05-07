@@ -3856,6 +3856,489 @@ var DISEASES = {
         ],
         "introduction": "Aortic dissection is a life-threatening tear in the aortic intima allowing blood to propagate within the media. Stanford Type A (ascending) requires emergent surgery; Type B (descending) is initially medical with TEVAR for complications. Diagnosis hinges on high suspicion in the right clinical context, with CT angiography as the gold standard. Anti-impulse therapy (β-blocker first, then vasodilator) targeting HR <60 and SBP 100-120 mmHg is foundational.",
         "source": "AHA/ACC Guideline for Diagnosis and Management of Aortic Disease 2022 (Isselbacher Circ 2022). ESC Aortic Diseases 2014 (update 2024). CCS Position Statement Aortic Dissection 2022. INSTEAD-XL Nienaber Circ 2013. ADSORB Brunkwall EJVS 2014."
+      },
+      {
+        "id": "cardiac_tamponade",
+        "name": "Cardiac Tamponade",
+        "subtitle": "Pericardial fluid causing hemodynamic compromise — ESC Pericardial Diseases 2015",
+        "patho": "Accumulation of pericardial fluid (acute or subacute) raising intrapericardial pressure → impaired ventricular filling → reduced stroke volume → obstructive shock. Acute (rapid — small volume sufficient if rapid; trauma, aortic dissection rupture, post-procedural, post-MI free wall rupture) vs subacute/chronic (slow accumulation of large volumes — malignancy, uremia, infection, autoimmune, hypothyroidism). Etiologies: malignancy (lung, breast, lymphoma, melanoma — most common medical cause), idiopathic/viral pericarditis, uremia, post-cardiac surgery, post-MI (Dressler, free wall rupture), trauma (blunt/penetrating), aortic dissection (Type A), iatrogenic (pacemaker lead perforation, PCI, ablation), tuberculous, bacterial purulent.",
+        "signs": "BECK'S TRIAD (only 10-30%): hypotension + JVD + muffled heart sounds. PULSUS PARADOXUS >10 mmHg (drop in SBP with inspiration; sensitive but not specific — also seen in severe asthma, COPD, PE, tension pneumothorax, RV MI). Tachycardia, tachypnea, narrow pulse pressure, cool clammy extremities, altered mental status. Kussmaul sign (rise in JVP with inspiration) — uncommon in tamponade (more in constriction). Electrical alternans on ECG (large effusion). LOW-VOLTAGE QRS.",
+        "diagnosis": "ECHOCARDIOGRAM (URGENT — bedside) gold standard: pericardial effusion + chamber collapse (RA collapse > 1/3 cardiac cycle systolic; RV diastolic collapse — most specific), respirophasic ventricular interdependence (>25% mitral inflow variation, >40% tricuspid inflow variation), IVC plethora (>2.1 cm + <50% inspiratory collapse). ECG — low voltage, electrical alternans (alternating QRS amplitude). CXR — enlarged 'water-bottle' cardiac silhouette (large effusions only). Cardiac CT/MRI — for chronic/loculated/post-surgical effusions. Etiology workup: CBC, BUN/Cr, TSH, troponin, ANA, blood cultures, malignancy screen, HIV.",
+        "monitoring": "Hemodynamic — BP, HR, SpO2, MAP; CVP if line in; serial echo; pericardial drain output if drained; etiology workup post-stabilization.",
+        "treatment": [
+          {
+            "line": "Initial resuscitation + diagnosis",
+            "type": "Volume + bedside echo",
+            "family": "Resuscitation",
+            "agents": [
+              "IV fluid bolus 500-1000 mL crystalloid (TEMPORIZING — increases preload to overcome tamponade physiology; small benefit; BRIDGE TO DRAINAGE)",
+              "AVOID positive pressure ventilation if possible (decreases preload → worsens tamponade)",
+              "AVOID vasodilators, β-blockers, diuretics (decrease preload)",
+              "VASOPRESSOR if needed: NOREPINEPHRINE (preserve preload + afterload; avoid pure vasodilators)",
+              "URGENT BEDSIDE ECHO + CARDIOLOGY/CARDIOTHORACIC CONSULT"
+            ],
+            "notes": "Volume + temporizing measures — DEFINITIVE TX = DRAINAGE. Avoid intubation if possible until drained.",
+            "guideline": "ESC Pericardial Diseases 2015 (Adler EHJ 2015)"
+          },
+          {
+            "line": "Pericardiocentesis (DEFINITIVE)",
+            "type": "Echocardiography-guided drainage",
+            "family": "Procedural",
+            "agents": [
+              "ECHO-GUIDED PERICARDIOCENTESIS (subxiphoid or apical approach, depending on location of largest fluid pocket; sterile technique; usually local anesthesia ± conscious sedation)",
+              "Needle (Seldinger) → guidewire → pigtail catheter for ongoing drainage 24-72 h",
+              "SEND FLUID: cell count + diff, gram stain + culture (incl AFB + fungal), cytology, glucose, protein, LDH, ADA (TB), triglycerides, hematocrit (if bloody)",
+              "Surgical PERICARDIAL WINDOW (subxiphoid or thoracoscopic) if loculated, recurrent, post-surgical, or operative source (Type A dissection — emergent OR; trauma)",
+              "AVOID PERICARDIOCENTESIS IN AORTIC DISSECTION (controlled hemopericardium tamponade is partial — relieving may worsen exsanguination); MINIMAL volume if needed"
+            ],
+            "notes": "Bedside echo-guided ~95% success; complications ~5% (pneumothorax, ventricular puncture).",
+            "guideline": "ESC 2015"
+          },
+          {
+            "line": "Etiology-specific management",
+            "type": "Cause-directed",
+            "family": "Multi-modal",
+            "agents": [
+              "MALIGNANT (most common medical cause): pigtail drainage; oncology referral; intrapericardial sclerosing agents (bleomycin, doxycycline) or balloon pericardiotomy if recurrent; pericardial window if persistent",
+              "PURULENT BACTERIAL: pericardial window + IV antibiotics (S. aureus, Strep, GNR; pip-tazo or vancomycin + ceftriaxone empiric; Bugs & Drugs)",
+              "TUBERCULOUS: ATT (RIPE) × 6+ months; consider steroids (small benefit reducing constriction); PHAC + CTS guidelines",
+              "URMIC: dialysis intensification",
+              "POST-MI free wall rupture: emergent cardiothoracic surgery",
+              "AUTOIMMUNE: NSAIDs, colchicine, steroids",
+              "HYPOTHYROID myxedema: levothyroxine; rarely needs drainage"
+            ],
+            "notes": "After initial drainage, address underlying cause to prevent recurrence.",
+            "guideline": "ESC 2015; CCS Position on Pericardial Disease"
+          },
+          {
+            "line": "Recurrent / chronic effusion",
+            "type": "Pericardial window or pericardiectomy",
+            "family": "Surgical",
+            "agents": [
+              "SURGICAL PERICARDIAL WINDOW (subxiphoid or thoracoscopic) — for recurrent malignant or idiopathic",
+              "PERICARDIECTOMY — chronic constrictive pericarditis or refractory effusive-constrictive disease",
+              "Sclerotherapy intrapericardial (bleomycin, doxycycline, talc — selected malignant effusions)"
+            ],
+            "notes": "Surgical referral for recurrent/refractory cases.",
+            "guideline": "ESC 2015"
+          }
+        ],
+        "pearls": [
+          "BECK'S TRIAD (10-30%): HYPOTENSION + JVD + MUFFLED HEART SOUNDS",
+          "PULSUS PARADOXUS >10 mmHg — sensitive (but also seen in asthma, COPD, PE)",
+          "ECHO = GOLD STANDARD — RA collapse, RV diastolic collapse, IVC plethora, respiratory inflow variation",
+          "ECG: LOW VOLTAGE + ELECTRICAL ALTERNANS",
+          "BRIDGE: IV FLUID + AVOID positive pressure / vasodilators / β-blockers / diuretics",
+          "DEFINITIVE TX = PERICARDIOCENTESIS (echo-guided) or surgical window",
+          "BLOODY EFFUSION → consider trauma, aortic dissection, malignancy, post-MI rupture",
+          "AORTIC DISSECTION TYPE A — AVOID PERICARDIOCENTESIS (urgent OR; partial decompression only if necessary)",
+          "MALIGNANT effusion — most common MEDICAL cause (lung, breast, lymphoma)",
+          "TB pericarditis — ADA elevated CSF/fluid; ATT 6+ months; steroids reduce constriction",
+          "PURULENT BACTERIAL — pericardial WINDOW + IV abx (S. aureus, Strep)",
+          "RECURRENT → pericardial window; CHRONIC CONSTRICTIVE → pericardiectomy",
+          "POST-CARDIAC SURGERY tamponade can be loculated — high suspicion if hemodynamically unstable"
+        ],
+        "introduction": "Cardiac tamponade is obstructive shock from pericardial fluid impairing ventricular filling. Bedside echocardiography is the diagnostic gold standard, identifying chamber collapse and respirophasic flow variation. Treatment is urgent drainage by echo-guided pericardiocentesis or surgical pericardial window, with cause-directed therapy to prevent recurrence. Aortic dissection complicated by tamponade is the key exception requiring emergent cardiothoracic surgery rather than pericardiocentesis.",
+        "source": "ESC Guidelines for Diagnosis and Management of Pericardial Diseases 2015 (Adler EHJ 2015). CCS Position on Pericardial Disease. Bugs & Drugs 2024 (purulent pericarditis). PHAC + CTS TB pericarditis."
+      },
+      {
+        "id": "dilated_cardiomyopathy",
+        "name": "Dilated Cardiomyopathy (DCM)",
+        "subtitle": "LV dilation + systolic dysfunction unexplained by load — ESC Cardiomyopathies 2023 / CCS HF",
+        "patho": "Dilation + impaired contractile function (LVEF <50%) of left ventricle (or both ventricles) NOT explained by abnormal loading conditions (hypertension, valve disease) or coronary artery disease causing global dysfunction. Heterogeneous etiologies: GENETIC (~30-40% — TTN truncating variants most common; LMNA, MYH7, RBM20, FLNC, BAG3, DSP, SCN5A, PLN, DES); ACQUIRED — viral myocarditis (Coxsackie, parvovirus B19, HHV-6, COVID-19), peripartum (last month pregnancy to 5 months postpartum), alcoholic, cocaine, chemotherapy (anthracycline, trastuzumab), iron overload (hemochromatosis), thyroid disease, autoimmune (SLE, scleroderma, sarcoidosis), nutritional (thiamine, selenium), chronic tachyarrhythmia (tachycardia-induced cardiomyopathy), amyloidosis, radiation. Significant overlap with hypokinetic non-dilated cardiomyopathy (HNDC) — same management.",
+        "signs": "Heart failure (HFrEF) — dyspnea on exertion, orthopnea, PND, peripheral edema, fatigue, weight gain. Cardiac exam: S3, displaced apex, mitral regurgitation murmur (functional). Atrial fibrillation common. Family history (genetic forms). Sudden cardiac death risk (especially LMNA, FLNC, DSP — 'arrhythmogenic' subtypes). Embolic events (LV thrombus).",
+        "diagnosis": "ECHOCARDIOGRAM — LV dilation (LVEDD >5.7 cm men, >5.1 cm women; or indexed LVEDV), LVEF <50%, global hypokinesis, MR. CARDIAC MRI — confirms morphology, late gadolinium enhancement (LGE — fibrosis pattern), tissue characterization (T1/T2 mapping — myocarditis, amyloid, iron). EXCLUDE CAD — coronary CT angiography, coronary angiography (or stress test/perfusion). LABS: BNP/NT-proBNP, troponin, TSH, ferritin/transferrin sat, HIV, HBV/HCV, ANA, ESR/CRP, alcohol use; SPEP/free light chains (amyloid screen if >65 or specific findings); GENETIC TESTING with proband — recommended Class I selected patients. Holter (arrhythmia screening). Family screening (first-degree relatives — echo + ECG; cascade genetic testing).",
+        "monitoring": "Symptoms (NYHA), weight, BP/HR, BNP, electrolytes/Cr, repeat echo q1-2 years (or sooner if change), Holter monitor, LV thrombus on echo, sleep apnea evaluation, depression screening.",
+        "treatment": [
+          {
+            "line": "Foundational HFrEF therapy — 'four pillars'",
+            "type": "GDMT (guideline-directed medical therapy)",
+            "family": "Quad therapy",
+            "agents": [
+              "ACEi/ARB or ARNI: SACUBITRIL-VALSARTAN 24/26 mg → 49/51 mg → 97/103 mg PO BID (preferred Class I — PARADIGM-HF; CCS); enalapril/lisinopril alternative",
+              "β-BLOCKER (HF-specific): BISOPROLOL, CARVEDILOL, METOPROLOL SUCCINATE — start low, titrate to target",
+              "MRA: SPIRONOLACTONE 25-50 mg/day or EPLERENONE 25-50 mg/day",
+              "SGLT2 INHIBITOR: DAPAGLIFLOZIN 10 mg/day or EMPAGLIFLOZIN 10 mg/day (DAPA-HF, EMPEROR-Reduced — Class I — irrespective of diabetes)",
+              "TARGET initiation/titration to maximum tolerated within first 3 months",
+              "DIURETIC: furosemide for congestion symptom relief",
+              "Avoid: NSAIDs, glitazones (worsen HF), most CCBs (negative inotropy)"
+            ],
+            "notes": "Four pillars approach (CCS 2021 update). Initiate all four early; sequence pragmatically based on BP/renal/K+.",
+            "guideline": "CCS Heart Failure 2017 + 2021 update (Ezekowitz CJC 2021); ESC HF 2021 (McDonagh EHJ 2021); ESC Cardiomyopathies 2023"
+          },
+          {
+            "line": "Device therapy",
+            "type": "ICD ± CRT",
+            "family": "Implantable",
+            "agents": [
+              "ICD for primary prevention SCD: LVEF ≤35%, NYHA II-III on optimal GDMT ≥3 months, expected survival >1 year (Class I non-ischemic — DANISH 2016 data nuanced — still recommended for higher-risk subsets, LMNA, FLNC, DSP, syncope, NSVT)",
+              "CRT (cardiac resynchronization therapy) — LVEF ≤35% + LBBB QRS ≥150 ms (Class I) or 120-149 ms (Class IIa); benefit greatest LBBB + female + non-ischemic",
+              "CRT-D (CRT + ICD) common combined indication"
+            ],
+            "notes": "DANISH trial: ICD did not reduce all-cause mortality in non-ischemic DCM but did reduce SCD; selective use.",
+            "guideline": "CCS Device Therapy 2016/2024; ESC HF 2021"
+          },
+          {
+            "line": "Genotype/phenotype-specific",
+            "type": "Risk-stratified",
+            "family": "Targeted",
+            "agents": [
+              "LMNA mutations: high SCD risk → ICD often EARLIER (LVEF >35% — 2 risk factors per HRS algorithm: NSVT, LVEF <45%, male, non-missense mutation)",
+              "FLNC, DSP, RBM20, PLN: arrhythmogenic — ICD threshold LOWER",
+              "AVOID PREGNANCY in LMNA, peripartum CM history (recurrence high)",
+              "PERIPARTUM CM: bromocriptine 2.5 mg BID × 6 weeks (controversial — German PPCM Registry; NOT US standard); standard HF therapy contraindicated in pregnancy → carvedilol + hydralazine + diuretics",
+              "Family screening — echo + ECG first-degree relatives; genetic counselling"
+            ],
+            "notes": "Genotype-guided risk stratification increasingly important.",
+            "guideline": "ESC Cardiomyopathies 2023; HRS 2019; CCS Genetic CM 2024"
+          },
+          {
+            "line": "Advanced HF therapies",
+            "type": "MCS / transplant",
+            "family": "End-stage",
+            "agents": [
+              "LVAD (left ventricular assist device) — bridge to transplant or destination therapy (continuous-flow centrifugal HeartMate 3)",
+              "HEART TRANSPLANT — gold standard for end-stage; survival ~90% 1y, ~75% 5y",
+              "CONSIDER WHEN: refractory NYHA IIIb-IV despite optimal GDMT, recurrent HF hospitalizations, inotrope dependence, escalating SBP/Cr/Na restrictions",
+              "PALLIATIVE CARE — for those not transplant candidates"
+            ],
+            "notes": "Specialist transplant/MCS center referral.",
+            "guideline": "ISHLT MCS 2023; CCS HF 2021"
+          },
+          {
+            "line": "Anticoagulation considerations",
+            "type": "Selective AC",
+            "family": "Anticoagulant",
+            "agents": [
+              "AF + DCM: standard DOAC or warfarin per CHADS-65",
+              "LV THROMBUS on imaging: warfarin (preferred — DOAC limited evidence) × 3-6 months minimum, repeat imaging",
+              "PERIPARTUM CM with severe LV dysfunction (EF <30%): consider AC (LV thrombus risk)",
+              "Routine AC in DCM without AF/thrombus: NOT recommended (WARCEF — no benefit)"
+            ],
+            "notes": "Anticoagulation case-by-case; not routine sinus rhythm DCM.",
+            "guideline": "WARCEF Homma NEJM 2012; CCS Heart Failure 2021"
+          }
+        ],
+        "pearls": [
+          "DCM = LV dilation + LVEF <50% NOT explained by load/CAD",
+          "GENETIC ~30-40% (TTN most common; LMNA, FLNC, DSP arrhythmogenic)",
+          "FOUR PILLARS HFrEF: ARNI/ACEi + β-blocker + MRA + SGLT2i",
+          "SACUBITRIL-VALSARTAN > ACEi (PARADIGM-HF)",
+          "SGLT2i benefit irrespective of diabetes (DAPA-HF, EMPEROR-Reduced)",
+          "ICD primary prevention: LVEF ≤35% + NYHA II-III on optimal GDMT (DANISH nuanced for non-ischemic; LMNA/FLNC earlier)",
+          "CRT — LBBB + QRS ≥150 ms benefit greatest",
+          "PERIPARTUM CM — distinct entity; recurrence risk in subsequent pregnancy",
+          "GENETIC TESTING + FAMILY SCREENING (Class I selected; echo + ECG first-degree relatives)",
+          "VIRAL MYOCARDITIS — supportive + GDMT; rarely IVIG/steroids/immunosuppression",
+          "ALCOHOLIC CM — abstinence may reverse 50%+ over 6-12 months",
+          "TACHYCARDIA-INDUCED — rate/rhythm control may reverse",
+          "TRANSPLANT — refractory end-stage; LVAD bridge or destination",
+          "AVOID: NSAIDs, non-DHP CCB, glitazones in HFrEF"
+        ],
+        "introduction": "Dilated cardiomyopathy is characterized by left ventricular dilation and systolic dysfunction unexplained by abnormal loading conditions or coronary disease. Etiology is heterogeneous — genetic (~30-40%, most commonly TTN truncating variants), acquired (viral, peripartum, alcoholic, toxic, autoimmune), or idiopathic. Foundational HFrEF therapy (ARNI, β-blocker, MRA, SGLT2 inhibitor) plus device therapy (ICD, CRT) for selected patients improves survival. Genetic testing and family screening guide risk stratification.",
+        "source": "ESC Guidelines on Cardiomyopathies 2023 (Arbelo EHJ 2023). CCS Heart Failure Guidelines 2017 + 2021 update (Ezekowitz CJC 2021). PARADIGM-HF McMurray NEJM 2014. DAPA-HF McMurray NEJM 2019. EMPEROR-Reduced Packer NEJM 2020. DANISH Køber NEJM 2016. WARCEF Homma NEJM 2012. ESC HF 2021 (McDonagh EHJ 2021)."
+      },
+      {
+        "id": "acute_limb_ischemia",
+        "name": "Acute Limb Ischemia",
+        "subtitle": "Sudden arterial occlusion threatening limb viability — ESVS 2020 / CSVS",
+        "patho": "Sudden decrease in arterial perfusion of a limb (<2 weeks duration), threatening tissue viability. Etiologies: EMBOLISM (most common — 40-50%; cardiac source — AF, post-MI thrombus, valve, paradoxical embolism through PFO; aortic atheroembolism); IN-SITU THROMBOSIS (atherosclerotic plaque rupture in PAD patient — 30%); BYPASS GRAFT THROMBOSIS; TRAUMA (blunt/penetrating, iatrogenic post-catheterization); DISSECTION extension; THROMBOPHILIA (HIT, antiphospholipid, malignancy-associated). RUTHERFORD CLASSIFICATION I-III based on viability: I — viable (no immediate threat); IIa — marginally threatened (salvageable with timely tx); IIb — immediately threatened (salvageable with immediate revascularization); III — irreversible (major tissue loss, permanent neuro damage — amputation typical). TIME = TISSUE — irreversible damage 6 hours warm ischemia.",
+        "signs": "6 P's — PAIN (sudden, severe), PALLOR (white initially, mottled later), PULSELESSNESS, PARESTHESIA (sensory loss — IIb), PARALYSIS (motor loss — IIb advancing to III), POIKILOTHERMIA (cold). Compare bilateral. Findings BELOW occlusion. Auscultate for bruits (proximal). FIXED MOTTLING/SKIN STAINING = IRREVERSIBLE (III).",
+        "diagnosis": "CLINICAL — 6 P's. ABI (ankle-brachial index) — 0 to <0.5 indicates severe ischemia. HANDHELD DOPPLER — assess pulse signals (audible/inaudible/monophasic). DUPLEX ULTRASOUND — bedside if available. CT ANGIOGRAPHY (CTA) of aorta + lower extremities — gold standard ED if surgery/intervention planned (delineates occlusion, runoff). MRA alternative (renal failure). DSA (digital subtraction angiography) gold standard but invasive (often combined therapeutic). LABS: lactate (compartment ischemia), CK (rhabdomyolysis), creatinine, K+, troponin (cardiac source), CBC, coags, type & screen.",
+        "monitoring": "Limb perfusion serial exam (every 1-2 h initially), motor + sensory function, K+/Cr (post-revasc reperfusion injury, rhabdomyolysis), compartment pressures (compartment syndrome post-revasc).",
+        "treatment": [
+          {
+            "line": "Initial — anticoagulation + analgesia",
+            "type": "Heparin + assessment",
+            "family": "Anticoagulant + supportive",
+            "agents": [
+              "IV HEPARIN unfractionated 80 U/kg bolus + 18 U/kg/h infusion (target aPTT 50-80 sec or anti-Xa 0.3-0.7) — IMMEDIATE on diagnosis (prevents propagation; reduces mortality)",
+              "ANALGESIA — IV opioids (morphine, fentanyl)",
+              "IV FLUIDS (rhabdomyolysis prevention; cautious if cardiac source/HF)",
+              "Keep limb DEPENDENT (improves perfusion); avoid heating/cooling",
+              "VASCULAR SURGERY URGENT CONSULT",
+              "ECG, troponin, echo (embolic source)"
+            ],
+            "notes": "Heparin within minutes of diagnosis. Avoid LMWH initially (need rapid reversibility for surgery).",
+            "guideline": "ESVS Acute Limb Ischemia 2020 (Björck EJVS 2020); CSVS Position"
+          },
+          {
+            "line": "Rutherford I-IIa (viable / marginally threatened)",
+            "type": "Catheter-directed thrombolysis (CDT) or open",
+            "family": "Endovascular vs open",
+            "agents": [
+              "CATHETER-DIRECTED THROMBOLYSIS — alteplase (tPA) infusion via catheter at clot 0.5-1 mg/h × 24-48 h with mechanical thrombectomy adjunct",
+              "MECHANICAL THROMBECTOMY (Penumbra Indigo, AngioJet, etc.) — adjunct or primary",
+              "ENDOVASCULAR REVASCULARIZATION — angioplasty + stent for residual stenosis",
+              "OPEN SURGICAL THROMBOEMBOLECTOMY (Fogarty) — embolic, in-situ thrombosis, bypass graft thrombosis"
+            ],
+            "notes": "Endovascular vs open chosen by limb status, occlusion location, anatomy, comorbidity, available expertise.",
+            "guideline": "ESVS 2020"
+          },
+          {
+            "line": "Rutherford IIb (immediately threatened)",
+            "type": "EMERGENT open or hybrid revascularization",
+            "family": "Surgical urgent",
+            "agents": [
+              "EMERGENT OPEN THROMBOEMBOLECTOMY — Fogarty catheter; OR HYBRID (open + endovascular)",
+              "BYPASS — if extensive disease, native artery unsuitable for direct revasc",
+              "FASCIOTOMY — pre-emptive in IIb with prolonged ischemia (>4-6 h) or post-revascularization compartment syndrome",
+              "TIME-CRITICAL — minutes-to-hours decision"
+            ],
+            "notes": "IIb = 4-6 h to viable revascularization; thrombolysis too slow.",
+            "guideline": "ESVS 2020"
+          },
+          {
+            "line": "Rutherford III (irreversible)",
+            "type": "Primary amputation",
+            "family": "Surgical",
+            "agents": [
+              "PRIMARY AMPUTATION — non-salvageable limb; mortality reduced vs failed revascularization",
+              "Wait if questionable: 6-12 h with anticoagulation may demarcate level"
+            ],
+            "notes": "Trying to revascularize a fixed, non-viable limb causes systemic toxicity (myoglobinuria, hyperkalemia, acidosis, multi-organ failure).",
+            "guideline": "ESVS 2020"
+          },
+          {
+            "line": "Post-revascularization care + secondary prevention",
+            "type": "Reperfusion management + risk modification",
+            "family": "Multi-modal",
+            "agents": [
+              "Monitor for COMPARTMENT SYNDROME (calf compartment pressures >30 mmHg) — fasciotomy; clinical 'pain out of proportion', tense calf, sensory loss, foot drop",
+              "REPERFUSION INJURY — IV bicarbonate + fluid for myoglobin/hyperkalemia; CRRT if severe",
+              "ANTICOAGULATION continued — bridge to long-term DOAC (AF) or warfarin/AC if hypercoagulable",
+              "ANTIPLATELET (aspirin or clopidogrel) for atherosclerotic disease",
+              "STATIN HIGH-INTENSITY (atorvastatin 40-80 mg, rosuvastatin 20-40 mg)",
+              "SMOKING CESSATION + diabetes/HTN control",
+              "EMBOLIC SOURCE — echo (LAA thrombus, vegetation), TEE if needed; ANTICOAGULATE AF chronically",
+              "FOLLOW-UP imaging 1-3 months post-revasc"
+            ],
+            "notes": "Address etiology to prevent recurrence; cardiac source vs atherosclerotic differs in long-term management.",
+            "guideline": "ESVS 2020; CSVS PAD; CCS AF"
+          }
+        ],
+        "pearls": [
+          "6 P's — PAIN, PALLOR, PULSELESSNESS, PARESTHESIA, PARALYSIS, POIKILOTHERMIA",
+          "TIME = TISSUE — 6 hours warm ischemia → irreversible muscle damage",
+          "RUTHERFORD CLASSIFICATION I-III: viable / marginally / immediately threatened / irreversible",
+          "EMBOLIC (40-50%) — usually CARDIAC source (AF most common)",
+          "IN-SITU THROMBOSIS (30%) — atherosclerotic disease pre-existing PAD",
+          "IV HEPARIN immediately on diagnosis — minutes",
+          "CTA gold standard imaging if surgery planned",
+          "RUTHERFORD IIb = EMERGENT open thrombectomy (thrombolysis too slow)",
+          "RUTHERFORD I-IIa = catheter-directed thrombolysis acceptable",
+          "RUTHERFORD III = PRIMARY AMPUTATION (revascularizing causes systemic toxicity)",
+          "FASCIOTOMY — pre-emptive if prolonged ischemia or post-revasc compartment syndrome",
+          "REPERFUSION INJURY — myoglobinuria, hyperkalemia, acidosis (treat with fluids + bicarb)",
+          "ANTICOAGULATION long-term if AF or hypercoagulable; antiplatelet + statin for atherosclerotic",
+          "CARDIAC SOURCE — TEE for LAA thrombus, vegetation; chronic AC for AF"
+        ],
+        "introduction": "Acute limb ischemia is a vascular emergency with a narrow window for limb salvage. The 6 P's (pain, pallor, pulselessness, paresthesia, paralysis, poikilothermia) and Rutherford classification (I-III) guide urgency. Immediate IV heparin, prompt CTA, and revascularization (endovascular or open depending on viability category and anatomy) are the cornerstones. Post-revascularization care addresses reperfusion injury and secondary prevention against the underlying cardiac or atherosclerotic etiology.",
+        "source": "ESVS Clinical Practice Guidelines on the Management of Acute Limb Ischemia 2020 (Björck EJVS 2020). CSVS Position on Vascular Disease. CCS AF Guidelines 2020. American Heart Association/ACC PAD 2017."
+      },
+      {
+        "id": "mitral_stenosis",
+        "name": "Mitral Stenosis",
+        "subtitle": "Rheumatic vs degenerative — AHA/ACC Valvular 2020 / ESC Valvular 2021 / CCS",
+        "patho": "Narrowing of mitral valve orifice (normal 4-6 cm²; severe <1.5 cm² indexed; very severe <1.0 cm²) impeding LA-to-LV diastolic flow. CAUSES: RHEUMATIC HEART DISEASE (>90% globally — leaflet thickening, commissural fusion, chordal shortening — sequela of group A strep rheumatic fever); DEGENERATIVE/CALCIFIC (mitral annular calcification — elderly, HD, diabetes, CKD); RARE (congenital, radiation, drug-induced, infiltrative). PROGRESSION: rising LA pressure → LA enlargement → AF → systemic embolism (high risk especially with LA thrombus); pulmonary venous HTN → pulmonary edema; pulmonary arterial HTN → RV failure → tricuspid regurgitation. PREGNANCY high-risk (volume + tachycardia worsen gradient).",
+        "signs": "Dyspnea on exertion (cardinal). Orthopnea, PND, fatigue. Palpitations (AF). Hemoptysis (pulmonary venous HTN — bronchial vein rupture; rare currently). Hoarseness (Ortner syndrome — LA compresses recurrent laryngeal nerve). Embolic events. Auscultation: LOUD S1 (mobile leaflet — pliable rheumatic; absent if heavily calcified), OPENING SNAP (early diastole), LOW-PITCHED MID-DIASTOLIC RUMBLE at apex (best left lateral decubitus, bell), pre-systolic accentuation (sinus rhythm only). MALAR FLUSH (severe). Right HF signs (advanced).",
+        "diagnosis": "ECG — P MITRALE (notched broad P wave V1 — LA enlargement), AF common. CXR — LA enlargement (double density, splayed carina, posterior LA on lateral), pulmonary venous redistribution, Kerley B lines. ECHOCARDIOGRAM — MITRAL VALVE AREA (planimetry, pressure half-time, continuity), MEAN GRADIENT, leaflet morphology (Wilkins score), commissural calcification, LA size + thrombus (TEE), pulmonary pressure, LV/RV function. SEVERITY: SEVERE = MVA <1.5 cm²; very severe <1.0 cm². Stages A-D (AHA/ACC). EXERCISE ECHO — symptomatic but mild-moderate at rest.",
+        "monitoring": "Symptoms (NYHA), echo q1-2 years severe asymptomatic; AF screening; LA thrombus (TEE pre-cardioversion or balloon valvuloplasty); pulmonary HTN; RV function.",
+        "treatment": [
+          {
+            "line": "Symptomatic / asymptomatic mild-moderate",
+            "type": "Medical optimization",
+            "family": "Symptom + AF management",
+            "agents": [
+              "DIURETICS (furosemide) — congestion symptom relief",
+              "β-BLOCKERS (metoprolol, atenolol) or non-DHP CCBs (verapamil, diltiazem) — slow HR (lengthen diastole; improve LV filling) — particularly with AF",
+              "ANTICOAGULATION for AF — WARFARIN (rheumatic MS = mechanical mechanism per AHA/ACC; DOACs NOT recommended for moderate-severe rheumatic MS — INVICTUS 2022 trial confirmed warfarin superior in rheumatic MS-AF)",
+              "PENICILLIN PROPHYLAXIS rheumatic fever recurrence (BENZATHINE PENICILLIN G 1.2 mU IM q3-4 weeks until age 40+ or 10 years past last episode whichever longer; GAS prophylaxis lifetime if MS persistent)",
+              "Treat HF (loop diuretic; RAS blocker if reduced EF/HTN — caution in severe MS)"
+            ],
+            "notes": "Symptomatic medical management bridges to intervention.",
+            "guideline": "AHA/ACC Valvular 2020 (Otto JACC 2021); ESC Valvular 2021 (Vahanian EHJ 2022); INVICTUS Connolly NEJM 2022"
+          },
+          {
+            "line": "Anticoagulation — rheumatic MS",
+            "type": "WARFARIN (not DOAC)",
+            "family": "Vitamin K antagonist",
+            "agents": [
+              "WARFARIN target INR 2-3 — RHEUMATIC MS with AF, prior embolism, or LA thrombus",
+              "DOACs (apixaban, rivaroxaban, dabigatran, edoxaban) NOT RECOMMENDED for moderate-severe rheumatic MS-AF (INVICTUS 2022 — rivaroxaban inferior to warfarin for thromboembolism + death)",
+              "DOACs ACCEPTABLE for non-rheumatic (degenerative/calcific) MS with AF (CHA₂DS₂-VASc directed)",
+              "Mechanical valve replacement → warfarin lifelong"
+            ],
+            "notes": "Critical distinction — INVICTUS changed practice 2022.",
+            "guideline": "INVICTUS Connolly NEJM 2022; AHA/ACC 2020; CCS AF 2020"
+          },
+          {
+            "line": "Severe symptomatic / very severe — intervention",
+            "type": "PMBV vs surgery",
+            "family": "Procedural",
+            "agents": [
+              "PERCUTANEOUS MITRAL BALLOON VALVULOPLASTY (PMBV / Inoue balloon) — first-line if FAVORABLE ANATOMY (Wilkins score ≤8: pliable leaflets, mild calcification, mild subvalvular disease, no LA thrombus, no/mild MR) — 95% success, durable; preferred pregnancy",
+              "MITRAL VALVE SURGERY — open commissurotomy (rare modern); MV REPLACEMENT (mechanical or bioprosthetic) for unfavorable anatomy (Wilkins >8), heavy calcification, moderate MR, LA thrombus",
+              "MV REPLACEMENT also for severe degenerative MS (PMBV not effective for calcific)",
+              "TRANSCATHETER MV INTERVENTION (TMVI/TMVR) — investigational"
+            ],
+            "notes": "PMBV in pregnancy if symptomatic/severe — preferred over surgery (lower fetal mortality). Wilkins echo score predicts PMBV outcome.",
+            "guideline": "AHA/ACC 2020; ESC 2021; CCS Valvular Position"
+          },
+          {
+            "line": "Atrial fibrillation in MS",
+            "type": "Rate control + anticoagulation ± rhythm",
+            "family": "AF management",
+            "agents": [
+              "RATE CONTROL — β-blocker, non-DHP CCB, digoxin (cautious — narrow window, renal)",
+              "RHYTHM CONTROL — generally less successful in rheumatic MS due to LA enlargement; consider if highly symptomatic; antiarrhythmic (amiodarone) ± cardioversion (after 3 weeks AC + TEE for LA thrombus)",
+              "WARFARIN — see above (NOT DOAC for rheumatic MS)",
+              "MAZE PROCEDURE concomitant with MV surgery — restores sinus rhythm in selected patients"
+            ],
+            "notes": "AF in MS is high-thromboembolism risk — anticoagulation paramount.",
+            "guideline": "CCS AF 2020"
+          },
+          {
+            "line": "Pregnancy with MS",
+            "type": "High-risk multidisciplinary care",
+            "family": "Pregnancy management",
+            "agents": [
+              "PRE-CONCEPTION CONSULT — severe MS = mWHO Class IV (extremely high risk; counsel against)",
+              "MEDICAL: β-BLOCKER (metoprolol, atenolol — caution growth restriction), DIURETICS judiciously, BED REST left lateral position",
+              "PMBV during pregnancy — preferred intervention if severe symptomatic + favorable anatomy",
+              "DELIVERY PLANNING — vaginal preferred with regional anesthesia + assisted 2nd stage; C-section for obstetric indications or hemodynamic instability",
+              "ANTICOAGULATION pregnancy: rheumatic MS-AF — WARFARIN risks (embryopathy 1st trimester, fetal hemorrhage 3rd trimester); LMWH or warfarin (post-1st trimester) — multidisciplinary discussion"
+            ],
+            "notes": "Maternal mortality severe MS pregnancy 5-10% historically; modern care lower.",
+            "guideline": "CCS Pregnancy + Heart Disease; ROPAC Registry; ESC Pregnancy 2018"
+          }
+        ],
+        "pearls": [
+          "RHEUMATIC HEART DISEASE >90% globally cause MS (commissural fusion)",
+          "DEGENERATIVE/CALCIFIC — elderly, CKD, HD",
+          "AUSCULTATION: LOUD S1 + OPENING SNAP + DIASTOLIC RUMBLE apex (left lateral decubitus, bell)",
+          "ECHO MVA <1.5 cm² SEVERE; <1.0 cm² VERY SEVERE",
+          "AF + RHEUMATIC MS — VERY HIGH thromboembolism risk",
+          "WARFARIN for rheumatic MS-AF (NOT DOAC) — INVICTUS 2022 changed practice",
+          "DOACs OK for degenerative MS-AF (CHA₂DS₂-VASc directed)",
+          "PMBV (Inoue balloon) — favorable anatomy (Wilkins ≤8); preferred pregnancy",
+          "MV REPLACEMENT — unfavorable anatomy, calcific, LA thrombus, MR",
+          "PENICILLIN PROPHYLAXIS — rheumatic fever recurrence prevention (BPG 1.2 mU IM q3-4 weeks)",
+          "PREGNANCY high-risk — severe MS mWHO IV; PMBV during pregnancy preferred",
+          "P MITRALE on ECG — broad notched P V1 (LA enlargement)",
+          "ORTNER syndrome — hoarseness from LA compressing recurrent laryngeal nerve",
+          "GLOBAL BURDEN — rheumatic MS still major cause maternal cardiac death low-income countries"
+        ],
+        "introduction": "Mitral stenosis is most often a sequela of rheumatic heart disease, with degenerative calcific MS rising in elderly populations. Severity is graded by echocardiography. Symptomatic medical therapy emphasizes diuretics, rate control, and anticoagulation (warfarin — not DOACs — for rheumatic MS-AF per INVICTUS 2022). Definitive intervention is percutaneous mitral balloon valvuloplasty for favorable anatomy, with mitral valve replacement for unfavorable anatomy or calcific disease. Pregnancy with severe MS is a high-risk situation requiring multidisciplinary care.",
+        "source": "AHA/ACC Guideline for Management of Patients With Valvular Heart Disease 2020 (Otto JACC 2021). ESC/EACTS Guidelines for Management of Valvular Heart Disease 2021 (Vahanian EHJ 2022). INVICTUS-VKA Connolly NEJM 2022. CCS AF Guidelines 2020. ESC Pregnancy 2018."
+      },
+      {
+        "id": "rheumatic_fever",
+        "name": "Acute Rheumatic Fever",
+        "subtitle": "Post-streptococcal autoimmune sequela — Jones Criteria 2015 (Gewitz Circ 2015); WHO Position 2018",
+        "patho": "Autoimmune sequela 2-4 weeks AFTER untreated GROUP A STREPTOCOCCAL (GAS) PHARYNGITIS in genetically susceptible host. Molecular mimicry — anti-streptococcal M protein antibodies cross-react with HEART (myosin, valves), JOINTS, BRAIN (basal ganglia), SKIN. Mostly affects children 5-15 years. Globally — 470,000 new cases/year, 230,000 deaths from RHD; concentrated in low-/middle-income countries, Indigenous populations (Canada — Inuit, First Nations), Pacific Islanders, sub-Saharan Africa. Recurrent attacks → cumulative valvular damage → RHEUMATIC HEART DISEASE (mitral stenosis most common; mitral regurg + aortic involvement common).",
+        "signs": "Onset 2-4 weeks post-pharyngitis. JONES MAJOR CRITERIA: CARDITIS (pancarditis — myocardial, endocardial, pericardial — 50-80%; new murmur of MR or AR most common; pericarditis); MIGRATORY POLYARTHRITIS (large joints, asymmetric, migratory, exquisitely tender, response to ASA dramatic — 75%); SYDENHAM CHOREA (basal ganglia involvement — irregular involuntary movements; latency 1-8 mo; girls > boys; 10-30%); ERYTHEMA MARGINATUM (evanescent, serpiginous pink rings on trunk; rare ~2-5%); SUBCUTANEOUS NODULES (extensor surfaces; rare ~2-5%; severe carditis). MINOR CRITERIA: arthralgia, fever ≥38.5°C, ESR ≥60 or CRP ≥30, prolonged PR. EVIDENCE OF PRECEDING GAS: throat culture/RADT positive, elevated ASOT or anti-DNase B titers, recent scarlet fever.",
+        "diagnosis": "REVISED JONES CRITERIA 2015 (Gewitz Circ 2015) — separate criteria for LOW-RISK vs MODERATE/HIGH-RISK populations: (1) PRIMARY ATTACK = 2 major OR 1 major + 2 minor + evidence of preceding GAS infection; (2) RECURRENT ATTACK = 2 major OR 1 major + 2 minor OR 3 minor + evidence of GAS. ECHOCARDIOGRAM with Doppler now Class I — subclinical carditis (asymptomatic regurgitant lesions on echo) NOW counts as carditis (2015 update; major change). LAB: ESR, CRP, CBC, ASOT/anti-DNase B (preceding GAS), throat swab (GAS culture/RADT — often negative by time RF develops). ECG (PR prolongation; conduction abnormalities). EXCLUSION other causes (poststreptococcal reactive arthritis, viral, JIA, lupus, Lyme).",
+        "monitoring": "ESR/CRP weekly until normalized, echo q3-6 mo first 1-2 years post-attack, ECG, vital signs, joint exam. Long-term — follow valvular disease (annual echo if RHD); secondary prophylaxis adherence; functional cardiac status.",
+        "treatment": [
+          {
+            "line": "ERADICATE STREPTOCOCCAL infection (all patients)",
+            "type": "Antibiotic",
+            "family": "Penicillin",
+            "agents": [
+              "BENZATHINE PENICILLIN G 1.2 mU IM ONCE (preferred — adherence assured) — adult/older child; 600,000 U IM if <27 kg/<6 years",
+              "ALTERNATIVE: PENICILLIN V 500 mg PO TID/QID × 10 days",
+              "PCN-allergic: AZITHROMYCIN 12 mg/kg (max 500 mg) day 1 then 6 mg/kg (max 250 mg) days 2-5; or CLINDAMYCIN; or CEPHALEXIN (non-anaphylactic)",
+              "Throat culture + treat household contacts with proven GAS"
+            ],
+            "notes": "Treats GAS regardless of throat culture status (residual organisms or eliminating carriage). PHAC + AMMI Canada / Bugs & Drugs 2024.",
+            "guideline": "WHO 2018; AHA Jones Criteria 2015; PHAC; AMMI Canada / Bugs & Drugs 2024"
+          },
+          {
+            "line": "ANTI-INFLAMMATORY (joint + non-severe carditis)",
+            "type": "ASA or NSAID",
+            "family": "NSAID",
+            "agents": [
+              "ASPIRIN (high-dose) 80-100 mg/kg/day (max 4-6 g/day) PO divided q6h × 1-2 weeks; taper over 4-6 weeks based on inflammatory markers; therapeutic salicylate level 20-30 mg/dL",
+              "NAPROXEN 10-20 mg/kg/day BID — alternative (better tolerated, no Reye's risk)",
+              "Symptom relief in arthritis is dramatic + rapid (24-48 h) — diagnostic clue",
+              "AVOID until DIAGNOSIS CONFIRMED (response to ASA can mask atypical presentations)"
+            ],
+            "notes": "Treat arthritis + minor carditis. Reye syndrome historically; modern dosing safer.",
+            "guideline": "AHA 2015"
+          },
+          {
+            "line": "SEVERE CARDITIS (CHF, severe valvulitis)",
+            "type": "Corticosteroids",
+            "family": "Steroid",
+            "agents": [
+              "PREDNISONE 1-2 mg/kg/day (max 80 mg) × 2-3 weeks then taper 4-6 weeks",
+              "+ Standard HF therapy if CHF: diuretic, RAS blocker (severe MR), digoxin (now less common)",
+              "Severe MR/AR with HF — emergent valve surgery rarely needed (most stabilize medically)",
+              "ASA can be added concurrently; or replaced by steroid"
+            ],
+            "notes": "Steroids for severe carditis only; mild-moderate carditis manage with ASA.",
+            "guideline": "AHA 2015"
+          },
+          {
+            "line": "SYDENHAM CHOREA",
+            "type": "Symptom management",
+            "family": "Neurologic",
+            "agents": [
+              "MILD chorea — observation; usually self-limited 4-6 months",
+              "Severe — VALPROIC ACID first-line, CARBAMAZEPINE alternative (avoid haloperidol — extrapyramidal worsening risk)",
+              "Bed rest + non-stimulating environment",
+              "IVIG or steroids — refractory cases (specialist)"
+            ],
+            "notes": "Resolves spontaneously in months but disabling.",
+            "guideline": "AHA 2015"
+          },
+          {
+            "line": "SECONDARY PROPHYLAXIS (PREVENT RECURRENCE)",
+            "type": "Long-term penicillin",
+            "family": "Antibiotic prophylaxis",
+            "agents": [
+              "BENZATHINE PENICILLIN G 1.2 mU IM EVERY 3-4 WEEKS (q3 weeks more effective in high-risk regions/individuals; adherence-friendly)",
+              "PENICILLIN V 250 mg PO BID — alternative if BPG refused/contraindicated (worse adherence)",
+              "PCN-allergic: SULFADIAZINE 1 g/day OR AZITHROMYCIN 250 mg/day (variable uptake)",
+              "DURATION: RF without carditis — 5 years OR until age 21 (whichever longer); RF with carditis no residual heart disease — 10 years OR until age 21; RF with persistent valve disease — 10 years past last episode OR until age 40, sometimes lifelong; severe RHD — LIFELONG"
+            ],
+            "notes": "ESSENTIAL for preventing recurrent attacks + cumulative valve damage. Adherence-supported BPG injection program — RHD elimination strategy WHO + Indigenous Canadian programs.",
+            "guideline": "WHO 2018; AHA 2015; PHAC Indigenous health programs"
+          },
+          {
+            "line": "PRIMARY PREVENTION",
+            "type": "Treat GAS pharyngitis",
+            "family": "Antibiotic",
+            "agents": [
+              "TREAT all confirmed GAS pharyngitis: PENICILLIN V 500 mg PO TID/QID × 10 days OR AMOXICILLIN 50 mg/kg (max 1 g) once daily × 10 days OR BENZATHINE PCN G IM single dose",
+              "PCN-allergic: cephalexin, azithromycin, clindamycin",
+              "Treatment within 9 days of pharyngitis onset prevents RF",
+              "Targeted screening high-risk populations + access to care"
+            ],
+            "notes": "Throat culture or RADT-positive GAS pharyngitis treatment.",
+            "guideline": "AMMI Canada / Bugs & Drugs 2024; CPS"
+          }
+        ],
+        "pearls": [
+          "POST-GAS PHARYNGITIS 2-4 weeks; molecular mimicry",
+          "JONES CRITERIA 2015: 2 major OR 1 major + 2 minor + GAS evidence",
+          "MAJOR: CARDITIS, MIGRATORY POLYARTHRITIS, CHOREA, ERYTHEMA MARGINATUM, SUBCUTANEOUS NODULES",
+          "CARDITIS — pancarditis; MR + AR most common; subclinical echo lesions NOW count (2015)",
+          "MIGRATORY POLYARTHRITIS — large joints, exquisitely tender, dramatic ASA response (24-48 h)",
+          "SYDENHAM CHOREA — basal ganglia; latency 1-8 mo; girls > boys",
+          "GLOBAL BURDEN: 470K new cases, 230K deaths from RHD/year — Indigenous Canada, Pacific Islanders, sub-Saharan Africa",
+          "PRIMARY TX: BPG 1.2 mU IM ONCE eradicates GAS",
+          "ASA 80-100 mg/kg/day for arthritis + mild carditis",
+          "PREDNISONE for severe carditis with CHF",
+          "SECONDARY PROPHYLAXIS: BPG 1.2 mU IM q3-4 weeks — DURATION based on carditis status; LIFELONG severe RHD",
+          "RECURRENCE → cumulative valve damage → MS most common chronic finding",
+          "PRIMARY PREVENTION: treat GAS pharyngitis within 9 days",
+          "ECHO with Doppler Class I — subclinical carditis now counts as major criterion",
+          "INDIGENOUS CANADIAN populations — disproportionate burden; targeted programs"
+        ],
+        "introduction": "Acute rheumatic fever is an autoimmune sequela of group A streptococcal pharyngitis affecting heart, joints, brain, and skin. The 2015 Jones Criteria revision incorporates echocardiographic evidence of subclinical carditis and stratifies criteria by population risk. Treatment focuses on streptococcal eradication, anti-inflammatory therapy (aspirin or steroids for severe carditis), and lifelong secondary prophylaxis with benzathine penicillin G to prevent recurrence and cumulative valvular damage (rheumatic heart disease). RHD remains a major preventable cause of cardiovascular morbidity in low/middle-income countries and Indigenous Canadian populations.",
+        "source": "Revised Jones Criteria 2015 (Gewitz Circulation 2015). WHO Rheumatic Fever and Rheumatic Heart Disease Position 2018. AHA/AAP Statement Acute Rheumatic Fever 2009/2015. AMMI Canada / Bugs & Drugs 2024. PHAC Indigenous Health programs. Australian RHD Guideline 2020."
       }
     ]
   },
