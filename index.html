@@ -34106,7 +34106,9 @@ var DRUGS = {
         "management": "Transplant patients on tacrolimus must completely avoid grapefruit and grapefruit juice; the inhibition persists for 24–72 hours after grapefruit ingestion; also avoid Seville oranges (marmalades) and pomelo, which share the same furanocoumarins; counsel patients at every dispensing; if grapefruit has been consumed, check tacrolimus trough level before the next dose; document grapefruit avoidance counselling in the patient's transplant pharmacy record per transplant center protocols"
       },
       { "drug": "Macrolides (clarithromycin, erythromycin)", "severity": "Major", "mechanism": "Strong CYP3A4 inhibition significantly increases tacrolimus levels — toxicity (nephrotoxicity, neurotoxicity)", "management": "Avoid combination — use azithromycin (less CYP3A4 inhibition) or alternative antibiotic; if necessary, reduce tacrolimus dose 50% and monitor levels q48h" },
-      { "drug": "NSAIDs (ibuprofen, naproxen, diclofenac)", "severity": "Moderate", "mechanism": "Additive nephrotoxicity (afferent arteriole vasoconstriction + calcineurin nephrotoxicity)", "management": "Avoid chronic NSAID use; if short course needed, monitor SCr and tacrolimus levels" }
+      { "drug": "NSAIDs (ibuprofen, naproxen, diclofenac)", "severity": "Moderate", "mechanism": "Additive nephrotoxicity (afferent arteriole vasoconstriction + calcineurin nephrotoxicity)", "management": "Avoid chronic NSAID use; if short course needed, monitor SCr and tacrolimus levels" },
+      { "drug": "Azole antifungals (fluconazole, voriconazole, posaconazole, itraconazole)", "severity": "Major", "mechanism": "Strong CYP3A4 inhibition increases tacrolimus 2-3x", "management": "Reduce tacrolimus dose 50% on initiation of azole; monitor levels q48h until stable" }
+    
     
     ],
     "pregnancy": "Limited human data; minimal systemic absorption from intact skin makes risk low. Generally considered acceptable when benefits outweigh risks; avoid extensive application.",
@@ -34238,7 +34240,11 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive GI ulcer/bleeding risk with systemic steroid",
         "management": "Add PPI for GI protection if combining; intra-articular alone with NSAID — acceptable"
-      }
+      },
+      { "drug": "Skin atrophy / striae (prolonged use)", "severity": "Major", "mechanism": "Mid-potency topical corticosteroid — atrophy with prolonged or potent application", "management": "Limit duration; avoid face/intertriginous; counsel periodic breaks" },
+      { "drug": "Occlusive dressings", "severity": "Major", "mechanism": "Occlusion increases penetration ~10x", "management": "Avoid occlusion unless prescribed" },
+      { "drug": "Systemic absorption (large area, broken skin)", "severity": "Moderate", "mechanism": "Large areas / chronic use → HPA suppression", "management": "Limit weekly amount; reassess at 2 weeks" }
+    
     ],
     "pregnancy": "TOPICAL low-mid potency: considered low-risk in limited areas/short courses (Aristocort 0.1% for localized eczema). HIGH-POTENCY (0.5%) over large areas or prolonged: AVOID — possible association with low birthweight per Cochrane meta-analysis (>300 g cumulative). INTRANASAL Nasacort AQ: budesonide preferred (most pregnancy data), but triamcinolone considered low-risk; FDA had pregnancy warning historically removed after 2017 review of cohorts showing no clear teratogenicity. INTRA-ARTICULAR/IM: avoid elective use in 1st trimester; if essential for severe maternal condition, single dose acceptable; avoid IM depot late pregnancy (irreversible if adverse effect occurs). LACTATION: all routes compatible (negligible milk transfer for topical/intranasal; IM depot single dose poses minimal risk).",
     "pk": {
@@ -39547,7 +39553,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Absorption reduced by orlistat",
         "management": "Take multivitamin containing fat-soluble vitamins at bedtime (separate from orlistat)"
-      }
+      },
+      { "drug": "Amiodarone", "severity": "Major", "mechanism": "Reduces amiodarone absorption ~50% — loss of antiarrhythmic effect", "management": "Avoid combination; if both needed, separate timing or alternative weight-loss approach" }
+    
     ],
     "pregnancy": "Contraindicated.",
     "pk": {
@@ -50255,7 +50263,9 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Nystatin is not absorbed and does not significantly alter gut flora (unlike broad-spectrum antibiotics), so no interaction with warfarin INR or OCP efficacy is expected.",
         "management": "No special precautions needed."
-      }
+      },
+      { "drug": "No clinically significant interactions (oral suspension)", "severity": "Note", "mechanism": "Minimal systemic absorption from oral suspension", "management": "No specific monitoring required" }
+    
     ],
     "pregnancy": "Compatible — Health Canada / Motherisk: nystatin is considered safe in pregnancy at all stages because it is not absorbed from the GI tract or intact skin/mucosa, so fetal exposure is negligible. Used routinely for oral thrush, vaginal candidiasis, and diaper rash in pregnant patients. No teratogenic signal in human data.",
     "pk": {
@@ -67662,7 +67672,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive sympathomimetic/stimulant effects — caffeine inhibits phosphodiesterase and adenosine receptors independently amplifying catecholamine effects; pseudoephedrine + high caffeine intake (energy drinks, multiple coffees) → pronounced tachycardia, palpitations, anxiety, hypertension, tremor; methylphenidate and amphetamines (taken for ADHD) + pseudoephedrine = combined central and peripheral stimulant toxicity (sleep disruption, arrhythmia risk)",
         "management": "Counsel patients to avoid caffeine-containing beverages (coffee, energy drinks, cola) during pseudoephedrine use; avoid pseudoephedrine in patients on prescription stimulants (methylphenidate, lisdexamfetamine) for ADHD — saline nasal spray or intranasal steroid preferred; patients who take both may notice heart racing and insomnia — a clear signal of combined stimulant excess; screen for energy drink use in adolescents prescribed ADHD medications"
-      }
+      },
+      { "drug": "TCAs", "severity": "Moderate", "mechanism": "Potentiated cardiovascular effects", "management": "Use cautiously" },
+      { "drug": "NAPRA Schedule III / restricted access", "severity": "Note", "mechanism": "Pseudoephedrine moved to Schedule III in Canada due to methamphetamine precursor restrictions — pharmacist-only OTC", "management": "Verify ID at sale; quantity limits may apply provincially; phenylephrine alternatives considered (poor efficacy)" }
+    
     ],
     "pregnancy": "Category C. Avoid in first trimester (gastroschisis association in some epidemiological studies). Avoid throughout pregnancy if possible — vasoconstriction may reduce uteroplacental blood flow. Saline nasal spray preferred for congestion in pregnancy.",
     "pk": {
@@ -78179,7 +78192,9 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Topical calcineurin inhibitors (TCIs) are sometimes used off-label for granulomatous rosacea or steroid-rosacea; azelaic acid and TCIs address different aspects of rosacea (azelaic: antibacterial, antikeratinizing; TCIs: anti-inflammatory); no direct pharmacokinetic interaction; both have low systemic absorption",
         "management": "Sequential or alternate-day application is acceptable; apply to different areas if different rosacea subtypes present on separate facial zones; routine monitoring not required; consider dermatology referral for complex rosacea requiring multiple agents"
-      }
+      },
+      { "drug": "No clinically significant systemic interactions", "severity": "Note", "mechanism": "Topical with minimal systemic absorption", "management": "No specific monitoring required" }
+    
     ],
     "pregnancy": "Pregnancy Category B — generally considered SAFE in pregnancy and breastfeeding. One of the few acne/rosacea treatments acceptable during pregnancy (alongside topical clindamycin, topical erythromycin). Limited systemic absorption.",
     "pk": {
@@ -80573,7 +80588,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Hydroxyurea can potentiate antiretroviral activity by depleting dNTP pools (less competition with NRTIs), but simultaneously increases NRTI mitochondrial toxicity risk. Modern NRTIs (TDF, TAF, ABC) safer than ddI/d4T.",
         "management": "Monitor for signs of NRTI toxicity (lactic acidosis, hepatomegaly, peripheral neuropathy) if hydroxyurea co-prescribed with HAART for HIV-associated conditions (e.g., progressive multifocal leukoencephalopathy). Not first-line approach."
-      }
+      },
+      { "drug": "CYP / antiretroviral interactions (didanosine, stavudine)", "severity": "Major", "mechanism": "Hydroxyurea + didanosine ± stavudine causes severe pancreatitis and lactic acidosis", "management": "AVOID combination (older HIV regimen — rarely used now)" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "Animal teratogenicity and human reports", "management": "AVOID; effective contraception during therapy" }
+    
     ],
     "pregnancy": "Category D — CONTRAINDICATED. Effective contraception during and 6 months post-treatment (males also). Sperm banking BEFORE treatment for males of reproductive age (azoospermia risk).",
     "pk": {
@@ -93117,7 +93135,11 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Additive immunosuppression",
         "management": "Avoid combination"
-      }
+      },
+      { "drug": "TB screening", "severity": "Major", "mechanism": "JAK inhibitor — TB reactivation risk", "management": "Screen for latent TB before initiation; treat before therapy" },
+      { "drug": "Thrombosis (DVT, PE, arterial)", "severity": "Major", "mechanism": "JAK class effect — increased thrombosis risk", "management": "Avoid in high VTE risk; counsel symptoms" },
+      { "drug": "CYP2C9 / CYP2C19 inhibitors (fluconazole, fluoxetine)", "severity": "Major", "mechanism": "Increased abrocitinib levels", "management": "Reduce dose; monitor" }
+    
     ],
     "pregnancy": "Health Canada Pregnancy Category C/D — animal embryofetal toxicity. Use only if benefit outweighs risk; effective contraception during therapy and ≥4 weeks after discontinuation. Excretion in breast milk: limited data — avoid breastfeeding.",
     "pk": {
@@ -93902,7 +93924,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Fibrinolysis activates plasma kallikrein and contact activation pathways, potentially triggering HAE attacks. Additionally, profound swelling from HAE attacks may mimic stroke or bowel ischemia, leading to inappropriate thrombolytic use.",
         "management": "Screen for HAE history before thrombolytic use. If HAE patient requires thrombolysis (confirmed stroke), use thrombolytic with concurrent C1-INH concentrate to prevent HAE flare. Coordinate with HAE specialist immediately."
-      }
+      },
+      { "drug": "No clinically significant systemic interactions", "severity": "Note", "mechanism": "Monoclonal antibody — minimal CYP/transporter interactions", "management": "No specific monitoring required" }
+    
     ],
     "pregnancy": "Health Canada classification: limited human pregnancy data; animal studies do not show major fetotoxicity at clinical exposures. IgG1 antibodies cross placenta in 3rd trimester. Use only if benefit clearly outweighs risk; HAE attacks in pregnancy can be life-threatening. Excretion in breast milk: minimal due to IgG1 properties.",
     "pk": {
@@ -97473,7 +97497,9 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Filgrastim in sickle cell disease (SCD) can trigger severe vaso-occlusive crises and acute chest syndrome by mobilizing sickle erythrocyte precursors and increasing neutrophil-mediated vascular inflammation. Multiple deaths and severe events reported.",
         "management": "Health Canada: filgrastim is CONTRAINDICATED in patients with sickle cell disease. If stem cell mobilization is required in SCD patients (rare), plerixafor (CXCR4 antagonist) may be a safer alternative under hematology specialist supervision. Never administer standard G-CSF protocols in SCD."
-      }
+      },
+      { "drug": "Splenomegaly / splenic rupture (rare)", "severity": "Major", "mechanism": "Rare splenic enlargement and rupture (case reports)", "management": "Investigate left upper quadrant pain; ultrasound if suspected" }
+    
     ],
     "pregnancy": "Category C (US FDA equivalent; Health Canada — use with caution). Limited human data. Filgrastim crosses placenta. Animal studies show no embryotoxicity at therapeutic doses. G-CSF is considered relatively safe in pregnancy when benefit outweighs risk (e.g., life-threatening FN in a pregnant cancer patient). Most experience from bone marrow transplantation and oncology — consult hematology/oncology + maternal-fetal medicine. Breastfeeding: filgrastim likely safe (large protein — minimal oral absorption by infant); use with caution.",
     "pk": {
@@ -97591,7 +97617,9 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "CYP3A4 inhibition increases olaparib",
         "management": "Counsel patient to avoid"
-      }
+      },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "PARP inhibitor — embryo-fetal toxicity", "management": "AVOID; contraception during and 6 months after" }
+    
     ],
     "pregnancy": "Embryo-fetal toxicity — genotoxic mechanism (DNA damage repair inhibition). Effective contraception during therapy and ≥6 months after last dose (females); ≥3 months for male partners with female partners of reproductive potential. Lactation: avoid breastfeeding during therapy and 1 month post-dose.",
     "pk": {
@@ -97699,7 +97727,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Niraparib weak CYP1A2 inhibitor",
         "management": "Monitor"
-      }
+      },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "PARP inhibitor — embryo-fetal toxicity", "management": "AVOID; effective contraception during and 6 months after" },
+      { "drug": "Thrombocytopenia", "severity": "Major", "mechanism": "Most common dose-limiting toxicity (~33%); higher in patients with weight <77 kg or platelets <150 at baseline", "management": "Weight-based starting dose 200 mg/day if <77 kg or platelets <150; weekly CBC × 8 weeks then monthly" }
+    
     ],
     "pregnancy": "Embryo-fetal toxicity — genotoxic mechanism. Effective contraception during therapy and ≥6 months after last dose (females); ≥3 months for male partners. Lactation: avoid breastfeeding during therapy and 1 month post-dose.",
     "pk": {
@@ -98026,7 +98057,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "DXd is substrate; potential interactions with inhibitors",
         "management": "Monitor"
-      }
+      },
+      { "drug": "Interstitial lung disease (ILD) / pneumonitis", "severity": "Major", "mechanism": "Black Box: ILD/pneumonitis (~10-15%), can be fatal", "management": "Baseline + serial CT chest; investigate any respiratory symptoms; corticosteroids for grade 2+; permanent discontinuation for grade 3+" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "ADC with cytotoxic payload — embryo-fetal toxicity", "management": "AVOID; effective contraception during and 7 months after" }
+    
     ],
     "pregnancy": "Embryo-fetal harm. Trastuzumab component crosses placenta; oligohydramnios warning (class effect — see plain trastuzumab); DXd payload genotoxic. Effective contraception during therapy AND ≥7 months after last dose (females); ≥4 months for male partners. Lactation: avoid breastfeeding during therapy and 7 months post-dose.",
     "pk": {
@@ -118358,7 +118392,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "ACE inhibitors", "severity": "Major", "mechanism": "increase bradykinin levels (substrate of ACE) → may worsen HAE attacks", "management": "AVOID in HAE patients (use ARB if antihypertensive needed)" },
       { "drug": "Estrogens (oral contraceptives, HRT)", "severity": "Contraindicated", "mechanism": "exacerbate HAE (estrogen-driven attacks)", "management": "avoid combination OCs in HAE; consider progestin-only or non-hormonal contraception" },
-      { "drug": "Tissue plasminogen activator (tPA)", "severity": "Note", "mechanism": "theoretical interaction with C1-INH (both serpin pathway)", "management": "clinical relevance unclear" }
+      { "drug": "Tissue plasminogen activator (tPA)", "severity": "Note", "mechanism": "theoretical interaction with C1-INH (both serpin pathway)", "management": "clinical relevance unclear" },
+      { "drug": "No clinically significant systemic interactions", "severity": "Note", "mechanism": "Plasma-derived/recombinant protein with specific HAE activity", "management": "No specific monitoring required" },
+      { "drug": "Thrombotic events (rare)", "severity": "Note", "mechanism": "Rare reports of thrombosis with high doses (especially Berinert IV)", "management": "Caution in thrombophilia or hypercoagulable states" }
+    
     ],
     "pregnancy": "Pregnancy is a high-risk period for HAE attacks (estrogen-driven). Berinert (pdC1-INH IV) has the best pregnancy safety record and is FIRST-LINE for both acute treatment and prophylaxis in pregnancy. Avoid androgens (danazol — teratogenic), antifibrinolytics (limited data), kallikrein inhibitors and bradykinin antagonists (limited data). Coordinate with HAE specialist + maternal-fetal medicine.",
     "pk": "IV: peak immediate. t½ pdC1-INH ~30-40 hours. SC: bioavailability ~40%; gradual rise; t½ similar to IV. Excretion: hepatic catabolism (proteolytic).",
@@ -118419,7 +118456,9 @@ var DRUGS = {
       { "drug": "P-glycoprotein and BCRP substrates (digoxin, dabigatran)", "severity": "Minor", "mechanism": "berotralstat is mild inhibitor", "management": "monitor" },
       { "drug": "QT-prolonging drugs (amiodarone, ondansetron, fluoroquinolones, methadone)", "severity": "Moderate", "mechanism": "additive QT effect", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Statins (rosuvastatin, atorvastatin)", "severity": "Moderate", "mechanism": "berotralstat may slightly ↑exposure", "management": "monitor for myopathy" },
-      { "drug": "Hormonal contraceptives", "severity": "Note", "mechanism": "no significant interaction (unlike many other oral specialty drugs)", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Hormonal contraceptives", "severity": "Note", "mechanism": "no significant interaction (unlike many other oral specialty drugs)", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "P-gp substrates (cyclosporine, digoxin)", "severity": "Moderate", "mechanism": "Berotralstat is a moderate P-gp inhibitor", "management": "Monitor cyclosporine, digoxin levels" }
+    
     ],
     "pregnancy": "Limited human data. Animal studies showed no adverse fetal effects at clinically relevant doses. Avoid in pregnancy unless benefit outweighs risk; use C1-INH (Berinert) prophylaxis preferentially in pregnancy.",
     "pk": "PO bioavailability ~30% (food increases AUC modestly — TAKE WITH FOOD per labeling). Peak: 5h. Highly protein bound (~99%). Hepatic metabolism CYP3A4 (major), CYP2D6 (minor). t½: ~93 hours (~4 days). Steady state ~2 weeks. Excretion: feces (mostly), urine (~9%).",
@@ -120392,7 +120431,9 @@ var DRUGS = {
     "interactions": [
       { "drug": "STRONG CYP3A4 INHIBITORS (clarithromycin, itraconazole, ritonavir)", "severity": "Major", "mechanism": "substantial ↑cabazitaxel", "management": "AVOID" },
       { "drug": "STRONG CYP3A4 INDUCERS (rifampin, phenytoin)", "severity": "Major", "mechanism": "↓cabazitaxel", "management": "AVOID" },
-      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid during therapy + 6 months post" }
+      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid during therapy + 6 months post" },
+      { "drug": "Pregnancy (male partners)", "severity": "Major", "mechanism": "Potential fetal toxicity from semen exposure (animal data)", "management": "Effective contraception + condom use during therapy and 6 months after for male patients with pregnant partners" }
+    
     ],
     "pregnancy": "Not indicated (male-only mCRPC); however, partners — effective contraception advised + condoms during therapy + 6 months",
     "pk": "IV. Hepatic metabolism CYP3A4. t½: ~95h (long terminal). Fecal/biliary excretion.",
@@ -122005,7 +122046,9 @@ var DRUGS = {
       "Known hypersensitivity to ecallantide"
     ],
     "interactions": [
-      { "drug": "Limited; no major drug-drug interactions documented.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" }
+      { "drug": "Limited; no major drug-drug interactions documented.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
+      { "drug": "Anaphylaxis (Black Box)", "severity": "Major", "mechanism": "~3% anaphylaxis risk with subcutaneous administration", "management": "Administer in healthcare facility with anaphylaxis-trained staff and resuscitation equipment; observe ≥1h post-dose" }
+    
     ],
     "pregnancy": "Limited data; use only if benefit outweighs risk.",
     "pk": "SC. Peak: 2-3h. t½: ~2h.",
@@ -123398,7 +123441,9 @@ var DRUGS = {
     "interactions": [
       { "drug": "STRONG CYP3A4 INHIBITORS", "severity": "Major", "mechanism": "↑pemigatinib", "management": "AVOID or reduce dose" },
       { "drug": "STRONG CYP3A4 INDUCERS", "severity": "Major", "mechanism": "↓pemigatinib", "management": "AVOID" },
-      { "drug": "Phosphate binders", "severity": "Note", "mechanism": "therapeutic management of hyperphosphatemia", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Phosphate binders", "severity": "Note", "mechanism": "therapeutic management of hyperphosphatemia", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Ophthalmologic exam (serous retinal detachment)", "severity": "Major", "mechanism": "FGFR inhibitor class — serous retinal detachment / RPED in ~5-10%", "management": "Baseline + every 2 months ophthalmologic exam (OCT)" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 1 week.",
     "pk": "PO. Peak: 1.1h. CYP3A4 metabolism. t½: ~15h.",
