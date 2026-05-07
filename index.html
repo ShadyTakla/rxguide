@@ -3673,6 +3673,189 @@ var DISEASES = {
         ],
         "introduction": "Cardiogenic shock is acute primary pump failure causing systemic hypoperfusion and end-organ damage. Acute MI accounts for ~80% of cases; emergent coronary angiography + PCI is the cornerstone of care, with norepinephrine as first-line vasopressor and dobutamine/milrinone as inotropes. Mechanical circulatory support landscape evolved with recent trials: IABP-SHOCK II (2012) and ECLS-SHOCK (2023) showed NO mortality benefit for IABP and routine VA-ECMO respectively; in contrast, DanGer Shock (Møller NEJM 2024) showed Impella CP reduces 180-day mortality (NNT 8) in selected anterior STEMI cardiogenic shock — the first MCS trial with positive mortality outcome. Mortality remains ~40-50%; pharmacist roles include vasopressor/inotrope titration, drug interactions, ECMO anticoagulation, and transition to guideline-directed medical therapy upon recovery. Mechanical complications (papillary muscle rupture, VSR, free-wall rupture) post-MI are surgical emergencies.",
         "source": "CCS Heart Failure Guidelines 2024; SHOCK trial Hochman NEJM 1999; CULPRIT-SHOCK Thiele NEJM 2017; SOAP II De Backer NEJM 2010; IABP-SHOCK II Thiele NEJM 2012; ECLS-SHOCK Thiele NEJM 2023; DanGer Shock Møller NEJM 2024; SCAI Shock Classification Baran 2019"
+      },
+      {
+        "id": "cardiac_arrest_acls",
+        "name": "Cardiac Arrest (ACLS)",
+        "subtitle": "VF/pVT, Asystole/PEA — Adult Advanced Life Support — Heart & Stroke / AHA Guidelines",
+        "patho": "Sudden cessation of effective cardiac output. Two main rhythm groups: SHOCKABLE (VF, pulseless VT) vs NON-SHOCKABLE (asystole, PEA). VF/pVT survival hinges on EARLY DEFIBRILLATION + high-quality CPR. PEA = organized electrical activity without effective mechanical contraction; address H's & T's reversible causes. Survival to hospital discharge OHCA ~10% overall (much higher with bystander CPR + early AED). IHCA survival ~25%.",
+        "signs": "Unresponsive + apnea/agonal breathing + no pulse. Initial rhythm determines pathway. ACLS: C-A-B (compressions first). Capnography (ETCO2 <10 mmHg = poor CPR quality; sudden rise = ROSC).",
+        "diagnosis": "CLINICAL — unresponsive, no pulse (≤10 sec check), apnea/agonal. Cardiac monitor reveals rhythm. Post-ROSC: 12-lead ECG (STEMI for emergent cath), ABG, lactate, troponin, K+/Mg2+/Ca2+, glucose, coags, drug screen, CXR, CT head if neuro post-arrest.",
+        "monitoring": "Continuous ECG, ETCO2 (CPR quality + ROSC), arterial line post-ROSC, core temperature (TTM 32-36°C × 24 h post-arrest comatose).",
+        "treatment": [
+          {
+            "line": "BLS first 2 minutes",
+            "type": "Basic Life Support",
+            "family": "—",
+            "agents": [
+              "Recognize arrest",
+              "Call code/911",
+              "CPR 30:2 — 100-120/min, depth 5-6 cm, full recoil, minimize interruptions",
+              "AED/defibrillator ASAP"
+            ],
+            "notes": "HIGH-QUALITY CPR is single most important intervention. Bystander CPR doubles survival.",
+            "guideline": "Heart & Stroke Canada / AHA BLS 2020 (updated 2023)"
+          },
+          {
+            "line": "Shockable: VF/pVT",
+            "type": "Defibrillation + epinephrine + amiodarone",
+            "family": "Antiarrhythmic + vasopressor",
+            "agents": [
+              "DEFIBRILLATE 200 J biphasic (or per device); resume CPR immediately × 2 min",
+              "EPINEPHRINE 1 mg IV/IO every 3-5 min after 2nd shock",
+              "AMIODARONE 300 mg IV/IO bolus after 3rd shock; second dose 150 mg after 5th shock; alternative LIDOCAINE 1-1.5 mg/kg"
+            ],
+            "notes": "EARLY DEFIBRILLATION is key. Shock-CPR-Drug-Shock cycle. Address H's & T's in parallel.",
+            "guideline": "Heart & Stroke / AHA ACLS 2020 (updated 2023); EPI dose timing per ALPS / PARAMEDIC-2"
+          },
+          {
+            "line": "Non-shockable: Asystole/PEA",
+            "type": "CPR + epinephrine + reversible causes",
+            "family": "Vasopressor",
+            "agents": [
+              "CPR continuous",
+              "EPINEPHRINE 1 mg IV/IO ASAP, then every 3-5 min",
+              "ADDRESS H's & T's: Hypovolemia, Hypoxia, H+ (acidosis), Hypo/hyperkalemia, Hypothermia; Tension pneumothorax, Tamponade, Toxins, Thrombosis (PE/MI)"
+            ],
+            "notes": "PARAMEDIC-2 trial — epinephrine improves ROSC + survival to discharge but neurological outcomes mixed. Use it.",
+            "guideline": "Heart & Stroke / AHA ACLS 2020"
+          },
+          {
+            "line": "Refractory VF/pVT",
+            "type": "Advanced — dual sequential, ECMO, magnesium, amiodarone+lidocaine",
+            "family": "Multi-modal",
+            "agents": [
+              "DOUBLE SEQUENTIAL DEFIBRILLATION (DOSE-VF trial — 30% better ROSC) — two defibrillators, simultaneous shocks",
+              "MAGNESIUM 1-2 g IV — torsades or hypoMg only",
+              "ECMO/eCPR — selected centers; survival ~30% in good candidates (<60 min downtime, witnessed, shockable)",
+              "Esmolol 500 mcg/kg bolus + 50-100 mcg/kg/min — refractory VF storm"
+            ],
+            "notes": "DOSE-VF (Cheskes NEJM 2022): vector change + dual sequential defibrillation outperformed standard for refractory VF.",
+            "guideline": "DOSE-VF Cheskes NEJM 2022; ARREST trial Yannopoulos Lancet 2020 (eCPR)"
+          },
+          {
+            "line": "Post-ROSC care",
+            "type": "TTM + emergent PCI + supportive",
+            "family": "Multi-system",
+            "agents": [
+              "TARGETED TEMPERATURE MANAGEMENT 32-36°C × 24 h (TTM2 trial: normothermia 36-37.5°C non-inferior — local protocol; comatose post-arrest)",
+              "EMERGENT CATH/PCI if STEMI on post-ROSC ECG (Class I)",
+              "MAP target ≥65 mmHg (norepinephrine first-line vasopressor)",
+              "Glucose target 7.8-10 mmol/L; SpO2 92-98%; PaCO2 35-45; Hb >70",
+              "Avoid hyperthermia, hyperoxia, hypocapnia"
+            ],
+            "notes": "TTM2 (Dankiewicz NEJM 2021): hypothermia 33°C did not improve outcomes vs normothermia 37.5°C. CCS Post-Cardiac Arrest Care: individualized; aggressive hyperthermia avoidance.",
+            "guideline": "TTM2 Dankiewicz NEJM 2021; AHA Post-Arrest 2020"
+          }
+        ],
+        "pearls": [
+          "HIGH-QUALITY CPR > all drugs (compressions deep, fast, minimize interruptions, full recoil)",
+          "EARLY DEFIBRILLATION for VF/pVT — every minute delay = 7-10% lower survival",
+          "EPINEPHRINE 1 mg IV/IO q3-5 min — improves ROSC; PARAMEDIC-2",
+          "AMIODARONE 300 mg IV after 3rd shock; second 150 mg after 5th",
+          "ETCO2 <10 mmHg = poor CPR quality; sudden rise = ROSC",
+          "DOSE-VF — DOUBLE SEQUENTIAL DEFIBRILLATION for refractory VF",
+          "ECMO/eCPR — select centers; refractory shockable, witnessed, <60 min downtime",
+          "POST-ROSC: emergent PCI if STEMI; TTM 32-36°C (TTM2 — normothermia non-inferior)",
+          "H's & T's: Hypovolemia, Hypoxia, H+, Hypo/hyperK, Hypothermia, Tension pneumo, Tamponade, Toxins, Thrombosis",
+          "VASOPRESSIN no longer routine ACLS; epinephrine alone preferred",
+          "DEBRIEF + family presence during resuscitation now recommended",
+          "OPIOID OVERDOSE arrest — NALOXONE 0.4-2 mg IV/IM/IN as adjunct after CPR begun"
+        ],
+        "introduction": "Cardiac arrest is the abrupt loss of effective cardiac output. ACLS algorithms standardize response with high-quality CPR, early defibrillation for shockable rhythms, epinephrine, antiarrhythmics for refractory VF, and addressing reversible causes. Outcomes are best with witnessed arrest, bystander CPR, early AED, and integrated post-arrest care including TTM and emergent PCI when indicated.",
+        "source": "Heart & Stroke Foundation of Canada / AHA ACLS 2020 (focused updates 2023). DOSE-VF Cheskes NEJM 2022; PARAMEDIC-2 Perkins NEJM 2018; ARREST Yannopoulos Lancet 2020; TTM2 Dankiewicz NEJM 2021. CCS Post-Cardiac Arrest Care."
+      },
+      {
+        "id": "aortic_dissection",
+        "name": "Aortic Dissection",
+        "subtitle": "Acute Aortic Syndrome — Stanford Type A vs Type B — CCS / ACC / AHA / ESC Guidelines",
+        "patho": "INTIMAL TEAR allows pulsatile blood to enter media → propagating false lumen separating aortic intima from adventitia. STANFORD TYPE A involves ASCENDING aorta (DeBakey I/II) — surgical emergency (mortality 1-2% per hour untreated). STANFORD TYPE B involves DESCENDING aorta only (DeBakey III) — initial medical management; complicated B (malperfusion, rupture, refractory pain) → TEVAR. Risk factors: HYPERTENSION (most common), connective tissue disease (Marfan, Loeys-Dietz, vascular Ehlers-Danlos, bicuspid aortic valve), pregnancy 3rd trimester, cocaine, trauma, prior cardiac surgery, atherosclerosis.",
+        "signs": "ABRUPT ONSET TEARING/RIPPING SEVERE CHEST OR BACK PAIN — peak at onset (vs MI crescendo). Migration as dissection propagates (chest → back → abdomen). Pulse deficit (asymmetric — 30% Type A). New aortic regurgitation murmur (Type A; 30%). Neuro deficit (carotid involvement → stroke). Limb ischemia. Mesenteric ischemia. Renal failure. Pleural effusion (left). Tamponade (Type A — pericardial extension).",
+        "diagnosis": "HIGH SUSPICION KEY (often missed). CT ANGIOGRAPHY chest/abdomen/pelvis (gold standard ED — sensitivity + specificity >95%). TEE alternative (operating room, hemodynamic instability). MRI (stable chronic). CXR (widened mediastinum >8 cm — 60% sens). D-DIMER negative may help rule out (high NPV but not stand-alone). ADD risk score (Aortic Dissection Detection Risk Score 0-3). Troponin can be elevated (RCA dissection). ECG often normal or non-specific (rule out STEMI which mimics + thrombolytics catastrophic if dissection).",
+        "monitoring": "Arterial line (preferably right + left to detect malperfusion), CVP, urine output (renal malperfusion), neuro exam (stroke), abdominal exam (mesenteric), serial troponins (RCA), ABG/lactate.",
+        "treatment": [
+          {
+            "line": "Initial — pain + BP + HR control (BOTH TYPES)",
+            "type": "β-blocker IV (FIRST) → vasodilator (afterload)",
+            "family": "β1-selective + direct vasodilator",
+            "agents": [
+              "LABETALOL IV 20 mg bolus q10 min then 1-2 mg/min infusion (preferred — α + β; both HR + BP)",
+              "ESMOLOL IV 500 mcg/kg load + 50-300 mcg/kg/min (titratable; preferred renal/hepatic impaired)",
+              "MORPHINE / FENTANYL IV — analgesia (catecholamine reduction)",
+              "TARGET: HR <60 bpm AND SBP 100-120 mmHg WITHIN 20 MINUTES — reduces aortic shear stress (dP/dt)",
+              "Add NITROPRUSSIDE or NICARDIPINE if BP not controlled — ONLY AFTER β-blocker (avoid reflex tachycardia worsening shear)"
+            ],
+            "notes": "β-blocker FIRST CRITICAL — control HR before vasodilator (vasodilator alone causes reflex tachycardia → INCREASED shear → propagation). Avoid hydralazine (similar issue).",
+            "guideline": "CCS / AHA / ACC Aortic Diseases 2022; ESC Aortic Diseases 2014 (update 2024)"
+          },
+          {
+            "line": "Type A (ascending)",
+            "type": "EMERGENT SURGICAL REPAIR",
+            "family": "Cardiothoracic surgery",
+            "agents": [
+              "EMERGENT cardiothoracic surgery — open repair (graft replacement of ascending aorta ± aortic valve ± root)",
+              "Endovascular techniques investigational for Type A",
+              "Mortality 1-2%/hour untreated; surgical mortality 15-30%"
+            ],
+            "notes": "Type A = SURGICAL EMERGENCY. Transfer to cardiothoracic center. Avoid delays. Concomitant pericardial effusion/tamponade = TIME-CRITICAL.",
+            "guideline": "AHA/ACC 2022; CCS 2022; ESC 2014"
+          },
+          {
+            "line": "Type B uncomplicated",
+            "type": "Medical management — strict BP/HR control",
+            "family": "Anti-impulse therapy",
+            "agents": [
+              "Continue IV β-blocker → transition to PO atenolol/metoprolol/bisoprolol target HR <60",
+              "ACE inhibitor or ARB (LOSARTAN) — Marfan + reduce aortic dilation",
+              "BP target SBP <120 mmHg long-term",
+              "Imaging surveillance CT/MRI 1, 3, 6, 12 months then yearly"
+            ],
+            "notes": "Type B uncomplicated = medical first. Long-term anti-impulse therapy. Surveillance for false lumen expansion → late TEVAR.",
+            "guideline": "AHA/ACC 2022 (Class I); INSTEAD trial — TEVAR adds to medical for chronic"
+          },
+          {
+            "line": "Type B complicated",
+            "type": "TEVAR (thoracic endovascular aortic repair)",
+            "family": "Endovascular",
+            "agents": [
+              "TEVAR — covered stent graft over entry tear",
+              "Indications: malperfusion (limb, mesenteric, renal, spinal), rupture/impending, refractory pain, refractory hypertension, rapid expansion",
+              "Adjuncts: fenestration, branch vessel stenting"
+            ],
+            "notes": "ADSORB + INSTEAD-XL trials demonstrated TEVAR benefit complicated Type B + selected uncomplicated.",
+            "guideline": "AHA/ACC 2022; ADSORB Brunkwall EJVS 2014; INSTEAD-XL Nienaber Circ 2013"
+          },
+          {
+            "line": "Connective tissue disease (Marfan, Loeys-Dietz)",
+            "type": "Prophylactic surgery + losartan + lifestyle",
+            "family": "Genetics + surgical",
+            "agents": [
+              "LOSARTAN 50-100 mg (RCT data — slows aortic dilation Marfan)",
+              "β-BLOCKER (atenolol or others)",
+              "PROPHYLACTIC AORTIC ROOT REPAIR when ascending aorta ≥5.0 cm Marfan (or 4.5 if family history dissection, rapid growth)",
+              "Avoid heavy isometric exercise, contact sports, valsalva, pregnancy precautions"
+            ],
+            "notes": "Genetic counseling; family screening (echo + genetic testing). Pregnancy high-risk if aortic root >4 cm.",
+            "guideline": "AHA/ACC 2022 Marfan management"
+          }
+        ],
+        "pearls": [
+          "TEARING/RIPPING chest or back pain — abrupt onset, peak immediately",
+          "PULSE DEFICIT or BP differential between arms — 30% Type A",
+          "NEW AORTIC REGURG MURMUR — 30% Type A",
+          "WIDENED MEDIASTINUM on CXR (60% sens) — non-specific",
+          "CT ANGIO GOLD STANDARD ED",
+          "TYPE A = EMERGENT SURGERY (1-2% mortality/hour)",
+          "TYPE B uncomplicated = medical first; complicated = TEVAR",
+          "β-BLOCKER FIRST (LABETALOL or ESMOLOL) — HR <60 AND SBP <120 in 20 min",
+          "AVOID vasodilator alone (reflex tachycardia worsens shear)",
+          "MARFAN — losartan + β-blocker + prophylactic surgery if root ≥5 cm",
+          "STEMI MIMIC — RCA dissection causes inferior STEMI; thrombolytics catastrophic",
+          "D-DIMER may rule out but not stand-alone diagnostic",
+          "PREGNANCY 3rd trimester + Marfan = high-risk dissection"
+        ],
+        "introduction": "Aortic dissection is a life-threatening tear in the aortic intima allowing blood to propagate within the media. Stanford Type A (ascending) requires emergent surgery; Type B (descending) is initially medical with TEVAR for complications. Diagnosis hinges on high suspicion in the right clinical context, with CT angiography as the gold standard. Anti-impulse therapy (β-blocker first, then vasodilator) targeting HR <60 and SBP 100-120 mmHg is foundational.",
+        "source": "AHA/ACC Guideline for Diagnosis and Management of Aortic Disease 2022 (Isselbacher Circ 2022). ESC Aortic Diseases 2014 (update 2024). CCS Position Statement Aortic Dissection 2022. INSTEAD-XL Nienaber Circ 2013. ADSORB Brunkwall EJVS 2014."
       }
     ]
   },
@@ -15637,6 +15820,102 @@ var DISEASES = {
         ],
         "introduction": "Gastroparesis is delayed gastric emptying causing postprandial nausea, vomiting (often of undigested food), early satiation, and bloating. Diabetes is the most common cause; idiopathic and medication-induced (opioids, GLP-1 RAs) are increasingly recognized. Diagnosis requires gastric emptying scintigraphy after ruling out mechanical obstruction. Management combines dietary modification, prokinetics (domperidone preferred in Canada), antiemetics, and procedural options for refractory disease. Pharmacy plays a key role in identifying medication-induced cases, ECG/QT monitoring with prokinetics, and supporting glucose optimization.",
         "source": "ACG Gastroparesis Guidelines 2022 (Camilleri); CCS Diabetic Gastroparesis 2024; Canadian Society of Intestinal Research; Health Canada Domperidone Risk Communication 2015; FDA Metoclopramide BBW; G-POEM Trial Data 2024"
+      },
+      {
+        "id": "acute_mesenteric_ischemia",
+        "name": "Acute Mesenteric Ischemia",
+        "subtitle": "Embolic, Thrombotic, Non-occlusive (NOMI), Venous — CAG / WSES / ESVS Guidelines",
+        "patho": "Acute reduction in blood flow to small bowel → bowel ischemia → infarction → perforation → sepsis → death (mortality 50-80%). Etiologies: ARTERIAL EMBOLISM (50%) — usually SMA from cardiac source (AF, post-MI thrombus, valve, endocarditis); ARTERIAL THROMBOSIS (25%) — atherosclerosis pre-existing chronic mesenteric ischemia; NON-OCCLUSIVE MESENTERIC ISCHEMIA (NOMI, 20%) — splanchnic vasoconstriction in shock, sepsis, post-cardiac surgery, dialysis, vasopressors, digoxin; MESENTERIC VENOUS THROMBOSIS (5%) — hypercoagulable, portal HTN, malignancy, cirrhosis, OCP, IBD. TIME = INTESTINE — irreversible necrosis within 6-12 hours.",
+        "signs": "PAIN OUT OF PROPORTION TO EXAM — severe abdominal pain disproportionate to mild abdominal findings (early). Later: peritonitis, distension, GI bleeding, shock. Cardinal triad: severe pain + GI emptying (vomiting/diarrhea) + cardiac source. Non-specific early presentation = HIGH MORTALITY due to delayed diagnosis.",
+        "diagnosis": "CT ANGIOGRAPHY abdomen/pelvis with arterial + venous phases (gold standard ED) — vascular occlusion, bowel wall changes (pneumatosis, portal venous gas — late), free air. Lactate elevated (late marker — tissue infarction). D-dimer elevated (sensitive not specific). Leukocytosis. CK elevated. Metabolic acidosis (late). Conventional angiography (gold standard but invasive — therapeutic if intervention planned). Avoid plain films alone (insensitive).",
+        "monitoring": "Hemodynamics, lactate, ABG, CBC, CK, urine output. Re-look laparotomy 24-48 h often needed (assess viability).",
+        "treatment": [
+          {
+            "line": "Initial resuscitation + diagnosis",
+            "type": "ABC + heparin + analgesia + IV fluids",
+            "family": "Resuscitation",
+            "agents": [
+              "IV FLUIDS aggressive crystalloid",
+              "HEPARIN IV — therapeutic anticoagulation immediately on diagnosis (UFH 80 U/kg bolus + 18 U/kg/h)",
+              "ANALGESIA — IV opioids (avoid masking)",
+              "BROAD-SPECTRUM ANTIBIOTICS — Bugs & Drugs: piperacillin-tazobactam 4.5 g IV q8h or carbapenem (translocation prevention)",
+              "VASOPRESSOR if needed — NOREPINEPHRINE (less mesenteric vasoconstriction than dopamine/vasopressin)",
+              "AVOID α-agonists where possible (worsen NOMI)",
+              "EMERGENT SURGICAL CONSULT + INTERVENTIONAL RADIOLOGY"
+            ],
+            "notes": "Time-critical. Empiric heparin reduces propagation while planning intervention.",
+            "guideline": "WSES Acute Mesenteric Ischemia 2017; CAG / Bugs & Drugs 2024; ESVS 2017"
+          },
+          {
+            "line": "Arterial embolism (SMA)",
+            "type": "Endovascular thrombectomy or surgical embolectomy",
+            "family": "Vascular intervention",
+            "agents": [
+              "FIRST-LINE: ENDOVASCULAR — catheter-directed thrombolysis + mechanical thrombectomy (modern preferred if no peritonitis)",
+              "SURGICAL embolectomy (Fogarty catheter) + bowel resection of necrotic segments + 'second-look' laparotomy 24-48 h",
+              "Anticoagulation chronic — DOAC or warfarin if AF",
+              "Address embolic source (cardiology workup, AF management)"
+            ],
+            "notes": "ENDOVASCULAR FIRST if no peritonitis (lower mortality vs open). PERITONITIS = OPEN SURGERY (assess bowel viability + resect).",
+            "guideline": "WSES 2017; ESVS Mesenteric Disease 2017"
+          },
+          {
+            "line": "Arterial thrombosis",
+            "type": "Endovascular stenting / open bypass",
+            "family": "Vascular intervention",
+            "agents": [
+              "ENDOVASCULAR — angioplasty + stent (atherosclerotic SMA origin)",
+              "OPEN — aortomesenteric bypass + bowel resection if necrotic",
+              "Anticoagulation + antiplatelet long-term"
+            ],
+            "notes": "Often pre-existing chronic mesenteric ischemia; consider pre-emptive intervention if known.",
+            "guideline": "ESVS 2017"
+          },
+          {
+            "line": "Non-occlusive (NOMI)",
+            "type": "Treat shock + intra-arterial vasodilator",
+            "family": "Hemodynamic + vasodilator",
+            "agents": [
+              "TREAT UNDERLYING SHOCK / sepsis / cardiac dysfunction",
+              "INTRA-ARTERIAL PAPAVERINE 30-60 mg/h via SMA catheter (specialized)",
+              "AVOID α-agonists / vasopressin / digoxin (worsen)",
+              "NOREPINEPHRINE preferred vasopressor",
+              "Surgery only if peritonitis / perforation"
+            ],
+            "notes": "Mortality 70%+ — usually critically ill comorbid patients.",
+            "guideline": "WSES 2017"
+          },
+          {
+            "line": "Mesenteric venous thrombosis",
+            "type": "Anticoagulation alone (most cases)",
+            "family": "Anticoagulant",
+            "agents": [
+              "HEPARIN IV → WARFARIN or DOAC × 6 months minimum",
+              "Lifelong if hypercoagulable",
+              "Surgery only if peritonitis / perforation",
+              "Hypercoagulability workup (JAK2, paroxysmal nocturnal hemoglobinuria, antiphospholipid, Factor V Leiden, prothrombin G20210A, malignancy)"
+            ],
+            "notes": "Best prognosis (mortality 20%). Chronic anticoagulation primary therapy.",
+            "guideline": "WSES 2017; CHEST 2024"
+          }
+        ],
+        "pearls": [
+          "PAIN OUT OF PROPORTION TO EXAM — cardinal early sign",
+          "TIME = INTESTINE — irreversible necrosis 6-12 hours",
+          "CT ANGIOGRAPHY arterial + venous phases — diagnostic gold standard ED",
+          "LACTATE elevated late (post-infarction); D-dimer sensitive not specific",
+          "MORTALITY 50-80% overall — delayed diagnosis common",
+          "HEPARIN IV immediately on diagnosis",
+          "EMBOLIC (50%) — usually AF; SMA — endovascular first if no peritonitis",
+          "THROMBOTIC (25%) — atherosclerotic; chronic mesenteric ischemia precedes",
+          "NOMI (20%) — shock/vasoconstriction; treat underlying; intra-arterial papaverine",
+          "VENOUS (5%) — hypercoagulable; anticoagulation primary",
+          "PERITONITIS = OPEN SURGERY (resect necrotic bowel + second-look 24-48h)",
+          "ANTIBIOTICS — pip-tazo or carbapenem (bacterial translocation)",
+          "PORTAL VENOUS GAS / PNEUMATOSIS = LATE infarction sign on CT"
+        ],
+        "introduction": "Acute mesenteric ischemia is a high-mortality vascular emergency in which the small bowel loses adequate blood supply. Pain out of proportion to exam in a high-risk patient (AF, atherosclerosis, hypercoagulable, shock) demands immediate CT angiography. Treatment requires anticoagulation, broad-spectrum antibiotics, and mechanism-specific revascularization (endovascular increasingly first-line) with surgical resection of necrotic bowel.",
+        "source": "WSES Guidelines Acute Mesenteric Ischemia 2017 (Bala WJES 2017). ESVS Mesenteric Arterial and Venous Diseases 2017. CAG IBD-related ischemia + Bugs & Drugs 2024. CHEST 2024 anticoagulation."
       }
     ]
   },
@@ -23207,6 +23486,99 @@ var DISEASES = {
         ],
         "introduction": "Infectious mononucleosis (EBV) is a common adolescent/young-adult viral illness with classic triad of fever, posterior cervical lymphadenopathy, and exudative pharyngitis. Most cases resolve with supportive care alone. Critical pharmacy counseling points: AVOID amoxicillin/ampicillin (90% rash — immune-mediated, not true allergy), AVOID contact sports + heavy lifting for 3-4 weeks (splenic rupture risk), and counsel realistic 4-12 week fatigue recovery timeline. Distinguish from strep pharyngitis (co-infection in 5%), and consider HIV acute retroviral syndrome in heterophile-negative cases.",
         "source": "AAP Adolescent Mono Practice Point 2024; Cochrane Acyclovir for Mono 2016; Cochrane Steroids for Mono 2015; IDSA EBV; Hoagland Splenic Rupture Sports Medicine Reviews; CMA Family Practice"
+      },
+      {
+        "id": "bacterial_meningitis",
+        "name": "Bacterial Meningitis",
+        "subtitle": "Acute bacterial meningitis — Strep pneumo, N. meningitidis, Listeria, GBS — IDSA / CIDRAS / Bugs & Drugs Guidelines",
+        "patho": "Bacterial infection of meninges (pia + arachnoid + subarachnoid space CSF). PATHOGENS by age: NEONATES (0-1 mo) — Group B Strep (GBS), E. coli, Listeria; INFANTS/CHILDREN (1 mo-2 y) — S. pneumoniae, N. meningitidis, H. influenzae type b (rare post-vaccine); ADULTS (18-50 y) — S. pneumoniae, N. meningitidis; OLDER ADULTS (>50 y) or IMMUNOCOMPROMISED — add LISTERIA monocytogenes (intracellular pathogen — covers with AMPICILLIN); POST-NEUROSURGERY/SHUNT — S. aureus, GNR, Pseudomonas. Mortality 10-25% even with treatment; survivors 30% have neurological sequelae (hearing loss, cognitive impairment, seizures).",
+        "signs": "Classic TRIAD (only 44% have all 3): FEVER + NECK STIFFNESS + ALTERED MENTAL STATUS. Headache (severe), photophobia, vomiting, seizures (30%), focal neuro deficits, papilledema (late). Kernig + Brudzinski signs (low sensitivity). PETECHIAE/PURPURA — meningococcemia (high suspicion). Neonates: poor feeding, lethargy, bulging fontanelle, paradoxical irritability, hypotonia. Older: subtle (confusion alone).",
+        "diagnosis": "URGENT LUMBAR PUNCTURE — CSF: opening pressure (>20 cm H2O elevated), TURBID CSF, NEUTROPHIL PREDOMINANT PLEOCYTOSIS (>1000 WBC, >80% PMN), GLUCOSE LOW (<2.2 mmol/L or CSF:serum <0.4), PROTEIN HIGH (>1 g/L), GRAM STAIN (60-90% sens), CULTURE, latex agglutination, PCR (S. pneumo, N. mening, HSV — adjunct). BLOOD CULTURES (positive 50-90%). CT before LP IF: focal neuro deficit, immunocompromised, seizure, papilledema, GCS <12, age >60 (avoid herniation in mass lesion). BUT — DO NOT DELAY ANTIBIOTICS for CT/LP; give EMPIRIC ABX + DEXAMETHASONE FIRST then image then LP.",
+        "monitoring": "Hemodynamics (sepsis), neuro exam q1-2 h, ICP (high risk), repeat LP if not improving 24-48 h, audiology testing post-recovery (hearing loss).",
+        "treatment": [
+          {
+            "line": "EMPIRIC immediate (DO NOT DELAY)",
+            "type": "Broad ABX + dexamethasone",
+            "family": "Combination",
+            "agents": [
+              "DEXAMETHASONE 0.15 mg/kg IV (0.6 mg/kg/day q6h) × 4 days STARTED 15-20 min BEFORE OR WITH FIRST ABX (S. pneumo benefit; reduces hearing loss + mortality)",
+              "CEFTRIAXONE 2 g IV q12h (covers S. pneumo, N. mening, GBS, Hib)",
+              "VANCOMYCIN 15-20 mg/kg q8-12h (target trough 15-20 — covers PCN-resistant S. pneumo)",
+              "ADD AMPICILLIN 2 g IV q4h IF AGE >50 OR IMMUNOCOMPROMISED (covers Listeria — Listeria is INTRACELLULAR; cephalosporins ineffective)",
+              "ACYCLOVIR 10 mg/kg q8h IF concern for HSV encephalitis (alteration of consciousness, focal — empirical until ruled out)"
+            ],
+            "notes": "FIRST DOSE WITHIN 1 HOUR of suspected meningitis. Do not wait for LP. CCS Sepsis 2024.",
+            "guideline": "IDSA Bacterial Meningitis 2004 (update 2017); CIDRAS / Bugs & Drugs 2024; PHAC"
+          },
+          {
+            "line": "S. pneumoniae confirmed",
+            "type": "Pathogen-directed",
+            "family": "Penicillin/cephalosporin ± vancomycin",
+            "agents": [
+              "If PCN-susceptible: PENICILLIN G 4 mU IV q4h × 10-14 days OR CEFTRIAXONE 2 g IV q12h",
+              "If PCN-resistant or unknown sensitivity: CEFTRIAXONE 2 g IV q12h + VANCOMYCIN until susceptibility known",
+              "DEXAMETHASONE × 4 days (Class I S. pneumo)",
+              "Duration: 10-14 days IV"
+            ],
+            "notes": "Vaccination prevention: PCV13 + PPSV23.",
+            "guideline": "IDSA 2017"
+          },
+          {
+            "line": "N. meningitidis confirmed",
+            "type": "Penicillin or ceftriaxone",
+            "family": "β-lactam",
+            "agents": [
+              "PENICILLIN G 4 mU IV q4h OR CEFTRIAXONE 2 g IV q12h × 7 days",
+              "POST-EXPOSURE PROPHYLAXIS for close contacts: CIPROFLOXACIN 500 mg PO once OR RIFAMPIN 600 mg PO q12h × 4 doses OR CEFTRIAXONE 250 mg IM once (pregnancy)",
+              "MENINGOCOCCAL VACCINE (MenACWY + MenB)"
+            ],
+            "notes": "PUBLIC HEALTH NOTIFIABLE. Petechiae/purpura → fulminant meningococcemia; mortality 40%.",
+            "guideline": "PHAC; IDSA 2017"
+          },
+          {
+            "line": "Listeria confirmed (or empirical >50/immunocompromised)",
+            "type": "Ampicillin + gentamicin",
+            "family": "β-lactam + aminoglycoside",
+            "agents": [
+              "AMPICILLIN 2 g IV q4h × 21 days",
+              "GENTAMICIN 1.7 mg/kg q8h synergy first 7-14 days",
+              "ALTERNATIVE PCN-allergic: TMP-SMX 5 mg/kg (TMP component) IV q6h × 21 days",
+              "DEXAMETHASONE — uncertain benefit Listeria; not contraindicated"
+            ],
+            "notes": "Listeria intracellular — LONGER DURATION + synergy with aminoglycoside.",
+            "guideline": "IDSA 2017"
+          },
+          {
+            "line": "Neonatal (0-30 days)",
+            "type": "Ampicillin + cefotaxime/gentamicin",
+            "family": "β-lactam combo",
+            "agents": [
+              "AMPICILLIN 50-100 mg/kg IV q6-8h (covers GBS, Listeria, Enterococcus)",
+              "+ CEFOTAXIME 50 mg/kg IV q8h (E. coli, GNR — preferred over ceftriaxone in neonates due to bilirubin displacement)",
+              "+/- GENTAMICIN 4 mg/kg IV q24h (synergy)",
+              "Duration: GBS 14-21 days; GNR 21 days minimum"
+            ],
+            "notes": "Group B Strep prophylaxis intrapartum reduces early-onset disease.",
+            "guideline": "AAP Pediatric Red Book 2024"
+          }
+        ],
+        "pearls": [
+          "TRIAD (44%): FEVER + NECK STIFFNESS + ALTERED MENTAL STATUS",
+          "PETECHIAE/PURPURA → meningococcal (high suspicion)",
+          "FIRST DOSE ANTIBIOTICS WITHIN 1 HOUR — do not delay",
+          "DEXAMETHASONE 15-20 min BEFORE/with first abx — S. pneumo benefit (mortality + hearing)",
+          "EMPIRIC: CEFTRIAXONE + VANCOMYCIN; ADD AMPICILLIN if >50 or immunocompromised (Listeria)",
+          "CT BEFORE LP if focal neuro, immunocompromised, GCS <12, papilledema, age >60",
+          "MORTALITY 10-25%; SEQUELAE 30% (HEARING LOSS most common)",
+          "MENINGOCOCCAL post-exposure prophylaxis: CIPRO 500 mg ONCE",
+          "VACCINATION primary prevention (PCV13/15/20, MenACWY, MenB, Hib)",
+          "LISTERIA — AMPICILLIN; cephalosporins INEFFECTIVE (intracellular)",
+          "NEONATAL: AMP + CEFOTAXIME (not ceftriaxone — bilirubin)",
+          "CSF: NEUTROPHIL PLEOCYTOSIS, LOW GLUCOSE, HIGH PROTEIN",
+          "PUBLIC HEALTH NOTIFIABLE — meningococcal especially"
+        ],
+        "introduction": "Bacterial meningitis is a neurological emergency with high mortality and morbidity even with optimal therapy. Empiric antibiotics covering the likely pathogens by age plus dexamethasone given before or with the first dose must be initiated within the first hour. Lumbar puncture (with CT first if mass lesion suspected) confirms diagnosis and guides directed therapy. Vaccination is the principal prevention strategy.",
+        "source": "IDSA Practice Guidelines for Bacterial Meningitis (Tunkel CID 2004, updated 2017). CIDRAS / Bugs & Drugs 2024. PHAC Public Health notifiable disease. Meningococcal Vaccines NACI. ESCMID Bacterial Meningitis 2016. AAP Pediatric Red Book 2024."
       }
     ]
   },
@@ -27629,6 +28001,109 @@ var DISEASES = {
         ],
         "introduction": "Uterine fibroids (leiomyomas) are the most common pelvic tumor in women — benign monoclonal smooth muscle tumors with ~70-80% lifetime incidence (~25% symptomatic). They cause heavy menstrual bleeding, bulk symptoms (urinary frequency, constipation), dyspareunia, infertility, and pregnancy complications. Treatment is individualized to symptoms, age, fertility desires, and fibroid location/size. LNG-IUS is first-line medical for HMB; tranexamic acid is a non-hormonal option. GnRH agonists (leuprolide) provide pre-operative shrinkage; oral GnRH antagonists with add-back therapy (Myfembree — relugolix/estradiol/norethindrone) are emerging long-term options (24 months max). Myomectomy preserves fertility; uterine artery embolization preserves the uterus without surgery; hysterectomy is definitive. Pharmacist roles include HMB management counseling, iron therapy, GnRH antagonist administration + bone health, and contraceptive selection.",
         "source": "SOGC Fibroid Practice Guidelines 2024; ACOG Practice; LIBERTY-1 + LIBERTY-2 Myfembree trials; Health Canada Ulipristal/Fibristal Risk Communication 2020; CRASH-2 trial TXA; Stoffel Alternate-Day Iron Blood 2017"
+      },
+      {
+        "id": "postpartum_hemorrhage",
+        "name": "Postpartum Hemorrhage (PPH)",
+        "subtitle": "Primary PPH ≥500 mL vaginal / ≥1000 mL C-section within 24 h — SOGC Guideline 235",
+        "patho": "Excessive bleeding after delivery. PRIMARY (within 24 h) vs SECONDARY (24 h-12 weeks). 4 T's etiologies: TONE (uterine atony — 70-80%), TRAUMA (laceration, rupture, inversion — 20%), TISSUE (retained placenta, abnormal placentation — 10%), THROMBIN (coagulopathy — DIC, anticoagulation, congenital, HELLP). Risk factors: prolonged labor, augmented labor, multiple gestation, polyhydramnios, grand multiparity, prior PPH, fibroids, chorioamnionitis, macrosomia, instrumental/operative delivery, placenta previa/accreta. Leading cause of maternal mortality globally (~25% of maternal deaths).",
+        "signs": "Heavy bleeding postpartum. Tachycardia (early); hypotension (late — pregnancy physiology masks shock — young women compensate well). Pallor. Soft 'boggy' uterus = atony. Localized bleeding source — examine cervix/vagina for laceration. Retained tissue — incomplete placenta. Consider DIC (oozing IV sites, generalized).",
+        "diagnosis": "Clinical — quantify blood loss (visual estimation underestimates ~30%; weigh swabs). FOUR T's assessment. Bedside US for retained tissue. CBC, fibrinogen (<2 g/L = DIC predictor — major), PT/INR, aPTT, platelets, type & cross 4 units. Lactate.",
+        "monitoring": "Continuous BP, HR, SpO2; urine output (catheter); fundal tone q15 min; serial labs (Hb, fibrinogen, coags, lactate); transfusion targets (Hb, platelets >50, fibrinogen >2-3 g/L, INR <1.5).",
+        "treatment": [
+          {
+            "line": "ABC + simultaneous resuscitation + 4 T's identification",
+            "type": "Resuscitation + diagnosis",
+            "family": "Multi-modal",
+            "agents": [
+              "CALL FOR HELP (massive transfusion protocol activation)",
+              "TWO LARGE-BORE IV (16G+); TYPE & CROSSMATCH 4 UNITS",
+              "OXYGEN, monitor, foley",
+              "CRYSTALLOID 1-2 L → blood products if ongoing bleeding (1:1:1 RBC:FFP:platelets if massive)",
+              "TRANEXAMIC ACID 1 g IV WITHIN 3 HOURS (WOMAN trial — reduces death)",
+              "Identify 4 T's: TONE (uterus), TRAUMA (cervix/vagina), TISSUE (retained placenta), THROMBIN (coag)"
+            ],
+            "notes": "WOMAN trial (Lancet 2017): TXA 1 g IV within 3 h reduces death from PPH (NNT 250).",
+            "guideline": "SOGC PPH Guideline 235 (2018, updated 2022); WOMAN Lancet 2017"
+          },
+          {
+            "line": "TONE (atony — 70-80%): uterotonic ladder + mechanical",
+            "type": "Uterotonics + mechanical compression",
+            "family": "Multiple uterotonics",
+            "agents": [
+              "UTERINE MASSAGE + bimanual compression (immediate)",
+              "OXYTOCIN 10 IU IM or 5 IU IV slow + INFUSION 20-40 IU/L NS at 250 mL/h (FIRST-LINE)",
+              "ERGOMETRINE 0.2 mg IM (avoid HTN, preeclampsia, cardiac disease)",
+              "CARBOPROST (Hemabate) 250 mcg IM q15-90 min, max 2 mg (AVOID asthma — bronchospasm)",
+              "MISOPROSTOL 800-1000 mcg PR or sublingual (universal — temperature stable)",
+              "CARBETOCIN 100 mcg IV (long-acting analogue; SOGC Class I — preferred for C-section prevention)",
+              "BAKRI BALLOON tamponade if uterotonics fail",
+              "B-LYNCH SUTURE / Hayman compression suture (operative)",
+              "UTERINE ARTERY EMBOLIZATION (interventional radiology)",
+              "HYSTERECTOMY (last resort — life-saving)"
+            ],
+            "notes": "Uterotonic ladder: oxytocin → ergot → carboprost → misoprostol → TXA. Mechanical + surgical when pharmacologic fails.",
+            "guideline": "SOGC 235; CHAMPION trial Carbetocin Lancet 2018"
+          },
+          {
+            "line": "TRAUMA (20%): repair laceration",
+            "type": "Surgical repair",
+            "family": "Surgery",
+            "agents": [
+              "EXAM under anesthesia — identify cervical/vaginal/perineal laceration",
+              "REPAIR with suture (absorbable Vicryl)",
+              "Uterine inversion → manual replacement + uterotonics after replaced",
+              "Uterine rupture → emergent laparotomy"
+            ],
+            "notes": "Always examine for lacerations even if uterus tonic.",
+            "guideline": "SOGC 235"
+          },
+          {
+            "line": "TISSUE (retained placenta): manual removal / D&C",
+            "type": "Manual removal + curettage",
+            "family": "Procedure",
+            "agents": [
+              "MANUAL REMOVAL of retained placenta (under anesthesia)",
+              "DILATATION & CURETTAGE if products retained",
+              "BEDSIDE ULTRASOUND to confirm empty uterus",
+              "PLACENTA ACCRETA SPECTRUM — multidisciplinary team — preserve fertility (uterine artery embolization, methotrexate, leave placenta + delayed) or hysterectomy"
+            ],
+            "notes": "Antibiotic prophylaxis (cefazolin) if manual removal.",
+            "guideline": "SOGC 235; SOGC Placenta Accreta 2019"
+          },
+          {
+            "line": "THROMBIN (coagulopathy): blood products + correction",
+            "type": "Massive transfusion + replacement",
+            "family": "Hematologic",
+            "agents": [
+              "MASSIVE TRANSFUSION PROTOCOL (1:1:1 RBC:FFP:platelets)",
+              "FIBRINOGEN concentrate 4 g IV or CRYOPRECIPITATE 10 units if fibrinogen <2 g/L",
+              "PLATELETS >50, INR <1.5, fibrinogen >2-3 g/L (or 3 g/L active bleeding)",
+              "TXA 1 g IV (already given)",
+              "WARM blood / patient (avoid hypothermia coagulopathy)",
+              "Correct hypocalcemia (massive transfusion)"
+            ],
+            "notes": "ROTEM/TEG-guided in major centers. Fibrinogen <2 g/L = strongest DIC predictor.",
+            "guideline": "SOGC 235; British Society Haematology Massive Transfusion 2024"
+          }
+        ],
+        "pearls": [
+          "4 T's: TONE (70-80%), TRAUMA (20%), TISSUE (10%), THROMBIN (DIC)",
+          "TXA 1 g IV WITHIN 3 HOURS (WOMAN trial — reduces death)",
+          "OXYTOCIN first-line uterotonic (10 IU IM or 5 IU IV + infusion)",
+          "ERGOMETRINE — AVOID HTN/preeclampsia",
+          "CARBOPROST — AVOID asthma",
+          "MISOPROSTOL universal alternative (temperature stable)",
+          "CARBETOCIN 100 mcg IV — long-acting; PREVENTION at C-section (CHAMPION)",
+          "BAKRI BALLOON, B-LYNCH suture, UAE if pharmacologic fails",
+          "MASSIVE TRANSFUSION 1:1:1 (RBC:FFP:platelets); fibrinogen >2 g/L",
+          "PLACENTA ACCRETA SPECTRUM — multidisciplinary; high mortality without planning",
+          "PREGNANCY PHYSIOLOGY masks shock — young women compensate; act early",
+          "WEIGH SWABS — visual estimation underestimates ~30%",
+          "ACTIVE MANAGEMENT 3rd STAGE (oxytocin + cord traction + massage) reduces PPH"
+        ],
+        "introduction": "Postpartum hemorrhage is the leading cause of maternal mortality globally. Systematic 4 T's assessment (Tone, Trauma, Tissue, Thrombin) guides therapy. Tranexamic acid within 3 hours of bleeding onset reduces death (WOMAN trial). Uterotonics ladder (oxytocin → ergot → carboprost → misoprostol) plus mechanical (Bakri balloon, B-Lynch suture), interventional (UAE), and surgical (hysterectomy) options form a coordinated escalation pathway.",
+        "source": "SOGC Postpartum Hemorrhage Guideline 235 (2018, updated 2022). WOMAN Trial Shakur Lancet 2017. CHAMPION Carbetocin Widmer Lancet 2018. SOGC Placenta Accreta Spectrum Guideline 2019. WHO PPH Guidelines 2017."
       }
     ]
   },
@@ -141457,6 +141932,158 @@ var DRUGS = {
     ],
     "counselling": "(IV infusion in clinic/specialty centre weekly) The medication is given as a 35-60 minute IV weekly. Common: mild fatigue, headache, mild infusion site reaction. Tell team about: signs of allergic reaction (rash, breathing problems), foamy urine (possible kidney involvement). Get periodic urine + kidney tests. This is a long-term commitment — your child will receive infusions weekly indefinitely. Cost is significant — multidisciplinary team navigates funding. Continue ALL other DMD care (steroids, physiotherapy, cardiology, respiratory, nutrition support) — eteplirsen is one part of a comprehensive plan.",
     "source": "Health Canada Exondys 51 monograph; FDA Accelerated Approval 2016; SRP-4053-201/202 trials Mendell Ann Neurol 2013-2016; Cure DMD Canada"
+  },
+  "carboprost": {
+    "name": "Carboprost tromethamine",
+    "brand": "Hemabate",
+    "class": "Synthetic prostaglandin F2-alpha analogue (15-methyl PGF2α)",
+    "napra": "Schedule I (Rx); hospital — obstetric/L&D inventory.",
+    "moa": "Synthetic 15-methyl analogue of prostaglandin F2-alpha. Binds FP receptors on UTERINE SMOOTH MUSCLE → potent SUSTAINED CONTRACTION (more potent + longer-acting than native PGF2α). Causes vascular smooth muscle constriction in placental bed → reduces hemorrhage. Also stimulates GI + bronchial smooth muscle (side effects). Used for POSTPARTUM HEMORRHAGE (PPH) refractory to oxytocin + as second-line uterotonic. Also used for second-trimester abortion.",
+    "indications": [
+      "POSTPARTUM HEMORRHAGE due to uterine atony refractory to oxytocin (second-line uterotonic; alternative or adjunct to ergometrine + misoprostol)",
+      "SECOND TRIMESTER ABORTION (induced abortion 13-20 weeks; less common modern use)",
+      "Failed first-trimester abortion (rare)"
+    ],
+    "dosing": {
+      "Postpartum hemorrhage (adult)": "250 mcg (0.25 mg) IM (deep IM or intramyometrial) every 15-90 minutes as needed; MAXIMUM TOTAL DOSE 2 mg (8 doses); typical total 1-2 doses sufficient",
+      "Intramyometrial route": "Direct intramyometrial injection at C-section under direct visualization (off-label); same dose 250 mcg",
+      "Second-trimester abortion": "250 mcg IM every 1.5-3.5 hours; titrate; typical 8-10 doses",
+      "Renal / hepatic impairment": "Use with caution in significant impairment",
+      "Storage": "Refrigerate 2-8°C protected from light"
+    },
+    "side_effects": {
+      "common": [
+        "Nausea",
+        "Vomiting",
+        "Diarrhea (very common — pre-treat or treat)",
+        "Flushing",
+        "Fever / chills",
+        "Headache"
+      ],
+      "serious": [
+        "BRONCHOSPASM — CONTRAINDICATED IN ASTHMA — can be severe / fatal",
+        "PULMONARY HYPERTENSION — caution — relative contraindication",
+        "HYPERTENSION — caution preeclampsia (can worsen)",
+        "PULMONARY EDEMA",
+        "UTERINE RUPTURE (rare — caution prior C-section, multiparity, oxytocin overstimulation)",
+        "CARDIAC ARREST (rare, with pulmonary issues)",
+        "Severe diarrhea / electrolyte loss"
+      ]
+    },
+    "contraindications": [
+      "ACTIVE ASTHMA / SEVERE BRONCHOSPASTIC DISEASE",
+      "Pulmonary hypertension",
+      "Active cardiac, hepatic, renal disease",
+      "Pelvic inflammatory disease (active)",
+      "Hypersensitivity to prostaglandins"
+    ],
+    "interactions": [
+      "Other oxytocics — additive effects (synergistic with oxytocin which is desired)",
+      "NSAIDs — may attenuate (theoretical)"
+    ],
+    "pregnancy": "Cat C — used postpartum, not antepartum. Used for second-trimester termination. Breastfeeding: brief exposure; compatible.",
+    "pk": "IM peak 30 minutes; metabolized by 15-OH-prostaglandin dehydrogenase; t1/2 ~8 minutes (parent drug); active metabolite longer; renal + hepatic excretion.",
+    "canadian_notes": "HEMABATE — Health Canada approved; obstetric departments stock; ODB General Benefit (rarely outpatient — hospital use). SOGC Postpartum Hemorrhage Guideline 235 (2018, updated 2022): uterotonic ladder = OXYTOCIN (first-line — 10 IU IM or 5 IU IV slowly + infusion 20-40 IU/L NS) → ERGOMETRINE (0.2 mg IM if not hypertensive) → CARBOPROST (250 mcg IM q15-90 min — caution asthma) → MISOPROSTOL (800-1000 mcg PR sublingual if other unavailable) → TRANEXAMIC ACID (1 g IV within 3 hours of bleeding onset — WOMAN trial). Mechanical: uterine massage, bimanual compression, balloon tamponade (Bakri), B-Lynch suture, uterine artery embolization, hysterectomy.",
+    "pearls": [
+      "POSTPARTUM HEMORRHAGE — second-line uterotonic after oxytocin",
+      "ASTHMA = ABSOLUTE CONTRAINDICATION (severe bronchospasm — fatal)",
+      "Pre-treat with antiemetic + antidiarrheal (very common GI effects)",
+      "250 mcg IM q15-90 min; MAX 2 mg",
+      "WOMAN trial — TRANEXAMIC ACID 1 g IV within 3 hours reduces death from PPH",
+      "SOGC PPH Guideline 235 — ladder: OXYTOCIN → ERGOT → CARBOPROST → MISOPROSTOL → TXA",
+      "CHOICE in PPH: OXYTOCIN first-line; ERGOMETRINE (avoid HTN, preeclampsia); CARBOPROST (avoid asthma); MISOPROSTOL (universal alternative)",
+      "Do NOT use IV (hypotension, severe bronchospasm) — IM only",
+      "BAKRI BALLOON tamponade if uterotonic failure",
+      "B-LYNCH SUTURE / Hayman suture / uterine artery ligation if surgical"
+    ],
+    "monitoring": [
+      "BP",
+      "HR",
+      "Respiratory status (CRITICAL — bronchospasm)",
+      "Bleeding amount",
+      "Temperature",
+      "GI symptoms"
+    ],
+    "patient_counseling": "Used for severe postpartum bleeding. Side effects nausea, diarrhea, fever, flushing common. Tell us if shortness of breath."
+  },
+  "nitroprusside": {
+    "name": "Sodium nitroprusside",
+    "brand": "Nipride",
+    "class": "Direct vasodilator — nitric oxide donor (arterial + venous)",
+    "napra": "Schedule I (Rx); hospital ICU/CCU only — light-protected continuous infusion.",
+    "moa": "DIRECT VASODILATOR releasing NITRIC OXIDE (NO) → activates GUANYLATE CYCLASE → increased cGMP → smooth muscle relaxation BOTH ARTERIAL + VENOUS BEDS (balanced — preload + afterload reduction). Onset within 30 seconds; offset within 1-2 minutes — INSTANT TITRATABILITY. Used for HYPERTENSIVE EMERGENCY, AORTIC DISSECTION (with β-blocker first), ACUTE HEART FAILURE, INTRAOPERATIVE HYPOTENSION. METABOLIZED to CYANIDE → THIOCYANATE (renal excretion). CYANIDE TOXICITY major risk especially in renal/hepatic dysfunction or prolonged high-dose infusions.",
+    "indications": [
+      "HYPERTENSIVE EMERGENCY (severe HTN with end-organ damage; encephalopathy, ACS, dissection)",
+      "ACUTE AORTIC DISSECTION — afterload reduction (AFTER β-blocker controls HR) — Type A surgical, Type B medical",
+      "ACUTE DECOMPENSATED HEART FAILURE (cardiogenic shock with high SVR) — afterload reduction",
+      "CONTROLLED INTRAOPERATIVE HYPOTENSION (deliberate)"
+    ],
+    "dosing": {
+      "Adult IV initial": "0.25-0.3 mcg/kg/min IV continuous infusion; titrate every 1-2 minutes by 0.5 mcg/kg/min up to target BP",
+      "Adult maintenance range": "Usual 0.5-3 mcg/kg/min; rarely up to 10 mcg/kg/min (CYANIDE risk — limit dose + duration)",
+      "Maximum infusion": "10 mcg/kg/min — brief use (<10 minutes) to avoid cyanide; 3 mcg/kg/min sustained limit",
+      "Pediatric": "0.5 mcg/kg/min initial; titrate to 5 mcg/kg/min; specialist",
+      "Renal impairment": "DOSE LIMIT — thiocyanate accumulates; max 0.5 mcg/kg/min in significant CKD; monitor serum thiocyanate (toxic >100 mg/L)",
+      "Hepatic impairment": "DOSE LIMIT — cyanide accumulates; cautious",
+      "Storage / preparation": "PROTECT FROM LIGHT (foil-wrapped tubing); reconstitute in D5W; bag stable 24h",
+      "Antidotes (cyanide toxicity)": "HYDROXOCOBALAMIN 5 g IV (preferred); or sodium thiosulfate + sodium nitrite (older Lilly cyanide kit)"
+    },
+    "side_effects": {
+      "common": [
+        "HYPOTENSION (dose-dependent)",
+        "Reflex tachycardia",
+        "Headache",
+        "Nausea / vomiting",
+        "Sweating",
+        "Restlessness"
+      ],
+      "serious": [
+        "CYANIDE TOXICITY — high dose (>2-3 mcg/kg/min) prolonged (>72 hours), renal/hepatic dysfunction; presents as METABOLIC ACIDOSIS, ELEVATED LACTATE, ELEVATED SVO2 (cellular hypoxia despite normal arterial O2), tachyphylaxis, altered mental status, seizures, coma",
+        "THIOCYANATE TOXICITY — renal failure prolonged use; tinnitus, blurred vision, confusion, seizures",
+        "METHEMOGLOBINEMIA (rare; treat with methylene blue)",
+        "CORONARY STEAL — caution active myocardial ischemia",
+        "INCREASED ICP — caution head injury",
+        "SEVERE HYPOTENSION (over-titration)"
+      ]
+    },
+    "contraindications": [
+      "Compensatory hypertension (AV shunt, aortic coarctation)",
+      "Inadequate cerebral circulation",
+      "Acute cardiac failure with low SVR",
+      "Hereditary optic neuropathy",
+      "Pregnancy (relative — fetal cyanide accumulation)"
+    ],
+    "interactions": [
+      "Other antihypertensives — additive (intended for titration)",
+      "Sildenafil + PDE5 inhibitors — severe hypotension",
+      "Riluzole, methotrexate — minimal direct"
+    ],
+    "pregnancy": "Cat C — fetal cyanide accumulation; AVOID — alternatives labetalol, hydralazine, nicardipine. Breastfeeding: limited data; brief use compatible.",
+    "pk": "IV onset <30 seconds; offset 1-2 minutes; non-enzymatic + enzymatic (rhodanase) conversion to cyanide → thiocyanate; thiocyanate t1/2 ~3 days normal renal, prolonged in CKD.",
+    "canadian_notes": "NIPRIDE — Health Canada approved; ICU/CCU stock only; ODB hospital benefit. SHORTAGE has occurred — alternatives: NICARDIPINE, CLEVIDIPINE (DCC + cardiology preferred for hypertensive emergency due to better safety profile). CCS Hypertensive Emergency: aortic dissection target SBP <120 mmHg + HR <60 within 20 minutes (β-blocker IV LABETALOL or ESMOLOL first → then nitroprusside or nicardipine for additional BP reduction). Acute pulmonary edema with severe HTN: nitroglycerin preferred; nitroprusside alternative. CKD: AVOID prolonged nitroprusside.",
+    "pearls": [
+      "INSTANT VASODILATOR — onset <30 seconds, offset 1-2 minutes — most titratable IV antihypertensive",
+      "BALANCED arterial + venous (preload + afterload reduction)",
+      "CYANIDE TOXICITY — limit dose + duration; renal/hepatic impairment",
+      "ANTIDOTE: HYDROXOCOBALAMIN 5 g IV (preferred); sodium thiosulfate alternative",
+      "PROTECT FROM LIGHT (light degrades to cyanide)",
+      "AORTIC DISSECTION — β-BLOCKER FIRST (LABETALOL or ESMOLOL — control HR <60) THEN nitroprusside (avoid reflex tachycardia worsening shear)",
+      "ALTERNATIVES: NICARDIPINE, CLEVIDIPINE (better safety profile — increasingly preferred in modern ICU)",
+      "INDUCED HYPOTENSION (intraoperative): brief use safe",
+      "SHORTAGES occurred — backup with nicardipine drip protocol",
+      "PEDIATRIC use: cautious — cyanide accumulation; max 5 mcg/kg/min"
+    ],
+    "monitoring": [
+      "ARTERIAL LINE BP (continuous)",
+      "HR",
+      "Mental status",
+      "Lactate (cyanide marker)",
+      "ABG",
+      "Thiocyanate level (>48 hours infusion or CKD)",
+      "Urine output",
+      "ScvO2 (elevated in cyanide tox)"
+    ],
+    "patient_counseling": "Critical care medication delivered by infusion. Used to lower very high blood pressure or in heart failure or aortic dissection."
   }
 
 };
@@ -143425,7 +144052,9 @@ var FAMILY_MAP = {
   "decitabine": "Hypomethylating Agents",
   "nusinersen": "Antisense Oligonucleotides",
   "pyridostigmine": "Acetylcholinesterase Inhibitors",
-  "eteplirsen": "Antisense Oligonucleotides"
+  "eteplirsen": "Antisense Oligonucleotides",
+  "carboprost": "Prostaglandins (Uterotonics)",
+  "nitroprusside": "Direct Vasodilators"
 };
 var NAPRA_ODB_DATA = {
   "amoxicillin": {
@@ -153222,6 +153851,24 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "Limited Health Canada approval; ODB LU rare specific patients.",
     "luCode": "Verify current Ontario e-Formulary LU code for Exondys 51 (specialty DMD exon 51 skipping — pCPA negotiated)",
     "notes": "ASO exon 51 skipping (~13% DMD); FDA accelerated approval 2016 controversial. Alternatives: golodirsen, casimersen, viltolarsen, delandistrogene moxeparvovec gene therapy, vamorolone, givinostat."
+  },
+  "carboprost": {
+    "name": "Carboprost (Hemabate)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); hospital obstetric/L&D inventory.",
+    "odbStatus": "General Benefit (Hospital)",
+    "odbDetail": "Hospital/L&D stock; rarely outpatient.",
+    "luCode": null,
+    "notes": "Synthetic 15-methyl PGF2α; second-line uterotonic for PPH refractory to oxytocin. ASTHMA CONTRAINDICATION (severe bronchospasm). 250 mcg IM q15-90 min, max 2 mg. SOGC Guideline 235 ladder: oxytocin → ergot → carboprost → misoprostol → TXA."
+  },
+  "nitroprusside": {
+    "name": "Sodium Nitroprusside (Nipride)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); hospital ICU/CCU only.",
+    "odbStatus": "General Benefit (Hospital)",
+    "odbDetail": "ICU/CCU only; light-protected continuous infusion.",
+    "luCode": null,
+    "notes": "Direct NO donor — balanced arterial+venous vasodilator; instant titratability for hypertensive emergency, aortic dissection (after β-blocker), HF. CYANIDE TOXICITY risk — limit dose + duration; antidote HYDROXOCOBALAMIN 5 g IV. Alternatives nicardipine, clevidipine increasingly preferred."
   }
 };
 var MINOR_AILMENTS = [
@@ -176456,6 +177103,28 @@ var PREG_DATA = {
     "bfDetail": "Limited breastfeeding data; use cautiously.",
     "alternatives": "",
     "source": "Health Canada Exondys 51 monograph; FDA Accelerated Approval 2016; SRP-4053-201/202 trials Mendell Ann Neurol 2013-2016; Cure DMD Canada"
+  },
+  "carboprost": {
+    "name": "Carboprost tromethamine (Hemabate)",
+    "pregRisk": "Compatible",
+    "pregColor": "#10b981",
+    "bfRisk": "Compatible",
+    "bfColor": "#10b981",
+    "pregDetail": "Cat C — used postpartum, not antepartum. Used for second-trimester termination. Breastfeeding: brief exposure; compatible.",
+    "bfDetail": "Compatible with breastfeeding (limited data may apply).",
+    "alternatives": "",
+    "source": "Health Canada PM"
+  },
+  "nitroprusside": {
+    "name": "Sodium nitroprusside (Nipride)",
+    "pregRisk": "Compatible",
+    "pregColor": "#10b981",
+    "bfRisk": "Compatible",
+    "bfColor": "#10b981",
+    "pregDetail": "Cat C — fetal cyanide accumulation; AVOID — alternatives labetalol, hydralazine, nicardipine. Breastfeeding: limited data; brief use compatible.",
+    "bfDetail": "Compatible with breastfeeding (limited data may apply).",
+    "alternatives": "",
+    "source": "Health Canada PM"
   }
 };
 
