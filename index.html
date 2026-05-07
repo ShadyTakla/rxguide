@@ -35759,7 +35759,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "NSAIDs cause sodium/water retention via prostaglandin inhibition → blunted antihypertensive effect; in HFrEF patients on bisoprolol, NSAIDs worsen fluid overload and can precipitate HF decompensation",
         "management": "Avoid NSAIDs in HFrEF patients on bisoprolol; use acetaminophen; if NSAID required, monitor BP, weight, and fluid status; per CHFS HF Guidelines"
-      }
+      },
+      { "drug": "Asthma / severe COPD", "severity": "Moderate", "mechanism": "Cardioselectivity reduced at higher doses — bronchospasm possible", "management": "Use lowest effective dose; monitor respiratory symptoms" }
+    
     ],
     "pregnancy": "Category C. Labetalol preferred for HTN in pregnancy. Beta-blockers associated with IUGR and neonatal bradycardia.",
     "pk": {
@@ -35865,7 +35867,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "NSAIDs inhibit prostaglandin synthesis → sodium and water retention → blunted antihypertensive effect of metoprolol and other antihypertensives; may increase BP by 3–5 mmHg; particularly relevant in HFrEF patients where NSAIDs worsen fluid retention",
         "management": "Avoid NSAIDs in patients on metoprolol for HF or hypertension; use acetaminophen for analgesia; monitor BP if NSAID required"
-      }
+      },
+      { "drug": "Clonidine withdrawal", "severity": "Major", "mechanism": "Stopping clonidine while on beta-blocker → severe rebound hypertension (unopposed alpha)", "management": "Taper beta-blocker BEFORE clonidine when discontinuing both" }
+    
     ],
     "pregnancy": "Category C. Labetalol preferred. Associated with IUGR and neonatal bradycardia.",
     "pk": {
@@ -35966,7 +35970,10 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "When discontinuing clonidine in a patient on carvedilol (beta-blocker): catecholamine rebound surge from clonidine withdrawal is not buffered by beta-2 vasodilation (carvedilol's beta-2 blockade leaves alpha-1 vasoconstriction unopposed during rebound) — severe hypertensive crisis (BP >200/120 mmHg). Also: additive bradycardia/AV conduction slowing when both drugs are given concurrently (both reduce sympathetic output). Carvedilol's alpha-1 blockade partially mitigates some of the vasoconstriction during rebound, but beta blockade remains the dominant hazard.",
         "management": "If discontinuing clonidine in carvedilol-treated patient: stop carvedilol first (taper over several days), then taper clonidine slowly (25% reduction every 2-3 days). If emergency clonidine discontinuation occurs: phentolamine IV (alpha-blocker) for hypertensive emergency; resume clonidine immediately. Counsel patients: do not stop either clonidine OR carvedilol abruptly. This interaction is listed in both carvedilol and clonidine product monographs."
-      }
+      },
+      { "drug": "Cyclosporine", "severity": "Major", "mechanism": "Carvedilol increases cyclosporine levels by 10-20%", "management": "Monitor cyclosporine troughs; reduce dose 20% empirically" },
+      { "drug": "Rifampin", "severity": "Moderate", "mechanism": "CYP2D6/3A4 induction reduces carvedilol levels", "management": "Monitor BP/HR; may need higher carvedilol dose" }
+    
     ],
     "pregnancy": "Category C.",
     "pk": {
@@ -36073,7 +36080,9 @@ var DRUGS = {
         "mechanism": "Spironolactone reduces sodium reabsorption → secondary proximal tubular reabsorption of lithium → elevated lithium levels; less predictable than thiazide-lithium interaction but clinically significant",
         "management": "Monitor lithium levels within 1–2 weeks of starting spironolactone; adjust lithium dose if levels rise; counsel patient on toxicity signs"
       }
-    ,{"drug":"Lab interference: digoxin immunoassay cross-reactivity","severity":"Note","mechanism":"Spironolactone and its metabolite canrenone cross-react with older digoxin immunoassays (especially radioimmunoassay) → falsely ELEVATED digoxin levels. Modern fluorescence polarization (FPIA) and chemiluminescence assays minimally affected but cross-reactivity persists at therapeutic spironolactone doses.","management":"In patients on both spironolactone and digoxin, interpret digoxin levels cautiously — consider LC-MS/MS confirmation if discrepancy with clinical picture (no toxicity symptoms but elevated level). Withholding spironolactone before digoxin level draw is impractical."},{"drug":"Hyperkalemia (K+ >5.0 mEq/L) or risk factors (CKD eGFR <30, concurrent ACEi/ARB)","severity":"Major","mechanism":"Spironolactone blocks aldosterone-mediated potassium excretion → hyperkalemia. Combined with ACEi/ARB or in CKD, can cause severe (>6.5) hyperkalemia → cardiac arrest. Landmark CMAJ studies showed increased mortality with combination in elderly.","management":"AVOID if baseline K+ >5.0. eGFR <30: avoid (unless dialysis specialist coordinates). Check K+ + SCr at baseline, 1 week, 4 weeks, then q3 months. With ACEi/ARB: more frequent monitoring; consider dose reduction. Counsel: AVOID K-rich foods (banana, OJ, salt substitute KCl)."}],
+    ,{"drug":"Lab interference: digoxin immunoassay cross-reactivity","severity":"Note","mechanism":"Spironolactone and its metabolite canrenone cross-react with older digoxin immunoassays (especially radioimmunoassay) → falsely ELEVATED digoxin levels. Modern fluorescence polarization (FPIA) and chemiluminescence assays minimally affected but cross-reactivity persists at therapeutic spironolactone doses.","management":"In patients on both spironolactone and digoxin, interpret digoxin levels cautiously — consider LC-MS/MS confirmation if discrepancy with clinical picture (no toxicity symptoms but elevated level). Withholding spironolactone before digoxin level draw is impractical."},{"drug":"Hyperkalemia (K+ >5.0 mEq/L) or risk factors (CKD eGFR <30, concurrent ACEi/ARB)","severity":"Major","mechanism":"Spironolactone blocks aldosterone-mediated potassium excretion → hyperkalemia. Combined with ACEi/ARB or in CKD, can cause severe (>6.5) hyperkalemia → cardiac arrest. Landmark CMAJ studies showed increased mortality with combination in elderly.","management":"AVOID if baseline K+ >5.0. eGFR <30: avoid (unless dialysis specialist coordinates). Check K+ + SCr at baseline, 1 week, 4 weeks, then q3 months. With ACEi/ARB: more frequent monitoring; consider dose reduction. Counsel: AVOID K-rich foods (banana, OJ, salt substitute KCl)."},
+      { "drug": "Aliskiren (in diabetes/CKD)", "severity": "Contraindicated", "mechanism": "Triple RAAS blockade — hyperkalemia, AKI", "management": "AVOID combination per Health Canada" }
+    ],
     "pregnancy": "Contraindicated in first trimester (anti-androgenic — feminization of male fetus). Avoid throughout pregnancy.",
     "pk": {
       "absorption": "~65% oral bioavailability (improved with food)",
@@ -36172,7 +36181,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Probenecid inhibits renal tubular secretion of furosemide (OAT transporters) → reduces furosemide delivery to tubular lumen → reduced diuretic effect",
         "management": "May need higher furosemide doses in patients on probenecid; monitor diuretic response (urine output, daily weight in HF)"
-      }
+      },
+      { "drug": "Cisplatin / aminoglycosides", "severity": "Major", "mechanism": "Additive nephrotoxicity and ototoxicity", "management": "Avoid combination; if necessary, monitor SCr daily and audiometry" },
+      { "drug": "Sulfonamide cross-reactivity", "severity": "Note", "mechanism": "Furosemide has a sulfonamide moiety — true cross-reactivity rare", "management": "Use ethacrynic acid alternative if severe sulfa allergy" }
+    
     ],
     "pregnancy": "Category C. Used for symptomatic relief in cardiomyopathy of pregnancy — weigh risk/benefit.",
     "pk": {
@@ -36279,7 +36291,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Sacubitril-valsartan causes significant BP reduction, particularly with first doses. Volume-depleted state from diuretics + additional antihypertensive agents → first-dose hypotension, syncope. PDE5 inhibitors (sildenafil, tadalafil) for pulmonary hypertension or erectile dysfunction: additive vasodilation — avoid in HFrEF",
         "management": "Initiate at 24/26 mg BID (lowest dose) in ACEi-naive or volume-depleted patients. Reduce loop diuretic dose before initiation. Monitor BP closely after first dose. PDE5 inhibitors: generally avoid in HFrEF patients on sacubitril-valsartan; contraindicated if nitrates also used"
-      }
+      },
+      { "drug": "Pregnancy (all trimesters)", "severity": "Contraindicated", "mechanism": "ARB component — fetal renal failure, oligohydramnios, skull hypoplasia", "management": "AVOID; effective contraception; switch to alternative if pregnancy confirmed" }
+    
     ],
     "pregnancy": "CONTRAINDICATED in pregnancy. ARB component causes fetal renal dysfunction, oligohydramnios, fetal limb contractures, craniofacial deformities, hypoplastic lung development, and fetal death. Detect pregnancy early and discontinue immediately. Same teratogenicity as ACE inhibitors. Breastfeeding: avoid — insufficient data; theoretically crosses into breast milk.",
     "pk": {
@@ -38608,7 +38622,11 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "HCTZ reduces renal uric acid excretion → hyperuricemia and gout precipitation; can counteract allopurinol or uricosuric therapy; up to 25% of thiazide-treated patients develop hyperuricemia",
         "management": "Monitor uric acid in patients with gout or hyperuricemia; consider reducing HCTZ dose or switching to indapamide (lower uricosuric effect); if gout attack: treat with colchicine or NSAIDs (balance against NSAID-diuretic interaction)"
-      }
+      },
+      { "drug": "Sulfonamide cross-reactivity", "severity": "Note", "mechanism": "HCTZ has a sulfonamide moiety — true sulfa-allergy cross-reactivity controversial; severe sulfa antibiotic allergy may not preclude HCTZ", "management": "Counsel; consider alternative thiazide-like (chlorthalidone, indapamide) if concerned" },
+      { "drug": "Photosensitivity", "severity": "Moderate", "mechanism": "HCTZ causes phototoxic skin reactions and contributes to non-melanoma skin cancer risk", "management": "Counsel sun protection (broad-spectrum SPF 30+, sun avoidance)" },
+      { "drug": "Corticosteroids", "severity": "Moderate", "mechanism": "Additive hypokalemia and sodium retention", "management": "Monitor electrolytes" }
+    
     ],
     "pregnancy": "Category B. May cause neonatal thrombocytopenia, hypoglycemia. Methyldopa or labetalol preferred.",
     "pk": {
@@ -40591,7 +40609,11 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "TCAs block the alpha-2 receptor mechanism of clonidine's antihypertensive effect → loss of BP control; abrupt discontinuation of clonidine while on TCA → rebound hypertensive crisis",
         "management": "Avoid combination; if both required, taper clonidine extremely slowly; monitor BP"
-      }
+      },
+      { "drug": "MAOI", "severity": "Contraindicated", "mechanism": "Hypertensive crisis", "management": "AVOID; 14-day washout" },
+      { "drug": "Serotonergic agents (SSRIs, SNRIs, tramadol, linezolid, methylene blue)", "severity": "Major", "mechanism": "Serotonin syndrome risk", "management": "Avoid; monitor closely if combined" },
+      { "drug": "CNS depressants (alcohol, opioids, benzodiazepines)", "severity": "Moderate", "mechanism": "Additive sedation", "management": "Counsel; monitor" }
+    
     ],
     "pregnancy": "Category C. Avoid near term — neonatal withdrawal.",
     "pk": {
@@ -44073,7 +44095,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive serotonergic toxicity risk",
         "management": "Use with caution; monitor for serotonin syndrome"
-      }
+      },
+      { "drug": "Methylergonovine / ergotamine", "severity": "Contraindicated", "mechanism": "Additive vasoconstriction — CV/cerebrovascular events", "management": "AVOID — separate by ≥24 hours from any ergot" }
+    
     ],
     "pregnancy": "PREGNANCY CATEGORY: Limited data. Sumatriptan use in pregnancy — accumulated evidence (Sumatriptan/Naratriptan Pregnancy Registry, general epidemiology studies): no clear increase in major birth defects. However, theoretical concern: uterine vasoconstriction could compromise uteroplacental blood flow. Canadian/ACOG guidance: triptans can be used in pregnancy for severe migraines when non-pharmacological measures and acetaminophen/anti-emetics fail — weigh risks vs severe migraine with dehydration/risk. Oral sumatriptan preferred over SC in pregnancy. Non-pharmacological first: rest, ice, hydration. If preventive therapy needed: propranolol or amitriptyline safer in pregnancy. Breastfeeding: sumatriptan passes into breast milk in small quantities; half-life short (~2 h) → 'pump and dump' for 12 h after sumatriptan SC use often recommended as precaution; oral likely compatible (low systemic exposure). LactMed: compatible with breastfeeding with precautions.",
     "pk": {
@@ -44865,7 +44889,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Iron chelates levodopa — reduces bioavailability",
         "management": "Separate iron from levodopa by ≥2 hours"
-      }
+      },
+      { "drug": "Doxycycline / tetracyclines", "severity": "Major", "mechanism": "Iron chelates tetracyclines — markedly reduced absorption", "management": "Take iron 2 hours before or 6 hours after tetracycline" },
+      { "drug": "Methyldopa / penicillamine", "severity": "Moderate", "mechanism": "Iron reduces absorption of these drugs", "management": "Separate by 2-3 hours" }
+    
     ],
     "pregnancy": "Safe and recommended — all pregnant women should take iron supplementation. Category A. Prenatal vitamins typically contain 27 mg elemental iron.",
     "pk": {
@@ -44990,7 +45017,10 @@ var DRUGS = {
         "severity": "Contraindicated",
         "mechanism": "Hydroxychloroquine produces modest immunosuppression via inhibition of toll-like receptor signaling and antigen presentation; while less immunosuppressive than biologics or methotrexate, HCQ may still reduce the immune response to live attenuated vaccines, and live vaccines carry theoretical risk of disseminated infection in immunosuppressed patients",
         "management": "Administer all indicated live vaccines (MMR, varicella, yellow fever) before initiating hydroxychloroquine therapy; NACI and the Canadian Immunization Guide advise against live vaccines in patients on immunosuppressive therapy; recombinant zoster vaccine (Shingrix) is preferred over live Zostavax in all HCQ-treated patients; inactivated influenza and PCV vaccines are safe and recommended while on HCQ"
-      }
+      },
+      { "drug": "Macrolides / fluoroquinolones (azithromycin, ciprofloxacin)", "severity": "Major", "mechanism": "Additive QT prolongation — TdP risk", "management": "Monitor ECG; avoid combination if possible especially in elderly/cardiac history" },
+      { "drug": "Cyclosporine", "severity": "Moderate", "mechanism": "HCQ may increase cyclosporine levels", "management": "Monitor cyclosporine troughs" }
+    
     ],
     "pregnancy": "COMPATIBLE in pregnancy — preferred DMARD for SLE in pregnancy. SLE outcomes IMPROVED with continued HCQ (reduces flares, preeclampsia, preterm birth, neonatal lupus, congenital heart block in anti-Ro/SSA positive mothers). DO NOT DISCONTINUE HCQ DURING PREGNANCY in SLE patients. No teratogenicity in extensive registry data. RA: HCQ acceptable in pregnancy. Breastfeeding: COMPATIBLE — small amounts in breast milk; long history of safe use.",
     "pk": {
@@ -48650,7 +48680,11 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Propranolol reduces hepatic blood flow (30–50% reduction in cardiac output), decreasing hepatic clearance of IV lidocaine → elevated lidocaine plasma levels with risk of CNS toxicity and arrhythmia; additive myocardial depression with Class I antiarrhythmics",
         "management": "Reduce IV lidocaine infusion rate in patients on propranolol; monitor ECG for QRS widening; monitor lidocaine levels (therapeutic 1.5–5 mcg/mL); note propranolol is itself CYP1A2-metabolized and may interact bidirectionally with CYP1A2 inhibitors"
-      }
+      },
+      { "drug": "CYP2D6 inhibitors (fluoxetine, paroxetine, bupropion)", "severity": "Major", "mechanism": "Propranolol metabolized by CYP2D6 — inhibitors increase levels significantly", "management": "Monitor BP, HR; reduce propranolol dose if symptomatic" },
+      { "drug": "Fluvoxamine / cimetidine (CYP1A2 inhibitors)", "severity": "Major", "mechanism": "CYP1A2 inhibition increases propranolol levels", "management": "Reduce propranolol dose; monitor for bradycardia, hypotension" },
+      { "drug": "Asthma / severe COPD", "severity": "Contraindicated", "mechanism": "Non-selective beta-blockade — bronchospasm risk", "management": "AVOID in active asthma; use cardioselective agent (metoprolol, bisoprolol) if beta-blocker needed" }
+    
     ],
     "pregnancy": "Category C. Neonatal bradycardia, hypoglycemia, intrauterine growth restriction with prolonged use. Used when necessary with fetal monitoring; labetalol preferred in pregnancy hypertension.",
     "pk": {
@@ -48981,7 +49015,10 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Diclofenac (and all NSAIDs) reduce renal methotrexate clearance through two mechanisms: (1) prostaglandin-mediated reduction in renal blood flow, decreasing GFR and tubular secretion of methotrexate; (2) competition for organic anion transporter (OAT3) in proximal tubules — diclofenac competitively inhibits methotrexate tubular secretion; combined, these mechanisms can increase methotrexate AUC by 50–200%, leading to severe toxicity: myelosuppression (pancytopenia), mucositis, and acute kidney injury",
         "management": "Avoid NSAIDs including diclofenac within 24–48 hours before and after high-dose methotrexate (oncology doses ≥500 mg/m²); for low-dose weekly methotrexate (rheumatology/dermatology doses 7.5–25 mg/week), occasional short-term diclofenac use with leucovorin rescue is generally managed by the specialist, but routine concurrent use is discouraged; Health Canada methotrexate product monograph identifies NSAIDs as major interactions; use acetaminophen for analgesia in methotrexate-treated patients where possible"
-      }
+      },
+      { "drug": "Aspirin (low-dose CV protection)", "severity": "Moderate", "mechanism": "Antagonism of aspirin antiplatelet effect via COX-1 competition", "management": "Take aspirin ≥30 min before diclofenac; consider acetaminophen or non-NSAID alternative" },
+      { "drug": "Cardiovascular events", "severity": "Major", "mechanism": "Highest CV risk of NSAIDs (PRECISION/SOS); INCREASED MI/stroke risk especially at high dose", "management": "AVOID in established CVD; if NSAID needed, use naproxen instead at lowest dose" }
+    
     ],
     "pregnancy": "Category C (under 30 weeks); avoid from 20 weeks onward (premature ductus arteriosus closure, oligohydramnios). Topical gel: use with caution; systemic absorption low but avoid from 20 weeks. AVOID after 20 weeks gestation (FDA Safety Communication 2020; Health Canada concurs): NSAID exposure ≥20 weeks → fetal renal dysfunction, oligohydramnios, premature ductus arteriosus closure (the latter especially after 30 weeks).",
     "pk": {
@@ -49932,7 +49969,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive serotonergic effect — both have SNRI/serotonin properties. Additive seizure risk and serotonin syndrome risk.",
         "management": "Avoid if possible; if must combine, use lowest doses and monitor closely."
-      }
+      },
+      { "drug": "CYP1A2 inhibitors (fluvoxamine, ciprofloxacin)", "severity": "Moderate", "mechanism": "Increased cyclobenzaprine levels — sedation", "management": "Reduce dose; monitor sedation" }
+    
     ],
     "pregnancy": "Category B — animal studies favourable; limited human data. Use only if benefit > risk; cyclobenzaprine intended for SHORT-TERM (≤2-3 weeks) acute MSK pain — generally avoid in pregnancy if alternative available (acetaminophen + non-pharm). Lactation: limited data; structurally related to TCAs; small amounts likely in breast milk; AVOID in nursing mothers if possible (potential infant sedation, anticholinergic effects).",
     "pk": {
@@ -56196,7 +56235,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Terbinafine undergoes extensive hepatic metabolism and has rare but documented hepatotoxicity (Health Canada — discontinue if AST/ALT >3x ULN); concurrent use of other hepatotoxic drugs increases liver injury risk; statins + terbinafine: CYP2D6 inhibition of CYP2D6-metabolized statins is minor but hepatic combination risk relevant",
         "management": "Obtain baseline LFTs before 12-week terbinafine course; avoid terbinafine in patients with active hepatic disease; monitor LFTs monthly if co-administering hepatotoxic drugs; terbinafine is not recommended in patients with CrCl <50 mL/min (reduced renal clearance of metabolites)"
-      }
+      },
+      { "drug": "Beta-blockers (metoprolol, propranolol, carvedilol)", "severity": "Major", "mechanism": "CYP2D6 inhibition increases beta-blocker levels", "management": "Monitor for bradycardia/hypotension" },
+      { "drug": "Caffeine", "severity": "Minor", "mechanism": "CYP1A2 inhibition increases caffeine levels", "management": "Counsel reduced caffeine if symptomatic" }
+    
     ],
     "pregnancy": "Avoid during pregnancy — especially during first trimester. Limited human data. Teratogenicity not established but inadequate data. Onychomycosis is not life-threatening — defer oral terbinafine until after delivery. Topical terbinafine: limited systemic absorption; considered lower risk — topical use acceptable if clearly needed. Breastfeeding: excreted in breast milk; avoid oral terbinafine; topical formulation may be used cautiously on non-breast areas.",
     "pk": {
@@ -56403,7 +56445,9 @@ var DRUGS = {
         "mechanism": "Additive blood pressure lowering",
         "management": "Monitor BP; start at lowest sildenafil dose"
       }
-    ,{"drug":"Riociguat (Adempas — sGC stimulator)","severity":"Contraindicated","mechanism":"Riociguat (soluble guanylate cyclase stimulator for pulmonary hypertension) + PDE5 inhibitor → synergistic massive cGMP elevation → severe systemic hypotension, syncope. ABSOLUTE contraindication per HC + FDA.","management":"CONTRAINDICATED. Never combine. Use ERA + endothelin pathway therapy or PDE5i monotherapy for PAH; riociguat is exclusive choice for stim-class."},{"drug":"Clarithromycin / itraconazole / ketoconazole (strong CYP3A4 inhibitors)","severity":"Major","mechanism":"Strong CYP3A4 inhibitors increase sildenafil AUC ~7× → marked hypotension, prolonged hypotension, headache, visual changes, priapism risk.","management":"Reduce sildenafil starting dose to 25 mg (max 25 mg in 48 h) when on strong CYP3A4 inhibitor. Avoid initiation during acute course of clarithromycin/azoles. Tadalafil 2.5-5 mg is alternative with longer-acting profile."}],
+    ,{"drug":"Riociguat (Adempas — sGC stimulator)","severity":"Contraindicated","mechanism":"Riociguat (soluble guanylate cyclase stimulator for pulmonary hypertension) + PDE5 inhibitor → synergistic massive cGMP elevation → severe systemic hypotension, syncope. ABSOLUTE contraindication per HC + FDA.","management":"CONTRAINDICATED. Never combine. Use ERA + endothelin pathway therapy or PDE5i monotherapy for PAH; riociguat is exclusive choice for stim-class."},{"drug":"Clarithromycin / itraconazole / ketoconazole (strong CYP3A4 inhibitors)","severity":"Major","mechanism":"Strong CYP3A4 inhibitors increase sildenafil AUC ~7× → marked hypotension, prolonged hypotension, headache, visual changes, priapism risk.","management":"Reduce sildenafil starting dose to 25 mg (max 25 mg in 48 h) when on strong CYP3A4 inhibitor. Avoid initiation during acute course of clarithromycin/azoles. Tadalafil 2.5-5 mg is alternative with longer-acting profile."},
+      { "drug": "Alpha blockers (tamsulosin, doxazosin, terazosin)", "severity": "Moderate", "mechanism": "Additive hypotension", "management": "Stable alpha-blocker dose ≥4 weeks before adding PDE5; start sildenafil 25 mg" }
+    ],
     "pregnancy": "ERECTILE DYSFUNCTION USE: Not applicable (males only). PULMONARY ARTERIAL HYPERTENSION (PAH) in PREGNANCY: Complex situation. PAH in pregnancy is very high-risk (maternal mortality up to 30–56%). Sildenafil/tadalafil used for PAH in pregnancy — considered acceptable by expert consensus (benefits outweigh risks). Animal studies show skeletal abnormalities at high doses; limited human data. Perinatal use for PAH: sildenafil used off-label to treat persistent pulmonary hypertension of the newborn (PPHN). NOT routinely used for preterm labor (trial stopped early — increased infant deaths in one study at high doses). Breastfeeding: limited data — sildenafil passes into breast milk in small amounts; generally considered compatible at low doses in PAH use.",
     "pk": {
       "absorption": "Oral bioavailability ~40% (extensive first-pass hepatic metabolism). High-fat meal delays Tmax by ~1 h and reduces Cmax by ~29% — take on empty stomach for fastest onset in ED use.",
@@ -56532,7 +56576,9 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Additive PDE5 inhibition; no benefit, increased adverse effects.",
         "management": "Do not combine PDE5i agents."
-      }
+      },
+      { "drug": "Alpha blockers", "severity": "Moderate", "mechanism": "Additive hypotension", "management": "Use lowest tadalafil dose; stable alpha-blocker dose" }
+    
     ],
     "pregnancy": "Not indicated for ED in females. For PAH in pregnancy: same considerations as sildenafil — pregnancy is high-risk, but tadalafil may be continued under specialist care. Animal data show no teratogenicity. Limited human data. For male partners taking tadalafil: no effect on partner pregnancy outcome or offspring; semen levels negligible.",
     "pk": {
@@ -58186,7 +58232,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive GI ulceration",
         "management": "PPI co-prescription; minimize duration"
-      }
+      },
+      { "drug": "Aspirin / other NSAIDs", "severity": "Contraindicated", "mechanism": "Additive GI bleeding/ulcer risk; ketorolac has highest GI toxicity of NSAIDs", "management": "AVOID combination" },
+      { "drug": "5-day duration limit", "severity": "Major", "mechanism": "FDA/Health Canada: max 5 days total (oral + parenteral combined) due to GI/renal toxicity", "management": "Strict 5-day limit; not for chronic pain" }
+    
     ],
     "pregnancy": "AVOID. Like all NSAIDs after 20 weeks gestation, ketorolac risks fetal renal impairment, oligohydramnios, and (after 30 weeks) premature closure of the ductus arteriosus. Specifically CONTRAINDICATED in labor and delivery (impairs uterine contraction and increases postpartum bleeding risk; affects fetal hemostasis and ductus). First and second trimester use should be avoided if possible due to potency and parenteral exposure; if used, brief duration only. Excreted in breast milk in small amounts; alternatives such as ibuprofen are preferred during lactation.",
     "pk": {
@@ -64715,7 +64764,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Indomethacin antagonizes most antihypertensive drug classes via prostaglandin inhibition — mean BP rise of 5-10 mmHg (highest among NSAIDs for BP elevation); indomethacin reduces efficacy of diuretics, beta-blockers, vasodilators, and RAAS inhibitors; effect is rapid (within days) and dose-dependent; particularly relevant as indomethacin is commonly used for gout in hypertensive patients",
         "management": "Monitor BP closely when starting indomethacin in hypertensive patients; may require antihypertensive dose increase; prefer colchicine or short course of prednisone for gout in hypertension management — no BP-raising effect; if indomethacin required, use shortest effective course (3-5 days); blood pressure typically returns to baseline within days of NSAID discontinuation"
-      }
+      },
+      { "drug": "Pregnancy ≥20 weeks", "severity": "Major", "mechanism": "FDA 2020 — fetal renal/oligohydramnios; ductus arteriosus closure", "management": "AVOID after 20 weeks gestation" }
+    
     ],
     "pregnancy": "Category C (1st/2nd trimester); Category D/X (≥30 weeks — premature ductus arteriosus closure, oligohydramnios, pulmonary hypertension). AVOID after 30 weeks. Short-term tocolysis <32 weeks with monitoring only.",
     "pk": {
@@ -64890,7 +64941,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Serotonin syndrome (theoretical — case reports)",
         "management": "Monitor for serotonin syndrome symptoms; combination widely used in practice"
-      }
+      },
+      { "drug": "MAOIs", "severity": "Contraindicated", "mechanism": "Increased rizatriptan exposure (MAO-A metabolism)", "management": "AVOID — 2-week washout from MAOI" },
+      { "drug": "Serotonergic agents", "severity": "Moderate", "mechanism": "Serotonin syndrome theoretical risk", "management": "Caution; monitor for serotonin syndrome symptoms" }
+    
     ],
     "pregnancy": "Category C. Triptans generally avoided in pregnancy (vasoconstrictive mechanism, limited safety data). For severe migraine in pregnancy: acetaminophen first-line; IV metoclopramide + IV fluids; triptans as last resort.",
     "pk": {
@@ -67743,7 +67797,11 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Methimazole-induced agranulocytosis occurs in 0.2-0.5% of patients (usually within first 3 months). Additive bone marrow suppression with other myelosuppressive drugs → significantly higher agranulocytosis risk. Carbimazole (prodrug of methimazole): same risk. PTU also causes agranulocytosis but different mechanism",
         "management": "Obtain baseline WBC/differential before starting methimazole. Counsel patients to report sore throat, fever, mouth ulcers immediately — stop methimazole and check CBC urgently. Avoid concurrent myelosuppressive drugs where possible; if unavoidable, monitor CBC every 2 weeks for first 3 months. Agranulocytosis: hospitalize, stop methimazole permanently, broad-spectrum antibiotics, G-CSF, switch to propylthiouracil (PTU) with caution if thyroid control still needed"
-      }
+      },
+      { "drug": "Digoxin", "severity": "Moderate", "mechanism": "Altered thyroid status changes digoxin requirements (hyperthyroid → ↓digoxin effect; achieving euthyroid → ↑digoxin effect)", "management": "Monitor digoxin levels as thyroid function normalizes" },
+      { "drug": "Theophylline", "severity": "Moderate", "mechanism": "Hyperthyroid increases theophylline clearance — clearance returns to normal as euthyroid achieved → toxicity risk", "management": "Monitor theophylline levels" },
+      { "drug": "Pregnancy (1st trimester)", "severity": "Major", "mechanism": "Methimazole associated with congenital anomalies (aplasia cutis, choanal/esophageal atresia) in 1st trimester — switch to PTU in 1st trimester then back to methimazole 2nd-3rd trimester", "management": "Switch to PTU pre-conception or as soon as pregnancy confirmed; OB + endocrine coordination" }
+    
     ],
     "pregnancy": "METHIMAZOLE vs PTU in PREGNANCY: FIRST TRIMESTER — Use PTU (propylthiouracil) preferred due to methimazole embryopathy risk (aplasia cutis, choanal atresia — rare but concerning). SECOND AND THIRD TRIMESTER — Switch to methimazole (PTU has higher risk of fulminant hepatotoxicity with prolonged use; methimazole safer hepatically and easier dosing). Both cross placenta and can cause fetal hypothyroidism — use lowest effective dose; FT4 at upper normal range of pregnancy target. Breastfeeding: methimazole preferred over PTU (less concentrated in breast milk); methimazole ≤20–30 mg/day generally considered compatible with breastfeeding.",
     "pk": {
@@ -69799,7 +69857,10 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Non-selective beta-blockade + epinephrine → unopposed alpha stimulation → severe hypertension, reflex bradycardia",
         "management": "Use with caution in emergency settings; inform anaesthesiologist of ophthalmic beta-blocker use"
-      }
+      },
+      { "drug": "Systemic beta-blockers", "severity": "Major", "mechanism": "Additive systemic beta-blockade from absorbed eye drops", "management": "Use punctal occlusion (close eye 1-2 min after drops); monitor HR/BP" },
+      { "drug": "Asthma / COPD", "severity": "Contraindicated", "mechanism": "Non-cardioselective beta-blockade — bronchospasm even from eye drops", "management": "AVOID; use betaxolol (cardioselective) ophthalmic alternative" }
+    
     ],
     "pregnancy": "CAUTION in pregnancy — systemic beta-blockade from nasolacrimal absorption → fetal bradycardia, neonatal hypoglycemia, respiratory depression, bradycardia in neonate; preterm infants especially sensitive. Use punctal occlusion technique to minimize absorption. Avoid in third trimester if possible. Topical timolol used by ophthalmologists in pregnancy when glaucoma control essential — benefits may outweigh risks with careful monitoring. Consult ophthalmology and obstetrics. Breastfeeding: timolol passes into breast milk — neonatal bradycardia, apnea reported; use punctal occlusion; monitor infant for bradycardia. Consult lactation specialist.",
     "pk": {
@@ -78831,7 +78892,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Chloroquine inhibits P-glycoprotein (P-gp) → reduces renal tubular and GI secretion of digoxin → elevated digoxin levels; digoxin has narrow therapeutic window (toxic range >2.0 ng/mL); combined with chloroquine's own QTc effect — increased risk of digoxin toxicity (bradycardia, heart block, ventricular arrhythmias) and QTc prolongation; lupus patients with cardiac involvement may receive both",
         "management": "Monitor digoxin levels when starting chloroquine in digoxin-treated patients; anticipate 20–30% digoxin level increase; maintain digoxin in lower therapeutic range (0.5–0.9 ng/mL for CHF); obtain ECG; both drugs prolong QTc — additive cardiac risk; consider alternative heart failure medications if possible"
-      }
+      },
+      { "drug": "Methotrexate", "severity": "Moderate", "mechanism": "Reduced MTX absorption; possible additive hepatotoxicity", "management": "Monitor MTX response and LFTs" },
+      { "drug": "Cimetidine", "severity": "Moderate", "mechanism": "Inhibits chloroquine metabolism — toxicity", "management": "Use famotidine alternative" }
+    
     ],
     "pregnancy": "SAFE in pregnancy (long history of safe use); preferred for prophylaxis in chloroquine-sensitive areas in pregnancy.",
     "pk": {
@@ -79285,7 +79349,9 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Additive hepatotoxicity",
         "management": "Avoid oral 17-α-alkylated; use undecanoate or non-oral forms"
-      }
+      },
+      { "drug": "Cardiovascular events / monitoring", "severity": "Major", "mechanism": "FDA/Health Canada warnings — possible increased CV events; polycythemia risk", "management": "Baseline + periodic CBC, lipids, BP, PSA; avoid in active CVD/recent MI/stroke" }
+    
     ],
     "pregnancy": "ABSOLUTE CONTRAINDICATION — virilization of female fetus. Topical gel transferable through skin — counsel hand washing and avoid contact with women/children. Never use in females (off-label); transgender testosterone therapy follows different protocols.",
     "pk": {
@@ -86499,7 +86565,9 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Additive sedation",
         "management": "Caution"
-      }
+      },
+      { "drug": "Estrogens", "severity": "Moderate", "mechanism": "Estrogens reduce ropinirole clearance — increased levels", "management": "Monitor for ropinirole adverse effects (nausea, somnolence)" }
+    
     ],
     "pregnancy": "Category C — limited data.",
     "pk": {
@@ -86886,7 +86954,11 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Amantadine is an NMDA receptor antagonist — additive CNS effects with alcohol (which also has NMDA antagonism), memantine (prescribed for Alzheimer's via same mechanism), and ketamine; amantadine + memantine combination in dementia + PD co-morbidity: double NMDA blockade → excessive CNS depression, confusion, hallucinations; alcohol + amantadine: additive impairment and increased fall risk in PD patients (already at high fall risk)",
         "management": "Avoid alcohol in amantadine-treated patients (especially PD with gait instability); amantadine + memantine combination: caution — both act on NMDA receptors; if PD patient develops Alzheimer's requiring memantine, consider reducing amantadine dose; ketamine for procedural sedation or anesthesia in amantadine-treated patients: delayed recovery expected — inform anesthesiologist; PD patients taking amantadine: fall prevention program (physiotherapy, environmental assessment) is essential"
-      }
+      },
+      { "drug": "CNS stimulants (sympathomimetics, anticholinergics)", "severity": "Moderate", "mechanism": "Additive CNS stimulation, anticholinergic burden, hallucinations", "management": "Monitor for confusion/hallucinations especially in elderly" },
+      { "drug": "TMP-SMX", "severity": "Moderate", "mechanism": "Reduces amantadine renal clearance — toxicity", "management": "Reduce amantadine dose; monitor for CNS symptoms" },
+      { "drug": "Thiazide diuretics", "severity": "Moderate", "mechanism": "Reduce amantadine clearance", "management": "Monitor for amantadine toxicity" }
+    
     ],
     "pregnancy": "Category C — limited data.",
     "pk": {
@@ -87771,7 +87843,10 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Additive nephrotoxicity",
         "management": "Avoid; monitor"
-      }
+      },
+      { "drug": "Hypokalemia / hypomagnesemia", "severity": "Major", "mechanism": "Renal tubular wasting of K+ and Mg++ — risk of arrhythmia", "management": "Monitor K+, Mg++ daily; replete aggressively; pre-hydrate with normal saline" },
+      { "drug": "Digoxin", "severity": "Major", "mechanism": "Hypokalemia from amphotericin increases digoxin toxicity", "management": "Monitor K+, digoxin levels" }
+    
     ],
     "pregnancy": "Category B — used in severe maternal infections; minimal placental transfer.",
     "pk": {
@@ -90252,7 +90327,9 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Short-course oral steroids are used as transitional therapy to break active cluster cycles while preventive agents (verapamil, galcanezumab) take effect. No pharmacokinetic interaction between corticosteroids and galcanezumab.",
         "management": "Galcanezumab onset of effect occurs within the first month. For immediate cluster attack suppression at cycle start, a short steroid bridge (prednisone 60-80mg tapering over 2-3 weeks) can be used concurrently with galcanezumab. No dose adjustment of either agent required."
-      }
+      },
+      { "drug": "Injection site reactions", "severity": "Minor", "mechanism": "Local SC injection site pain, erythema, induration", "management": "Rotate injection sites; cold compress; usually self-limiting" }
+    
     ],
     "pregnancy": "Health Canada classification: limited human pregnancy data. Animal studies do not demonstrate fetotoxicity at clinically relevant exposures. Long half-life (~27 days) means residual exposure ≥5 months after stopping. SOGC/Canadian Headache Society: discontinue when planning pregnancy unless severe migraine; counsel washout period. Excretion in breast milk: limited data.",
     "pk": {
@@ -90337,7 +90414,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Lasmiditan inhibits P-gp and BCRP at therapeutic doses",
         "management": "Avoid concurrent P-gp substrates with narrow therapeutic index (digoxin, dabigatran)"
-      }
+      },
+      { "drug": "Driving / operating heavy machinery", "severity": "Major", "mechanism": "Sedation/CNS effects — driving impairment up to 8 hours after dose", "management": "Do NOT drive for 8 hours after lasmiditan; counsel patient" }
+    
     ],
     "pregnancy": "Health Canada classification: limited human pregnancy data; animal studies do not show major fetotoxicity but limited reassurance. Use only if benefit outweighs risk. Excretion in breast milk: limited data — caution.",
     "pk": {
@@ -91429,7 +91508,11 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Octreotide may modestly prolong QT",
         "management": "Caution in combination; monitor ECG"
-      }
+      },
+      { "drug": "Sulfonylureas / insulin", "severity": "Major", "mechanism": "Octreotide suppresses insulin secretion and counter-regulatory hormones — both hyper and hypoglycemia possible", "management": "Monitor glucose closely; adjust diabetes therapy" },
+      { "drug": "Digoxin / beta-blockers", "severity": "Moderate", "mechanism": "Reduced absorption + bradycardia (octreotide reduces HR)", "management": "Monitor digoxin levels; HR monitoring" },
+      { "drug": "Gallstones (cholestasis)", "severity": "Moderate", "mechanism": "Octreotide reduces gallbladder contraction → gallstone formation in 25% with chronic use", "management": "Baseline + periodic ultrasound; counsel symptoms" }
+    
     ],
     "pregnancy": "Health Canada classification: limited human data. Octreotide crosses placenta. Use only if benefit clearly outweighs risk — most clearly justified in active acromegaly with significant maternal complications, severe carcinoid syndrome, or acute variceal bleeding. Excretion in breast milk: limited data.",
     "pk": {
@@ -98553,7 +98636,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Almotriptan metabolized by CYP3A4, CYP2D6, MAO-A → inhibitors increase exposure",
         "management": "Caution; use lower 6.25 mg dose with potent inhibitors"
-      }
+      },
+      { "drug": "MAOIs", "severity": "Major", "mechanism": "Increased almotriptan levels and serotonergic effect", "management": "Avoid combination; 2-week washout" }
+    
     ],
     "pregnancy": "Limited human pregnancy data (less than sumatriptan). Class effect of triptans: generally used with caution in migraine of pregnancy when non-pharmacological measures and acetaminophen insufficient. Sumatriptan is preferred triptan in pregnancy (most data). Avoid in 3rd trimester (theoretical uterotonic effect — minimal with triptans but ergotamine contraindicated as comparator). Lactation: limited data; small amount in breast milk; avoid breastfeeding 12 hours after dose.",
     "pk": {
@@ -100593,7 +100678,9 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Elevated TCA levels → cardiac toxicity",
         "management": "Monitor TCA blood level; reduce TCA dose"
-      }
+      },
+      { "drug": "Serotonergic agents", "severity": "Major", "mechanism": "Serotonin syndrome", "management": "Avoid combination" }
+    
     ],
     "pregnancy": "Limited data. Neonatal withdrawal syndrome (irritability, tachycardia, respiratory distress) with third-trimester exposure. Neonatal anticholinergic syndrome. Per CANMAT: SSRIs (sertraline, escitalopram) preferred for depression in pregnancy. If imipramine cannot be avoided: lowest effective dose; discuss risks. Not for breastfeeding (significant transfer to milk).",
     "pk": {
@@ -102756,7 +102843,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive CNS and anticholinergic effects; muscle hypotonia",
         "management": "Use cautiously; monitor sedation"
-      }
+      },
+      { "drug": "TCAs", "severity": "Moderate", "mechanism": "Additive CNS depression and anticholinergic effects", "management": "Monitor; counsel" }
+    
     ],
     "pregnancy": "Limited human data. Animal studies show skeletal abnormalities at high doses. Neonatal withdrawal syndrome reported with maternal baclofen use. Per SOGC: avoid if possible; if spasticity management essential: use lowest effective dose. Breastfeeding: excreted in milk; infant sedation and withdrawal possible; caution.",
     "pk": {
@@ -107264,7 +107353,9 @@ var DRUGS = {
         "severity": "Contraindicated",
         "mechanism": "Additive QT prolongation → torsades de pointes",
         "management": "Contraindicated — do not use vardenafil with these antiarrhythmics; consider alternative PDE5 inhibitor (though all class members have some QT effect)."
-      }
+      },
+      { "drug": "Alpha blockers", "severity": "Major", "mechanism": "Significant hypotension risk (more than other PDE5)", "management": "Avoid combination or use carefully titrated doses" }
+    
     ],
     "pregnancy": "Not applicable — indicated for erectile dysfunction in males. Not relevant for pregnancy or breastfeeding.",
     "pk": {
@@ -117422,7 +117513,11 @@ var DRUGS = {
       { "drug": "CYP1A2 inhibitors (cimetidine, fluvoxamine, ciprofloxacin)", "severity": "Moderate", "mechanism": "↑doxepin levels", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Anticholinergics (TCAs, antipsychotics, antiparkinson agents, oxybutynin, diphenhydramine)", "severity": "Moderate", "mechanism": "additive anticholinergic burden", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Antihypertensives", "severity": "Moderate", "mechanism": "additive hypotension", "management": "clonidine antihypertensive effect blocked" },
-      { "drug": "Cimetidine", "severity": "Moderate", "mechanism": "markedly ↑doxepin levels (use famotidine instead)", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Cimetidine", "severity": "Moderate", "mechanism": "markedly ↑doxepin levels (use famotidine instead)", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "MAOI / serotonergic agents", "severity": "Major", "mechanism": "Hypertensive crisis / serotonin syndrome", "management": "AVOID combinations; 14-day MAOI washout" },
+      { "drug": "Tramadol", "severity": "Major", "mechanism": "Lowers seizure threshold + serotonin syndrome", "management": "AVOID combination" },
+      { "drug": "Breastfeeding", "severity": "Contraindicated", "mechanism": "Significant breast milk transfer — infant respiratory depression reported (unique among TCAs)", "management": "AVOID doxepin in breastfeeding; alternative TCA (nortriptyline) if needed" }
+    
     ],
     "pregnancy": "TCAs generally compatible with pregnancy when needed (relatively well-studied class). Doxepin secreted in breast milk in significant amounts → respiratory depression in infants → AVOID IN BREASTFEEDING (unique among TCAs).",
     "pk": "PO bioavailability ~25-30% (high first-pass). Peak: 2-4h. t½: 8-25h (active metabolite N-desmethyldoxepin t½ ~30h). Hepatic metabolism CYP2D6, CYP1A2, CYP2C19. Topical: variable absorption depending on application area, broken skin, dose.",
@@ -118882,7 +118977,10 @@ var DRUGS = {
       { "drug": "Phenytoin", "severity": "Moderate", "mechanism": "↑phenytoin levels", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Brivudine, sorivudine (antiviral)", "severity": "Major", "mechanism": "INHIBIT DPD → severe 5-FU toxicity", "management": "FATAL combination — never combine; 4-week washout" },
       { "drug": "Methotrexate", "severity": "Note", "mechanism": "sequence-dependent", "management": "combinations require careful planning" },
-      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" }
+      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" },
+      { "drug": "DPYD deficiency", "severity": "Contraindicated", "mechanism": "DPYD enzyme deficiency causes severe, life-threatening 5-FU toxicity (mucositis, neutropenia, death)", "management": "DPYD genotyping required before initiation per Canadian oncology guidelines (2020+); reduce dose 50% in heterozygotes" },
+      { "drug": "Capecitabine (oral 5-FU prodrug)", "severity": "Contraindicated", "mechanism": "Cross-resistance and additive toxicity", "management": "Don't combine; same DPYD precautions apply" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID. Effective contraception during + 6 months after.",
     "pk": "IV. Rapidly metabolized by DPD (dihydropyrimidine dehydrogenase) — ~85% catabolism in liver; ~15% renal excretion of parent. Short t½ (8-20 minutes) — basis for continuous infusion to maintain levels. Ternary complex formation key to mechanism.",
