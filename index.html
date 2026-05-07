@@ -51950,7 +51950,11 @@ var DRUGS = {
         "mechanism": "Minor CYP3A4 substrate; OAT3 transport is more clinically relevant; CYP interactions modest",
         "management": "No specific dose adjustment for CYP modulators; monitor for unusual adverse effects."
       },
-      { "drug": "TB screening", "severity": "Major", "mechanism": "JAK inhibitor — increased TB reactivation risk", "management": "Screen for latent TB before initiation" }
+      { "drug": "TB screening", "severity": "Major", "mechanism": "JAK inhibitor — increased TB reactivation risk", "management": "Screen for latent TB before initiation" },
+      { "drug": "Hepatitis B reactivation", "severity": "Major", "mechanism": "JAK inhibitor — HBV reactivation risk", "management": "Screen HBsAg + anti-HBc before initiation; antiviral prophylaxis if HBV+" },
+      { "drug": "Thrombosis (DVT, PE, arterial)", "severity": "Major", "mechanism": "JAK class — increased thrombosis risk", "management": "Avoid in high VTE risk; counsel symptoms" },
+      { "drug": "JAK inhibitor Black Box (MACE/cancer/thrombosis)", "severity": "Major", "mechanism": "FDA Black Box 2021 from ORAL Surveillance trial", "management": "Reserve for use after TNF-blocker failure; counsel risks" }
+    
     
     ],
     "pregnancy": "Avoid. Reproductive toxicity in animal studies — post-implantation loss, decreased fetal weight, skeletal malformations at exposures near human therapeutic doses. No adequate human pregnancy data. Use effective contraception during treatment and for ≥1 week after last dose in women of reproductive potential. If pregnancy occurs, discontinue immediately and report to pharmacovigilance registry.",
@@ -82293,7 +82297,9 @@ var DRUGS = {
         "mechanism": "Tocilizumab + MTX is the guideline-recommended combination for active RA with inadequate MTX response (ACR/EULAR 2022). Additive disease modification: tocilizumab blocks IL-6-driven synovitis; MTX reduces T-cell activation and folate-dependent inflammatory pathways. AMBITION trial: tocilizumab monotherapy was non-inferior to tocilizumab + MTX in some endpoints — tocilizumab may be used without MTX if MTX is contraindicated or not tolerated. Combined therapy: reduced immunogenicity of tocilizumab (MTX prevents anti-tocilizumab antibody formation).",
         "management": "Standard combination: tocilizumab (162 mg SC weekly or 8 mg/kg IV q4 weeks) + MTX (15-25 mg/week SC or PO) + folic acid. Monitor CBC + LFTs monthly x3 then q3 months (MTX + tocilizumab additive hepatotoxicity risk — hold if ALT >3x ULN). PJP prophylaxis (TMP-SMX DS 3x/week) in patients on triple therapy (tocilizumab + MTX + prednisone ≥10 mg). Screen for latent TB (IGRA/TST + CXR) before starting tocilizumab — 5-25x TB reactivation risk with IL-6 blockade (IL-6 needed for granuloma maintenance)."
       },
-      { "drug": "Hepatitis B reactivation", "severity": "Major", "mechanism": "IL-6 blockade can reactivate HBV", "management": "Screen HBsAg + anti-HBc; antiviral prophylaxis if HBV+" }
+      { "drug": "Hepatitis B reactivation", "severity": "Major", "mechanism": "IL-6 blockade can reactivate HBV", "management": "Screen HBsAg + anti-HBc; antiviral prophylaxis if HBV+" },
+      { "drug": "CYP enzyme normalization on initiation", "severity": "Major", "mechanism": "IL-6 suppresses CYP enzymes; tocilizumab restores CYP function — may decrease levels of CYP3A4, CYP2C9, CYP2C19, CYP2D6 substrates (warfarin, simvastatin, omeprazole, atorvastatin)", "management": "Monitor INR (warfarin), statin efficacy, omeprazole effect; may need dose adjustment 1-2 weeks after starting tocilizumab" }
+    
     
     ],
     "pregnancy": "Limited data — Category C. Crosses placenta. Use only if benefit outweighs; case-by-case rheumatology consultation. Lactation: appears low-risk (large IgG).",
@@ -88470,7 +88476,11 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Mifepristone inhibits CYP3A4 and may increase statin levels, increasing myopathy and rhabdomyolysis risk. For long-term mifepristone (Cushing's), this interaction is clinically significant; for single-dose abortion use, minimal concern.",
         "management": "For Korlym (Cushing's): avoid simvastatin doses >20mg; prefer pravastatin or rosuvastatin (not CYP3A4-dependent). For Mifegymiso single-dose use: no dose adjustment required for statins."
-      }
+      },
+      { "drug": "Strong CYP3A4 inducers (rifampin, carbamazepine, phenytoin)", "severity": "Major", "mechanism": "Significantly reduce mifepristone levels → loss of efficacy", "management": "Avoid combination" },
+      { "drug": "NSAIDs (for medical abortion regimen)", "severity": "Note", "mechanism": "NSAIDs do not interfere with abortion efficacy when used after mifepristone for pain control", "management": "Acetaminophen or ibuprofen acceptable for cramping pain" },
+      { "drug": "Long-term corticosteroids (off-label Cushing's)", "severity": "Major", "mechanism": "Mifepristone antagonizes glucocorticoid receptor — worsens any pre-existing adrenal insufficiency", "management": "Endocrine specialist supervision; monitor electrolytes" }
+    
     ],
     "pregnancy": "Indicated for TERMINATION of pregnancy. If pregnancy CONTINUES after Mifegymiso (incomplete abortion or patient changes mind), TERATOGENICITY data limited — counsel.",
     "pk": {
@@ -92173,7 +92183,10 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Activated charcoal (50-100 g PO) can reduce dabigatran absorption if given within 2-6 hours of ingestion in an overdose setting; this is an alternative or adjunct to idarucizumab specifically for intentional overdose presentations where the patient is conscious; dabigatran is well-absorbed in GI and has good charcoal binding; idarucizumab is preferred for life-threatening bleeding regardless of timing",
         "management": "For intentional dabigatran overdose within 2-6 hours: charcoal 50-100 g PO/NG tube (if airway protected); for life-threatening bleeding regardless of timing: idarucizumab is primary treatment; charcoal cannot reverse already-absorbed dabigatran; for sub-toxic dabigatran overdose with no active bleeding: charcoal alone may be sufficient with observation; consult Poison Control (1-800-222-1222 USA / 1-800-268-9017 Ontario)"
-      }
+      },
+      { "drug": "Dabigatran (specific reversal)", "severity": "Beneficial", "mechanism": "Specific monoclonal Fab — binds dabigatran with 350x higher affinity than thrombin", "management": "5 g IV (2x 2.5 g vials) as single dose for life-threatening bleeding or emergency surgery" },
+      { "drug": "No interaction with other anticoagulants", "severity": "Note", "mechanism": "Specific to dabigatran only — does not reverse warfarin, factor Xa inhibitors, heparin", "management": "Use andexanet alfa for factor Xa inhibitor reversal; PCC/vitamin K for warfarin" }
+    
     ],
     "pregnancy": "Health Canada classification: limited human data; animal studies do not show fetotoxicity at therapeutic exposures. Use in pregnancy only when clearly indicated (life-threatening dabigatran-induced bleeding or emergency surgery). Excretion in breast milk: limited data — likely minimal due to monoclonal antibody Fab fragment.",
     "pk": {
@@ -92854,7 +92867,10 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Ergot derivatives and eptinezumab target different mechanisms. Ergotamine causes vasoconstriction (5-HT1B/D agonism, alpha-adrenergic); eptinezumab blocks CGRP-mediated vasodilation. No direct pharmacokinetic or adverse pharmacodynamic interaction identified.",
         "management": "Ergotamine use should be limited regardless — Health Canada: ergotamine should not be used more than 10 days/month (medication overuse headache risk). Patients on eptinezumab can use ergotamine for breakthrough migraines with standard precautions (avoid in cardiovascular disease, pregnancy)."
-      }
+      },
+      { "drug": "Constipation (class effect)", "severity": "Moderate", "mechanism": "Anti-CGRP — constipation in some patients", "management": "Counsel hydration, fibre; fluid management" },
+      { "drug": "Pregnancy", "severity": "Note", "mechanism": "Limited data; IgG crosses placenta in 3rd trimester", "management": "Counsel; insufficient data for formal recommendation" }
+    
     ],
     "pregnancy": "Health Canada classification: limited human pregnancy data; animal studies acceptable. Long half-life ~27 days — washout ~5 months when discontinuing. SOGC/Canadian Headache Society: discontinue when planning pregnancy unless severe migraine. Excretion in breast milk: minimal due to IgG1 properties.",
     "pk": {
@@ -93244,7 +93260,11 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "No pharmacokinetic interaction with these topical agents and tralokinumab. Topical JAK inhibitors (ruxolitinib — Opzelura) are minimal systemic absorption. Combination may provide complementary inflammatory pathway control.",
         "management": "Topical crisaborole or ruxolitinib can be used as adjunctive agents during tralokinumab therapy — particularly for breakthrough flares or recalcitrant patches. Monitor for any additive immunosuppressive effects. Health Canada Adbry PM: concurrent topical therapy recommended."
-      }
+      },
+      { "drug": "Live vaccines", "severity": "Major", "mechanism": "IL-13 inhibitor — defer live vaccines during therapy", "management": "Update live vaccines before initiation if possible" },
+      { "drug": "Allergen immunotherapy", "severity": "Note", "mechanism": "Theoretical interference with sensitization", "management": "Coordinate with allergist if initiating IT" },
+      { "drug": "Helminth infections", "severity": "Moderate", "mechanism": "IL-13 blockade may impair anti-helminth immunity", "management": "Treat pre-existing helminth before initiation" }
+    
     ],
     "pregnancy": "Health Canada classification: limited human data; animal studies do not show major fetotoxicity at clinical exposures. IgG4 antibodies generally cross placenta in 3rd trimester. Use only if benefit clearly outweighs risk; SOGC: most biologics in atopic disease can be continued in pregnancy if maternal disease severe. Excretion in breast milk: minimal, generally compatible with breastfeeding.",
     "pk": {
@@ -94647,7 +94667,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Possible INR effects",
         "management": "Monitor INR more frequently"
-      }
+      },
+      { "drug": "Interstitial lung disease (ILD)", "severity": "Major", "mechanism": "EGFR-TKI class — pneumonitis (~3-4%)", "management": "Investigate respiratory symptoms; baseline + serial chest CT; permanent discontinuation grade 3+" },
+      { "drug": "Cardiomyopathy / LVEF reduction", "severity": "Major", "mechanism": "Heart failure / LVEF decrease in ~3-5%", "management": "Baseline echo; periodic monitoring; hold for LVEF drop" }
+    
     ],
     "pregnancy": "Health Canada Pregnancy Category D — embryofetal toxicity in animal studies. CONTRAINDICATED in pregnancy. Effective contraception during therapy and ≥6 weeks after for women; ≥4 months after for men. Excretion in breast milk: avoid breastfeeding.",
     "pk": {
@@ -94834,7 +94857,11 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Duplicate therapy",
         "management": "DO NOT combine ERAs — substitute one for the other"
-      }
+      },
+      { "drug": "Cyclosporine A", "severity": "Major", "mechanism": "Cyclosporine doubles macitentan exposure", "management": "Avoid combination if possible" },
+      { "drug": "Hepatotoxicity / liver function", "severity": "Major", "mechanism": "Endothelin receptor antagonist — hepatotoxicity (less than bosentan)", "management": "Baseline + monthly LFTs; hold for ALT/AST >3x ULN with symptoms or >5x" },
+      { "drug": "Hemoglobin reduction", "severity": "Major", "mechanism": "ERA class — anemia", "management": "Baseline + serial Hb monitoring; hold if Hb <8 g/dL" }
+    
     ],
     "pregnancy": "Health Canada Pregnancy Category X — TERATOGEN. CONTRAINDICATED in pregnancy. Mandatory pregnancy testing pre-treatment + monthly. ERA Pregnancy Prevention Program enrollment required. Two forms of effective contraception during therapy and ≥1 month after discontinuation. Excretion in breast milk: limited data — avoid breastfeeding.",
     "pk": {
@@ -94930,7 +94957,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Triple combination therapy is increasingly standard for intermediate-high risk PAH",
         "management": "Combination is intended use; titrate selexipag to max tolerated dose; do NOT combine with parenteral prostacyclins (epoprostenol/treprostinil) unless under PAH centre supervision"
-      }
+      },
+      { "drug": "Clopidogrel", "severity": "Major", "mechanism": "Clopidogrel inhibits CYP2C8 → 2x increase in selexipag active metabolite", "management": "Reduce selexipag dose 50% if combined; monitor for AE" }
+    
     ],
     "pregnancy": "Health Canada Pregnancy Category C — animal embryofetal toxicity. Use only if benefit clearly outweighs risk. Effective contraception during therapy and ≥30 days post-discontinuation. Excretion in breast milk: limited data — caution.",
     "pk": {
@@ -95048,7 +95077,12 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "CYP3A4 inhibition increases exposure",
         "management": "AVOID grapefruit juice and Seville orange products"
-      }
+      },
+      { "drug": "Strong CYP3A4 inducers (rifampin, carbamazepine, phenytoin, st. john's wort)", "severity": "Contraindicated", "mechanism": "Significantly reduce CFTR modulator levels → loss of efficacy", "management": "AVOID combination per Health Canada PM Trikafta" },
+      { "drug": "Strong CYP3A4 inhibitors (clarithromycin, itraconazole, ketoconazole, ritonavir)", "severity": "Major", "mechanism": "Significantly increase CFTR modulator levels — toxicity", "management": "Reduce dose to 2 tablets twice weekly; monitor for AE" },
+      { "drug": "Hepatotoxicity / liver function", "severity": "Major", "mechanism": "Transaminase elevation common; serious hepatic injury reported", "management": "Baseline + q3 month LFTs first year, then annually; hold/discontinue per ALT/AST elevations" },
+      { "drug": "Cataracts (pediatric)", "severity": "Moderate", "mechanism": "Cataracts reported in children — animal model concerning", "management": "Baseline + annual ophthalmologic exam in pediatric patients" }
+    
     ],
     "pregnancy": "Health Canada classification: limited human pregnancy data; emerging registry data suggests acceptable maternal-fetal safety in pregnancy (CF disease severity often justifies continuation). Specialist (CF clinic, maternal-fetal medicine) shared decision-making. Excretion in breast milk: detected in small amounts; benefit-risk per CF clinic.",
     "pk": {
@@ -98267,7 +98301,11 @@ var DRUGS = {
         "severity": "Note",
         "mechanism": "Standard vaccination schedule generally maintained in SMA patients on risdiplam (not significantly immunosuppressive)",
         "management": "Per pediatric / adult vaccination schedules"
-      }
+      },
+      { "drug": "MATE1/MATE2-K substrates (metformin)", "severity": "Moderate", "mechanism": "Risdiplam inhibits MATE1/MATE2-K → may increase metformin levels", "management": "Monitor for metformin toxicity; consider dose adjustment" },
+      { "drug": "Pregnancy and lactation", "severity": "Major", "mechanism": "Embryo-fetal toxicity in animals (no human data)", "management": "AVOID in pregnancy; effective contraception during therapy and 1 month after" },
+      { "drug": "Male fertility (animal data)", "severity": "Major", "mechanism": "Animal studies suggest male reproductive toxicity at high doses", "management": "Counsel possibility of male infertility; sperm cryopreservation may be considered" }
+    
     ],
     "pregnancy": "Limited human pregnancy data. Animal studies showed teratogenicity at exposures similar to therapeutic doses. Effective contraception during therapy and ≥1 month after last dose (females); MALE PARTNERS — effective contraception during therapy and ≥4 months after last dose (animal male reproductive toxicity reported). Lactation: avoid breastfeeding during therapy.",
     "pk": {
@@ -113026,7 +113064,10 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Overlapping ocular AE profile.",
         "management": "Use one agent at a time; switching is acceptable."
-      }
+      },
+      { "drug": "Endophthalmitis (post-injection)", "severity": "Major", "mechanism": "Intravitreal injection — sterile or infectious endophthalmitis (~1 in 1000)", "management": "Sterile technique; urgent ophtho assessment for post-injection eye pain, redness, vision change" },
+      { "drug": "Systemic anti-VEGF effects (rare)", "severity": "Note", "mechanism": "Minimal systemic absorption from intravitreal route — rare thromboembolic events theoretical", "management": "Caution in recent stroke/MI <3 months" }
+    
     ],
     "pregnancy": "Limited human data; theoretical risk to fetal vascular development. Use only if benefit outweighs risk; effective contraception during therapy and ≥3 months after final dose recommended.",
     "pk": {
@@ -115532,7 +115573,11 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Increased ruxolitinib exposure (less than strong inhibitors).",
         "management": "Reduce ruxolitinib dose if higher fluconazole doses; avoid >200 mg/day combination."
-      }
+      },
+      { "drug": "TB screening", "severity": "Major", "mechanism": "JAK inhibitor — TB reactivation risk", "management": "Screen for latent TB before initiation" },
+      { "drug": "Hepatitis B reactivation", "severity": "Major", "mechanism": "JAK class effect", "management": "Screen HBV before therapy; antiviral prophylaxis if positive" },
+      { "drug": "JAK Black Box (MACE/cancer/thrombosis)", "severity": "Major", "mechanism": "Class effect from ORAL Surveillance", "management": "Counsel risks; reserve for appropriate indications" }
+    
     ],
     "pregnancy": "Limited human data; teratogenic in animal studies. CONTRAINDICATED during pregnancy. Effective contraception during therapy and ≥1 month after final dose. Breastfeeding contraindicated.",
     "pk": {
@@ -116334,7 +116379,10 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Immunocompromise.",
         "management": "Avoid during + ≥3-6 months after."
-      }
+      },
+      { "drug": "Progressive multifocal leukoencephalopathy (PML)", "severity": "Major", "mechanism": "Anti-CD30 ADC — rare JC virus reactivation", "management": "Counsel new neurologic symptoms — urgent MRI + JC virus testing" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "MMAE cytotoxic payload", "management": "AVOID; contraception during and 6 months after" }
+    
     ],
     "pregnancy": "Limited human data; embryo-fetal toxicity. CONTRAINDICATED in pregnancy. Effective contraception during therapy and ≥6 months after final dose for women; ≥3 months for men. Breastfeeding contraindicated.",
     "pk": {
@@ -116598,7 +116646,11 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Mg + concurrent calcium injection in setting of digoxin toxicity can cause severe arrhythmia.",
         "management": "Avoid calcium gluconate in digitalis-toxic arrhythmia."
-      }
+      },
+      { "drug": "Calcium channel blockers (especially nifedipine)", "severity": "Major", "mechanism": "Severe hypotension and neuromuscular blockade with concurrent IV Mg + nifedipine in obstetric setting", "management": "Caution; monitor BP; consider alternative tocolytic" },
+      { "drug": "Depolarizing neuromuscular blockers (succinylcholine)", "severity": "Major", "mechanism": "Mg potentiates neuromuscular blockade — prolonged paralysis", "management": "Reduce NMB dose; monitor train-of-four; have reversal available" },
+      { "drug": "Renal impairment / accumulation", "severity": "Major", "mechanism": "Mg cleared renally — accumulates in renal impairment → hypermagnesemia", "management": "Reduce dose in renal impairment; monitor Mg levels, deep tendon reflexes, respiratory rate" }
+    
     ],
     "pregnancy": "PREGNANCY-COMPATIBLE — used routinely in pregnancy for preeclampsia / eclampsia / fetal neuroprotection. ANTIDOTE in preeclampsia / eclampsia. NOT teratogenic at therapeutic doses; prolonged use (weeks) at high doses associated with fetal/neonatal hypocalcemia + bone demineralization (rare; FDA warning 2013 for prolonged tocolytic use >5-7 days — not relevant for short-course preeclampsia/eclampsia indications). Compatible with breastfeeding (poor oral bioavailability if neonatal exposure).",
     "pk": {
@@ -117220,7 +117272,12 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive immunosuppression / myelotoxicity.",
         "management": "Avoid combination if possible."
-      }
+      },
+      { "drug": "Iron supplements / antacids / mineral supplements", "severity": "Major", "mechanism": "Reduces penicillamine absorption (chelation)", "management": "Take penicillamine 1 hour before or 2 hours after iron, antacids, food" },
+      { "drug": "Gold therapy (auranofin)", "severity": "Contraindicated", "mechanism": "Severe additive hematologic toxicity (agranulocytosis, aplastic anemia) and renal toxicity", "management": "AVOID combination; allow ≥3 months between" },
+      { "drug": "Antimalarials (chloroquine, hydroxychloroquine)", "severity": "Major", "mechanism": "Additive hematologic and severe skin reactions", "management": "Avoid combination unless specialist supervision" },
+      { "drug": "Cytotoxic / immunosuppressants (azathioprine)", "severity": "Major", "mechanism": "Severe additive bone marrow suppression", "management": "Monitor CBC closely; avoid combination if possible" }
+    
     ],
     "pregnancy": "Pregnancy Category D (US legacy) — connective tissue defects (cutis laxa) with high doses (e.g., 2 g/day cystinuria). DO NOT discontinue in WILSON DISEASE during pregnancy (fulminant Wilson recurrence → maternal + fetal mortality); REDUCE DOSE BY ~50% during pregnancy; OB + hepatology specialty management. Trientine + zinc are alternatives often preferred in pregnancy. Compatible with breastfeeding (limited data; weigh benefit vs theoretical infant exposure).",
     "pk": {
@@ -117337,7 +117394,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Mutual chelation reducing efficacy of both.",
         "management": "Separate by ≥1-2 hours; or use one or the other in Wilson maintenance."
-      }
+      },
+      { "drug": "Iron supplements", "severity": "Major", "mechanism": "Trientine chelates iron — both reduced absorption", "management": "Take trientine ≥1 hour before or 2 hours after iron supplements; iron deficiency common in Wilson disease" },
+      { "drug": "Zinc supplements (used in Wilson disease)", "severity": "Moderate", "mechanism": "Both compete for absorption", "management": "Separate by ≥1 hour; both may be used in Wilson disease management" }
+    
     ],
     "pregnancy": "Limited data; trientine considered SAFER than penicillamine in pregnancy (less teratogenicity reported in case series). DO NOT discontinue Wilson therapy in pregnancy. Specialty OB + hepatology management. Compatible with breastfeeding (limited data).",
     "pk": {
@@ -117780,7 +117840,9 @@ var DRUGS = {
       { "drug": "Activated prothrombin complex concentrate (FEIBA)", "severity": "Major", "mechanism": "BLACK BOX warning at ≥100 U/kg/24h × ≥24h (thrombotic microangiopathy, thromboembolism) — use rFVIIa preferentially", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "FVIII concentrate", "severity": "Note", "mechanism": "can be used together (e.g., for surgery, acute bleeds)", "management": "no thrombosis signal" },
       { "drug": "rFVIIa (NovoSeven)", "severity": "Note", "mechanism": "preferred bypassing agent for breakthrough bleeds", "management": "lower thrombosis risk vs aPCC" },
-      { "drug": "Coagulation tests interference: aPTT falsely SHORTENED, FVIII one-stage assay falsely ELEVATED (apparent FVIII >100% when actual is 0%), Bethesda assay using one-stage method falsely negative for inhibitors. CHROMOGENIC FVIII assay using BOVINE substrate is unaffected", "severity": "Moderate", "mechanism": "must use this for true FVIII level monitoring", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Coagulation tests interference: aPTT falsely SHORTENED, FVIII one-stage assay falsely ELEVATED (apparent FVIII >100% when actual is 0%), Bethesda assay using one-stage method falsely negative for inhibitors. CHROMOGENIC FVIII assay using BOVINE substrate is unaffected", "severity": "Moderate", "mechanism": "must use this for true FVIII level monitoring", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Laboratory test interference", "severity": "Major", "mechanism": "Emicizumab gives FALSE-NORMAL aPTT and one-stage FVIII assays — chromogenic FVIII assay required", "management": "Communicate to lab; use chromogenic FVIII assay for level monitoring; standard aPTT/coagulation studies unreliable" }
+    
     ],
     "pregnancy": "Limited human data. Animal studies suggest no direct teratogenicity but maternal-fetal hemorrhage from any cause more concerning. Hemophilia A carriers may benefit; coordinate with HTC + MFM. Crosses placenta minimally late pregnancy.",
     "pk": "SC absorption: ~80% bioavailability. Peak concentration 5 days after dose. Steady state by week 4-5 of loading. t½ ~28 days. Cleared via reticuloendothelial system (no renal/hepatic dose adjustment).",
@@ -118289,7 +118351,10 @@ var DRUGS = {
       { "drug": "UGT2B17/CYP2C19 INDUCERS (rifampin, phenytoin)", "severity": "Major", "mechanism": "↓belzutifan", "management": "AVOID" },
       { "drug": "CYP3A4 SUBSTRATES with narrow therapeutic index (belzutifan is moderate CYP3A4 inducer)", "severity": "Moderate", "mechanism": "check oral contraceptives (may ↓ efficacy — use non-hormonal or barrier)", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "ESAs / EPO", "severity": "Note", "mechanism": "used together when needed for anemia management", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Other CNS depressants", "severity": "Moderate", "mechanism": "additive fatigue/dizziness", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Other CNS depressants", "severity": "Moderate", "mechanism": "additive fatigue/dizziness", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Hypoxia (severe)", "severity": "Major", "mechanism": "HIF-2α inhibition reduces erythropoiesis but also impairs oxygen-carrying response — hypoxia in ~7%", "management": "Monitor SpO₂ regularly; hold for SpO₂ <88%; supplemental oxygen as needed" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "Embryo-fetal toxicity in animal studies", "management": "AVOID; effective contraception during and 1 week after (both sexes); hormonal contraceptives may be less effective (CYP3A4 induction)" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY (animal — fetal anemia, malformations). CONTRAINDICATED in pregnancy. Effective contraception during + 1 week after (both sexes). Hormonal contraceptives may be less effective (CYP3A4 induction) — non-hormonal preferred. AVOID breastfeeding during + 1 week after.",
     "pk": "PO bioavailability adequate. Peak: 1-2h. t½: ~14h. Hepatic metabolism UGT2B17 (major), CYP2C19 (minor). Excretion: feces, urine.",
@@ -118411,7 +118476,9 @@ var DRUGS = {
       { "drug": "Estrogens (oral contraceptives, HRT)", "severity": "Contraindicated", "mechanism": "exacerbate HAE (estrogen-driven attacks)", "management": "avoid combination OCs in HAE; consider progestin-only or non-hormonal contraception" },
       { "drug": "Tissue plasminogen activator (tPA)", "severity": "Note", "mechanism": "theoretical interaction with C1-INH (both serpin pathway)", "management": "clinical relevance unclear" },
       { "drug": "No clinically significant systemic interactions", "severity": "Note", "mechanism": "Plasma-derived/recombinant protein with specific HAE activity", "management": "No specific monitoring required" },
-      { "drug": "Thrombotic events (rare)", "severity": "Note", "mechanism": "Rare reports of thrombosis with high doses (especially Berinert IV)", "management": "Caution in thrombophilia or hypercoagulable states" }
+      { "drug": "Thrombotic events (rare)", "severity": "Note", "mechanism": "Rare reports of thrombosis with high doses (especially Berinert IV)", "management": "Caution in thrombophilia or hypercoagulable states" },
+      { "drug": "No clinically significant systemic interactions", "severity": "Note", "mechanism": "Plasma-derived/recombinant protein — specific HAE activity", "management": "No specific monitoring required" }
+    
     
     ],
     "pregnancy": "Pregnancy is a high-risk period for HAE attacks (estrogen-driven). Berinert (pdC1-INH IV) has the best pregnancy safety record and is FIRST-LINE for both acute treatment and prophylaxis in pregnancy. Avoid androgens (danazol — teratogenic), antifibrinolytics (limited data), kallikrein inhibitors and bradykinin antagonists (limited data). Coordinate with HAE specialist + maternal-fetal medicine.",
@@ -118526,7 +118593,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "Other HAE medications", "severity": "Note", "mechanism": "typically no clinically significant interactions", "management": "can be combined with on-demand acute therapy" },
       { "drug": "Anticoagulants (warfarin, DOACs)", "severity": "Note", "mechanism": "theoretical additive bleeding risk (clinical relevance unclear)", "management": "monitor" },
-      { "drug": "Hormonal contraceptives", "severity": "Note", "mechanism": "no interaction", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Hormonal contraceptives", "severity": "Note", "mechanism": "no interaction", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "C1-inhibitor concentrate (Berinert)", "severity": "Note", "mechanism": "Different mechanism — garadacimab is plasma kallikrein inhibitor, can be used in same patient", "management": "Coordinate transition between agents" },
+      { "drug": "Pregnancy", "severity": "Note", "mechanism": "Limited data; mAb crosses placenta 2nd-3rd trimester", "management": "C1-INH preferred in pregnancy" }
+    
     ],
     "pregnancy": "Limited human data. Monoclonal antibodies cross placenta in 2nd-3rd trimester. Use only if benefit outweighs risk. C1-INH preferred in pregnancy.",
     "pk": "SC bioavailability ~50%. Peak: 5-7 days. t½: ~25 days (allows monthly dosing). Catabolized by reticuloendothelial system.",
@@ -118657,7 +118727,11 @@ var DRUGS = {
       { "drug": "DDAVP (desmopressin)", "severity": "Minor", "mechanism": "alternative or adjunct in mild type 1 vWD (response variable", "management": "tachyphylaxis with repeated dosing)" },
       { "drug": "Aspirin/NSAIDs", "severity": "Major", "mechanism": "bleeding risk", "management": "AVOID in vWD" },
       { "drug": "Anticoagulants", "severity": "Note", "mechanism": "bleeding", "management": "coordinate carefully" },
-      { "drug": "Hormonal contraceptives (estrogen-containing)", "severity": "Minor", "mechanism": "↑vWF and FVIII levels", "management": "can be therapeutically used in mild type 1 (concentrate may be unnecessary in mild types)" }
+      { "drug": "Hormonal contraceptives (estrogen-containing)", "severity": "Minor", "mechanism": "↑vWF and FVIII levels", "management": "can be therapeutically used in mild type 1 (concentrate may be unnecessary in mild types)" },
+      { "drug": "Plasma-derived product / viral safety", "severity": "Note", "mechanism": "Plasma-derived — theoretical infection risk (HIV, HCV, HBV, parvovirus B19) despite modern viral inactivation", "management": "Use viral-inactivated product; vaccinate HBV before therapy; recombinant alternatives available" },
+      { "drug": "Thrombotic events", "severity": "Major", "mechanism": "Excessive vWF/FVIII levels can cause thrombosis", "management": "Monitor FVIII levels; aim <200% to avoid thrombosis; LMWH prophylaxis post-surgery" },
+      { "drug": "Transfusion reactions", "severity": "Moderate", "mechanism": "Allergic/anaphylactic reactions possible", "management": "Slow infusion; antihistamine pre-medication if reactions; monitor" }
+    
     ],
     "pregnancy": "vWF and FVIII levels rise during pregnancy in normal women (especially 3rd trimester) — many type 1 vWD patients normalize. Type 2 and type 3 require concentrate for delivery and postpartum hemorrhage prophylaxis. Manage at HTC or specialized obstetrics/hematology team. Concentrate is safe in pregnancy. Postpartum bleeding common 2-6 weeks postpartum (vWF returns to baseline) — vigilant monitoring.",
     "pk": "IV: peak immediate. t½ of vWF ~12 hours; FVIII rises 8-12h after vWF infusion (FVIII is stabilized by vWF, so endogenous FVIII persists). Cleared by reticuloendothelial system. ABO blood group affects baseline vWF levels (Type O has 25% lower than non-O; not related to drug clearance directly).",
@@ -118800,7 +118874,10 @@ var DRUGS = {
       { "drug": "Iron supplementation", "severity": "Moderate", "mechanism": "pancreatic enzymes may reduce iron absorption", "management": "separate by 1-2 hours" },
       { "drug": "Folate", "severity": "Moderate", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "may reduce folate absorption (rare clinical relevance)" },
       { "drug": "Acid-suppressing therapy (PPI/H2RA)", "severity": "Major", "mechanism": "actually IMPROVES PERT efficacy in CF and severe EPI (gastric acid prematurely activates and degrades enzymes", "management": "PPI raises gastric pH → enzymes survive to duodenum where pH-dependent capsule dissolution occurs); recommended adjunct" },
-      { "drug": "Bicarbonate, sodium citrate", "severity": "Note", "mechanism": "also adjuncts to neutralize gastric acid", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Bicarbonate, sodium citrate", "severity": "Note", "mechanism": "also adjuncts to neutralize gastric acid", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Acidic environment / PPI / H2 blocker", "severity": "Moderate", "mechanism": "Pancrelipase enteric coating dissolves in higher pH (>5.5); PPI/H2 may alter timing/efficacy of release", "management": "Take with meals; PPI may actually improve efficacy in CF; counsel" },
+      { "drug": "Food interaction", "severity": "Major", "mechanism": "Must take WITH meals/snacks for efficacy; doesn't work if taken alone", "management": "Swallow whole with first bite of meal; sprinkle on soft acidic food (applesauce) for children if needed" }
+    
     ],
     "pregnancy": "Compatible — not absorbed systemically.",
     "pk": "Not absorbed — luminal action in small intestine. Active in duodenum/jejunum where pH-dependent enteric coating dissolves (>5.5). Acid-resistant capsule formulation crucial — premature dissolution in stomach → enzyme inactivation by acid + pepsin → loss of efficacy. Eliminated in feces.",
@@ -118872,7 +118949,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "Plasma exchange / IVIG", "severity": "Note", "mechanism": "REMOVES eculizumab", "management": "supplemental dosing required (e.g., 600 mg post-PE)" },
       { "drug": "Live vaccines", "severity": "Major", "mechanism": "generally avoid during therapy", "management": "meningococcal CONJUGATE (not live) is mandatory; pneumococcal PCV20 + PPSV23, Hib, influenza inactivated, COVID, Shingrix recommended" },
-      { "drug": "Other immunosuppressants", "severity": "Moderate", "mechanism": "additive infection risk", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Other immunosuppressants", "severity": "Moderate", "mechanism": "additive infection risk", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Meningococcal vaccination (Black Box)", "severity": "Contraindicated", "mechanism": "C5 inhibition increases N. meningitidis infection risk", "management": "Mandatory vaccination ≥2 weeks before initiation; lifelong antibiotic prophylaxis" },
+      { "drug": "Pregnancy", "severity": "Note", "mechanism": "Limited data; engineered IgG2/4 — minimal placental transfer; used in pregnancy for life-threatening aHUS/PNH", "management": "Risk-benefit analysis; close monitoring with hematology/nephrology" }
+    
     ],
     "pregnancy": "Limited data; eculizumab does NOT cross placenta significantly (engineered IgG2/4 hybrid). Has been used in pregnancy for aHUS and PNH with successful outcomes (significant maternal benefit; infant typically not exposed). Coordinate with high-risk pregnancy + hematology/nephrology. Breastfeeding: low transfer; compatible.",
     "pk": "IV: peak immediate. t½: ~11-12 days. Distribution: blood + extracellular space. Cleared by reticuloendothelial system. Steady state by week 4-5 of induction.",
@@ -118918,7 +118998,11 @@ var DRUGS = {
       "Same as eculizumab."
     ],
     "interactions": [
-      { "drug": "Same as eculizumab", "severity": "Note", "mechanism": "plasma exchange/IVIG remove drug (supplemental dosing).", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Same as eculizumab", "severity": "Note", "mechanism": "plasma exchange/IVIG remove drug (supplemental dosing).", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Meningococcal vaccination required (Black Box)", "severity": "Contraindicated", "mechanism": "C5 inhibition increases risk of N. meningitidis infection", "management": "Mandatory meningococcal vaccination (ACWY + B serogroups) ≥2 weeks before initiation; lifelong antibiotic prophylaxis (penicillin V); REMS-equivalent program in Canada" },
+      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Immunosuppressive effect", "management": "Update live vaccines before initiation; defer during therapy" },
+      { "drug": "PNH / aHUS — discontinuation", "severity": "Major", "mechanism": "Stopping ravulizumab in PNH/aHUS can cause severe hemolysis or TMA flare", "management": "Do not discontinue without specialist; close monitoring after discontinuation" }
+    
     ],
     "pregnancy": "Limited data; minimal placental transfer; used in pregnancy for life-threatening aHUS/PNH.",
     "pk": "Engineered Fc → enhanced FcRn recycling → t½ ~50 days (vs eculizumab ~12 days). Allows q8 week dosing.",
@@ -119534,7 +119618,11 @@ var DRUGS = {
       { "drug": "Insulin / antidiabetics", "severity": "Moderate", "mechanism": "alters glucose", "management": "aggressive monitoring; many patients need anti-diabetic intensification" },
       { "drug": "Cyclosporine", "severity": "Moderate", "mechanism": "↓levels", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Beta-blockers", "severity": "Moderate", "mechanism": "additive bradycardia", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "DPP-4 inhibitors / GLP-1 agonists", "severity": "Note", "mechanism": "first-line antidiabetics for pasireotide-induced hyperglycemia (TURN-1 trial — incretin-based therapies most effective)", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "DPP-4 inhibitors / GLP-1 agonists", "severity": "Note", "mechanism": "first-line antidiabetics for pasireotide-induced hyperglycemia (TURN-1 trial — incretin-based therapies most effective)", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "QT-prolonging drugs (azithromycin, fluoroquinolones, antipsychotics)", "severity": "Major", "mechanism": "Pasireotide prolongs QT — additive risk", "management": "Avoid combination if possible; baseline + serial ECG; correct K+/Mg++" },
+      { "drug": "Bromocriptine / cyclosporine / hyperglycemic drugs", "severity": "Moderate", "mechanism": "Reduced bromocriptine effect; reduced cyclosporine levels", "management": "Monitor" },
+      { "drug": "Gallstones / cholestasis", "severity": "Major", "mechanism": "Somatostatin analogue reduces gallbladder contraction → gallstone formation in 25% with chronic use", "management": "Baseline + periodic ultrasound; counsel symptoms" }
+    
     ],
     "pregnancy": "Limited data. Generally avoided.",
     "pk": "SC: peak 0.5-1h; t½ ~12h; steady state 4-6 days. LAR: t½ at steady state ~12 days; gradual release over 28 days.",
@@ -119591,7 +119679,11 @@ var DRUGS = {
     "interactions": [
       { "drug": "Insulin / oral antidiabetics", "severity": "Moderate", "mechanism": "pegvisomant IMPROVES insulin sensitivity in acromegaly (often ↓ requirements)", "management": "monitor + adjust" },
       { "drug": "Opioids", "severity": "Moderate", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "may reduce response (case reports)" },
-      { "drug": "DOES NOT have major CYP-mediated interactions", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" }
+      { "drug": "DOES NOT have major CYP-mediated interactions", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
+      { "drug": "GH receptor antagonist — IGF-1 monitoring (NOT GH levels)", "severity": "Major", "mechanism": "Pegvisomant blocks peripheral GH receptor — GH levels rise (not interpretable); IGF-1 is the monitoring target", "management": "Use IGF-1 (not GH) to titrate dose; daily SC injection" },
+      { "drug": "Insulin / oral hypoglycemics", "severity": "Major", "mechanism": "Reverses GH-induced insulin resistance — may need hypoglycemic dose reduction", "management": "Monitor glucose closely; reduce diabetic medications as needed" },
+      { "drug": "Hepatotoxicity / liver function", "severity": "Major", "mechanism": "Transaminase elevation reported", "management": "Baseline + monthly × 6 months, then quarterly LFTs" }
+    
     ],
     "pregnancy": "Limited data. Crosses placenta minimally (large molecule). Avoid unless clearly needed.",
     "pk": "SC: peak 33-77h. t½: 138 hours (long; basis for daily dosing maintaining steady level). PEGylation extends half-life. Cleared by reticuloendothelial system + renal/hepatic.",
@@ -119916,7 +120008,9 @@ var DRUGS = {
     ],
     "interactions": [
       { "drug": "BCRP/efflux substrates (rosuvastatin slight ↑); pregnancy.", "severity": "Moderate", "mechanism": "See drug monograph", "management": "Consult monograph" },
-      { "drug": "Warfarin", "severity": "Note", "mechanism": "Mild CYP2C9 inhibition — clinically minimal effect on warfarin", "management": "Monitor INR closely with initiation; usually no dose change needed" }
+      { "drug": "Warfarin", "severity": "Note", "mechanism": "Mild CYP2C9 inhibition — clinically minimal effect on warfarin", "management": "Monitor INR closely with initiation; usually no dose change needed" },
+      { "drug": "Hepatotoxicity (rare)", "severity": "Note", "mechanism": "Mild ALT/AST elevation rarely; generally well tolerated", "management": "Baseline + periodic LFTs; usually asymptomatic" }
+    
     
     ],
     "pregnancy": "AVOID — teratogenic in animals; effective contraception during + 1 month after.",
@@ -120072,7 +120166,9 @@ var DRUGS = {
       { "drug": "STRONG CYP3A4/2C8 inducers (rifampin, phenytoin, carbamazepine)", "severity": "Major", "mechanism": "↓dabrafenib", "management": "AVOID. STRONG CYP3A4 inhibitors (clarithromycin, itraconazole) — ↑dabrafenib; modest concern. Dabrafenib INDUCES CYP3A4/2B6/2C8 → ↓effectiveness of warfarin, hormonal contraceptives (use non-hormonal), midazolam, dexamethasone. PPIs/H2 blockers — modest ↓absorption (CHRONIC PPI may reduce; spacing)." },
       { "drug": "CYP3A4 inducer effect", "severity": "Major", "mechanism": "Dabrafenib is a moderate CYP3A4 inducer — reduces levels of midazolam, oral contraceptives, warfarin", "management": "Use additional contraception; monitor INR; avoid CYP3A4 substrate combinations" },
       { "drug": "Oral contraceptives", "severity": "Major", "mechanism": "CYP3A4 induction reduces hormonal contraceptive efficacy", "management": "Use additional non-hormonal contraception (IUD, barrier)" },
-      { "drug": "Pyrexia / fever", "severity": "Major", "mechanism": "Dabrafenib + trametinib combination causes pyrexia in ~50% (especially in melanoma)", "management": "Hold both drugs at fever ≥38.5°C; restart at lower dose with antipyretic; consider corticosteroid" }
+      { "drug": "Pyrexia / fever", "severity": "Major", "mechanism": "Dabrafenib + trametinib combination causes pyrexia in ~50% (especially in melanoma)", "management": "Hold both drugs at fever ≥38.5°C; restart at lower dose with antipyretic; consider corticosteroid" },
+      { "drug": "CYP2C9 substrate (warfarin)", "severity": "Major", "mechanism": "Dabrafenib is a moderate CYP2C9 inducer in addition to CYP3A4", "management": "Monitor INR with initiation/discontinuation" }
+    
     
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; effective NON-HORMONAL contraception during + 2 weeks after (CYP3A4 induction reduces hormonal efficacy).",
@@ -120116,7 +120212,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "Minimal CYP-mediated; mostly P-gp/BCRP substrate.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
       { "drug": "LVEF reduction / cardiomyopathy", "severity": "Major", "mechanism": "MEK inhibitor class — LV dysfunction in ~7-11%, usually reversible", "management": "Baseline echo; q2-3 month echo monitoring; hold if LVEF drops >10% or below LLN" },
-      { "drug": "Acneiform rash", "severity": "Major", "mechanism": "MEK inhibitor class — papulopustular rash 60-80%", "management": "Topical/systemic antibiotics (doxycycline) + topical steroids; sunscreen; rarely dose-limiting" }
+      { "drug": "Acneiform rash", "severity": "Major", "mechanism": "MEK inhibitor class — papulopustular rash 60-80%", "management": "Topical/systemic antibiotics (doxycycline) + topical steroids; sunscreen; rarely dose-limiting" },
+      { "drug": "BRAF inhibitor combination (dabrafenib)", "severity": "Beneficial", "mechanism": "Standard combination for BRAF V600 melanoma/NSCLC/ATC", "management": "Standard regimen — manage pyrexia, LVEF, rash, ophtho" },
+      { "drug": "Pyrexia (with dabrafenib)", "severity": "Major", "mechanism": "Common with combo (~50%)", "management": "Hold both at fever ≥38.5°C; antipyretic; restart at lower dose; corticosteroid for severe" }
+    
     
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 4 months after.",
@@ -120802,7 +120901,12 @@ var DRUGS = {
       { "drug": "STRONG CYP3A4 INHIBITORS", "severity": "Moderate", "mechanism": "modest ↑tivozanib", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "STRONG CYP3A4 INDUCERS (rifampin, phenytoin, carbamazepine, St. John's wort)", "severity": "Major", "mechanism": "↓tivozanib", "management": "AVOID" },
       { "drug": "QT-prolonging drugs", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Antihypertensives", "severity": "Moderate", "mechanism": "additive (often needed therapeutically)", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Antihypertensives", "severity": "Moderate", "mechanism": "additive (often needed therapeutically)", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Hypertension", "severity": "Major", "mechanism": "VEGFR-TKI — induces/worsens HTN", "management": "Baseline + frequent BP; treat aggressively" },
+      { "drug": "Thromboembolic events (arterial + venous)", "severity": "Major", "mechanism": "VEGFR-TKI class effect", "management": "Caution in CV history; counsel symptoms" },
+      { "drug": "Hepatotoxicity / liver function", "severity": "Major", "mechanism": "Transaminase elevation; rare hepatic failure", "management": "Baseline + bi-weekly LFTs" },
+      { "drug": "Wound healing / surgery", "severity": "Major", "mechanism": "VEGFR inhibition impairs healing", "management": "Hold ≥4 weeks pre-op; resume after wound healed" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 1 month after.",
     "pk": "PO. Peak: 2-24h. Highly protein-bound. CYP3A4 metabolism. t½: ~111h (long — basis for 21/7 cycling).",
@@ -120932,7 +121036,11 @@ var DRUGS = {
       { "drug": "STRONG CYP3A4 INDUCERS", "severity": "Major", "mechanism": "↓encorafenib", "management": "AVOID" },
       { "drug": "QT-prolonging drugs", "severity": "Moderate", "mechanism": "additive (ECG monitoring)", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Encorafenib INDUCES CYP3A4", "severity": "Moderate", "mechanism": "↓warfarin INR, hormonal contraceptive efficacy", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Hepatotoxic drugs", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Hepatotoxic drugs", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Cetuximab (combination for CRC)", "severity": "Beneficial", "mechanism": "Standard combination for BRAF V600E mCRC (BEACON trial — encorafenib + cetuximab)", "management": "Standard regimen; manage rash; monitor LFTs" },
+      { "drug": "Binimetinib (combination for melanoma)", "severity": "Beneficial", "mechanism": "Standard combination for BRAF V600 melanoma (COLUMBUS trial)", "management": "Standard regimen; LVEF + ophtho monitoring (binimetinib)" },
+      { "drug": "Photosensitivity", "severity": "Moderate", "mechanism": "BRAF inhibitor class effect", "management": "Sun protection (SPF 30+, sun avoidance)" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; non-hormonal contraception during + 2 weeks after.",
     "pk": "PO. Peak: 2h. Highly protein-bound. CYP3A4 metabolism + UGT1A1. t½: ~6h (paradoxically — but tissue binding gives sustained pharmacodynamic effect).",
@@ -120994,7 +121102,11 @@ var DRUGS = {
       { "drug": "STRONG CYP3A4 INHIBITORS", "severity": "Major", "mechanism": "substantially ↑cobimetinib", "management": "AVOID or reduce 50%" },
       { "drug": "STRONG CYP3A4 INDUCERS", "severity": "Major", "mechanism": "↓cobimetinib", "management": "AVOID" },
       { "drug": "QT-prolonging drugs", "severity": "Moderate", "mechanism": "additive (vemurafenib already prolongs)", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Hepatotoxic drugs", "severity": "Moderate", "mechanism": "See drug monograph", "management": "Consult monograph" }
+      { "drug": "Hepatotoxic drugs", "severity": "Moderate", "mechanism": "See drug monograph", "management": "Consult monograph" },
+      { "drug": "Photosensitivity (severe)", "severity": "Major", "mechanism": "MEK inhibitor + vemurafenib synergy — severe photosensitivity", "management": "Strict sun avoidance; broad-spectrum SPF 50+ daily" },
+      { "drug": "LVEF reduction / cardiomyopathy", "severity": "Major", "mechanism": "MEK inhibitor class effect", "management": "Baseline echo; serial monitoring" },
+      { "drug": "Acneiform rash", "severity": "Major", "mechanism": "MEK class effect", "management": "Topical/systemic antibiotic + steroid; sunscreen" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 2 weeks after.",
     "pk": "PO. Peak: 2.4h. Highly protein-bound. CYP3A4 metabolism. t½: ~44h. Fecal/biliary excretion.",
@@ -121053,7 +121165,11 @@ var DRUGS = {
     "interactions": [
       { "drug": "Mostly UGT1A1 substrate; minimal CYP-mediated interactions (vs trametinib)", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
       { "drug": "QT-prolonging drugs", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Hepatotoxic drugs", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Hepatotoxic drugs", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "LVEF reduction / cardiomyopathy", "severity": "Major", "mechanism": "MEK inhibitor class — LV dysfunction in 7-11%", "management": "Baseline echo; q2-3 month echo monitoring; hold for LVEF drop" },
+      { "drug": "Acneiform rash", "severity": "Major", "mechanism": "MEK class effect (~60-80%)", "management": "Topical/systemic antibiotics + topical steroids" },
+      { "drug": "CYP3A4 substrate (minor)", "severity": "Note", "mechanism": "Minor CYP3A4 metabolism — usually clinically minor", "management": "No specific dose adjustment" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 1 month after.",
     "pk": "PO. Peak: 1.6h. Highly protein-bound. UGT1A1 + CYP1A2 metabolism. t½: ~3.5h. Fecal/biliary excretion mostly.",
@@ -121114,7 +121230,11 @@ var DRUGS = {
       { "drug": "STRONG CYP3A4 INHIBITORS (clarithromycin, itraconazole)", "severity": "Major", "mechanism": "↑selumetinib", "management": "reduce dose or AVOID" },
       { "drug": "STRONG CYP3A4 INDUCERS", "severity": "Major", "mechanism": "↓selumetinib", "management": "AVOID" },
       { "drug": "VITAMIN E supplements", "severity": "Moderate", "mechanism": "additive bleeding risk (capsules contain vitamin E succinate as excipient)", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Anticoagulants", "severity": "Note", "mechanism": "bleeding", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Anticoagulants", "severity": "Note", "mechanism": "bleeding", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "LVEF reduction / cardiomyopathy", "severity": "Major", "mechanism": "MEK inhibitor — LV dysfunction in pediatric NF1 patients", "management": "Baseline echo + cardiac monitoring during therapy" },
+      { "drug": "Ophthalmologic monitoring (RPED, retinal vein occlusion)", "severity": "Major", "mechanism": "MEK class effect", "management": "Baseline + periodic ophtho exam" },
+      { "drug": "Pediatric growth/development", "severity": "Major", "mechanism": "Approved ages ≥2; monitor growth", "management": "Pediatric oncology specialist; growth monitoring" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; pediatric patients should use contraception when of reproductive age during + 1 week after.",
     "pk": "PO. Peak: 1-1.5h. Highly protein-bound. CYP3A4 + CYP2C19 + UGT1A1 metabolism. t½: ~6.2h. Mostly hepatic + renal excretion of metabolites.",
@@ -121434,7 +121554,11 @@ var DRUGS = {
       { "drug": "STRONG CYP3A4 INHIBITORS", "severity": "Major", "mechanism": "↑MMAE", "management": "avoid" },
       { "drug": "P-gp inhibitors", "severity": "Moderate", "mechanism": "↑MMAE", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" },
-      { "drug": "Other neurotoxins (vincristine", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "replaces in R-CHP) — avoid additive" }
+      { "drug": "Other neurotoxins (vincristine", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "replaces in R-CHP) — avoid additive" },
+      { "drug": "Peripheral neuropathy (MMAE class)", "severity": "Major", "mechanism": "MMAE microtubule disruptor causes peripheral neuropathy (~40%)", "management": "Neurologic exam baseline + each cycle; dose modification for grade 2+; usually reversible" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "Cytotoxic payload", "management": "AVOID; contraception during and 9 months after (women), 6 months (men)" },
+      { "drug": "Tumour lysis syndrome", "severity": "Major", "mechanism": "Rapid B-cell lymphoma cell lysis", "management": "Allopurinol prophylaxis; hydration; electrolyte monitoring" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 9 months (females), 6 months (males) after.",
     "pk": "IV. ADC: antibody t½ ~12 days; MMAE released slowly. CYP3A4 substrate (MMAE).",
@@ -121490,7 +121614,10 @@ var DRUGS = {
       { "drug": "STRONG CYP3A4 INHIBITORS", "severity": "Moderate", "mechanism": "↑exposure", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Other photosensitizing drugs (doxycycline, tetracyclines, voriconazole, amiodarone)", "severity": "Moderate", "mechanism": "additive photosensitivity", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" },
-      { "drug": "Other myelosuppressives", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Other myelosuppressives", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Edema / effusions", "severity": "Major", "mechanism": "PBD payload causes edema, pleural effusion, ascites", "management": "Diuretics; thoracentesis if symptomatic; dose modification" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "PBD cytotoxic payload — embryo-fetal toxicity", "management": "AVOID; contraception during and 9 months after" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 9 months after.",
     "pk": "IV. ADC: t½ ~15 days. Hepatic metabolism.",
@@ -121545,7 +121672,11 @@ var DRUGS = {
     "interactions": [
       { "drug": "STRONG CYP3A4 INHIBITORS", "severity": "Moderate", "mechanism": "modest ↑DM4 exposure", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" },
-      { "drug": "Other neurotoxins", "severity": "Moderate", "mechanism": "additive neuropathy", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Other neurotoxins", "severity": "Moderate", "mechanism": "additive neuropathy", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Ocular toxicity / corneal events", "severity": "Major", "mechanism": "Black Box: severe ocular toxicity (keratopathy, dry eye, blurred vision) in ~50%", "management": "Mandatory ophthalmologic exam baseline + before each dose × 4 cycles, then every other cycle; lubricating drops; vasoconstrictor drops + cold packs during infusion" },
+      { "drug": "Pneumonitis", "severity": "Major", "mechanism": "ADC class effect — pneumonitis", "management": "Investigate respiratory symptoms; corticosteroids; permanent discontinuation grade 3+" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "DM4 cytotoxic payload — embryo-fetal toxicity", "management": "AVOID; effective contraception during and 7 months after" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 7 months after.",
     "pk": "IV. ADC: antibody t½ ~5 days. DM4 metabolism via CYP3A4.",
@@ -121601,7 +121732,12 @@ var DRUGS = {
       { "drug": "Anticoagulants", "severity": "Moderate", "mechanism": "bleeding risk", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Antiplatelets", "severity": "Note", "mechanism": "bleeding", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "STRONG CYP3A4 INHIBITORS", "severity": "Moderate", "mechanism": "↑MMAE", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" }
+      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" },
+      { "drug": "Ocular toxicity (Black Box)", "severity": "Major", "mechanism": "Severe ocular toxicity (conjunctivitis, keratitis, ulceration)", "management": "Mandatory ophthalmologic exam baseline + before each dose; cooling eye pads + vasoconstrictor + lubricating drops during infusion" },
+      { "drug": "Corneal events", "severity": "Major", "mechanism": "Same — corneal ulceration risk", "management": "Discontinue for grade 3+ corneal events" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "MMAE cytotoxic payload", "management": "AVOID; contraception during and 2 months after (women), 4 months (men)" },
+      { "drug": "Bleeding", "severity": "Major", "mechanism": "Anti-tissue factor mAb component — increased bleeding risk", "management": "Caution in coagulopathy; monitor for bleeding" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 2 months after.",
     "pk": "IV. ADC: t½ ~4 days. MMAE metabolism via CYP3A4.",
@@ -121658,7 +121794,11 @@ var DRUGS = {
     "interactions": [
       { "drug": "QT-prolonging drugs", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Hepatotoxic drugs (conditioning regimens)", "severity": "Moderate", "mechanism": "VOD risk", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" }
+      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" },
+      { "drug": "Sinusoidal obstruction syndrome (VOD/SOS) — Black Box", "severity": "Major", "mechanism": "Hepatic VOD — fatal in some patients, especially with subsequent HSCT", "management": "Limit exposure to ≤2 cycles before HSCT if possible; baseline + LFTs before each dose; counsel signs (RUQ pain, weight gain, ascites, bilirubin elevation)" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "Cytotoxic calicheamicin payload", "management": "AVOID; effective contraception during and 8 months after (women), 5 months (men)" },
+      { "drug": "Tumour lysis syndrome", "severity": "Major", "mechanism": "Rapid leukemia cell lysis on initiation", "management": "Allopurinol or rasburicase prophylaxis; aggressive hydration; monitor electrolytes" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 8 months (females), 5 months (males) after.",
     "pk": "IV. ADC: t½ ~13 days.",
@@ -121716,7 +121856,11 @@ var DRUGS = {
     "interactions": [
       { "drug": "QT-prolonging drugs", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
       { "drug": "Hepatotoxic drugs (HSCT conditioning)", "severity": "Moderate", "mechanism": "VOD risk", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" }
+      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" },
+      { "drug": "Hepatotoxicity / VOD", "severity": "Major", "mechanism": "Black Box: hepatotoxicity, VOD/SOS especially with HSCT", "management": "Baseline + LFTs; reduce HSCT VOD risk with delayed initiation" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "Cytotoxic payload", "management": "AVOID; contraception during and 6 months after" },
+      { "drug": "Tumour lysis syndrome", "severity": "Major", "mechanism": "Rapid AML cell lysis", "management": "Allopurinol/rasburicase; hydration; electrolyte monitoring" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; contraception during + 6 months after.",
     "pk": "IV. ADC: t½ ~62 hours.",
@@ -122031,7 +122175,10 @@ var DRUGS = {
       "Hypersensitivity"
     ],
     "interactions": [
-      { "drug": "Limited CYP-mediated; minimal known interactions.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" }
+      { "drug": "Limited CYP-mediated; minimal known interactions.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
+      { "drug": "Warfarin", "severity": "Note", "mechanism": "Mild CYP2C9 inhibition — clinically minimal effect", "management": "Monitor INR with initiation" },
+      { "drug": "Pregnancy", "severity": "Major", "mechanism": "Animal embryo-fetal toxicity at high doses", "management": "AVOID in pregnancy; effective contraception" }
+    
     ],
     "pregnancy": "AVOID — animal embryofetal toxicity; effective contraception during.",
     "pk": "PO with or without food. Hepatic metabolism + biliary excretion.",
@@ -122079,7 +122226,9 @@ var DRUGS = {
     ],
     "interactions": [
       { "drug": "Limited; no major drug-drug interactions documented.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
-      { "drug": "Anaphylaxis (Black Box)", "severity": "Major", "mechanism": "~3% anaphylaxis risk with subcutaneous administration", "management": "Administer in healthcare facility with anaphylaxis-trained staff and resuscitation equipment; observe ≥1h post-dose" }
+      { "drug": "Anaphylaxis (Black Box)", "severity": "Major", "mechanism": "~3% anaphylaxis risk with subcutaneous administration", "management": "Administer in healthcare facility with anaphylaxis-trained staff and resuscitation equipment; observe ≥1h post-dose" },
+      { "drug": "Anaphylaxis Black Box", "severity": "Major", "mechanism": "~3% anaphylaxis with SC administration", "management": "Administer in healthcare facility with anaphylaxis-trained staff; ≥1h observation post-dose" }
+    
     
     ],
     "pregnancy": "Limited data; use only if benefit outweighs risk.",
@@ -122128,7 +122277,10 @@ var DRUGS = {
       "Hypersensitivity to donidalorsen"
     ],
     "interactions": [
-      { "drug": "Minimal known interactions; antisense oligonucleotides are not CYP/transporter substrates significantly.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" }
+      { "drug": "Minimal known interactions; antisense oligonucleotides are not CYP/transporter substrates significantly.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
+      { "drug": "Pregnancy", "severity": "Note", "mechanism": "Limited human data; antisense oligonucleotide — minimal placental transfer expected", "management": "Counsel; preserve C1-INH (Berinert) prophylaxis preferred in pregnancy" },
+      { "drug": "Injection site reactions", "severity": "Moderate", "mechanism": "SC injection site pain, erythema (~10-15%)", "management": "Rotate sites; usually self-limiting" }
+    
     ],
     "pregnancy": "Limited human data; animal: no specific concerns at clinical doses. Use only if needed.",
     "pk": "SC. Peak: ~5h. t½: ~25 days. Hepatic uptake (GalNAc-mediated ASGR receptor); slow tissue clearance.",
@@ -122339,7 +122491,11 @@ var DRUGS = {
     "interactions": [
       { "drug": "Anticoagulants / antiplatelets", "severity": "Moderate", "mechanism": "additive bleeding risk (thrombocytopenia)", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Other nephrotoxic drugs", "severity": "Moderate", "mechanism": "additive renal injury", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Live vaccines", "severity": "Note", "mechanism": "caution (immunosuppression theoretical)", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Live vaccines", "severity": "Note", "mechanism": "caution (immunosuppression theoretical)", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Severe thrombocytopenia (Black Box)", "severity": "Major", "mechanism": "Antisense oligonucleotide — severe thrombocytopenia (platelets <25,000) reported", "management": "Mandatory weekly platelet count; hold for platelets <100,000; corticosteroids and platelet transfusion for severe drops" },
+      { "drug": "Glomerulonephritis (Black Box)", "severity": "Major", "mechanism": "Crescentic glomerulonephritis with proteinuria/AKI reported", "management": "Mandatory monthly urinalysis + SCr; discontinue for proteinuria, rising SCr, glomerular changes" },
+      { "drug": "Vitamin A supplementation", "severity": "Major", "mechanism": "TTR is vitamin A binding protein — reduced retinol", "management": "Mandatory 2,500-3,000 IU/day vitamin A supplementation per Health Canada PM" }
+    
     ],
     "pregnancy": "AVOID — limited data; effective contraception during + 5 days after.",
     "pk": "SC. Peak: 2-4h. t½: ~32 days (very long; basis for weekly dosing maintaining suppression). Tissue accumulation. Hepatic uptake + nuclease degradation.",
@@ -122508,7 +122664,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "Immunosuppressants", "severity": "Moderate", "mechanism": "may impair immune response monitoring", "management": "corticosteroids used therapeutically" },
       { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid for ~3 months post-infusion (immune system focused on AAV response)" },
-      { "drug": "Hepatotoxic drugs", "severity": "Moderate", "mechanism": "additive ALT effect", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Hepatotoxic drugs", "severity": "Moderate", "mechanism": "additive ALT effect", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Hepatotoxicity / liver function", "severity": "Major", "mechanism": "AAV5 gene therapy — transient transaminitis common (~7%)", "management": "Mandatory weekly LFTs first 3 months; corticosteroid taper for AST/ALT >2x ULN; oral prednisone for hepatotoxicity" },
+      { "drug": "Pre-existing AAV5 antibodies", "severity": "Major", "mechanism": "Pre-existing neutralizing antibodies to AAV5 (~25-50% of population) reduce efficacy and increase liver injury", "management": "Mandatory pre-treatment AAV5 antibody titer; do not administer if titer above threshold" }
+    
     ],
     "pregnancy": "AVOID (theoretical germline + somatic gene transfer concerns); contraception 6 months for males due to potential viral vector shedding in semen.",
     "pk": "Single IV infusion. AAV vector clears within weeks; transduced hepatocytes express FIX-Padua DURABLY (years). Mean FIX activity ~36% post-infusion (HOPE-B 2-year data); sustained exposure prevents bleeds.",
@@ -122631,7 +122790,10 @@ var DRUGS = {
       { "drug": "**EMICIZUMAB (Hemlibra)**", "severity": "Contraindicated", "mechanism": "BBW thrombotic microangiopathy with FEIBA ≥100 U/kg/24h × ≥24h", "management": "AVOID combination; use rFVIIa instead if patient on Hemlibra" },
       { "drug": "Antifibrinolytics (tranexamic acid)", "severity": "Note", "mechanism": "synergistic + thrombosis", "management": "combine cautiously" },
       { "drug": "Other bypassing agents (rFVIIa)", "severity": "Contraindicated", "mechanism": "DO NOT combine", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Anticoagulants", "severity": "Note", "mechanism": "counteract therapeutic effect", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Anticoagulants", "severity": "Note", "mechanism": "counteract therapeutic effect", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Emicizumab (concurrent in HEMLIBRA patients)", "severity": "Contraindicated", "mechanism": "aPCC (FEIBA) >100 U/kg/24h with emicizumab causes thrombotic microangiopathy and thrombosis", "management": "AVOID >100 U/kg/24h; use rFVIIa (NovoSeven) or low-dose aPCC alternatives in emicizumab patients" },
+      { "drug": "Thrombotic events", "severity": "Major", "mechanism": "aPCC contains activated factors — thrombotic risk especially in DIC, recent thrombosis", "management": "Avoid in active DIC; cautious dosing; monitor for thrombosis" }
+    
     ],
     "pregnancy": "Cat C. Use only if benefit outweighs.",
     "pk": "IV. t½: vit K-dependent factors variable (FVII ~5h, FIX ~24h, FII ~60h). Reticuloendothelial clearance.",
@@ -122789,7 +122951,9 @@ var DRUGS = {
       { "drug": "Other immunosuppressants (oral JAK inhibitors, biologics)", "severity": "Contraindicated", "mechanism": "additive class concern", "management": "do not combine" },
       { "drug": "Strong CYP3A4 inhibitors", "severity": "Note", "mechanism": "minor systemic absorption may slightly elevate levels (clinically minimal)", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Live vaccines", "severity": "Note", "mechanism": "generally compatible at low BSA", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Sunscreens", "severity": "Note", "mechanism": "recommended (counsel ongoing UV protection", "management": "UVB phototherapy + topical ruxolitinib combinations in vitiligo)" }
+      { "drug": "Sunscreens", "severity": "Note", "mechanism": "recommended (counsel ongoing UV protection", "management": "UVB phototherapy + topical ruxolitinib combinations in vitiligo)" },
+      { "drug": "Systemic absorption / JAK Black Box (theoretical)", "severity": "Major", "mechanism": "Despite topical, systemic absorption occurs — JAK class warnings (CV/cancer/thrombosis) theoretical with extensive use", "management": "Maximum 20% BSA application; avoid prolonged/extensive use; counsel theoretical class risks; not for severe systemic JAK indications" }
+    
     ],
     "pregnancy": "Limited data; AVOID (oral JAK inhibitors have embryofetal toxicity); contraception during therapy.",
     "pk": "Topical; minimal systemic absorption (<10% bioavailable at recommended use); some systemic exposure if applied to large BSA or under occlusion. t½ (systemic): ~3h.",
@@ -123265,7 +123429,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid concurrent (theoretical immune interaction)" },
       { "drug": "Other intravesical therapies (BCG, mitomycin)", "severity": "Note", "mechanism": "typically not used concurrently (sequential)", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Immunosuppressants", "severity": "Moderate", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "may reduce efficacy" }
+      { "drug": "Immunosuppressants", "severity": "Moderate", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "may reduce efficacy" },
+      { "drug": "Replication-deficient adenovirus precautions", "severity": "Note", "mechanism": "Replication-incompetent vector — minimal systemic absorption from intravesical instillation", "management": "Standard biohazard precautions for healthcare staff during preparation/administration" },
+      { "drug": "Urinary tract symptoms", "severity": "Moderate", "mechanism": "Local instillation — dysuria, urinary urgency, pain ~30-50%", "management": "Counsel; usually transient (resolves within 24-48h)" }
+    
     ],
     "pregnancy": "Limited data; minimal systemic absorption; counsel barrier protection during sex × 7 days (theoretical viral shedding).",
     "pk": "Local intravesical action; minimal systemic absorption (~1% IFN-α detected in plasma briefly post-instillation); local IFN-α expression ~7-10 days.",
@@ -123320,7 +123487,9 @@ var DRUGS = {
       { "drug": "Concurrent administration of CYP3A4 inhibitors/inducers", "severity": "Note", "mechanism": "minimal effect (siRNA mechanism)", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Live vaccines", "severity": "Note", "mechanism": "generally compatible", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Pre-medications must be given (not contraindicated; required to prevent infusion reactions)", "severity": "Contraindicated", "mechanism": "See drug monograph", "management": "Consult monograph" },
-      { "drug": "Vitamin A supplementation required", "severity": "Major", "mechanism": "TTR is a vitamin A binding protein — silencing reduces serum retinol", "management": "Mandatory daily vitamin A supplementation 2,500-10,000 IU (per Health Canada PM)" }
+      { "drug": "Vitamin A supplementation required", "severity": "Major", "mechanism": "TTR is a vitamin A binding protein — silencing reduces serum retinol", "management": "Mandatory daily vitamin A supplementation 2,500-10,000 IU (per Health Canada PM)" },
+      { "drug": "Pregnancy", "severity": "Major", "mechanism": "Vitamin A deficiency from TTR silencing — fetal toxicity risk", "management": "Avoid in pregnancy; mandatory vitamin A supplementation" }
+    
     
     ],
     "pregnancy": "AVOID — limited data; effective contraception during.",
@@ -123372,7 +123541,10 @@ var DRUGS = {
     ],
     "interactions": [
       { "drug": "Minimal CYP/transporter interactions (siRNA mechanism)", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
-      { "drug": "Live vaccines", "severity": "Note", "mechanism": "generally compatible", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Live vaccines", "severity": "Note", "mechanism": "generally compatible", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Vitamin A supplementation required", "severity": "Major", "mechanism": "TTR is a vitamin A binding protein — TTR silencing reduces serum retinol", "management": "Mandatory daily vitamin A 2,500-3,000 IU per Health Canada PM" },
+      { "drug": "Pregnancy", "severity": "Major", "mechanism": "Limited data; vitamin A deficiency risk to fetus", "management": "AVOID in pregnancy" }
+    
     ],
     "pregnancy": "AVOID — limited data; effective contraception during.",
     "pk": "SC. Tissue accumulation; sustained TTR knockdown × 3 months per dose.",
