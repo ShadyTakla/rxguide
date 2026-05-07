@@ -435,11 +435,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   <button class="tab-btn" onclick="switchTab('antimicrobials');buildAMR();">🦠 Antimicrobials</button>
   <button class="tab-btn" onclick="switchTab('vaccinations');buildVaccines();">💉 Vaccinations</button>
   <button class="tab-btn" onclick="switchTab('interactions')">⚡ Interactions</button>
+  <button class="tab-btn" onclick="switchTab('reference');buildReference();">📊 Reference</button>
   <button class="tab-btn" onclick="switchTab('pregnancy')">🤰 Pregnancy</button>
   <button class="tab-btn" onclick="switchTab('formulary')">📋 NAPRA/ODB Formulary</button>
   <button class="tab-btn" onclick="switchTab('minor_ailments');resetMA();">🩺 Minor Ailments</button>
   <button class="tab-btn" onclick="switchTab('jurisprudence')">⚖️ Jurisprudence</button>
-  <button class="tab-btn" onclick="switchTab('deprescribing');buildDeprescribing();">👴 Deprescribing</button>
 </div>
 
 <div id="main">
@@ -484,15 +484,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
         </div>
       </div>
 
-      <!-- DEPRESCRIBING TAB -->
-      <div id="tab-deprescribing" class="tab-panel">
+      <!-- REFERENCE TAB (unified Deprescribing + Reference Charts) -->
+      <div id="tab-reference" class="tab-panel">
         <div style="padding:16px;">
-          <h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 6px;">👴 Deprescribing Protocols</h2>
-          <p style="font-size:0.83rem;color:var(--muted);margin:0 0 16px;">Evidence-based step-by-step taper protocols based on the Canadian Deprescribing Network (deprescribing.org), Choosing Wisely Canada, AGS Beers Criteria 2023, and STOPP/START v3 (2023).</p>
-          <div id="deprescribing-list"></div>
-          <div id="deprescribing-detail" style="display:none;">
-            <button onclick="closeDeprescribing()" style="background:var(--accent2);color:#fff;border:none;border-radius:6px;padding:8px 14px;font-size:0.85rem;cursor:pointer;margin-bottom:14px;">← Back to all protocols</button>
-            <div id="deprescribing-content"></div>
+          <div id="reference-home">
+            <h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 6px;">📊 Reference</h2>
+            <p style="font-size:0.83rem;color:var(--muted);margin:0 0 16px;">Deprescribing protocols and quick-reference clinical charts. Canadian-cited and 2020+. Click a category to expand.</p>
+            <div id="reference-categories" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;"></div>
+          </div>
+          <div id="reference-detail" style="display:none;">
+            <button onclick="closeReference()" style="background:var(--accent2);color:#fff;border:none;border-radius:6px;padding:8px 14px;font-size:0.85rem;cursor:pointer;margin-bottom:14px;">← Back to Reference</button>
+            <div id="reference-content"></div>
           </div>
         </div>
       </div>
@@ -154132,7 +154134,7 @@ function showSidebar() {
 // TAB SWITCHING
 // ══════════════════════════════════════════════
 function switchTab(name) {
-  var tabMap = {diseases:0, antimicrobials:1, vaccinations:2, interactions:3, pregnancy:4, formulary:5, minor_ailments:6, jurisprudence:7, deprescribing:8};
+  var tabMap = {diseases:0, antimicrobials:1, vaccinations:2, interactions:3, reference:4, pregnancy:5, formulary:6, minor_ailments:7, jurisprudence:8};
   document.querySelectorAll('.tab-btn').forEach(function(el,i){
     el.classList.toggle('active', i === tabMap[name]);
   });
@@ -155222,6 +155224,27 @@ function showDrugPanel(drugKey) {
     }
 
     h += '</div>';
+  }
+
+  // ── Linked Reference Tables (drug-class-specific equivalence/potency/dose tables) ──
+  if (typeof REFERENCE_TABLES !== 'undefined') {
+    var linkedTables = [];
+    for (var rt = 0; rt < REFERENCE_TABLES.length; rt++) {
+      var t = REFERENCE_TABLES[rt];
+      if (t.related_drugs && t.related_drugs.indexOf(drugKey) >= 0) linkedTables.push(t);
+    }
+    if (linkedTables.length) {
+      h += '<div class="dp-section">';
+      h += '<div class="dp-section-title" style="color:#06b6d4;">📊 Linked Reference Tables</div>';
+      for (var rt = 0; rt < linkedTables.length; rt++) {
+        var t = linkedTables[rt];
+        h += '<div onclick="switchTab(\'reference\');buildReference();setTimeout(function(){showReferenceTable(\'' + t.id + '\')},50)" style="margin-top:8px;padding:10px;background:rgba(6,182,212,0.10);border:1px solid rgba(6,182,212,0.35);border-radius:6px;cursor:pointer;">';
+        h += '<div style="font-size:0.78rem;font-weight:700;color:#67e8f9;">' + (t.icon||'📊') + '  ' + t.title + ' →</div>';
+        if (t.overview) h += '<div style="font-size:0.78rem;color:#c8cadc;margin-top:3px;">' + t.overview.substring(0, 110) + (t.overview.length > 110 ? '…' : '') + '</div>';
+        h += '</div>';
+      }
+      h += '</div>';
+    }
   }
 
   if (drug.pregnancy) {
@@ -174270,6 +174293,444 @@ function closeDeprescribing() {
   document.getElementById('deprescribing-detail').style.display = 'none';
   document.getElementById('deprescribing-list').style.display = 'block';
 }
+
+
+// ════════════════════════════════════════════════════════════
+// REFERENCE TABLES (charts — read-only structured data)
+// ════════════════════════════════════════════════════════════
+var REFERENCE_TABLES = [
+  {
+    id: 'opioid_mme',
+    title: 'Opioid Morphine Equivalent (MME) Reference',
+    icon: '💉',
+    color: '#dc2626',
+    overview: 'Approximate equianalgesic dose conversions from various opioids to oral morphine. For dose review, opioid stewardship, and opioid rotation context — NOT a calculator.',
+    warnings: [
+      'INCOMPLETE CROSS-TOLERANCE: When rotating between opioids, REDUCE the calculated equivalent dose by 25–50% to account for incomplete cross-tolerance. Then titrate to effect with breakthrough doses.',
+      'METHADONE: Conversion ratio is non-linear and dose-dependent (4:1 to 12:1+ — higher methadone-to-morphine ratio at higher baseline doses). Methadone rotation requires SPECIALIST consultation; do not use this table to calculate methadone doses.',
+      'FENTANYL TRANSDERMAL: Patch dose ratios vary across references; 25 mcg/h ≈ ~60–90 mg morphine PO/day per Canadian Pain Society — but published ranges differ. Do NOT initiate fentanyl patches in opioid-naive patients.',
+      'BUPRENORPHINE: Partial agonist with ceiling effect — conversion to/from full agonists requires structured induction. SL/IM doses are not directly comparable to PO morphine.',
+      'INDIVIDUAL VARIATION: Patient-specific factors (renal/hepatic function, age, drug interactions, prior opioid exposure, pain mechanism) markedly affect actual response.',
+      'THIS IS A REFERENCE CHART — clinical judgment, dose verification, and specialist consultation are required for any rotation or new prescription.'
+    ],
+    columns: ['Opioid', 'Route', 'Equivalent to 30 mg morphine PO', 'MME factor (× dose)'],
+    rows: [
+      ['Morphine', 'PO', '30 mg', '1.0'],
+      ['Morphine', 'IV / SC / IM', '10 mg', '3.0'],
+      ['Hydromorphone', 'PO', '6 mg', '5.0'],
+      ['Hydromorphone', 'IV / SC', '1.5 mg', '20.0'],
+      ['Codeine', 'PO', '200 mg', '0.15'],
+      ['Oxycodone', 'PO (immediate or sustained release)', '20 mg', '1.5'],
+      ['Tramadol', 'PO', '300 mg (max 400 mg/day)', '0.1'],
+      ['Tapentadol', 'PO', '75 mg', '0.4'],
+      ['Buprenorphine', 'SL', '0.4 mg (specialist context)', '~75 (highly variable)'],
+      ['Methadone — SPECIALIST ONLY', 'PO', 'Variable (4:1 to 12:1+)', 'See specialist'],
+      ['Fentanyl', 'Transdermal patch', '25 mcg/h ≈ ~60–90 mg morphine PO/day', '~2.4 (variable)'],
+      ['Meperidine (avoid)', 'PO', '300 mg (Beers Avoid)', '0.1'],
+      ['Pentazocine (avoid)', 'PO', '150 mg', '0.2']
+    ],
+    source: 'Canadian Pain Society 2024; CMA Opioid Guidelines (Busse CMAJ 2017); CRISM 2018; Canadian Association of Chiefs of Pharmacy / RxFiles Opioid Comparison 2024.',
+    related_drugs: ['morphine','oxycodone','hydromorphone','fentanyl','fentanyl_patch','codeine','tramadol','tapentadol','methadone','buprenorphine','meperidine'],
+    related_protocols: ['opioid_chronic']
+  },
+  {
+    id: 'steroid_equiv',
+    title: 'Glucocorticoid Equivalence',
+    icon: '💊',
+    color: '#fb923c',
+    overview: 'Comparative oral glucocorticoid potencies relative to prednisone, with biologic half-life and mineralocorticoid activity. Used for rotation, stress dosing, and tapers.',
+    warnings: [
+      'TAPER REQUIRED for therapy >2–3 weeks (HPA axis suppression).',
+      'Hydrocortisone preferred for adrenal insufficiency replacement (mineralocorticoid component).',
+      'Dexamethasone has minimal mineralocorticoid activity — preferred for cerebral edema, antiemetic adjunct, but not for adrenal insufficiency replacement.',
+      'Equivalence is for anti-inflammatory potency — NOT for adrenal replacement (which considers mineralocorticoid activity).'
+    ],
+    columns: ['Glucocorticoid', 'Equivalent dose (mg)', 'Anti-inflammatory potency', 'Mineralocorticoid potency', 'Biologic half-life'],
+    rows: [
+      ['Cortisone (PO)', '25 mg', '0.8', '0.8', '8–12 h'],
+      ['Hydrocortisone (PO/IV)', '20 mg', '1.0', '1.0', '8–12 h'],
+      ['Prednisone (PO)', '5 mg', '4.0', '0.8', '12–36 h'],
+      ['Prednisolone (PO/IV)', '5 mg', '4.0', '0.8', '12–36 h'],
+      ['Methylprednisolone (PO/IV)', '4 mg', '5.0', '0.5', '12–36 h'],
+      ['Triamcinolone (PO/IM)', '4 mg', '5.0', '0', '12–36 h'],
+      ['Dexamethasone (PO/IV)', '0.75 mg', '25–30', '0', '36–72 h'],
+      ['Betamethasone (PO/IV)', '0.6 mg', '25–30', '0', '36–72 h'],
+      ['Fludrocortisone (PO)', '— (mineralocorticoid)', '10', '125 (potent)', '18–36 h']
+    ],
+    source: 'Health Canada PMs (Cortef, Solu-Cortef, Decadron, Medrol); RxFiles Steroid Comparison 2024; Endocrine Society Adrenal Insufficiency 2024.',
+    related_drugs: ['hydrocortisone','prednisone','prednisolone','methylprednisolone','triamcinolone','dexamethasone','dexamethasone_systemic','betamethasone','fludrocortisone','cortisone'],
+    related_protocols: []
+  },
+  {
+    id: 'ppi_equiv',
+    title: 'PPI Equivalence & Comparison',
+    icon: '🔥',
+    color: '#06b6d4',
+    overview: 'Comparative oral PPI doses, formulations, and Canadian-context notes. All currently available PPIs have similar efficacy at standard equipotent doses.',
+    warnings: [
+      'For deprescribing, use the linked PPI Deprescribing protocol (step-down 50% → alternate-day → on-demand/stop).',
+      'Long-term use (>8 weeks) without indication: AGS Beers Avoid + STOPP F2.',
+      'Drug interactions: clopidogrel (omeprazole > esomeprazole > pantoprazole/lansoprazole — pantoprazole preferred with clopidogrel).'
+    ],
+    columns: ['PPI', 'Standard dose (GERD)', 'Half dose (maintenance)', 'High dose (erosive)', 'Notes'],
+    rows: [
+      ['Omeprazole (Losec)', '20 mg PO daily', '10 mg daily', '40 mg daily', 'CYP2C19 substrate; clopidogrel interaction'],
+      ['Esomeprazole (Nexium)', '20 mg PO daily', '10 mg daily', '40 mg daily', 'S-isomer of omeprazole; less clopidogrel concern'],
+      ['Pantoprazole (Pantoloc)', '40 mg PO daily', '20 mg daily', '40 mg BID', 'Preferred with clopidogrel; lowest CYP interactions'],
+      ['Lansoprazole (Prevacid)', '30 mg PO daily', '15 mg daily', '30 mg BID', 'Available as orodispersible'],
+      ['Rabeprazole (Pariet)', '20 mg PO daily', '10 mg daily', '20 mg BID', 'Less CYP2C19 dependent metabolism'],
+      ['Dexlansoprazole (Dexilant)', '30–60 mg PO daily', '30 mg daily', '60 mg daily', 'Dual delayed-release; no food effect']
+    ],
+    source: 'Health Canada PMs Losec, Nexium, Pantoloc, Prevacid, Pariet, Dexilant; RxFiles PPI Comparison 2024; CAG GERD 2020/2024.',
+    related_drugs: ['omeprazole','esomeprazole','pantoprazole','lansoprazole','rabeprazole','dexlansoprazole'],
+    related_protocols: ['ppi']
+  },
+  {
+    id: 'statin_equiv',
+    title: 'Statin LDL-Lowering Equivalence',
+    icon: '🫀',
+    color: '#f97316',
+    overview: 'Comparative LDL-lowering at equipotent doses. For statin selection, intolerance management, and substitution. Based on CCS Dyslipidemia 2021.',
+    warnings: [
+      'Intensity classification (high/moderate/low) determines reduction (~50% / ~30–49% / <30% LDL-C).',
+      'CYP3A4 substrates (simvastatin, lovastatin, atorvastatin) — caution with strong inhibitors. Pravastatin, rosuvastatin, pitavastatin have minimal CYP interactions.',
+      'In secondary prevention or high-risk primary prevention, target ≥50% LDL reduction (high-intensity statin).',
+      'Older adults with limited life expectancy — see Statin Deprescribing protocol.'
+    ],
+    columns: ['Statin', 'Low intensity (~25% LDL ↓)', 'Moderate intensity (~30–50% ↓)', 'High intensity (≥50% ↓)'],
+    rows: [
+      ['Atorvastatin', '—', '10–20 mg', '40–80 mg'],
+      ['Rosuvastatin', '—', '5–10 mg', '20–40 mg'],
+      ['Simvastatin', '10 mg', '20–40 mg', '— (FDA: avoid 80 mg)'],
+      ['Pravastatin', '10–20 mg', '40–80 mg', '—'],
+      ['Lovastatin', '20 mg', '40 mg', '—'],
+      ['Fluvastatin', '20–40 mg', '40 mg BID, 80 mg ER', '—'],
+      ['Pitavastatin', '1 mg', '2–4 mg', '—']
+    ],
+    source: 'Pearson GJ, et al. 2021 Canadian Cardiovascular Society Guidelines for the Management of Dyslipidemia. CJC 2021;37(8):1129-1150.',
+    related_drugs: ['atorvastatin','rosuvastatin','simvastatin','pravastatin','lovastatin','fluvastatin','pitavastatin'],
+    related_protocols: ['statin_advanced_age']
+  },
+  {
+    id: 'ics_potency',
+    title: 'Inhaled Corticosteroid (ICS) Potency — Adult & Pediatric',
+    icon: '🫁',
+    color: '#3b82f6',
+    overview: 'Comparative ICS doses for asthma management classified as low / medium / high. Based on GINA 2024 / CTS Asthma 2021.',
+    warnings: [
+      'Doses vary between products; absolute mcg/day differs by molecule.',
+      'Pediatric doses are LOWER than adult equivalents.',
+      'Step-up if uncontrolled; step-down to lowest effective dose every 3 months once stable per GINA 2024.'
+    ],
+    columns: ['ICS Molecule', 'Low (μg/day, adult)', 'Medium (μg/day, adult)', 'High (μg/day, adult)', 'Pediatric notes'],
+    rows: [
+      ['Beclomethasone HFA (QVAR)', '100–200', '>200–400', '>400', '50–100 (low) / 100–200 (med) / >200 (high) — children 6–11'],
+      ['Budesonide DPI (Pulmicort Turbuhaler)', '200–400', '>400–800', '>800', '100–200 / 200–400 / >400 — children 6–11'],
+      ['Fluticasone propionate HFA/DPI (Flovent / Diskus)', '100–250', '>250–500', '>500', '50–100 / 100–200 / >200 — children 6–11'],
+      ['Fluticasone furoate DPI (Arnuity Ellipta)', '100', '— (single strength)', '200', 'Not approved <12'],
+      ['Mometasone DPI (Asmanex Twisthaler)', '110–220', '>220–440', '>440', '110 (children 4–11)'],
+      ['Ciclesonide HFA (Alvesco)', '80–160', '>160–320', '>320', '80–160 (children 6–11)']
+    ],
+    source: 'GINA Global Strategy 2024; CTS Asthma 2021; Health Canada PMs.',
+    related_drugs: ['budesonide','fluticasone','beclomethasone','mometasone','ciclesonide'],
+    related_protocols: []
+  },
+  {
+    id: 'topical_steroid_potency',
+    title: 'Topical Corticosteroid Potency (Class I–VII)',
+    icon: '🩹',
+    color: '#84cc16',
+    overview: 'US classification of topical corticosteroid potency (Class I = super-high, Class VII = lowest). Selection by anatomic site, severity, age, and duration.',
+    warnings: [
+      'Use the LOWEST potency that controls symptoms for the SHORTEST duration.',
+      'AVOID Class I–II on FACE, intertriginous, or genital areas (skin atrophy + systemic absorption).',
+      'AVOID OCCLUSION unless prescribed (occlusion increases potency ~10×).',
+      'Pediatric: limit potency and duration; high systemic absorption risk in infants.'
+    ],
+    columns: ['Class (potency)', 'Examples (Canadian brand)', 'Typical site', 'Max duration'],
+    rows: [
+      ['Class I (Super-potent)', 'Clobetasol propionate 0.05% (Dermovate, Clobex), Halobetasol 0.05% (Ultravate)', 'Palms, soles, thick plaques only — never face/intertriginous', '2 weeks max'],
+      ['Class II (High potency)', 'Betamethasone dipropionate 0.05% (Diprolene), Halcinonide 0.1%, Desoximetasone 0.25%', 'Body, scalp', '2–4 weeks'],
+      ['Class III (Upper-mid)', 'Betamethasone valerate 0.1% (Betaderm, Celestoderm), Triamcinolone 0.5%', 'Body', '4 weeks'],
+      ['Class IV (Mid)', 'Mometasone 0.1% (Elocom), Triamcinolone 0.1% (Aristocort), Hydrocortisone valerate 0.2%', 'Body, mild areas', '4–6 weeks'],
+      ['Class V (Lower-mid)', 'Hydrocortisone valerate 0.2% (Westcort), Betamethasone valerate 0.05–0.1%', 'Body, occasional face short course', '4–6 weeks'],
+      ['Class VI (Mild)', 'Desonide 0.05% (Desocort), Hydrocortisone 0.5–1%', 'Face, intertriginous', '2–4 weeks then taper'],
+      ['Class VII (Lowest)', 'Hydrocortisone 0.5%, 1%, 2.5% (Cortate, generic OTC)', 'Face, eyelids, intertriginous, infants', 'Short courses; lowest for chronic']
+    ],
+    source: 'Canadian Dermatology Association 2024; Health Canada PMs; RxFiles Topical Corticosteroid Comparison 2024.',
+    related_drugs: ['hydrocortisone','triamcinolone','betamethasone','clobetasol','mometasone_topical','desonide','desoximetasone','fluocinolone','fluocinonide','hydrocortisone_valerate'],
+    related_protocols: []
+  },
+  {
+    id: 'doac_dose',
+    title: 'DOAC Dose by Indication × CrCl',
+    icon: '🩸',
+    color: '#dc2626',
+    overview: 'Direct oral anticoagulant dosing for AF stroke prevention, VTE treatment, and VTE prophylaxis — adjusted by CrCl, age, weight, and indication.',
+    warnings: [
+      'CrCl by Cockcroft-Gault is the validated method for DOAC dosing (NOT eGFR/MDRD/CKD-EPI).',
+      'Apixaban: dose-reduce if ≥2 of [age ≥80, weight ≤60 kg, SCr ≥133 μmol/L].',
+      'Rivaroxaban + meals: 15/20 mg doses MUST be taken with food (absorption).',
+      'Dabigatran: avoid in CrCl <30 (Canada label); some experts use 75 mg BID in CrCl 15–30.',
+      'Edoxaban: AVOID if CrCl >95 (paradoxically reduced efficacy in AF per ENGAGE-AF).',
+      'P-gp inhibitors (verapamil, dronedarone, ketoconazole) — increased DOAC exposure; dose adjustments per individual product label.'
+    ],
+    columns: ['DOAC', 'AF stroke prevention', 'VTE treatment', 'VTE prophylaxis (orthopedic surgery)'],
+    rows: [
+      ['Apixaban (Eliquis)', '5 mg PO BID; 2.5 mg BID if 2/3: age ≥80, ≤60 kg, SCr ≥133', '10 mg BID × 7 days, then 5 mg BID', '2.5 mg BID × 12 days (knee) / 35 days (hip)'],
+      ['Rivaroxaban (Xarelto)', '20 mg PO daily WITH FOOD; 15 mg if CrCl 15–49', '15 mg BID WITH FOOD × 21 days, then 20 mg daily WITH FOOD', '10 mg PO daily × 12 days (knee) / 35 days (hip)'],
+      ['Dabigatran (Pradaxa)', '150 mg PO BID; 110 mg BID if age ≥80 or bleeding risk; AVOID if CrCl <30', '150 mg BID after ≥5 days parenteral', '110 mg PO 1–4h post-op then 220 mg daily × 10–35 days'],
+      ['Edoxaban (Lixiana)', '60 mg PO daily; 30 mg if CrCl 15–50, weight ≤60 kg, or P-gp inhibitor', '60 mg daily after ≥5 days parenteral; 30 mg if dose-reduce criteria', 'Not labeled for VTE prophylaxis in Canada']
+    ],
+    source: 'Andrade JG, et al. 2024 CCS/CHRS Atrial Fibrillation Guidelines. CJC 2024. Health Canada PMs Eliquis, Xarelto, Pradaxa, Lixiana.',
+    related_drugs: ['apixaban','rivaroxaban','dabigatran','edoxaban'],
+    related_protocols: ['anticoagulant_bleeding']
+  },
+  {
+    id: 'insulin_types',
+    title: 'Insulin Types — Onset, Peak, Duration',
+    icon: '💉',
+    color: '#a855f7',
+    overview: 'Pharmacokinetic profile of insulin types for type 1 and type 2 diabetes. Used for regimen selection, basal-bolus titration, and stacking avoidance.',
+    warnings: [
+      'Sliding-scale insulin alone in older adults — Beers Avoid (recommended basal + correction instead).',
+      'Hypoglycemia risk highest with regular and rapid-acting at peak times — counsel patient/caregiver.',
+      'Concentrated insulins (U-200, U-300, U-500) are NOT bioequivalent unit-for-unit to U-100 — read labels carefully.'
+    ],
+    columns: ['Insulin Type', 'Brand (Canada)', 'Onset', 'Peak', 'Duration'],
+    rows: [
+      ['Rapid-acting (lispro)', 'Humalog (U-100, U-200)', '10–15 min', '60–90 min', '3–5 h'],
+      ['Rapid-acting (aspart)', 'NovoRapid', '10–15 min', '60–90 min', '3–5 h'],
+      ['Faster-acting aspart', 'Fiasp', '2–7 min', '~60 min', '3–5 h'],
+      ['Rapid-acting (glulisine)', 'Apidra', '10–15 min', '60–90 min', '3–5 h'],
+      ['Short-acting (regular)', 'Humulin R, Novolin ge Toronto', '30 min', '2–3 h', '6.5 h'],
+      ['Intermediate (NPH)', 'Humulin N, Novolin ge NPH', '1–3 h', '5–8 h', 'Up to 18 h'],
+      ['Long-acting (glargine U-100)', 'Lantus, Basaglar (biosimilar)', '90 min', 'No peak', '~24 h'],
+      ['Long-acting (glargine U-300)', 'Toujeo', '6 h', 'No peak', '>30 h'],
+      ['Long-acting (detemir)', 'Levemir', '~90 min', 'Minimal peak (3–9 h)', '~16–24 h'],
+      ['Ultra-long (degludec U-100)', 'Tresiba', '1–2 h', 'No peak', '>42 h'],
+      ['Concentrated regular U-500', 'Humulin R U-500', '30 min', '2–3 h', '12–24 h']
+    ],
+    source: 'Diabetes Canada 2020/2023 Clinical Practice Guidelines. Health Canada PMs.',
+    related_drugs: ['insulin','insulin_glargine','insulin_lispro','insulin_aspart','insulin_detemir','insulin_degludec'],
+    related_protocols: ['antihyperglycemic']
+  }
+];
+
+
+
+// ════════════════════════════════════════════════════════════
+// UNIFIED REFERENCE TAB RENDERING
+// (Deprescribing Protocols + Reference Charts)
+// ════════════════════════════════════════════════════════════
+function buildReference() {
+  var listDiv = document.getElementById('reference-categories');
+  var detailDiv = document.getElementById('reference-detail');
+  var homeDiv = document.getElementById('reference-home');
+  if (!listDiv) return;
+  detailDiv.style.display = 'none';
+  homeDiv.style.display = 'block';
+
+  // Categories: Deprescribing + Reference Charts (split into Equivalence / Potency / Dose)
+  // Group reference tables by category from id prefix
+  var equivIds = ['opioid_mme','steroid_equiv','ppi_equiv','statin_equiv'];
+  var potencyIds = ['ics_potency','topical_steroid_potency'];
+  var doseIds = ['doac_dose','insulin_types'];
+
+  function refTableById(id) {
+    for (var i = 0; i < REFERENCE_TABLES.length; i++) if (REFERENCE_TABLES[i].id === id) return REFERENCE_TABLES[i];
+    return null;
+  }
+
+  var categories = [
+    { key: 'deprescribing', icon: '👴', label: 'Deprescribing Protocols', color: '#fb923c',
+      items: DEPRESCRIBING_PROTOCOLS.map(function(p){ return { type:'protocol', id:p.id, name:p.title, icon:p.icon, color:p.color }; }) },
+    { key: 'equivalence', icon: '🔢', label: 'Equivalence References', color: '#06b6d4',
+      items: equivIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) },
+    { key: 'potency', icon: '💊', label: 'Potency / Classification References', color: '#84cc16',
+      items: potencyIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) },
+    { key: 'dose', icon: '📏', label: 'Dose Adjustment References', color: '#a855f7',
+      items: doseIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) }
+  ];
+
+  var html = '';
+  for (var c = 0; c < categories.length; c++) {
+    var cat = categories[c];
+    html += '<div class="cat-tile" id="ref-tile-' + cat.key + '" style="border-top:3px solid ' + cat.color + ';">';
+    html += '<div class="cat-tile-header" onclick="toggleRefTile(\'' + cat.key + '\')">';
+    html += '<span class="cat-icon">' + cat.icon + '</span>';
+    html += '<span style="font-weight:700;color:var(--text);">' + cat.label + '</span>';
+    html += '<span class="cat-tile-count">' + cat.items.length + '</span>';
+    html += '<span class="cat-tile-chevron">▾</span>';
+    html += '</div>';
+    html += '<div class="cat-tile-body">';
+    for (var i = 0; i < cat.items.length; i++) {
+      var it = cat.items[i];
+      var fn = it.type === 'protocol' ? "showDeprescribing('" + it.id + "')" : "showReferenceTable('" + it.id + "')";
+      html += '<div class="disease-row" onclick="' + fn + '">';
+      html += '<span style="margin-right:6px;">' + (it.icon||'') + '</span>';
+      html += '<span class="disease-row-name">' + it.name + '</span>';
+      html += '</div>';
+    }
+    html += '</div></div>';
+  }
+  listDiv.innerHTML = html;
+}
+
+function toggleRefTile(key) {
+  var t = document.getElementById('ref-tile-' + key);
+  if (t) t.classList.toggle('collapsed');
+}
+
+function showReferenceTable(id) {
+  var t = null;
+  for (var i = 0; i < REFERENCE_TABLES.length; i++) if (REFERENCE_TABLES[i].id === id) { t = REFERENCE_TABLES[i]; break; }
+  if (!t) return;
+  document.getElementById('reference-home').style.display = 'none';
+  var detail = document.getElementById('reference-detail');
+  var content = document.getElementById('reference-content');
+  detail.style.display = 'block';
+
+  var h = '<div style="background:var(--card);border-left:5px solid ' + t.color + ';border-radius:8px;padding:18px;margin-bottom:14px;">';
+  h += '<div style="font-size:2rem;margin-bottom:8px;">' + t.icon + '</div>';
+  h += '<h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 10px;">' + t.title + '</h2>';
+  h += '<p style="font-size:0.85rem;color:#c8cadc;line-height:1.6;margin:0;">' + t.overview + '</p>';
+  h += '</div>';
+
+  if (t.warnings && t.warnings.length) {
+    h += '<div style="background:rgba(239,68,68,0.08);border:2px solid rgba(239,68,68,0.4);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:#ef4444;margin-bottom:10px;">⚠️ Important Warnings & Caveats</div>';
+    h += '<ul style="margin:0;padding-left:20px;">';
+    for (var i = 0; i < t.warnings.length; i++) h += '<li style="font-size:0.83rem;color:#fca5a5;line-height:1.5;margin-bottom:5px;">' + t.warnings[i] + '</li>';
+    h += '</ul></div>';
+  }
+
+  // Table
+  if (t.columns && t.rows) {
+    h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;overflow-x:auto;">';
+    h += '<table style="width:100%;border-collapse:collapse;font-size:0.83rem;">';
+    h += '<thead><tr style="border-bottom:2px solid var(--border);">';
+    for (var i = 0; i < t.columns.length; i++) h += '<th style="text-align:left;padding:8px 10px;color:' + t.color + ';font-weight:700;">' + t.columns[i] + '</th>';
+    h += '</tr></thead><tbody>';
+    for (var r = 0; r < t.rows.length; r++) {
+      h += '<tr style="border-bottom:1px solid var(--border);">';
+      for (var col = 0; col < t.rows[r].length; col++) h += '<td style="padding:8px 10px;color:#c8cadc;line-height:1.5;">' + t.rows[r][col] + '</td>';
+      h += '</tr>';
+    }
+    h += '</tbody></table>';
+    h += '</div>';
+  }
+
+  // Related links
+  if ((t.related_drugs && t.related_drugs.length) || (t.related_protocols && t.related_protocols.length)) {
+    h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.85rem;font-weight:700;color:#a5b4fc;margin-bottom:8px;">🔗 Related</div>';
+    if (t.related_drugs && t.related_drugs.length) {
+      h += '<div style="font-size:0.78rem;color:var(--muted);margin-bottom:6px;">Drug cards:</div>';
+      h += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">';
+      for (var i = 0; i < t.related_drugs.length; i++) {
+        var dk = t.related_drugs[i];
+        if (DRUGS[dk]) {
+          var dn = DRUGS[dk].name || dk;
+          h += '<span onclick="showDrugPanel(\'' + dk + '\')" style="background:rgba(165,180,252,0.15);color:#a5b4fc;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:0.75rem;">' + dn + ' ↗</span>';
+        }
+      }
+      h += '</div>';
+    }
+    if (t.related_protocols && t.related_protocols.length) {
+      h += '<div style="font-size:0.78rem;color:var(--muted);margin-bottom:6px;">Deprescribing protocols:</div>';
+      h += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
+      for (var i = 0; i < t.related_protocols.length; i++) {
+        var pid = t.related_protocols[i];
+        var pname = pid;
+        for (var j = 0; j < DEPRESCRIBING_PROTOCOLS.length; j++) if (DEPRESCRIBING_PROTOCOLS[j].id === pid) { pname = DEPRESCRIBING_PROTOCOLS[j].title; break; }
+        h += '<span onclick="showDeprescribing(\'' + pid + '\')" style="background:rgba(251,146,60,0.15);color:#fb923c;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:0.75rem;">📋 ' + pname + ' ↗</span>';
+      }
+      h += '</div>';
+    }
+    h += '</div>';
+  }
+
+  if (t.source) {
+    h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.78rem;font-weight:700;color:#fbbf24;margin-bottom:6px;">📚 Source</div>';
+    h += '<div style="font-size:0.78rem;color:#94a3b8;line-height:1.5;">' + t.source + '</div>';
+    h += '</div>';
+  }
+
+  content.innerHTML = h;
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function closeReference() {
+  document.getElementById('reference-detail').style.display = 'none';
+  document.getElementById('reference-home').style.display = 'block';
+}
+
+// Re-route legacy showDeprescribing → render in the new Reference tab
+function showDeprescribing(id) {
+  var p = null;
+  for (var i = 0; i < DEPRESCRIBING_PROTOCOLS.length; i++) if (DEPRESCRIBING_PROTOCOLS[i].id === id) { p = DEPRESCRIBING_PROTOCOLS[i]; break; }
+  if (!p) return;
+  // Ensure Reference tab is active
+  var refPanel = document.getElementById('tab-reference');
+  if (refPanel && !refPanel.classList.contains('active')) switchTab('reference');
+  document.getElementById('reference-home').style.display = 'none';
+  var detail = document.getElementById('reference-detail');
+  var content = document.getElementById('reference-content');
+  detail.style.display = 'block';
+
+  var h = '<div style="background:var(--card);border-left:5px solid ' + p.color + ';border-radius:8px;padding:18px;margin-bottom:16px;">';
+  h += '<div style="font-size:2rem;margin-bottom:8px;">' + p.icon + '</div>';
+  h += '<h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 10px;">' + p.title + '</h2>';
+  h += '<p style="font-size:0.85rem;color:#c8cadc;line-height:1.6;margin:0;">' + p.overview + '</p>';
+  h += '</div>';
+
+  function sectionList(title, items, color, icon) {
+    if (!items || !items.length) return '';
+    var s = '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    s += '<div style="font-size:0.95rem;font-weight:700;color:' + color + ';margin-bottom:10px;">' + icon + ' ' + title + '</div>';
+    s += '<ul style="margin:0;padding-left:20px;">';
+    for (var i = 0; i < items.length; i++) s += '<li style="font-size:0.83rem;color:#c8cadc;line-height:1.5;margin-bottom:4px;">' + items[i] + '</li>';
+    s += '</ul></div>';
+    return s;
+  }
+
+  h += sectionList('When to CONTINUE the medication', p.indications_to_continue, '#22c55e', '✓');
+  h += sectionList('When to CONSIDER deprescribing', p.consider_deprescribing || p.consider_deprescribing_or_modifying, '#fb923c', '⚠️');
+
+  if (p.taper_steps && p.taper_steps.length) {
+    h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:' + p.color + ';margin-bottom:14px;">📋 Taper Protocol</div>';
+    for (var i = 0; i < p.taper_steps.length; i++) {
+      var s = p.taper_steps[i];
+      h += '<div style="display:flex;gap:12px;margin-bottom:14px;">';
+      h += '<div style="flex:0 0 36px;height:36px;border-radius:50%;background:' + p.color + ';color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.95rem;">' + s.step + '</div>';
+      h += '<div style="flex:1;">';
+      h += '<div style="font-size:0.85rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">' + s.action + '</div>';
+      h += '<div style="font-size:0.83rem;color:#c8cadc;line-height:1.5;">' + s.detail + '</div>';
+      h += '</div></div>';
+    }
+    h += '</div>';
+  }
+
+  h += sectionList('Monitoring during taper', p.monitoring, '#3b82f6', '📊');
+  h += sectionList('Withdrawal / rebound symptom management', p.rebound_management, '#a855f7', '🌪️');
+  h += sectionList('Patient counselling scripts', p.counselling, '#10b981', '🗣️');
+
+  if (p.sources) {
+    h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.78rem;font-weight:700;color:#fbbf24;margin-bottom:6px;">📚 Sources</div>';
+    h += '<div style="font-size:0.78rem;color:#94a3b8;line-height:1.5;">' + p.sources + '</div>';
+    h += '</div>';
+  }
+
+  content.innerHTML = h;
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function closeDeprescribing() { closeReference(); }
+
 
 </script>
 </body>
