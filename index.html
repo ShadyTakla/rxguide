@@ -34680,6 +34680,138 @@ var DISEASES = {
           "PHARMACIST role: ABCDE patient education + skin exam advocacy; sunscreen counselling; identify melanoma DMTs (oral BRAFi+MEKi adherence + interactions); IO irAE management; ODB Limited Use applications; manufacturer PSPs"
         ],
         "source": "NCCN Cutaneous Melanoma v1.2025; ESMO Melanoma Guidelines 2024; CDA Melanoma Position 2024; CheckMate 067/238; KEYNOTE-054/716; COMBI-d/v/AD; RELATIVITY-047; DREAMseq; SWOG S1801; FDA Lifileucel approval 2024"
+      },
+      {
+        "id": "cml",
+        "name": "Chronic Myeloid Leukemia (CML)",
+        "subtitle": "BCR-ABL Driven Myeloproliferative Neoplasm",
+        "rxfiles_ref": "Onc: Hematologic Malignancies | CML",
+        "patho": "Chronic myeloid leukemia (CML) — myeloproliferative neoplasm characterized by PHILADELPHIA CHROMOSOME (Ph; t(9;22)(q34;q11)) → BCR-ABL FUSION ONCOGENE encoding BCR-ABL constitutively active tyrosine kinase → uncontrolled myeloid proliferation. PRESENT in ~95% of CML cases (Ph+); ~5% Ph-negative (often atypical CML, distinct entity). PHASES: CHRONIC PHASE (CP; ~85% at diagnosis; controllable years-decades on TKIs), ACCELERATED PHASE (AP; transitional; 10-19% blasts), BLAST PHASE/CRISIS (BP; ≥20% blasts; resembles acute leukemia; poor prognosis without allo-HSCT). EPIDEMIOLOGY: ~15% of adult leukemias; median age 65; M slightly > F; incidence ~1-2/100,000/year. RISK FACTORS: ionizing radiation (atomic bomb survivors, therapeutic radiation; 4-7 year latency); most cases sporadic. TKI ERA (imatinib FDA 2001) transformed CML from fatal disease (5-year survival ~30%) to chronic disease (5-year survival 90%+, near-normal life expectancy). MOLECULAR ENDPOINTS: complete cytogenetic response (CCyR), major molecular response (MMR; BCR-ABL ≤0.1%), deep molecular response (DMR; MR4 ≤0.01%, MR4.5 ≤0.0032%, MR5 ≤0.001%) — DMR ≥2 years enables TREATMENT-FREE REMISSION (TFR) attempt.",
+        "signs": [
+          "DIAGNOSIS often INCIDENTAL (~40%) — elevated WBC on routine CBC",
+          "FATIGUE, weakness, weight loss",
+          "Splenomegaly (~50%; can be massive — early satiety, LUQ pain/fullness)",
+          "Hepatomegaly",
+          "Sweating, low-grade fever",
+          "Bone pain (sternal especially)",
+          "Bleeding/bruising (thrombocytopenia rare in CP)",
+          "ACCELERATED/BLAST PHASE: progressive splenomegaly, increasing WBC despite therapy, increasing blasts in blood/marrow, basophilia, additional cytogenetic abnormalities, drug resistance",
+          "BLAST CRISIS: AML-like (myeloid blast crisis ~70%) or ALL-like (lymphoid blast crisis ~30%) presentation",
+          "Lab: WBC often 50-200×10⁹/L (sometimes >300); LEFT-SHIFT (mature neutrophils + bands + metamyelocytes + myelocytes — 'myelocyte bulge'); BASOPHILIA + EOSINOPHILIA; thrombocytosis common (~50%); anemia mild-moderate"
+        ],
+        "diagnosis": [
+          "CBC + DIFFERENTIAL — leukocytosis with myeloid left-shift; basophilia",
+          "PERIPHERAL BLOOD SMEAR — full spectrum of myeloid maturation; basophilia + eosinophilia; rare blasts in CP",
+          "BONE MARROW BIOPSY — hypercellular; myeloid hyperplasia; assesses phase (CP/AP/BP); cytogenetics + molecular testing",
+          "CYTOGENETICS — Philadelphia chromosome t(9;22)(q34;q11.2) — PRESENT in 95% (95% Ph+ CML; 5% Ph-negative atypical CML)",
+          "FISH — BCR-ABL fusion confirmation; sensitive when cytogenetics negative",
+          "MOLECULAR (RT-qPCR) — BCR-ABL transcript levels (international scale; IS); BASELINE + serial monitoring",
+          "BCR-ABL TRANSCRIPT TYPE — major (e13a2, e14a2 — most common 95%) vs minor (e1a2 — ~5%; more in Ph+ ALL); rare variants",
+          "LDH, uric acid, alkaline phosphatase (low in CP — distinguishing feature from other myeloid disorders)",
+          "RULE OUT BLAST CRISIS — flow cytometry, additional mutations (BCR-ABL kinase domain mutations after TKI failure)",
+          "DIFFERENTIAL: leukemoid reaction (infection, severe inflammation; Ph-NEGATIVE; LDH high; alkaline phosphatase high), myeloproliferative neoplasms (PV, ET, MF — separate entities), atypical CML (Ph-NEGATIVE; specific molecular features), chronic neutrophilic leukemia, chronic eosinophilic leukemia"
+        ],
+        "monitoring": [
+          "MOLECULAR RESPONSE (RT-qPCR for BCR-ABL transcript on International Scale): every 3 months until MMR; then every 3-6 months",
+          "BCR-ABL ≤10% IS at 3 months — early molecular response (EMR; predictive of long-term outcome)",
+          "BCR-ABL ≤1% IS at 6-12 months",
+          "BCR-ABL ≤0.1% IS = MAJOR MOLECULAR RESPONSE (MMR; goal at 12-18 months)",
+          "BCR-ABL ≤0.01% (MR4) or ≤0.0032% (MR4.5) = DEEP MOLECULAR RESPONSE (DMR) — eligible for TFR attempt after sustained ≥2 years",
+          "FAILURE (>10% IS at 3 mo, >1% at 6 mo, >0.1% at 12 mo) — KINASE DOMAIN MUTATION testing + switch TKI",
+          "TKI TOXICITY monitoring — drug-specific (CV for nilotinib/ponatinib, GI for bosutinib, pleural effusion for dasatinib)",
+          "ADHERENCE assessment — non-adherence common cause of suboptimal response",
+          "DRUG INTERACTIONS — CYP3A4 substrates; PPI interactions",
+          "CARDIOVASCULAR risk assessment ongoing (especially nilotinib + ponatinib)",
+          "ECG QTc baseline + periodic (especially nilotinib)",
+          "TFR ATTEMPT eligibility: CP CML, ≥3-5 years TKI, sustained MR4/4.5 ≥2 years; ~50% maintain TFR; ~50% relapse + restart TKI (almost all regain response)"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line — Chronic Phase CML",
+            "type": "Drug",
+            "family": "BCR-ABL Tyrosine Kinase Inhibitors",
+            "agents": [
+              "IMATINIB (Gleevec) 400 mg PO daily — oldest; most experience; cheapest",
+              "DASATINIB (Sprycel) 100 mg PO daily — 2nd-gen; deeper/faster responses",
+              "NILOTINIB (Tasigna) 300 mg PO BID empty stomach — 2nd-gen; CV risk requires assessment",
+              "BOSUTINIB (Bosulif) 400 mg PO daily with food — 2nd-gen; less CV; GI dose-limiting",
+              "ASCIMINIB (Scemblix) — emerging first-line per ASC4FIRST trial 2024 (FDA approval expected expansion)"
+            ],
+            "notes": "IMATINIB or 2ND-GEN TKI as first-line — CHOICE based on patient age, comorbidities (especially cardiovascular), risk score, deep molecular response goals, cost. IMATINIB cheapest + most experience; 2ND-GEN higher rates of MMR + DMR but more toxicity. SOKAL/EUTOS/ELTS risk scores guide selection. Goal: MMR by 12-18 months → DMR for TFR eligibility.",
+            "guideline": "ELN CML Recommendations 2020 (Hochhaus); CCS Hematology CML 2024; CCO 2024; NCCN CML 2024; ASCO Practice"
+          },
+          {
+            "line": "Second-Line — TKI Resistance/Intolerance",
+            "type": "Drug",
+            "family": "Switch TKI Based on Mutation",
+            "agents": [
+              "DASATINIB or NILOTINIB or BOSUTINIB if previously on imatinib (mutation-based selection)",
+              "PONATINIB if T315I mutation OR after multiple TKI failures",
+              "ASCIMINIB if post-≥2 TKI failure or T315I (alternative to ponatinib with better tolerability)"
+            ],
+            "notes": "BCR-ABL KINASE DOMAIN MUTATION TESTING after TKI failure guides 2nd-line selection. T315I mutation → PONATINIB or ASCIMINIB. Other mutations → 2nd-gen TKI selection per resistance profile. INTOLERANCE (vs resistance) → switch TKI based on toxicity profile (e.g., from dasatinib pleural effusion to bosutinib).",
+            "guideline": "ELN 2020; CCS 2024; ELN Mutation Guidance"
+          },
+          {
+            "line": "Accelerated / Blast Phase",
+            "type": "Drug",
+            "family": "TKI ± Chemotherapy + Allo-HSCT",
+            "agents": [
+              "TKI (DASATINIB, BOSUTINIB, PONATINIB) — based on prior TKI + mutations",
+              "MYELOID BLAST CRISIS — TKI + AML-induction chemotherapy (cytarabine + anthracycline)",
+              "LYMPHOID BLAST CRISIS — TKI + ALL-induction chemotherapy",
+              "ALLOGENEIC HEMATOPOIETIC STEM CELL TRANSPLANT (allo-HSCT) — definitive curative therapy for blast crisis or accelerated phase failing TKI",
+              "OMACETAXINE (Synribo) — mepesuccinate; protein synthesis inhibitor; refractory CP-AP; not CCS preferred"
+            ],
+            "notes": "ACCELERATED + BLAST PHASE markedly worse prognosis; allo-HSCT definitive cure; TKI + chemotherapy bridge. TKI choice based on mutations + comorbidities. CONSULT TRANSPLANT TEAM EARLY.",
+            "guideline": "ELN 2020; CCS Hematology + Transplant 2024; CIBMTR"
+          },
+          {
+            "line": "Treatment-Free Remission (TFR) Attempt",
+            "type": "Strategy",
+            "family": "TKI Discontinuation Trial",
+            "agents": [
+              "DISCONTINUE TKI in eligible patients: CP CML, ≥3-5 years TKI, sustained DMR (MR4 or MR4.5) ≥2 years",
+              "MOLECULAR MONITORING q1 month × 6 months, then q2 months × 6 months, then q3 months indefinitely",
+              "RESTART TKI promptly if BCR-ABL >0.1% IS (MMR loss) — almost all regain previous response"
+            ],
+            "notes": "TFR ~50% maintain; ~50% relapse + restart. Eligibility per ELN/NCCN/CCS criteria. PATIENT-CENTRIC decision — pregnancy planning, drug toxicity, finances, fertility. Most relapses within first 6 months.",
+            "guideline": "ELN TFR 2020; STIM trial Mahon Lancet Onc 2010; ENESTfreedom Hochhaus Leukemia 2017; EURO-SKI Saussele Lancet Onc 2018"
+          },
+          {
+            "line": "Pregnancy",
+            "type": "Strategy",
+            "family": "Specialist Co-Management",
+            "agents": [
+              "PRECONCEPTION TFR ATTEMPT if eligible (DMR ≥2 years)",
+              "If conception during TKI: discuss continuation vs switch to interferon-α (only TKI with extensive pregnancy safety data) — specialist hematology + maternal-fetal medicine",
+              "IFN-α 3-9 MIU SC 3×/week — historic CML therapy; pregnancy-compatible; modest efficacy",
+              "Most TKIs Cat D — embryofetal toxicity; CONTRACEPTION required while on TKI"
+            ],
+            "notes": "PREGNANCY in CML — specialist co-management. Preconception counselling + TFR attempt preferred. IFN-α only TKI-era pregnancy-compatible therapy.",
+            "guideline": "ELN TFR Pregnancy Considerations; CCS Reproductive in Hematology"
+          }
+        ],
+        "pearls": [
+          "Ph CHROMOSOME t(9;22) = BCR-ABL fusion — cause of CML",
+          "TKI ERA TRANSFORMED CML — 5-year survival from ~30% pre-imatinib to >90% modern era; near-normal life expectancy in chronic phase",
+          "FIRST-LINE: IMATINIB or 2ND-GEN TKI — choice depends on age, CV risk, response goals, cost",
+          "MOLECULAR MONITORING (BCR-ABL RT-qPCR International Scale) every 3 months — basis of management",
+          "MILESTONES: BCR-ABL ≤10% at 3mo, ≤1% at 6mo, ≤0.1% (MMR) at 12-18mo, MR4-MR4.5 (DMR) for TFR eligibility",
+          "T315I 'GATEKEEPER' MUTATION — resistant to all 1st + 2nd gen TKIs; needs PONATINIB or ASCIMINIB",
+          "ASCIMINIB (Scemblix) — first-in-class STAMP inhibitor (myristoyl pocket); allosteric; better tolerability",
+          "TFR ELIGIBILITY: CP CML, ≥3-5 years TKI, sustained DMR ≥2 years; ~50% maintain TFR",
+          "CV TOXICITY HIERARCHY: ponatinib > nilotinib > others — risk assessment critical",
+          "TKI-SPECIFIC TOXICITIES: imatinib (edema, GI, cytopenia), dasatinib (pleural effusion, PAH), nilotinib (QT, arterial events), bosutinib (diarrhea, hepatotoxicity), ponatinib (CV, VTE, HF), asciminib (pancreatitis)",
+          "PPI INTERACTION significant for dasatinib, nilotinib, bosutinib (pH-dependent absorption)",
+          "ADHERENCE — major determinant of outcome; 90%+ adherence needed for optimal response",
+          "PEDIATRIC CML — specialist; imatinib + dasatinib + nilotinib + bosutinib all approved ≥1 year",
+          "Sokal/EUTOS/ELTS risk scores at diagnosis guide treatment intensity",
+          "ALLO-HSCT — reserved for blast crisis, accelerated phase failing TKI, multi-TKI resistance",
+          "PHARMACIST ROLE: TKI counseling (food/PPI/CYP3A4), monitoring schedule, adherence support, CV risk modification, TFR education"
+        ],
+        "introduction": "Chronic myeloid leukemia (CML) is a Philadelphia chromosome-driven myeloproliferative neoplasm where BCR-ABL fusion oncogene activates constitutive tyrosine kinase signaling. The TKI era (imatinib FDA 2001 onward) transformed CML from a fatal disease (5-year survival ~30%) to a chronic condition (5-year survival >90%, near-normal life expectancy in chronic phase). First-line therapy choice (imatinib, dasatinib, nilotinib, bosutinib, asciminib emerging) is individualized based on age, cardiovascular comorbidities, response goals, and cost. T315I gatekeeper mutation requires ponatinib or asciminib. Molecular monitoring (BCR-ABL RT-qPCR International Scale) every 3 months guides therapy; deep molecular response (MR4-MR4.5) sustained ≥2 years enables treatment-free remission (TFR) attempt with ~50% success. Pharmacist roles include TKI counselling, adherence support, drug interaction screening (CYP3A4, PPIs), cardiovascular risk modification, and TFR education.",
+        "source": "ELN CML Recommendations 2020 (Hochhaus); CCS Hematology CML 2024; CCO Practice 2024; NCCN CML 2024; ASC4FIRST trial Hochhaus NEJM 2024; STIM/ENESTfreedom/EURO-SKI TFR trials"
       }
     ]
   },
@@ -138505,6 +138637,374 @@ var DRUGS = {
     ],
     "counselling": "Take 1-2 times daily as prescribed. Common: drowsiness, mild diarrhea, dry mouth, mild fatigue. Tell provider if you have or develop depressed mood or thoughts of suicide — report immediately. Do not drive until you know how it affects you. AVOID alcohol. Get baseline ECG before starting. Tell every provider + pharmacist about all medications, especially antidepressants (especially paroxetine, fluoxetine, bupropion which require dose reduction), MAOIs (cannot combine), other movement disorder medications. Continue follow-up with your specialist. Pregnancy must be avoided unless approved.",
     "source": "Health Canada Austedo monograph; FIRST-HD trial Huntington Study Group 2016; ARM-TD + AIM-TD tardive dyskinesia trials; FDA pediatric Tourette extension 2023"
+  },
+  "dasatinib": {
+    "name": "Dasatinib",
+    "brand": "Sprycel",
+    "class": "Second-generation BCR-ABL tyrosine kinase inhibitor; multi-kinase (SRC family)",
+    "napra": "Schedule I (Rx); specialty pharmacy; specialist (hematology) initiation",
+    "moa": "Second-generation BCR-ABL TKI binding both ACTIVE + INACTIVE conformations of ABL kinase (vs imatinib only inactive). Also potent inhibitor of SRC family kinases (Src, Lck, Yes, Fyn, Hck), KIT, PDGFR, EPHA2, ephrin. ~325× more potent than imatinib in vitro against BCR-ABL. ACTIVE against most imatinib-resistant mutations EXCEPT T315I (gatekeeper mutation — needs ponatinib or asciminib). FAVOURED for high-risk CML or imatinib failure/intolerance.",
+    "indications": [
+      "CHRONIC MYELOID LEUKEMIA (CML) chronic phase — first-line OR after imatinib failure/intolerance",
+      "CML accelerated/blast phase",
+      "Ph+ ACUTE LYMPHOBLASTIC LEUKEMIA (Ph+ ALL) — combined with chemotherapy",
+      "Pediatric Ph+ CML (FDA 2017 ≥1 year)"
+    ],
+    "dosing": {
+      "Adult CML chronic phase": "100 mg PO once daily with or without food",
+      "Adult CML accelerated/blast phase OR Ph+ ALL": "140 mg PO once daily",
+      "Pediatric ≥1 year Ph+ CML chronic phase": "Weight-based: 60 mg/m² PO once daily (round to nearest 20 mg)",
+      "Hepatic impairment": "Use cautiously",
+      "Renal impairment": "No specific adjustment",
+      "Drug interactions": "Avoid PPIs/H2 blockers/antacids — pH-dependent absorption; if needed, take dasatinib 2 hours before or 10 hours after. ECG + echo baseline + periodic"
+    },
+    "side_effects": {
+      "common": [
+        "Pleural effusion (~20-35% — DOSE-LIMITING; especially elderly + women)",
+        "Cytopenias (anemia, thrombocytopenia, neutropenia; CBC q1-2 weeks first 8 weeks)",
+        "Headache, fatigue, diarrhea, nausea",
+        "Rash (~20%)",
+        "Musculoskeletal pain",
+        "Peripheral edema",
+        "Mucositis"
+      ],
+      "serious": [
+        "PLEURAL EFFUSION — CHARACTERISTIC + dose-limiting; manage with diuretics, dose reduction, dose interruption, switching",
+        "PULMONARY ARTERIAL HYPERTENSION (PAH) — RARE but reversible with cessation; baseline + serial echo",
+        "QT PROLONGATION — modest; ECG baseline + periodic",
+        "BLEEDING / THROMBOCYTOPENIA — BBW",
+        "SEVERE FLUID RETENTION — pleural, pericardial, ascites",
+        "TUMOR LYSIS SYNDROME (rare)",
+        "Hepatic failure (rare)",
+        "Pediatric — slowed bone growth"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to dasatinib",
+      "Severe pulmonary hypertension (relative)",
+      "Concurrent strong CYP3A4 inhibitors (caution; may need dose reduction)",
+      "Pregnancy (Cat D)"
+    ],
+    "interactions": [
+      "STRONG CYP3A4 INHIBITORS — increase dasatinib levels (clarithromycin, ketoconazole, ritonavir/cobicistat); reduce dose to 20-40 mg",
+      "STRONG CYP3A4 INDUCERS — decrease levels (rifampin, phenytoin, carbamazepine, St. John's Wort); AVOID combination",
+      "PPIs / H2 blockers / antacids — REDUCE absorption; take dasatinib 2 hours before or 10 hours after — significant interaction",
+      "QT-PROLONGING DRUGS — additive effect",
+      "WARFARIN — possible INR effects",
+      "GRAPEFRUIT JUICE — increases levels"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity in animals; CONTRACEPTION required during + 30 days after; men contraception during + ≥3 months. Breastfeeding: AVOID.",
+    "pk": "Oral: F variable (pH-dependent); peak 0.5-3 hours; ~96% protein-bound; t1/2 ~3-5 hours; hepatic CYP3A4 metabolism; biliary/fecal excretion 85%.",
+    "canadian_notes": "SPRYCEL — Health Canada approved CML + Ph+ ALL; ODB Limited Use; specialty pharmacy + hematology initiation; cost ~$5-7,000/month. Pediatric Ph+ CML approved. CCS Hematology + CCO 2024: dasatinib first-line option for CML chronic phase alongside nilotinib + bosutinib (vs imatinib).",
+    "pearls": [
+      "PLEURAL EFFUSION ~20-35% — characteristic dose-limiting AE; especially elderly + women",
+      "PAH (pulmonary arterial hypertension) — rare; reversible; baseline + periodic echo",
+      "PPI INTERACTION SIGNIFICANT — pH-dependent absorption; separate by hours OR avoid PPI",
+      "Active against most imatinib-resistant mutations EXCEPT T315I (need ponatinib or asciminib)",
+      "PEDIATRIC ≥1 YEAR Ph+ CML chronic phase approved (FDA 2017)",
+      "MULTI-KINASE INHIBITOR — SRC family + KIT + PDGFR (off-target effects)",
+      "ONCE DAILY dosing convenient",
+      "WEEKLY DOSING (200 mg PO weekly) — emerging maintenance regimen post-deep response",
+      "TLS PREVENTION — hydration + allopurinol if high disease burden",
+      "CARDIAC TOXICITY less than ponatinib but monitor",
+      "STOPPING ATTEMPT — patients with sustained deep molecular response (MR4.5 ≥2 years) may attempt treatment-free remission (TFR)"
+    ],
+    "counselling": "Take ONCE A DAY at the same time, with or without food. AVOID acid-reducing medications (omeprazole, pantoprazole, ranitidine, antacids) — if you must take, separate by hours from dasatinib. Common: tiredness, headache, mild rash, mild diarrhea, peripheral edema. Tell doctor IMMEDIATELY about: shortness of breath (possible pleural effusion or PAH), severe leg swelling, fast/irregular heartbeat, easy bruising/bleeding, fever (possible infection from low blood counts), severe rash. Get blood work (CBC) every 1-2 weeks first 8 weeks. Get baseline + periodic echo. Avoid grapefruit juice. Tell every prescriber + pharmacist about all medications. Pregnancy: highly effective contraception during + 30 days after (women); men contraception during + 3 months after stopping.",
+    "source": "Health Canada Sprycel monograph; DASISION trial Kantarjian NEJM 2010; CCS Hematology CML 2024; ELN CML Recommendations 2020; Cortes Pediatric CML 2018"
+  },
+  "nilotinib": {
+    "name": "Nilotinib",
+    "brand": "Tasigna",
+    "class": "Second-generation BCR-ABL tyrosine kinase inhibitor",
+    "napra": "Schedule I (Rx); specialty pharmacy; specialist (hematology) initiation",
+    "moa": "Second-generation BCR-ABL TKI; ~30× more potent than imatinib; binds inactive conformation. Also inhibits KIT, PDGFR, DDR1. ACTIVE against most imatinib-resistant mutations EXCEPT T315I. Distinct cardiovascular toxicity profile (highest among TKIs — ARTERIAL OCCLUSIVE EVENTS — peripheral arterial disease, MI, stroke; CHARACTERISTIC) requires CV risk assessment + Mediterranean diet counselling.",
+    "indications": [
+      "CHRONIC MYELOID LEUKEMIA (CML) chronic phase — first-line OR after imatinib intolerance/failure",
+      "Pediatric Ph+ CML (FDA 2018 ≥1 year)",
+      "Ph+ acute lymphoblastic leukemia (off-label)"
+    ],
+    "dosing": {
+      "Adult CML chronic phase first-line": "300 mg PO BID — empty stomach (no food 2 hours before + 1 hour after)",
+      "Adult CML 2nd-line / accelerated phase": "400 mg PO BID — empty stomach",
+      "Pediatric ≥1 year Ph+ CML": "230 mg/m² PO BID — empty stomach",
+      "Hepatic impairment": "Use cautiously; reduce dose",
+      "Renal impairment": "No specific adjustment. ECG QTc baseline + periodic — characteristic QT prolongation. Lipid panel + glucose monitoring — metabolic syndrome risk"
+    },
+    "side_effects": {
+      "common": [
+        "Rash (~30%)",
+        "Pruritus",
+        "Headache, fatigue",
+        "Nausea, vomiting, diarrhea, constipation",
+        "Cytopenias",
+        "Peripheral edema",
+        "Hyperglycemia, hyperlipidemia",
+        "Increased pancreatic enzymes (lipase) — rare pancreatitis"
+      ],
+      "serious": [
+        "QT PROLONGATION — characteristic; BBW; ECG baseline + at 1 week + periodic; AVOID concurrent QT-prolonging drugs",
+        "ARTERIAL OCCLUSIVE EVENTS — HIGHEST AMONG TKIs — peripheral arterial disease, MI, stroke (BBW); CV risk assessment + ASA + Mediterranean diet + statin counselling; AVOID smoking, control HTN/diabetes/lipids",
+        "PANCREATITIS, ELEVATED LIPASE",
+        "HEPATOTOXICITY (LFT elevations)",
+        "HYPERGLYCEMIA / DIABETES",
+        "SUDDEN CARDIAC DEATH (rare; QT-related)",
+        "TUMOR LYSIS SYNDROME (rare; high disease burden)",
+        "Tyrosine kinase off-target — bone marrow failure"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity",
+      "Hypokalemia, hypomagnesemia, long QT syndrome (untreated)",
+      "Pregnancy (Cat D)",
+      "Concurrent strong CYP3A4 inhibitors without dose reduction",
+      "Severe peripheral arterial disease (relative — exacerbates)"
+    ],
+    "interactions": [
+      "STRONG CYP3A4 INHIBITORS — increase nilotinib levels; reduce dose 50%",
+      "STRONG CYP3A4 INDUCERS — decrease levels; AVOID",
+      "PPIs / H2 BLOCKERS — reduce absorption; significant interaction",
+      "QT-PROLONGING DRUGS — additive QT; AVOID",
+      "STATINS — pharmacokinetic + pharmacodynamic considerations; combine for CV risk reduction (MEDITERRANEAN diet + statin + ASA after CV risk assessment)",
+      "WARFARIN — INR monitoring",
+      "GRAPEFRUIT JUICE — increases levels"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity. CONTRACEPTION required + ≥1 month after; men ≥3 months. Breastfeeding: AVOID.",
+    "pk": "Oral: F ~30% (food increases dramatically — REQUIRES empty stomach); peak 3 hours; ~98% protein-bound; t1/2 ~17 hours; CYP3A4 hepatic metabolism; biliary/fecal excretion.",
+    "canadian_notes": "TASIGNA — Health Canada approved CML; ODB Limited Use; specialty pharmacy + hematology initiation. Cost ~$5,500/month. CCS Hematology + CCO 2024: nilotinib first-line option for CML chronic phase. CV RISK ASSESSMENT MANDATORY before initiation; ASA prophylaxis + Mediterranean diet + statin counselling.",
+    "pearls": [
+      "EMPTY STOMACH ESSENTIAL — F increases dramatically with food (~80% increase QTc effect with food); 2 hours before + 1 hour after meals",
+      "QT PROLONGATION class effect; ECG baseline + 1 week + periodic; CORRECT K+/Mg2+",
+      "ARTERIAL OCCLUSIVE EVENTS (BBW) — highest among TKIs; CV risk assessment + ASA + Mediterranean diet + statin",
+      "AVOID in advanced PAD or recent arterial event",
+      "HYPERGLYCEMIA / METABOLIC SYNDROME — monitor glucose + HbA1c",
+      "Active against most imatinib-resistant mutations EXCEPT T315I",
+      "PEDIATRIC ≥1 YEAR Ph+ CML approved (FDA 2018)",
+      "TFR (treatment-free remission) attempt eligible after sustained deep response",
+      "DIET CRITICAL — empty stomach (no food 2h pre + 1h post)",
+      "NILOTINIB STOPPING TRIALS — STOP, ENESTfreedom, ENESTop showed safe TFR in eligible patients",
+      "PPI INTERACTION significant — separate or avoid"
+    ],
+    "counselling": "Take TWICE A DAY (12 hours apart) on EMPTY STOMACH (no food 2 hours before + 1 hour after each dose). AVOID grapefruit juice. AVOID acid-reducing medications (omeprazole, pantoprazole, ranitidine, antacids) — if needed, separate by hours. Common: rash, headache, tiredness, mild stomach upset. CARDIOVASCULAR RISKS — your team will check ECG, blood pressure, cholesterol, blood sugar regularly. Take aspirin 81 mg daily and consider Mediterranean diet to reduce risk. Stop smoking. Tell doctor IMMEDIATELY about: chest pain, leg pain on walking (possible PAD), severe headache or weakness on one side (possible stroke), fast/irregular heartbeat, fainting, severe abdominal pain (possible pancreatitis), yellow skin/eyes, severe muscle pain. Get blood tests + ECGs as scheduled. Contraception during + 1 month after (women); 3 months (men).",
+    "source": "Health Canada Tasigna monograph; ENESTnd trial Saglio NEJM 2010; ENESTfreedom + ENESTop TFR trials; CCS Hematology CML 2024; ELN CML Recommendations 2020"
+  },
+  "bosutinib": {
+    "name": "Bosutinib",
+    "brand": "Bosulif",
+    "class": "Second-generation BCR-ABL tyrosine kinase inhibitor; SRC inhibitor",
+    "napra": "Schedule I (Rx); specialty pharmacy; specialist (hematology) initiation",
+    "moa": "Second-generation BCR-ABL TKI binding active conformation; ~200× more potent than imatinib. Dual SRC + ABL kinase inhibitor (less off-target than dasatinib's broader multi-kinase profile). Active against most imatinib-resistant mutations EXCEPT T315I + V299L. NOTABLE GI TOXICITY (diarrhea ~70-80%) — characteristic dose-limiting; less cardiotoxicity than nilotinib; less pleural effusion than dasatinib.",
+    "indications": [
+      "CHRONIC MYELOID LEUKEMIA (CML) chronic phase — first-line OR after imatinib failure/intolerance",
+      "CML accelerated/blast phase after prior TKI failure",
+      "Pediatric ≥1 year Ph+ CML chronic phase (FDA 2023)"
+    ],
+    "dosing": {
+      "Adult CML chronic phase first-line": "400 mg PO once daily WITH FOOD",
+      "Adult CML 2nd-line or accelerated phase": "500 mg PO once daily WITH FOOD",
+      "Pediatric ≥1 year Ph+ CML": "300-400 mg/m² PO once daily WITH FOOD",
+      "Hepatic impairment (any)": "200 mg PO once daily — AVOID Child-Pugh C if not absolutely indicated",
+      "Renal impairment": "Reduce dose 25% if CrCl 30-50; 50% if <30. GI INTOLERANCE: dose interruption + restart at lower dose; loperamide PRN"
+    },
+    "side_effects": {
+      "common": [
+        "DIARRHEA (~70-80%; characteristic; dose-limiting; loperamide PRN; may interrupt + restart lower dose)",
+        "Rash (~30%)",
+        "Nausea, vomiting",
+        "Abdominal pain",
+        "Fatigue",
+        "Cytopenias",
+        "Liver enzyme elevation (~15-30%; ~5% Grade 3-4)",
+        "Peripheral edema"
+      ],
+      "serious": [
+        "DIARRHEA — usually self-limiting first 2 months; sometimes severe + requiring dose reduction",
+        "HEPATOTOXICITY — LFT elevations common; serial monitoring; RARE acute liver failure",
+        "FLUID RETENTION (peripheral edema, pleural effusion — less than dasatinib)",
+        "CARDIAC FAILURE (rare)",
+        "TUMOR LYSIS SYNDROME (rare)",
+        "QT PROLONGATION (less than nilotinib)",
+        "Stevens-Johnson syndrome (very rare)"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity",
+      "Severe hepatic impairment without dose reduction",
+      "Pregnancy (Cat D)",
+      "Concurrent strong CYP3A4 inhibitors/inducers (caution + dose adjustment)"
+    ],
+    "interactions": [
+      "STRONG CYP3A4 INHIBITORS — increase levels; reduce dose 50%",
+      "STRONG CYP3A4 INDUCERS — decrease levels; AVOID",
+      "PPIs/H2 BLOCKERS — REDUCE absorption (pH-dependent); separate or avoid",
+      "WARFARIN — possible INR effects",
+      "GRAPEFRUIT JUICE — increases levels",
+      "TAKE WITH FOOD — increases F by 60%"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 30 days after; men ≥3 months. Breastfeeding: AVOID.",
+    "pk": "Oral: F ~30% (food increases 60%); peak 4-6 hours; ~94% protein-bound; t1/2 ~22-27 hours; CYP3A4 hepatic metabolism; biliary/fecal excretion 91%.",
+    "canadian_notes": "BOSULIF — Health Canada approved CML chronic + accelerated phase; ODB Limited Use; specialty pharmacy. Cost ~$5,000-7,000/month. CCS Hematology 2024: bosutinib first-line option for CML chronic phase, especially with cardiovascular comorbidities (less cardiac toxicity than nilotinib).",
+    "pearls": [
+      "DIARRHEA (~70-80%) DOSE-LIMITING — characteristic; loperamide PRN; usually self-limiting first 2 months; dose reduction if persistent",
+      "TAKE WITH FOOD — increases F 60% (vs nilotinib empty stomach)",
+      "HEPATOTOXICITY — LFT monitoring baseline + monthly first 3 months + periodic",
+      "CV TOXICITY less than nilotinib — PREFERRED in CV comorbidity patients",
+      "PLEURAL EFFUSION less than dasatinib",
+      "Active against most imatinib-resistant mutations EXCEPT T315I + V299L",
+      "PEDIATRIC ≥1 YEAR Ph+ CML approved (FDA 2023)",
+      "PPI INTERACTION significant — separate or avoid",
+      "RENAL DOSE adjustment for CrCl <50 (others CML TKIs less impacted)",
+      "STARTING LOW (300 mg) emerging — improved tolerance with non-inferior efficacy (BFORE trial)",
+      "TFR ELIGIBLE after sustained deep molecular response"
+    ],
+    "counselling": "Take ONCE A DAY WITH FOOD (food doubles how much medication is absorbed). DIARRHEA is very common (most patients) — usually improves over first 2 months; take loperamide as needed; tell team if severe (>5/day, blood, dehydration). AVOID acid-reducing medications (PPIs, H2 blockers, antacids). AVOID grapefruit juice. Get blood tests for liver, kidney, CBC as scheduled. Tell doctor IMMEDIATELY about: yellow skin/eyes (liver problem), severe diarrhea, severe stomach pain, easy bruising/bleeding, fever, fast/irregular heartbeat, severe rash with peeling skin. Tell every prescriber + pharmacist all medications. Pregnancy: contraception during + 30 days (women); 3 months (men).",
+    "source": "Health Canada Bosulif monograph; BFORE trial Cortes JCO 2018; BELA trial Cortes Lancet Onc 2018; CCS Hematology CML 2024; ELN CML 2020"
+  },
+  "ponatinib": {
+    "name": "Ponatinib",
+    "brand": "Iclusig",
+    "class": "Third-generation BCR-ABL tyrosine kinase inhibitor; PAN-BCR-ABL — including T315I",
+    "napra": "Schedule I (Rx); specialty pharmacy; specialist (hematology) initiation; FDA REMS",
+    "moa": "Third-generation BCR-ABL TKI — UNIQUELY ACTIVE against T315I 'gatekeeper' mutation (resistance mutation that blocks ALL other BCR-ABL TKIs). Multi-kinase: BCR-ABL + VEGFR + FGFR + PDGFR + SRC + KIT + RET + TIE2 + FLT3 — broadest multi-kinase profile among CML TKIs. SIGNIFICANT CV TOXICITY (BBW) — arterial occlusive events (~25% in PACE trial), heart failure, hypertension; reserved for T315I or post-multiple TKI failure.",
+    "indications": [
+      "CHRONIC MYELOID LEUKEMIA (CML) — T315I mutation OR resistance/intolerance to ≥2 prior TKIs",
+      "PHILADELPHIA-POSITIVE ACUTE LYMPHOBLASTIC LEUKEMIA (Ph+ ALL) — T315I or resistance/intolerance",
+      "Pediatric Ph+ ALL (FDA 2024 expanded)"
+    ],
+    "dosing": {
+      "Adult CML chronic phase / Ph+ ALL T315I": "45 mg PO once daily; consider lower 30 mg if cardiovascular concern; with or without food. Dose reduction strategy (PACE trial): once response achieved, reduce to 15-30 mg PO once daily — REDUCED CV events while maintaining efficacy",
+      "Hepatic impairment": "Use cautiously",
+      "Renal impairment (CrCl <50)": "Reduce dose. CARDIOVASCULAR ASSESSMENT essential before starting + ongoing",
+      "Concurrent strong CYP3A4 inhibitors": "Reduce dose 30%"
+    },
+    "side_effects": {
+      "common": [
+        "Hypertension (~50% — significant)",
+        "Rash (~40%)",
+        "Abdominal pain",
+        "Nausea, fatigue, headache",
+        "Cytopenias",
+        "Pancreatitis (~5%)",
+        "Increased lipase",
+        "Arthralgia"
+      ],
+      "serious": [
+        "ARTERIAL OCCLUSIVE EVENTS — BBW; PERIPHERAL ARTERIAL DISEASE, MI, STROKE, RENAL ARTERY STENOSIS — ~25% in PACE trial; CV risk assessment + ASA + statin + Mediterranean diet + smoking cessation",
+        "VENOUS THROMBOEMBOLISM (BBW) — DVT, PE",
+        "HEART FAILURE (~6%)",
+        "HEPATOTOXICITY (BBW) — fulminant hepatic failure rare",
+        "HYPERTENSION — severe; treat aggressively",
+        "PANCREATITIS — characteristic; discontinue if severe",
+        "TUMOR LYSIS SYNDROME",
+        "Optic neuropathy (rare)",
+        "Reversible posterior leukoencephalopathy syndrome (PRES)",
+        "WOUND HEALING IMPAIRED — discontinue ≥1 week pre-surgery",
+        "Hemorrhage"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity",
+      "Active arterial thrombotic event",
+      "Severe pulmonary hypertension",
+      "Severe hepatic impairment",
+      "Pregnancy (Cat D)"
+    ],
+    "interactions": [
+      "STRONG CYP3A4 INHIBITORS — increase levels; reduce dose 30%",
+      "STRONG CYP3A4 INDUCERS — decrease levels; AVOID",
+      "PPIs — minor effect (less significant than other TKIs)",
+      "WARFARIN, ANTIPLATELETS — additive bleeding risk if VTE/HTN management requires",
+      "GRAPEFRUIT JUICE — increases levels"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 1 month after; men ≥3 months. Breastfeeding: AVOID.",
+    "pk": "Oral: F ~50%; peak 4-6 hours; >99% protein-bound; t1/2 ~24 hours; CYP3A4 hepatic metabolism; biliary/fecal excretion.",
+    "canadian_notes": "ICLUSIG — Health Canada approved 2014 (after FDA REMS 2013); ODB Limited Use; specialty pharmacy + hematology; cost ~$13,000+/month. RESERVED for T315I or post-multiple TKI failure due to CV toxicity. CCS Hematology + CCO 2024: ponatinib for T315I CML/Ph+ ALL or after dasatinib + nilotinib + imatinib failure. CV RISK ASSESSMENT mandatory + ongoing. DOSE REDUCTION strategy (start 45 mg, reduce to 15 mg after response) emerging to mitigate CV events (OPTIC trial).",
+    "pearls": [
+      "T315I MUTATION — ONLY drug approved against this gatekeeper mutation alongside asciminib",
+      "BBW: ARTERIAL OCCLUSIVE EVENTS (~25%) + VTE + HEART FAILURE + HEPATOTOXICITY",
+      "DOSE REDUCTION STRATEGY — start 45 mg, reduce to 15 mg after molecular response (OPTIC trial 2021) — reduces CV events while maintaining efficacy",
+      "RESERVED for T315I OR post-multiple TKI failure — NOT first-line",
+      "CV RISK ASSESSMENT MANDATORY — ASA + statin + Mediterranean diet + smoking cessation",
+      "HYPERTENSION SEVERE — treat aggressively",
+      "PANCREATITIS — characteristic AE; discontinue if severe",
+      "PEDIATRIC Ph+ ALL FDA 2024 expanded",
+      "FDA REMS — risk evaluation mitigation strategy program",
+      "WOUND HEALING IMPAIRED — discontinue ≥1 week pre-surgery",
+      "PPI interaction less significant than dasatinib/nilotinib/bosutinib",
+      "OLVERSEMBATINIB — emerging T315I-active TKI alternative (non-Canadian)",
+      "STAMP INHIBITOR (asciminib) — alternative for T315I; better tolerability"
+    ],
+    "counselling": "Take ONCE A DAY at the same time, with or without food. Tell doctor IMMEDIATELY about: chest pain, leg pain on walking (PAD), severe headache or weakness on one side (stroke), fast/irregular heartbeat, severe leg swelling (DVT), shortness of breath (PE or HF), severe abdominal pain (pancreatitis), yellow skin/eyes (liver), severe rash. CONTROL BLOOD PRESSURE (very important — this medication causes high BP); take BP regularly. Take aspirin 81 mg daily + cholesterol medication as prescribed. STOP SMOKING. Eat Mediterranean diet. Tell every prescriber + pharmacist. Avoid grapefruit juice. Pregnancy: highly effective contraception during + 1 month after (women); 3 months (men). Stop ≥1 week before any surgery. Get all blood tests + scans + appointments — close monitoring required.",
+    "source": "Health Canada Iclusig monograph; PACE trial Cortes Blood 2014; OPTIC trial Cortes Blood 2021 (dose reduction strategy); CCS Hematology CML 2024; FDA REMS"
+  },
+  "asciminib": {
+    "name": "Asciminib",
+    "brand": "Scemblix",
+    "class": "Specifically targeting the ABL myristoyl pocket (STAMP) — first-in-class allosteric BCR-ABL inhibitor",
+    "napra": "Schedule I (Rx); specialty pharmacy; specialist (hematology) initiation",
+    "moa": "FIRST-IN-CLASS allosteric inhibitor binding the MYRISTOYL POCKET of ABL kinase (NOT the ATP-binding site like all other BCR-ABL TKIs). 'STAMP' (Specifically Targeting the ABL Myristoyl Pocket) mechanism. ACTIVE against ATP-site resistance mutations including T315I (with 200 mg BID dose). Better tolerability profile than imatinib + 2nd-gen TKIs (less cytopenia, GI, hepatotoxicity, CV events). FDA approved 2021 + Health Canada 2022 for resistant/intolerant CML chronic phase post-≥2 TKIs OR T315I.",
+    "indications": [
+      "CHRONIC MYELOID LEUKEMIA (CML) chronic phase — post-failure or intolerance to ≥2 prior TKIs",
+      "T315I mutation CML (200 mg BID dose)",
+      "EMERGING first-line CML chronic phase (ASC4FIRST trial 2024 — non-inferior/superior to imatinib + 2nd-gen TKIs; FDA approval expansion expected)"
+    ],
+    "dosing": {
+      "Adult CML chronic phase post-≥2 TKI": "80 mg PO once daily OR 40 mg PO BID, with or without food",
+      "Adult T315I CML": "200 mg PO BID — twice the standard dose for T315I activity",
+      "Hepatic impairment": "No specific adjustment Mild/Moderate; severe: caution",
+      "Renal impairment (CrCl <30)": "Use cautiously",
+      "Concurrent strong CYP3A4 inhibitors": "Reduce dose"
+    },
+    "side_effects": {
+      "common": [
+        "Headache, fatigue (~25%)",
+        "Cytopenias (less than 2nd-gen TKIs)",
+        "Musculoskeletal pain",
+        "Diarrhea, nausea (less than bosutinib)",
+        "Rash",
+        "Increased lipase/amylase (~15%; pancreatitis ~3%)",
+        "Hypertension (less than ponatinib)"
+      ],
+      "serious": [
+        "PANCREATITIS — characteristic; lipase + amylase monitoring; symptoms of acute pancreatitis (severe abdominal pain, nausea, vomiting)",
+        "HEPATOTOXICITY (less than other TKIs but possible)",
+        "CARDIOVASCULAR EVENTS (less common than nilotinib/ponatinib but possible)",
+        "HYPERTENSION",
+        "TUMOR LYSIS SYNDROME (rare)",
+        "Cytopenias (thrombocytopenia, neutropenia)",
+        "Hypersensitivity"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to asciminib",
+      "Severe hepatic impairment (relative)",
+      "Pregnancy (Cat D)"
+    ],
+    "interactions": [
+      "STRONG CYP3A4 INHIBITORS — modest increase; reduce dose with caution",
+      "STRONG CYP3A4 INDUCERS — decrease levels; AVOID",
+      "PPIs / H2 BLOCKERS — minimal effect (advantage over other TKIs)",
+      "WARFARIN — minor effects",
+      "BCRP SUBSTRATES (rosuvastatin) — modestly increased levels"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 1 week after. Breastfeeding: AVOID.",
+    "pk": "Oral: F variable; peak 2-3 hours; ~98% protein-bound; t1/2 ~7-15 hours; hepatic CYP3A4 + UGT2B7 metabolism; biliary/fecal excretion.",
+    "canadian_notes": "SCEMBLIX — Health Canada approved 2022 for resistant/intolerant CML post-≥2 TKIs + T315I; ODB Limited Use; specialty pharmacy + hematology; cost ~$13,000+/month. EMERGING ROLE: ASC4FIRST trial 2024 (Hochhaus NEJM) showed asciminib SUPERIOR to imatinib + non-inferior to 2nd-gen TKIs in first-line; FDA expanded approval expected.",
+    "pearls": [
+      "FIRST-IN-CLASS STAMP inhibitor (myristoyl pocket; allosteric)",
+      "ACTIVE against T315I (200 mg BID dose) — alternative to ponatinib with better tolerability",
+      "ASC4FIRST trial 2024 — superior to imatinib in first-line CML; expanded indication expected",
+      "BETTER TOLERABILITY than imatinib + 2nd-gen TKIs — less cytopenia, GI, hepatotoxicity, CV events",
+      "PPI INTERACTION MINIMAL (advantage over dasatinib/nilotinib/bosutinib)",
+      "PANCREATITIS characteristic AE — lipase + amylase monitoring",
+      "T315I DOSE = 200 mg BID (vs 80 mg daily standard)",
+      "ALLOSTERIC mechanism (NOT ATP-site) — distinct from all other BCR-ABL TKIs",
+      "EMERGING FIRST-LINE — likely shift from current 2nd-gen TKI standards",
+      "RESERVED currently for post-≥2 TKI failure or T315I in Canada (Health Canada 2022)",
+      "CV TOXICITY less than nilotinib/ponatinib",
+      "PEDIATRIC studies ongoing"
+    ],
+    "counselling": "Take 1-2 times daily as prescribed, with or without food. Common: headache, fatigue, mild stomach upset, muscle/joint pain. Tell doctor IMMEDIATELY about: severe abdominal pain (possible pancreatitis), severe nausea/vomiting, yellow skin/eyes (liver), severe rash, signs of allergic reaction, severe muscle pain, easy bruising/bleeding, fever (low blood counts). Get blood tests (CBC, lipase, LFTs) as scheduled. Tell every prescriber + pharmacist. AVOID grapefruit juice. Generally well tolerated compared to older CML medications. Pregnancy: contraception during + 1 week after.",
+    "source": "Health Canada Scemblix monograph; ASCEMBL trial Réa Blood 2021; ASC4FIRST trial Hochhaus NEJM 2024; CCS Hematology 2024; ELN CML Recommendations"
   }
 
 };
@@ -140455,7 +140955,12 @@ var FAMILY_MAP = {
   "tezacaftor": "CFTR Modulators",
   "elexacaftor": "CFTR Modulators",
   "relugolix": "GnRH Antagonists",
-  "deutetrabenazine": "VMAT2 Inhibitors"
+  "deutetrabenazine": "VMAT2 Inhibitors",
+  "dasatinib": "BCR-ABL Tyrosine Kinase Inhibitors",
+  "nilotinib": "BCR-ABL Tyrosine Kinase Inhibitors",
+  "bosutinib": "BCR-ABL Tyrosine Kinase Inhibitors",
+  "ponatinib": "BCR-ABL Tyrosine Kinase Inhibitors",
+  "asciminib": "BCR-ABL Tyrosine Kinase Inhibitors"
 };
 var NAPRA_ODB_DATA = {
   "amoxicillin": {
@@ -150090,6 +150595,51 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "ODB LU; specialist neurology/movement disorders.",
     "luCode": "Verify current Ontario e-Formulary LU code for Austedo (specialty/biologic — pCPA negotiated; check Ontario.ca pharmacy formulary)",
     "notes": "Deuterated tetrabenazine VMAT2 inhibitor; BID dosing; less depression/sedation than tetrabenazine. Huntington chorea, tardive dyskinesia, pediatric Tourette FDA 2023."
+  },
+  "dasatinib": {
+    "name": "Dasatinib (Sprycel)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); specialty pharmacy.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU; specialist hematology.",
+    "luCode": "Verify current Ontario e-Formulary LU code for Sprycel (specialty oncology — pCPA negotiated; check Ontario.ca pharmacy formulary)",
+    "notes": "2nd-gen BCR-ABL TKI; pleural effusion + PAH characteristic AEs; T315I-resistant. PPI interaction significant."
+  },
+  "nilotinib": {
+    "name": "Nilotinib (Tasigna)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); specialty pharmacy.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU; specialist hematology.",
+    "luCode": "Verify current Ontario e-Formulary LU code for Tasigna (specialty oncology — pCPA negotiated)",
+    "notes": "2nd-gen BCR-ABL TKI; QT prolongation BBW + arterial occlusive events; empty stomach essential. T315I-resistant."
+  },
+  "bosutinib": {
+    "name": "Bosutinib (Bosulif)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); specialty pharmacy.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU; specialist hematology.",
+    "luCode": "Verify current Ontario e-Formulary LU code for Bosulif (specialty oncology)",
+    "notes": "2nd-gen BCR-ABL TKI; diarrhea ~70-80% dose-limiting; hepatotoxicity; less CV than nilotinib. T315I-resistant."
+  },
+  "ponatinib": {
+    "name": "Ponatinib (Iclusig)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); specialty pharmacy; FDA REMS program.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU; T315I or post-multi-TKI failure; specialist hematology.",
+    "luCode": "Verify current Ontario e-Formulary LU code for Iclusig (T315I or post-multi-TKI failure — pCPA negotiated)",
+    "notes": "3rd-gen pan-BCR-ABL TKI active against T315I. BBW: arterial occlusive events ~25% + VTE + HF + hepatotoxicity. Dose reduction strategy (45→15 mg post-response per OPTIC trial)."
+  },
+  "asciminib": {
+    "name": "Asciminib (Scemblix)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); specialty pharmacy.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU; post-≥2 TKI failure or T315I.",
+    "luCode": "Verify current Ontario e-Formulary LU code for Scemblix (post-≥2 TKI failure or T315I — pCPA negotiated)",
+    "notes": "First-in-class STAMP inhibitor (myristoyl pocket); active against T315I (200 mg BID); better tolerability than 2nd-gen; ASC4FIRST 2024 — emerging first-line."
   }
 };
 var MINOR_AILMENTS = [
@@ -173105,6 +173655,61 @@ var PREG_DATA = {
     "bfDetail": "Limited breastfeeding data; use cautiously.",
     "alternatives": "",
     "source": "Health Canada Austedo monograph; FIRST-HD trial Huntington Study Group 2016; ARM-TD + AIM-TD tardive dyskinesia trials; FDA pediatric Tourette extension 2023"
+  },
+  "dasatinib": {
+    "name": "Dasatinib (Sprycel)",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity in animals; CONTRACEPTION required during + 30 days after; men contraception during + ≥3 months. Breastfeeding: AVOID.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Sprycel monograph; DASISION trial Kantarjian NEJM 2010; CCS Hematology CML 2024; ELN CML Recommendations 2020; Cortes Pediatric CML 2018"
+  },
+  "nilotinib": {
+    "name": "Nilotinib (Tasigna)",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity. CONTRACEPTION required + ≥1 month after; men ≥3 months. Breastfeeding: AVOID.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Tasigna monograph; ENESTnd trial Saglio NEJM 2010; ENESTfreedom + ENESTop TFR trials; CCS Hematology CML 2024; ELN CML Recommendations 2020"
+  },
+  "bosutinib": {
+    "name": "Bosutinib (Bosulif)",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity. Contraception during + 30 days after; men ≥3 months. Breastfeeding: AVOID.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Bosulif monograph; BFORE trial Cortes JCO 2018; BELA trial Cortes Lancet Onc 2018; CCS Hematology CML 2024; ELN CML 2020"
+  },
+  "ponatinib": {
+    "name": "Ponatinib (Iclusig)",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity. Contraception during + 1 month after; men ≥3 months. Breastfeeding: AVOID.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Iclusig monograph; PACE trial Cortes Blood 2014; OPTIC trial Cortes Blood 2021 (dose reduction strategy); CCS Hematology CML 2024; FDA REMS"
+  },
+  "asciminib": {
+    "name": "Asciminib (Scemblix)",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity. Contraception during + 1 week after. Breastfeeding: AVOID.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Scemblix monograph; ASCEMBL trial Réa Blood 2021; ASC4FIRST trial Hochhaus NEJM 2024; CCS Hematology 2024; ELN CML Recommendations"
   }
 };
 
