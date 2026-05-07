@@ -138034,20 +138034,59 @@ function jumpToSection(id, linkEl) {
 }
 
 
+// Tokens to skip when looking for drug names in agent strings (routes, action verbs, generics)
+var _AGENT_NOISE_WORDS = {
+  'iv':1,'po':1,'sc':1,'im':1,'in':1,'pr':1,'inh':1,'sl':1,'top':1,'pv':1,'pr':1,
+  'oral':1,'rectal':1,'vaginal':1,'topical':1,'inhaled':1,'nebulized':1,'sublingual':1,
+  'intranasal':1,'transdermal':1,'subcutaneous':1,'intramuscular':1,'intravenous':1,
+  'add':1,'use':1,'consider':1,'avoid':1,'continue':1,'start':1,'switch':1,'rotate':1,
+  'oral':1,'iv/po':1,'iv/im':1,'high':1,'low':1,'mid':1,
+  'route':1,'dose':1,'and':1,'or':1,'with':1,'plus':1,'then':1,'after':1,'before':1,
+  'first':1,'second':1,'third':1,'fourth':1,
+  'a':1,'an':1,'the':1,'of':1,'for':1,'to':1
+};
+
 function renderDrugLink(agentStr) {
   var base = agentStr.replace(/\s*\(.*?\)/g, '').trim();
-  var words = base.toLowerCase().split(/\s+/);
+  var lower = base.toLowerCase();
   var foundKey = null;
-  // Try full name first, then first word
-  var k1 = base.toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/_+/g,'_').replace(/^_|_$/g,'');
+
+  // Strategy 1: full base normalized to slug (drops dose/units etc.)
+  var k1 = lower.replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
   if (DRUGS[k1]) { foundKey = k1; }
-  else {
-    for (var key in DRUGS) {
-      if (key === words[0] || key.indexOf(words[0]) === 0) { foundKey = key; break; }
+
+  // Strategy 2: tokenize, strip route/action noise words from front, then try compound prefixes
+  // E.g., "IV ampicillin-sulbactam + azithromycin" → drop "iv" → try "ampicillin_sulbactam"
+  if (!foundKey) {
+    // Split on whitespace, slash, plus, hyphen-when-before-route — preserve hyphens within drug compound names
+    var rawTokens = lower.split(/[\s,;()\/+]+/).filter(function(t){ return t.length > 0; });
+    // Strip leading noise words + numeric/dosing tokens (e.g., "1g", "500", "mg", "bid", "od")
+    var startIdx = 0;
+    while (startIdx < rawTokens.length) {
+      var t = rawTokens[startIdx];
+      if (_AGENT_NOISE_WORDS[t]) { startIdx++; continue; }
+      // Numeric or dose-unit token
+      if (/^[0-9]+([.,][0-9]+)?(mg|mcg|g|ml|iu|u|units?|kg|hr|h|d|day|days|wk|week|weeks)?$/i.test(t)) { startIdx++; continue; }
+      if (/^(bid|tid|qid|qd|od|hs|prn|q[0-9]+h?|×|x)$/i.test(t)) { startIdx++; continue; }
+      break;
+    }
+    var tokens = rawTokens.slice(startIdx);
+    if (tokens.length) {
+      // Try 3-, 2-, 1-token prefixes joined (handles compound drugs with hyphen→space normalization)
+      for (var n = Math.min(3, tokens.length); n >= 1; n--) {
+        var compound = tokens.slice(0, n).join(' ').replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
+        if (compound.length >= 4 && DRUGS[compound]) { foundKey = compound; break; }
+      }
+      // Final fallback: if first token is hyphenated combo (e.g. "ampicillin-sulbactam") and the
+      // combo isn't in DRUGS, try the first hyphen-component alone (e.g. "ampicillin")
+      if (!foundKey && tokens[0].indexOf('-') > 0) {
+        var firstPart = tokens[0].split('-')[0].replace(/[^a-z0-9]/g, '');
+        if (firstPart.length >= 4 && DRUGS[firstPart]) foundKey = firstPart;
+      }
     }
   }
+
   if (foundKey) {
-    var family = FAMILY_MAP[foundKey] || '';
     return '<span class="drug-link" onclick="showDrugPanel(\'' + foundKey + '\')">' + agentStr + '</span>';
   }
   return '<span class="drug-name">' + agentStr + '</span>';
@@ -138087,9 +138126,17 @@ function _buildDrugRegex() {
     var firstWord = slug.split(' ')[0];
     if (_DRUG_LINK_BLOCKLIST[firstWord] && slug.split(' ').length === 1) continue;
     tokens[slug] = key;
+    // Also register hyphenated variant for compound drugs (e.g. "amoxicillin-clavulanate")
+    if (slug.indexOf(' ') >= 0) {
+      var hyphenSlug = slug.replace(/ /g, '-');
+      tokens[hyphenSlug] = key;
+    }
   }
   var sorted = Object.keys(tokens).sort(function(a,b){ return b.length - a.length; });
-  var pattern = '\\b(' + sorted.map(function(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\b';
+  // Build pattern that allows space OR hyphen between words in multi-word drug names
+  var pattern = '\\b(' + sorted.map(function(s){
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/[\s\-]/g, '[\\s\\-]');
+  }).join('|') + ')\\b';
   _drugRegexCache = { regex: new RegExp(pattern, 'gi'), map: tokens };
   return _drugRegexCache;
 }
@@ -138097,7 +138144,13 @@ function renderDrugLinksInProse(prose) {
   if (!prose) return '';
   var dr = _buildDrugRegex();
   return prose.replace(dr.regex, function(match) {
-    var key = dr.map[match.toLowerCase()];
+    var lc = match.toLowerCase();
+    var key = dr.map[lc];
+    // If the matched text used a different separator (hyphen vs space), normalize for lookup
+    if (!key) {
+      key = dr.map[lc.replace(/[\s\-]+/g, ' ')];
+      if (!key) key = dr.map[lc.replace(/[\s\-]+/g, '-')];
+    }
     if (!key) return match;
     return '<span class="drug-link" onclick="showDrugPanel(\'' + key + '\')">' + match + '</span>';
   });
