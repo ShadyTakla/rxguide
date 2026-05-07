@@ -14081,6 +14081,383 @@ var DISEASES = {
           "PHARMACIST role: identify dysphagia red flags + refer for HRM; PPI for post-POEM reflux; counsel medications (CCB/nitrate) limitations; aspiration precautions"
         ],
         "source": "ACG Clinical Guideline Achalasia 2020 + 2024 Update; Chicago Classification 4.0; European Achalasia Trial 2011 NEJM; Werner JAMA 2019 (POEM vs PD)"
+      },
+      {
+        "id": "functional_dyspepsia",
+        "name": "Functional Dyspepsia",
+        "subtitle": "Acid-Related & Motility Disorders",
+        "rxfiles_ref": "GI: Functional GI Disorders | Functional Dyspepsia",
+        "patho": "Functional dyspepsia (FD) — chronic or recurrent epigastric symptoms (pain, fullness, early satiety, bloating) without identifiable structural cause on endoscopy. Multifactorial pathophysiology: (1) IMPAIRED GASTRIC ACCOMMODATION (failure of fundus to relax with meals; ~40%); (2) DELAYED GASTRIC EMPTYING (~25-35%); (3) VISCERAL HYPERSENSITIVITY (lowered threshold for pain perception); (4) DUODENAL EOSINOPHILIA / LOW-GRADE INFLAMMATION; (5) PSYCHOSOCIAL contributors (anxiety, depression, stress); (6) H. PYLORI INFECTION (test-and-treat first-line per Maastricht VI). Two ROME IV SUBTYPES: POSTPRANDIAL DISTRESS SYNDROME (PDS) — bothersome postprandial fullness + early satiation ≥3 days/week; EPIGASTRIC PAIN SYNDROME (EPS) — bothersome epigastric pain or burning ≥1 day/week. ~20-25% of population worldwide; chronic course with relapsing-remitting symptoms.",
+        "signs": [
+          "POSTPRANDIAL DISTRESS SYNDROME (PDS): bothersome postprandial fullness, early satiation (cannot finish normal-size meal), upper abdominal bloating, postprandial nausea, belching",
+          "EPIGASTRIC PAIN SYNDROME (EPS): bothersome epigastric pain or burning ≥1 day/week (NOT exclusively postprandial; not relieved by defecation)",
+          "OVERLAP common with GERD, IBS, anxiety disorders",
+          "ALARM FEATURES requiring URGENT endoscopy: age >55 with new-onset symptoms; weight loss; dysphagia; persistent vomiting; GI bleeding (hematemesis, melena); iron deficiency anemia; family history of upper GI cancer; palpable abdominal mass",
+          "Non-alarm symptoms: bloating, fullness, mild epigastric discomfort, mild nausea — manage empirically WITHOUT endoscopy"
+        ],
+        "diagnosis": [
+          "ROME IV CRITERIA: ≥1 of (postprandial fullness, early satiation, epigastric pain, epigastric burning) for ≥3 months with onset ≥6 months ago + NO STRUCTURAL DISEASE (normal endoscopy + ultrasound + labs)",
+          "TEST FOR H. PYLORI in all dyspepsia patients (urea breath test or stool antigen — STOP PPI ≥2 weeks + antibiotics ≥4 weeks before test for accuracy); TREAT IF POSITIVE (Maastricht VI test-and-treat first-line in young patients without alarm features)",
+          "ENDOSCOPY indicated: age >55 with new-onset symptoms; alarm features; refractory to empiric therapy after 4-8 weeks; family history of upper GI cancer",
+          "DIFFERENTIAL: GERD (heartburn predominant), peptic ulcer disease, gastric/esophageal cancer (>55 + alarm features), gastroparesis (consider if vomiting/early satiety + diabetes), IBD, biliary colic, pancreatitis, celiac disease, mesenteric ischemia (elderly)",
+          "Labs: CBC (rule out anemia), CMP (LFTs, lipase if pain pattern), TSH, celiac serology if suspected; H. pylori test as above; consider abdominal US if biliary symptoms"
+        ],
+        "monitoring": [
+          "Symptom response at 4-8 weeks of empiric therapy",
+          "Quality of life: PAGI-SYM, FD-QoL, or simple symptom diary",
+          "H. pylori eradication confirmation: urea breath test/stool antigen 4+ weeks after antibiotic completion AND 2+ weeks after PPI cessation",
+          "Mood screening — anxiety, depression (PHQ-9, GAD-7) — high comorbidity; address with CBT, SSRIs, SNRIs",
+          "Endoscopy if symptoms progress, alarm features develop, or fail multi-line empiric therapy"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line",
+            "type": "Strategy",
+            "family": "Test-and-Treat H. pylori",
+            "agents": [
+              "Quadruple therapy: bismuth + tetracycline + metronidazole + PPI × 14 days (Canadian Helicobacter Study Group preferred); OR PBMT — pantoprazole + bismuth + metronidazole + tetracycline; OR clarithromycin-based triple if local resistance <15%"
+            ],
+            "notes": "TEST AND TREAT first-line in dyspepsia patients without alarm features per Maastricht VI 2022 + CAG/CHSG. Eradication improves symptoms in ~30-40% of FD patients (Cochrane).",
+            "guideline": "Maastricht VI (Malfertheiner Gut 2022); CAG/CHSG H. pylori 2024; ACG H. pylori 2024"
+          },
+          {
+            "line": "First-Line (after H. pylori eradication or if negative)",
+            "type": "Drug",
+            "family": "Proton Pump Inhibitors",
+            "agents": [
+              "omeprazole (Losec)",
+              "pantoprazole (Tecta)",
+              "rabeprazole (Pariet)",
+              "esomeprazole (Nexium)",
+              "lansoprazole (Prevacid)"
+            ],
+            "notes": "PPI 4-8 weeks for both PDS and EPS; ~20% absolute response benefit. Standard dose (20 mg omeprazole-equivalent OD before breakfast). Step down or stop after 4-8 weeks; restart if relapse. Effective in EPS subtype.",
+            "guideline": "ACG 2017; CAG Functional GI 2024; Cochrane 2017"
+          },
+          {
+            "line": "Second-Line (PDS subtype primarily)",
+            "type": "Drug",
+            "family": "Prokinetics",
+            "agents": [
+              "domperidone (Motilium) — preferred Canadian first-line",
+              "metoclopramide (Maxeran)",
+              "prucalopride (Resotran) — emerging alternative"
+            ],
+            "notes": "Domperidone 10 mg PO TID-QID (15 min pre-meal + bedtime) — preferred Canadian prokinetic; ECG monitoring (QT prolongation; max dose 30 mg/day in adults). Metoclopramide alternative but BBW for tardive dyskinesia (max 5 days; max 30 mg/day). Prucalopride emerging (CIC-approved; off-label for FD-PDS).",
+            "guideline": "Health Canada Domperidone Risk Communication 2015; CAG Functional GI 2024"
+          },
+          {
+            "line": "Third-Line",
+            "type": "Drug",
+            "family": "Tricyclic Antidepressants",
+            "agents": [
+              "amitriptyline 10-25 mg PO at bedtime",
+              "nortriptyline 10-25 mg PO at bedtime",
+              "imipramine 10-25 mg PO at bedtime"
+            ],
+            "notes": "TCAs at LOW doses for VISCERAL HYPERSENSITIVITY component (especially EPS subtype refractory to PPI). NORTRIPTYLINE preferred elderly (less anticholinergic). Titrate slowly (10 mg weekly). Continue 6-12 months. Cochrane meta-analysis: NNT ~6 for symptom relief.",
+            "guideline": "ACG 2017; Cochrane Antidepressants for FD 2017; CCS Functional GI 2024"
+          },
+          {
+            "line": "Fourth-Line",
+            "type": "Drug",
+            "family": "Selective Serotonin Reuptake Inhibitors",
+            "agents": [
+              "citalopram 10-20 mg PO daily",
+              "sertraline 25-50 mg PO daily",
+              "escitalopram 5-10 mg PO daily"
+            ],
+            "notes": "SSRIs alternative when TCA not tolerated; less efficacy data than TCA but acceptable. Useful when comorbid anxiety/depression (HIGH overlap with FD).",
+            "guideline": "CCS Functional GI 2024; ACG 2017"
+          },
+          {
+            "line": "Adjunct / Lifestyle",
+            "type": "Non-pharmacologic",
+            "family": "Dietary + Behavioral Intervention",
+            "agents": [
+              "Small frequent meals",
+              "Avoid trigger foods (high-fat, spicy, alcohol, caffeine)",
+              "Smoking cessation",
+              "Weight loss if BMI elevated",
+              "STRESS REDUCTION + COGNITIVE BEHAVIORAL THERAPY (CBT) + GUT-DIRECTED HYPNOTHERAPY (Cochrane evidence)",
+              "Probiotics (limited evidence; some specific strains)",
+              "Peppermint oil — limited evidence; reasonable adjunct"
+            ],
+            "notes": "PSYCHOLOGICAL THERAPIES — CBT, gut-directed hypnotherapy, mindfulness — strong Cochrane evidence (NNT 3-5); often underutilized. CONSIDER psychiatry/psychology referral early if dominant anxiety/depression component.",
+            "guideline": "Cochrane Psychological Therapies 2019; Rome Foundation 2021"
+          }
+        ],
+        "pearls": [
+          "ROME IV: PDS (postprandial fullness/early satiation) vs EPS (epigastric pain) — guides therapy",
+          "TEST-AND-TREAT H. PYLORI FIRST-LINE in young patients without alarm features — Maastricht VI / CAG",
+          "AGE >55 with NEW dyspepsia → ENDOSCOPY before empiric therapy",
+          "ALARM FEATURES: weight loss, dysphagia, vomiting, bleeding, anemia, family hx → urgent endoscopy",
+          "PPI > prokinetic for EPS; prokinetic > PPI for PDS — patients respond differently to each based on subtype",
+          "TCA (low-dose) NNT ~6 for refractory FD — visceral hypersensitivity mechanism; counsel as 'pain modulator' not antidepressant to improve adherence",
+          "DOMPERIDONE QT MONITORING — ECG before initiation, especially if cardiac history; max 30 mg/day per Health Canada 2015",
+          "METOCLOPRAMIDE BBW TARDIVE DYSKINESIA — max 5 days at low dose; AVOID elderly (Beers)",
+          "PSYCHOLOGICAL COMORBIDITY (~50%) — screen + treat anxiety/depression; CBT + gut-directed hypnotherapy strong evidence",
+          "PROBIOTICS — emerging (Bifidobacterium, Lactobacillus); modest evidence; reasonable adjunct",
+          "PEPPERMINT OIL — limited evidence; may help; safe alternative",
+          "OVERLAP with IBS, GERD common — manage all conditions together",
+          "REFRACTORY FD — consider gastric emptying study (rule out gastroparesis), endoscopy, biopsy duodenum (eosinophilia)",
+          "CHRONIC RELAPSING-REMITTING course — counsel realistic expectations; symptom management not cure"
+        ],
+        "introduction": "Functional dyspepsia is one of the most common reasons for upper GI symptoms in pharmacy and primary care — affecting ~20-25% of adults at some point. Most patients can be managed with empirical strategies (test-and-treat H. pylori, PPI, prokinetic, TCA) without endoscopy. Identifying alarm features and ruling out structural disease is essential before empirical therapy. Pharmacist counseling on diet, lifestyle, mood-symptom links, and adherence to multi-week trials is key to symptom control.",
+        "source": "Maastricht VI Consensus (Malfertheiner Gut 2022); ACG Functional Dyspepsia Guidelines 2017; CAG Functional GI Disorders Position 2024; Rome IV Criteria 2016; Cochrane Reviews on PPI/Prokinetics/TCA/Psychological Therapy in FD"
+      },
+      {
+        "id": "lactose_intolerance",
+        "name": "Lactose Intolerance",
+        "subtitle": "Carbohydrate Malabsorption",
+        "rxfiles_ref": "GI: Lactose Intolerance | Diet & Enzyme Replacement",
+        "patho": "Lactose intolerance — clinical syndrome of GI symptoms (bloating, cramping, flatulence, diarrhea) following lactose ingestion due to INSUFFICIENT INTESTINAL LACTASE (β-galactosidase) activity in small intestine brush border. Undigested lactose passes to colon → osmotic water draw + bacterial fermentation (short-chain fatty acids + gases — H2, CO2, methane) → osmotic diarrhea + bloating + flatulence. CAUSES: (1) PRIMARY (genetic; lactase non-persistence — most common; ~70% of world adults; especially East Asian ~90%, African ~75%, Indigenous ~80%, Southern European ~70%; lactase activity declines after weaning); (2) SECONDARY (transient; post-viral gastroenteritis, celiac disease flare, IBD active disease, post-chemotherapy mucositis); (3) CONGENITAL (rare; neonatal lactase deficiency — autosomal recessive). Distinct from MILK PROTEIN ALLERGY (immune-mediated to casein/whey).",
+        "signs": [
+          "Bloating, abdominal distention, cramping (~30 min - 2 hours after lactose ingestion)",
+          "Flatulence (excessive gas)",
+          "Osmotic diarrhea (watery, large-volume; resolves with lactose avoidance)",
+          "Borborygmi (audible bowel sounds)",
+          "Nausea (rare; severe lactose loads)",
+          "DOSE-DEPENDENT — many lactose-intolerant adults tolerate up to ~12 g lactose (~1 cup milk) without symptoms",
+          "YOGURT and HARD CHEESES often well tolerated (live bacterial cultures + minimal residual lactose)"
+        ],
+        "diagnosis": [
+          "CLINICAL DIAGNOSIS often sufficient — symptoms after lactose ingestion + improvement with lactose avoidance",
+          "HYDROGEN BREATH TEST (gold standard) — 25-50 g lactose oral; measure exhaled H2 over 3-4 hours; H2 >20 ppm rise indicates malabsorption (gut bacteria fermenting undigested lactose)",
+          "LACTOSE TOLERANCE TEST (legacy) — blood glucose <1.1 mmol/L rise after 50 g lactose suggests malabsorption (less specific)",
+          "GENETIC TESTING — LCT (lactase) C/T-13910 polymorphism — homozygous CC = lactase non-persistence (Caucasian-specific test; less applicable globally)",
+          "CONSIDER SECONDARY CAUSES: celiac serology (anti-tTG IgA), endoscopic biopsy if suspected (small bowel atrophy), IBD evaluation, parasitic stool studies if travel history, recent gastroenteritis"
+        ],
+        "monitoring": [
+          "Symptom response to lactose avoidance / lactase enzyme",
+          "Calcium intake — counsel adequate non-dairy sources (1000-1200 mg/day adult; 1300 mg/day adolescent); calcium supplement if inadequate",
+          "Vitamin D status — co-deficiency common (dairy avoidance); monitor 25(OH)D; supplement 800-2000 IU/day",
+          "Bone mineral density (DEXA) every 1-2 years if long-standing lactose intolerance + dairy avoidance + risk factors (postmenopausal, glucocorticoid use, low BMI, family history of osteoporosis)",
+          "Re-test for tolerance every 1-2 years (especially in secondary lactose intolerance — often resolves)"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line",
+            "type": "Diet",
+            "family": "Dietary Modification",
+            "agents": [
+              "Lactose-free dairy products (Lactantia Lactose Free, Natrel Lactose-Free)",
+              "Plant-based alternatives (oat milk, almond milk, soy milk, coconut milk — choose CALCIUM + VITAMIN D fortified)",
+              "Yogurt with live cultures (often tolerated — bacterial lactase aids digestion)",
+              "Hard cheeses (cheddar, Swiss, parmesan — minimal residual lactose)",
+              "Avoid: regular milk, ice cream, soft cheeses (cottage, ricotta), cream-based sauces"
+            ],
+            "notes": "STEPWISE LACTOSE TOLERANCE: most lactose-intolerant adults tolerate ~12 g lactose (1 cup milk) without symptoms. Spread lactose intake across meals + with food (slows transit). YOGURT often tolerated due to live cultures.",
+            "guideline": "CAG Lactose Intolerance Position; ACG Practice 2024; Misselwitz BMJ 2019"
+          },
+          {
+            "line": "Second-Line",
+            "type": "Drug",
+            "family": "Digestive Enzymes",
+            "agents": [
+              "lactase (Lactaid, Lacteeze) 3,000-9,000 IU PO with first bite/sip of lactose-containing food"
+            ],
+            "notes": "Exogenous lactase enzyme; take with FIRST bite of lactose-containing food (must be in stomach with lactose). Adjust dose to lactose load. Pre-treated milk drops alternative (5-15 drops per quart, refrigerate 24h).",
+            "guideline": "CAG Lactose Intolerance Position; Cochrane Lactase Supplementation"
+          },
+          {
+            "line": "Adjunct",
+            "type": "Supplement",
+            "family": "Calcium + Vitamin D",
+            "agents": [
+              "calcium 1000-1200 mg/day (calcium carbonate, citrate, fortified foods)",
+              "vitamin D 800-2000 IU/day (cholecalciferol preferred over ergocalciferol)"
+            ],
+            "notes": "Lactose-intolerant patients restricting dairy frequently develop calcium + vitamin D deficiency → bone health risk. Counsel non-dairy calcium sources (broccoli, kale, sardines, fortified plant milks) + supplement if intake inadequate.",
+            "guideline": "Osteoporosis Canada 2024; Health Canada Dietary Reference Intakes"
+          },
+          {
+            "line": "Adjunct (Limited Evidence)",
+            "type": "Drug",
+            "family": "Probiotics",
+            "agents": [
+              "Lactobacillus acidophilus",
+              "Bifidobacterium lactis",
+              "Streptococcus thermophilus"
+            ],
+            "notes": "Specific probiotic strains may improve lactose tolerance over weeks of regular use (modest evidence). Consider trial in patients wishing to consume more dairy.",
+            "guideline": "Cochrane Probiotics 2024; ISAPP 2024"
+          },
+          {
+            "line": "Treat Secondary Cause",
+            "type": "Strategy",
+            "family": "Underlying Disease Management",
+            "agents": [
+              "GLUTEN-FREE DIET (celiac disease)",
+              "IBD induction therapy (active flare)",
+              "Antiparasitic therapy (giardiasis post-travel)",
+              "Time + supportive care (post-viral; usually resolves 4-6 weeks)"
+            ],
+            "notes": "SECONDARY lactose intolerance from active small-bowel disease usually resolves with treatment of underlying condition. Re-test tolerance every 6-12 months.",
+            "guideline": "CAG Celiac/IBD Practice; ACG Practice 2024"
+          }
+        ],
+        "pearls": [
+          "PRIMARY ADULT LACTOSE INTOLERANCE GLOBAL DEFAULT — ~70% of world adults; lactase persistence is the genetic exception (Northern European)",
+          "MOST LACTOSE-INTOLERANT ADULTS TOLERATE ~12 g LACTOSE (1 cup milk) — counsel realistic stepwise approach, not strict avoidance",
+          "YOGURT (live cultures) + HARD CHEESES (minimal lactose) USUALLY TOLERATED — many patients eliminate ALL dairy unnecessarily",
+          "LACTASE ENZYME — take WITH FIRST BITE; titrate dose to lactose load",
+          "PRE-TREATED MILK — lactase drops 24h before; tastes slightly sweeter (mono-saccharide hydrolysis)",
+          "CALCIUM + VITAMIN D supplementation — counsel actively to prevent osteoporosis",
+          "PLANT-BASED MILKS — choose CALCIUM + VITAMIN D FORTIFIED (~30% of milk's calcium)",
+          "SECONDARY LACTOSE INTOLERANCE — consider underlying CELIAC, IBD, post-viral, parasitic; resolves with disease treatment",
+          "DISTINGUISH FROM MILK PROTEIN ALLERGY — IgE-mediated; immediate reaction; entirely different management",
+          "GENETIC TESTING (LCT C/T-13910) — Caucasian-specific; less useful in non-Caucasian populations (different polymorphisms)",
+          "PROBIOTICS — modest evidence for tolerance improvement over weeks",
+          "RACE-NEUTRAL CONSIDER — many patients raised on dairy-heavy diets discover symptoms in adulthood; counsel positively without stigma",
+          "INFANTS / CHILDREN — congenital lactase deficiency rare; secondary post-rotavirus more common (transient, resolves <4-6 weeks); breast milk fortifier or lactose-free formula short-term"
+        ],
+        "introduction": "Lactose intolerance affects ~70% of adults globally — primarily due to age-related decline in intestinal lactase activity (lactase non-persistence). Symptoms after dairy ingestion lead to dietary restriction, which can cause calcium + vitamin D deficiency and bone health risks if not counseled. Dietary modification (lactose-free or plant-based alternatives), lactase enzyme supplementation, calcium + vitamin D, and education on dose-dependent tolerance are the core management strategies. Consider secondary causes (celiac, IBD, post-viral) in atypical presentations.",
+        "source": "Misselwitz Lactose Intolerance Review BMJ 2019; CAG Lactose Intolerance Position; ACG Practice Guideline 2024; Health Canada Dietary Reference Intakes; ESPGHAN Pediatric Lactose Intolerance"
+      },
+      {
+        "id": "gastroparesis",
+        "name": "Gastroparesis",
+        "subtitle": "Delayed Gastric Emptying",
+        "rxfiles_ref": "GI: Motility Disorders | Gastroparesis",
+        "patho": "Gastroparesis — DELAYED GASTRIC EMPTYING in absence of mechanical obstruction. CAUSES: (1) DIABETIC GASTROPARESIS (most common; ~30-40% of long-standing T1DM, ~10% of T2DM; vagal autonomic neuropathy + interstitial cells of Cajal dysfunction); (2) IDIOPATHIC (~30-40%); (3) POSTSURGICAL (vagotomy, fundoplication, bariatric, esophagectomy); (4) MEDICATION-INDUCED (opioids, anticholinergics, GLP-1 RAs, exenatide, dopamine agonists, cyclosporine, lithium, alpha-blockers); (5) CONNECTIVE TISSUE DISEASE (scleroderma); (6) VIRAL POSTINFECTIOUS (CMV, EBV, varicella — usually resolves); (7) AMYLOIDOSIS, PARANEOPLASTIC, neurologic disease (Parkinson's, MS). Pathophysiology: impaired gastric accommodation + pacemaker activity + antral hypomotility → delayed emptying → postprandial symptoms. Bidirectional with dysglycemia in diabetes (poor glucose control delays emptying; delayed emptying causes erratic glucose absorption).",
+        "signs": [
+          "Postprandial nausea + vomiting (HALLMARK; especially of UNDIGESTED FOOD eaten hours earlier — characteristic)",
+          "Early satiation + postprandial fullness",
+          "Bloating + epigastric discomfort",
+          "Weight loss (severe cases)",
+          "Dehydration, electrolyte disturbance (severe with vomiting)",
+          "Erratic blood glucose control (diabetic gastroparesis) — episodic hypoglycemia + postprandial hyperglycemia",
+          "Epigastric pain (~50%; can be severe)",
+          "GERD symptoms common (~60%)"
+        ],
+        "diagnosis": [
+          "GASTRIC EMPTYING SCINTIGRAPHY (gold standard) — standardized solid meal (egg-substitute + toast + jam, ~250 kcal); 4-hour scan; >10% retention at 4 hours = abnormal; SEVERITY: 11-20% mild, 21-35% moderate, >35% severe",
+          "STOP MEDICATIONS DELAYING EMPTYING ≥48-72 hours BEFORE test: opioids, anticholinergics, GLP-1 RAs, exenatide, octreotide, lithium",
+          "OPTIMIZE GLUCOSE — hyperglycemia >275 mg/dL (15 mmol/L) delays emptying; correct before test",
+          "RULE OUT MECHANICAL OBSTRUCTION: upper endoscopy (EGD) FIRST — exclude gastric outlet obstruction, peptic ulcer, malignancy",
+          "ALTERNATIVE TESTS: SmartPill wireless motility capsule (whole-gut transit), 13C-octanoic acid breath test (less reliable)",
+          "LABS: CBC, CMP, HbA1c, TSH, TTG (celiac), CMV/EBV serology if postinfectious suspected, ANA + scleroderma antibodies if connective tissue disease suspected",
+          "Cyclic vomiting differential: cannabinoid hyperemesis syndrome (cannabis use + relief with hot showers — characteristic); cyclical with periods of wellness"
+        ],
+        "monitoring": [
+          "Symptom severity: GASTROPARESIS CARDINAL SYMPTOM INDEX (GCSI) — validated patient-reported outcome",
+          "Weight + nutritional status — prealbumin, albumin, micronutrient screening",
+          "Glucose control (HbA1c quarterly) in diabetic gastroparesis — target <7% achievable in mild disease, individualized in severe",
+          "Repeat gastric emptying scintigraphy at 6-12 months if unclear response",
+          "QT prolongation (ECG) at baseline + with prokinetics (domperidone, metoclopramide IV, erythromycin) — significant additive risk",
+          "Mood screening — anxiety, depression common; refer for CBT/SSRI",
+          "Dehydration / hospitalization risk in severe acute decompensation"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line",
+            "type": "Diet",
+            "family": "Dietary Modification",
+            "agents": [
+              "Small frequent meals (5-6 per day, low volume)",
+              "LOW-FAT (fat delays emptying)",
+              "LOW-FIBER (fiber forms bezoars)",
+              "LIQUID/SOFT TEXTURE preferred (better tolerated than solids)",
+              "Avoid carbonated beverages",
+              "Optimize glucose (HbA1c <7-8%) in diabetic gastroparesis"
+            ],
+            "notes": "DIET FIRST — many patients improve significantly. Pureed food + nutritional supplements (Boost, Ensure) for severe disease. Refer to dietitian.",
+            "guideline": "ACG Gastroparesis 2022; Canadian Society of Intestinal Research; AGA 2024"
+          },
+          {
+            "line": "First-Line (Drug)",
+            "type": "Drug",
+            "family": "Prokinetics — Dopamine Antagonists",
+            "agents": [
+              "domperidone (Motilium) 10 mg PO TID-QID 15 min pre-meals + bedtime — preferred Canadian first-line",
+              "metoclopramide (Maxeran) 5-10 mg PO TID-QID 30 min pre-meals — SECOND-LINE due to BBW tardive dyskinesia"
+            ],
+            "notes": "DOMPERIDONE preferred Canadian first-line — peripheral D2 antagonist (less CNS effects than metoclopramide); ECG MONITORING (QT prolongation; max 30 mg/day adults); avoid if known cardiac disease/QT-prolonging drugs/severe electrolyte abnormalities. METOCLOPRAMIDE BBW for tardive dyskinesia (chronic use); MAX 5 days at standard dose; MAX 12 weeks total per Health Canada; AVOID elderly per Beers. ERYTHROMYCIN 250 mg PO QID alternative motilin agonist (transient; tachyphylaxis within 4 weeks; ECG monitor — QT class effect with macrolides).",
+            "guideline": "Health Canada Domperidone Risk Communication 2015; FDA Metoclopramide BBW; ACG 2022; CCS Diabetic Gastroparesis 2024"
+          },
+          {
+            "line": "Second-Line (Drug)",
+            "type": "Drug",
+            "family": "Motilides (Macrolide Prokinetics)",
+            "agents": [
+              "erythromycin 250-500 mg PO TID before meals (oral)",
+              "erythromycin lactobionate 1-3 mg/kg IV q6-8h (acute hospital use; severe gastroparesis)"
+            ],
+            "notes": "Motilin receptor agonist — strongly stimulates antral contractility. SHORT-TERM USE only — TACHYPHYLAXIS within 2-4 weeks (downregulation of motilin receptors). ECG monitoring (QT prolongation class effect). Drug interactions extensive (CYP3A4 inhibitor — statins, warfarin, BZDs).",
+            "guideline": "ACG 2022; Cochrane Erythromycin for Gastroparesis"
+          },
+          {
+            "line": "Third-Line / Refractory",
+            "type": "Drug",
+            "family": "5-HT4 Agonists",
+            "agents": [
+              "prucalopride (Resotran) 1-2 mg PO daily — selective 5-HT4 agonist",
+              "cisapride (WITHDRAWN globally — torsades risk)"
+            ],
+            "notes": "PRUCALOPRIDE primary indication is chronic idiopathic constipation (CIC) but emerging off-label evidence for gastroparesis (Tack trials). Less first-line than domperidone but useful when PG-prokinetics fail. CISAPRIDE WITHDRAWN due to torsades.",
+            "guideline": "ACG 2022; Tack Gastroparesis Trials"
+          },
+          {
+            "line": "Symptom Control — Antiemetics",
+            "type": "Drug",
+            "family": "5-HT3 Antagonists + Antihistamines",
+            "agents": [
+              "ondansetron 4-8 mg PO TID-QID PRN",
+              "granisetron 1 mg PO daily",
+              "promethazine 12.5-25 mg PO/IV PRN",
+              "diphenhydramine 25-50 mg PO/IV PRN",
+              "scopolamine patch 1 mg q72h",
+              "olanzapine 2.5-10 mg PO at bedtime (specialist; refractory)"
+            ],
+            "notes": "ANTIEMETICS for symptomatic relief (nausea/vomiting); ondansetron 5-HT3 antagonist preferred; combined with prokinetic. Avoid metoclopramide AS antiemetic (chronic use TD risk).",
+            "guideline": "ACG 2022; Pediatric ASGE Society"
+          },
+          {
+            "line": "Refractory / Severe",
+            "type": "Procedural",
+            "family": "Endoscopic / Surgical",
+            "agents": [
+              "GASTRIC ELECTRICAL STIMULATION (Enterra device — implanted gastric pacemaker; specialist GI/surgery)",
+              "G-POEM (gastric peroral endoscopic myotomy) — pyloric myotomy via endoscope; emerging 2nd-line",
+              "BOTOX INJECTION pylorus (specialist; less durable; mixed evidence)",
+              "JEJUNOSTOMY TUBE for nutrition (severe weight loss / dehydration)",
+              "Total parenteral nutrition (TPN) — last-resort"
+            ],
+            "notes": "REFRACTORY GASTROPARESIS (failed dietary + prokinetic + antiemetic) → tertiary referral for procedural options. G-POEM emerging promising therapy (2018+); Enterra device historical option.",
+            "guideline": "ACG 2022; G-POEM Trial Data 2024"
+          },
+          {
+            "line": "Adjunct",
+            "type": "Drug",
+            "family": "Tricyclic Antidepressants",
+            "agents": [
+              "amitriptyline 10-50 mg PO at bedtime",
+              "nortriptyline 10-50 mg PO at bedtime"
+            ],
+            "notes": "TCA for visceral pain modulation in gastroparesis (pain component ~50%); also helps comorbid depression. AVOID metoclopramide BBW + TCA combination (additive sedation, anticholinergic).",
+            "guideline": "ACG 2022; Functional GI Pain Modulation"
+          }
+        ],
+        "pearls": [
+          "DIABETIC GASTROPARESIS — bidirectional with dysglycemia; OPTIMIZE GLUCOSE (HbA1c <7-8%) FIRST",
+          "MEDICATION-INDUCED — STOP/REPLACE: opioids, GLP-1 RAs, anticholinergics, dopamine agonists; check before treating gastroparesis",
+          "DOMPERIDONE PREFERRED Canadian first-line — peripheral D2 antagonist; ECG monitoring (QT); max 30 mg/day per Health Canada 2015",
+          "METOCLOPRAMIDE BBW TARDIVE DYSKINESIA — max 5 days; AVOID elderly (Beers); short-term use",
+          "ERYTHROMYCIN TACHYPHYLAXIS within 2-4 weeks — short-term use only; significant CYP3A4 interactions",
+          "GLP-1 RAs (semaglutide, liraglutide, tirzepatide) — DELAYS gastric emptying — counsel + screen for gastroparesis symptoms; STOP if persistent gastroparesis suspected",
+          "CYCLIC VOMITING DIFFERENTIAL — cannabinoid hyperemesis syndrome (cannabis + hot shower relief); episodic with wellness intervals",
+          "DIETARY MODIFICATION FIRST — small frequent meals, low-fat, low-fiber, soft texture; refer to dietitian",
+          "GLUCOSE CONTROL PARADOXICAL — hyperglycemia delays emptying → tighter control improves emptying → can resolve mild diabetic gastroparesis",
+          "G-POEM emerging — pyloric myotomy via endoscope; promising 2nd-line for refractory disease",
+          "ENTERRA GASTRIC PACEMAKER — historical refractory option; specialist tertiary care",
+          "BEZOAR FORMATION — plant fiber accumulation → obstruction; avoid high-fiber diet",
+          "SCLERODERMA — diffuse GI dysmotility; gastroparesis + small bowel + colon involvement; PPI + prokinetic + dietitian",
+          "POSTINFECTIOUS GASTROPARESIS (CMV, EBV) — usually resolves over months; supportive care",
+          "PSYCHOLOGICAL COMORBIDITY ~30% — screen + treat depression/anxiety; CBT adjunct"
+        ],
+        "introduction": "Gastroparesis is delayed gastric emptying causing postprandial nausea, vomiting (often of undigested food), early satiation, and bloating. Diabetes is the most common cause; idiopathic and medication-induced (opioids, GLP-1 RAs) are increasingly recognized. Diagnosis requires gastric emptying scintigraphy after ruling out mechanical obstruction. Management combines dietary modification, prokinetics (domperidone preferred in Canada), antiemetics, and procedural options for refractory disease. Pharmacy plays a key role in identifying medication-induced cases, ECG/QT monitoring with prokinetics, and supporting glucose optimization.",
+        "source": "ACG Gastroparesis Guidelines 2022 (Camilleri); CCS Diabetic Gastroparesis 2024; Canadian Society of Intestinal Research; Health Canada Domperidone Risk Communication 2015; FDA Metoclopramide BBW; G-POEM Trial Data 2024"
       }
     ]
   },
@@ -20764,6 +21141,248 @@ var DISEASES = {
           "Alcohol-based hand sanitizers are LESS effective vs pinworm eggs than soap + water — emphasize hand-washing"
         ],
         "source": "Health Canada Product Monograph — Combantrin (Pfizer Canada Consumer Health); Public Health Ontario — Enterobiasis Information Sheet; Canadian Paediatric Society — Pinworm Practice Resource; AMMI Canada / Bugs & Drugs Canada 2025; AAP Red Book — Enterobius vermicularis."
+      },
+      {
+        "id": "cellulitis_erysipelas",
+        "name": "Cellulitis & Erysipelas",
+        "subtitle": "Skin & Soft Tissue Infections — Acute Bacterial",
+        "rxfiles_ref": "ID: SSTI | Cellulitis & Erysipelas Treatment",
+        "patho": "Cellulitis — acute bacterial infection of DEEP DERMIS + subcutaneous tissue; usually unilateral. Erysipelas — superficial cellulitis variant involving UPPER DERMIS + LYMPHATICS (well-demarcated, raised, fiery red — 'butterfly' face). Pathogenesis: bacterial entry through skin breach (cuts, abrasions, insect bites, tinea pedis, lymphedema, recent surgery) → spread via lymphatics. PATHOGENS: GROUP A β-HEMOLYTIC STREPTOCOCCUS (most common; ~75% of cellulitis), STAPH AUREUS (MSSA + MRSA — purulent cellulitis). RECURRENT cellulitis associated with: chronic lymphedema, venous insufficiency, tinea pedis (interdigital portal), prior episodes, obesity, diabetes. Special pathogens: Pasteurella (animal bites), Aeromonas/Vibrio (water exposure), Pseudomonas (puncture through shoe — 'sweaty sock'), MRSA (purulent, recurrent, IDU, athletes, prior MRSA, hemodialysis), polymicrobial (diabetic foot, lymphedema). DIFFERENTIAL: necrotizing fasciitis (severe pain out of proportion, crepitus, hemorrhagic bullae, systemic toxicity — SURGICAL EMERGENCY); DVT; gout; contact dermatitis; stasis dermatitis (often misdiagnosed as cellulitis).",
+        "signs": [
+          "ERYTHEMA + WARMTH + SWELLING + TENDERNESS (CARDINAL features) — usually unilateral lower extremity",
+          "CELLULITIS: poorly demarcated borders (ill-defined edge); diffuse erythema",
+          "ERYSIPELAS: WELL-DEMARCATED RAISED border ('palpable edge'); fiery red; classic facial 'butterfly' or extremity",
+          "Streaking (lymphangitis — red streaks toward lymph nodes)",
+          "Regional lymphadenopathy",
+          "Fever ± chills (~40%)",
+          "PURULENCE (pus, abscess, drainage) → suspect S. aureus (MSSA or MRSA); requires drainage + culture",
+          "ALARM features (necrotizing fasciitis): SEVERE PAIN OUT OF PROPORTION TO EXAM, crepitus, hemorrhagic bullae, skin necrosis, systemic toxicity, rapid progression — SURGICAL EMERGENCY",
+          "Bilateral lower extremity 'cellulitis' — RARELY cellulitis; almost always STASIS DERMATITIS (chronic venous insufficiency) — distinguish carefully"
+        ],
+        "diagnosis": [
+          "CLINICAL DIAGNOSIS — typical features sufficient",
+          "MARK BORDERS with skin marker — track progression over 24-48 hours; helps distinguish cellulitis (extending) from stasis dermatitis (stable) and assess antibiotic response",
+          "BLOOD CULTURES — rarely positive (~5%) in uncomplicated cellulitis; reserved for sepsis, immunocompromised, suspected bacteremia",
+          "CULTURES of PURULENT DRAINAGE / ABSCESS contents — useful for tailoring antibiotics (especially MRSA suspected); incision + drainage standard",
+          "IMAGING (US, CT, MRI) — for suspected abscess, deep involvement, necrotizing fasciitis (gas in soft tissue, fascial thickening)",
+          "DIFFERENTIAL — bilateral lower extremity erythema almost always STASIS DERMATITIS, not cellulitis (oral antibiotics not indicated)"
+        ],
+        "monitoring": [
+          "Clinical response within 24-48 hours: reduction in erythema, warmth, swelling; mark borders for objective monitoring",
+          "Fever / WBC trend",
+          "Culture results (purulent cellulitis or abscess)",
+          "Address underlying portal of entry: tinea pedis (athlete's foot), lymphedema, venous insufficiency",
+          "Recurrent cellulitis prevention strategy",
+          "Specialist referral if: failure to improve at 48-72 hours, severe disease (sepsis, hemodynamic instability), suspected necrotizing fasciitis (URGENT SURGICAL CONSULT), immunocompromised host, recurrent ≥3 episodes/year"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line (Mild, Outpatient — NON-PURULENT CELLULITIS / ERYSIPELAS — STREPTOCOCCAL)",
+            "type": "Drug",
+            "family": "Penicillins / Cephalosporins",
+            "agents": [
+              "cephalexin 500 mg PO QID × 5-7 days",
+              "cefadroxil 1 g PO daily × 5-7 days",
+              "amoxicillin 1 g PO TID × 5-7 days (less common; cephalexin preferred)",
+              "penicillin V 500 mg PO QID × 5-7 days (erysipelas if streptococcal confirmed)"
+            ],
+            "notes": "FIRST-LINE for non-purulent cellulitis (presumed streptococcal). Cephalexin most commonly used. Course 5-7 days for uncomplicated; 7-10 days for moderate; 10-14 days severe. Consider IV cefazolin if cellulitis severe or oral failed.",
+            "guideline": "IDSA SSTI 2014; Bugs & Drugs 2024 (Canada); CCS Antimicrobial Stewardship 2024"
+          },
+          {
+            "line": "First-Line (PURULENT CELLULITIS / ABSCESS — MSSA OR MRSA)",
+            "type": "Drug",
+            "family": "Anti-Staphylococcal Antibiotics",
+            "agents": [
+              "INCISION + DRAINAGE first if abscess (often curative without antibiotics for small abscesses <5 cm in immunocompetent)",
+              "TMP-SMX (1 DS PO BID × 5-7 days) — covers MRSA + MSSA + most strep",
+              "doxycycline 100 mg PO BID × 5-7 days — covers MRSA + MSSA + most strep",
+              "clindamycin 300-450 mg PO QID × 5-7 days — covers MRSA + MSSA + strep (but D-test for inducible resistance)"
+            ],
+            "notes": "PURULENT (pus, abscess, recurrent) → cover MRSA. INCISION + DRAINAGE primary; antibiotics adjunct (controversial whether needed for small abscess — IDSA suggests adjunct for larger abscess + comorbidities). TMP-SMX = first-choice oral MRSA in Canada per Bugs & Drugs.",
+            "guideline": "IDSA SSTI 2014; Bugs & Drugs 2024; Choosing Wisely Canada"
+          },
+          {
+            "line": "Second-Line / Severe (Inpatient IV)",
+            "type": "Drug",
+            "family": "IV Antibiotics — Broad",
+            "agents": [
+              "cefazolin 1-2 g IV q8h (MSSA + strep)",
+              "ceftriaxone 1-2 g IV q24h (broader)",
+              "vancomycin 15-20 mg/kg IV q8-12h (MRSA suspected)",
+              "daptomycin 4-6 mg/kg IV q24h (MRSA, vanco-intolerant)",
+              "linezolid 600 mg PO/IV q12h (MRSA; oral alternative)",
+              "ceftaroline 600 mg IV q12h (MRSA + strep; broader)",
+              "tedizolid 200 mg PO/IV q24h (MRSA; oral alternative)"
+            ],
+            "notes": "IV for: severe disease (sepsis, hemodynamic instability), failure of oral therapy after 48-72h, immunocompromised, extensive involvement. MRSA empiric coverage: prior MRSA, IV drug use, hemodialysis, hospitalization, athletic/military, sub-Saharan African origin. STEP-DOWN to oral once afebrile + clinical improvement.",
+            "guideline": "IDSA SSTI 2014; Bugs & Drugs 2024; CCS Antimicrobial Stewardship"
+          },
+          {
+            "line": "Special Populations",
+            "type": "Drug",
+            "family": "Pathogen-Specific",
+            "agents": [
+              "AMOXICILLIN-CLAVULANATE 875/125 mg PO BID — animal bites (Pasteurella + oral flora)",
+              "CIPROFLOXACIN + clindamycin — water exposure (Vibrio, Aeromonas)",
+              "PIPERACILLIN-TAZOBACTAM 4.5 g IV q8h — diabetic foot infection, polymicrobial",
+              "VANCOMYCIN + piperacillin-tazobactam — severe diabetic foot, sepsis, immunocompromised",
+              "BACTROBAN (mupirocin) topical 2% — minor superficial skin infections + nasal MRSA decolonization"
+            ],
+            "notes": "ANIMAL BITES — amox-clav covers Pasteurella + oral aerobes/anaerobes. WATER EXPOSURE (Vibrio after seafood/seawater) — doxy + ciprofloxacin. DIABETIC FOOT — polymicrobial; cover Gram-positive + Gram-negative + anaerobes; surgical eval. PUNCTURE THROUGH SHOE — Pseudomonas (ciprofloxacin or piperacillin-tazobactam).",
+            "guideline": "IDSA SSTI 2014; IDSA Diabetic Foot Infection 2012"
+          },
+          {
+            "line": "Recurrent Cellulitis Prevention (≥3 episodes/year)",
+            "type": "Drug",
+            "family": "Suppressive Antibiotic Prophylaxis",
+            "agents": [
+              "penicillin V 250-500 mg PO BID × 6-12 months",
+              "erythromycin 250 mg PO BID × 6-12 months (penicillin allergy)",
+              "benzathine penicillin G 1.2 million units IM q3-4 weeks",
+              "Address underlying causes: TINEA PEDIS treatment, lymphedema management, venous insufficiency"
+            ],
+            "notes": "PATCH trial (Thomas NEJM 2013): penicillin V 250 mg BID × 12 months reduced recurrence (HR 0.55). ADDRESS PORTAL OF ENTRY: tinea pedis (terbinafine 250 mg PO daily × 6 weeks), chronic lymphedema (compression, lymphatic massage), venous insufficiency.",
+            "guideline": "PATCH trial NEJM 2013; IDSA SSTI 2014"
+          }
+        ],
+        "pearls": [
+          "BILATERAL LOWER EXTREMITY 'CELLULITIS' is almost always STASIS DERMATITIS — DO NOT prescribe oral antibiotics; topical steroid + leg elevation + compression",
+          "MARK BORDERS with skin marker — track progression over 24-48h",
+          "PURULENT (pus/abscess/drainage) → cover MRSA: TMP-SMX, doxycycline, clindamycin",
+          "NON-PURULENT (no pus) → cover STREP: cephalexin, cefadroxil, penicillin V",
+          "INCISION + DRAINAGE primary for abscess — antibiotics may not be needed if small + immunocompetent",
+          "ANIMAL BITE → amoxicillin-clavulanate (Pasteurella + oral flora) + tetanus prophylaxis + rabies post-exposure consideration",
+          "NECROTIZING FASCIITIS = SURGICAL EMERGENCY — severe pain out of proportion, crepitus, hemorrhagic bullae, systemic toxicity, rapid progression; broad antibiotics + URGENT SURGICAL DEBRIDEMENT",
+          "WATER EXPOSURE — doxycycline + ciprofloxacin (Vibrio/Aeromonas)",
+          "DIABETIC FOOT — polymicrobial; broad cover; vascular surgery + ID consultation",
+          "RECURRENT CELLULITIS — penicillin V 250 mg BID × 12 months (PATCH trial); also TREAT TINEA PEDIS portal of entry",
+          "BUGS & DRUGS Canada (Alberta) — gold-standard local antibiotic stewardship reference",
+          "MRSA RISK FACTORS: prior MRSA, IV drug use, hemodialysis, hospitalization, athletes, military, sub-Saharan African origin",
+          "STEP-DOWN IV→ORAL once afebrile + clinical improvement (typically 48-72h)",
+          "DURATION 5-10 DAYS for uncomplicated; longer for severe/diabetic foot/osteomyelitis (4-6 weeks)",
+          "ERYSIPELAS (well-demarcated, raised, fiery red) — facial or extremity; usually streptococcal; penicillin V or cephalexin",
+          "PERIORBITAL CELLULITIS in children — rule out POSTSEPTAL/orbital cellulitis (proptosis, ophthalmoplegia, vision changes — URGENT IMAGING + IV)"
+        ],
+        "introduction": "Cellulitis is one of the most common reasons for primary care, ED, and pharmacy presentation. Distinguishing simple non-purulent cellulitis (streptococcal — cephalexin) from purulent cellulitis with possible MRSA (TMP-SMX, doxycycline) is the key first decision. Bilateral lower extremity erythema is rarely cellulitis — it's almost always stasis dermatitis, which warrants topical steroid + compression rather than antibiotics. Necrotizing fasciitis (surgical emergency) must be ruled out in any rapidly progressive cellulitis with severe pain. Recurrent cellulitis benefits from prophylactic penicillin V (PATCH trial) and treatment of underlying portals of entry (tinea pedis, lymphedema).",
+        "source": "IDSA SSTI Guidelines 2014 (Stevens); Bugs & Drugs 2024 (Alberta Health Services); CCS Antimicrobial Stewardship 2024; PATCH trial NEJM 2013; Cochrane Cellulitis Reviews"
+      },
+      {
+        "id": "mononucleosis",
+        "name": "Mononucleosis (EBV)",
+        "subtitle": "Infectious Mononucleosis (Glandular Fever)",
+        "rxfiles_ref": "ID: Viral Infections | Mononucleosis",
+        "patho": "Infectious mononucleosis (IM) — clinical syndrome typically caused by EPSTEIN-BARR VIRUS (EBV; ~90% of cases). EBV (HHV-4; gamma-herpesvirus) infects B-LYMPHOCYTES via CD21 receptor → atypical T-cell response (Downey cells — atypical lymphocytes >10%). Transmitted via SALIVA ('kissing disease'). Incubation 4-6 weeks. Typical presentation in ADOLESCENTS + YOUNG ADULTS (15-25 years); >90% of adults globally are EBV-seropositive. CMV, HIV (acute retroviral syndrome), toxoplasmosis, HHV-6, adenovirus, hepatitis A/B/C, rubella can cause MONO-LIKE SYNDROMES (heterophile-negative). Lifelong latency in B-cells; reactivation usually subclinical; associated with: Burkitt lymphoma, nasopharyngeal carcinoma, Hodgkin lymphoma, post-transplant lymphoproliferative disorder (PTLD).",
+        "signs": [
+          "FEVER + PHARYNGITIS + LYMPHADENOPATHY (CLASSIC TRIAD) — especially POSTERIOR cervical lymphadenopathy",
+          "Severe FATIGUE (often persists weeks-months — characteristic)",
+          "Tonsillar exudate (whitish/grey membrane; can mimic strep but with lymphadenopathy elsewhere)",
+          "SPLENOMEGALY (~50%) — palpable; ULTRASOUND if uncertain; CRITICAL CLINICAL POINT — splenic rupture risk",
+          "Hepatomegaly (~10%) + transient transaminase elevation (~80%)",
+          "Mild jaundice (~5%)",
+          "Periorbital edema (early; characteristic)",
+          "Maculopapular RASH ~5% spontaneous; 90% if AMOXICILLIN/AMPICILLIN given (immune-mediated; NOT true penicillin allergy — counsel patients)",
+          "Headache, myalgia, anorexia",
+          "Petechial palatal enanthem"
+        ],
+        "diagnosis": [
+          "MONOSPOT TEST (heterophile antibodies) — sensitivity 70-90%; specificity 90%; FALSE NEGATIVES in early disease (first week) + children <4 years; repeat in 1-2 weeks if initial negative + high suspicion",
+          "EBV-SPECIFIC SEROLOGY — VCA IgM (acute infection; 4-6 weeks), VCA IgG (current + past infection — lifelong), EBNA IgG (≥6 weeks post-infection — late convalescent)",
+          "CBC with DIFFERENTIAL — atypical LYMPHOCYTOSIS (>10% atypical / Downey cells = characteristic); WBC 12,000-25,000",
+          "LFTs — transaminase elevation (~80%) — usually mild; resolve over weeks",
+          "MONOSPOT NEGATIVE + clinical suspicion → CMV serology, HIV testing, hepatitis A/B/C, toxoplasmosis serology",
+          "RAPID STREP TEST + culture — distinguish from group A strep pharyngitis (DIFFERENTIAL — both can cause exudative pharyngitis; MONO has lymphadenopathy elsewhere + atypical lymphs); 5% co-infection",
+          "ULTRASOUND for splenomegaly assessment if uncertain on exam",
+          "DIFFERENTIAL: CMV mono (heterophile-negative; older patients), acute HIV (heterophile-negative; KNOW HIV TESTING IS ESSENTIAL — HIV-1 acute syndrome mimics mono with rash; STIs co-occur), strep pharyngitis, leukemia, lymphoma, drug rash"
+        ],
+        "monitoring": [
+          "SPLENIC RUPTURE — RARE BUT POTENTIALLY FATAL; ABSOLUTE AVOIDANCE OF CONTACT SPORTS + HEAVY LIFTING × 3-4 WEEKS minimum (until splenic resolution; some experts 6-8 weeks)",
+          "Symptom course: fever + pharyngitis 7-14 days; fatigue 4-12 weeks (longer in some — chronic active EBV in <1%)",
+          "LFT trend if elevated — usually resolve over 4-8 weeks",
+          "Airway compromise — severe tonsillar swelling + 'kissing tonsils' → CORTICOSTEROIDS (rare indication)",
+          "Hospitalize if: severe airway compromise, severe dehydration from poor oral intake, severe hemolysis, suspected splenic rupture (LUQ pain, peritonism, hypotension)",
+          "Return to play (sports/exercise) — 3-4 weeks minimum; ULTRASOUND-confirmed splenic resolution helpful in athletes",
+          "Chronic active EBV (rare, <1%) — lymphoproliferative disease; specialist referral",
+          "Post-EBV malignancies — rare; lifelong increased risk of Burkitt, nasopharyngeal, Hodgkin lymphoma in some populations"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line (Supportive)",
+            "type": "Strategy",
+            "family": "Symptom Management",
+            "agents": [
+              "Rest, hydration",
+              "ACETAMINOPHEN 500-1000 mg PO q4-6h PRN (max 4 g/day; reduce in liver dysfunction)",
+              "IBUPROFEN 400-600 mg PO q6-8h PRN (max 2400 mg/day; with food; AVOID if dehydration)",
+              "Throat lozenges, salt water gargles, cool fluids, soft foods",
+              "AVOID CONTACT SPORTS + HEAVY LIFTING × 3-4 WEEKS minimum"
+            ],
+            "notes": "MOST PATIENTS RECOVER WITH SUPPORTIVE CARE ONLY — no specific antiviral indicated. ACETAMINOPHEN preferred over NSAIDs if hepatic involvement. RETURN TO SPORTS — 3-4 weeks minimum; some experts longer in athletes.",
+            "guideline": "AAP Adolescent Mono 2024; CMA Family Practice Guidelines"
+          },
+          {
+            "line": "AVOID — AMOXICILLIN / AMPICILLIN",
+            "type": "Counselling",
+            "family": "Antibiotic Avoidance",
+            "agents": [
+              "AVOID AMOXICILLIN, AMPICILLIN, RELATED PENICILLINS in suspected mononucleosis"
+            ],
+            "notes": "CRITICAL COUNSELLING POINT — amoxicillin/ampicillin in EBV mono causes MACULOPAPULAR RASH in ~90% of patients (not true penicillin allergy — immune-mediated; resolves; not lifelong contraindication). Explain to patients that this rash does not represent penicillin allergy if it occurs in the setting of EBV. If concomitant strep pharyngitis confirmed, use PENICILLIN V or CEPHALEXIN instead.",
+            "guideline": "Pediatric Infect Dis Society; AAP Mono Practice Point 2024"
+          },
+          {
+            "line": "Rare Indication — Corticosteroids",
+            "type": "Drug",
+            "family": "Glucocorticoids",
+            "agents": [
+              "prednisone 40-60 mg PO daily × 5-7 days, taper over 1-2 weeks (severe airway compromise from tonsillar enlargement)"
+            ],
+            "notes": "RESERVED for severe complications: AIRWAY COMPROMISE from severe tonsillar swelling ('kissing tonsils' threatening airway), severe hemolytic anemia, severe thrombocytopenia, neurologic complications (meningitis, encephalitis). NOT routinely indicated; may prolong viral shedding + immune dysfunction. Consult ENT for airway concerns; ID for severe hematologic.",
+            "guideline": "Cochrane Steroids for Mono 2015; AAP 2024"
+          },
+          {
+            "line": "Limited Evidence — Antivirals",
+            "type": "Drug",
+            "family": "Antivirals (Acyclovir, Valacyclovir)",
+            "agents": [
+              "acyclovir 400-800 mg PO 5×/day or 10 mg/kg IV q8h × 7-10 days (RARELY USED)"
+            ],
+            "notes": "COCHRANE 2016: acyclovir reduces oropharyngeal viral shedding but does NOT reduce clinical illness duration or symptoms; therefore NOT routinely recommended. Consider only in severe complications (CNS involvement, severe lymphoproliferation in immunocompromised) — specialist initiation.",
+            "guideline": "Cochrane Antivirals for Mono 2016; IDSA EBV"
+          },
+          {
+            "line": "Special Populations",
+            "type": "Strategy",
+            "family": "Targeted Management",
+            "agents": [
+              "IMMUNOCOMPROMISED (HIV, post-transplant) — RITUXIMAB for PTLD (post-transplant lymphoproliferative disease); reduce immunosuppression; specialist",
+              "CHRONIC ACTIVE EBV (<1%) — specialist referral; rituximab + chemotherapy in some cases",
+              "EBV-ASSOCIATED MALIGNANCY (Burkitt, NPC, Hodgkin) — oncology referral; specific therapy"
+            ],
+            "notes": "RARE COMPLICATIONS — specialist referral. PTLD post-transplant: reduce immunosuppression + rituximab; chronic active EBV = lymphoproliferative; EBV-associated cancers (Burkitt, nasopharyngeal carcinoma, Hodgkin lymphoma) — separate management.",
+            "guideline": "IDSA EBV; Hematology Practice; Pediatric Oncology"
+          }
+        ],
+        "pearls": [
+          "EBV (HHV-4) — 'kissing disease'; 90% adults seropositive; teen/young adult onset most symptomatic",
+          "CLASSIC TRIAD: fever + posterior cervical lymphadenopathy + exudative pharyngitis",
+          "MONOSPOT FALSE NEGATIVE in first week (sensitivity 70-90%); repeat in 1-2 weeks if high suspicion",
+          "AMOXICILLIN/AMPICILLIN RASH (~90%) — immune-mediated, NOT true penicillin allergy; counsel future use OK",
+          "CO-INFECTION with strep ~5% — use PENICILLIN V or CEPHALEXIN if strep confirmed (avoid amoxicillin)",
+          "SPLENIC RUPTURE RISK — AVOID CONTACT SPORTS + HEAVY LIFTING × 3-4 WEEKS minimum; check ultrasound resolution in athletes",
+          "FATIGUE persists 4-12 weeks (occasionally longer) — counsel realistic recovery timeline",
+          "ATYPICAL LYMPHOCYTOSIS (Downey cells >10%) — characteristic CBC finding",
+          "TRANSAMINASE ELEVATION (~80%) — usually mild; resolve over weeks",
+          "HIV ACUTE RETROVIRAL SYNDROME mimics mono — TEST HIV in any heterophile-negative mono case",
+          "CMV MONONUCLEOSIS — heterophile-negative; older adults; less pharyngitis; specific CMV IgM",
+          "ACYCLOVIR not routinely indicated (Cochrane) — reserved for rare severe complications",
+          "CORTICOSTEROIDS — only for severe airway compromise, severe hemolysis, neurologic involvement; not routine",
+          "POST-EBV MALIGNANCIES — Burkitt, NPC, Hodgkin lymphoma; rare; long-term consideration",
+          "CHRONIC ACTIVE EBV (<1%) — specialist referral; lymphoproliferative concern",
+          "PHARMACIST COUNSELLING: rest + hydration + acetaminophen/ibuprofen + AVOID amoxicillin + sports restriction + realistic timeline"
+        ],
+        "introduction": "Infectious mononucleosis (EBV) is a common adolescent/young-adult viral illness with classic triad of fever, posterior cervical lymphadenopathy, and exudative pharyngitis. Most cases resolve with supportive care alone. Critical pharmacy counseling points: AVOID amoxicillin/ampicillin (90% rash — immune-mediated, not true allergy), AVOID contact sports + heavy lifting for 3-4 weeks (splenic rupture risk), and counsel realistic 4-12 week fatigue recovery timeline. Distinguish from strep pharyngitis (co-infection in 5%), and consider HIV acute retroviral syndrome in heterophile-negative cases.",
+        "source": "AAP Adolescent Mono Practice Point 2024; Cochrane Acyclovir for Mono 2016; Cochrane Steroids for Mono 2015; IDSA EBV; Hoagland Splenic Rupture Sports Medicine Reviews; CMA Family Practice"
       }
     ]
   },
@@ -132608,6 +133227,63 @@ var DRUGS = {
     ],
     "counselling": "Take ON EMPTY STOMACH (2 hours before or 2 hours after eating); take with PLAIN WATER (not mineral water). DO NOT take with calcium, iron, magnesium supplements, antacids, or milk — separate by 2 hours. STAY UPRIGHT 30 minutes after dose. Common: mild stomach upset, mild bone aches initially. STOP and call provider for: severe heartburn/chest pain, difficulty swallowing, severe bone/joint/muscle pain, jaw pain (especially after dental procedure), unusual thigh/groin pain, severe rash. Get dental check-up before starting. Take adequate calcium + vitamin D as recommended. Get bone density tests as scheduled. AVOID in pregnancy. Newer bisphosphonates (alendronate, risedronate, zoledronate IV) generally preferred — discuss with provider.",
     "source": "Health Canada Didronel/Didrocal monographs; Osteoporosis Canada 2024 Guidelines; Paget's Disease Practice Guidelines"
+  },
+  "lactase": {
+    "name": "Lactase Enzyme (β-galactosidase)",
+    "brand": "Lactaid (US/CDN); Lacteeze; Dairy Ease; generic OTC",
+    "class": "Digestive enzyme — exogenous lactase replacement",
+    "napra": "Unscheduled (U) — OTC; classified as natural health product (NHP) in Canada",
+    "moa": "Exogenous lactase (β-galactosidase) — derived from yeast (Kluyveromyces lactis) or fungal sources (Aspergillus oryzae). HYDROLYZES LACTOSE → glucose + galactose in small intestine, replacing absent/insufficient endogenous lactase in lactose-intolerant individuals. Allows digestion of dairy without symptoms (bloating, cramping, flatulence, diarrhea from undigested lactose fermenting in colon).",
+    "indications": [
+      "PRIMARY (GENETIC) LACTOSE INTOLERANCE — adult-onset lactase deficiency (most common; ~70% of world adult population; especially East Asian, African, Indigenous populations)",
+      "SECONDARY LACTOSE INTOLERANCE — post-enteritis (viral gastroenteritis), celiac disease, IBD flares, post-chemotherapy mucositis (transient)",
+      "CONGENITAL LACTASE DEFICIENCY (rare; neonatal)",
+      "Pre-emptive use before consuming lactose-containing foods/beverages"
+    ],
+    "dosing": {
+      "Adult / pediatric (immediate before lactose intake)": "3,000-9,000 IU (1-3 caplets/tablets/drops) PO with FIRST bite/sip of lactose-containing food",
+      "Lactose load adjustment": "Increase to 9,000+ IU for high-lactose meals (large servings of milk, ice cream, soft cheese)",
+      "Pre-treated milk drops": "5-15 drops per quart (1L) of milk; refrigerate 24 hours; lactose hydrolyzed before consumption",
+      "Pediatric": "Same dose; supervise younger children with caplets",
+      "Renal / hepatic impairment": "No adjustment (acts locally in gut; not absorbed)"
+    },
+    "side_effects": {
+      "common": [
+        "Generally extremely well tolerated (acts locally; not absorbed)",
+        "Rare mild GI upset"
+      ],
+      "serious": [
+        "Hypersensitivity reactions (rare; allergic to fungal/yeast source)",
+        "Insufficient response — need higher dose or alternative (lactose-free milk, plant-based alternatives)"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to lactase or fungal/yeast source",
+      "Galactosemia (genetic disorder — galactose toxicity; lactase generates galactose which they cannot metabolize)"
+    ],
+    "interactions": [
+      "No significant drug interactions (acts locally; not absorbed systemically)"
+    ],
+    "pregnancy": "Cat A. Safe in pregnancy; widely used. Compatible with lactose intolerance management during pregnancy. Breastfeeding: compatible (acts locally; mother takes it before consuming dairy).",
+    "pk": "Oral: F minimal systemic (acts locally in gut); not absorbed; degraded by gastric acid + pancreatic proteases; co-administer with food (food buffers stomach acid + slows transit allowing enzyme activity).",
+    "canadian_notes": "LACTAID + LACTEEZE — widely available OTC; Health Canada classifies as natural health product. Cost ~$10-20/bottle. CAG GUIDELINES: lactase enzyme + LACTOSE-FREE DAIRY (Lactantia Lactose Free, Natrel Lactose-Free) + plant-based alternatives (almond, oat, soy milk) FIRST-LINE. Many lactose-intolerant patients tolerate small amounts of lactose (especially yogurt, hard cheese — lower lactose content); ENZYME REPLACEMENT for higher-lactose meals.",
+    "pearls": [
+      "PRIMARY ADULT LACTOSE INTOLERANCE in ~70% of world population — especially East Asian (~90%), African American (~75%), Indigenous (~80%), Southern European (~70%); white European descent only ~15-25% (lactase persistence allele)",
+      "TAKE WITH FIRST BITE — lactase needs to be in stomach simultaneously with lactose; not effective post-meal",
+      "DOSING — start 3,000 IU; titrate to 9,000+ IU for larger lactose loads",
+      "PRE-TREATED MILK — drops added 24h before; lactose pre-hydrolyzed; tastes slightly sweeter (galactose + glucose monosaccharides)",
+      "ALTERNATIVES: lactose-free milk products, plant-based milks (oat, almond, soy, coconut)",
+      "TOLERANCE VARIES — many lactose-intolerant individuals tolerate up to 12 g lactose (~1 cup milk) without symptoms; YOGURT (live cultures contain bacterial lactase) and HARD CHEESES (cheddar, parmesan — minimal lactose) often tolerated",
+      "GALACTOSEMIA CONTRAINDICATION — rare genetic disorder; galactose toxicity",
+      "CALCIUM intake — counsel alternative sources (calcium-fortified plant milk, leafy greens, sardines, calcium supplements 500-1000 mg/day) to avoid deficiency",
+      "VITAMIN D — co-deficiency common; supplement 800-2000 IU/day",
+      "SECONDARY LACTOSE INTOLERANCE post-viral gastroenteritis usually resolves over 4-6 weeks",
+      "CELIAC + IBD — secondary lactase deficiency with active disease; resolves with disease remission",
+      "PROBIOTICS (S. thermophilus, L. acidophilus, Bifidobacterium) may improve lactose tolerance over weeks (limited evidence)",
+      "RACE-NEUTRAL EDUCATION — lactose tolerance is the EVOLUTIONARY EXCEPTION; intolerance is the global default; counsel respectfully"
+    ],
+    "counselling": "Take 1-3 tablets with the FIRST bite or sip of any food containing milk, cream, ice cream, soft cheese, butter, or yogurt. The medicine works in your stomach to digest the milk sugar so you don't have bloating, cramping, gas, or diarrhea. Common: harmless if you take too much. STOP and tell provider if: severe rash, difficulty breathing (rare allergic reaction). ALTERNATIVES: lactose-free milk products are widely available; plant-based milks (oat, almond, soy) are dairy-free. Many people with lactose intolerance can tolerate small amounts of YOGURT and HARD CHEESE without enzyme. Make sure you get enough CALCIUM (1000-1200 mg/day from non-dairy sources or supplements) and VITAMIN D (800-2000 IU/day). Safe during pregnancy and breastfeeding.",
+    "source": "Health Canada NHP database; CAG Lactose Intolerance Position Statement; Misselwitz BMJ 2019 Lactose Intolerance Review; ACG Practice Guideline 2024"
   }
 
 };
@@ -134549,7 +135225,8 @@ var FAMILY_MAP = {
   "abaloparatide": "Parathyroid Hormone Analogues",
   "ergocalciferol": "Vitamin D Supplements",
   "magnesium_oxide": "Mineral Supplements",
-  "potassium_chloride": "Mineral Supplements"
+  "potassium_chloride": "Mineral Supplements",
+  "lactase": "Digestive Enzymes"
 };
 var NAPRA_ODB_DATA = {
   "amoxicillin": {
@@ -143060,8 +143737,24 @@ var NAPRA_ODB_DATA = {
   "captopril": { "napra": "Schedule I", "odbStatus": "General Benefit", "luCode": null },
   "cilostazol": { "napra": "Schedule I", "odbStatus": "Limited Use", "luCode": "PAD with claudication-limited walking after standard medical mgmt" },
   "esmolol": { "napra": "Schedule I", "odbStatus": "Hospital formulary only (IV)", "luCode": null },
-  "mannitol": { "napra": "Schedule I", "odbStatus": "Hospital formulary only (IV)", "luCode": null },
-  "midodrine": { "napra": "Schedule I", "odbStatus": "Limited Use", "luCode": "Severe symptomatic orthostatic hypotension after non-pharm failure" },
+  "mannitol": {
+    "name": "Mannitol (Osmitrol (Baxter Canada); generic)",
+    "napra": "I",
+    "napraDetail": "Prescription required.",
+    "odbStatus": "Hospital formulary only (IV)",
+    "odbDetail": "Hospital formulary — ED/ICU/OR. Available as 5%, 10%, 20%, 25% solutions. NOT covered by ODB (hospital-only IV). Inhaled mannitol (Bronchitol) is a separate product for cystic fibrosis (different indication, oral inhalation; see Bronchitol entry). Crystallization is common — warm to body temp before",
+    "luCode": null,
+    "notes": "Osmotic Diuretic — non-electrolyte sugar alcohol"
+  },
+  "midodrine": {
+    "name": "Midodrine (Amatine (Shire)",
+    "napra": "I",
+    "napraDetail": "Prescription required.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "Health Canada-approved 1996 for symptomatic orthostatic hypotension. Generic available. ODB Limited Use for severe symptomatic orthostatic hypotension after failure of non-pharmacologic measures (compression stockings, increased salt/fluid intake, head-up sleeping). Combine with non-pharm measures a",
+    "luCode": "Severe symptomatic orthostatic hypotension after non-pharm failure",
+    "notes": "α1-Adrenergic Receptor Agonist (peripheral — pro-drug)"
+  },
   "isosorbide_dinitrate": {
     "name": "Isosorbide Dinitrate (Isordil, Cedocard)",
     "napra": "I",
@@ -144087,6 +144780,15 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "Didronel/Didrocal covered.",
     "luCode": null,
     "notes": "First-gen non-nitrogen bisphosphonate; LARGELY SUPERSEDED; OSTEOMALACIA at high doses unique; Paget's disease superseded by IV zoledronate; heterotopic ossification niche."
+  },
+  "lactase": {
+    "name": "Lactase Enzyme (Lactaid, Lacteeze)",
+    "napra": "U",
+    "napraDetail": "Unscheduled OTC; Health Canada natural health product (NHP).",
+    "odbStatus": "Not covered (OTC)",
+    "odbDetail": "Patient pay; ~$10-20/bottle; widely available pharmacy OTC.",
+    "luCode": null,
+    "notes": "Exogenous lactase enzyme for lactose intolerance; alternative: lactose-free milk + plant-based alternatives. Galactosemia contraindication."
   }
 };
 var MINOR_AILMENTS = [
@@ -166905,6 +167607,17 @@ var PREG_DATA = {
     "bfDetail": "AVOID breastfeeding (per labeling).",
     "alternatives": "",
     "source": "Health Canada Didronel/Didrocal monographs; Osteoporosis Canada 2024 Guidelines; Paget's Disease Practice Guidelines"
+  },
+  "lactase": {
+    "name": "Lactase Enzyme (β-galactosidase) (Lactaid (US)",
+    "pregRisk": "Compatible",
+    "pregColor": "#10b981",
+    "bfRisk": "Compatible",
+    "bfColor": "#10b981",
+    "pregDetail": "Cat A. Safe in pregnancy; widely used. Compatible with lactose intolerance management during pregnancy. Breastfeeding: compatible (acts locally; mother takes it before consuming dairy).",
+    "bfDetail": "Compatible with breastfeeding (limited data may apply).",
+    "alternatives": "",
+    "source": "Health Canada NHP database; CAG Lactose Intolerance Position Statement; Misselwitz BMJ 2019 Lactose Intolerance Review; ACG Practice Guideline 2024"
   }
 };
 
