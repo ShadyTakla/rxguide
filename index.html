@@ -3274,6 +3274,389 @@ var DISEASES = {
           "PHARMACIST role: recognize 'red flag' HFpEF patients with bilateral CTS/lumbar stenosis/biceps rupture history + refer for amyloid workup; tafamidis cost coordination via Pfizer Patient Support Program; ODB Limited Use applications; flag inappropriate digoxin/CCB in amyloid; AL emergency identification with M-protein + cardiac"
         ],
         "source": "ESC Cardiac Amyloidosis Position 2021; CCS Cardiac Amyloidosis Position; ATTR-ACT Trial (Maurer NEJM 2018); APOLLO-B (vutrisiran cardiac); ANDROMEDA (daratumumab AL); 2023 ACC Expert Consensus on Cardiac Amyloidosis"
+      },
+      {
+        "id": "wpw_syndrome",
+        "name": "Wolff-Parkinson-White (WPW) Syndrome",
+        "subtitle": "Pre-Excitation Syndrome — Accessory Pathway",
+        "rxfiles_ref": "Cardio: Arrhythmias | WPW Syndrome",
+        "patho": "Wolff-Parkinson-White (WPW) syndrome — congenital ACCESSORY PATHWAY (Bundle of Kent) connecting atrium directly to ventricle, BYPASSING AV node. Conduction through AP is FASTER than AV node → PRE-EXCITATION of ventricle (early ventricular activation; characteristic ECG: short PR + DELTA WAVE + wide QRS). PROBLEM: provides re-entrant circuit potential → SVT (orthodromic AVRT — most common; antegrade AV node, retrograde AP) OR antidromic AVRT (rare; antegrade AP, retrograde AV node). DANGER: ATRIAL FIBRILLATION WITH WPW → atrial impulses conduct rapidly antegrade over AP without AV node filtering → VENTRICULAR RATES UP TO 250-300 bpm → VENTRICULAR FIBRILLATION + SUDDEN CARDIAC DEATH (rare but classic teaching). PREVALENCE 0.1-0.3% of population; SCD risk 0.1%/year in symptomatic WPW. Distinguish WPW SYNDROME (pre-excitation + symptomatic arrhythmia) from WPW PATTERN (asymptomatic ECG finding only).",
+        "signs": [
+          "ECG: SHORT PR INTERVAL (<120 ms) + DELTA WAVE (slurred upstroke of QRS) + WIDE QRS (>110 ms) — CLASSIC pre-excitation pattern",
+          "ASYMPTOMATIC: incidental finding on routine ECG (WPW pattern; no symptoms)",
+          "SYMPTOMATIC: PSVT episodes (palpitations, lightheadedness, syncope)",
+          "ATRIAL FIBRILLATION WITH RVR — rapid wide-complex irregular tachycardia (potentially life-threatening; preexcited AF)",
+          "Sudden cardiac death (rare; 0.1%/year in symptomatic WPW; first presentation in some)",
+          "EXERTIONAL palpitations / pre-syncope / syncope",
+          "Fatigue with arrhythmia episodes",
+          "EBSTEIN ANOMALY association (~5-25% WPW patients have Ebstein)"
+        ],
+        "diagnosis": [
+          "ECG — short PR + delta wave + wide QRS (CLASSIC); intermittent pre-excitation may require multiple ECGs or Holter",
+          "ELECTROPHYSIOLOGY (EP) STUDY — definitive; characterizes pathway location, refractory period, ablation target — performed in symptomatic patients + asymptomatic with high-risk features",
+          "ECHO — rule out structural heart disease (Ebstein anomaly, hypertrophic cardiomyopathy)",
+          "EXERCISE STRESS TEST — abrupt LOSS of pre-excitation during exercise = LOW-RISK accessory pathway (good prognosis)",
+          "AMBULATORY MONITORING (Holter, ZIO, loop) — detect intermittent arrhythmias",
+          "AF WITH WPW emergency: ECG shows IRREGULAR WIDE-COMPLEX rapid tachycardia (preexcited AF) — distinct from regular VT",
+          "RISK STRATIFICATION: shortest pre-excited RR interval in AF <250 ms = HIGH RISK; sustained pre-excitation at peak exercise = HIGH RISK"
+        ],
+        "monitoring": [
+          "SYMPTOMATIC PATIENTS: arrhythmia episodes, syncope, palpitations",
+          "RISK STRATIFICATION: exercise stress test (intermittent vs persistent pre-excitation), EP study (refractory period of AP)",
+          "POST-ABLATION: ECG to confirm loss of delta wave; recurrence (~5%)",
+          "ASYMPTOMATIC WPW PATTERN: shared decision making for EP study + ablation in selected patients (athletes, high-risk professions, anxiety)",
+          "FAMILY HISTORY of SCD or WPW — earlier evaluation",
+          "EBSTEIN ANOMALY surveillance"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line — Acute SVT Termination (Orthodromic AVRT, Narrow Complex)",
+            "type": "Strategy",
+            "family": "Vagal Maneuvers + Adenosine",
+            "agents": [
+              "VAGAL MANEUVERS first: Valsalva (modified 'REVERT' technique most effective per REVERT trial 2015 — squat or supine with leg raise after blowing into 10 mL syringe), carotid sinus massage (NOT in elderly with carotid bruits)",
+              "ADENOSINE 6 mg IV rapid push → 12 mg IV rapid push if no conversion in 1-2 min — first-line drug therapy"
+            ],
+            "notes": "VAGAL MANEUVERS first — modified Valsalva (REVERT trial 2015) effective ~43% vs ~17% standard. ADENOSINE for narrow-complex SVT (orthodromic AVRT; AV node antegrade circuit). Caution: adenosine OK for KNOWN WPW orthodromic AVRT (narrow complex); AVOID adenosine if ATRIAL FIBRILLATION WITH WPW (pre-excited AF; wide irregular complex).",
+            "guideline": "AHA/ACC/HRS SVT Guidelines 2015 (updated 2024); CCS SVT 2024; REVERT trial Lancet 2015"
+          },
+          {
+            "line": "First-Line — AF WITH WPW (PRE-EXCITED AF)",
+            "type": "Drug",
+            "family": "Class IA / IC Antiarrhythmics (Procainamide / Ibutilide)",
+            "agents": [
+              "PROCAINAMIDE 20-50 mg/min IV until rhythm conversion, hypotension, QRS widening 50%, or 17 mg/kg max — FIRST CHOICE",
+              "IBUTILIDE 1 mg IV over 10 min (alternative; QT prolongation; ECG monitoring)",
+              "ELECTRICAL CARDIOVERSION 200 J synchronized — preferred if hemodynamically unstable"
+            ],
+            "notes": "AF WITH WPW IS DIFFERENT FROM REGULAR AF — DO NOT USE AV NODAL BLOCKERS (digoxin, β-blockers, calcium channel blockers, adenosine — all can paradoxically increase conduction over accessory pathway → VF). PROCAINAMIDE first-line (Class IA blocks both AP + AV node); IBUTILIDE alternative; ELECTRICAL CARDIOVERSION preferred if unstable.",
+            "guideline": "AHA/ACC/HRS 2015 (updated 2024); CCS AF Guidelines 2024"
+          },
+          {
+            "line": "First-Line — Definitive Therapy",
+            "type": "Procedural",
+            "family": "Catheter Ablation",
+            "agents": [
+              "RADIOFREQUENCY CATHETER ABLATION of accessory pathway — definitive cure; ~95% success; <2% major complications"
+            ],
+            "notes": "DEFINITIVE THERAPY for symptomatic WPW; CURATIVE in ~95%. EP study + ablation. INDICATED: symptomatic WPW (any arrhythmia), high-risk asymptomatic (high-risk occupation, athletes, family hx SCD, persistent pre-excitation on exercise). Asymptomatic low-risk WPW pattern — observation acceptable.",
+            "guideline": "AHA/ACC/HRS 2015 (updated 2024); CCS Catheter Ablation 2024"
+          },
+          {
+            "line": "Second-Line — Chronic Drug Suppression (Pre-Ablation or Refractory)",
+            "type": "Drug",
+            "family": "Antiarrhythmics",
+            "agents": [
+              "FLECAINIDE 50-200 mg PO BID — Class IC; preferred in normal heart; AVOID in structural heart disease/CAD (CAST trial)",
+              "PROPAFENONE 150-300 mg PO TID — Class IC alternative",
+              "SOTALOL 80-160 mg PO BID — Class III; QT monitoring",
+              "AMIODARONE — reserved for refractory; significant toxicity profile"
+            ],
+            "notes": "AVOID DIGOXIN + VERAPAMIL + DILTIAZEM + β-BLOCKERS in WPW with AF history (paradoxical conduction over accessory pathway). FLECAINIDE/PROPAFENONE first-line drugs; ABLATION preferred over chronic drug therapy when feasible.",
+            "guideline": "AHA/ACC/HRS 2015 (updated 2024); CCS SVT 2024"
+          },
+          {
+            "line": "AVOID — AV Nodal Blockers in Pre-Excited AF",
+            "type": "Counselling",
+            "family": "Pharmacotherapy Pitfalls",
+            "agents": [
+              "AVOID DIGOXIN, VERAPAMIL, DILTIAZEM, β-BLOCKERS, ADENOSINE in known WPW with atrial fibrillation"
+            ],
+            "notes": "CRITICAL TEACHING POINT — these AV nodal blockers can paradoxically INCREASE conduction over accessory pathway in WPW + AF → VF/sudden death. Always know if patient has WPW before treating AF. ADENOSINE OK for orthodromic SVT (narrow complex); AVOID for WPW + AF (wide irregular).",
+            "guideline": "AHA/ACC/HRS 2015 (updated 2024)"
+          }
+        ],
+        "pearls": [
+          "ECG TRIAD: short PR (<120 ms) + DELTA WAVE + wide QRS",
+          "WPW PATTERN (asymptomatic) vs WPW SYNDROME (symptomatic arrhythmia)",
+          "AF WITH WPW = EMERGENCY — irregular wide-complex rapid tachycardia; PROCAINAMIDE IV first-line; AVOID AV nodal blockers (digoxin, β-blockers, CCBs, adenosine — paradoxical 1:1 conduction → VF)",
+          "ORTHODROMIC AVRT (narrow complex; ~95% of WPW SVT) — adenosine + vagal maneuvers OK",
+          "DEFINITIVE THERAPY = CATHETER ABLATION ~95% cure rate; <2% complications",
+          "INDICATIONS FOR ABLATION: symptomatic WPW; high-risk asymptomatic (athletes, high-risk occupations, family hx SCD, persistent pre-excitation on exercise)",
+          "EXERCISE STRESS TEST — abrupt loss of pre-excitation = LOW-RISK accessory pathway",
+          "EBSTEIN ANOMALY association ~5-25% — echo screen",
+          "REVERT TRIAL Valsalva — squat/leg raise after Valsalva strain ~43% conversion vs ~17% standard",
+          "FLECAINIDE/PROPAFENONE chronic drug suppression alternative to ablation; AVOID structural heart disease",
+          "SUDDEN CARDIAC DEATH risk 0.1%/year in symptomatic WPW",
+          "FAMILIAL WPW — rare; PRKAG2 mutations; screen first-degree relatives",
+          "ASYMPTOMATIC WPW PATTERN — shared decision making; some opt for ablation given small SCD risk",
+          "ATHLETIC SCREENING — pre-excitation + symptoms or high-risk features → ablation before competitive sport",
+          "TRANSPLANT HEART denervated — adenosine hypersensitive (5×) — reduce dose 50%"
+        ],
+        "introduction": "Wolff-Parkinson-White syndrome involves a congenital accessory pathway connecting atrium to ventricle, bypassing the AV node. The classic ECG triad is short PR + delta wave + wide QRS. Most patients with symptomatic WPW present with paroxysmal SVT (orthodromic AVRT — narrow complex; adenosine effective). The dangerous scenario is AF WITH WPW (pre-excited AF — wide irregular tachycardia) where AV nodal blockers (digoxin, β-blockers, CCBs, adenosine) paradoxically increase conduction over the accessory pathway and can cause VF/sudden death. Procainamide IV is first-line drug therapy; electrical cardioversion if unstable. Catheter ablation is definitive cure with ~95% success rate.",
+        "source": "AHA/ACC/HRS SVT Guidelines 2015 (updated 2024); CCS SVT + AF Guidelines 2024; PROCAMIO trial (procainamide for stable VT, also relevant); REVERT trial Lancet 2015"
+      },
+      {
+        "id": "long_qt_syndrome",
+        "name": "Long QT Syndrome (LQTS)",
+        "subtitle": "Inherited or Acquired Cardiac Repolarization Disorder",
+        "rxfiles_ref": "Cardio: Arrhythmias | Long QT Syndrome",
+        "patho": "Long QT Syndrome (LQTS) — abnormally prolonged ventricular repolarization (QT interval) → predisposition to TORSADES DE POINTES (polymorphic VT) → SCD. INHERITED (CONGENITAL) LQTS: autosomal dominant; >15 genetic subtypes; common: LQT1 (KCNQ1 — IKs reduced; arrhythmias triggered by EXERCISE, especially SWIMMING; ~30%), LQT2 (KCNH2 — IKr reduced; arrhythmias triggered by AUDITORY STIMULI, ALARM CLOCK, EMOTION, POSTPARTUM; ~25%), LQT3 (SCN5A — late INa increased; arrhythmias DURING SLEEP; ~5-10%; mexiletine niche). ACQUIRED LQTS: drug-induced (numerous QT-prolonging drugs), electrolyte (hypokalemia, hypomagnesemia, hypocalcemia), bradycardia, hypothyroidism, anorexia/starvation, intracranial hemorrhage. RISK STRATIFICATION: QTc, sex (female>male after puberty), arrhythmia history, syncope, family history of SCD. CONGENITAL LQTS prevalence 1:2000; SCD risk 1-2%/year untreated symptomatic; reduced to <1%/year with β-blockers + sympathectomy + ICD.",
+        "signs": [
+          "PROLONGED QT INTERVAL on ECG: QTc >450 ms male, >470 ms female adult (using BAZETT FORMULA — divide QT by √RR); >480-500 ms = high concern; >500 ms = high risk; QTc >600 ms = very high risk",
+          "T-WAVE MORPHOLOGY: characteristic for genetic subtype (LQT1 broad; LQT2 notched/biphasic; LQT3 long ST then narrow T)",
+          "CONGENITAL LQTS: SYNCOPE (often during exercise, stress, emotion, swimming, sleep — depending on subtype), SEIZURES (misdiagnosed epilepsy), CARDIAC ARREST, FAMILY HISTORY of unexplained syncope or SCD",
+          "ACQUIRED LQTS: triggered by QT-prolonging drug + electrolyte abnormality; symptoms: palpitations, presyncope, syncope, sudden cardiac arrest",
+          "TORSADES DE POINTES — polymorphic VT with twisting QRS axis around baseline; usually self-terminating but may degenerate to VF",
+          "Baseline normal exam between events"
+        ],
+        "diagnosis": [
+          "ECG (12-lead) — QTc measurement; CALCULATE BAZETT (QT / √RR); other formulas (Fridericia, Framingham) for HR <60 or >100",
+          "TRIPLICATE ECG to confirm prolongation (some labile QT)",
+          "EXERCISE TREADMILL — QTc EXPOSURE TEST: in LQT1 patients, QTc fails to shorten normally during exercise (<10 ms shortening = abnormal)",
+          "EPINEPHRINE PROVOCATION TEST — 0.05-0.4 mcg/kg/min IV (specialist cardiology); paradoxical QT prolongation in LQT1/LQT2",
+          "GENETIC TESTING (if LQTS suspected) — KCNQ1, KCNH2, SCN5A panel; cascade testing for first-degree relatives if proband positive",
+          "RULE OUT ACQUIRED CAUSES: medication review (QT-prolonging drugs), electrolytes (K+, Mg2+, Ca2+), TSH, BUN/creatinine, troponin (rule out ischemia)",
+          "SCHWARTZ SCORE — clinical scoring system: QTc value, T-wave alternans, family history, syncope, congenital deafness; helps probabilistically establish diagnosis"
+        ],
+        "monitoring": [
+          "QTc on serial ECGs — at baseline + with any QT-prolonging drug initiation",
+          "Symptom monitoring: syncope, palpitations, family events",
+          "Compliance with β-blockers + activity restrictions",
+          "Avoid QT-prolonging drugs — review at every prescription",
+          "Implantable cardioverter-defibrillator (ICD) battery, lead checks if implanted",
+          "Pediatric: QTc varies with age; serial assessment",
+          "Pregnancy + postpartum LQT2 — high-risk period for arrhythmia (continue β-blocker; specialist cardio-obstetric care)",
+          "Holter / event monitoring for symptoms"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line — Congenital LQTS All Subtypes",
+            "type": "Drug",
+            "family": "Beta-Blockers",
+            "agents": [
+              "NADOLOL 40-160 mg PO daily (most effective; non-selective long-acting; preferred LQT1 + LQT2)",
+              "PROPRANOLOL 0.5-1 mg/kg/day PO divided BID-TID (alternative)",
+              "atenolol — historical use; less effective per recent data"
+            ],
+            "notes": "BETA-BLOCKERS are first-line for ALL CONGENITAL LQTS; reduce SCD risk 70%+. NADOLOL preferred (long-acting; once-daily; non-selective). Continue lifelong; PREGNANCY + POSTPARTUM critical period — DO NOT STOP. LQT3 less responsive to β-blockers than LQT1/LQT2; combine with mexiletine. Goal: prevent triggered arrhythmia + reduce QT swings.",
+            "guideline": "ESC LQTS Guidelines 2022; AHA/ACC/HRS LQTS 2017; AHA Sudden Death Prevention; Schwartz Long-Term Outcomes"
+          },
+          {
+            "line": "First-Line — LQT3 Specific (Gene-Specific Therapy)",
+            "type": "Drug",
+            "family": "Class IB Antiarrhythmic",
+            "agents": [
+              "MEXILETINE 150-200 mg PO TID — gene-specific therapy for LQT3 (SCN5A gain-of-function)"
+            ],
+            "notes": "LQT3 PATIENTS — late INa increased causing prolonged repolarization; MEXILETINE blocks late INa → SHORTENS QT toward normal + reduces VT/VF episodes. Combine with β-blocker. Specialist (electrophysiology) initiation. RANOLAZINE (late INa inhibitor) emerging alternative.",
+            "guideline": "ESC LQTS 2022; AHA/ACC/HRS LQTS 2017; Moss SCN5A LQT3 Trial"
+          },
+          {
+            "line": "Second-Line — Refractory or High-Risk",
+            "type": "Procedural / Drug",
+            "family": "ICD + Surgical Sympathectomy",
+            "agents": [
+              "IMPLANTABLE CARDIOVERTER-DEFIBRILLATOR (ICD) — primary prevention in survivors of cardiac arrest, recurrent syncope despite β-blocker, persistently severely prolonged QTc despite therapy",
+              "LEFT CARDIAC SYMPATHETIC DENERVATION (LCSD) — surgical removal of T1-T4 sympathetic ganglia; 80%+ reduction in arrhythmic events; option in ICD-intolerant or as adjunct"
+            ],
+            "notes": "ICD INDICATIONS: cardiac arrest survivor; recurrent syncope on β-blocker; family hx SCD + high-risk genotype. LCSD specialist surgery — left thoracoscopic; alternatives in young patients to avoid lifelong ICD shocks; combined with β-blocker.",
+            "guideline": "ESC LQTS 2022; AHA/ACC/HRS Sudden Death Prevention 2017"
+          },
+          {
+            "line": "Acquired LQTS — Drug-Induced Torsades",
+            "type": "Strategy",
+            "family": "Acute Management + Drug Removal",
+            "agents": [
+              "MAGNESIUM SULFATE 2 g IV bolus (regardless of serum Mg level) — first-line for torsades de pointes",
+              "REPLACE K+ to >4.0 mmol/L + Mg++ >2.0 mmol/L",
+              "REMOVE OFFENDING DRUG (review medication list)",
+              "INCREASE HEART RATE — isoproterenol IV infusion or transvenous pacing (target HR 90-110; shortens QT); avoid in congenital LQT1 (paradoxical worsening)",
+              "ATROPINE 0.5-1 mg IV for bradycardia-induced",
+              "ELECTRICAL DEFIBRILLATION 200 J unsynchronized for sustained polymorphic VT"
+            ],
+            "notes": "DRUG-INDUCED TORSADES — MAGNESIUM IV first-line (regardless of level); replace K+ + Mg++; REMOVE causative drug; PACE if bradycardia-induced (NOT isoproterenol in LQT1 — paradoxical worsening). REVIEW QT-prolonging drug list (Crediblemeds.org) before any new drug.",
+            "guideline": "AHA/ACC/HRS Acute Management Torsades 2017; CredibleMeds QT Drug List"
+          },
+          {
+            "line": "Lifestyle + Trigger Avoidance",
+            "type": "Strategy",
+            "family": "Activity Modification + Drug Avoidance",
+            "agents": [
+              "AVOID QT-PROLONGING DRUGS (CredibleMeds.org list)",
+              "AVOID HYPOKALEMIA + HYPOMAGNESEMIA (replace with diuretics)",
+              "LQT1 — avoid SWIMMING (especially competitive), strenuous exercise; consider LCSD if athlete",
+              "LQT2 — avoid AUDITORY STARTLE (alarm clocks — use vibrating alarm), unexpected loud noises, postpartum period high-risk",
+              "LQT3 — avoid bradycardia-causing drugs; sleep monitoring",
+              "DRIVING RESTRICTIONS per provincial guidelines (e.g., 6 months after symptom resolution)"
+            ],
+            "notes": "TRIGGER AVOIDANCE subtype-specific: LQT1 exercise/swimming; LQT2 auditory; LQT3 sleep/bradycardia. PHARMACIST ROLE — review every new prescription against QT-prolonging drug list; counsel patient + carry MedicAlert ID.",
+            "guideline": "ESC LQTS 2022; AHA/ACC/HRS LQTS 2017; CCS Driving Recommendations"
+          },
+          {
+            "line": "AVOID — QT-Prolonging Drugs",
+            "type": "Counselling",
+            "family": "Drug Avoidance List",
+            "agents": [
+              "ANTIARRHYTHMICS: amiodarone, sotalol, dofetilide, ibutilide, quinidine, procainamide, disopyramide, flecainide",
+              "ANTIPSYCHOTICS: haloperidol, ziprasidone, droperidol, chlorpromazine, thioridazine (withdrawn), pimozide, olanzapine (high-dose)",
+              "ANTIDEPRESSANTS: citalopram >40 mg, escitalopram >20 mg, TCAs (high-dose)",
+              "MACROLIDES: erythromycin, clarithromycin, azithromycin",
+              "FLUOROQUINOLONES: moxifloxacin > levofloxacin > ciprofloxacin",
+              "ANTIFUNGALS: fluconazole, voriconazole, ketoconazole, itraconazole",
+              "OPIOIDS: methadone (high-dose >100 mg)",
+              "5-HT3: ondansetron (especially IV high-dose), dolasetron (IV withdrawn for QT)",
+              "OTHER: domperidone (high-dose), donepezil, hydroxychloroquine, lithium"
+            ],
+            "notes": "PHARMACIST ROLE CRITICAL — review medication list at every prescription against CredibleMeds.org for known LQTS patients. Consider safer alternatives. Counsel patient to carry list + MedicAlert.",
+            "guideline": "CredibleMeds.org Drug List; AHA Drug-Induced Arrhythmia 2018"
+          }
+        ],
+        "pearls": [
+          "BAZETT'S FORMULA: QTc = QT / √RR (RR in seconds); >450 ms ♂, >470 ms ♀ adult abnormal; >500 ms high risk",
+          "LQT1 — KCNQ1; trigger EXERCISE/SWIMMING; broad T waves; β-blocker + activity restriction",
+          "LQT2 — KCNH2; trigger AUDITORY STIMULI/ALARM/EMOTION/POSTPARTUM; notched/biphasic T waves; β-blocker + avoid loud alarms",
+          "LQT3 — SCN5A; trigger SLEEP/BRADYCARDIA; long ST + narrow T; β-blocker + MEXILETINE (gene-specific)",
+          "NADOLOL preferred β-blocker for LQTS (long-acting; non-selective)",
+          "ACQUIRED LQTS — drug-induced torsades; MAGNESIUM IV first-line + remove drug + K+/Mg++ replace + pace if bradycardic",
+          "PHARMACIST ROLE: CredibleMeds.org review at every Rx",
+          "PREGNANCY + POSTPARTUM in LQT2 — HIGH-RISK PERIOD; continue β-blocker; specialist cardio-obstetric care",
+          "EXERCISE TREADMILL — QTc fails to shorten in LQT1 (paradoxical QT prolongation with HR increase)",
+          "GENETIC TESTING — KCNQ1, KCNH2, SCN5A panel; cascade family screening if proband+",
+          "ICD for cardiac arrest survivors, recurrent syncope on β-blocker",
+          "LEFT CARDIAC SYMPATHETIC DENERVATION — surgical option for refractory; reduces events 80%+",
+          "DRIVING RESTRICTIONS — vary by province; typically 6 months after symptom resolution",
+          "MEDICALERT bracelet + medication card carrying",
+          "EBSTEIN ANOMALY associated with WPW (different syndrome) — separate consideration",
+          "JLN SYNDROME (Jervell-Lange-Nielsen) — autosomal recessive LQT1 + congenital deafness; very high SCD risk"
+        ],
+        "introduction": "Long QT syndrome (LQTS) is a disorder of cardiac repolarization causing risk of torsades de pointes and sudden cardiac death. Congenital LQTS includes >15 genetic subtypes — most commonly LQT1 (exercise/swimming triggers), LQT2 (auditory/postpartum triggers), and LQT3 (sleep/bradycardia triggers). Acquired LQTS results from QT-prolonging drugs, electrolyte abnormalities, or other causes. Beta-blockers (nadolol preferred) are first-line for all congenital LQTS subtypes; LQT3 patients additionally benefit from gene-specific mexiletine (late INa block). Drug-induced torsades responds to magnesium IV + electrolyte replacement + drug discontinuation. Pharmacist role is critical: review every prescription against CredibleMeds.org QT drug list for known LQTS patients. ICD and left cardiac sympathetic denervation are options for refractory disease.",
+        "source": "ESC LQTS Guidelines 2022; AHA/ACC/HRS LQTS Guidelines 2017; CredibleMeds.org QT Drug Database; Schwartz Long-Term Outcomes Studies; CCS Sudden Death Prevention 2024"
+      },
+      {
+        "id": "cardiogenic_shock",
+        "name": "Cardiogenic Shock",
+        "subtitle": "Acute Pump Failure with End-Organ Hypoperfusion",
+        "rxfiles_ref": "Cardio: Critical Care | Cardiogenic Shock",
+        "patho": "Cardiogenic shock (CS) — circulatory failure due to PRIMARY CARDIAC PUMP DYSFUNCTION → systemic hypoperfusion + end-organ damage. HEMODYNAMIC HALLMARK: low cardiac output (CI <2.2 L/min/m²) + elevated filling pressures (PCWP >15 mmHg) + hypotension (SBP <90 mmHg or vasopressor-dependent). CAUSES: ACUTE MI WITH LV FAILURE (~80% — anterior STEMI most common; SHOCK trial population), acute mechanical complications post-MI (papillary muscle rupture, ventricular septal rupture, free-wall rupture), MYOCARDITIS, TAKOTSUBO (stress) cardiomyopathy, ACUTE VALVULAR REGURGITATION, RIGHT VENTRICULAR INFARCT, MASSIVE PE, ACUTE HEART FAILURE on chronic HFrEF/HFpEF, ARRHYTHMIA-MEDIATED (sustained VT/AF with poor LV function), POST-CARDIAC SURGERY low-output, PERICARDIAL TAMPONADE (technically obstructive but presents similar). MORTALITY remains ~40-50% despite advances; SCAI SHOCK CLASSIFICATION (A-E) stratifies severity (A=at risk; E=extremis cardiac arrest).",
+        "signs": [
+          "HYPOTENSION — SBP <90 mmHg sustained or requiring vasopressors to maintain >90 mmHg",
+          "TISSUE HYPOPERFUSION: cool/clammy extremities, mottled skin, weak pulses, ALTERED MENTATION (confusion, lethargy), DECREASED URINE OUTPUT (<0.5 mL/kg/h), elevated lactate (>2 mmol/L; severe >4 mmol/L)",
+          "PULMONARY CONGESTION: dyspnea, hypoxemia, rales, JVP elevation, S3 gallop",
+          "TACHYCARDIA (compensatory)",
+          "Cool extremities (LOW CARDIAC OUTPUT — distinct from septic shock with warm extremities)",
+          "SCAI SHOCK CLASSIFICATION (2019): A=At-risk; B=Beginning (clinical evidence relative hypotension/tachycardia, no hypoperfusion); C=Classic (hypoperfusion requires intervention); D=Deteriorating (failing initial intervention); E=Extremis (cardiac arrest with ongoing CPR/ECMO)",
+          "ALARM features: severe hypotension, lactate >5, anuria, organ failure, refractory arrhythmia"
+        ],
+        "diagnosis": [
+          "BEDSIDE — clinical signs + lactate; URGENT ECHOCARDIOGRAPHY (point-of-care or formal) — RV/LV function, mechanical complication, valve, pericardium, IVC",
+          "ECG — anterior STEMI most common; right-sided leads if RV infarct; ischemia, arrhythmia",
+          "CHEST X-RAY — pulmonary edema, cardiac size",
+          "LABS: troponin (rising/falling), BNP/NT-proBNP, lactate (serial), creatinine, LFTs, ABG, coags, CBC",
+          "CORONARY ANGIOGRAPHY — emergent for STEMI/NSTEMI cardiogenic shock (per CCS/ACC: door-to-balloon <90 min from first medical contact)",
+          "INVASIVE HEMODYNAMICS (Swan-Ganz/PA catheter) — selective use; CI <2.2, PCWP >15 mmHg confirms",
+          "CT-PE if suspected pulmonary embolism massive",
+          "CULTURES if mixed picture (sepsis-cardiogenic shock often coexist)"
+        ],
+        "monitoring": [
+          "CONTINUOUS HEMODYNAMIC MONITORING: arterial line for BP, central venous catheter, ± Swan-Ganz catheter",
+          "Lactate trend (q2-4h) — clearance correlates with outcome",
+          "Mixed venous saturation (ScvO2 from central line; SvO2 if PA catheter) — target >65%",
+          "Urine output (Foley)",
+          "Renal/hepatic function trends",
+          "ECG continuous + serial (arrhythmia, ischemia)",
+          "Echocardiography serial (LV function, RWMA, mechanical complication, valve)",
+          "MENTATION + clinical perfusion (cap refill, extremity temperature, mottling)",
+          "Vasopressor / inotrope dose titration",
+          "Mechanical circulatory support function (IABP, Impella, ECMO)"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line — Acute MI Cardiogenic Shock",
+            "type": "Strategy",
+            "family": "Reperfusion + Hemodynamic Support",
+            "agents": [
+              "EMERGENT CORONARY ANGIOGRAPHY + PCI — culprit lesion; door-to-balloon <90 minutes; SHOCK trial benefit reperfusion",
+              "DUAL ANTIPLATELET — ASA 162-325 mg + ticagrelor 180 mg loading (preferred over clopidogrel; avoid prasugrel in cardiogenic shock per ISAR-REACT 5)",
+              "ANTICOAGULATION — heparin or bivalirudin per institutional protocol",
+              "FIBRINOLYSIS only if PCI not available within 90-120 min (less effective in cardiogenic shock — PCI strongly preferred)"
+            ],
+            "notes": "EMERGENT REPERFUSION is core of cardiogenic shock care for acute MI; SHOCK trial 1999 established early revascularization benefit. Target door-to-balloon <90 minutes. CULPRIT-SHOCK trial 2017: stage non-culprit lesions; do NOT routinely revascularize all lesions in same session.",
+            "guideline": "CCS ACS Guidelines 2024; AHA/ACC ACS 2024; SHOCK trial Hochman NEJM 1999; CULPRIT-SHOCK Thiele NEJM 2017"
+          },
+          {
+            "line": "First-Line — Inotropic Support",
+            "type": "Drug",
+            "family": "Inotropes",
+            "agents": [
+              "DOBUTAMINE 2-20 mcg/kg/min IV — first-line β1 inotrope; tachycardia + arrhythmia risk; tolerance with prolonged use; AVOID if patient on chronic β-blocker (use milrinone instead)",
+              "MILRINONE 0.25-0.75 mcg/kg/min IV (after 50 mcg/kg loading; omit load if hypotensive) — PDE3 inhibitor; INODILATOR (positive inotropy + vasodilation); preferred over dobutamine in chronic β-blocker patients; CARE in renal failure (accumulates)",
+              "DIGOXIN — limited role acute (slow onset, narrow window)"
+            ],
+            "notes": "INOTROPES support cardiac output. DOBUTAMINE first-line; switch to MILRINONE if patient on chronic β-blocker (non-overlapping mechanism). Consider epinephrine if combined inotrope + vasopressor needed. RESERVE for true low-output state — OPTIME-CHF showed harm in normal-output ADHF.",
+            "guideline": "CCS Heart Failure 2024; ESC Acute HF 2024"
+          },
+          {
+            "line": "First-Line — Vasopressor Support (if hypotensive)",
+            "type": "Drug",
+            "family": "Vasopressors",
+            "agents": [
+              "NOREPINEPHRINE 0.05-2 mcg/kg/min IV — FIRST-LINE vasopressor in cardiogenic shock; reduced arrhythmia + better outcomes vs dopamine (SOAP II trial 2010)",
+              "EPINEPHRINE 0.01-0.5 mcg/kg/min IV — alternative; combined inotrope + vasopressor; avoid first-line per OptimaCC trial 2018 (more refractory shock)",
+              "VASOPRESSIN 0.01-0.04 U/min IV — adjunct vasopressor (not first-line; second-line catecholamine-sparing)",
+              "DOPAMINE — declining use; SOAP II showed worse outcomes vs norepinephrine in cardiogenic shock"
+            ],
+            "notes": "NOREPINEPHRINE first-line VASOPRESSOR in cardiogenic shock (SOAP II 2010, OptimaCC 2018). DOPAMINE worse outcomes (more arrhythmia). Often combined with inotrope (norepinephrine + dobutamine OR milrinone).",
+            "guideline": "CCS Heart Failure 2024; SOAP II trial De Backer NEJM 2010; OptimaCC trial Levy JACC 2018"
+          },
+          {
+            "line": "Second-Line — Mechanical Circulatory Support (MCS)",
+            "type": "Procedural",
+            "family": "Devices",
+            "agents": [
+              "INTRA-AORTIC BALLOON PUMP (IABP) — historical; IABP-SHOCK II trial 2012 NO mortality benefit in MI cardiogenic shock; reserved for selective bridging",
+              "IMPELLA (microaxial pump CP/5.5/RP) — left or right ventricular support; specialist tertiary care; data mixed (DanGer Shock 2024 + ECLS-SHOCK 2023 caution)",
+              "VA-ECMO (extracorporeal membrane oxygenation) — biventricular + lung support; rescue therapy; specialist ECMO program; ECLS-SHOCK trial 2023 NO mortality benefit; reserve for refractory CS",
+              "TANDEMHEART (left atrium → femoral artery) — historical; less common",
+              "DURABLE LVAD (HeartMate 3) — bridge to transplant or destination therapy"
+            ],
+            "notes": "MCS REMAINS CONTROVERSIAL — recent trials (IABP-SHOCK II, ECLS-SHOCK, DanGer Shock) tempered enthusiasm. Reserve for: refractory shock despite optimal medical therapy, bridge to recovery (myocarditis, takotsubo), bridge to transplant, bridge to durable LVAD. Specialist tertiary ECMO/MCS team.",
+            "guideline": "CCS Heart Failure 2024; IABP-SHOCK II trial Thiele NEJM 2012; ECLS-SHOCK trial Thiele NEJM 2023; DanGer Shock trial NEJM 2024"
+          },
+          {
+            "line": "Refractory / Advanced",
+            "type": "Strategy",
+            "family": "Heart Transplant + Durable LVAD",
+            "agents": [
+              "CARDIAC TRANSPLANTATION — definitive therapy for end-stage CS unable to wean MCS",
+              "DURABLE LVAD (HeartMate 3) — destination therapy or bridge to transplant",
+              "WITHDRAWAL OF SUPPORT — palliative if irreversible, futile, patient/family wishes"
+            ],
+            "notes": "REFRACTORY CS — multidisciplinary heart failure team (cardiology, surgery, transplant, palliative care). Decision-making complex. Bridge to durable solution (transplant, LVAD, recovery, palliation).",
+            "guideline": "CCS HF + Transplant 2024; ISHLT Heart Transplant Guidelines"
+          },
+          {
+            "line": "Adjunct — Mechanical Complication Repair",
+            "type": "Surgical",
+            "family": "Acute Mitral Regurgitation, VSR, Free-Wall Rupture",
+            "agents": [
+              "URGENT CARDIAC SURGERY — papillary muscle rupture (severe MR), ventricular septal rupture (VSR), free-wall rupture/tamponade",
+              "PERCUTANEOUS VSR CLOSURE — emerging alternative",
+              "MITRACLIP (transcatheter MV repair) — high-risk patients with severe MR + cardiogenic shock"
+            ],
+            "notes": "MECHANICAL COMPLICATIONS post-MI (3-7 days post) = SURGICAL EMERGENCY — papillary muscle rupture (severe MR, pulmonary edema), VSR (new harsh holosystolic murmur, RV failure), free-wall rupture (tamponade, PEA arrest). URGENT echo + cardiac surgery consultation.",
+            "guideline": "CCS Cardiac Surgery 2024; AHA/ACC Mechanical MI Complications"
+          }
+        ],
+        "pearls": [
+          "DEFINITION: low CO + elevated filling pressures + hypotension + end-organ hypoperfusion",
+          "ACUTE MI ~80% of cardiogenic shock cases; emergent reperfusion is key",
+          "SCAI SHOCK CLASSIFICATION (A-E) stratifies severity",
+          "DOOR-TO-BALLOON <90 MIN for cardiogenic shock + acute MI",
+          "CULPRIT-SHOCK 2017: stage non-culprit lesions; don't revascularize all in one session",
+          "NOREPINEPHRINE first-line vasopressor (SOAP II); dopamine more arrhythmia",
+          "DOBUTAMINE first-line inotrope; MILRINONE if on chronic β-blocker",
+          "MCS (IABP, Impella, ECMO) — recent trials show NO mortality benefit (IABP-SHOCK II, ECLS-SHOCK); selective use",
+          "MECHANICAL COMPLICATIONS post-MI 3-7 days — papillary muscle rupture, VSR, free-wall rupture — SURGICAL EMERGENCY",
+          "RIGHT VENTRICULAR INFARCT — hypotension responsive to FLUIDS (preload-dependent); avoid aggressive diuresis/vasodilators",
+          "MASSIVE PE causing CS — fibrinolysis (alteplase 100 mg over 2h or 0.6 mg/kg bolus) + ECMO",
+          "MORTALITY ~40-50% despite advances — palliative care discussion when refractory",
+          "PHARMACIST ROLE: vasopressor/inotrope titration, infusion pump verification, drug interactions, ECMO anticoagulation, transition to oral therapy",
+          "POST-CS recovery: optimize GDMT (ACEi/ARB/ARNI, β-blocker, MRA, SGLT2i) for HFrEF",
+          "TAKOTSUBO CARDIOMYOPATHY (stress) — usually reversible; supportive care; β-blocker"
+        ],
+        "introduction": "Cardiogenic shock is acute primary pump failure causing systemic hypoperfusion and end-organ damage. Acute MI accounts for ~80% of cases; emergent coronary angiography + PCI is the cornerstone of care, with norepinephrine as first-line vasopressor and dobutamine/milrinone as inotropes. Recent trials (IABP-SHOCK II, ECLS-SHOCK, DanGer Shock) have tempered enthusiasm for routine mechanical circulatory support. Mortality remains ~40-50%; pharmacist roles include vasopressor/inotrope titration, drug interactions, ECMO anticoagulation, and transition to guideline-directed medical therapy upon recovery. Mechanical complications (papillary muscle rupture, VSR, free-wall rupture) post-MI are surgical emergencies.",
+        "source": "CCS Heart Failure Guidelines 2024; SHOCK trial Hochman NEJM 1999; CULPRIT-SHOCK Thiele NEJM 2017; SOAP II De Backer NEJM 2010; IABP-SHOCK II Thiele NEJM 2012; ECLS-SHOCK Thiele NEJM 2023; DanGer Shock 2024; SCAI Shock Classification Baran 2019"
       }
     ]
   },
@@ -18266,6 +18649,257 @@ var DISEASES = {
           "PHARMACIST role: identify MGUS on SPEP review during medication reconciliation; ensure follow-up scheduled; recognize warning signs of progression (anemia, fatigue, bone pain, hypercalcemia symptoms, new renal injury); vaccination reminders; AL amyloid red flag identification"
         ],
         "source": "IMWG Updated Diagnostic Criteria 2014 (updates 2024); NCCN Multiple Myeloma v1.2025; Mayo MGUS Risk Stratification (Rajkumar Blood 2005); E3A06 (Lonial JCO 2020); ASCENT/CENTAURUS (daratumumab in SMM); Canadian Myeloma Research Group"
+      },
+      {
+        "id": "dic",
+        "name": "Disseminated Intravascular Coagulation (DIC)",
+        "subtitle": "Acute Consumptive Coagulopathy",
+        "rxfiles_ref": "Heme: Acute Coagulopathies | DIC",
+        "patho": "Disseminated intravascular coagulation (DIC) — acquired SYSTEMIC ACTIVATION OF COAGULATION + FIBRINOLYSIS leading to widespread microthrombi (consuming clotting factors + platelets) AND simultaneous bleeding (depletion of factors + platelets + activation of fibrinolysis). 'PARADOX' of thrombosis + hemorrhage. ETIOLOGY (always SECONDARY to underlying disorder): SEPSIS (most common; Gram-negative + Gram-positive bacteremia, fungal, viral), MALIGNANCY (ACUTE PROMYELOCYTIC LEUKEMIA — APL — characteristic; adenocarcinomas of pancreas/prostate/lung — chronic compensated DIC), OBSTETRIC (placental abruption, amniotic fluid embolism, retained dead fetus, preeclampsia/HELLP, septic abortion), MASSIVE TRAUMA (especially crush injury, head injury, burns), ACUTE TRANSFUSION REACTION (ABO incompatibility), SEVERE LIVER FAILURE, SNAKE BITE / TOXINS, AAA RUPTURE, GIANT HEMANGIOMA (Kasabach-Merritt syndrome). MECHANISM: tissue factor (TF) release → activation extrinsic pathway → thrombin generation → fibrinogen → fibrin → microthrombi → end-organ ischemia (kidneys, lungs, liver, brain) + consumption of factors + platelets → BLEEDING.",
+        "signs": [
+          "BLEEDING (most common manifestation; ~60-70%): petechiae, purpura, oozing from IV sites, surgical wounds, gums, GI/GU/respiratory bleeding, intracranial hemorrhage",
+          "THROMBOSIS (~20-30%): deep vein thrombosis, pulmonary embolism, microvascular ischemia (digital gangrene, purpura fulminans, organ infarcts)",
+          "ORGAN DYSFUNCTION: AKI (renal microthrombi), ARDS (pulmonary), liver dysfunction, encephalopathy, GI ischemia",
+          "Underlying disease signs: sepsis (fever, hypotension), obstetric (abruption, amniotic emboli), malignancy (APL bleeding tendency)",
+          "PURPURA FULMINANS — severe; rapidly progressive purpuric lesions with hemorrhagic necrosis (especially meningococcemia)",
+          "WATERHOUSE-FRIDERICHSEN SYNDROME — adrenal hemorrhage + purpura fulminans (meningococcal sepsis)",
+          "Lab: prolonged PT, aPTT, low platelets, low fibrinogen, ↑D-dimer/fibrin degradation products, schistocytes on smear (microangiopathy)"
+        ],
+        "diagnosis": [
+          "ISTH SCORING SYSTEM for OVERT DIC: platelets (<50 = 2, <100 = 1), fibrinogen (<1 g/L = 1), PT prolongation (>3 sec = 1, >6 sec = 2), D-dimer (moderate = 2, severe = 3); SCORE ≥5 = OVERT DIC",
+          "LABS: CBC (thrombocytopenia, schistocytes), PT + aPTT (prolonged), FIBRINOGEN (LOW; <1 g/L significant; in pregnancy <2-3 g/L abnormal — pregnancy normally elevates fibrinogen), D-DIMER (markedly elevated; >5x upper limit), FIBRIN DEGRADATION PRODUCTS (FDPs)",
+          "Peripheral blood smear — SCHISTOCYTES (microangiopathic hemolysis), thrombocytopenia",
+          "Liver function (rule out cirrhosis-associated coagulopathy), renal function",
+          "IDENTIFY UNDERLYING CAUSE: cultures + workup for sepsis, β-hCG, obstetric exam, imaging for trauma/AAA, oncology workup for malignancy",
+          "DIFFERENTIAL: severe liver failure (similar coagulopathy + low platelets; clinical context distinguishes), TTP/HUS (microangiopathic hemolysis + thrombocytopenia + organ dysfunction; ADAMTS13 testing), HELLP, primary fibrinolysis (rare), HIT (thrombocytopenia + thrombosis on heparin)",
+          "ACUTE PROMYELOCYTIC LEUKEMIA (APL — t(15;17)) — characteristic DIC presentation; URGENT FLOW CYTOMETRY + CYTOGENETICS — START ATRA EMPIRICALLY before diagnosis confirmed in suspected APL"
+        ],
+        "monitoring": [
+          "Serial coagulation panel: PT, aPTT, FIBRINOGEN, D-DIMER, platelets q6-12 hours initially",
+          "CBC — platelets, schistocytes, hemoglobin",
+          "Lactate, end-organ function (renal, hepatic, neurologic)",
+          "Bleeding sites + thrombotic complications",
+          "Underlying disease response (sepsis, obstetric, malignancy, trauma)",
+          "ISTH score evolution",
+          "Blood product transfusion needs",
+          "Mechanical ventilator + organ support"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line — TREAT UNDERLYING CAUSE",
+            "type": "Strategy",
+            "family": "Source Control",
+            "agents": [
+              "SEPSIS — early broad-spectrum antibiotics + source control + IV fluid + vasopressor (Surviving Sepsis 2024)",
+              "OBSTETRIC — emergent delivery (placental abruption, amniotic fluid embolism, septic abortion) + obstetric care",
+              "TRAUMA — surgical hemostasis + tranexamic acid (CRASH-2 trial: TXA 1 g IV bolus + 1 g over 8h within 3 hours of trauma reduces mortality)",
+              "ACUTE PROMYELOCYTIC LEUKEMIA (APL) — EMPIRIC ALL-TRANS RETINOIC ACID (ATRA) + ARSENIC TRIOXIDE + steroids (HEMATOLOGY URGENT)",
+              "MALIGNANCY — chemotherapy/targeted therapy",
+              "TRANSFUSION REACTION — STOP transfusion + supportive care"
+            ],
+            "notes": "TREATMENT OF DIC = TREATMENT OF UNDERLYING CAUSE. DIC will resolve only if cause addressed. APL — ATRA EMPIRICALLY when suspected (don't wait for cytogenetics confirmation; rapidly fatal coagulopathy without ATRA).",
+            "guideline": "ISTH DIC Guidelines 2018; Surviving Sepsis 2024; ACOG Obstetric Hemorrhage; CCS Hematology 2024; CRASH-2 trial TXA"
+          },
+          {
+            "line": "Supportive — Bleeding-Predominant DIC",
+            "type": "Drug / Blood Product",
+            "family": "Blood Product Replacement",
+            "agents": [
+              "FRESH FROZEN PLASMA (FFP) 10-15 mL/kg IV — replaces all coagulation factors; use for ACTIVE BLEEDING + INR >1.5",
+              "CRYOPRECIPITATE 10 units IV — replaces FIBRINOGEN (250 mg/unit); use for FIBRINOGEN <1 g/L (or <2 g/L in pregnancy/postpartum hemorrhage)",
+              "PLATELETS 1 unit per 10 kg or 1 apheresis unit — for platelets <50,000 with active bleeding (or <20,000 prophylactic)",
+              "FIBRINOGEN CONCENTRATE (RiaSTAP, Fibryga) — alternative to cryoprecipitate; pure fibrinogen; less volume",
+              "PROTHROMBIN COMPLEX CONCENTRATE (PCC) — selective use; rapid factor replacement; risk thrombosis if DIC",
+              "TRANEXAMIC ACID 1 g IV (CRASH-2 evidence in trauma; controversial routine use in DIC)"
+            ],
+            "notes": "BLOOD PRODUCT REPLACEMENT is supportive — does NOT treat DIC; addresses bleeding. Targets: PLATELETS >50K with bleeding, FIBRINOGEN >1 g/L (>2 g/L in pregnancy), INR <1.5 with active bleeding. AVOID over-correction (may exacerbate microthrombosis). Tranexamic acid controversial in DIC (theoretical worsening of microthrombi).",
+            "guideline": "ISTH DIC 2018; CCS Hematology 2024; CRASH-2 trial Lancet 2010"
+          },
+          {
+            "line": "Selective — Thrombosis-Predominant DIC",
+            "type": "Drug",
+            "family": "Anticoagulation",
+            "agents": [
+              "UNFRACTIONATED HEPARIN 5-10 U/kg/h IV (low-dose, no bolus) — selective use for THROMBOSIS-PREDOMINANT DIC (purpura fulminans, large vessel thrombosis, retained dead fetus)",
+              "LOW-MOLECULAR-WEIGHT HEPARIN — alternative",
+              "ACTIVATED PROTEIN C (xigris — drotrecogin alfa) — WITHDRAWN 2011 (PROWESS-SHOCK trial — no benefit)",
+              "THROMBOMODULIN (recombinant — RECOMOMODULIN) — emerging; not approved Canada; mortality benefit in SCARLET-2 trial (post-hoc subgroup)"
+            ],
+            "notes": "ANTICOAGULATION CONTROVERSIAL in DIC — useful in THROMBOSIS-PREDOMINANT (purpura fulminans, retained dead fetus, large-vessel thrombosis) but contraindicated in BLEEDING-PREDOMINANT. Specialist (hematology) decision.",
+            "guideline": "ISTH DIC 2018; CCS Hematology 2024"
+          },
+          {
+            "line": "APL-Specific (Acute Promyelocytic Leukemia)",
+            "type": "Drug",
+            "family": "Differentiation Therapy",
+            "agents": [
+              "ALL-TRANS RETINOIC ACID (ATRA) 45 mg/m² PO daily in divided doses (start EMPIRICALLY when APL suspected — don't wait for confirmation)",
+              "ARSENIC TRIOXIDE (ATO; Trisenox) 0.15 mg/kg/day IV (combined ATRA-ATO; APL2000 + AML-17 trials — GOLD STANDARD modern APL induction)",
+              "SUPPORTIVE care: aggressive blood product replacement during induction; STEROIDS for differentiation syndrome (dexamethasone 10 mg IV q12h)"
+            ],
+            "notes": "APL = HEMATOLOGIC EMERGENCY — pretreatment mortality from coagulopathy ~30%; ATRA-ATO induction protocols achieve ~95% complete remission + ~85% cure. EMPIRIC ATRA when APL clinically suspected (bleeding + leukemia + characteristic blasts). DIFFERENTIATION SYNDROME — dyspnea, fever, weight gain, hypotension, fluid retention; dexamethasone + supportive care.",
+            "guideline": "APL2000 + AML-17 trials; CCO/CCS Hematology APL Guidelines 2024; ELN APL Recommendations"
+          },
+          {
+            "line": "Refractory / Specialized",
+            "type": "Strategy",
+            "family": "Tertiary Care",
+            "agents": [
+              "PLASMA EXCHANGE (limited evidence; some refractory cases)",
+              "ECMO (severe pulmonary microthrombi / ARDS)",
+              "RRT (renal replacement therapy for AKI)",
+              "ICU support: vasopressors, ventilation, paralytics, deep sedation"
+            ],
+            "notes": "REFRACTORY DIC — multidisciplinary team (ICU, hematology, ID, surgery, OB-GYN). Mortality very high in refractory cases.",
+            "guideline": "ICU Critical Care 2024"
+          }
+        ],
+        "pearls": [
+          "DIC is ALWAYS SECONDARY — TREAT UNDERLYING CAUSE",
+          "ISTH SCORE ≥5 = OVERT DIC (platelets, fibrinogen, PT prolongation, D-dimer)",
+          "FIBRINOGEN <1 g/L (or <2 g/L in pregnancy) = critical replacement target",
+          "BLEEDING + THROMBOSIS PARADOX — both occur simultaneously",
+          "APL — EMPIRIC ATRA before cytogenetics confirmed (rapidly fatal without)",
+          "ATRA-ATO MODERN GOLD STANDARD APL induction (~95% CR; ~85% cure)",
+          "SEPSIS most common cause; broad-spectrum antibiotics + source control core",
+          "OBSTETRIC DIC — emergent delivery; placental abruption, AFE, septic abortion",
+          "TRAUMA-ASSOCIATED DIC — TXA within 3 hours (CRASH-2)",
+          "TRANSFUSION TARGETS: platelets >50K + bleeding, fibrinogen >1 g/L, INR <1.5",
+          "ANTICOAGULATION SELECTIVE — only for thrombosis-predominant (purpura fulminans, retained dead fetus); contraindicated bleeding-predominant",
+          "CRYOPRECIPITATE for fibrinogen replacement (250 mg fibrinogen/unit; 10 units = ~2.5 g)",
+          "FIBRINOGEN CONCENTRATE alternative to cryoprecipitate (less volume; pure fibrinogen)",
+          "PURPURA FULMINANS — protein C deficiency / meningococcal — emergent ANTICOAGULATION + protein C concentrate",
+          "MORTALITY high (30-80% depending on cause and severity)",
+          "PHARMACIST ROLE — blood product coordination, ATRA-ATO administration, antibiotic optimization, vasopressor titration"
+        ],
+        "introduction": "Disseminated intravascular coagulation (DIC) is acquired systemic activation of coagulation + fibrinolysis with simultaneous bleeding and thrombosis. It is always secondary to an underlying disorder — sepsis is the most common cause; obstetric, trauma, malignancy (especially APL), and transfusion reactions are other key etiologies. Treatment focuses on addressing the underlying cause with supportive blood product replacement (cryoprecipitate, FFP, platelets) for bleeding-predominant disease and selective anticoagulation for thrombosis-predominant disease. APL requires empiric ATRA before cytogenetics confirmation. Mortality remains 30-80%, but modern protocols (ATRA-ATO for APL; CRASH-2 TXA for trauma) have improved outcomes. Pharmacy roles include blood product coordination, ATRA-ATO administration, and antibiotic stewardship.",
+        "source": "ISTH DIC Guidelines 2018; CCS Hematology Guidelines 2024; APL2000 + AML-17 trials; CRASH-2 trial TXA Lancet 2010; Surviving Sepsis 2024"
+      },
+      {
+        "id": "ttp",
+        "name": "Thrombotic Thrombocytopenic Purpura (TTP)",
+        "subtitle": "Acquired or Hereditary ADAMTS13 Deficiency",
+        "rxfiles_ref": "Heme: Microangiopathic Hemolytic Anemias | TTP",
+        "patho": "Thrombotic thrombocytopenic purpura (TTP) — life-threatening thrombotic microangiopathy (TMA) caused by SEVERE ADAMTS13 DEFICIENCY (<10% activity). ADAMTS13 (A Disintegrin And Metalloproteinase with ThromboSpondin motifs 13) is the protease that cleaves ULTRA-LARGE VON WILLEBRAND FACTOR (vWF) MULTIMERS released from endothelium. Without ADAMTS13: ultra-large vWF persists → platelet AGGLUTINATION → MICROTHROMBI in arterioles + capillaries → MICROANGIOPATHIC HEMOLYTIC ANEMIA (schistocytes from sheared RBCs) + THROMBOCYTOPENIA (consumption) + ORGAN ISCHEMIA (kidneys, brain, heart). FORMS: ACQUIRED (immune-mediated; ~95%; autoantibodies against ADAMTS13; HLA-DRB1*11 association) — most common; or HEREDITARY (UPSHAW-SCHULMAN SYNDROME; ADAMTS13 gene mutations; ~5%; presents in childhood/pregnancy). MORTALITY pre-plasma exchange ~90%; with modern triple therapy (PEX + immunosuppression + caplacizumab) ~10-20%. CLASSIC PENTAD: thrombocytopenia + microangiopathic hemolytic anemia + neurologic symptoms + renal dysfunction + fever (HISTORIC; modern presentation often dyad: thrombocytopenia + MAHA without other features).",
+        "signs": [
+          "THROMBOCYTOPENIA (often <30 × 10⁹/L) — petechiae, purpura, mucocutaneous bleeding (spontaneous + post-trauma)",
+          "MICROANGIOPATHIC HEMOLYTIC ANEMIA (MAHA) — schistocytes on smear, indirect hyperbilirubinemia, elevated LDH, low haptoglobin, dark urine",
+          "NEUROLOGIC SYMPTOMS (50-70%): headache, confusion, focal deficits, seizures, coma, stroke (microthrombi)",
+          "RENAL DYSFUNCTION (~25-50%): proteinuria, hematuria, AKI (less prominent than HUS)",
+          "FEVER (~25%; not always present)",
+          "CHEST PAIN, troponin elevation (cardiac microthrombi; ~20%)",
+          "GI symptoms (nausea, abdominal pain)",
+          "FATIGUE, PALLOR (anemia)",
+          "Pregnancy-precipitated TTP (~5%) — second/third trimester or postpartum"
+        ],
+        "diagnosis": [
+          "CBC: thrombocytopenia, anemia",
+          "PERIPHERAL SMEAR — SCHISTOCYTES (RBC fragments) — DIAGNOSTIC sign of microangiopathic hemolysis (MAHA)",
+          "LDH (markedly elevated; both hemolysis + tissue damage), HAPTOGLOBIN (low/absent), INDIRECT BILIRUBIN (elevated)",
+          "COOMBS NEGATIVE direct antiglobulin test (rules out autoimmune hemolysis)",
+          "PT + aPTT NORMAL (distinguishes from DIC where they're prolonged)",
+          "FIBRINOGEN NORMAL (distinguishes from DIC where low)",
+          "RENAL FUNCTION (creatinine, urinalysis)",
+          "ADAMTS13 ACTIVITY + INHIBITOR (anti-ADAMTS13 IgG) — gold standard; <10% = TTP; HIGH inhibitor = acquired immune-mediated; LOW/absent inhibitor + low ADAMTS13 = hereditary",
+          "PLASMIC SCORE — bedside score predicting TTP probability (platelets, hemolysis, MCV, INR, creatinine, bilirubin, no recent oncology/transplant); score ≥6 = high TTP probability — START PLASMA EXCHANGE EMPIRICALLY",
+          "DIFFERENTIAL: HUS (typical Shiga toxin diarrhea — children; vs atypical HUS — complement; vs TTP — ADAMTS13), DIC (PT/aPTT/fibrinogen abnormal in DIC), HELLP, drug-induced TMA (quinine, gemcitabine, mitomycin, calcineurin inhibitors, ticlopidine, clopidogrel), antiphospholipid syndrome, malignant hypertension, CMV/HIV"
+        ],
+        "monitoring": [
+          "PLATELET COUNT daily during PEX (rising = response)",
+          "LDH daily (falling = response)",
+          "HEMOGLOBIN, smear (resolution of schistocytes)",
+          "CREATININE, urine output",
+          "Neurologic exam",
+          "ADAMTS13 ACTIVITY periodically (durable response = ADAMTS13 >50%)",
+          "REFRACTORY (no response after 5-7 PEX) — escalate to rituximab + caplacizumab, immunosuppression",
+          "RELAPSE common (~30% in acquired) — ADAMTS13 monitoring quarterly post-remission",
+          "Plasma exchange catheter complications (line infection, thrombosis, citrate toxicity)",
+          "PREGNANCY in known TTP — high-risk obstetrics + hematology co-management; recurrence risk"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line — Acquired TTP (Immune-Mediated)",
+            "type": "Strategy",
+            "family": "Triple Therapy",
+            "agents": [
+              "PLASMA EXCHANGE (PEX) — 1.5× plasma volume daily until platelets >150 × 10⁹/L for 2 consecutive days, LDH normalizing, neurologic resolved (typically 5-10 sessions); replaces ADAMTS13 + removes autoantibodies + ULvWF",
+              "IMMUNOSUPPRESSION: PREDNISONE 1 mg/kg/day PO + RITUXIMAB 375 mg/m² IV weekly × 4 doses (or 1 g IV × 2 doses) — autoantibody suppression",
+              "CAPLACIZUMAB 11 mg IV bolus then 11 mg SC daily × 30 days post-PEX (or until durable remission) — anti-vWF nanobody; FASTER PLATELET RECOVERY"
+            ],
+            "notes": "TRIPLE THERAPY MODERN STANDARD per HERCULES + TITAN trials. PEX critical — START WITHIN HOURS of clinical suspicion (don't wait for ADAMTS13 result; PLASMIC ≥6 → start). RITUXIMAB upfront in moderate-to-severe TTP reduces relapse. CAPLACIZUMAB faster platelet recovery + reduced mortality.",
+            "guideline": "ISTH TTP Guidelines 2020; CCS Hematology 2024; HERCULES trial Scully NEJM 2019; TITAN trial Peyvandi NEJM 2016"
+          },
+          {
+            "line": "First-Line — Hereditary TTP (Upshaw-Schulman Syndrome)",
+            "type": "Drug",
+            "family": "ADAMTS13 Replacement",
+            "agents": [
+              "PLASMA INFUSIONS (FFP 10-15 mL/kg every 2-3 weeks) — replaces ADAMTS13",
+              "RECOMBINANT ADAMTS13 (ADZYNMA — apadamtase alfa-yyaa) — FDA approved 2023; emerging Canadian access; specialist (hematology) initiation",
+              "EMERGENCY PEX during acute episode"
+            ],
+            "notes": "HEREDITARY TTP (Upshaw-Schulman) — chronic prophylactic plasma infusions every 2-3 weeks; recombinant ADAMTS13 (ADZYNMA) FDA 2023 — game-changer; Canadian access via Health Canada SAP or post-approval.",
+            "guideline": "ISTH TTP 2020; FDA ADZYNMA approval 2023"
+          },
+          {
+            "line": "Refractory / Relapsed",
+            "type": "Strategy",
+            "family": "Salvage Therapy",
+            "agents": [
+              "RITUXIMAB if not given upfront",
+              "CYCLOPHOSPHAMIDE 500-750 mg/m² IV monthly — salvage immunosuppression",
+              "VINCRISTINE — historical salvage",
+              "BORTEZOMIB — emerging salvage in refractory acquired TTP",
+              "SPLENECTOMY — historical refractory; less common modern era",
+              "CAPLACIZUMAB if not given initial therapy"
+            ],
+            "notes": "REFRACTORY TTP — failure of PEX after 5-7 sessions; specialist hematology + transfusion medicine. Modern standard is to add CAPLACIZUMAB + escalate immunosuppression (cyclophosphamide).",
+            "guideline": "ISTH TTP 2020; CCS Hematology 2024"
+          },
+          {
+            "line": "Avoid — Platelet Transfusion",
+            "type": "Counselling",
+            "family": "Pitfalls",
+            "agents": [
+              "AVOID PLATELET TRANSFUSION in TTP (unless life-threatening hemorrhage or before central line placement)"
+            ],
+            "notes": "PLATELET TRANSFUSION IN TTP can WORSEN microthrombi formation (more substrate for ULvWF + microaggregation) — RESERVE FOR LIFE-THREATENING HEMORRHAGE only. Counsel team + family.",
+            "guideline": "ISTH TTP 2020; CCS Hematology"
+          },
+          {
+            "line": "Maintenance / Relapse Prevention",
+            "type": "Strategy",
+            "family": "Long-Term Management",
+            "agents": [
+              "RITUXIMAB MAINTENANCE (~30% relapse acquired TTP) — pre-emptive at ADAMTS13 <20% during follow-up",
+              "ADAMTS13 monitoring quarterly post-remission",
+              "AVOID known TTP triggers (some drugs, severe infection, pregnancy planning consultation)",
+              "MEDICALERT bracelet"
+            ],
+            "notes": "LONG-TERM FOLLOW-UP — ADAMTS13 falling activity precedes relapse; pre-emptive rituximab can prevent. Pregnancy planning consultation (pregnancy precipitates TTP).",
+            "guideline": "ISTH TTP 2020"
+          }
+        ],
+        "pearls": [
+          "ADAMTS13 <10% = TTP",
+          "ACQUIRED (immune; ~95%) vs HEREDITARY (Upshaw-Schulman; ~5%)",
+          "MAHA + thrombocytopenia + organ dysfunction = consider TTP",
+          "PLASMIC SCORE ≥6 — start PEX EMPIRICALLY (don't wait for ADAMTS13 result)",
+          "TRIPLE THERAPY: PEX + RITUXIMAB + CAPLACIZUMAB = modern standard (HERCULES trial)",
+          "CAPLACIZUMAB anti-vWF nanobody — FIRST-IN-CLASS; faster platelet recovery + reduced mortality",
+          "DIFFERENTIATE FROM DIC — TTP has NORMAL PT/aPTT/fibrinogen (DIC has prolonged + low fibrinogen)",
+          "AVOID PLATELET TRANSFUSION (worsens microthrombi); reserve for life-threatening hemorrhage",
+          "RECOMBINANT ADAMTS13 (ADZYNMA) FDA 2023 — game-changer for hereditary TTP",
+          "CLASSIC PENTAD HISTORIC (now: thrombocytopenia + MAHA dyad sufficient with PLASMIC ≥6 to start)",
+          "PREGNANCY-PRECIPITATED TTP — second/third trimester, postpartum; specialist co-management",
+          "ADAMTS13 + INHIBITOR — distinguishes acquired (high inhibitor) from hereditary (low/absent + low ADAMTS13)",
+          "MORTALITY pre-PEX 90% → modern triple therapy 10-20%",
+          "RELAPSE ~30% in acquired; ADAMTS13 monitoring + pre-emptive rituximab",
+          "DRUG-INDUCED TMA: quinine, gemcitabine, mitomycin, calcineurin inhibitors, ticlopidine, clopidogrel — different from immune-mediated",
+          "EXISTS UNDER 'TTP-LIKE' SYNDROMES: complement-mediated atypical HUS (eculizumab), drug-induced TMA, malignancy-associated TMA"
+        ],
+        "introduction": "Thrombotic thrombocytopenic purpura is a life-threatening thrombotic microangiopathy caused by severe ADAMTS13 deficiency (<10%) — most often acquired immune-mediated (autoantibodies) or rarely hereditary. Modern triple therapy with plasma exchange + immunosuppression (rituximab + steroids) + caplacizumab (HERCULES trial) has reduced mortality from ~90% pre-PEX era to 10-20%. The PLASMIC score (≥6) supports empirical plasma exchange before ADAMTS13 results. Critical pharmacy roles: rapid plasma exchange coordination, caplacizumab administration + bleeding monitoring, rituximab infusions, avoidance of platelet transfusion (worsens microthrombi unless life-threatening hemorrhage). Recombinant ADAMTS13 (ADZYNMA, FDA 2023) is a game-changer for hereditary TTP. Long-term follow-up with ADAMTS13 monitoring helps prevent relapse.",
+        "source": "ISTH TTP Guidelines 2020; CCS Hematology Guidelines 2024; HERCULES trial Scully NEJM 2019; TITAN trial Peyvandi NEJM 2016; FDA ADZYNMA approval 2023; PLASMIC Score Bendapudi Lancet Hematology 2017"
       }
     ]
   },
@@ -133932,6 +134566,205 @@ var DRUGS = {
     ],
     "counselling": "Take 1-3 tablets with the FIRST bite or sip of any food containing milk, cream, ice cream, soft cheese, butter, or yogurt. The medicine works in your stomach to digest the milk sugar so you don't have bloating, cramping, gas, or diarrhea. Common: harmless if you take too much. STOP and tell provider if: severe rash, difficulty breathing (rare allergic reaction). ALTERNATIVES: lactose-free milk products are widely available; plant-based milks (oat, almond, soy) are dairy-free. Many people with lactose intolerance can tolerate small amounts of YOGURT and HARD CHEESE without enzyme. Make sure you get enough CALCIUM (1000-1200 mg/day from non-dairy sources or supplements) and VITAMIN D (800-2000 IU/day). Safe during pregnancy and breastfeeding.",
     "source": "Health Canada NHP database; CAG Lactose Intolerance Position Statement; Misselwitz BMJ 2019 Lactose Intolerance Review; ACG Practice Guideline 2024"
+  },
+  "caplacizumab": {
+    "name": "Caplacizumab",
+    "brand": "Cablivi",
+    "class": "Anti-vWF nanobody — first-in-class for acquired TTP",
+    "napra": "Schedule I (Rx); IV/SC hospital and specialty pharmacy stock",
+    "moa": "Humanized bivalent NANOBODY (single-domain antibody fragment) targeting the A1 DOMAIN OF VON WILLEBRAND FACTOR (vWF) → blocks platelet glycoprotein Ib-IX-V binding to ultra-large vWF multimers → prevents platelet microthrombi formation in ACQUIRED THROMBOTIC THROMBOCYTOPENIC PURPURA (aTTP). Provides RAPID PLATELET RECOVERY (median ~2.7 days) when added to plasma exchange + immunosuppression (rituximab, steroids). FIRST-IN-CLASS therapy for aTTP — addresses thrombotic component while ADAMTS13 deficiency reverses with immunosuppression.",
+    "indications": [
+      "ACQUIRED THROMBOTIC THROMBOCYTOPENIC PURPURA (aTTP) — adults; ADJUNCT to plasma exchange + immunosuppression (rituximab + steroids); first-in-class targeted therapy"
+    ],
+    "dosing": {
+      "Adult aTTP": "FIRST DOSE 11 mg IV bolus before plasma exchange initiation; FOLLOWED BY 11 mg SC daily after each plasma exchange × 30 days post-PEX (or until durable remission). May extend to 60 days total in refractory disease.",
+      "Pediatric (≥12 years; ≥40 kg)": "Same as adult dose (11 mg IV/SC); FDA approved 2022 for pediatric ≥12 years",
+      "Renal / hepatic impairment": "No specific adjustment",
+      "Storage": "Refrigerate (2-8°C); bring to room temperature before injection; protect from light"
+    },
+    "side_effects": {
+      "common": [
+        "MUCOCUTANEOUS BLEEDING (~50% — most common AE) — epistaxis, gingival bleeding, easy bruising, GI bleeding (less severe)",
+        "Headache (~21%)",
+        "Fatigue (~12%)",
+        "Injection site reactions"
+      ],
+      "serious": [
+        "MAJOR BLEEDING (~6-10%) — GI bleeding, intracranial bleeding (rare); BLEEDING RISK significant with concurrent anticoagulants/antiplatelets/recent surgery/trauma",
+        "FEVER REACTIONS / hypersensitivity (rare)",
+        "ANTIBODY DEVELOPMENT (~3%) — neutralizing antibodies to caplacizumab; ineffective + potential hypersensitivity"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to caplacizumab",
+      "Active major bleeding (relative)",
+      "Recent major surgery or trauma <2 weeks (relative — bleeding risk)",
+      "Concurrent anticoagulants without close monitoring (additive bleeding)"
+    ],
+    "interactions": [
+      "ANTICOAGULANTS (warfarin, DOACs, heparin) — additive bleeding; HOLD if possible",
+      "ANTIPLATELETS (aspirin, P2Y12 inhibitors) — additive bleeding",
+      "NSAIDs — increased bleeding risk",
+      "RECENT SURGERY/TRAUMA <2 weeks — caution; consider hold if active bleeding"
+    ],
+    "pregnancy": "Cat C / no human data. Limited human data; aTTP itself is high-risk pregnancy condition. Use only if clearly indicated. Breastfeeding: limited data; minimal data on milk transfer; cautious use.",
+    "pk": "IV: peak immediate; SC: F ~90% (excellent); peak 1.4-3.5 hours after SC; t1/2 ~6-8 hours (short — daily dosing); not metabolized via CYP; renal excretion minor; mostly eliminated via vWF complex turnover.",
+    "canadian_notes": "CABLIVI (CAPLACIZUMAB) — Health Canada approved 2019 for aTTP; ODB Limited Use; specialist (hematology) initiation; HOSPITAL inpatient + specialty pharmacy outpatient. Cost ~$8,000-12,000 per dose; total course often $250,000+. CCS HEMATOLOGY GUIDELINES 2024: caplacizumab + plasma exchange + rituximab + steroids — TRIPLE THERAPY for aTTP; FASTER PLATELET RECOVERY + REDUCED MORTALITY (HERCULES trial).",
+    "pearls": [
+      "FIRST-IN-CLASS aTTP therapy — anti-vWF nanobody",
+      "TRIPLE THERAPY: PLASMA EXCHANGE + IMMUNOSUPPRESSION (rituximab + steroids) + CAPLACIZUMAB",
+      "HERCULES TRIAL (Scully NEJM 2019) — caplacizumab faster platelet recovery (median 2.7 days vs 4.0 days), fewer relapses, reduced mortality",
+      "BLEEDING RISK ~50% mucocutaneous; ~6-10% major — counsel + hold concurrent anticoagulants/antiplatelets if possible",
+      "FIRST DOSE IV before plasma exchange (rapid loading); SC daily after PEX",
+      "DURATION: at least 30 days post-PEX; may extend 60 days in refractory disease",
+      "PEDIATRIC ≥12 YEARS approved (FDA 2022)",
+      "ADAMTS13 ACTIVITY MONITORING — guide duration (continue until durable normalization)",
+      "ANTIBODY DEVELOPMENT (~3%) — uncommon but limits efficacy + potential hypersensitivity",
+      "COST significant ($8,000-12,000/dose; $250,000+/course) — specialty pharmacy + manufacturer access programs (Sanofi-Genzyme PSP)",
+      "ROUTE: IV first dose then SC self-administration after training",
+      "STORAGE refrigerated; counsel cold-chain"
+    ],
+    "counselling": "Given as IV first dose then daily SC injection at home/clinic during/after plasma exchange. The medication helps your platelets recover faster than plasma exchange alone. Keep refrigerated; bring to room temperature 15-30 minutes before injection. Common side effects: bleeding (gum bleeding, nosebleeds, easy bruising) — tell team immediately about any major bleeding. STOP and call team for: severe nosebleed, blood in vomit/stool/urine, severe headache (possible brain bleed), signs of allergic reaction, persistent severe bruising. Avoid blood thinners (aspirin, ibuprofen, naproxen) without team approval. Continue until your hematologist tells you to stop (typically 30+ days after plasma exchange).",
+    "source": "HERCULES trial Scully NEJM 2019; TITAN trial Peyvandi NEJM 2016; CCS Hematology Guidelines 2024; Health Canada Cablivi monograph; FDA Cablivi approval 2019 + pediatric extension 2022"
+  },
+  "milrinone": {
+    "name": "Milrinone",
+    "brand": "Primacor (historic); generic IV",
+    "class": "Phosphodiesterase 3 (PDE3) inhibitor — inotrope + vasodilator",
+    "napra": "Schedule I (Rx); IV hospital ICU/CCU stock",
+    "moa": "Selective inhibitor of PHOSPHODIESTERASE 3 (PDE3) in cardiac myocytes + vascular smooth muscle → ↑intracellular cAMP → ↑Ca2+ influx in cardiomyocytes → POSITIVE INOTROPY + LUSITROPY (improved diastolic relaxation) + VASODILATION (peripheral + pulmonary). 'INODILATOR' — enhances cardiac output WITHOUT direct β-adrenergic stimulation (advantage in patients on chronic β-blockers — non-overlapping mechanism vs dobutamine/dopamine). Pulmonary vasodilation valuable in right heart failure / pulmonary hypertension. Half-life ~2-3 hours (short-acting; loading + infusion).",
+    "indications": [
+      "ACUTE DECOMPENSATED HEART FAILURE WITH LOW CARDIAC OUTPUT — short-term inotropic support (alongside or after dobutamine; preferred when β-blocker on board)",
+      "CARDIOGENIC SHOCK — inotropic support with vasodilation (caution if hypotensive; often combined with vasopressor)",
+      "POST-CARDIAC SURGERY LOW-OUTPUT STATE — weaning from cardiopulmonary bypass",
+      "RIGHT HEART FAILURE / PULMONARY HYPERTENSION — pulmonary vasodilator effect; specialist use",
+      "BRIDGE TO CARDIAC TRANSPLANT (continuous infusion outpatient — tertiary specialist care)"
+    ],
+    "dosing": {
+      "Adult ICU loading + infusion": "LOADING DOSE 50 mcg/kg IV over 10 min (omit in hypotensive patients), then INFUSION 0.375-0.75 mcg/kg/min titrate to hemodynamic effect; usual 0.5 mcg/kg/min",
+      "Bridge to transplant (outpatient continuous IV)": "0.25-0.5 mcg/kg/min via PICC/central; specialist tertiary heart failure clinic",
+      "Renal impairment": "REDUCE infusion rate; CrCl 30-50: 0.33 mcg/kg/min; CrCl 10-30: 0.23 mcg/kg/min; HD: post-dialysis adjustment",
+      "Hepatic impairment": "No specific adjustment",
+      "Pediatric (specialist)": "Loading 50 mcg/kg IV over 30-60 min, then 0.25-1 mcg/kg/min. Avoid in HOCM (worsens outflow obstruction)"
+    },
+    "side_effects": {
+      "common": [
+        "HYPOTENSION (vasodilation; often dose-limiting)",
+        "HEADACHE",
+        "SUPRAVENTRICULAR + VENTRICULAR ARRHYTHMIAS (~12-15% — atrial fibrillation, VT)",
+        "Tremor",
+        "Hypokalemia"
+      ],
+      "serious": [
+        "VENTRICULAR ARRHYTHMIA — VT/VF; mortality risk; ECG monitoring continuous",
+        "ATRIAL FIBRILLATION (new-onset)",
+        "SEVERE HYPOTENSION",
+        "MYOCARDIAL ISCHEMIA — increased oxygen demand from inotropy",
+        "OPTIME-CHF Trial — milrinone in ADHF without low-output state INCREASED mortality + arrhythmia (limit to true low-output)",
+        "Thrombocytopenia (rare)",
+        "Electrolyte abnormalities"
+      ]
+    },
+    "contraindications": [
+      "Severe aortic stenosis (preload-dependent)",
+      "Severe pulmonic stenosis",
+      "Hypertrophic obstructive cardiomyopathy (HOCM — worsens obstruction)",
+      "Active myocardial ischemia (relative — increases oxygen demand)",
+      "Severe hypotension without vasopressor support",
+      "Hypersensitivity"
+    ],
+    "interactions": [
+      "VASOPRESSORS (norepinephrine, vasopressin) — often combined therapeutically (offset hypotension)",
+      "ANTIARRHYTHMICS — additive QT/proarrhythmia",
+      "OTHER INOTROPES (dobutamine, dopamine, epinephrine) — additive arrhythmia/oxygen demand; specialist combination",
+      "CCBs (verapamil, diltiazem) — additive negative effects"
+    ],
+    "pregnancy": "Cat C. Limited human data; reserve for life-threatening maternal indication. Breastfeeding: limited data; usually used in critical care setting transient use.",
+    "pk": "IV: peak immediate; t1/2 ~2-3 hours (longer in HF + renal impairment); 70% protein-bound; renal excretion ~85% unchanged.",
+    "canadian_notes": "PRIMACOR / GENERIC MILRINONE — Health Canada approved IV; ICU/CCU/cardiac surgery + tertiary heart failure clinic outpatient bridge therapy. ODB Limited Use for outpatient continuous infusion (bridge to transplant). CCS HEART FAILURE 2024: short-term inotropic support for ACUTE DECOMPENSATED HF WITH LOW-OUTPUT STATE; AVOID in normal-output ADHF (OPTIME-CHF trial harm). PREFERRED OVER DOBUTAMINE in patients on chronic β-blockers (non-overlapping mechanism).",
+    "pearls": [
+      "INODILATOR — POSITIVE INOTROPY + VASODILATION (peripheral + pulmonary)",
+      "PREFERRED OVER DOBUTAMINE in patients on chronic β-BLOCKERS (non-β-adrenergic; non-overlapping mechanism)",
+      "OPTIME-CHF TRIAL — milrinone HARMFUL in ADHF without low-output state (increased arrhythmia + mortality); RESERVE for true low-output / cardiogenic shock",
+      "RENAL DOSING IMPORTANT — reduce infusion CrCl <50",
+      "CARDIOGENIC SHOCK — often combined with NOREPINEPHRINE (vasopressor) to offset hypotension",
+      "ARRHYTHMIA RISK — atrial fibrillation, VT (~12-15%); continuous ECG monitoring",
+      "HOCM CONTRAINDICATED — worsens outflow obstruction",
+      "PULMONARY VASODILATOR — useful in right heart failure / pulmonary hypertension",
+      "BRIDGE TO TRANSPLANT — outpatient continuous IV via PICC; tertiary specialist care",
+      "POST-CARDIAC SURGERY weaning bypass — common ICU use",
+      "LOAD MAY BE OMITTED if hypotensive — use infusion alone",
+      "SHORT t1/2 (~2-3h) — rapid titratability advantage"
+    ],
+    "counselling": "(IV in ICU/CCU under continuous monitoring) The team will closely monitor your blood pressure, ECG, oxygen, and urine output. Tell the team right away about: severe headache, fast or irregular heartbeat, fainting, severe chest pain, severe shortness of breath, severe dizziness. The medication wears off quickly (2-3 hours after stopping). After leaving ICU, you'll likely be transitioned to oral heart failure medications. If you're sent home on continuous IV (bridge to transplant), the home care team will train you on PICC line care + signs to call for.",
+    "source": "Health Canada Primacor monograph; OPTIME-CHF trial Cuffe NEJM 2002; CCS Heart Failure Guidelines 2024; ESC Acute HF 2024"
+  },
+  "adenosine": {
+    "name": "Adenosine",
+    "brand": "Adenocard (IV); generic",
+    "class": "Endogenous purine nucleoside — antiarrhythmic + pharmacologic stress agent",
+    "napra": "Schedule I (Rx); IV hospital ED/CCU/cath lab stock",
+    "moa": "Endogenous purine nucleoside — activates A1 ADENOSINE RECEPTORS at AV node → SHORT-LASTING AV NODAL BLOCK (transient; t1/2 ~10 seconds; degraded by adenosine deaminase in red blood cells). Terminates re-entrant supraventricular tachycardias (SVT) involving the AV node. Also A2A receptor → coronary vasodilation (used for pharmacologic stress imaging — alternative to dipyridamole, regadenoson). DOES NOT terminate atrial fibrillation, atrial flutter, or VT — but transiently SLOWS conduction (unmasks rhythm; helps diagnose).",
+    "indications": [
+      "PAROXYSMAL SUPRAVENTRICULAR TACHYCARDIA (PSVT) — termination; first-line drug therapy after vagal maneuvers fail",
+      "DIAGNOSTIC adjunct for wide-complex tachycardia of uncertain origin — helps differentiate SVT with aberrancy from VT (VT not terminated)",
+      "PHARMACOLOGIC STRESS IMAGING — coronary vasodilation for myocardial perfusion imaging (SPECT, PET); alternative to dipyridamole + regadenoson",
+      "Investigational: pulmonary hypertension testing"
+    ],
+    "dosing": {
+      "Adult PSVT termination": "6 mg IV RAPID PUSH followed by 20 mL saline flush (must be rapid through proximal large IV); if no conversion in 1-2 min: 12 mg IV rapid push; may repeat 12 mg once if needed",
+      "Adult pharmacologic stress test": "0.14 mg/kg/min IV continuous infusion × 6 minutes (radioisotope tracer injected at 3-minute mark)",
+      "Pediatric SVT": "0.1 mg/kg IV (max 6 mg first dose); if no conversion: 0.2 mg/kg (max 12 mg) — repeat 0.2 mg/kg q1-2 min × 1. ENHANCED EFFECT (reduce dose 50%): central line administration, transplanted heart (denervation), concurrent dipyridamole, carbamazepine. REDUCED EFFECT (may need higher dose): chronic theophylline, caffeine within 12 hours (A2A antagonists)"
+    },
+    "side_effects": {
+      "common": [
+        "TRANSIENT (10-20 seconds): chest pain/pressure, dyspnea, flushing, headache, dizziness, nausea — counsel patient as expected; resolves rapidly",
+        "Bradycardia/asystole (transient — usually <5 seconds)",
+        "Sense of impending doom"
+      ],
+      "serious": [
+        "BRONCHOSPASM — caution in asthma/COPD with bronchospasm history; consider regadenoson (A2A-selective; less bronchospasm)",
+        "PROLONGED ASYSTOLE — rare; avoid in 2nd/3rd degree AV block without pacemaker",
+        "HYPOTENSION — usually transient",
+        "AF/AFLUTTER UNMASKING — adenosine may convert PSVT to AF; usually self-resolves",
+        "WPW with antegrade conduction — adenosine generally safe in known WPW PSVT but caution; AV NODAL BLOCKER risk paradoxical 1:1 conduction in pre-excited AF (atrial fibrillation with antegrade conduction over accessory pathway)"
+      ]
+    },
+    "contraindications": [
+      "Severe asthma / bronchospasm history (relative — bronchospasm risk; regadenoson alternative)",
+      "Second or third degree AV block without functioning pacemaker",
+      "Sick sinus syndrome without pacemaker",
+      "Concurrent dipyridamole (significantly potentiates effect — reduce dose 50-75%)",
+      "Theophylline/caffeine within 12 hours (antagonize effect for stress imaging)",
+      "Pre-excited AFib (WPW + AF) — paradoxical 1:1 conduction over accessory pathway → VF (USE IV PROCAINAMIDE INSTEAD)",
+      "Hypersensitivity"
+    ],
+    "interactions": [
+      "DIPYRIDAMOLE — POTENTIATES adenosine 4-8×; REDUCE dose 50-75%; clinical pearl",
+      "CAFFEINE / THEOPHYLLINE — ANTAGONIZE adenosine (A2A receptor blockers); HOLD CAFFEINE 12-24 hours before stress test",
+      "CARBAMAZEPINE — potentiates AV blockade",
+      "BETA-BLOCKERS, CCBs (verapamil/diltiazem), DIGOXIN — additive AV blockade; usually safe but caution",
+      "CARDIAC TRANSPLANT — denervated heart hypersensitive (~5×); reduce dose 50%"
+    ],
+    "pregnancy": "Cat C. Limited human data; used acutely for SVT termination in pregnancy when needed (life-threatening maternal arrhythmia). Crosses placenta minimally given short t1/2. Breastfeeding: irrelevant given seconds-long t1/2.",
+    "pk": "IV: peak immediate; t1/2 ~10 seconds (extremely short); degraded in red blood cells by adenosine deaminase + tissue uptake; no metabolism by liver/kidney; no dose adjustment for organ failure.",
+    "canadian_notes": "ADENOCARD / GENERIC ADENOSINE — Health Canada approved; IV ED/cath lab/cardiology stock. ODB Limited Use. ACLS 2024 + CCS SVT GUIDELINES: adenosine first-line drug for PSVT termination after vagal maneuvers failed. PHARMACOLOGIC STRESS imaging — adenosine + regadenoson (A2A-selective; preferred in COPD/asthma) + dipyridamole — choice depends on patient factors.",
+    "pearls": [
+      "CLASSIC PSVT TERMINATION DRUG — 6 mg IV rapid push followed by 12 mg if needed",
+      "RAPID PUSH + SALINE FLUSH ESSENTIAL — t1/2 ~10 seconds; slow administration ineffective",
+      "PROXIMAL LARGE IV (antecubital or central) — distal small IV reduces efficacy",
+      "TRANSIENT EFFECTS (<20 seconds): chest pain, dyspnea, flushing, sense of doom — counsel as expected",
+      "DIPYRIDAMOLE INTERACTION POTENTIATES 4-8× — reduce dose 50-75% in patients on Aggrenox/dipyridamole",
+      "CAFFEINE/THEOPHYLLINE 12h washout for stress testing (A2A receptor blockade)",
+      "CARDIAC TRANSPLANT (denervated heart) hypersensitive ~5× — reduce dose 50%",
+      "WPW + AF (PRE-EXCITED AF) — DO NOT USE adenosine (paradoxical 1:1 conduction → VF); use IV procainamide",
+      "PSVT WITH NORMAL HEART responds well; VT does NOT terminate (helps diagnose)",
+      "ASTHMA RELATIVE CONTRAINDICATION — bronchospasm risk; regadenoson alternative",
+      "PHARMACOLOGIC STRESS IMAGING — alternative to dipyridamole; faster onset/offset",
+      "AMINOPHYLLINE 100-250 mg IV reverses adenosine if prolonged effect (rare)"
+    ],
+    "counselling": "(IV in monitored hospital setting) Given as a rapid IV push by the team. You may experience VERY BRIEF (10-20 seconds): intense chest pressure, shortness of breath, flushing, sense of doom — these are EXPECTED and resolve rapidly. The medication has an extremely short half-life (10 seconds). The team will monitor your heart rhythm and blood pressure closely. If you take dipyridamole/Aggrenox, your dose will be reduced. AVOID caffeine for 12-24 hours before stress testing (coffee, tea, chocolate, soda).",
+    "source": "Health Canada Adenocard monograph; ACLS 2024 (AHA); CCS SVT Guidelines 2024; Pediatric SVT ACLS"
   }
 
 };
@@ -135874,7 +136707,10 @@ var FAMILY_MAP = {
   "ergocalciferol": "Vitamin D Supplements",
   "magnesium_oxide": "Mineral Supplements",
   "potassium_chloride": "Mineral Supplements",
-  "lactase": "Digestive Enzymes"
+  "lactase": "Digestive Enzymes",
+  "caplacizumab": "Anti-vWF Therapies",
+  "milrinone": "Inotropic Agents",
+  "adenosine": "Antiarrhythmics"
 };
 var NAPRA_ODB_DATA = {
   "amoxicillin": {
@@ -145437,6 +146273,33 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "Patient pay; ~$10-20/bottle; widely available pharmacy OTC.",
     "luCode": null,
     "notes": "Exogenous lactase enzyme for lactose intolerance; alternative: lactose-free milk + plant-based alternatives. Galactosemia contraindication."
+  },
+  "caplacizumab": {
+    "name": "Caplacizumab (Cablivi)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); IV/SC hospital and specialty pharmacy.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU; specialist hematology initiation; cost ~$8K-12K/dose, ~$250K+ course.",
+    "luCode": "Cablivi LU per ODB Formulary",
+    "notes": "First-in-class anti-vWF nanobody for aTTP (HERCULES trial); triple therapy with PEX + rituximab + steroids. Bleeding risk ~50% mucocutaneous; ~6-10% major. ≥12 yr pediatric approved (FDA 2022)."
+  },
+  "milrinone": {
+    "name": "Milrinone (Primacor; generic)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); IV ICU/CCU stock.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU for outpatient continuous infusion (bridge to transplant); inpatient hospital formulary.",
+    "luCode": "Milrinone LU per ODB Formulary",
+    "notes": "PDE3 inhibitor 'inodilator' (positive inotropy + vasodilation); preferred over dobutamine if on chronic β-blockers. RESERVE for true low-output ADHF (OPTIME-CHF trial harm in normal-output)."
+  },
+  "adenosine": {
+    "name": "Adenosine (Adenocard; generic)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); IV ED/cath lab stock.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU.",
+    "luCode": "Adenocard LU per ODB Formulary",
+    "notes": "PSVT termination first-line drug (after vagal maneuvers); 6 mg → 12 mg IV rapid push. Dipyridamole potentiates 4-8×; AVOID in pre-excited AF (WPW + AF). t1/2 ~10 seconds."
   }
 };
 var MINOR_AILMENTS = [
@@ -168266,6 +169129,39 @@ var PREG_DATA = {
     "bfDetail": "Compatible with breastfeeding (limited data may apply).",
     "alternatives": "",
     "source": "Health Canada NHP database; CAG Lactose Intolerance Position Statement; Misselwitz BMJ 2019 Lactose Intolerance Review; ACG Practice Guideline 2024"
+  },
+  "caplacizumab": {
+    "name": "Caplacizumab (Cablivi)",
+    "pregRisk": "Use if needed",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Limited data — caution",
+    "bfColor": "#fbbf24",
+    "pregDetail": "Cat C / no human data. Limited human data; aTTP itself is high-risk pregnancy condition. Use only if clearly indicated. Breastfeeding: limited data; minimal data on milk transfer; cautious use.",
+    "bfDetail": "Limited breastfeeding data; use cautiously.",
+    "alternatives": "",
+    "source": "HERCULES trial Scully NEJM 2019; TITAN trial Peyvandi NEJM 2016; CCS Hematology Guidelines 2024; Health Canada Cablivi monograph; FDA Cablivi approval 2019 + pediatric extension 2022"
+  },
+  "milrinone": {
+    "name": "Milrinone (Primacor (historic); generic IV)",
+    "pregRisk": "Use if needed",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Limited data — caution",
+    "bfColor": "#fbbf24",
+    "pregDetail": "Cat C. Limited human data; reserve for life-threatening maternal indication. Breastfeeding: limited data; usually used in critical care setting transient use.",
+    "bfDetail": "Limited breastfeeding data; use cautiously.",
+    "alternatives": "",
+    "source": "Health Canada Primacor monograph; OPTIME-CHF trial Cuffe NEJM 2002; CCS Heart Failure Guidelines 2024; ESC Acute HF 2024"
+  },
+  "adenosine": {
+    "name": "Adenosine (Adenocard (IV); generic)",
+    "pregRisk": "Use if needed",
+    "pregColor": "#fbbf24",
+    "bfRisk": "Limited data — caution",
+    "bfColor": "#fbbf24",
+    "pregDetail": "Cat C. Limited human data; used acutely for SVT termination in pregnancy when needed (life-threatening maternal arrhythmia). Crosses placenta minimally given short t1/2. Breastfeeding: irrelevant given seconds-long t1/2.",
+    "bfDetail": "Limited breastfeeding data; use cautiously.",
+    "alternatives": "",
+    "source": "Health Canada Adenocard monograph; ACLS 2024 (AHA); CCS SVT Guidelines 2024; Pediatric SVT ACLS"
   }
 };
 
