@@ -46247,7 +46247,10 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Fatal bradycardia (sofosbuvir + amiodarone — not Maviret directly, but important context)",
         "management": "Maviret does not contain sofosbuvir — less concern, but flag amiodarone use to specialist"
-      }
+      },
+      { "drug": "Strong CYP3A4 inducers (rifampin, efavirenz, carbamazepine, phenytoin)", "severity": "Contraindicated", "mechanism": "Significantly reduce DAA levels — virologic failure and resistance", "management": "AVOID combination; switch HIV regimen if needed" },
+      { "drug": "Oral contraceptives (ethinyl estradiol)", "severity": "Contraindicated", "mechanism": "Pibrentasvir increases EE levels → increased ALT", "management": "AVOID combination; use progestin-only or non-hormonal contraception" }
+    
     ],
     "pregnancy": "Category B equivalent. Avoid — insufficient data. HCV treatment should ideally occur before or after pregnancy.",
     "pk": {
@@ -60634,7 +60637,11 @@ var DRUGS = {
         "mechanism": "Tafenoquine inhibits OCT2 → increases substrate levels",
         "management": "Monitor; consider alternative"
       }
-    ,{"drug":"G6PD deficiency","severity":"Contraindicated","mechanism":"Tafenoquine causes hemolytic anemia in G6PD-deficient patients (8-aminoquinoline class effect). G6PD deficiency present in ~5% population worldwide; up to 30% in some Mediterranean/African/Asian populations. Long half-life (~14 days) means hemolysis cannot be stopped quickly.","management":"QUANTITATIVE G6PD ENZYME activity testing MANDATORY before tafenoquine (>70% normal activity required for treatment per FDA/HC label). Qualitative G6PD test alone is INSUFFICIENT. If G6PD-deficient or status unknown → use alternative malaria prophylaxis (atovaquone-proguanil, doxycycline) or chloroquine-only (without primaquine/tafenoquine for radical cure)."}],
+    ,{"drug":"G6PD deficiency","severity":"Contraindicated","mechanism":"Tafenoquine causes hemolytic anemia in G6PD-deficient patients (8-aminoquinoline class effect). G6PD deficiency present in ~5% population worldwide; up to 30% in some Mediterranean/African/Asian populations. Long half-life (~14 days) means hemolysis cannot be stopped quickly.","management":"QUANTITATIVE G6PD ENZYME activity testing MANDATORY before tafenoquine (>70% normal activity required for treatment per FDA/HC label). Qualitative G6PD test alone is INSUFFICIENT. If G6PD-deficient or status unknown → use alternative malaria prophylaxis (atovaquone-proguanil, doxycycline) or chloroquine-only (without primaquine/tafenoquine for radical cure)."},
+      { "drug": "G6PD deficiency", "severity": "Contraindicated", "mechanism": "8-aminoquinoline — severe hemolytic anemia in G6PD-deficient patients", "management": "MANDATORY G6PD testing before each dose (quantitative — not just qualitative); contraindicated if G6PD activity <70%" },
+      { "drug": "Methemoglobinemia", "severity": "Major", "mechanism": "8-aminoquinoline class — methemoglobin formation", "management": "Monitor for cyanosis, hypoxia; check methemoglobin level if symptomatic" },
+      { "drug": "CYP2D6 (poor metabolizers)", "severity": "Note", "mechanism": "CYP2D6 partially metabolizes tafenoquine; poor metabolizers may have higher levels", "management": "Limited clinical relevance; standard dosing" }
+    ],
     "pregnancy": "CONTRAINDICATED in pregnancy — fetal G6PD status unknown; potential for fetal hemolysis. Effective contraception during AND for 3 months after dose (long half-life). Lactation: avoid if infant G6PD status unknown; if infant G6PD-normal, compatible after weighing benefit-risk.",
     "pk": {
       "absorption": "Oral; food increases absorption ~40%",
@@ -60786,7 +60793,11 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Artesunate is CYP2A6 substrate — inducers reduce levels",
         "management": "Limited clinical relevance for short courses"
-      }
+      },
+      { "drug": "Post-artesunate delayed hemolysis", "severity": "Major", "mechanism": "13-22% of severe malaria patients develop hemolysis 7-21 days post-treatment, especially with high parasitemia", "management": "Mandatory weekly CBC × 1 month post-treatment; treat with transfusion if Hb <70 g/L" },
+      { "drug": "Hemoglobin / CBC monitoring", "severity": "Major", "mechanism": "Same — close hematologic monitoring required", "management": "Weekly CBC × 4 weeks post-IV artesunate" },
+      { "drug": "Pregnancy", "severity": "Note", "mechanism": "1st trimester: limited data, severe malaria may override; 2nd-3rd trimester compatible per WHO", "management": "Severe malaria — benefit usually outweighs risk regardless of trimester" }
+    
     ],
     "pregnancy": "1st trimester: WHO PERMITS in life-threatening severe malaria (alternatives — IV quinine — also have fetal risks; severe malaria has very high maternal/fetal mortality untreated). 2nd/3rd trimester: PREFERRED for severe malaria (lower mortality than quinine). Lactation: small amounts in milk; compatible with monitoring.",
     "pk": {
@@ -60850,7 +60861,9 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Additive cholinesterase inhibition (theoretical with topical use; relevant if systemically absorbed)",
         "management": "Generally not clinically relevant for routine topical use"
-      }
+      },
+      { "drug": "Flammable — fire hazard", "severity": "Major", "mechanism": "Solvent base is flammable", "management": "No smoking, hair dryers, open flames during application; avoid for 4-6 hours after" }
+    
     ],
     "pregnancy": "Limited human data; minimal systemic absorption from topical use suggests low fetal exposure. Defer treatment to postpartum if possible (use permethrin if treatment essential — better safety data). Lactation: minimal absorption; compatible.",
     "pk": {
@@ -68544,7 +68557,10 @@ var DRUGS = {
         "severity": "Minor",
         "mechanism": "Permethrin used for clothing/textile treatment (insect repellent for outdoor clothing, bed nets) is oil-based in some formulations and may degrade latex condoms or diaphragms if treated clothing or linens are in direct contact; this is a device interaction with treated textiles, not with permethrin cream",
         "management": "Wash permethrin-treated clothing before use in intimate contexts; permethrin 5% cream for scabies/lice treatment should be completely washed off after treatment period before engaging in activities requiring latex protection; no interaction between permethrin as a drug and oral contraceptives or IUDs"
-      }
+      },
+      { "drug": "Systemic absorption (minimal)", "severity": "Note", "mechanism": "<2% systemic absorption from intact skin", "management": "Standard topical use; safe in pregnancy/lactation" },
+      { "drug": "Pediatric (≥2 months)", "severity": "Note", "mechanism": "Approved for infants ≥2 months for scabies", "management": "Standard dose; avoid eyes, mouth" }
+    
     ],
     "pregnancy": "Category B. Preferred topical treatment for scabies in pregnancy (minimal systemic absorption, animal studies reassuring). Oral ivermectin not used in pregnancy.",
     "pk": {
@@ -81022,7 +81038,11 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Disseminated infection risk",
         "management": "Avoid; for ≥6 months post-treatment"
-      }
+      },
+      { "drug": "Phenobarbital / phenytoin / rifampin (CYP inducers)", "severity": "Major", "mechanism": "Increase activation to active metabolite — increased toxicity", "management": "Monitor for toxicity; dose adjustment may be needed" },
+      { "drug": "Hemorrhagic cystitis", "severity": "Major", "mechanism": "Acrolein metabolite damages bladder epithelium → severe hematuria", "management": "Aggressive hydration; mesna (sodium 2-mercaptoethanesulfonate) co-administration for high doses; avoid evening dosing" },
+      { "drug": "Mesna (uroprotectant)", "severity": "Beneficial", "mechanism": "Mesna binds acrolein in bladder — prevents hemorrhagic cystitis", "management": "Administer mesna with high-dose cyclophosphamide (e.g., HSCT conditioning)" }
+    
     ],
     "pregnancy": "Category D — CONTRAINDICATED. Effective contraception (both sexes) during and 12 months post (ovary) / 4 months post (sperm).",
     "pk": {
@@ -94256,7 +94276,9 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "H1 antagonists may reduce pitolisant's wakefulness-promoting effect (pitolisant raises CNS histamine; H1 antagonists block its action)",
         "management": "AVOID concurrent H1 antihistamines, especially sedating first-generation agents"
-      }
+      },
+      { "drug": "Oral contraceptives", "severity": "Major", "mechanism": "CYP3A4 induction reduces hormonal contraceptive efficacy", "management": "Use non-hormonal contraception or higher-dose hormonal during therapy and for 21 days after stopping" }
+    
     ],
     "pregnancy": "Health Canada classification: limited human data; animal studies show some fetotoxicity at high exposures. Use only if benefit clearly outweighs risk. Counsel non-hormonal contraception during therapy. Excretion in breast milk: limited data — CONTRAINDICATED in breastfeeding per Health Canada PM.",
     "pk": {
@@ -103075,7 +103097,10 @@ var DRUGS = {
         "severity": "Moderate",
         "mechanism": "Transient hypertension post-dose may override antihypertensive therapy",
         "management": "Monitor BP at 40 min post-dose; hold dose if BP >160/100 at baseline"
-      }
+      },
+      { "drug": "Driving / heavy machinery", "severity": "Major", "mechanism": "Sedation, dissociation — driving impairment", "management": "Do NOT drive day of treatment; rest of day post-administration" },
+      { "drug": "REMS program (Spravato in US)", "severity": "Major", "mechanism": "Severe sedation, dissociation, abuse risk; FDA REMS-equivalent supervised administration", "management": "In Canada — administered in healthcare facility with 2-hour observation; monitor BP, dissociation" }
+    
     ],
     "pregnancy": "AVOID in pregnancy. Ketamine class has been associated with neurotoxicity in animal models during brain development. Esketamine should not be used in pregnancy. For TRD in pregnancy: consult perinatal psychiatry; ECT considered in severe refractory depression.",
     "pk": {
@@ -105119,7 +105144,10 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Additive methemoglobinemia",
         "management": "Avoid nitrite-generating local anesthetics; use lidocaine instead"
-      }
+      },
+      { "drug": "G6PD deficiency", "severity": "Major", "mechanism": "Sulfone — hemolytic anemia in G6PD-deficient patients", "management": "Test G6PD before initiation; avoid in deficient patients or use lower doses with close monitoring" },
+      { "drug": "Sulfonamide allergy (cross-reactivity)", "severity": "Major", "mechanism": "Dapsone has sulfa moiety — cross-reactivity in true sulfa antibiotic allergy", "management": "Avoid in confirmed sulfa allergy" }
+    
     ],
     "pregnancy": "Avoid if possible. Dapsone crosses placenta. Hemolytic anemia risk in newborn. Methemoglobinemia risk in fetus (fetal hemoglobin more sensitive). If PJP prophylaxis required in pregnancy, TMP-SMX preferred (more data). Avoid near delivery due to hemolysis/methemoglobin risk in newborn. Breastfeeding: present in breast milk — hemolytic anemia risk in G6PD-deficient infants. Avoid in breastfeeding or monitor infant closely.",
     "pk": {
@@ -113138,7 +113166,10 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Duplicate therapy.",
         "management": "Use one anti-VEGF at a time."
-      }
+      },
+      { "drug": "Endophthalmitis (post-injection)", "severity": "Major", "mechanism": "Intravitreal injection — sterile or infectious endophthalmitis", "management": "Sterile technique; urgent ophtho assessment for post-injection eye pain/redness/vision change" },
+      { "drug": "Intraocular inflammation / retinal vasculitis", "severity": "Major", "mechanism": "Brolucizumab specifically associated with intraocular inflammation, retinal vasculitis, occlusive vasculitis (~5%, higher than other anti-VEGF)", "management": "Counsel patients; investigate any vision change urgently; permanent discontinuation if confirmed" }
+    
     ],
     "pregnancy": "Limited human data; VEGF inhibition theoretically harmful to fetal vasculature. Use only if benefit outweighs risk; contraception during therapy and ≥3 months after.",
     "pk": {
@@ -115909,7 +115940,9 @@ var DRUGS = {
         "severity": "Major",
         "mechanism": "Vaccine-strain disease in immunocompromised.",
         "management": "AVOID during therapy + ≥3 months after; update before starting."
-      }
+      },
+      { "drug": "Trastuzumab combination therapy", "severity": "Beneficial", "mechanism": "Standard combination for HER2+ breast cancer (CLEOPATRA, APHINITY)", "management": "Standard regimen — both monitor LVEF; do not give one without the other" }
+    
     ],
     "pregnancy": "BOXED WARNING — embryo-fetal toxicity (oligohydramnios, fetal lung hypoplasia, neonatal renal failure). CONTRAINDICATED during pregnancy. Effective contraception during therapy and ≥7 months after final dose. Breastfeeding: limited data; manufacturer recommends discontinuation OR avoidance.",
     "pk": {
@@ -117727,7 +117760,9 @@ var DRUGS = {
     ],
     "interactions": [
       { "drug": "Bypassing agents (rFVIIa, aPCC/FEIBA)", "severity": "Note", "mechanism": "NOT to be used routinely with FVIII (no benefit, theoretical thrombosis)", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Emicizumab", "severity": "Note", "mechanism": "overlaps", "management": "if switching, washout considerations; emicizumab interferes with FVIII assays (one-stage falsely high)" }
+      { "drug": "Emicizumab", "severity": "Note", "mechanism": "overlaps", "management": "if switching, washout considerations; emicizumab interferes with FVIII assays (one-stage falsely high)" },
+      { "drug": "Inhibitor development (alloantibody)", "severity": "Major", "mechanism": "FVIII inhibitor antibodies develop in 25-30% of severe hemophilia A on treatment", "management": "Monitor inhibitor titer (Bethesda assay); use bypassing agents (rFVIIa, aPCC) for breakthrough bleeding" }
+    
     ],
     "pregnancy": "Hemophilia A carriers may have low FVIII levels and bleed risk. FVIII concentrate is safe in pregnancy and used to maintain levels >50% for delivery. Coordinate with hematology/MFM; avoid IM injections; epidural only if FVIII >50%; manage at hemophilia treatment centre.",
     "pk": "SHL FVIII: t½ ~8-12h. EHL FVIII (Eloctate, Adynovate, Esperoct, Jivi): t½ ~14-19h. Ultra-EHL (Altuviiio): t½ ~43h. Distribution to von Willebrand factor (which protects FVIII from clearance) is rate-limiting for half-life — ALL FVIII products are still cleared via VWF.",
@@ -117784,7 +117819,10 @@ var DRUGS = {
     ],
     "interactions": [
       { "drug": "Antifibrinolytics", "severity": "Note", "mechanism": "synergistic for mucosal bleeds (typically given together)", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "PCC (4-factor)", "severity": "Contraindicated", "mechanism": "contains FIX", "management": "do NOT combine" }
+      { "drug": "PCC (4-factor)", "severity": "Contraindicated", "mechanism": "contains FIX", "management": "do NOT combine" },
+      { "drug": "Inhibitor development", "severity": "Major", "mechanism": "FIX inhibitors rare (~3-5% in severe hemophilia B) but allergic reactions/anaphylaxis specifically high-risk", "management": "Monitor inhibitor titer; cautious infusion in inhibitor-positive patients (rFVIIa alternative)" },
+      { "drug": "Thrombotic events (rare)", "severity": "Note", "mechanism": "Excessive replacement → thrombosis; older PCC concentrates higher risk", "management": "Monitor FIX trough; aim physiologic levels" }
+    
     ],
     "pregnancy": "Hemophilia B carriers may have low FIX. Concentrate safe in pregnancy. Maintain >50% for delivery. Manage at HTC.",
     "pk": "SHL FIX (BeneFIX): t½ ~18-24h. EHL FIX (Fc-fusion Alprolix, albumin-fusion Idelvion, PEG-Refixia): t½ ~80-100h — longer than EHL FVIII due to FIX not being VWF-dependent.",
@@ -117986,7 +118024,10 @@ var DRUGS = {
     ],
     "interactions": [
       { "drug": "Other CNS depressants (opioids, benzodiazepines, sedating antihistamines, alcohol)", "severity": "Moderate", "mechanism": "additive sedation/dizziness", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Other kappa-opioid agonists (rare in clinical use)", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" }
+      { "drug": "Other kappa-opioid agonists (rare in clinical use)", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
+      { "drug": "Hepatic impairment (limited data)", "severity": "Major", "mechanism": "Limited safety data in severe hepatic impairment", "management": "Avoid in Child-Pugh C; caution in B" },
+      { "drug": "CKD pruritus only — specific indication", "severity": "Note", "mechanism": "Approved only for hemodialysis patients with moderate-to-severe pruritus", "management": "IV during dialysis sessions; not for non-dialysis pruritus" }
+    
     ],
     "pregnancy": "Limited human data. Animal studies no teratogenicity at clinically relevant doses. Use only if needed.",
     "pk": "IV: peak immediate. t½ ~22-31h in ESKD. Renally cleared, but designed for dialysis use — removed by hemodialysis (administered AFTER session). Hydrophilic peptide — does NOT cross BBB.",
@@ -118139,7 +118180,11 @@ var DRUGS = {
       { "drug": "Anticoagulants (warfarin, DOACs)", "severity": "Moderate", "mechanism": "increased bleeding risk", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Antihypertensives", "severity": "Moderate", "mechanism": "additive (often needed", "management": "treat HTN aggressively)" },
       { "drug": "Bisphosphonates/denosumab", "severity": "Moderate", "mechanism": "ONJ risk increased", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "QT-prolonging drugs", "severity": "Moderate", "mechanism": "additive QT effect", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "QT-prolonging drugs", "severity": "Moderate", "mechanism": "additive QT effect", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Hypertension", "severity": "Major", "mechanism": "VEGFR-TKI — induces/worsens HTN", "management": "Baseline + frequent BP monitoring; treat aggressively" },
+      { "drug": "Wound healing / surgery", "severity": "Major", "mechanism": "VEGFR inhibition impairs healing", "management": "Hold ≥4 weeks pre-op; resume after wound healed" },
+      { "drug": "GI perforation / fistula", "severity": "Major", "mechanism": "Class effect of VEGFR-TKI", "management": "Investigate severe abdominal pain; urgent imaging" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY in animals. AVOID in pregnancy. Effective contraception during therapy + 4 months after (both sexes). AVOID breastfeeding during + 4 months after.",
     "pk": "PO bioavailability — fasting required (food increases AUC ~50% — toxicity risk). Peak: 2-5h. Highly protein bound (>99.7%). Hepatic metabolism CYP3A4 (mostly inactive metabolites). t½: ~99 hours. Steady state ~15 days. Excretion: feces 54%, urine 27%.",
@@ -119493,7 +119538,11 @@ var DRUGS = {
     "interactions": [
       { "drug": "Other neurotoxins (paclitaxel, vincristine, bortezomib)", "severity": "Moderate", "mechanism": "additive neuropathy", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Aminoglycosides", "severity": "Moderate", "mechanism": "possible additive nephrotoxicity (less than cisplatin)", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" }
+      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" },
+      { "drug": "Cold-induced acute neuropathy", "severity": "Major", "mechanism": "Hallmark — laryngopharyngeal dysesthesia within hours of exposure to cold drinks/food/air", "management": "Avoid all cold exposure × 5 days post-infusion; warm gloves, scarves; counsel patient and family" },
+      { "drug": "Serotonergic agents", "severity": "Note", "mechanism": "Oxaliplatin-induced 5-HT3 release with antiemetics — usually controlled with prophylaxis", "management": "Standard 5-HT3 antagonist prophylaxis" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "Embryo-fetal toxicity — platinum chemotherapy", "management": "AVOID; effective contraception during and 9 months after" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; effective contraception during + 9 months after.",
     "pk": "IV. Rapidly distributes to tissues + binds plasma proteins. Non-enzymatic biotransformation. Triphasic elimination — terminal t½ ~16 days (long; reflects tissue platinum binding). Renal excretion 50% in 5 days.",
@@ -120118,7 +120167,10 @@ var DRUGS = {
       { "drug": "**SUPPLEMENTAL OXYGEN**", "severity": "Major", "mechanism": "increases pulmonary toxicity dramatically", "management": "AVOID FiO2 >24% perioperatively LIFELONG; medical alert bracelet 'PRIOR BLEOMYCIN — limit oxygen ≤24%'" },
       { "drug": "Cisplatin (in BEP)", "severity": "Moderate", "mechanism": "↓bleomycin clearance via renal impairment → ↑lung toxicity (basis for dose reduction with renal injury)", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "G-CSF", "severity": "Major", "mechanism": "controversial", "management": "some data suggesting ↑ lung toxicity (avoid in some BEP protocols)" },
-      { "drug": "Other pulmonary toxic drugs (amiodarone, methotrexate)", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Other pulmonary toxic drugs (amiodarone, methotrexate)", "severity": "Moderate", "mechanism": "additive", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Pulmonary fibrosis (Black Box)", "severity": "Major", "mechanism": "Cumulative dose-related interstitial pneumonitis/fibrosis (especially >400 units lifetime)", "management": "Baseline + monthly DLCO/PFT; FiO₂ kept low intraop (≤25%); avoid lifetime cumulative >400 units" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "Embryo-fetal toxicity", "management": "AVOID; contraception during and 6 months after" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; effective contraception during + 6 months after.",
     "pk": "IV/IM/SC. Mainly renal excretion (~50% unchanged). Tissue accumulation in lung + skin → pulmonary + skin toxicity.",
@@ -122384,7 +122436,9 @@ var DRUGS = {
       "Hypersensitivity"
     ],
     "interactions": [
-      { "drug": "Local; minimal systemic absorption; no significant drug interactions documented.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" }
+      { "drug": "Local; minimal systemic absorption; no significant drug interactions documented.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
+      { "drug": "Intravesical-only — no systemic interactions", "severity": "Note", "mechanism": "Local instillation; minimal systemic absorption", "management": "No systemic monitoring required" }
+    
     ],
     "pregnancy": "Limited data; minimal systemic absorption — likely compatible.",
     "pk": "Local bladder action; minimal systemic absorption; cleared with urination.",
@@ -122431,7 +122485,9 @@ var DRUGS = {
       "Hypersensitivity"
     ],
     "interactions": [
-      { "drug": "Local; no significant interactions.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" }
+      { "drug": "Local; no significant interactions.", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
+      { "drug": "Intravesical-only — no systemic interactions", "severity": "Note", "mechanism": "Local instillation; minimal systemic absorption", "management": "No systemic monitoring required" }
+    
     ],
     "pregnancy": "Limited data; likely compatible (minimal systemic absorption).",
     "pk": "Local; minimal systemic absorption.",
@@ -122607,7 +122663,10 @@ var DRUGS = {
     ],
     "interactions": [
       { "drug": "Inhaled bronchodilators", "severity": "Note", "mechanism": "pre-treatment recommended (not interaction", "management": "required)" },
-      { "drug": "No significant systemic drug interactions (local action; minimal systemic absorption)", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" }
+      { "drug": "No significant systemic drug interactions (local action; minimal systemic absorption)", "severity": "Note", "mechanism": "See drug monograph", "management": "Consult monograph" },
+      { "drug": "Hyperreactive airways / bronchospasm", "severity": "Major", "mechanism": "Inhaled hyperosmolar agent — bronchoconstriction in some patients", "management": "Mandatory pre-bronchodilator; mannitol tolerance test (MTT) before initiation" },
+      { "drug": "Mannitol Tolerance Test (MTT) required", "severity": "Major", "mechanism": "Initial dose challenge to identify hyperresponders", "management": "MTT in supervised setting before first chronic dose; abandon if FEV1 drops >20% or significant symptoms" }
+    
     ],
     "pregnancy": "Cat B; minimal systemic absorption; use if benefit outweighs (CF maternal benefit can be significant).",
     "pk": "Inhaled local action; minimal systemic absorption (~50% absorbed; most expired or swallowed); not metabolized; renal excretion of any absorbed.",
@@ -122732,7 +122791,11 @@ var DRUGS = {
       { "drug": "Antifibrinolytics (tranexamic acid, aminocaproic acid)", "severity": "Note", "mechanism": "synergistic + thrombosis risk", "management": "combine cautiously" },
       { "drug": "Activated PCC (FEIBA)", "severity": "Contraindicated", "mechanism": "DO NOT COMBINE (additive thrombosis)", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Other procoagulants", "severity": "Moderate", "mechanism": "additive thrombosis", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Concurrent anticoagulants", "severity": "Note", "mechanism": "counteract therapeutic effect", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Concurrent anticoagulants", "severity": "Note", "mechanism": "counteract therapeutic effect", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Thrombotic events", "severity": "Major", "mechanism": "Recombinant FVIIa promotes thrombosis especially in DIC, atherosclerosis", "management": "Avoid in active thrombosis; cautious dosing in DIC" },
+      { "drug": "Concurrent aPCC (FEIBA) or emicizumab", "severity": "Major", "mechanism": "Additive procoagulant effect", "management": "Standard hemophilia management — coordinate doses" },
+      { "drug": "Emicizumab patients (alternative bypassing)", "severity": "Beneficial", "mechanism": "Preferred bypassing agent over aPCC in HEMLIBRA patients", "management": "Use rFVIIa for breakthrough bleeding in emicizumab patients" }
+    
     ],
     "pregnancy": "Cat C. Maternal life-threatening hemorrhage may necessitate; coordinate hemophilia treatment centre.",
     "pk": "IV. t½: ~2-3 hours (very short — basis for q2-3h dosing). Cleared by reticuloendothelial system + plasma proteases.",
@@ -122842,7 +122905,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "Anticoagulants / antiplatelets", "severity": "Moderate", "mechanism": "additive bleeding (or thrombosis if rebalancing not adequate)", "management": "coordinate carefully" },
       { "drug": "Live vaccines", "severity": "Note", "mechanism": "generally compatible", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Other procoagulants (rFVIIa, FEIBA, factor concentrates for bleeds)", "severity": "Moderate", "mechanism": "generally compatible (use for breakthrough bleeds", "management": "thrombosis monitoring)" }
+      { "drug": "Other procoagulants (rFVIIa, FEIBA, factor concentrates for bleeds)", "severity": "Moderate", "mechanism": "generally compatible (use for breakthrough bleeds", "management": "thrombosis monitoring)" },
+      { "drug": "Thrombotic events (theoretical)", "severity": "Major", "mechanism": "Anti-TFPI promotes coagulation — theoretical thrombotic risk", "management": "Monitor for VTE/MI; caution in CV history" },
+      { "drug": "Concurrent factor concentrates / bypassing agents", "severity": "Major", "mechanism": "Combination may over-correct hemostasis", "management": "Coordinated dosing during breakthrough bleeding; specialist supervision" }
+    
     ],
     "pregnancy": "Limited data; AVOID; effective contraception during.",
     "pk": "SC. t½: ~28 days (long; supports weekly dosing).",
@@ -122895,7 +122961,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "Factor concentrates (for breakthrough bleeds)", "severity": "Major", "mechanism": "coordinate dosing carefully", "management": "LOWER doses than usual to avoid thrombosis at low AT activity" },
       { "drug": "Anticoagulants", "severity": "Moderate", "mechanism": "counteract therapeutic effect", "management": "bleeding risk if reversed" },
-      { "drug": "Anti-fibrinolytics (TXA)", "severity": "Moderate", "mechanism": "additive thrombosis", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Anti-fibrinolytics (TXA)", "severity": "Moderate", "mechanism": "additive thrombosis", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Antithrombin reduction → thrombotic events (Black Box)", "severity": "Major", "mechanism": "siRNA reduces AT levels — ↑ thrombin generation; thrombotic risk", "management": "Monitor AT levels; thrombotic events occurred in trials; specialist supervision" },
+      { "drug": "Hepatotoxicity", "severity": "Major", "mechanism": "Transaminase elevation reported", "management": "Baseline + serial LFTs" }
+    
     ],
     "pregnancy": "AVOID — limited data; thrombosis risk in pregnancy already elevated.",
     "pk": "SC. GalNAc-mediated hepatic uptake. t½: ~4 weeks at tissue level (basis for monthly dosing).",
@@ -123009,7 +123078,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "Photosensitizing drugs (doxycycline, NSAIDs, voriconazole, amiodarone)", "severity": "Moderate", "mechanism": "additive photosensitivity (counterintuitively — though afamelanotide intended to prevent phototoxicity in EPP)", "management": "Monitor; consult monograph for specific recommendations" },
       { "drug": "Live vaccines", "severity": "Note", "mechanism": "generally compatible", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Other α-MSH-related drugs", "severity": "Note", "mechanism": "none clinically used", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Other α-MSH-related drugs", "severity": "Note", "mechanism": "none clinically used", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Melanoma / skin cancer screening", "severity": "Major", "mechanism": "Stimulates melanogenesis — concern for stimulating existing melanoma; no causal link established but vigilance required", "management": "Mandatory full-body skin exam baseline + every 6 months; avoid in personal melanoma history" },
+      { "drug": "Pregnancy", "severity": "Major", "mechanism": "Limited data; potential effects on fetal melanocyte development", "management": "AVOID in pregnancy unless benefit clearly outweighs" }
+    
     ],
     "pregnancy": "AVOID — limited data; effective contraception during.",
     "pk": "SC implant — slow release. Plasma levels detectable for ~10 days post-implant. Pigmentation effect persists 60+ days.",
@@ -123176,7 +123248,12 @@ var DRUGS = {
       { "drug": "STRONG CYP3A4 INHIBITORS", "severity": "Contraindicated", "mechanism": "modest ↑rucaparib", "management": "not contraindicated" },
       { "drug": "STRONG CYP3A4 INDUCERS", "severity": "Major", "mechanism": "↓rucaparib", "management": "AVOID" },
       { "drug": "Rucaparib INHIBITS CYP1A2, CYP2C9, CYP2C19, CYP3A", "severity": "Note", "mechanism": "multiple substrate interactions (warfarin INR, digoxin, statins, phenytoin)", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" }
+      { "drug": "Live vaccines", "severity": "Major", "mechanism": "Pharmacologic interaction (see drug monograph for details)", "management": "avoid" },
+      { "drug": "CYP1A2 inhibitor (caffeine, theophylline interactions)", "severity": "Moderate", "mechanism": "Rucaparib inhibits CYP1A2 — increases caffeine, theophylline, tizanidine levels", "management": "Counsel reduced caffeine intake; monitor theophylline levels" },
+      { "drug": "CYP2D6 inhibitor", "severity": "Moderate", "mechanism": "Inhibits CYP2D6 — increases substrate levels (metoprolol, codeine effect reduced)", "management": "Monitor" },
+      { "drug": "Pregnancy", "severity": "Contraindicated", "mechanism": "PARP inhibitor — embryo-fetal toxicity", "management": "AVOID; contraception during and 6 months after (women), 3 months (men)" },
+      { "drug": "Thrombocytopenia / myelosuppression", "severity": "Major", "mechanism": "Common dose-limiting toxicity (~30%)", "management": "Weekly CBC × 8 weeks then monthly; dose modifications" }
+    
     ],
     "pregnancy": "EMBRYOFETAL TOXICITY. AVOID; effective contraception during + 6 months after.",
     "pk": "PO. Peak: 1.9h. CYP2D6 + CYP1A2 metabolism (less CYP3A4 dependence than olaparib). t½: ~17h. Mostly fecal excretion.",
@@ -123593,7 +123670,10 @@ var DRUGS = {
     "interactions": [
       { "drug": "Factor concentrates / rFVIIa / FEIBA (for breakthrough bleeds)", "severity": "Note", "mechanism": "coordinate carefully", "management": "thrombosis risk if combined inappropriately" },
       { "drug": "Anticoagulants", "severity": "Note", "mechanism": "counteract effect", "management": "Monitor; consult monograph for specific recommendations" },
-      { "drug": "Antifibrinolytics (TXA)", "severity": "Moderate", "mechanism": "additive thrombosis caution", "management": "Monitor; consult monograph for specific recommendations" }
+      { "drug": "Antifibrinolytics (TXA)", "severity": "Moderate", "mechanism": "additive thrombosis caution", "management": "Monitor; consult monograph for specific recommendations" },
+      { "drug": "Thrombotic events", "severity": "Major", "mechanism": "Anti-TFPI — theoretical and observed thrombotic risk", "management": "Monitor; caution in CV/VTE history" },
+      { "drug": "Pregnancy", "severity": "Note", "mechanism": "Limited data; mAb crosses placenta in 3rd trimester", "management": "Risk-benefit; coordinate with hematology + MFM" }
+    
     ],
     "pregnancy": "AVOID — limited data; effective contraception during.",
     "pk": "SC. Daily dosing. t½ moderate; therapeutic concentration maintained at steady state.",
