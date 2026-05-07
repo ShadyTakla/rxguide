@@ -175822,6 +175822,42 @@ function showReferenceTable(id) {
     h += '</ul></div>';
   }
 
+  // Helper: linkify drug names in cell text against related_drugs list
+  function linkifyCell(text, drugKeys) {
+    if (!text || !drugKeys || !drugKeys.length) return text;
+    var out = String(text);
+    // Sort drug keys by length descending to match longer names first
+    var sortedKeys = drugKeys.slice().sort(function(a, b) {
+      var an = ((DRUGS[a] && DRUGS[a].name) || a).length;
+      var bn = ((DRUGS[b] && DRUGS[b].name) || b).length;
+      return bn - an;
+    });
+    for (var i = 0; i < sortedKeys.length; i++) {
+      var dk = sortedKeys[i];
+      if (!DRUGS[dk]) continue;
+      // Build a list of name candidates: full name, name without parenthetical, first word
+      var name = DRUGS[dk].name || dk;
+      var candidates = [];
+      candidates.push(name);
+      var noParen = name.replace(/\s*\(.*?\)\s*/g, '').trim();
+      if (noParen && candidates.indexOf(noParen) < 0) candidates.push(noParen);
+      var firstWord = noParen.split(/[\s,/—-]/)[0];
+      if (firstWord && firstWord.length >= 4 && candidates.indexOf(firstWord) < 0) candidates.push(firstWord);
+      // Try each candidate (longest first)
+      for (var c = 0; c < candidates.length; c++) {
+        var cand = candidates[c];
+        // Build a case-insensitive regex with word boundaries (allow trailing/preceding non-word)
+        var escaped = cand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        var re = new RegExp('\\b(' + escaped + ')\\b', 'i');
+        if (re.test(out)) {
+          out = out.replace(re, '<span onclick="event.stopPropagation();showDrugPanel(\'' + dk + '\')" style="color:#a5b4fc;cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px;" title="Open ' + name + ' drug card">$1</span>');
+          break; // matched this drug; move to next drug
+        }
+      }
+    }
+    return out;
+  }
+
   // Table
   if (t.columns && t.rows) {
     h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;overflow-x:auto;">';
@@ -175831,40 +175867,28 @@ function showReferenceTable(id) {
     h += '</tr></thead><tbody>';
     for (var r = 0; r < t.rows.length; r++) {
       h += '<tr style="border-bottom:1px solid var(--border);">';
-      for (var col = 0; col < t.rows[r].length; col++) h += '<td style="padding:8px 10px;color:#c8cadc;line-height:1.5;">' + t.rows[r][col] + '</td>';
+      for (var col = 0; col < t.rows[r].length; col++) {
+        var cell = linkifyCell(t.rows[r][col], t.related_drugs);
+        h += '<td style="padding:8px 10px;color:#c8cadc;line-height:1.5;">' + cell + '</td>';
+      }
       h += '</tr>';
     }
     h += '</tbody></table>';
     h += '</div>';
   }
 
-  // Related links
-  if ((t.related_drugs && t.related_drugs.length) || (t.related_protocols && t.related_protocols.length)) {
+  // Related deprescribing protocols (drug cards now linked inline in the table above)
+  if (t.related_protocols && t.related_protocols.length) {
     h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;">';
-    h += '<div style="font-size:0.85rem;font-weight:700;color:#a5b4fc;margin-bottom:8px;">🔗 Related</div>';
-    if (t.related_drugs && t.related_drugs.length) {
-      h += '<div style="font-size:0.78rem;color:var(--muted);margin-bottom:6px;">Drug cards:</div>';
-      h += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">';
-      for (var i = 0; i < t.related_drugs.length; i++) {
-        var dk = t.related_drugs[i];
-        if (DRUGS[dk]) {
-          var dn = DRUGS[dk].name || dk;
-          h += '<span onclick="showDrugPanel(\'' + dk + '\')" style="background:rgba(165,180,252,0.15);color:#a5b4fc;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:0.75rem;">' + dn + ' ↗</span>';
-        }
-      }
-      h += '</div>';
+    h += '<div style="font-size:0.85rem;font-weight:700;color:#fb923c;margin-bottom:8px;">📋 Related Deprescribing Protocols</div>';
+    h += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
+    for (var i = 0; i < t.related_protocols.length; i++) {
+      var pid = t.related_protocols[i];
+      var pname = pid;
+      for (var j = 0; j < DEPRESCRIBING_PROTOCOLS.length; j++) if (DEPRESCRIBING_PROTOCOLS[j].id === pid) { pname = DEPRESCRIBING_PROTOCOLS[j].title; break; }
+      h += '<span onclick="showDeprescribing(\'' + pid + '\')" style="background:rgba(251,146,60,0.15);color:#fb923c;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:0.78rem;">📋 ' + pname + ' →</span>';
     }
-    if (t.related_protocols && t.related_protocols.length) {
-      h += '<div style="font-size:0.78rem;color:var(--muted);margin-bottom:6px;">Deprescribing protocols:</div>';
-      h += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
-      for (var i = 0; i < t.related_protocols.length; i++) {
-        var pid = t.related_protocols[i];
-        var pname = pid;
-        for (var j = 0; j < DEPRESCRIBING_PROTOCOLS.length; j++) if (DEPRESCRIBING_PROTOCOLS[j].id === pid) { pname = DEPRESCRIBING_PROTOCOLS[j].title; break; }
-        h += '<span onclick="showDeprescribing(\'' + pid + '\')" style="background:rgba(251,146,60,0.15);color:#fb923c;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:0.75rem;">📋 ' + pname + ' ↗</span>';
-      }
-      h += '</div>';
-    }
+    h += '</div>';
     h += '</div>';
   }
 
@@ -175902,6 +175926,35 @@ function showDeprescribing(id) {
   h += '<h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 10px;">' + p.title + '</h2>';
   h += '<p style="font-size:0.85rem;color:#c8cadc;line-height:1.6;margin:0;">' + p.overview + '</p>';
   h += '</div>';
+
+  // Commonly applies to drugs — driven by DEPRESCRIBING_APPLIES_TO map
+  var DEPRESCRIBING_APPLIES_TO = {
+    ppi: ['omeprazole','pantoprazole','esomeprazole','lansoprazole','rabeprazole','dexlansoprazole'],
+    bzd_z_drug: ['alprazolam','lorazepam','clonazepam','diazepam','oxazepam','temazepam','triazolam','flurazepam','midazolam','chlordiazepoxide','zolpidem','zopiclone','eszopiclone'],
+    opioid_chronic: ['morphine','oxycodone','hydromorphone','fentanyl','fentanyl_patch','codeine','tramadol','tapentadol','methadone','buprenorphine','meperidine'],
+    antipsychotic_bpsd: ['haloperidol','quetiapine','olanzapine','risperidone','aripiprazole','ziprasidone','lurasidone','paliperidone','asenapine','brexpiprazole','clozapine','chlorpromazine','fluphenazine','perphenazine','thiothixene','trifluoperazine','prochlorperazine','pimozide','loxapine','methotrimeprazine'],
+    antihyperglycemic: ['glyburide','gliclazide','glimepiride','insulin','insulin_glargine','metformin','sitagliptin','linagliptin','saxagliptin','alogliptin','empagliflozin','dapagliflozin','canagliflozin','liraglutide','semaglutide','dulaglutide'],
+    cholinesterase: ['donepezil','rivastigmine','galantamine','memantine'],
+    anticholinergic: ['diphenhydramine','hydroxyzine','cyproheptadine','meclizine','dimenhydrinate','promethazine','chlorpheniramine','doxylamine','oxybutynin','tolterodine','solifenacin','darifenacin','fesoterodine','trospium','amitriptyline','doxepin','imipramine','clomipramine','amoxapine','paroxetine','cyclobenzaprine','methocarbamol','hyoscine','dicyclomine','scopolamine_transdermal'],
+    antihypertensive_frail: ['doxazosin','prazosin','terazosin','clonidine','methyldopa','guanfacine','furosemide','bumetanide','hydrochlorothiazide','chlorthalidone','indapamide'],
+    bisphosphonate_holiday: ['alendronate','risedronate','ibandronate','etidronate','zoledronic_acid'],
+    statin_advanced_age: ['atorvastatin','rosuvastatin','simvastatin','pravastatin','lovastatin','fluvastatin','pitavastatin','ezetimibe'],
+    anticoagulant_bleeding: ['warfarin','apixaban','rivaroxaban','dabigatran','edoxaban'],
+    loop_diuretic: ['furosemide','bumetanide']
+  };
+  var appliesTo = DEPRESCRIBING_APPLIES_TO[p.id] || [];
+  if (appliesTo.length) {
+    h += '<div style="background:rgba(99,102,241,0.10);border:1px solid rgba(99,102,241,0.35);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.85rem;font-weight:700;color:#a5b4fc;margin-bottom:8px;">💊 Commonly applies to (click to open drug card)</div>';
+    h += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
+    for (var ai = 0; ai < appliesTo.length; ai++) {
+      var dk = appliesTo[ai];
+      if (!DRUGS[dk]) continue;
+      var dn = DRUGS[dk].name || dk;
+      h += '<span onclick="showDrugPanel(\'' + dk + '\')" style="background:rgba(165,180,252,0.18);color:#c7d2fe;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:0.77rem;border:1px solid rgba(165,180,252,0.3);">' + dn + ' ↗</span>';
+    }
+    h += '</div></div>';
+  }
 
   function sectionList(title, items, color, icon) {
     if (!items || !items.length) return '';
