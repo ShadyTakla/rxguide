@@ -108497,7 +108497,11 @@ var DRUGS = {
     "references": [
       "Health Canada Product Monograph – Flonase",
       "Health Canada Product Monograph – Avamys",
-      "CADTH Rapid Review – Intranasal Corticosteroids 2022"
+      "CADTH Rapid Review – Intranasal Corticosteroids 2022",
+            "OCP Minor Ailments Algorithm — Acne (Jan 2023; consolidated O. Reg. 256/24 May 2025)",
+            "RxFiles Acne Drug Comparison Chart 2024 (Canada)",
+            "Health Canada Product Monographs — adapalene (Differin), tretinoin (Stieva-A, Retin-A), trifarotene (Aklief), benzoyl peroxide / clindamycin / adapalene (Cabtreo) — 2024"
+        
     ],
     "source": "Health Canada PM (Flonase Allergy Relief / Flonase Sensimist OTC; Flonase Rx); CDA Allergic Rhinitis Position; CTS; ARIA Guidelines; CPS Compendium. Canadian Allergy/Asthma 2023; AR-CASS 2023.",
     "brand": "Flonase, Avamys, Flonase Sensimist",
@@ -133444,6 +133448,7 @@ var MINOR_AILMENTS = [
         "name": "Allergic Rhinitis",
         "icon": "🤧",
         "category": "ENT",
+        "ontario_ma_scope": "✅ Allergic rhinitis IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (added Jan 2023; consolidated May 2025). Pharmacists may assess and prescribe second-generation oral antihistamines (cetirizine, loratadine, fexofenadine, bilastine, rupatadine, desloratadine, levocetirizine), intranasal corticosteroids (mometasone, fluticasone, budesonide), and intranasal antihistamines (azelastine, olopatadine). Combination INCS+intranasal antihistamine (Dymista — fluticasone/azelastine) also within scope.",
         "assessment": {
             "key_questions": [
                 "Seasonal (tree/grass/ragweed) or perennial (dust mites, pet dander, mold)?",
@@ -133841,6 +133846,7 @@ var MINOR_AILMENTS = [
         "name": "Urticaria (Hives)",
         "icon": "🔴",
         "category": "Dermatology",
+        "ontario_ma_scope": "✅ Urticaria (hives) IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (Jan 2023). Pharmacists may prescribe second-generation antihistamines (cetirizine, loratadine, fexofenadine, bilastine, desloratadine, rupatadine, levocetirizine) up to 4× standard dose for chronic urticaria per BSACI/Canadian Allergy guidelines. Acute urticaria <6 weeks AND chronic spontaneous urticaria (CSU) ≥6 weeks both eligible. EXCLUSIONS: anaphylaxis, angioedema with airway compromise, urticarial vasculitis (lesions >24h with pigmentation/bruising) — refer.",
         "assessment": {
             "key_questions": [
                 "Acute (<6 weeks) vs chronic (>6 weeks)?",
@@ -134037,6 +134043,7 @@ var MINOR_AILMENTS = [
         "name": "Hemorrhoids",
         "icon": "🩸",
         "category": "GI",
+        "ontario_ma_scope": "✅ Hemorrhoids (uncomplicated, external/internal Grade I-II) IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (Jan 2023). Pharmacists may prescribe topical hydrocortisone-containing products (Anusol-HC, Proctosedyl, Proctofoam-HC, hydrocortisone/pramoxine) and zinc-based barrier products. EXCLUSIONS: thrombosed external hemorrhoid (severe acute pain — refer for incision/drainage), Grade III/IV (prolapsed), bleeding requiring evaluation (rule out colorectal CA in patients ≥45 yrs with new bleeding), pregnancy with concerning features (refer to MD/midwife).",
         "assessment": {
             "key_questions": [
                 "Internal (painless bleeding) vs external (pain, prolapse)?",
@@ -134278,6 +134285,7 @@ var MINOR_AILMENTS = [
         "name": "Dysmenorrhea (Menstrual Pain)",
         "icon": "🔵",
         "category": "Womens Health",
+        "ontario_ma_scope": "✅ Primary dysmenorrhea IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (Jan 2023). Pharmacists may prescribe NSAIDs (naproxen 500 mg loading then 250 mg q6–8h; ibuprofen 400–600 mg q4–6h; mefenamic acid 500 mg loading then 250 mg q6h) and acetaminophen for menstrual pain in non-pregnant women. EXCLUSIONS: secondary dysmenorrhea (endometriosis, fibroids, PID, ovarian cyst), severe pain unresponsive to OTC NSAIDs, pregnancy, NSAID contraindications (peptic ulcer, severe renal/hepatic, anticoagulation), unable to fast for endometriosis workup — refer to physician/NP.",
         "assessment": {
             "key_questions": [
                 "Primary (no identifiable cause, onset with first menses) vs secondary (endometriosis, fibroids, IUD)?",
@@ -134488,6 +134496,7 @@ var MINOR_AILMENTS = [
         "name": "Impetigo",
         "icon": "🦠",
         "category": "Dermatology",
+        "ontario_ma_scope": "✅ Non-bullous impetigo IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (Jan 2023). Pharmacists may prescribe topical antibiotics (mupirocin 2% ointment TID × 5 days, fusidic acid 2% TID × 7–10 days, ozenoxacin 1% cream BID × 5 days) for limited disease (≤3 lesions over <3% BSA). EXCLUSIONS: extensive disease (>3 lesions, >3% BSA — needs systemic antibiotic), bullous impetigo, ecthyma (deeper ulcerative), MRSA-suspected (recurrent, treatment failure), facial involvement near eye/mouth requiring urgent assessment, immunocompromised, < 1 year old — refer to physician.",
         "assessment": {
             "key_questions": [
                 "Number of lesions and extent of involvement?",
@@ -134701,6 +134710,7 @@ var MINOR_AILMENTS = [
         "name": "Tick Bite (Lyme Prophylaxis)",
         "icon": "🦟",
         "category": "Infectious",
+        "ontario_ma_scope": "✅ Tick bite post-exposure prophylaxis IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (Oct 2023). Pharmacists may prescribe single-dose doxycycline 200 mg PO × 1 (children ≥45 kg same; <45 kg 4.4 mg/kg up to 200 mg) within 72 hours of tick removal in endemic areas (most of southern Ontario per Public Health Ontario tick surveillance). ELIGIBILITY: identified Ixodes scapularis (deer tick) attached ≥36 hours OR engorged AND tick acquired in endemic area AND prophylaxis can be initiated within 72h of tick removal AND patient ≥8 yrs (or pregnant — alternative amoxicillin) AND no doxycycline contraindications. EXCLUSIONS: erythema migrans rash present (treat as Lyme — refer for full course), pregnancy <8 yrs (use alternative — refer), tick attached <36h or non-Ixodes species, >72h since removal — refer if symptomatic.",
         "assessment": {
             "key_questions": [
                 "Geographic risk: known Lyme-endemic area (southern/eastern Ontario [Long Point, Turkey Point, Rouge Valley, Thousand Islands, Kingston area, Niagara, eastern ON], NS, NB, southern QC, southern MB)?",
@@ -134909,6 +134919,7 @@ var MINOR_AILMENTS = [
         "name": "Conjunctivitis (Pink Eye)",
         "icon": "👁️",
         "category": "Ophthalmology",
+        "ontario_ma_scope": "✅ Allergic and bacterial conjunctivitis IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (Jan 2023). Pharmacists may prescribe ophthalmic antibiotics (polymyxin B/trimethoprim, polymyxin B/gramicidin, erythromycin, fusidic acid, tobramycin, gentamicin, ciprofloxacin, moxifloxacin) for bacterial conjunctivitis and ophthalmic antihistamines (olopatadine, ketotifen) and ophthalmic mast cell stabilizers (sodium cromoglycate) for allergic conjunctivitis. EXCLUSIONS: viral conjunctivitis (treat supportively only — Rx not indicated), suspected herpetic keratitis (dendritic ulcer, severe pain, photophobia), gonococcal/chlamydial (urgent ophtho), corneal involvement, contact lens wearers (Pseudomonas risk — refer ophtho), trauma, marked vision change, neonates (ophthalmia neonatorum — urgent referral).",
         "assessment": {
             "key_questions": [
                 "Discharge character: watery (viral/allergic) vs mucopurulent/purulent (bacterial)?",
@@ -135106,6 +135117,7 @@ var MINOR_AILMENTS = [
         "name": "Acne Vulgaris",
         "icon": "😶",
         "category": "Dermatology",
+        "ontario_ma_scope": "✅ Mild acne vulgaris IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (Jan 2023). Pharmacists may prescribe topical retinoids (tretinoin, adapalene, trifarotene), topical benzoyl peroxide, topical antibiotics (clindamycin, erythromycin) and combinations (Cabtreo: clindamycin/adapalene/BPO; Aklief, Onexton). EXCLUSIONS: moderate-severe acne (numerous papules/pustules, nodules, cystic, scarring), need for systemic antibiotics or isotretinoin, hormonal acne suspected (PCOS workup — refer), pregnancy (some topicals contraindicated — coordinate with MD), failed pharmacist-prescribed first/second-line — refer to physician/dermatology.",
         "assessment": {
             "key_questions": [
                 "Severity: comedonal (blackheads/whiteheads only), mild inflammatory (few papules/pustules), moderate inflammatory (multiple papules/pustules), or severe (many papules/pustules + nodules/cysts)?",
@@ -135193,7 +135205,11 @@ var MINOR_AILMENTS = [
             "Reynolds RV, Yeung H, Cheng CE, et al. Guidelines of care for the management of acne vulgaris (AAD). J Am Acad Dermatol. 2024;90(5):1006.e1–1006.e30. (Replaces Zaenglein 2016 AAD guideline.)",
             "Canadian Dermatology Association (CDA). Acne Management Position Statement (2023 update).",
             "Asai Y, Baibergenova A, Dutil M, et al. Management of acne: Canadian clinical practice guideline. CMAJ. 2016;188(2):118–126 (Canadian-context reference).",
-            "NICE. Acne vulgaris: management. NICE guideline [NG198] (2021, updated 2023). National Institute for Health and Care Excellence."
+            "NICE. Acne vulgaris: management. NICE guideline [NG198] (2021, updated 2023). National Institute for Health and Care Excellence.",
+            "OCP Minor Ailments Algorithm — Acne (Jan 2023; consolidated O. Reg. 256/24 May 2025)",
+            "RxFiles Acne Drug Comparison Chart 2024 (Canada)",
+            "Health Canada Product Monographs — adapalene (Differin), tretinoin, trifarotene (Aklief), benzoyl peroxide / clindamycin / adapalene (Cabtreo) — 2024"
+        
         ],
         "patient_counselling": [
             "Benzoyl peroxide (BPO) 2.5–5%: apply a thin layer to clean dry skin (pea-sized amount for the whole face) ONCE daily initially; can increase to twice daily if tolerated. 2.5% strength has equivalent efficacy to 5–10% with less irritation — start low.",
@@ -135268,6 +135284,7 @@ var MINOR_AILMENTS = [
         "name": "Cold Sores (Oral Herpes Simplex)",
         "icon": "💋",
         "category": "Oral/Dermatology",
+        "ontario_ma_scope": "✅ Cold sores (oral herpes simplex labialis) IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (Jan 2023). Pharmacists may prescribe oral antivirals (valacyclovir 2 g PO BID × 1 day; famciclovir 1500 mg PO single dose; acyclovir 400 mg PO 5×/day × 5 days) and topical antivirals (acyclovir 5% cream, penciclovir 1% cream, docosanol 10% cream) for episodic treatment. ELIGIBILITY: known recurrent oral HSV-1 patient with prodrome/early lesion <72h. EXCLUSIONS: first-episode (rule out other causes — refer), severe systemic illness, herpetic whitlow / keratitis / encephalitis (urgent referral), immunocompromised (HIV, transplant, chemo), eczema herpeticum (urgent), >6 episodes/year (consider chronic suppressive therapy — refer), pregnancy near term (refer to OB).",
         "assessment": {
             "key_questions": [
                 "Prodrome: tingling, burning, itching at site before vesicles appear (herpes-specific)?",
@@ -135504,6 +135521,7 @@ var MINOR_AILMENTS = [
         "name": "Musculoskeletal Sprains",
         "icon": "🦵",
         "category": "MSK",
+        "ontario_ma_scope": "✅ Mild musculoskeletal sprains and strains IS in the Ontario Minor Ailments designated list under O. Reg. 256/24 (Jan 2023). Pharmacists may prescribe oral NSAIDs (naproxen, ibuprofen, diclofenac), topical NSAIDs (diclofenac 1.16% / 2.32% gel — Voltaren Emulgel; methyl salicylate / camphor / menthol topical), acetaminophen, and muscle relaxants (cyclobenzaprine 5 mg TID — short course up to 14 days) for acute strain/sprain. EXCLUSIONS: severe injury (suspected fracture per Ottawa Ankle/Knee Rules, dislocation), penetrating wound, neurovascular compromise (numbness, pulse, capillary refill), inability to weight bear or use the limb, head/spine injury, pediatric <2 yrs, RICE not adequate after 1–2 weeks — refer to physician/physiotherapy for imaging.",
         "assessment": {
             "key_questions": [
                 "Mechanism of injury: inversion sprain (lateral ankle), fall, overuse?",
@@ -136190,6 +136208,7 @@ var MINOR_AILMENTS = [
         "name": "Uncomplicated UTI (Women)",
         "icon": "💧",
         "category": "Womens Health",
+        "ontario_ma_scope": "✅ Uncomplicated UTI in non-pregnant adult women is IN the Ontario Minor Ailments designated list under O. Reg. 256/24 (Oct 2023). Pharmacists may prescribe nitrofurantoin macrocrystals 100 mg BID × 5 days (first-line), trimethoprim/sulfamethoxazole DS 1 tab PO BID × 3 days (if local resistance <20%), or fosfomycin 3 g PO single dose. ELIGIBILITY: adult non-pregnant woman, ≥2 typical symptoms (dysuria, frequency, urgency), no fever/flank pain/systemic features, no recent antibiotic use (<3 months — adjust agent), no recurrent UTI (≥2 in 6 mo or ≥3 in 12 mo — refer for workup), no urological abnormality, immunocompetent. EXCLUSIONS: pregnancy (refer), male, pediatric, pyelonephritis/sepsis (refer ED), recurrent UTI workup, urinary catheter, immunocompromised, ESBL/MDRO history, recent travel/hospitalization — refer.",
         "assessment": {
             "key_questions": [
                 "Classic triad: dysuria + frequency + urgency (without fever/flank pain — lower tract only)?",
@@ -137172,6 +137191,7 @@ var MINOR_AILMENTS = [
         "name": "Smoking Cessation",
         "icon": "🚬",
         "category": "Prevention",
+        "ontario_ma_scope": "✅ Smoking cessation prescribing has been within Ontario pharmacist scope since 2014 under O. Reg. 202/94 (Pharmacist Prescribing of Smoking Cessation Therapies), now consolidated under O. Reg. 256/24. Pharmacists may prescribe varenicline (Champix), bupropion (Zyban), and nicotine replacement therapies (gum, lozenge, patch, inhaler, spray) for adult patients seeking to quit smoking. ELIGIBILITY: adult ≥18 yrs (younger requires MD), motivated to quit, no contraindications to specific agent (e.g., bupropion contraindicated in seizure disorder/eating disorder; varenicline caution with severe psychiatric history; NRT precautions in recent CV event). Combination NRT (patch + short-acting) endorsed by CAN-ADAPTT. Pharmacist follow-up at 1, 4, 12 weeks recommended. Counsel quit date, behavioral support (Smokers' Helpline 1-877-513-5333), and STOP program.",
         "ontario_prescribing_authority": "Pharmacists in Ontario can prescribe varenicline, bupropion, and NRT under the Ontario Smoking Cessation Prescribing Authority (separate from the Minor Ailments program; available since 2012, expanded 2021). ODB covers 12 weeks/year for eligible patients.",
         "assessment": {
             "key_questions": [
@@ -137193,7 +137213,14 @@ var MINOR_AILMENTS = [
                 "NRT is SAFE in cardiovascular disease — nicotine without combustion by-products is far safer than continued smoking; do NOT withhold NRT in stable CVD (CAN-ADAPTT 2011/2023, USPHS 2020).",
                 "Severe psychiatric illness — EAGLES trial (Anthenelli, Lancet 2016) showed varenicline neuropsychiatric risk LOWER than the original FDA boxed warning suggested; varenicline is safe in stable psychiatric patients with appropriate monitoring (Health Canada removed comparable boxed warning 2017)."
             ],
-            "ddx": []
+            "ddx": [
+                "Other tobacco/nicotine product use (vaping, cigars, smokeless) — same approach generally applies; counsel on relative risks",
+                "Concurrent substance use disorder (alcohol, opioid, cannabis) — affects choice/timing of cessation; coordinate with addictions specialist if pertinent",
+                "Underlying mental health condition (depression, anxiety, schizophrenia) — may affect drug choice (varenicline + bupropion both effective; bupropion CI in seizure disorder/eating disorder)",
+                "Cannabis-tobacco co-use — clarify patient goals (full cessation vs reduction); separate cannabis cessation may be needed",
+                "Pregnancy — first-line non-pharmacologic + behavioural; NRT preferred over varenicline/bupropion; refer for shared decision making",
+                "Pediatric/adolescent (<18) — pharmacist scope is adult; refer to MD/NP and Smokers' Helpline for youth"
+            ]
         },
         "treatment": {
             "first_line": [
