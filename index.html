@@ -439,6 +439,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   <button class="tab-btn" onclick="switchTab('formulary')">📋 NAPRA/ODB Formulary</button>
   <button class="tab-btn" onclick="switchTab('minor_ailments');resetMA();">🩺 Minor Ailments</button>
   <button class="tab-btn" onclick="switchTab('jurisprudence')">⚖️ Jurisprudence</button>
+  <button class="tab-btn" onclick="switchTab('deprescribing');buildDeprescribing();">👴 Deprescribing</button>
 </div>
 
 <div id="main">
@@ -480,6 +481,19 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
           <div id="drug-tags"></div>
           <button id="check-btn" onclick="checkInteractions()">Check Interactions</button>
           <div id="int-results"></div>
+        </div>
+      </div>
+
+      <!-- DEPRESCRIBING TAB -->
+      <div id="tab-deprescribing" class="tab-panel">
+        <div style="padding:16px;">
+          <h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 6px;">👴 Deprescribing Protocols</h2>
+          <p style="font-size:0.83rem;color:var(--muted);margin:0 0 16px;">Evidence-based step-by-step taper protocols based on the Canadian Deprescribing Network (deprescribing.org), Choosing Wisely Canada, AGS Beers Criteria 2023, and STOPP/START v3 (2023).</p>
+          <div id="deprescribing-list"></div>
+          <div id="deprescribing-detail" style="display:none;">
+            <button onclick="closeDeprescribing()" style="background:var(--accent2);color:#fff;border:none;border-radius:6px;padding:8px 14px;font-size:0.85rem;cursor:pointer;margin-bottom:14px;">← Back to all protocols</button>
+            <div id="deprescribing-content"></div>
+          </div>
         </div>
       </div>
 
@@ -33924,7 +33938,26 @@ var DRUGS = {
       "HEAT STROKE RISK: sweating suppressed → hyperthermia in hot environments",
       "ANTICHOLINERGIC BURDEN: review all medications for cumulative anticholinergic effects"
     ],
-    "source": "Health Canada Product Monograph Ditropan (Janssen Canada); CUA OAB Guidelines 2017; AGS Beers Criteria 2023; SOGC; CPS Compendium"
+    "source": "Health Canada Product Monograph Ditropan (Janssen Canada); CUA OAB Guidelines 2017; AGS Beers Criteria 2023; SOGC; CPS Compendium",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (use mirabegron/PFMT instead)",
+        "population": "Adults ≥65",
+        "rationale": "Anticholinergic — confusion, falls, cognitive decline. Especially CNS-penetrant. Mirabegron preferred.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used in dementia",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic burden worsens cognition"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't prescribe oxybutynin for urinary incontinence in older adults — use less anticholinergic alternatives",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "tretinoin": {
     "name": "Tretinoin (Topical)",
@@ -35242,7 +35275,23 @@ var DRUGS = {
       "Deprescribing — taper to alternate-day or reduce strength over 2–4 weeks; rebound hyperacidity can mimic relapse",
       "OTC 15 mg for self-treatment frequent heartburn × 14 days max — refer if persistent symptoms or red flags (dysphagia, weight loss, melena, age >50 new-onset)"
     ],
-    "source": "Health Canada PM. Choosing Wisely Canada — Gastroenterology (deprescribing). AGS Beers 2023."
+    "source": "Health Canada PM. Choosing Wisely Canada — Gastroenterology (deprescribing). AGS Beers 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid prolonged use (>8 weeks) without indication",
+        "population": "Adults ≥65",
+        "rationale": "Same PPI class effects.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should be deprescribed",
+        "criteria": "STOPP F2",
+        "rationale": "Step-down or stop after 8 weeks"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "esomeprazole": {
     "name": "Esomeprazole",
@@ -35381,7 +35430,23 @@ var DRUGS = {
       "Check magnesium and B12 annually if chronic use >1 year",
       "OTC Nexium 24HR is for short-term (14-day) self-treatment of frequent heartburn; refer to physician if symptoms persist beyond 2 weeks or red flags (dysphagia, weight loss, melena)"
     ],
-    "source": "Health Canada PM. Choosing Wisely Canada — Gastroenterology (deprescribing). AGS Beers 2023."
+    "source": "Health Canada PM. Choosing Wisely Canada — Gastroenterology (deprescribing). AGS Beers 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid prolonged use (>8 weeks) without indication",
+        "population": "Adults ≥65",
+        "rationale": "Same PPI class effects.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should be deprescribed",
+        "criteria": "STOPP F2",
+        "rationale": "Step-down or stop after 8 weeks"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "perindopril": {
     "name": "Perindopril",
@@ -35486,7 +35551,19 @@ var DRUGS = {
       "Used specifically for stable CAD based on EUROPA trial data",
       "Cough class-effect — same as all ACEi"
     ],
-    "source": "Health Canada PM. Hypertension Canada Guideline 2025 (Rabi DM et al, CMAJ; primary care update). CCS/CHFS HF Guidelines 2017 + 2021 HFrEF Update (McDonald M et al) + 2023 phenotypes + 2025 HFnrEF Update. KDIGO CKD 2024."
+    "source": "Health Canada PM. Hypertension Canada Guideline 2025 (Rabi DM et al, CMAJ; primary care update). CCS/CHFS HF Guidelines 2017 + 2021 HFrEF Update (McDonald M et al) + 2023 phenotypes + 2025 HFnrEF Update. KDIGO CKD 2024.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A6 (ACE inhibitor in HFrEF or post-MI)",
+        "rationale": "Mortality benefit; commonly used in elderly Canadian HF cohorts",
+        "citation": "STOPP/START v3 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "candesartan": {
     "name": "Candesartan",
@@ -35807,7 +35884,19 @@ var DRUGS = {
       "Target resting HR 55–65 bpm in HFrEF and angina",
       "Start HFrEF dose only when patient is hemodynamically stable (not in decompensation)"
     ],
-    "source": "Health Canada PM (Monocor, generic); CCS/CHFS HF Guidelines 2017+2021+2023+2025 update; CCS AF Guidelines 2020; Hypertension Canada 2025; CIBIS-II Trial; CPS Compendium."
+    "source": "Health Canada PM (Monocor, generic); CCS/CHFS HF Guidelines 2017+2021+2023+2025 update; CCS AF Guidelines 2020; Hypertension Canada 2025; CIBIS-II Trial; CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A7 (Beta-blocker in HFrEF, post-MI, or symptomatic CAD)",
+        "rationale": "Mortality benefit (CIBIS-II)",
+        "citation": "STOPP/START v3 2023; CCS HF 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "metoprolol": {
     "name": "Metoprolol Succinate",
@@ -35924,7 +36013,19 @@ var DRUGS = {
       "Avoid combining with cold/flu products containing pseudoephedrine, and avoid heavy alcohol use (worsens dizziness).",
       "Tell prescribers and dentists you take a beta-blocker before any procedure or new prescription."
     ],
-    "source": "Health Canada PM (Lopressor, Betaloc; Toprol-XL); CCS/CHFS HF Guidelines 2017+2021+2023+2025 update; CCS AF 2020; Hypertension Canada 2025; MERIT-HF Trial; CPS Compendium."
+    "source": "Health Canada PM (Lopressor, Betaloc; Toprol-XL); CCS/CHFS HF Guidelines 2017+2021+2023+2025 update; CCS AF 2020; Hypertension Canada 2025; MERIT-HF Trial; CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A7 (Beta-blocker in HFrEF, post-MI, or symptomatic CAD)",
+        "rationale": "Mortality benefit (MERIT-HF)",
+        "citation": "STOPP/START v3 2023; CCS HF 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "carvedilol": {
     "name": "Carvedilol",
@@ -36127,7 +36228,28 @@ var DRUGS = {
       "Take with food to maximize absorption",
       "Excellent add-on in resistant HTN — proven in PATHWAY-2 trial"
     ],
-    "source": "Health Canada PM. CCS/CHFS HF Guidelines 2017 + 2021 HFrEF + 2023 phenotypes + 2025 HFnrEF update. FIDELIO/FIGARO trials (NEJM 2020/2021) for finerenone."
+    "source": "Health Canada PM. CCS/CHFS HF Guidelines 2017 + 2021 HFrEF + 2023 phenotypes + 2025 HFnrEF update. FIDELIO/FIGARO trials (NEJM 2020/2021) for finerenone.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Use cautiously (>25 mg/d in HF)",
+        "population": "Adults ≥65 with HF or CKD eGFR <45",
+        "rationale": "Hyperkalemia risk with K+-sparing diuretic + ACE/ARB. Limit to ≤25 mg/d in HF.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution in CKD",
+        "criteria": "STOPP B11 (K+-sparing diuretics in eGFR <45 with K+ >5)",
+        "rationale": "Hyperkalemia in CKD"
+      },
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A8 (MRA in HFrEF NYHA III-IV)",
+        "rationale": "Mortality benefit in HFrEF (RALES)",
+        "citation": "STOPP/START v3 2023; CCS HF 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "furosemide": {
     "name": "Furosemide",
@@ -36570,7 +36692,19 @@ var DRUGS = {
       "Reversal: Andexanet alfa (if available) or 4F-PCC",
       "ODB General Benefit; Apo-Apixaban generic available"
     ,"PERIOP HOLD: low bleeding risk procedure (cataract, simple endoscopy) — hold ≥24 h. Moderate-high bleeding risk — hold 48 h (CrCl ≥50) or 72 h (CrCl 30–49). Per Thrombosis Canada peri-procedural tool."],
-    "source": "Health Canada Product Monograph Eliquis (BMS/Pfizer Canada); CCS AF Guidelines 2020; Thrombosis Canada Clinical Guides (current); CHEST 2024 Antithrombotic Therapy for VTE (Stevens et al, compendium 2012-2021); ARISTOTLE NEJM 2011; AMPLIFY NEJM 2013; CPS Compendium."
+    "source": "Health Canada Product Monograph Eliquis (BMS/Pfizer Canada); CCS AF Guidelines 2020; Thrombosis Canada Clinical Guides (current); CHEST 2024 Antithrombotic Therapy for VTE (Stevens et al, compendium 2012-2021); ARISTOTLE NEJM 2011; AMPLIFY NEJM 2013; CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A4 (DOAC in non-valvular AF unless contraindicated)",
+        "rationale": "Stroke prevention; preferred over warfarin per CCS AF 2024",
+        "citation": "STOPP/START v3 2023; CCS AF 2024"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "rivaroxaban": {
     "name": "Rivaroxaban",
@@ -36692,7 +36826,19 @@ var DRUGS = {
       "Strong CYP3A4/P-gp dual inhibitors (itraconazole, ritonavir): CONTRAINDICATED",
       "ODB General Benefit; Apo-Rivaroxaban generic available"
     ,"PERIOP HOLD: low bleeding risk procedure — hold ≥24 h. Moderate-high bleeding risk — hold 48 h (CrCl ≥30) or 72 h (CrCl 15–29). Per Thrombosis Canada peri-procedural tool."],
-    "source": "Health Canada Product Monograph Xarelto (Bayer/Janssen Canada); CCS AF Guidelines 2020; Thrombosis Canada Clinical Guides (current); CHEST 2024 Antithrombotic Therapy for VTE; CCS VTE 2020; CPS Compendium."
+    "source": "Health Canada Product Monograph Xarelto (Bayer/Janssen Canada); CCS AF Guidelines 2020; Thrombosis Canada Clinical Guides (current); CHEST 2024 Antithrombotic Therapy for VTE; CCS VTE 2020; CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A4 (DOAC in non-valvular AF unless contraindicated)",
+        "rationale": "Stroke prevention",
+        "citation": "STOPP/START v3 2023; CCS AF 2024"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "warfarin": {
     "name": "Warfarin",
@@ -36969,7 +37115,22 @@ var DRUGS = {
       "Lifestyle (diet, exercise, smoking cessation) significantly augments the cardiovascular benefit — statin is not a substitute.",
       "Do not stop without speaking to your prescriber, even if cholesterol is in target — protection wears off quickly when stopped."
     ],
-    "source": "Health Canada PM (Lipitor/atorvastatin); CCS Dyslipidemia Guidelines 2021 (Pearson GJ et al, Can J Cardiol); FDA Drug Safety Communication July 2021; Norwegian nationwide cohort (Eur Heart J 2025); ACC/AHA 2018."
+    "source": "Health Canada PM (Lipitor/atorvastatin); CCS Dyslipidemia Guidelines 2021 (Pearson GJ et al, Can J Cardiol); FDA Drug Safety Communication July 2021; Norwegian nationwide cohort (Eur Heart J 2025); ACC/AHA 2018.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A5 (Statin in CV disease, peripheral arterial disease, or cerebrovascular disease)",
+        "rationale": "Established secondary prevention benefit; do not deprescribe in CVD based on age alone if life expectancy >5 years",
+        "citation": "STOPP/START v3 2023; CCS Dyslipidemia 2021"
+      },
+      "choosing_wisely_canada": {
+        "recommendation": "Don't recommend continued statin use for primary prevention in older adults with limited life expectancy",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "rosuvastatin": {
     "name": "Rosuvastatin",
@@ -37379,7 +37540,23 @@ var DRUGS = {
       "DIGIFAB: reversal agent for severe toxicity — highly effective, available hospital pharmacy",
       "Does NOT reduce mortality in HFrEF (DIG trial) — symptoms and hospitalization benefit only"
     ],
-    "source": "Health Canada Product Monograph Lanoxin (GSK Canada); CCS AF Guidelines 2020; CCS HF Guidelines 2021; DIG Trial; CPS Compendium"
+    "source": "Health Canada Product Monograph Lanoxin (GSK Canada); CCS AF Guidelines 2020; CCS HF Guidelines 2021; DIG Trial; CPS Compendium",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (>0.125 mg/d in HF; not first-line in AF)",
+        "population": "Adults ≥65",
+        "rationale": "Higher doses increase mortality in HF (DIG trial). In AF, beta-blockers/CCBs preferred for rate control.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution",
+        "criteria": "STOPP B7 (Digoxin >125 mcg/day in eGFR <30)",
+        "rationale": "Renal accumulation → toxicity"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "amiodarone": {
     "name": "Amiodarone",
@@ -37502,7 +37679,23 @@ var DRUGS = {
       "BASELINE MONITORING mandatory: TFTs, LFTs, CXR, PFTs, ECG, ophthalmology",
       "ACLS: 300 mg IV bolus for shock-refractory VF (first-line vasopressor-adjunct)"
     ],
-    "source": "Health Canada Product Monograph Cordarone (Sanofi Canada); CCS AF Guidelines 2020; ARREST Trial; ALIVE Trial; ACLS Guidelines; CPS Compendium"
+    "source": "Health Canada Product Monograph Cordarone (Sanofi Canada); CCS AF Guidelines 2020; ARREST Trial; ALIVE Trial; ACLS Guidelines; CPS Compendium",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid as first-line for AF",
+        "population": "Adults ≥65",
+        "rationale": "Multiple long-term toxicities (thyroid, lung, liver, cornea, neuropathy). Reserve for refractory cases.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution",
+        "criteria": "STOPP B5 (Amiodarone as first-line antiarrhythmic in AF)",
+        "rationale": "Multi-organ toxicity"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "metformin": {
     "name": "Metformin",
@@ -37617,7 +37810,19 @@ var DRUGS = {
       "Metformin alone does not cause low blood sugar (hypoglycemia) — but if combined with insulin or sulfonylureas, low sugar is possible.",
       "Stop and call your prescriber urgently if you develop unusual muscle pain, trouble breathing, or extreme fatigue (rare lactic acidosis)."
     ],
-    "source": "Health Canada PM. Diabetes Canada 2018/2024 Updates."
+    "source": "Health Canada PM. Diabetes Canada 2018/2024 Updates.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START F1 (Metformin in type 2 diabetes if eGFR ≥30)",
+        "rationale": "First-line per Diabetes Canada; CV benefit suggested in elderly",
+        "citation": "STOPP/START v3 2023; Diabetes Canada 2020"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "semaglutide": {
     "name": "Semaglutide",
@@ -37937,7 +38142,22 @@ var DRUGS = {
       "Driving: check glucose before driving — hypoglycemia impairs driving; report to MTO if recurrent severe hypoglycemia",
       "Hypoglycemia management: 15g fast-acting glucose → recheck 15 min → repeat if still low (15-15 rule)"
     ],
-    "source": "Health Canada PM. Diabetes Canada 2018/2024 Updates."
+    "source": "Health Canada PM. Diabetes Canada 2018/2024 Updates.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Use cautiously",
+        "population": "Adults ≥65",
+        "rationale": "Less hypoglycemia than glyburide but still risk in elderly with renal impairment. Consider DPP-4i or GLP-1 RA alternatives.",
+        "citation": "AGS Beers Criteria 2023 (Sulfonylureas — class)"
+      },
+      "stopp": null,
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use glyburide as first-line sulfonylurea — gliclazide acceptable but caution in elderly",
+        "organization": "Diabetes Canada — Choosing Wisely Canada"
+      }
+    }
+  
   },
   "insulin_glargine": {
     "name": "Insulin Glargine",
@@ -39706,7 +39926,23 @@ var DRUGS = {
       "ELDERLY: Beers — avoid chronic; topical Voltaren gel preferred for OA",
       "OTC Aleve 220 mg (NAPRA II) for short-term self-care; ≥250 mg prescription only"
     ],
-    "source": "Health Canada Product Monograph Naprosyn / Anaprox; PRECISION Trial (NEJM 2016); Antman Cardiovascular NSAID Meta-analyses; CADTH NSAID Therapeutic Review; Canadian Rheumatology Association; CPS Compendium; Canadian Pain Society 2024; CRA 2023."
+    "source": "Health Canada Product Monograph Naprosyn / Anaprox; PRECISION Trial (NEJM 2016); Antman Cardiovascular NSAID Meta-analyses; CADTH NSAID Therapeutic Review; Canadian Rheumatology Association; CPS Compendium; Canadian Pain Society 2024; CRA 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid chronic use",
+        "population": "Adults ≥65",
+        "rationale": "Same NSAID class effects.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution chronic",
+        "criteria": "STOPP H1-H3",
+        "rationale": "AKI, GI bleed, fluid retention"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "prednisone": {
     "name": "Prednisone / Prednisolone",
@@ -40708,7 +40944,23 @@ var DRUGS = {
       "Still on Beers Criteria for elderly — but less anticholinergic than amitriptyline",
       "Secondary amine (less anticholinergic) vs amitriptyline (tertiary amine — more anticholinergic)"
     ],
-    "source": "Health Canada PM. CANMAT 2023 Update MDD (May 2024 publication). CPS for chronic pain."
+    "source": "Health Canada PM. CANMAT 2023 Update MDD (May 2024 publication). CPS for chronic pain.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Use cautiously",
+        "population": "Adults ≥65",
+        "rationale": "Secondary amine TCA — less anticholinergic than amitriptyline but still risk of orthostasis, falls; preferred TCA if needed.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution",
+        "criteria": "STOPP B1",
+        "rationale": "Caution in cardiac conduction abnormalities, prostatism"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "buspirone": {
     "name": "Buspirone",
@@ -41030,7 +41282,26 @@ var DRUGS = {
       "Elderly: accumulates significantly — increased fall, fracture, cognitive impairment risk (Beers Criteria)",
       "Switch to diazepam for taper: clonazepam 0.5 mg ≈ diazepam 10 mg equivalents for smoother long taper"
     ],
-    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics."
+    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Long half-life (20-60h) — accumulation risk. Increased BZD sensitivity.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used >4 weeks",
+        "criteria": "STOPP D5",
+        "rationale": "Long half-life worse for elderly"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line for insomnia/agitation/delirium in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014/2023)"
+      }
+    }
+  
   },
   "pregabalin": {
     "name": "Pregabalin",
@@ -41237,7 +41508,26 @@ var DRUGS = {
       "Avoid in hepatic disease — active metabolites accumulate more; use lorazepam/oxazepam instead",
       "Self-tapering PK: active metabolite desmethyldiazepam (t½ up to 200h) reduces withdrawal symptoms naturally"
     ],
-    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics."
+    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Very long half-life (active metabolite up to 200h) — significant accumulation.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP D5",
+        "rationale": "Long half-life — strongly avoid in elderly"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line for insomnia/agitation/delirium in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014/2023)"
+      }
+    }
+  
   },
   "quetiapine": {
     "name": "Quetiapine",
@@ -41356,7 +41646,26 @@ var DRUGS = {
       "DEMENTIA: black box warning — avoid for behavioral symptoms (mortality risk)",
       "Off-label insomnia: controversial — avoid; prefer CBT-I, melatonin"
     ],
-    "source": "Health Canada Product Monograph Seroquel (AstraZeneca Canada); CANMAT Schizophrenia 2017; CANMAT/ISBD Bipolar Guidelines 2018 + 2023 update; CPS Compendium"
+    "source": "Health Canada Product Monograph Seroquel (AstraZeneca Canada); CANMAT Schizophrenia 2017; CANMAT/ISBD Bipolar Guidelines 2018 + 2023 update; CPS Compendium",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (in dementia BPSD)",
+        "population": "Adults ≥65 with dementia",
+        "rationale": "Black Box mortality in dementia. Often inappropriately used for sleep — strongly avoid.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used in BPSD",
+        "criteria": "STOPP B12",
+        "rationale": "Mortality risk; sedation; falls"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use antipsychotics as first choice for BPSD; don't use quetiapine for insomnia",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "lithium": {
     "name": "Lithium Carbonate / Lithium Citrate",
@@ -42038,7 +42347,26 @@ var DRUGS = {
       "New-onset DM: can occur in previously non-diabetic patients — check fasting glucose at baseline and every 3 months",
       "CATIE trial: olanzapine had best overall efficacy but worst metabolic outcomes — defines its place in therapy"
     ],
-    "source": "Health Canada PM. CANMAT Schizophrenia 2017. AGS Beers 2023 (caution in elderly with dementia)."
+    "source": "Health Canada PM. CANMAT Schizophrenia 2017. AGS Beers 2023 (caution in elderly with dementia).",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (in dementia BPSD)",
+        "population": "Adults ≥65 with dementia",
+        "rationale": "Same Black Box mortality. Significant anticholinergic + metabolic effects.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used in BPSD",
+        "criteria": "STOPP B12",
+        "rationale": "Mortality + anticholinergic + metabolic"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use antipsychotics as first choice for BPSD",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "carbamazepine": {
     "name": "Carbamazepine",
@@ -42387,7 +42715,26 @@ var DRUGS = {
       "CYP2D6 inhibitors (fluoxetine, paroxetine): reduce risperidone dose by 50% when these SSRIs are added",
       "Paliperidone (Invega): active metabolite — no hepatic metabolism required; preferred if hepatic impairment"
     ],
-    "source": "Health Canada PM. CANMAT Schizophrenia 2017. AGS Beers 2023 (caution in elderly with dementia)."
+    "source": "Health Canada PM. CANMAT Schizophrenia 2017. AGS Beers 2023 (caution in elderly with dementia).",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (in dementia BPSD unless severe)",
+        "population": "Adults ≥65 with dementia",
+        "rationale": "Black Box mortality. Approved for short-term BPSD with severe agitation/aggression but cerebrovascular events increased.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution in BPSD",
+        "criteria": "STOPP B12",
+        "rationale": "CVA risk; EPS; orthostasis"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use antipsychotics as first choice for BPSD",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "haloperidol": {
     "name": "Haloperidol",
@@ -42499,7 +42846,26 @@ var DRUGS = {
       "Decanoate LAI: 10–15x daily oral dose monthly; overlap oral × 1 month after first injection",
       "Antiemetic: haloperidol 0.5–1 mg IV/SC effective for nausea/vomiting in palliative care"
     ],
-    "source": "Health Canada PM. CANMAT Schizophrenia 2017. AGS Beers 2023 (caution in elderly with dementia)."
+    "source": "Health Canada PM. CANMAT Schizophrenia 2017. AGS Beers 2023 (caution in elderly with dementia).",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (in dementia BPSD)",
+        "population": "Adults ≥65 with dementia",
+        "rationale": "Black Box: increased mortality in dementia. EPS, QT, falls. Reserve for severe agitation when non-pharm fails and benefits outweigh risks.",
+        "citation": "AGS Beers Criteria 2023 (Antipsychotics in dementia)"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B12 (Antipsychotics in dementia BPSD)",
+        "rationale": "Increased mortality + EPS in PD"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use antipsychotics as first choice for behavioural and psychological symptoms of dementia (BPSD)",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "clozapine": {
     "name": "Clozapine",
@@ -43582,7 +43948,19 @@ var DRUGS = {
       "Bradycardia: check baseline ECG in patients with cardiac history; monitor HR when starting",
       "Do not stop abruptly — sudden discontinuation may cause rapid cognitive and behavioural decline"
     ],
-    "source": "Health Canada PM Aricept (Eisai/Pfizer Canada); CCCDTD5 (5th Canadian Consensus Conference on Diagnosis and Treatment of Dementia 2020); Canadian Geriatrics Society guidance; CPS Compendium."
+    "source": "Health Canada PM Aricept (Eisai/Pfizer Canada); CCCDTD5 (5th Canadian Consensus Conference on Diagnosis and Treatment of Dementia 2020); Canadian Geriatrics Society guidance; CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START D2 (AChE inhibitor for mild-moderate Alzheimer's or LBD)",
+        "rationale": "Modest cognitive/functional benefit",
+        "citation": "STOPP/START v3 2023; CCCDTD 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "rivastigmine": {
     "name": "Rivastigmine",
@@ -43674,7 +44052,19 @@ var DRUGS = {
       "GI side effects of oral form can be severe — patch is the solution, not dose reduction",
       "If switching from oral to patch: use patch dose equivalent; 3 mg BID oral ≈ 4.6 mg/24h patch"
     ],
-    "source": "Health Canada PM Exelon oral/patch (Novartis Canada); CCCDTD5 (5th Canadian Consensus Conference on Dementia 2020); Canadian Geriatrics Society; CPS Compendium."
+    "source": "Health Canada PM Exelon oral/patch (Novartis Canada); CCCDTD5 (5th Canadian Consensus Conference on Dementia 2020); Canadian Geriatrics Society; CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START D2 (AChE inhibitor for mild-moderate Alzheimer's or LBD)",
+        "rationale": "Modest benefit; LBD-specific evidence",
+        "citation": "STOPP/START v3 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "galantamine": {
     "name": "Galantamine",
@@ -44045,7 +44435,23 @@ var DRUGS = {
       "PDE5 inhibitors (Viagra, Cialis): absolute contraindication — severe symptomatic hypotension",
       "PTSD nightmares: 70% reduction in nightmare frequency at adequate dose — continue for at least 8 weeks before assessing response"
     ],
-    "source": "Health Canada PM Minipress (generic); CFPC PTSD-Associated Nightmares; CANMAT/ISBD; Hypertension Canada 2025; CPS Compendium."
+    "source": "Health Canada PM Minipress (generic); CFPC PTSD-Associated Nightmares; CANMAT/ISBD; Hypertension Canada 2025; CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid as first-line antihypertensive",
+        "population": "Adults ≥65",
+        "rationale": "Same — orthostatic hypotension, falls.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution",
+        "criteria": "STOPP B3",
+        "rationale": "Orthostatic hypotension"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "varenicline": {
     "name": "Varenicline",
@@ -45044,7 +45450,19 @@ var DRUGS = {
       "PPI interaction: common cause of iron treatment failure — separate by 2+ hours or switch acid suppression",
       "Levothyroxine: separate iron by ≥4 hours — iron chelates thyroid hormone, reducing absorption and causing clinical hypothyroidism"
     ],
-    "source": "Health Canada NHP Monograph. Dietitians of Canada. Hematology/CSCI 2023."
+    "source": "Health Canada NHP Monograph. Dietitians of Canada. Hematology/CSCI 2023.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START E3 (Iron in iron-deficiency anaemia)",
+        "rationale": "Treat documented iron deficiency",
+        "citation": "STOPP/START v3 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "hydroxychloroquine": {
     "name": "Hydroxychloroquine",
@@ -45291,7 +45709,26 @@ var DRUGS = {
       "Lifestyle measures matter: avoid late meals, elevate the head of the bed, lose weight if applicable, limit alcohol/spicy foods/coffee.",
       "If symptoms continue >2 weeks despite OTC use, see your prescriber — may need testing (H. pylori, endoscopy) or another approach."
     ],
-    "source": "Health Canada PM. Choosing Wisely Canada — Gastroenterology (deprescribing). AGS Beers 2023."
+    "source": "Health Canada PM. Choosing Wisely Canada — Gastroenterology (deprescribing). AGS Beers 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid prolonged use (>8 weeks) without indication",
+        "population": "Adults ≥65",
+        "rationale": "Long-term PPI: C. difficile, fractures, B12 deficiency, hypomagnesemia, CKD. Deprescribe in absence of GERD/erosive esophagitis/Barrett/NSAID prophylaxis.",
+        "citation": "AGS Beers Criteria 2023 (PPIs >8 weeks)"
+      },
+      "stopp": {
+        "flag": "Should be deprescribed",
+        "criteria": "STOPP F2 (PPI for uncomplicated peptic ulcer or erosive esophagitis at full dose >8 weeks)",
+        "rationale": "Step-down or stop after 8 weeks"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't continue prescribing long-term PPI therapy without attempting deprescribing in patients without documented indication",
+        "organization": "Canadian Family Physician — Choosing Wisely Canada (2017)"
+      }
+    }
+  
   },
   "pantoprazole": {
     "name": "Pantoprazole",
@@ -45410,7 +45847,26 @@ var DRUGS = {
       "H. pylori eradication: PPI + clarithromycin + amoxicillin × 14 days",
       "ODB General Benefit; swallow whole (enteric-coated — do not crush)"
     ],
-    "source": "Health Canada Product Monograph Pantoloc/Tecta (Janssen Canada); CAG/Toronto Consensus H. pylori Guidelines 2016 + 2024 update; AMMI Canada H. pylori Guideline; Canadian Deprescribing Network PPI Guidelines; CPS Compendium"
+    "source": "Health Canada Product Monograph Pantoloc/Tecta (Janssen Canada); CAG/Toronto Consensus H. pylori Guidelines 2016 + 2024 update; AMMI Canada H. pylori Guideline; Canadian Deprescribing Network PPI Guidelines; CPS Compendium",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid prolonged use (>8 weeks) without indication",
+        "population": "Adults ≥65",
+        "rationale": "Same PPI class effects.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should be deprescribed",
+        "criteria": "STOPP F2",
+        "rationale": "Step-down or stop after 8 weeks"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't continue long-term PPI without attempting deprescribing",
+        "organization": "Canadian Family Physician — Choosing Wisely Canada (2017)"
+      }
+    }
+  
   },
   "azithromycin": {
     "name": "Azithromycin",
@@ -46743,7 +47199,23 @@ var DRUGS = {
       "Dry mouth management: sugar-free gum, sip water frequently, saliva substitutes — most common reason patients discontinue",
       "Constipation: prescribe dietary fibre + adequate fluids; stimulant laxative PRN — constipation can progress to impaction in elderly"
     ],
-    "source": "Health Canada PM. Canadian Urological Association OAB Guideline 2017. AGS Beers 2023."
+    "source": "Health Canada PM. Canadian Urological Association OAB Guideline 2017. AGS Beers 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Use cautiously",
+        "population": "Adults ≥65",
+        "rationale": "Anticholinergic — falls, confusion.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution in dementia",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "alteplase": {
     "name": "Alteplase (tPA)",
@@ -48966,7 +49438,23 @@ var DRUGS = {
       "ADHD and tic disorder: preferred non-stimulant option when ADHD coexists with tic disorder/Tourette's (stimulants can worsen tics)",
       "Patch: apply once weekly — better adherence for chronic hypertension; rotate sites; keep previous patch on 12h after applying new one during transition"
     ],
-    "source": "Health Canada PM Catapres/Dixarit/Kapvay (generics); Hypertension Canada 2025; CADDRA ADHD Guidelines 4.1 (2018+); CRISM Stimulant Use Disorder; CPS Compendium."
+    "source": "Health Canada PM Catapres/Dixarit/Kapvay (generics); Hypertension Canada 2025; CADDRA ADHD Guidelines 4.1 (2018+); CRISM Stimulant Use Disorder; CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid as first-line antihypertensive",
+        "population": "Adults ≥65",
+        "rationale": "Bradycardia, orthostatic hypotension, CNS effects (sedation, depression). Severe rebound HTN if stopped abruptly.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution",
+        "criteria": "STOPP B14 (Centrally acting antihypertensives in elderly)",
+        "rationale": "Sedation; rebound HTN"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "diltiazem": {
     "name": "Diltiazem",
@@ -49200,7 +49688,23 @@ var DRUGS = {
       "Apply topical to specific area only: 4g gel per application to target joint only — do not apply to large body surface (increases absorption)",
       "Heart failure: all oral NSAIDs worsen HF — increase fluid retention, blunt diuretic response; topical diclofenac is safer (minimal systemic absorption)"
     ],
-    "source": "Health Canada PM. RxFiles NSAIDs Comparison Chart. Choosing Wisely Canada — Geriatrics. AGS Beers 2023."
+    "source": "Health Canada PM. RxFiles NSAIDs Comparison Chart. Choosing Wisely Canada — Geriatrics. AGS Beers 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid chronic use",
+        "population": "Adults ≥65",
+        "rationale": "Same plus highest CV risk among NSAIDs.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution chronic",
+        "criteria": "STOPP H1-H3",
+        "rationale": "Cardiovascular, AKI, GI"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "budesonide_gi": {
     "name": "Budesonide (Oral — GI)",
@@ -50053,7 +50557,23 @@ var DRUGS = {
       "Poor analgesic choice for CYP2D6 poor metabolizers — consider alternative if patient reports no effect despite adequate dosing",
       "Seizure risk is the most important safety concern — avoid in epilepsy, keep below max dose, and be cautious with any drug that lowers seizure threshold"
     ],
-    "source": "Health Canada PM. Canadian Guideline for Opioids for Chronic Non-Cancer Pain 2017 (Busse JW et al, CMAJ); CRISM 2023 OUD Treatment Guideline; Health Canada Opioid Risk Mitigation 2018+. Health Canada Opioid Action Plan."
+    "source": "Health Canada PM. Canadian Guideline for Opioids for Chronic Non-Cancer Pain 2017 (Busse JW et al, CMAJ); CRISM 2023 OUD Treatment Guideline; Health Canada Opioid Risk Mitigation 2018+. Health Canada Opioid Action Plan.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Use cautiously",
+        "population": "Adults ≥65",
+        "rationale": "Lowers seizure threshold; SIADH/hyponatremia; serotonergic; falls.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution",
+        "criteria": "STOPP K6 (SSRI/SNRI/SARI/TCA + tramadol — serotonin syndrome)",
+        "rationale": "Serotonin syndrome and seizure risk"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "cyclobenzaprine": {
     "name": "Cyclobenzaprine",
@@ -50159,7 +50679,23 @@ var DRUGS = {
       "Anticholinergic Cognitive Burden: appears on Beers Criteria as potentially inappropriate in elderly (≥65) — avoid if possible due to sedation, falls, anticholinergic effects, and cognitive impairment",
       "Methocarbamol (Robaxin) is a safer alternative in elderly or patients on serotonergic drugs — no anticholinergic or serotonergic activity, shorter half-life"
     ],
-    "source": "Health Canada PM. Toronto Western Hospital / Canadian neurology consensus. AGS Beers 2023 (caution in elderly)."
+    "source": "Health Canada PM. Toronto Western Hospital / Canadian neurology consensus. AGS Beers 2023 (caution in elderly).",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Highly anticholinergic; sedation; falls; minimal long-term efficacy.",
+        "citation": "AGS Beers Criteria 2023 (Skeletal muscle relaxants)"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B6 (Anticholinergics)",
+        "rationale": "Anticholinergic burden + sedation"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "nirmatrelvir_ritonavir": {
     "name": "Paxlovid (Nirmatrelvir / Ritonavir)",
@@ -51030,7 +51566,23 @@ var DRUGS = {
       "Stop and call your prescriber if you develop: black/tarry stools, vomiting blood, severe stomach pain, decreased urine, swelling, shortness of breath, or rash.",
       "Acetaminophen is often a safer first-choice analgesic when no anti-inflammatory effect is needed."
     ],
-    "source": "Health Canada PM. RxFiles NSAIDs Comparison Chart. Choosing Wisely Canada — Geriatrics. AGS Beers 2023."
+    "source": "Health Canada PM. RxFiles NSAIDs Comparison Chart. Choosing Wisely Canada — Geriatrics. AGS Beers 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid chronic use",
+        "population": "Adults ≥65 (especially with HF, CKD, GI bleed history, anticoagulation)",
+        "rationale": "GI bleed, AKI, HF exacerbation, hypertension. Use shortest course.",
+        "citation": "AGS Beers Criteria 2023 (Non-selective NSAIDs — chronic)"
+      },
+      "stopp": {
+        "flag": "Caution chronic",
+        "criteria": "STOPP H1-H3 (NSAIDs in CKD/HF/anticoagulant)",
+        "rationale": "AKI, GI bleed, fluid retention"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "diclofenac_topical": {
     "name": "Diclofenac Topical",
@@ -52316,7 +52868,23 @@ var DRUGS = {
       "BEDTIME DOSING IS ESSENTIAL: sedation from clomipramine is significant — evening or bedtime dosing allows sleep benefit and minimizes daytime cognitive impairment. OCD patients typically dose at bedtime.",
       "CYP2D6 INHIBITORS DANGEROUSLY RAISE LEVELS: co-prescribing fluoxetine or paroxetine (strong CYP2D6 inhibitors) with clomipramine can double or triple clomipramine plasma levels — risk of seizures, arrhythmia, serotonin syndrome. Flag immediately on medication review."
     ],
-    "source": "Health Canada PM Anafranil (Mallinckrodt Canada); CANMAT 2023 Update MDD (May 2024); CFP OCD Reviews; AGS Beers 2023 (avoid elderly); CPS Compendium."
+    "source": "Health Canada PM Anafranil (Mallinckrodt Canada); CANMAT 2023 Update MDD (May 2024); CFP OCD Reviews; AGS Beers 2023 (avoid elderly); CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Tertiary TCA — anticholinergic.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B1",
+        "rationale": "Anticholinergic burden"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "dienogest": {
     "name": "Dienogest",
@@ -53365,7 +53933,27 @@ var DRUGS = {
       "Ibuprofen blocks antiplatelet effect — use acetaminophen for pain",
       "NAPRA Schedule II (OTC low-dose); ODB General Benefit for CV indications"
     ],
-    "source": "Health Canada Product Monograph; CCS ACS Guidelines 2022; CCS Dyslipidemia/CVD Primary Prevention 2023; SOGC Preeclampsia Prevention Guidelines; ACC/AHA Antiplatelet Guidelines; CPS Compendium"
+    "source": "Health Canada Product Monograph; CCS ACS Guidelines 2022; CCS Dyslipidemia/CVD Primary Prevention 2023; SOGC Preeclampsia Prevention Guidelines; ACC/AHA Antiplatelet Guidelines; CPS Compendium",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid for primary prevention >70",
+        "population": "Adults ≥70 without established CVD",
+        "rationale": "ASPREE — harm > benefit (bleeding) for primary prevention.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A2 (ASA 75-160 mg in established CVD)",
+        "rationale": "Secondary prevention benefit",
+        "citation": "STOPP/START v3 2023"
+      },
+      "choosing_wisely_canada": {
+        "recommendation": "Don't routinely use ASA for primary prevention of CV disease in adults ≥70 years without established CVD",
+        "organization": "Canadian Cardiovascular Society — Choosing Wisely Canada"
+      }
+    }
+  
   },
   "dexamethasone": {
     "name": "Dexamethasone",
@@ -53917,7 +54505,19 @@ var DRUGS = {
       "Stay hydrated; if you develop vomiting/diarrhea or are sick, contact your prescriber as low blood pressure and kidney issues can occur.",
       "Bloodwork (kidney function, potassium) is usually checked 1–2 weeks after starting and after any dose increase."
     ],
-    "source": "Health Canada PM. Hypertension Canada Guideline 2025 (Rabi DM et al, CMAJ; primary care update). CCS/CHFS HF Guidelines 2017 + 2021 HFrEF Update (McDonald M et al) + 2023 phenotypes + 2025 HFnrEF Update. KDIGO CKD 2024."
+    "source": "Health Canada PM. Hypertension Canada Guideline 2025 (Rabi DM et al, CMAJ; primary care update). CCS/CHFS HF Guidelines 2017 + 2021 HFrEF Update (McDonald M et al) + 2023 phenotypes + 2025 HFnrEF Update. KDIGO CKD 2024.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A6 (ACE inhibitor in HFrEF or post-MI)",
+        "rationale": "Mortality benefit",
+        "citation": "STOPP/START v3 2023; CCS HF 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "cholecalciferol": {
     "name": "Cholecalciferol",
@@ -54024,7 +54624,19 @@ var DRUGS = {
       "CKD STAGE 5 AND DIALYSIS: cholecalciferol requires renal 1-alpha-hydroxylation for activation; this step is severely impaired in end-stage kidney disease. These patients require calcitriol (Rocaltrol) or alfacalcidol (1-alpha-hydroxycholecalciferol) directly — cholecalciferol alone is insufficient for active vitamin D replacement in this population.",
       "INFANT SUPPLEMENTATION: Health Canada recommends 400 IU/day for all breastfed infants from birth, as breast milk contains very little vitamin D. D-Drops 400 IU/drop makes this straightforward. Formula-fed infants receiving the full recommended volume of fortified formula generally do not need additional supplementation."
     ],
-    "source": "Health Canada Natural Health Product Monograph. Dietitians of Canada. Osteoporosis Canada 2023."
+    "source": "Health Canada Natural Health Product Monograph. Dietitians of Canada. Osteoporosis Canada 2023.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START E5 (Vitamin D supplement in osteoporosis or housebound elderly)",
+        "rationale": "Falls and fragility fracture prevention",
+        "citation": "STOPP/START v3 2023; Osteoporosis Canada 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "folic_acid": {
     "name": "Folic Acid",
@@ -54580,7 +55192,23 @@ var DRUGS = {
       "Galactorrhea/hyperprolactinemia (D2 blockade → prolactin release)",
       "ODB General Benefit; domperidone preferred for chronic use (less CNS penetration)"
     ],
-    "source": "Health Canada Product Monograph Maxeran (Pfizer Canada); Health Canada Black Box Warning 2011 + 2017 (tardive dyskinesia limit ≤5 days; updated dosing guidance); CAG Gastroparesis Guideline; CPS Compendium; CAG Gastroparesis 2023."
+    "source": "Health Canada Product Monograph Maxeran (Pfizer Canada); Health Canada Black Box Warning 2011 + 2017 (tardive dyskinesia limit ≤5 days; updated dosing guidance); CAG Gastroparesis Guideline; CPS Compendium; CAG Gastroparesis 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (>12 weeks)",
+        "population": "Adults ≥65",
+        "rationale": "Tardive dyskinesia, EPS — risk increases with age and duration. Health Canada limits to 5 days, Beers/FDA limit chronic use.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used >5 days",
+        "criteria": "STOPP K3 (Metoclopramide >5 days)",
+        "rationale": "Tardive dyskinesia in elderly"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "zolpidem": {
     "name": "Zolpidem",
@@ -54680,7 +55308,26 @@ var DRUGS = {
       "CBT-I IS BETTER THAN DRUGS: Cognitive Behavioral Therapy for Insomnia (CBT-I) is more effective than any sleep medication for chronic insomnia and has durable effects. Pharmacotherapy should be short-term only (2–4 weeks). Refer patients to CBT-I resources or apps (Sleepio, SleepStation) when possible.",
       "BEERS CRITERIA — AVOID IN ELDERLY: Z-drugs are on the American Geriatrics Society Beers Criteria for inappropriate use in patients ≥65 — falls, hip fractures, cognitive impairment, motor vehicle accidents. If an elderly patient needs hypnotic treatment, consider low-dose melatonin or doxepine (Silenor) under specialist guidance, or CBT-I."
     ],
-    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics."
+    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Z-drug — similar AE profile to BZDs (cognitive impairment, delirium, falls, fractures, MVCs); minimal sleep benefit.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used >4 weeks",
+        "criteria": "STOPP D5 (extended to Z-drugs)",
+        "rationale": "Same risks as BZDs"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line for insomnia in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "levofloxacin": {
     "name": "Levofloxacin",
@@ -55430,7 +56077,19 @@ var DRUGS = {
       "AVOID if CrCl <35 (renal accumulation) or esophageal disorders",
       "ODB General Benefit — generic 70 mg weekly preferred"
     ],
-    "source": "Health Canada Product Monograph Fosamax (Organon Canada); Osteoporosis Canada Guidelines 2023; AACE 2020 Osteoporosis Guidelines; CPS Compendium"
+    "source": "Health Canada Product Monograph Fosamax (Organon Canada); Osteoporosis Canada Guidelines 2023; AACE 2020 Osteoporosis Guidelines; CPS Compendium",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START E1 (Bisphosphonate + vitamin D in osteoporosis or after fragility fracture)",
+        "rationale": "Fracture risk reduction",
+        "citation": "STOPP/START v3 2023; Osteoporosis Canada 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "risedronate": {
     "name": "Risedronate",
@@ -55554,7 +56213,19 @@ var DRUGS = {
       "CHECK CALCIUM AND VITAMIN D BEFORE INITIATING — correct deficiency to avoid symptomatic hypocalcemia.",
       "BISPHOSPHONATE HOLIDAY after 5 years of continuous therapy if fracture risk is low (T-score > -2.5, no recent fracture)."
     ],
-    "source": "Health Canada PM. Osteoporosis Canada 2023 Clinical Practice Guideline (Morin SN et al, CMAJ 2023)."
+    "source": "Health Canada PM. Osteoporosis Canada 2023 Clinical Practice Guideline (Morin SN et al, CMAJ 2023).",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START E1",
+        "rationale": "Same — fracture prevention",
+        "citation": "STOPP/START v3 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "citalopram": {
     "name": "Citalopram",
@@ -56086,7 +56757,26 @@ var DRUGS = {
       "(5) PARADOXICAL REACTIONS especially in elderly, patients with dementia, and children - aggression, agitation, disinhibition, mania",
       "discontinue if observed."
     ],
-    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics."
+    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Increased BZD sensitivity; cognitive impairment, delirium, falls, fractures, MVCs.",
+        "citation": "AGS Beers Criteria 2023 (Benzodiazepines — all)"
+      },
+      "stopp": {
+        "flag": "Should not be used >4 weeks",
+        "criteria": "STOPP D5",
+        "rationale": "Tolerance, dependence; deprescribing recommended"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line for insomnia/agitation/delirium in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014/2023)"
+      }
+    }
+  
   },
   "hydrocortisone": {
     "name": "Hydrocortisone",
@@ -57119,7 +57809,23 @@ var DRUGS = {
       "(4) VAGINAL ESTROGEN for atrophy/dyspareunia — very low systemic absorption (Vagifem 10 mcg, Estring 7.5 mcg/day); does not require concurrent progestin; safe even in many breast cancer survivors after specialist input",
       "(5) DURATION — use lowest effective dose for shortest duration needed; reassess annually; gradual taper if discontinuing (abrupt stop may cause symptom rebound); no arbitrary stopping age — individualized risk/benefit"
     ],
-    "source": "Health Canada PM. SOGC Menopause and Osteoporosis Society of Canada Guidelines. SOGC Menopause 2021."
+    "source": "Health Canada PM. SOGC Menopause and Osteoporosis Society of Canada Guidelines. SOGC Menopause 2021.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid systemic (oral, transdermal patch)",
+        "population": "Postmenopausal women ≥65",
+        "rationale": "Long-term systemic estrogen — breast cancer, VTE risk. Low-dose vaginal estrogen for GSM is acceptable (minimal systemic absorption).",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Avoid systemic ≥65",
+        "criteria": "STOPP G2 (Oestrogens with HRT contraindications)",
+        "rationale": "Breast/endometrial cancer, VTE"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "medroxyprogesterone": {
     "name": "Medroxyprogesterone Acetate (MPA)",
@@ -58287,7 +58993,23 @@ var DRUGS = {
       "STANDARD NSAID CAUTIONS APPLY - check baseline renal function and BP; review concomitant ACEi/ARB/diuretic (triple-whammy AKI risk); add PPI for high GI risk; avoid in HF, CKD, post-CABG, third trimester pregnancy.",
       "NO ANTIPLATELET INTERFERENCE WITH ASA - Unlike ibuprofen (which competitively blocks ASA's COX-1 binding), low-dose meloxicam minimally affects ASA cardioprotection - relevant for cardiac patients needing both."
     ],
-    "source": "Health Canada PM. RxFiles NSAIDs Comparison Chart. Choosing Wisely Canada — Geriatrics. AGS Beers 2023."
+    "source": "Health Canada PM. RxFiles NSAIDs Comparison Chart. Choosing Wisely Canada — Geriatrics. AGS Beers 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid chronic use",
+        "population": "Adults ≥65",
+        "rationale": "NSAID class — same risks.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution chronic",
+        "criteria": "STOPP H1-H3",
+        "rationale": "AKI, GI bleed"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "ketorolac": {
     "name": "Ketorolac",
@@ -58454,7 +59176,23 @@ var DRUGS = {
       "GI BLEED RISK IS HIGHEST AMONG NSAIDs - never combine with other NSAIDs/ASA; consider PPI in high-risk patients (age >65, anticoagulation, prior ulcer); counsel to report melena/hematemesis immediately.",
       "PEDIATRIC - IV ketorolac is approved and well-studied for postoperative pain in children >=2 years (typically 0.5 mg/kg q6h, max 30 mg, max 5 days). Oral ketorolac is rarely used in children - other oral NSAIDs preferred."
     ],
-    "source": "Health Canada PM. Hypertension Canada 2025. CCS/CHFS HF Guidelines 2017 + 2021 HFrEF + 2023 phenotypes + 2025 HFnrEF update. KDIGO 2024 CKD Guideline."
+    "source": "Health Canada PM. Hypertension Canada 2025. CCS/CHFS HF Guidelines 2017 + 2021 HFrEF + 2023 phenotypes + 2025 HFnrEF update. KDIGO 2024 CKD Guideline.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Highest GI/renal toxicity NSAID; only ≤5 days even in non-elderly.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used >5 days",
+        "criteria": "STOPP H1",
+        "rationale": "Severe GI bleed and AKI risk"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "cefuroxime": {
     "name": "Cefuroxime",
@@ -63553,7 +64291,23 @@ var DRUGS = {
       "Hemolytic anemia (Coombs positive): check CBC if long-term use",
       "TID–QID dosing burden: labetalol or nifedipine XL more convenient for most patients"
     ],
-    "source": "Health Canada PM Aldomet/methyldopa (generic); SOGC Guideline 426 (2022) Hypertensive Disorders of Pregnancy; Hypertension Canada 2025; CPS Compendium."
+    "source": "Health Canada PM Aldomet/methyldopa (generic); SOGC Guideline 426 (2022) Hypertensive Disorders of Pregnancy; Hypertension Canada 2025; CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid as first-line antihypertensive",
+        "population": "Adults ≥65",
+        "rationale": "Bradycardia, orthostatic hypotension, sedation, depression. (Pregnancy is the main appropriate indication.)",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution",
+        "criteria": "STOPP B14",
+        "rationale": "Centrally acting; sedation"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "hydralazine": {
     "name": "Hydralazine",
@@ -64918,7 +65672,26 @@ var DRUGS = {
       "Beers list: not recommended in elderly (>65)",
       "CBT-I first-line: superior to pharmacotherapy long-term and without side effects"
     ],
-    "source": "Health Canada PM Lunesta (Sunovion Canada); Canadian Sleep Society; AGS Beers Criteria 2023 (avoid in elderly); CPS Compendium."
+    "source": "Health Canada PM Lunesta (Sunovion Canada); Canadian Sleep Society; AGS Beers Criteria 2023 (avoid in elderly); CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Same Z-drug class concerns.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used >4 weeks",
+        "criteria": "STOPP D5",
+        "rationale": "Same Z-drug class"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line for insomnia in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "indomethacin": {
     "name": "Indomethacin",
@@ -65026,7 +65799,23 @@ var DRUGS = {
       "Headache as side effect is paradoxical — limit use for headache disorders",
       "AVOID ≥30 weeks pregnancy — premature ductus closure"
     ],
-    "source": "Health Canada PM Indocid (generic); CRA Gout / Inflammatory Arthritis; SOGC Tocolytic Guidelines (gestational use); CPS Compendium. Canadian Pain Society 2024; CRA 2023."
+    "source": "Health Canada PM Indocid (generic); CRA Gout / Inflammatory Arthritis; SOGC Tocolytic Guidelines (gestational use); CPS Compendium. Canadian Pain Society 2024; CRA 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Most CNS adverse effects of NSAIDs (confusion, dizziness, headache). Higher GI/renal toxicity.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP H4 (Indomethacin)",
+        "rationale": "CNS effects unique to indomethacin"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "baclofen_oral": {
     "name": "Baclofen",
@@ -65679,7 +66468,23 @@ var DRUGS = {
       "Elderly: Beers list — falls, confusion risk",
       "OTC combinations (Robaxacet) available at pharmacy without prescription"
     ],
-    "source": "Health Canada PM Robaxin/Robaxisal (Sanofi/generic); CFP Skeletal Muscle Relaxant Reviews; AGS Beers 2023 (caution in elderly); CPS Compendium."
+    "source": "Health Canada PM Robaxin/Robaxisal (Sanofi/generic); CFP Skeletal Muscle Relaxant Reviews; AGS Beers 2023 (caution in elderly); CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Anticholinergic; sedation; falls.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic burden"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "rabeprazole": {
     "name": "Rabeprazole",
@@ -65777,7 +66582,23 @@ var DRUGS = {
       "Annual reassessment for continued PPI need — step down when appropriate",
       "Long-term: monitor Mg, B12, bone density"
     ],
-    "source": "Health Canada PM Pariet (Janssen Canada); CAG GERD/H. pylori Guidelines; ACG/CAG Dyspepsia 2017; Choosing Wisely Canada PPI Deprescribing; CPS Compendium. CAG 2020; Toronto Consensus 2024."
+    "source": "Health Canada PM Pariet (Janssen Canada); CAG GERD/H. pylori Guidelines; ACG/CAG Dyspepsia 2017; Choosing Wisely Canada PPI Deprescribing; CPS Compendium. CAG 2020; Toronto Consensus 2024.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid prolonged use (>8 weeks) without indication",
+        "population": "Adults ≥65",
+        "rationale": "Same PPI class effects.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should be deprescribed",
+        "criteria": "STOPP F2",
+        "rationale": "Step-down or stop after 8 weeks"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "ranitidine": {
     "name": "Ranitidine (withdrawn) / Famotidine (active H2 blocker)",
@@ -66511,7 +67332,26 @@ var DRUGS = {
       "Pregnancy: Diclegis (doxylamine/B6) is first-line NVP; Gravol is second-line",
       "Anticholinergic burden: avoid in BPH, glaucoma, cognitive impairment"
     ],
-    "source": "Health Canada PM Gravol (Church & Dwight Canada); SOGC NVP Guidelines (1st-line in pregnancy); CFP Motion Sickness; CPS Compendium. Canadian Allergy/Asthma 2023."
+    "source": "Health Canada PM Gravol (Church & Dwight Canada); SOGC NVP Guidelines (1st-line in pregnancy); CFP Motion Sickness; CPS Compendium. Canadian Allergy/Asthma 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Highly anticholinergic; sedation, confusion. Sometimes inappropriately used for nausea — ondansetron preferred.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic; safer antiemetics exist"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use first-generation antihistamines for any indication in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "doxylamine_pyridoxine": {
     "name": "Doxylamine + Pyridoxine (Vitamin B6)",
@@ -66794,7 +67634,26 @@ var DRUGS = {
       "Beers list: avoid in elderly (anticholinergic, sedation, falls)",
       "Very sedating — use this to advantage for nighttime dosing or preoperative sedation"
     ],
-    "source": "Health Canada PM Phenergan (multiple generics — limited Canadian availability); SOGC NVP Guidelines; CHS Migraine; CPS Compendium. Canadian Allergy/Asthma 2023."
+    "source": "Health Canada PM Phenergan (multiple generics — limited Canadian availability); SOGC NVP Guidelines; CHS Migraine; CPS Compendium. Canadian Allergy/Asthma 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Highly anticholinergic + extrapyramidal effects + QT prolongation. Avoid for nausea, sleep, anxiety.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic + EPS + QT"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use first-generation antihistamines for any indication in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "sulfasalazine": {
     "name": "Sulfasalazine",
@@ -67712,7 +68571,26 @@ var DRUGS = {
       "NEVER give IV — IM only (thrombophlebitis/necrosis risk with IV/SC)",
       "Reduce opioid dose 50% when combined (additive CNS depression)"
     ],
-    "source": "Health Canada PM Atarax/Vistaril (multiple generics); CFP Anxiety/Pruritus Reviews; AGS Beers Criteria 2023 (caution elderly); CPS Compendium."
+    "source": "Health Canada PM Atarax/Vistaril (multiple generics); CFP Anxiety/Pruritus Reviews; AGS Beers Criteria 2023 (caution elderly); CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Highly anticholinergic; sedating; orthostatic hypotension. Risk of confusion, dry mouth, constipation, urinary retention, falls.",
+        "citation": "AGS Beers Criteria 2023 (Anticholinergics — first-generation antihistamines)"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B6 (First-generation antihistamines)",
+        "rationale": "Anticholinergic burden; safer alternatives exist"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use first-generation antihistamines for any indication in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "pseudoephedrine": {
     "name": "Pseudoephedrine",
@@ -69419,7 +70297,26 @@ var DRUGS = {
       "Take 1 hour BEFORE travel for prevention",
       "Beers list in elderly: anticholinergic burden — use with caution"
     ],
-    "source": "Health Canada PM Bonamine (Pfizer Canada — NAPRA Schedule II); SOGC NVP Guidelines; CFP Motion Sickness; CPS Compendium. Canadian Allergy/Asthma 2023."
+    "source": "Health Canada PM Bonamine (Pfizer Canada — NAPRA Schedule II); SOGC NVP Guidelines; CFP Motion Sickness; CPS Compendium. Canadian Allergy/Asthma 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Anticholinergic; sedation, confusion, urinary retention. Use vestibular rehab or non-anticholinergic options for vertigo.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic burden"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use first-generation antihistamines for any indication in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "oxymetazoline": {
     "name": "Oxymetazoline",
@@ -70711,7 +71608,26 @@ var DRUGS = {
       "Beers list: avoid in elderly",
       "Take at night if sedation bothersome during day"
     ],
-    "source": "Health Canada PM Chlor-Tripolon (Bayer Canada); CSACI Allergic Rhinitis (1st-gen — sedating); AGS Beers Criteria 2023 (avoid elderly); CPS Compendium."
+    "source": "Health Canada PM Chlor-Tripolon (Bayer Canada); CSACI Allergic Rhinitis (1st-gen — sedating); AGS Beers Criteria 2023 (avoid elderly); CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Anticholinergic; sedation. Found in many OTC cold/allergy products — counsel patients.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic burden"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use first-generation antihistamines for any indication in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "cyproheptadine": {
     "name": "Cyproheptadine",
@@ -70807,7 +71723,26 @@ var DRUGS = {
       "Sedation is significant — often used at bedtime",
       "Can antagonize SSRIs — avoid chronic co-administration"
     ],
-    "source": "Health Canada PM Periactin (Mylan Canada); CFP Appetite Stimulant; CPS Compendium. Canadian Allergy/Asthma 2023."
+    "source": "Health Canada PM Periactin (Mylan Canada); CFP Appetite Stimulant; CPS Compendium. Canadian Allergy/Asthma 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Highly anticholinergic — same risks as other 1st-gen antihistamines.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic burden"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use first-generation antihistamines for any indication in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "mometasone": {
     "name": "Mometasone",
@@ -71006,7 +71941,23 @@ var DRUGS = {
       "Remove before MRI (metallic component in patch)",
       "Buscopan: does not cross BBB — fewer CNS side effects than Transderm V"
     ],
-    "source": "Health Canada PM Buscopan (Sanofi Canada); CFP IBS Reviews; CAG IBS; CPS Compendium. RxTx 2024."
+    "source": "Health Canada PM Buscopan (Sanofi Canada); CFP IBS Reviews; CAG IBS; CPS Compendium. RxTx 2024.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Anticholinergic — confusion, urinary retention, falls.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used in dementia",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "fesoterodine": {
     "name": "Fesoterodine",
@@ -74463,7 +75414,23 @@ var DRUGS = {
       "Delayed-release formulation requires taking at bedtime before symptoms are anticipated",
       "OTC doxylamine (Unisom) can be used off-label for NVP but is not delayed-release"
     ],
-    "source": "Health Canada PM. Canadian Society of Allergy and Clinical Immunology (CSACI). AGS Beers 2023 (1st-gen caution in elderly)."
+    "source": "Health Canada PM. Canadian Society of Allergy and Clinical Immunology (CSACI). AGS Beers 2023 (1st-gen caution in elderly).",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (except NVP)",
+        "population": "Adults ≥65 outside of pregnancy",
+        "rationale": "Anticholinergic; sedation. Diclectin (doxylamine/pyridoxine) is intended for NVP not chronic insomnia.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used as hypnotic",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic; risk of falls"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "methadone": {
     "name": "Methadone",
@@ -75335,7 +76302,23 @@ var DRUGS = {
       "If treating BPH (prostate): improvement in urinary stream typically takes 2–4 weeks.",
       "Do not stop abruptly without speaking to your prescriber — taper as directed."
     ],
-    "source": "Health Canada Product Monograph: Cardura, Cardura XL (Pfizer Canada). Hypertension Canada 2025 Guidelines. Canadian Urological Association BPH Guideline 2018. ALLHAT Trial: JAMA 2002;288:2981."
+    "source": "Health Canada Product Monograph: Cardura, Cardura XL (Pfizer Canada). Hypertension Canada 2025 Guidelines. Canadian Urological Association BPH Guideline 2018. ALLHAT Trial: JAMA 2002;288:2981.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid as first-line antihypertensive",
+        "population": "Adults ≥65",
+        "rationale": "Orthostatic hypotension, falls. ALLHAT showed worse CV outcomes vs thiazide.",
+        "citation": "AGS Beers Criteria 2023 (Peripheral α1-blockers as antihypertensive)"
+      },
+      "stopp": {
+        "flag": "Caution",
+        "criteria": "STOPP B3 (α1-blockers in symptomatic orthostatic hypotension)",
+        "rationale": "Falls risk"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "silodosin": {
     "name": "Silodosin",
@@ -77309,7 +78292,19 @@ var DRUGS = {
       "Carry a medical alert ID indicating epilepsy and phenobarbital.",
       "Bloodwork (drug level, blood counts, liver, electrolytes) at intervals."
     ],
-    "source": "Health Canada Product Monograph: Phenobarbital (multiple Canadian generics). Canadian Pediatric Society Neonatal Seizure Guideline. Controlled Drugs and Substances Act — Targeted Substances Regulations. NICE CG137 Epilepsies. CLAE 2023."
+    "source": "Health Canada Product Monograph: Phenobarbital (multiple Canadian generics). Canadian Pediatric Society Neonatal Seizure Guideline. Controlled Drugs and Substances Act — Targeted Substances Regulations. NICE CG137 Epilepsies. CLAE 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "High dependence/tolerance; sedation, falls; many drug interactions (CYP induction).",
+        "citation": "AGS Beers Criteria 2023 (Barbiturates)"
+      },
+      "stopp": null,
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "oxcarbazepine": {
     "name": "Oxcarbazepine",
@@ -78146,7 +79141,23 @@ var DRUGS = {
       "Bloodwork is generally not required, but tell your prescriber about all medications BEFORE starting any new prescription (interactions matter).",
       "Coverage: Ontario ODB Limited Use code typically required — pharmacist verifies before fill."
     ],
-    "source": "Health Canada Product Monograph: Detrol, Detrol LA (Pfizer Canada). Canadian Urological Association Guideline on Adult Overactive Bladder, Can Urol Assoc J 2017. AGS Beers Criteria 2023."
+    "source": "Health Canada Product Monograph: Detrol, Detrol LA (Pfizer Canada). Canadian Urological Association Guideline on Adult Overactive Bladder, Can Urol Assoc J 2017. AGS Beers Criteria 2023.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Use cautiously",
+        "population": "Adults ≥65",
+        "rationale": "Less CNS-penetrant than oxybutynin but still anticholinergic.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution in dementia",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "pimecrolimus": {
     "name": "Pimecrolimus 1% Cream (Topical)",
@@ -79548,7 +80559,23 @@ var DRUGS = {
       "Prolonged use (>3-4 days) — TAPER to avoid withdrawal vertigo/nausea",
       "AVOID combining with other anticholinergics (additive delirium, urinary retention) — especially elderly"
     ],
-    "source": "Health Canada PM (Transderm-V). Cochrane Motion Sickness Prevention. Beers Criteria 2023 (anticholinergic risk in elderly)."
+    "source": "Health Canada PM (Transderm-V). Cochrane Motion Sickness Prevention. Beers Criteria 2023 (anticholinergic risk in elderly).",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Use cautiously",
+        "population": "Adults ≥65",
+        "rationale": "Anticholinergic — confusion, urinary retention.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Caution",
+        "criteria": "STOPP B6",
+        "rationale": "Anticholinergic"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "testosterone": {
     "name": "Testosterone (Replacement Therapy)",
@@ -89972,7 +90999,19 @@ var DRUGS = {
       "Per CUA, combine with 5-alpha-reductase inhibitor (finasteride, dutasteride) in larger prostates (>40 mL) or PSA >1.4 ng/mL — additive symptomatic + disease-modifying benefit (CombAT trial)",
       "Avoid in symptomatic orthostatic hypotension or recent syncope"
     ],
-    "source": "Health Canada Product Monograph (current version, Hytrin / generic terazosin); Canadian Urological Association BPH Guidelines (most recent update); Hypertension Canada Guidelines 2020 + 2024 update"
+    "source": "Health Canada Product Monograph (current version, Hytrin / generic terazosin); Canadian Urological Association BPH Guidelines (most recent update); Hypertension Canada Guidelines 2020 + 2024 update",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid as first-line antihypertensive",
+        "population": "Adults ≥65",
+        "rationale": "Same; falls risk.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": null,
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "finerenone": {
     "name": "Finerenone",
@@ -91200,7 +92239,23 @@ var DRUGS = {
       "CONTRAINDICATED with rilpivirine (HIV)",
       "Pregnancy: acceptable per SOGC when GERD severe; omeprazole has more pregnancy experience"
     ],
-    "source": "Health Canada Product Monograph (current version, Dexilant, Takeda Canada); Canadian Association of Gastroenterology (CAG) GERD Guidelines (most recent update); Choosing Wisely Canada — PPI deprescribing recommendations; CAG 2020; Toronto Consensus 2024."
+    "source": "Health Canada Product Monograph (current version, Dexilant, Takeda Canada); Canadian Association of Gastroenterology (CAG) GERD Guidelines (most recent update); Choosing Wisely Canada — PPI deprescribing recommendations; CAG 2020; Toronto Consensus 2024.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid prolonged use (>8 weeks) without indication",
+        "population": "Adults ≥65",
+        "rationale": "Same PPI class effects.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should be deprescribed",
+        "criteria": "STOPP F2",
+        "rationale": "Step-down or stop after 8 weeks"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "fidaxomicin": {
     "name": "Fidaxomicin",
@@ -101188,7 +102243,26 @@ var DRUGS = {
       "CYP2D6: paroxetine, fluoxetine raise TCA levels",
       "ODB General Benefit"
     ],
-    "source": "Health Canada Product Monograph Tofranil; CANMAT Depression Guidelines 2023 (MacQueen G et al., Can J Psychiatry); AGS Beers Criteria 2023; CPS Compendium"
+    "source": "Health Canada Product Monograph Tofranil; CANMAT Depression Guidelines 2023 (MacQueen G et al., Can J Psychiatry); AGS Beers Criteria 2023; CPS Compendium",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Tertiary TCA — same anticholinergic profile as amitriptyline.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B1/D14",
+        "rationale": "Anticholinergic; falls; orthostasis"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't prescribe TCAs as first-line for insomnia, depression, or pain in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "levomilnacipran": {
     "name": "Levomilnacipran",
@@ -101411,7 +102485,26 @@ var DRUGS = {
       "OPIOID + BZD combination: Health Canada black box warning",
       "CANMAT: SSRIs/SNRIs preferred over BZDs for anxiety"
     ],
-    "source": "Health Canada Product Monograph (Serax generics); CANMAT Anxiety Guidelines 2023 (Katzman MA et al., BMC Psychiatry); AGS Beers Criteria 2023; CCS/CSAM Alcohol Withdrawal; CADTH; ODB formulary"
+    "source": "Health Canada Product Monograph (Serax generics); CANMAT Anxiety Guidelines 2023 (Katzman MA et al., BMC Psychiatry); AGS Beers Criteria 2023; CCS/CSAM Alcohol Withdrawal; CADTH; ODB formulary",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Increased BZD sensitivity; falls, cognitive impairment. (Shorter t½ + glucuronidation makes it 'safest' BZD if absolutely needed.)",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used >4 weeks",
+        "criteria": "STOPP D5",
+        "rationale": "All BZDs avoidable"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line for insomnia/agitation/delirium in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014/2023)"
+      }
+    }
+  
   },
   "temazepam": {
     "name": "Temazepam",
@@ -101506,7 +102599,26 @@ var DRUGS = {
       "TAPER on discontinuation — rebound insomnia, seizure risk",
       "ODB formulary status — verify current LU code"
     ],
-    "source": "Health Canada Product Monograph Restoril (generics); CANMAT Insomnia Guidelines 2021 (Morin CM et al.); AGS Beers Criteria 2023; Health Canada Drug Safety Communication on BZD complex sleep behaviours 2020; ODB formulary"
+    "source": "Health Canada Product Monograph Restoril (generics); CANMAT Insomnia Guidelines 2021 (Morin CM et al.); AGS Beers Criteria 2023; Health Canada Drug Safety Communication on BZD complex sleep behaviours 2020; ODB formulary",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Increased BZD sensitivity; risks of cognitive impairment, falls, MVCs.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used >4 weeks",
+        "criteria": "STOPP D5",
+        "rationale": "Same BZD class concern"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line for insomnia in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014/2023)"
+      }
+    }
+  
   },
   "nitrazepam": {
     "name": "Nitrazepam",
@@ -103359,7 +104471,19 @@ var DRUGS = {
       "ODB General Benefit",
       "FALLS RISK: weakness, hypotonia, dizziness — especially elderly"
     ],
-    "source": "Health Canada PM Lioresal (generic); MS Society of Canada Spasticity Guidance; CRISM AUD Guideline 2018+2024 (off-label for AUD); CPS Compendium."
+    "source": "Health Canada PM Lioresal (generic); MS Society of Canada Spasticity Guidance; CRISM AUD Guideline 2018+2024 (off-label for AUD); CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Use cautiously",
+        "population": "Adults ≥65",
+        "rationale": "Sedation, falls; abrupt discontinuation can cause withdrawal syndrome.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": null,
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "isosorbide_mononitrate": {
     "name": "Isosorbide Mononitrate",
@@ -107253,7 +108377,22 @@ var DRUGS = {
       "Beta-blockers mask adrenergic hypoglycemia symptoms; diaphoresis still present",
       "Pregnancy: insulin first-line (all types); dose requirements increase significantly in 2nd/3rd trimester"
     ],
-    "source": "Health Canada PM. Diabetes Canada Pharmacologic Glycemic Management 2018 + 2024 Update."
+    "source": "Health Canada PM. Diabetes Canada Pharmacologic Glycemic Management 2018 + 2024 Update.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid sliding-scale only",
+        "population": "Adults ≥65",
+        "rationale": "SSI alone (without basal) — high hypoglycemia risk and inadequate glycemic control.",
+        "citation": "AGS Beers Criteria 2023 (SSI without basal)"
+      },
+      "stopp": null,
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't routinely use 'sliding-scale insulin' for long-term diabetes management in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "duloxetine_pain": {
     "name": "Duloxetine (Pain Indications)",
@@ -118109,7 +119248,26 @@ var DRUGS = {
       "Pharmacist counselling: dose at HS, expect AM grogginess, avoid alcohol, no driving until effects known"
     ],
     "counselling": "This medication treats severe itching and helps with sleep. Take at bedtime. It will make you drowsy — do not drive or operate machinery the next day until you know how it affects you. Avoid alcohol. Dry mouth and constipation are common — sip water, increase fibre/fluids. If you are breastfeeding, this is not the right medication for you. Tell your pharmacist about ALL other medications including supplements — many drugs interact. Do not stop suddenly after long use — taper.",
-    "source": "AAD Atopic Dermatitis Guidelines 2023; IFSI Pruritus 2019; Health Canada Sinequan/Silenor/Zonalon monographs; Beers Criteria 2023"
+    "source": "AAD Atopic Dermatitis Guidelines 2023; IFSI Pruritus 2019; Health Canada Sinequan/Silenor/Zonalon monographs; Beers Criteria 2023",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (>6 mg/day)",
+        "population": "Adults ≥65",
+        "rationale": "Anticholinergic at antidepressant doses; safer at very low dose (3-6 mg) for insomnia.",
+        "citation": "AGS Beers Criteria 2023 (TCAs)"
+      },
+      "stopp": {
+        "flag": "Should not be used as antidepressant",
+        "criteria": "STOPP B1/D14",
+        "rationale": "Anticholinergic; sedation; orthostatic"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't prescribe TCAs as first-line for insomnia, depression, or pain in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "difelikefalin": {
     "name": "Difelikefalin",
@@ -119986,7 +121144,19 @@ var DRUGS = {
       "PHARMACIST role: VTE risk assessment + thromboprophylaxis recommendation; glucose monitoring counselling; steroid taper for chronic use; deprescribing in elderly cachexia (weigh modest benefit vs significant AEs); fertility-sparing endometrial protocol monitoring"
     ],
     "counselling": "This medication is a synthetic progesterone. Common side effects: weight gain, swelling, mood changes, increased blood sugar, irregular bleeding initially. SERIOUS RISK: blood clots — tell team immediately about leg pain/swelling, chest pain, shortness of breath. Other warnings: high blood sugar (extreme thirst, frequent urination), changes in mood. Don't stop suddenly if on long-term high dose — taper. Check blood sugar more often if diabetic. Pregnancy must be avoided.",
-    "source": "Health Canada Megace product monograph; NCCN Uterine v2.2025; SOGC Endometrial Hyperplasia 2019; ASCO Cancer Cachexia 2020"
+    "source": "Health Canada Megace product monograph; NCCN Uterine v2.2025; SOGC Endometrial Hyperplasia 2019; ASCO Cancer Cachexia 2020",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Minimal effect on weight; increased VTE, mortality. No good evidence for cachexia.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": null,
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "tobramycin_inhaled": {
     "name": "Tobramycin Inhalation Solution / Powder",
@@ -125104,7 +126274,23 @@ var DRUGS = {
       "PHARMACIST role: monitor BP, breast self-exam reminders, mammography compliance, VTE risk assessment, progestin co-prescribing for intact uterus, deprescribe in elderly + after 5 years of HRT use"
     ],
     "counselling": "Take as directed. Combine with progestin if you have a uterus (prevents uterine cancer). Tell team: leg pain/swelling, chest pain, severe headache, vision changes, breast lump, vaginal bleeding (after a year of no bleeding). Get mammogram + Pap smear as scheduled. Don't smoke (increases VTE risk). Avoid grapefruit. Pregnancy must be avoided.",
-    "source": "WHI Trial (Rossouw NEJM 2002); SOGC Menopause 2024; NAMS HT Position 2022; Health Canada Premarin monograph"
+    "source": "WHI Trial (Rossouw NEJM 2002); SOGC Menopause 2024; NAMS HT Position 2022; Health Canada Premarin monograph",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid systemic",
+        "population": "Postmenopausal women ≥65",
+        "rationale": "Same as estradiol — breast cancer, VTE risk.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Avoid systemic",
+        "criteria": "STOPP G2",
+        "rationale": "Breast/endometrial cancer, VTE"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "vasopressin": {
     "name": "Vasopressin (Arginine Vasopressin, AVP)",
@@ -129947,7 +131133,23 @@ var DRUGS = {
       "GRAPEFRUIT JUICE — avoid; increases levels"
     ],
     "counselling": "(IV/IM/intranasal/buccal in monitored setting) The team will closely monitor your breathing, oxygen, blood pressure, and consciousness. You will likely have NO MEMORY of the procedure (intentional amnesia effect). Common: sleepiness for several hours after; mild dizziness when waking; mild nausea. AVOID alcohol, sedatives, opioids for 24 hours after a dose. Do NOT drive, operate machinery, or make important decisions for 24 HOURS after the medication. If you receive intranasal/buccal at home for seizures, the caregiver should know how to position you (recovery position); call 911 if seizure doesn't stop in 5-10 minutes after dose. Antidote (flumazenil) is available if needed. Tell every prescriber and pharmacist about all medications.",
-    "source": "Health Canada Versed monograph; CCS/AES Status Epilepticus Guidelines 2024; FDA BBW Opioid + BZD 2016; Nayzilam approval"
+    "source": "Health Canada Versed monograph; CCS/AES Status Epilepticus Guidelines 2024; FDA BBW Opioid + BZD 2016; Nayzilam approval",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid (PO/SL chronic)",
+        "population": "Adults ≥65",
+        "rationale": "Procedural IV/IM appropriate; chronic oral dosing in elderly is not.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used chronically",
+        "criteria": "STOPP D5",
+        "rationale": "BZD chronic dosing in elderly"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "triazolam": {
     "name": "Triazolam",
@@ -130024,7 +131226,26 @@ var DRUGS = {
       "ABUSE POTENTIAL — significant; CDSA Schedule IV"
     ],
     "counselling": "Take 1 dose at BEDTIME ONLY (not during the day or before activity). Take ONLY when you can devote 7-8 hours to sleep. Do NOT drive, operate machinery, make important decisions, or sign documents within 12 hours of a dose. AVOID alcohol entirely. AVOID grapefruit juice. AVOID other CNS depressants (other sleep aids, opioid pain medications, antihistamines for sleep, alcohol). May cause: morning drowsiness, mild forgetfulness about the night/morning, mild dizziness. STOP and call provider for: severe drowsiness/confusion, paradoxical agitation/aggression/hallucinations, sleep-walking/sleep-driving/sleep-eating (DANGEROUS), severe rash, swelling, slow/shallow breathing. Do NOT use for more than 7-10 days without provider review. Do NOT stop suddenly after 2+ weeks of use — talk to provider for tapering plan. AVOID in pregnancy and breastfeeding. NOT for elderly patients without specialist guidance. Tell pharmacist about all medications, especially azole antifungals, clarithromycin, HIV/HCV drugs, and St. John's Wort.",
-    "source": "Health Canada Halcion monograph; Beers Criteria 2024; CCS Insomnia Guidelines 2024"
+    "source": "Health Canada Halcion monograph; Beers Criteria 2024; CCS Insomnia Guidelines 2024",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Short-acting BZD; high abuse potential; amnesia, complex sleep behaviours. Particularly poor choice in elderly.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP D5",
+        "rationale": "Significant adverse effects in elderly"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line for insomnia in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014/2023)"
+      }
+    }
+  
   },
   "flurazepam": {
     "name": "Flurazepam",
@@ -130098,7 +131319,26 @@ var DRUGS = {
       "ABUSE POTENTIAL — CDSA Schedule IV"
     ],
     "counselling": "Take 1 dose at BEDTIME ONLY when you can devote 7-8 hours to sleep. EXPECT DAYTIME DROWSINESS for several days as the medication accumulates. Do NOT drive, operate machinery, or make important decisions during the day while taking this. AVOID alcohol entirely. AVOID grapefruit juice. AVOID other CNS depressants. Common: daytime sleepiness, mild dizziness, mild forgetfulness. STOP and call provider for: severe drowsiness, severe confusion, paradoxical agitation/hallucinations, sleep-walking/sleep-driving/sleep-eating (DANGEROUS), severe rash, swelling, slow breathing, falls. NOT for elderly patients (Beers Criteria — high fall risk). Do NOT stop suddenly after 2+ weeks of use — taper plan needed. AVOID in pregnancy and breastfeeding. Better alternatives often available — discuss with provider.",
-    "source": "Health Canada Dalmane monograph; Beers Criteria 2024; CCS Insomnia Guidelines 2024"
+    "source": "Health Canada Dalmane monograph; Beers Criteria 2024; CCS Insomnia Guidelines 2024",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Long half-life (40-100h+) — significant accumulation risk; daytime sedation; falls.",
+        "citation": "AGS Beers Criteria 2023"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP D5",
+        "rationale": "Long half-life unsuitable for elderly"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line for insomnia in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014/2023)"
+      }
+    }
+  
   },
   "clorazepate": {
     "name": "Clorazepate",
@@ -132484,7 +133724,19 @@ var DRUGS = {
       "ORAL ABSORPTION INDEPENDENT OF INTRINSIC FACTOR at high doses (1000-2000 mcg) — passive diffusion adequate"
     ],
     "counselling": "Take ORAL: 1-2 tablets (1000-2000 mcg) daily — many patients can use oral form even for pernicious anemia (high doses absorb passively without intrinsic factor). INJECTION: typically given monthly after initial weekly loading. Common: mild injection site soreness, mild diarrhea (oral). Continue treatment LIFELONG for pernicious anemia or chronic deficiency. STOP and call provider for: severe rash, swelling, severe weakness/palpitations (electrolyte imbalance during recovery), signs of allergic reaction. If you take metformin, PPIs (omeprazole, pantoprazole), or H2 blockers chronically, your B12 may need to be checked annually. Vegans + people with bariatric surgery need lifelong supplementation. Tell pharmacist about all medications.",
-    "source": "Health Canada Cyanocobalamin monograph; Cochrane Oral vs IM B12 2018; CCS Hematology B12 Deficiency Guidelines 2024"
+    "source": "Health Canada Cyanocobalamin monograph; Cochrane Oral vs IM B12 2018; CCS Hematology B12 Deficiency Guidelines 2024",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START E4 (Vitamin B12 in deficiency)",
+        "rationale": "B12 supplementation in confirmed deficiency",
+        "citation": "STOPP/START v3 2023"
+      },
+      "choosing_wisely_canada": null
+    }
+  
   },
   "ergocalciferol": {
     "name": "Ergocalciferol (Vitamin D2)",
@@ -148269,7 +149521,7 @@ function showSidebar() {
 // TAB SWITCHING
 // ══════════════════════════════════════════════
 function switchTab(name) {
-  var tabMap = {diseases:0, antimicrobials:1, vaccinations:2, interactions:3, pregnancy:4, formulary:5, minor_ailments:6, jurisprudence:7};
+  var tabMap = {diseases:0, antimicrobials:1, vaccinations:2, interactions:3, pregnancy:4, formulary:5, minor_ailments:6, jurisprudence:7, deprescribing:8};
   document.querySelectorAll('.tab-btn').forEach(function(el,i){
     el.classList.toggle('active', i === tabMap[name]);
   });
@@ -167598,6 +168850,434 @@ document.addEventListener('DOMContentLoaded', function() {
   initPregSearch();
   initFormularySearch();
 });
+
+
+
+// ════════════════════════════════════════════════════════════
+// DEPRESCRIBING PROTOCOLS
+// Sources: Canadian Deprescribing Network (deprescribing.org),
+//          Choosing Wisely Canada, AGS Beers Criteria 2023,
+//          STOPP/START v3 (2023), CCSMH 2023
+// ════════════════════════════════════════════════════════════
+var DEPRESCRIBING_PROTOCOLS = [
+  {
+    id: 'ppi',
+    title: 'Proton Pump Inhibitor (PPI) Deprescribing',
+    icon: '💊',
+    color: '#06b6d4',
+    overview: 'Long-term PPI use is associated with C. difficile, fractures, B12 deficiency, hypomagnesemia, CKD, and pneumonia. Many patients are on PPIs without ongoing indication. The Canadian deprescribing.org algorithm (Farrell CFP 2017) provides evidence-based step-down/discontinuation guidance.',
+    indications_to_continue: [
+      'Severe esophagitis (LA Class C/D)',
+      'Documented Barrett esophagus',
+      'Long-term NSAID use with bleeding risk factors',
+      'Zollinger-Ellison syndrome',
+      'Documented chronic GERD with relapse on stopping (after trial)',
+      'Recent peptic ulcer with bleeding (continue 8 weeks then reassess)'
+    ],
+    consider_deprescribing: [
+      'Used >8 weeks for non-erosive GERD or uncomplicated peptic ulcer',
+      'Started in hospital without ongoing indication',
+      'Functional dyspepsia after H. pylori eradication',
+      'Stress ulcer prophylaxis after discharge from ICU',
+      'NSAID prophylaxis when NSAID stopped',
+      'Asymptomatic on PPI for ≥4 weeks'
+    ],
+    taper_steps: [
+      { step: 1, action: 'SHARED DECISION', detail: 'Discuss benefits/risks with patient. Provide patient handout (deprescribing.org PPI patient guide). Set expectations: rebound acid hypersecretion may cause transient symptoms 1-2 weeks after discontinuation; not a sign of underlying disease.' },
+      { step: 2, action: 'STEP-DOWN (preferred)', detail: 'Reduce dose by 50% for 4 weeks (e.g., omeprazole 20 mg daily → 10 mg daily; pantoprazole 40 mg daily → 20 mg daily). May need to use H2 blocker temporarily for breakthrough symptoms.' },
+      { step: 3, action: 'ALTERNATE-DAY', detail: 'After 4 weeks at half-dose, transition to alternate-day dosing × 2-4 weeks if tolerated.' },
+      { step: 4, action: 'ON-DEMAND or STOP', detail: 'Switch to on-demand use (PRN for breakthrough symptoms ≤14 days/month) or discontinue completely. H2 blocker (famotidine 20 mg PRN) acceptable for occasional symptoms.' },
+      { step: 5, action: 'MONITOR', detail: 'Reassess at 4 weeks and 12 weeks. If symptoms recur > 1-2 weeks, restart at lowest effective dose. If severe symptoms (chest pain, dysphagia, weight loss), refer for endoscopy to rule out complications.' }
+    ],
+    monitoring: [
+      'Symptoms: heartburn, regurgitation, dyspepsia (mild rebound expected 1-2 weeks)',
+      'Lifestyle: weight loss if overweight, head-of-bed elevation, avoid late meals, alcohol/tobacco',
+      'Adjuncts: alginate (Gaviscon) PRN, calcium carbonate antacid PRN'
+    ],
+    rebound_management: [
+      'Mild rebound dyspepsia (transient): symptomatic management with antacids/H2 blockers PRN',
+      'Persistent symptoms beyond 4 weeks: consider underlying functional dyspepsia, IBS, food sensitivity',
+      'Alarm symptoms (dysphagia, GI bleed, anemia, vomiting, weight loss): refer for endoscopy'
+    ],
+    counselling: [
+      '"Your stomach has been making less acid because of this medication. When we stop it, your stomach may produce extra acid for 1-2 weeks. This is temporary."',
+      '"Try lifestyle measures first: avoid late meals, raise the head of your bed, lose weight if needed, and avoid trigger foods."',
+      '"Use Tums or Gaviscon for occasional heartburn. If symptoms last more than 2 weeks, contact your pharmacist or doctor."',
+      '"Long-term acid blockers can have side effects — bone fractures, low magnesium, vitamin B12 deficiency, gut infections. Many people don\'t need them long-term."'
+    ],
+    sources: 'Farrell B, et al. Deprescribing proton pump inhibitors: Evidence-based clinical practice guideline. Can Fam Physician 2017;63(5):354-364. Choosing Wisely Canada (Canadian Family Physician 2017). AGS Beers Criteria 2023.'
+  },
+  {
+    id: 'bzd_z_drug',
+    title: 'Benzodiazepine & Z-Drug Deprescribing',
+    icon: '😴',
+    color: '#8b5cf6',
+    overview: 'Long-term benzodiazepine and Z-drug (zopiclone, zolpidem, eszopiclone) use is associated with cognitive impairment, delirium, falls, fractures, motor vehicle crashes, and dependence. The Canadian Deprescribing Network 2018 algorithm (Pottie CFP 2018) provides a 25% dose-reduction-every-2-weeks taper schedule.',
+    indications_to_continue: [
+      'Active treatment of generalized anxiety/panic disorder (with adequate antidepressant titration)',
+      'Status epilepticus (lorazepam, diazepam, midazolam)',
+      'Alcohol withdrawal (acute)',
+      'Severe muscle spasm (short-term)',
+      'Procedural sedation',
+      'End-of-life care for severe agitation/dyspnea'
+    ],
+    consider_deprescribing: [
+      'Used >4 weeks for insomnia',
+      'No clear indication',
+      'Side effects (cognitive, falls, dependence)',
+      'Older adult (≥65) — Beers Criteria avoidance',
+      'Patient request to stop',
+      'Long-acting BZD (diazepam, clonazepam, flurazepam) regardless of duration'
+    ],
+    taper_steps: [
+      { step: 1, action: 'SHARED DECISION', detail: 'Discuss withdrawal symptoms and timeline. Set expectation: 75% of long-term users can successfully taper with structured support over 8-26 weeks. Provide deprescribing.org BZD-Z drug patient guide.' },
+      { step: 2, action: 'CHOOSE TAPER PACE', detail: 'For shorter-term use (1-3 months): 25% reduction every 1-2 weeks. For long-term (>1 year): SLOWER taper — 25% every 2-4 weeks. For very long-term + high dose: convert to long half-life equivalent (diazepam) and taper over months.' },
+      { step: 3, action: 'BEGIN TAPER', detail: 'Reduce by 25% of current dose every 2 weeks (most common schedule). Example: lorazepam 2 mg → 1.5 mg → 1 mg → 0.75 mg → 0.5 mg → 0.25 mg → 0. Use available tablet strengths; round to nearest available; cut tablets if needed.' },
+      { step: 4, action: 'PLATEAU IF NEEDED', detail: 'If withdrawal symptoms emerge at any step, hold at current dose for 2-4 weeks until symptoms settle, then resume taper. Do not increase back to higher dose.' },
+      { step: 5, action: 'CBT-I FOR INSOMNIA', detail: 'Concurrent CBT-I (cognitive behavioural therapy for insomnia) — first-line per CCSMH Insomnia 2023; significantly improves taper success. Online options: Sleepio, mySleepwell.ca (free Canadian).' },
+      { step: 6, action: 'ALTERNATIVE PHARMACOTHERAPY', detail: 'For insomnia post-taper if needed: trazodone 25-50 mg HS, mirtazapine 7.5-15 mg HS (especially with depression), low-dose doxepin 3-6 mg HS, melatonin 1-3 mg HS. AVOID: zopiclone/zolpidem (Beers Avoid), quetiapine off-label (worse — antipsychotic for sleep).' },
+      { step: 7, action: 'MONITOR', detail: 'Weekly check-ins during active taper. Watch for severe withdrawal: seizures (rare, more common with abrupt withdrawal of long-term high-dose), psychosis, severe insomnia. If severe — slow taper, increase support; do not abandon attempt.' }
+    ],
+    monitoring: [
+      'Withdrawal symptoms: anxiety, insomnia (rebound), tremor, sweating, irritability, palpitations',
+      'Severe withdrawal (rare): seizures, psychosis, hallucinations — increase support, slow taper',
+      'Falls assessment: gait, balance — particularly important during taper',
+      'Cognitive function: may IMPROVE with successful taper (especially if dementia overlay)'
+    ],
+    rebound_management: [
+      'Rebound insomnia (1-2 weeks): non-pharmacologic CBT-I; melatonin 1-3 mg HS as bridge',
+      'Rebound anxiety: slow taper, CBT, SSRI/SNRI for underlying GAD',
+      'Acute severe withdrawal: switch to equivalent diazepam dose, then slow taper over months'
+    ],
+    counselling: [
+      '"You\'ve been on this medication for a while, so your body has adapted to it. We can\'t stop it suddenly — we have to slowly reduce the dose to let your body adjust."',
+      '"Most people feel some withdrawal symptoms — anxiety, sleep changes — for 1-2 weeks at each dose reduction. This is temporary and means the medication is working its way out."',
+      '"Sleeping pills don\'t actually fix sleep problems — they often make them worse over time. Cognitive Behavioural Therapy for Insomnia (CBT-I) is more effective and lasts longer. There are free Canadian online programs."',
+      '"You\'re much more likely to succeed with a structured plan and regular check-ins. We\'re aiming for slow and steady — there\'s no rush."'
+    ],
+    sources: 'Pottie K, et al. Deprescribing benzodiazepine receptor agonists: Evidence-based clinical practice guideline. Can Fam Physician 2018;64(5):339-351. Canadian Coalition for Seniors\' Mental Health (CCSMH) Insomnia 2023; AGS Beers Criteria 2023; Choosing Wisely Canada.'
+  },
+  {
+    id: 'opioid_chronic',
+    title: 'Long-Term Opioid Deprescribing',
+    icon: '💉',
+    color: '#dc2626',
+    overview: 'Long-term opioid therapy for chronic non-cancer pain is associated with limited efficacy beyond 3 months, hyperalgesia, dependence, opioid use disorder, falls/fractures, respiratory depression (especially with BZD/alcohol), constipation, and overdose death. CMA/CRISM 2017 + Health Canada 2017 guideline supports tapering when risks > benefits.',
+    indications_to_continue: [
+      'Active cancer pain',
+      'End-of-life / palliative care',
+      'Sickle cell crisis',
+      'Documented opioid use disorder on opioid agonist therapy (methadone/buprenorphine — different framework)',
+      'Severe acute pain (e.g., post-surgical, trauma) — short-term'
+    ],
+    consider_deprescribing: [
+      'Daily morphine equivalent (MME) ≥90 mg without specialist support',
+      'Concurrent benzodiazepine, alcohol use disorder, or sedative-hypnotic use',
+      'Limited functional improvement despite ≥3 months therapy',
+      'Adverse effects (cognitive, falls, constipation, hyperalgesia, depression)',
+      'Patient request',
+      'Suspected opioid use disorder (refer for OAT — methadone/buprenorphine)',
+      'Older adult (≥65) on chronic opioid'
+    ],
+    taper_steps: [
+      { step: 1, action: 'ASSESS RISK & READINESS', detail: 'Screen for OUD using DSM-5 criteria. Calculate baseline MME. Assess for concomitant benzodiazepines, alcohol, other CNS depressants. Engage patient in shared decision — discuss goals (pain relief, function, harm reduction).' },
+      { step: 2, action: 'CHOOSE TAPER RATE', detail: 'Outpatient: 5-10% reduction every 2-4 weeks (slow taper). Faster taper (10% every week) if escalating risk (e.g., new BZD prescription, suspected diversion). Slower taper (5% per month) for very long-term, high-dose, or patients with severe psychosocial distress.' },
+      { step: 3, action: 'CONVERT TO LONG-ACTING (optional)', detail: 'Patients on multiple short-acting opioids may benefit from consolidation to single long-acting (morphine SR, hydromorphone CR) before taper. Avoid initiating fentanyl patch for taper purposes.' },
+      { step: 4, action: 'BEGIN TAPER', detail: 'Reduce dose per chosen schedule. Always reduce, never increase to baseline if difficulty. Pause taper for ≥2-4 weeks at any step if needed; do not resume escalation.' },
+      { step: 5, action: 'MULTIMODAL PAIN MANAGEMENT', detail: 'Replace opioid load with: acetaminophen scheduled, topical NSAID (diclofenac gel), gabapentinoid (cautiously — also Beers concern; respiratory depression with opioids), duloxetine for neuropathic pain, physical therapy, exercise, CBT for chronic pain, mindfulness, sleep hygiene.' },
+      { step: 6, action: 'WITHDRAWAL SYMPTOM MANAGEMENT', detail: 'Symptoms peak 24-72h after dose reduction. Clonidine 0.1-0.2 mg PO TID PRN for autonomic symptoms. Loperamide for diarrhea. Antiemetic for nausea. Acetaminophen/ibuprofen for myalgia. Hydroxyzine PRN anxiety (NOT in elderly — Beers).' },
+      { step: 7, action: 'NALOXONE PRESCRIBED', detail: 'All patients on chronic opioids (and during taper) should have take-home naloxone kit + family/contact trained in use. Particularly important during taper — overdose risk if patient resumes higher dose unexpectedly.' },
+      { step: 8, action: 'OUD ASSESSMENT', detail: 'If patient has DSM-5 OUD criteria: refer for opioid agonist therapy (methadone, buprenorphine/naloxone). Tapering alone is contraindicated in OUD — high relapse and overdose mortality. Consult addiction medicine.' }
+    ],
+    monitoring: [
+      'COWS (Clinical Opiate Withdrawal Scale) at each visit — guides taper pace',
+      'Pain scores, functional outcomes (PEG scale)',
+      'Mental health: depression, suicidality, OUD criteria',
+      'Urine drug screen (per agreement)',
+      'Constipation, sleep, anxiety'
+    ],
+    rebound_management: [
+      'Mild withdrawal (yawning, lacrimation, rhinorrhea): symptomatic — clonidine 0.1 mg TID, loperamide, antiemetic',
+      'Severe withdrawal: pause taper at current dose; do not increase. Refer to addiction medicine.',
+      'Suicidal ideation: urgent mental health support; do not abandon patient.',
+      'Diversion concern: structured pill counts; weekly dispensing; addiction medicine referral.'
+    ],
+    counselling: [
+      '"Long-term opioid use can sometimes paradoxically increase pain (hyperalgesia) and reduce quality of life. Many people feel better physically and mentally after a careful taper."',
+      '"We will go slow — there is no rush. If a step is too hard, we pause for as long as needed."',
+      '"Withdrawal symptoms are uncomfortable but not dangerous. We have medications to help (clonidine, loperamide, antiemetics)."',
+      '"Naloxone is critical — if you accidentally take too much again, this can save your life. Make sure family or close contacts know how to use it."',
+      '"If you find yourself craving the medication or unable to control your use, that is opioid use disorder — it is a medical condition we can treat with methadone or buprenorphine. There is no shame in needing this support."'
+    ],
+    sources: 'Busse JW, et al. Guideline for opioid therapy and chronic noncancer pain. CMAJ 2017;189(18):E659-E666. Canadian Research Initiative in Substance Misuse (CRISM) 2018. Health Canada Opioid Crisis Action Plan. AGS Beers Criteria 2023.'
+  },
+  {
+    id: 'antipsychotic_bpsd',
+    title: 'Antipsychotic Deprescribing in Dementia BPSD',
+    icon: '🧠',
+    color: '#fb923c',
+    overview: 'Antipsychotics are used for behavioural and psychological symptoms of dementia (BPSD), but Health Canada Black Box warns of increased mortality (~1.6× death) from cerebrovascular events, infections, and cardiac arrhythmias. The Bjerre 2018 Canadian guideline (CFP) recommends time-limited use with structured tapering.',
+    indications_to_continue: [
+      'Severe psychosis or hallucinations causing distress',
+      'Aggressive behaviour with imminent risk of harm to self or others (after non-pharmacologic measures fail)',
+      'Pre-existing primary psychiatric disorder (schizophrenia, bipolar — different framework)',
+      'Lewy body dementia psychosis (consider quetiapine or pimavanserin)'
+    ],
+    consider_deprescribing: [
+      'BPSD has stabilized for ≥3 months on current antipsychotic',
+      'Mild-to-moderate behavioural symptoms (non-pharmacologic preferred)',
+      'Adverse effects: EPS, falls, sedation, weight gain, metabolic, anticholinergic',
+      'No clear indication documented',
+      'Patient/family preference'
+    ],
+    taper_steps: [
+      { step: 1, action: 'ASSESS', detail: 'Document current behaviour, indication, duration of antipsychotic use. Identify and address underlying triggers (pain, infection, constipation, sleep, environment, caregiver stress) — non-pharmacologic measures first.' },
+      { step: 2, action: 'NON-PHARMACOLOGIC FIRST', detail: 'Review ABCs of behavioural assessment (Antecedent-Behaviour-Consequence). Apply structured non-pharm interventions: redirecting, music therapy, occupational/physical activity, sleep hygiene, simplification of environment, caregiver education.' },
+      { step: 3, action: 'TAPER SCHEDULE', detail: 'Reduce dose by 25-50% every 1-2 weeks. Example: risperidone 1 mg HS → 0.5 mg HS → 0.25 mg HS → STOP. Quetiapine 25 mg HS → 12.5 mg HS → STOP. Olanzapine 5 mg HS → 2.5 mg HS → STOP.' },
+      { step: 4, action: 'OBSERVE', detail: 'Monitor for return of original behavioural symptoms vs. withdrawal phenomena (different — withdrawal less common with antipsychotics than BZDs).' },
+      { step: 5, action: 'COMPLETE OR HOLD', detail: 'If behaviour stable at lowest dose, stop. If symptoms recur and severe, restart at lowest effective dose; reattempt taper in 3 months.' },
+      { step: 6, action: 'OPTIMIZE BASELINE THERAPY', detail: 'Cholinesterase inhibitor (donepezil, rivastigmine) and memantine should be optimized — these may reduce some BPSD over time.' }
+    ],
+    monitoring: [
+      'NPI (Neuropsychiatric Inventory) or Cohen-Mansfield Agitation Inventory',
+      'Falls, EPS (AIMS scale), sedation level',
+      'Functional status, quality of life',
+      'Caregiver burden'
+    ],
+    rebound_management: [
+      'Recurrence of severe agitation: reassess for triggers; reattempt non-pharm; restart at minimum dose if needed',
+      'Withdrawal dyskinesia (rare with atypicals): time-limited',
+      'Severe BPSD return despite repeated attempts: discuss palliative care goals; team-based decision'
+    ],
+    counselling: [
+      '"This medication carries serious risks for older adults with dementia, including stroke and death — Health Canada has a specific warning about this."',
+      '"Behavioural symptoms in dementia often improve over time even without medication. We can try to reduce or stop the medication and watch carefully."',
+      '"Caregivers are critical here — please help us identify what triggers behaviours (pain? noise? hunger? loneliness?). Often addressing these is more effective than medication."',
+      '"If symptoms come back and are severe, we can use the medication again at the lowest dose."'
+    ],
+    sources: 'Bjerre LM, et al. Deprescribing antipsychotics for behavioural and psychological symptoms of dementia and insomnia. Can Fam Physician 2018;64(1):17-27. Health Canada Black Box (atypical antipsychotics in dementia). AGS Beers Criteria 2023; CCCDTD 2023.'
+  },
+  {
+    id: 'antihyperglycemic',
+    title: 'Antihyperglycemic Deprescribing in Older Adults',
+    icon: '🩸',
+    color: '#f59e0b',
+    overview: 'Tight glycemic control (A1c <7.5%) in older adults with limited life expectancy, multimorbidity, or hypoglycemia risk causes more harm than benefit. Diabetes Canada 2020 recommends individualized A1c targets (7.5-8.5% in frail elderly). The Farrell 2017 deprescribing.org algorithm guides safe reduction.',
+    indications_to_continue: [
+      'Symptomatic hyperglycemia (polyuria, polydipsia, weight loss)',
+      'Strong patient preference for tight control with shared decision',
+      'Type 1 diabetes (basal-bolus essential — never stop)',
+      'High HbA1c (>9%) despite reduction'
+    ],
+    consider_deprescribing: [
+      'A1c <7% in frail elderly (life expectancy <5-10 years)',
+      'Recurrent or severe hypoglycemia',
+      'Falls, fractures, cognitive decline attributed to hypoglycemia',
+      'Long-acting sulfonylurea (glyburide) — switch class first',
+      'Sliding-scale insulin only — basal+correction preferred',
+      'Limited life expectancy / palliative goals',
+      'Polypharmacy with concerning interactions'
+    ],
+    taper_steps: [
+      { step: 1, action: 'INDIVIDUALIZE A1c TARGET', detail: 'Healthy ≥65: 7-7.5%. Frail or limited life expectancy: 7.5-8.5%. End-of-life: avoid hypoglycemia rather than target A1c.' },
+      { step: 2, action: 'SWITCH HIGH-RISK AGENT', detail: 'Glyburide → gliclazide MR (lower hypoglycemia) or stop if A1c at goal. Sliding-scale insulin only → add basal insulin or stop SSI.' },
+      { step: 3, action: 'STEPWISE DOSE REDUCTION', detail: 'Reduce by 25-50% every 2-4 weeks based on A1c, finger-stick glucose, and clinical assessment. Example: gliclazide MR 60 mg → 30 mg → STOP. Basal insulin: reduce 10-20% per step.' },
+      { step: 4, action: 'PRIORITIZE METFORMIN', detail: 'Metformin has best safety profile; usually last to deprescribe (continue if eGFR ≥30 and no contraindication). SGLT2 and GLP-1 agents have CV/renal benefit — consider continuing.' },
+      { step: 5, action: 'STOP MOST RISKY FIRST', detail: 'Order of stopping (when goals exceeded): 1) Sliding-scale insulin, 2) glyburide, 3) prandial insulin, 4) other sulfonylureas, 5) DPP-4 inhibitors, 6) basal insulin, 7) SGLT2/GLP-1 (if no CV/renal benefit), 8) metformin (last).' }
+    ],
+    monitoring: [
+      'A1c every 3-6 months',
+      'Finger-stick glucose if symptomatic',
+      'Weight, hydration status',
+      'Falls, cognitive function',
+      'Renal function (especially metformin)'
+    ],
+    rebound_management: [
+      'Symptomatic hyperglycemia (polyuria, polydipsia, weight loss): hold taper; reassess goals',
+      'A1c drift above individualized target: review whether stopping was appropriate',
+      'DKA (T1DM only): emergency — never stop insulin in T1DM'
+    ],
+    counselling: [
+      '"For older adults, a higher A1c (7.5-8.5%) is often safer than tight control. Tight blood sugar can cause low blood sugar — falls, confusion, even death."',
+      '"We will reduce the medication slowly and watch your sugars. If they go too high and cause symptoms, we can adjust."',
+      '"Metformin is usually the last one we stop because it has the best safety profile."'
+    ],
+    sources: 'Farrell B, et al. Deprescribing antihyperglycemic agents in older persons: Evidence-based clinical practice guideline. Can Fam Physician 2017;63(11):832-843. Diabetes Canada 2020/2023; AGS Beers Criteria 2023.'
+  },
+  {
+    id: 'cholinesterase',
+    title: 'Cholinesterase Inhibitor / Memantine Deprescribing',
+    icon: '🧓',
+    color: '#10b981',
+    overview: 'Cholinesterase inhibitors (donepezil, rivastigmine, galantamine) and memantine are used for Alzheimer\'s disease and other dementias. Modest cognitive benefits. Reeve 2019 algorithm guides assessment of ongoing benefit and safe withdrawal.',
+    indications_to_continue: [
+      'Continued cognitive benefit per family/caregiver report',
+      'Functional status maintained or improving',
+      'Patient/family preference for continuation',
+      'Mild-to-moderate dementia stage'
+    ],
+    consider_deprescribing: [
+      'Severe dementia with no perceived benefit',
+      'GFR-related dose accumulation (galantamine, memantine)',
+      'GI/cardiac side effects (bradycardia, syncope, GI bleed)',
+      'End-of-life / palliative goals',
+      'Patient/family preference'
+    ],
+    taper_steps: [
+      { step: 1, action: 'ASSESS BENEFIT', detail: 'Use MMSE, MoCA, or family/caregiver report (ADCS-CGIC). Compare to baseline pre-treatment.' },
+      { step: 2, action: 'TAPER OVER 4-6 WEEKS', detail: 'Reduce dose by 50% for 4 weeks, then stop. Example: donepezil 10 mg → 5 mg × 4 weeks → STOP. Rivastigmine 9.5 mg/24h patch → 4.6 mg × 4 weeks → STOP.' },
+      { step: 3, action: 'OBSERVE 4-6 WEEKS', detail: 'Watch for cognitive/functional decline. Decline can be reversible if drug restarted within 6 weeks of stopping; after that, returning to drug may not restore benefit.' },
+      { step: 4, action: 'RESTART IF NEEDED', detail: 'If clear decline within 6 weeks of stopping, restart at previous effective dose.' }
+    ],
+    monitoring: [
+      'MMSE / MoCA at 3 months',
+      'Functional status (ADLs, IADLs)',
+      'Caregiver perception of change',
+      'Adverse effects'
+    ],
+    rebound_management: [
+      'Marked cognitive/functional decline: restart promptly',
+      'Behavioural worsening: address triggers; consider antipsychotic deprescribing protocol if also on antipsychotic'
+    ],
+    counselling: [
+      '"These medications provide modest benefit for some people but not all. We can stop them and watch carefully — if you (or family) notice clear worsening, we can restart."',
+      '"The benefit is usually most clear in mild-to-moderate dementia. As dementia advances, the benefit becomes less clear."'
+    ],
+    sources: 'Reeve E, et al. Deprescribing cholinesterase inhibitors and memantine in dementia: Guideline summary. MJA 2019;210(4):174-179. Canadian Consensus Conference on the Diagnosis and Treatment of Dementia (CCCDTD) 2023.'
+  },
+  {
+    id: 'anticholinergic',
+    title: 'Anticholinergic Drug Burden Reduction',
+    icon: '🚫',
+    color: '#ef4444',
+    overview: 'Anticholinergic burden (cumulative effect of multiple drugs with anticholinergic activity) is associated with cognitive impairment, delirium, falls, urinary retention, dry mouth, constipation, blurred vision, and increased mortality in older adults. Use the Anticholinergic Cognitive Burden (ACB) scale to assess and reduce.',
+    indications_to_continue: [
+      'Strong indication with no good alternative (rare)',
+      'End-of-life palliative care'
+    ],
+    consider_deprescribing: [
+      'ACB score ≥3 (high anticholinergic burden)',
+      'Cognitive impairment or dementia',
+      'Falls, delirium, urinary retention',
+      'Multiple anticholinergic agents (>2)',
+      'Available non-anticholinergic alternative'
+    ],
+    taper_steps: [
+      { step: 1, action: 'CALCULATE BURDEN', detail: 'Use ACB scale or Anticholinergic Drug Scale (ADS). Score ≥3 = high burden. Common offenders: 1st-gen antihistamines (diphenhydramine, hydroxyzine), TCAs (amitriptyline, doxepin), oxybutynin, tolterodine, paroxetine, scopolamine, atropine, hyoscine.' },
+      { step: 2, action: 'IDENTIFY HIGHEST-IMPACT TARGETS', detail: 'Drugs with strongest anticholinergic activity AND no clear indication: usually 1st-gen antihistamines (used for sleep), oxybutynin (use mirabegron), benztropine (rarely needed), TCAs (often have alternatives).' },
+      { step: 3, action: 'SUBSTITUTE LESS ANTICHOLINERGIC ALTERNATIVES', detail: 'Insomnia: stop diphenhydramine, use trazodone or melatonin. Allergy: stop chlorpheniramine, use cetirizine/loratadine. OAB: stop oxybutynin, use mirabegron. Depression: stop TCA, consider sertraline/escitalopram.' },
+      { step: 4, action: 'TAPER WHEN NEEDED', detail: 'Most anticholinergics can be stopped abruptly without withdrawal. TCAs: taper over 2-4 weeks if used >6 months (cholinergic rebound). BZDs combined: prioritize BZD taper first.' },
+      { step: 5, action: 'REASSESS', detail: 'After 4-12 weeks: reassess cognition (MMSE/MoCA), urinary symptoms, constipation, dry mouth, falls. Often noticeable improvement.' }
+    ],
+    monitoring: [
+      'ACB score before and after',
+      'Cognitive function (MMSE/MoCA)',
+      'Urinary retention, post-void residual',
+      'Falls log',
+      'Constipation frequency'
+    ],
+    rebound_management: [
+      'TCA cholinergic rebound (1-3 weeks): symptomatic',
+      'Original symptom recurrence: substitute non-anticholinergic alternative'
+    ],
+    counselling: [
+      '"Many medications cause confusion, falls, dry mouth, and constipation in older adults — these effects add up when multiple are used."',
+      '"There are usually safer alternatives. We will switch one at a time and watch carefully."'
+    ],
+    sources: 'Reeve E, et al. Deprescribing anticholinergics. ACB Calculator (Boustani 2008). AGS Beers Criteria 2023; STOPP-START v3 2023.'
+  }
+];
+
+// ════════════════════════════════════════════════════════════
+// DEPRESCRIBING TAB RENDERING
+// ════════════════════════════════════════════════════════════
+function buildDeprescribing() {
+  var listDiv = document.getElementById('deprescribing-list');
+  var detailDiv = document.getElementById('deprescribing-detail');
+  if (!listDiv) return;
+  detailDiv.style.display = 'none';
+  listDiv.style.display = 'block';
+  var h = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;">';
+  for (var i = 0; i < DEPRESCRIBING_PROTOCOLS.length; i++) {
+    var p = DEPRESCRIBING_PROTOCOLS[i];
+    h += '<div onclick="showDeprescribing(\'' + p.id + '\')" style="background:var(--card);border:1px solid var(--border);border-left:4px solid ' + p.color + ';border-radius:8px;padding:14px;cursor:pointer;transition:all .15s;" onmouseover="this.style.transform=\'translateY(-2px)\';this.style.borderColor=\'' + p.color + '\'" onmouseout="this.style.transform=\'translateY(0)\';this.style.borderColor=\'var(--border)\'">';
+    h += '<div style="font-size:1.6rem;margin-bottom:8px;">' + p.icon + '</div>';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">' + p.title + '</div>';
+    h += '<div style="font-size:0.78rem;color:#94a3b8;line-height:1.4;">' + p.overview.substring(0, 140) + '…</div>';
+    h += '<div style="margin-top:10px;font-size:0.75rem;color:' + p.color + ';font-weight:600;">View protocol →</div>';
+    h += '</div>';
+  }
+  h += '</div>';
+  listDiv.innerHTML = h;
+}
+
+function showDeprescribing(id) {
+  var p = null;
+  for (var i = 0; i < DEPRESCRIBING_PROTOCOLS.length; i++) {
+    if (DEPRESCRIBING_PROTOCOLS[i].id === id) { p = DEPRESCRIBING_PROTOCOLS[i]; break; }
+  }
+  if (!p) return;
+  document.getElementById('deprescribing-list').style.display = 'none';
+  var detailDiv = document.getElementById('deprescribing-detail');
+  var content = document.getElementById('deprescribing-content');
+  detailDiv.style.display = 'block';
+  
+  var h = '<div style="background:var(--card);border-left:5px solid ' + p.color + ';border-radius:8px;padding:18px;margin-bottom:16px;">';
+  h += '<div style="font-size:2rem;margin-bottom:8px;">' + p.icon + '</div>';
+  h += '<h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 10px;">' + p.title + '</h2>';
+  h += '<p style="font-size:0.85rem;color:#c8cadc;line-height:1.6;margin:0;">' + p.overview + '</p>';
+  h += '</div>';
+  
+  function sectionList(title, items, color, icon) {
+    if (!items || !items.length) return '';
+    var s = '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    s += '<div style="font-size:0.95rem;font-weight:700;color:' + color + ';margin-bottom:10px;">' + icon + ' ' + title + '</div>';
+    s += '<ul style="margin:0;padding-left:20px;">';
+    for (var i = 0; i < items.length; i++) {
+      s += '<li style="font-size:0.83rem;color:#c8cadc;line-height:1.5;margin-bottom:4px;">' + items[i] + '</li>';
+    }
+    s += '</ul></div>';
+    return s;
+  }
+  
+  h += sectionList('When to CONTINUE the medication', p.indications_to_continue, '#22c55e', '✓');
+  h += sectionList('When to CONSIDER deprescribing', p.consider_deprescribing, '#fb923c', '⚠️');
+  
+  // Taper steps as numbered cards
+  if (p.taper_steps && p.taper_steps.length) {
+    h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:' + p.color + ';margin-bottom:14px;">📋 Taper Protocol</div>';
+    for (var i = 0; i < p.taper_steps.length; i++) {
+      var s = p.taper_steps[i];
+      h += '<div style="display:flex;gap:12px;margin-bottom:14px;">';
+      h += '<div style="flex:0 0 36px;height:36px;border-radius:50%;background:' + p.color + ';color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.95rem;">' + s.step + '</div>';
+      h += '<div style="flex:1;">';
+      h += '<div style="font-size:0.85rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">' + s.action + '</div>';
+      h += '<div style="font-size:0.83rem;color:#c8cadc;line-height:1.5;">' + s.detail + '</div>';
+      h += '</div></div>';
+    }
+    h += '</div>';
+  }
+  
+  h += sectionList('Monitoring during taper', p.monitoring, '#3b82f6', '📊');
+  h += sectionList('Withdrawal / rebound symptom management', p.rebound_management, '#a855f7', '🌪️');
+  h += sectionList('Patient counselling scripts', p.counselling, '#10b981', '🗣️');
+  
+  if (p.sources) {
+    h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.78rem;font-weight:700;color:#fbbf24;margin-bottom:6px;">📚 Sources</div>';
+    h += '<div style="font-size:0.78rem;color:#94a3b8;line-height:1.5;">' + p.sources + '</div>';
+    h += '</div>';
+  }
+  
+  content.innerHTML = h;
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function closeDeprescribing() {
+  document.getElementById('deprescribing-detail').style.display = 'none';
+  document.getElementById('deprescribing-list').style.display = 'block';
+}
 
 </script>
 </body>
