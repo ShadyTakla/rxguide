@@ -37074,7 +37074,22 @@ var DRUGS = {
       "Maximum high-intensity dose: 40 mg (rare to exceed 40 mg)",
       "Once daily; can be taken any time of day"
     ],
-    "source": "Health Canada PM (Crestor/rosuvastatin); CCS Dyslipidemia Guidelines 2021; FDA July 2021; Norwegian cohort (Eur Heart J 2025); ACC/AHA 2018."
+    "source": "Health Canada PM (Crestor/rosuvastatin); CCS Dyslipidemia Guidelines 2021; FDA July 2021; Norwegian cohort (Eur Heart J 2025); ACC/AHA 2018.",
+    "geriatric_concerns": {
+      "beers": null,
+      "stopp": null,
+      "start": {
+        "flag": "Should be considered",
+        "criteria": "START A5 (Statin therapy for documented atherosclerotic CV disease in patients with life expectancy >5 years)",
+        "rationale": "Established secondary CV prevention benefit; do not deprescribe based on age alone in patients with CVD",
+        "citation": "STOPP/START v3 2023; CCS Dyslipidemia 2021"
+      },
+      "choosing_wisely_canada": {
+        "recommendation": "Don't recommend continued statin use for primary prevention in older adults with limited life expectancy",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "clopidogrel": {
     "name": "Clopidogrel",
@@ -40568,7 +40583,26 @@ var DRUGS = {
       "Nortriptyline preferred over amitriptyline (secondary amine — less anticholinergic)",
       "Baseline ECG before starting TCA; repeat ECG at therapeutic dose"
     ],
-    "source": "Health Canada PM. CANMAT 2023 Update MDD (May 2024 publication). Updated Canadian Headache Society Migraine Prevention Guideline 2024. CPS for chronic pain/migraine."
+    "source": "Health Canada PM. CANMAT 2023 Update MDD (May 2024 publication). Updated Canadian Headache Society Migraine Prevention Guideline 2024. CPS for chronic pain/migraine.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Highly anticholinergic, sedating, orthostatic hypotension. Tertiary TCA — superior options exist for depression, neuropathic pain, insomnia.",
+        "citation": "AGS Beers Criteria 2023 (TCAs — tertiary amines)"
+      },
+      "stopp": {
+        "flag": "Should not be used as first-line",
+        "criteria": "STOPP B1 (TCAs in dementia, narrow-angle glaucoma, cardiac conduction abnormalities, prostatism, prior urinary retention) and STOPP D14 (TCAs as first-line depression)",
+        "rationale": "Cognitive impairment in dementia, anticholinergic effects, falls"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't prescribe tricyclic antidepressants as first-line treatment of insomnia, depression, or pain in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "nortriptyline": {
     "name": "Nortriptyline",
@@ -40871,7 +40905,26 @@ var DRUGS = {
       "BZD taper: reduce by 10% every 1–2 weeks; switch to diazepam equivalents for prolonged taper",
       "CIWA protocol: preferred BZD for alcohol withdrawal in hepatic disease (no active metabolites)"
     ],
-    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics."
+    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Increased sensitivity to benzodiazepines; slower metabolism in elderly. Risk of cognitive impairment, delirium, falls, fractures, motor vehicle crashes.",
+        "citation": "AGS Beers Criteria 2023 (Benzodiazepines — all)"
+      },
+      "stopp": {
+        "flag": "Should not be used >4 weeks",
+        "criteria": "STOPP D5 (Benzodiazepines for ≥4 weeks — risk of confusion, falls, dependence)",
+        "rationale": "Tolerance and dependence develop after 4 weeks; deprescribing recommended"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line therapy for insomnia, agitation, or delirium in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014, updated 2023)"
+      }
+    }
+  
   },
   "clonazepam": {
     "name": "Clonazepam",
@@ -42951,7 +43004,26 @@ var DRUGS = {
       "Avoid in elderly — use trazodone, melatonin, or CBT-I instead",
       "Taper on discontinuation — rebound insomnia otherwise; reduce by 25% per week"
     ],
-    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics."
+    "source": "Health Canada PM. AGS Beers Criteria 2023. Choosing Wisely Canada — Geriatrics.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Z-drugs (zopiclone, zolpidem, eszopiclone) have similar adverse effects to benzodiazepines — cognitive impairment, delirium, falls, motor vehicle crashes. Minimal effect on sleep latency/duration.",
+        "citation": "AGS Beers Criteria 2023 (Non-benzodiazepine hypnotics — Z-drugs)"
+      },
+      "stopp": {
+        "flag": "Should not be used >4 weeks",
+        "criteria": "STOPP D5 (extends to Z-drugs as benzodiazepine receptor agonists)",
+        "rationale": "Same risks as benzodiazepines despite shorter half-life"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use benzodiazepines or other sedative-hypnotics as first-line therapy for insomnia in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "melatonin": {
     "name": "Melatonin",
@@ -45543,7 +45615,23 @@ var DRUGS = {
       "Urine discoloration (yellow-brown): harmless — warn patient in advance",
       "Pregnancy: safe first and second trimester; avoid at term (≥37 weeks) — neonatal hemolytic anemia"
     ],
-    "source": "Health Canada PM. AMMI Canada Bugs & Drugs 2024. Public Health Ontario Antimicrobial Stewardship. IDSA infection-specific guidelines."
+    "source": "Health Canada PM. AMMI Canada Bugs & Drugs 2024. Public Health Ontario Antimicrobial Stewardship. IDSA infection-specific guidelines.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid in specific conditions",
+        "population": "Adults ≥65 with CrCl <30 mL/min",
+        "rationale": "Inadequate urinary concentrations in poor renal function; increased risk of pulmonary toxicity, hepatotoxicity, peripheral neuropathy with chronic use.",
+        "citation": "AGS Beers Criteria 2023 (Nitrofurantoin in CrCl <30 mL/min or chronic suppression)"
+      },
+      "stopp": {
+        "flag": "Should not be used in renal impairment",
+        "criteria": "STOPP H8 (Nitrofurantoin if eGFR <45 mL/min — Health Canada label allows >30, but Beers stricter)",
+        "rationale": "Reduced efficacy + increased toxicity"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "ciprofloxacin": {
     "name": "Ciprofloxacin",
@@ -67504,7 +67592,26 @@ var DRUGS = {
       "Best use: acute dystonic reactions (IM/IV very effective)",
       "First-generation: significant impairment of driving ability — warn patients strongly"
     ],
-    "source": "Health Canada PM Benadryl OTC + Rx (multiple manufacturers); CSACI Anaphylaxis Practice Parameter (NOT first-line for anaphylaxis); AGS Beers Criteria 2023 (avoid in elderly — strong anticholinergic); CPS Compendium."
+    "source": "Health Canada PM Benadryl OTC + Rx (multiple manufacturers); CSACI Anaphylaxis Practice Parameter (NOT first-line for anaphylaxis); AGS Beers Criteria 2023 (avoid in elderly — strong anticholinergic); CPS Compendium.",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Highly anticholinergic — clearance reduced with age; tolerance develops. Risk of confusion, dry mouth, constipation, urinary retention, falls.",
+        "citation": "AGS Beers Criteria 2023 (Anticholinergics — first-generation antihistamines)"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP B6 (First-generation antihistamines as hypnotic)",
+        "rationale": "Anticholinergic burden; superior alternatives exist (sleep hygiene, cetirizine if antihistamine needed)"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use first-generation antihistamines (e.g., diphenhydramine) for any indication in older adults",
+        "organization": "Canadian Geriatrics Society — Choosing Wisely Canada (2014)"
+      }
+    }
+  
   },
   "hydroxyzine": {
     "name": "Hydroxyzine",
@@ -100683,7 +100790,26 @@ var DRUGS = {
       "GDM: possible (Langer trial) but insulin preferred per SOGC",
       "NO CV outcome benefit"
     ],
-    "source": "Health Canada Product Monograph Diabeta (Sanofi Canada — most recent update); Diabetes Canada Clinical Practice Guidelines 2023; SOGC GDM Guideline; AGS Beers Criteria 2023; Langer et al. (NEJM 2000 — glyburide vs insulin GDM); CPS Compendium"
+    "source": "Health Canada Product Monograph Diabeta (Sanofi Canada — most recent update); Diabetes Canada Clinical Practice Guidelines 2023; SOGC GDM Guideline; AGS Beers Criteria 2023; Langer et al. (NEJM 2000 — glyburide vs insulin GDM); CPS Compendium",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Long-acting sulfonylurea — high risk of severe, prolonged hypoglycemia (especially in renal impairment). Glimepiride and gliclazide are preferred sulfonylureas in elderly per Diabetes Canada 2020.",
+        "citation": "AGS Beers Criteria 2023 (Long-acting sulfonylureas)"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP J6 (Long-acting sulfonylureas in T2DM)",
+        "rationale": "Severe hypoglycemia risk"
+      },
+      "start": null,
+      "choosing_wisely_canada": {
+        "recommendation": "Don't use glyburide as a first-line agent in patients with type 2 diabetes",
+        "organization": "Diabetes Canada — Choosing Wisely Canada"
+      }
+    }
+  
   },
   "lovastatin": {
     "name": "Lovastatin",
@@ -128280,7 +128406,23 @@ var DRUGS = {
       "PROCEDURAL PAIN — fentanyl (short-acting) or morphine preferred over meperidine"
     ],
     "counselling": "(IV/IM in hospital under monitoring; oral use very limited and short-term) The team will closely monitor your breathing, heart rate, blood pressure, and pain level. Common side effects: drowsiness, nausea, dry mouth, constipation, sweating. Tell us right away about: severe drowsiness, slow/shallow breathing, twitching, confusion/agitation, severe muscle stiffness, fever, fast heartbeat (possible serotonin syndrome — life-threatening). If you take ANY antidepressant (SSRI, SNRI, MAOI), tramadol, methadone, fentanyl, lithium, anti-Parkinson medications, methylene blue, linezolid (antibiotic) — TELL THE TEAM IMMEDIATELY before this medication is given. AVOID alcohol. Do not drive or operate machinery for 24 hours after a dose. Use only as a single dose for shivering or short-term — should not be used for ongoing pain control.",
-    "source": "ISMP Canada Meperidine Safety Alert 2009; Beers Criteria 2024; Health Canada Demerol monograph; CPS Pediatric Pain Guidelines"
+    "source": "ISMP Canada Meperidine Safety Alert 2009; Beers Criteria 2024; Health Canada Demerol monograph; CPS Pediatric Pain Guidelines",
+    "geriatric_concerns": {
+      "beers": {
+        "flag": "Avoid",
+        "population": "Adults ≥65",
+        "rationale": "Active metabolite (normeperidine) accumulates in renal impairment — neurotoxicity, seizures. Other opioids preferred. Particularly dangerous in elderly with reduced GFR.",
+        "citation": "AGS Beers Criteria 2023 (Meperidine)"
+      },
+      "stopp": {
+        "flag": "Should not be used",
+        "criteria": "STOPP K1 (Meperidine in any patient — accumulation of toxic metabolites)",
+        "rationale": "Normeperidine neurotoxicity"
+      },
+      "start": null,
+      "choosing_wisely_canada": null
+    }
+  
   },
   "nalbuphine": {
     "name": "Nalbuphine",
@@ -149047,6 +149189,19 @@ function showDrugPanel(drugKey) {
     h += '<span class="family-badge" style="background:' + ucol + '22;border:1px solid ' + ucol + '44;color:' + ucol + ';cursor:pointer;font-size:0.75rem;padding:3px 10px;border-radius:4px;" title="Umbrella class card" onclick="showFamilyPanel(\'' + _umbrellaFam.replace(/'/g, "\\'") + '\')">🌳 ' + _umbrellaFam + ' ↗</span>';
   }
 
+  // 5. Geriatric concerns badge (Beers / STOPP / START / Choosing Wisely Canada)
+  // Shows only when at least one flag is set on the drug.
+  var gc = drug.geriatric_concerns;
+  if (gc && (gc.beers || gc.stopp || gc.start || gc.choosing_wisely_canada)) {
+    var hasAvoid = (gc.beers && /avoid|should not/i.test(gc.beers.flag||'')) || (gc.stopp && /should not|avoid/i.test(gc.stopp.flag||''));
+    var hasStart = !!gc.start;
+    var bg, col, icon, label;
+    if (hasAvoid) { bg = 'rgba(239,68,68,0.15)'; col = '#ef4444'; icon = '⚠️'; label = 'Geriatric: Avoid'; }
+    else if (hasStart) { bg = 'rgba(34,197,94,0.15)'; col = '#22c55e'; icon = '✓'; label = 'START — Consider'; }
+    else { bg = 'rgba(251,146,60,0.15)'; col = '#fb923c'; icon = '👴'; label = 'Geriatric Concern'; }
+    h += '<span style="font-size:0.75rem;padding:3px 10px;border-radius:4px;background:' + bg + ';color:' + col + ';cursor:pointer;border:1px solid ' + col + '44;" title="Click for Beers/STOPP-START/Choosing Wisely details" onclick="document.getElementById(\'dp-geriatric-section-' + drugKey + '\').scrollIntoView({behavior:\'smooth\',block:\'center\'})">' + icon + ' ' + label + '</span>';
+  }
+
   h += '</div>';
 
   // ── MOA as bullet points ─────────────────────────────────────────────────
@@ -149123,6 +149278,31 @@ function showDrugPanel(drugKey) {
     }
     h += '</div>';
   }
+  // ── Geriatric concerns: Beers Criteria / STOPP-START / Choosing Wisely Canada ──
+  if (drug.geriatric_concerns && (drug.geriatric_concerns.beers || drug.geriatric_concerns.stopp || drug.geriatric_concerns.start || drug.geriatric_concerns.choosing_wisely_canada)) {
+    var gc2 = drug.geriatric_concerns;
+    h += '<div class="dp-section" id="dp-geriatric-section-' + drugKey + '">';
+    h += '<div class="dp-section-title" style="color:#fbbf24;">👴 Geriatric Concerns <span style="font-size:0.7rem;font-weight:500;color:var(--muted);">(Beers / STOPP-START / Choosing Wisely Canada)</span></div>';
+    function gcCard(title, obj, color) {
+      if (!obj) return '';
+      var s = '<div style="background:' + color + '15;border-left:3px solid ' + color + ';padding:8px 12px;margin:6px 0;border-radius:4px;">';
+      s += '<div style="font-size:0.78rem;font-weight:700;color:' + color + ';margin-bottom:4px;">' + title + (obj.flag ? ' — ' + obj.flag : '') + '</div>';
+      if (obj.population) s += '<div style="font-size:0.72rem;color:#94a3b8;margin-bottom:3px;">Population: ' + obj.population + '</div>';
+      if (obj.criteria) s += '<div style="font-size:0.72rem;color:#94a3b8;margin-bottom:3px;">Criteria: ' + obj.criteria + '</div>';
+      if (obj.recommendation) s += '<div style="font-size:0.78rem;color:#c8cadc;margin-bottom:4px;font-style:italic;">"' + obj.recommendation + '"</div>';
+      if (obj.rationale) s += '<div style="font-size:0.78rem;color:#c8cadc;margin-bottom:4px;">' + obj.rationale + '</div>';
+      if (obj.organization) s += '<div style="font-size:0.7rem;color:#64748b;">— ' + obj.organization + '</div>';
+      if (obj.citation) s += '<div style="font-size:0.7rem;color:#64748b;">— ' + obj.citation + '</div>';
+      s += '</div>';
+      return s;
+    }
+    if (gc2.beers) h += gcCard('⚠️ AGS Beers Criteria', gc2.beers, '#ef4444');
+    if (gc2.stopp) h += gcCard('⚠️ STOPP', gc2.stopp, '#fb923c');
+    if (gc2.start) h += gcCard('✓ START', gc2.start, '#22c55e');
+    if (gc2.choosing_wisely_canada) h += gcCard('🇨🇦 Choosing Wisely Canada', gc2.choosing_wisely_canada, '#3b82f6');
+    h += '</div>';
+  }
+
   if (drug.pregnancy) {
     h += '<div class="dp-section"><div class="dp-section-title">🤰 Pregnancy</div>';
     h += '<ul style="margin:0;padding-left:18px;font-size:0.82rem;color:#c8cadc;line-height:1.5;">' + sentencesToBullets(drug.pregnancy) + '</ul></div>';
