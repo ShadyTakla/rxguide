@@ -19452,6 +19452,140 @@ var DISEASES = {
         ],
         "introduction": "Thrombotic thrombocytopenic purpura is a life-threatening thrombotic microangiopathy caused by severe ADAMTS13 deficiency (<10%) — most often acquired immune-mediated (autoantibodies) or rarely hereditary. Modern triple therapy with plasma exchange + immunosuppression (rituximab + steroids) + caplacizumab (HERCULES trial) has reduced mortality from ~90% pre-PEX era to 10-20%. The PLASMIC score (≥6) supports empirical plasma exchange before ADAMTS13 results. Critical pharmacy roles: rapid plasma exchange coordination, caplacizumab administration + bleeding monitoring, rituximab infusions, avoidance of platelet transfusion (worsens microthrombi unless life-threatening hemorrhage). Recombinant ADAMTS13 (ADZYNMA, FDA 2023) is a game-changer for hereditary TTP. Long-term follow-up with ADAMTS13 monitoring helps prevent relapse.",
         "source": "ISTH TTP Guidelines 2020; CCS Hematology Guidelines 2024; HERCULES trial Scully NEJM 2019; TITAN trial Peyvandi NEJM 2016; FDA ADZYNMA approval 2023; PLASMIC Score Bendapudi Lancet Hematology 2017"
+      },
+      {
+        "id": "mds",
+        "name": "Myelodysplastic Syndrome (MDS)",
+        "subtitle": "Clonal Hematopoietic Stem Cell Disorders with Risk of AML Transformation",
+        "rxfiles_ref": "Heme: Hematologic Malignancies | MDS",
+        "patho": "Myelodysplastic syndromes (MDS) — clonal hematopoietic stem cell disorders characterized by INEFFECTIVE HEMATOPOIESIS (cytopenias despite hypercellular marrow), DYSPLASTIC MORPHOLOGY (in ≥1 myeloid lineage), and risk of progression to AML (~30%; usually those with higher-risk features). PATHOGENESIS: clonal mutations in epigenetic regulators (TET2, DNMT3A, ASXL1), splicing factors (SF3B1, SRSF2, U2AF1, ZRSR2), DNA damage response (TP53), signaling (NRAS, JAK2), transcription factors (RUNX1). EPIDEMIOLOGY: median age 70+; M:F 2:1; ~4-5/100,000/year (likely underestimated); rare in children. RISK FACTORS: prior cytotoxic therapy/RT (therapy-related MDS — t-MDS; ~10-20% of MDS), benzene, radiation, smoking; hereditary syndromes (Fanconi anemia, dyskeratosis congenita, GATA2 deficiency, severe congenital neutropenia). WHO 2022 + ICC 2022 CLASSIFICATION (recently revised; molecular markers prominent): MDS-LB (low blasts), MDS-IB (increased blasts; <20% — distinguishes from AML), MDS-BIPHENOTYPIC, MDS WITH MUTATED SF3B1 (low-risk; lenalidomide responsive — del(5q)), MDS WITH BIALLELIC TP53 (HIGH-RISK; chemotherapy + transplant). RISK STRATIFICATION: IPSS-R (Revised International Prognostic Scoring System; 2012) and IPSS-M (Molecular; 2022) — guides treatment intensity. PROGNOSIS — IPSS-R median OS: very-low ~9 yr, low ~5.3 yr, intermediate ~3 yr, high ~1.6 yr, very-high ~0.8 yr. AML transformation rate increases with risk score.",
+        "signs": [
+          "ANEMIA (most common; fatigue, dyspnea, pallor)",
+          "NEUTROPENIA — recurrent infections",
+          "THROMBOCYTOPENIA — bleeding, bruising",
+          "Macrocytosis (MCV elevated; characteristic)",
+          "Pseudo-Pelger-Huët cells (hyposegmented neutrophils — characteristic dysplasia)",
+          "Hypogranular neutrophils, micromegakaryocytes",
+          "Splenomegaly (rare; suggests CMML or MPN/MDS overlap)",
+          "Constitutional symptoms (uncommon; suggests progression)",
+          "Many patients ASYMPTOMATIC — diagnosis on routine CBC abnormality investigation"
+        ],
+        "diagnosis": [
+          "BONE MARROW BIOPSY + ASPIRATE — required; assesses cellularity, dysplasia (≥10% in any lineage), blast percentage, ring sideroblasts",
+          "CYTOGENETICS — del(5q), -7/del(7q), trisomy 8, complex karyotype, TP53-related; PROGNOSTIC + treatment-defining (del(5q) → lenalidomide)",
+          "MOLECULAR / NGS PANEL — TET2, DNMT3A, ASXL1, SF3B1, SRSF2, U2AF1, TP53, RUNX1, NRAS, EZH2; defines IPSS-M risk",
+          "FLOW CYTOMETRY — confirms myeloid, identifies MDS-related immunophenotype",
+          "PERIPHERAL SMEAR — cytopenias, dysplasia, blasts (~5%)",
+          "RULE OUT REVERSIBLE CAUSES of cytopenias: vitamin B12, folate, copper deficiency, thyroid, autoimmune (lupus, immune thrombocytopenia), drug-induced (chemotherapy, methotrexate, azathioprine, alcohol), HIV, hepatitis",
+          "SERUM ERYTHROPOIETIN — guides ESA response (<500 mIU/mL more likely to respond)",
+          "FERRITIN — track iron overload (transfusion-dependent or hereditary)",
+          "HLA TYPING for potential allo-HSCT candidates",
+          "DIFFERENTIAL: aplastic anemia (hypocellular marrow vs MDS hypercellular), AML (≥20% blasts), MDS/MPN overlap (CMML, atypical CML, JMML), MGUS-related cytopenia, parvovirus B19 PRCA"
+        ],
+        "monitoring": [
+          "CBC + DIFFERENTIAL every 3-6 months (more often if treating)",
+          "BONE MARROW BIOPSY annually OR at suspected progression",
+          "RISK SCORE (IPSS-R or IPSS-M) RE-CALCULATION at progression",
+          "FERRITIN — track iron overload; chelation if >1000 ng/mL or transfusion-dependent (deferasirox, deferoxamine)",
+          "TRANSFUSION REQUIREMENTS — frequency (PRBC, platelets); document burden",
+          "VITAMIN B12 + folate annually (additive deficiency worsens cytopenias)",
+          "INFECTION SURVEILLANCE — neutropenic precautions; prophylaxis if <500 ANC prolonged",
+          "PROGRESSION TO AML — increasing blasts, new cytopenias, new cytogenetic abnormalities",
+          "QUALITY OF LIFE — fatigue, transfusion burden, hospital visits"
+        ],
+        "treatment": [
+          {
+            "line": "Lower-Risk MDS (IPSS-R Very Low / Low / Intermediate)",
+            "type": "Drug + Strategy",
+            "family": "Cytopenia-Directed",
+            "agents": [
+              "WATCH AND WAIT for asymptomatic, no significant cytopenia (very-low risk)",
+              "ERYTHROPOIESIS-STIMULATING AGENTS (ESAs) — DARBEPOETIN, EPOETIN α — for symptomatic anemia + low EPO (<500 mIU/mL) + low transfusion burden; response ~30-60%",
+              "LENALIDOMIDE — DEL(5Q) MDS specifically — TRANSFUSION INDEPENDENCE in ~50-70% (List NEJM 2006); also non-del(5q) low-risk in select cases",
+              "LUSPATERCEPT (Reblozyl) — RING SIDEROBLAST POSITIVE MDS (SF3B1+) failed/intolerant to ESAs (MEDALIST trial; FDA 2020 + Health Canada 2023)",
+              "IMETELSTAT (Rytelo) — telomerase inhibitor; FDA 2024 for transfusion-dependent lower-risk MDS — emerging",
+              "G-CSF for severe neutropenia (limited use)",
+              "TRANSFUSION SUPPORT (PRBC + platelets) — adjunct"
+            ],
+            "notes": "LOWER-RISK MDS — focus on cytopenia management + quality of life. ESA + lenalidomide (del(5q)) + luspatercept (ring sideroblasts) + imetelstat (transfusion-dependent) are key options. Most patients live years without transformation.",
+            "guideline": "ELN MDS 2022; CCS Hematology MDS 2024; NCCN MDS 2024; MEDALIST trial Fenaux NEJM 2020 (luspatercept); IMerge trial Platzbecker NEJM 2024 (imetelstat)"
+          },
+          {
+            "line": "Higher-Risk MDS (IPSS-R Intermediate-High / High / Very High)",
+            "type": "Drug + Strategy",
+            "family": "Hypomethylating Agents (HMAs) ± Allo-HSCT",
+            "agents": [
+              "AZACITIDINE (Vidaza) 75 mg/m² SC/IV Days 1-7 every 28 days × minimum 6 cycles",
+              "DECITABINE (Dacogen) 20 mg/m² IV Days 1-5 every 28 days × minimum 6 cycles",
+              "INQOVI (oral cedazuridine + decitabine) — FDA 2020 alternative to IV decitabine; ASCERTAIN trial bioequivalent",
+              "AZA-VEN (azacitidine + venetoclax) — emerging for high-risk MDS not eligible for allo-HSCT (similar to AML approach)",
+              "ALLOGENEIC HEMATOPOIETIC STEM CELL TRANSPLANT (allo-HSCT) — DEFINITIVE CURATIVE THERAPY for high/very-high-risk + younger fit patients with donor"
+            ],
+            "notes": "HIGHER-RISK MDS — HMA primary therapy; allo-HSCT for fit patients. AZA + DEC equivalent efficacy in monotherapy. Allo-HSCT requires assessment + donor + comorbidities + risk-benefit discussion (potential cure vs transplant-related mortality).",
+            "guideline": "ELN MDS 2022; CCS Hematology MDS 2024; CIBMTR Allo-HSCT Outcomes; Lübbert NEJM 2018 (decitabine vs supportive care)"
+          },
+          {
+            "line": "TP53-Mutated MDS",
+            "type": "Drug",
+            "family": "Specific Therapy + Trials",
+            "agents": [
+              "AZACITIDINE + VENETOCLAX OR AZACITIDINE alone — limited efficacy in TP53-mutated",
+              "ALLO-HSCT remains only curative option (poor outcomes; specialty)",
+              "EPRENETAPOPT (APR-246) — investigational TP53-restoration agent; results disappointing in phase III",
+              "MAGROLIMAB (anti-CD47) — investigational; trial closed 2023 due to lack of efficacy"
+            ],
+            "notes": "TP53-MUTATED MDS — POOR PROGNOSIS regardless of therapy; allo-HSCT only curative option; most outcomes poor. Clinical trial enrollment encouraged.",
+            "guideline": "ELN MDS 2022; ASH-EHA TP53 MDS reviews"
+          },
+          {
+            "line": "Iron Chelation Therapy",
+            "type": "Drug",
+            "family": "Iron Chelators",
+            "agents": [
+              "DEFERASIROX (Exjade, Jadenu) 20-40 mg/kg PO daily — first-line chelator; convenient oral",
+              "DEFEROXAMINE (Desferal) 25-50 mg/kg SC infusion 8-12h × 5-7 days/week — historic; less convenient",
+              "DEFERIPRONE (Ferriprox) — alternative in select"
+            ],
+            "notes": "IRON CHELATION for transfusion-dependent MDS with FERRITIN >1000 ng/mL (or per CCS criteria) — reduces iron overload morbidity. DEFERASIROX preferred (oral). Effects on survival modest.",
+            "guideline": "CCS MDS Iron Chelation 2024; NCCN MDS"
+          },
+          {
+            "line": "Supportive Care",
+            "type": "Strategy",
+            "family": "Comprehensive",
+            "agents": [
+              "PRBC transfusion for symptomatic anemia (Hgb target individualized; usually 70-80 with cardiac, lower in well-tolerated)",
+              "PLATELET transfusion <10,000 prophylactic OR <20,000 with bleeding/fever",
+              "G-CSF for severe neutropenia + infection",
+              "ANTIBIOTIC PROPHYLAXIS in prolonged neutropenia (TMP-SMX, fluoroquinolone)",
+              "ANTIFUNGAL PROPHYLAXIS in prolonged neutropenia + AML transformation risk (posaconazole)",
+              "TRANEXAMIC ACID for thrombocytopenic bleeding adjunct",
+              "NUTRITION + B12/folate supplementation",
+              "MENTAL HEALTH + palliative care integration"
+            ],
+            "notes": "SUPPORTIVE CARE — TRANSFUSION SUPPORT cornerstone for many patients; G-CSF + antibiotic + antifungal prophylaxis tailored to ANC + infection risk. Quality of life optimization.",
+            "guideline": "CCS Hematology MDS 2024; NCCN MDS Supportive Care"
+          }
+        ],
+        "pearls": [
+          "MDS DEFINITION: clonal HSC disorder with cytopenias + dysplasia + variable blast %; risk of AML transformation",
+          "WHO/ICC 2022 — molecular markers prominent (SF3B1, TP53 biallelic, etc.) in classification",
+          "IPSS-R (2012) + IPSS-M (2022; molecular) — risk stratification + treatment guide",
+          "LOWER-RISK: ESAs (low EPO + low transfusion burden), LENALIDOMIDE (del(5q)), LUSPATERCEPT (ring sideroblast SF3B1+ post-ESA), IMETELSTAT (transfusion-dependent; FDA 2024)",
+          "HIGHER-RISK: HMA (azacitidine/decitabine) ± ALLO-HSCT (only curative)",
+          "DEL(5Q) MDS — LENALIDOMIDE transfusion independence ~50-70% (List NEJM 2006)",
+          "RING SIDEROBLAST + SF3B1+ MDS — LUSPATERCEPT post-ESA (MEDALIST trial)",
+          "TP53-MUTATED MDS — poor prognosis; allo-HSCT only curative (often poor outcomes); trials encouraged",
+          "INQOVI (oral cedazuridine + decitabine) — FDA 2020 alternative to IV decitabine",
+          "DEFERASIROX iron chelation — transfusion-dependent + ferritin >1000",
+          "ALLO-HSCT — definitive curative; eligibility based on age + fitness + donor + comorbidities",
+          "AZA-VEN — emerging for higher-risk MDS not eligible for allo-HSCT (analogous to AML)",
+          "VITAMIN B12 + FOLATE — rule out reversible cytopenias before MDS diagnosis",
+          "T-MDS (therapy-related) ~10-20% — worse prognosis; often TP53/complex karyotype",
+          "PHARMACIST ROLE: ESA dosing, lenalidomide REMS, luspatercept SC injections, HMA cycle scheduling, iron chelator counseling, transfusion support, antimicrobial prophylaxis"
+        ],
+        "introduction": "Myelodysplastic syndromes (MDS) are clonal hematopoietic stem cell disorders with ineffective hematopoiesis, cytopenias, dysplasia, and risk of AML transformation. WHO/ICC 2022 classifications integrate molecular markers; IPSS-R (2012) and IPSS-M (2022 molecular) stratify risk. Lower-risk MDS focuses on cytopenia management — ESAs for symptomatic anemia + low EPO; lenalidomide for del(5q); luspatercept for ring sideroblast SF3B1+ MDS post-ESA failure (MEDALIST trial); imetelstat (FDA 2024) for transfusion-dependent. Higher-risk MDS uses hypomethylating agents (azacitidine, decitabine; oral Inqovi alternative) ± allogeneic hematopoietic stem cell transplant (allo-HSCT — only curative option). TP53-mutated MDS has poor prognosis; allo-HSCT remains the only curative option. Pharmacist roles include ESA dosing, lenalidomide REMS counseling, luspatercept SC injection counseling, HMA cycle scheduling, iron chelator monitoring, and antimicrobial prophylaxis during prolonged neutropenia.",
+        "source": "ELN MDS Recommendations 2022; CCS Hematology MDS 2024; NCCN MDS 2024; List NEJM 2006 (lenalidomide del(5q)); MEDALIST trial Fenaux NEJM 2020 (luspatercept); IMerge trial Platzbecker NEJM 2024 (imetelstat); Lübbert NEJM 2018 (decitabine); WHO 2022 + ICC 2022 Classifications"
       }
     ]
   },
@@ -34975,6 +35109,589 @@ var DISEASES = {
         ],
         "introduction": "Acute myeloid leukemia (AML) is a clonal hematologic malignancy with ≥20% myeloid blasts in marrow/blood. Risk stratification by cytogenetics + molecular profile (ELN 2022) drives treatment: intensive 7+3 induction with risk-adapted consolidation (chemotherapy alone for favourable; allo-HSCT for adverse risk in fit younger patients) for fit patients; AZA-VEN (VIALE-A 2020) revolutionized unfit AML with median OS 14.7 months. Mutation-targeted therapy includes midostaurin/gilteritinib (FLT3+), ivosidenib (IDH1+), enasidenib (IDH2+), gemtuzumab ozogamicin (CD33+ favourable-risk), and emerging menin inhibitors (KMT2A-r, NPM1+). APL (PML-RARA) is a hematologic emergency requiring empiric ATRA before cytogenetic confirmation; modern ATRA-ATO chemotherapy-free protocols achieve ~95% cure. Pharmacist roles include chemotherapy verification, antimicrobial stewardship for prolonged neutropenia, TLS monitoring, transfusion support, drug interactions, and supportive care.",
         "source": "ELN AML Recommendations 2022 (Döhner Blood); CCS Hematology AML 2024; NCCN AML 2024; VIALE-A DiNardo NEJM 2020; RATIFY Stone NEJM 2017; ADMIRAL Perl NEJM 2019; APL0406 Lo-Coco NEJM 2013; AGILE Montesinos NEJM 2022; ALFA-0701 Castaigne Lancet 2012; Vyxeos Lancet 2018"
+      },
+      {
+        "id": "all",
+        "name": "Acute Lymphoblastic Leukemia (ALL)",
+        "subtitle": "B-Cell or T-Cell Acute Lymphoblastic Leukemia / Lymphoma",
+        "rxfiles_ref": "Onc: Hematologic Malignancies | ALL",
+        "patho": "Acute lymphoblastic leukemia (ALL) — clonal expansion of LYMPHOID PROGENITOR CELLS (B-cell or T-cell precursors) in marrow with peripheral blood + tissue infiltration. EPIDEMIOLOGY: most common pediatric cancer (~25% of childhood cancers; peak 2-5 yr); rare in adults but mortality higher (~30% of adult acute leukemia). PATHOGENESIS: somatic mutations + chromosomal rearrangements: PHILADELPHIA CHROMOSOME (Ph+ ALL; t(9;22) BCR-ABL — ~25% of adult ALL, ~3% pediatric — historically poorest prognosis until TKIs), MLL/KMT2A rearrangements, ETV6-RUNX1 t(12;21) (most common pediatric — favourable), TCF3-PBX1 t(1;19), HYPERDIPLOIDY (>50 chromosomes — favourable), HYPODIPLOIDY (<44 — unfavorable). PHENOTYPE: B-cell precursor ~85%, T-cell precursor ~15%, mature B-cell (Burkitt-like) ~5%. SUBSETS: PHILADELPHIA-LIKE (Ph-LIKE) ALL — gene expression similar to Ph+ but BCR-ABL negative; CRLF2 + JAK2 + ABL1 + ABL2 + PDGFRB rearrangements; ~15% AYA + adult ALL; emerging therapies. RISK STRATIFICATION: AGE (>1 yr + <10 yr most favourable; infants <1 + adolescents/adults higher risk), WBC (high-risk if >50×10⁹/L B-ALL, >100×10⁹/L T-ALL), CYTOGENETICS, MRD (measurable residual disease) at end-induction. PROGNOSIS by age: pediatric 5-yr OS ~90%; AYA ~70%; older adults ~30%. ALL-TYPE CARE BY AGE — pediatric (COG, DFCI), AYA (CALGB 10403), adult (UKALL, hyperCVAD).",
+        "signs": [
+          "PANCYTOPENIA SYMPTOMS: anemia (fatigue, pallor), thrombocytopenia (petechiae, bruising, gingival bleeding), neutropenia (fever, infection)",
+          "LYMPHADENOPATHY (esp. T-ALL with mediastinal mass), HEPATOSPLENOMEGALY",
+          "BONE PAIN, ARTHRALGIA — common pediatric presentation; can mimic JIA",
+          "CNS INVOLVEMENT (~5%) — headache, meningismus, cranial neuropathies (especially CN VII), papilledema; LP examination",
+          "TESTICULAR INVOLVEMENT (males; ~10% relapse site)",
+          "MEDIASTINAL MASS — T-ALL especially; SVC syndrome, airway compromise",
+          "B SYMPTOMS (fever, night sweats, weight loss)",
+          "Lab: PANCYTOPENIA OR leukocytosis with circulating BLASTS; ≥20% blasts in marrow OR peripheral blood (WHO/ICC); LDH elevated; uric acid elevated",
+          "TUMOR LYSIS SYNDROME — high blast count; emergent prevention/treatment"
+        ],
+        "diagnosis": [
+          "BONE MARROW BIOPSY + ASPIRATE — DEFINITIVE: ≥20% lymphoid blasts (WHO/ICC 2022)",
+          "FLOW CYTOMETRY — confirms lymphoid lineage; B-cell precursor (CD19+, CD22+, CD79a+) vs T-cell precursor (CD2, CD3, CD7); subtype + immunophenotype",
+          "CYTOGENETICS — Ph+ t(9;22), t(12;21) ETV6-RUNX1, t(1;19) TCF3-PBX1, MLL rearrangements, hypodiploidy, hyperdiploidy",
+          "FISH — BCR-ABL + KMT2A rearrangements",
+          "MOLECULAR / NGS — Ph-like ALL (CRLF2, JAK2, ABL1/2, PDGFRB), MLL fusions, NOTCH1 (T-ALL), TP53",
+          "MEASURABLE RESIDUAL DISEASE (MRD) — flow cytometry (multiparameter; threshold 0.01%) or molecular (RT-qPCR for IGH/TCR rearrangements; or Ph+ BCR-ABL); end-induction MRD = strongest prognostic marker",
+          "LP (lumbar puncture) — REQUIRED at diagnosis for CNS staging (CNS-1 negative, CNS-2 <5 WBC + blasts, CNS-3 ≥5 WBC + blasts) — guides intrathecal therapy",
+          "ECHO/MUGA before anthracycline (cardiotoxicity baseline)",
+          "VIRAL SEROLOGY (HIV, hepatitis B/C, CMV)",
+          "FERTILITY DISCUSSION — sperm/oocyte cryopreservation; pediatric ovarian tissue cryopreservation",
+          "DIFFERENTIAL: AML (myeloid blasts), CML blast crisis, lymphoma (mediastinal mass, lymphadenopathy with ≤20% marrow involvement), aplastic anemia, ITP, JIA, mononucleosis"
+        ],
+        "monitoring": [
+          "DAILY CBC + electrolytes during induction + while neutropenic",
+          "TUMOR LYSIS SYNDROME monitoring (LDH, uric acid, K+, Ca2+, phosphate, creatinine) days 1-7",
+          "DIC / coagulopathy (especially mature B-cell ALL with high WBC)",
+          "MEASURABLE RESIDUAL DISEASE (MRD) at end-induction (Day 28-42), end-consolidation, mid-maintenance — KEY treatment-decision tool; MRD-positive = intensified therapy or allo-HSCT",
+          "BONE MARROW BIOPSY at end-induction (~Day 28) for response assessment",
+          "L-ASPARAGINASE ACTIVITY (silent inactivation — shifts to Erwinia-derived if antibodies + low activity)",
+          "ANTHRACYCLINE CUMULATIVE DOSE (echo monitoring, dose limit)",
+          "INFECTION SURVEILLANCE — neutropenic fever; antifungal + PJP prophylaxis essential during prolonged neutropenia",
+          "LATE EFFECTS — late cardiotoxicity, neurocognitive (especially with cranial RT), endocrine (especially TBI/HSCT), fertility, secondary malignancies (especially t-MDS/AML)",
+          "Mental health — anxiety, depression; survivorship clinic",
+          "TRANSITION pediatric → AYA → adult care for survivors"
+        ],
+        "treatment": [
+          {
+            "line": "Induction — Pediatric / AYA Ph-Negative B-ALL",
+            "type": "Drug",
+            "family": "Multi-Agent Combination Chemotherapy",
+            "agents": [
+              "VINCRISTINE 1.5 mg/m² IV weekly × 4",
+              "CORTICOSTEROIDS — DEXAMETHASONE (preferred pediatric; better CNS penetration) OR PREDNISONE",
+              "PEGASPARGASE 2,500 IU/m² IV/IM Day 4 (or per protocol)",
+              "DAUNORUBICIN 25-45 mg/m² IV (anthracycline component; especially high-risk)",
+              "INTRATHECAL METHOTREXATE (CNS prophylaxis; some protocols add cytarabine + steroid as 'triple IT')",
+              "RITUXIMAB if CD20-positive (added to chemotherapy backbone — improves outcomes)"
+            ],
+            "notes": "PEDIATRIC ALL TREATMENT — multi-phase: INDUCTION (4 weeks) → CONSOLIDATION → INTERIM MAINTENANCE → DELAYED INTENSIFICATION → MAINTENANCE × 18-24 months total. COG, DFCI, ALL Together protocols guide care. AYA — CALGB 10403 / pediatric-inspired protocols superior to adult-style for ages 18-39 in many studies.",
+            "guideline": "COG Pediatric ALL protocols; DFCI ALL Consortium; CALGB 10403 AYA trial; CCS Hematology Pediatric ALL 2024; CCO POGO"
+          },
+          {
+            "line": "Induction — Adult Ph-Negative ALL",
+            "type": "Drug",
+            "family": "Multi-Agent Combination",
+            "agents": [
+              "HYPERCVAD (hyperfractionated cyclophosphamide + vincristine + adriamycin/doxorubicin + dexamethasone) alternating with HIGH-DOSE METHOTREXATE + CYTARABINE × 8 cycles",
+              "OR PEDIATRIC-INSPIRED ADULT PROTOCOLS (CALGB 10403, GRAALL) for age <40-55 — show superior outcomes vs older adult protocols",
+              "BLINATUMOMAB (CD19/CD3 BiTE) — emerging consolidation in MRD+ B-ALL OR R/R B-ALL",
+              "INOTUZUMAB OZOGAMICIN (anti-CD22 ADC with calicheamicin) — emerging consolidation/R/R B-ALL"
+            ],
+            "notes": "ADULT ALL — pediatric-inspired protocols for younger fit adults (<40-55). hyperCVAD for older or those unable to tolerate intensive pediatric regimens. BLINATUMOMAB + INOTUZUMAB increasingly integrated into upfront consolidation (E1910 trial 2024 — blinatumomab consolidation improves OS).",
+            "guideline": "ELN ALL Recommendations 2024; CCS Hematology Adult ALL 2024; NCCN ALL 2024; CALGB 10403; E1910 trial 2024"
+          },
+          {
+            "line": "Ph+ ALL — TKI + Chemotherapy",
+            "type": "Drug",
+            "family": "BCR-ABL TKI + Reduced Chemotherapy",
+            "agents": [
+              "DASATINIB or PONATINIB (preferred) + STEROID + low-intensity chemotherapy — 'chemo-light' approach (D-ALBA trial dasatinib; GIMEMA ponatinib + blinatumomab — emerging)",
+              "NEWER STRATEGY: PONATINIB + BLINATUMOMAB + STEROID — chemotherapy-free (Foà NEJM 2020) — high CR + MRD-negative rates without intensive chemo",
+              "IMATINIB + chemotherapy — older standard"
+            ],
+            "notes": "Ph+ ALL TRANSFORMED by TKIs — historically worst prognosis now nearly equivalent to Ph-negative. PONATINIB + BLINATUMOMAB chemo-free regimen emerging; lower toxicity than TKI + intensive chemo; specialist hematology.",
+            "guideline": "ELN ALL 2024; D-ALBA trial Foà NEJM 2020; PhALLCON trial Jabbour Lancet 2024 (ponatinib + chemo); CCS Hematology"
+          },
+          {
+            "line": "Maintenance Phase",
+            "type": "Drug",
+            "family": "Anti-Metabolite Maintenance",
+            "agents": [
+              "MERCAPTOPURINE (6-MP) 75 mg/m² PO daily empty stomach",
+              "METHOTREXATE 20-40 mg/m² PO weekly",
+              "MONTHLY VINCRISTINE + CORTICOSTEROID PULSES (some protocols)",
+              "INTRATHECAL METHOTREXATE periodic (CNS maintenance)",
+              "TPMT/NUDT15 GENOTYPING required pre-6-MP",
+              "Allopurinol + 6-MP combination — REDUCE 6-MP 75%"
+            ],
+            "notes": "MAINTENANCE PHASE 18-24 months total (boys often longer than girls historically). 6-MP + MTX backbone. TPMT testing essential. PEDIATRIC ALL CURATIVE INTENT — completion of maintenance.",
+            "guideline": "COG ALL protocols; CCS Hematology Pediatric ALL 2024; DFCI ALL"
+          },
+          {
+            "line": "Relapsed / Refractory",
+            "type": "Drug + Strategy",
+            "family": "Salvage + Targeted + Cellular",
+            "agents": [
+              "BLINATUMOMAB (CD19/CD3 BiTE) — R/R B-ALL OR MRD+ post-induction; FDA + Health Canada approved",
+              "INOTUZUMAB OZOGAMICIN (anti-CD22 ADC) — R/R B-ALL; FDA + Health Canada approved",
+              "CAR-T CELL THERAPY: TISAGENLECLEUCEL (Kymriah) — pediatric/AYA R/R B-ALL; BREXUCABTAGENE (Tecartus) — adult R/R B-ALL; LISOCABTAGENE — alternative",
+              "ALLO-HSCT — definitive curative therapy for high-risk + R/R + MRD-positive disease",
+              "POMA-VINCRISTINE + DEXAMETHASONE; FLAG-IDA salvage chemo"
+            ],
+            "notes": "R/R ALL — modern era integrates targeted (blinatumomab, inotuzumab) + cellular (CAR-T) + transplant. Specialist tertiary care; clinical trial enrollment encouraged. CAR-T cytokine release syndrome (CRS) + ICANS (immune effector cell-associated neurotoxicity syndrome) — tocilizumab + steroid management.",
+            "guideline": "ELN ALL 2024; ELIANA trial Maude NEJM 2018 (tisa-cel pediatric); ZUMA-3 trial brexu-cel adult; CCS Hematology + CAR-T 2024"
+          },
+          {
+            "line": "Supportive Care + CNS Prophylaxis",
+            "type": "Strategy",
+            "family": "Comprehensive",
+            "agents": [
+              "INTRATHECAL CHEMOTHERAPY — methotrexate (or cytarabine; or 'triple IT' MTX + cytarabine + hydrocortisone) at multiple time points (induction, consolidation, maintenance) — CNS prophylaxis without cranial RT in modern era",
+              "CRANIAL RADIATION — historically used; reserved now for high-risk CNS-positive at diagnosis or relapse (avoid in pediatric where possible due to neurocognitive late effects)",
+              "PJP PROPHYLAXIS — TMP-SMX during prolonged immunosuppression (3×/week)",
+              "ANTIFUNGAL PROPHYLAXIS — posaconazole or voriconazole for prolonged neutropenia; isavuconazole alternative",
+              "ACYCLOVIR PROPHYLAXIS — HSV/VZV reactivation",
+              "TLS PROPHYLAXIS — hydration + allopurinol; rasburicase if high-risk",
+              "TRANSFUSION SUPPORT (PRBC, platelets, irradiated + CMV-safe)",
+              "GROWTH FACTORS (G-CSF) post-induction; VARIABLE BENEFIT"
+            ],
+            "notes": "INTRATHECAL CHEMOTHERAPY essential for CNS prophylaxis — eliminates need for prophylactic cranial RT in most pediatric protocols (avoiding neurocognitive late effects). PJP prophylaxis throughout therapy.",
+            "guideline": "IDSA Neutropenic Fever 2024; ASCO Antimicrobial Prophylaxis 2024; ASTCT"
+          }
+        ],
+        "pearls": [
+          "ALL = MOST COMMON PEDIATRIC CANCER (~25% childhood cancers); peak 2-5 yr; pediatric 5-yr OS ~90%",
+          "DIAGNOSIS: ≥20% lymphoid blasts (B-precursor ~85%, T-precursor ~15%, mature B ~5%)",
+          "CYTOGENETICS + MOLECULAR PANEL REQUIRED — Ph (BCR-ABL), MLL, ETV6-RUNX1, TCF3-PBX1, hyperdiploidy, hypodiploidy, NOTCH1 (T-ALL), Ph-like markers",
+          "MRD (measurable residual disease) — strongest prognostic factor; flow cytometry or molecular; end-induction key timepoint",
+          "Ph+ ALL TKI ERA — historically worst prognosis now near-equivalent to Ph-negative with TKI integration",
+          "PONATINIB + BLINATUMOMAB CHEMO-FREE Ph+ ALL emerging (Foà NEJM 2020; PhALLCON 2024)",
+          "PEDIATRIC PROTOCOLS (COG, DFCI, ALL Together) — superior outcomes for AYA ≤40-55 vs adult-style protocols (CALGB 10403)",
+          "MAINTENANCE 18-24 months 6-MP + MTX backbone; TPMT testing required",
+          "CNS PROPHYLAXIS via INTRATHECAL chemotherapy — avoids cranial RT neurocognitive late effects",
+          "BLINATUMOMAB (CD19/CD3 BiTE) — R/R + MRD+; CRS + neurotoxicity manageable; E1910 trial 2024 consolidation OS benefit",
+          "INOTUZUMAB OZOGAMICIN (anti-CD22 ADC) — R/R; veno-occlusive disease/sinusoidal obstruction syndrome (VOD/SOS) risk especially with subsequent allo-HSCT",
+          "CAR-T (tisagenlecleucel, brexu-cel) — R/R B-ALL; pediatric/AYA + adult; CRS + ICANS; specialist tertiary",
+          "PEGASPARGASE — ALL cornerstone; HSR ~10-30% (Erwinia switch); pancreatitis + thrombosis + hyperglycemia + hepatotoxicity",
+          "VINCRISTINE — neuropathy dose-limiting; FATAL if intrathecal (minibag mandatory)",
+          "ITRACONAZOLE/VORICONAZOLE + VINCRISTINE — severe neurotoxicity; switch to posaconazole",
+          "L-ASPARAGINASE ACTIVITY MONITORING — silent inactivation; switch to Erwinia",
+          "ALLO-HSCT for high-risk Ph+, MRD+, T-ALL high-risk, R/R; pediatric + adult",
+          "T-ALL — mediastinal mass + airway compromise emergent; SVC syndrome",
+          "PHARMACIST ROLE: chemotherapy verification, antimicrobial prophylaxis, TLS monitoring, asparaginase HSR + VTE + glucose + lipase, vincristine intrathecal safety, late effects survivorship"
+        ],
+        "introduction": "Acute lymphoblastic leukemia (ALL) is the most common pediatric cancer and a treatable adult hematologic malignancy. Pediatric outcomes are excellent (~90% 5-year OS) with multi-phase combination chemotherapy (induction + consolidation + maintenance, total 24-30 months). AYA outcomes improved with pediatric-inspired protocols (CALGB 10403). Adult ALL outcomes range from ~70% in young fit adults to ~30% in older patients. Ph+ ALL (~25% adult, ~3% pediatric) was historically the worst prognosis but now near-equivalent to Ph-negative with TKI + chemotherapy integration; ponatinib + blinatumomab chemo-free regimens are emerging. Modern relapsed/refractory therapy includes blinatumomab (CD19/CD3 BiTE), inotuzumab ozogamicin (anti-CD22 ADC), and CAR-T cell therapy. Pharmacist roles include chemotherapy verification, vincristine intrathecal safety (minibag mandatory — fatal if intrathecal), asparaginase pharmacovigilance, TPMT/NUDT15 genotyping for 6-MP, and antimicrobial stewardship throughout prolonged immunosuppression.",
+        "source": "ELN ALL Recommendations 2024 (Hoelzer); CCS Hematology ALL 2024; CCO POGO Pediatric Oncology; COG ALL protocols; DFCI ALL Consortium; CALGB 10403 AYA trial; D-ALBA Foà NEJM 2020; PhALLCON 2024; E1910 trial 2024; ELIANA trial CAR-T pediatric; ZUMA-3 brexu-cel adult"
+      },
+      {
+        "id": "glioblastoma",
+        "name": "Glioblastoma & Primary Brain Tumors",
+        "subtitle": "Glioblastoma Multiforme (GBM) / High-Grade Glioma — IDH-Wildtype",
+        "rxfiles_ref": "Onc: CNS Cancers | Glioblastoma",
+        "patho": "Glioblastoma (GBM; WHO grade 4 astrocytoma) — most common + most aggressive primary brain tumour in adults. WHO 2021 CLASSIFICATION restructured: GBM now defined as IDH-WILDTYPE astrocytoma WHO grade 4 (IDH-mutant grade 4 astrocytomas reclassified as 'astrocytoma, IDH-mutant, grade 4' — separate entity with better prognosis). MOLECULAR HALLMARKS: IDH-wildtype, TERT promoter mutation, EGFR amplification/mutation, +7/-10 chromosomal pattern, MGMT methylation status (PROGNOSTIC + PREDICTIVE for temozolomide response). EPIDEMIOLOGY: median age 64; M slightly > F; ~3-4/100,000/year; rare in children (childhood GBM = different molecular entity — H3 K27 mutations diffuse midline glioma DIPG). RISK FACTORS: prior cranial RT, hereditary syndromes (Li-Fraumeni, Lynch, Turcot, Cowden — rare); most cases sporadic. PROGNOSIS: median OS 14-18 months with standard care (Stupp regimen); 5-yr OS ~5-10%; MGMT-METHYLATED tumours respond best (~21 months OS vs ~13 months unmethylated). RECURRENCE inevitable in nearly all patients; subsequent therapy bevacizumab, lomustine, regorafenib, optune (TTFields), trials. OTHER PRIMARY BRAIN TUMOURS: low-grade gliomas (better prognosis; IDH-mutant), oligodendroglioma (1p/19q codeleted; best prognosis; PCV chemotherapy + RT), meningioma (mostly benign; surgery primary), pituitary adenoma (transsphenoidal surgery + dopamine agonists for prolactinomas + somatostatin analogs for acromegaly), schwannoma, ependymoma, primary CNS lymphoma (PCNSL — different entity; high-dose methotrexate + rituximab).",
+        "signs": [
+          "PROGRESSIVE FOCAL NEUROLOGIC DEFICIT (depending on tumour location): hemiparesis, aphasia, visual field deficit, sensory loss, ataxia",
+          "HEADACHE — usually progressive; worse in morning, with Valsalva (cough, bending, straining); often with nausea/vomiting",
+          "SEIZURES — first presentation in ~25-50% of GBM (more common in lower-grade gliomas; ~80%)",
+          "COGNITIVE / PERSONALITY CHANGES — frontal lobe involvement",
+          "Increased intracranial pressure signs: papilledema, vomiting, lethargy, Cushing reflex (HTN + bradycardia)",
+          "Cerebellar signs — ataxia, dysmetria",
+          "VENOUS THROMBOEMBOLISM — increased risk in malignant glioma (~20-30%) due to tumour-derived procoagulants + immobility",
+          "CORTICOSTEROID EFFECTS at presentation — moon face, weight gain, hyperglycemia, mood",
+          "Imaging: MRI with gadolinium — irregular ring-enhancing mass with central necrosis + surrounding edema (T2/FLAIR hyperintense), mass effect, midline shift; restricted diffusion (DWI) in highly cellular regions; spectroscopy (high choline, low NAA)"
+        ],
+        "diagnosis": [
+          "MRI BRAIN WITH GADOLINIUM — initial imaging; characterizes tumour location, enhancement, edema, mass effect",
+          "CT BRAIN — alternative if MRI contraindicated; less sensitive for tumour characterization",
+          "TISSUE BIOPSY (stereotactic) OR RESECTION — DEFINITIVE for diagnosis; required for grading + molecular profiling",
+          "NEUROPATHOLOGY — WHO grade + IDH status (IDH1 R132H + IDH2 mutations) + 1p/19q codeletion (oligodendroglioma) + MGMT methylation status + ATRX + TP53 + TERT promoter mutations + EGFR amplification + +7/-10",
+          "WHO 2021 INTEGRATED MOLECULAR + HISTOLOGIC DIAGNOSIS",
+          "STAGING — usually localized to brain; rare extracranial spread",
+          "SPINE MRI — if symptoms suggesting drop metastases (rare)",
+          "NEUROCOGNITIVE BASELINE testing",
+          "FUNCTIONAL MRI / DTI for surgical planning (eloquent cortex)",
+          "DIFFERENTIAL: brain metastases (more common than primary brain tumour in adults; lung, breast, melanoma; usually multiple), abscess, demyelinating disease (tumefactive MS), low-grade glioma, primary CNS lymphoma (PCNSL — solid enhancement, restricted diffusion; biopsy required)"
+        ],
+        "monitoring": [
+          "MRI BRAIN WITH GADOLINIUM at intervals: post-RT/chemo (4-6 weeks post-RT to baseline), every 2-3 months during adjuvant temozolomide, every 3 months post-treatment, more often if progression suspected",
+          "RANO CRITERIA (Response Assessment in Neuro-Oncology) — response evaluation; PSEUDOPROGRESSION (early apparent worsening on MRI 1-3 months post-RT — actually treatment effect, not progression) vs true progression — challenging; may require advanced imaging (perfusion, spectroscopy) or surgical re-biopsy",
+          "Steroid dose minimization (taper as tolerated) — AVOID chronic high-dose to prevent myopathy, infection, glucose, mood",
+          "PJP prophylaxis during concurrent RT + temozolomide phase + while on dexamethasone >20 mg/day equivalent",
+          "VTE surveillance + prophylaxis — high-risk; LMWH preferred over DOACs in active brain tumour (intracranial bleeding risk)",
+          "SEIZURE control (anti-seizure meds; AVOID enzyme-inducers — phenytoin, carbamazepine, phenobarbital — reduce chemo levels; PREFER levetiracetam, lacosamide)",
+          "MOOD + COGNITION — depression/anxiety common; cognitive decline progressive",
+          "PALLIATIVE CARE INTEGRATION early",
+          "PHARMACIST ROLE: temozolomide cycle scheduling, antiemetic + PJP + antiviral prophylaxis, anti-seizure medication selection, steroid taper, VTE prophylaxis"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line — Newly-Diagnosed GBM (IDH-Wildtype)",
+            "type": "Drug + Procedural",
+            "family": "STUPP REGIMEN — Maximum-Safe Resection + RT + Temozolomide",
+            "agents": [
+              "MAXIMUM-SAFE SURGICAL RESECTION (gross-total or near-total preferred; subtotal acceptable if eloquent cortex)",
+              "RADIATION THERAPY 60 Gy in 30 fractions (2 Gy/fx) over 6 weeks",
+              "CONCURRENT TEMOZOLOMIDE 75 mg/m² PO daily × 42 days during RT",
+              "ADJUVANT TEMOZOLOMIDE 150-200 mg/m² PO Days 1-5 every 28 days × 6 cycles (some extend longer)",
+              "TUMOUR TREATING FIELDS (Optune/TTFields) — adjunct; FDA 2015; randomized trial showed OS benefit in MGMT-methylated; Health Canada submission limited adoption"
+            ],
+            "notes": "STUPP REGIMEN (Stupp NEJM 2005) standard of care since 2005. MGMT-METHYLATED tumours respond best (~21 mo OS vs 13 mo unmethylated). Elderly + frail: hypofractionated RT (40 Gy/15 fx or 25 Gy/5 fx) + temozolomide alternative.",
+            "guideline": "Stupp NEJM 2005; CCO Neuro-Oncology 2024; NCCN CNS Cancers 2024; EANO Glioma Guidelines"
+          },
+          {
+            "line": "Recurrent GBM (Inevitable in Most)",
+            "type": "Drug",
+            "family": "Salvage Therapy",
+            "agents": [
+              "BEVACIZUMAB (Avastin) 10 mg/kg IV every 2 weeks — anti-VEGF; reduces edema + radiographic response; no clear OS benefit (BELOB trial)",
+              "LOMUSTINE (CCNU) 110 mg/m² PO every 6 weeks — alkylator; alternative to or combination with bevacizumab",
+              "REGORAFENIB (Stivarga) — oral multi-kinase inhibitor; emerging post-bevacizumab",
+              "RE-IRRADIATION — selected cases; specialist neuro-oncology",
+              "RE-RESECTION if accessible + favourable performance status",
+              "TUMOUR TREATING FIELDS continued or initiated (recurrent setting)",
+              "CLINICAL TRIAL ENROLLMENT strongly encouraged"
+            ],
+            "notes": "RECURRENT GBM — no clear standard; multiple options based on prior therapy + performance status + tumour location. Median OS at recurrence ~6-9 months. Clinical trial enrollment encouraged.",
+            "guideline": "EANO Recurrent Glioma 2024; CCO; NCCN CNS 2024; BELOB trial"
+          },
+          {
+            "line": "Symptom Management — Edema",
+            "type": "Drug",
+            "family": "Corticosteroids",
+            "agents": [
+              "DEXAMETHASONE 4-16 mg PO/IV daily divided BID-QID — initial; titrate to symptoms; LOWEST EFFECTIVE DOSE",
+              "TAPER once stable (reduce 1-2 mg every 3-7 days as tolerated; full taper over weeks-months)"
+            ],
+            "notes": "DEXAMETHASONE for symptomatic peritumoral edema. AVOID prolonged high-dose — Cushing syndrome, myopathy, hyperglycemia, infection, GI ulcers. PPI for gastroprotection. PJP prophylaxis if dose >20 mg/day equivalent for >4 weeks.",
+            "guideline": "EANO Glioma; NCCN CNS 2024"
+          },
+          {
+            "line": "Symptom Management — Seizures",
+            "type": "Drug",
+            "family": "Anti-Seizure Medications",
+            "agents": [
+              "LEVETIRACETAM (Keppra) 500 mg PO BID, titrate to 1500 mg BID — non-enzyme-inducing; preferred in brain tumour",
+              "LACOSAMIDE (Vimpat) 100 mg PO BID, titrate — alternative non-inducer",
+              "VALPROATE (Depakote) — anti-epileptic + possible HDAC-inhibitor anti-tumour effect; some evidence; specialist",
+              "AVOID ENZYME-INDUCING ANTI-SEIZURE: phenytoin, carbamazepine, phenobarbital, primidone, oxcarbazepine — REDUCE chemotherapy levels (CYP3A4 induction reduces temozolomide efficacy)"
+            ],
+            "notes": "ANTI-SEIZURE MEDICATIONS — only if seizure occurs (not prophylactic in most modern guidelines). PREFER non-enzyme-inducing agents (levetiracetam, lacosamide, valproate, lamotrigine, pregabalin) to avoid chemotherapy interactions.",
+            "guideline": "AAN Anti-Seizure Prophylaxis Brain Tumour 2024; EANO"
+          },
+          {
+            "line": "VTE Prophylaxis + Treatment",
+            "type": "Drug",
+            "family": "Anticoagulation",
+            "agents": [
+              "LMWH (enoxaparin, tinzaparin, dalteparin) — preferred in brain tumour over DOACs (reduced intracranial bleeding risk; specialist judgment)",
+              "DOACs (apixaban, rivaroxaban) — emerging acceptable in some patients with stable disease + no recent intracranial bleeding (CARAVAGGIO + Hokusai-VTE Cancer trials)",
+              "PROPHYLAXIS during hospital admission only (NOT routine outpatient prophylaxis); treat established VTE",
+              "AVOID prophylaxis in active recent surgery, recent intracranial bleed, severe thrombocytopenia"
+            ],
+            "notes": "VTE PROPHYLAXIS — usually only inpatient; outpatient routine prophylaxis NOT recommended (bleeding risk). Treat ESTABLISHED VTE with LMWH preferred.",
+            "guideline": "CCS VTE in Cancer 2024; ASCO VTE in Cancer; CARAVAGGIO + Hokusai-VTE Cancer trials"
+          },
+          {
+            "line": "Palliative + Supportive Care",
+            "type": "Strategy",
+            "family": "Comprehensive",
+            "agents": [
+              "PALLIATIVE CARE INTEGRATION early (concurrent with active treatment); ASCO recommends within 8 weeks of diagnosis advanced cancer",
+              "FAMILY/CAREGIVER SUPPORT",
+              "SOCIAL WORK + spiritual care",
+              "ADVANCE CARE PLANNING (goals of care, decision-making, MAID consideration if eligible Canadian context)",
+              "SYMPTOM MANAGEMENT — pain (opioids), nausea, fatigue, mood (SSRI), constipation (laxatives), seizures, edema",
+              "REHABILITATION — PT/OT/speech for functional optimization",
+              "DRIVING RESTRICTIONS per provincial laws (post-seizure or impaired neurology)"
+            ],
+            "notes": "PALLIATIVE CARE early integration improves quality of life + may improve survival (Temel JCO 2010 lung cancer paradigm). DECISION-MAKING about further treatment vs comfort care evolves over disease course.",
+            "guideline": "ASCO Palliative Care; CSPCP; EANO; CCS Palliative"
+          }
+        ],
+        "pearls": [
+          "GBM = WHO grade 4 IDH-WILDTYPE astrocytoma (WHO 2021 reclassification)",
+          "STUPP REGIMEN — RT + concurrent + adjuvant temozolomide; standard since 2005; OS ~15 mo median",
+          "MGMT METHYLATION prognostic + predictive — methylated ~21 mo, unmethylated ~13 mo OS",
+          "PJP PROPHYLAXIS (TMP-SMX) during concurrent RT + temozolomide phase",
+          "AVOID enzyme-inducing anti-seizure meds (phenytoin, carbamazepine, phenobarbital) — reduce temozolomide efficacy; PREFER levetiracetam, lacosamide",
+          "DEXAMETHASONE for edema — LOWEST EFFECTIVE DOSE; taper as tolerated",
+          "VTE high risk (~20-30%) — LMWH preferred over DOACs in active brain tumour (bleeding risk)",
+          "PSEUDOPROGRESSION — early apparent radiographic worsening 1-3 months post-RT; treatment effect, not progression; advanced imaging or biopsy if uncertain",
+          "RECURRENT GBM — bevacizumab, lomustine, regorafenib; no clear standard; trials encouraged",
+          "TUMOUR TREATING FIELDS (Optune) — adjunct; OS benefit in MGMT-methylated trial",
+          "MEDIAN OS 14-18 months newly-diagnosed with Stupp regimen; 5-yr OS ~5-10%",
+          "PEDIATRIC HIGH-GRADE GLIOMA (DIPG) — H3 K27 mutations; distinct entity; tumour-treating fields + RT + ONC201 trials; uniformly fatal",
+          "PRIMARY CNS LYMPHOMA (PCNSL) — different entity; high-dose methotrexate + rituximab + cytarabine; biopsy required",
+          "PALLIATIVE CARE EARLY integration (ASCO recommends within 8 weeks); improves QOL + may improve survival",
+          "DRIVING RESTRICTIONS — post-seizure or impaired neurology; provincial laws",
+          "PHARMACIST ROLE: temozolomide cycle, anti-seizure med selection (NON-inducer), antiemetic + PJP + antiviral, steroid taper, VTE management"
+        ],
+        "introduction": "Glioblastoma (GBM; WHO grade 4 IDH-wildtype astrocytoma) is the most common + aggressive primary brain tumour in adults. The Stupp regimen (Stupp NEJM 2005) — maximum-safe resection + radiotherapy 60 Gy + concurrent temozolomide + adjuvant temozolomide × 6 cycles — is the standard of care, achieving median OS 14-18 months. MGMT methylation is prognostic + predictive (better temozolomide response). PJP prophylaxis is required during concurrent RT + temozolomide. Recurrence is inevitable in nearly all patients; bevacizumab + lomustine + regorafenib + tumour treating fields are options without clear OS benefit. Anti-seizure medication choice is critical: AVOID enzyme inducers (phenytoin, carbamazepine, phenobarbital) which reduce temozolomide efficacy; PREFER levetiracetam, lacosamide. Pharmacist roles include temozolomide cycle scheduling, antiemetic + PJP + antiviral prophylaxis, anti-seizure medication selection, steroid taper, and VTE management. Early palliative care integration improves quality of life.",
+        "source": "Stupp NEJM 2005 (RT + temozolomide); WHO CNS 2021 Classification; CCO Neuro-Oncology 2024; NCCN CNS Cancers 2024; EANO Glioma Guidelines; AAN Anti-Seizure Prophylaxis Brain Tumour 2024"
+      },
+      {
+        "id": "thyroid_cancer",
+        "name": "Thyroid Cancer",
+        "subtitle": "Differentiated, Medullary & Anaplastic Thyroid Cancers",
+        "rxfiles_ref": "Onc: Endocrine | Thyroid Cancer",
+        "patho": "Thyroid cancer — most common endocrine malignancy. SUBTYPES (TUMOUR ORIGIN + PROGNOSIS): DIFFERENTIATED THYROID CANCER (DTC ~95%): PAPILLARY (PTC ~85%; favourable; lymph node metastases common but rarely fatal; F:M 3:1; peak 30-50 years), FOLLICULAR (FTC ~10%; hematogenous spread to bone/lung; older age), HÜRTHLE CELL (oncocytic; intermediate prognosis); MEDULLARY (MTC ~3-5%; from C-cells; calcitonin marker; sporadic ~75% or hereditary MEN2A/2B/familial MTC ~25% — RET mutations); ANAPLASTIC (ATC ~1-2%; UNDIFFERENTIATED; rapid growth; median survival ~6 months — most lethal). RISK FACTORS: childhood/young-adult radiation exposure (Chernobyl, therapeutic RT, dental X-rays — minor), iodine deficiency (FTC) or excess (PTC), Hashimoto thyroiditis (papillary), MEN2 (medullary), familial syndromes (Cowden, FAP, Werner, Carney complex). EPIDEMIOLOGY: ~14/100,000/year in Canada; F:M 3:1 (DTC); rising incidence (mostly micropapillary thyroid cancer detected by imaging — debate about overdiagnosis). PROGNOSIS: PTC 5-yr OS 98%, FTC 92%, MTC 80%, ATC ~7%. ATA RISK STRATIFICATION (low/intermediate/high) guides post-thyroidectomy radioactive iodine + monitoring.",
+        "signs": [
+          "PAINLESS THYROID NODULE — most common presentation (palpable or imaging-detected; ~5-10% of palpable nodules malignant)",
+          "Cervical lymphadenopathy (especially PTC; lateral neck or central compartment)",
+          "Hoarseness (recurrent laryngeal nerve invasion — ATC, large invasive)",
+          "Dysphagia, dyspnea (extrathyroidal extension)",
+          "Rapidly enlarging mass — ATC characteristic; medical emergency",
+          "Distant metastases — bone (FTC), lung (FTC, ATC), liver, brain (rare)",
+          "MTC: PARANEOPLASTIC SYNDROMES — calcitonin-related diarrhea (severe; high tumour burden), Cushing syndrome (ectopic ACTH; rare)",
+          "MEN2: PHEOCHROMOCYTOMA + PRIMARY HYPERPARATHYROIDISM (MEN2A) or MUCOSAL NEUROMAS + MARFANOID HABITUS (MEN2B) — must SCREEN before MTC surgery",
+          "ATC: hard fixed mass + obstructive symptoms; airway emergency",
+          "Lab: TSH (low TSH suspicious for hyperfunctional), calcitonin (elevated MTC; screen if family history), CEA (MTC)"
+        ],
+        "diagnosis": [
+          "TSH + thyroid hormones — rule out hyperfunctional nodule (rare cancer in autonomous nodule)",
+          "THYROID ULTRASOUND — characterizes nodule (hypoechoic, irregular margins, microcalcifications, taller-than-wide, suspicious vascularity = high-risk per TI-RADS)",
+          "FINE-NEEDLE ASPIRATION (FNA) BIOPSY — guided by ultrasound; BETHESDA SYSTEM CYTOLOGY: I (non-diagnostic), II (benign), III (atypia of undetermined significance — AUS/FLUS; molecular testing helpful), IV (follicular neoplasm; surgery), V (suspicious for malignancy; surgery), VI (malignant; surgery)",
+          "MOLECULAR TESTING (ThyroSeq, Afirma) — Bethesda III/IV indeterminate; reduces unnecessary surgery",
+          "CALCITONIN + CEA — if MTC suspected (FNA cytology compatible OR family history MEN2/FMTC)",
+          "RET MUTATION GENETIC TESTING — all MTC + family screen (germline RET); affects surveillance + MEN2 features",
+          "PHEOCHROMOCYTOMA SCREEN (plasma metanephrines or 24h urine metanephrines) — required BEFORE thyroidectomy in MEN2 patients",
+          "PARATHYROID HORMONE + calcium — MEN2A primary HPT screen",
+          "CT NECK/CHEST — extent + lymph node + lung metastases; AVOID iodinated contrast in DTC if RAI planned (delays RAI ≥4-6 weeks; some now consider acceptable)",
+          "WHOLE-BODY RAI SCAN — post-thyroidectomy DTC staging + treatment",
+          "PET-CT — radioiodine-refractory DTC, MTC, ATC restaging"
+        ],
+        "monitoring": [
+          "DTC: TSH suppression therapy (levothyroxine; target TSH <0.1 in high-risk, 0.1-0.5 intermediate-risk, 0.5-2.0 low-risk)",
+          "DTC: SERUM THYROGLOBULIN (Tg) — tumour marker; UNDETECTABLE post-thyroidectomy + RAI = remission; rising Tg = recurrence",
+          "Tg ANTIBODIES — interfere with Tg assay; alternative monitoring required if positive",
+          "Whole-body RAI scan + neck ultrasound + Tg — staged monitoring per ATA risk stratification",
+          "MTC: CALCITONIN + CEA every 3-6 months; doubling time prognostic (<6 months unfavourable, >2 years favourable)",
+          "MTC: imaging if calcitonin >150 pg/mL",
+          "ATC: rapid restaging due to aggressive course",
+          "PHEOCHROMOCYTOMA + HPT surveillance in MEN2 family screen",
+          "BONE DENSITY (DEXA) on chronic TSH suppression — osteoporosis risk in postmenopausal women",
+          "ATRIAL FIBRILLATION risk on chronic TSH suppression — counsel + monitor",
+          "QUALITY OF LIFE — fatigue, mood, weight, sleep on TSH suppression"
+        ],
+        "treatment": [
+          {
+            "line": "First-Line — Differentiated Thyroid Cancer (DTC) (Papillary, Follicular, Hürthle)",
+            "type": "Procedural + Drug",
+            "family": "Surgery + RAI + TSH Suppression",
+            "agents": [
+              "TOTAL THYROIDECTOMY (or hemithyroidectomy for selected low-risk T1 ≤4 cm) ± central + lateral lymph node dissection",
+              "RADIOACTIVE IODINE (RAI; I-131) — risk-adapted: low-risk often omit; intermediate-risk consider; high-risk standard; doses 30-150 mCi",
+              "LEVOTHYROXINE TSH SUPPRESSION — TSH target <0.1 high-risk, 0.1-0.5 intermediate-risk, 0.5-2.0 low-risk; lifelong"
+            ],
+            "notes": "DTC PRIMARY MANAGEMENT: surgery + selective RAI + TSH suppression. RAI requires low-iodine diet × 2 weeks + thyrogen (rhTSH) injection or thyroid hormone withdrawal pre-RAI. Most DTC patients cured.",
+            "guideline": "ATA Differentiated Thyroid Cancer Guidelines 2015 (updates 2024); CCO Endocrine Cancer; NCCN Thyroid 2024; SCDC Canadian Thyroid Group"
+          },
+          {
+            "line": "Recurrent / Metastatic / Radioiodine-Refractory DTC",
+            "type": "Drug",
+            "family": "Multi-Kinase Inhibitors + Targeted Therapy",
+            "agents": [
+              "LENVATINIB (Lenvima) 24 mg PO daily — first-line oral multi-kinase TKI; SELECT trial superior PFS vs placebo",
+              "SORAFENIB (Nexavar) 400 mg PO BID — alternative MKI; DECISION trial",
+              "CABOZANTINIB (Cometriq) 60 mg PO daily — alternative",
+              "BRAF V600E + MEK INHIBITORS — DABRAFENIB + TRAMETINIB for BRAF-mutated radioiodine-refractory DTC + ATC (FDA 2018 ATC, 2022 DTC)",
+              "RET-FUSION INHIBITORS — SELPERCATINIB (Retevmo) for RET-fusion+; PRALSETINIB (Gavreto) alternative",
+              "NTRK-FUSION INHIBITORS — LAROTRECTINIB, ENTRECTINIB for NTRK-fusion+ (rare)",
+              "REDIFFERENTIATION (selumetinib MEK inhibitor + RAI) — emerging strategy to restore RAI-sensitivity"
+            ],
+            "notes": "RADIOIODINE-REFRACTORY DTC — multi-kinase inhibitors first-line (lenvatinib preferred). MOLECULAR TESTING for BRAF, RET, NTRK fusions — TARGETED THERAPY available. Better tolerability + efficacy than older MKIs.",
+            "guideline": "ATA 2015 + 2024 update; SELECT trial Schlumberger NEJM 2015; DECISION trial Brose Lancet 2014; ASCO Thyroid Cancer Guidelines"
+          },
+          {
+            "line": "Medullary Thyroid Cancer (MTC)",
+            "type": "Procedural + Drug",
+            "family": "Surgery + RET-Targeted",
+            "agents": [
+              "TOTAL THYROIDECTOMY + COMPLETE CENTRAL NECK DISSECTION + LATERAL NECK DISSECTION as indicated — primary treatment",
+              "PROPHYLACTIC THYROIDECTOMY in MEN2 children based on RET mutation: MEN2B early (~6 months); MEN2A early-childhood (timing per ATA risk stratification)",
+              "RET-INHIBITORS for advanced MTC: SELPERCATINIB (Retevmo) — preferred per LIBRETTO-001 trial; PRALSETINIB (Gavreto) — alternative",
+              "VANDETANIB (Caprelsa) or CABOZANTINIB (Cometriq) — older MKIs with RET activity; less first-line modern era post-selpercatinib"
+            ],
+            "notes": "MTC — surgery + RET-targeted for advanced. RET MUTATION TESTING universal in MTC. Family screening + prophylactic thyroidectomy for MEN2 carriers.",
+            "guideline": "ATA Medullary Thyroid Cancer Guidelines 2015 (updates 2024); LIBRETTO-001 trial Wirth NEJM 2020; FDA selpercatinib 2020; FDA pralsetinib 2020"
+          },
+          {
+            "line": "Anaplastic Thyroid Cancer (ATC)",
+            "type": "Drug + Procedural + Strategy",
+            "family": "Multi-Modal Aggressive + Targeted",
+            "agents": [
+              "BRAF V600E MUTATION TESTING URGENT (~25-50% of ATC are BRAF+)",
+              "DABRAFENIB + TRAMETINIB (Tafinlar + Mekinist) — FDA 2018 for BRAF V600E+ ATC; transformative",
+              "RT + chemotherapy (paclitaxel, doxorubicin, carboplatin) — for BRAF-wildtype + adjuvant",
+              "TRACHEOSTOMY for airway compromise",
+              "SURGICAL DEBULKING if feasible",
+              "MULTIDISCIPLINARY EXPEDITED CARE — diagnosis to treatment within days"
+            ],
+            "notes": "ATC = MEDICAL EMERGENCY — rapid airway deterioration; expedited multidisciplinary care; BRAF testing urgent; dabrafenib + trametinib transformative for BRAF+ subset (was uniformly fatal).",
+            "guideline": "ATA Anaplastic Thyroid Cancer Guidelines 2021; Subbiah JCO 2018 (ROAR study dabrafenib + trametinib); FDA approval 2018"
+          },
+          {
+            "line": "Levothyroxine Therapy + TSH Suppression",
+            "type": "Drug",
+            "family": "Thyroid Hormone Replacement",
+            "agents": [
+              "LEVOTHYROXINE 1.6-2.0 mcg/kg PO once daily empty stomach (30-60 min before food) — lifelong post-thyroidectomy; titrate by TSH targets per ATA risk"
+            ],
+            "notes": "TSH SUPPRESSION targets: HIGH-RISK <0.1, INTERMEDIATE 0.1-0.5, LOW 0.5-2.0. ADVERSE EFFECTS of suppression: atrial fibrillation, osteoporosis (postmenopausal women), cardiovascular. Re-stratify periodically.",
+            "guideline": "ATA Differentiated Thyroid Cancer 2015; CCO; CSEM"
+          }
+        ],
+        "pearls": [
+          "DTC ~95% of thyroid cancer (papillary 85%, follicular 10%, Hürthle <5%) — favourable prognosis with surgery + RAI + TSH suppression",
+          "MTC ~3-5% — calcitonin marker; sporadic ~75% or hereditary MEN2A/2B/familial ~25%; RET mutation testing universal; prophylactic thyroidectomy in MEN2 carriers",
+          "ATC ~1-2% — UNDIFFERENTIATED; rapid; BRAF V600E TESTING URGENT — dabrafenib + trametinib transformative for BRAF+ subset",
+          "ATA RISK STRATIFICATION (low/int/high) — guides RAI + TSH suppression",
+          "TSH SUPPRESSION LIFELONG post-thyroidectomy + RAI (atrial fibrillation + osteoporosis risks counselled)",
+          "BETHESDA CYTOLOGY (I-VI) + molecular testing (ThyroSeq, Afirma) for indeterminate Bethesda III/IV — reduces unnecessary surgery",
+          "PHEOCHROMOCYTOMA SCREEN BEFORE THYROIDECTOMY in MEN2 (life-threatening if missed)",
+          "RAI-REFRACTORY DTC: LENVATINIB first-line MKI (SELECT trial); BRAF/RET/NTRK targeted for fusion+",
+          "SELPERCATINIB (Retevmo) RET-fusion+ DTC + RET-mutated MTC — transformative LIBRETTO-001",
+          "DABRAFENIB + TRAMETINIB BRAF V600E+ ATC + RAI-refractory DTC",
+          "THYROGLOBULIN MONITORING for DTC; CALCITONIN + CEA for MTC",
+          "TRABECULAR FRACTURES + AFib on chronic TSH suppression — counsel + monitor",
+          "LOW-IODINE DIET × 2 weeks before RAI",
+          "RADIOACTIVE IODINE PRECAUTIONS — 1-2 weeks distancing post-RAI (especially pregnant women + young children)",
+          "PHARMACIST ROLE: levothyroxine timing + interactions (Ca, Fe, food, PPI, soy), TSH target review, RAI prep, multi-kinase inhibitor counseling"
+        ],
+        "introduction": "Thyroid cancer is the most common endocrine malignancy. Differentiated thyroid cancer (DTC; papillary + follicular ~95%) has excellent prognosis with surgery + radioactive iodine + TSH suppression. Medullary thyroid cancer (MTC ~3-5%) requires RET mutation testing universally and prophylactic thyroidectomy in MEN2 carriers; selpercatinib (Retevmo) is transformative for RET-mutated/fusion+ disease. Anaplastic thyroid cancer (ATC ~1-2%) is a medical emergency with rapid airway deterioration; BRAF V600E testing is urgent — dabrafenib + trametinib has transformed BRAF+ ATC from uniformly fatal to durable responses. Pharmacist roles include levothyroxine timing + interactions counselling, TSH suppression target review, RAI preparation, and multi-kinase inhibitor toxicity management.",
+        "source": "ATA Differentiated Thyroid Cancer Guidelines 2015 + 2024 update; ATA Medullary Thyroid Cancer 2015; ATA Anaplastic Thyroid Cancer 2021; SELECT trial Schlumberger NEJM 2015; LIBRETTO-001 trial Wirth NEJM 2020; ROAR study Subbiah JCO 2018; CCO Endocrine Cancer 2024; NCCN Thyroid 2024"
+      },
+      {
+        "id": "head_neck_cancer",
+        "name": "Head & Neck Cancer (SCC)",
+        "subtitle": "Squamous Cell Carcinoma of Oral Cavity, Oropharynx, Larynx, Hypopharynx",
+        "rxfiles_ref": "Onc: Head & Neck | Squamous Cell Carcinoma",
+        "patho": "Head and neck cancers — predominantly SQUAMOUS CELL CARCINOMA (HNSCC ~90%) of the upper aerodigestive tract: ORAL CAVITY (tongue, floor of mouth, buccal mucosa, gingiva, hard palate, lips), OROPHARYNX (tonsils, base of tongue, soft palate, pharyngeal walls), LARYNX (supraglottic, glottic, subglottic), HYPOPHARYNX, NASOPHARYNX (distinct entity — EBV-associated). RISK FACTORS: TOBACCO + ALCOHOL (synergistic; ~75% of HNSCC); HUMAN PAPILLOMAVIRUS (HPV; especially HPV-16) — BIOLOGICALLY DISTINCT subset of OROPHARYNGEAL cancers (~70-80% of US/Canadian oropharyngeal SCC; better prognosis than HPV-negative); BETEL NUT (oral; South Asian); AREA-VARYING PREVALENCE (nasopharyngeal — Southeast Asia + EBV); poor oral hygiene; immunosuppression; UV exposure (lip cancer); occupational exposures (woodworkers, leather). EPIDEMIOLOGY: ~5-10% of all cancers; M:F 3-4:1 (HPV-negative); HPV+ oropharyngeal cancer rising in younger non-smokers. STAGING: AJCC 8th edition — DISTINCT staging for HPV+ vs HPV- oropharyngeal cancer (HPV+ down-staged given better prognosis). PROGNOSIS: HPV+ oropharyngeal — 5-yr OS ~80-85%; HPV-negative oropharyngeal ~50-60%; oral cavity 50-65%; laryngeal varies by site/stage; nasopharyngeal 70-75%.",
+        "signs": [
+          "PERSISTENT HEAD/NECK SYMPTOMS >2-3 weeks: hoarseness, dysphagia, odynophagia, otalgia, sore throat, oral ulcer/lesion, neck mass, oral bleeding, dysarthria, weight loss",
+          "ORAL CAVITY: non-healing ulcer (especially lateral tongue + floor of mouth), leukoplakia/erythroplakia (premalignant), submucosal mass",
+          "OROPHARYNX: tonsillar mass (often presents with neck mass; HPV+); base-of-tongue mass; chronic sore throat; referred otalgia",
+          "LARYNX: HOARSENESS (cardinal sign; >2-3 weeks of unexplained hoarseness — laryngoscopy); progressive dyspnea, stridor (advanced); neck mass",
+          "NASOPHARYNX: epistaxis, nasal obstruction, hearing loss (Eustachian tube), neck mass (level II-V especially); cranial neuropathies",
+          "CERVICAL LYMPHADENOPATHY — common presentation; especially level II/III for oropharyngeal/laryngeal/oral; level VA-VB for nasopharyngeal",
+          "TRISMUS (jaw stiffness) — oral cavity/oropharyngeal advanced",
+          "Cranial neuropathies (especially nasopharyngeal — CN II-VI); CN VII for parotid",
+          "Ear pain (referred from throat)",
+          "Distant metastases — lung most common; less common bone/liver"
+        ],
+        "diagnosis": [
+          "PHYSICAL EXAM with thorough head/neck inspection + bimanual palpation + cervical lymph node exam",
+          "FIBEROPTIC LARYNGOSCOPY / NASOPHARYNGOSCOPY — visualize larynx + pharynx + nasopharynx",
+          "PUNCH BIOPSY of suspicious lesion or FNA of neck mass — DEFINITIVE; HPV testing (p16 IHC; HPV DNA/RNA)",
+          "CT NECK + CHEST WITH CONTRAST — primary tumour + nodal + chest staging",
+          "PET-CT — for staging + restaging; especially distant + nodal disease + treatment response",
+          "MRI NECK — assess soft tissue extent, perineural invasion (especially oral cavity, nasopharynx)",
+          "EXAM UNDER ANESTHESIA (EUA) with biopsy + extent mapping (operating room)",
+          "HPV STATUS (p16 IHC + HPV ISH/PCR for confirmation if positive p16) — REQUIRED for OROPHARYNGEAL SCC; affects staging + prognosis + treatment de-escalation considerations",
+          "EBV STATUS for nasopharyngeal cancer (EBER ISH on biopsy) — diagnostic + prognostic",
+          "Dental evaluation + extraction of non-restorable teeth before head/neck RT (osteoradionecrosis prevention)",
+          "Audiogram (cisplatin pre-treatment baseline)",
+          "Renal + hepatic function (cisplatin baseline)",
+          "SWALLOWING + NUTRITION assessment (PEG tube consideration; head/neck cancers often need PEG due to dysphagia from disease + RT toxicity)"
+        ],
+        "monitoring": [
+          "DURING TREATMENT: cisplatin renal/ototoxicity (audiogram, creatinine, magnesium, electrolytes); RT-induced mucositis, dermatitis, dysphagia, weight loss",
+          "POST-TREATMENT: ASCO + CCO H&N CANCER SURVIVORSHIP — physical exam + scope every 1-3 months × 1 year, every 2-4 months × 2-5 years, then annually",
+          "Imaging (PET-CT or CT) at 3 months post-treatment + as clinically indicated",
+          "TSH every 6-12 months (RT to neck causes hypothyroidism in 30-50%)",
+          "DENTAL CARE — caries + osteoradionecrosis; xerostomia (often permanent)",
+          "SWALLOWING — chronic dysphagia common; SLP follow-up + therapy",
+          "TOBACCO + ALCOHOL CESSATION (recurrence risk; second primary cancers)",
+          "MOOD — depression common; PHQ-9 screening",
+          "EARLY PALLIATIVE CARE for advanced disease",
+          "SURVEILLANCE for SECOND PRIMARIES (lung, esophagus — same field cancerization)"
+        ],
+        "treatment": [
+          {
+            "line": "Early-Stage (T1-T2 N0)",
+            "type": "Procedural + Strategy",
+            "family": "Surgery OR Radiation",
+            "agents": [
+              "SURGICAL RESECTION with selective neck dissection (early-stage often surgery alone)",
+              "RADIATION THERAPY 60-70 Gy single-modality (alternative to surgery; equivalent outcomes for many sites)",
+              "TRANSORAL ROBOTIC SURGERY (TORS) — early oropharyngeal HPV+ — emerging organ-preserving option"
+            ],
+            "notes": "EARLY STAGE: surgery or RT (single modality) — equivalent outcomes for many sites; choose based on site, accessibility, patient preference, side effect profile.",
+            "guideline": "CCO Head & Neck Cancer 2024; NCCN H&N 2024; AHNS Practice Guidelines"
+          },
+          {
+            "line": "Locally-Advanced (T3-T4 OR N+) — Curative Intent",
+            "type": "Drug + Strategy",
+            "family": "Concurrent Chemoradiation (CRT) + Cisplatin",
+            "agents": [
+              "RADIATION THERAPY 70 Gy (35 fractions over 7 weeks) — definitive intent",
+              "CONCURRENT CISPLATIN — bolus 100 mg/m² IV q21 days × 3 cycles (Days 1, 22, 43) PREFERRED over weekly per modern data",
+              "ALTERNATIVE: weekly cisplatin 40 mg/m² IV × 7 cycles",
+              "ALTERNATIVE: CARBOPLATIN AUC 2 weekly if cisplatin contraindicated (renal, hearing, neuropathy)",
+              "CETUXIMAB (anti-EGFR mAb; Erbitux) — alternative if cisplatin contraindicated; INFERIOR to cisplatin per multiple trials (Bonner NEJM 2006 vs RT alone; cisplatin still preferred)"
+            ],
+            "notes": "CONCURRENT CHEMORADIATION (CRT) standard of care for locally-advanced. CISPLATIN preferred over cetuximab. PEG tube before RT (most patients require nutritional support during/after treatment). CISPLATIN RENAL + OTOTOXICITY + NEUROTOXICITY pharmacist-relevant.",
+            "guideline": "CCO H&N 2024; NCCN H&N 2024; INCT 2003 (concurrent CRT); RTOG 9111 (laryngeal preservation); Bonner NEJM 2006 cetuximab"
+          },
+          {
+            "line": "Recurrent / Metastatic (R/M HNSCC)",
+            "type": "Drug",
+            "family": "Immunotherapy + Chemotherapy",
+            "agents": [
+              "FIRST-LINE PD-L1+ (CPS ≥1; KEYNOTE-048): PEMBROLIZUMAB (Keytruda) ± chemotherapy (5-FU + cisplatin/carboplatin)",
+              "FIRST-LINE PD-L1 NEGATIVE: chemotherapy (5-FU + platinum + cetuximab — EXTREME regimen) OR pembrolizumab + chemo",
+              "SECOND-LINE: NIVOLUMAB (Opdivo) — CheckMate-141 trial OR pembrolizumab if not used first-line",
+              "ALTERNATIVE chemo: methotrexate, docetaxel, paclitaxel, capecitabine"
+            ],
+            "notes": "R/M HNSCC TRANSFORMED by IMMUNOTHERAPY — pembrolizumab first-line based on KEYNOTE-048 (Burtness Lancet 2019); nivolumab second-line CheckMate-141. PD-L1 testing required for treatment selection.",
+            "guideline": "KEYNOTE-048 trial Burtness Lancet 2019; CheckMate-141 Ferris NEJM 2016; CCO H&N 2024; NCCN H&N 2024"
+          },
+          {
+            "line": "Nasopharyngeal Cancer (Distinct Entity)",
+            "type": "Drug + Strategy",
+            "family": "Cisplatin-Based CRT + Adjuvant",
+            "agents": [
+              "INDUCTION CHEMOTHERAPY (TPF — taxane + platinum + 5-FU) — emerging for high-risk",
+              "CONCURRENT CISPLATIN-BASED CRT — primary treatment",
+              "ADJUVANT CISPLATIN + 5-FU OR CAPECITABINE — improves OS",
+              "TORIPALIMAB or NIVOLUMAB + chemotherapy — emerging metastatic NPC"
+            ],
+            "notes": "NASOPHARYNGEAL CANCER distinct from other H&N — EBV-associated; cisplatin CRT + adjuvant chemo; usually unresectable so primary RT + chemo. Capecitabine adjuvant trial 2022 OS benefit.",
+            "guideline": "NCCN NPC 2024; CSCO China NPC; EBV-DNA monitoring"
+          },
+          {
+            "line": "HPV+ Oropharyngeal Cancer — De-Intensification (Investigational)",
+            "type": "Strategy",
+            "family": "Reduced Toxicity Trials",
+            "agents": [
+              "TORS (transoral robotic surgery) + reduced-dose adjuvant RT — early HPV+ oropharyngeal",
+              "REDUCED-DOSE RT + concurrent cisplatin — investigational",
+              "DE-INTENSIFICATION TRIALS ongoing (NRG-HN002, RTOG 1016 [cetuximab WORSE than cisplatin], ECOG-3311)"
+            ],
+            "notes": "HPV+ oropharyngeal — DE-INTENSIFICATION trials seeking to reduce toxicity while maintaining excellent outcomes. RTOG 1016: cetuximab INFERIOR to cisplatin in HPV+ — cisplatin remains standard. Investigational only outside trials.",
+            "guideline": "NRG-HN002, RTOG 1016, ECOG-3311 trials; investigational"
+          },
+          {
+            "line": "Supportive Care During CRT",
+            "type": "Strategy",
+            "family": "Comprehensive",
+            "agents": [
+              "PEG TUBE / NG TUBE for nutrition during/after RT (most patients require)",
+              "FLUORIDE TRAYS + dental hygiene (post-RT xerostomia + caries prevention)",
+              "MUCOSITIS MANAGEMENT — magic mouthwash, doxepin rinse, photobiomodulation, careful oral hygiene",
+              "ANTIEMETICS (5-HT3 + dexamethasone for cisplatin)",
+              "CISPLATIN HYDRATION + magnesium replacement",
+              "AMIFOSTINE — historical xerostomia prophylaxis (limited modern use)",
+              "PILOCARPINE for established xerostomia",
+              "PJP PROPHYLAXIS during CRT + steroid use (some protocols)",
+              "VTE PROPHYLAXIS during admission",
+              "OPIOID for severe odynophagia (oral mucositis pain)"
+            ],
+            "notes": "SUPPORTIVE CARE during CRT extensive — multidisciplinary team essential (oncology, RT, surgery, dietitian, SLP, dental, social work, palliative care).",
+            "guideline": "MASCC/ISOO Mucositis Guidelines 2020; CCO H&N Supportive Care 2024"
+          }
+        ],
+        "pearls": [
+          "HPV+ OROPHARYNGEAL CANCER — biologically distinct, better prognosis (~80-85% 5-yr OS); separate AJCC 8th staging",
+          "CISPLATIN bolus 100 mg/m² q3 weeks × 3 PREFERRED over weekly for concurrent CRT",
+          "CETUXIMAB INFERIOR TO CISPLATIN per RTOG 1016 + Bonner NEJM 2006 — reserve for cisplatin-contraindicated",
+          "RADIATION INDUCTION chemotherapy TPF (taxane+platinum+5-FU) — limited role; concurrent CRT preferred for most",
+          "PEMBROLIZUMAB FIRST-LINE R/M HNSCC PD-L1 CPS ≥1 (KEYNOTE-048)",
+          "NIVOLUMAB SECOND-LINE post-platinum (CheckMate-141)",
+          "DENTAL EVALUATION + EXTRACTIONS BEFORE RT — osteoradionecrosis prevention",
+          "PEG TUBE most patients during/after RT — nutritional support",
+          "TSH MONITORING post-RT (hypothyroidism in 30-50%)",
+          "TOBACCO + ALCOHOL CESSATION — recurrence + second primary risk",
+          "FIELD CANCERIZATION — surveillance for second primaries (lung, esophagus)",
+          "NASOPHARYNGEAL — EBV-associated; distinct entity; cisplatin CRT + adjuvant",
+          "CISPLATIN OTOTOXICITY — audiogram baseline + monitoring; sodium thiosulfate CHILDREN cisplatin SIOP-PNET 5 trial",
+          "PHARMACIST ROLE: cisplatin renal/ototoxicity monitoring + hydration + magnesium + electrolytes; pembrolizumab/nivolumab IRAEs; mucositis management; pain (opioids); nutrition support",
+          "OUTCOMES: HPV+ oropharyngeal ~80-85% 5-yr OS; HPV- oropharyngeal ~50-60%; oral cavity 50-65%; laryngeal varies; NPC 70-75%"
+        ],
+        "introduction": "Head and neck cancers (predominantly squamous cell carcinoma — HNSCC) arise in oral cavity, oropharynx, larynx, hypopharynx, and nasopharynx. HPV-positive oropharyngeal cancer is biologically distinct with better prognosis (~80-85% 5-yr OS) and has separate AJCC 8th staging. Standard care for locally-advanced HNSCC is concurrent chemoradiation (cisplatin 100 mg/m² q3 weeks × 3 + RT 70 Gy); cetuximab is inferior to cisplatin per RTOG 1016. Pembrolizumab (KEYNOTE-048) is first-line for recurrent/metastatic disease; nivolumab is second-line (CheckMate-141). Nasopharyngeal cancer is EBV-associated and distinct. Pharmacist roles include cisplatin renal/ototoxicity monitoring with magnesium replacement + hydration, immune checkpoint inhibitor IRAE management, mucositis + dysphagia + nutritional support, and pre-treatment dental evaluation for osteoradionecrosis prevention.",
+        "source": "CCO Head & Neck Cancer 2024; NCCN H&N 2024; AHNS Practice Guidelines; KEYNOTE-048 Burtness Lancet 2019; CheckMate-141 Ferris NEJM 2016; Bonner NEJM 2006 cetuximab; RTOG 1016 (cetuximab inferior); MASCC/ISOO Mucositis 2020"
       }
     ]
   },
@@ -139514,6 +140231,366 @@ var DRUGS = {
     ],
     "counselling": "Take 1 tablet ONCE A DAY at the same time, with or without food. Common: tiredness, cough, mild stomach upset, mild swelling. Tell team IMMEDIATELY about: fever + breathing problems + swelling (possible differentiation syndrome — emergency), fast/irregular heartbeat, severe headache or vision changes, yellow skin/eyes, severe abdominal pain, severe rash. ECG checks regularly. Avoid grapefruit juice. Tell every prescriber + pharmacist all medications. Pregnancy: contraception during + 6 months. Continue daily until disease progression or unacceptable toxicity.",
     "source": "Health Canada Xospata monograph; ADMIRAL trial Perl NEJM 2019; CCS Hematology AML 2024; ELN AML 2022; LACEWING trial ongoing"
+  },
+  "temozolomide": {
+    "name": "Temozolomide",
+    "brand": "Temodal (Canada); Temodar (US); generic capsules",
+    "class": "Oral alkylating chemotherapy — imidazotetrazine prodrug of MTIC",
+    "napra": "Schedule I (Rx); specialty pharmacy; specialist neuro-oncology initiation",
+    "moa": "Oral imidazotetrazine prodrug — spontaneously converts at physiologic pH to 5-(3-methyl-1-triazeno)imidazole-4-carboxamide (MTIC) → methylates DNA at O6 + N7 of guanine → DNA damage + cell death. CROSSES BLOOD-BRAIN BARRIER (small molecule, lipophilic) — main indication CNS tumours. SENSITIVITY DEPENDS ON MGMT (O6-methylguanine-DNA methyltransferase) STATUS — MGMT METHYLATED tumours (silenced enzyme; cannot repair temozolomide damage) → BETTER RESPONSE. Synergistic with concurrent radiotherapy (Stupp regimen 2005).",
+    "indications": [
+      "GLIOBLASTOMA (newly-diagnosed) — STUPP REGIMEN: radiotherapy 60 Gy/30 fractions + concurrent temozolomide 75 mg/m²/day × 6 weeks, then adjuvant 150-200 mg/m² Days 1-5 every 28 days × 6 cycles",
+      "ANAPLASTIC ASTROCYTOMA — adjuvant after radiation",
+      "RECURRENT MALIGNANT GLIOMA",
+      "METASTATIC MELANOMA — limited use (immunotherapy preferred)",
+      "Off-label: low-grade glioma, brain metastases, neuroendocrine tumours, primary CNS lymphoma"
+    ],
+    "dosing": {
+      "Stupp regimen — concurrent phase": "75 mg/m² PO once daily × 42 days (matches RT duration)",
+      "Stupp regimen — adjuvant": "150 mg/m² PO Days 1-5 every 28 days for cycle 1 (escalate to 200 mg/m² cycle 2 if tolerated; max 6 cycles standard; some extend longer)",
+      "Hepatic / renal impairment": "No specific adjustment (mild-mod); severe: caution. Take ON EMPTY STOMACH (1h before or 2h after meals; pre-medicate with ondansetron 8 mg PO 30 min before for emesis). PJP PROPHYLAXIS during concurrent RT phase (TMP-SMX) — concurrent temozolomide + RT = high-risk lymphocytopenia"
+    },
+    "side_effects": {
+      "common": [
+        "Nausea + vomiting (~50%; pre-medicate with ondansetron)",
+        "Fatigue",
+        "Cytopenias (especially thrombocytopenia + lymphopenia — lymphocytopenia universal)",
+        "Constipation",
+        "Headache",
+        "Anorexia",
+        "Alopecia (mild)"
+      ],
+      "serious": [
+        "MYELOSUPPRESSION — thrombocytopenia + lymphopenia universal; monitor CBC weekly during concurrent phase + Day 22+29 of adjuvant cycles",
+        "PJP (Pneumocystis jirovecii pneumonia) — characteristic risk during concurrent RT + temozolomide phase from CD4 lymphopenia; PJP PROPHYLAXIS required (TMP-SMX)",
+        "HEPATOTOXICITY — fatal hepatic failure rare; LFT monitoring",
+        "MDS / SECONDARY LEUKEMIA (rare; alkylator class effect)",
+        "TUMOR LYSIS SYNDROME (high-burden disease; rare)",
+        "STEVENS-JOHNSON SYNDROME / TEN (rare)",
+        "DRUG REACTION WITH EOSINOPHILIA + SYSTEMIC SYMPTOMS (DRESS) — rare",
+        "Pulmonary toxicity (pneumonitis; rare)"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to temozolomide or dacarbazine (DTIC; cross-allergic)",
+      "Severe myelosuppression",
+      "Pregnancy (Cat D)"
+    ],
+    "interactions": [
+      "VALPROIC ACID — slight reduction in temozolomide clearance; usually clinically insignificant",
+      "WARFARIN — possible INR effects; monitor",
+      "Live vaccines — AVOID during treatment + ≥6 months post",
+      "CYTOTOXIC AGENTS — additive myelosuppression"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity (DNA-damaging alkylator). Contraception during + ≥6 months post; men: contraception + ≥3 months post (sperm DNA damage). Breastfeeding: AVOID.",
+    "pk": "Oral: F ~96-100%; peak 0.5-1.5 hours; rapid hydrolysis to MTIC; t1/2 ~1.8 hours; <15% protein-bound; renal excretion of metabolites; food reduces F ~30% (take empty stomach).",
+    "canadian_notes": "TEMODAL — Health Canada approved newly-diagnosed glioblastoma + anaplastic astrocytoma; ODB Limited Use; specialty pharmacy + neuro-oncology initiation. STUPP REGIMEN (Stupp NEJM 2005) standard since 2005. MGMT methylation testing +/- IDH status help prognosis + treatment intensity. Tumour Treating Fields (Optune) — adjunct modality post-RT in selected patients (FDA 2015; Health Canada submission limited adoption).",
+    "pearls": [
+      "STUPP REGIMEN (Stupp NEJM 2005) — RT + concurrent + adjuvant temozolomide; standard of care newly-diagnosed glioblastoma; OS benefit",
+      "MGMT METHYLATED tumours respond best (~21 months median OS vs ~13 months unmethylated)",
+      "PJP PROPHYLAXIS during concurrent RT phase — TMP-SMX; classic teaching pearl",
+      "EMPTY STOMACH dosing — F reduces ~30% with food",
+      "ONDANSETRON 30 min pre-dose — moderate emetogenic potential",
+      "THROMBOCYTOPENIA + LYMPHOPENIA universal — weekly CBC during concurrent phase",
+      "BBB CROSSING — useful for CNS tumours (lipophilic small molecule)",
+      "DACARBAZINE CROSS-ALLERGIC — dacarbazine is also imidazotetrazine; AVOID in cross-allergic",
+      "MEN AND WOMEN contraception — alkylator DNA damage to sperm + ova",
+      "RECURRENT GBM — bevacizumab (with or without temozolomide rechallenge); lomustine alternative",
+      "OPTIMAL DURATION 6 cycles standard; some continue 12+ if tolerating + no progression",
+      "COMBINATION WITH IDO/ANTI-PD-1 IMMUNOTHERAPY — limited benefit in GBM (CheckMate-498 negative)"
+    ],
+    "counselling": "Take EMPTY STOMACH (1 hour before or 2 hours after meals), at the same time daily. Take ondansetron 30 minutes before to prevent nausea. AVOID vaccines (live) during treatment + 6 months after. Common: nausea (improves with anti-nausea), tiredness, low blood counts. STOP and call team for: fever (especially with low neutrophils — emergency), severe rash with peeling skin, severe bleeding/bruising, yellow skin/eyes, severe shortness of breath. Get blood work as scheduled. Take TMP-SMX (Septra) during the radiation + chemotherapy combination phase to prevent rare lung infection. Pregnancy: highly effective contraception during + 6 months after (women); 3 months men.",
+    "source": "Health Canada Temodal monograph; Stupp NEJM 2005 (RT + temozolomide for GBM); EORTC/NCIC trial; CCO Neuro-Oncology 2024; NCCN CNS Cancers 2024"
+  },
+  "vincristine": {
+    "name": "Vincristine",
+    "brand": "Oncovin (historic); generic IV; Marqibo (liposomal — limited use)",
+    "class": "Vinca alkaloid microtubule inhibitor",
+    "napra": "Schedule I (Rx); IV-only hospital oncology stock; INTRATHECAL FATAL — IV ONLY",
+    "moa": "Vinca alkaloid — binds β-TUBULIN at vinca site → INHIBITS MICROTUBULE POLYMERIZATION → mitotic arrest in METAPHASE → cell death. Cell-cycle-specific (M-phase). Component of: ALL induction (with corticosteroids + asparaginase + anthracycline ± rituximab), HODGKIN/NHL regimens (CHOP, ABVD), Ewing sarcoma (VAC), rhabdomyosarcoma, retinoblastoma, neuroblastoma. UNIVERSALLY FATAL IF GIVEN INTRATHECALLY (even small dose) — major patient-safety issue; HAND-WRITTEN 'IV ONLY — FATAL IF INTRATHECAL' on every order; minibag administration (50-100 mL) standard since 2005.",
+    "indications": [
+      "ACUTE LYMPHOBLASTIC LEUKEMIA (ALL) — induction + consolidation component (with corticosteroid + asparaginase + anthracycline; ± rituximab if CD20+)",
+      "HODGKIN LYMPHOMA — ABVD (with adriamycin/doxorubicin + bleomycin + dacarbazine) regimen",
+      "NON-HODGKIN LYMPHOMA — CHOP + R-CHOP (with cyclophosphamide + doxorubicin + prednisone ± rituximab)",
+      "BURKITT LYMPHOMA — CODOX-M, hyperCVAD, R-EPOCH",
+      "MULTIPLE MYELOMA — VAD (historic; bortezomib regimens preferred now)",
+      "EWING SARCOMA — VAC (vincristine + actinomycin-D + cyclophosphamide)",
+      "RHABDOMYOSARCOMA, NEUROBLASTOMA, WILMS TUMOR, RETINOBLASTOMA — pediatric oncology",
+      "SOFT TISSUE SARCOMA"
+    ],
+    "dosing": {
+      "Adult (most regimens)": "1.4 mg/m² IV (CAPPED at 2 mg total dose) — administer in 50-100 mL minibag over 5-10 minutes (NOT IV PUSH historical — minibag prevents accidental intrathecal)",
+      "Pediatric": "1.5 mg/m² IV (CAPPED 2 mg)",
+      "Elderly / debilitated": "Reduce dose 30%",
+      "Hepatic impairment (bilirubin >3 mg/dL OR AST >180)": "Reduce 50%",
+      "Severe hepatic": "AVOID",
+      "Renal impairment": "No specific adjustment. VESICANT — central line preferred for prolonged courses; antidote HYALURONIDASE 150 units SC infiltrated for extravasation"
+    },
+    "side_effects": {
+      "common": [
+        "PERIPHERAL NEUROPATHY (DOSE-LIMITING; universal cumulative; sensory > motor; cumulative dose-related) — paresthesias, decreased DTRs, foot drop, hand weakness",
+        "Constipation / autonomic neuropathy ileus",
+        "Alopecia",
+        "Nausea, vomiting (mild-moderate)",
+        "Mucositis",
+        "SIADH (rare)"
+      ],
+      "serious": [
+        "BBW: FATAL IF GIVEN INTRATHECALLY — IV ONLY; minibag administration mandatory; pre-printed 'FOR IV USE ONLY — FATAL IF INTRATHECAL'",
+        "PERIPHERAL NEUROPATHY — dose-limiting; severe motor neuropathy; permanent residual deficits possible; counsel + serial neuro exam",
+        "AUTONOMIC NEUROPATHY — paralytic ileus, urinary retention, postural hypotension",
+        "VESICANT EXTRAVASATION — severe tissue necrosis; antidote HYALURONIDASE",
+        "TUMOR LYSIS SYNDROME — high disease burden",
+        "MYELOSUPPRESSION (less than other chemotherapy)",
+        "SIADH — hyponatremia; characteristic",
+        "RESPIRATORY DISTRESS — bronchospasm rare, especially with mitomycin combination"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to vinca alkaloids",
+      "DEMYELINATING DISEASE (Charcot-Marie-Tooth — severe neuropathy precipitation; AVOID)",
+      "Pregnancy (Cat D)",
+      "INTRATHECAL ADMINISTRATION (ABSOLUTE — fatal)"
+    ],
+    "interactions": [
+      "STRONG CYP3A4 INHIBITORS — increase neurotoxicity (clarithromycin, ketoconazole, itraconazole, ritonavir/cobicistat); AVOID combinations or severe neuropathy",
+      "ITRACONAZOLE / VORICONAZOLE specifically associated with severe vincristine neurotoxicity — caution + dose reduction; consider posaconazole alternative",
+      "STRONG CYP3A4 INDUCERS — decrease efficacy; AVOID",
+      "L-ASPARAGINASE — schedule sequentially (asparaginase given AFTER vincristine; reduces clearance)",
+      "MITOMYCIN — bronchospasm with combination",
+      "DIGOXIN — vincristine reduces digoxin absorption"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months post; men: 3 months. Breastfeeding: AVOID.",
+    "pk": "IV: triphasic; t1/2 terminal ~85 hours; 75% protein-bound; hepatic CYP3A4 metabolism extensively; biliary excretion 80%; minimal CNS penetration.",
+    "canadian_notes": "ONCOVIN / generic — Health Canada approved oncology indications; hospital oncology stock; pediatric + adult hematology/oncology. ISMP CANADA 2008 + WHO Vincristine Safety Recommendations: MINIBAG ADMINISTRATION mandatory to prevent fatal intrathecal errors. ODB Limited Use.",
+    "pearls": [
+      "INTRATHECAL = FATAL — universal warning; minibag administration mandatory since 2005",
+      "PERIPHERAL NEUROPATHY DOSE-LIMITING — sensory > motor; CUMULATIVE; counsel + serial exam",
+      "CHARCOT-MARIE-TOOTH DISEASE — AVOID (severe neuropathy precipitation)",
+      "AUTONOMIC NEUROPATHY: ileus, urinary retention, postural hypotension — STOOL SOFTENER PROPHYLAXIS",
+      "VESICANT — central line preferred; HYALURONIDASE antidote for extravasation",
+      "ITRACONAZOLE / VORICONAZOLE — severe neurotoxicity with vincristine; switch to posaconazole or fluconazole",
+      "MAX DOSE 2 mg (cap) regardless of BSA — prevents excess neurotoxicity",
+      "SIADH — characteristic; monitor sodium",
+      "ABVD HODGKIN regimen, R-CHOP NHL regimen, ALL induction (children + adults)",
+      "MAJOR PEDIATRIC ONCOLOGY drug — Wilms, Ewing, RMS, neuroblastoma",
+      "MITOMYCIN combination → bronchospasm",
+      "MARQIBO (liposomal vincristine) — limited use; relapsed Ph- ALL"
+    ],
+    "counselling": "(IV chemotherapy in hospital under monitoring) Common: numbness/tingling in hands and feet (peripheral neuropathy — tell team if worsening, weakness, or tripping; can become permanent), constipation (very common — start stool softener + laxative immediately), hair loss, mild nausea. Tell team IMMEDIATELY about: severe abdominal pain (possible ileus), inability to urinate, severe weakness/tripping, severe pain at IV site (extravasation). NEVER given into spinal fluid (intrathecal) — always IV only. AVOID itraconazole, voriconazole (antifungals — severe nerve damage). Pregnancy: contraception during + 6 months (women); 3 months (men).",
+    "source": "Health Canada Oncovin monograph; ISMP Canada Vincristine Safety 2008; WHO Vincristine Safety Recommendations; CCO Pediatric Oncology 2024"
+  },
+  "pegaspargase": {
+    "name": "Pegaspargase (PEG-Asparaginase)",
+    "brand": "Oncaspar; ASPARLAS (calaspargase pegol — longer-acting variant)",
+    "class": "PEGylated L-asparaginase — depletes circulating asparagine",
+    "napra": "Schedule I (Rx); IV/IM hospital oncology stock; pediatric/adult hematology specialist",
+    "moa": "PEGYLATED form of E. coli L-ASPARAGINASE — hydrolyzes circulating L-asparagine to aspartate + ammonia → DEPLETES asparagine. ALL leukemic blasts have low asparagine synthetase + cannot synthesize asparagine → DEPENDENT on circulating asparagine → STARVED + apoptosis. Normal cells synthesize asparagine + are unaffected. PEGYLATION extends t1/2 (~6 days vs native asparaginase 1 day) — fewer injections + reduced immunogenicity. Cornerstone of pediatric + AYA (adolescent + young adult) ALL induction + consolidation; emerging in older adult ALL with modern dose-intensified regimens.",
+    "indications": [
+      "ACUTE LYMPHOBLASTIC LEUKEMIA (ALL) — induction + consolidation in pediatric + AYA + selected adult protocols",
+      "Lymphoid blast crisis CML",
+      "Relapsed/refractory ALL (combination)",
+      "EXTRANODAL NK/T-CELL LYMPHOMA — SMILE regimen (with steroids, methotrexate, ifosfamide, etoposide)"
+    ],
+    "dosing": {
+      "Pediatric ALL induction": "2,500 IU/m² IV/IM every 14 days (max 3,750 IU total per dose); pediatric pharmacy specialist",
+      "AYA / adult ALL": "2,000-2,500 IU/m² IV/IM every 14 days × 2-6 doses per protocol",
+      "ASPARLAS (calaspargase pegol) — pediatric/AYA": "2,500 IU/m² IV every 21 days (longer t1/2)",
+      "Hepatic impairment (severe)": "Reduce dose / specialist judgment",
+      "Renal impairment": "No specific adjustment. Pre-medication: antiemetic (ondansetron) + diphenhydramine + acetaminophen ± hydrocortisone for HSR prevention"
+    },
+    "side_effects": {
+      "common": [
+        "HYPERSENSITIVITY REACTIONS (~10-30%) — anaphylaxis, urticaria, angioedema, bronchospasm; immunogenic — antibody development (~30%) reduces efficacy",
+        "PANCREATITIS (~5-10%) — characteristic; lipase + amylase monitoring; severe can be fatal",
+        "THROMBOSIS (~5-10%) — characteristic; CNS sinus thrombosis common; reduced antithrombin III",
+        "HEPATOTOXICITY — transaminase elevation common; hyperbilirubinemia; rare hepatic failure",
+        "HYPERGLYCEMIA — characteristic; pancreatic islet cell impairment; insulin needed transient",
+        "Hypoalbuminemia, hypofibrinogenemia, hypertriglyceridemia (severe; risk pancreatitis)",
+        "Nausea, fatigue, fever"
+      ],
+      "serious": [
+        "BBW: ANAPHYLAXIS — observe ≥1 hour post-dose; epinephrine + supportive ready",
+        "PANCREATITIS (~5-10%) — characteristic; lipase + amylase monitoring; permanent damage possible",
+        "THROMBOSIS — CNS sinus thrombosis (especially), DVT, PE; ANTITHROMBIN III deficiency; FFP or AT-III concentrate replacement may be needed",
+        "HEPATOTOXICITY — fulminant hepatic failure rare; serial LFT monitoring",
+        "HYPERGLYCEMIA — diabetic ketoacidosis-like; insulin treatment",
+        "HYPERTRIGLYCERIDEMIA — extreme; pancreatitis precursor; fenofibrate may be needed",
+        "BLEEDING — fibrinogen depletion; cryoprecipitate replacement",
+        "ENCEPHALOPATHY (rare; hyperammonemia)"
+      ]
+    },
+    "contraindications": [
+      "Severe hypersensitivity to E. coli L-asparaginase or PEG-asparaginase",
+      "Active pancreatitis or history of severe pancreatitis from asparaginase",
+      "Severe thrombosis history during prior asparaginase",
+      "Severe hepatic impairment",
+      "Pregnancy (Cat D)"
+    ],
+    "interactions": [
+      "STEROIDS (dexamethasone, prednisone) — additive hyperglycemia + thrombosis risk (used in regimens — accept + monitor)",
+      "METHOTREXATE — schedule asparaginase AFTER methotrexate (asparaginase reduces methotrexate efficacy)",
+      "VINCRISTINE — schedule vincristine BEFORE asparaginase (asparaginase reduces vincristine clearance)",
+      "Anticoagulants (warfarin) — additive bleeding/thrombosis complexity"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months. Breastfeeding: AVOID.",
+    "pk": "IV: peak immediate; IM: peak 24-72h; t1/2 ~5.7 days (vs native asparaginase 1.2 days); plasma asparagine depletion sustained 14+ days; not metabolized via CYP; reticuloendothelial system clearance.",
+    "canadian_notes": "ONCASPAR (pegaspargase) + ASPARLAS (calaspargase pegol — longer-acting; FDA 2018) — Health Canada approved pediatric + AYA ALL; specialty hospital pharmacy; pediatric oncology + hematology. ALL Together protocols + DFCI consortium + COG (Children's Oncology Group) protocols use modern PEG-asparaginase regimens. ANTIBODY MONITORING — silent inactivation common (~30%) — switch to ERWINIA-derived asparaginase (Erwinaze) for hypersensitivity / silent inactivation.",
+    "pearls": [
+      "ALL CORNERSTONE — pediatric + AYA induction + consolidation; emerging in modern adult protocols",
+      "MOA UNIQUE — depletes asparagine; ALL blasts cannot synthesize → starvation",
+      "HYPERSENSITIVITY ~10-30% — anaphylaxis; observe 1+ hour; pre-medicate",
+      "PANCREATITIS ~5-10% — discontinue if severe; permanent damage possible",
+      "THROMBOSIS ~5-10% — CNS sinus thrombosis especially; AT-III replacement",
+      "HYPERGLYCEMIA characteristic — insulin transiently",
+      "HYPERTRIGLYCERIDEMIA extreme — fenofibrate may be needed; pancreatitis precursor",
+      "ANTIBODY DEVELOPMENT (~30%) — silent inactivation; serum asparaginase activity monitoring",
+      "ERWINIA-DERIVED ASPARAGINASE (Erwinaze, Rylaze) — alternative for hypersensitivity / antibody-mediated inactivation",
+      "DFCI / COG protocols use intensified asparaginase in pediatric + AYA",
+      "MEDIASTINAL T-ALL / CNS positive ALL — high-risk; intensified asparaginase",
+      "SCHEDULING: vincristine BEFORE asparaginase; methotrexate BEFORE asparaginase",
+      "PHARMACIST ROLE: hypersensitivity prep (epi/diphen/hydrocortisone), pancreatitis monitoring, glucose, antithrombin III, fibrinogen, triglyceride monitoring"
+    ],
+    "counselling": "(IV/IM in hospital under monitoring; usually outpatient infusion clinic) Pre-medications given to prevent allergic reaction. Stay 1+ hour after for monitoring. Common: tiredness, mild fever, mild nausea, slightly increased blood sugar. Tell team IMMEDIATELY about: difficulty breathing, throat tightness, hives (allergic reaction — emergency), severe abdominal pain (pancreatitis), severe headache (possible blood clot in head), leg swelling, increased thirst/urination (high blood sugar), severe bleeding. Get blood tests for blood sugar, liver, pancreas, blood clotting as scheduled. Tell every prescriber + pharmacist about all medications. Pregnancy: contraception during + 6 months.",
+    "source": "Health Canada Oncaspar + Asparlas monographs; CCO Pediatric Oncology Group (POGO) Practice; DFCI ALL protocols; COG ALL protocols; SMILE regimen for NK/T lymphoma"
+  },
+  "mercaptopurine": {
+    "name": "Mercaptopurine (6-MP)",
+    "brand": "Purinethol (historic); Purixan (oral suspension); generic",
+    "class": "Thiopurine antimetabolite — purine analog",
+    "napra": "Schedule I (Rx)",
+    "moa": "Purine analog (6-thiopurine) — phosphorylated intracellularly to TGN (thioguanine nucleotides) → INCORPORATED INTO DNA + RNA → cytotoxic. Also inhibits PRPP amidotransferase → reduced de novo purine synthesis. METABOLISM: TPMT (thiopurine methyltransferase) genetic polymorphism critical — homozygous TPMT*3 ~0.3% (severe deficiency; require 90% dose reduction) + heterozygotes ~10% (~50% reduction); TPMT GENOTYPE/PHENOTYPE testing recommended PRE-INITIATION (NUDT15 also relevant in Asian populations; FDA 2019). NUDT15 deficiency causes severe myelosuppression. ALLOPURINOL INTERACTION classic — xanthine oxidase inhibition increases active 6-MP metabolites; reduce 6-MP 75% with allopurinol.",
+    "indications": [
+      "ACUTE LYMPHOBLASTIC LEUKEMIA (ALL) — maintenance phase (with methotrexate); 18-24 months total",
+      "ACUTE LYMPHOBLASTIC LYMPHOMA",
+      "INFLAMMATORY BOWEL DISEASE (IBD) — Crohn's + ulcerative colitis maintenance (off-label; sometimes used; azathioprine more common)"
+    ],
+    "dosing": {
+      "ALL maintenance (pediatric)": "75 mg/m² PO daily (typical); titrate to ANC target 1,000-1,500 / WBC 1,500-3,500",
+      "ALL maintenance (adult)": "60-75 mg/m² PO daily. Take ON EMPTY STOMACH — F reduced ~40% with food (especially milk/dairy). TPMT GENOTYPE/PHENOTYPE testing pre-initiation:.   - WT (~89%): standard dose.   - HETEROZYGOUS (~10%): start 30-50% standard dose.   - HOMOZYGOUS DEFICIENT (~0.3%): start 10% standard dose or AVOID. NUDT15 testing in Asian populations. Concurrent allopurinol: REDUCE 6-MP 75%",
+      "Hepatic impairment": "Reduce dose; monitor closely",
+      "Renal impairment (severe; CrCl <50)": "Reduce dose"
+    },
+    "side_effects": {
+      "common": [
+        "Myelosuppression (especially with TPMT/NUDT15 deficiency or allopurinol)",
+        "Hepatotoxicity (transaminase elevation common; ~25%)",
+        "Nausea, vomiting, mucositis",
+        "Pancreatitis (especially with IBD use)",
+        "Rash"
+      ],
+      "serious": [
+        "BBW: SEVERE MYELOSUPPRESSION + INFECTION + BLEEDING — TPMT/NUDT15 deficiency catastrophic if not screened",
+        "HEPATOTOXICITY — including veno-occlusive disease (VOD/SOS) at higher doses",
+        "PANCREATITIS (especially in IBD; ~5%)",
+        "SECONDARY MALIGNANCIES (long-term immunosuppression — non-melanoma skin cancer, lymphoma; especially Crohn's)",
+        "INFECTION (immunosuppression)",
+        "ALOPECIA",
+        "Stevens-Johnson syndrome (rare)",
+        "Hepatosplenic T-cell lymphoma (rare; with prolonged use in young IBD patients especially with anti-TNF combination)"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to mercaptopurine",
+      "Severe TPMT or NUDT15 deficiency without dose reduction",
+      "Severe myelosuppression unrelated to disease",
+      "Pregnancy (Cat D)"
+    ],
+    "interactions": [
+      "ALLOPURINOL (or febuxostat) — INHIBITS xanthine oxidase → INCREASES 6-MP toxic metabolites SIGNIFICANTLY; REDUCE 6-MP DOSE 75% (CRITICAL pearl)",
+      "FEBUXOSTAT — same mechanism as allopurinol; major interaction",
+      "WARFARIN — INR may decrease (variable; monitor)",
+      "AMINOSALICYLATES (mesalamine, sulfasalazine, balsalazide) — inhibit TPMT → may increase 6-MP toxicity; monitor CBC + LFTs (especially in IBD combinations)",
+      "METHOTREXATE — synergistic in ALL (intentional combination)",
+      "Live vaccines — AVOID during treatment + ≥3 months"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity in first trimester. Risk-benefit; specialist guidance. Many IBD patients continue azathioprine/6-MP through pregnancy with good outcomes per modern data (PIANO registry). Breastfeeding: passes into milk; AAP cautions; some pediatric/IBD experts considered OK if low-dose maintenance.",
+    "pk": "Oral: F ~50% (variable; reduces ~40% with food/dairy); peak 1-2 hours; ~20% protein-bound; t1/2 ~1 hour (parent); active metabolites (TGN) intracellular t1/2 longer; hepatic metabolism via TPMT, xanthine oxidase, hypoxanthine-guanine phosphoribosyltransferase; renal excretion of metabolites.",
+    "canadian_notes": "PURINETHOL / generic / PURIXAN (oral suspension for pediatric) — Health Canada approved ALL maintenance; ODB General Benefit (generic). PURIXAN (oral suspension; Health Canada pediatric) for children unable to swallow tablets. TPMT testing widely available — recommended pre-initiation. PHARMACIST ROLE: TPMT result interpretation, allopurinol interaction screen, food/dairy timing, CBC + LFT monitoring, IBD vs ALL dose differences.",
+    "pearls": [
+      "TPMT (and NUDT15 in Asian populations) GENOTYPE/PHENOTYPE testing before initiation — major safety pearl",
+      "ALLOPURINOL + 6-MP — REDUCE 6-MP 75% (critical; xanthine oxidase inhibition increases toxic metabolites)",
+      "FEBUXOSTAT same mechanism — same caution",
+      "EMPTY STOMACH dosing — F reduced 40% with food (especially milk/dairy)",
+      "ALL MAINTENANCE 18-24 months total — major component of curative pediatric ALL therapy",
+      "AZATHIOPRINE (Imuran) is metabolized to 6-MP — same TPMT considerations",
+      "PURIXAN ORAL SUSPENSION for pediatric ALL maintenance",
+      "TPMT TGN MONITORING (thioguanine nucleotide levels) in some IBD/ALL programs",
+      "AMINOSALICYLATES (mesalamine, sulfasalazine) — inhibit TPMT; monitor IBD combinations",
+      "HEPATOSPLENIC T-CELL LYMPHOMA — rare but devastating; young men with IBD on prolonged 6-MP/AZA + anti-TNF combination",
+      "PANCREATITIS — characteristic AE in IBD use (~5%); discontinue if severe",
+      "VOD/SOS at higher doses (chemotherapy regimens) — hepatotoxicity",
+      "PIANO REGISTRY — IBD pregnancy data reassuring for AZA/6-MP continuation"
+    ],
+    "counselling": "Take ONCE A DAY at the same time, on EMPTY STOMACH (1 hour before or 2 hours after meals); AVOID milk/dairy at the same time. CRITICAL: tell every prescriber + pharmacist that you take this — many drug interactions especially ALLOPURINOL or FEBUXOSTAT (gout medications) which can cause dangerous drug accumulation. Common: nausea, mild stomach upset, low blood counts. STOP and call team for: fever (low neutrophils risk infection — emergency), severe abdominal pain (pancreatitis), yellow skin/eyes, severe rash, easy bruising/bleeding, severe diarrhea. Get blood work (CBC, LFTs) regularly. Get genetic testing (TPMT) before starting if not done. Pregnancy: discussion with specialist — sometimes continued in IBD; ALL pregnancy specialist care.",
+    "source": "Health Canada Purinethol + Purixan monographs; FDA NUDT15 testing 2019; COG ALL protocols; CAG IBD Guidelines 2024; PIANO Registry IBD Pregnancy Data"
+  },
+  "decitabine": {
+    "name": "Decitabine",
+    "brand": "Dacogen (IV); Inqovi (oral cedazuridine + decitabine combination — FDA 2020)",
+    "class": "Hypomethylating agent (HMA); deoxycytidine analog",
+    "napra": "Schedule I (Rx); IV hospital + oral specialty pharmacy",
+    "moa": "DEOXYCYTIDINE analog incorporated into DNA → IRREVERSIBLY INHIBITS DNA METHYLTRANSFERASE → HYPOMETHYLATION → re-expression of silenced tumor suppressor genes + cell differentiation. Higher specificity for DNA than azacitidine (incorporates only into DNA; azacitidine into both DNA + RNA). Cornerstone of HIGH-RISK MDS + AML therapy alongside azacitidine. ORAL FORMULATION (Inqovi — cedazuridine inhibits cytidine deaminase that breaks down decitabine; allows oral absorption) — equivalent to IV per ASCERTAIN trial. Combination with venetoclax (Dec-Ven) similar efficacy to Aza-Ven for unfit AML.",
+    "indications": [
+      "MYELODYSPLASTIC SYNDROME (MDS) — higher-risk; FDA 2006",
+      "ACUTE MYELOID LEUKEMIA (AML) — combined with venetoclax for unfit (Dec-Ven; alternative to Aza-Ven); also single-agent maintenance in select",
+      "CHRONIC MYELOMONOCYTIC LEUKEMIA (CMML)",
+      "INQOVI (oral; cedazuridine + decitabine) — MDS + CMML; FDA 2020"
+    ],
+    "dosing": {
+      "MDS / AML (Dacogen IV)": "20 mg/m² IV over 1 hour daily × 5 days every 28 days OR 15 mg/m² IV over 3 hours every 8 hours × 3 days every 6 weeks",
+      "Inqovi (oral; MDS + CMML)": "1 tablet PO once daily × 5 days every 28 days; on EMPTY STOMACH (1h before / 2h after); cedazuridine 100 mg + decitabine 35 mg",
+      "Dec-Ven AML unfit": "Decitabine 20 mg/m² IV Days 1-5 + venetoclax ramp (100→200→400 mg D1-3) then 400 mg D4-28",
+      "Renal impairment (CrCl <30)": "Avoid (limited data)",
+      "Hepatic impairment (severe)": "Reduce dose. Reconstitute IV: refrigerate after reconstitution; use within 7 hours"
+    },
+    "side_effects": {
+      "common": [
+        "Cytopenias (universal — neutropenia, thrombocytopenia, anemia)",
+        "Nausea, vomiting, constipation, diarrhea",
+        "Fatigue, fever",
+        "Cough, pneumonia",
+        "Hyperglycemia (modest)"
+      ],
+      "serious": [
+        "MYELOSUPPRESSION + INFECTION + BLEEDING — universal; CBC q1-2 weeks",
+        "TUMOR LYSIS SYNDROME (Dec-Ven combination — venetoclax especially)",
+        "HEPATOTOXICITY",
+        "SEVERE PNEUMONIA / RESPIRATORY INFECTION",
+        "SECONDARY MALIGNANCIES",
+        "Stevens-Johnson syndrome (rare)"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity",
+      "Pregnancy (Cat D)",
+      "Severe hepatic impairment"
+    ],
+    "interactions": [
+      "VENETOCLAX (intentional Dec-Ven) — additive myelosuppression + TLS risk; structured ramp + monitoring",
+      "STRONG CYP3A4 INHIBITORS with venetoclax — significant venetoclax level increase; reduce venetoclax 75% with posaconazole/voriconazole/clarithromycin",
+      "Live vaccines — AVOID",
+      "INQOVI: take EMPTY STOMACH; CYP enzyme inhibitors/inducers minor relevance"
+    ],
+    "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months; men: 3 months. Breastfeeding: AVOID.",
+    "pk": "IV: peak immediate; t1/2 ~30 min; rapid + extensive deamination by cytidine deaminase; renal excretion of metabolites. Oral (Inqovi): cedazuridine inhibits cytidine deaminase enabling oral absorption; F enhanced; peak 1-3 hours.",
+    "canadian_notes": "DACOGEN (IV) — Health Canada approved MDS + AML; ODB Limited Use; specialty pharmacy + hematology. INQOVI (oral) — FDA 2020 + Health Canada submission limited; oral convenience for MDS/CMML; cost ~$15K/cycle. CCS Hematology MDS 2024: HMAs (azacitidine + decitabine) standard for higher-risk MDS; Dec-Ven similar to Aza-Ven for unfit AML.",
+    "pearls": [
+      "DEOXYCYTIDINE analog — DNA-specific (vs azacitidine DNA + RNA)",
+      "MDS + AML cornerstone HMA alongside azacitidine",
+      "INQOVI (oral combo with cedazuridine) — equivalent to IV per ASCERTAIN trial; convenience advantage",
+      "DEC-VEN AML — alternative to AZA-VEN for unfit AML; similar efficacy",
+      "VENETOCLAX RAMP-UP for TLS prevention",
+      "MINIMUM 4-6 CYCLES before assessing response (slow-acting)",
+      "RENAL DOSING — CrCl <30 avoid",
+      "ORAL Inqovi — empty stomach; cedazuridine prevents decitabine breakdown",
+      "STRONG CYP3A4 INHIBITORS with venetoclax — reduce venetoclax 75%",
+      "MDS HIGHER-RISK (IPSS-R) — first-line HMA monotherapy",
+      "BCR-ABL+ LIKE phenotype — ponatinib + decitabine emerging combination",
+      "PHARMACIST ROLE: cycle scheduling, antimicrobial prophylaxis, transfusion support, oral Inqovi food timing"
+    ],
+    "counselling": "(IV in hospital infusion clinic OR oral Inqovi at home empty stomach) Common: low blood counts (need transfusions + infection risk), mild nausea, fatigue. Tell team IMMEDIATELY about: fever (especially with low neutrophils — emergency), severe nausea/vomiting, severe weakness, easy bruising/bleeding, severe rash. Avoid sick contacts. Cycles every 28 days; minimum 4-6 cycles before assessing if working. With venetoclax combination: careful ramp-up + hydration + electrolyte monitoring to prevent tumor lysis syndrome. Pregnancy: contraception during + 6 months (women); 3 months (men). Get blood work (CBC) every 1-2 weeks.",
+    "source": "Health Canada Dacogen + Inqovi monographs; FDA Inqovi approval 2020; ASCERTAIN trial Garcia-Manero Lancet Hematol 2020; CCS Hematology MDS 2024; ELN MDS 2024"
   }
 
 };
@@ -141474,7 +142551,12 @@ var FAMILY_MAP = {
   "daunorubicin": "Anthracyclines",
   "azacitidine": "Hypomethylating Agents",
   "midostaurin": "FLT3 Inhibitors",
-  "gilteritinib": "FLT3 Inhibitors"
+  "gilteritinib": "FLT3 Inhibitors",
+  "temozolomide": "Antineoplastic Alkylating Agents",
+  "vincristine": "Vinca Alkaloids",
+  "pegaspargase": "L-Asparaginase Enzymes",
+  "mercaptopurine": "Antimetabolites",
+  "decitabine": "Hypomethylating Agents"
 };
 var NAPRA_ODB_DATA = {
   "amoxicillin": {
@@ -151199,6 +152281,51 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "ODB LU; specialist hematology; R/R FLT3+ AML.",
     "luCode": "Verify current Ontario e-Formulary LU code for Xospata (specialty oncology — pCPA negotiated)",
     "notes": "Selective FLT3 inhibitor; R/R FLT3+ AML monotherapy (ADMIRAL trial); differentiation syndrome characteristic AE; once-daily."
+  },
+  "temozolomide": {
+    "name": "Temozolomide (Temodal)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); specialty pharmacy.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU; specialist neuro-oncology.",
+    "luCode": "Verify current Ontario e-Formulary LU code for Temodal (specialty oncology — pCPA negotiated; check Ontario.ca pharmacy formulary)",
+    "notes": "Oral alkylator BBB-crossing; STUPP REGIMEN (NEJM 2005) RT + concurrent + adjuvant for newly-diagnosed GBM; MGMT methylation prognostic; PJP prophylaxis during concurrent RT phase."
+  },
+  "vincristine": {
+    "name": "Vincristine (Oncovin; generic)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); IV-ONLY hospital oncology; FATAL IF INTRATHECAL.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "Hospital oncology; ODB LU.",
+    "luCode": "Verify current Ontario e-Formulary LU code for vincristine (specialty oncology)",
+    "notes": "Vinca alkaloid; ALL/NHL/Hodgkin/sarcoma cornerstone; FATAL if intrathecal — minibag administration mandatory (ISMP Canada 2008); peripheral neuropathy dose-limiting; itraconazole/voriconazole interaction."
+  },
+  "pegaspargase": {
+    "name": "Pegaspargase (Oncaspar; Asparlas calaspargase pegol)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); hospital + specialty pharmacy.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU; specialist hematology/oncology.",
+    "luCode": "Verify current Ontario e-Formulary LU code for Oncaspar (specialty oncology — pCPA negotiated)",
+    "notes": "PEGylated L-asparaginase; ALL pediatric + AYA cornerstone; hypersensitivity ~10-30% (Erwinia alternative for HSR/silent inactivation); pancreatitis + thrombosis + hyperglycemia + hepatotoxicity characteristic AEs."
+  },
+  "mercaptopurine": {
+    "name": "Mercaptopurine (Purinethol; Purixan)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx).",
+    "odbStatus": "General Benefit",
+    "odbDetail": "Generic mercaptopurine covered; Purixan oral suspension pediatric.",
+    "luCode": null,
+    "notes": "Thiopurine antimetabolite; ALL maintenance + IBD off-label; TPMT (and NUDT15 in Asian populations) genotype testing pre-init; ALLOPURINOL/FEBUXOSTAT REDUCE 6-MP 75%; empty stomach dosing."
+  },
+  "decitabine": {
+    "name": "Decitabine (Dacogen IV; Inqovi oral combo)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); hospital + oral specialty pharmacy.",
+    "odbStatus": "Limited Use",
+    "odbDetail": "ODB LU; AML/MDS specialist hematology.",
+    "luCode": "Verify current Ontario e-Formulary LU code for Dacogen / Inqovi (specialty oncology — pCPA negotiated)",
+    "notes": "Hypomethylating agent; MDS + AML cornerstone; Dec-Ven alternative to Aza-Ven for unfit AML; oral Inqovi (cedazuridine combo) FDA 2020 ASCERTAIN trial."
   }
 };
 var MINOR_AILMENTS = [
@@ -174345,6 +175472,61 @@ var PREG_DATA = {
     "bfDetail": "AVOID breastfeeding (per labeling).",
     "alternatives": "",
     "source": "Health Canada Xospata monograph; ADMIRAL trial Perl NEJM 2019; CCS Hematology AML 2024; ELN AML 2022; LACEWING trial ongoing"
+  },
+  "temozolomide": {
+    "name": "Temozolomide (Temodal (Canada); Temodar (US); generic capsules)",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity (DNA-damaging alkylator). Contraception during + ≥6 months post; men: contraception + ≥3 months post (sperm DNA damage). Breastfeeding: AVOID.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Temodal monograph; Stupp NEJM 2005 (RT + temozolomide for GBM); EORTC/NCIC trial; CCO Neuro-Oncology 2024; NCCN CNS Cancers 2024"
+  },
+  "vincristine": {
+    "name": "Vincristine (Oncovin (historic); generic IV; Marqibo (liposomal — limited use))",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity. Contraception during + 6 months post; men: 3 months. Breastfeeding: AVOID.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Oncovin monograph; ISMP Canada Vincristine Safety 2008; WHO Vincristine Safety Recommendations; CCO Pediatric Oncology 2024"
+  },
+  "pegaspargase": {
+    "name": "Pegaspargase (PEG-Asparaginase) (Oncaspar; ASPARLAS (calaspargase pegol — longer-acting variant))",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity. Contraception during + 6 months. Breastfeeding: AVOID.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Oncaspar + Asparlas monographs; CCO Pediatric Oncology Group (POGO) Practice; DFCI ALL protocols; COG ALL protocols; SMILE regimen for NK/T lymphoma"
+  },
+  "mercaptopurine": {
+    "name": "Mercaptopurine (6-MP) (Purinethol (historic); Purixan (oral suspension); generic)",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity in first trimester. Risk-benefit; specialist guidance. Many IBD patients continue azathioprine/6-MP through pregnancy with good outcomes per modern data (PIANO registry). Breastfeeding: passes into milk; AAP cautions; some pediatric/IBD experts considered OK if low-dose maintenance.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Purinethol + Purixan monographs; FDA NUDT15 testing 2019; COG ALL protocols; CAG IBD Guidelines 2024; PIANO Registry IBD Pregnancy Data"
+  },
+  "decitabine": {
+    "name": "Decitabine (Dacogen (IV); Inqovi (oral cedazuridine + decitabine combination — FDA 2020))",
+    "pregRisk": "Avoid",
+    "pregColor": "#dc2626",
+    "bfRisk": "Avoid",
+    "bfColor": "#dc2626",
+    "pregDetail": "Cat D. Embryofetal toxicity. Contraception during + 6 months; men: 3 months. Breastfeeding: AVOID.",
+    "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada Dacogen + Inqovi monographs; FDA Inqovi approval 2020; ASCERTAIN trial Garcia-Manero Lancet Hematol 2020; CCS Hematology MDS 2024; ELN MDS 2024"
   }
 };
 
