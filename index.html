@@ -11184,6 +11184,125 @@ var DISEASES = {
         ],
         "introduction": "Essential tremor is the most common movement disorder, characterized by bilateral postural and kinetic tremor without bradykinesia or rigidity. Differentiation from Parkinson's disease (rest tremor) is essential. First-line therapy is propranolol or primidone (equivalent Class A efficacy). Topiramate and gabapentin are second-line options. Refractory disease may benefit from DBS or MR-guided focused ultrasound thalamotomy. Strong genetic component and significant functional/social impact warrant early treatment when bothersome.",
         "source": "AAN Practice Guideline Essential Tremor 2011 (Zesiewicz Neurology 2011), 2025 update. Movement Disorder Society Consensus on Tremor 2018 (Bhatia Mov Disord 2018). Elias MR-Guided FUS NEJM 2016. Canadian Movement Disorders Group (CMDG)."
+      },
+      {
+        "id": "status_epilepticus",
+        "name": "Status Epilepticus",
+        "subtitle": "Continuous or recurrent seizures — NCS 2012 / ESETT 2019 / ACAES",
+        "patho": "TIME-DEFINED EMERGENCY: continuous seizure activity ≥5 min OR ≥2 seizures without return to baseline in between (operational definition; ILAE 2015 distinguishes T1 — when treatment should begin = 5 min, T2 — when permanent neuronal injury risk begins = 30 min for convulsive). CONVULSIVE STATUS — generalized tonic-clonic activity; visible. NON-CONVULSIVE STATUS (NCSE) — persistent or recurrent EEG seizure activity without prominent motor; underdiagnosed; requires EEG to detect. SUBTLE STATUS — late-stage convulsive evolving to non-convulsive (motor exhaustion + ongoing electrographic). CAUSES: medication non-adherence (most common in known epilepsy), withdrawal (alcohol, benzodiazepines, opioids), febrile (children), CNS infection (meningitis, encephalitis), stroke, traumatic brain injury, hypoxia, hypoglycemia, electrolyte (Na, Ca, Mg), uremia, hepatic encephalopathy, drug toxicity, autoimmune encephalitis (anti-NMDAR, LGI1, GABA-B), brain tumor, hippocampal sclerosis. Mortality ~20% (refractory super-refractory higher 30-50%); permanent neurological injury 10-20%.",
+        "signs": "CONVULSIVE: generalized tonic-clonic activity, eye deviation, urinary incontinence, tongue biting, postictal confusion. EVOLVING — may transition to subtle motor + non-convulsive. NON-CONVULSIVE — altered mental status, confusion, fluctuating consciousness, abnormal automatisms, eye twitching/nystagmus only — REQUIRES EEG to confirm; high suspicion in unexplained altered mental status especially elderly, post-cardiac arrest, post-CNS injury. POST-ICTAL: confusion, focal weakness (Todd's paralysis), aphasia.",
+        "diagnosis": "CLINICAL diagnosis (convulsive — visible). Early intervention takes precedence over diagnostic workup. CONCURRENT WORKUP (do not delay treatment): GLUCOSE bedside (rule out hypoglycemia — give D50W if low); ELECTROLYTES (Na, Ca, Mg, urea, Cr); CBC; LFTs; AED levels; toxicology; CT head non-contrast; LP if meningitis suspected (after CT); EEG (continuous monitoring once stabilized); MRI brain when stable. NCSE: cEEG monitoring required for diagnosis. Anti-neuronal antibodies if suspicion (paraneoplastic/autoimmune encephalitis).",
+        "monitoring": "Continuous ECG, BP, SpO2, capnography, EEG (especially after benzodiazepine + AED — to confirm seizure cessation + identify NCSE), pupils, GCS, post-ictal recovery. Glucose, electrolytes, lactate.",
+        "treatment": [
+          {
+            "line": "STAGE 1 (0-5 min): Stabilization",
+            "type": "ABC + glucose + benzodiazepine prep",
+            "family": "Resuscitation",
+            "agents": [
+              "AIRWAY — head positioning; supplemental O2; suction; NPA if needed; do NOT force objects in mouth",
+              "MONITOR vitals + ECG + SpO2 + capnography",
+              "IV ACCESS (or IO if difficult)",
+              "BEDSIDE GLUCOSE — D50W 25-50 g IV if hypoglycemia (or D10W 100-200 mL); THIAMINE 100 mg IV if alcoholic/malnourished BEFORE glucose to prevent Wernicke's",
+              "ELECTROLYTE QUICK CHECK if available",
+              "POSITION on side once initial control achieved (aspiration prevention)"
+            ],
+            "notes": "Concurrent workup + initial dose benzodiazepine.",
+            "guideline": "Neurocritical Care Society (NCS) Status Epilepticus Guideline 2012 (Brophy Neurocritical Care 2012); ACAES Canadian Adult Epilepsy"
+          },
+          {
+            "line": "STAGE 2 (5-20 min): FIRST-LINE benzodiazepine",
+            "type": "Benzodiazepine",
+            "family": "GABA-A allosteric",
+            "agents": [
+              "IV ACCESS AVAILABLE: LORAZEPAM 0.1 mg/kg IV (typical 4 mg adult) at 2 mg/min — preferred (longer duration than diazepam); MAY repeat ×1 in 5-10 min if seizure persists",
+              "OR DIAZEPAM 0.15-0.2 mg/kg IV (typical 5-10 mg adult); shorter duration; need follow-on AED earlier",
+              "NO IV ACCESS: MIDAZOLAM 10 mg IM (>40 kg adult) ONCE — RAMPART trial Silbergleit NEJM 2012 — IM midazolam non-inferior to IV lorazepam in pre-hospital setting",
+              "OR INTRANASAL MIDAZOLAM 5-10 mg, BUCCAL MIDAZOLAM 5-10 mg, RECTAL DIAZEPAM 0.5 mg/kg (children) — pediatric/community settings",
+              "DOSE FULL — UNDERDOSING IS COMMON CAUSE OF FAILURE — NO STEP-DOWN"
+            ],
+            "notes": "Most common reason for failure = underdosing benzodiazepine. Give full dose.",
+            "guideline": "NCS 2012; ESETT 2019; RAMPART Silbergleit NEJM 2012"
+          },
+          {
+            "line": "STAGE 3 (20-40 min): SECOND-LINE non-benzo AED if persistent",
+            "type": "AED loading",
+            "family": "Anticonvulsant",
+            "agents": [
+              "LEVETIRACETAM 60 mg/kg IV (max 4500 mg) over 10 min — NEW FIRST-LINE alternative (ESETT 2019; few drug interactions; well-tolerated; fewer hemodynamic effects than fosphenytoin)",
+              "OR FOSPHENYTOIN 20 mg PE/kg IV at 150 mg/min (or PHENYTOIN 20 mg/kg IV at 50 mg/min — slower; vesicant — central preferred; NS only)",
+              "OR VALPROATE 40 mg/kg IV (max 3000 mg) over 10 min — ESETT 2019 alternative (avoid pregnancy + suspected liver/mitochondrial disease)",
+              "ESETT trial Kapur NEJM 2019 — levetiracetam, fosphenytoin, valproate equivalent in efficacy + safety (~50% seizure cessation each); choice based on availability + comorbidities",
+              "BRIVARACETAM 100-200 mg IV — alternative if available",
+              "Pediatric: same agents weight-based"
+            ],
+            "notes": "ESETT 2019 changed practice — levetiracetam, fosphenytoin, valproate equivalent. LEV widely preferred for AE profile + interactions.",
+            "guideline": "ESETT Kapur NEJM 2019; NCS 2012; ILAE"
+          },
+          {
+            "line": "STAGE 4 (40-60+ min) — REFRACTORY: anesthetic infusion + intubation",
+            "type": "Anesthetic + ICU",
+            "family": "Continuous infusion",
+            "agents": [
+              "INTUBATION + ICU + cEEG monitoring",
+              "MIDAZOLAM 0.2 mg/kg IV bolus then 0.05-2 mg/kg/h infusion — preferred initial (rapid + reversible)",
+              "OR PROPOFOL 1-2 mg/kg IV bolus then 30-200 mcg/kg/min infusion — caution propofol infusion syndrome (>4 mg/kg/h × >48 h or pediatric)",
+              "OR PENTOBARBITAL 5-15 mg/kg IV load then 0.5-5 mg/kg/h — last-line refractory; severe hemodynamic depression",
+              "TARGET: cEEG seizure suppression OR burst-suppression × 24-48 h then attempt taper",
+              "Maintenance AEDs continued (LEV + others)"
+            ],
+            "notes": "Refractory ~30% of SE cases despite first 2 lines. ICU + cEEG mandatory.",
+            "guideline": "NCS 2012; ILAE"
+          },
+          {
+            "line": "STAGE 5 — SUPER-REFRACTORY (>24 h): combination + alternative",
+            "type": "Multi-modal",
+            "family": "—",
+            "agents": [
+              "KETAMINE infusion 0.5-3 mg/kg/h (NMDA antagonist; effective when GABA-ergic exhausted)",
+              "INHALED ANESTHETICS (isoflurane, desflurane) — selected centers",
+              "KETOGENIC DIET — refractory cases",
+              "IMMUNOTHERAPY — if autoimmune encephalitis suspected (steroids + IVIG + rituximab)",
+              "SURGERY (rare; lesional cortical resection if focal)",
+              "VAGAL NERVE STIMULATOR (acute interventions investigational)",
+              "SPECIALIST EPILEPSY CENTER REFERRAL"
+            ],
+            "notes": "Mortality + morbidity rise dramatically; multidisciplinary intensive care.",
+            "guideline": "NCS 2012; specialist consensus"
+          },
+          {
+            "line": "Post-SE — secondary prevention",
+            "type": "AED maintenance + workup",
+            "family": "—",
+            "agents": [
+              "MAINTENANCE AED — usually agents used in stage 3 (LEV) continued PO",
+              "Adjust based on cause + co-morbidity",
+              "WORKUP — MRI (mass, stroke, hippocampal sclerosis), LP if not done, autoimmune panel, EEG video monitoring after recovery",
+              "EPILEPSY CARE PATHWAY — neurology referral; long-term AED + counseling + driving regulations",
+              "ADDRESS UNDERLYING CAUSE — adherence, electrolytes, infection, alcohol withdrawal protocol"
+            ],
+            "notes": "Most patients require long-term AED.",
+            "guideline": "ACAES Canadian Adult Epilepsy"
+          }
+        ],
+        "pearls": [
+          "DEFINITION: ≥5 min continuous OR ≥2 seizures without baseline recovery (operational; ILAE 2015 T1=5 min)",
+          "TIME = NEURONS — start treatment AT 5 MIN",
+          "STAGE 1 (0-5 min): ABC + glucose + IV access + thiamine if at risk",
+          "STAGE 2 (5-20 min): BENZODIAZEPINE — LORAZEPAM 0.1 mg/kg IV (4 mg adult); IM midazolam 10 mg (RAMPART)",
+          "UNDERDOSING is most common failure — give FULL benzodiazepine dose",
+          "STAGE 3 (20-40 min): LEVETIRACETAM 60 mg/kg, FOSPHENYTOIN 20 mg/kg, VALPROATE 40 mg/kg — equivalent (ESETT 2019)",
+          "STAGE 4 (>40 min) REFRACTORY: intubate + ICU + cEEG + midazolam/propofol/pentobarbital infusion",
+          "STAGE 5 SUPER-REFRACTORY (>24 h): ketamine, inhaled anesthetics, ketogenic, immunotherapy",
+          "NCSE — high suspicion altered mental status post-cardiac arrest, elderly, unexplained; cEEG required",
+          "WORKUP CONCURRENT — glucose, electrolytes, AED levels, toxicology, CT, LP if meningitis, EEG, MRI",
+          "MORTALITY ~20%; refractory 30-50%",
+          "PREGNANCY — magnesium sulfate for ECLAMPSIA SE; standard AEDs cautious",
+          "AUTOIMMUNE ENCEPHALITIS — anti-NMDAR, LGI1; consider in refractory; immunotherapy",
+          "CAUSE: most common = AED non-adherence in known epilepsy; alcohol withdrawal common",
+          "POST-SE — long-term AED + neurology + driving regulations"
+        ],
+        "introduction": "Status epilepticus is a time-defined neurological emergency requiring treatment at 5 minutes of continuous seizure activity. Stepwise management progresses from benzodiazepine (lorazepam IV or midazolam IM — RAMPART), to second-line non-benzodiazepine AED (levetiracetam, fosphenytoin, or valproate — equivalent per ESETT 2019), to anesthetic infusion in the ICU for refractory disease (>40 min). Underdosing of benzodiazepines is the most common failure mode. Concurrent workup and treatment of underlying causes (electrolytes, glucose, infection, alcohol withdrawal, AED non-adherence) is essential. Mortality is approximately 20% and rises substantially in refractory and super-refractory disease.",
+        "source": "Neurocritical Care Society Status Epilepticus Guideline 2012 (Brophy Neurocritical Care 2012). ESETT Kapur NEJM 2019. RAMPART Silbergleit NEJM 2012. ILAE 2015 Operational Definition (Trinka Epilepsia 2015). ACAES Canadian Adult Epilepsy."
       }
     ]
   },
@@ -17916,6 +18035,124 @@ var DISEASES = {
           "PHARMACIST role: titrate ACEi/ARB to target proteinuria reduction (not just BP), SGLT2i additive renoprotection, manage diuretic resistance, screen for VTE risk + anticoagulation indication, immunosuppression monitoring (LFTs, CBC, CNI levels), vaccination optimization, sparsentan/Filspari black box monitoring + contraception, ODB Limited Use applications, recognize relapse (return of proteinuria)"
         ],
         "source": "KDIGO Clinical Practice Guideline for the Management of Glomerular Diseases 2024; Toronto General Hospital Nephrology Glomerulonephritis Protocol; ISN/RPS Glomerular Disease Atlas; MENTOR Trial (rituximab vs cyclosporine in MN); STARMEN; PROTECT (sparsentan IgAN); DUPLEX (sparsentan FSGS); NefIgArd (Nefecon IgAN); DAPA-CKD; EMPA-KIDNEY; APPLAUSE-IgAN"
+      },
+      {
+        "id": "iga_nephropathy",
+        "name": "IgA Nephropathy (Berger Disease)",
+        "subtitle": "Most common primary glomerulonephritis worldwide — KDIGO 2021 / 2024 update",
+        "patho": "MOST COMMON PRIMARY GLOMERULONEPHRITIS in adults globally; particularly prevalent East Asians, less common Africans. Mesangial deposition of GALACTOSE-DEFICIENT IgA1 (Gd-IgA1) immune complexes (4-hit pathogenesis: aberrant IgA1 glycosylation → autoantibody against Gd-IgA1 → immune complex formation → mesangial deposition + injury). Spectrum: ASYMPTOMATIC microhematuria → recurrent macroscopic hematuria with respiratory infections (synpharyngitic) → progressive CKD → ESKD. ~25-40% reach ESKD over 20 years. Same disease spectrum as IgA VASCULITIS (Henoch-Schönlein) — different distribution. Distinct from IgA dominant infection-related GN (post-staphylococcal etc).",
+        "signs": "PRESENTATIONS: (1) ASYMPTOMATIC microscopic hematuria + proteinuria (most common — discovered on routine screening); (2) GROSS hematuria (synpharyngitic — within 24-72h of URI; classically); (3) chronic progressive CKD; (4) NEPHROTIC syndrome (rare); (5) RAPIDLY PROGRESSIVE GN (RPGN — crescentic; rare; aggressive immunosuppression); (6) Acute kidney injury — gross hematuria-associated tubular injury or crescentic. Hypertension, peripheral edema (advanced). Not classically systemic — IgA-VASCULITIS is the systemic form.",
+        "diagnosis": "RENAL BIOPSY = GOLD STANDARD — IgA-DOMINANT or IgA-CO-DOMINANT mesangial deposits on immunofluorescence (DIAGNOSTIC); mesangial proliferation + matrix expansion on light microscopy; subepithelial/subendothelial deposits on EM; OXFORD-MEST-C SCORING (M-mesangial, E-endocapillary, S-segmental sclerosis, T-tubular atrophy/interstitial fibrosis, C-crescents) — predicts progression. INDICATION FOR BIOPSY: persistent proteinuria >0.5 g/day, declining eGFR, gross hematuria with proteinuria/eGFR change, suspected RPGN. LABS: urinalysis (dysmorphic RBC + RBC casts), 24-h urine protein OR PCR, creatinine + eGFR, ANA, ANCA, complement (typically NORMAL — distinguishes from lupus, post-strep, MPGN), IgA level (elevated 50% — non-diagnostic), HIV/HBV/HCV (rule out secondary), throat culture if recent URI. RISK STRATIFICATION: International IgAN Prediction Tool (Barbour JAMA Intern Med 2019) integrates clinical + Oxford-MEST-C — predicts 5-year ESKD/50% eGFR decline.",
+        "monitoring": "BP + creatinine + UPCR + UACR q1-3 months during active treatment; q3-6 months stable; risk re-assessment q6-12 months; histologic re-biopsy if unexplained progression.",
+        "treatment": [
+          {
+            "line": "ALL PATIENTS — supportive (foundational)",
+            "type": "Optimal supportive care",
+            "family": "RAS blocker + lifestyle",
+            "agents": [
+              "RAS BLOCKADE — ACEi (ramipril, lisinopril) OR ARB (losartan, valsartan, telmisartan, irbesartan) — TITRATE TO MAXIMUM TOLERATED dose for proteinuria reduction; target UPCR <0.5 g/g (50 mg/mmol) IDEALLY — KDIGO 2021 Class 1A",
+              "BP TARGET <120/80 (KDIGO 2021); <130/80 acceptable in older / less proteinuric",
+              "SODIUM RESTRICTION — <2 g/day (5 g salt)",
+              "WEIGHT optimization, smoking cessation, exercise",
+              "CV RISK modification — statin per CKD CV risk",
+              "Avoid NSAIDs",
+              "12+ MONTHS OPTIMAL SUPPORTIVE CARE BEFORE adding immunosuppression in moderate-risk disease"
+            ],
+            "notes": "Supportive cornerstone; all subsequent therapies layered on optimized supportive.",
+            "guideline": "KDIGO Glomerular Diseases 2021; STOP-IgAN Rauen NEJM 2015"
+          },
+          {
+            "line": "ADDITIONAL RAAS — SGLT2i + finerenone (CKD class)",
+            "type": "Cardiorenal protection",
+            "family": "SGLT2i + ns-MRA",
+            "agents": [
+              "DAPAGLIFLOZIN 10 mg/day OR EMPAGLIFLOZIN 10 mg/day — DAPA-CKD (Wheeler Lancet 2021) + EMPA-KIDNEY (Herrington NEJM 2023) — robust kidney + CV benefit in proteinuric CKD including IgAN; KDIGO 2024 recommends layered on RAS blocker",
+              "FINERENONE — non-steroidal MRA; FIDELIO/FIGARO data extend to non-DKD CKD; emerging role IgAN",
+              "Sequence: maximize RAS blockade → add SGLT2i → consider finerenone",
+              "BP target intensification with combination"
+            ],
+            "notes": "SGLT2i now standard layered onto RAS blockade for proteinuric CKD inc. IgAN.",
+            "guideline": "KDIGO 2024 update; DAPA-CKD Wheeler Lancet 2021; EMPA-KIDNEY Herrington NEJM 2023"
+          },
+          {
+            "line": "PROTEINURIA >1 g/day despite max supportive — IMMUNOSUPPRESSION",
+            "type": "Risk-stratified",
+            "family": "—",
+            "agents": [
+              "TARGETED-RELEASE BUDESONIDE (NEFECON / TARPEYO) 16 mg PO once daily × 9 months — DELIVERED to terminal ileum/Peyer's patches → suppresses gut Gd-IgA1 production; FDA 2021 + Health Canada 2024 NOC; NefIgArd Lai Lancet 2023 — sustained eGFR + UPCR benefit; PREFERRED first-line immunosuppression",
+              "ALTERNATIVELY SYSTEMIC GLUCOCORTICOIDS (TESTING regimen — methylprednisolone 0.4-0.6 mg/kg/day with PJP prophylaxis — REDUCED-DOSE per TESTING 2022 due to AE) — efficacy demonstrated but increased AE (infection, AVN, weight gain); Class IIb in KDIGO; Reserve for high-risk + selected centers; PJP PROPHYLAXIS MANDATORY",
+              "MMF — variable efficacy (positive in Asian populations — Hou JASN 2017); KDIGO 2021 limited recommendation",
+              "AVOID cyclophosphamide / azathioprine outside crescentic GN",
+              "Consider clinical trial: SPARSENTAN (PROTECT — endothelin + ARB combination; FDA 2023 approval)"
+            ],
+            "notes": "Targeted-release budesonide is paradigm shift — gut-directed mechanism with safer profile than systemic steroids. NefIgArd 2023 changed practice.",
+            "guideline": "KDIGO 2024 update; NefIgArd Lai Lancet 2023; TESTING Lv JAMA 2017, 2022"
+          },
+          {
+            "line": "CRESCENTIC / RAPIDLY PROGRESSIVE GN",
+            "type": "Aggressive immunosuppression",
+            "family": "—",
+            "agents": [
+              "METHYLPREDNISOLONE 500-1000 mg IV × 3 days then PREDNISONE 1 mg/kg/day (max 60-80 mg) → taper",
+              "+ CYCLOPHOSPHAMIDE — IV pulse 0.75 g/m² q4 weeks × 6 OR PO 2 mg/kg/day × 3 months",
+              "PLASMA EXCHANGE — selected (anti-GBM overlap, severe AKI; not routine)",
+              "Renal biopsy guides intensity (% crescents)",
+              "PJP prophylaxis MANDATORY",
+              "Refractory: rituximab (limited evidence)"
+            ],
+            "notes": "Crescentic IgAN <10% but aggressive course; treat aggressively.",
+            "guideline": "KDIGO 2021"
+          },
+          {
+            "line": "EMERGING THERAPIES (2024+)",
+            "type": "Novel agents",
+            "family": "—",
+            "agents": [
+              "SPARSENTAN — dual ARB + endothelin A receptor antagonist; FDA 2023 (PROTECT trial Heerspink Lancet 2023); proteinuria reduction and eGFR stabilization vs irbesartan",
+              "ATRASENTAN — endothelin antagonist (ALIGN trial)",
+              "IPTACOPAN — alternative complement pathway inhibitor (factor B); APPLAUSE-IgAN; FDA 2024 for IgAN",
+              "NARSOPLIMAB — MASP-2 (lectin pathway); investigational",
+              "ANTI-APRIL/ANTI-BAFF — sibeprenlimab, atacicept, povetacicept — phase 3 trials",
+              "TELITACICEPT — anti-APRIL/BAFF (China-approved)"
+            ],
+            "notes": "Many novel agents in development; rapidly evolving landscape 2024-2025.",
+            "guideline": "Various phase 3 trials; emerging guidelines 2024"
+          },
+          {
+            "line": "Long-term + transplant",
+            "type": "ESKD prep + transplant",
+            "family": "—",
+            "agents": [
+              "TRANSPLANT EVALUATION as eGFR <30; living donor preferred",
+              "DIALYSIS — HD or PD; modality choice patient-specific",
+              "POST-TRANSPLANT — IgAN RECURRENCE in graft 30-60% (often subclinical); 5-15% graft loss attributable; standard immunosuppression usually sufficient",
+              "Tonsillectomy — CONTROVERSIAL; some Asian guidelines recommend (with steroids); NOT recommended in Western guidelines",
+              "PREGNANCY — preconception counseling; CKD-stage risk-stratified; ACEi/ARB DC pre-conception (teratogenic); antihypertensive switch (labetalol, nifedipine)"
+            ],
+            "notes": "ESKD prep + transplant integration.",
+            "guideline": "KDIGO 2021"
+          }
+        ],
+        "pearls": [
+          "MOST COMMON primary GN globally; East Asian highest prevalence",
+          "BERGER DISEASE — synpharyngitic gross hematuria 24-72h post-URI",
+          "RENAL BIOPSY GOLD STANDARD — IgA mesangial deposits + Oxford MEST-C",
+          "INDICATION FOR BIOPSY: proteinuria >0.5 g/day, declining eGFR, gross hematuria with renal change",
+          "COMPLEMENT NORMAL — distinguishes from lupus, post-strep, MPGN",
+          "RISK ASSESSMENT — International IgAN Prediction Tool (Barbour 2019)",
+          "SUPPORTIVE FOUNDATIONAL: RAS blockade max + BP target + Na restrict + lifestyle",
+          "12+ MONTHS supportive before adding immunosuppression (moderate-risk)",
+          "SGLT2i + RAS blocker = STANDARD layered (DAPA-CKD, EMPA-KIDNEY)",
+          "TARGETED-RELEASE BUDESONIDE (NEFECON) — gut-directed; FDA 2021, Health Canada 2024 NOC; preferred over systemic steroids (NefIgArd 2023)",
+          "TESTING 2022 — reduced-dose systemic steroid regimen (PJP prophylaxis MANDATORY)",
+          "SPARSENTAN (PROTECT 2023) — dual ARB + ETAR antagonist; FDA 2023",
+          "IPTACOPAN — complement factor B inhibitor; FDA 2024",
+          "CRESCENTIC IgAN — aggressive: high-dose steroid + cyclophosphamide",
+          "POST-TRANSPLANT RECURRENCE 30-60%; 5-15% graft loss",
+          "TONSILLECTOMY — controversial; Asian guidelines ± it; Western guidelines do not recommend"
+        ],
+        "introduction": "IgA nephropathy is the most common primary glomerulonephritis globally, characterized by mesangial deposits of galactose-deficient IgA1 immune complexes. Treatment foundation is optimized supportive care with maximum tolerated RAS blockade plus SGLT2 inhibitors, with kidney biopsy guiding risk stratification and additional therapy. For persistent proteinuria, targeted-release budesonide (Nefecon — gut-directed; NefIgArd 2023) is preferred over systemic glucocorticoids due to favorable side effect profile. Crescentic disease requires aggressive immunosuppression. Emerging agents (sparsentan, iptacopan, anti-APRIL/BAFF) are reshaping the treatment landscape in 2024+.",
+        "source": "KDIGO Glomerular Diseases Guideline 2021 (Kidney Int Suppl 2021). KDIGO 2024 update. NefIgArd Lai Lancet 2023. TESTING Lv JAMA 2017, 2022. STOP-IgAN Rauen NEJM 2015 (10-year follow-up Lancet 2020). DAPA-CKD Wheeler Lancet 2021. EMPA-KIDNEY Herrington NEJM 2023. PROTECT Sparsentan Heerspink Lancet 2023. International IgAN Prediction Tool Barbour JAMA Intern Med 2019."
       }
     ]
   },
@@ -25504,6 +25741,123 @@ var DISEASES = {
         ],
         "introduction": "Bacterial meningitis is a neurological emergency with high mortality and morbidity even with optimal therapy. Empiric antibiotics covering the likely pathogens by age plus dexamethasone given before or with the first dose must be initiated within the first hour. Lumbar puncture (with CT first if mass lesion suspected) confirms diagnosis and guides directed therapy. Vaccination is the principal prevention strategy.",
         "source": "IDSA Practice Guidelines for Bacterial Meningitis (Tunkel CID 2004, updated 2017). AMMI Canada / Bugs & Drugs 2024. PHAC Public Health notifiable disease. Meningococcal Vaccines NACI. ESCMID Bacterial Meningitis 2016. AAP Pediatric Red Book 2024."
+      },
+      {
+        "id": "syphilis",
+        "name": "Syphilis",
+        "subtitle": "Treponema pallidum infection — primary/secondary/latent/tertiary/congenital — PHAC Canadian STI Guidelines 2024",
+        "patho": "Spirochete TREPONEMA PALLIDUM subspecies pallidum infection — multistage disease. Transmission: sexual (most), vertical (transplacental — congenital syphilis), rarely parenteral (transfusion, needle-stick). STAGES: PRIMARY (3 weeks-3 months post-exposure) — solitary painless chancre + regional lymphadenopathy; spontaneous resolution 3-6 weeks; SECONDARY (4-10 weeks post-exposure; 25% of untreated primary) — disseminated; rash (palms/soles characteristic), mucosal patches, condyloma lata, lymphadenopathy, constitutional symptoms, hepatitis, glomerulonephritis, ocular/otic disease; LATENT — asymptomatic, serology positive; EARLY LATENT <1 year, LATE LATENT >1 year or unknown; TERTIARY (years-decades) — gummatous (skin/bone/visceral), cardiovascular (aortitis, aortic aneurysm/regurgitation), neurosyphilis (meningovascular, parenchymatous — tabes dorsalis, general paresis). NEUROSYPHILIS can occur AT ANY STAGE. Globally rising; Canada — surge since 2018 (PHAC), CONGENITAL SYPHILIS particularly concerning (5-fold increase 2018-2023; Indigenous + northern + women of reproductive age disproportionately affected; PUBLIC HEALTH EMERGENCY).",
+        "signs": "PRIMARY: PAINLESS GENITAL/ORAL CHANCRE (single, indurated, clean base) + regional lymphadenopathy. Often missed (heals spontaneously). SECONDARY: maculopapular rash (palms + soles characteristic), mucous patches, condyloma lata (broad-based wart-like), generalized lymphadenopathy, fever, malaise, sore throat, hepatitis, glomerulonephritis, alopecia (moth-eaten), ocular (uveitis), otosyphilis (sensorineural HL — emergency). LATENT: ASYMPTOMATIC, positive serology only. TERTIARY: gummas (granulomatous lesions); CARDIOVASCULAR (ascending aortic aneurysm, aortic regurgitation, coronary ostial stenosis); NEUROSYPHILIS — asymptomatic, meningovascular, parenchymatous (general paresis = dementia + psychosis; tabes dorsalis = posterior column lesion, ataxia, lightning pains, ARGYLL ROBERTSON pupils, neurogenic bladder); ocular (uveitis, optic neuritis, retinitis); auditory (sensorineural HL). CONGENITAL: early (<2 y) — hepatomegaly, jaundice, rash, snuffles (syphilitic rhinitis), pseudoparalysis, anemia, osteochondritis; late (>2 y) — Hutchinson teeth, mulberry molars, saber shins, frontal bossing, saddle nose, interstitial keratitis, sensorineural HL, neurodevelopmental.",
+        "diagnosis": "DARK-FIELD MICROSCOPY of chancre exudate — primary syphilis (specialized centers). SEROLOGY — TWO-TEST sequence: TREPONEMAL TEST (CIA, EIA, TPPA, FTA-ABS — high sensitivity early; PERSISTS for life — confirms exposure but not activity) + NON-TREPONEMAL TEST (RPR, VDRL — quantitative titers reflect ACTIVITY; rise with new infection, decline with treatment 4-fold = treatment success). REVERSE SEQUENCE testing now standard PHAC 2024 — treponemal first, then non-treponemal if positive. EARLY PRIMARY SYPHILIS may be SEROLOGICALLY NEGATIVE — repeat in 2-6 weeks. NEUROSYPHILIS DIAGNOSIS: LP if neurologic/ocular/otic symptoms OR persistent serology after treatment; CSF — VDRL (specific but insensitive 30-70%), CSF FTA-ABS (sensitive less specific), CSF cell count + protein elevated. HIV CO-INFECTION TESTING — high prevalence (~25%); always test syphilis + HIV. PREGNANCY — RPR at first prenatal visit; repeat at 28-32 weeks + at delivery in high-risk regions (PHAC). REPORTABLE ALL STAGES — public health notification + partner notification.",
+        "monitoring": "Post-treatment serology: RPR/VDRL at 6, 12, 24 months (some labs at 3 also) — TARGET 4-fold decline (e.g., 1:32 → 1:8) = TREATMENT SUCCESS. Persistently positive (low titer 'serofast') possible but acceptable if 4-fold decline achieved. Treatment failure or reinfection = absence of 4-fold decline at 6-12 months OR 4-fold rise — REPEAT TREATMENT + LP for neurosyphilis evaluation + HIV testing. Pregnancy — additional monitoring at delivery + congenital syphilis evaluation neonate.",
+        "treatment": [
+          {
+            "line": "PRIMARY / SECONDARY / EARLY LATENT (<1 year) — non-pregnant adult",
+            "type": "Single-dose IM penicillin",
+            "family": "Penicillin",
+            "agents": [
+              "BENZATHINE PENICILLIN G 2.4 million units IM ONCE (split 1.2 mU each gluteus)",
+              "PCN-allergic non-pregnant: DOXYCYCLINE 100 mg PO BID × 14 days (PHAC + CDC alternative)",
+              "PCN-allergic alternative: CEFTRIAXONE 1 g IM or IV daily × 10-14 days (less data; off-label STI)",
+              "AZITHROMYCIN — NOT recommended due to resistance (mutations 23S rRNA — Treponema pallidum macrolide resistance widespread; PHAC + CDC discourage)",
+              "PARTNER NOTIFICATION + treatment of contacts within last 90 days (presumptive treatment 2.4 mU BPG × 1)",
+              "PUBLIC HEALTH REPORTING (notifiable)"
+            ],
+            "notes": "Single dose 2.4 mU IM cures primary/secondary/early latent. Jarisch-Herxheimer common 24h.",
+            "guideline": "PHAC Canadian STI Guidelines 2024; CDC STI Treatment Guidelines 2021"
+          },
+          {
+            "line": "LATE LATENT (>1 year or unknown duration) / TERTIARY non-neuro",
+            "type": "3 weekly IM doses",
+            "family": "Penicillin",
+            "agents": [
+              "BENZATHINE PENICILLIN G 2.4 mU IM WEEKLY × 3 doses (total 7.2 mU)",
+              "PCN-allergic: DOXYCYCLINE 100 mg PO BID × 28 days",
+              "Cardiovascular syphilis — same regimen (3 weekly BPG); cardiology consultation; consider corticosteroid pre-treatment to prevent worsening (controversial)",
+              "Gummatous syphilis — same regimen; surgical evaluation if structurally critical lesion"
+            ],
+            "notes": "Late latent + tertiary non-neuro = 3 weekly doses.",
+            "guideline": "PHAC 2024; CDC 2021"
+          },
+          {
+            "line": "NEUROSYPHILIS / OCULAR / OTIC syphilis",
+            "type": "IV penicillin",
+            "family": "Penicillin",
+            "agents": [
+              "AQUEOUS CRYSTALLINE PENICILLIN G 18-24 million units/day IV continuous infusion OR 3-4 mU IV q4h × 10-14 days (preferred)",
+              "ALTERNATIVE: PROCAINE PENICILLIN G 2.4 mU IM daily + PROBENECID 500 mg PO QID × 10-14 days (less convenient)",
+              "PCN-ALLERGIC NEUROSYPHILIS: DESENSITIZATION + PCN (preferred) OR CEFTRIAXONE 2 g IV/IM daily × 10-14 days (less data; off-label)",
+              "After IV course — consider 1-3 doses BPG IM weekly to extend depot coverage (some authorities)",
+              "OPHTHALMOLOGY/ENT/NEUROLOGY consult"
+            ],
+            "notes": "BPG IM does NOT achieve adequate CSF levels — IV PCN G mandatory.",
+            "guideline": "PHAC 2024; CDC 2021"
+          },
+          {
+            "line": "PREGNANCY",
+            "type": "Penicillin only — desensitize if allergic",
+            "family": "Penicillin",
+            "agents": [
+              "PRIMARY/SECONDARY/EARLY LATENT pregnancy: BPG 2.4 mU IM ONCE (some authorities including PHAC recommend SECOND DOSE at 1 week to ensure efficacy — particularly if 3rd trimester or high RPR titer)",
+              "LATE LATENT pregnancy: BPG 2.4 mU IM WEEKLY × 3",
+              "PCN-ALLERGIC PREGNANCY: DESENSITIZATION + PCN (no acceptable alternative — doxycycline contraindicated, azithromycin resistance, ceftriaxone limited data + cross-reactivity)",
+              "DELIVERY < 30 days post-treatment OR inadequately treated → CONGENITAL SYPHILIS PROTOCOL for neonate",
+              "Fetal monitoring during treatment (Jarisch-Herxheimer can cause preterm labor + fetal distress) — outpatient OK if uncomplicated; inpatient if 3rd trimester + high titer",
+              "Re-screen at 28-32 weeks + at delivery (PHAC high-risk areas); partner treatment"
+            ],
+            "notes": "Pregnancy syphilis = critical public health priority Canada (congenital syphilis surge).",
+            "guideline": "PHAC 2024; SOGC; CDC 2021"
+          },
+          {
+            "line": "CONGENITAL SYPHILIS (neonate)",
+            "type": "IV penicillin",
+            "family": "Penicillin",
+            "agents": [
+              "PROVEN OR HIGHLY PROBABLE: AQUEOUS CRYSTALLINE PCN G 50,000 U/kg IV q12h (1st week) then q8h (>1 week age) × 10 days OR PROCAINE PCN G 50,000 U/kg IM daily × 10 days",
+              "POSSIBLE OR LESS LIKELY (mother adequately treated, infant asymptomatic, normal exam + RPR <4× maternal): single BPG 50,000 U/kg IM with close follow-up",
+              "Evaluation neonate: CBC, LFTs, long-bone XR, CSF (cells, protein, VDRL), ophtho, audiology, head US, RPR + treponemal testing",
+              "Pediatric infectious disease + neonatal team"
+            ],
+            "notes": "Congenital syphilis evaluation per CDC/PHAC algorithm based on maternal treatment + infant exam + serology.",
+            "guideline": "PHAC 2024; CPS"
+          },
+          {
+            "line": "HIV CO-INFECTION",
+            "type": "Standard syphilis treatment + HIV care",
+            "family": "—",
+            "agents": [
+              "SAME STANDARD REGIMENS — BPG IM by stage",
+              "MORE FREQUENT SEROLOGIC FOLLOW-UP — 3, 6, 9, 12, 24 months",
+              "Lower threshold for LP (more frequent neurosyphilis in HIV+) — particularly if CD4 <350, RPR ≥1:32, neurologic/ocular symptoms",
+              "Concurrent HIV management"
+            ],
+            "notes": "HIV doesn't change syphilis treatment but increases monitoring + neuro evaluation threshold.",
+            "guideline": "PHAC 2024; IDSA HIV-STI"
+          }
+        ],
+        "pearls": [
+          "TREPONEMA PALLIDUM — multistage spirochete infection",
+          "PRIMARY = PAINLESS GENITAL CHANCRE (often missed)",
+          "SECONDARY = palms/soles rash + mucous patches + condyloma lata + lymphadenopathy",
+          "LATENT = serology positive, asymptomatic; early <1 year, late >1 year",
+          "TERTIARY = gummas + CARDIOVASCULAR (aortitis, aneurysm) + NEUROSYPHILIS",
+          "NEUROSYPHILIS at ANY stage; LP indicated if neuro/ocular/otic sx",
+          "OCULAR / OTIC SYPHILIS — TREAT AS NEUROSYPHILIS (IV PCN G)",
+          "PRIMARY/SECONDARY/EARLY LATENT: BPG 2.4 mU IM ONCE",
+          "LATE LATENT/TERTIARY non-neuro: BPG 2.4 mU IM weekly × 3",
+          "NEUROSYPHILIS: AQUEOUS CRYSTALLINE PCN G 18-24 mU IV/day × 10-14 days",
+          "PREGNANCY: PCN ONLY EFFECTIVE — DESENSITIZE if allergic; doxycycline CONTRAINDICATED",
+          "PCN-allergic NON-PREGNANT: doxycycline 100 mg BID × 14d (early) or 28d (late latent)",
+          "AZITHROMYCIN NOT RECOMMENDED — widespread resistance",
+          "JARISCH-HERXHEIMER first 24h — counsel patient",
+          "FOLLOW-UP RPR/VDRL at 6, 12, 24 mo — 4-fold drop = success",
+          "HIV testing — always with syphilis (~25% co-infection)",
+          "REPORTABLE all stages — public health + partner notification",
+          "CONGENITAL SYPHILIS Canada — 5-fold increase 2018-2023; PUBLIC HEALTH PRIORITY",
+          "BPG SUPPLY SHORTAGES Canada periodic (2017, 2023, 2024)"
+        ],
+        "introduction": "Syphilis is a multistage spirochete infection caused by Treponema pallidum with rising rates in Canada, particularly congenital syphilis which has increased 5-fold since 2018. Stage-based management uses benzathine penicillin G (single dose for early disease, three weekly doses for late latent or tertiary non-neurologic disease) and IV crystalline penicillin G for neurosyphilis, ocular, or otic disease. Pregnancy requires penicillin (with desensitization for true allergy) as no acceptable alternative exists. Public health reporting, partner notification, HIV co-testing, and post-treatment serologic follow-up (RPR/VDRL 4-fold decline at 6-12 months) are essential.",
+        "source": "PHAC Canadian Guidelines on Sexually Transmitted Infections — Syphilis 2024. CDC STI Treatment Guidelines 2021. SOGC Pregnancy Syphilis. CPS Congenital Syphilis."
       }
     ]
   },
@@ -34485,6 +34839,209 @@ var DISEASES = {
         ],
         "introduction": "Duchenne muscular dystrophy (DMD) is an X-linked recessive disorder affecting ~1:5,000 male births due to absent dystrophin protein. CK is markedly elevated (10-100× normal); genetic testing confirms diagnosis + identifies mutations amenable to exon-skipping therapy. CORTICOSTEROIDS (prednisone, deflazacort, vamorolone) are the standard of care, extending ambulation by 2-3 years. Modern disease-modifying options include exon-skipping antisense oligonucleotides (eteplirsen exon 51, golodirsen + viltolarsen exon 53, casimersen exon 45 — covering ~37% of DMD), DELANDISTROGENE MOXEPARVOVEC (Elevidys — AAV gene therapy; one-time IV; FDA 2023 + 2024 expansion), ATALUREN (Translarna — nonsense mutations; EU + Canada limited), and GIVINOSTAT (Duvyzat — HDAC inhibitor; FDA 2024). Multidisciplinary care including early ACE inhibitor cardiac prophylaxis (~age 10), respiratory support (BiPAP when FVC <50%), and steroid AE mitigation has extended modern era survival to 30+ years. Pharmacist roles include steroid AE prevention, ACEi initiation, gene therapy specialty pharmacy coordination, and family education + carrier counseling.",
         "source": "DMD Care Considerations Update Birnkrant Lancet Neurol 2018; CCS Neuromuscular DMD 2024; Cure DMD Canada Standards; Duboc trial 2005 (ACEi cardioprotection); FDA Elevidys 2023 + 2024 expansion; FDA Givinostat 2024"
+      },
+      {
+        "id": "bronchiolitis",
+        "name": "Bronchiolitis",
+        "subtitle": "Viral lower respiratory tract infection in infants — CPS Bronchiolitis 2014 (reaffirmed) / AAP 2014",
+        "patho": "Viral lower respiratory tract infection of infants (<24 months; peak 2-6 months) — inflammation, edema, mucus, necrosis of small bronchiolar epithelium → airway obstruction, atelectasis, ventilation-perfusion mismatch → hypoxia + respiratory distress. PATHOGENS: RESPIRATORY SYNCYTIAL VIRUS (RSV; ~70% of cases — most severe; epidemic Nov-April Canada), rhinovirus (often co-detected; predisposes to subsequent asthma), parainfluenza, human metapneumovirus, adenovirus, COVID-19, influenza. Risk factors for SEVERE disease: PREMATURITY <35 weeks, age <12 weeks (particularly <3 months), CHRONIC LUNG DISEASE of prematurity, congenital heart disease (especially hemodynamically significant — VSD, PDA, complex), immunodeficiency, neuromuscular disease, Indigenous communities (Inuit infants — disproportionate severe RSV bronchiolitis). Hospitalization rate 2-3% of all infants; ICU 5-15% of admitted. Mortality <1% in modern era; higher in low-resource + comorbid.",
+        "signs": "PRECEDING UPPER RESPIRATORY TRACT SYMPTOMS — rhinorrhea, cough × 1-3 days. PROGRESSION to LOWER RESPIRATORY TRACT — TACHYPNEA (>60/min infant), WHEEZING (often diffuse), CRACKLES, CHEST RETRACTIONS (subcostal, intercostal), nasal flaring, head bobbing, grunting, hypoxemia (SpO2 <92%), feeding difficulty (key marker of severity in infants — taking <50% of normal feeds), apnea (especially <2 months, premature). FEVER often modest (38-38.5°C); high fever (>39°C) reconsider bacterial, COVID, influenza. Course: peak day 3-5; resolution 7-14 days; cough may persist 2-4 weeks. RED FLAGS: SpO2 <90% on room air, severe retractions, lethargy, dehydration, apnea, cyanosis, RR >70 — admit / escalate care.",
+        "diagnosis": "CLINICAL — based on history + exam. AGE <24 months + viral URI prodrome + lower respiratory tract findings (tachypnea, wheeze, crackles, retractions). DO NOT routinely order: chest XR (only if focal findings, atypical course, severe disease), viral testing (does not change management — only useful for cohort isolation in admitted patients), CBC + CRP (overuse — only if bacterial concern), blood gas (severe), urine (sepsis evaluation if febrile <90 days). DIFFERENTIAL: pneumonia (focal findings, fever >39°C), foreign body aspiration (sudden onset, choking history, asymmetric findings), CHF, vascular ring, recurrent wheeze/asthma (>1 episode similar pattern), pertussis.",
+        "monitoring": "Inpatient — continuous SpO2 not routinely; intermittent (q1-4h based on severity); RR, HR, work of breathing, feeding, fever, hydration. Outpatient — return precautions (worsening breathing, decreased feeds <50%, dehydration, lethargy, fever >39°C, apnea, cyanosis).",
+        "treatment": [
+          {
+            "line": "Mainstay — supportive care",
+            "type": "Symptomatic",
+            "family": "—",
+            "agents": [
+              "MAINSTAY = SUPPORTIVE: nasal suction (bulb syringe, saline drops; gentle, parents trained), HYDRATION (small frequent feeds; NG/IV if poor PO), O2 if SpO2 <90% (target 90-92% sufficient — CPS recommends not >92% routine to avoid prolonged admissions)",
+              "ANTIPYRETICS for fever (acetaminophen, ibuprofen >6 mo)",
+              "POSITIONING — slight head elevation; minimal handling",
+              "PARENT EDUCATION + RETURN PRECAUTIONS"
+            ],
+            "notes": "CPS + AAP 2014: supportive care is the foundation; 'less is more.'",
+            "guideline": "CPS Bronchiolitis 2014 (Friedman Paediatr Child Health 2014, reaffirmed 2024); AAP Bronchiolitis 2014 (Ralston Pediatrics 2014)"
+          },
+          {
+            "line": "Therapies NOT RECOMMENDED for routine use",
+            "type": "De-implementation",
+            "family": "—",
+            "agents": [
+              "BRONCHODILATORS (salbutamol/albuterol) — NOT recommended for routine use (CPS + AAP 2014); single trial may be considered IF clear bronchospastic component or family history asthma — discontinue if no objective improvement",
+              "EPINEPHRINE NEBULIZED — limited evidence; not recommended routinely; exception possibly outpatient if avoiding admission (CARE-2 trial)",
+              "SYSTEMIC CORTICOSTEROIDS — NOT recommended (does not reduce admission/duration; may increase severe RSV with subsequent asthma)",
+              "ANTIBIOTICS — NOT recommended unless documented bacterial co-infection (otitis media, pneumonia consolidation) — most fevers viral",
+              "CHEST PHYSIOTHERAPY — NOT recommended",
+              "COUGH SUPPRESSANTS / COLD MEDICINES — NOT recommended (avoid in <6 years generally per Health Canada)",
+              "RIBAVIRIN — NOT routinely recommended (limited utility, expensive, teratogenic to staff)",
+              "NEBULIZED HYPERTONIC SALINE — modest benefit ED-to-admission setting; conflicting RCTs; CPS does NOT routinely recommend; AAP 2014 considers reasonable for prolonged hospitalizations",
+              "Azithromycin — NOT recommended (BIPED trial Beigelman ARC 2015 — no benefit)"
+            ],
+            "notes": "Major change from older practice — DEIMPLEMENTATION of unhelpful interventions improved outcomes.",
+            "guideline": "CPS 2014; AAP 2014; CHOOSING WISELY Canada/AAP"
+          },
+          {
+            "line": "Supplemental OXYGEN + RESPIRATORY SUPPORT",
+            "type": "Stepwise",
+            "family": "—",
+            "agents": [
+              "LOW-FLOW NASAL CANNULA — first if SpO2 <90% (target 90-92%; CPS 2014)",
+              "HIGH-FLOW NASAL CANNULA (HFNC) — if low-flow inadequate; PARIS trial Franklin NEJM 2018 demonstrated reduced treatment escalation vs low-flow; 2 L/kg/min (max 60 L/min); humidified + heated",
+              "CPAP — if HFNC inadequate; CPAP > HFNC for severe respiratory failure (preventing intubation)",
+              "MECHANICAL VENTILATION — for respiratory failure / apnea / severe failure; PICU"
+            ],
+            "notes": "Stepwise escalation; HFNC has supplanted older interventions in many centers.",
+            "guideline": "PARIS Franklin NEJM 2018; Pediatric Acute Lung Injury Consensus Conference; CPS"
+          },
+          {
+            "line": "Hospitalization / Admission criteria",
+            "type": "Disposition",
+            "family": "—",
+            "agents": [
+              "SpO2 <90-92% room air persistently",
+              "Significant respiratory distress (severe retractions, RR >70 infant, grunting, head bobbing)",
+              "POOR FEEDING (<50% of usual) or DEHYDRATION",
+              "APNEA (especially <2 months or premature)",
+              "AGE <90 days with severe disease",
+              "Comorbidity (CHD, CLD, immunocompromised, NMD)",
+              "Social — poor follow-up, distance from care, parental concern with red flags"
+            ],
+            "notes": "Lower threshold for younger + comorbid infants. Most uncomplicated cases manage outpatient.",
+            "guideline": "CPS 2014; AAP 2014"
+          },
+          {
+            "line": "PREVENTION",
+            "type": "Vaccines + monoclonal antibodies",
+            "family": "Immunoprophylaxis",
+            "agents": [
+              "NIRSEVIMAB 50 mg (>5 kg) or 100 mg (≥5 kg) IM ONCE per RSV season — NACI 2024 recommends ALL infants <8 months entering first RSV season; high-risk infants ≤24 months may receive second season; replaces palivizumab in many provinces (Health Canada 2023)",
+              "PALIVIZUMAB 15 mg/kg IM monthly during RSV season — high-risk only (extreme prematurity, hemodynamically significant CHD, chronic lung disease, immunocompromised, Indigenous communities) — being supplanted by nirsevimab",
+              "MATERNAL RSV VACCINE (RSVpreF — Abrysvo) — pregnant 32-36 weeks gestation during RSV season; NACI 2024 — alternative to nirsevimab maternal-side prevention",
+              "HAND HYGIENE + droplet/contact precautions in healthcare",
+              "BREASTFEEDING — protective",
+              "SMOKING CESSATION household",
+              "Daycare avoidance high-risk infants RSV season",
+              "Influenza vaccination — older infants + family members"
+            ],
+            "notes": "NIRSEVIMAB is major advance — single dose long-acting RSV mAb. NACI 2024 universal infant recommendation.",
+            "guideline": "NACI Statement on Nirsevimab 2023/2024; CPS Position; Health Canada Approval 2023"
+          }
+        ],
+        "pearls": [
+          "VIRAL LRTI of INFANTS <24 months (peak 2-6 months); RSV ~70%",
+          "URI prodrome → tachypnea + wheeze + crackles + retractions + ↓SpO2 + feeding difficulty",
+          "DIAGNOSIS CLINICAL — no routine CXR / viral testing / labs",
+          "MAINSTAY: SUPPORTIVE — nasal suction, hydration, O2 if <90%",
+          "BRONCHODILATORS / STEROIDS / ABX / RIBAVIRIN — NOT routine (CPS 2014, AAP 2014)",
+          "HYPERTONIC SALINE — modest benefit prolonged stays; conflicting evidence",
+          "HIGH-FLOW NASAL CANNULA (HFNC) — supplanted some older interventions (PARIS 2018)",
+          "ADMIT: SpO2 <90-92%, severe distress, poor feeds <50%, apnea, age <90 days, comorbid",
+          "FEEDING DIFFICULTY <50% feeds — KEY severity marker",
+          "APNEA — especially <2 months, premature",
+          "PREVENTION: NIRSEVIMAB once-per-season ALL infants <8 mo (NACI 2024) — REPLACES palivizumab in many provinces",
+          "MATERNAL RSV VACCINE (Abrysvo) — alternative pregnancy 32-36 weeks",
+          "PALIVIZUMAB — high-risk only; supplanted by nirsevimab",
+          "PEAK DAY 3-5; resolves 7-14 days; cough lingers 2-4 weeks",
+          "RED FLAGS: SpO2 <90, lethargy, dehydration, apnea, cyanosis, severe retractions",
+          "INDIGENOUS infants — disproportionate severe RSV; targeted prevention programs"
+        ],
+        "introduction": "Bronchiolitis is a viral lower respiratory tract infection of infants, with respiratory syncytial virus (RSV) as the predominant pathogen. Diagnosis is clinical and treatment is supportive (nasal suction, hydration, supplemental oxygen). Bronchodilators, corticosteroids, antibiotics, and ribavirin are not recommended for routine use. High-flow nasal cannula has improved outcomes (PARIS 2018) for moderate-severe disease. Nirsevimab (NACI 2024) has revolutionized prevention as a single-dose long-acting RSV monoclonal antibody recommended universally for infants entering their first RSV season, supplanting palivizumab in most Canadian provinces.",
+        "source": "CPS Bronchiolitis Position 2014 (Friedman Paediatr Child Health 2014, reaffirmed). AAP Clinical Practice Guideline Bronchiolitis 2014 (Ralston Pediatrics 2014). PARIS HFNC Franklin NEJM 2018. NACI Statement on Nirsevimab 2023/2024. Health Canada Nirsevimab Approval 2023."
+      },
+      {
+        "id": "kawasaki_disease",
+        "name": "Kawasaki Disease",
+        "subtitle": "Medium-vessel vasculitis — children — AHA 2017 / CPS Kawasaki Position",
+        "patho": "Self-limited medium-vessel VASCULITIS of childhood (mostly <5 years; peak 1-2 years; M:F 1.5:1; Asian descent highest incidence — Japan 240/100,000 <5 y vs 9-20/100,000 Canadian populations). Leading cause of ACQUIRED HEART DISEASE in developed countries (replacing rheumatic fever). Etiology unclear — likely infectious trigger (possibly enteric? environmental aerosolized exposure) in genetically predisposed. SEASONAL clustering (winter-spring). Complications: CORONARY ARTERY ANEURYSMS (CAA) develop in 25% UNTREATED, 4-6% TREATED with IVIG within 10 days — leading cause of childhood acquired heart disease. Risk of CAA highest with delayed treatment, age <12 months or >5 years, male, prolonged fever, lab markers (low Hb, plt, albumin; high CRP, ALT, sodium dropping). Multisystem inflammatory syndrome in children (MIS-C) post-COVID — DISTINCT entity but Kawasaki-like; approached differently.",
+        "signs": "AHA 2017 CRITERIA — FEVER ≥5 DAYS + AT LEAST 4 OF 5 PRINCIPAL FEATURES: (1) BILATERAL CONJUNCTIVAL INJECTION (non-exudative, limbic sparing); (2) ORAL CHANGES — strawberry tongue, erythema/cracking lips, oropharyngeal erythema; (3) EXTREMITY CHANGES — erythema/edema palms/soles ACUTELY → PERIUNGUAL DESQUAMATION (subacute, week 2-3); (4) POLYMORPHIC RASH — maculopapular, morbilliform, scarlatiniform, perineal accentuation; (5) CERVICAL LYMPHADENOPATHY ≥1.5 cm (typically unilateral; 50%). INCOMPLETE/ATYPICAL KAWASAKI — fever ≥5 days + 2-3 features + supportive labs + exclusion alternatives + consider echo (especially infants <6 months, who often present incompletely). AHA 2017 algorithm — high-risk infants treated empirically. MIS-C overlap — multi-system COVID-associated; NEJM Whittaker 2020.",
+        "diagnosis": "CLINICAL — based on criteria. LABS supportive but not diagnostic: CRP elevated, ESR elevated, NEUTROPHIL leukocytosis, anemia (mild), THROMBOCYTOSIS (week 2-3 — characteristic; can exceed 1 million), low albumin, elevated ALT, sterile pyuria, hyponatremia. ECHOCARDIOGRAM AT DIAGNOSIS (baseline coronary measurements; Z-scores), 1-2 weeks, 4-8 weeks (peak CAA development), then individualized. RULE OUT: scarlet fever, measles, drug reactions (DRESS, SJS), JIA, MIS-C, leptospirosis, EBV, viral exanthema. MIS-C considered separately if SARS-CoV-2 exposure + multi-organ + GI prominent + shock features.",
+        "monitoring": "Cardiology referral all confirmed. Echo at diagnosis, 1-2 weeks, 4-6 weeks, 6-8 weeks; thereafter individualized by CAA presence/severity. CAA — long-term cardiology follow-up; serial echocardiography ± CT/MRI/coronary angiography in adolescence/adulthood depending on CAA severity. Aspirin levels not needed.",
+        "treatment": [
+          {
+            "line": "FIRST-LINE — IVIG + ASPIRIN (within 10 days of fever onset)",
+            "type": "Immunomodulation",
+            "family": "Immunoglobulin + ASA",
+            "agents": [
+              "INTRAVENOUS IMMUNOGLOBULIN (IVIG) 2 g/kg IV ONCE (single infusion over 10-12 hours) — START WITHIN 10 DAYS of fever onset (later still recommended if fever or markers persistent); reduces CAA from 25% to 4-6%",
+              "ASPIRIN — HIGH-DOSE (anti-inflammatory) 80-100 mg/kg/day divided q6h until afebrile 48-72 hours (or some centers use 30-50 mg/kg/day — recent guidance favors moderate dose); then LOW-DOSE (antiplatelet) 3-5 mg/kg/day until coronary artery normalcy at 6-8 weeks",
+              "AFTER 10 DAYS but persistent fever or CAA — STILL TREAT with IVIG",
+              "TREAT EVEN IF CRITERIA INCOMPLETE if echo shows CAA"
+            ],
+            "notes": "IVIG within 10 days = single most important intervention. Aspirin doses higher historically; modern moderate dose acceptable.",
+            "guideline": "AHA Kawasaki Disease Statement 2017 (McCrindle Circulation 2017); CPS Kawasaki Position"
+          },
+          {
+            "line": "IVIG-RESISTANT (10-20%): persistent fever 36 h post-IVIG",
+            "type": "Re-treat + intensify",
+            "family": "—",
+            "agents": [
+              "SECOND DOSE IVIG 2 g/kg IV (preferred initial re-treatment)",
+              "OR INFLIXIMAB 5-10 mg/kg IV ONCE (small RCTs suggest comparable; Tremoulet KAWAKINRA + KIDCARE)",
+              "OR HIGH-DOSE IV METHYLPREDNISOLONE 30 mg/kg IV daily × 3 days then taper",
+              "CYCLOSPORINE — refractory cases (selected centers)",
+              "INFLIXIMAB or 2nd IVIG often equivalent — center preference"
+            ],
+            "notes": "10-20% IVIG-resistant; second IVIG vs infliximab in trials; 2024+ trend toward earlier escalation in high-risk.",
+            "guideline": "AHA 2017; KIDCARE Tremoulet 2019; KAWAKINRA"
+          },
+          {
+            "line": "HIGH-RISK Japanese patients — primary IVIG + STEROID (RAISE protocol)",
+            "type": "Steroid intensification first-line",
+            "family": "—",
+            "agents": [
+              "RAISE PROTOCOL (Kobayashi Japan high-risk score >5/9) — IVIG 2 g/kg + PREDNISOLONE 2 mg/kg/day × 5 days then taper; demonstrated reduced CAA in high-risk Japanese KD (Kobayashi Lancet 2012)",
+              "Application to non-Japanese populations — limited validation; AHA 2017 considers reasonable for HIGH-RISK predicted by clinical scores",
+              "Some North American centers add steroid for incomplete responders OR high-risk features (age <12 mo, severe inflammation)"
+            ],
+            "notes": "Japanese RAISE protocol — risk-stratified primary intensification.",
+            "guideline": "AHA 2017; RAISE Kobayashi Lancet 2012"
+          },
+          {
+            "line": "CORONARY ARTERY ANEURYSM management",
+            "type": "Risk-stratified",
+            "family": "—",
+            "agents": [
+              "AHA 2017 RISK STRATIFICATION based on z-scores: NORMAL/MILD — no aneurysm — discontinue ASA at 6-8 weeks if normal echo; MILD CAA (z-score 2.5-5) — ASA 81 mg indefinitely; MODERATE CAA (z 5-10) — ASA + clopidogrel; LARGE/GIANT (z >10 or >8 mm absolute) — ASA + clopidogrel + WARFARIN or LMWH (target INR 2-3) given thrombus risk",
+              "GIANT ANEURYSMS — long-term cardiology + serial coronary imaging; intervention (PCI, CABG) if stenosis/MI",
+              "STATIN — controversial; not routine; consider for adolescents with persistent CAA"
+            ],
+            "notes": "CAA severity-stratified antithrombotic regimens.",
+            "guideline": "AHA 2017"
+          },
+          {
+            "line": "Long-term follow-up",
+            "type": "Lifelong cardiology",
+            "family": "—",
+            "agents": [
+              "NORMAL ECHO at 6-8 weeks (no CAA): low risk; possibly discharge from cardiology after several years; lifestyle (diet, exercise, no smoking) counseling",
+              "ANY HISTORY CAA: lifelong cardiology follow-up; serial echocardiography in childhood; CT/MRI/coronary angiography in adolescence/adulthood",
+              "AGGRESSIVE CV risk modification adolescents/adults — LDL goals, BP, glucose, smoking, weight, exercise",
+              "ACTIVITY restrictions for moderate-large CAA",
+              "PREGNANCY — CAA management high-risk obstetrics + cardiology"
+            ],
+            "notes": "KD survivors monitored long-term per CAA history.",
+            "guideline": "AHA 2017"
+          }
+        ],
+        "pearls": [
+          "MEDIUM-VESSEL VASCULITIS — children <5 years (peak 1-2)",
+          "AHA 2017: FEVER ≥5 DAYS + 4/5 PRINCIPAL FEATURES",
+          "PRINCIPAL: CONJUNCTIVITIS, ORAL CHANGES (strawberry tongue), EXTREMITY CHANGES (palmar erythema/desquamation), RASH, CERVICAL ADENOPATHY ≥1.5 cm",
+          "INCOMPLETE/ATYPICAL — fewer features + supportive labs + echo (AHA algorithm; especially infants <6 mo)",
+          "IVIG 2 g/kg + ASPIRIN within 10 days — REDUCES CAA from 25% to 4-6%",
+          "ECHO at diagnosis, 1-2 wk, 4-8 wk (CAA peak)",
+          "IVIG-RESISTANT (10-20%) — 2nd IVIG OR INFLIXIMAB OR steroid",
+          "RAISE PROTOCOL — primary IVIG + steroid in HIGH-RISK Japanese KD (Kobayashi 2012)",
+          "CAA RISK STRATIFICATION (z-scores) — ASA only / + clopidogrel / + warfarin or LMWH",
+          "GIANT CAA (z >10 or >8 mm) — TRIPLE antithrombotic; lifelong cardiology",
+          "MIS-C — distinct COVID-associated entity; treated separately",
+          "LEADING CAUSE acquired heart disease in developed countries",
+          "EVEN IF >10 DAYS — TREAT if fever / markers persistent or CAA on echo",
+          "ASIAN DESCENT highest incidence (Japan 240/100,000 <5 y)",
+          "LONG-TERM — CV risk modification + serial coronary imaging if CAA history"
+        ],
+        "introduction": "Kawasaki disease is a self-limited medium-vessel vasculitis of children, predominantly affecting those under 5 years and the leading cause of acquired heart disease in developed countries. Diagnosis follows AHA 2017 criteria (fever ≥5 days plus 4 of 5 principal features) with incomplete/atypical algorithms for infants and partial presentations. Treatment with IVIG 2 g/kg plus aspirin within 10 days of fever onset reduces coronary artery aneurysm risk from 25% to 4-6%. IVIG-resistant cases benefit from second IVIG, infliximab, or corticosteroids. Long-term coronary aneurysm management uses risk-stratified antithrombotic therapy with lifelong cardiology surveillance for those with persistent aneurysms.",
+        "source": "AHA Kawasaki Disease Statement 2017 (McCrindle Circulation 2017). RAISE Kobayashi Lancet 2012. KIDCARE Tremoulet 2019. CPS Kawasaki Position. Health Canada IVIG products."
       }
     ]
   },
@@ -144367,6 +144924,93 @@ var DRUGS = {
       "Hepatic decompensation signs at every visit (ascites, jaundice, encephalopathy)"
     ],
     "patient_counseling": "Once-daily oral. Pruritus very common — antihistamines, cholestyramine adjunct. Tell us if worsening jaundice, swelling, confusion, severe pruritus. Take 4-6 hours from cholestyramine if used together."
+  },
+  "benzathine_penicillin_g": {
+    "name": "Benzathine Penicillin G",
+    "brand": "Bicillin L-A (US); Bicillin/Penicillin G Benzathine (Canada — limited availability)",
+    "class": "Long-acting depot natural penicillin (β-lactam)",
+    "napra": "Schedule I (Rx); IM administration only — NEVER IV (fatal cardiopulmonary arrest reports).",
+    "moa": "Suspension of benzathine salt of PENICILLIN G, providing slow IM depot release of penicillin G over weeks. Bactericidal — inhibits BACTERIAL CELL WALL synthesis by binding penicillin-binding proteins (PBPs) → blocks transpeptidation → autolysis. ACTIVE against group A/B/C/G β-hemolytic streptococci (Strep pyogenes, S. agalactiae), Strep pneumoniae (PCN-susceptible), TREPONEMA PALLIDUM (syphilis — no resistance documented), oral anaerobes, Listeria monocytogenes (modest). NOT active against most staphylococci (β-lactamase), gram-negatives, atypicals. Slow release maintains MICs for syphilis + GAS prophylaxis for weeks.",
+    "indications": [
+      "EARLY SYPHILIS (primary, secondary, early latent <1 year) — single dose",
+      "LATE LATENT SYPHILIS (>1 year duration or unknown duration) — three weekly doses",
+      "TERTIARY (cardiovascular, gummatous) syphilis — three weekly doses (NOT neurosyphilis — requires IV PCN)",
+      "RHEUMATIC FEVER PROPHYLAXIS (secondary prevention) — q3-4 weekly indefinite",
+      "GROUP A STREPTOCOCCAL PHARYNGITIS — alternative to oral course (single dose)",
+      "GROUP A STREP impetigo, erysipelas treatment alternative"
+    ],
+    "dosing": {
+      "Adult primary/secondary/early latent syphilis": "2.4 million units IM once (typically 1.2 mU each gluteus)",
+      "Adult late latent or tertiary (non-neuro) syphilis": "2.4 million units IM weekly × 3 doses (total 7.2 mU)",
+      "NEUROSYPHILIS / OCULAR / OTIC SYPHILIS": "BENZATHINE PENICILLIN INADEQUATE — use AQUEOUS CRYSTALLINE PCN G 18-24 mU IV/day × 10-14 days (continuous infusion or 4-mU q4h) OR PROCAINE PCN G 2.4 mU IM daily + PROBENECID 500 mg PO QID × 10-14 days",
+      "Pediatric syphilis (early, congenital evaluated)": "50,000 U/kg IM once (max 2.4 mU)",
+      "Pediatric syphilis (late latent)": "50,000 U/kg IM weekly × 3 (max 2.4 mU each dose)",
+      "Rheumatic fever secondary prophylaxis (adult/child >27 kg)": "1.2 million units IM every 3-4 weeks (q3 weeks if higher-risk: post-recent attack, recurrent, high-incidence area)",
+      "Rheumatic fever secondary prophylaxis (child <27 kg)": "600,000 units IM every 3-4 weeks",
+      "GAS pharyngitis (adult/child >27 kg)": "1.2 million units IM once",
+      "GAS pharyngitis (child <27 kg)": "600,000 units IM once",
+      "Pregnancy syphilis": "Same as non-pregnant — primary/secondary/early latent: 2.4 mU IM ONCE; late latent: 2.4 mU weekly × 3 (some authorities recommend 3 doses for ALL syphilis in pregnancy)",
+      "Storage": "Refrigerate 2-8°C; warm to room temperature before injection; SHAKE before drawing",
+      "Administration": "DEEP IM (gluteal — adult; vastus lateralis — pediatric); divide ≥1.2 mU between two sites if large volume; ASPIRATE before injection (avoid intravascular)"
+    },
+    "side_effects": {
+      "common": [
+        "Injection site pain (significant — large volume thick suspension)",
+        "Local reactions (erythema, induration, abscess rare)",
+        "Allergic reactions (rash, urticaria, pruritus)"
+      ],
+      "serious": [
+        "ANAPHYLAXIS — class effect; ~1-4 per 100,000; 0.5% mortality with anaphylaxis; PCN allergy testing if doubt; epinephrine + monitoring 30 minutes post-injection",
+        "SERUM SICKNESS-LIKE REACTION (delayed type)",
+        "ACCIDENTAL IV ADMINISTRATION — FATAL CARDIOPULMONARY ARREST (drug particles → microemboli); BLACK BOX WARNING; NEVER IV",
+        "JARISCH-HERXHEIMER REACTION — common with syphilis treatment first 24h; fever, chills, headache, myalgia, rash exacerbation, hypotension; pre-treat with antipyretics + counselling; severe in PREGNANCY can cause preterm labor + fetal distress (monitor fetal HR; not contraindication but use supportive)",
+        "STEVENS-JOHNSON SYNDROME / TEN (rare)",
+        "INTERSTITIAL NEPHRITIS (rare)",
+        "Hemolytic anemia (rare; positive Coombs)",
+        "Seizures (extremely rare, high doses)",
+        "Hoigné syndrome (immediate non-allergic anxiety/dissociative reaction post-injection; resolves)"
+      ]
+    },
+    "contraindications": [
+      "Hypersensitivity to penicillin (anaphylaxis prior)",
+      "NEVER ADMINISTER IV — fatal",
+      "Hypersensitivity to other β-lactams (cross-reactivity ~1-10% cephalosporins; less with newer)"
+    ],
+    "interactions": [
+      "Probenecid — increases penicillin levels (used therapeutically for neurosyphilis with procaine PCN G)",
+      "Methotrexate — penicillins reduce renal clearance → increased MTX levels + toxicity",
+      "Tetracyclines — antagonism (bacteriostatic vs bactericidal — theoretical; usually clinically minor)",
+      "Oral contraceptives — penicillins theoretically reduce efficacy (limited evidence; backup contraception not routinely advised)"
+    ],
+    "pregnancy": "Cat B (long history of safe use). FIRST-LINE for syphilis in pregnancy — penicillin is the ONLY effective treatment for congenital syphilis prevention; PCN-allergic pregnant patients require DESENSITIZATION + PCN (no acceptable alternative). Breastfeeding: minimal transfer; compatible.",
+    "pk": "IM depot — slow release; detectable serum levels for 1-4 weeks (variable by dose); T. pallidum-active levels for 7-10 days after 2.4 mU dose; no significant CSF penetration (insufficient for neurosyphilis); 60% protein-bound; renal excretion (active tubular secretion).",
+    "canadian_notes": "Health Canada APPROVED but periodic SHORTAGES (global supply chain issues — Pfizer Bicillin L-A primary manufacturer); shortages 2017, 2023, 2024 affected syphilis treatment + RF prophylaxis. ODB General Benefit when available. SUPPLY ISSUES — alternatives during shortage: doxycycline 100 mg PO BID × 14 days (early syphilis non-pregnant) per PHAC 2024 STI Guidelines; ceftriaxone 1 g IM/IV daily × 10-14 days. CONGENITAL SYPHILIS — escalating in Canada (PHAC reports 5-fold increase 2018-2023); treatment of pregnant women is critical public health priority. CCP RHD Network (Indigenous health) — secondary prophylaxis programs use BPG q3 weeks. PHAC STI 2024 Guidelines: bicillin/BPG remains first-line all syphilis stages; pregnancy MUST receive PCN (desensitize if allergic). Reportable disease — syphilis all stages public health notifiable.",
+    "pearls": [
+      "LONG-ACTING IM PENICILLIN G — depot for syphilis + RF prophylaxis + GAS",
+      "NEVER IV — FATAL (microemboli; black box)",
+      "EARLY SYPHILIS: 2.4 mU IM ONCE",
+      "LATE LATENT / TERTIARY (non-neuro): 2.4 mU IM WEEKLY × 3",
+      "NEUROSYPHILIS / OCULAR / OTIC: BPG INADEQUATE — IV CRYSTALLINE PCN G 18-24 mU/day × 10-14 days",
+      "RF PROPHYLAXIS: 1.2 mU IM q3-4 weeks (q3 wk higher-risk/Indigenous Canadian programs)",
+      "PREGNANCY SYPHILIS: PCN ONLY EFFECTIVE — DESENSITIZE if allergic",
+      "JARISCH-HERXHEIMER 1st 24h — common (fever, chills, headache, myalgia)",
+      "PCN ALLERGY: doxycycline 100 mg BID × 14 d (early non-pregnant); CEFTRIAXONE 1 g IM/IV × 10-14 d",
+      "SUPPLY ISSUES Canada — periodic shortages (2017, 2023, 2024) affect access",
+      "GAS PHARYNGITIS: single 1.2 mU dose — alternative to 10-day oral PCN V",
+      "ASPIRATION before injection — avoid intravascular",
+      "DEEP IM — gluteal adult, vastus lateralis pediatric",
+      "RECOVERY 30 min post-injection — anaphylaxis monitoring",
+      "CONGENITAL SYPHILIS — escalating Canadian public health concern",
+      "SYPHILIS REPORTABLE — public health notifiable all stages"
+    ],
+    "monitoring": [
+      "Allergy assessment pre-administration",
+      "Observe 30 min post-injection (anaphylaxis)",
+      "Jarisch-Herxheimer 24-48h post-treatment (counsel patient)",
+      "Syphilis post-treatment — RPR/VDRL serology at 6, 12, 24 months (4-fold drop = treatment success)",
+      "Pregnancy syphilis — fetal monitoring during/post-treatment (Herxheimer fetal distress); RPR + delivery; congenital syphilis evaluation neonate"
+    ],
+    "patient_counseling": "IM injection in buttock or thigh — uncomfortable. Stay 30 min after for monitoring. Tell us about penicillin allergy. Possible flu-like symptoms first 24 hours after syphilis treatment (Jarisch-Herxheimer reaction — expected). Follow-up blood test required to confirm treatment worked. If pregnant — this is the only safe + effective syphilis treatment for your baby."
   }
 
 };
@@ -146340,7 +146984,8 @@ var FAMILY_MAP = {
   "nitroprusside": "Direct Vasodilators",
   "primidone": "Anticonvulsants (Barbiturate prodrugs)",
   "ropeginterferon_alfa_2b": "Interferons (Pegylated)",
-  "obeticholic_acid": "FXR Agonists / Bile Acid Therapies"
+  "obeticholic_acid": "FXR Agonists / Bile Acid Therapies",
+  "benzathine_penicillin_g": "Penicillins (Long-acting depot)"
 };
 var NAPRA_ODB_DATA = {
   "amoxicillin": {
@@ -156182,6 +156827,15 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "ODB LU specialty hepatology; second-line PBC.",
     "luCode": "Verify current Ontario e-Formulary LU code for Ocaliva (specialty PBC — pCPA negotiated)",
     "notes": "FXR agonist; second-line PBC after inadequate UDCA response (Toronto/Paris-II criteria) or UDCA intolerance. CONTRAINDICATED Child-Pugh B/C (FDA 2021 advisory). Severe pruritus (60-70%). Fibrates (bezafibrate, fenofibrate) + new PPAR agonists (seladelpar, elafibranor — FDA 2024) increasingly preferred alternatives."
+  },
+  "benzathine_penicillin_g": {
+    "name": "Benzathine Penicillin G (Bicillin L-A)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); IM only — NEVER IV (black box).",
+    "odbStatus": "General Benefit",
+    "odbDetail": "Covered when available; periodic Canadian shortages.",
+    "luCode": null,
+    "notes": "Long-acting depot PCN G. Syphilis first-line all stages (NOT neurosyphilis — IV PCN G). RF secondary prophylaxis. Pregnancy: PCN ONLY effective (desensitize if allergic). Jarisch-Herxheimer common 24h. Supply shortages in Canada — alternatives doxycycline (non-pregnant), ceftriaxone."
   }
 };
 var MINOR_AILMENTS = [
@@ -181040,6 +181694,17 @@ var PREG_DATA = {
     "bfRisk": "Compatible",
     "bfColor": "#10b981",
     "pregDetail": "Cat B (limited human data; animal data benign). Breastfeeding: minimal data; high protein binding suggests low transfer; specialist decision.",
+    "bfDetail": "Compatible with breastfeeding (limited data may apply).",
+    "alternatives": "",
+    "source": "Health Canada PM"
+  },
+  "benzathine_penicillin_g": {
+    "name": "Benzathine Penicillin G (Bicillin L-A (US); Bicillin)",
+    "pregRisk": "Compatible",
+    "pregColor": "#10b981",
+    "bfRisk": "Compatible",
+    "bfColor": "#10b981",
+    "pregDetail": "Cat B (long history of safe use). FIRST-LINE for syphilis in pregnancy — penicillin is the ONLY effective treatment for congenital syphilis prevention; PCN-allergic pregnant patients require DESENSITIZATION + PCN (no acceptable alternative). Breastfeeding: minimal transfer; compatible.",
     "bfDetail": "Compatible with breastfeeding (limited data may apply).",
     "alternatives": "",
     "source": "Health Canada PM"
