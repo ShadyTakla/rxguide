@@ -177126,16 +177126,16 @@ function showDeprescribing(id) {
   };
   var appliesTo = DEPRESCRIBING_APPLIES_TO[p.id] || [];
   if (appliesTo.length) {
-    h += '<div style="background:rgba(99,102,241,0.10);border:1px solid rgba(99,102,241,0.35);border-radius:8px;padding:14px;margin-bottom:14px;">';
-    h += '<div style="font-size:0.85rem;font-weight:700;color:#a5b4fc;margin-bottom:8px;">💊 Commonly applies to (click to open drug card)</div>';
-    h += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
+    h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:#a5b4fc;margin-bottom:10px;">💊 Drugs this commonly applies to</div>';
+    h += '<ul style="margin:0;padding-left:20px;">';
     for (var ai = 0; ai < appliesTo.length; ai++) {
       var dk = appliesTo[ai];
       if (!DRUGS[dk]) continue;
       var dn = DRUGS[dk].name || dk;
-      h += '<span onclick="showDrugPanel(\'' + dk + '\')" style="background:rgba(165,180,252,0.18);color:#c7d2fe;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:0.77rem;border:1px solid rgba(165,180,252,0.3);">' + dn + ' ↗</span>';
+      h += '<li style="font-size:0.83rem;color:#c8cadc;line-height:1.6;margin-bottom:3px;"><span onclick="showDrugPanel(\'' + dk + '\')" style="color:#a5b4fc;cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px;" title="Open ' + dn + ' drug card">' + dn + '</span></li>';
     }
-    h += '</div></div>';
+    h += '</ul></div>';
   }
 
   function sectionList(title, items, color, icon) {
