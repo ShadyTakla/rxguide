@@ -137767,14 +137767,22 @@ function renderDisease(cat, cond) {
   var signsArr = cond.signs || cond.signs_symptoms || [];
   if (signsArr && signsArr.length) {
     h += '<div id="sec-signs" class="section" style="scroll-margin-top:12px;"><div class="section-title">🩺 Signs &amp; Symptoms</div><ul>';
-    for (var i = 0; i < signsArr.length; i++) h += '<li>' + signsArr[i] + '</li>';
+    if (typeof signsArr === 'string') {
+      h += sentencesToBullets(signsArr);
+    } else {
+      for (var i = 0; i < signsArr.length; i++) h += '<li>' + signsArr[i] + '</li>';
+    }
     h += '</ul></div>';
   }
 
   // ── Diagnosis ───────────────────────────────────────────────────────────
   if (cond.diagnosis && cond.diagnosis.length) {
     h += '<div id="sec-diagnosis" class="section" style="scroll-margin-top:12px;"><div class="section-title">🔍 Diagnosis</div><ul>';
-    for (var i = 0; i < cond.diagnosis.length; i++) h += '<li>' + cond.diagnosis[i] + '</li>';
+    if (typeof cond.diagnosis === 'string') {
+      h += sentencesToBullets(cond.diagnosis);
+    } else {
+      for (var i = 0; i < cond.diagnosis.length; i++) h += '<li>' + cond.diagnosis[i] + '</li>';
+    }
     h += '</ul></div>';
   }
 
@@ -137873,7 +137881,11 @@ function renderDisease(cat, cond) {
   // ── Monitoring ──────────────────────────────────────────────────────────
   if (cond.monitoring && cond.monitoring.length) {
     h += '<div id="sec-monitoring" class="section" style="scroll-margin-top:12px;"><div class="section-title">📊 Monitoring</div><ul>';
-    for (var i = 0; i < cond.monitoring.length; i++) h += '<li>' + cond.monitoring[i] + '</li>';
+    if (typeof cond.monitoring === 'string') {
+      h += sentencesToBullets(cond.monitoring);
+    } else {
+      for (var i = 0; i < cond.monitoring.length; i++) h += '<li>' + cond.monitoring[i] + '</li>';
+    }
     h += '</ul></div>';
   }
 
