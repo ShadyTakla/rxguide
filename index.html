@@ -166582,7 +166582,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     category: 'respiratory', icon: '🫁', color: '#3b82f6',
     overview: 'Pneumonia acquired outside healthcare settings, in patients without recent hospitalization or immunosuppression. Severity-stratified using CRB-65 (or CURB-65 with urea) — guides outpatient vs inpatient vs ICU disposition. Always rule out atypical pathogens; cover Streptococcus pneumoniae empirically.',
     likely_organisms: [
-      { name: 'Streptococcus pneumoniae', frequency: '~30–50% — most common typical pathogen; pneumococcal resistance to macrolides ~25%' },
+      { name: 'Streptococcus pneumoniae', frequency: '~30–50% — most common typical pathogen; Canadian (CANWARD 2023) pneumococcal macrolide resistance ~22–25%, doxycycline resistance ~5–8%, penicillin non-susceptibility ~10–15% (high-level <5%)' },
       { name: 'Mycoplasma pneumoniae', frequency: '5–15% — atypical; younger adults, dry cough' },
       { name: 'Chlamydophila pneumoniae', frequency: '5–10% — atypical' },
       { name: 'Haemophilus influenzae', frequency: '5–10% — smokers, COPD' },
@@ -166628,6 +166628,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Discharge antibiotics should be reviewed — most CAP courses are 5 days, NOT 10 (longer courses do not improve outcomes per CAP-START and other Canadian RCTs).',
       'Always reassess at 48–72h for clinical response — failure to improve warrants imaging review, broader culture workup, and consideration of resistant or atypical pathogens.'
     ],
+    canadian_context: "S. pneumoniae macrolide resistance in Canada ~22–25% (CANWARD 2023) — azithromycin monotherapy is inappropriate in adults with comorbidities; doxycycline is the preferred atypical agent in Canadian practice. Pneumococcal penicillin non-susceptibility ~10–15% (high-level <5%); high-dose amoxicillin (1 g TID) overcomes most non-meningeal isolates. Ontario adult immunization: PCV20 routine ≥65y (NACI 2023). RSV (Arexvy/Abrysvo) publicly funded in Ontario for adults ≥75 and 60–74 with chronic conditions (Sept 2024). Test for influenza/RSV/SARS-CoV-2 during respiratory virus season; treat influenza with oseltamivir within 48h.",
     source: 'CTS/Bugs & Drugs 2024; AMMI Canada CAP guideline 2021; ATS/IDSA 2019',
     related_drugs: ['amoxicillin','amoxicillin_clavulanate','doxycycline','azithromycin','clarithromycin','ceftriaxone','levofloxacin','moxifloxacin','vancomycin','linezolid','oseltamivir','cefuroxime']
   },
@@ -166637,7 +166638,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     category: 'respiratory', icon: '🫁', color: '#3b82f6',
     overview: 'HAP: pneumonia ≥48h after admission, not present at admission. VAP: pneumonia ≥48h after intubation. Risk factors for MDR pathogens (MRSA, Pseudomonas, ESBL): IV antibiotics within 90 days, septic shock at VAP onset, ARDS, prolonged hospitalization (≥5 days), hemodialysis.',
     likely_organisms: [
-      { name: 'Staphylococcus aureus (incl. MRSA)', frequency: '20–30% — increases with ICU exposure' },
+      { name: 'Staphylococcus aureus (incl. MRSA)', frequency: '20–30% of HAP/VAP; Canadian (CNISP) hospital MRSA has declined to ~10–15% of S. aureus isolates' },
       { name: 'Pseudomonas aeruginosa', frequency: '15–25% — major MDR concern' },
       { name: 'Enterobacterales (Klebsiella, E. coli, Enterobacter, ESBL+)', frequency: '20–30%' },
       { name: 'Acinetobacter baumannii', frequency: '5–10% — MDR risk in some Canadian centres' },
@@ -166667,6 +166668,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       '7-day course non-inferior to 14 days for most VAP (Chastre 2003 RCT) — except non-fermenters (Pseudomonas, Acinetobacter) where extended course often used.',
       'AVOID daptomycin for pneumonia — inactivated by pulmonary surfactant.'
     ],
+    canadian_context: "CNISP (Canadian Nosocomial Infection Surveillance Program) tracks nosocomial pathogens — MRSA has declined to ~10–15% of S. aureus in Canadian hospitals (vs >30% historically). Pseudomonas resistance to pip-tazo ~10–15%; meropenem resistance <5%; ESBL Enterobacterales ~7–10% in Canadian ICUs. Ontario tertiary centres typically empirically use piperacillin-tazobactam + vancomycin or cefepime + vancomycin (lower AKI than pip-tazo + vancomycin). Always reference local hospital antibiogram and consult ID-stewardship.",
     source: 'Bugs & Drugs 2024; ATS/IDSA HAP/VAP 2016; Canadian Critical Care Society',
     related_drugs: ['piperacillin_tazobactam','cefepime','meropenem','vancomycin','linezolid','tobramycin','ciprofloxacin','levofloxacin','aztreonam','daptomycin']
   },
@@ -166711,6 +166713,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Position-related aspiration (LTC, dementia) — focus on prevention: dysphagia assessment, head-of-bed elevation, swallowing therapy.',
       'Lung abscess: prolonged therapy (4–6 weeks); follow with serial imaging. Drainage needed if >6 cm or no clinical response.'
     ],
+    canadian_context: "CTS pneumonia guidance and AMMI Canada align with reduced anaerobic coverage for routine community-acquired aspiration pneumonia. In Ontario long-term care, ceftriaxone IV daily is standard inpatient empiric therapy; metronidazole added only when periodontal disease, putrid sputum, or lung abscess. Recurrent aspiration in dementia/stroke patients warrants speech-language pathology assessment, swallowing therapy, and goals-of-care discussion (Ontario MOH frailty/end-of-life pathways).",
     source: 'Bugs & Drugs 2024; CTS guidelines',
     related_drugs: ['amoxicillin_clavulanate','ceftriaxone','piperacillin_tazobactam','clindamycin','metronidazole','levofloxacin','moxifloxacin','vancomycin']
   },
@@ -166757,6 +166760,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Smoking cessation, vaccinations (influenza annual, pneumococcal PCV20, COVID-19, RSV in eligible adults) reduce exacerbation frequency.',
       'Macrolide prophylaxis (azithromycin 250 mg 3×/week) reduces exacerbations in select frequent exacerbators — balance against QT, hearing risk, resistance.'
     ],
+    canadian_context: "CTS COPD 2023 — antibiotics indicated only with Anthonisen ≥2/3 criteria; sputum purulence is the strongest predictor of bacterial cause. Canadian H. influenzae beta-lactamase positivity ~25–30% supports amoxicillin-clavulanate over amoxicillin alone in moderate–severe AECOPD. Macrolide prophylaxis (azithromycin 250 mg 3×/wk) is covered by ODB for select frequent exacerbators. Ontario publicly funded vaccinations for COPD: influenza (universal annual), pneumococcal (PCV20), RSV (≥75 or 60–74 with chronic conditions), COVID-19. Smoking cessation supports (STOP, NRT, varenicline) covered under various ODB programs.",
     source: 'Bugs & Drugs 2024; CTS COPD guideline 2023; GOLD 2024',
     related_drugs: ['amoxicillin','amoxicillin_clavulanate','doxycycline','sulfamethoxazole','levofloxacin','moxifloxacin','azithromycin','piperacillin_tazobactam','cefepime','prednisone']
   },
@@ -166794,6 +166798,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Tdap booster recommended for all adults; pregnant individuals should receive Tdap in EVERY pregnancy (preferably 27–32 weeks gestation) for neonatal protection.',
       'Erythromycin in infants <1 month: AVOID — strong association with infantile hypertrophic pyloric stenosis. Use azithromycin instead.'
     ],
+    canadian_context: "PHAC reportable disease — Ontario Public Health Unit notification mandatory under HPPA. Ontario routine immunization: DTaP-IPV-Hib infant series (2/4/6/18 months), Tdap booster Grade 7 (publicly funded), and Tdap once in adulthood (then Td q10y). NACI/SOGC: Tdap in EVERY pregnancy at 27–32 weeks for transplacental neonatal protection. Post-exposure prophylaxis: same regimen as treatment, given to close contacts within 21 days; coordinated by local Public Health Unit.",
     source: 'Bugs & Drugs 2024; PHAC/NACI; CDC pertussis guideline',
     related_drugs: ['azithromycin','clarithromycin','erythromycin','sulfamethoxazole']
   },
@@ -166805,7 +166810,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     category: 'gu', icon: '💧', color: '#06b6d4',
     overview: 'Acute uncomplicated UTI in non-pregnant, healthy women without structural/functional urinary tract abnormalities. Typical features: dysuria, frequency, urgency, suprapubic pain, ABSENCE of fever, flank pain, or systemic symptoms. Note: ALL UTIs in men are considered complicated.',
     likely_organisms: [
-      { name: 'Escherichia coli', frequency: '75–95% — most common; Canadian E. coli resistance to TMP-SMX ~25%, ciprofloxacin ~15%' },
+      { name: 'Escherichia coli', frequency: '75–95% — most common; Canadian (CANWARD 2023) urinary E. coli resistance to TMP-SMX ~25–30%, ciprofloxacin ~20–25%, nitrofurantoin <5%, fosfomycin <5%' },
       { name: 'Staphylococcus saprophyticus', frequency: '5–10% — sexually active women' },
       { name: 'Klebsiella pneumoniae', frequency: '<5%' },
       { name: 'Proteus, Enterococcus', frequency: '<5% each' }
@@ -166842,6 +166847,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'AVOID treating asymptomatic bacteriuria in non-pregnant individuals — exception: pregnancy and pre-urologic procedures with mucosal trauma.',
       'Cranberry products: weak evidence for prevention; not for treatment.'
     ],
+    canadian_context: "Public Health Ontario / CANWARD 2023 — E. coli urinary resistance: TMP-SMX ~25–30%, ciprofloxacin ~20–25%, nitrofurantoin <5%, fosfomycin <5%. The IDSA 20% threshold for empirical TMP-SMX is OFTEN EXCEEDED in Ontario — confirm local antibiogram (PHO interactive antibiogram available). NITROFURANTOIN remains first-line in Ontario when CrCl ≥30 mL/min. Ontario pharmacist prescribing for uncomplicated UTI in adults ≥18y has been authorized by OCP since Oct 2023 (preferred agents: nitrofurantoin, TMP-SMX, fosfomycin). All recommended UTI antibiotics are ODB-covered.",
     source: 'Bugs & Drugs 2024; AAFP / Canadian Urological Association; SOGC for pregnancy',
     related_drugs: ['nitrofurantoin','sulfamethoxazole','fosfomycin','cephalexin','amoxicillin_clavulanate','ciprofloxacin']
   },
@@ -166851,7 +166857,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     category: 'gu', icon: '💧', color: '#06b6d4',
     overview: 'Upper urinary tract infection with renal parenchyma involvement (pyelonephritis) OR any UTI with complicating factors: men, pregnancy, immunocompromise, diabetes, structural/functional abnormalities, recent instrumentation, indwelling catheter. Always obtain pre-treatment urine culture.',
     likely_organisms: [
-      { name: 'Escherichia coli', frequency: '70–80% — Canadian ESBL rates 5–15% (rising)' },
+      { name: 'Escherichia coli', frequency: '70–80% — Canadian (CANWARD 2023) ESBL rate ~7–10% nationally, rising; Ontario hospital ESBL ~7–10%' },
       { name: 'Klebsiella pneumoniae', frequency: '5–15%' },
       { name: 'Proteus mirabilis', frequency: '5–10% — struvite stones' },
       { name: 'Enterococcus faecalis', frequency: '5–10% — older, healthcare-associated' },
@@ -166897,6 +166903,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'In men, all UTIs are complicated — consider prostatitis (longer duration 4–6 weeks if prostatic involvement suspected).',
       'Asymptomatic bacteriuria with indwelling catheter: do NOT treat unless symptomatic; replace catheter if treating.'
     ],
+    canadian_context: "Ontario hospital ESBL E. coli ~7–10% (rising; CANWARD 2023). Risk factors for Canadian ESBL: travel to South Asia/Middle East/North Africa within 6 months, recent broad-spectrum antibiotics, healthcare exposure, prior ESBL infection. Ceftriaxone 1 g IV/IM × 1 + oral step-down (ciprofloxacin or TMP-SMX if susceptible) is common Ontario emergency department outpatient pyelonephritis pathway. SOGC pregnancy UTI guidelines guide obstetric care (admit, IV until afebrile 48h). Ontario hospital antibiotic stewardship encourages 7-day FQ-based regimens over 14-day beta-lactam.",
     source: 'Bugs & Drugs 2024; AMMI/CIDS 2018 update; SOGC pregnancy UTI 2017',
     related_drugs: ['ciprofloxacin','levofloxacin','ceftriaxone','sulfamethoxazole','piperacillin_tazobactam','meropenem','vancomycin','gentamicin','tobramycin','aztreonam','cephalexin','amoxicillin_clavulanate']
   },
@@ -166906,7 +166913,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     category: 'gu', icon: '💧', color: '#06b6d4',
     overview: 'Acute bacterial prostatitis: acute febrile syndrome with severe perineal/pelvic pain, dysuria, urinary obstruction, tender boggy prostate. Chronic bacterial prostatitis: relapsing UTI, persistent pelvic discomfort. Antibiotics with prostatic penetration (lipophilic — fluoroquinolones, TMP-SMX) preferred.',
     likely_organisms: [
-      { name: 'Escherichia coli', frequency: '60–80%' },
+      { name: 'Escherichia coli', frequency: '60–80%. Canadian FQ resistance ~20–25% — culture-directed therapy strongly preferred' },
       { name: 'Other Enterobacterales (Klebsiella, Proteus, Enterobacter)', frequency: '10–20%' },
       { name: 'Pseudomonas aeruginosa', frequency: '5–10% — instrumentation, indwelling catheter' },
       { name: 'Enterococcus', frequency: '5–10%' },
@@ -166950,6 +166957,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Beta-lactams have POOR prostate penetration in absence of inflammation — adequate during acute phase but poor for chronic prostatitis.',
       'Always rule out urinary retention (post-void residual, bladder scan) — may need urologic intervention.'
     ],
+    canadian_context: "Increasing FQ resistance in Canadian E. coli (~20–25%) reduces empirical reliability of ciprofloxacin — culture-directed therapy strongly preferred when feasible. TMP-SMX remains a useful alternative in susceptible isolates. STI-related prostatitis in young men: PHAC 2023 STI guidelines recommend ceftriaxone 500 mg IM × 1 (increased from 250 mg in 2023) PLUS doxycycline 100 mg PO BID × 7 days; report to local Public Health Unit (gonorrhea is reportable in Ontario).",
     source: 'Bugs & Drugs 2024; AUA/Canadian Urological Association',
     related_drugs: ['ciprofloxacin','sulfamethoxazole','ceftriaxone','doxycycline','gentamicin','levofloxacin']
   },
@@ -166995,6 +167003,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Pyuria alone (without symptoms) is NOT an indication for antibiotic treatment.',
       'Solid organ transplant: ASB treatment NOT routinely indicated >1 month post-transplant (per AST guidelines).'
     ],
+    canadian_context: "Choosing Wisely Canada (multiple specialty societies) explicitly recommends against urine cultures or treatment in patients without urinary symptoms. Ontario long-term care homes have very high asymptomatic bacteriuria prevalence (>50% in some catheterized residents) — treatment does NOT improve delirium, falls, functional decline, or mortality, and increases C. difficile and resistance. Exception: pregnancy (SOGC: routine first-trimester urine culture, treat positives) and pre-urological procedure with mucosal trauma.",
     source: 'IDSA ASB 2019 (endorsed by AMMI Canada); Bugs & Drugs 2024; Choosing Wisely Canada',
     related_drugs: ['cephalexin','nitrofurantoin','fosfomycin','amoxicillin_clavulanate']
   },
@@ -167042,6 +167051,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Prevention: minimize catheter use (review daily for removal), aseptic insertion, closed drainage, no routine bladder irrigation.',
       'Most "fevers in catheterized patients" are NOT from CAUTI — search broadly for source.'
     ],
+    canadian_context: "PIDAC (Ontario provincial infection prevention) emphasizes catheter-day reduction and indwelling catheter avoidance. Ontario hospital antibiograms guide empiric choices; pip-tazo or cefepime are typical first-line for severe healthcare-associated CAUTI. Catheter removal or exchange (if catheter has been in place >2 weeks) is essential adjunct — antibiotics alone cannot eradicate biofilm. Asymptomatic candiduria does NOT warrant antifungal therapy in catheterized patients.",
     source: 'IDSA CAUTI 2009 (updated 2019); Bugs & Drugs 2024',
     related_drugs: ['ceftriaxone','ciprofloxacin','piperacillin_tazobactam','meropenem','vancomycin','aztreonam','gentamicin']
   },
@@ -167055,7 +167065,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     likely_organisms: [
       { name: 'Beta-hemolytic streptococci (Group A — S. pyogenes; also B, C, G)', frequency: '>70% of non-purulent cellulitis' },
       { name: 'Methicillin-sensitive Staphylococcus aureus (MSSA)', frequency: '<25% — minor role in non-purulent' },
-      { name: 'MRSA', frequency: '<5% in non-purulent cellulitis (unless purulent or risk factors)' }
+      { name: 'MRSA', frequency: '<5% in non-purulent cellulitis empirically; Canadian non-purulent SSTI rarely needs empirical MRSA coverage absent risk factors (IVDU, prior MRSA, Indigenous community, shelter)' }
     ],
     severity_strata: [
       {
@@ -167096,6 +167106,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Recurrent cellulitis in the same site (≥3/year): consider penicillin V 250 mg PO BID or benzathine penicillin G 1.2 MU IM monthly prophylaxis.',
       'Elevation of affected limb is a key non-pharmacological intervention — accelerates resolution.'
     ],
+    canadian_context: "Ontario CA-MRSA prevalence is moderate (~10–20% of community SSTI in Toronto/Ottawa/major centres) but higher in IVDU populations, shelter residents, Indigenous communities, and Northern Ontario (>30% in some regions). MOST non-purulent cellulitis in Ontario is treated with cephalexin alone — empirical MRSA coverage is NOT routinely needed without risk factors. ODB-covered options: cephalexin, cloxacillin, cefadroxil, TMP-SMX, doxycycline. Bilateral lower-extremity \"cellulitis\" is overdiagnosed — most is venous stasis dermatitis.",
     source: 'Bugs & Drugs 2024; IDSA SSTI 2014; Canadian dermatology resources',
     related_drugs: ['cephalexin','cefazolin','clindamycin','cefadroxil','vancomycin','amoxicillin_clavulanate','piperacillin_tazobactam','levofloxacin']
   },
@@ -167106,7 +167117,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     overview: 'Skin/soft tissue infection with purulent drainage, fluctuance, or abscess. Incision and drainage (I&D) is the cornerstone of management — antibiotics are adjunctive. Empiric coverage targets Staphylococcus aureus, including community-associated MRSA (CA-MRSA) when risk factors present or local prevalence high.',
     likely_organisms: [
       { name: 'Staphylococcus aureus (MSSA + MRSA)', frequency: '>75% of purulent SSTI' },
-      { name: 'CA-MRSA (community-associated)', frequency: '20–60% — varies by region; certain Canadian populations >50%' },
+      { name: 'CA-MRSA (community-associated)', frequency: '~10–20% in major Ontario centres (Toronto, Ottawa); >30% in IVDU populations, shelter residents, Indigenous communities, and Northern/Western Canada — local antibiogram critical' },
       { name: 'Streptococci', frequency: '<20% in purulent disease' },
       { name: 'Polymicrobial (perirectal, perineal, animal bite-associated)', frequency: 'Site-specific' }
     ],
@@ -167142,6 +167153,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Recurrent abscesses (especially MRSA): consider decolonization protocol — intranasal mupirocin BID × 5 days + chlorhexidine body wash daily × 5 days.',
       'Look for predisposing factors: hidradenitis suppurativa, diabetes, IV drug use, household contacts with similar lesions.'
     ],
+    canadian_context: "CA-MRSA is more clinically relevant for purulent SSTI in Ontario. TMP-SMX or doxycycline are first-line empirical agents post-I&D (both ODB-covered, oral, cheap). Some Ontario populations (Indigenous communities, inner-city shelters, IVDU) have CA-MRSA prevalence >30% — local public health/community antibiograms should guide empiric coverage. Decolonization (intranasal mupirocin BID + chlorhexidine body wash daily × 5d) considered for recurrent disease, particularly in household clusters.",
     source: 'Bugs & Drugs 2024; IDSA SSTI 2014; AMMI Canada CA-MRSA position',
     related_drugs: ['sulfamethoxazole','doxycycline','cephalexin','clindamycin','vancomycin','linezolid','daptomycin','cefazolin','mupirocin','chlorhexidine']
   },
@@ -167196,6 +167208,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Charcot foot can mimic infection — careful differentiation (Charcot: warm, swollen, neuropathic, no systemic signs; infection: usually with systemic signs or deep tissue findings).',
       'Consider hospitalization for: severe infection, inability to ambulate, failure of outpatient therapy, social barriers to care.'
     ],
+    canadian_context: "IWGDF/IDSA 2023 guidance is endorsed by Diabetes Canada. Ontario diabetic limb preservation programs (provincial Wound Care strategy, Limb Preservation Centres in major regional hospitals) emphasize multidisciplinary care: podiatry, vascular surgery, ID, plastics. Vascular assessment (ABI, toe-brachial index, doppler) at regional vascular clinics is standard before prolonged antibiotic courses or amputation decisions. Bone biopsy via interventional radiology (rather than wound swab) is increasingly available in tertiary Ontario centres.",
     source: 'IDSA / IWGDF 2023 diabetic foot guideline; Bugs & Drugs 2024',
     related_drugs: ['cephalexin','cloxacillin','amoxicillin_clavulanate','clindamycin','sulfamethoxazole','doxycycline','levofloxacin','metronidazole','ceftriaxone','piperacillin_tazobactam','vancomycin','linezolid','aztreonam']
   },
@@ -167236,6 +167249,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Repeat surgical debridement is the rule, not the exception (24–48h re-look standard).',
       'IVIG considered for streptococcal toxic shock syndrome (especially Type II) — neutralizes toxins.'
     ],
+    canadian_context: "Public Health Ontario reported a marked increase in invasive Group A Streptococcus (iGAS) post-pandemic 2022–2024, with peaks in winter respiratory virus season; iGAS infections including necrotizing fasciitis are reportable to Ontario Public Health under HPPA. SURGICAL EMERGENCY — every hour of delay increases mortality. Ontario tertiary centres have established surgical/ID/critical-care response pathways for suspected necrotizing soft tissue infections. Clindamycin (Eagle effect — toxin suppression) is added to all suspected GAS necrotizing infections.",
     source: 'Bugs & Drugs 2024; IDSA SSTI 2014; Canadian streptococcal TSS guidelines',
     related_drugs: ['piperacillin_tazobactam','meropenem','vancomycin','clindamycin','penicillin','aztreonam','metronidazole']
   },
@@ -167276,6 +167290,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Procalcitonin can guide de-escalation/discontinuation in stable patients (but should not delay initial empiric therapy).',
       'Vasopressor of choice: norepinephrine first-line; add vasopressin if persistent hypotension.'
     ],
+    canadian_context: "Critical Care Services Ontario coordinates provincial sepsis pathways aligned with Surviving Sepsis Campaign 2021 (Hour-1 bundle). Empirical regimens in Ontario tertiary centres typically pair ceftriaxone or pip-tazo with vancomycin pending source identification, with antifungal added based on Candida risk. Sepsis is a leading cause of in-hospital mortality in Canada — early recognition, blood cultures before antibiotics (within 45 min), and rapid source control are key.",
     source: 'Surviving Sepsis Campaign 2021; Bugs & Drugs 2024; AMMI Canada',
     related_drugs: ['ceftriaxone','vancomycin','azithromycin','metronidazole','piperacillin_tazobactam','meropenem','aztreonam','levofloxacin']
   },
@@ -167315,6 +167330,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Antifungal empiric coverage if Candida risk: prolonged broad-spectrum antibiotics, TPN, multi-site Candida colonization, recent abdominal surgery.',
       'Source control is paramount — drain abscess, remove infected hardware, debride necrosis.'
     ],
+    canadian_context: "Local CNISP and hospital antibiograms guide empiric coverage in Ontario hospitals. Ontario ICU MRSA rates ~10–15%; Pseudomonas ~10–20%; ESBL Enterobacterales ~7–10%; Candida species 5–10% of ICU sepsis. Antimicrobial stewardship programs (mandated in Ontario hospitals via Accreditation Canada) drive de-escalation. Catheter-related bloodstream infections track via CNISP CLABSI surveillance — line removal/exchange is essential.",
     source: 'Surviving Sepsis Campaign 2021; Bugs & Drugs 2024',
     related_drugs: ['piperacillin_tazobactam','cefepime','meropenem','vancomycin','aztreonam','metronidazole','fluconazole']
   },
@@ -167384,6 +167400,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Tooth extraction prophylaxis: only for HIGH-RISK cardiac conditions (prosthetic valve, prior IE, cyanotic CHD, transplant + valvulopathy) — amoxicillin 2 g PO 30–60 min before procedure.',
       'IVDU right-sided IE: unique cohort; some protocols use 2-week IV regimens for uncomplicated MSSA.'
     ],
+    canadian_context: "IVDU-associated right-sided IE has risen significantly in Canada with the opioid crisis — Northern Ontario and Indigenous communities particularly affected; harm-reduction integration with IE care is increasingly emphasized. Six-week IV antibiotics remain Canadian standard; the POET trial (oral step-down at 10–14d for stable, susceptible cases) is influencing select Canadian centres but not yet routine. Cardiac surgery referral programs: Toronto General/St. Michael's, Sunnybrook, Hamilton General, Ottawa Heart Institute, London. Consult ID for all S. aureus bacteremia.",
     source: 'AHA/ACC IE 2015; ESC IE 2023; AMMI Canada IE position; Bugs & Drugs 2024',
     related_drugs: ['vancomycin','ceftriaxone','cefepime','rifampin','cefazolin','cloxacillin','daptomycin','penicillin','ampicillin','gentamicin','linezolid','aztreonam','amoxicillin']
   },
@@ -167441,6 +167458,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Public health: meningococcal disease is REPORTABLE — close contacts need chemoprophylaxis (rifampin, ciprofloxacin, ceftriaxone IM).',
       'Vaccination prevention: pneumococcal (PCV20/PCV15+PPSV23 schedules), meningococcal (MenACWY adolescents, MenB selected), Hib (childhood), per NACI.'
     ],
+    canadian_context: "N. meningitidis serogroup B leads in Canadian adolescents/young adults; Y in older adults; C nearly eliminated by routine vaccination. Ontario routine immunization: MenC-C in infancy (1y), MenACWY-Tet in Grade 7 (universal); MenB (Bexsero/Trumenba) recommended for high-risk groups (asplenia, complement deficiency, lab workers, outbreak response) but NOT publicly funded for healthy adolescents. Adult pneumococcal: PCV20 routine ≥65y (NACI 2023). Hib essentially eliminated by routine Hib vaccine. Reportable in Ontario; close contacts get chemoprophylaxis (rifampin, ceftriaxone IM, or ciprofloxacin) coordinated by Public Health Unit.",
     source: 'IDSA bacterial meningitis 2004 (updated); AMMI Canada; Bugs & Drugs 2024',
     related_drugs: ['ceftriaxone','vancomycin','ampicillin','cefepime','meropenem','dexamethasone','acyclovir','cefotaxime','gentamicin','rifampin','ciprofloxacin','sulfamethoxazole']
   },
@@ -167480,6 +167498,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Empiric antifungal (voriconazole) and Toxoplasma coverage in immunocompromised (HIV, transplant) per local epidemiology.',
       'Serial imaging at 1–2 week intervals (MRI preferred) to assess response — antibiotic duration guided by imaging resolution.'
     ],
+    canadian_context: "Toronto (TGH/UHN, SickKids), Hamilton (HHS), London (LHSC), Ottawa (TOH), Kingston have neurosurgical referral programs for brain abscess. ID consultation is the Ontario standard. Imaging-guided stereotactic aspiration is preferred over open craniotomy when feasible; serial MRI guides antibiotic duration. Always investigate source: dental, sinus, otitis, congenital heart disease (R-to-L shunt), endocarditis, lung abscess.",
     source: 'IDSA brain abscess; Bugs & Drugs 2024',
     related_drugs: ['ceftriaxone','metronidazole','vancomycin','cefepime','meropenem','aztreonam','moxifloxacin','amoxicillin_clavulanate','voriconazole']
   },
@@ -167492,7 +167511,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     overview: 'Acute middle ear infection — classic triad: middle ear effusion + signs of acute inflammation (ear pain, fever, irritability) + bulging tympanic membrane. Most common in children. Many cases are viral or self-resolving — observation appropriate in selected cases.',
     likely_organisms: [
       { name: 'Streptococcus pneumoniae', frequency: '30–40%' },
-      { name: 'Haemophilus influenzae (non-typeable)', frequency: '20–30%; ~30% beta-lactamase positive in Canada' },
+      { name: 'Haemophilus influenzae (non-typeable)', frequency: '20–30%; ~25–30% beta-lactamase positive in Canada — supports high-dose amoxicillin first-line, amox-clav for failure or otitis-conjunctivitis syndrome' },
       { name: 'Moraxella catarrhalis', frequency: '10–15%; >90% beta-lactamase positive' },
       { name: 'Group A Strep (S. pyogenes)', frequency: '<5% in children' },
       { name: 'Viral co-infection', frequency: 'Very common; many AOM episodes are mixed viral/bacterial' }
@@ -167536,6 +167555,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Vaccinations: PCV13/PCV15 (childhood schedule) reduces pneumococcal AOM. Annual influenza vaccine reduces AOM rates.',
       'NEVER use topical aminoglycosides if possible perforation — ototoxicity risk.'
     ],
+    canadian_context: "CPS AOM 2016 — observation appropriate for many children ≥2y with mild unilateral disease (safety-net prescription approach). PCV15 (replacing PCV13) and routine catch-up immunization in Ontario have reduced pneumococcal AOM. Canadian H. influenzae beta-lactamase ~25–30%; high-dose amoxicillin (75–90 mg/kg/day divided BID) remains first-line. Amoxicillin-clavulanate reserved for treatment failure or otitis-conjunctivitis syndrome (suggesting beta-lactamase-positive H. influenzae). Topical ciprofloxacin-dexamethasone for tube-related otorrhea is widely used in Ontario pediatric practice — avoids systemic antibiotic.",
     source: 'CPS AOM 2016; AAP/AAFP 2013; Bugs & Drugs 2024',
     related_drugs: ['amoxicillin','amoxicillin_clavulanate','cefuroxime','azithromycin','ceftriaxone','ciprofloxacin','ibuprofen','acetaminophen']
   },
@@ -167546,7 +167566,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     overview: 'Acute sinusitis is most often viral (>90%); bacterial superinfection ("ABRS") complicates ~0.5–2%. Diagnose ABRS when: symptoms >10 days without improvement, OR severe symptoms (high fever ≥39°C, purulent discharge, facial pain) ≥3–4 days, OR worsening after initial improvement (double-sickening).',
     likely_organisms: [
       { name: 'Streptococcus pneumoniae', frequency: '30–40%' },
-      { name: 'Haemophilus influenzae (often beta-lactamase positive)', frequency: '20–30%' },
+      { name: 'Haemophilus influenzae (often beta-lactamase positive)', frequency: '20–30%; Canadian beta-lactamase positivity ~25–30%' },
       { name: 'Moraxella catarrhalis', frequency: '10–15% — children more than adults' },
       { name: 'Streptococcus pyogenes / anaerobes / S. aureus', frequency: '<10% — chronic/dental source' }
     ],
@@ -167581,6 +167601,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Choosing Wisely Canada: "Don\'t prescribe antibiotics for acute sinusitis without symptoms ≥10 days, severe symptoms, or worsening after initial improvement."',
       'Chronic rhinosinusitis (>12 weeks): different pathophysiology and management — antibiotics rarely curative, ENT referral standard.'
     ],
+    canadian_context: "Choosing Wisely Canada (College of Family Physicians, Otolaryngology) recommends against antibiotics for acute sinusitis without symptoms ≥10 days, severe symptoms (≥39°C + purulent + facial pain ≥3–4 days), or \"double-sickening\" pattern. Most uncomplicated cases managed by Ontario family physicians without imaging. Recurrent or chronic rhinosinusitis warrants ENT referral for nasal endoscopy and CT. Intranasal corticosteroids (mometasone, fluticasone) are widely used as adjunct.",
     source: 'IDSA ABRS 2012; CFP/CMA Choosing Wisely; Bugs & Drugs 2024',
     related_drugs: ['amoxicillin_clavulanate','amoxicillin','doxycycline','levofloxacin','ceftriaxone','vancomycin','metronidazole','mometasone','fluticasone']
   },
@@ -167590,7 +167611,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     category: 'ent', icon: '👂', color: '#f59e0b',
     overview: 'Group A Streptococcus (S. pyogenes) pharyngitis. Most pharyngitis is VIRAL; treat only confirmed or strongly suspected GAS to prevent rheumatic fever. Use Centor/McIsaac score — only test (rapid antigen detection test or culture) those with high pre-test probability.',
     likely_organisms: [
-      { name: 'Group A Streptococcus (S. pyogenes)', frequency: '~10% adults; ~30% children with pharyngitis' },
+      { name: 'Group A Streptococcus (S. pyogenes)', frequency: '~10% adults; ~30% children with pharyngitis. Canadian GAS macrolide resistance ~8–12% (rising; PHAC) — penicillin/amoxicillin first-line empirically' },
       { name: 'Group C/G Strep', frequency: 'Less common — clinical significance debated; usually self-limited' },
       { name: 'Viruses (rhinovirus, EBV, adenovirus)', frequency: '~70–90% of all pharyngitis' },
       { name: 'Fusobacterium necrophorum (Lemierre syndrome)', frequency: 'Young adults; severe persistent pharyngitis' }
@@ -167620,6 +167641,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Avoid amoxicillin in mononucleosis (causes morbilliform rash — not a true allergy but problematic).',
       'Lemierre syndrome (Fusobacterium necrophorum): suspect in young adult with prolonged pharyngitis + neck pain + fever + systemic illness — often missed; mortality high; CT neck + IV beta-lactam/metronidazole.'
     ],
+    canadian_context: "GAS macrolide resistance in Canada ~8–12% and rising (PHAC surveillance) — penicillin V or amoxicillin remain first-line empirically; reserve macrolides for true penicillin allergy. Centor/McIsaac scoring directs RADT/culture testing. iGAS (invasive GAS) rates have risen post-pandemic in Ontario — early antibiotic treatment of confirmed strep pharyngitis remains key for rheumatic fever prevention. Ontario pharmacist-prescribing for strep pharyngitis (RADT-guided) is being piloted in select community pharmacies.",
     source: 'IDSA pharyngitis 2012; CPS streptococcal; Bugs & Drugs 2024',
     related_drugs: ['penicillin','amoxicillin','cephalexin','clindamycin','azithromycin','clarithromycin']
   },
@@ -167658,6 +167680,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Ensure airway monitoring — peritonsillar abscess can rapidly progress to airway compromise.',
       'Recurrent peritonsillar abscess (≥2 episodes): consider interval tonsillectomy.'
     ],
+    canadian_context: "ENT referral standard in Ontario; pediatric and adult emergency department protocols for needle aspiration vs incision and drainage. Adjunctive single-dose dexamethasone (Chau 2014 RCT) is commonly used in Ontario EDs to reduce pain and trismus. Suspected deep neck space involvement: CT neck with contrast and urgent ENT consultation.",
     source: 'IDSA SSTI; ENT Canada/AAO-HNS; Bugs & Drugs 2024',
     related_drugs: ['amoxicillin_clavulanate','clindamycin','piperacillin_tazobactam','ceftriaxone','metronidazole','vancomycin','levofloxacin','aztreonam','dexamethasone']
   },
@@ -167709,8 +167732,9 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Probiotics for primary or secondary prevention: evidence inconsistent; not routinely recommended (Saccharomyces boulardii most-studied).',
       'Hand hygiene with SOAP AND WATER (not alcohol-based — does not kill C. difficile spores).',
       'Hospital infection control: contact precautions, single room, dedicated equipment.',
-      'Bezlotoxumab (monoclonal anti-toxin B): adjunct to standard antibiotic therapy in patients at high risk of recurrence (age ≥65, immunocompromise, severe CDI, recurrent CDI). Reduces recurrence ~10% absolute.'
+      'Bezlotoxumab (monoclonal anti-toxin B): adjunct to standard antibiotic therapy in patients at high risk of recurrence (age ≥65, immunocompromise, severe CDI, recurrent CDI). Reduces recurrence ~10% absolute. Canada: Health Canada–approved; NOT routinely on ODB — specialty access via Exceptional Access Program. Fidaxomicin covered under ODB Limited Use code 564 (recurrent CDI).'
     ],
+    canadian_context: "NAP1/B1/027 hypervirulent strain has decreased in Canadian hospitals through enhanced infection control (PIDAC contact precautions, soap-and-water hand hygiene, dedicated equipment). Fidaxomicin is preferred per IDSA/SHEA 2021 and AMMI Canada — Ontario Drug Benefit (ODB) covers fidaxomicin under Limited Use code 564 for recurrent CDI; some hospitals also use it for initial CDI in high-risk patients. Bezlotoxumab is Health Canada–approved but NOT routinely funded — specialty access via Exceptional Access Program. Fecal microbiota transplant (FMT) is offered through Ontario tertiary centres (e.g., St. Michael's, Western, Mount Sinai).",
     source: 'IDSA/SHEA CDI 2021 update; AMMI Canada; Bugs & Drugs 2024',
     related_drugs: ['fidaxomicin','vancomycin','metronidazole','bezlotoxumab']
   },
@@ -167757,6 +167781,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Tokyo Guidelines (TG18): standardized severity grading for cholangitis and cholecystitis — guides urgency of intervention.',
       'Empiric Enterococcus coverage (ampicillin or vancomycin): only if biliary stent, healthcare-associated, immunocompromised, or transplant.'
     ],
+    canadian_context: "Tokyo Guidelines TG18 widely applied across Ontario hospitals for severity stratification. ERCP is available 24/7 at Ontario tertiary centres (UHN, Mount Sinai, Sunnybrook, Hamilton, London, Ottawa); transfer pathways exist for community hospitals. Antibiotic durations are SHORT (4–7 days) AFTER source control — Ontario antibiotic stewardship targets unnecessary prolongation. Empiric Enterococcus coverage (ampicillin/vancomycin) only when biliary stent, healthcare-associated, immunocompromised, or transplant.",
     source: 'Tokyo Guidelines TG18; IDSA intra-abdominal 2010; Bugs & Drugs 2024',
     related_drugs: ['ceftriaxone','metronidazole','piperacillin_tazobactam','meropenem','ciprofloxacin','vancomycin','aztreonam','amoxicillin_clavulanate']
   },
@@ -167812,6 +167837,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Public health: report enteric fever, cholera, hemorrhagic E. coli (EHEC O157:H7) — consult local public health.',
       'Vaccinations: typhoid (oral or IM), cholera-ETEC oral (Dukoral) for at-risk travellers per CATMAT.'
     ],
+    canadian_context: "CATMAT (Committee to Advise on Tropical Medicine and Travel — PHAC) is the primary Canadian source. Azithromycin 1 g × 1 is preferred over fluoroquinolones because Campylobacter FQ resistance is >80% in South/Southeast Asia (the most common destinations producing TD in Canadian travellers). Dukoral (oral cholera/ETEC vaccine) is Health Canada–licensed; coverage by private plans varies; not on ODB. Travel medicine clinics across Ontario provide pre-travel counselling, vaccinations (typhoid, yellow fever, hepatitis A/B), and self-treatment kit prescriptions.",
     source: 'CATMAT (Committee to Advise on Tropical Medicine); IDSA travel diarrhea; Bugs & Drugs 2024',
     related_drugs: ['azithromycin','ciprofloxacin','metronidazole','loperamide','bismuth_subsalicylate']
   },
@@ -167876,6 +167902,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'OVIVA (2019, NEJM): oral antibiotics non-inferior to IV for osteomyelitis when high-bioavailability oral options used (FQs, linezolid, clindamycin, rifampin). Consult ID for transition.',
       'Prosthetic joint infection: 1 episode in 1% of THA/TKA patients lifetime; surgical management critical (DAIR, 1-stage, 2-stage revision).'
     ],
+    canadian_context: "OVIVA-style early oral step-down (high-bioavailability oral agents — FQs, linezolid, clindamycin) is increasingly adopted in Ontario centres for stable patients. ID consultation is the Ontario standard for vertebral osteomyelitis and prosthetic joint infection. Always test for Brucella in immigrants from endemic regions (Mediterranean, Middle East, Latin America); TB (Pott disease) where epidemiologic risk. Bone biopsy via interventional radiology is widely available at Ontario tertiary centres. Outpatient parenteral therapy (CCAC/Ontario Health home IV programs) supports prolonged IV therapy.",
     source: 'IDSA bone/joint guidelines; OVIVA 2019; AMMI Canada; Bugs & Drugs 2024',
     related_drugs: ['vancomycin','cefepime','ceftriaxone','cefazolin','daptomycin','rifampin','levofloxacin','sulfamethoxazole','linezolid','clindamycin','aztreonam']
   },
@@ -167887,7 +167914,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     likely_organisms: [
       { name: 'Staphylococcus aureus (MSSA, MRSA)', frequency: '50–60% adults; most common cause' },
       { name: 'Streptococci (incl. GAS)', frequency: '15–25%' },
-      { name: 'Neisseria gonorrhoeae', frequency: 'Sexually active adults — may be polyarticular, tenosynovitis, dermatitis (DGI syndrome)' },
+      { name: 'Neisseria gonorrhoeae', frequency: 'Sexually active adults — may be polyarticular, tenosynovitis, dermatitis (DGI syndrome). Canadian (PHAC 2023): ciprofloxacin resistance >40% (do NOT use empirically); azithromycin resistance ~10–20% — current empirical regimen is ceftriaxone 500 mg IM (increased from 250 mg in 2023)' },
       { name: 'Gram-negatives', frequency: 'Elderly, immunocompromised, IVDU' },
       { name: 'Kingella kingae', frequency: 'Young children (<4y)' }
     ],
@@ -167930,6 +167957,7 @@ var EMPIRIC_THERAPY_SYNDROMES = [
       'Polyarticular: think gonococcal, viral (parvovirus, hepatitis B), or non-infectious (rheumatologic) — different management.',
       'Crystal arthropathy (gout, pseudogout) can co-exist with septic arthritis — always send fluid for both crystals AND culture.'
     ],
+    canadian_context: "PHAC 2023 STI guideline updated empiric ceftriaxone IM dose to 500 mg (from 250 mg) due to declining gonococcal susceptibility worldwide. Ciprofloxacin resistance in Canadian N. gonorrhoeae >40% — cannot use empirically; PHAC tracks resistance via Antimicrobial Resistance Surveillance Reports. Joint aspiration BEFORE antibiotics is the Ontario emergency department standard. Septic arthritis requires orthopedic surgical consultation for washout (arthroscopic or open) — antibiotics alone cannot clear bacterial joint infection.",
     source: 'IDSA septic arthritis; Bugs & Drugs 2024',
     related_drugs: ['vancomycin','ceftriaxone','cefazolin','daptomycin','aztreonam','levofloxacin','doxycycline','azithromycin','clindamycin','linezolid']
   }
@@ -168063,6 +168091,13 @@ function showSyndrome(id) {
   h += '<h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 10px;">' + s.title + '</h2>';
   h += '<p style="font-size:0.85rem;color:#c8cadc;line-height:1.6;margin:0;">' + s.overview + '</p>';
   h += '</div>';
+
+  // Canadian / Ontario context
+  if (s.canadian_context) {
+    h += '<div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:#f87171;margin-bottom:8px;">🍁 Canadian / Ontario Context</div>';
+    h += '<div style="font-size:0.83rem;color:#c8cadc;line-height:1.6;">' + linkifyText(s.canadian_context, rd) + '</div></div>';
+  }
 
   // Likely organisms
   if (s.likely_organisms && s.likely_organisms.length) {
