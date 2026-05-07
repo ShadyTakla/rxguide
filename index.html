@@ -137658,6 +137658,16 @@ function showDisease(catKey, diseaseId) {
   // Render jump-to sidebar
   var jn = document.getElementById('disease-jumpnav');
   if (jn) jn.innerHTML = buildJumpNav(cond);
+
+  // Scroll page to top (window + any scrollable parent containers) so each
+  // condition opens at its overview, not at whatever scroll the previous one was at
+  window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+  if (document.documentElement) document.documentElement.scrollTop = 0;
+  if (document.body) document.body.scrollTop = 0;
+  var dv = document.getElementById('disease-view');
+  if (dv) dv.scrollTop = 0;
+  // Also reset jump-nav if it carries scroll
+  if (jn) jn.scrollTop = 0;
 }
 
 function classifyNonDrug(agents) {
