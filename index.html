@@ -525,18 +525,43 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 <!-- Antimicrobials Tab -->
 <div id="tab-antimicrobials" class="tab-panel">
   <h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 6px;">🦠 Antimicrobial Reference</h2>
-  <p style="font-size:0.83rem;color:var(--muted);margin-bottom:12px;">Comprehensive antimicrobial guide: families, coverage, dosing, and clinical pearls for community pharmacy practice.</p>
-  <div style="position:sticky;top:0;z-index:20;background:var(--bg);padding:0 0 10px;">
-    <div style="display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:9px 14px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
-      <span style="font-size:1rem;opacity:0.6;">🔍</span>
-      <input id="amr-search-input" type="text" placeholder="Search drug, family, coverage, uses…"
-        style="flex:1;background:transparent;border:none;outline:none;color:var(--text);font-size:0.88rem;"
-        oninput="amrSearch(this.value)" onkeydown="amrSearchNav(event)">
-      <span id="amr-search-count" style="color:var(--muted);font-size:0.78rem;white-space:nowrap;min-width:4em;text-align:right;"></span>
-      <button id="amr-search-clear" onclick="amrSearchClear()" style="display:none;background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.9rem;padding:0 2px;" title="Clear search">✕</button>
+  <p style="font-size:0.83rem;color:var(--muted);margin-bottom:12px;">Comprehensive antimicrobial guide: drug-centric (families, coverage, dosing) plus syndrome-centric empiric therapy (Bugs &amp; Drugs–style).</p>
+
+  <!-- View toggle -->
+  <div style="display:flex;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:4px;margin-bottom:12px;">
+    <button id="amr-view-drug-btn" onclick="setAmrView('drug')" class="amr-view-btn" style="flex:1;padding:9px 14px;background:var(--accent);color:#fff;border:none;border-radius:7px;font-size:0.85rem;font-weight:700;cursor:pointer;">💊 Drug-Centric</button>
+    <button id="amr-view-syndrome-btn" onclick="setAmrView('syndrome')" class="amr-view-btn" style="flex:1;padding:9px 14px;background:transparent;color:var(--muted);border:none;border-radius:7px;font-size:0.85rem;font-weight:700;cursor:pointer;">🩺 Syndrome-Centric (Empiric Therapy)</button>
+  </div>
+
+  <!-- Drug-Centric view -->
+  <div id="amr-view-drug">
+    <div style="position:sticky;top:0;z-index:20;background:var(--bg);padding:0 0 10px;">
+      <div style="display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:9px 14px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+        <span style="font-size:1rem;opacity:0.6;">🔍</span>
+        <input id="amr-search-input" type="text" placeholder="Search drug, family, coverage, uses…"
+          style="flex:1;background:transparent;border:none;outline:none;color:var(--text);font-size:0.88rem;"
+          oninput="amrSearch(this.value)" onkeydown="amrSearchNav(event)">
+        <span id="amr-search-count" style="color:var(--muted);font-size:0.78rem;white-space:nowrap;min-width:4em;text-align:right;"></span>
+        <button id="amr-search-clear" onclick="amrSearchClear()" style="display:none;background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.9rem;padding:0 2px;" title="Clear search">✕</button>
+      </div>
+    </div>
+    <div id="amr-grid"></div>
+  </div>
+
+  <!-- Syndrome-Centric view -->
+  <div id="amr-view-syndrome" style="display:none;">
+    <div id="empiric-home">
+      <div style="background:rgba(99,102,241,0.06);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:14px;">
+        <div style="font-size:0.85rem;color:#c8cadc;line-height:1.6;">Empiric antibiotic regimens by infectious syndrome. Stratified by severity (outpatient / inpatient / ICU) with likely pathogens, penicillin-allergy alternatives, IV→PO step-down, and duration. Always tailor to local antibiogram, patient-specific factors, and culture/sensitivity once available.</div>
+        <div style="font-size:0.75rem;color:var(--muted);margin-top:8px;">Primary source: AMMI Canada / Bugs &amp; Drugs (2024 update). Drug names are clickable to open the drug card.</div>
+      </div>
+      <div id="empiric-categories"></div>
+    </div>
+    <div id="empiric-detail" style="display:none;">
+      <button onclick="document.getElementById('empiric-home').style.display='block';document.getElementById('empiric-detail').style.display='none';" style="background:var(--card);border:1px solid var(--border);color:var(--text);padding:7px 12px;border-radius:6px;cursor:pointer;font-size:0.83rem;margin-bottom:12px;">← Back to syndromes</button>
+      <div id="empiric-content"></div>
     </div>
   </div>
-  <div id="amr-grid"></div>
 </div>
 
 
@@ -165878,6 +165903,1578 @@ function buildAMR() {
   }
   grid.innerHTML = h;
 }
+
+// ════════════════════════════════════════════════════════════
+// EMPIRIC ANTIMICROBIAL THERAPY BY SYNDROME (Bugs & Drugs–style)
+// Primary source: AMMI Canada / Bugs & Drugs 2024 update,
+// supplemented with Canadian disease society guidelines.
+// ════════════════════════════════════════════════════════════
+var EMPIRIC_THERAPY_CATEGORIES = [
+  { key: 'respiratory', label: 'Respiratory Tract Infections', icon: '🫁', color: '#3b82f6' },
+  { key: 'gu',          label: 'Genitourinary Tract Infections', icon: '💧', color: '#06b6d4' },
+  { key: 'ssti',        label: 'Skin & Soft Tissue Infections', icon: '🦠', color: '#10b981' },
+  { key: 'sepsis',      label: 'Sepsis & Bloodstream Infections', icon: '⚕️', color: '#ef4444' },
+  { key: 'cns',         label: 'CNS Infections', icon: '🧠', color: '#a855f7' },
+  { key: 'ent',         label: 'Ear, Nose & Throat Infections', icon: '👂', color: '#f59e0b' },
+  { key: 'gi',          label: 'GI / Hepatobiliary Infections', icon: '🤢', color: '#84cc16' },
+  { key: 'bone',        label: 'Bone & Joint Infections', icon: '🦴', color: '#fb923c' }
+];
+
+var EMPIRIC_THERAPY_SYNDROMES = [
+  // ═══════════ RESPIRATORY ═══════════
+  {
+    id: 'cap',
+    title: 'Community-Acquired Pneumonia (CAP)',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'Pneumonia acquired outside healthcare settings, in patients without recent hospitalization or immunosuppression. Severity-stratified using CRB-65 (or CURB-65 with urea) — guides outpatient vs inpatient vs ICU disposition. Always rule out atypical pathogens; cover Streptococcus pneumoniae empirically.',
+    likely_organisms: [
+      { name: 'Streptococcus pneumoniae', frequency: '~30–50% — most common typical pathogen; pneumococcal resistance to macrolides ~25%' },
+      { name: 'Mycoplasma pneumoniae', frequency: '5–15% — atypical; younger adults, dry cough' },
+      { name: 'Chlamydophila pneumoniae', frequency: '5–10% — atypical' },
+      { name: 'Haemophilus influenzae', frequency: '5–10% — smokers, COPD' },
+      { name: 'Legionella pneumophila', frequency: '2–8% — severe CAP, ICU; consider with travel/water exposure' },
+      { name: 'Respiratory viruses (Influenza, RSV, SARS-CoV-2)', frequency: '20–30% — co-infection common' },
+      { name: 'Staphylococcus aureus (incl. MRSA)', frequency: '<5% — post-influenza, severe necrotizing CAP' }
+    ],
+    severity_strata: [
+      {
+        name: 'Outpatient — Healthy, no comorbidities (CRB-65 = 0)',
+        criteria: 'No hospitalization needed. No comorbidities (no CHF, COPD, diabetes, CKD, malignancy, immunosuppression). No recent antibiotics (<3 months).',
+        first_line: 'Amoxicillin 1 g PO TID × 5 days',
+        alt_pen_allergy: 'Doxycycline 100 mg PO BID × 5 days (preferred) OR Azithromycin 500 mg day 1, then 250 mg PO daily days 2–5 (rising pneumococcal resistance — confirm local susceptibility)',
+        duration: '5 days (extend to 7 if afebrile <48h or slow clinical response)'
+      },
+      {
+        name: 'Outpatient — With comorbidities or recent antibiotics',
+        criteria: 'Comorbidities present (CHF, COPD, diabetes, CKD, asplenia, immunosuppression) OR antibiotic use in last 3 months OR macrolide-resistance risk.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID + Doxycycline 100 mg PO BID × 5–7 days',
+        alt_pen_allergy: 'Levofloxacin 750 mg PO daily × 5 days OR Moxifloxacin 400 mg PO daily × 5 days (respiratory fluoroquinolone monotherapy — reserve due to safety profile)',
+        duration: '5–7 days'
+      },
+      {
+        name: 'Inpatient (non-ICU) — CRB-65 ≥ 1 or hypoxia',
+        criteria: 'Admitted to medical ward. Not requiring vasopressors or mechanical ventilation.',
+        first_line: 'Ceftriaxone 1–2 g IV daily + Azithromycin 500 mg IV/PO daily × 5–7 days',
+        alt_pen_allergy: 'Levofloxacin 750 mg IV/PO daily × 5–7 days (monotherapy)',
+        duration: '5–7 days total (longer for Legionella, S. aureus, complicated CAP)'
+      },
+      {
+        name: 'ICU / Severe CAP — CRB-65 ≥ 3 or septic shock',
+        criteria: 'Mechanical ventilation, vasopressors, or severe respiratory failure.',
+        first_line: 'Ceftriaxone 2 g IV daily + Azithromycin 500 mg IV daily (atypical coverage essential — Legionella) × 7–10 days',
+        alt_pen_allergy: 'Levofloxacin 750 mg IV daily + (Aztreonam or Vancomycin if MRSA risk)',
+        duration: '7–10 days; consider longer (14–21 d) for Legionella, S. aureus, immunosuppression. Add empiric MRSA coverage (Vancomycin or Linezolid) if post-influenza, IV drug use, cavitary disease, or prior MRSA colonization.'
+      }
+    ],
+    iv_to_po: 'Switch criteria (HOT): Hemodynamically stable, Oxygenation improving (SpO₂ ≥90% on room air or baseline), Tolerating oral intake (functioning GI tract). Most patients meet criteria within 48–72h. Step-down options: Amoxicillin (high-dose), Amoxicillin-clavulanate, Cefuroxime axetil, or Levofloxacin.',
+    pearls: [
+      'CRB-65 (outpatient) or CURB-65 (with urea — inpatient): Confusion, Urea >7 mmol/L, RR ≥30, BP <90/60, age ≥65. Each = 1 point. ≥2 = consider admission.',
+      'Influenza co-infection markedly worsens prognosis — test during flu season and treat with oseltamivir within 48h of symptom onset.',
+      'Procalcitonin and CRP can help guide duration but should not delay initial antibiotic therapy.',
+      'Discharge antibiotics should be reviewed — most CAP courses are 5 days, NOT 10 (longer courses do not improve outcomes per CAP-START and other Canadian RCTs).',
+      'Always reassess at 48–72h for clinical response — failure to improve warrants imaging review, broader culture workup, and consideration of resistant or atypical pathogens.'
+    ],
+    source: 'CTS/Bugs & Drugs 2024; AMMI Canada CAP guideline 2021; ATS/IDSA 2019',
+    related_drugs: ['amoxicillin','amoxicillin_clavulanate','doxycycline','azithromycin','clarithromycin','ceftriaxone','levofloxacin','moxifloxacin','vancomycin','linezolid','oseltamivir','cefuroxime']
+  },
+  {
+    id: 'hap_vap',
+    title: 'Hospital-Acquired & Ventilator-Associated Pneumonia (HAP/VAP)',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'HAP: pneumonia ≥48h after admission, not present at admission. VAP: pneumonia ≥48h after intubation. Risk factors for MDR pathogens (MRSA, Pseudomonas, ESBL): IV antibiotics within 90 days, septic shock at VAP onset, ARDS, prolonged hospitalization (≥5 days), hemodialysis.',
+    likely_organisms: [
+      { name: 'Staphylococcus aureus (incl. MRSA)', frequency: '20–30% — increases with ICU exposure' },
+      { name: 'Pseudomonas aeruginosa', frequency: '15–25% — major MDR concern' },
+      { name: 'Enterobacterales (Klebsiella, E. coli, Enterobacter, ESBL+)', frequency: '20–30%' },
+      { name: 'Acinetobacter baumannii', frequency: '5–10% — MDR risk in some Canadian centres' },
+      { name: 'Stenotrophomonas maltophilia', frequency: '<5% — late VAP, prior carbapenem exposure' }
+    ],
+    severity_strata: [
+      {
+        name: 'HAP — Low MDR risk, no septic shock',
+        criteria: 'No IV antibiotics in last 90d, no structural lung disease, not in unit with high MRSA/Pseudomonas prevalence.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h (extended infusion) OR Cefepime 2 g IV q8h × 7 days',
+        alt_pen_allergy: 'Levofloxacin 750 mg IV daily × 7 days (if no recent FQ exposure)',
+        duration: '7 days (de-escalate based on cultures)'
+      },
+      {
+        name: 'HAP/VAP — High MDR risk or septic shock',
+        criteria: 'IV antibiotics within 90d, septic shock, ARDS, prolonged hospitalization, hemodialysis, or ICU MRSA/Pseudomonas prevalence >10–20%.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h (extended infusion) OR Cefepime 2 g IV q8h OR Meropenem 1 g IV q8h — PLUS Vancomycin (15–20 mg/kg IV q8–12h, target trough 15–20 mg/L) PLUS consider second anti-pseudomonal (Tobramycin 5–7 mg/kg IV daily OR Ciprofloxacin 400 mg IV q8h) if known MDR colonization or septic shock — × 7 days',
+        alt_pen_allergy: 'Aztreonam 2 g IV q8h (Pseudomonas coverage, no cross-reactivity) + Vancomycin + (Tobramycin or Levofloxacin)',
+        duration: '7 days for most VAP (per Canadian Critical Care Society / Bugs & Drugs); 8–14 days if Pseudomonas, MRSA, immunosuppressed, or slow response.'
+      }
+    ],
+    iv_to_po: 'IV-only therapy throughout in most cases (severity, NPO status). Step-down to oral only when patient is hemodynamically stable, extubated, tolerating PO, AND a culture-directed oral option is appropriate (e.g., levofloxacin, linezolid for MRSA).',
+    pearls: [
+      'Obtain quantitative respiratory cultures (BAL or endotracheal aspirate) BEFORE antibiotics whenever feasible.',
+      'De-escalate based on culture results within 48–72h — narrow spectrum, drop double anti-pseudomonal coverage if susceptible.',
+      'Linezolid is non-inferior to vancomycin for MRSA pneumonia, with possible advantages in ventilated patients (better lung penetration).',
+      '7-day course non-inferior to 14 days for most VAP (Chastre 2003 RCT) — except non-fermenters (Pseudomonas, Acinetobacter) where extended course often used.',
+      'AVOID daptomycin for pneumonia — inactivated by pulmonary surfactant.'
+    ],
+    source: 'Bugs & Drugs 2024; ATS/IDSA HAP/VAP 2016; Canadian Critical Care Society',
+    related_drugs: ['piperacillin_tazobactam','cefepime','meropenem','vancomycin','linezolid','tobramycin','ciprofloxacin','levofloxacin','aztreonam','daptomycin']
+  },
+  {
+    id: 'aspiration_pna',
+    title: 'Aspiration Pneumonia',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'Pneumonia from aspiration of oropharyngeal contents — typically in patients with impaired consciousness, dysphagia (stroke, dementia, post-operative), or alcohol/drug intoxication. Distinguish from aspiration pneumonitis (chemical, no antibiotic needed).',
+    likely_organisms: [
+      { name: 'Streptococcus species (oropharyngeal)', frequency: 'Common' },
+      { name: 'Anaerobes (Prevotella, Fusobacterium, Peptostreptococcus)', frequency: 'Historically thought common, but recent evidence suggests overestimated — routine anaerobic coverage no longer required for community-acquired aspiration' },
+      { name: 'Gram-negatives (in hospital-acquired or aspiration with periodontal disease)', frequency: 'Variable' },
+      { name: 'Staphylococcus aureus', frequency: 'In hospitalized/comorbid patients' }
+    ],
+    severity_strata: [
+      {
+        name: 'Community-acquired aspiration pneumonia',
+        criteria: 'Aspiration event in community/long-term care; no recent hospitalization. No severe periodontal disease or putrid sputum.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID OR (if hospitalized) Ceftriaxone 1–2 g IV daily — anaerobic coverage NOT routinely required × 5–7 days',
+        alt_pen_allergy: 'Levofloxacin 750 mg PO/IV daily × 5–7 days OR Moxifloxacin 400 mg PO/IV daily × 5–7 days (covers oral anaerobes if needed)',
+        duration: '5–7 days'
+      },
+      {
+        name: 'Severe periodontal disease, putrid sputum, lung abscess, or empyema',
+        criteria: 'Foul-smelling sputum, gum disease, alcohol use disorder, OR cavitary disease/abscess/empyema on imaging.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID OR Piperacillin-tazobactam 4.5 g IV q6h × 4–6 weeks (if abscess)',
+        alt_pen_allergy: 'Clindamycin 600 mg IV q8h or 300–450 mg PO QID + Ceftriaxone (if no anaphylactic penicillin allergy) × 4–6 weeks',
+        duration: '4–6 weeks for lung abscess (until imaging resolution); 7 days for uncomplicated aspiration pneumonia'
+      },
+      {
+        name: 'Hospital-acquired aspiration pneumonia',
+        criteria: 'Aspiration occurring ≥48h after admission, often peri-operative or in critically ill.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h (extended infusion) × 7 days. Add Vancomycin if MRSA risk.',
+        alt_pen_allergy: 'Levofloxacin 750 mg IV daily + Metronidazole 500 mg IV q8h ± Vancomycin',
+        duration: '7 days'
+      }
+    ],
+    iv_to_po: 'Most non-ICU aspiration pneumonia can be treated entirely orally with amoxicillin-clavulanate. Step-down from IV when hemodynamically stable, tolerating PO, and improving clinically.',
+    pearls: [
+      'Distinguish PNEUMONIA (infection, antibiotics needed) from PNEUMONITIS (chemical injury from gastric acid — antibiotics NOT routinely needed; observe 48h, treat only if persisting fever/infiltrate beyond that).',
+      'Routine empiric anaerobic coverage is NO LONGER recommended for most aspiration pneumonia (recent evidence) unless periodontal disease, putrid sputum, lung abscess, or empyema.',
+      'Position-related aspiration (LTC, dementia) — focus on prevention: dysphagia assessment, head-of-bed elevation, swallowing therapy.',
+      'Lung abscess: prolonged therapy (4–6 weeks); follow with serial imaging. Drainage needed if >6 cm or no clinical response.'
+    ],
+    source: 'Bugs & Drugs 2024; CTS guidelines',
+    related_drugs: ['amoxicillin_clavulanate','ceftriaxone','piperacillin_tazobactam','clindamycin','metronidazole','levofloxacin','moxifloxacin','vancomycin']
+  },
+  {
+    id: 'aecopd',
+    title: 'Acute Exacerbation of COPD (AECOPD)',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'Acute worsening of respiratory symptoms in COPD beyond normal day-to-day variation. Antibiotics indicated only when ≥2 of 3 Anthonisen criteria are met (increased dyspnea, increased sputum volume, increased sputum purulence) OR mechanical ventilation required. Most exacerbations are viral or non-infectious.',
+    likely_organisms: [
+      { name: 'Haemophilus influenzae', frequency: '20–30% — most common bacterial pathogen in AECOPD' },
+      { name: 'Streptococcus pneumoniae', frequency: '10–15%' },
+      { name: 'Moraxella catarrhalis', frequency: '10–15%' },
+      { name: 'Pseudomonas aeruginosa', frequency: '5–15% — in severe COPD (FEV1 <50%), frequent exacerbators (≥4/year), recent antibiotic use, bronchiectasis' },
+      { name: 'Respiratory viruses (Rhinovirus, Influenza, RSV)', frequency: '40–50% — most exacerbations have viral component' }
+    ],
+    severity_strata: [
+      {
+        name: 'Mild–moderate AECOPD — No risk factors for Pseudomonas',
+        criteria: 'Anthonisen ≥2/3 criteria. FEV1 ≥50%. No frequent exacerbations. No recent antibiotics (<3 months). No bronchiectasis.',
+        first_line: 'Amoxicillin 500 mg PO TID × 5 days OR Doxycycline 100 mg PO BID × 5 days OR Trimethoprim-sulfamethoxazole 1 DS tab PO BID × 5 days',
+        alt_pen_allergy: 'Doxycycline 100 mg PO BID × 5 days (already first-line option)',
+        duration: '5 days (5 days non-inferior to 10 — Falagas 2008 meta-analysis)'
+      },
+      {
+        name: 'Moderate–severe AECOPD — Risk factors present',
+        criteria: 'Severe COPD (FEV1 <50%), frequent exacerbators (≥4/year), recent antibiotics (<3 months), home O₂, bronchiectasis, hospitalized.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID × 5–7 days OR Levofloxacin 500 mg PO daily × 5–7 days',
+        alt_pen_allergy: 'Levofloxacin 500 mg PO/IV daily × 5–7 days OR Moxifloxacin 400 mg PO/IV daily × 5–7 days',
+        duration: '5–7 days'
+      },
+      {
+        name: 'Pseudomonas risk — severe AECOPD requiring hospitalization',
+        criteria: 'FEV1 <30%, prior Pseudomonas isolation, bronchiectasis, recent broad-spectrum antibiotics, mechanical ventilation.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h OR Cefepime 2 g IV q8h OR Levofloxacin 750 mg IV/PO daily (only oral anti-pseudomonal) × 7 days',
+        alt_pen_allergy: 'Levofloxacin 750 mg IV/PO daily × 7 days OR Aztreonam (if known anti-pseudomonal need + true pen allergy)',
+        duration: '7 days'
+      }
+    ],
+    iv_to_po: 'Most AECOPD treated entirely orally. Inpatient IV: switch to PO when stable, tolerating intake, and clinical improvement (typically 24–48h).',
+    pearls: [
+      'Anthonisen criteria: ≥2 of 3 = antibiotics indicated (increased dyspnea, sputum volume, sputum purulence). Sputum purulence alone is the best predictor of bacterial cause.',
+      'Procalcitonin-guided therapy may reduce antibiotic exposure in stable AECOPD (Stolz 2007 RCT) — not yet routine in Canada.',
+      'Always combine with systemic corticosteroids (prednisone 40 mg PO × 5 days — REDUCE trial) and bronchodilator optimization.',
+      'Smoking cessation, vaccinations (influenza annual, pneumococcal PCV20, COVID-19, RSV in eligible adults) reduce exacerbation frequency.',
+      'Macrolide prophylaxis (azithromycin 250 mg 3×/week) reduces exacerbations in select frequent exacerbators — balance against QT, hearing risk, resistance.'
+    ],
+    source: 'Bugs & Drugs 2024; CTS COPD guideline 2023; GOLD 2024',
+    related_drugs: ['amoxicillin','amoxicillin_clavulanate','doxycycline','sulfamethoxazole','levofloxacin','moxifloxacin','azithromycin','piperacillin_tazobactam','cefepime','prednisone']
+  },
+  {
+    id: 'pertussis',
+    title: 'Pertussis (Whooping Cough)',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'Bordetella pertussis infection — paroxysmal cough, post-tussive emesis, inspiratory whoop. Antibiotics reduce transmission but DO NOT shorten illness once paroxysmal phase begins (>21 days from onset). Treat all suspected cases plus close contacts (post-exposure prophylaxis).',
+    likely_organisms: [
+      { name: 'Bordetella pertussis', frequency: '100% — sole causative organism' },
+      { name: 'Bordetella parapertussis', frequency: '<5% — milder syndrome, treated similarly' }
+    ],
+    severity_strata: [
+      {
+        name: 'Adults & children ≥1 month — Treatment OR post-exposure prophylaxis',
+        criteria: 'Confirmed or suspected pertussis WITHIN 3 weeks of cough onset (treatment); OR close household/childcare contact regardless of symptoms (PEP).',
+        first_line: 'Azithromycin 500 mg PO day 1, then 250 mg PO daily days 2–5 (5-day course) — preferred for tolerability',
+        alt_pen_allergy: 'TMP-SMX 1 DS tab PO BID × 14 days (alternative if macrolide-intolerant; NOT for infants <2 months — kernicterus risk)',
+        duration: '5 days (azithromycin) or 7 days (clarithromycin) or 14 days (erythromycin or TMP-SMX)'
+      },
+      {
+        name: 'Infants <1 month',
+        criteria: 'Newborns — at highest risk for severe disease and death.',
+        first_line: 'Azithromycin 10 mg/kg PO daily × 5 days (preferred — erythromycin causes pyloric stenosis in young infants)',
+        alt_pen_allergy: 'No oral alternative; consult ID',
+        duration: '5 days'
+      }
+    ],
+    iv_to_po: 'IV therapy not typically required — oral macrolides are mainstay. Hospitalization may be needed for infants for supportive care (oxygen, hydration), not for IV antibiotics.',
+    pearls: [
+      'Antibiotics given in catarrhal stage (first 1–2 weeks) may shorten illness; given later (paroxysmal stage) they DO NOT improve symptoms but reduce transmissibility.',
+      'No need to treat after 3 weeks of cough — patient no longer infectious.',
+      'Public health REPORTABLE in Canada — notify local public health for contact tracing.',
+      'Post-exposure prophylaxis: same regimen as treatment, given to all close contacts (household, healthcare, daycare) within 21 days of exposure to a case.',
+      'Tdap booster recommended for all adults; pregnant individuals should receive Tdap in EVERY pregnancy (preferably 27–32 weeks gestation) for neonatal protection.',
+      'Erythromycin in infants <1 month: AVOID — strong association with infantile hypertrophic pyloric stenosis. Use azithromycin instead.'
+    ],
+    source: 'Bugs & Drugs 2024; PHAC/NACI; CDC pertussis guideline',
+    related_drugs: ['azithromycin','clarithromycin','erythromycin','sulfamethoxazole']
+  },
+
+  // ═══════════ GU ═══════════
+  {
+    id: 'cystitis',
+    title: 'Uncomplicated Cystitis (Lower UTI in Healthy Women)',
+    category: 'gu', icon: '💧', color: '#06b6d4',
+    overview: 'Acute uncomplicated UTI in non-pregnant, healthy women without structural/functional urinary tract abnormalities. Typical features: dysuria, frequency, urgency, suprapubic pain, ABSENCE of fever, flank pain, or systemic symptoms. Note: ALL UTIs in men are considered complicated.',
+    likely_organisms: [
+      { name: 'Escherichia coli', frequency: '75–95% — most common; Canadian E. coli resistance to TMP-SMX ~25%, ciprofloxacin ~15%' },
+      { name: 'Staphylococcus saprophyticus', frequency: '5–10% — sexually active women' },
+      { name: 'Klebsiella pneumoniae', frequency: '<5%' },
+      { name: 'Proteus, Enterococcus', frequency: '<5% each' }
+    ],
+    severity_strata: [
+      {
+        name: 'Acute uncomplicated cystitis — non-pregnant healthy women',
+        criteria: 'Dysuria, frequency, urgency without fever, flank pain, or vaginal symptoms. No structural abnormality, no recent instrumentation, immunocompetent.',
+        first_line: 'Nitrofurantoin macrocrystals 100 mg PO BID × 5 days (preferred — minimal collateral damage to gut flora) OR Trimethoprim-sulfamethoxazole 1 DS tab PO BID × 3 days (only if local E. coli resistance <20%) OR Fosfomycin 3 g PO × 1 dose (single-dose convenience)',
+        alt_pen_allergy: 'Nitrofurantoin remains first-line (no penicillin-related cross-reactivity). Fosfomycin also fine.',
+        duration: 'Nitrofurantoin: 5 days. TMP-SMX: 3 days. Fosfomycin: single dose.'
+      },
+      {
+        name: 'Cystitis — pregnancy',
+        criteria: 'Pregnant patient with cystitis OR asymptomatic bacteriuria (which IS treated in pregnancy unlike non-pregnant).',
+        first_line: 'Cephalexin 500 mg PO QID × 5–7 days OR Amoxicillin-clavulanate 500/125 mg PO TID × 5–7 days OR Nitrofurantoin 100 mg PO BID × 5–7 days (AVOID at term/G6PD)',
+        alt_pen_allergy: 'Nitrofurantoin (avoid 1st trimester per some guidelines, term, and G6PD-deficient) OR Fosfomycin 3 g × 1',
+        duration: '5–7 days. AVOID: TMP-SMX (1st & 3rd trimester — neural tube defects, kernicterus), fluoroquinolones (cartilage toxicity), tetracyclines.'
+      },
+      {
+        name: 'Recurrent uncomplicated UTI (≥3 episodes/year or ≥2 in 6 months)',
+        criteria: 'Healthy women with recurrent culture-proven cystitis.',
+        first_line: 'Treat each acute episode as above. Consider continuous prophylaxis (TMP-SMX 1 SS QHS, nitrofurantoin 50–100 mg QHS) × 6 months OR post-coital prophylaxis (single dose post-intercourse) OR self-initiated short-course therapy.',
+        alt_pen_allergy: 'Same options',
+        duration: 'Acute: 3–5 days. Prophylaxis: 6–12 months, then reassess.'
+      }
+    ],
+    iv_to_po: 'Cystitis treated entirely orally — no IV needed.',
+    pearls: [
+      'Nitrofurantoin: AVOID if CrCl <30 (insufficient urine concentration — earlier threshold of CrCl <60 has been relaxed; current Beers guidance: CrCl <30 — but use with caution 30–60). Also avoid in G6PD deficiency, term pregnancy (>36 weeks — neonatal hemolysis), and pyelonephritis (poor tissue concentration).',
+      'TMP-SMX: only first-line if local E. coli resistance <20% — Canadian rates often 20–30% so check local antibiogram. If patient has had TMP-SMX in past 3 months, choose alternative.',
+      'Fosfomycin: convenient single dose but lower cure rates than 5-day nitrofurantoin (~85% vs 90%). Reasonable choice for adherence-limited patients.',
+      'Fluoroquinolones (ciprofloxacin) NO LONGER first-line for uncomplicated cystitis — reserve due to safety profile (tendon, neuropathy) and collateral resistance effects.',
+      'AVOID treating asymptomatic bacteriuria in non-pregnant individuals — exception: pregnancy and pre-urologic procedures with mucosal trauma.',
+      'Cranberry products: weak evidence for prevention; not for treatment.'
+    ],
+    source: 'Bugs & Drugs 2024; AAFP / Canadian Urological Association; SOGC for pregnancy',
+    related_drugs: ['nitrofurantoin','sulfamethoxazole','fosfomycin','cephalexin','amoxicillin_clavulanate','ciprofloxacin']
+  },
+  {
+    id: 'pyelo',
+    title: 'Pyelonephritis & Complicated UTI',
+    category: 'gu', icon: '💧', color: '#06b6d4',
+    overview: 'Upper urinary tract infection with renal parenchyma involvement (pyelonephritis) OR any UTI with complicating factors: men, pregnancy, immunocompromise, diabetes, structural/functional abnormalities, recent instrumentation, indwelling catheter. Always obtain pre-treatment urine culture.',
+    likely_organisms: [
+      { name: 'Escherichia coli', frequency: '70–80% — Canadian ESBL rates 5–15% (rising)' },
+      { name: 'Klebsiella pneumoniae', frequency: '5–15%' },
+      { name: 'Proteus mirabilis', frequency: '5–10% — struvite stones' },
+      { name: 'Enterococcus faecalis', frequency: '5–10% — older, healthcare-associated' },
+      { name: 'Pseudomonas aeruginosa', frequency: '<5% — catheter, instrumentation, prior antibiotics' },
+      { name: 'Staphylococcus aureus', frequency: '<5% — bacteremic seeding (suggests endocarditis), urological hardware' }
+    ],
+    severity_strata: [
+      {
+        name: 'Outpatient pyelonephritis — mild, no sepsis, tolerating PO',
+        criteria: 'Hemodynamically stable, no septic shock, tolerating oral intake, reliable follow-up. Often single dose of IV/IM ceftriaxone given before PO step-down.',
+        first_line: 'Ciprofloxacin 500 mg PO BID × 7 days (preferred — local susceptibility) OR Levofloxacin 750 mg PO daily × 5 days. Many clinicians give Ceftriaxone 1–2 g IV/IM × 1 dose first, then PO step-down.',
+        alt_pen_allergy: 'TMP-SMX 1 DS PO BID × 14 days (only if susceptible)',
+        duration: 'Ciprofloxacin 7 days OR Levofloxacin 5 days OR TMP-SMX 14 days. AVOID nitrofurantoin and fosfomycin (poor renal tissue penetration).'
+      },
+      {
+        name: 'Inpatient pyelonephritis — moderate severity',
+        criteria: 'Hospitalized for IV therapy. No sepsis/shock, no resistance risk factors.',
+        first_line: 'Ceftriaxone 1–2 g IV daily × 7–14 days (with step-down to oral when stable, total 7–14 days including IV)',
+        alt_pen_allergy: 'Ciprofloxacin 400 mg IV q12h or 500 mg PO BID × 7 days OR Aminoglycoside (Gentamicin/Tobramycin)',
+        duration: '7–14 days total; 7 days for FQ-based regimens, 10–14 days for beta-lactam regimens'
+      },
+      {
+        name: 'Severe pyelonephritis / urosepsis / septic shock',
+        criteria: 'Sepsis, septic shock, ICU admission, or known MDR colonization/recent broad-spectrum antibiotics.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h OR Meropenem 1 g IV q8h (if ESBL risk or known) — × 7–14 days. Add Vancomycin if Enterococcus or MRSA suspected.',
+        alt_pen_allergy: 'Aztreonam 2 g IV q8h + Vancomycin if Gram-positive coverage needed',
+        duration: '7–14 days, with de-escalation to definitive therapy based on cultures'
+      },
+      {
+        name: 'Pyelonephritis in pregnancy',
+        criteria: 'Pregnant patient with upper UTI — admit and IV therapy initially.',
+        first_line: 'Ceftriaxone 1–2 g IV daily — admit, IV until afebrile 24–48h, then PO step-down (cephalexin or amoxicillin-clavulanate) to complete 10–14 days',
+        alt_pen_allergy: 'Aztreonam 1–2 g IV q8h (no penicillin cross-reactivity); consult ID/MFM. AVOID FQs, TMP-SMX, tetracyclines, nitrofurantoin (term).',
+        duration: '10–14 days. Postpartum follow-up urine culture; consider suppressive nitrofurantoin until delivery if recurrent.'
+      }
+    ],
+    iv_to_po: 'Step-down to oral when: hemodynamically stable, afebrile ≥24h, tolerating PO, susceptibility-directed oral option available. Most patients transition within 48–72h. Preferred PO step-down: ciprofloxacin (susceptible), TMP-SMX, cephalexin (mild only — bioavailability/tissue concentration suboptimal for severe).',
+    pearls: [
+      'ALWAYS obtain pre-treatment urine culture in pyelonephritis (collect before first antibiotic dose). Blood cultures in admitted patients.',
+      'Imaging (CT or US) only for: severe sepsis, no improvement at 48–72h, suspected obstruction or abscess, recurrent infection.',
+      'AVOID nitrofurantoin and fosfomycin for pyelonephritis — inadequate renal tissue concentrations.',
+      'ESBL E. coli increasing in Canada — risk factors: prior ESBL infection, healthcare exposure, recent broad-spectrum antibiotics, travel (especially to high-prevalence regions). Empiric carbapenem if known ESBL colonization.',
+      'In men, all UTIs are complicated — consider prostatitis (longer duration 4–6 weeks if prostatic involvement suspected).',
+      'Asymptomatic bacteriuria with indwelling catheter: do NOT treat unless symptomatic; replace catheter if treating.'
+    ],
+    source: 'Bugs & Drugs 2024; AMMI/CIDS 2018 update; SOGC pregnancy UTI 2017',
+    related_drugs: ['ciprofloxacin','levofloxacin','ceftriaxone','sulfamethoxazole','piperacillin_tazobactam','meropenem','vancomycin','gentamicin','tobramycin','aztreonam','cephalexin','amoxicillin_clavulanate']
+  },
+  {
+    id: 'prostatitis',
+    title: 'Bacterial Prostatitis',
+    category: 'gu', icon: '💧', color: '#06b6d4',
+    overview: 'Acute bacterial prostatitis: acute febrile syndrome with severe perineal/pelvic pain, dysuria, urinary obstruction, tender boggy prostate. Chronic bacterial prostatitis: relapsing UTI, persistent pelvic discomfort. Antibiotics with prostatic penetration (lipophilic — fluoroquinolones, TMP-SMX) preferred.',
+    likely_organisms: [
+      { name: 'Escherichia coli', frequency: '60–80%' },
+      { name: 'Other Enterobacterales (Klebsiella, Proteus, Enterobacter)', frequency: '10–20%' },
+      { name: 'Pseudomonas aeruginosa', frequency: '5–10% — instrumentation, indwelling catheter' },
+      { name: 'Enterococcus', frequency: '5–10%' },
+      { name: 'Sexually transmitted (Chlamydia, Gonorrhea, Mycoplasma)', frequency: 'Younger men <35 years — separate consideration' }
+    ],
+    severity_strata: [
+      {
+        name: 'Acute bacterial prostatitis — outpatient',
+        criteria: 'Hemodynamically stable, no severe sepsis, tolerating PO. Acute febrile prostatitis.',
+        first_line: 'Ciprofloxacin 500 mg PO BID × 4 weeks OR TMP-SMX 1 DS PO BID × 4 weeks',
+        alt_pen_allergy: 'Both options are non-beta-lactam — already preferred',
+        duration: '4 weeks (some experts: 2–4 weeks acute; 4–6 weeks if chronic relapse risk)'
+      },
+      {
+        name: 'Acute bacterial prostatitis — inpatient/severe',
+        criteria: 'Sepsis, urinary retention, severe pain, immunocompromise.',
+        first_line: 'Ceftriaxone 1–2 g IV daily until afebrile, then step-down to oral ciprofloxacin or TMP-SMX × 4 weeks total',
+        alt_pen_allergy: 'Ciprofloxacin 400 mg IV q12h ± Aminoglycoside (gentamicin)',
+        duration: '4 weeks total'
+      },
+      {
+        name: 'Chronic bacterial prostatitis',
+        criteria: 'Recurrent UTI in same male patient, persistent prostatic infection.',
+        first_line: 'Ciprofloxacin 500 mg PO BID × 4–6 weeks OR TMP-SMX 1 DS PO BID × 4–6 weeks',
+        alt_pen_allergy: 'Same — non-beta-lactam preferred for prostate penetration',
+        duration: '4–6 weeks (sometimes up to 12 weeks for relapse)'
+      },
+      {
+        name: 'Acute prostatitis in young sexually active man (<35y) — STI risk',
+        criteria: 'Younger man, multiple partners, urethral discharge, possible STI.',
+        first_line: 'Ceftriaxone 500 mg IM × 1 PLUS Doxycycline 100 mg PO BID × 10–14 days (covers gonorrhea + chlamydia)',
+        alt_pen_allergy: 'Doxycycline + Gentamicin 240 mg IM × 1 (alternative for cephalosporin-allergic) — discuss with ID',
+        duration: '10–14 days for STI-related; may need extension if culture-positive bacterial prostatitis'
+      }
+    ],
+    iv_to_po: 'Most acute prostatitis can be treated entirely orally with FQ or TMP-SMX. Severe or septic patients: IV ceftriaxone initially, step-down to oral once stable.',
+    pearls: [
+      'Prostatic capsule limits antibiotic penetration — choose lipophilic agents: FLUOROQUINOLONES (best penetration), TMP-SMX, doxycycline.',
+      'AVOID prostate massage in acute bacterial prostatitis — can precipitate bacteremia.',
+      'Recurrence after treatment is common — extended course (4–6 weeks) reduces chronic prostatitis development.',
+      'Beta-lactams have POOR prostate penetration in absence of inflammation — adequate during acute phase but poor for chronic prostatitis.',
+      'Always rule out urinary retention (post-void residual, bladder scan) — may need urologic intervention.'
+    ],
+    source: 'Bugs & Drugs 2024; AUA/Canadian Urological Association',
+    related_drugs: ['ciprofloxacin','sulfamethoxazole','ceftriaxone','doxycycline','gentamicin','levofloxacin']
+  },
+  {
+    id: 'asb',
+    title: 'Asymptomatic Bacteriuria (ASB)',
+    category: 'gu', icon: '💧', color: '#06b6d4',
+    overview: 'Significant bacteriuria (≥10⁵ CFU/mL on 2 consecutive samples in women, or 1 sample in men/catheterized) WITHOUT urinary symptoms. Treatment is rarely beneficial and often harmful (resistance, C. difficile, drug toxicity). Indications to treat are NARROW.',
+    likely_organisms: [
+      { name: 'Escherichia coli', frequency: 'Most common in non-catheterized patients' },
+      { name: 'Polymicrobial (catheter, prolonged)', frequency: 'Common in long-term catheterized' },
+      { name: 'Enterococcus, CoNS, Pseudomonas, Candida', frequency: 'Healthcare-associated, catheter-associated' }
+    ],
+    severity_strata: [
+      {
+        name: 'TREAT — Pregnancy',
+        criteria: 'Pregnant patient with confirmed ASB (≥10⁵ CFU/mL same organism, single sample acceptable). Untreated ASB in pregnancy → 20–30% pyelonephritis risk, prematurity, low birth weight.',
+        first_line: 'Cephalexin 500 mg PO QID × 5–7 days OR Nitrofurantoin 100 mg PO BID × 5–7 days (avoid term, G6PD) OR Amoxicillin-clavulanate (less preferred — resistance) — directed by susceptibilities',
+        alt_pen_allergy: 'Nitrofurantoin (no cross-reactivity) OR Fosfomycin 3 g × 1',
+        duration: '5–7 days; follow-up culture at 1–2 weeks; consider suppressive therapy if recurrent'
+      },
+      {
+        name: 'TREAT — Pre-urologic procedures with mucosal trauma',
+        criteria: 'Planned TURP, transrectal prostate biopsy, ureteroscopy with stone manipulation, etc. — start antibiotics shortly before procedure.',
+        first_line: 'Antibiotics directed by susceptibility, starting ~1 hour before procedure, continue 24h–7 days depending on procedure',
+        alt_pen_allergy: 'Per susceptibility',
+        duration: 'Procedure-specific (typically until catheter removed or 24h post-procedure for endoscopic)'
+      },
+      {
+        name: 'DO NOT TREAT — All other patients',
+        criteria: 'Non-pregnant women, men, elderly, diabetic, post-menopausal, spinal cord injury, indwelling catheter, transplant recipients (>1 month post-transplant) — even with ≥10⁵ CFU/mL, do NOT treat without symptoms.',
+        first_line: 'NO ANTIBIOTICS. Reassess if symptoms develop. Replace indwelling catheter if treating in symptomatic patients.',
+        alt_pen_allergy: 'NA',
+        duration: 'NA'
+      }
+    ],
+    iv_to_po: 'NA — treatment is per indication, oral if treating.',
+    pearls: [
+      'Choosing Wisely Canada: "Don\'t order urine cultures unless patients have signs or symptoms of UTI."',
+      'In elderly patients with delirium and bacteriuria but NO urinary symptoms: search for OTHER causes of delirium (dehydration, drugs, infection elsewhere). Treating bacteriuria does NOT improve delirium.',
+      'Pregnancy: routine screening at first prenatal visit (urine culture, not just dipstick) — treat all positives.',
+      'Catheter-associated bacteriuria: do NOT treat without symptoms; remove or replace catheter when possible.',
+      'Pyuria alone (without symptoms) is NOT an indication for antibiotic treatment.',
+      'Solid organ transplant: ASB treatment NOT routinely indicated >1 month post-transplant (per AST guidelines).'
+    ],
+    source: 'IDSA ASB 2019 (endorsed by AMMI Canada); Bugs & Drugs 2024; Choosing Wisely Canada',
+    related_drugs: ['cephalexin','nitrofurantoin','fosfomycin','amoxicillin_clavulanate']
+  },
+  {
+    id: 'cauti',
+    title: 'Catheter-Associated UTI (CAUTI)',
+    category: 'gu', icon: '💧', color: '#06b6d4',
+    overview: 'Symptomatic UTI in a patient with an indwelling urinary catheter (within 48h of removal also counts). Clinical diagnosis difficult — fever and bacteriuria alone insufficient. Replace or remove catheter as part of treatment.',
+    likely_organisms: [
+      { name: 'Polymicrobial common', frequency: 'Common in long-term catheter' },
+      { name: 'E. coli', frequency: '20–30%' },
+      { name: 'Pseudomonas aeruginosa', frequency: '10–20% — biofilm' },
+      { name: 'Klebsiella, Enterobacter, Proteus', frequency: '15–25%' },
+      { name: 'Enterococcus', frequency: '15–25% — including VRE' },
+      { name: 'Candida species', frequency: '10–20% — typically reflects colonization, not infection' }
+    ],
+    severity_strata: [
+      {
+        name: 'Symptomatic CAUTI — Mild–moderate, no sepsis',
+        criteria: 'Fever, suprapubic discomfort, costovertebral tenderness, new delirium, or hematuria in catheterized patient. NO septic shock.',
+        first_line: 'Ceftriaxone 1–2 g IV daily OR Ciprofloxacin 500 mg PO BID × 7 days. Adjust based on cultures.',
+        alt_pen_allergy: 'Ciprofloxacin (oral) OR Aminoglycoside',
+        duration: '7 days (10–14 days only if delayed clinical response or complicated)'
+      },
+      {
+        name: 'Severe CAUTI / urosepsis',
+        criteria: 'Sepsis, septic shock, ICU admission.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h OR Meropenem 1 g IV q8h (if ESBL risk). Add Vancomycin if Enterococcus suspected.',
+        alt_pen_allergy: 'Aztreonam + Vancomycin',
+        duration: '7 days post-source control (catheter change or removal)'
+      },
+      {
+        name: 'Candiduria — asymptomatic catheterized patient',
+        criteria: 'Candida in urine without symptoms.',
+        first_line: 'NO antifungal therapy. Remove catheter if possible.',
+        alt_pen_allergy: 'NA',
+        duration: 'NA'
+      }
+    ],
+    iv_to_po: 'Step-down to oral when stable, catheter exchanged/removed, and oral susceptibility option available. Many CAUTI can be treated entirely with oral ciprofloxacin if susceptible.',
+    pearls: [
+      'REPLACE the catheter if it has been in place >2 weeks (biofilm) and the patient still requires catheterization. REMOVE if no longer indicated.',
+      'Asymptomatic candiduria in catheterized patients almost never requires antifungal therapy — treatment recommended only for: symptomatic, neutropenic, pre-urologic procedure, or low birth weight infants.',
+      'Topical or instilled antibiotics into catheter/bladder are NOT recommended.',
+      'Prevention: minimize catheter use (review daily for removal), aseptic insertion, closed drainage, no routine bladder irrigation.',
+      'Most "fevers in catheterized patients" are NOT from CAUTI — search broadly for source.'
+    ],
+    source: 'IDSA CAUTI 2009 (updated 2019); Bugs & Drugs 2024',
+    related_drugs: ['ceftriaxone','ciprofloxacin','piperacillin_tazobactam','meropenem','vancomycin','aztreonam','gentamicin']
+  },
+
+  // ═══════════ SSTI ═══════════
+  {
+    id: 'cellulitis',
+    title: 'Non-Purulent Cellulitis & Erysipelas',
+    category: 'ssti', icon: '🦠', color: '#10b981',
+    overview: 'Diffuse spreading skin and subcutaneous infection without purulent drainage or abscess. Unilateral lower extremity most common. Empiric coverage targets beta-hemolytic streptococci (primarily Group A Strep), with MSSA secondary. MRSA coverage NOT routinely needed for non-purulent cellulitis.',
+    likely_organisms: [
+      { name: 'Beta-hemolytic streptococci (Group A — S. pyogenes; also B, C, G)', frequency: '>70% of non-purulent cellulitis' },
+      { name: 'Methicillin-sensitive Staphylococcus aureus (MSSA)', frequency: '<25% — minor role in non-purulent' },
+      { name: 'MRSA', frequency: '<5% in non-purulent cellulitis (unless purulent or risk factors)' }
+    ],
+    severity_strata: [
+      {
+        name: 'Mild non-purulent cellulitis — outpatient oral',
+        criteria: 'Localized erythema, no systemic signs, can take oral, reliable follow-up. No abscess, no purulent drainage.',
+        first_line: 'Cephalexin 500 mg PO QID × 5–7 days (preferred — beta-lactam, Strep + MSSA) OR Cefadroxil 1 g PO BID × 5–7 days',
+        alt_pen_allergy: 'Clindamycin 300–450 mg PO QID × 5–7 days (covers Strep + MSSA + most CA-MRSA)',
+        duration: '5–7 days (5 days non-inferior to 10 in uncomplicated cellulitis — Hepburn 2004)'
+      },
+      {
+        name: 'Moderate cellulitis — systemic signs, IV needed',
+        criteria: 'Fever, tachycardia, extensive cellulitis, lymphangitic streaking, or failed outpatient therapy. Hospitalized but not septic.',
+        first_line: 'Cefazolin 1–2 g IV q8h × 5–7 days, switch to PO cephalexin once improving',
+        alt_pen_allergy: 'Clindamycin 600 mg IV q8h OR Vancomycin (if MRSA risk — IV drug use, prior MRSA)',
+        duration: '5–7 days total (IV + PO combined)'
+      },
+      {
+        name: 'Severe cellulitis with sepsis or MRSA risk',
+        criteria: 'Sepsis, hypotension, rapidly spreading, IV drug use, immunocompromise, prior MRSA colonization.',
+        first_line: 'Cefazolin 1–2 g IV q8h + Vancomycin 15–20 mg/kg IV q8–12h (target trough 10–15 mg/L)',
+        alt_pen_allergy: 'Vancomycin + (Aztreonam or Levofloxacin if Gram-negative coverage needed)',
+        duration: '5–14 days based on response; rule out necrotizing fasciitis if rapidly progressive'
+      },
+      {
+        name: 'Diabetic / post-saphenous vein harvest cellulitis (broader coverage)',
+        criteria: 'Diabetic foot, post-CABG saphenous vein donor site cellulitis — broaden for Gram-negative + anaerobes.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID OR Piperacillin-tazobactam 4.5 g IV q6h (severe)',
+        alt_pen_allergy: 'Levofloxacin + Clindamycin OR Ciprofloxacin + Clindamycin',
+        duration: '7–14 days'
+      }
+    ],
+    iv_to_po: 'Step-down when afebrile ≥24h, hemodynamically stable, decreasing erythema/swelling. Cefazolin → cephalexin is the standard.',
+    pearls: [
+      'Cellulitis is OFTEN OVERDIAGNOSED — common mimics: stasis dermatitis (bilateral, chronic), DVT, lipodermatosclerosis, contact dermatitis, gout. Bilateral lower-extremity "cellulitis" is almost never cellulitis (~85% of bilateral leg redness is venous stasis).',
+      'Mark the border with permanent marker — track for progression vs regression at 24–48h. Worsening at 48h despite antibiotics: reconsider diagnosis or coverage.',
+      'Routine MRSA coverage NOT needed for non-purulent cellulitis. Add only if: purulent component, IV drug use, prior MRSA, severe sepsis, or shelter/incarcerated populations.',
+      'Treat predisposing factors: tinea pedis (between toes — entry point), edema (compression), diabetic skin care.',
+      'Recurrent cellulitis in the same site (≥3/year): consider penicillin V 250 mg PO BID or benzathine penicillin G 1.2 MU IM monthly prophylaxis.',
+      'Elevation of affected limb is a key non-pharmacological intervention — accelerates resolution.'
+    ],
+    source: 'Bugs & Drugs 2024; IDSA SSTI 2014; Canadian dermatology resources',
+    related_drugs: ['cephalexin','cefazolin','clindamycin','cefadroxil','vancomycin','amoxicillin_clavulanate','piperacillin_tazobactam','levofloxacin']
+  },
+  {
+    id: 'purulent_ssti',
+    title: 'Purulent SSTI (Abscess, Furuncle, Carbuncle)',
+    category: 'ssti', icon: '🦠', color: '#10b981',
+    overview: 'Skin/soft tissue infection with purulent drainage, fluctuance, or abscess. Incision and drainage (I&D) is the cornerstone of management — antibiotics are adjunctive. Empiric coverage targets Staphylococcus aureus, including community-associated MRSA (CA-MRSA) when risk factors present or local prevalence high.',
+    likely_organisms: [
+      { name: 'Staphylococcus aureus (MSSA + MRSA)', frequency: '>75% of purulent SSTI' },
+      { name: 'CA-MRSA (community-associated)', frequency: '20–60% — varies by region; certain Canadian populations >50%' },
+      { name: 'Streptococci', frequency: '<20% in purulent disease' },
+      { name: 'Polymicrobial (perirectal, perineal, animal bite-associated)', frequency: 'Site-specific' }
+    ],
+    severity_strata: [
+      {
+        name: 'Simple abscess — adequate I&D, no cellulitis or systemic signs',
+        criteria: 'Drainable abscess <5 cm, no surrounding cellulitis, no systemic signs, immunocompetent. I&D alone may suffice.',
+        first_line: 'Incision & drainage — antibiotic NOT routinely required for simple drainable abscess in immunocompetent patient. Some studies (Talan 2016) show small benefit of TMP-SMX × 7 days post-I&D for abscess <5 cm; reasonable but not mandatory.',
+        alt_pen_allergy: 'NA — TMP-SMX or Doxycycline if antibiotic given',
+        duration: 'I&D alone OR 5–7 days TMP-SMX/doxycycline post-I&D'
+      },
+      {
+        name: 'Complicated abscess + cellulitis — outpatient oral',
+        criteria: 'Surrounding cellulitis, recurrent, or larger abscess — antibiotics adjunctive to I&D.',
+        first_line: 'TMP-SMX 1–2 DS PO BID × 7 days OR Doxycycline 100 mg PO BID × 7 days (both cover CA-MRSA + Strep — combine with cephalexin if Strep coverage needed)',
+        alt_pen_allergy: 'Both options are non-beta-lactam — already preferred',
+        duration: '7 days'
+      },
+      {
+        name: 'Severe / hospitalized purulent SSTI',
+        criteria: 'Sepsis, immunocompromise, failed outpatient therapy, large complex abscess.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8–12h (target trough 10–15 mg/L) — empiric MRSA coverage. Add Cefazolin if MSSA also likely, then narrow once cultures back.',
+        alt_pen_allergy: 'Linezolid 600 mg IV/PO q12h OR Daptomycin 4–6 mg/kg IV daily (NOT for pneumonia)',
+        duration: '7–14 days based on severity and response'
+      }
+    ],
+    iv_to_po: 'After I&D and clinical improvement (afebrile, decreasing erythema), step-down to oral TMP-SMX, doxycycline, or linezolid.',
+    pearls: [
+      'I&D IS THE PRIMARY TREATMENT for abscesses — antibiotics alone without drainage often fail.',
+      'Send wound culture at I&D — guides definitive therapy and tracks local MRSA epidemiology.',
+      'TMP-SMX and doxycycline have GOOD CA-MRSA coverage but variable Strep coverage. If Strep also suspected (mixed cellulitis), combine with cephalexin or use clindamycin.',
+      'Clindamycin: rising resistance (~15–25% in some Canadian centres) and risk of C. difficile — check D-test for inducible resistance.',
+      'Recurrent abscesses (especially MRSA): consider decolonization protocol — intranasal mupirocin BID × 5 days + chlorhexidine body wash daily × 5 days.',
+      'Look for predisposing factors: hidradenitis suppurativa, diabetes, IV drug use, household contacts with similar lesions.'
+    ],
+    source: 'Bugs & Drugs 2024; IDSA SSTI 2014; AMMI Canada CA-MRSA position',
+    related_drugs: ['sulfamethoxazole','doxycycline','cephalexin','clindamycin','vancomycin','linezolid','daptomycin','cefazolin','mupirocin','chlorhexidine']
+  },
+  {
+    id: 'diabetic_foot',
+    title: 'Diabetic Foot Infection',
+    category: 'ssti', icon: '🦠', color: '#10b981',
+    overview: 'Soft tissue and/or bone infection of the foot in a diabetic patient. Stratified by IDSA classification (mild / moderate / severe / +osteomyelitis). Multidisciplinary care (podiatry, vascular, ID) is essential. Always assess for osteomyelitis with probe-to-bone test and imaging.',
+    likely_organisms: [
+      { name: 'Staphylococcus aureus (MSSA + MRSA)', frequency: 'Most common, especially superficial' },
+      { name: 'Streptococci', frequency: 'Common in cellulitic component' },
+      { name: 'Enterobacterales (E. coli, Klebsiella, Proteus)', frequency: 'Common in moderate–severe and chronic wounds' },
+      { name: 'Anaerobes (Bacteroides, Peptostreptococcus)', frequency: 'Deeper, ischemic, or foul-smelling wounds' },
+      { name: 'Pseudomonas aeruginosa', frequency: 'Macerated wounds, prior antibiotics, hospitalized' }
+    ],
+    severity_strata: [
+      {
+        name: 'Mild infection (IDSA: superficial only, <2 cm cellulitis, no systemic signs)',
+        criteria: 'Erythema, warmth, swelling, drainage; cellulitis ≤2 cm; no deep infection or systemic illness.',
+        first_line: 'Cephalexin 500 mg PO QID × 7–14 days OR Cloxacillin 500 mg PO QID × 7–14 days (cover MSSA + Strep)',
+        alt_pen_allergy: 'Clindamycin 300–450 mg PO QID × 7–14 days OR (if MRSA risk) TMP-SMX or Doxycycline + Cephalexin',
+        duration: '7–14 days'
+      },
+      {
+        name: 'Moderate infection (IDSA: deeper/extensive without systemic signs)',
+        criteria: 'Cellulitis >2 cm, deep abscess, lymphangitis, deep tissue/fascia involvement; metabolically stable.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID × 1–3 weeks (covers Gram-pos + Gram-neg + anaerobes) OR Ceftriaxone IV + Metronidazole if hospitalized',
+        alt_pen_allergy: 'Levofloxacin + Clindamycin OR Levofloxacin + Metronidazole',
+        duration: '1–3 weeks; longer if osteomyelitis (4–6 weeks)'
+      },
+      {
+        name: 'Severe infection (IDSA: systemic toxicity, ICU)',
+        criteria: 'Sepsis, hypotension, severe metabolic dysregulation, extensive necrotizing infection, gas in tissues.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h (extended infusion) PLUS Vancomycin 15–20 mg/kg IV q8–12h (MRSA coverage) × 2–3 weeks initial, narrow per cultures',
+        alt_pen_allergy: 'Aztreonam + Vancomycin + Metronidazole',
+        duration: '2–3 weeks; 4–6 weeks (or longer) if osteomyelitis'
+      },
+      {
+        name: 'With concomitant osteomyelitis (probe-to-bone positive, MRI evidence)',
+        criteria: 'Bone involvement on imaging or probe-to-bone exam, often with chronic non-healing ulcer.',
+        first_line: 'Surgical debridement + culture-directed antibiotics (often 6 weeks IV + step-down) — ID consultation recommended',
+        alt_pen_allergy: 'Per cultures',
+        duration: '4–6 weeks if surgical resection achieves clean margins; up to 12 weeks if no resection'
+      }
+    ],
+    iv_to_po: 'Highly bioavailable PO options (FQs, linezolid, TMP-SMX, clindamycin, metronidazole) allow early IV→PO step-down. Vancomycin → linezolid PO when MRSA confirmed and stable.',
+    pearls: [
+      'Mild diabetic foot infections do NOT need anaerobic coverage routinely — only when deep, ischemic, gangrenous, or foul-smelling.',
+      'Probe-to-bone test: rough metal probe touching bone in a clean ulcer = high specificity for osteomyelitis (treat empirically pending MRI).',
+      'OBTAIN CULTURES: deep tissue biopsy or curettage at debridement (NOT superficial swab — surface colonizers misleading).',
+      'Vascular assessment is critical — ABI, doppler. Severely ischemic limbs may need revascularization for healing; antibiotics alone often fail.',
+      'Charcot foot can mimic infection — careful differentiation (Charcot: warm, swollen, neuropathic, no systemic signs; infection: usually with systemic signs or deep tissue findings).',
+      'Consider hospitalization for: severe infection, inability to ambulate, failure of outpatient therapy, social barriers to care.'
+    ],
+    source: 'IDSA / IWGDF 2023 diabetic foot guideline; Bugs & Drugs 2024',
+    related_drugs: ['cephalexin','cloxacillin','amoxicillin_clavulanate','clindamycin','sulfamethoxazole','doxycycline','levofloxacin','metronidazole','ceftriaxone','piperacillin_tazobactam','vancomycin','linezolid','aztreonam']
+  },
+  {
+    id: 'nec_fasc',
+    title: 'Necrotizing Fasciitis',
+    category: 'ssti', icon: '🦠', color: '#10b981',
+    overview: 'Surgical emergency — rapidly progressive necrotizing infection of fascia and subcutaneous tissue with systemic toxicity, high mortality (~25–35%). EARLY surgical debridement is life-saving. Antibiotics adjunctive, never substitute for surgery.',
+    likely_organisms: [
+      { name: 'Type I (polymicrobial — most common ~70%)', frequency: 'Mix of Streptococci, Staphylococci, Enterobacterales, anaerobes (Bacteroides, Peptostreptococcus, Clostridium)' },
+      { name: 'Type II (monomicrobial — Group A Strep ~20%)', frequency: 'Often otherwise healthy young adults; toxic shock syndrome' },
+      { name: 'Type III (Vibrio vulnificus — saltwater exposure, raw oysters)', frequency: 'Rare in Canada; immigrants/travel; cirrhosis high-risk' },
+      { name: 'Clostridium perfringens (gas gangrene)', frequency: 'Trauma, gas in tissues, crepitus' }
+    ],
+    severity_strata: [
+      {
+        name: 'Empiric — broad-spectrum until cultures',
+        criteria: 'Suspected necrotizing infection — surgical exploration is diagnostic.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h (or Meropenem 1 g IV q8h) PLUS Vancomycin 15–20 mg/kg IV q8–12h PLUS Clindamycin 900 mg IV q8h (toxin suppression — added to standard regimens for any suspected GAS necrotizing infection)',
+        alt_pen_allergy: 'Aztreonam + Vancomycin + Clindamycin + Metronidazole',
+        duration: 'Continue until: (a) source controlled (multiple debridements typically needed), (b) clinical improvement, (c) cultures define narrower regimen — often 2–4+ weeks'
+      },
+      {
+        name: 'Group A Strep necrotizing fasciitis (Type II)',
+        criteria: 'Confirmed S. pyogenes by Gram stain or culture; often classic ‟red flag" features and toxic shock.',
+        first_line: 'Penicillin G 4 MU IV q4h + Clindamycin 900 mg IV q8h (Eagle effect — clindamycin suppresses streptococcal toxin production at high inoculum) + IVIG 1 g/kg day 1, 0.5 g/kg days 2–3 (in toxic shock) — ID consult',
+        alt_pen_allergy: 'Vancomycin + Clindamycin (continue clindamycin for toxin suppression even if penicillin-allergic)',
+        duration: '14 days minimum; longer if hardware, persistent positive cultures'
+      }
+    ],
+    iv_to_po: 'IV throughout — IV→PO transition rare and only when source is controlled, CRP/WBC normalizing, and clinical resolution. Often requires prolonged IV outpatient therapy via PICC.',
+    pearls: [
+      'TIME TO SURGERY IS THE STRONGEST PREDICTOR OF SURVIVAL — every hour delay increases mortality. Do NOT delay surgical consultation for imaging.',
+      'LRINEC score (CRP, WBC, Hb, Na, Cr, glucose) — score ≥6 high suspicion. Negative LRINEC does NOT exclude.',
+      'Pain "out of proportion" to clinical findings is a CLASSIC EARLY SIGN.',
+      'Add CLINDAMYCIN to any suspected GAS necrotizing infection — suppresses streptococcal exotoxin (Eagle effect, ribosomal inhibition).',
+      'Hyperbaric oxygen: controversial; consider for clostridial gas gangrene if available, but NEVER delay surgery.',
+      'Repeat surgical debridement is the rule, not the exception (24–48h re-look standard).',
+      'IVIG considered for streptococcal toxic shock syndrome (especially Type II) — neutralizes toxins.'
+    ],
+    source: 'Bugs & Drugs 2024; IDSA SSTI 2014; Canadian streptococcal TSS guidelines',
+    related_drugs: ['piperacillin_tazobactam','meropenem','vancomycin','clindamycin','penicillin','aztreonam','metronidazole']
+  },
+
+  // ═══════════ SEPSIS ═══════════
+  {
+    id: 'community_sepsis',
+    title: 'Community-Acquired Sepsis (Unknown Source)',
+    category: 'sepsis', icon: '⚕️', color: '#ef4444',
+    overview: 'Life-threatening organ dysfunction due to dysregulated host response to community-acquired infection. Sepsis Hour-1 bundle: cultures (2 sets blood) + lactate + broad-spectrum antibiotics within 1 hour + IV fluids 30 mL/kg if hypotensive/lactate ≥4 + vasopressors if MAP <65 after fluids. Then SOURCE IDENTIFICATION.',
+    likely_organisms: [
+      { name: 'Source-dependent — most common: respiratory, urinary, intra-abdominal, skin', frequency: 'Pulmonary 30–40%, urinary 15–25%, abdominal 10–20%, skin 5–10%, other 10%' },
+      { name: 'Streptococcus pneumoniae, E. coli, Klebsiella', frequency: 'Common gram-positive/negative pathogens' },
+      { name: 'Staphylococcus aureus (MSSA, MRSA)', frequency: 'Skin source, IVDU' }
+    ],
+    severity_strata: [
+      {
+        name: 'Community sepsis — no MDR risk factors',
+        criteria: 'No recent hospitalization, no recent antibiotics (<90d), no MDR colonization. Source unknown at presentation.',
+        first_line: 'Ceftriaxone 2 g IV daily PLUS Vancomycin 15–20 mg/kg IV q8–12h (cover MRSA empirically until cultures) — adjust per source. Add Azithromycin if pulmonary source suspected; Metronidazole if intra-abdominal.',
+        alt_pen_allergy: 'Levofloxacin 750 mg IV daily + Vancomycin + Metronidazole (if abdominal)',
+        duration: 'Source-directed; reassess at 48–72h to narrow'
+      },
+      {
+        name: 'Community sepsis — with MDR risk factors',
+        criteria: 'Recent antibiotics, healthcare exposure, immunocompromise, MDR colonization history.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h (extended infusion) OR Meropenem 1 g IV q8h (if ESBL risk) PLUS Vancomycin 15–20 mg/kg IV q8–12h',
+        alt_pen_allergy: 'Aztreonam + Vancomycin ± Metronidazole',
+        duration: 'Source-directed'
+      }
+    ],
+    iv_to_po: 'IV throughout acute resuscitation phase. PO step-down only after source control, hemodynamic stability, and oral intake re-established.',
+    pearls: [
+      'Hour-1 bundle (Surviving Sepsis Campaign): blood cultures × 2 BEFORE antibiotics (do not delay >45 min), measure lactate, administer broad-spectrum antibiotics, 30 mL/kg crystalloid if hypotensive, vasopressors if MAP <65 after fluids.',
+      'EVERY HOUR delay in appropriate antibiotic increases mortality ~7%.',
+      'Source control is essential — drain abscess, remove infected catheter, decompress obstruction, debride necrotic tissue.',
+      'Reassess EVERY DAY whether antibiotics can be narrowed or stopped — antimicrobial stewardship.',
+      'Procalcitonin can guide de-escalation/discontinuation in stable patients (but should not delay initial empiric therapy).',
+      'Vasopressor of choice: norepinephrine first-line; add vasopressin if persistent hypotension.'
+    ],
+    source: 'Surviving Sepsis Campaign 2021; Bugs & Drugs 2024; AMMI Canada',
+    related_drugs: ['ceftriaxone','vancomycin','azithromycin','metronidazole','piperacillin_tazobactam','meropenem','aztreonam','levofloxacin']
+  },
+  {
+    id: 'hospital_sepsis',
+    title: 'Hospital-Acquired Sepsis',
+    category: 'sepsis', icon: '⚕️', color: '#ef4444',
+    overview: 'Sepsis ≥48h after admission — empiric coverage broadened for nosocomial pathogens (MRSA, Pseudomonas, ESBL, Acinetobacter). Local antibiogram and patient-specific colonization history guide therapy.',
+    likely_organisms: [
+      { name: 'MRSA (line, skin, pneumonia)', frequency: 'Common — empirical coverage standard' },
+      { name: 'Pseudomonas aeruginosa', frequency: 'Common — pneumonia, line, urinary' },
+      { name: 'ESBL Enterobacterales', frequency: 'Increasing — consider carbapenem if known colonization' },
+      { name: 'Enterococcus (incl. VRE)', frequency: 'Catheter, abdominal, hardware infections' },
+      { name: 'Candida species (especially in TPN, broad-spectrum antibiotics)', frequency: '5–10% nosocomial sepsis' }
+    ],
+    severity_strata: [
+      {
+        name: 'Empiric hospital-acquired sepsis',
+        criteria: 'Sepsis arising ≥48h after admission. Possible nosocomial source.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h (extended infusion) OR Cefepime 2 g IV q8h OR Meropenem 1 g IV q8h (if ESBL risk) — PLUS Vancomycin 15–20 mg/kg IV q8–12h. Consider antifungal (fluconazole or echinocandin) if Candida risk (TPN, broad-spectrum, prolonged stay).',
+        alt_pen_allergy: 'Aztreonam + Vancomycin ± Metronidazole',
+        duration: 'Source-directed; reassess 48–72h. De-escalate aggressively per cultures.'
+      },
+      {
+        name: 'Catheter-related bloodstream infection',
+        criteria: 'Central or peripheral line-associated; positive blood cultures with line as suspected source.',
+        first_line: 'REMOVE the catheter (or exchange) + Vancomycin 15–20 mg/kg IV q8–12h + (Cefepime or Pip-tazo) for Gram-negative coverage. Tailor to organism.',
+        alt_pen_allergy: 'Vancomycin + Aztreonam',
+        duration: 'CoNS: 5–7 days post-removal. S. aureus: 14 days from first negative culture (rule out endocarditis). Gram-negative: 7–14 days. Candida: 14 days from first negative + ophthal exam.'
+      }
+    ],
+    iv_to_po: 'IV throughout in critical phase. Step-down per organism and source — line-related: typically IV-only for full course due to bacteremia.',
+    pearls: [
+      'Always consider line/catheter as source — culture from line and peripheral simultaneously (differential time-to-positivity supports CLABSI).',
+      'S. aureus bacteremia: NEVER short-course — minimum 14 days IV + ECHO (rule out endocarditis) + ID consult standard.',
+      'Empirically cover MRSA AND Pseudomonas in critically ill nosocomial sepsis until culture data available.',
+      'Antifungal empiric coverage if Candida risk: prolonged broad-spectrum antibiotics, TPN, multi-site Candida colonization, recent abdominal surgery.',
+      'Source control is paramount — drain abscess, remove infected hardware, debride necrosis.'
+    ],
+    source: 'Surviving Sepsis Campaign 2021; Bugs & Drugs 2024',
+    related_drugs: ['piperacillin_tazobactam','cefepime','meropenem','vancomycin','aztreonam','metronidazole','fluconazole']
+  },
+  {
+    id: 'endocarditis',
+    title: 'Infective Endocarditis (IE)',
+    category: 'sepsis', icon: '⚕️', color: '#ef4444',
+    overview: 'Endovascular infection of heart valve(s). Native valve, prosthetic valve, or device-related. Always 2 sets of blood cultures from separate sites BEFORE antibiotics (3 sets if subacute/stable). Treatment is prolonged (4–6 weeks IV); cardiac surgery for HF, abscess, persistent bacteremia, or large vegetations.',
+    likely_organisms: [
+      { name: 'Staphylococcus aureus', frequency: '30–40% — most common; aggressive course; IVDU' },
+      { name: 'Streptococcus viridans group', frequency: '20–30% — subacute; dental procedures' },
+      { name: 'Enterococcus', frequency: '10–15% — older, GU procedures' },
+      { name: 'Coagulase-negative Staphylococci', frequency: '5–15% — prosthetic valves' },
+      { name: 'HACEK organisms', frequency: '2–5% — culture-negative when fastidious' },
+      { name: 'Streptococcus gallolyticus (bovis)', frequency: '5–10% — colorectal cancer association' }
+    ],
+    severity_strata: [
+      {
+        name: 'Native valve — empiric (cultures pending)',
+        criteria: 'Suspected IE pending cultures. Subacute presentation.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8–12h + Ceftriaxone 2 g IV daily — covers Staph (incl. MRSA), Strep, Enterococcus, HACEK',
+        alt_pen_allergy: 'Vancomycin alone OR Vancomycin + Aztreonam if Gram-negative concern',
+        duration: 'Empiric until cultures back; total 4–6 weeks once organism-directed'
+      },
+      {
+        name: 'Prosthetic valve — empiric',
+        criteria: 'Suspected PV-IE — broader coverage including CoNS, Pseudomonas, MRSA.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8–12h + Cefepime 2 g IV q8h + Rifampin 300 mg PO q8h (if PV-IE suspected, after cultures back and >2 weeks vancomycin/beta-lactam)',
+        alt_pen_allergy: 'Vancomycin + Aztreonam + Rifampin',
+        duration: '6 weeks minimum; prosthetic valve typically 6+ weeks'
+      },
+      {
+        name: 'Native valve S. aureus IE (MSSA)',
+        criteria: 'MSSA confirmed — switch from empiric.',
+        first_line: 'Cefazolin 2 g IV q8h × 6 weeks (preferred) OR Cloxacillin 2 g IV q4h × 6 weeks',
+        alt_pen_allergy: 'Vancomycin 15–20 mg/kg IV q8–12h × 6 weeks (suboptimal vs MSSA but used in true allergy)',
+        duration: '6 weeks (4 weeks for uncomplicated right-sided in IVDU per some guidelines)'
+      },
+      {
+        name: 'Native valve S. aureus IE (MRSA)',
+        criteria: 'MRSA confirmed.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8–12h × 6 weeks (target trough 15–20 mg/L for IE) OR Daptomycin 8–10 mg/kg IV daily × 6 weeks (alternative — high-dose for IE)',
+        alt_pen_allergy: 'Daptomycin OR Linezolid (off-label for IE — limited data)',
+        duration: '6 weeks'
+      },
+      {
+        name: 'Streptococcal IE (viridans, S. gallolyticus, susceptible)',
+        criteria: 'Strep with penicillin MIC ≤0.12 mg/L.',
+        first_line: 'Penicillin G 12–18 MU IV daily (continuous or divided q4h) × 4 weeks OR Ceftriaxone 2 g IV daily × 4 weeks',
+        alt_pen_allergy: 'Vancomycin 15–20 mg/kg IV q8–12h × 4 weeks',
+        duration: '4 weeks (2 weeks for highly susceptible Strep + uncomplicated, with gentamicin synergy)'
+      },
+      {
+        name: 'Enterococcal IE',
+        criteria: 'Enterococcus faecalis (more common, susceptible to ampicillin) or faecium (often VRE).',
+        first_line: 'Ampicillin 2 g IV q4h + Ceftriaxone 2 g IV q12h × 6 weeks (preferred — DUAL beta-lactam regimen, less nephrotoxic than ampicillin + gentamicin) — for E. faecalis',
+        alt_pen_allergy: 'Vancomycin + Gentamicin (avoid in renal impairment); Daptomycin + Ampicillin/Ceftaroline for VRE — ID consult',
+        duration: '6 weeks; longer for VRE'
+      }
+    ],
+    iv_to_po: 'Historically IV-only for entire 4–6 week course. POET trial (2019) and others show oral step-down after 10–14 days IV is non-inferior in selected stable IE patients with susceptible Streptococci, Enterococci, MSSA, and CoNS — not yet routine in Canada but emerging.',
+    pearls: [
+      'Obtain 2–3 sets of blood cultures from SEPARATE sites BEFORE antibiotics (essential — false-negatives change diagnosis and treatment).',
+      'EVERY S. aureus bacteremia: ECHO (TTE first; TEE if TTE negative or prosthetic valve, ICD/CIED, or persisting bacteremia >72h).',
+      'Surgery indications: heart failure, paravalvular abscess, persistent bacteremia >5–7 days despite appropriate antibiotics, mobile vegetation >10 mm + embolic event, fungal IE, prosthetic valve dehiscence.',
+      'S. gallolyticus (bovis) IE: ALWAYS evaluate for colorectal malignancy — colonoscopy after recovery.',
+      'Tooth extraction prophylaxis: only for HIGH-RISK cardiac conditions (prosthetic valve, prior IE, cyanotic CHD, transplant + valvulopathy) — amoxicillin 2 g PO 30–60 min before procedure.',
+      'IVDU right-sided IE: unique cohort; some protocols use 2-week IV regimens for uncomplicated MSSA.'
+    ],
+    source: 'AHA/ACC IE 2015; ESC IE 2023; AMMI Canada IE position; Bugs & Drugs 2024',
+    related_drugs: ['vancomycin','ceftriaxone','cefepime','rifampin','cefazolin','cloxacillin','daptomycin','penicillin','ampicillin','gentamicin','linezolid','aztreonam','amoxicillin']
+  },
+
+  // ═══════════ CNS ═══════════
+  {
+    id: 'meningitis',
+    title: 'Acute Bacterial Meningitis',
+    category: 'cns', icon: '🧠', color: '#a855f7',
+    overview: 'Pyogenic infection of meninges with characteristic CSF findings (neutrophilic pleocytosis, low glucose, elevated protein). Empiric treatment is a TIME-CRITICAL EMERGENCY — antibiotics within 1 hour of presentation, BEFORE LP if LP is delayed by imaging. DEXAMETHASONE in pneumococcal meningitis reduces mortality and neurologic sequelae.',
+    likely_organisms: [
+      { name: 'Streptococcus pneumoniae', frequency: '50% of adult community-acquired bacterial meningitis' },
+      { name: 'Neisseria meningitidis', frequency: '20–30% — adolescents, young adults; petechial rash; outbreaks' },
+      { name: 'Listeria monocytogenes', frequency: '5–10% — neonates, age >50, immunocompromised, pregnant' },
+      { name: 'Group B Streptococcus', frequency: 'Neonates; pregnancy' },
+      { name: 'Haemophilus influenzae type b', frequency: 'Now rare since Hib vaccine; consider in unvaccinated' },
+      { name: 'Gram-negative bacilli', frequency: 'Post-neurosurgical, immunocompromised' }
+    ],
+    severity_strata: [
+      {
+        name: 'Empiric — Adult age 1 month–50 years, immunocompetent',
+        criteria: 'Suspected community-acquired bacterial meningitis. No risk factors for Listeria.',
+        first_line: 'Ceftriaxone 2 g IV q12h PLUS Vancomycin 15–20 mg/kg IV q8h (target trough 15–20 mg/L — covers cephalosporin-resistant pneumococcus). Add Dexamethasone 0.15 mg/kg IV q6h × 4 days (start with or just before first antibiotic dose — pneumococcal benefit).',
+        alt_pen_allergy: 'Vancomycin + Moxifloxacin 400 mg IV daily (or Aztreonam if pen allergy + acceptable) — consult ID',
+        duration: '7 days (meningococcal); 10–14 days (pneumococcal); 7 days (Hib)'
+      },
+      {
+        name: 'Empiric — >50 years, immunocompromised, alcoholic, pregnant',
+        criteria: 'Risk factors for Listeria monocytogenes (cephalosporins do NOT cover Listeria).',
+        first_line: 'Ceftriaxone 2 g IV q12h + Vancomycin 15–20 mg/kg IV q8h + Ampicillin 2 g IV q4h (for Listeria) + Dexamethasone (if pneumococcal suspected)',
+        alt_pen_allergy: 'TMP-SMX (for Listeria) + Vancomycin + Moxifloxacin/Aztreonam — ID consult',
+        duration: 'Listeria: 21 days minimum (longer in immunocompromised); pneumococcal: 10–14 days'
+      },
+      {
+        name: 'Post-neurosurgical / penetrating head trauma / CSF shunt',
+        criteria: 'History of recent neurosurgery, CSF shunt, or penetrating skull trauma.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8h + Cefepime 2 g IV q8h OR Meropenem 2 g IV q8h (covers Pseudomonas + nosocomial pathogens)',
+        alt_pen_allergy: 'Vancomycin + Aztreonam',
+        duration: '10–14 days (longer if shunt removed delayed)'
+      },
+      {
+        name: 'Neonatal meningitis (<1 month)',
+        criteria: 'Neonatal — covers GBS, E. coli, Listeria, HSV (consider acyclovir).',
+        first_line: 'Ampicillin + (Gentamicin or Cefotaxime) — ID/neonatology guidance. Add Acyclovir if HSV considered.',
+        alt_pen_allergy: 'ID consult',
+        duration: 'Per organism: GBS 14–21 days; E. coli 21 days; Listeria 21+ days'
+      }
+    ],
+    iv_to_po: 'IV throughout — no PO step-down for bacterial meningitis (need CSF concentrations). Prolonged outpatient parenteral therapy via PICC if early discharge.',
+    pearls: [
+      'EMPIRIC ANTIBIOTICS WITHIN 1 HOUR — do not delay for CT or LP. If LP delayed (e.g., for CT due to focal signs/papilledema/immunocompromise), draw blood cultures and start antibiotics immediately. CSF profile is preserved for hours after antibiotics.',
+      'DEXAMETHASONE 0.15 mg/kg IV q6h × 4 days for ALL adults with suspected bacterial meningitis — start with or before first antibiotic. STOP if not pneumococcal.',
+      'CSF profile of bacterial meningitis: opening pressure ↑, WBC 1000–5000 (neutrophil-predominant), protein >1 g/L, glucose <40% serum, Gram stain often diagnostic.',
+      'Repeat LP at 48h if: poor clinical response, resistant organism, dexamethasone use (may mask response), neonate.',
+      'Public health: meningococcal disease is REPORTABLE — close contacts need chemoprophylaxis (rifampin, ciprofloxacin, ceftriaxone IM).',
+      'Vaccination prevention: pneumococcal (PCV20/PCV15+PPSV23 schedules), meningococcal (MenACWY adolescents, MenB selected), Hib (childhood), per NACI.'
+    ],
+    source: 'IDSA bacterial meningitis 2004 (updated); AMMI Canada; Bugs & Drugs 2024',
+    related_drugs: ['ceftriaxone','vancomycin','ampicillin','cefepime','meropenem','dexamethasone','acyclovir','cefotaxime','gentamicin','rifampin','ciprofloxacin','sulfamethoxazole']
+  },
+  {
+    id: 'brain_abscess',
+    title: 'Brain Abscess',
+    category: 'cns', icon: '🧠', color: '#a855f7',
+    overview: 'Focal pus collection within brain parenchyma. Sources: contiguous (sinusitis, otitis, dental — most common), hematogenous (endocarditis, lung, IVDU), direct inoculation (trauma, neurosurgery), cryptogenic. Treatment: SURGICAL DRAINAGE + prolonged broad-spectrum antibiotics (4–8 weeks IV).',
+    likely_organisms: [
+      { name: 'Streptococci (esp. Streptococcus anginosus / milleri group)', frequency: 'Most common; oral source' },
+      { name: 'Anaerobes (Bacteroides, Fusobacterium, Prevotella)', frequency: 'Common; oral, sinus, otogenic' },
+      { name: 'Staphylococcus aureus', frequency: 'Trauma, endocarditis, hematogenous' },
+      { name: 'Gram-negatives (Pseudomonas, Enterobacterales)', frequency: 'Otogenic, neurosurgical' },
+      { name: 'Toxoplasma gondii / Nocardia / fungi (Aspergillus)', frequency: 'Immunocompromised — separate considerations' }
+    ],
+    severity_strata: [
+      {
+        name: 'Empiric — community brain abscess',
+        criteria: 'Most common scenario; cause not yet identified.',
+        first_line: 'Ceftriaxone 2 g IV q12h + Metronidazole 500 mg IV q8h ± Vancomycin (if S. aureus or post-trauma/neurosurgery)',
+        alt_pen_allergy: 'Moxifloxacin + Metronidazole + Vancomycin (or Aztreonam + Vancomycin + Metronidazole) — ID consult',
+        duration: '4–8 weeks IV; some experts: 6–8 weeks IV + 2–3 months PO. Serial imaging guides duration.'
+      },
+      {
+        name: 'Post-neurosurgical / penetrating trauma',
+        criteria: 'Recent neurosurgery, head trauma — broaden for nosocomial pathogens.',
+        first_line: 'Vancomycin + (Cefepime or Meropenem) + Metronidazole',
+        alt_pen_allergy: 'Vancomycin + Aztreonam + Metronidazole',
+        duration: '6–8 weeks'
+      }
+    ],
+    iv_to_po: 'IV-only for several weeks; PO step-down (e.g., metronidazole, amoxicillin-clavulanate) considered after cavity resolution on imaging. Consult ID.',
+    pearls: [
+      'IMAGING FIRST — contrast CT or MRI brain. Lumbar puncture is CONTRAINDICATED (mass effect, herniation risk).',
+      'Surgical drainage (aspiration or excision) is usually required for diagnosis (culture) AND treatment, except very small (<2.5 cm) early cerebritis.',
+      'Identify source: dental, sinus, otitis media (chronic), congenital heart disease (R-to-L shunt), endocarditis, lung abscess, IVDU. Ophthal exam for septic emboli.',
+      'Empiric antifungal (voriconazole) and Toxoplasma coverage in immunocompromised (HIV, transplant) per local epidemiology.',
+      'Serial imaging at 1–2 week intervals (MRI preferred) to assess response — antibiotic duration guided by imaging resolution.'
+    ],
+    source: 'IDSA brain abscess; Bugs & Drugs 2024',
+    related_drugs: ['ceftriaxone','metronidazole','vancomycin','cefepime','meropenem','aztreonam','moxifloxacin','amoxicillin_clavulanate','voriconazole']
+  },
+
+  // ═══════════ ENT ═══════════
+  {
+    id: 'aom',
+    title: 'Acute Otitis Media (AOM)',
+    category: 'ent', icon: '👂', color: '#f59e0b',
+    overview: 'Acute middle ear infection — classic triad: middle ear effusion + signs of acute inflammation (ear pain, fever, irritability) + bulging tympanic membrane. Most common in children. Many cases are viral or self-resolving — observation appropriate in selected cases.',
+    likely_organisms: [
+      { name: 'Streptococcus pneumoniae', frequency: '30–40%' },
+      { name: 'Haemophilus influenzae (non-typeable)', frequency: '20–30%; ~30% beta-lactamase positive in Canada' },
+      { name: 'Moraxella catarrhalis', frequency: '10–15%; >90% beta-lactamase positive' },
+      { name: 'Group A Strep (S. pyogenes)', frequency: '<5% in children' },
+      { name: 'Viral co-infection', frequency: 'Very common; many AOM episodes are mixed viral/bacterial' }
+    ],
+    severity_strata: [
+      {
+        name: 'Watchful waiting — mild AOM in low-risk children',
+        criteria: 'Age ≥2 years, unilateral AOM, mild symptoms, no otorrhea, reliable follow-up. Many AOM cases self-resolve.',
+        first_line: 'Symptomatic management × 48–72h with ibuprofen/acetaminophen. Re-assess; antibiotics if no improvement at 48–72h or worsening. Provide a safety-net rx.',
+        alt_pen_allergy: 'NA initially',
+        duration: 'NA initially'
+      },
+      {
+        name: 'Antibiotic-warranted AOM — first-line',
+        criteria: 'Age <6 months (always treat), age <2 with bilateral AOM, any age with otorrhea, severe symptoms (high fever, severe pain), or failed observation.',
+        first_line: 'Amoxicillin 75–90 mg/kg/day PO divided BID × 5 days (children ≥2y, mild) or × 10 days (children <2y, severe, bilateral, recurrent)',
+        alt_pen_allergy: 'Cefuroxime axetil 30 mg/kg/day divided BID × 5–10 days (non-anaphylactic pen allergy) OR Azithromycin 10 mg/kg day 1, then 5 mg/kg days 2–5 (rising resistance — last choice)',
+        duration: '5 days (≥2y mild–moderate) or 10 days (<2y, severe, treatment failure, perforation)'
+      },
+      {
+        name: 'Treatment failure or recent antibiotics',
+        criteria: 'No improvement after 48–72h of high-dose amoxicillin OR amoxicillin in last 30 days OR concurrent purulent conjunctivitis (suggests H. influenzae beta-lactamase+).',
+        first_line: 'Amoxicillin-clavulanate 90 mg/kg/day (amox component) divided BID × 5–10 days',
+        alt_pen_allergy: 'Cefuroxime axetil OR Ceftriaxone 50 mg/kg IM × 1–3 days (severe, refractory)',
+        duration: '5–10 days based on age/severity'
+      },
+      {
+        name: 'AOM with tympanostomy tubes — otorrhea',
+        criteria: 'Children with PE tubes presenting with otorrhea (without severe systemic illness).',
+        first_line: 'Topical Ciprofloxacin 0.3% + Dexamethasone otic suspension 4 drops BID × 7 days (preferred — avoids systemic antibiotics for otorrhea-only)',
+        alt_pen_allergy: 'Same — topical FQ does not cross-react',
+        duration: '7 days'
+      }
+    ],
+    iv_to_po: 'AOM is treated entirely orally in nearly all cases. Severe complications (mastoiditis, intracranial spread) require IV.',
+    pearls: [
+      'Observation/Watchful waiting is appropriate for many children ≥2y with unilateral mild AOM — most resolve spontaneously. CPS / Choosing Wisely supports this approach with safety-net prescription.',
+      'High-dose amoxicillin (75–90 mg/kg/day) overcomes intermediate-resistance pneumococcus.',
+      'Shorter courses (5 days) appropriate for older children with mild–moderate AOM (TREAT-AOM trial); longer 10 days for younger, severe, perforation, recurrent.',
+      'Recurrent AOM (≥3 episodes in 6 months OR ≥4 in 12 months): consider tympanostomy tube referral.',
+      'Vaccinations: PCV13/PCV15 (childhood schedule) reduces pneumococcal AOM. Annual influenza vaccine reduces AOM rates.',
+      'NEVER use topical aminoglycosides if possible perforation — ototoxicity risk.'
+    ],
+    source: 'CPS AOM 2016; AAP/AAFP 2013; Bugs & Drugs 2024',
+    related_drugs: ['amoxicillin','amoxicillin_clavulanate','cefuroxime','azithromycin','ceftriaxone','ciprofloxacin','ibuprofen','acetaminophen']
+  },
+  {
+    id: 'sinusitis',
+    title: 'Acute Bacterial Rhinosinusitis (ABRS)',
+    category: 'ent', icon: '👂', color: '#f59e0b',
+    overview: 'Acute sinusitis is most often viral (>90%); bacterial superinfection ("ABRS") complicates ~0.5–2%. Diagnose ABRS when: symptoms >10 days without improvement, OR severe symptoms (high fever ≥39°C, purulent discharge, facial pain) ≥3–4 days, OR worsening after initial improvement (double-sickening).',
+    likely_organisms: [
+      { name: 'Streptococcus pneumoniae', frequency: '30–40%' },
+      { name: 'Haemophilus influenzae (often beta-lactamase positive)', frequency: '20–30%' },
+      { name: 'Moraxella catarrhalis', frequency: '10–15% — children more than adults' },
+      { name: 'Streptococcus pyogenes / anaerobes / S. aureus', frequency: '<10% — chronic/dental source' }
+    ],
+    severity_strata: [
+      {
+        name: 'Mild–moderate ABRS — first-line',
+        criteria: 'Diagnostic criteria for ABRS met; immunocompetent, no severe complications.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID × 5–7 days (preferred over amoxicillin alone due to H. influenzae beta-lactamase) OR high-dose Amoxicillin 1 g PO TID × 5–7 days (if low resistance area)',
+        alt_pen_allergy: 'Doxycycline 100 mg PO BID × 5–7 days OR Levofloxacin 500 mg PO daily × 5–7 days (reserve)',
+        duration: '5–7 days (5–7 day non-inferior to 10 days)'
+      },
+      {
+        name: 'ABRS — risk of resistance',
+        criteria: 'Age >65, recent antibiotics (<30d), recent hospitalization, immunocompromised, daycare attendance.',
+        first_line: 'High-dose Amoxicillin-clavulanate 2 g/125 mg PO BID × 7–10 days (covers high-level penicillin-resistant pneumococcus)',
+        alt_pen_allergy: 'Levofloxacin 500 mg PO daily × 5–7 days OR Doxycycline 100 mg PO BID × 7–10 days',
+        duration: '7–10 days'
+      },
+      {
+        name: 'Severe ABRS / orbital or intracranial complications',
+        criteria: 'Periorbital cellulitis, vision changes, severe headache, focal neuro signs — emergency evaluation.',
+        first_line: 'Ceftriaxone 2 g IV daily + Vancomycin (if S. aureus risk) + Metronidazole (if intracranial extension) — ENT/neurosurgery consult',
+        alt_pen_allergy: 'Levofloxacin + Vancomycin + Metronidazole',
+        duration: '10–14 days IV initially, transition to oral for total 4+ weeks if intracranial'
+      }
+    ],
+    iv_to_po: 'Most ABRS treated entirely orally. Complicated/orbital/intracranial: IV initially, oral step-down once controlled.',
+    pearls: [
+      'MOST acute sinusitis is VIRAL — antibiotics are NOT indicated for symptoms <10 days unless severe (high fever ≥39°C, purulent discharge, facial pain) or "double-sickening" (worsening after initial improvement).',
+      'Symptomatic management: nasal saline irrigation, intranasal corticosteroids (mometasone, fluticasone), analgesics, decongestants short-term.',
+      'Imaging (CT) NOT needed for uncomplicated acute sinusitis. Indicated for: orbital/intracranial complications, recurrent/chronic, immunocompromised.',
+      'Choosing Wisely Canada: "Don\'t prescribe antibiotics for acute sinusitis without symptoms ≥10 days, severe symptoms, or worsening after initial improvement."',
+      'Chronic rhinosinusitis (>12 weeks): different pathophysiology and management — antibiotics rarely curative, ENT referral standard.'
+    ],
+    source: 'IDSA ABRS 2012; CFP/CMA Choosing Wisely; Bugs & Drugs 2024',
+    related_drugs: ['amoxicillin_clavulanate','amoxicillin','doxycycline','levofloxacin','ceftriaxone','vancomycin','metronidazole','mometasone','fluticasone']
+  },
+  {
+    id: 'pharyngitis',
+    title: 'Streptococcal Pharyngitis (Strep Throat)',
+    category: 'ent', icon: '👂', color: '#f59e0b',
+    overview: 'Group A Streptococcus (S. pyogenes) pharyngitis. Most pharyngitis is VIRAL; treat only confirmed or strongly suspected GAS to prevent rheumatic fever. Use Centor/McIsaac score — only test (rapid antigen detection test or culture) those with high pre-test probability.',
+    likely_organisms: [
+      { name: 'Group A Streptococcus (S. pyogenes)', frequency: '~10% adults; ~30% children with pharyngitis' },
+      { name: 'Group C/G Strep', frequency: 'Less common — clinical significance debated; usually self-limited' },
+      { name: 'Viruses (rhinovirus, EBV, adenovirus)', frequency: '~70–90% of all pharyngitis' },
+      { name: 'Fusobacterium necrophorum (Lemierre syndrome)', frequency: 'Young adults; severe persistent pharyngitis' }
+    ],
+    severity_strata: [
+      {
+        name: 'Confirmed GAS pharyngitis (positive RADT or culture)',
+        criteria: 'Centor/McIsaac score ≥3 PLUS positive throat swab (RADT or culture).',
+        first_line: 'Penicillin V 600 mg PO BID × 10 days (preferred — narrow spectrum, prevents rheumatic fever) OR Amoxicillin 50 mg/kg (max 1 g) PO daily × 10 days',
+        alt_pen_allergy: 'Cephalexin 500 mg PO BID × 10 days (non-anaphylactic) OR Clindamycin 300 mg PO TID × 10 days OR Azithromycin 12 mg/kg (max 500 mg) day 1, then 6 mg/kg (max 250 mg) days 2–5 (rising resistance)',
+        duration: '10 days for penicillin/amoxicillin to prevent rheumatic fever (5 days azithromycin equivalent)'
+      },
+      {
+        name: 'Recurrent GAS pharyngitis',
+        criteria: '≥7 episodes in 1 year OR ≥5 in 2 years OR ≥3 in 3 years.',
+        first_line: 'Cephalosporin (cephalexin) × 10 days OR clindamycin × 10 days (slightly higher cure rates than penicillin in retreatment) — assess treatment vs carrier state',
+        alt_pen_allergy: 'Same options',
+        duration: '10 days; tonsillectomy referral if criteria met'
+      }
+    ],
+    iv_to_po: 'NA — entirely oral. Severe complications (peritonsillar abscess, deep neck space infection, Lemierre): IV.',
+    pearls: [
+      'McIsaac score: fever >38°C (1), absent cough (1), tender anterior cervical adenopathy (1), tonsillar exudate (1), age 3–14y (1), age 15–44y (0), age ≥45y (-1). Score 0–1: no test, no treat. 2–3: test, treat if positive. 4–5: test, consider empiric.',
+      'Antibiotics shorten symptoms by ~1 day if started early; PRIMARY purpose is rheumatic fever prevention (within 9 days of symptom onset).',
+      'Only ~10% adults with sore throat have GAS — empiric antibiotic prescribing is overuse.',
+      'NEVER treat asymptomatic strep carriers — colonization, not infection.',
+      'Avoid amoxicillin in mononucleosis (causes morbilliform rash — not a true allergy but problematic).',
+      'Lemierre syndrome (Fusobacterium necrophorum): suspect in young adult with prolonged pharyngitis + neck pain + fever + systemic illness — often missed; mortality high; CT neck + IV beta-lactam/metronidazole.'
+    ],
+    source: 'IDSA pharyngitis 2012; CPS streptococcal; Bugs & Drugs 2024',
+    related_drugs: ['penicillin','amoxicillin','cephalexin','clindamycin','azithromycin','clarithromycin']
+  },
+  {
+    id: 'peritonsillar',
+    title: 'Peritonsillar Abscess (Quinsy)',
+    category: 'ent', icon: '👂', color: '#f59e0b',
+    overview: 'Suppurative collection between palatine tonsil capsule and pharyngeal constrictor muscle. Classic features: severe sore throat (often unilateral), fever, "hot potato" voice, trismus, deviated uvula. ENT consultation for drainage + antibiotics.',
+    likely_organisms: [
+      { name: 'Group A Streptococcus (S. pyogenes)', frequency: 'Common' },
+      { name: 'Streptococcus anginosus group', frequency: 'Common' },
+      { name: 'Anaerobes (Fusobacterium, Prevotella, Peptostreptococcus)', frequency: 'Common — often polymicrobial' },
+      { name: 'Staphylococcus aureus (MSSA, MRSA)', frequency: 'Variable; consider MRSA if severe or recurrent' }
+    ],
+    severity_strata: [
+      {
+        name: 'Drainage + outpatient oral antibiotics — uncomplicated',
+        criteria: 'Successful needle aspiration or I&D performed; no airway compromise; tolerating oral.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID × 7–10 days (covers Strep + anaerobes + S. aureus)',
+        alt_pen_allergy: 'Clindamycin 300–450 mg PO QID × 7–10 days',
+        duration: '7–10 days'
+      },
+      {
+        name: 'Severe / hospitalized peritonsillar abscess',
+        criteria: 'Airway compromise, sepsis, immunocompromise, suspected deep neck extension.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h OR Ceftriaxone 2 g IV daily + Metronidazole 500 mg IV q8h ± Vancomycin (if MRSA risk)',
+        alt_pen_allergy: 'Clindamycin + Levofloxacin (or Aztreonam if Gram-neg coverage needed)',
+        duration: '10–14 days; longer if deep neck space involvement'
+      }
+    ],
+    iv_to_po: 'After drainage and clinical improvement (afebrile, decreased trismus, improved oral intake), step-down to oral amoxicillin-clavulanate or clindamycin.',
+    pearls: [
+      'DRAINAGE (needle aspiration or I&D) is the cornerstone — antibiotics alone insufficient. ENT consultation standard.',
+      'IMAGING (CT neck with contrast) recommended if unable to localize abscess clinically, suspicion of deep neck extension, or treatment failure.',
+      'Adjunctive corticosteroids (single dose dexamethasone 10 mg IV) — reduce pain and trismus, accelerate symptom resolution (Chau 2014 RCT).',
+      'Ensure airway monitoring — peritonsillar abscess can rapidly progress to airway compromise.',
+      'Recurrent peritonsillar abscess (≥2 episodes): consider interval tonsillectomy.'
+    ],
+    source: 'IDSA SSTI; ENT Canada/AAO-HNS; Bugs & Drugs 2024',
+    related_drugs: ['amoxicillin_clavulanate','clindamycin','piperacillin_tazobactam','ceftriaxone','metronidazole','vancomycin','levofloxacin','aztreonam','dexamethasone']
+  },
+
+  // ═══════════ GI ═══════════
+  {
+    id: 'cdi',
+    title: 'Clostridioides difficile Infection (CDI)',
+    category: 'gi', icon: '🤢', color: '#84cc16',
+    overview: 'Toxin-producing C. difficile infection, characterized by diarrhea (≥3 unformed stools/24h) with positive stool toxin EIA or PCR. Most cases follow antibiotic exposure (clindamycin, FQs, cephalosporins, carbapenems are highest risk). DISCONTINUE the offending antibiotic when possible.',
+    likely_organisms: [
+      { name: 'Clostridioides difficile', frequency: '100% — diagnostic by definition' }
+    ],
+    severity_strata: [
+      {
+        name: 'Initial CDI (any severity, including severe)',
+        criteria: 'First episode of CDI, any severity (mild, moderate, severe). Severe = WBC ≥15 × 10⁹/L OR creatinine ≥133 μmol/L (1.5 mg/dL).',
+        first_line: 'Fidaxomicin 200 mg PO BID × 10 days (preferred — IDSA 2021; reduces recurrence) OR Vancomycin (oral) 125 mg PO QID × 10 days (acceptable alternative; less expensive)',
+        alt_pen_allergy: 'NA — fidaxomicin/vancomycin are non-beta-lactam',
+        duration: '10 days; consider extended course or taper for high-risk recurrence'
+      },
+      {
+        name: 'Fulminant CDI (ileus, megacolon, hypotension)',
+        criteria: 'Severe complicated CDI: hypotension/shock, ileus, toxic megacolon — surgical consultation.',
+        first_line: 'Vancomycin (oral) 500 mg PO/NG QID PLUS Metronidazole 500 mg IV q8h. If ileus: add Vancomycin retention enemas 500 mg in 100 mL saline q6h. Surgical consult for colectomy if shock or peritonitis.',
+        alt_pen_allergy: 'Same regimen',
+        duration: '10–14 days; surgical management as needed'
+      },
+      {
+        name: 'First recurrence',
+        criteria: 'Recurrence of CDI within 8 weeks of completion of initial therapy.',
+        first_line: 'Fidaxomicin 200 mg PO BID × 10 days (preferred) OR Vancomycin pulse-taper (125 mg QID × 10–14d, then BID × 7d, then daily × 7d, then q2–3 days × 2–8 weeks)',
+        alt_pen_allergy: 'Same — non-beta-lactam',
+        duration: 'Variable; pulsed-taper standard for recurrence'
+      },
+      {
+        name: 'Multiple recurrences (≥2 recurrences)',
+        criteria: 'Two or more recurrences. Consider fecal microbiota transplant (FMT).',
+        first_line: 'Fecal microbiota transplant (FMT) — high efficacy (~85–90%); through ID/GI consultation. Bezlotoxumab (monoclonal — IV adjunct) considered for high-risk recurrence.',
+        alt_pen_allergy: 'Same',
+        duration: 'Per FMT protocol; bezlotoxumab single infusion'
+      }
+    ],
+    iv_to_po: 'CDI treated entirely orally (vancomycin, fidaxomicin) — IV vancomycin does NOT achieve effective gut concentrations. IV metronidazole is adjunctive only in fulminant disease (when oral cannot be used).',
+    pearls: [
+      'STOP the inciting antibiotic if possible — antibiotic withdrawal alone resolves mild CDI in some cases.',
+      'AVOID antiperistaltic agents (loperamide, opioids) — risk of toxic megacolon in active CDI.',
+      'Test of cure NOT recommended — many patients shed C. difficile in stool for weeks after symptom resolution.',
+      'Probiotics for primary or secondary prevention: evidence inconsistent; not routinely recommended (Saccharomyces boulardii most-studied).',
+      'Hand hygiene with SOAP AND WATER (not alcohol-based — does not kill C. difficile spores).',
+      'Hospital infection control: contact precautions, single room, dedicated equipment.',
+      'Bezlotoxumab (monoclonal anti-toxin B): adjunct to standard antibiotic therapy in patients at high risk of recurrence (age ≥65, immunocompromise, severe CDI, recurrent CDI). Reduces recurrence ~10% absolute.'
+    ],
+    source: 'IDSA/SHEA CDI 2021 update; AMMI Canada; Bugs & Drugs 2024',
+    related_drugs: ['fidaxomicin','vancomycin','metronidazole','bezlotoxumab']
+  },
+  {
+    id: 'cholangitis',
+    title: 'Acute Cholangitis & Cholecystitis',
+    category: 'gi', icon: '🤢', color: '#84cc16',
+    overview: 'Cholangitis: bacterial infection of biliary tree (Charcot triad: fever, jaundice, RUQ pain; Reynolds pentad adds confusion + hypotension = severe). Cholecystitis: gallbladder inflammation, often calculous. Treatment: antibiotics + biliary decompression (ERCP, percutaneous, or surgical) + cholecystectomy.',
+    likely_organisms: [
+      { name: 'Escherichia coli', frequency: '30–40%' },
+      { name: 'Klebsiella pneumoniae', frequency: '15–25%' },
+      { name: 'Enterococcus', frequency: '10–20% — biliary stents, healthcare-associated' },
+      { name: 'Anaerobes (Bacteroides, Clostridium)', frequency: '10–20% — bilio-enteric anastomosis' },
+      { name: 'Pseudomonas aeruginosa', frequency: '5–10% — biliary stents, prior antibiotics' }
+    ],
+    severity_strata: [
+      {
+        name: 'Mild–moderate community-acquired cholangitis/cholecystitis (Tokyo Grade I–II)',
+        criteria: 'Hemodynamically stable, no organ dysfunction, no MDR risk factors.',
+        first_line: 'Ceftriaxone 1–2 g IV daily + Metronidazole 500 mg IV q8h × 4–7 days (after source control) OR Piperacillin-tazobactam 4.5 g IV q6h × 4–7 days',
+        alt_pen_allergy: 'Ciprofloxacin + Metronidazole (oral or IV) × 4–7 days',
+        duration: '4–7 days post-source control (ERCP, percutaneous, surgery)'
+      },
+      {
+        name: 'Severe cholangitis (Tokyo Grade III) / sepsis',
+        criteria: 'Organ dysfunction (hypotension, AKI, altered mental status, hyperbilirubinemia, etc.).',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h OR Meropenem 1 g IV q8h (if ESBL risk) — early biliary decompression (ERCP within 24h critical)',
+        alt_pen_allergy: 'Meropenem OR Aztreonam + Metronidazole + Vancomycin (if Enterococcus suspected)',
+        duration: '4–7 days post-source control; longer if persistent bacteremia'
+      },
+      {
+        name: 'Healthcare-associated cholangitis (post-ERCP, biliary stent, recent hospitalization)',
+        criteria: 'MDR risk — recent ERCP, indwelling biliary stent, recent broad-spectrum antibiotics.',
+        first_line: 'Piperacillin-tazobactam OR Meropenem (if ESBL/Enterobacter risk) — adjust per local susceptibility patterns. Consider Vancomycin if Enterococcus risk.',
+        alt_pen_allergy: 'Meropenem + Vancomycin OR Aztreonam + Metronidazole + Vancomycin',
+        duration: '7–14 days based on bacteremia and source control'
+      }
+    ],
+    iv_to_po: 'After source control + clinical improvement, step-down to oral ciprofloxacin + metronidazole or amoxicillin-clavulanate (if susceptible). Most uncomplicated cases transition within 48–72h.',
+    pearls: [
+      'BILIARY DECOMPRESSION is essential in cholangitis — ERCP within 24h for severe cholangitis; percutaneous transhepatic if ERCP fails or contraindicated. Antibiotics alone insufficient.',
+      'Cholecystitis: cholecystectomy is definitive; early laparoscopic cholecystectomy (within 7 days) preferred over delayed.',
+      'Antibiotic duration is SHORT (4–7 days) AFTER source control — long courses unnecessary and promote resistance.',
+      'Tokyo Guidelines (TG18): standardized severity grading for cholangitis and cholecystitis — guides urgency of intervention.',
+      'Empiric Enterococcus coverage (ampicillin or vancomycin): only if biliary stent, healthcare-associated, immunocompromised, or transplant.'
+    ],
+    source: 'Tokyo Guidelines TG18; IDSA intra-abdominal 2010; Bugs & Drugs 2024',
+    related_drugs: ['ceftriaxone','metronidazole','piperacillin_tazobactam','meropenem','ciprofloxacin','vancomycin','aztreonam','amoxicillin_clavulanate']
+  },
+  {
+    id: 'travel_diarrhea',
+    title: 'Travellers\' Diarrhea',
+    category: 'gi', icon: '🤢', color: '#84cc16',
+    overview: 'Acute diarrhea (≥3 loose stools/24h ± systemic symptoms) in a traveller, typically to South Asia, Sub-Saharan Africa, Latin America. Most cases self-limited (3–5 days). Antibiotics shorten illness and treat severe disease.',
+    likely_organisms: [
+      { name: 'Enterotoxigenic E. coli (ETEC)', frequency: '30–60% — most common bacterial cause' },
+      { name: 'Enteroaggregative E. coli (EAEC)', frequency: '10–20%' },
+      { name: 'Campylobacter jejuni', frequency: '5–15% — South/Southeast Asia; FQ resistance >80%' },
+      { name: 'Shigella, Salmonella', frequency: '5–10% each' },
+      { name: 'Norovirus, Rotavirus', frequency: '10–20% — viral; antibiotics not indicated' },
+      { name: 'Giardia, Entamoeba histolytica, Cryptosporidium', frequency: 'Persistent (>14 days) — parasitic causes' }
+    ],
+    severity_strata: [
+      {
+        name: 'Mild — no need for antibiotics',
+        criteria: '<3 stools/24h, no blood/mucus, no fever, tolerating oral fluids.',
+        first_line: 'Oral rehydration + loperamide (2 mg up to 16 mg/day) for symptom control. Bismuth subsalicylate alternative.',
+        alt_pen_allergy: 'NA',
+        duration: 'Self-limited (3–5 days)'
+      },
+      {
+        name: 'Moderate — distressing or interfering with travel',
+        criteria: '3–4 stools/24h, no high fever, no blood. Symptoms interfering with planned activities.',
+        first_line: 'Azithromycin 1 g PO single dose (preferred — covers Campylobacter; FQs no longer first-line in S Asia due to resistance) OR Ciprofloxacin 500 mg PO BID × 1–3 days (in low-FQ-resistance areas) — combine with loperamide for rapid symptom control.',
+        alt_pen_allergy: 'Same — non-beta-lactam',
+        duration: '1–3 days'
+      },
+      {
+        name: 'Severe — fever, dysentery (blood/mucus), dehydration',
+        criteria: 'Fever ≥38.5°C, blood or mucus in stool, severe dehydration, ≥6 stools/day.',
+        first_line: 'Azithromycin 1 g PO single dose OR 500 mg PO daily × 3 days (preferred for invasive/dysentery; covers Campylobacter, Shigella, non-typhoidal Salmonella) — AVOID loperamide in dysenteric/febrile diarrhea',
+        alt_pen_allergy: 'Same',
+        duration: '1–3 days'
+      },
+      {
+        name: 'Persistent diarrhea (>14 days)',
+        criteria: 'Diarrhea >14 days post-travel — investigate parasites (Giardia, Entamoeba, Cyclospora, Cryptosporidium).',
+        first_line: 'Stool ova/parasites (× 3 samples), Giardia antigen — empiric metronidazole 250 mg PO TID × 5–7 days OR tinidazole 2 g PO × 1 if Giardia strongly suspected',
+        alt_pen_allergy: 'Same',
+        duration: 'Per pathogen: Giardia 5–7 days; Entamoeba 7–10 days + luminal agent (paromomycin)'
+      }
+    ],
+    iv_to_po: 'Treated entirely orally. Severe dehydration may require IV rehydration.',
+    pearls: [
+      'PRIMARY treatment for most travellers\' diarrhea is REHYDRATION (oral rehydration salts) — antibiotics shorten course but are not always needed.',
+      'AZITHROMYCIN 1 g single dose is now preferred over fluoroquinolones — high Campylobacter FQ resistance (>80% in Southeast Asia), tendon and CNS warnings, C. difficile risk.',
+      'AVOID loperamide in dysenteric/febrile diarrhea (may worsen Shigella, EHEC).',
+      'Prophylactic antibiotics: NOT routinely recommended (resistance concerns); reserve for short, critical travel in high-risk individuals (immunocompromised, military). Bismuth subsalicylate has modest preventive effect.',
+      'Public health: report enteric fever, cholera, hemorrhagic E. coli (EHEC O157:H7) — consult local public health.',
+      'Vaccinations: typhoid (oral or IM), cholera-ETEC oral (Dukoral) for at-risk travellers per CATMAT.'
+    ],
+    source: 'CATMAT (Committee to Advise on Tropical Medicine); IDSA travel diarrhea; Bugs & Drugs 2024',
+    related_drugs: ['azithromycin','ciprofloxacin','metronidazole','loperamide','bismuth_subsalicylate']
+  },
+
+  // ═══════════ BONE/JOINT ═══════════
+  {
+    id: 'osteomyelitis',
+    title: 'Osteomyelitis',
+    category: 'bone', icon: '🦴', color: '#fb923c',
+    overview: 'Bone infection — acute (days–weeks) or chronic (months). Mechanisms: hematogenous (children — long bone metaphysis; adults — vertebral), contiguous (diabetic foot, surgical site, trauma), prosthetic joint. Bone biopsy for culture is standard before empiric therapy unless septic.',
+    likely_organisms: [
+      { name: 'Staphylococcus aureus (MSSA + MRSA)', frequency: '50–70% — most common in all ages' },
+      { name: 'Coagulase-negative Staphylococci', frequency: 'Hardware, prosthetic infections' },
+      { name: 'Streptococci, Enterococci', frequency: 'Less common' },
+      { name: 'Gram-negatives (E. coli, Pseudomonas, Enterobacter)', frequency: 'Diabetic foot, post-traumatic, IVDU' },
+      { name: 'Salmonella', frequency: 'Sickle cell disease' },
+      { name: 'Mycobacterium tuberculosis', frequency: 'Vertebral (Pott disease) — TB endemic regions' }
+    ],
+    severity_strata: [
+      {
+        name: 'Empiric — culture pending',
+        criteria: 'Suspected osteomyelitis. Bone biopsy ideally obtained before empiric therapy. If septic, start empiric immediately.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8–12h + (Cefepime 2 g IV q8h or Ceftriaxone 2 g IV daily) — broad initial coverage. Narrow per cultures.',
+        alt_pen_allergy: 'Vancomycin + (Aztreonam or Levofloxacin)',
+        duration: 'Targeted therapy: 4–6 weeks IV (or oral with high bioavailability) once culture-directed'
+      },
+      {
+        name: 'MSSA osteomyelitis',
+        criteria: 'Confirmed MSSA — narrow therapy.',
+        first_line: 'Cefazolin 2 g IV q8h × 4–6 weeks (preferred — equivalent to nafcillin/cloxacillin, better tolerated)',
+        alt_pen_allergy: 'Vancomycin × 4–6 weeks (if true beta-lactam allergy)',
+        duration: '4–6 weeks (longer for prosthetic joint or vertebral)'
+      },
+      {
+        name: 'MRSA osteomyelitis',
+        criteria: 'Confirmed MRSA.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8–12h × 4–6 weeks (target trough 15–20 mg/L) OR Daptomycin 6–8 mg/kg IV daily × 4–6 weeks (alternative)',
+        alt_pen_allergy: 'Same — Vancomycin',
+        duration: '4–6 weeks; longer for prosthetic joint or vertebral'
+      },
+      {
+        name: 'Vertebral osteomyelitis',
+        criteria: 'Spinal infection — Staph most common, also Strep, Gram-negatives. Always consider TB and Brucella.',
+        first_line: 'Per cultures (CT-guided biopsy if blood cultures negative); typical: Vancomycin + Ceftriaxone × 6 weeks',
+        alt_pen_allergy: 'Per cultures',
+        duration: '6 weeks IV minimum; oral step-down for full duration acceptable in select stable patients per recent evidence'
+      },
+      {
+        name: 'Prosthetic joint infection',
+        criteria: 'Joint replacement with infection — surgical management (DAIR vs revision) + antibiotics × 12 weeks (or longer with retention).',
+        first_line: 'Surgical (DAIR or 1- or 2-stage revision) + empiric Vancomycin + Cefepime, then per cultures × 6–12+ weeks. Add Rifampin (300 mg PO/IV q8–12h) for staphylococcal PJI with retained hardware.',
+        alt_pen_allergy: 'Per cultures',
+        duration: '6–12 weeks; longer for retained hardware'
+      }
+    ],
+    iv_to_po: 'Recent evidence (OVIVA 2019, POET-style trials) supports oral step-down (e.g., levofloxacin + rifampin, TMP-SMX, linezolid) after 1–2 weeks IV in selected stable patients with susceptible organisms — particularly in osteomyelitis and PJI. Consult ID; not yet routine in all Canadian centres.',
+    pearls: [
+      'BONE BIOPSY for culture before empiric antibiotics is the GOLD STANDARD when possible — superficial wound swab cultures unreliable.',
+      'Imaging: MRI is most sensitive for osteomyelitis (especially vertebral); plain films lag 10–14 days behind clinical disease.',
+      'Surgical debridement is essential for chronic osteomyelitis with sequestrum, abscess, or hardware-associated infection. Antibiotics alone often fail.',
+      'Rifampin: ADD to staphylococcal therapy when retained orthopedic hardware (synergistic, biofilm penetration) — never as monotherapy (rapid resistance).',
+      'OVIVA (2019, NEJM): oral antibiotics non-inferior to IV for osteomyelitis when high-bioavailability oral options used (FQs, linezolid, clindamycin, rifampin). Consult ID for transition.',
+      'Prosthetic joint infection: 1 episode in 1% of THA/TKA patients lifetime; surgical management critical (DAIR, 1-stage, 2-stage revision).'
+    ],
+    source: 'IDSA bone/joint guidelines; OVIVA 2019; AMMI Canada; Bugs & Drugs 2024',
+    related_drugs: ['vancomycin','cefepime','ceftriaxone','cefazolin','daptomycin','rifampin','levofloxacin','sulfamethoxazole','linezolid','clindamycin','aztreonam']
+  },
+  {
+    id: 'septic_arthritis',
+    title: 'Septic Arthritis',
+    category: 'bone', icon: '🦴', color: '#fb923c',
+    overview: 'Bacterial infection of synovial joint — surgical emergency. Cardinal features: acute monoarticular arthritis with fever, severe pain, restricted ROM. Joint aspiration BEFORE antibiotics is essential (synovial fluid: WBC >50,000/μL, Gram stain, culture, crystals).',
+    likely_organisms: [
+      { name: 'Staphylococcus aureus (MSSA, MRSA)', frequency: '50–60% adults; most common cause' },
+      { name: 'Streptococci (incl. GAS)', frequency: '15–25%' },
+      { name: 'Neisseria gonorrhoeae', frequency: 'Sexually active adults — may be polyarticular, tenosynovitis, dermatitis (DGI syndrome)' },
+      { name: 'Gram-negatives', frequency: 'Elderly, immunocompromised, IVDU' },
+      { name: 'Kingella kingae', frequency: 'Young children (<4y)' }
+    ],
+    severity_strata: [
+      {
+        name: 'Empiric — adult, no risk factors for gonorrhea',
+        criteria: 'Acute septic arthritis pending Gram stain/culture. Joint aspirate obtained.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8–12h + Ceftriaxone 2 g IV daily (covers Staph + Strep + most Gram-negatives + N. gonorrhoeae)',
+        alt_pen_allergy: 'Vancomycin + (Aztreonam or Levofloxacin)',
+        duration: 'Empiric until cultures back; typically 2–4 weeks total once organism-directed (longer for staph, prosthetic joint)'
+      },
+      {
+        name: 'MSSA septic arthritis',
+        criteria: 'MSSA confirmed.',
+        first_line: 'Cefazolin 2 g IV q8h × 2–4 weeks (with surgical washout)',
+        alt_pen_allergy: 'Vancomycin × 2–4 weeks',
+        duration: '2–4 weeks (longer if delayed presentation, immunocompromised)'
+      },
+      {
+        name: 'MRSA septic arthritis',
+        criteria: 'MRSA confirmed.',
+        first_line: 'Vancomycin × 4 weeks (target trough 15–20 mg/L)',
+        alt_pen_allergy: 'Daptomycin alternative',
+        duration: '4 weeks'
+      },
+      {
+        name: 'Disseminated gonococcal infection (DGI)',
+        criteria: 'Sexually active adult; tenosynovitis, dermatitis, polyarthritis, possible monoarticular gonococcal septic arthritis. Treponemal test/HIV co-screen.',
+        first_line: 'Ceftriaxone 1 g IV/IM daily × 7–14 days + (Doxycycline 100 mg PO BID × 7 days OR Azithromycin 1 g × 1 — for chlamydia co-treatment)',
+        alt_pen_allergy: 'ID consult — sometimes spectinomycin (limited availability in Canada) or fluoroquinolone (FQ resistance high)',
+        duration: '7–14 days IV/IM ceftriaxone'
+      }
+    ],
+    iv_to_po: 'After surgical drainage + clinical improvement, consider step-down to oral with high bioavailability (FQ, clindamycin, linezolid) for full duration — recent evidence supports.',
+    pearls: [
+      'JOINT ASPIRATION BEFORE ANTIBIOTICS — synovial fluid WBC >50,000/μL with neutrophil predominance is highly suggestive (sensitivity ~60%, specificity ~85%); negative culture does not rule out (~30%).',
+      'SURGICAL DRAINAGE (arthroscopic washout, open debridement, or repeat needle aspiration) is essential — antibiotics alone cannot clear bacterial joint infection.',
+      'Empiric coverage MUST include MRSA in many regions and Neisseria gonorrhoeae in sexually active patients.',
+      'Prosthetic joint septic arthritis: management as PJI (DAIR vs revision + 6–12 weeks antibiotics).',
+      'Polyarticular: think gonococcal, viral (parvovirus, hepatitis B), or non-infectious (rheumatologic) — different management.',
+      'Crystal arthropathy (gout, pseudogout) can co-exist with septic arthritis — always send fluid for both crystals AND culture.'
+    ],
+    source: 'IDSA septic arthritis; Bugs & Drugs 2024',
+    related_drugs: ['vancomycin','ceftriaxone','cefazolin','daptomycin','aztreonam','levofloxacin','doxycycline','azithromycin','clindamycin','linezolid']
+  }
+];
+
+
+
+// ════════════════════════════════════════════════════════════
+// EMPIRIC THERAPY RENDERING (Antimicrobials → Syndrome view)
+// ════════════════════════════════════════════════════════════
+function setAmrView(view) {
+  var drugView = document.getElementById('amr-view-drug');
+  var synView = document.getElementById('amr-view-syndrome');
+  var drugBtn = document.getElementById('amr-view-drug-btn');
+  var synBtn = document.getElementById('amr-view-syndrome-btn');
+  if (!drugView || !synView) return;
+  if (view === 'syndrome') {
+    drugView.style.display = 'none';
+    synView.style.display = 'block';
+    if (drugBtn) { drugBtn.style.background = 'transparent'; drugBtn.style.color = 'var(--muted)'; }
+    if (synBtn)  { synBtn.style.background = 'var(--accent)';  synBtn.style.color = '#fff'; }
+    buildEmpiricTherapy();
+  } else {
+    drugView.style.display = 'block';
+    synView.style.display = 'none';
+    if (drugBtn) { drugBtn.style.background = 'var(--accent)'; drugBtn.style.color = '#fff'; }
+    if (synBtn)  { synBtn.style.background = 'transparent';     synBtn.style.color = 'var(--muted)'; }
+    if (typeof buildAMR === 'function') buildAMR();
+  }
+}
+
+var _empiricBuilt = false;
+function buildEmpiricTherapy() {
+  if (_empiricBuilt) return;
+  _empiricBuilt = true;
+  var container = document.getElementById('empiric-categories');
+  if (!container) return;
+  // Group syndromes by category
+  var byCat = {};
+  for (var i = 0; i < EMPIRIC_THERAPY_SYNDROMES.length; i++) {
+    var s = EMPIRIC_THERAPY_SYNDROMES[i];
+    if (!byCat[s.category]) byCat[s.category] = [];
+    byCat[s.category].push(s);
+  }
+  var html = '';
+  for (var c = 0; c < EMPIRIC_THERAPY_CATEGORIES.length; c++) {
+    var cat = EMPIRIC_THERAPY_CATEGORIES[c];
+    var items = byCat[cat.key] || [];
+    if (!items.length) continue;
+    html += '<div class="cat-tile collapsed" id="empiric-tile-' + cat.key + '" style="border-top:3px solid ' + cat.color + ';margin-bottom:10px;">';
+    html += '<div class="cat-tile-header" onclick="toggleEmpiricTile(\'' + cat.key + '\')">';
+    html += '<span class="cat-tile-icon">' + cat.icon + '</span>';
+    html += '<span class="cat-tile-label">' + cat.label + '</span>';
+    html += '<span class="cat-tile-count">' + items.length + '</span>';
+    html += '<span class="cat-tile-chevron">▾</span>';
+    html += '</div>';
+    html += '<div class="cat-tile-body">';
+    for (var j = 0; j < items.length; j++) {
+      var s = items[j];
+      html += '<div class="disease-row" onclick="showSyndrome(\'' + s.id + '\')">';
+      html += '<span style="margin-right:6px;">' + (s.icon || '') + '</span>';
+      html += '<span class="disease-row-name">' + s.title + '</span>';
+      html += '</div>';
+    }
+    html += '</div></div>';
+  }
+  container.innerHTML = html;
+}
+
+function toggleEmpiricTile(key) {
+  var t = document.getElementById('empiric-tile-' + key);
+  if (t) t.classList.toggle('collapsed');
+}
+
+function showSyndrome(id) {
+  var s = null;
+  for (var i = 0; i < EMPIRIC_THERAPY_SYNDROMES.length; i++) {
+    if (EMPIRIC_THERAPY_SYNDROMES[i].id === id) { s = EMPIRIC_THERAPY_SYNDROMES[i]; break; }
+  }
+  if (!s) return;
+  document.getElementById('empiric-home').style.display = 'none';
+  var detail = document.getElementById('empiric-detail');
+  var content = document.getElementById('empiric-content');
+  detail.style.display = 'block';
+
+  // linkifyText: find drug names (from related_drugs) inside arbitrary text and turn them into drug-card links
+  function linkifyText(text, drugKeys) {
+    if (!text || !drugKeys || !drugKeys.length) return text || '';
+    var out = String(text);
+    var sortedKeys = drugKeys.slice().sort(function(a, b) {
+      var an = ((DRUGS[a] && DRUGS[a].name) || a).length;
+      var bn = ((DRUGS[b] && DRUGS[b].name) || b).length;
+      return bn - an;
+    });
+    // Use placeholders to prevent re-matching inside already-wrapped spans
+    var tokens = [];
+    for (var i = 0; i < sortedKeys.length; i++) {
+      var dk = sortedKeys[i];
+      if (!DRUGS[dk]) continue;
+      var name = DRUGS[dk].name || dk;
+      var candidates = [name];
+      var noParen = name.replace(/\s*\(.*?\)\s*/g, '').trim();
+      if (noParen && candidates.indexOf(noParen) < 0) candidates.push(noParen);
+      var firstWord = noParen.split(/[\s,/—-]/)[0];
+      if (firstWord && firstWord.length >= 4 && candidates.indexOf(firstWord) < 0) candidates.push(firstWord);
+      for (var c = 0; c < candidates.length; c++) {
+        var escaped = candidates[c].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        var re = new RegExp('\\b(' + escaped + ')\\b', 'i');
+        if (re.test(out)) {
+          var token = 'SYNLINK' + tokens.length + '';
+          var link = '<span onclick="event.stopPropagation();showDrugPanel(\'' + dk + '\')" style="color:#a5b4fc;cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px;" title="Open ' + name + ' drug card">$1</span>';
+          tokens.push(link);
+          out = out.replace(re, token.replace('$1','$1'));
+          break;
+        }
+      }
+    }
+    // Restore tokens
+    for (var k = 0; k < tokens.length; k++) {
+      out = out.replace('SYNLINK' + k + '', tokens[k]);
+    }
+    return out;
+  }
+
+  var rd = s.related_drugs || [];
+
+  var h = '';
+  // Header
+  h += '<div style="background:var(--card);border-left:5px solid ' + s.color + ';border-radius:8px;padding:18px;margin-bottom:14px;">';
+  h += '<div style="font-size:2rem;margin-bottom:8px;">' + s.icon + '</div>';
+  h += '<h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 10px;">' + s.title + '</h2>';
+  h += '<p style="font-size:0.85rem;color:#c8cadc;line-height:1.6;margin:0;">' + s.overview + '</p>';
+  h += '</div>';
+
+  // Likely organisms
+  if (s.likely_organisms && s.likely_organisms.length) {
+    h += '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:#a5b4fc;margin-bottom:10px;">🦠 Likely Pathogens</div>';
+    h += '<ul style="margin:0;padding-left:20px;">';
+    for (var oi = 0; oi < s.likely_organisms.length; oi++) {
+      var o = s.likely_organisms[oi];
+      h += '<li style="font-size:0.83rem;color:#c8cadc;line-height:1.6;margin-bottom:5px;"><strong style="color:var(--text);">' + o.name + '</strong>';
+      if (o.frequency) h += ' — <span style="color:var(--muted);">' + o.frequency + '</span>';
+      h += '</li>';
+    }
+    h += '</ul></div>';
+  }
+
+  // Severity strata (regimens)
+  if (s.severity_strata && s.severity_strata.length) {
+    h += '<div style="font-size:1rem;font-weight:700;color:var(--text);margin:18px 0 10px;">💊 Empiric Regimens by Severity</div>';
+    for (var si = 0; si < s.severity_strata.length; si++) {
+      var st = s.severity_strata[si];
+      h += '<div style="background:var(--card);border:1px solid var(--border);border-left:4px solid ' + s.color + ';border-radius:8px;padding:14px;margin-bottom:12px;">';
+      h += '<div style="font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:6px;">' + st.name + '</div>';
+      if (st.criteria) h += '<div style="font-size:0.78rem;color:var(--muted);line-height:1.5;margin-bottom:10px;font-style:italic;">' + st.criteria + '</div>';
+      if (st.first_line) {
+        h += '<div style="margin-bottom:8px;"><span style="font-size:0.75rem;font-weight:700;color:#10b981;text-transform:uppercase;letter-spacing:0.05em;">First-line</span><div style="font-size:0.83rem;color:#c8cadc;line-height:1.6;margin-top:3px;">' + linkifyText(st.first_line, rd) + '</div></div>';
+      }
+      if (st.alt_pen_allergy) {
+        h += '<div style="margin-bottom:8px;"><span style="font-size:0.75rem;font-weight:700;color:#f59e0b;text-transform:uppercase;letter-spacing:0.05em;">Penicillin allergy / Alternative</span><div style="font-size:0.83rem;color:#c8cadc;line-height:1.6;margin-top:3px;">' + linkifyText(st.alt_pen_allergy, rd) + '</div></div>';
+      }
+      if (st.duration) {
+        h += '<div><span style="font-size:0.75rem;font-weight:700;color:#a5b4fc;text-transform:uppercase;letter-spacing:0.05em;">Duration</span><div style="font-size:0.83rem;color:#c8cadc;line-height:1.6;margin-top:3px;">' + linkifyText(st.duration, rd) + '</div></div>';
+      }
+      h += '</div>';
+    }
+  }
+
+  // IV → PO step-down
+  if (s.iv_to_po) {
+    h += '<div style="background:rgba(99,102,241,0.06);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:#a5b4fc;margin-bottom:8px;">↪ IV → PO Step-Down</div>';
+    h += '<div style="font-size:0.83rem;color:#c8cadc;line-height:1.6;">' + linkifyText(s.iv_to_po, rd) + '</div></div>';
+  }
+
+  // Pearls
+  if (s.pearls && s.pearls.length) {
+    h += '<div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:#f59e0b;margin-bottom:10px;">💡 Clinical Pearls</div>';
+    h += '<ul style="margin:0;padding-left:20px;">';
+    for (var pi = 0; pi < s.pearls.length; pi++) {
+      h += '<li style="font-size:0.83rem;color:#c8cadc;line-height:1.6;margin-bottom:6px;">' + linkifyText(s.pearls[pi], rd) + '</li>';
+    }
+    h += '</ul></div>';
+  }
+
+  // Source
+  if (s.source) {
+    h += '<div style="font-size:0.78rem;color:var(--muted);font-style:italic;margin-top:14px;border-top:1px solid var(--border);padding-top:10px;"><strong>Source:</strong> ' + s.source + '</div>';
+  }
+
+  content.innerHTML = h;
+  // Scroll detail into view
+  detail.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+
+
 
 
 // ══════════════════════════════════════════════
