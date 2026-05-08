@@ -8628,6 +8628,127 @@ var DISEASES = {
         ],
         "introduction": "Subclinical hyperthyroidism is a biochemical state with suppressed TSH and normal free T4/T3, often discovered incidentally. Etiologies parallel overt hyperthyroidism (Graves' disease, toxic multinodular goiter, toxic adenoma, thyroiditis, exogenous L-T4 over-replacement). Severity grades (mild TSH 0.1-0.4; severe <0.1) and patient features (age, cardiovascular disease, postmenopausal/osteoporosis status, symptoms) guide treatment decisions. ATA 2024 and ETA 2015 recommend treatment for severe subclinical hyperthyroidism in older adults, those with cardiovascular disease (especially atrial fibrillation), postmenopausal women with osteoporosis, or symptomatic patients. Treatment options mirror overt disease — antithyroid drugs (methimazole preferred), radioactive iodine, or surgery — chosen by etiology. Persistent biochemical confirmation at 2-3 months and exclusion of L-T4 over-replacement are essential pre-treatment steps.",
         "source": "ATA Guidelines for Diagnosis and Management of Hyperthyroidism 2024 (Ross Thyroid 2024). ETA Subclinical Hyperthyroidism 2015 (Biondi ETJ 2015). Gencer Subclinical AF JAMA 2012. CTS Position."
+      },
+      {
+        "id": "thyroid_storm",
+        "name": "Thyroid Storm",
+        "subtitle": "Hyperthyroid life-threatening crisis — Burch-Wartofsky / ATA 2024",
+        "patho": "Life-threatening exacerbation of hyperthyroidism with multisystem decompensation. Mortality 10-30% historically; modern early recognition + multimodal therapy <10%. PATHOGENESIS: extreme thyroid hormone excess → hyper-adrenergic state + hypermetabolic + multi-organ failure. PRECIPITANTS: ACUTE EVENTS in patient with underlying or undiagnosed hyperthyroidism — INFECTION (most common), surgery (especially THYROID surgery without adequate preoperative blockade), stress, trauma, parturition, DKA, MI, stroke, IODINE LOAD (radiocontrast, amiodarone — contains massive iodine, povidone-iodine), sudden discontinuation of antithyroid drugs, RADIOACTIVE IODINE (transient release of preformed hormone — caution if active hyperthyroid before RAI), thyroid hormone overdose (factitious, accidental). UNDERLYING: GRAVES' DISEASE (most common), TOXIC MULTINODULAR GOITER, TOXIC ADENOMA, AMIODARONE-INDUCED THYROTOXICOSIS, less commonly factitious or other.",
+        "signs": "Classic features amplified vs uncomplicated hyperthyroidism: HYPERPYREXIA (often >38.5-40°C — characteristic), TACHYCARDIA out of proportion (often 130-200 bpm), DYSRHYTHMIAS (atrial fibrillation common; rate often resistant; sometimes VT), HEART FAILURE (often acute pulmonary edema; reduced cardiac reserve in elderly especially), HYPERTENSION early then HYPOTENSION late, ALTERED MENTAL STATUS / AGITATION / PSYCHOSIS / SEIZURES / COMA, GI — diarrhea, vomiting, abdominal pain, jaundice (cholestasis), tremor (severe + coarse), DEHYDRATION + electrolyte derangements, hyperthyroid stigmata (goiter, ophthalmopathy if Graves' — exophthalmos, lid lag, lid retraction).",
+        "diagnosis": "CLINICAL DIAGNOSIS — laboratory confirmation often overlaps with severe hyperthyroidism; SCORING SYSTEM helpful for diagnosis: BURCH-WARTOFSKY POINT SCALE (BWPS): 1) Thermoregulatory dysfunction (5-30 points based on temperature ≥37.2 to ≥40°C); 2) CNS effects (10-30 — agitation to coma); 3) GI/Hepatic (10-20 — diarrhea/vomiting/jaundice); 4) Cardiovascular — tachycardia (5-25 — HR 99-140+), CHF (5-15 — peripheral edema/pulmonary edema), AF (10); 5) Precipitating event (10). Score ≥45 suggestive; ≥25 'impending'; <25 unlikely. ATA 2024 — clinical context + BWPS. LABS: TSH SUPPRESSED + ELEVATED FREE T4 + FREE T3 (sometimes degree disproportionate to clinical severity); CBC (sometimes leukocytosis); comprehensive metabolic; LFTs (cholestatic pattern common — alkaline phosphatase, bilirubin elevated); calcium (often elevated); cortisol level (consider — coexisting adrenal insufficiency precipitating; do NOT delay treatment for results). EVALUATE PRECIPITANT — blood cultures, urinalysis, CXR, lactate, ECG, troponin (cardiac), drug screen, pregnancy test, etc. ECG: sinus tachy + AF + VT.",
+        "monitoring": "ICU monitoring: continuous ECG + temperature + BP + SpO2; daily labs (electrolytes, LFTs, BUN/Cr, glucose, calcium); cardiac monitoring + echo; mental status; precipitating cause workup + treatment.",
+        "treatment": [
+          {
+            "line": "STOP THYROID HORMONE PRODUCTION (Step 1)",
+            "type": "Antithyroid drug",
+            "family": "—",
+            "agents": [
+              "PROPYLTHIOURACIL (PTU) — preferred in thyroid storm: LOAD 600-1000 mg PO/NG/PR THEN 200-300 mg q4-6h (max 1200-1500 mg/day) — INHIBITS de novo thyroid hormone synthesis + INHIBITS PERIPHERAL T4→T3 CONVERSION (key advantage); PTU preferred over methimazole in storm specifically for the T4→T3 conversion blockade",
+              "ALTERNATIVELY METHIMAZOLE 60-80 mg/day PO/PR — when PTU contraindicated; less effective in storm but acceptable if PTU unavailable",
+              "Both also work when given via NG tube or rectally (suppositories) if patient cannot swallow"
+            ],
+            "notes": "PTU preferred for T4→T3 inhibition + thyroid hormone synthesis block.",
+            "guideline": "ATA Hyperthyroidism 2024 (Ross Thyroid 2024); Burch + Wartofsky"
+          },
+          {
+            "line": "BLOCK THYROID HORMONE RELEASE (Step 2 — 1 HOUR AFTER ANTITHYROID DRUG)",
+            "type": "Iodine",
+            "family": "—",
+            "agents": [
+              "IODINE — STARTED ≥1 HOUR AFTER PTU/methimazole (if iodine given first WITHOUT antithyroid blockade, PARADOXICALLY worsens by providing substrate for hormone synthesis): LUGOL'S SOLUTION 8-10 drops PO/NG q6h OR POTASSIUM IODIDE (SSKI) 5 drops PO q6h OR LITHIUM CARBONATE 300 mg PO/NG q8h (alternative if iodine contraindicated)",
+              "BLOCKS hormone release from gland (Wolff-Chaikoff effect)",
+              "Continue 7-10 days then taper",
+              "AMIODARONE-INDUCED THYROTOXICOSIS Type 1 — iodine NOT helpful (already iodine-loaded); steroids more important"
+            ],
+            "notes": "Iodine blocks hormone release; MUST follow antithyroid drug.",
+            "guideline": "ATA 2024"
+          },
+          {
+            "line": "BLOCK PERIPHERAL T4→T3 + ADRENERGIC (Step 3)",
+            "type": "β-blocker + steroid",
+            "family": "—",
+            "agents": [
+              "β-BLOCKER — PROPRANOLOL 60-80 mg PO q4-6h OR 0.5-1 mg IV q5-10 min titrate (highest evidence; non-selective + reduces T4→T3 conversion) OR ESMOLOL 250-500 mcg/kg IV bolus + 50-200 mcg/kg/min infusion (titratable; preferred CHF); CAUTION HEART FAILURE (can precipitate decompensation; assess LV function first) — start LOWER + monitor; some advocate IV calcium channel blockade (diltiazem) as alternative if HF + AF",
+              "HYDROCORTISONE 100 mg IV q8h × 2-3 days then taper — INHIBITS T4→T3 + treats relative ADRENAL INSUFFICIENCY (frequently coexisting in storm) + treats Graves' immunopathology",
+              "OR DEXAMETHASONE 2 mg IV q6h alternative",
+              "ASSESS LV function before β-blocker (echo if uncertain) — high cardiogenic decompensation risk in storm",
+              "AVOID β-BLOCKER if severe LV dysfunction with low CO + bronchospastic disease severe"
+            ],
+            "notes": "Combination β-blocker + steroid; cautious LV function.",
+            "guideline": "ATA 2024"
+          },
+          {
+            "line": "TREAT PRECIPITANT (Step 4) + supportive",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "SEPSIS — broad-spectrum antibiotics + cultures (most common precipitant)",
+              "DKA — insulin + fluids + electrolyte",
+              "MI / STROKE — standard care + thyroid storm management",
+              "COOLING — acetaminophen + cooling blankets + ice packs (AVOID ASA — displaces T4 from binding proteins → free T4 increase)",
+              "FLUID RESUSCITATION — high losses from fever + GI; cautious in HF (often coexists)",
+              "ELECTROLYTE replacement (especially K+, Mg, glucose)",
+              "VASOPRESSOR for hypotension (norepinephrine first-line)",
+              "MECHANICAL VENTILATION if respiratory failure",
+              "CHF MANAGEMENT — diuretic, β-blocker cautious, digoxin (often less effective in hyperthyroid — large doses sometimes), inotropic support refractory",
+              "AF management — rate control with β-blocker + cautious anticoagulation",
+              "PSYCHIATRIC EVALUATION + benzodiazepine for severe agitation (monitor airway)"
+            ],
+            "notes": "Concurrent comprehensive ICU + precipitant management.",
+            "guideline": "ATA 2024"
+          },
+          {
+            "line": "REFRACTORY storm — additional therapies",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "PLASMAPHERESIS — refractory cases; rapidly removes circulating thyroid hormone + thyrotropin receptor antibodies; specialty centers",
+              "EMERGENT THYROIDECTOMY — refractory + life-threatening; pre-treat with iodine + steroids + β-blocker if possible",
+              "CHOLESTYRAMINE 4 g PO QID — interrupts enterohepatic circulation of thyroid hormone (modest adjunct)",
+              "CARNITINE 2-4 g/day — investigational adjunct (some evidence); peripheral antagonist of thyroid hormone in tissues",
+              "ECMO — selected refractory cardiogenic shock"
+            ],
+            "notes": "Refractory cases — multimodal escalation.",
+            "guideline": "ATA 2024"
+          },
+          {
+            "line": "POST-STORM long-term management",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "TRANSITION TO DEFINITIVE THERAPY for underlying hyperthyroidism — radioactive iodine, thyroidectomy, or chronic antithyroid drug",
+              "GRAVES' — methimazole 12-18 months OR RAI OR thyroidectomy",
+              "TOXIC MNG/ADENOMA — RAI preferred",
+              "AVOID future precipitants (iodine load awareness — counsel re: contrast, amiodarone, povidone-iodine, supplements)",
+              "Counsel re: pregnancy implications",
+              "Long-term endocrinology follow-up",
+              "MEDIC ALERT bracelet"
+            ],
+            "notes": "Definitive therapy after stabilization.",
+            "guideline": "ATA 2024"
+          }
+        ],
+        "pearls": [
+          "LIFE-THREATENING HYPERTHYROID EXACERBATION; mortality 10-30% (modern <10%)",
+          "PRECIPITANTS: INFECTION most common; surgery, parturition, iodine load, RAI, amiodarone, AbX dc",
+          "BURCH-WARTOFSKY SCORE — clinical scoring (≥45 suggestive)",
+          "HYPERPYREXIA + TACHYCARDIA + ALTERED MENTAL STATUS + GI + cardiac compromise — clinical diagnosis",
+          "TSH suppressed + free T4 + T3 elevated — confirm hyperthyroid",
+          "STEPWISE THERAPY (TIMING CRITICAL):",
+          "1. ANTITHYROID DRUG: PTU 600-1000 mg load + 200-300 mg q4-6h (preferred — also blocks T4→T3); methimazole 60-80 mg/day alternative",
+          "2. IODINE 1+ HOUR AFTER antithyroid drug (NEVER before — paradoxical worsening); Lugol's 8-10 drops PO q6h OR SSKI 5 drops q6h",
+          "3. β-BLOCKER (propranolol — non-selective + reduces T4→T3) + HYDROCORTISONE 100 mg IV q8h",
+          "4. TREAT PRECIPITANT + supportive (cooling, fluids, electrolytes, vasopressor, MV)",
+          "AVOID ASA for fever (displaces T4 → increases free)",
+          "β-BLOCKER CAUTION in HF — assess LV first; esmolol titratable preferred CHF",
+          "REFRACTORY: plasmapheresis, emergent thyroidectomy, cholestyramine adjunct",
+          "AMIODARONE-INDUCED THYROTOXICOSIS: Type 1 (iodine-induced — antithyroid + steroid + iodine NOT helpful); Type 2 (destructive — STEROID), mixed",
+          "POST-STORM: definitive therapy for underlying hyperthyroid (RAI/surgery/long ATD)",
+          "PREGNANCY storm — PTU 1st trimester (less teratogenic than methimazole)",
+          "FUTURE — counsel re: iodine load avoidance + medic alert"
+        ],
+        "introduction": "Thyroid storm is a life-threatening exacerbation of hyperthyroidism with multi-system decompensation triggered by infection (most common), surgery, parturition, iodine load, sudden antithyroid drug discontinuation, or radioactive iodine in poorly-controlled disease. Diagnosis is clinical, often supported by Burch-Wartofsky scoring (≥45 suggestive) with hyperpyrexia, tachycardia, altered mental status, GI symptoms, and cardiovascular compromise. Stepwise therapy is critical: first antithyroid drug (propylthiouracil preferred for additional T4→T3 conversion blockade; or methimazole), then iodine ≥1 hour later (Lugol's solution or SSKI) — sequence essential as iodine before antithyroid blockade paradoxically worsens. β-blocker (propranolol or esmolol) and hydrocortisone block peripheral conversion and address adrenal insufficiency. Concurrent management of the precipitating cause and comprehensive ICU support with cooling (avoid aspirin), fluids, electrolytes, and vasopressor are essential. Refractory cases may require plasmapheresis or emergent thyroidectomy. Post-storm transition to definitive hyperthyroidism therapy prevents recurrence.",
+        "source": "ATA Guidelines for Hyperthyroidism 2024 (Ross Thyroid 2024). Burch-Wartofsky Point Scale Burch Endocrinol Metab Clin 1993. CTS Position. ETA 2018."
       }
     ]
   },
@@ -24964,6 +25085,268 @@ var DISEASES = {
         ],
         "introduction": "De Quervain's tenosynovitis is a stenosing tenosynovitis of the 1st dorsal extensor compartment affecting the abductor pollicis longus and extensor pollicis brevis tendons at the radial styloid. It is significantly more common in women, particularly postpartum (8-15× risk). Diagnosis is clinical with the Finkelstein's test being most specific. Treatment progresses from conservative measures (thumb spica splint, activity modification, topical NSAIDs) to local corticosteroid injection (70-90% success per Cochrane 2009 review) to surgical release of the 1st dorsal compartment for refractory cases. Anatomic septation of the compartment (20-50% of patients) into separate APL and EPB sub-tunnels predicts both injection failure and surgical recurrence if not all sub-tunnels are released — ultrasound-guided injection and meticulous surgical technique address this consideration.",
         "source": "AAOS Position. ACR Wrist + Hand 2017. Cochrane Peters-Veluthamaningal Steroid Injection 2009. Wolf Surgical Release JBJS 2009. Clarke De Quervain's 1998."
+      },
+      {
+        "id": "adult_onset_still_disease",
+        "name": "Adult-Onset Still Disease (AOSD)",
+        "subtitle": "Systemic inflammatory disorder — Yamaguchi 1992 / Fautrel 2002 / EULAR",
+        "patho": "Rare systemic AUTOINFLAMMATORY disorder of unknown etiology — fever + joint inflammation + characteristic skin rash + multi-organ inflammation. ETIOLOGY UNCLEAR — likely combination of genetic predisposition + infectious trigger (Coxsackie, EBV, parvovirus B19 implicated in some cases). SHARES PATHOPHYSIOLOGY with juvenile idiopathic arthritis systemic onset (sJIA — same disease in pediatric population) — IL-1 + IL-6 + IL-18 driven autoinflammation. CYTOKINE STORM in severe forms — MACROPHAGE ACTIVATION SYNDROME (MAS; secondary HLH) — life-threatening complication. CLASSIC TRIAD: SPIKING FEVER + EVANESCENT RASH + ARTHRITIS. AGE: bimodal 15-25 + 35-45; F:M 1:1.5 in adults. PROGNOSIS: monocyclic (~30% — single episode resolves), polycyclic (~30% — relapsing-remitting), chronic articular (~30-40% — persistent arthritis over years). MAS — 10-15% of patients; mortality up to 30% if not recognized.",
+        "signs": "CLASSIC TETRAD: (1) DAILY (QUOTIDIAN) FEVER — usually evening peak ≥39°C with rapid defervescence; lasts weeks-months untreated; (2) EVANESCENT SALMON-PINK MACULAR/MAPULOPAPULAR RASH — appears with fever, fades when fever resolves; trunk + extremities + occasionally face; characteristic Koebner phenomenon (rash at sites of trauma); (3) ARTHRITIS / ARTHRALGIA — symmetric polyarticular (knees, wrists, ankles, hips most common); chronic forms can be erosive; carpal ankylosis (FUSION OF WRIST CARPAL BONES) characteristic late feature; (4) SORE THROAT — early common; pharyngitis-like. OTHER FEATURES: HEPATOSPLENOMEGALY + LYMPHADENOPATHY (often massive cervical), serositis (pericarditis, pleuritis, peritonitis), MAS features (high fever, hepatosplenomegaly, cytopenias, coagulopathy, very high ferritin, hypofibrinogenemia, hemophagocytosis on BM). CARDIAC — myocarditis, pericarditis (rare).",
+        "diagnosis": "DIAGNOSIS OF EXCLUSION + clinical criteria. YAMAGUCHI 1992 CRITERIA — most widely used; requires ≥5 features INCLUDING ≥2 MAJOR + EXCLUSION criteria: MAJOR — fever ≥39°C × ≥1 week, arthralgia/arthritis ≥2 weeks, characteristic rash, leukocytosis ≥10 × 10⁹/L (≥80% neutrophils); MINOR — sore throat, lymphadenopathy or splenomegaly, abnormal LFTs, negative ANA/RF; EXCLUSIONS — infection, malignancy, other rheumatic disease. FAUTREL 2002 — alternative criteria with FERRITIN + glycosylated ferritin <20%. LABS: VERY HIGH FERRITIN (often >1000-10,000+ — characteristic; >5× ULN highly suggestive); LOW glycosylated ferritin (<20% — Fautrel; specific); CBC — neutrophilic leukocytosis (often very high), thrombocytosis, anemia; ESR/CRP markedly elevated; LFTs elevated (often); ANA + RF NEGATIVE. EXCLUDE INFECTIONS — extensive workup (blood cultures, viral panel including EBV/CMV/Parvo/HIV, mycobacterial, fungal); EXCLUDE MALIGNANCY — lymphoma cardinal mimic (CT chest/abdomen/pelvis, consider lymph node biopsy if available; sometimes BM biopsy); EXCLUDE OTHER RHEUMATIC DISEASE (RA, SLE, vasculitis, sarcoidosis). LP if neurologic features. ECHO + EKG. MAS WORKUP — ferritin (very high), fibrinogen (low), triglycerides (high), bone marrow (hemophagocytosis), CD25 soluble IL-2 receptor (elevated).",
+        "monitoring": "Disease activity (modified Pouchot score combining clinical + lab; AOSD activity), inflammatory markers (CRP, ferritin, ESR), MAS surveillance (ferritin trends, fibrinogen, cytopenias, LFTs), AE of therapy.",
+        "treatment": [
+          {
+            "line": "Mild — NSAIDs (limited efficacy)",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "NSAID — naproxen 500 mg PO BID, ibuprofen, indomethacin",
+              "Adequate for ~25% mild disease; most require escalation",
+              "Adjunct symptomatic"
+            ],
+            "notes": "NSAIDs alone insufficient for moderate-severe.",
+            "guideline": "EULAR AOSD; ACR"
+          },
+          {
+            "line": "First-line — corticosteroids",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "PREDNISONE 0.5-1 mg/kg/day (typical 40-60 mg) PO daily — initial; rapid response often within days",
+              "METHYLPREDNISOLONE 1 g IV × 3 days — severe disease (multi-organ, MAS, refractory)",
+              "TAPER over 3-6 MONTHS",
+              "PJP prophylaxis if prolonged high-dose steroid",
+              "Bone protection"
+            ],
+            "notes": "Steroids cornerstone; high-dose for severe disease + MAS.",
+            "guideline": "EULAR AOSD"
+          },
+          {
+            "line": "Steroid-sparing + refractory — biologics + DMARDs",
+            "type": "Targeted IL-1 + IL-6",
+            "family": "—",
+            "agents": [
+              "ANAKINRA 100 mg SC daily — IL-1 receptor antagonist; FIRST-LINE for steroid-refractory or steroid-sparing; rapid effect (days); EULAR + Canadian rheumatology preferred; relatively short t1/2 allows interruption",
+              "CANAKINUMAB 4 mg/kg SC q4 weeks — IL-1β antibody; FDA + Health Canada NOC for AOSD; longer-acting; costlier",
+              "TOCILIZUMAB 8 mg/kg IV q4 weeks (or 162 mg SC weekly) — IL-6 receptor antagonist; effective; option in steroid-refractory; CAUTION in MAS (TCZ may mask developing MAS); EULAR option",
+              "RILONACEPT — IL-1 trap; off-label in adult AOSD",
+              "MTX 10-25 mg/week PO/SC — older DMARD; modest efficacy; useful for chronic articular form",
+              "AZATHIOPRINE, MYCOPHENOLATE — alternative DMARDs",
+              "ANTI-TNF (etanercept, infliximab) — DISAPPOINTING in AOSD; not first-line",
+              "JAK INHIBITORS (tofacitinib, baricitinib, upadacitinib) — emerging case series + small studies",
+              "OPHTHALMIC ANAKINRA / OFF-LABEL combinations — refractory cases"
+            ],
+            "notes": "IL-1 inhibitors (anakinra, canakinumab) preferred biologic in modern era.",
+            "guideline": "EULAR AOSD; CRA Position"
+          },
+          {
+            "line": "MACROPHAGE ACTIVATION SYNDROME (MAS) — life-threatening",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "EMERGENCY recognition: spiking fever, drop in cytopenias, ferritin SKY-HIGH (>10,000+), low fibrinogen, high triglycerides, hepatomegaly, CNS symptoms, multi-organ failure",
+              "HIGH-DOSE METHYLPREDNISOLONE 1 g IV × 3 days then taper",
+              "ANAKINRA 100 mg SC TID-QID (HIGH-FREQUENCY dosing for MAS)",
+              "CYCLOSPORINE — historically used; some centers continue",
+              "ETOPOSIDE — hemophagocytosis (HLH-94 protocol-like)",
+              "RUXOLITINIB — emerging refractory MAS",
+              "EMAPALUMAB (anti-IFN-γ) — FDA approved primary HLH; off-label MAS in AOSD",
+              "ICU monitoring; multidisciplinary rheumatology + hematology + ICU"
+            ],
+            "notes": "MAS — emergency; aggressive multi-modal therapy.",
+            "guideline": "EULAR AOSD; HLH protocols"
+          },
+          {
+            "line": "Pregnancy + AOSD",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "Disease flares possible; preconception planning",
+              "AVOID methotrexate, leflunomide, MMF (teratogenic)",
+              "STEROIDS, HYDROXYCHLOROQUINE, AZATHIOPRINE, ANAKINRA — pregnancy-acceptable",
+              "Multidisciplinary obstetrics + rheumatology",
+              "MAS during pregnancy — emergency"
+            ],
+            "notes": "Pregnancy-compatible therapy options.",
+            "guideline": "EULAR AOSD"
+          },
+          {
+            "line": "Long-term + monitoring",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "DISEASE COURSE TYPES — monocyclic (~30%, single episode), polycyclic (~30%, relapsing), chronic articular (~30-40%, persistent erosive arthritis)",
+              "MAS surveillance — ferritin trends + fibrinogen + cytopenias",
+              "Articular surveillance — radiographs hand/wrist/ankle (carpal ankylosis pathognomonic late)",
+              "Cardiac surveillance (echo) — myocarditis",
+              "BONE PROTECTION + CV risk + INFECTION + MALIGNANCY surveillance (long-term immunosuppression)",
+              "VACCINATION — non-live vaccines per NACI"
+            ],
+            "notes": "Long-term multidisciplinary care.",
+            "guideline": "EULAR AOSD"
+          }
+        ],
+        "pearls": [
+          "RARE systemic autoinflammatory — fever + rash + arthritis",
+          "BIMODAL: 15-25 + 35-45; F:M 1:1.5",
+          "CLASSIC TETRAD: spiking fever + evanescent salmon-pink rash + arthritis + sore throat",
+          "EVANESCENT RASH — appears with fever, fades when defervescence",
+          "QUOTIDIAN FEVER (single daily peak) ≥39°C — characteristic",
+          "VERY HIGH FERRITIN >1000-10,000+ — characteristic; >5× ULN highly suggestive",
+          "LOW glycosylated ferritin <20% (Fautrel) — specific",
+          "ANA + RF NEGATIVE",
+          "YAMAGUCHI 1992 + FAUTREL 2002 criteria",
+          "DIAGNOSIS OF EXCLUSION — extensive infection + malignancy + rheumatic workup",
+          "CARPAL ANKYLOSIS (wrist fusion) — late characteristic feature",
+          "MAS (10-15%) — life-threatening; ferritin >10,000+, low fibrinogen, hemophagocytosis",
+          "PREDNISONE 0.5-1 mg/kg first-line; high-dose pulse for MAS",
+          "ANAKINRA (IL-1Ra) FIRST-LINE BIOLOGIC — rapid effect, EULAR preferred",
+          "CANAKINUMAB (IL-1β antibody) — FDA + Health Canada AOSD approved",
+          "TOCILIZUMAB (IL-6Ra) — alternative; CAUTION may mask MAS",
+          "ANTI-TNF — disappointing in AOSD; not first-line",
+          "MAS: methylpred + anakinra TID-QID + cyclosporine + etoposide + emapalumab",
+          "DISEASE TYPES: monocyclic (~30%), polycyclic (~30%), chronic articular (~30-40%)",
+          "PEDIATRIC counterpart = systemic JIA (sJIA) — same disease"
+        ],
+        "introduction": "Adult-onset Still disease is a rare systemic autoinflammatory disorder featuring spiking fever, evanescent salmon-pink rash, and arthritis with very high ferritin levels. Diagnosis follows Yamaguchi 1992 or Fautrel 2002 criteria after extensive exclusion of infections (blood cultures, viral panel, mycobacterial, fungal), malignancy (especially lymphoma), and other rheumatic diseases. NSAIDs alone are insufficient for most patients; corticosteroids (prednisone 0.5-1 mg/kg/day) are first-line. IL-1 inhibitors (anakinra preferred for rapid effect; canakinumab for chronicity) are the preferred biologics for steroid-refractory or steroid-sparing therapy with EULAR + Canadian rheumatology consensus. IL-6 inhibitor tocilizumab is an alternative but may mask developing macrophage activation syndrome. Macrophage activation syndrome is a life-threatening complication (10-15%) requiring emergency recognition and aggressive multimodal therapy. Disease courses are monocyclic, polycyclic, or chronic articular — the latter producing characteristic carpal ankylosis.",
+        "source": "Yamaguchi Adult Still's Criteria 1992. Fautrel Glycosylated Ferritin Criteria 2002. EULAR AOSD Recommendations. CRA Position. ANAKINRA + CANAKINUMAB clinical evidence."
+      },
+      {
+        "id": "eosinophilic_granulomatosis_polyangiitis",
+        "name": "Eosinophilic Granulomatosis with Polyangiitis (EGPA / Churg-Strauss)",
+        "subtitle": "ANCA-associated vasculitis with eosinophilia + asthma — ACR 2021 / EULAR 2022 / MIRRA",
+        "patho": "ANCA-ASSOCIATED VASCULITIS characterized by ASTHMA + EOSINOPHILIA + GRANULOMATOUS INFLAMMATION + small/medium vessel VASCULITIS. Formerly Churg-Strauss syndrome. RARE (incidence ~1-3/million/year). PATHOPHYSIOLOGY: Th2-driven inflammation + eosinophil activation + granuloma formation. ANCA POSITIVE ~30-40% (typically MPO/p-ANCA — distinct from GPA which is mostly PR3/c-ANCA); 60-70% ANCA-NEGATIVE. CLINICAL PHASES: (1) PRODROMAL (years) — adult-onset ASTHMA (often severe), allergic rhinitis, sinusitis, nasal polyps; (2) EOSINOPHILIC PHASE (months-years) — peripheral eosinophilia + organ involvement (eosinophilic pneumonia, gastroenteritis, cardiomyopathy); (3) VASCULITIC PHASE — full systemic vasculitis with NEUROPATHY (mononeuritis multiplex characteristic), purpura, GI vasculitis, glomerulonephritis. SUBPHENOTYPES based on ANCA status: ANCA-POSITIVE (often more vasculitic — neuropathy, GN, purpura) vs ANCA-NEGATIVE (often more eosinophilic — cardiac, pulmonary infiltrate). LEUKOTRIENE RECEPTOR ANTAGONISTS (montelukast, zafirlukast, omalizumab in some) — historic association controversial; new EGPA mostly seen WITHOUT LTRA exposure now (initial reports were unmasking with steroid-sparing in asthma).",
+        "signs": "ASTHMA + RHINITIS / SINUSITIS / NASAL POLYPS — almost universal (>90%) — usually adult-onset; severe + steroid-dependent. PERIPHERAL EOSINOPHILIA — typically marked (often >1500/µL = 1.5 ×10⁹/L). NEUROPATHY — MONONEURITIS MULTIPLEX (asymmetric multifocal nerve infarcts; classic; often feet/hands first; severe pain + weakness; ~70%); peripheral neuropathy distal symmetric. CARDIAC — eosinophilic myocarditis + pericarditis + endocardial fibrosis (Loeffler) — CARDIAC INVOLVEMENT is leading cause of EGPA mortality; surveillance crucial. PULMONARY — eosinophilic pneumonia + asthma + nodules + alveolar hemorrhage. SKIN — palpable PURPURA + nodules + livedo + ulcers. GI — eosinophilic gastroenteritis + vasculitis (rare bowel ischemia/perforation). RENAL — pauci-immune crescentic GN (less common than GPA/MPA). ANCA-positive subgroup more often has classic vasculitic features.",
+        "diagnosis": "ACR/EULAR 2022 CLASSIFICATION (Grayson ARD 2022) — score-based: clinical features + lab + biopsy. SUPPORTIVE: ASTHMA, EOSINOPHILIA >10% peripheral white count, mononeuritis multiplex, ANCA, biopsy showing eosinophilic vasculitis or granuloma. EOSINOPHILIA — peripheral count + tissue biopsy with eosinophilic infiltrate. ANCA TESTING — IF + ELISA — MPO (~30-40% positive); PR3 less common in EGPA. ECG + ECHO + cardiac MRI for cardiac involvement (LGE pattern; T1 mapping). PFT + HRCT chest (asthma + eosinophilic infiltrate + nodules). EMG/NCS for neuropathy. UA + creatinine + 24h urine + biopsy for renal. EXCLUDE: hypereosinophilic syndrome (myeloid HES — molecular FIP1L1-PDGFRα; less vasculitic), parasitic eosinophilia (Strongyloides especially before steroid; Toxocara, schistosomiasis, hookworm), ABPA (allergic bronchopulmonary aspergillosis — IgE high, RAST/skin test, central bronchiectasis), drug-induced eosinophilia, lymphoma (Hodgkin, T-cell). FIVE FACTOR SCORE (FFS) — prognostic: cardiac, GI, renal, CNS, age >65 → guides treatment intensity.",
+        "monitoring": "Eosinophil count (response marker), asthma control (peak flow, symptoms), neuropathy progression, cardiac surveillance (echo, BNP, troponin, MRI), renal function, ANCA titer (variable correlation), BVAS (Birmingham Vasculitis Activity Score), AE of therapy.",
+        "treatment": [
+          {
+            "line": "Induction — RISK-STRATIFIED",
+            "type": "Steroid + cyclophosphamide vs steroid alone",
+            "family": "—",
+            "agents": [
+              "LOW-RISK (no severe organ involvement; FFS = 0): PREDNISONE 0.5-1 mg/kg/day (max 60-80 mg) — initial; taper over months",
+              "HIGH-RISK / SEVERE ORGAN INVOLVEMENT (FFS ≥1; cardiac, GI, renal, CNS): METHYLPREDNISOLONE 500-1000 mg IV × 3 days then PREDNISONE 1 mg/kg/day + CYCLOPHOSPHAMIDE (IV pulse 0.6-0.75 g/m² monthly × 3-6 OR PO 2 mg/kg/day × 3-6 months); same as severe GPA/MPA",
+              "PJP PROPHYLAXIS — TMP-SMX 1 SS daily during induction",
+              "MESNA + hydration with cyclophosphamide",
+              "FERTILITY PRESERVATION before CYC",
+              "Bone protection + osteoporosis prophylaxis"
+            ],
+            "notes": "Risk-stratified per FFS; severe organ requires CYC + steroid combination.",
+            "guideline": "ACR/Vasculitis Foundation 2021 (Chung A&R 2021); EULAR 2022 (Hellmich ARD 2024)"
+          },
+          {
+            "line": "INDUCTION ALTERNATIVE — RITUXIMAB",
+            "type": "Anti-CD20",
+            "family": "—",
+            "agents": [
+              "RITUXIMAB 1 g IV days 0 + 14 — alternative to cyclophosphamide for severe disease; particularly in PR3-ANCA positive (less evidence in EGPA than GPA but increasingly used; pre-existing organ damage; want to avoid cyclophosphamide)",
+              "RITUXIMAB OR CYCLOPHOSPHAMIDE — comparable in some EGPA studies but limited (RAVE/RITUXVAS were primarily GPA/MPA)",
+              "Pre-medications + monitoring same as for GPA"
+            ],
+            "notes": "Rituximab emerging alternative to cyclophosphamide.",
+            "guideline": "ACR 2021"
+          },
+          {
+            "line": "MEPOLIZUMAB — biologic specific to EGPA",
+            "type": "Anti-IL-5",
+            "family": "—",
+            "agents": [
+              "MEPOLIZUMAB 300 mg SC q4 WEEKS — anti-IL-5 monoclonal antibody; FDA 2017 + Health Canada 2018 specifically for EGPA; MIRRA TRIAL (Wechsler NEJM 2017) demonstrated steroid-sparing + reduced relapses + improved remission rates",
+              "STANDARD OF CARE FOR RELAPSING/REFRACTORY OR STEROID-DEPENDENT EGPA — particularly with high eosinophilia + asthma + non-organ-threatening features",
+              "ALSO useful in induction for selected severe cases",
+              "NOT effective for severe vasculitic features alone (e.g., severe nephritis) — combine with conventional immunosuppression for severe organ involvement",
+              "Continue indefinitely in many patients"
+            ],
+            "notes": "Mepolizumab transformed EGPA management (MIRRA 2017).",
+            "guideline": "MIRRA Wechsler NEJM 2017; ACR 2021"
+          },
+          {
+            "line": "MAINTENANCE",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "PREDNISONE TAPER over 6-12 MONTHS",
+              "AZATHIOPRINE 2 mg/kg/day OR METHOTREXATE 15-25 mg/week — steroid-sparing maintenance after induction (CYCLOPS or RITUXIMAB induction)",
+              "MEPOLIZUMAB — long-term for asthma + eosinophil control + steroid-sparing",
+              "BENRALIZUMAB (anti-IL-5 receptor) — emerging EGPA evidence (smaller studies)",
+              "RITUXIMAB MAINTENANCE 500 mg q6 months — for severe refractory or relapsing",
+              "MMF — alternative",
+              "DURATION: minimum 2-4 years; some lifelong (especially severe cardiac, refractory)"
+            ],
+            "notes": "Maintenance reduces relapses; steroid-sparing strategy key.",
+            "guideline": "ACR 2021"
+          },
+          {
+            "line": "ASTHMA component",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "INHALED CORTICOSTEROID + LABA — standard severe asthma stepwise (GINA)",
+              "MEPOLIZUMAB — dual benefit asthma + EGPA",
+              "BENRALIZUMAB / RESLIZUMAB — alternative anti-IL-5",
+              "OMALIZUMAB (anti-IgE) — selected severe allergic component",
+              "DUPILUMAB (anti-IL-4Rα) — emerging in EGPA (caution — case reports of EGPA UNMASKING; need EGPA control before)",
+              "AVOID LEUKOTRIENE RECEPTOR ANTAGONISTS (montelukast, zafirlukast) — historic association with EGPA unmasking; avoid for asthma if EGPA history (although new evidence suggests less causation than initially thought)",
+              "Allergen avoidance + sinus management"
+            ],
+            "notes": "Asthma + EGPA — multidisciplinary respirology + rheumatology.",
+            "guideline": "GINA + ACR EGPA"
+          },
+          {
+            "line": "REFRACTORY / RELAPSING",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "INTENSIFY INDUCTION (re-induce with cyclophosphamide or rituximab)",
+              "ADD MEPOLIZUMAB if not already",
+              "BENRALIZUMAB (anti-IL-5R)",
+              "DARATUMUMAB / TPE (plasmapheresis) — refractory severe",
+              "JAK inhibitors — emerging case series",
+              "Specialty rheumatology + allergy + neurology + cardiology"
+            ],
+            "notes": "Refractory cases multidisciplinary specialty.",
+            "guideline": "ACR 2021"
+          },
+          {
+            "line": "Cardiac involvement (leading mortality cause)",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "AGGRESSIVE INDUCTION (cyclophosphamide + high-dose steroid)",
+              "Echo + cardiac MRI surveillance + biomarkers",
+              "Standard heart failure management (ARNI/ACEi, β-blocker, MRA, SGLT2i, diuretic)",
+              "ICD secondary prevention if VT/VF",
+              "Heart transplant — selected end-stage",
+              "Mepolizumab + add-on management"
+            ],
+            "notes": "Cardiac EGPA — aggressive induction + monitoring; leading mortality.",
+            "guideline": "ACR 2021"
+          }
+        ],
+        "pearls": [
+          "ANCA-ASSOCIATED VASCULITIS — formerly Churg-Strauss syndrome",
+          "TRIAD: ASTHMA + EOSINOPHILIA + GRANULOMATOUS VASCULITIS",
+          "ANCA POSITIVE ~30-40% (MPO usually); 60-70% ANCA-NEGATIVE",
+          "PHASES: PRODROMAL (asthma + sinusitis) → EOSINOPHILIC (organ infiltration) → VASCULITIC (full systemic)",
+          "ASTHMA + adult-onset + steroid-dependent — almost universal",
+          "MONONEURITIS MULTIPLEX — classic (~70%; foot drop common)",
+          "CARDIAC INVOLVEMENT — LEADING mortality cause; eosinophilic myocarditis + pericarditis",
+          "FIVE FACTOR SCORE (FFS) — cardiac, GI, renal, CNS, age >65 → guides treatment",
+          "ACR/EULAR 2022 classification (Grayson ARD 2022)",
+          "INDUCTION: low-risk → prednisone alone; HIGH-RISK (FFS ≥1) → CYC + steroid OR rituximab + steroid",
+          "MEPOLIZUMAB 300 mg SC q4wk (MIRRA NEJM 2017) — FDA 2017/Health Canada 2018; relapsing/refractory/steroid-dependent",
+          "BENRALIZUMAB (anti-IL-5R) — emerging",
+          "MAINTENANCE: AZATHIOPRINE or MTX or rituximab + mepolizumab long-term",
+          "AVOID LEUKOTRIENE RECEPTOR ANTAGONISTS (montelukast) — historic EGPA unmasking association",
+          "DUPILUMAB caution — case reports unmasking EGPA in asthma patients",
+          "DIFFERENTIAL: hypereosinophilic syndrome (FIP1L1-PDGFRα), parasitic, ABPA, lymphoma",
+          "PJP PROPHYLAXIS during induction",
+          "FERTILITY PRESERVATION before cyclophosphamide",
+          "VACCINATION non-live; AVOID live during immunosuppression"
+        ],
+        "introduction": "Eosinophilic granulomatosis with polyangiitis (formerly Churg-Strauss syndrome) is an ANCA-associated vasculitis characterized by adult-onset asthma, peripheral and tissue eosinophilia, and granulomatous small/medium vessel vasculitis. Three phases (prodromal asthma/rhinitis, eosinophilic organ infiltration, frank vasculitis) progress over years. ANCA is positive in 30-40% (typically MPO). Clinical features include severe asthma, mononeuritis multiplex (classic), cardiac involvement (leading mortality cause), purpura, eosinophilic pneumonia, and glomerulonephritis. Five Factor Score (FFS) stratifies prognosis and guides therapy. Low-risk disease is treated with prednisone alone; high-risk with severe organ involvement requires combination cyclophosphamide or rituximab plus high-dose steroids. Mepolizumab (anti-IL-5; MIRRA 2017; FDA 2017, Health Canada 2018) is the standard biologic for relapsing or refractory disease and dual asthma/EGPA control. Long-term maintenance with azathioprine, methotrexate, mepolizumab, or rituximab manages relapse risk.",
+        "source": "ACR/Vasculitis Foundation 2021 ANCA-Associated Vasculitis (Chung A&R 2021). EULAR 2022 (Hellmich ARD 2024). ACR/EULAR 2022 EGPA Classification (Grayson ARD 2022). MIRRA Mepolizumab Wechsler NEJM 2017. Five Factor Score (Guillevin Medicine 1996, updated 2011)."
       }
     ]
   },
@@ -31329,6 +31712,153 @@ var DISEASES = {
         ],
         "introduction": "Invasive candidiasis encompasses candidemia and deep tissue infections caused by Candida species — increasingly with non-albicans species (C. glabrata, C. parapsilosis, C. krusei, and the emerging multidrug-resistant C. auris). Diagnosis combines blood cultures (gold standard but limited sensitivity), T2 Candida panel (rapid molecular testing), β-D-glucan, species identification, and antifungal susceptibility testing. First-line empiric and initial therapy is an echinocandin (caspofungin, micafungin, anidulafungin) with step-down to fluconazole once species and susceptibility are confirmed and clinical response is established. Duration is 14 days after the first negative blood culture for uncomplicated candidemia, longer for endocarditis, endophthalmitis, and deep-seated infections. Source control (central line removal in non-neutropenic patients, abscess drainage, valve surgery) substantially improves outcomes. Ophthalmology screening for endophthalmitis is recommended within one week of candidemia. C. auris requires contact precautions plus, environmental decontamination, public health reporting, and species-specific management with growing concern about echinocandin resistance.",
         "source": "IDSA Clinical Practice Guideline for Management of Candidiasis 2016 (Pappas CID 2016). ESCMID 2024 Update. CDC C. auris Surveillance 2024. T2 Candida Panel FDA approval. Manogepix Phase 3 trials."
+      },
+      {
+        "id": "sepsis_septic_shock",
+        "name": "Sepsis / Septic Shock",
+        "subtitle": "Surviving Sepsis Campaign 2021 / Sepsis-3 / CCS Sepsis",
+        "patho": "Sepsis-3 (Singer JAMA 2016): SEPSIS = LIFE-THREATENING ORGAN DYSFUNCTION caused by DYSREGULATED HOST RESPONSE TO INFECTION; defined by INCREASE IN SOFA score ≥2 from baseline (SEQUENTIAL ORGAN FAILURE ASSESSMENT) due to infection. SEPTIC SHOCK = subset with PROFOUND CIRCULATORY + cellular/metabolic abnormalities — clinical: persistent HYPOTENSION requiring VASOPRESSOR to maintain MAP ≥65 mm Hg + SERUM LACTATE >2 mmol/L despite adequate fluid resuscitation; mortality >40%. PATHOPHYSIOLOGY: dysregulated host response to infection → inflammatory cytokines (TNF-α, IL-1, IL-6) + complement + coagulation activation → vasodilation (vasoplegia), capillary leak, microthrombosis, tissue hypoperfusion, organ dysfunction (cardiovascular, respiratory — ARDS, renal — AKI, hepatic, hematologic — DIC, neurologic — encephalopathy, GI). SOURCE: pneumonia (most common ~50%), abdominal (peritonitis, biliary, urinary tract), bloodstream (catheter, endocarditis), CNS, skin/soft tissue (necrotizing fasciitis, cellulitis), bone/joint, post-surgical. PATHOGENS: bacterial (gram-positive S. aureus including MRSA, Strep pneumoniae, Enterococcus; gram-negative E. coli, Klebsiella, Pseudomonas, Acinetobacter; anaerobes); fungal (Candida ICU); viral (influenza, COVID, HSV); MULTIDRUG-RESISTANT increasing — ESBL, CRE, MRSA, VRE.",
+        "signs": "INFECTION + SYSTEMIC INFLAMMATORY response: fever or hypothermia (often elderly hypothermic; infants too), tachycardia, tachypnea, altered mental status (often EARLY in elderly), hypotension (late), oliguria, mottled extremities, lactate elevation. ORGAN DYSFUNCTION: respiratory (hypoxia, ARDS), cardiovascular (hypotension, vasopressor-requiring shock — septic shock), renal (rising creatinine, oliguria), hepatic (transaminitis, bilirubin), hematologic (thrombocytopenia, DIC), neurologic (delirium, coma — septic encephalopathy). SEPTIC SHOCK — peripheral edema (capillary leak), vasodilated warm skin (early) → cool clammy (late), reduced cardiac output despite vasopressor (cardiogenic component), refractory hypotension. SOURCE-SPECIFIC: pneumonia (cough, sputum, decreased breath sounds, hypoxia, infiltrates), pyelonephritis (CVA tenderness, dysuria, urinalysis), peritonitis (abdominal pain + tenderness, peritoneal signs), endocarditis (murmur, embolic phenomena, vegetations).",
+        "diagnosis": "qSOFA (SEPSIS-3 SCREENING — outside ICU): 2+ of: RR ≥22, altered mental status (GCS <15), SBP ≤100 — predicts increased mortality but LOW SENSITIVITY for early sepsis; modern preference is broader clinical suspicion + lactate measurement. SOFA SCORE — 6 organ system points; sepsis = ≥2 increase from baseline. NEWS2 (modern + sensitive screening). LACTATE — early measurement (>2 mmol/L = elevated; >4 mmol/L = severe; >10 = often fatal); SERIAL LACTATE for clearance. LABS — CBC + differential, comprehensive metabolic, LFTs, coagulation (PT/INR, aPTT, fibrinogen), procalcitonin (sepsis marker; rises faster than CRP — >0.5 ng/mL suggests bacterial; >2 severe), CRP, blood cultures × 2 sets BEFORE antibiotics (when feasible without delay), urine culture, sputum culture, source-specific cultures. IMAGING — chest XR/CT, abdominal CT, source-specific. ECG. SOURCE-SPECIFIC tests — LP if meningitis, echo if endocarditis, paracentesis if peritonitis, pleural tap if effusion.",
+        "monitoring": "Continuous BP/HR/SpO2/RR; ECG; arterial line (severe); urine output; mental status; lactate q2-4h initially then by clearance; ABG; CBC q12h; comprehensive metabolic + LFTs daily; cultures + susceptibilities; source assessment; vasopressor titration; ventilator parameters if intubated.",
+        "treatment": [
+          {
+            "line": "HOUR-1 BUNDLE — Surviving Sepsis Campaign 2021",
+            "type": "Resuscitation + diagnosis + treatment",
+            "family": "—",
+            "agents": [
+              "MEASURE LACTATE; remeasure if elevated",
+              "OBTAIN BLOOD CULTURES BEFORE antibiotics (if no delay)",
+              "BROAD-SPECTRUM ANTIBIOTICS within 1 HOUR of sepsis recognition (within 3 hours for sepsis without shock per 2021 update — debate continues; 1 hour for septic shock + likely sepsis)",
+              "BEGIN 30 mL/kg CRYSTALLOID for hypotension OR lactate ≥4 mmol/L within first 3 hours",
+              "VASOPRESSORS for MAP ≥65 if hypotensive during/after fluids — NOREPINEPHRINE first-line"
+            ],
+            "notes": "1-hour bundle is gold standard for septic shock + likely sepsis.",
+            "guideline": "Surviving Sepsis Campaign 2021 (Evans Crit Care Med 2021); CCS Sepsis"
+          },
+          {
+            "line": "EMPIRIC ANTIBIOTICS — broad-spectrum within 1 hour",
+            "type": "Source-directed",
+            "family": "—",
+            "agents": [
+              "CHOICE BASED ON: suspected source, local resistance patterns, healthcare exposure, patient factors",
+              "COMMUNITY: PIPERACILLIN-TAZOBACTAM 4.5 g IV q8h OR CEFTRIAXONE 2 g IV q24h + (METRONIDAZOLE if anaerobic concern)",
+              "HEALTHCARE-ASSOCIATED / RESISTANT FLORA: MEROPENEM 1 g IV q8h OR CEFEPIME 2 g IV q8h ± ANTI-MRSA (vancomycin)",
+              "ADD VANCOMYCIN if MRSA risk: hemodynamic instability, prior MRSA, healthcare exposure, IV drug use, soft tissue/skin focus, line-related, CNS infection",
+              "ADD ANTIFUNGAL if fungal risk: Candida (echinocandin); aspergillosis (voriconazole); cryptococcal (amph B + flucytosine)",
+              "ANTIVIRAL if viral suspected: oseltamivir if influenza; acyclovir if HSV encephalitis",
+              "DESCALATE within 48-72h based on cultures + susceptibilities + clinical course",
+              "DURATION TYPICAL 7-10 DAYS (uncomplicated; varies by source); lower threshold for shorter courses if rapid clearance + good source control"
+            ],
+            "notes": "Empirical broad-spectrum within 1 hour; deescalate quickly.",
+            "guideline": "Surviving Sepsis 2021; CCS"
+          },
+          {
+            "line": "FLUID RESUSCITATION",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "INITIAL: BALANCED CRYSTALLOID (Ringer's lactate, PlasmaLyte) — preferred over normal saline 0.9% (less hyperchloremic acidosis); 30 mL/kg over 3 hours for septic shock or lactate ≥4",
+              "SMART trial Semler NEJM 2018 — balanced crystalloids reduced major adverse kidney events vs saline",
+              "AVOID HYDROXYETHYL STARCH (HES, hetastarch) — increased AKI + mortality (CHEST + 6S trials); HARMFUL",
+              "AVOID GELATIN-based colloids",
+              "ALBUMIN 5% — selected (high APACHE, persistent hypoperfusion despite crystalloid; SAFE 2004 + meta-analyses neutral); not routine",
+              "DYNAMIC FLUID RESPONSIVENESS — passive leg raise, IVC ultrasound, PPV/SVV in ventilated; AVOID OVERFILLING (worse outcomes); REASSESS frequently",
+              "CONSERVATIVE FLUID after initial resuscitation — recent evidence (CLOVERS, CLASSIC trials) suggests early conservative may be acceptable in some patients"
+            ],
+            "notes": "Balanced crystalloids first; avoid HES; reassess frequently.",
+            "guideline": "Surviving Sepsis 2021; SMART NEJM 2018"
+          },
+          {
+            "line": "VASOPRESSORS",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "NOREPINEPHRINE — FIRST-LINE; titrate to MAP ≥65 mm Hg; 0.05-3 mcg/kg/min",
+              "VASOPRESSIN (0.03 U/min) — second-line ADD-ON to norepinephrine for refractory shock + reducing norepinephrine dose; not titrated like other vasopressors",
+              "EPINEPHRINE — alternative or addition; useful for cardiogenic component",
+              "PHENYLEPHRINE — limited use; selected",
+              "ANGIOTENSIN II — refractory shock (ATHOS-3 NEJM 2017; FDA approved); selected ICU centers; expensive",
+              "DOBUTAMINE — for cardiogenic component (low cardiac output despite adequate filling)",
+              "AVOID DOPAMINE first-line — increased arrhythmia + mortality vs norepinephrine (SOAP-II De Backer NEJM 2010)",
+              "TARGET MAP ≥65; higher (75-85) if pre-existing chronic HTN OR persistent hypoperfusion"
+            ],
+            "notes": "Norepinephrine first-line; vasopressin add-on; angiotensin II for refractory.",
+            "guideline": "Surviving Sepsis 2021; SOAP-II De Backer NEJM 2010"
+          },
+          {
+            "line": "STEROIDS for refractory septic shock",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "HYDROCORTISONE 200 mg/day IV (50 mg q6h or 200 mg/day continuous infusion) — for SEPTIC SHOCK requiring continuous norepinephrine ≥0.25 mcg/kg/min × 4+ hours despite adequate fluid resuscitation; ADRENAL II 2018 + APROCCHSS 2018 supported (mortality benefit ADRENAL II — Venkatesh; APROCCHSS combined with fludrocortisone)",
+              "DC steroid as vasopressor weaned + clinical improvement (typically 5-7 days)",
+              "AVOID dexamethasone for routine sepsis (fludrocortisone considered + ADRENAL II)"
+            ],
+            "notes": "Hydrocortisone for refractory shock; established benefit.",
+            "guideline": "ADRENAL II Venkatesh NEJM 2018; APROCCHSS Annane NEJM 2018"
+          },
+          {
+            "line": "SOURCE CONTROL — CRITICAL",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "IDENTIFY SOURCE within 6-12 hours",
+              "DRAIN ABSCESSES + collections",
+              "REMOVE INFECTED CATHETERS / DEVICES (CVC, foley, prosthetic joints, infected hardware)",
+              "SURGICAL DEBRIDEMENT for necrotizing fasciitis or other necrotic tissue",
+              "PERFORATION/ ISCHEMIA — laparotomy",
+              "PYELONEPHRITIS WITH OBSTRUCTION — urgent decompression (percutaneous nephrostomy, ureteral stent)",
+              "EMPYEMA — chest tube + intrapleural fibrinolytics (MIST 2)",
+              "CHOLANGITIS — ERCP biliary drainage"
+            ],
+            "notes": "Source control improves outcomes substantially.",
+            "guideline": "Surviving Sepsis 2021"
+          },
+          {
+            "line": "Adjuncts + organ support",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "LUNG-PROTECTIVE VENTILATION if intubated (TV 4-6 mL/kg PBW; plateau ≤30; PEEP)",
+              "ARDS protocols if applicable (prone if P/F <150)",
+              "RENAL REPLACEMENT THERAPY for AKI requiring (no benefit early in absence of indications — IDEAL-ICU)",
+              "GLYCEMIC CONTROL — target 140-180 mg/dL (7.8-10 mmol/L); avoid intensive insulin (NICE-SUGAR worse with <110)",
+              "DVT PROPHYLAXIS — LMWH unless contraindicated",
+              "STRESS ULCER PROPHYLAXIS — H2 blocker or PPI in high-risk",
+              "NUTRITION — early enteral preferred",
+              "TRANSFUSION — restrictive Hb >70 unless ischemic heart disease (target >80)",
+              "DAILY EVALUATION OF READINESS for SBT, sedation interruption, mobilization, line removal",
+              "VITAMIN C / THIAMINE / HYDROCORTISONE 'HAT' — VITAMINS C-ID + ATESS trials NEGATIVE for routine; not recommended"
+            ],
+            "notes": "Comprehensive ICU bundle.",
+            "guideline": "Surviving Sepsis 2021"
+          }
+        ],
+        "pearls": [
+          "SEPSIS-3 (2016): organ dysfunction + dysregulated host response to infection (SOFA ↑≥2)",
+          "SEPTIC SHOCK: vasopressor + lactate >2 despite adequate fluid (mortality >40%)",
+          "qSOFA (RR≥22 + AMS + SBP≤100) low sensitivity — broad clinical suspicion + lactate",
+          "HOUR-1 BUNDLE: lactate + cultures + ANTIBIOTICS + 30 mL/kg crystalloid + vasopressor",
+          "ANTIBIOTICS WITHIN 1 HOUR of septic shock recognition",
+          "SOURCE: pneumonia (50%), abdominal, urinary, bloodstream, CNS, soft tissue",
+          "CRYSTALLOIDS: BALANCED (Ringer's lactate, PlasmaLyte) > saline (SMART 2018)",
+          "AVOID HES (HARMFUL — CHEST + 6S)",
+          "NOREPINEPHRINE first-line vasopressor",
+          "VASOPRESSIN second add-on; angiotensin II for refractory (ATHOS-3)",
+          "AVOID DOPAMINE first-line (SOAP-II — increased arrhythmia + mortality)",
+          "HYDROCORTISONE 200 mg/day for REFRACTORY shock (ADRENAL II 2018 + APROCCHSS 2018)",
+          "MAP target ≥65 (higher 75-85 if pre-existing HTN or persistent hypoperfusion)",
+          "SOURCE CONTROL within 6-12h — drainage, surgery, line removal",
+          "VITAMIN C/THIAMINE/HC ('HAT') NEGATIVE for routine sepsis (VITAMINS, CITRUS-ALI, ATESS)",
+          "GLYCEMIC TARGET 140-180 mg/dL (NICE-SUGAR)",
+          "RESTRICTIVE TRANSFUSION Hb >70 (>80 if ischemic heart disease)",
+          "PROCALCITONIN — bacterial sepsis marker; helps deescalation",
+          "LACTATE clearance — important resuscitation marker",
+          "DESCALATE antibiotics within 48-72h based on cultures + clinical course"
+        ],
+        "introduction": "Sepsis is a life-threatening organ dysfunction caused by dysregulated host response to infection (Sepsis-3 definition; SOFA score increase ≥2). Septic shock is a subset with persistent vasopressor-requiring hypotension and elevated lactate despite adequate fluid resuscitation, with mortality exceeding 40%. The Surviving Sepsis Campaign 2021 mandates an Hour-1 bundle: lactate measurement, blood cultures, broad-spectrum antibiotics, 30 mL/kg crystalloid for hypotension or lactate ≥4, and vasopressor initiation if hypotensive. Norepinephrine is first-line vasopressor; vasopressin and angiotensin II add-on for refractory cases. Hydrocortisone benefit established for refractory septic shock (ADRENAL II + APROCCHSS 2018). Source control within 6-12 hours (drainage, surgery, device removal) substantially improves outcomes. Balanced crystalloids preferred over normal saline (SMART 2018); hydroxyethyl starch is harmful. Comprehensive ICU support includes lung-protective ventilation, conservative fluid management after resuscitation, glycemic control, restrictive transfusion, and daily readiness assessments.",
+        "source": "Surviving Sepsis Campaign 2021 (Evans Crit Care Med 2021). Sepsis-3 Singer JAMA 2016. SMART Semler NEJM 2018. SOAP-II De Backer NEJM 2010. ADRENAL II Venkatesh NEJM 2018. APROCCHSS Annane NEJM 2018. ATHOS-3 Khanna NEJM 2017. CCS Sepsis."
       }
     ]
   },
@@ -36410,6 +36940,114 @@ var DISEASES = {
         ],
         "introduction": "Postpartum hemorrhage is the leading cause of maternal mortality globally. Systematic 4 T's assessment (Tone, Trauma, Tissue, Thrombin) guides therapy. Tranexamic acid within 3 hours of bleeding onset reduces death (WOMAN trial). Uterotonics ladder (oxytocin → ergot → carboprost → misoprostol) plus mechanical (Bakri balloon, B-Lynch suture), interventional (UAE), and surgical (hysterectomy) options form a coordinated escalation pathway.",
         "source": "SOGC Postpartum Hemorrhage Guideline No. 431 (2022, superseding No. 235 2009). WOMAN Trial Shakur Lancet 2017. CHAMPION Carbetocin Widmer NEJM 2018. SOGC Placenta Accreta Spectrum Guideline 2019. WHO PPH Guidelines 2017."
+      },
+      {
+        "id": "preeclampsia_eclampsia",
+        "name": "Preeclampsia / Eclampsia",
+        "subtitle": "Hypertensive disorder of pregnancy — SOGC 2022 / ACOG / ASPRE",
+        "patho": "Multi-system disorder of pregnancy characterized by NEW-ONSET HYPERTENSION + END-ORGAN DYSFUNCTION after 20 weeks gestation (or postpartum). PATHOPHYSIOLOGY: ABNORMAL PLACENTATION → SHALLOW TROPHOBLAST INVASION OF SPIRAL ARTERIES → PLACENTAL HYPOPERFUSION → release of antiangiogenic factors (sFlt-1, sEndoglin) into maternal circulation → ENDOTHELIAL DYSFUNCTION + INFLAMMATORY RESPONSE → systemic vasoconstriction, increased capillary permeability, renal dysfunction, hepatic injury, neurological complications. RISK FACTORS: nulliparity, prior preeclampsia (recurrence ~15-20%), chronic HTN, diabetes, obesity, age ≥35, multifetal gestation, autoimmune disease (SLE, APS), CKD, IVF, family history, paternal change between pregnancies. PREVENTION: ASA 81-150 mg starting before 16 weeks gestation in HIGH-RISK women (ASPRE NEJM 2017 Rolnik). PRESENTATIONS: PREECLAMPSIA — BP ≥140/90 + proteinuria OR end-organ dysfunction (renal, hepatic, neurologic, hematologic, fetal growth restriction); SEVERE PREECLAMPSIA — BP ≥160/110 OR specific severe features; ECLAMPSIA — preeclampsia + new-onset SEIZURES; HELLP SYNDROME — HEMOLYSIS + ELEVATED LIVER ENZYMES + LOW PLATELETS (severe variant). POSTPARTUM ECLAMPSIA — up to 6 weeks postpartum.",
+        "signs": "Often ASYMPTOMATIC initially — found on routine prenatal BP checking. SYMPTOMS suggesting SEVERE: persistent HEADACHE, blurred vision/visual scotomata/temporary blindness (cortical), epigastric or RUQ pain (hepatic capsule stretch), nausea/vomiting, hyperreflexia + clonus, severe edema (dependent + facial), pulmonary edema (dyspnea, orthopnea), oliguria, decreased fetal movement (placental insufficiency). SEIZURES = ECLAMPSIA (clinical diagnosis; rule out other causes — stroke, metabolic, hyponatremia, infection). HELLP — RUQ pain, jaundice, dark urine, weakness, fatigue.",
+        "diagnosis": "SOGC 2022 + ACOG: HYPERTENSION ≥140/90 (mild) or ≥160/110 (severe) — measured properly + on ≥2 occasions ≥4 hours apart (severe BP often single reading needs urgent treatment). PLUS one of: PROTEINURIA (>0.3 g/24h or PCR ≥30 mg/mmol or dipstick ≥1+) — NOT REQUIRED for diagnosis any longer if other end-organ dysfunction; END-ORGAN DYSFUNCTION — RENAL (creatinine >97 µmol/L without other cause), HEPATIC (transaminase ≥2× ULN, severe RUQ/epigastric pain), HEMATOLOGIC (platelets <100, DIC, hemolysis), NEUROLOGIC (severe headache, blurred vision, scotomata, hyperreflexia+clonus), PULMONARY EDEMA, UTEROPLACENTAL DYSFUNCTION (IUGR, fetal growth restriction, oligohydramnios, abnormal Doppler). HELLP CRITERIA: hemolysis (LDH >600, schistocytes, indirect bilirubin), elevated transaminases (AST/ALT ≥70), low platelets (<100). LABS: CBC + smear, LFTs, creatinine, uric acid, urinalysis + PCR, coagulation (DIC if HELLP). FETAL — biophysical profile, NSTs, growth ultrasound. EMERGING BIOMARKERS: sFlt-1/PlGF ratio (Health Canada-approved test for predicting risk + diagnosis confirmation; high specificity).",
+        "monitoring": "BP serial (q4h-continuous severe), proteinuria, LFTs, creatinine, platelet trends, neurologic assessment, fetal monitoring (NST, BPP, growth ultrasound), HELLP labs trending if severe, postpartum BP × 6 weeks (resolution typically 12 weeks).",
+        "treatment": [
+          {
+            "line": "PREVENTION (high-risk women)",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "ASA 81-150 mg PO daily — START BEFORE 16 weeks (ideally 12-14 weeks); CONTINUE until 36 weeks; ASPRE trial Rolnik NEJM 2017 demonstrated 80% reduction in preterm preeclampsia in high-risk; SOGC + ACOG strong recommendation",
+              "HIGH-RISK CRITERIA (1 high-risk OR ≥2 moderate-risk → ASA): HIGH RISK — prior preeclampsia, chronic HTN, type 1/2 DM, CKD, autoimmune (SLE, APS); MODERATE RISK — nulliparity, age ≥35-40, BMI ≥30, IVF, family history, multiple pregnancy",
+              "CALCIUM 1.2-2 g/day — supplementation in low-calcium-intake populations (less relevant most Western women)",
+              "Limited evidence: vitamin D, fish oil, exercise"
+            ],
+            "notes": "ASPRE established ASA prophylaxis; SOGC + ACOG implementation.",
+            "guideline": "ASPRE Rolnik NEJM 2017; SOGC Guideline 2022; ACOG"
+          },
+          {
+            "line": "Mild preeclampsia (non-severe; <37 weeks)",
+            "type": "Expectant management",
+            "family": "—",
+            "agents": [
+              "EXPECTANT MANAGEMENT in selected with close monitoring (often outpatient if reliable)",
+              "BP TREATMENT — initiate at ≥140/90 (SOGC 2022; lowered threshold from prior 150/100); ORAL FIRST-LINE: LABETALOL 100-200 mg PO BID-QID (max 1200 mg/day), NIFEDIPINE XL 30-60 mg PO daily, METHYLDOPA 250-500 mg BID-QID; AVOID ACEi/ARB (teratogenic), atenolol (IUGR), mineralocorticoid antagonists (NICE)",
+              "TARGET BP 110-140/85 (SOGC 2022 — diastolic specifically <85)",
+              "FETAL SURVEILLANCE — NST + BPP + growth ultrasound q1-2 weeks",
+              "MAGNESIUM SULFATE — for severe features only; not all preeclampsia",
+              "DELIVER AT 37 WEEKS if persistent + worsening"
+            ],
+            "notes": "Mild preeclampsia — expectant + medication + delivery at 37 weeks.",
+            "guideline": "SOGC 2022"
+          },
+          {
+            "line": "Severe preeclampsia / HELLP — admission + delivery planning",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "ADMIT ALL severe preeclampsia + HELLP",
+              "BP CONTROL — IV LABETALOL 20 mg IV bolus → 40-80 mg q10 min (max 300 mg) OR IV HYDRALAZINE 5-10 mg IV q15-30 min (less preferred; reflex tachycardia + can cause hypotension) OR ORAL NIFEDIPINE IR 10-20 mg PO q30 min — TARGET BP <160/110 within 60 minutes; AVOID over-correction (placental hypoperfusion)",
+              "MAGNESIUM SULFATE — for SEIZURE PROPHYLAXIS in severe + HELLP + ECLAMPSIA: LOAD 4-6 g IV over 20 min then 1-2 g/h continuous infusion; CONTINUE 24h post-delivery",
+              "STEROIDS — BETAMETHASONE 12 mg IM q24h × 2 doses for fetal lung maturity if 24-34 weeks; controversial in HELLP for maternal benefit (may transient improve platelets — limited evidence; not standard)",
+              "PLAN DELIVERY — TIMING based on gestational age + severity: <34 weeks expectant if stable + corticosteroids for fetal lung maturity, ≥34 weeks deliver promptly, severe instability/HELLP/eclampsia/multi-organ failure → EMERGENCY DELIVERY regardless of gestational age",
+              "MULTIDISCIPLINARY — high-risk obstetrics + maternal-fetal medicine + neonatology + anesthesia + ICU"
+            ],
+            "notes": "Severe preeclampsia/HELLP — admission + magnesium + delivery planning critical.",
+            "guideline": "SOGC 2022; ACOG"
+          },
+          {
+            "line": "ECLAMPSIA (seizure)",
+            "type": "Emergency",
+            "family": "—",
+            "agents": [
+              "AIRWAY + LATERAL POSITIONING + suction + oxygen",
+              "MAGNESIUM SULFATE — LOAD 4-6 g IV over 20 min then 2 g/h infusion; for RECURRENT seizure on Mg → additional 2 g IV bolus",
+              "BP CONTROL as severe preeclampsia",
+              "DIAZEPAM 5-10 mg IV — NOT first-line (Mg superior; Eclampsia Trial Collaborative); reserve for refractory",
+              "MAGNESIUM TOXICITY MONITORING — DTRs (lost first), respiratory rate <12 — STOP Mg + give CALCIUM GLUCONATE 1 g IV antidote",
+              "DELIVERY — not necessarily cesarean if vaginal feasible after stabilization; prompt delivery typical",
+              "ICU monitoring",
+              "POSTPARTUM eclampsia possible up to 6 weeks — counsel + monitor"
+            ],
+            "notes": "Eclampsia — magnesium first-line; calcium gluconate antidote; deliver after stabilization.",
+            "guideline": "SOGC 2022; Magpie Trial Lancet 2002; Eclampsia Trial 1995"
+          },
+          {
+            "line": "POSTPARTUM management",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "BP MONITORING — q15-30 min × 1h post-delivery, q4h × 24h, then daily; OUTPATIENT BP MONITORING for 2-6 weeks (postpartum eclampsia possible)",
+              "CONTINUE antihypertensives postpartum if BP elevated; many can taper over weeks-months",
+              "BREASTFEEDING — labetalol, nifedipine, methyldopa, propranolol all compatible (low transfer); ACEi/ARB acceptable postpartum (not pregnancy)",
+              "EARLY postpartum NSAID WAS thought to be controversial; recent data — short-course NSAIDs (ibuprofen) postpartum is acceptable with BP monitoring",
+              "POSTPARTUM ECLAMPSIA — readmit + magnesium + BP control; can occur 6 weeks postpartum",
+              "LONG-TERM CV risk — preeclampsia 2-4× lifetime CVD risk; counsel re: long-term BP + CV risk modification"
+            ],
+            "notes": "Postpartum care + long-term CV risk modification.",
+            "guideline": "SOGC 2022"
+          }
+        ],
+        "pearls": [
+          "Multi-system disorder of pregnancy — abnormal placentation + endothelial dysfunction",
+          "BP ≥140/90 + end-organ dysfunction + 20+ weeks gestation",
+          "ASA 81-150 mg from 12-16 weeks PREVENTION in high-risk (ASPRE 2017; 80% reduction preterm preeclampsia)",
+          "RISK STRATIFICATION SOGC: 1 high-risk OR ≥2 moderate → ASA",
+          "TARGET BP <140/85 (SOGC 2022 — lowered from prior; CHIPS trial)",
+          "ORAL: LABETALOL, NIFEDIPINE XL, METHYLDOPA — first-line",
+          "AVOID: ACEi/ARB (teratogenic), atenolol (IUGR)",
+          "SEVERE: BP ≥160/110, end-organ severity, HELLP",
+          "IV LABETALOL 20-40 mg or HYDRALAZINE 5-10 mg or PO NIFEDIPINE IR 10-20 mg → target <160/110 within 60 min",
+          "MAGNESIUM SULFATE — seizure prophylaxis severe + HELLP; load 4-6 g IV + 2 g/h",
+          "Magnesium toxicity — DTR loss + respiratory <12 → CALCIUM GLUCONATE 1 g IV antidote",
+          "ECLAMPSIA — magnesium first (Magpie 2002 + Eclampsia Trial 1995)",
+          "BETAMETHASONE 12 mg IM × 2 — fetal lung maturity 24-34 weeks",
+          "DELIVERY at 37 weeks for mild + 34 weeks for severe (or earlier if instability)",
+          "HELLP — hemolysis + ↑LFTs + low platelets; severe variant",
+          "POSTPARTUM ECLAMPSIA possible 6 weeks postpartum",
+          "LONG-TERM CV RISK 2-4× — counsel modification",
+          "BREASTFEEDING — labetalol, nifedipine, methyldopa, propranolol compatible"
+        ],
+        "introduction": "Preeclampsia is a hypertensive multi-system disorder of pregnancy resulting from abnormal placentation, endothelial dysfunction, and circulating antiangiogenic factors. Diagnosis follows SOGC 2022 + ACOG criteria — new-onset hypertension after 20 weeks gestation plus proteinuria or end-organ dysfunction (renal, hepatic, hematologic, neurologic, pulmonary, uteroplacental). Severity is graded by BP and end-organ features. HELLP syndrome (hemolysis, elevated liver enzymes, low platelets) is a severe variant. Prevention with low-dose aspirin (ASPRE NEJM 2017) starting before 16 weeks reduces preterm preeclampsia 80% in high-risk women. Treatment combines BP control (labetalol, nifedipine, methyldopa; avoid ACEi/ARB, atenolol), magnesium sulfate seizure prophylaxis for severe disease, betamethasone for fetal lung maturity if 24-34 weeks, and timed delivery. Eclampsia (seizures) is treated with magnesium sulfate first-line (Magpie 2002) with calcium gluconate as toxicity antidote. Long-term cardiovascular risk increase (2-4×) requires lifestyle counseling.",
+        "source": "SOGC Diagnosis, Evaluation, and Management of Hypertensive Disorders of Pregnancy 2022. ACOG Practice Bulletin Hypertension in Pregnancy. ASPRE Rolnik NEJM 2017. CHIPS Magee NEJM 2015. Magpie Trial Lancet 2002. Eclampsia Trial 1995."
       }
     ]
   },
@@ -152721,6 +153359,91 @@ var DRUGS = {
       "Pregnancy testing women of reproductive potential"
     ],
     "patient_counseling": "Oral antifungal — take with or without food; same time daily. Tell us about easy bruising, mouth sores, jaundice, severe diarrhea. Frequent blood tests during treatment. Effective contraception required."
+  },
+  "thiamine": {
+    "name": "Thiamine (vitamin B1)",
+    "brand": "Generic; Bewon (B-complex); Beneva (Canada)",
+    "class": "Water-soluble vitamin (B1) — coenzyme cofactor",
+    "napra": "OTC + prescription IV/IM forms; widely available.",
+    "moa": "Essential WATER-SOLUBLE VITAMIN (B1; thiamine) — required cofactor for several KEY enzymes in carbohydrate metabolism + nervous system function: PYRUVATE DEHYDROGENASE (entry to TCA cycle), α-KETOGLUTARATE DEHYDROGENASE (TCA cycle), TRANSKETOLASE (pentose phosphate pathway), BRANCHED-CHAIN α-KETO ACID DEHYDROGENASE. DEFICIENCY → impaired carbohydrate metabolism → ATP depletion + lactic acidosis + neurologic dysfunction (especially BRAIN — high glucose dependency). DAILY REQUIREMENT: 1.1 mg women, 1.2 mg men; pregnancy 1.4 mg; demands increase with high-carbohydrate diet, alcohol, hyperthyroidism, malabsorption. CLINICAL DEFICIENCY: WERNICKE ENCEPHALOPATHY (acute neuropsychiatric — TRIAD: ophthalmoplegia + ataxia + confusion); KORSAKOFF SYNDROME (chronic — anterograde + retrograde amnesia, confabulation); WET BERIBERI (cardiac high-output failure + edema); DRY BERIBERI (peripheral neuropathy); INFANTILE BERIBERI; SHOSHIN BERIBERI (acute fulminant cardiac).",
+    "indications": [
+      "WERNICKE ENCEPHALOPATHY / Korsakoff syndrome — diagnosis + prevention; emergency treatment",
+      "ALCOHOL USE DISORDER — prophylaxis (especially during withdrawal, hospitalization, malnutrition)",
+      "MALNUTRITION / malabsorption (post-bariatric surgery, severe vomiting/hyperemesis gravidarum, PEM, anorexia nervosa, chronic illness, parenteral nutrition without supplementation)",
+      "REFEEDING SYNDROME prevention",
+      "CONGESTIVE HEART FAILURE on chronic LOOP DIURETIC (associated thiamine deficiency)",
+      "DIABETIC KETOACIDOSIS / sepsis — adjunct (controversial; some data suggests benefit)",
+      "MAPLE SYRUP URINE DISEASE (responsive types)",
+      "DIETARY SUPPLEMENTATION as part of B-complex multivitamin"
+    ],
+    "dosing": {
+      "Wernicke encephalopathy (treatment)": "500 mg IV TID × 2-3 days then 250 mg IV/IM daily × 5 days then 100 mg PO daily ongoing (Royal College + Cochrane recommend 500 mg IV TID for 2-3 days)",
+      "Wernicke prevention (alcohol use disorder)": "100 mg IV/IM/PO daily × 3-5 days then 100 mg PO daily ongoing",
+      "Glucose administration in alcohol-dependent / malnourished": "100 mg IV BEFORE OR WITH glucose (prevents PRECIPITATING Wernicke — glucose increases thiamine demand)",
+      "Maintenance (alcohol use disorder, chronic malabsorption)": "100 mg PO daily lifelong / chronic",
+      "Beriberi (wet — cardiac)": "10-30 mg IV TID × 1-2 weeks then 5-10 mg PO daily",
+      "Beriberi (dry — neurologic)": "10-25 mg IV/IM daily × several weeks then PO",
+      "Refeeding syndrome prevention": "200-300 mg IV/PO BEFORE refeeding + 200-300 mg/day during first 7-10 days of refeeding",
+      "DKA / sepsis adjunct (off-label)": "200-500 mg IV daily × short courses",
+      "Hepatic / renal impairment": "No specific adjustment (water-soluble; minimal accumulation)",
+      "Pregnancy": "Increase to 1.4 mg/day; HYPEREMESIS GRAVIDARUM — 100 mg IV/IM daily during severe vomiting",
+      "Pediatric": "10-25 mg IV/IM/PO daily depending on indication"
+    },
+    "side_effects": {
+      "common": [
+        "Generally well-tolerated; rare with PO",
+        "Local injection site reactions IM"
+      ],
+      "serious": [
+        "ANAPHYLAXIS / hypersensitivity — RARE but reported with rapid IV; particularly LARGE DOSES; SLOW IV infusion + dilute (in NS or D5W); have epinephrine + resuscitation available; PARENTERAL preparations contain potential allergens",
+        "Hypotension with rapid IV (rare)",
+        "Drug-induced anaphylactoid reactions on IV (idiosyncratic; can occur with first or repeat exposure)"
+      ]
+    },
+    "contraindications": [
+      "Known hypersensitivity (very rare)",
+      "Other true allergies usually relate to formulation excipients"
+    ],
+    "interactions": [
+      "No clinically significant drug interactions",
+      "GLUCOSE — must give thiamine BEFORE OR CONCURRENT with IV glucose in malnourished/alcohol-dependent (glucose precipitates Wernicke encephalopathy in thiamine-deficient brain — KEY CLINICAL CAUTION)",
+      "LOOP DIURETICS — chronic use depletes thiamine; consider supplementation",
+      "PHOSPHATE + MAGNESIUM — concurrent in refeeding syndrome management"
+    ],
+    "pregnancy": "Cat A — safe + indicated; pregnancy increases requirement to 1.4 mg/day; SEVERE HYPEREMESIS GRAVIDARUM may require IV/IM thiamine (Wernicke encephalopathy reported in HG; high-risk indication for IV supplementation). Breastfeeding: compatible.",
+    "pk": "Water-soluble; absorbed in proximal small intestine; ALCOHOL impairs absorption + utilization; minimal storage (~30 mg adult body stores; depleted within 2-3 weeks if no intake); phosphorylated to active forms (thiamine pyrophosphate, thiamine triphosphate); renal excretion of excess.",
+    "canadian_notes": "Available OTC + prescription. ODB General Benefit (oral 100 mg tablets); IV/IM also covered. INEXPENSIVE + WIDELY USED — emergency department, ICU, addictions, internal medicine routine. ALCOHOL USE DISORDER protocols — Canadian Centre on Substance Use + Addiction (CCSA) recommends thiamine for ALL admitted alcohol-dependent + alcohol withdrawal patients PRE OR WITH glucose administration. WERNICKE ENCEPHALOPATHY — Canadian Internal Medicine + Emergency Medicine standard practice — high-dose IV during initial 2-3 days. HYPEREMESIS GRAVIDARUM (SOGC 2022) — IV thiamine in severe cases with prolonged vomiting before glucose.",
+    "pearls": [
+      "WATER-SOLUBLE VITAMIN B1 — cofactor for pyruvate dehydrogenase + transketolase + α-KG dehydrogenase",
+      "BODY STORES 30 mg — depleted in 2-3 weeks without intake",
+      "ALCOHOL impairs absorption + utilization — high-risk for deficiency",
+      "WERNICKE TRIAD — OPHTHALMOPLEGIA + ATAXIA + CONFUSION (only 10-16% have all 3; high suspicion + treat empirically)",
+      "WERNICKE TX: 500 mg IV TID × 2-3 days then 250 mg/day × 5 days then 100 mg PO ongoing",
+      "WERNICKE PREVENTION: 100 mg IV/IM/PO daily × 3-5 days for alcohol use disorder + malnutrition",
+      "GIVE THIAMINE BEFORE/WITH GLUCOSE in malnourished/alcohol-dependent (glucose precipitates Wernicke)",
+      "ALCOHOL WITHDRAWAL — thiamine standard pre-glucose",
+      "REFEEDING SYNDROME — thiamine + phosphate + magnesium PRE-refeeding",
+      "HYPEREMESIS GRAVIDARUM — IV thiamine in severe cases (Wernicke reported in HG)",
+      "BARIATRIC SURGERY — chronic supplementation; deficiency post-Roux-en-Y common",
+      "WET BERIBERI — high-output cardiac failure + edema",
+      "DRY BERIBERI — peripheral neuropathy",
+      "KORSAKOFF — chronic neurologic; confabulation; reduced reversibility",
+      "DAILY REQUIREMENT: 1.1-1.2 mg adult; 1.4 mg pregnancy",
+      "ANAPHYLAXIS rare with rapid IV — slow + dilute; have epinephrine",
+      "LOOP DIURETICS — chronic depletion; consider supplementation in HF",
+      "Pregnancy Cat A — safe; SOGC HG protocol",
+      "INEXPENSIVE + LIFE-SAVING when indicated"
+    ],
+    "monitoring": [
+      "Clinical neurologic assessment for Wernicke (eye movement, gait, mentation)",
+      "Response to therapy",
+      "Anaphylaxis post-IV",
+      "Magnesium + phosphate during refeeding",
+      "B12 + folate (often coexist deficient)",
+      "LFTs (if alcohol)",
+      "Pregnancy status if HG"
+    ],
+    "patient_counseling": "Vitamin B1 given to prevent or treat brain damage from poor nutrition or alcohol. Tell us if known allergy. Generally very safe."
   }
 
 };
@@ -153463,7 +154186,7 @@ var DRUG_FAMILIES = {"Cephalosporins":{"name":"Cephalosporins","abbrev":"Ceph �
     ],
     "canadian_notes": "Glycoprotein IIb/IIIa receptor antagonists block the final common pathway of platelet aggregation. Primarily used in PCI/ACS settings. Hospital-only IV; ODB N/A. Largely supplanted by potent oral P2Y12 inhibitors (ticagrelor, prasugrel) but still used in high-risk PCI, bailout situations, and bridging.",
     "source": "Health Canada PMs Aggrastat, Integrilin, ReoPro (discontinued); CCS Antithrombotic 2024; ACC/AHA PCI 2021."
-  },"Antisense Oligonucleotides":{"name":"Antisense Oligonucleotides","abbrev":"ASO","class_color":"#7c3aed","moa_summary":"Antisense oligonucleotides (ASOs) are short synthetic single-stranded nucleic acids designed to bind complementary mRNA or pre-mRNA. Mechanisms: RNase H1-mediated cleavage of target RNA, modulation of pre-mRNA splicing (exon skipping/inclusion). Major applications: SMA (nusinersen — SMN2 exon 7 inclusion), DMD (eteplirsen, golodirsen, casimersen, viltolarsen — exon skipping). Chemical modifications (2'-MOE, phosphorothioate, morpholino) confer nuclease resistance + improved PK.","class_effects":["Thrombocytopenia (reversible class effect)","Proteinuria + glomerulonephritis (rare; class effect of phosphorothioate ASOs)","Injection site reactions (subcutaneous)","Post-lumbar puncture headache (intrathecal — nusinersen)","Hypersensitivity / infusion reactions","Coagulation abnormalities (rare)","Hepatic enzyme elevations"],"monitoring":["CBC + platelets baseline + before each dose","Urinalysis baseline + before each dose (proteinuria)","LFTs","Coagulation (selected)"],"interactions":["Few significant systemic drug interactions","Other ASOs — theoretical additive class effects"],"pregnancy":"Limited human data; varies by agent","members":["nusinersen","eteplirsen"]},"Thrombopoietin Receptor Agonists":{"name":"Thrombopoietin Receptor Agonists","abbrev":"TPO-RA","class_color":"#dc2626","moa_summary":"Thrombopoietin receptor (c-Mpl) agonists stimulate megakaryocyte proliferation and platelet production. Two main approved agents differ in mechanism + administration: eltrombopag (oral, small-molecule binding transmembrane domain — different site than endogenous TPO; also iron chelation effect supporting marrow recovery) and romiplostim (subcutaneous, peptibody — TPO mimetic binding extracellular TPO-receptor). Used for chronic ITP refractory to first-line therapy, severe aplastic anemia (eltrombopag in combination with hATG + cyclosporine — RACE 2017 trial), HCV-associated thrombocytopenia, and chemotherapy-induced thrombocytopenia in selected cases. Class effects include hepatotoxicity (eltrombopag), thromboembolism (dose-related), bone marrow fibrosis (long-term concern), and cataract development with prolonged use. Effective contraception is required due to embryo-fetal toxicity.","class_effects":["Hepatotoxicity (eltrombopag — black box; LFT monitoring required)","Thromboembolic events (DVT, PE, MI, stroke; dose-related; especially patients with risk factors)","Bone marrow reticulin/collagen fibrosis (long-term; periodic peripheral smear surveillance)","Cataracts (long-term use; baseline + periodic ophthalmology)","Antibody formation (rare with romiplostim; reduces efficacy)","Hematologic malignancy progression (debated; small risk in MDS/AML evolution)","Headache, fatigue, nausea, increased ALT (common)"],"monitoring":["Platelet count weekly during titration → monthly stable","LFTs q2 weeks → monthly (eltrombopag)","Peripheral smear q3-6 months (leukoerythroblastic = marrow fibrosis)","Eye exam baseline + q1-2 years","Bone marrow biopsy if cytopenias"],"interactions":["Polyvalent cations (calcium, iron, magnesium, aluminum, zinc, antacids, dairy) — chelate eltrombopag; SEPARATE 2h before/4h after","OATP1B1 substrates (rosuvastatin) — eltrombopag inhibits → increased levels","CYP1A2/2C8 substrates — minor effects","Hepatotoxic drugs — additive (eltrombopag)"],"pregnancy":"Cat C — animal teratogenicity; effective contraception during + 7 days after last dose (eltrombopag) or duration appropriate for romiplostim","members":["eltrombopag","romiplostim"]},"Proximal Complement (Factor B / C3) Inhibitors":{"name":"Proximal Complement (Factor B / C3) Inhibitors","abbrev":"Proximal complement","class_color":"#7c3aed","moa_summary":"Proximal complement pathway inhibitors block alternative pathway upstream of C5 — addressing both intravascular hemolysis (membrane attack complex) AND extravascular hemolysis (C3 deposition + opsonization). Key agents: pegcetacoplan (proximal C3 inhibitor; subcutaneous twice-weekly via on-body infusor); iptacopan (oral factor B inhibitor; twice-daily). Distinct from terminal C5 inhibitors (eculizumab, ravulizumab) that block only intravascular hemolysis. Indications: paroxysmal nocturnal hemoglobinuria (PNH; particularly residual anemia on C5 inhibitors), IgA nephropathy (iptacopan FDA accelerated approval 2024 — APPLAUSE-IgAN). All complement inhibitors confer increased risk of meningococcal and encapsulated organism infections — vaccination + antibiotic prophylaxis essential.","class_effects":["MENINGOCOCCAL + ENCAPSULATED ORGANISM INFECTIONS (BLACK BOX) — Neisseria meningitidis, S. pneumoniae, H. influenzae","Hemolysis breakthrough (especially during transitions)","Hepatic enzyme elevations (mild)","Hypersensitivity reactions","Headache, nasopharyngitis, GI symptoms (common)"],"monitoring":["Hemolysis markers (LDH, Hb, haptoglobin) for PNH","Vaccination status (MenACWY + MenB; PCV; Hib)","Infection surveillance (especially first 2-4 weeks)","LFTs periodic","Pregnancy testing"],"interactions":["CYP3A4 inhibitors/inducers (iptacopan)","Other immunosuppressants — additive infection risk"],"pregnancy":"Limited data; effective contraception recommended; specialist decision","members":["pegcetacoplan","iptacopan"]},"Direct-Acting Skeletal Muscle Relaxants":{"name":"Direct-Acting Skeletal Muscle Relaxants","abbrev":"Direct-acting muscle relaxant","class_color":"#dc2626","moa_summary":"Direct-acting skeletal muscle relaxants act peripherally at the muscle (not central nervous system). DANTROLENE inhibits ryanodine receptor (RyR1) calcium release from sarcoplasmic reticulum — interrupting excitation-contraction coupling. Unique uses: malignant hyperthermia (lifesaving — 80% pre-dantrolene mortality reduced to <5%), neuroleptic malignant syndrome, severe spasticity (chronic). Distinct from centrally-acting muscle relaxants (cyclobenzaprine, baclofen, tizanidine, methocarbamol — CNS-mediated) and neuromuscular blocking agents (rocuronium, vecuronium — competitive nicotinic blockade at NMJ).","class_effects":["Muscle weakness (often dose-limiting; chronic use)","Hepatotoxicity (BLACK BOX — chronic dantrolene; rare fatal hepatic failure)","Drowsiness, fatigue","Diarrhea (chronic PO)","Phlebitis at IV site (highly alkaline pH ~9-10)","Pleural/pericardial effusions (eosinophilic; chronic)"],"monitoring":["LFTs (chronic PO use)","Muscle function/weakness","Temperature + ETCO2 + ECG during MH crisis","CK + electrolytes during MH/NMS"],"interactions":["VERAPAMIL + NDH-CCB during MH treatment — severe hyperkalemia + cardiovascular collapse (CONTRAINDICATED)","Other muscle relaxants — additive weakness","Hepatotoxic agents — additive (chronic dantrolene)","Estrogens — increased hepatotoxicity (women on OCP)"],"pregnancy":"Cat C; emergency MH use justified despite category; chronic use weigh risk-benefit","members":["dantrolene"]},"Antifungal Pyrimidine Analogues":{"name":"Antifungal Pyrimidine Analogues","abbrev":"Pyrimidine antifungals","class_color":"#7c3aed","moa_summary":"Fluorinated pyrimidine analogues (5-FC / flucytosine) act as antifungal prodrugs — taken up by fungal cytosine permease (humans lack significant uptake — selective toxicity), converted intracellularly to 5-fluorouracil (5-FU) → inhibits fungal DNA + RNA synthesis via thymidylate synthase + ribosomal RNA disruption. Spectrum: Cryptococcus neoformans, Candida species (some resistance), Saccharomyces. Rapid resistance with monotherapy → ALWAYS USE COMBINATION (typically with amphotericin B for cryptococcal meningitis induction).","class_effects":["Bone marrow toxicity (neutropenia, thrombocytopenia, anemia) — particularly with renal accumulation; CBC monitoring","Hepatotoxicity (LFT monitoring)","GI symptoms (nausea, vomiting, diarrhea — common ~25%)","Enterocolitis (severe, rare)","Teratogenicity (5-FU conversion; pregnancy contraindicated)"],"monitoring":["CBC twice weekly during induction","LFTs weekly","Renal function (dose adjust!)","Drug levels — TDM peak 30-80 mg/L","GI symptoms"],"interactions":["Amphotericin B — synergy intended (preferred combination); both nephrotoxic","Cytotoxic chemotherapy — additive marrow toxicity","Cidofovir, ganciclovir — additive marrow toxicity"],"pregnancy":"Contraindicated (5-FU teratogen)","members":["flucytosine"]}};
+  },"Antisense Oligonucleotides":{"name":"Antisense Oligonucleotides","abbrev":"ASO","class_color":"#7c3aed","moa_summary":"Antisense oligonucleotides (ASOs) are short synthetic single-stranded nucleic acids designed to bind complementary mRNA or pre-mRNA. Mechanisms: RNase H1-mediated cleavage of target RNA, modulation of pre-mRNA splicing (exon skipping/inclusion). Major applications: SMA (nusinersen — SMN2 exon 7 inclusion), DMD (eteplirsen, golodirsen, casimersen, viltolarsen — exon skipping). Chemical modifications (2'-MOE, phosphorothioate, morpholino) confer nuclease resistance + improved PK.","class_effects":["Thrombocytopenia (reversible class effect)","Proteinuria + glomerulonephritis (rare; class effect of phosphorothioate ASOs)","Injection site reactions (subcutaneous)","Post-lumbar puncture headache (intrathecal — nusinersen)","Hypersensitivity / infusion reactions","Coagulation abnormalities (rare)","Hepatic enzyme elevations"],"monitoring":["CBC + platelets baseline + before each dose","Urinalysis baseline + before each dose (proteinuria)","LFTs","Coagulation (selected)"],"interactions":["Few significant systemic drug interactions","Other ASOs — theoretical additive class effects"],"pregnancy":"Limited human data; varies by agent","members":["nusinersen","eteplirsen"]},"Thrombopoietin Receptor Agonists":{"name":"Thrombopoietin Receptor Agonists","abbrev":"TPO-RA","class_color":"#dc2626","moa_summary":"Thrombopoietin receptor (c-Mpl) agonists stimulate megakaryocyte proliferation and platelet production. Two main approved agents differ in mechanism + administration: eltrombopag (oral, small-molecule binding transmembrane domain — different site than endogenous TPO; also iron chelation effect supporting marrow recovery) and romiplostim (subcutaneous, peptibody — TPO mimetic binding extracellular TPO-receptor). Used for chronic ITP refractory to first-line therapy, severe aplastic anemia (eltrombopag in combination with hATG + cyclosporine — RACE 2017 trial), HCV-associated thrombocytopenia, and chemotherapy-induced thrombocytopenia in selected cases. Class effects include hepatotoxicity (eltrombopag), thromboembolism (dose-related), bone marrow fibrosis (long-term concern), and cataract development with prolonged use. Effective contraception is required due to embryo-fetal toxicity.","class_effects":["Hepatotoxicity (eltrombopag — black box; LFT monitoring required)","Thromboembolic events (DVT, PE, MI, stroke; dose-related; especially patients with risk factors)","Bone marrow reticulin/collagen fibrosis (long-term; periodic peripheral smear surveillance)","Cataracts (long-term use; baseline + periodic ophthalmology)","Antibody formation (rare with romiplostim; reduces efficacy)","Hematologic malignancy progression (debated; small risk in MDS/AML evolution)","Headache, fatigue, nausea, increased ALT (common)"],"monitoring":["Platelet count weekly during titration → monthly stable","LFTs q2 weeks → monthly (eltrombopag)","Peripheral smear q3-6 months (leukoerythroblastic = marrow fibrosis)","Eye exam baseline + q1-2 years","Bone marrow biopsy if cytopenias"],"interactions":["Polyvalent cations (calcium, iron, magnesium, aluminum, zinc, antacids, dairy) — chelate eltrombopag; SEPARATE 2h before/4h after","OATP1B1 substrates (rosuvastatin) — eltrombopag inhibits → increased levels","CYP1A2/2C8 substrates — minor effects","Hepatotoxic drugs — additive (eltrombopag)"],"pregnancy":"Cat C — animal teratogenicity; effective contraception during + 7 days after last dose (eltrombopag) or duration appropriate for romiplostim","members":["eltrombopag","romiplostim"]},"Proximal Complement (Factor B / C3) Inhibitors":{"name":"Proximal Complement (Factor B / C3) Inhibitors","abbrev":"Proximal complement","class_color":"#7c3aed","moa_summary":"Proximal complement pathway inhibitors block alternative pathway upstream of C5 — addressing both intravascular hemolysis (membrane attack complex) AND extravascular hemolysis (C3 deposition + opsonization). Key agents: pegcetacoplan (proximal C3 inhibitor; subcutaneous twice-weekly via on-body infusor); iptacopan (oral factor B inhibitor; twice-daily). Distinct from terminal C5 inhibitors (eculizumab, ravulizumab) that block only intravascular hemolysis. Indications: paroxysmal nocturnal hemoglobinuria (PNH; particularly residual anemia on C5 inhibitors), IgA nephropathy (iptacopan FDA accelerated approval 2024 — APPLAUSE-IgAN). All complement inhibitors confer increased risk of meningococcal and encapsulated organism infections — vaccination + antibiotic prophylaxis essential.","class_effects":["MENINGOCOCCAL + ENCAPSULATED ORGANISM INFECTIONS (BLACK BOX) — Neisseria meningitidis, S. pneumoniae, H. influenzae","Hemolysis breakthrough (especially during transitions)","Hepatic enzyme elevations (mild)","Hypersensitivity reactions","Headache, nasopharyngitis, GI symptoms (common)"],"monitoring":["Hemolysis markers (LDH, Hb, haptoglobin) for PNH","Vaccination status (MenACWY + MenB; PCV; Hib)","Infection surveillance (especially first 2-4 weeks)","LFTs periodic","Pregnancy testing"],"interactions":["CYP3A4 inhibitors/inducers (iptacopan)","Other immunosuppressants — additive infection risk"],"pregnancy":"Limited data; effective contraception recommended; specialist decision","members":["pegcetacoplan","iptacopan"]},"Direct-Acting Skeletal Muscle Relaxants":{"name":"Direct-Acting Skeletal Muscle Relaxants","abbrev":"Direct-acting muscle relaxant","class_color":"#dc2626","moa_summary":"Direct-acting skeletal muscle relaxants act peripherally at the muscle (not central nervous system). DANTROLENE inhibits ryanodine receptor (RyR1) calcium release from sarcoplasmic reticulum — interrupting excitation-contraction coupling. Unique uses: malignant hyperthermia (lifesaving — 80% pre-dantrolene mortality reduced to <5%), neuroleptic malignant syndrome, severe spasticity (chronic). Distinct from centrally-acting muscle relaxants (cyclobenzaprine, baclofen, tizanidine, methocarbamol — CNS-mediated) and neuromuscular blocking agents (rocuronium, vecuronium — competitive nicotinic blockade at NMJ).","class_effects":["Muscle weakness (often dose-limiting; chronic use)","Hepatotoxicity (BLACK BOX — chronic dantrolene; rare fatal hepatic failure)","Drowsiness, fatigue","Diarrhea (chronic PO)","Phlebitis at IV site (highly alkaline pH ~9-10)","Pleural/pericardial effusions (eosinophilic; chronic)"],"monitoring":["LFTs (chronic PO use)","Muscle function/weakness","Temperature + ETCO2 + ECG during MH crisis","CK + electrolytes during MH/NMS"],"interactions":["VERAPAMIL + NDH-CCB during MH treatment — severe hyperkalemia + cardiovascular collapse (CONTRAINDICATED)","Other muscle relaxants — additive weakness","Hepatotoxic agents — additive (chronic dantrolene)","Estrogens — increased hepatotoxicity (women on OCP)"],"pregnancy":"Cat C; emergency MH use justified despite category; chronic use weigh risk-benefit","members":["dantrolene"]},"Antifungal Pyrimidine Analogues":{"name":"Antifungal Pyrimidine Analogues","abbrev":"Pyrimidine antifungals","class_color":"#7c3aed","moa_summary":"Fluorinated pyrimidine analogues (5-FC / flucytosine) act as antifungal prodrugs — taken up by fungal cytosine permease (humans lack significant uptake — selective toxicity), converted intracellularly to 5-fluorouracil (5-FU) → inhibits fungal DNA + RNA synthesis via thymidylate synthase + ribosomal RNA disruption. Spectrum: Cryptococcus neoformans, Candida species (some resistance), Saccharomyces. Rapid resistance with monotherapy → ALWAYS USE COMBINATION (typically with amphotericin B for cryptococcal meningitis induction).","class_effects":["Bone marrow toxicity (neutropenia, thrombocytopenia, anemia) — particularly with renal accumulation; CBC monitoring","Hepatotoxicity (LFT monitoring)","GI symptoms (nausea, vomiting, diarrhea — common ~25%)","Enterocolitis (severe, rare)","Teratogenicity (5-FU conversion; pregnancy contraindicated)"],"monitoring":["CBC twice weekly during induction","LFTs weekly","Renal function (dose adjust!)","Drug levels — TDM peak 30-80 mg/L","GI symptoms"],"interactions":["Amphotericin B — synergy intended (preferred combination); both nephrotoxic","Cytotoxic chemotherapy — additive marrow toxicity","Cidofovir, ganciclovir — additive marrow toxicity"],"pregnancy":"Contraindicated (5-FU teratogen)","members":["flucytosine"]},"B-Complex Vitamins":{"name":"B-Complex Vitamins","abbrev":"B vitamins","class_color":"#10b981","moa_summary":"Water-soluble B-complex vitamins serve as essential coenzymes in metabolism. Key members: thiamine (B1 — pyruvate dehydrogenase, transketolase, α-KG dehydrogenase; deficiency → Wernicke encephalopathy), riboflavin (B2), niacin (B3), pantothenic acid (B5), pyridoxine (B6), biotin (B7), folate (B9), cobalamin (B12). Used for nutritional deficiencies, alcohol use disorder, malabsorption, refeeding syndrome prevention, hyperemesis gravidarum, congestive heart failure on chronic loop diuretic.","class_effects":["Generally well-tolerated; rare anaphylaxis with rapid IV thiamine","Niacin can cause flushing + hepatotoxicity","Pyridoxine excess → peripheral neuropathy"],"monitoring":["Clinical response","Folate + B12 levels often","LFTs (niacin)","Anaphylaxis post-IV thiamine"],"interactions":["GLUCOSE — must give thiamine BEFORE/CONCURRENT with IV glucose in malnourished/alcohol-dependent (Wernicke prevention)","Loop diuretics — thiamine depletion","Isoniazid — pyridoxine depletion","5-FU — thiamine + folate antagonism"],"pregnancy":"Generally safe; required in pregnancy","members":["thiamine"]}};
 var FAMILY_MAP = {
   "insulin_aspart": "Insulins",
   "insulin_lispro": "Insulins",
@@ -153685,7 +154408,7 @@ var FAMILY_MAP = {
   "suvorexant": "Orexin Receptor Antagonists",
   "acamprosate": "Glutamate Modulators",
   "disulfiram": "Aversion Therapy",
-  "thiamine": "Vitamin Supplements",
+  "thiamine": "B-Complex Vitamins",
   "topiramate": "Anticonvulsants",
   "donepezil": "Cholinesterase Inhibitors",
   "rivastigmine": "Cholinesterase Inhibitors",
@@ -164626,6 +165349,15 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "ODB LU specialty antifungal; cryptococcal meningitis + invasive fungal.",
     "luCode": "Verify current Ontario e-Formulary LU code for Ancobon (specialty antifungal — pCPA)",
     "notes": "Fluorinated pyrimidine; converts to 5-FU intracellular. CRYPTOCOCCAL MENINGITIS combination with Amph B (IDSA 2010, WHO 2022, AMBITION 2022). Always combination (rapid resistance). RENAL DOSE ADJUSTMENT essential. TDM peak 30-80 mg/L. Bone marrow toxicity (CBC 2×/wk). PREGNANCY CONTRAINDICATED (5-FU teratogen)."
+  },
+  "thiamine": {
+    "name": "Thiamine (vitamin B1) (Generic; Bewon (B-complex); Beneva (Canada))",
+    "napra": "U",
+    "napraDetail": "Unscheduled / OTC.",
+    "odbStatus": "General Benefit",
+    "odbDetail": "Available OTC + prescription. ODB General Benefit (oral 100 mg tablets); IV/IM also covered. INEXPENSIVE + WIDELY USED — emergency department, ICU, addictions, internal medicine routine. ALCOHOL USE DISORDER protocols — Canadian Centre on Substance Use + Addiction (CCSA) recommends thiamine for ALL ",
+    "luCode": null,
+    "notes": "Water-soluble vitamin; cofactor for carb metabolism. Wernicke 500 mg IV TID × 2-3 days then 250 mg/day. Give BEFORE/WITH glucose in alcohol-dependent/malnourished. Hyperemesis gravidarum, alcohol use disorder, refeeding syndrome, bariatric surgery. A"
   }
 };
 var MINOR_AILMENTS = [
@@ -191865,6 +192597,17 @@ var PREG_DATA = {
     "bfColor": "#dc2626",
     "pregDetail": "Cat C → CONTRAINDICATED essentially (converts to 5-FU; teratogen; embryo-lethal in animals). Effective contraception during + several months after. Breastfeeding: limited data; AVOID (transfer + 5-FU concerns).",
     "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada PM"
+  },
+  "thiamine": {
+    "name": "Thiamine (vitamin B1) (Generic; Bewon (B-complex); Beneva (Canada))",
+    "pregRisk": "Compatible",
+    "pregColor": "#10b981",
+    "bfRisk": "Compatible",
+    "bfColor": "#10b981",
+    "pregDetail": "Cat A — safe + indicated; pregnancy increases requirement to 1.4 mg/day; SEVERE HYPEREMESIS GRAVIDARUM may require IV/IM thiamine (Wernicke encephalopathy reported in HG; high-risk indication for IV supplementation). Breastfeeding: compatible.",
+    "bfDetail": "Compatible with breastfeeding (limited data may apply).",
     "alternatives": "",
     "source": "Health Canada PM"
   }
