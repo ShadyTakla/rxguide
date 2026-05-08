@@ -152268,7 +152268,7 @@ var DRUGS = {
       "Galactosemia (genetic disorder — galactose toxicity; lactase generates galactose which they cannot metabolize)"
     ],
     "interactions": [
-      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No significant drug interactions (acts locally; not absorbed systemically)","management":"No specific monitoring required."}
+      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No significant drug interactions (acts locally; not absorbed systemically)","management":"No specific monitoring required; routine clinical assessment."}
     ],
     "pregnancy": "Cat A. Safe in pregnancy; widely used. Compatible with lactose intolerance management during pregnancy. Breastfeeding: compatible (acts locally; mother takes it before consuming dairy).",
     "pk": "Oral: F minimal systemic (acts locally in gut); not absorbed; degraded by gastric acid + pancreatic proteases; co-administer with food (food buffers stomach acid + slows transit allowing enzyme activity).",
@@ -152326,9 +152326,9 @@ var DRUGS = {
       "Concurrent anticoagulants without close monitoring (additive bleeding)"
     ],
     "interactions": [
-      {"drug":"ANTICOAGULANTS (warfarin, DOACs, heparin)","severity":"Note","mechanism":"additive bleeding","management":"HOLD if possible"},
-      {"drug":"ANTIPLATELETS (aspirin, P2Y12 inhibitors)","severity":"Note","mechanism":"additive bleeding","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"NSAIDs","severity":"Note","mechanism":"increased bleeding risk","management":"See mechanism. Monitor clinically per drug-specific protocol."},
+      {"drug":"ANTICOAGULANTS (warfarin, DOACs, heparin)","severity":"Note","mechanism":"additive bleeding","management":"Monitor for bleeding signs (bruising, hematuria, melena, hemoptysis); HOLD pre-procedure per agent-specific guidance; consider INR/anti-Xa as appropriate."},
+      {"drug":"ANTIPLATELETS (aspirin, P2Y12 inhibitors)","severity":"Note","mechanism":"additive bleeding","management":"Monitor for bleeding signs (bruising, hematuria, melena, hemoptysis); HOLD pre-procedure per agent-specific guidance; consider INR/anti-Xa as appropriate."},
+      {"drug":"NSAIDs","severity":"Note","mechanism":"increased bleeding risk","management":"Monitor for bleeding signs (bruising, hematuria, melena, hemoptysis); HOLD pre-procedure per agent-specific guidance; consider INR/anti-Xa as appropriate."},
       {"drug":"RECENT SURGERY/TRAUMA <2 weeks","severity":"Moderate","mechanism":"caution","management":"consider hold if active bleeding"}
     ],
     "pregnancy": "Cat C / no human data. Limited human data; aTTP itself is high-risk pregnancy condition. Use only if clearly indicated. Breastfeeding: limited data; minimal data on milk transfer; cautious use.",
@@ -152398,10 +152398,10 @@ var DRUGS = {
       "Hypersensitivity"
     ],
     "interactions": [
-      {"drug":"VASOPRESSORS (norepinephrine, vasopressin)","severity":"Note","mechanism":"often combined therapeutically (offset hypotension)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"ANTIARRHYTHMICS","severity":"Note","mechanism":"additive QT/proarrhythmia","management":"See mechanism. Monitor clinically per drug-specific protocol."},
+      {"drug":"VASOPRESSORS (norepinephrine, vasopressin)","severity":"Note","mechanism":"often combined therapeutically (offset hypotension)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"ANTIARRHYTHMICS","severity":"Note","mechanism":"additive QT/proarrhythmia","management":"Monitor for additive effects per drug-specific monograph."},
       {"drug":"OTHER INOTROPES (dobutamine, dopamine, epinephrine)","severity":"Note","mechanism":"additive arrhythmia/oxygen demand","management":"specialist combination"},
-      {"drug":"CCBs (verapamil, diltiazem)","severity":"Note","mechanism":"additive negative effects","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"CCBs (verapamil, diltiazem)","severity":"Note","mechanism":"additive negative effects","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat C. Limited human data; reserve for life-threatening maternal indication. Breastfeeding: limited data; usually used in critical care setting transient use.",
     "pk": "IV: peak immediate; t1/2 ~2-3 hours (longer in HF + renal impairment); 70% protein-bound; renal excretion ~85% unchanged.",
@@ -152466,9 +152466,9 @@ var DRUGS = {
     "interactions": [
       {"drug":"DIPYRIDAMOLE","severity":"Moderate","mechanism":"POTENTIATES adenosine 4-8×","management":"REDUCE dose 50-75%; clinical pearl"},
       {"drug":"CAFFEINE / THEOPHYLLINE","severity":"Note","mechanism":"ANTAGONIZE adenosine (A2A receptor blockers)","management":"HOLD CAFFEINE 12-24 hours before stress test"},
-      {"drug":"CARBAMAZEPINE","severity":"Note","mechanism":"potentiates AV blockade","management":"See mechanism. Monitor clinically per drug-specific protocol."},
+      {"drug":"CARBAMAZEPINE","severity":"Note","mechanism":"potentiates AV blockade","management":"Monitor for additive effects per drug-specific monograph."},
       {"drug":"BETA-BLOCKERS, CCBs (verapamil/diltiazem), DIGOXIN","severity":"Moderate","mechanism":"additive AV blockade","management":"usually safe but caution"},
-      {"drug":"CARDIAC TRANSPLANT","severity":"Major","mechanism":"denervated heart hypersensitive (~5×)","management":"reduce dose 50%"}
+      {"drug":"CARDIAC TRANSPLANT","severity":"Major","mechanism":"denervated heart hypersensitive (~5×)","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."}
     ],
     "pregnancy": "Cat C. Limited human data; used acutely for SVT termination in pregnancy when needed (life-threatening maternal arrhythmia). Crosses placenta minimally given short t1/2. Breastfeeding: irrelevant given seconds-long t1/2.",
     "pk": "IV: peak immediate; t1/2 ~10 seconds (extremely short); degraded in red blood cells by adenosine deaminase + tissue uptake; no metabolism by liver/kidney; no dose adjustment for organ failure.",
@@ -152531,13 +152531,13 @@ var DRUGS = {
       "Severe hepatic impairment (relative)"
     ],
     "interactions": [
-      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"increase ivacaftor 8-9×: clarithromycin, ketoconazole, itraconazole, ritonavir/cobicistat — REDUCE dose to 150 mg TWICE WEEKLY (Mon + Thu) or alternative","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"reduce ivacaftor 90%: rifampin, rifabutin, phenytoin, phenobarbital, carbamazepine, ST. JOHN'S WORT — AVOID combination","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"GRAPEFRUIT JUICE / SEVILLE ORANGE","severity":"Major","mechanism":"increase levels","management":"AVOID"},
-      {"drug":"MODERATE CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"fluconazole, erythromycin: reduce to 150 mg ONCE DAILY","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"WARFARIN","severity":"Note","mechanism":"minor INR effects","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Other CFTR modulators","severity":"Note","mechanism":"used in combination","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"P-gp substrates","severity":"Note","mechanism":"minor interactions","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"increase ivacaftor 8-9×: clarithromycin, ketoconazole, itraconazole, ritonavir/cobicistat — REDUCE dose to 150 mg TWICE WEEKLY (Mon + Thu) or alternative","management":"Monitor for additive effects; dose adjustment may be required; consult drug-specific monograph."},
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"reduce ivacaftor 90%: rifampin, rifabutin, phenytoin, phenobarbital, carbamazepine, ST. JOHN'S WORT — AVOID combination","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"GRAPEFRUIT JUICE / SEVILLE ORANGE","severity":"Major","mechanism":"increase levels","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"MODERATE CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"fluconazole, erythromycin: reduce to 150 mg ONCE DAILY","management":"Monitor for additive effects; dose adjustment may be required; consult drug-specific monograph."},
+      {"drug":"WARFARIN","severity":"Note","mechanism":"minor INR effects","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Other CFTR modulators","severity":"Note","mechanism":"used in combination","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"P-gp substrates","severity":"Note","mechanism":"minor interactions","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat B. Limited human data; reasonable safety in CF pregnancy; CF pregnancies high-risk regardless. Continue ivacaftor in pregnancy if benefit (lung function maintained); specialist co-management. Breastfeeding: passes into milk; use cautiously; risk-benefit discussion (CF lung function vs infant exposure).",
     "pk": "Oral: F variable; F increases 2-4× with fat-containing food (mandatory); peak 4 hours; ~99% protein-bound; t1/2 ~12 hours; hepatic CYP3A4 metabolism extensively; biliary excretion.",
@@ -152596,7 +152596,7 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"Same CYP3A4 interactions as ivacaftor","severity":"Major","mechanism":"strong inhibitors increase, strong inducers reduce","management":"AVOID rifampin, St. John's Wort"},
-      {"drug":"GRAPEFRUIT JUICE","severity":"Major","mechanism":"avoid","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"GRAPEFRUIT JUICE","severity":"Major","mechanism":"avoid","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."}
     ],
     "pregnancy": "Cat B. Limited human data; CF pregnancy specialist management.",
     "pk": "Oral: F variable; food increases F; peak 4 hours; t1/2 ~14 hours; CYP3A4 hepatic metabolism + biliary excretion.",
@@ -152655,7 +152655,7 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"Same CYP3A4 interactions as ivacaftor","severity":"Major","mechanism":"strong inhibitors (clarithro, keto, ritonavir) → reduce dose","management":"strong inducers (rifampin, St. John's Wort) → AVOID combination"},
-      {"drug":"GRAPEFRUIT JUICE","severity":"Major","mechanism":"avoid","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"GRAPEFRUIT JUICE","severity":"Major","mechanism":"avoid","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."}
     ],
     "pregnancy": "Cat B. Reassuring data emerging from CF Foundation pregnancy registry; continue in pregnancy if benefit (improved CF outcomes); specialist co-management. Breastfeeding: passes into milk; cautious; risk-benefit (CF lung function vs infant exposure).",
     "pk": "Oral: F variable; food increases F 2-3×; peak 6 hours; t1/2 ~24 hours (TEZ ~14h, IVA ~12h); hepatic CYP3A4 metabolism extensively; biliary excretion. Long t1/2 supports once-daily morning + evening IVA dosing.",
@@ -152724,10 +152724,10 @@ var DRUGS = {
       "Concurrent strong CYP3A4 inhibitors (caution)"
     ],
     "interactions": [
-      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"increase relugolix levels (clarithromycin, ketoconazole, ritonavir) — caution","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"reduce levels: rifampin, phenytoin, carbamazepine, ST. JOHN'S WORT — AVOID combination","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"P-GP INHIBITORS","severity":"Note","mechanism":"modest level increases","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Anticoagulants (Myfembree)","severity":"Note","mechanism":"additive bleeding risk + VTE consideration","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"increase relugolix levels (clarithromycin, ketoconazole, ritonavir) — caution","management":"Monitor for additive effects; dose adjustment may be required; consult drug-specific monograph."},
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"reduce levels: rifampin, phenytoin, carbamazepine, ST. JOHN'S WORT — AVOID combination","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"P-GP INHIBITORS","severity":"Note","mechanism":"modest level increases","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Anticoagulants (Myfembree)","severity":"Note","mechanism":"additive bleeding risk + VTE consideration","management":"Monitor for bleeding signs (bruising, hematuria, melena, hemoptysis); HOLD pre-procedure per agent-specific guidance; consider INR/anti-Xa as appropriate."}
     ],
     "pregnancy": "Cat X (Myfembree). Strong contraception × treatment + 1 month after. Orgovyx — male prostate cancer; pregnancy not applicable. Breastfeeding: minimal data; AVOID Myfembree during lactation (risk to infant); Orgovyx — not relevant.",
     "pk": "Oral: F ~12% (relatively low); peak 2.25 hours; t1/2 ~25 hours (long); hepatic metabolism + biliary excretion; minor renal unchanged.",
@@ -152796,13 +152796,13 @@ var DRUGS = {
       "Pregnancy (Cat C)"
     ],
     "interactions": [
-      {"drug":"STRONG CYP2D6 INHIBITORS","severity":"Note","mechanism":"increase deutetrabenazine 2-3×: paroxetine, fluoxetine, bupropion, quinidine — REDUCE max dose to 36 mg/day","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"MAOIs","severity":"Contraindicated","mechanism":"CONTRAINDICATED (additive monoamine depletion)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"RESERPINE","severity":"Contraindicated","mechanism":"CONTRAINDICATED within 20 days","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"DOPAMINE AGONISTS","severity":"Note","mechanism":"antagonistic (Parkinson's drugs)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"ANTIPSYCHOTICS","severity":"Note","mechanism":"additive parkinsonism","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"QT-PROLONGING DRUGS","severity":"Note","mechanism":"additive QT effect","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"ALCOHOL, OPIOIDS, SEDATIVES","severity":"Note","mechanism":"additive CNS depression","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP2D6 INHIBITORS","severity":"Note","mechanism":"increase deutetrabenazine 2-3×: paroxetine, fluoxetine, bupropion, quinidine — REDUCE max dose to 36 mg/day","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"MAOIs","severity":"Contraindicated","mechanism":"CONTRAINDICATED (additive monoamine depletion)","management":"AVOID combination; if essential, consult specialist before co-administration."},
+      {"drug":"RESERPINE","severity":"Contraindicated","mechanism":"CONTRAINDICATED within 20 days","management":"AVOID combination; if essential, consult specialist before co-administration."},
+      {"drug":"DOPAMINE AGONISTS","severity":"Note","mechanism":"antagonistic (Parkinson's drugs)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"ANTIPSYCHOTICS","severity":"Note","mechanism":"additive parkinsonism","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"QT-PROLONGING DRUGS","severity":"Note","mechanism":"additive QT effect","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"ALCOHOL, OPIOIDS, SEDATIVES","severity":"Note","mechanism":"additive CNS depression","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat C. Limited human data; reserve for severe disability; reproductive counseling. Breastfeeding: limited data; cautious.",
     "pk": "Oral: F ~80%; peak 3-4 hours; ~80% protein-bound; t1/2 ~9-10 hours (vs tetrabenazine ~5 hours — DEUTERATION advantage); hepatic CYP2D6 metabolism primarily; biliary/renal excretion of metabolites.",
@@ -152874,11 +152874,11 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"increase dasatinib levels (clarithromycin, ketoconazole, ritonavir/cobicistat)","management":"reduce dose to 20-40 mg"},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels (rifampin, phenytoin, carbamazepine, St. John's Wort)","management":"AVOID combination"},
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels (rifampin, phenytoin, carbamazepine, St. John's Wort)","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
       {"drug":"PPIs / H2 blockers / antacids","severity":"Note","mechanism":"REDUCE absorption","management":"take dasatinib 2 hours before or 10 hours after — significant interaction"},
-      {"drug":"QT-PROLONGING DRUGS","severity":"Note","mechanism":"additive effect","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"WARFARIN","severity":"Note","mechanism":"possible INR effects","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"QT-PROLONGING DRUGS","severity":"Note","mechanism":"additive effect","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"WARFARIN","severity":"Note","mechanism":"possible INR effects","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity in animals; CONTRACEPTION required during + 30 days after; men contraception during + ≥3 months. Breastfeeding: AVOID.",
     "pk": "Oral: F variable (pH-dependent); peak 0.5-3 hours; ~96% protein-bound; t1/2 ~3-5 hours; hepatic CYP3A4 metabolism; biliary/fecal excretion 85%.",
@@ -152947,13 +152947,13 @@ var DRUGS = {
       "Severe peripheral arterial disease (relative — exacerbates)"
     ],
     "interactions": [
-      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Major","mechanism":"increase nilotinib levels","management":"reduce dose 50%"},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"AVOID"},
+      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Major","mechanism":"increase nilotinib levels","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
       {"drug":"PPIs / H2 BLOCKERS","severity":"Note","mechanism":"reduce absorption","management":"significant interaction"},
-      {"drug":"QT-PROLONGING DRUGS","severity":"Major","mechanism":"additive QT","management":"AVOID"},
+      {"drug":"QT-PROLONGING DRUGS","severity":"Major","mechanism":"additive QT","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
       {"drug":"STATINS","severity":"Note","mechanism":"pharmacokinetic + pharmacodynamic considerations","management":"combine for CV risk reduction (MEDITERRANEAN diet + statin + ASA after CV risk assessment)"},
-      {"drug":"WARFARIN","severity":"Note","mechanism":"INR monitoring","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"WARFARIN","severity":"Note","mechanism":"INR monitoring","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. CONTRACEPTION required + ≥1 month after; men ≥3 months. Breastfeeding: AVOID.",
     "pk": "Oral: F ~30% (food increases dramatically — REQUIRES empty stomach); peak 3 hours; ~98% protein-bound; t1/2 ~17 hours; CYP3A4 hepatic metabolism; biliary/fecal excretion.",
@@ -153020,12 +153020,12 @@ var DRUGS = {
       "Concurrent strong CYP3A4 inhibitors/inducers (caution + dose adjustment)"
     ],
     "interactions": [
-      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Major","mechanism":"increase levels","management":"reduce dose 50%"},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"AVOID"},
-      {"drug":"PPIs/H2 BLOCKERS","severity":"Major","mechanism":"REDUCE absorption (pH-dependent)","management":"separate or avoid"},
-      {"drug":"WARFARIN","severity":"Note","mechanism":"possible INR effects","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"TAKE WITH FOOD","severity":"Note","mechanism":"increases F by 60%","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Major","mechanism":"increase levels","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"PPIs/H2 BLOCKERS","severity":"Major","mechanism":"REDUCE absorption (pH-dependent)","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"WARFARIN","severity":"Note","mechanism":"possible INR effects","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"TAKE WITH FOOD","severity":"Note","mechanism":"increases F by 60%","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 30 days after; men ≥3 months. Breastfeeding: AVOID.",
     "pk": "Oral: F ~30% (food increases 60%); peak 4-6 hours; ~94% protein-bound; t1/2 ~22-27 hours; CYP3A4 hepatic metabolism; biliary/fecal excretion 91%.",
@@ -153096,11 +153096,11 @@ var DRUGS = {
       "Pregnancy (Cat D)"
     ],
     "interactions": [
-      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"increase levels","management":"reduce dose 30%"},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"AVOID"},
-      {"drug":"PPIs","severity":"Note","mechanism":"minor effect (less significant than other TKIs)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"WARFARIN, ANTIPLATELETS","severity":"Note","mechanism":"additive bleeding risk if VTE/HTN management requires","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"increase levels","management":"Monitor for additive effects; dose adjustment may be required; consult drug-specific monograph."},
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"PPIs","severity":"Note","mechanism":"minor effect (less significant than other TKIs)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"WARFARIN, ANTIPLATELETS","severity":"Note","mechanism":"additive bleeding risk if VTE/HTN management requires","management":"Monitor for bleeding signs (bruising, hematuria, melena, hemoptysis); HOLD pre-procedure per agent-specific guidance; consider INR/anti-Xa as appropriate."},
+      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 1 month after; men ≥3 months. Breastfeeding: AVOID.",
     "pk": "Oral: F ~50%; peak 4-6 hours; >99% protein-bound; t1/2 ~24 hours; CYP3A4 hepatic metabolism; biliary/fecal excretion.",
@@ -153168,10 +153168,10 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Moderate","mechanism":"modest increase","management":"reduce dose with caution"},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"AVOID"},
-      {"drug":"PPIs / H2 BLOCKERS","severity":"Note","mechanism":"minimal effect (advantage over other TKIs)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"WARFARIN","severity":"Note","mechanism":"minor effects","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"BCRP SUBSTRATES (rosuvastatin)","severity":"Note","mechanism":"modestly increased levels","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"PPIs / H2 BLOCKERS","severity":"Note","mechanism":"minimal effect (advantage over other TKIs)","management":"No specific monitoring required; routine clinical assessment."},
+      {"drug":"WARFARIN","severity":"Note","mechanism":"minor effects","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"BCRP SUBSTRATES (rosuvastatin)","severity":"Note","mechanism":"modestly increased levels","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 1 week after. Breastfeeding: AVOID.",
     "pk": "Oral: F variable; peak 2-3 hours; ~98% protein-bound; t1/2 ~7-15 hours; hepatic CYP3A4 + UGT2B7 metabolism; biliary/fecal excretion.",
@@ -153242,10 +153242,10 @@ var DRUGS = {
       "Pregnancy (Cat D)"
     ],
     "interactions": [
-      {"drug":"DIGOXIN","severity":"Note","mechanism":"cytarabine reduces digoxin absorption (gut mucosal damage)","management":"monitor"},
+      {"drug":"DIGOXIN","severity":"Note","mechanism":"cytarabine reduces digoxin absorption (gut mucosal damage)","management":"Monitor for additive effects per drug-specific monograph."},
       {"drug":"GENTAMICIN","severity":"Note","mechanism":"antagonism in vitro for K. pneumoniae","management":"clinical relevance unclear"},
-      {"drug":"FLUCYTOSINE","severity":"Note","mechanism":"antagonism","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"FLUCYTOSINE","severity":"Note","mechanism":"antagonism","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months post; men ≥3 months. Breastfeeding: AVOID.",
     "pk": "IV/SC: peak immediate; t1/2 ~2-3 hours; rapidly deaminated to inactive ara-U; <15% protein-bound; hepatic + RBC deamination; renal excretion of metabolites.",
@@ -153311,9 +153311,9 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"TRASTUZUMAB","severity":"Major","mechanism":"additive cardiotoxicity","management":"AVOID concurrent with anthracycline"},
-      {"drug":"CYCLOPHOSPHAMIDE","severity":"Major","mechanism":"additive cardiotoxicity (used together in regimens)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Other cardiotoxic agents","severity":"Note","mechanism":"Other cardiotoxic agents","management":"See mechanism. Monitor clinically."}
+      {"drug":"CYCLOPHOSPHAMIDE","severity":"Major","mechanism":"additive cardiotoxicity (used together in regimens)","management":"Baseline + serial echocardiogram (LVEF); cumulative dose monitoring; AVOID concurrent cardiotoxic agents."},
+      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"Other cardiotoxic agents","severity":"Note","mechanism":"Other cardiotoxic agents","management":"Baseline + serial echocardiogram (LVEF); cumulative dose monitoring; AVOID concurrent cardiotoxic agents."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months. Breastfeeding: AVOID.",
     "pk": "IV: rapid distribution; ~50% protein-bound; t1/2 biphasic ~45 min initial then ~25 hours terminal; hepatic CYP-independent metabolism to daunorubicinol (active); biliary/fecal excretion 40%.",
@@ -153378,8 +153378,8 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"VENETOCLAX (intentional combination Aza-Ven)","severity":"Beneficial","mechanism":"additive myelosuppression + TLS risk","management":"structured ramp + monitoring"},
-      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Strong CYP3A4 inhibitors with venetoclax","severity":"Note","mechanism":"significant venetoclax level increase","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"Strong CYP3A4 inhibitors with venetoclax","severity":"Note","mechanism":"significant venetoclax level increase","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months. Breastfeeding: AVOID.",
     "pk": "SC: F ~89%; peak 30 min; t1/2 ~41 min; rapid spontaneous + enzymatic deamination; <30% protein-bound; renal excretion of metabolites. Oral (Onureg): F ~10% (food increases ~80%); take with food.",
@@ -153447,10 +153447,10 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Major","mechanism":"increase midostaurin levels","management":"reduce dose; AVOID combinations with strong inhibitors"},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"AVOID"},
-      {"drug":"QT-PROLONGING DRUGS","severity":"Note","mechanism":"additive QT effect","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Anti-emetics (ondansetron, granisetron)","severity":"Note","mechanism":"additive QT minor effect","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"QT-PROLONGING DRUGS","severity":"Note","mechanism":"additive QT effect","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Anti-emetics (ondansetron, granisetron)","severity":"Note","mechanism":"additive QT minor effect","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"increases levels","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 4 months. Breastfeeding: AVOID.",
     "pk": "Oral: F variable; food increases ~50%; peak 1-3 hours; >99.8% protein-bound; t1/2 ~21 hours (parent); active metabolites CGP62221 + CGP52421 (long t1/2); CYP3A4 hepatic metabolism; biliary/fecal excretion.",
@@ -153515,11 +153515,11 @@ var DRUGS = {
       "Severe hepatic impairment (relative)"
     ],
     "interactions": [
-      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Note","mechanism":"increase gilteritinib levels","management":"modest effect"},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"AVOID combinations"},
-      {"drug":"QT-PROLONGING DRUGS","severity":"Note","mechanism":"additive effect","management":"monitor"},
+      {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Note","mechanism":"increase gilteritinib levels","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease levels","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"QT-PROLONGING DRUGS","severity":"Note","mechanism":"additive effect","management":"Monitor for additive effects per drug-specific monograph."},
       {"drug":"P-GP / BCRP SUBSTRATES","severity":"Note","mechanism":"gilteritinib inhibits","management":"monitor narrow-therapeutic-index substrates"},
-      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"modest level increase","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"GRAPEFRUIT JUICE","severity":"Note","mechanism":"modest level increase","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months. Breastfeeding: AVOID.",
     "pk": "Oral: F unknown but extensive; peak 4-6 hours; >90% protein-bound; t1/2 ~113 hours (long; once-daily dosing); CYP3A4 hepatic metabolism; biliary/fecal excretion 65%.",
@@ -153585,9 +153585,9 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"VALPROIC ACID","severity":"Note","mechanism":"slight reduction in temozolomide clearance","management":"usually clinically insignificant"},
-      {"drug":"WARFARIN","severity":"Note","mechanism":"possible INR effects","management":"monitor"},
-      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID during treatment + ≥6 months post","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"CYTOTOXIC AGENTS","severity":"Note","mechanism":"additive myelosuppression","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"WARFARIN","severity":"Note","mechanism":"possible INR effects","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID during treatment + ≥6 months post","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"CYTOTOXIC AGENTS","severity":"Note","mechanism":"additive myelosuppression","management":"CBC 2–3× weekly during co-administration; HOLD or reduce dose if severe cytopenia develops."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity (DNA-damaging alkylator). Contraception during + ≥6 months post; men: contraception + ≥3 months post (sperm DNA damage). Breastfeeding: AVOID.",
     "pk": "Oral: F ~96-100%; peak 0.5-1.5 hours; rapid hydrolysis to MTIC; t1/2 ~1.8 hours; <15% protein-bound; renal excretion of metabolites; food reduces F ~30% (take empty stomach).",
@@ -153662,10 +153662,10 @@ var DRUGS = {
     "interactions": [
       {"drug":"STRONG CYP3A4 INHIBITORS","severity":"Major","mechanism":"increase neurotoxicity (clarithromycin, ketoconazole, itraconazole, ritonavir/cobicistat)","management":"AVOID combinations or severe neuropathy"},
       {"drug":"ITRACONAZOLE / VORICONAZOLE specifically associated with severe vincristine neurotoxicity","severity":"Moderate","mechanism":"caution + dose reduction","management":"consider posaconazole alternative"},
-      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease efficacy","management":"AVOID"},
-      {"drug":"L-ASPARAGINASE","severity":"Note","mechanism":"schedule sequentially (asparaginase given AFTER vincristine","management":"reduces clearance)"},
-      {"drug":"MITOMYCIN","severity":"Note","mechanism":"bronchospasm with combination","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"DIGOXIN","severity":"Note","mechanism":"vincristine reduces digoxin absorption","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP3A4 INDUCERS","severity":"Major","mechanism":"decrease efficacy","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"L-ASPARAGINASE","severity":"Note","mechanism":"schedule sequentially (asparaginase given AFTER vincristine","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"MITOMYCIN","severity":"Note","mechanism":"bronchospasm with combination","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"DIGOXIN","severity":"Note","mechanism":"vincristine reduces digoxin absorption","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months post; men: 3 months. Breastfeeding: AVOID.",
     "pk": "IV: triphasic; t1/2 terminal ~85 hours; 75% protein-bound; hepatic CYP3A4 metabolism extensively; biliary excretion 80%; minimal CNS penetration.",
@@ -153735,10 +153735,10 @@ var DRUGS = {
       "Pregnancy (Cat D)"
     ],
     "interactions": [
-      {"drug":"STEROIDS (dexamethasone, prednisone)","severity":"Note","mechanism":"additive hyperglycemia + thrombosis risk (used in regimens — accept + monitor)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"METHOTREXATE","severity":"Note","mechanism":"schedule asparaginase AFTER methotrexate (asparaginase reduces methotrexate efficacy)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"VINCRISTINE","severity":"Note","mechanism":"schedule vincristine BEFORE asparaginase (asparaginase reduces vincristine clearance)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Anticoagulants (warfarin)","severity":"Note","mechanism":"additive bleeding/thrombosis complexity","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STEROIDS (dexamethasone, prednisone)","severity":"Note","mechanism":"additive hyperglycemia + thrombosis risk (used in regimens — accept + monitor)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"METHOTREXATE","severity":"Note","mechanism":"schedule asparaginase AFTER methotrexate (asparaginase reduces methotrexate efficacy)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"VINCRISTINE","severity":"Note","mechanism":"schedule vincristine BEFORE asparaginase (asparaginase reduces vincristine clearance)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Anticoagulants (warfarin)","severity":"Note","mechanism":"additive bleeding/thrombosis complexity","management":"Monitor for bleeding signs (bruising, hematuria, melena, hemoptysis); HOLD pre-procedure per agent-specific guidance; consider INR/anti-Xa as appropriate."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months. Breastfeeding: AVOID.",
     "pk": "IV: peak immediate; IM: peak 24-72h; t1/2 ~5.7 days (vs native asparaginase 1.2 days); plasma asparagine depletion sustained 14+ days; not metabolized via CYP; reticuloendothelial system clearance.",
@@ -153805,11 +153805,11 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"ALLOPURINOL (or febuxostat)","severity":"Note","mechanism":"INHIBITS xanthine oxidase → INCREASES 6-MP toxic metabolites SIGNIFICANTLY","management":"REDUCE 6-MP DOSE 75% (CRITICAL pearl)"},
-      {"drug":"FEBUXOSTAT","severity":"Major","mechanism":"same mechanism as allopurinol","management":"major interaction"},
-      {"drug":"WARFARIN","severity":"Note","mechanism":"INR may decrease (variable","management":"monitor)"},
+      {"drug":"FEBUXOSTAT","severity":"Major","mechanism":"same mechanism as allopurinol","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"WARFARIN","severity":"Note","mechanism":"INR may decrease (variable","management":"Monitor for additive effects per drug-specific monograph."},
       {"drug":"AMINOSALICYLATES (mesalamine, sulfasalazine, balsalazide)","severity":"Note","mechanism":"inhibit TPMT → may increase 6-MP toxicity","management":"monitor CBC + LFTs (especially in IBD combinations)"},
-      {"drug":"METHOTREXATE","severity":"Beneficial","mechanism":"synergistic in ALL (intentional combination)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID during treatment + ≥3 months","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"METHOTREXATE","severity":"Beneficial","mechanism":"synergistic in ALL (intentional combination)","management":"INTENTIONAL combination — monitor for additive effects per regimen-specific protocol."},
+      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID during treatment + ≥3 months","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity in first trimester. Risk-benefit; specialist guidance. Many IBD patients continue azathioprine/6-MP through pregnancy with good outcomes per modern data (PIANO registry). Breastfeeding: passes into milk; AAP cautions; some pediatric/IBD experts considered OK if low-dose maintenance.",
     "pk": "Oral: F ~50% (variable; reduces ~40% with food/dairy); peak 1-2 hours; ~20% protein-bound; t1/2 ~1 hour (parent); active metabolites (TGN) intracellular t1/2 longer; hepatic metabolism via TPMT, xanthine oxidase, hypoxanthine-guanine phosphoribosyltransferase; renal excretion of metabolites.",
@@ -153876,8 +153876,8 @@ var DRUGS = {
     "interactions": [
       {"drug":"VENETOCLAX (intentional Dec-Ven)","severity":"Note","mechanism":"additive myelosuppression + TLS risk","management":"structured ramp + monitoring"},
       {"drug":"STRONG CYP3A4 INHIBITORS with venetoclax","severity":"Note","mechanism":"significant venetoclax level increase","management":"reduce venetoclax 75% with posaconazole/voriconazole/clarithromycin"},
-      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"INQOVI","severity":"Note","mechanism":"take EMPTY STOMACH; CYP enzyme inhibitors/inducers minor relevance","management":"Monitor clinically per drug-specific protocol."}
+      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"INQOVI","severity":"Note","mechanism":"take EMPTY STOMACH; CYP enzyme inhibitors/inducers minor relevance","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D. Embryofetal toxicity. Contraception during + 6 months; men: 3 months. Breastfeeding: AVOID.",
     "pk": "IV: peak immediate; t1/2 ~30 min; rapid + extensive deamination by cytidine deaminase; renal excretion of metabolites. Oral (Inqovi): cedazuridine inhibits cytidine deaminase enabling oral absorption; F enhanced; peak 1-3 hours.",
@@ -153941,8 +153941,8 @@ var DRUGS = {
       "Severe scoliosis precluding LP"
     ],
     "interactions": [
-      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No known significant systemic drug interactions (intrathecal; minimal systemic exposure)","management":"No specific monitoring required."},
-      {"drug":"Other ASOs (theoretical","severity":"Note","mechanism":"Other ASOs (theoretical; clinical relevance unclear)","management":"See mechanism. Monitor clinically."}
+      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No known significant systemic drug interactions (intrathecal; minimal systemic exposure)","management":"No specific monitoring required; routine clinical assessment."},
+      {"drug":"Other ASOs (theoretical","severity":"Note","mechanism":"Other ASOs (theoretical; clinical relevance unclear)","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat C. Limited human data; reasonable use in pregnant SMA patients (continue if benefit). Breastfeeding: not detected in milk in animal studies; cautious use.",
     "pk": "Intrathecal: peak in CSF immediate; t1/2 in CSF ~135-177 days (long; once every 4 months maintenance); low systemic exposure (~2% of CSF levels); not metabolized via CYP; renal excretion of metabolites.",
@@ -154009,18 +154009,18 @@ var DRUGS = {
       "Severe bradycardia / AV block (relative)"
     ],
     "interactions": [
-      {"drug":"SUCCINYLCHOLINE","severity":"Note","mechanism":"pyridostigmine prolongs depolarizing neuromuscular blockade (BBW potential prolonged paralysis)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
+      {"drug":"SUCCINYLCHOLINE","severity":"Note","mechanism":"pyridostigmine prolongs depolarizing neuromuscular blockade (BBW potential prolonged paralysis)","management":"Monitor for additive effects per drug-specific monograph."},
       {"drug":"AMINOGLYCOSIDES","severity":"Note","mechanism":"worsen MG","management":"use cautiously (increase MG severity)"},
       {"drug":"FLUOROQUINOLONES","severity":"Major","mechanism":"worsen MG","management":"AVOID in MG (especially ciprofloxacin, levofloxacin, moxifloxacin)"},
-      {"drug":"MACROLIDES (azithromycin, clarithromycin, erythromycin)","severity":"Moderate","mechanism":"worsen MG","management":"caution"},
-      {"drug":"BETA-BLOCKERS","severity":"Note","mechanism":"worsen MG (block ACh release at NMJ)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"CALCIUM CHANNEL BLOCKERS","severity":"Note","mechanism":"worsen MG","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"TELITHROMYCIN","severity":"Note","mechanism":"BBW for MG worsening","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"LIDOCAINE, PROCAINAMIDE, QUINIDINE, QUININE","severity":"Note","mechanism":"worsen MG","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"MAGNESIUM SULFATE (especially IV)","severity":"Note","mechanism":"worsens MG severely (block neuromuscular transmission)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"STATINS","severity":"Note","mechanism":"possible MG exacerbation (uncertain mechanism)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"NMB AGENTS (pancuronium, rocuronium, vecuronium)","severity":"Note","mechanism":"pyridostigmine reverses (intentional anesthesia use)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"ATROPINE / SCOPOLAMINE / GLYCOPYRROLATE","severity":"Note","mechanism":"antagonize muscarinic effects (may be intentional with NMB reversal)","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"MACROLIDES (azithromycin, clarithromycin, erythromycin)","severity":"Moderate","mechanism":"worsen MG","management":"Monitor for additive effects; dose adjustment may be required; consult drug-specific monograph."},
+      {"drug":"BETA-BLOCKERS","severity":"Note","mechanism":"worsen MG (block ACh release at NMJ)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"CALCIUM CHANNEL BLOCKERS","severity":"Note","mechanism":"worsen MG","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"TELITHROMYCIN","severity":"Note","mechanism":"BBW for MG worsening","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"LIDOCAINE, PROCAINAMIDE, QUINIDINE, QUININE","severity":"Note","mechanism":"worsen MG","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"MAGNESIUM SULFATE (especially IV)","severity":"Note","mechanism":"worsens MG severely (block neuromuscular transmission)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"STATINS","severity":"Note","mechanism":"possible MG exacerbation (uncertain mechanism)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"NMB AGENTS (pancuronium, rocuronium, vecuronium)","severity":"Note","mechanism":"pyridostigmine reverses (intentional anesthesia use)","management":"INTENTIONAL combination — monitor for additive effects per regimen-specific protocol."},
+      {"drug":"ATROPINE / SCOPOLAMINE / GLYCOPYRROLATE","severity":"Note","mechanism":"antagonize muscarinic effects (may be intentional with NMB reversal)","management":"INTENTIONAL combination — monitor for additive effects per regimen-specific protocol."}
     ],
     "pregnancy": "Cat C. Crosses placenta minimally; widely used in MG pregnancy; continue if needed for muscle function; specialist neurology + obstetric care. Breastfeeding: minimal milk transfer; AAP/LactMed considers compatible.",
     "pk": "Oral: F ~10-20% (poor; significant first-pass); peak 2-4 hours IR; t1/2 ~3-4 hours IR; ER ~6 hours; not protein-bound; minimal hepatic metabolism; renal excretion 80-90% unchanged; HD-removable.",
@@ -154075,7 +154075,7 @@ var DRUGS = {
       "Hypersensitivity to eteplirsen"
     ],
     "interactions": [
-      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No significant systemic drug interactions documented","management":"No specific monitoring required."}
+      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No significant systemic drug interactions documented","management":"No specific monitoring required; routine clinical assessment."}
     ],
     "pregnancy": "Cat C. Limited data; DMD patient population predominantly male.",
     "pk": "IV: peak immediate; t1/2 ~3-4 hours; minimal protein binding; renal excretion of intact ASO; not metabolized by CYP.",
@@ -154144,8 +154144,8 @@ var DRUGS = {
       "Hypersensitivity to prostaglandins"
     ],
     "interactions": [
-      {"drug":"Other oxytocics","severity":"Beneficial","mechanism":"additive effects (synergistic with oxytocin which is desired)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"NSAIDs","severity":"Note","mechanism":"may attenuate (theoretical)","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"Other oxytocics","severity":"Beneficial","mechanism":"additive effects (synergistic with oxytocin which is desired)","management":"INTENTIONAL combination — monitor for additive effects per regimen-specific protocol."},
+      {"drug":"NSAIDs","severity":"Note","mechanism":"may attenuate (theoretical)","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat C — used postpartum, not antepartum. Used for second-trimester termination. Breastfeeding: brief exposure; compatible.",
     "pk": "IM peak 30 minutes; metabolized by 15-OH-prostaglandin dehydrogenase; t1/2 ~8 minutes (parent drug); active metabolite longer; renal + hepatic excretion.",
@@ -154170,7 +154170,8 @@ var DRUGS = {
       "Temperature",
       "GI symptoms"
     ],
-    "patient_counseling": "Used for severe postpartum bleeding. Side effects nausea, diarrhea, fever, flushing common. Tell us if shortness of breath."
+    "patient_counseling": "Used for severe postpartum bleeding. Side effects nausea, diarrhea, fever, flushing common. Tell us if shortness of breath.",
+    "source": "SOGC Postpartum Hemorrhage Guidelines 2022; Health Canada PM Hemabate; ACOG Practice Bulletin Postpartum Hemorrhage 2017."
   },
   "nitroprusside": {
     "name": "Sodium nitroprusside",
@@ -154220,9 +154221,9 @@ var DRUGS = {
       "Pregnancy (relative — fetal cyanide accumulation)"
     ],
     "interactions": [
-      {"drug":"Other antihypertensives","severity":"Note","mechanism":"additive (intended for titration)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Sildenafil + PDE5 inhibitors","severity":"Note","mechanism":"severe hypotension","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Riluzole, methotrexate","severity":"Note","mechanism":"minimal direct","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"Other antihypertensives","severity":"Note","mechanism":"additive (intended for titration)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Sildenafil + PDE5 inhibitors","severity":"Note","mechanism":"severe hypotension","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Riluzole, methotrexate","severity":"Note","mechanism":"minimal direct","management":"No specific monitoring required; routine clinical assessment."}
     ],
     "pregnancy": "Cat C — fetal cyanide accumulation; AVOID — alternatives labetalol, hydralazine, nicardipine. Breastfeeding: limited data; brief use compatible.",
     "pk": "IV onset <30 seconds; offset 1-2 minutes; non-enzymatic + enzymatic (rhodanase) conversion to cyanide → thiocyanate; thiocyanate t1/2 ~3 days normal renal, prolonged in CKD.",
@@ -154249,7 +154250,8 @@ var DRUGS = {
       "Urine output",
       "ScvO2 (elevated in cyanide tox)"
     ],
-    "patient_counseling": "Critical care medication delivered by infusion. Used to lower very high blood pressure or in heart failure or aortic dissection."
+    "patient_counseling": "Critical care medication delivered by infusion. Used to lower very high blood pressure or in heart failure or aortic dissection.",
+    "source": "AHA/ACC Hypertensive Emergency 2017; ESC Acute Heart Failure 2021; Health Canada PM Nitroprusside; Critical Care Medicine reviews."
   },
   "primidone": {
     "name": "Primidone",
@@ -154295,11 +154297,11 @@ var DRUGS = {
       "Severe respiratory insufficiency"
     ],
     "interactions": [
-      {"drug":"STRONG CYP3A4/CYP2C9/CYP2C19 INDUCER (via phenobarbital)","severity":"Contraindicated","mechanism":"reduces levels of WARFARIN, DOACs (apixaban, rivaroxaban contraindicated), oral contraceptives (recommend backup), corticosteroids, lamotrigine, valproate, antiretrovirals, immunosuppressants","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"ALCOHOL + CNS DEPRESSANTS","severity":"Note","mechanism":"additive sedation/respiratory depression","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"FOLATE depletion","severity":"Note","mechanism":"supplement","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"VITAMIN D","severity":"Note","mechanism":"supplement chronic use","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Phenytoin","severity":"Note","mechanism":"bidirectional interaction (variable)","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP3A4/CYP2C9/CYP2C19 INDUCER (via phenobarbital)","severity":"Contraindicated","mechanism":"reduces levels of WARFARIN, DOACs (apixaban, rivaroxaban contraindicated), oral contraceptives (recommend backup), corticosteroids, lamotrigine, valproate, antiretrovirals, immunosuppressants","management":"AVOID combination; if essential, consult specialist before co-administration."},
+      {"drug":"ALCOHOL + CNS DEPRESSANTS","severity":"Note","mechanism":"additive sedation/respiratory depression","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"FOLATE depletion","severity":"Note","mechanism":"supplement","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"VITAMIN D","severity":"Note","mechanism":"supplement chronic use","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Phenytoin","severity":"Note","mechanism":"bidirectional interaction (variable)","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat D — TERATOGENIC (cleft lip/palate, cardiac defects, neural tube defects); avoid pregnancy; if essential tremor, propranolol or topiramate preferred. Breastfeeding: significant transfer (phenobarbital long t1/2) — sedation in infant; avoid or use lowest dose with infant monitoring.",
     "pk": "PO well absorbed; t1/2 primidone ~10-15 h; phenobarbital active metabolite t1/2 ~80-100 h (LONG); PEMA t1/2 ~24 h; CYP-mediated metabolism + renal/biliary excretion; INDUCES OWN METABOLISM.",
@@ -154326,7 +154328,8 @@ var DRUGS = {
       "Folate",
       "Vitamin D 25-OH"
     ],
-    "patient_counseling": "Take at bedtime — first-dose extreme drowsiness expected (start very low). Avoid alcohol. Tells us if rash, depression, signs of bleeding. Many drug interactions — review with pharmacist. Pregnancy planning."
+    "patient_counseling": "Take at bedtime — first-dose extreme drowsiness expected (start very low). Avoid alcohol. Tells us if rash, depression, signs of bleeding. Many drug interactions — review with pharmacist. Pregnancy planning.",
+    "source": "AAN Essential Tremor 2011 (updated 2024); Health Canada PM Mysoline; ILAE Treatment Guidelines."
   },
   "ropeginterferon_alfa_2b": {
     "name": "Ropeginterferon alfa-2b",
@@ -154377,11 +154380,11 @@ var DRUGS = {
       "Hypersensitivity to interferon"
     ],
     "interactions": [
-      {"drug":"CYP1A2 substrates (theophylline)","severity":"Note","mechanism":"interferon may increase levels","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Myelosuppressive drugs","severity":"Note","mechanism":"additive cytopenias","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Hepatotoxic drugs","severity":"Major","mechanism":"additive hepatotoxicity","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Methadone","severity":"Note","mechanism":"interferons may increase levels","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Live vaccines","severity":"Major","mechanism":"avoid (immunosuppression theoretical)","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"CYP1A2 substrates (theophylline)","severity":"Note","mechanism":"interferon may increase levels","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Myelosuppressive drugs","severity":"Note","mechanism":"additive cytopenias","management":"CBC 2–3× weekly during co-administration; HOLD or reduce dose if severe cytopenia develops."},
+      {"drug":"Hepatotoxic drugs","severity":"Major","mechanism":"additive hepatotoxicity","management":"Monitor LFTs (ALT, AST, bilirubin) baseline + monthly; HOLD if ALT >3–5× ULN with symptoms or >5× asymptomatic."},
+      {"drug":"Methadone","severity":"Note","mechanism":"interferons may increase levels","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Live vaccines","severity":"Major","mechanism":"avoid (immunosuppression theoretical)","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."}
     ],
     "pregnancy": "Cat C — limited human data; PROUD-PV excluded pregnancy; effective contraception during + 6 months after treatment for women + men. Breastfeeding: limited data; high molecular weight reduces transfer; cautious use.",
     "pk": "SC absorption peak 2-4 days; t1/2 ~6 days (long-acting due to mono-pegylation); minimal renal clearance; mostly catabolized; q2-week → q4-week dosing.",
@@ -154412,7 +154415,8 @@ var DRUGS = {
       "Lipase if abdominal pain",
       "ANA if autoimmune symptoms"
     ],
-    "patient_counseling": "SC injection q2 weeks. Flu-like symptoms common initially — improve with acetaminophen; resolve over weeks. Tell us if persistent low mood, suicidal thoughts. Tell us if eye symptoms, severe fatigue, jaundice, joint pain. Effective contraception during + 6 months after."
+    "patient_counseling": "SC injection q2 weeks. Flu-like symptoms common initially — improve with acetaminophen; resolve over weeks. Tell us if persistent low mood, suicidal thoughts. Tell us if eye symptoms, severe fatigue, jaundice, joint pain. Effective contraception during + 6 months after.",
+    "source": "PROUD-PV / CONTINUATION-PV Gisslinger 2020 Lancet Hematology; ELN Polycythemia Vera Recommendations 2018; Health Canada PM Besremi 2021; CADTH Reimbursement Review 2022."
   },
   "obeticholic_acid": {
     "name": "Obeticholic acid",
@@ -154459,9 +154463,9 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"BILE ACID SEQUESTRANTS (cholestyramine, colesevelam, colestipol)","severity":"Note","mechanism":"bind obeticholic acid","management":"SEPARATE by ≥4-6 hours"},
-      {"drug":"WARFARIN","severity":"Note","mechanism":"INR monitoring (FXR effects on coagulation factors theoretical)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"CYP1A2 substrates (theophylline, tizanidine, R-warfarin)","severity":"Note","mechanism":"obeticholic acid may increase levels (mild)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"STATINS","severity":"Major","mechanism":"potential additive hepatotoxicity","management":"LFT monitoring"}
+      {"drug":"WARFARIN","severity":"Note","mechanism":"INR monitoring (FXR effects on coagulation factors theoretical)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"CYP1A2 substrates (theophylline, tizanidine, R-warfarin)","severity":"Note","mechanism":"obeticholic acid may increase levels (mild)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"STATINS","severity":"Major","mechanism":"potential additive hepatotoxicity","management":"Monitor LFTs (ALT, AST, bilirubin) baseline + monthly; HOLD if ALT >3–5× ULN with symptoms or >5× asymptomatic."}
     ],
     "pregnancy": "Cat B (limited human data; animal data benign). Breastfeeding: minimal data; high protein binding suggests low transfer; specialist decision.",
     "pk": "PO bioavailability variable; extensive enterohepatic recirculation; metabolized to glycine + taurine conjugates (active); fecal excretion primary; minimal renal; t1/2 of conjugates ~150-180 hours (long-acting).",
@@ -154488,7 +154492,8 @@ var DRUGS = {
       "Liver elastography (Fibroscan) q1-2 years",
       "Hepatic decompensation signs at every visit (ascites, jaundice, encephalopathy)"
     ],
-    "patient_counseling": "Once-daily oral. Pruritus very common — antihistamines, cholestyramine adjunct. Tell us if worsening jaundice, swelling, confusion, severe pruritus. Take 4-6 hours from cholestyramine if used together."
+    "patient_counseling": "Once-daily oral. Pruritus very common — antihistamines, cholestyramine adjunct. Tell us if worsening jaundice, swelling, confusion, severe pruritus. Take 4-6 hours from cholestyramine if used together.",
+    "source": "AASLD PBC Guidance 2018/2021; POISE Trial Nevens 2016 NEJM; BEZURSO Trial Corpechot 2018 NEJM; Health Canada PM Ocaliva."
   },
   "benzathine_penicillin_g": {
     "name": "Benzathine Penicillin G",
@@ -154542,8 +154547,8 @@ var DRUGS = {
       "Hypersensitivity to other β-lactams (cross-reactivity ~1-10% cephalosporins; less with newer)"
     ],
     "interactions": [
-      {"drug":"Probenecid","severity":"Beneficial","mechanism":"increases penicillin levels (used therapeutically for neurosyphilis with procaine PCN G)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Methotrexate","severity":"Note","mechanism":"penicillins reduce renal clearance → increased MTX levels + toxicity","management":"See mechanism. Monitor clinically per drug-specific protocol."},
+      {"drug":"Probenecid","severity":"Beneficial","mechanism":"increases penicillin levels (used therapeutically for neurosyphilis with procaine PCN G)","management":"INTENTIONAL combination — monitor for additive effects per regimen-specific protocol."},
+      {"drug":"Methotrexate","severity":"Note","mechanism":"penicillins reduce renal clearance → increased MTX levels + toxicity","management":"Monitor renal function (SCr, eGFR) baseline + weekly; dose adjust per CrCl; avoid combination with additional nephrotoxins."},
       {"drug":"Tetracyclines","severity":"Note","mechanism":"antagonism (bacteriostatic vs bactericidal — theoretical","management":"usually clinically minor)"},
       {"drug":"Oral contraceptives","severity":"Note","mechanism":"penicillins theoretically reduce efficacy (limited evidence","management":"backup contraception not routinely advised)"}
     ],
@@ -154575,7 +154580,8 @@ var DRUGS = {
       "Syphilis post-treatment — RPR/VDRL serology at 6, 12, 24 months (4-fold drop = treatment success)",
       "Pregnancy syphilis — fetal monitoring during/post-treatment (Herxheimer fetal distress); RPR + delivery; congenital syphilis evaluation neonate"
     ],
-    "patient_counseling": "IM injection in buttock or thigh — uncomfortable. Stay 30 min after for monitoring. Tell us about penicillin allergy. Possible flu-like symptoms first 24 hours after syphilis treatment (Jarisch-Herxheimer reaction — expected). Follow-up blood test required to confirm treatment worked. If pregnant — this is the only safe + effective syphilis treatment for your baby."
+    "patient_counseling": "IM injection in buttock or thigh — uncomfortable. Stay 30 min after for monitoring. Tell us about penicillin allergy. Possible flu-like symptoms first 24 hours after syphilis treatment (Jarisch-Herxheimer reaction — expected). Follow-up blood test required to confirm treatment worked. If pregnant — this is the only safe + effective syphilis treatment for your baby.",
+    "source": "PHAC Canadian STI Guidelines 2024 — Syphilis; AHA Rheumatic Fever Prophylaxis 2009 (reaffirmed); CDC STI Treatment 2021; Health Canada PM Bicillin L-A; AMMI Canada Bugs & Drugs 2024."
   },
   "methylene_blue": {
     "name": "Methylene blue (methylthioninium chloride)",
@@ -154628,8 +154634,8 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"SSRIs/SNRIs/TCAs/MAOIs/FENTANYL/TRAMADOL/METHADONE/LINEZOLID/ONDANSETRON","severity":"Contraindicated","mechanism":"serotonin syndrome (BLACK BOX)","management":"discontinue serotonergic ≥2 weeks before elective use; emergency use weighs risk-benefit"},
-      {"drug":"G6PD deficiency","severity":"Note","mechanism":"hemolysis (DO NOT USE)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Pulse oximetry interference","severity":"Note","mechanism":"30-45 min falsely low SpO2 readings","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"G6PD deficiency","severity":"Note","mechanism":"hemolysis (DO NOT USE)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Pulse oximetry interference","severity":"Note","mechanism":"30-45 min falsely low SpO2 readings","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat C — limited human data; theoretical embryotoxicity; emergency use for severe methemoglobinemia (>30%) outweighs risks; alternative ascorbic acid in pregnancy when feasible; AVOID intra-amniotic (case reports fetal jejunal atresia, neonatal methemoglobinemia, hemolysis). Breastfeeding: brief discontinuation 24-48 hours; pump + discard.",
     "pk": "IV: peak immediate; rapid distribution; reduced to LEUCOMETHYLENE BLUE (colorless reduced form) intracellularly (active); t1/2 ~5-6 hours; renal excretion primary (75% in urine — blue-green color).",
@@ -154658,7 +154664,8 @@ var DRUGS = {
       "SpO2 (acknowledge interference)",
       "Mental status, cyanosis resolution"
     ],
-    "patient_counseling": "IV antidote for blood condition. Urine will turn blue-green for several days — expected. Tell us if you've ever had hemolysis or G6PD deficiency. Avoid certain antidepressants for 1-2 weeks before elective use. Pulse oximeter reading may be falsely low for ~1 hour."
+    "patient_counseling": "IV antidote for blood condition. Urine will turn blue-green for several days — expected. Tell us if you've ever had hemolysis or G6PD deficiency. Avoid certain antidepressants for 1-2 weeks before elective use. Pulse oximeter reading may be falsely low for ~1 hour.",
+    "source": "Wright et al Toxicology 2018; ACMT Position Statement Methemoglobinemia 2018; Health Canada PM Provayblue; ASA Guidelines Vasoplegic Shock; Stanford CHARM Trial."
   },
   "luspatercept": {
     "name": "Luspatercept",
@@ -154706,8 +154713,8 @@ var DRUGS = {
       "Severe uncontrolled hypertension"
     ],
     "interactions": [
-      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No formal CYP-based interactions","management":"No specific monitoring required."},
-      {"drug":"Anticoagulants","severity":"Note","mechanism":"concurrent monitoring (thromboembolic risk)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
+      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No formal CYP-based interactions","management":"No specific monitoring required; routine clinical assessment."},
+      {"drug":"Anticoagulants","severity":"Note","mechanism":"concurrent monitoring (thromboembolic risk)","management":"Monitor for additive effects per drug-specific monograph."},
       {"drug":"ESAs (epoetin, darbepoetin)","severity":"Note","mechanism":"combination with luspatercept not formally studied","management":"usually sequential not concurrent"}
     ],
     "pregnancy": "Cat — AVOID (teratogenic in animals — skeletal abnormalities, fetal loss). Effective contraception during + 12 weeks after last dose for women of reproductive potential. Breastfeeding: limited data; high MW limits transfer; cautious.",
@@ -154737,7 +154744,8 @@ var DRUGS = {
       "Pregnancy testing women of reproductive potential",
       "LFTs + CBC q3-6 months"
     ],
-    "patient_counseling": "Subcutaneous injection every 3 weeks. Reduces blood transfusion needs in thalassemia or MDS. Tell us about leg swelling/pain (blood clot), high BP, severe headache. Effective contraception required. Ongoing transfusion need monitoring."
+    "patient_counseling": "Subcutaneous injection every 3 weeks. Reduces blood transfusion needs in thalassemia or MDS. Tell us about leg swelling/pain (blood clot), high BP, severe headache. Effective contraception required. Ongoing transfusion need monitoring.",
+    "source": "BELIEVE Trial Cappellini 2020 NEJM (β-thalassemia); MEDALIST Trial Fenaux 2020 NEJM (MDS); Health Canada PM Reblozyl 2020; CADTH Reimbursement Review."
   },
   "terlipressin": {
     "name": "Terlipressin",
@@ -154788,10 +154796,10 @@ var DRUGS = {
       "Hypersensitivity"
     ],
     "interactions": [
-      {"drug":"Other vasopressors","severity":"Note","mechanism":"additive ischemic + BP effects","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Bradycardic agents (β-blockers, NDH-CCB, digoxin)","severity":"Note","mechanism":"additive bradycardia + AV block","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Indomethacin / NSAIDs","severity":"Note","mechanism":"may potentiate antidiuretic + V2 effects","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Volatile anesthetics","severity":"Note","mechanism":"additive cardiovascular depression","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"Other vasopressors","severity":"Note","mechanism":"additive ischemic + BP effects","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Bradycardic agents (β-blockers, NDH-CCB, digoxin)","severity":"Note","mechanism":"additive bradycardia + AV block","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Indomethacin / NSAIDs","severity":"Note","mechanism":"may potentiate antidiuretic + V2 effects","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Volatile anesthetics","severity":"Note","mechanism":"additive cardiovascular depression","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat — AVOID (UTEROTONIC — V1 agonism causes uterine contraction; risk preterm labor + fetal compromise). Breastfeeding: limited data; brief exposure compatible.",
     "pk": "IV: pro-drug slowly cleaved by tissue endopeptidases to lysine-vasopressin (active); active t1/2 ~6 hours; long-acting allowing bolus dosing; renal + hepatic clearance.",
@@ -154825,7 +154833,8 @@ var DRUGS = {
       "Volume status (fluid overload — pulmonary edema)",
       "Echo + cardiopulmonary assessment baseline"
     ],
-    "patient_counseling": "IV medication for kidney failure related to liver disease. Tell us if chest pain, breathing difficulty, leg/finger color change. Given with albumin infusion. Monitored in hospital."
+    "patient_counseling": "IV medication for kidney failure related to liver disease. Tell us if chest pain, breathing difficulty, leg/finger color change. Given with albumin infusion. Monitored in hospital.",
+    "source": "AASLD HRS Guidelines 2021; CONFIRM Trial Wong 2021 NEJM; Health Canada PM Glypressin; EASL Decompensated Cirrhosis 2018."
   },
   "rasburicase": {
     "name": "Rasburicase",
@@ -154872,9 +154881,9 @@ var DRUGS = {
       "Hereditary methemoglobinemia (consider alternatives)"
     ],
     "interactions": [
-      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No formal CYP-based interactions","management":"No specific monitoring required."},
-      {"drug":"Concomitant ALLOPURINOL","severity":"Note","mechanism":"generally not given concurrently (allopurinol reduces uric acid PRODUCTION which differs from rasburicase's mechanism — combination not necessarily harmful but rarely needed in TLS prevention)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Drugs causing hemolysis","severity":"Major","mechanism":"caution G6PD-deficient (avoid combination)","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No formal CYP-based interactions","management":"No specific monitoring required; routine clinical assessment."},
+      {"drug":"Concomitant ALLOPURINOL","severity":"Note","mechanism":"generally not given concurrently (allopurinol reduces uric acid PRODUCTION which differs from rasburicase's mechanism — combination not necessarily harmful but rarely needed in TLS prevention)","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Drugs causing hemolysis","severity":"Major","mechanism":"caution G6PD-deficient (avoid combination)","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."}
     ],
     "pregnancy": "Cat C — animal studies show no teratogenicity; limited human data; use in TLS emergency justified despite Cat C. Breastfeeding: limited data; consider alternative therapies; brief discontinuation reasonable.",
     "pk": "IV: peak immediate; t1/2 ~16-21 hours; protein-mediated catabolism; renal excretion; immunogenicity ~14% (may reduce efficacy on repeat dosing).",
@@ -154902,7 +154911,8 @@ var DRUGS = {
       "CBC (hemolysis screen if G6PD)",
       "MetHb if respiratory distress / cyanosis"
     ],
-    "patient_counseling": "IV given before chemotherapy to prevent kidney damage from cancer cell breakdown. Routine; usually one dose. Tell us about prior G6PD or hemolysis history."
+    "patient_counseling": "IV given before chemotherapy to prevent kidney damage from cancer cell breakdown. Routine; usually one dose. Tell us about prior G6PD or hemolysis history.",
+    "source": "ASCO TLS Guidelines 2008/2024; Cairo-Bishop Criteria; Health Canada PM Fasturtec; CARE-TLS Cortes 2010 J Clin Oncol."
   },
   "eltrombopag": {
     "name": "Eltrombopag",
@@ -154956,8 +154966,8 @@ var DRUGS = {
       {"drug":"POLYVALENT CATIONS (calcium, iron, magnesium, aluminum, zinc)","severity":"Moderate","mechanism":"chelate eltrombopag","management":"SEPARATE ≥2h before or 4h after; counsel re: dairy, antacids, multivitamins, iron supplements"},
       {"drug":"STATINS (substrates of OATP1B1)","severity":"Note","mechanism":"eltrombopag inhibits","management":"rosuvastatin levels significantly increased; reduce statin dose"},
       {"drug":"CYP1A2 + CYP2C8 substrates","severity":"Note","mechanism":"minor effects","management":"usually not clinically significant"},
-      {"drug":"Hepatotoxic agents","severity":"Note","mechanism":"additive LFT risk","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Other thrombocytopoietics (romiplostim)","severity":"Note","mechanism":"usually sequential not concurrent","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"Hepatotoxic agents","severity":"Note","mechanism":"additive LFT risk","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Other thrombocytopoietics (romiplostim)","severity":"Note","mechanism":"usually sequential not concurrent","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat C — animal teratogenicity at higher doses; effective contraception during + 7 days after last dose. Breastfeeding: limited data; high MW limits transfer but cautious; specialist decision.",
     "pk": "PO bioavailability variable (food + cation dependent); peak 2-6 hours; t1/2 ~21-32 hours (longer in hepatic impairment); UGT1A1 + CYP1A2/2C8 metabolism; biliary excretion primary; OATP1B1 inhibitor clinically relevant.",
@@ -154988,7 +154998,8 @@ var DRUGS = {
       "CBC monthly",
       "Pregnancy testing women of reproductive potential"
     ],
-    "patient_counseling": "Once-daily oral. EMPTY STOMACH — 1 hour before or 2 hours after food. SEPARATE from CALCIUM, IRON, MAGNESIUM, antacids, dairy, multivitamins by ≥2 hours BEFORE or 4 hours AFTER. Tell us about dark urine/yellow eyes (liver), leg pain/swelling (clot), eye changes. Effective contraception required."
+    "patient_counseling": "Once-daily oral. EMPTY STOMACH — 1 hour before or 2 hours after food. SEPARATE from CALCIUM, IRON, MAGNESIUM, antacids, dairy, multivitamins by ≥2 hours BEFORE or 4 hours AFTER. Tell us about dark urine/yellow eyes (liver), leg pain/swelling (clot), eye changes. Effective contraception required.",
+    "source": "RACE Trial 2017 NEJM (severe aplastic anemia); ASH ITP Guidelines 2019; Health Canada PM Revolade; CADTH Reimbursement Review SAA 2022."
   },
   "iptacopan": {
     "name": "Iptacopan",
@@ -155036,7 +155047,7 @@ var DRUGS = {
     "interactions": [
       {"drug":"CYP3A4 inhibitors (strong)","severity":"Major","mechanism":"increase iptacopan exposure (~2-fold)","management":"MONITOR or avoid (e.g., clarithromycin, itraconazole, ritonavir)"},
       {"drug":"CYP3A4 inducers (strong)","severity":"Major","mechanism":"decrease exposure substantially","management":"AVOID (rifampin, carbamazepine, phenytoin, St. John's wort)"},
-      {"drug":"OATP1B1/3 substrates","severity":"Note","mechanism":"limited clinical impact","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"OATP1B1/3 substrates","severity":"Note","mechanism":"limited clinical impact","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Limited human data; animal toxicity at high doses; effective contraception during + 5 days after last dose. Breastfeeding: limited data; brief discontinuation reasonable; specialist decision.",
     "pk": "PO bioavailability good; peak 2 hours; t1/2 ~25 hours; CYP3A4 metabolism (~70%) + biliary excretion; saturable target-mediated kinetics at therapeutic doses; no dose adjustment for renal/most hepatic impairment.",
@@ -155066,7 +155077,8 @@ var DRUGS = {
       "LFTs periodic",
       "Vaccination status pre + during therapy"
     ],
-    "patient_counseling": "Twice-daily oral capsule for blood disorder. Tell us about fever, severe headache, neck stiffness — call right away (meningococcal risk). Always carry emergency antibiotics. Effective contraception. Avoid combining with rifampin or strong antifungals."
+    "patient_counseling": "Twice-daily oral capsule for blood disorder. Tell us about fever, severe headache, neck stiffness — call right away (meningococcal risk). Always carry emergency antibiotics. Effective contraception. Avoid combining with rifampin or strong antifungals.",
+    "source": "APPLY-PNH Trial Risitano 2024 NEJM; Health Canada PM Fabhalta 2024; FDA / EMA approval data; ICAS PNH Recommendations 2024."
   },
   "dantrolene": {
     "name": "Dantrolene sodium",
@@ -155117,9 +155129,9 @@ var DRUGS = {
     "interactions": [
       {"drug":"VERAPAMIL (and other NDH-CCB)","severity":"Contraindicated","mechanism":"concomitant IV use → severe hyperkalemia + cardiovascular collapse — CONTRAINDICATED for MH (during acute MH treatment)","management":"can be life-threatening"},
       {"drug":"VECURONIUM + other NMBA","severity":"Moderate","mechanism":"additive weakness","management":"use with caution post-extubation"},
-      {"drug":"ESTROGENS","severity":"Major","mechanism":"increased hepatotoxicity (women on OCP during chronic dantrolene)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Hepatotoxic agents","severity":"Note","mechanism":"additive risk","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"CYP3A4 metabolism considerations (limited clinical impact)","severity":"Note","mechanism":"CYP3A4 metabolism considerations (limited clinical impact)","management":"See mechanism. Monitor clinically."}
+      {"drug":"ESTROGENS","severity":"Major","mechanism":"increased hepatotoxicity (women on OCP during chronic dantrolene)","management":"Monitor LFTs (ALT, AST, bilirubin) baseline + monthly; HOLD if ALT >3–5× ULN with symptoms or >5× asymptomatic."},
+      {"drug":"Hepatotoxic agents","severity":"Note","mechanism":"additive risk","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"CYP3A4 metabolism considerations (limited clinical impact)","severity":"Note","mechanism":"CYP3A4 metabolism considerations (limited clinical impact)","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat C — limited human data; use in MH emergency justified despite Cat C; chronic use weigh risk-benefit. Breastfeeding: limited data; brief discontinuation reasonable; minimal documented transfer.",
     "pk": "IV: peak immediate; t1/2 ~9 hours (active); CYP-mediated metabolism + active metabolites; 5-hydroxylation; biliary excretion; minimal renal.",
@@ -155152,7 +155164,8 @@ var DRUGS = {
       "LFTs (chronic PO)",
       "Muscle weakness assessment (chronic)"
     ],
-    "patient_counseling": "Emergency medication for life-threatening high-temperature reaction during anesthesia. Carry medic alert bracelet if susceptible. Family genetic testing recommended. For chronic spasticity use — tell us about jaundice, dark urine, persistent weakness."
+    "patient_counseling": "Emergency medication for life-threatening high-temperature reaction during anesthesia. Carry medic alert bracelet if susceptible. Family genetic testing recommended. For chronic spasticity use — tell us about jaundice, dark urine, persistent weakness.",
+    "source": "MHAUS Recommendations 2024; American Family Physician Malignant Hyperthermia 2024; Health Canada PM Dantrium IV; AAEM Hyperthermia Position 2018."
   },
   "flucytosine": {
     "name": "Flucytosine (5-FC)",
@@ -155196,8 +155209,8 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"AMPHOTERICIN B","severity":"Beneficial","mechanism":"synergy intended (preferred combination)","management":"both nephrotoxic — careful renal monitoring"},
-      {"drug":"Cytotoxic chemotherapy","severity":"Note","mechanism":"additive bone marrow toxicity","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Cidofovir, ganciclovir","severity":"Note","mechanism":"additive marrow toxicity","management":"See mechanism. Monitor clinically per drug-specific protocol."},
+      {"drug":"Cytotoxic chemotherapy","severity":"Note","mechanism":"additive bone marrow toxicity","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Cidofovir, ganciclovir","severity":"Note","mechanism":"additive marrow toxicity","management":"Monitor for additive effects per drug-specific monograph."},
       {"drug":"5-FU systemic chemotherapy","severity":"Note","mechanism":"overlapping mechanism","management":"do not combine (additive toxicity)"}
     ],
     "pregnancy": "Cat C → CONTRAINDICATED essentially (converts to 5-FU; teratogen; embryo-lethal in animals). Effective contraception during + several months after. Breastfeeding: limited data; AVOID (transfer + 5-FU concerns).",
@@ -155228,7 +155241,8 @@ var DRUGS = {
       "GI side effects",
       "Pregnancy testing women of reproductive potential"
     ],
-    "patient_counseling": "Oral antifungal — take with or without food; same time daily. Tell us about easy bruising, mouth sores, jaundice, severe diarrhea. Frequent blood tests during treatment. Effective contraception required."
+    "patient_counseling": "Oral antifungal — take with or without food; same time daily. Tell us about easy bruising, mouth sores, jaundice, severe diarrhea. Frequent blood tests during treatment. Effective contraception required.",
+    "source": "IDSA Cryptococcus Guidelines 2010 (Perfect); WHO HIV Cryptococcal Meningitis 2022; ACTA Trial Day 2013 NEJM; AMBITION Jarvis 2022 NEJM; Health Canada Special Access Programme; AMMI Canada Bugs & Drugs 2024."
   },
   "thiamine": {
     "name": "Thiamine (vitamin B1)",
@@ -155275,10 +155289,10 @@ var DRUGS = {
       "Other true allergies usually relate to formulation excipients"
     ],
     "interactions": [
-      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No clinically significant drug interactions","management":"No specific monitoring required."},
-      {"drug":"GLUCOSE","severity":"Moderate","mechanism":"must give thiamine BEFORE OR CONCURRENT with IV glucose in malnourished/alcohol-dependent (glucose precipitates Wernicke encephalopathy in thiamine-deficient brain — KEY CLINICAL CAUTION)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
+      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No clinically significant drug interactions","management":"No specific monitoring required; routine clinical assessment."},
+      {"drug":"GLUCOSE","severity":"Moderate","mechanism":"must give thiamine BEFORE OR CONCURRENT with IV glucose in malnourished/alcohol-dependent (glucose precipitates Wernicke encephalopathy in thiamine-deficient brain — KEY CLINICAL CAUTION)","management":"Monitor for additive effects; dose adjustment may be required; consult drug-specific monograph."},
       {"drug":"LOOP DIURETICS","severity":"Note","mechanism":"chronic use depletes thiamine","management":"consider supplementation"},
-      {"drug":"PHOSPHATE + MAGNESIUM","severity":"Note","mechanism":"concurrent in refeeding syndrome management","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"PHOSPHATE + MAGNESIUM","severity":"Note","mechanism":"concurrent in refeeding syndrome management","management":"Monitor for additive effects per drug-specific monograph."}
     ],
     "pregnancy": "Cat A — safe + indicated; pregnancy increases requirement to 1.4 mg/day; SEVERE HYPEREMESIS GRAVIDARUM may require IV/IM thiamine (Wernicke encephalopathy reported in HG; high-risk indication for IV supplementation). Breastfeeding: compatible.",
     "pk": "Water-soluble; absorbed in proximal small intestine; ALCOHOL impairs absorption + utilization; minimal storage (~30 mg adult body stores; depleted within 2-3 weeks if no intake); phosphorylated to active forms (thiamine pyrophosphate, thiamine triphosphate); renal excretion of excess.",
@@ -155313,7 +155327,8 @@ var DRUGS = {
       "LFTs (if alcohol)",
       "Pregnancy status if HG"
     ],
-    "patient_counseling": "Vitamin B1 given to prevent or treat brain damage from poor nutrition or alcohol. Tell us if known allergy. Generally very safe."
+    "patient_counseling": "Vitamin B1 given to prevent or treat brain damage from poor nutrition or alcohol. Tell us if known allergy. Generally very safe.",
+    "source": "NICE Wernicke-Korsakoff 2024; Royal College of Psychiatrists Thiamine Treatment 2018; Health Canada PM Vitamin B1; Cochrane Reviews Wernicke encephalopathy."
   },
   "sirolimus": {
     "name": "Sirolimus (rapamycin)",
@@ -155368,11 +155383,11 @@ var DRUGS = {
       "Severe hypercholesterolemia (relative)"
     ],
     "interactions": [
-      {"drug":"STRONG CYP3A4 + P-gp INHIBITORS","severity":"Moderate","mechanism":"significantly increase sirolimus levels: clarithromycin, erythromycin, voriconazole, ketoconazole, itraconazole, fluconazole, ritonavir, cyclosporine — adjust dose + TDM","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"STRONG CYP3A4/P-gp INDUCERS","severity":"Major","mechanism":"decrease levels: rifampin, rifabutin, carbamazepine, phenytoin, phenobarbital, St. John's wort — usually AVOID (substantial efficacy loss) or substantial dose increase + close TDM","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"GRAPEFRUIT JUICE","severity":"Major","mechanism":"increases levels (avoid)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"ACE INHIBITORS + SIROLIMUS","severity":"Moderate","mechanism":"angioedema (case reports","management":"caution)"},
-      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID (immunosuppression)","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"STRONG CYP3A4 + P-gp INHIBITORS","severity":"Moderate","mechanism":"significantly increase sirolimus levels: clarithromycin, erythromycin, voriconazole, ketoconazole, itraconazole, fluconazole, ritonavir, cyclosporine — adjust dose + TDM","management":"Monitor for additive effects; dose adjustment may be required; consult drug-specific monograph."},
+      {"drug":"STRONG CYP3A4/P-gp INDUCERS","severity":"Major","mechanism":"decrease levels: rifampin, rifabutin, carbamazepine, phenytoin, phenobarbital, St. John's wort — usually AVOID (substantial efficacy loss) or substantial dose increase + close TDM","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"GRAPEFRUIT JUICE","severity":"Major","mechanism":"increases levels (avoid)","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."},
+      {"drug":"ACE INHIBITORS + SIROLIMUS","severity":"Moderate","mechanism":"angioedema (case reports","management":"Monitor for additive effects; dose adjustment may be required; consult drug-specific monograph."},
+      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID (immunosuppression)","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."}
     ],
     "pregnancy": "Cat C — embryotoxicity in animals; effective contraception during + 12 WEEKS after last dose. Breastfeeding: limited data; AVOID (potentially significant transfer; immunosuppressive risk to infant).",
     "pk": "PO bioavailability ~15% (variable; food affects); peak 1-2 hours; t1/2 ~62 hours (long; once-daily dosing); CYP3A4 + P-gp metabolism (extensive interactions); biliary excretion primary; therapeutic monitoring essential.",
@@ -155406,7 +155421,8 @@ var DRUGS = {
       "Pneumonitis surveillance (cough, dyspnea — chest imaging if suspect)",
       "Pre-elective surgery — DC 2-4 weeks where feasible"
     ],
-    "patient_counseling": "Once-daily oral, consistent timing. Many drug interactions — review with pharmacist. Avoid grapefruit juice. Mouth ulcers common — soft diet + rinses. Avoid live vaccines. Effective contraception. Tell us about cough, fever, leg swelling."
+    "patient_counseling": "Once-daily oral, consistent timing. Many drug interactions — review with pharmacist. Avoid grapefruit juice. Mouth ulcers common — soft diet + rinses. Avoid live vaccines. Effective contraception. Tell us about cough, fever, leg swelling.",
+    "source": "MILES Trial McCormack 2011 NEJM (LAM); Transplant Society KDIGO Guidelines 2009; Health Canada PM Rapamune; CADTH Reimbursement Review LAM."
   },
   "alpha_1_proteinase_inhibitor": {
     "name": "Alpha-1 Proteinase Inhibitor (human)",
@@ -155447,7 +155463,7 @@ var DRUGS = {
       "PI*ZZ severity criteria not met"
     ],
     "interactions": [
-      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No clinically significant drug interactions","management":"No specific monitoring required."}
+      {"drug":"No clinically significant drug interactions","severity":"Note","mechanism":"No clinically significant drug interactions","management":"No specific monitoring required; routine clinical assessment."}
     ],
     "pregnancy": "Cat C — limited human data; reasonable to continue if needed during pregnancy (severe AATD pregnant patients counseled). Breastfeeding: minimal data; high MW limits transfer; cautious continuation reasonable.",
     "pk": "IV: peak immediate; t1/2 ~4-5 days; intermittent dosing maintains serum AAT >11 µM (protective threshold); not metabolized hepatically; protein-mediated catabolism + excretion.",
@@ -155477,7 +155493,8 @@ var DRUGS = {
       "Anaphylaxis post-infusion observation",
       "Smoking status reinforcement"
     ],
-    "patient_counseling": "Weekly IV infusion to slow lung damage from Alpha-1. Critical to STOP SMOKING. This therapy does not treat liver disease — separate concerns. Tell us about rash, breathing issues during infusion."
+    "patient_counseling": "Weekly IV infusion to slow lung damage from Alpha-1. Critical to STOP SMOKING. This therapy does not treat liver disease — separate concerns. Tell us about rash, breathing issues during infusion.",
+    "source": "RAPID-OLE Trial Chapman 2015 Lancet; ATS/ERS Alpha-1 AT Deficiency Standards 2003 (updated 2024); Health Canada PM Prolastin/Zemaira; Alpha-1 Foundation Recommendations."
   },
   "doxorubicin": {
     "name": "Doxorubicin (Adriamycin)",
@@ -155533,12 +155550,12 @@ var DRUGS = {
     ],
     "interactions": [
       {"drug":"TRASTUZUMAB","severity":"Major","mechanism":"increased CARDIOTOXICITY","management":"sequence (often AC-then-T-then-trastuzumab); avoid concurrent anthracycline + trastuzumab where possible"},
-      {"drug":"PACLITAXEL","severity":"Major","mechanism":"give DOXORUBICIN BEFORE paclitaxel (sequence affects PK + cardiotoxicity)","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"CYCLOPHOSPHAMIDE","severity":"Major","mechanism":"additive cardiotoxicity at high cumulative doses","management":"See mechanism. Monitor clinically per drug-specific protocol."},
+      {"drug":"PACLITAXEL","severity":"Major","mechanism":"give DOXORUBICIN BEFORE paclitaxel (sequence affects PK + cardiotoxicity)","management":"Baseline + serial echocardiogram (LVEF); cumulative dose monitoring; AVOID concurrent cardiotoxic agents."},
+      {"drug":"CYCLOPHOSPHAMIDE","severity":"Major","mechanism":"additive cardiotoxicity at high cumulative doses","management":"Baseline + serial echocardiogram (LVEF); cumulative dose monitoring; AVOID concurrent cardiotoxic agents."},
       {"drug":"RADIATION mediastinal","severity":"Major","mechanism":"dose-dependent additive cardiotoxicity (recall reactions","management":"especially within 2-3 years)"},
-      {"drug":"Strong CYP3A4 INHIBITORS / INDUCERS","severity":"Note","mechanism":"alter metabolism","management":"cautious"},
-      {"drug":"HEPATOTOXIC drugs","severity":"Note","mechanism":"additive","management":"See mechanism. Monitor clinically per drug-specific protocol."},
-      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID (immunosuppression)","management":"See mechanism. Monitor clinically per drug-specific protocol."}
+      {"drug":"Strong CYP3A4 INHIBITORS / INDUCERS","severity":"Note","mechanism":"alter metabolism","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"HEPATOTOXIC drugs","severity":"Note","mechanism":"additive","management":"Monitor for additive effects per drug-specific monograph."},
+      {"drug":"Live vaccines","severity":"Major","mechanism":"AVOID (immunosuppression)","management":"Monitor closely for additive toxicity; consider dose reduction or alternative therapy; consult drug-specific monograph."}
     ],
     "pregnancy": "Cat D — teratogenic 1st trimester; risk in later pregnancy variable; specialist obstetric oncology + multidisciplinary decision; effective contraception during + 6+ months after. Breastfeeding: contraindicated.",
     "pk": "IV — peak immediate; rapidly distributes (HIGH tissue accumulation); MULTI-COMPARTMENT; t1/2 alpha 5 min, beta 30 min, terminal 30-50 hours; hepatic metabolism (CYP3A4 + reduction to doxorubicinol); biliary excretion primary; minimal renal (5-10%). Liposomal formulations — long t1/2 ~50-90 hours; reduced peak free drug.",
@@ -155574,7 +155591,8 @@ var DRUGS = {
       "Hand-foot syndrome (liposomal)",
       "Mucositis assessment"
     ],
-    "patient_counseling": "Powerful chemotherapy with universal hair loss + nausea (premedications). Red-orange urine for days — expected. Critical to inform of cardiac history. Tell us about chest pain, breathing problems, leg swelling. Avoid pregnancy 6+ months. Some hospitals stock antidote for extravasation."
+    "patient_counseling": "Powerful chemotherapy with universal hair loss + nausea (premedications). Red-orange urine for days — expected. Critical to inform of cardiac history. Tell us about chest pain, breathing problems, leg swelling. Avoid pregnancy 6+ months. Some hospitals stock antidote for extravasation.",
+    "source": "NCCN Lymphoma Guidelines 2024; ECHELON-1 Connors 2018 NEJM (Hodgkin); POLARIX Tilly 2022 NEJM (DLBCL); Cancer Care Ontario Drug Formulary; Health Canada PM Adriamycin/Caelyx."
   }
 
 };
@@ -157517,14 +157535,10 @@ var FAMILY_MAP = {
   "ergocalciferol": "Vitamin D Supplements",
   "magnesium_oxide": "Mineral Supplements",
   "potassium_chloride": "Mineral Supplements",
-  "lactase": "Digestive Enzymes",
-  "caplacizumab": "Anti-vWF Therapies",
-  "milrinone": "Inotropic Agents",
   "adenosine": "Antiarrhythmics",
   "ivacaftor": "CFTR Modulators",
   "tezacaftor": "CFTR Modulators",
   "elexacaftor": "CFTR Modulators",
-  "relugolix": "GnRH Antagonists",
   "deutetrabenazine": "VMAT2 Inhibitors",
   "dasatinib": "BCR-ABL Tyrosine Kinase Inhibitors",
   "nilotinib": "BCR-ABL Tyrosine Kinase Inhibitors",
@@ -157532,10 +157546,6 @@ var FAMILY_MAP = {
   "ponatinib": "BCR-ABL Tyrosine Kinase Inhibitors",
   "asciminib": "BCR-ABL Tyrosine Kinase Inhibitors",
   "cytarabine": "Antimetabolites",
-  "daunorubicin": "Anthracyclines",
-  "azacitidine": "Hypomethylating Agents",
-  "midostaurin": "FLT3 Inhibitors",
-  "gilteritinib": "FLT3 Inhibitors",
   "temozolomide": "Alkylating Agents",
   "vincristine": "Cytotoxic Agents",
   "pegaspargase": "Cytotoxic Agents",
@@ -172853,6 +172863,32 @@ function showFamilyPanel(famName) {
   }
   // Skip umbrella's own comparison when subfamilies already cover the agents — avoids duplicate listing
   var _umbrellaHasChildren = (typeof FAMILY_UMBRELLA_CHILDREN !== 'undefined' && FAMILY_UMBRELLA_CHILDREN[famName]);
+  // Schema fallback: families using newer `members` array (DC-13–17 batches) instead of `comparison` —
+  // auto-build a comparison array from DRUGS so the table still renders.
+  if ((!fam.comparison || !fam.comparison.length) && Array.isArray(fam.members) && fam.members.length && !_umbrellaHasChildren) {
+    fam.comparison = fam.members.map(function(memberKey) {
+      var d = (typeof memberKey === 'string') ? DRUGS[memberKey] : null;
+      if (!d) return null;
+      // First dose entry — handle both array and object shapes
+      var doseStr = '';
+      if (Array.isArray(d.dosing) && d.dosing.length) {
+        var firstDose = d.dosing[0];
+        if (firstDose && firstDose.dose) doseStr = firstDose.dose;
+      } else if (d.dosing && typeof d.dosing === 'object') {
+        var firstKey = Object.keys(d.dosing)[0];
+        if (firstKey) doseStr = d.dosing[firstKey];
+      }
+      return {
+        drug: d.name || memberKey,
+        key: memberKey,
+        brand: d.brand || '',
+        dose: doseStr,
+        half_life: '',
+        renal_notes: '',
+        advantages: (d.indications && d.indications[0]) || ''
+      };
+    }).filter(Boolean);
+  }
   if (fam.comparison && fam.comparison.length && !_umbrellaHasChildren) {
     h += '<div class="dp-section"><div class="dp-section-title">📊 Drug Comparison</div>';
     h += '<div style="overflow-x:auto;"><table class="treatment-table"><thead><tr>';
