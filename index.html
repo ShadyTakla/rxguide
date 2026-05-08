@@ -169179,8 +169179,9 @@ var EMPIRIC_THERAPY_CATEGORIES = [
   { key: 'bone',        label: 'Bone & Joint Infections', icon: '🦴', color: '#fb923c' },
   { key: 'sti',         label: 'Sexually Transmitted Infections', icon: '🔬', color: '#ec4899' },
   { key: 'eye',         label: 'Eye Infections', icon: '👁️', color: '#0ea5e9' },
-  { key: 'tickborne',   label: 'Tick-Borne / Zoonotic Infections', icon: '🕷️', color: '#22c55e' },
-  { key: 'prophylaxis', label: 'Antimicrobial Prophylaxis', icon: '🛡️', color: '#6366f1' }
+  { key: 'tickborne',   label: 'Vector-Borne & Travel Infections', icon: '🦟', color: '#22c55e' },
+  { key: 'prophylaxis', label: 'Antimicrobial Prophylaxis', icon: '🛡️', color: '#6366f1' },
+  { key: 'peripartum',  label: 'Pregnancy & Peripartum Infections', icon: '🤰', color: '#f472b6' }
 ];
 
 var EMPIRIC_THERAPY_SYNDROMES = [
@@ -171582,6 +171583,1227 @@ var EMPIRIC_THERAPY_SYNDROMES = [
     ],
     source: 'ASHP/IDSA/SIS/SHEA Surgical Antimicrobial Prophylaxis 2013 (updated 2021); CSCRS; SOGC; Bugs & Drugs 2024',
     related_drugs: ['cefazolin','vancomycin','aztreonam','clindamycin','gentamicin','metronidazole','cefoxitin','ertapenem','azithromycin','mupirocin','chlorhexidine']
+  }
+
+,
+  // ═══════════ RESPIRATORY ADDITIONS ═══════════
+  {
+    id: 'influenza_antiviral',
+    title: 'Influenza Antiviral Therapy',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'Acute influenza A or B treatment in symptomatic patients within 48 hours of symptom onset (early treatment most effective) or in hospitalized/severe disease at any time. Oseltamivir is the workhorse Canadian agent; baloxavir is a single-dose alternative with limited Canadian uptake. Annual vaccination remains the primary prevention.',
+    canadian_context: 'NACI annual recommendation: universal influenza vaccination for all aged ≥6 months without contraindication. Ontario Universal Influenza Immunization Program (UIIP) — publicly funded for all Ontarians ≥6 months. Oseltamivir (Tamiflu) is ODB-covered. Baloxavir (Xofluza) Health Canada–approved 2021 but limited Canadian uptake; not routinely on ODB. PHAC tracks resistance — current circulating strains generally susceptible to neuraminidase inhibitors. Pharmacist immunization scope in Ontario covers influenza vaccine.',
+    likely_organisms: [
+      { name: 'Influenza A (H1N1, H3N2)', frequency: 'Most common; seasonal variation; H1N1pdm09 lineage post-2009' },
+      { name: 'Influenza B (Victoria, Yamagata)', frequency: 'Yamagata lineage essentially extinct since 2020; quadrivalent vaccine still includes both' }
+    ],
+    severity_strata: [
+      {
+        name: 'Outpatient — high-risk patient or severe symptoms',
+        criteria: 'Confirmed or strongly suspected influenza in patient with: age ≥65, age <5 (especially <2), pregnancy/postpartum 2 weeks, chronic medical conditions (lung, cardiac, renal, hepatic, hematologic, metabolic, neurologic, immunocompromise), morbid obesity (BMI ≥40), Indigenous community, long-term care resident. Treat within 48h of onset for maximal benefit (continued benefit shown in hospitalized at 48–96h).',
+        first_line: 'Oseltamivir (Tamiflu) 75 mg PO BID × 5 days. Adults <40 kg or pediatric: weight-based 30 mg BID (15–23 kg), 45 mg BID (23–40 kg). Hospitalized severe: continue beyond 5 days if not improving.',
+        alt_pen_allergy: 'Zanamivir 10 mg (2 inhalations) BID × 5 days (avoid in asthma/COPD — bronchospasm risk) OR Baloxavir marboxil 40 mg PO × 1 (≥80 kg: 80 mg) — single dose; resistance emergence with treatment',
+        duration: '5 days standard; longer (7–10+ days) for hospitalized severe or immunocompromised'
+      },
+      {
+        name: 'Hospitalized severe / ICU influenza',
+        criteria: 'Hospitalized with severe disease, mechanical ventilation, or progressive lower respiratory tract disease — treat regardless of time since onset.',
+        first_line: 'Oseltamivir 75 mg PO/NG BID × ≥5 days (extend to 10 days if severe or immunocompromised). IV peramivir 600 mg × 1 dose alternative if no oral access (Health Canada Special Access).',
+        alt_pen_allergy: 'IV peramivir if no oral; baloxavir limited evidence in severe',
+        duration: '5–10 days; longer for ICU/immunocompromised; consider repeat PCR before discontinuation in immunocompromised'
+      },
+      {
+        name: 'Pregnancy with influenza',
+        criteria: 'Pregnant or postpartum (within 2 weeks) — high-risk for severe complications; treat empirically while testing.',
+        first_line: 'Oseltamivir 75 mg PO BID × 5 days (SOGC and PHAC: safe in all trimesters; benefits strongly outweigh theoretical risks)',
+        alt_pen_allergy: 'Zanamivir inhaled (alternative — limited absorption)',
+        duration: '5 days'
+      },
+      {
+        name: 'Post-exposure prophylaxis (PEP)',
+        criteria: 'Unimmunized or recently-immunized (within 2 weeks) high-risk individual exposed to confirmed influenza case (household, LTC).',
+        first_line: 'Oseltamivir 75 mg PO daily × 7 days (post-household exposure) or × 10 days (institutional outbreak)',
+        alt_pen_allergy: 'Zanamivir 10 mg inhaled daily',
+        duration: '7–10 days (start within 48h of exposure)'
+      }
+    ],
+    iv_to_po: 'Oral oseltamivir is standard route. IV peramivir reserved for hospitalized patients with no enteral access (Health Canada Special Access only).',
+    pearls: [
+      'Annual influenza vaccination is the PRIMARY prevention — recommended for all ≥6 months without contraindication. High-dose (Fluzone HD), adjuvanted (Fluad), and recombinant (Flublok) options for adults ≥65 (Ontario UIIP funding varies).',
+      'Oseltamivir-resistance emergence is rare with standard therapy; significantly higher with prolonged treatment in immunocompromised — consult ID.',
+      'GI upset (nausea, vomiting) is common with oseltamivir — take with food to mitigate. Brief neuropsychiatric events have been reported (especially adolescents) — Health Canada label.',
+      'Annual influenza testing/treatment matters most during peak season (Nov–Apr in Canada); off-season suspect non-influenza ILI or returning traveller.',
+      'AVOID amantadine — high resistance in current circulating influenza strains; no role.',
+      'Baloxavir: single oral dose; favorable adherence; emerging resistance with PA/I38X mutations during treatment in some patients.',
+      'PHAC FluWatch surveillance reports weekly during respiratory virus season.'
+    ],
+    source: 'NACI Statement on Seasonal Influenza Vaccine 2024–25; AMMI Canada; SOGC pregnancy guidance; CDC IDSA Influenza',
+    related_drugs: ['oseltamivir','baloxavir']
+  },
+  {
+    id: 'covid19_antiviral',
+    title: 'COVID-19 Antiviral Therapy',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'Treatment of confirmed SARS-CoV-2 in eligible high-risk outpatients (oral nirmatrelvir-ritonavir or IV remdesivir) and hospitalized severe disease (dexamethasone + remdesivir + tocilizumab/baricitinib for selected severe). Eligibility for outpatient therapy requires high-risk criteria and treatment within 5–7 days of symptom onset.',
+    canadian_context: 'Health Canada–approved: Paxlovid (nirmatrelvir-ritonavir) Jan 2022; remdesivir (Veklury). Ontario pharmacist Paxlovid prescribing authorized since April 2022 — pharmacists assess eligibility, screen drug interactions (extensive — CYP3A4), and prescribe. ODB covers Paxlovid for high-risk eligible patients (criteria include age ≥70, age ≥60 with comorbidities, immunocompromise, vaccine ineligible). Outpatient remdesivir (3-day) available at select Ontario hospital infusion centres for Paxlovid-ineligible high-risk patients. Public Health Ontario maintains updated criteria.',
+    likely_organisms: [
+      { name: 'SARS-CoV-2 (COVID-19)', frequency: '100% — confirmed by NAAT or rapid antigen test (RAT)' }
+    ],
+    severity_strata: [
+      {
+        name: 'Outpatient — high-risk symptomatic, within 5 days of onset',
+        criteria: 'Confirmed SARS-CoV-2 (NAAT or RAT); eligibility per Ontario MOH: age ≥70, age ≥60 with chronic conditions, immunocompromised any age, age 18+ with high-risk conditions and incomplete vaccination. Within 5 days of symptom onset.',
+        first_line: 'Nirmatrelvir-ritonavir (Paxlovid) 300 mg/100 mg PO BID × 5 days. CRITICAL: extensive drug interactions (CYP3A4 inhibitor) — review all medications including OTC; many statins, immunosuppressants, antiarrhythmics, SSRIs, opioids contraindicated or require dose adjustment. Renal impairment dose adjustment (CrCl 30–60: 150/100 mg BID; <30: not recommended).',
+        alt_pen_allergy: 'Remdesivir 200 mg IV day 1, then 100 mg IV daily days 2–3 (3-day outpatient infusion at hospital outpatient clinic — alternative when Paxlovid contraindicated due to drug interactions or renal impairment). NO LONGER recommended: monoclonal antibodies (resistance to current variants).',
+        duration: '5 days (Paxlovid) or 3 days (remdesivir outpatient)'
+      },
+      {
+        name: 'Hospitalized — supplemental oxygen but not high-flow/ventilated',
+        criteria: 'Hospitalized requiring supplemental oxygen by nasal cannula or face mask; not high-flow O2 or mechanical ventilation.',
+        first_line: 'Dexamethasone 6 mg PO/IV daily × 10 days (or until discharge if shorter) + Remdesivir 200 mg IV day 1, then 100 mg IV daily days 2–5 (5-day course).',
+        alt_pen_allergy: 'Hydrocortisone or methylprednisolone equivalent if dexamethasone unavailable',
+        duration: '10 days dexamethasone (until discharge); 5 days remdesivir'
+      },
+      {
+        name: 'Severe — high-flow O2, NIV, mechanical ventilation, or ECMO',
+        criteria: 'Hospitalized requiring high-flow O2, non-invasive ventilation, mechanical ventilation, or ECMO; rapidly progressing inflammatory disease.',
+        first_line: 'Dexamethasone 6 mg IV daily × 10 days (or until discharge) + Remdesivir 5 days (continue 10 days if mechanically ventilated and started before intubation) + Tocilizumab 8 mg/kg IV × 1 (max 800 mg) OR Baricitinib 4 mg PO daily × 14 days (or until discharge) for patients with rapidly increasing oxygen requirements + elevated CRP.',
+        alt_pen_allergy: 'Sarilumab alternative IL-6 inhibitor (limited Canadian use)',
+        duration: '10 days dexamethasone; 5–10 days remdesivir; tocilizumab single dose; baricitinib up to 14 days'
+      }
+    ],
+    iv_to_po: 'Outpatient Paxlovid is oral; remdesivir is IV-only. Hospitalized patients on dexamethasone PO (preferred) or IV equivalent. Tocilizumab IV only.',
+    pearls: [
+      'PAXLOVID DRUG INTERACTIONS are the most common reason for ineligibility — CYP3A4 inhibition by ritonavir affects many medications. Consult Liverpool COVID-19 Drug Interactions database, University of Liverpool checker, or Lexicomp before prescribing.',
+      'Common Paxlovid contraindications/interactions: amiodarone, rifampin, St. John\'s wort, simvastatin/lovastatin (hold), tacrolimus/cyclosporine (require monitoring), fentanyl/methadone (avoid initiation), certain DOACs (apixaban dose adjustment).',
+      'Statin holds: simvastatin and lovastatin must be HELD entirely during Paxlovid; atorvastatin and rosuvastatin may be reduced or held; pravastatin and pitavastatin are safer.',
+      'COVID-19 REBOUND after Paxlovid (~2–10%) — symptoms recur 2–8 days after course; not standard reason to retreat per current guidance; monitor; isolate while symptomatic.',
+      'Vaccination remains primary prevention — bivalent/updated mRNA boosters per NACI 2024–25 schedule; high-risk groups eligible for additional doses.',
+      'Outpatient remdesivir (3-day) has NNT ~30 for hospitalization prevention (PINETREE trial) — Ontario delivery via hospital outpatient infusion programs.',
+      'Hospitalized dexamethasone (RECOVERY trial) reduces mortality in patients requiring supplemental O2; NO benefit and possible harm in non-hypoxic patients.',
+      'Tocilizumab (RECOVERY/REMAP-CAP) reduces mortality in severe disease with elevated CRP and hypoxia; combine with dexamethasone for additive effect.'
+    ],
+    source: 'Ontario MOH COVID-19 Therapy Guidance; PHAC; AMMI Canada; NIH/IDSA',
+    related_drugs: ['nirmatrelvir_ritonavir','remdesivir','dexamethasone','tocilizumab']
+  },
+  {
+    id: 'tb_active',
+    title: 'Active Tuberculosis Treatment',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'Active tuberculosis (pulmonary or extrapulmonary) requires multi-drug therapy with a 2-month intensive phase (HRZE — isoniazid, rifampin, pyrazinamide, ethambutol) followed by a 4-month continuation phase (HR). Drug-susceptibility testing guides regimen modification. Treatment is coordinated through Public Health Ontario with directly observed therapy (DOT) for most patients. Reportable disease.',
+    canadian_context: 'PHAC + Canadian Tuberculosis Standards (8th edition, 2022) + Public Health Ontario direct treatment programs. TB is REPORTABLE in Ontario — PHU coordinates contact tracing, DOT, free medications. Higher rates in foreign-born population (~70% of Canadian cases), Indigenous communities (Inuit Nunangat), HIV co-infection, immunosuppression. ID consultation typically required; multidrug-resistant (MDR-TB) and extensively drug-resistant (XDR-TB) treated only at specialized centres (Toronto, Montreal, Vancouver). Most TB drugs are dispensed free through Public Health.',
+    likely_organisms: [
+      { name: 'Mycobacterium tuberculosis complex (M. tuberculosis, M. bovis, M. africanum)', frequency: '100% — diagnosed by AFB smear, NAAT, or culture' }
+    ],
+    severity_strata: [
+      {
+        name: 'Drug-susceptible pulmonary TB — adults (standard 6-month regimen)',
+        criteria: 'Confirmed or strongly suspected drug-susceptible pulmonary TB. Smear-positive or smear-negative culture-confirmed.',
+        first_line: 'INTENSIVE PHASE (2 months): Isoniazid 5 mg/kg (max 300 mg) + Rifampin 10 mg/kg (max 600 mg) + Pyrazinamide 25 mg/kg (max 2 g) + Ethambutol 15–25 mg/kg (max 1.6 g) — all PO daily. CONTINUATION PHASE (4 months): Isoniazid + Rifampin daily or 3 times weekly. ADD Pyridoxine 25 mg PO daily (prevents INH-induced peripheral neuropathy).',
+        alt_pen_allergy: 'NA — non-beta-lactam regimens',
+        duration: '6 months total (2 + 4); extended to 9 months for cavitary disease with positive sputum culture at 2 months'
+      },
+      {
+        name: 'TB meningitis or bone/joint TB',
+        criteria: 'Extrapulmonary TB with CNS involvement, vertebral (Pott disease), or other bone/joint involvement.',
+        first_line: 'Same HRZE intensive phase + INH/RIF continuation, BUT extended duration: 9–12 months total (CNS); 6–9 months (bone/joint). Adjunctive corticosteroids for TB meningitis (dexamethasone tapered over 6–8 weeks).',
+        alt_pen_allergy: 'NA',
+        duration: '9–12 months (CNS); 6–9 months (bone/joint)'
+      },
+      {
+        name: 'TB in pregnancy',
+        criteria: 'Pregnant patient with active TB.',
+        first_line: 'Isoniazid + Rifampin + Ethambutol × 2 months → INH/RIF × 7 months (TOTAL 9 months). Pyrazinamide use in pregnancy varies — Canadian Tuberculosis Standards permits but US/IDSA cautious; ID consultation. Pyridoxine ESSENTIAL.',
+        alt_pen_allergy: 'NA',
+        duration: '9 months'
+      },
+      {
+        name: 'Multidrug-resistant TB (MDR-TB)',
+        criteria: 'Resistance to BOTH isoniazid and rifampin. ID/specialized centre referral mandatory.',
+        first_line: 'Individualized regimen of ≥4 likely-effective drugs based on DST: bedaquiline + pretomanid + linezolid + moxifloxacin (BPaL/BPaLM regimen) is the new short 6-month standard for many cases — replaces older 18–24 month regimens. Specialized centre management.',
+        alt_pen_allergy: 'NA',
+        duration: '6–24 months depending on regimen and resistance pattern'
+      }
+    ],
+    iv_to_po: 'TB drugs are oral. IV formulations (rifampin, levofloxacin, linezolid) used only if oral intolerance or critical illness.',
+    pearls: [
+      'DIRECTLY OBSERVED THERAPY (DOT) is recommended for nearly all active TB cases in Ontario — Public Health Unit-coordinated. Improves adherence and prevents MDR development.',
+      'BASELINE LABS: LFTs (HRZ all hepatotoxic), CBC, creatinine, HIV test, hepatitis B/C, vision testing for ethambutol, hearing for streptomycin/amikacin (if used).',
+      'PYRIDOXINE 25 mg daily PREVENTS INH-induced peripheral neuropathy — ALWAYS coadminister.',
+      'HEPATOTOXICITY monitoring: baseline LFTs, then monthly (more frequent if elevated) — hold INH/RIF/PZA if ALT >3× ULN with symptoms or >5× ULN asymptomatic.',
+      'RIFAMPIN colours secretions ORANGE-RED (urine, tears, sweat, saliva) — counsel patient; permanent staining of contact lenses.',
+      'ETHAMBUTOL: optic neuritis is the dose-limiting toxicity — baseline + monthly visual acuity and color vision; HOLD on any visual change.',
+      'Drug interactions: rifampin is a STRONG CYP3A4 INDUCER — many drugs lose efficacy (oral contraceptives, warfarin, statins, methadone, many HIV ART). Use barrier or alternative contraception during and 1 month after.',
+      'DOT REGIMENS: 5-times weekly daily (most centres) or 3-times weekly intermittent (continuation phase only) — never twice-weekly without DOT.',
+      'CHILDREN typically achieve good cure with similar regimens at weight-based doses; ethambutol use in young children (<5y) requires careful visual assessment.',
+      'TB CO-INFECTION WITH HIV: ART started 2–8 weeks after starting TB treatment depending on CD4; rifabutin replaces rifampin in many cases due to ART drug interactions; ID specialist co-management.'
+    ],
+    source: 'Canadian Tuberculosis Standards 8th ed (2022); WHO 2022; Public Health Ontario',
+    related_drugs: ['isoniazid','rifampin','pyrazinamide','ethambutol','pyridoxine','rifabutin','levofloxacin','moxifloxacin','linezolid','dexamethasone']
+  },
+  {
+    id: 'ltbi',
+    title: 'Latent Tuberculosis Infection (LTBI) Treatment',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'Asymptomatic infection with M. tuberculosis without active disease (positive TST or IGRA, normal CXR, no symptoms). Treatment substantially reduces lifetime risk of progression to active TB (10% lifetime baseline; ~5% in first 2 years). Modern shorter regimens (rifampin 4 months, 3HP weekly × 12) have replaced isoniazid 9 months as preferred Canadian options.',
+    canadian_context: 'Canadian Tuberculosis Standards 8th ed strongly recommends RIFAMPIN 4 months (4R) as first-line LTBI therapy — superior adherence and lower hepatotoxicity vs INH 9 months. 3HP regimen (isoniazid + rifapentine weekly × 12) gaining Canadian uptake but rifapentine availability is limited (Special Access). Public Health Ontario provides free LTBI medications. Highest yield testing/treatment in: contacts of active TB cases, recent immigrants from high-prevalence countries, immunocompromised (HIV, biologics, dialysis, transplant candidates), healthcare workers, occupational exposure.',
+    likely_organisms: [
+      { name: 'Mycobacterium tuberculosis (latent)', frequency: '100% — asymptomatic; diagnosis by TST or IGRA + normal CXR + no symptoms' }
+    ],
+    severity_strata: [
+      {
+        name: 'Standard LTBI treatment — adults and children (preferred shorter regimens)',
+        criteria: 'Confirmed LTBI: positive TST (≥5–15 mm depending on risk) or IGRA, normal CXR, no symptoms of active TB. Active TB ruled out before starting LTBI therapy.',
+        first_line: 'Rifampin 10 mg/kg (max 600 mg) PO daily × 4 months (4R) — PREFERRED first-line; superior completion rates and lower hepatotoxicity vs 9H',
+        alt_pen_allergy: 'Isoniazid 5 mg/kg (max 300 mg) PO daily × 9 months (9H) — older standard; if rifampin contraindicated. ADD Pyridoxine 25 mg daily. OR 3HP: Isoniazid 15 mg/kg (max 900 mg) + Rifapentine 900 mg PO weekly × 12 weeks (DOT typically) — Special Access for rifapentine in Canada.',
+        duration: '4 months (4R) or 9 months (9H) or 3 months (3HP)'
+      },
+      {
+        name: 'LTBI in HIV-positive patient',
+        criteria: 'HIV+ with LTBI — high-risk progression; treat all positive results.',
+        first_line: 'Rifampin 4 months (4R) — preferred IF no significant ART drug interactions. CHECK ART regimen: rifampin reduces dolutegravir, many PIs, NNRTIs — if ART incompatible, use Rifabutin 4 months OR Isoniazid 9 months (9H). Adjust ART per ID specialist.',
+        alt_pen_allergy: 'INH 9 months alternative',
+        duration: '4 or 9 months'
+      },
+      {
+        name: 'LTBI in pregnancy',
+        criteria: 'Pregnant or breastfeeding with LTBI — typically deferred unless recent contact or HIV+.',
+        first_line: 'Most LTBI in pregnancy: defer until postpartum (3 months) UNLESS recent TB contact or HIV+. If treatment indicated: Isoniazid 9 months + Pyridoxine 25 mg daily (preferred in pregnancy — most data; rifampin acceptable alternative).',
+        alt_pen_allergy: 'Rifampin alternative',
+        duration: '9 months (INH) or 4 months (RIF)'
+      },
+      {
+        name: 'LTBI before immunosuppression / biologics / transplant',
+        criteria: 'Patient about to start TNF-alpha inhibitor (infliximab, adalimumab, etanercept), other biologic, organ transplant, prolonged corticosteroids, hemodialysis.',
+        first_line: 'Treat LTBI BEFORE starting immunosuppression when possible: 4R (rifampin 4 months) preferred; 9H acceptable. Some experts proceed with immunosuppression after ≥1 month of LTBI therapy if delay would cause harm.',
+        alt_pen_allergy: 'Per regimen',
+        duration: '4 or 9 months; ideally complete before immunosuppression'
+      }
+    ],
+    iv_to_po: 'NA — entirely oral.',
+    pearls: [
+      'BEFORE starting LTBI therapy — ALWAYS rule out active TB: detailed symptom screen, CXR, sputum if any cough or abnormal CXR. Treating active TB as LTBI causes resistance.',
+      'TST POSITIVITY THRESHOLDS: ≥5 mm (HIV+, recent contact, abnormal CXR with healed TB, immunocompromised); ≥10 mm (recent immigrant, IDU, healthcare worker, high-risk medical conditions); ≥15 mm (low-risk).',
+      'IGRA (QuantiFERON, T-SPOT) preferred over TST when: BCG-vaccinated, anticipated poor follow-up for TST reading. Both tests have ~85% sensitivity; neither distinguishes latent from active.',
+      'CHILDREN <5 with TB exposure: window prophylaxis (treat presumptively until repeat testing 8–12 weeks post-exposure even if initial test negative).',
+      'COMPLETION RATES: 4R ~80% > 3HP ~75% > 9H ~60–70% — shorter regimens improve treatment completion.',
+      'Hepatotoxicity monitoring: baseline LFTs in all; monthly if HIV+, age >65, alcohol use, hepatitis B/C, pregnancy/postpartum 3 months. HOLD if ALT >3× ULN with symptoms or >5× asymptomatic.',
+      'Public Health Ontario provides free LTBI medications and DOT/clinical follow-up coordination.',
+      'BCG vaccination history: confounds TST (especially if BCG given >1 year of age) but does NOT confound IGRA — IGRA preferred in BCG-vaccinated.'
+    ],
+    source: 'Canadian Tuberculosis Standards 8th ed (2022); Public Health Ontario LTBI guidelines',
+    related_drugs: ['rifampin','isoniazid','pyridoxine','rifabutin']
+  },
+  {
+    id: 'pjp',
+    title: 'Pneumocystis jirovecii Pneumonia (PJP / PCP)',
+    category: 'respiratory', icon: '🫁', color: '#3b82f6',
+    overview: 'Opportunistic pneumonia caused by Pneumocystis jirovecii (atypical fungal organism) — historically PCP (P. carinii). Most common in HIV with CD4 <200 (<14%), solid organ transplant, hematologic malignancy, prolonged corticosteroids, biologic immunosuppression. Empiric treatment + adjunctive corticosteroids (when severe) reduce mortality. Prophylaxis is highly effective in at-risk populations.',
+    canadian_context: 'Toronto General/UHN, Mount Sinai, McGill MUHC, Vancouver, Calgary major HIV/transplant ID programs follow IDSA + IAS/CTN HIV opportunistic infections guidelines. PJP prophylaxis is standard in all HIV+ with CD4 <200, solid organ transplant recipients (typically 6–12 months post-transplant), allogeneic stem cell transplant, hematologic malignancy on intensive regimens, prolonged high-dose corticosteroids (≥20 mg prednisone equivalent ≥1 month). Bronchoalveolar lavage (BAL) is preferred diagnostic at major Ontario centres; induced sputum less sensitive but used when BAL not available.',
+    likely_organisms: [
+      { name: 'Pneumocystis jirovecii', frequency: '100% — non-cultivable atypical fungus; diagnosis by PCR or microscopy on BAL/induced sputum' }
+    ],
+    severity_strata: [
+      {
+        name: 'Mild–moderate PJP (PaO2 ≥70 mmHg or A-a gradient <35 mmHg)',
+        criteria: 'Hypoxemia mild–moderate; tolerating oral intake; not requiring ICU. Often outpatient or non-ICU inpatient.',
+        first_line: 'Trimethoprim-sulfamethoxazole (TMP-SMX) 15–20 mg/kg/day (TMP component) PO divided q6–8h × 21 days (typically 2 DS tabs PO TID for 70-kg adult)',
+        alt_pen_allergy: 'Sulfa-allergic alternatives: Clindamycin 600 mg PO/IV q8h + Primaquine 30 mg PO daily × 21 days (most data) OR Atovaquone 750 mg PO BID × 21 days (mild only — better tolerated, less effective for moderate–severe) OR Dapsone + Trimethoprim',
+        duration: '21 days'
+      },
+      {
+        name: 'Severe PJP (PaO2 <70 mmHg on room air OR A-a gradient ≥35 mmHg)',
+        criteria: 'Significant hypoxemia, ICU admission, mechanical ventilation, or rapid clinical deterioration.',
+        first_line: 'TMP-SMX 15–20 mg/kg/day (TMP component) IV divided q6–8h × 21 days PLUS adjunctive Prednisone 40 mg PO BID × 5 days, then 40 mg daily × 5 days, then 20 mg daily × 11 days (or methylprednisolone IV equivalent) — corticosteroids reduce mortality in moderate-severe HIV-PJP',
+        alt_pen_allergy: 'IV Pentamidine 4 mg/kg IV daily × 21 days (alternative; substantial nephrotoxicity, hypoglycemia, hypotension) OR Clindamycin + Primaquine OR Clindamycin + Pentamidine',
+        duration: '21 days IV ± step-down to oral; 21-day prednisone taper'
+      },
+      {
+        name: 'PJP prophylaxis (primary or secondary)',
+        criteria: 'Primary: HIV+ with CD4 <200 (or <14%); solid organ transplant 6–12 months post-transplant (longer in lung); hematologic malignancy on intensive regimens; prolonged corticosteroids ≥20 mg prednisone ≥1 month; biologic immunosuppression at-risk regimens. Secondary: post-PJP episode.',
+        first_line: 'TMP-SMX 1 SS tab PO daily (preferred) OR 1 DS tab PO daily OR 1 DS three times weekly (Mon/Wed/Fri) — equivalent efficacy with fewer ADRs in some patients',
+        alt_pen_allergy: 'Dapsone 100 mg PO daily (G6PD test before start) OR Atovaquone 1500 mg PO daily OR Aerosolized Pentamidine 300 mg via nebulizer monthly (least preferred; no extrapulmonary protection)',
+        duration: 'Continue while immunosuppression persists. HIV: until CD4 ≥200 for ≥3 months on ART. Transplant: 6–12 months (longer for lung). Stop after immunosuppression discontinued.'
+      }
+    ],
+    iv_to_po: 'TMP-SMX has near-100% oral bioavailability — IV→PO step-down once stable, tolerating PO, and clinically improving (typically days 3–5).',
+    pearls: [
+      'CORTICOSTEROIDS (prednisone 40 mg BID × 5d → 40 mg daily × 5d → 20 mg daily × 11d) for SEVERE PJP (PaO2 <70 OR A-a ≥35) reduces mortality in HIV-PJP — start within 72h of antibiotics. Less clear benefit in non-HIV PJP but commonly used.',
+      'TMP-SMX dosing is TMP-component-based: 15–20 mg/kg/day TMP. For 70-kg adult: 70 × 15 = 1050 mg TMP/day = 6 SS tablets/day = 3 DS tablets/day, divided TID-QID.',
+      'TMP-SMX hypersensitivity reactions are common in HIV (~30%) — rash, fever, transaminase elevation. Mild reactions can be desensitized; severe (Stevens-Johnson, hepatic) → switch.',
+      'Atovaquone is well-tolerated but requires HIGH-FAT MEAL for absorption and is LESS EFFECTIVE for moderate–severe disease.',
+      'BEFORE DAPSONE OR PRIMAQUINE: test G6PD activity — these drugs cause severe hemolysis in G6PD deficiency.',
+      'BRONCHOALVEOLAR LAVAGE (BAL) for diagnosis is the gold standard — high sensitivity (>95%); induced sputum sensitivity 50–90% (variable); serum beta-D-glucan supportive (sensitive but not specific).',
+      'CT chest typical findings: bilateral peri-hilar interstitial infiltrates, ground-glass opacities, sparing of pleura/periphery; cysts in some.',
+      'Early empiric therapy before confirmation is appropriate when high pre-test probability — DO NOT delay treatment for diagnostic confirmation if patient is sick.',
+      'PROPHYLAXIS DISCONTINUATION in HIV: when ART has restored CD4 ≥200 for ≥3 months and viral suppression — secondary prophylaxis can also be discontinued similarly.',
+      'NON-HIV PJP often more aggressive than HIV-PJP — lower organism burden but more vigorous host response; mortality ~30–50% vs ~10–20% in HIV.'
+    ],
+    source: 'IDSA/AIDSinfo HIV opportunistic infections (updated 2024); NIH PJP guidelines; Canadian HIV-AIDS treatment',
+    related_drugs: ['sulfamethoxazole','prednisone','clindamycin','primaquine','dapsone','pentamidine']
+  },
+
+  // ═══════════ SEPSIS ADDITIONS ═══════════
+  {
+    id: 'febrile_neutropenia',
+    title: 'Febrile Neutropenia',
+    category: 'sepsis', icon: '⚕️', color: '#ef4444',
+    overview: 'Fever (single oral temperature ≥38.3°C OR ≥38.0°C sustained over 1h) in a patient with neutropenia (ANC <500/μL OR <1000 with expected decrease to <500). Oncologic emergency — empiric broad-spectrum antibiotics within 1 hour. Risk-stratified using MASCC score (≥21 = low risk; can consider outpatient oral therapy in selected patients) vs high-risk (admit, IV broad-spectrum).',
+    canadian_context: 'Cancer Care Ontario (CCO) protocols + AMMI Canada + IDSA 2010 guidelines. Major Ontario cancer centres (Princess Margaret/UHN, Sunnybrook Odette, Hamilton Juravinski, London, Ottawa, Hospital for Sick Children) have institutional FN pathways. Outpatient oral therapy for low-risk febrile neutropenia (MASCC ≥21, expected ANC nadir <7 days, hemodynamically stable, reliable home support, can return for reassessment) is increasingly used at major Ontario centres. Granulocyte colony-stimulating factors (G-CSF — filgrastim, pegfilgrastim) are routinely used for prevention of FN in high-risk regimens; biosimilars cover under ODB.',
+    likely_organisms: [
+      { name: 'Gram-negatives (E. coli, Klebsiella, Pseudomonas, Enterobacter)', frequency: '~50% of identified pathogens in FN — historically dominant; rising MDR (ESBL, carbapenemase)' },
+      { name: 'Gram-positives (CoNS, S. aureus, Streptococci, Enterococcus, VRE)', frequency: '~50% — increasing proportion with central lines and prophylactic FQs (which select for gram-positive overgrowth)' },
+      { name: 'Anaerobes', frequency: 'Less common; consider with abdominal source, mucositis with severe oral pain' },
+      { name: 'Candida species (invasive candidiasis)', frequency: 'Risk after 4–7 days persistent fever despite broad antibiotics; prolonged neutropenia' },
+      { name: 'Aspergillus (invasive aspergillosis)', frequency: 'Prolonged neutropenia (>14 days), high-dose corticosteroids, allogeneic SCT — fluconazole prophylaxis does not cover' }
+    ],
+    severity_strata: [
+      {
+        name: 'High-risk FN — admit and IV broad-spectrum',
+        criteria: 'MASCC <21 OR any of: hemodynamic instability, mucositis preventing PO intake, focal infection (pneumonia, line), hepatic/renal dysfunction, expected prolonged neutropenia (>7 days) or profound (ANC <100), allogeneic SCT, induction chemo for AML, age ≥65 with comorbidities.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h (extended infusion preferred) OR Cefepime 2 g IV q8h OR Meropenem 1 g IV q8h (if ESBL risk or recent broad-spectrum). MONOTHERAPY adequate in most. ADD Vancomycin 15–20 mg/kg IV q8–12h ONLY for: hemodynamic instability, suspected line infection, soft tissue/skin infection, severe mucositis, MRSA colonization, prior MRSA, previous prophylactic FQ use.',
+        alt_pen_allergy: 'Aztreonam 2 g IV q8h + Vancomycin (true beta-lactam anaphylaxis) — narrow gram-negative coverage; ID consult',
+        duration: 'Continue until afebrile ≥48h AND ANC recovering ≥500. Typical duration 7–14 days; longer if positive cultures or persisting infection.'
+      },
+      {
+        name: 'Low-risk FN — outpatient oral therapy candidate',
+        criteria: 'MASCC ≥21, hemodynamically stable, no comorbidities, no focal infection, expected short neutropenia (<7 days), reliable home support, transportation to ED, ability to return for reassessment, not currently on prophylactic FQ.',
+        first_line: 'Outpatient: Ciprofloxacin 750 mg PO BID + Amoxicillin-clavulanate 875/125 mg PO BID. Reassess in 24–48h. Some centres admit briefly for first IV dose + observation, then discharge.',
+        alt_pen_allergy: 'Levofloxacin 750 mg PO daily + Clindamycin 600 mg PO TID (less data; reserve)',
+        duration: '7–14 days; continue until afebrile ≥48h and ANC recovering'
+      },
+      {
+        name: 'Persistent fever despite broad antibiotics (≥4–7 days)',
+        criteria: 'Fever persists despite appropriate broad-spectrum gram-negative + vancomycin coverage at days 4–7. Concern for invasive fungal infection.',
+        first_line: 'ADD empiric antifungal: Caspofungin 70 mg IV day 1, then 50 mg IV daily OR Anidulafungin OR Liposomal Amphotericin B 3 mg/kg IV daily (broad: Aspergillus + Candida) OR Voriconazole 6 mg/kg IV q12h × 1 day, then 4 mg/kg IV q12h (if Aspergillus suspected — galactomannan + CT chest).',
+        alt_pen_allergy: 'Per organism susceptibility',
+        duration: 'Continue antifungal until: ANC recovering AND no documented fungal infection (3–14 days) OR full course if fungal disease confirmed'
+      },
+      {
+        name: 'Antibacterial prophylaxis during expected high-risk neutropenia',
+        criteria: 'Expected prolonged severe neutropenia (e.g., AML induction, allogeneic SCT) — primary prophylaxis to reduce FN incidence.',
+        first_line: 'Levofloxacin 500 mg PO daily during expected ANC nadir (typically days 7–14 post-chemo until ANC >500). Reduces febrile neutropenia, bacteremia, mortality (CALGB/IMPROVE trials).',
+        alt_pen_allergy: 'Ciprofloxacin 500 mg PO BID (alternative)',
+        duration: 'Throughout expected neutropenia'
+      }
+    ],
+    iv_to_po: 'High-risk FN: IV throughout most of episode; PO step-down possible after 48h afebrile + ANC ≥500 with appropriate oral regimen (cipro + amox-clav). Low-risk: oral throughout.',
+    pearls: [
+      'TIME TO FIRST ANTIBIOTIC: target ≤60 minutes from arrival — every hour of delay increases mortality.',
+      'BLOOD CULTURES (peripheral × 2 + line — separate sites/lumens) BEFORE first antibiotic dose. Other site cultures (urine, sputum, wound, line) as clinically indicated.',
+      'MASCC SCORE (low risk ≥21): factors include burden of illness, no hypotension, no COPD, solid tumor or no fungal infection, no dehydration, outpatient at fever onset, age <60.',
+      'CENTRAL LINE INFECTION: positive blood culture from line significantly earlier than peripheral (differential time to positivity ≥2h) suggests CLABSI; consider line removal especially with persistent bacteremia, S. aureus, Pseudomonas, fungi.',
+      'G-CSF (FILGRASTIM, PEGFILGRASTIM) primary prophylaxis is standard for chemo regimens with expected FN risk ≥20%; secondary prophylaxis after first FN episode. Therapeutic G-CSF during established FN: NO benefit in survival (only neutrophil recovery duration).',
+      'GRANULOCYTE TRANSFUSIONS: rare; consider for severe neutropenia + documented infection not responding to optimal antibiotics — limited evidence.',
+      'AVOID PR exam, suppositories, enemas — risk of bacteremia from anorectal mucosal trauma in neutropenic patients.',
+      'NEUTROPENIC DIET (low-bacteria) — limited evidence; most centres no longer enforce strict diet.',
+      'RECTAL TEMPERATURES — avoid (mucosal trauma); use oral or tympanic.',
+      'RESPIRATORY VIRUS panel during respiratory virus season — viral PNA presentations can mimic bacterial FN; treat both empirically.'
+    ],
+    source: 'IDSA Febrile Neutropenia 2010 (NCCN updates); Cancer Care Ontario protocols; AMMI Canada',
+    related_drugs: ['piperacillin_tazobactam','cefepime','meropenem','vancomycin','aztreonam','ciprofloxacin','levofloxacin','amoxicillin_clavulanate','clindamycin']
+  },
+
+  // ═══════════ CNS ADDITIONS ═══════════
+  {
+    id: 'hsv_encephalitis',
+    title: 'HSV Encephalitis',
+    category: 'cns', icon: '🧠', color: '#a855f7',
+    overview: 'Herpes simplex virus encephalitis — most common sporadic viral encephalitis; usually HSV-1 (>90% adults), HSV-2 in neonates. Predilection for temporal/frontal lobes. Untreated mortality ~70%; with prompt acyclovir ~20% with significant morbidity. EMERGENT empiric IV acyclovir within hours of clinical suspicion — do NOT wait for confirmation.',
+    canadian_context: 'Toronto, Hamilton, London, Ottawa, Kingston, McGill major Ontario referral centres. HSV PCR on CSF is standard at provincial reference labs — sensitivity rises after 24–48h of symptoms. Brain MRI temporal/limbic findings highly suggestive. Mortality remains high; emphasis on time-to-acyclovir.',
+    likely_organisms: [
+      { name: 'Herpes simplex virus 1 (HSV-1)', frequency: '>90% of adult HSV encephalitis' },
+      { name: 'Herpes simplex virus 2 (HSV-2)', frequency: 'Most neonatal HSV encephalitis (perinatal vertical transmission); also adult mollaret meningitis' }
+    ],
+    severity_strata: [
+      {
+        name: 'Empiric HSV encephalitis — start IMMEDIATELY on suspicion',
+        criteria: 'Acute febrile encephalopathy: fever + altered mental status / seizure / focal neurologic deficit / personality change in any patient. Do NOT wait for HSV PCR or imaging — initiate empiric acyclovir while diagnostics proceed. Consider broad coverage (bacterial meningitis empiric) until ruled out.',
+        first_line: 'Acyclovir 10 mg/kg IV q8h (use ideal body weight if obese) × 14–21 days. RENAL DOSE ADJUSTMENT: CrCl 25–50 → q12h; CrCl 10–25 → q24h; CrCl <10 → 50% dose q24h. Hydrate aggressively to prevent crystal nephropathy. Continue empiric bacterial coverage (ceftriaxone + vancomycin ± ampicillin per meningitis protocol) until bacterial meningitis ruled out.',
+        alt_pen_allergy: 'Foscarnet 60 mg/kg IV q8h (if acyclovir-resistant — rare; nephrotoxic) — ID consultation',
+        duration: '14–21 days (21 days for HSV-1 encephalitis confirmed; 14 days minimum if suspicion not confirmed)'
+      },
+      {
+        name: 'Confirmed HSV encephalitis (positive CSF PCR)',
+        criteria: 'CSF HSV PCR positive (or strong clinical/imaging picture with negative early PCR — repeat at 48–72h).',
+        first_line: 'Acyclovir 10 mg/kg IV q8h × 21 days (full course). Some experts repeat CSF PCR at end of treatment in immunocompromised to confirm clearance.',
+        alt_pen_allergy: 'Foscarnet (acyclovir-resistant)',
+        duration: '21 days IV'
+      },
+      {
+        name: 'Neonatal HSV (CNS or disseminated)',
+        criteria: 'Neonate <30 days with HSV — vertical transmission (intrapartum > postnatal). Disseminated, CNS, or skin/eye/mouth (SEM).',
+        first_line: 'Acyclovir 20 mg/kg IV q8h (HIGHER pediatric dose) × 14 days (SEM disease) or 21 days (CNS or disseminated) — followed by oral acyclovir 300 mg/m² PO TID × 6 months suppression (improved neurologic outcomes per Kimberlin 2011 NEJM).',
+        alt_pen_allergy: 'Foscarnet (rare resistance)',
+        duration: '14 days (SEM) or 21 days (CNS/disseminated) IV; then 6 months oral suppression'
+      }
+    ],
+    iv_to_po: 'IV acyclovir THROUGHOUT acute treatment (CSF penetration). Oral suppressive acyclovir/valacyclovir AFTER acute course in neonates and selected immunocompromised; not standard for adult HSV encephalitis.',
+    pearls: [
+      'EVERY HOUR of acyclovir delay worsens outcomes — empiric therapy on suspicion, BEFORE LP or CT if delays >1h.',
+      'BRAIN MRI: temporal/limbic enhancement, gyral edema, restricted diffusion, hemorrhage — highly suggestive but not pathognomonic. Negative early MRI does NOT exclude.',
+      'CSF: lymphocytic pleocytosis (typical 10–500 cells), elevated protein, normal-low glucose, RBCs (hemorrhagic encephalitis), HSV PCR positive (sensitivity rises after 24–48h symptoms — repeat at 48–72h if initial negative and high suspicion).',
+      'EEG: temporal lobe slowing or epileptiform discharges (PLEDs — periodic lateralized epileptiform discharges) classic.',
+      'AVOID rapid acyclovir IV bolus — crystal nephropathy. Infuse over ≥1 hour; hydrate to maintain urine output.',
+      'CORTICOSTEROIDS: limited evidence; ongoing trials. Some experts add dexamethasone for severe edema; not routine.',
+      'DIFFERENTIAL of acute encephalitis: bacterial meningitis (empiric coverage), West Nile (warm months), VZV, autoimmune encephalitis (anti-NMDA, others), tuberculous meningitis, brain abscess, drug-induced.',
+      'NEONATAL HSV: most acquired intrapartum from active genital HSV; cesarean delivery if active maternal lesions at delivery.',
+      'POST-HSV ENCEPHALITIS sequelae: memory impairment, personality change, seizures, hemiparesis — common despite treatment; rehabilitation important.',
+      'Anti-NMDA receptor encephalitis can FOLLOW HSV encephalitis — re-emergence of symptoms after initial improvement; consider autoimmune workup.'
+    ],
+    source: 'IDSA Encephalitis 2008; AMMI Canada; CCM/CNS Society',
+    related_drugs: ['acyclovir','valacyclovir','ceftriaxone','vancomycin','ampicillin','dexamethasone']
+  },
+  {
+    id: 'spinal_epidural_abscess',
+    title: 'Spinal Epidural Abscess',
+    category: 'cns', icon: '🧠', color: '#a855f7',
+    overview: 'Suppurative collection in the spinal epidural space — neurologic emergency. Classic triad (back pain + fever + neurologic deficit) is present in <30%; high index of suspicion needed. Early surgical decompression + prolonged antibiotics; outcomes deteriorate rapidly with delayed treatment. Increasingly common with IVDU/opioid epidemic.',
+    canadian_context: 'Rising incidence in Canadian centres correlated with the opioid crisis — Northern Ontario, Indigenous communities, IVDU populations particularly affected. Toronto/UHN, Sunnybrook, Hamilton, London, Ottawa neurosurgical programs accept emergent transfers. Public Health Ontario tracking iGAS-related musculoskeletal infections; harm reduction integration with infection care.',
+    likely_organisms: [
+      { name: 'Staphylococcus aureus (MSSA + MRSA)', frequency: '~65% — most common; MRSA proportion rising with IVDU' },
+      { name: 'Coagulase-negative Staphylococci', frequency: '~10% — post-procedural (epidural anesthesia, spinal surgery)' },
+      { name: 'Streptococci', frequency: '~10%' },
+      { name: 'Gram-negatives (E. coli, Pseudomonas)', frequency: '~10% — IVDU, post-procedural, urinary source' },
+      { name: 'Anaerobes', frequency: '<5% — post-traumatic, contiguous infection' },
+      { name: 'Mycobacterium tuberculosis (Pott disease)', frequency: 'Endemic regions; tuberculous spondylitis with epidural extension' }
+    ],
+    severity_strata: [
+      {
+        name: 'Empiric — pending culture/imaging',
+        criteria: 'Suspected spinal epidural abscess (back pain + fever + any neurologic finding, OR back pain + risk factors: IVDU, recent procedure, immunocompromise, bacteremia source). MRI with contrast is diagnostic; CT-myelogram alternative if MRI contraindicated.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8–12h (target trough 15–20 mg/L) + Ceftriaxone 2 g IV q12h (broad gram-positive incl. MRSA + gram-negative coverage). NEUROSURGICAL CONSULTATION — most cases require surgical decompression for source control + culture (Gram stain, bacterial culture, AFB).',
+        alt_pen_allergy: 'Vancomycin + Aztreonam 2 g IV q8h OR Vancomycin + Levofloxacin (limited Gram-negative coverage)',
+        duration: 'Empiric × 6 weeks IV minimum; tailor per cultures'
+      },
+      {
+        name: 'MRSA spinal epidural abscess (confirmed)',
+        criteria: 'MRSA confirmed by culture.',
+        first_line: 'Vancomycin 15–20 mg/kg IV q8–12h × 6–8 weeks (target trough 15–20 mg/L). Daptomycin 8–10 mg/kg IV daily (high-dose for serious deep infections) is alternative if vancomycin failure or intolerance.',
+        alt_pen_allergy: 'Daptomycin OR Linezolid 600 mg IV/PO q12h (alternative; bacteriostatic — concerns in some serious infections)',
+        duration: '6–8 weeks; longer if hardware retained'
+      },
+      {
+        name: 'MSSA spinal epidural abscess (confirmed)',
+        criteria: 'MSSA confirmed.',
+        first_line: 'Cefazolin 2 g IV q8h × 6 weeks (preferred — equivalent to nafcillin/cloxacillin, better tolerated)',
+        alt_pen_allergy: 'Vancomycin 15–20 mg/kg IV q8–12h × 6 weeks (true beta-lactam anaphylaxis)',
+        duration: '6 weeks'
+      }
+    ],
+    iv_to_po: 'IV throughout 6–8 week course is standard (CNS penetration). Recent emerging evidence (OVIVA-style) suggests highly bioavailable oral agents (FQs, linezolid, rifampin combinations) may be acceptable for stable patients with susceptible organisms after 1–2 weeks IV — ID consultation.',
+    pearls: [
+      'CLASSIC TRIAD (back pain + fever + neuro deficit) is present in <30% of cases — most patients have back pain + fever WITHOUT neuro findings at presentation. HIGH index of suspicion in IVDU, post-procedural patients, bacteremia source, immunocompromised.',
+      'EMERGENT MRI WITH CONTRAST whenever spinal epidural abscess is suspected — including thoracic and lumbar spine; some imaging full spine.',
+      'STAGES: 1 (back pain), 2 (radicular pain), 3 (motor/sensory/sphincter), 4 (paraplegia/quadriplegia). Rapid progression possible (hours to days). Delayed treatment after Stage 3 → permanent deficits.',
+      'SURGICAL DECOMPRESSION (laminectomy + abscess evacuation + culture) is generally indicated; absolute indications: any neurologic deficit, progressive deficit, abscess size, failure of medical management.',
+      'NON-SURGICAL MANAGEMENT may be appropriate in: surgically inoperable patient, established complete neurologic deficit >24–72h (irreversible), small focal abscess without neurologic compromise — close monitoring.',
+      'BLOOD CULTURES × 2 sets BEFORE antibiotics; biopsy/aspiration cultures at surgery.',
+      'CONTIGUOUS SOURCES: vertebral osteomyelitis (treat both); psoas abscess (often hematogenous); epidural anesthesia/procedure.',
+      'FOLLOW-UP: serial neurologic exam, repeat imaging at 4–6 weeks (or sooner if deteriorating), inflammatory markers (CRP, ESR — slow to normalize).',
+      'IVDU PATIENTS: assess for endocarditis (TTE/TEE), other foci (psoas, septic arthritis), HIV/HBV/HCV testing, harm reduction referral.'
+    ],
+    source: 'IDSA bone/joint adjacent; AMMI Canada; Bugs & Drugs 2024',
+    related_drugs: ['vancomycin','ceftriaxone','cefazolin','daptomycin','linezolid','aztreonam','levofloxacin']
+  },
+
+  // ═══════════ ENT ADDITIONS ═══════════
+  {
+    id: 'external_otitis',
+    title: 'External Otitis (Swimmer\'s Ear) & Malignant Otitis Externa',
+    category: 'ent', icon: '👂', color: '#f59e0b',
+    overview: 'Acute external otitis (AOE — ‟swimmer\'s ear"): infection of external auditory canal — most commonly Pseudomonas aeruginosa or S. aureus; topical antibiotics are mainstay. Malignant (necrotizing) otitis externa: invasive Pseudomonas infection extending to skull base osteomyelitis — diabetic, elderly, immunocompromised; medical/surgical emergency requiring prolonged IV antipseudomonal therapy.',
+    canadian_context: 'Ontario pharmacist prescribing for uncomplicated AOE is in expanding scope — preferred agents include topical ciprofloxacin/dexamethasone (Ciprodex) and framycetin/gramicidin/dexamethasone (Sofracort). Both ODB-listed. Malignant otitis externa requires emergent ENT/ID consultation at major centres (UHN, Sunnybrook, Hamilton, London, Ottawa) — IV antipseudomonal therapy for 6–8 weeks with imaging follow-up.',
+    likely_organisms: [
+      { name: 'Pseudomonas aeruginosa', frequency: '>50% of AOE; ~95% of malignant otitis externa' },
+      { name: 'Staphylococcus aureus (MSSA, MRSA)', frequency: '~25% of AOE' },
+      { name: 'Polymicrobial (gram-negative + gram-positive)', frequency: 'Common in moisture-related AOE' },
+      { name: 'Fungal (Candida, Aspergillus — otomycosis)', frequency: 'Chronic AOE, immunocompromised, prolonged antibiotic use' }
+    ],
+    severity_strata: [
+      {
+        name: 'Acute external otitis (AOE) — uncomplicated',
+        criteria: 'Pain, otorrhea, canal edema, +/- conductive hearing loss; intact tympanic membrane (or cannot visualize but no severe systemic illness). Outpatient.',
+        first_line: 'Ciprofloxacin 0.3% / Dexamethasone 0.1% (Ciprodex) 4 drops to affected ear BID × 7 days (preferred — covers Pseudomonas + S. aureus + reduces inflammation) OR Framycetin / Gramicidin / Dexamethasone (Sofracort) 3–4 drops TID-QID × 7 days OR Ofloxacin 0.3% drops BID × 7 days. ADJUNCT: aural toilet (suction or wick if canal severely swollen); keep ear DRY (no swimming, cotton during showers).',
+        alt_pen_allergy: 'NA — topical drops have minimal systemic absorption',
+        duration: '7 days (extend to 10 if slow improvement)'
+      },
+      {
+        name: 'AOE with severe inflammation, ear canal occlusion',
+        criteria: 'Severe edema obstructing visualization or topical drug delivery — wick placement or oral antibiotics may be needed.',
+        first_line: 'Place ear wick (saturated with topical solution) + topical Ciprodex BID × 7–10d. If cellulitic spread (auricle, pre-auricular swelling): ADD oral Ciprofloxacin 500 mg PO BID × 7 days.',
+        alt_pen_allergy: 'Levofloxacin oral alternative',
+        duration: '7–10 days topical ± 7 days oral'
+      },
+      {
+        name: 'Malignant (necrotizing) otitis externa — EMERGENCY',
+        criteria: 'Diabetic, elderly, or immunocompromised patient with severe ear pain (often disproportionate to exam), granulation tissue at canal floor, cranial nerve palsies (CN VII, IX, X, XI, XII), elevated ESR/CRP. Imaging (CT or MRI) shows skull base osteomyelitis. EMERGENCY — admit, ENT/ID consult, IV antipseudomonal.',
+        first_line: 'Ciprofloxacin 400 mg IV q8h or 750 mg PO BID × 6–8 weeks (highly bioavailable — IV→PO acceptable) OR Piperacillin-tazobactam 4.5 g IV q6h × 6–8 weeks OR Cefepime 2 g IV q8h × 6–8 weeks (alternatives). DEBRIDEMENT and OSTEOMYELITIS workup.',
+        alt_pen_allergy: 'Ciprofloxacin (already first-line, non-beta-lactam) OR Aztreonam',
+        duration: '6–8 weeks minimum; longer if persistent imaging or symptoms; serial CRP/ESR + imaging to guide'
+      },
+      {
+        name: 'Otomycosis (fungal external otitis)',
+        criteria: 'Chronic AOE not responding to antibacterial therapy; visible fungal hyphae or spores; immunocompromised; recent antibiotic use.',
+        first_line: 'Acetic acid 2% drops BID + thorough aural toilet OR Clotrimazole 1% topical solution BID × 1–3 weeks OR Topical voriconazole (compounded; refractory)',
+        alt_pen_allergy: 'NA',
+        duration: '1–3 weeks; longer if Aspergillus'
+      }
+    ],
+    iv_to_po: 'AOE is topical only. Malignant OE: ciprofloxacin has near-100% bioavailability — early IV→PO step-down (within 48–72h) is appropriate for stable patients with susceptible Pseudomonas.',
+    pearls: [
+      'AOE PREVENTION: keep ears dry (drying drops with isopropyl alcohol after swimming, ear plugs), avoid Q-tips/instrumentation, treat early canal inflammation.',
+      'AVOID AMINOGLYCOSIDE-ONLY DROPS (gentamicin, neomycin, tobramycin) — ototoxicity risk if tympanic membrane perforation.',
+      'AVOID NEOMYCIN in any drop (10%+ contact dermatitis).',
+      'WICK PLACEMENT: saturate with topical solution, place into canal — allows medication to reach inflamed tissue when canal is swollen shut.',
+      'MALIGNANT OTITIS EXTERNA: classic triad — diabetic + severe otalgia + cranial nerve palsy. Granulation tissue at osseous-cartilaginous junction is pathognomonic.',
+      'Imaging for malignant OE: CT initially (bone destruction), MRI for soft tissue/skull base/dural extension. Bone scan and gallium scan may guide treatment duration.',
+      'Pediatric AOE: same topical management; risk factors include swimming, eczema, foreign bodies.',
+      'Tympanic membrane perforation suspected: AVOID aminoglycoside drops; use ciprofloxacin or ofloxacin (safe with perforation) — Ciprodex Health Canada–approved for both intact and perforated TM.',
+      'Ottitis-conjunctivitis syndrome (children): purulent conjunctivitis + otitis media → high-dose amox-clav (different management — beta-lactamase H. influenzae).',
+      'CHRONIC SUPPURATIVE OTITIS MEDIA (CSOM) — TM perforation with chronic discharge — different entity; prolonged topical Ciprodex + ENT referral.'
+    ],
+    source: 'AAO-HNS AOE 2014 (updated); Canadian Otolaryngology; Bugs & Drugs 2024',
+    related_drugs: ['ciprofloxacin','levofloxacin','dexamethasone','ofloxacin','piperacillin_tazobactam','cefepime','aztreonam','tobramycin']
+  },
+  {
+    id: 'mastoiditis',
+    title: 'Acute Mastoiditis',
+    category: 'ent', icon: '👂', color: '#f59e0b',
+    overview: 'Suppurative infection of mastoid air cells — most often a complication of acute otitis media (AOM). Children >> adults. Significant decline in incidence with childhood pneumococcal vaccination. Classic features: post-auricular swelling, erythema, tenderness, protruding ear; AOM history; fever. Emergent ENT consultation, IV antibiotics, ± myringotomy/mastoidectomy.',
+    canadian_context: 'Pediatric pneumococcal conjugate vaccine (PCV) routinely given in Ontario infant schedule has dramatically reduced mastoiditis. CPS guidance + AAO-HNS aligned. SickKids (Toronto), McMaster Children\'s, CHEO (Ottawa), Western (London) accept regional pediatric ENT referrals. Most cases respond to IV antibiotics + myringotomy; mastoidectomy reserved for failed medical management or intracranial complications.',
+    likely_organisms: [
+      { name: 'Streptococcus pneumoniae', frequency: '~30–40% — most common; resistance varies' },
+      { name: 'Streptococcus pyogenes (Group A)', frequency: '~15–20% — rising post-pandemic with iGAS surge' },
+      { name: 'Staphylococcus aureus (MSSA + MRSA)', frequency: '~10–15%' },
+      { name: 'Haemophilus influenzae', frequency: '~5–10% — declining post-Hib vaccination' },
+      { name: 'Pseudomonas aeruginosa', frequency: 'Chronic mastoiditis, immunocompromised' },
+      { name: 'Anaerobes', frequency: 'Chronic mastoiditis' }
+    ],
+    severity_strata: [
+      {
+        name: 'Acute mastoiditis — empiric',
+        criteria: 'AOM history + post-auricular swelling/erythema/tenderness + protruding pinna + fever; CT temporal bone confirms (mastoid air cell coalescence, cortical destruction).',
+        first_line: 'Ceftriaxone 1–2 g IV daily + Vancomycin 15–20 mg/kg IV q8–12h (if MRSA risk or severe) — admit; ENT consult for myringotomy ± tympanostomy tube. Switch to oral after clinical response (typically 48–72h) — amoxicillin-clavulanate 875/125 mg PO BID to complete 10–14 days total.',
+        alt_pen_allergy: 'Vancomycin + Levofloxacin OR Vancomycin + Aztreonam',
+        duration: '10–14 days total; longer for complicated (intracranial extension, abscess)'
+      },
+      {
+        name: 'Chronic mastoiditis (>3 months) or post-surgical',
+        criteria: 'Chronic ear discharge ≥3 months, often with cholesteatoma; or recurrent acute mastoiditis. ENT for surgical management.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID × 14 days (covers anaerobes + gram-positive) OR Piperacillin-tazobactam IV (severe). ENT for definitive surgical management (mastoidectomy).',
+        alt_pen_allergy: 'Levofloxacin + Metronidazole OR Moxifloxacin (single agent)',
+        duration: '14 days antibiotics + surgical management'
+      },
+      {
+        name: 'Complicated mastoiditis (intracranial extension, sigmoid sinus thrombosis, Bezold abscess)',
+        criteria: 'Subperiosteal abscess (Bezold abscess — neck), intracranial extension (epidural/subdural empyema, brain abscess, meningitis), sigmoid sinus thrombosis (lateral sinus thrombosis).',
+        first_line: 'Vancomycin + Cefepime + Metronidazole IV × 4–6 weeks. URGENT neurosurgery + ENT joint management. Anticoagulation for sigmoid sinus thrombosis (controversial — case-by-case).',
+        alt_pen_allergy: 'Vancomycin + Aztreonam + Metronidazole',
+        duration: '4–6 weeks IV minimum; longer with intracranial complications'
+      }
+    ],
+    iv_to_po: 'Initial IV (ceftriaxone ± vancomycin) until afebrile, decreasing erythema/swelling, oral tolerance. Step-down to amoxicillin-clavulanate or other oral agent for completion of 10–14 day course (uncomplicated).',
+    pearls: [
+      'CT TEMPORAL BONE is the diagnostic standard — mastoid air cell coalescence (loss of trabecular pattern), cortical destruction, abscess.',
+      'MRI brain + venogram for suspected intracranial complication (meningitis, abscess) or sigmoid sinus thrombosis.',
+      'MYRINGOTOMY ± TUBE: source control — drains middle ear, allows culture; performed at bedside under topical anesthetic in children.',
+      'MASTOIDECTOMY indicated for: failure of medical management at 48–72h, complicated mastoiditis (subperiosteal abscess, intracranial extension), cholesteatoma, persistent disease.',
+      'PCV13/PCV15 routine immunization has reduced pneumococcal mastoiditis dramatically. iGAS surge post-pandemic 2022–2024 has increased Strep pyogenes mastoiditis in Ontario.',
+      'Hearing assessment after mastoiditis — sensorineural loss possible; audiology follow-up.',
+      'CONTRALATERAL OE/AOM is common — examine both ears.',
+      'PEDIATRIC ANTIBIOTIC DOSING: ceftriaxone 50–100 mg/kg/day IV; vancomycin 15 mg/kg q6–8h; amoxicillin-clavulanate 90 mg/kg/day amox component divided BID-TID.',
+      'Unusual organisms (Pseudomonas, Aspergillus) considered in chronic mastoiditis, immunocompromised — culture-directed therapy.'
+    ],
+    source: 'CPS pediatric infectious diseases; AAO-HNS; Bugs & Drugs 2024',
+    related_drugs: ['ceftriaxone','vancomycin','amoxicillin_clavulanate','levofloxacin','aztreonam','piperacillin_tazobactam','metronidazole','moxifloxacin','cefepime']
+  },
+  {
+    id: 'odontogenic_infection',
+    title: 'Odontogenic Infection (Dental Abscess, Ludwig\'s Angina)',
+    category: 'ent', icon: '👂', color: '#f59e0b',
+    overview: 'Dental abscess (periapical, periodontal) and deep neck space infections of dental origin — Ludwig\'s angina (bilateral submandibular space cellulitis) is an airway emergency. Polymicrobial oral flora; anaerobic coverage essential. Management: source control (drainage, dental procedure, extraction) + antibiotics. Severe cases: airway management, IV antibiotics, surgical/maxillofacial involvement.',
+    canadian_context: 'Most uncomplicated dental abscesses are managed by dentists in Ontario (out-of-hospital). Pharmacy involvement common for acute pain management + antibiotic prescribing (when prescribed by dentist). Limited dental coverage in Ontario (some via OHIP for hospital-based dental services in select populations; Canadian Dental Care Plan rolling out 2024–2025) impacts access. Severe odontogenic infections (Ludwig\'s, deep neck space, airway compromise) → ENT/maxillofacial/ICU; major Ontario tertiary centres.',
+    likely_organisms: [
+      { name: 'Viridans group Streptococci', frequency: 'Common — typical oral flora' },
+      { name: 'Anaerobes (Bacteroides, Prevotella, Fusobacterium, Peptostreptococcus)', frequency: 'Polymicrobial; anaerobic coverage essential' },
+      { name: 'Eikenella corrodens', frequency: 'Slow-growing; clenched-fist injury also produces' },
+      { name: 'Staphylococcus aureus', frequency: 'Less common; consider in severe' },
+      { name: 'Actinomyces', frequency: 'Chronic odontogenic infection — sulfur granules, slow course' }
+    ],
+    severity_strata: [
+      {
+        name: 'Mild dental abscess (localized) — outpatient',
+        criteria: 'Localized periapical or periodontal abscess; no systemic signs; tolerating oral; reliable dental follow-up. Source control by dentist (drainage, root canal, extraction) is the primary treatment.',
+        first_line: 'DENTAL SOURCE CONTROL is essential (drainage, root canal, extraction). Antibiotics are ADJUNCTIVE only when systemic signs, immunocompromise, or cellulitic spread: Amoxicillin 500 mg PO TID × 3–7 days (sufficient if no anaerobic concern) OR Amoxicillin-clavulanate 500/125 mg PO TID (if cellulitis/anaerobic coverage needed)',
+        alt_pen_allergy: 'Clindamycin 300 mg PO QID × 3–7 days (covers oral anaerobes + Streptococci) OR Doxycycline 100 mg PO BID + Metronidazole 500 mg PO TID',
+        duration: '3–7 days post-source-control; many cases resolve with drainage alone'
+      },
+      {
+        name: 'Moderate odontogenic infection — facial cellulitis, soft tissue swelling',
+        criteria: 'Facial cellulitis, submandibular/buccal space involvement, modest fever, immunocompromised, or failed outpatient. May require admission.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID × 7–10 days (outpatient) OR Ampicillin-sulbactam 3 g IV q6h × 5–7 days (inpatient; switch to oral when stable)',
+        alt_pen_allergy: 'Clindamycin 600 mg IV q8h or 300–450 mg PO QID × 7–10 days OR Moxifloxacin 400 mg PO/IV daily (single-agent, covers anaerobes)',
+        duration: '7–10 days'
+      },
+      {
+        name: 'Severe — Ludwig\'s angina, deep neck space infection, airway threat',
+        criteria: 'Bilateral submandibular cellulitis (Ludwig\'s angina — woody, brawny induration, elevated tongue), trismus, drooling, dyspnea, stridor, parapharyngeal/retropharyngeal/prevertebral space involvement, mediastinitis. AIRWAY EMERGENCY.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h × 7–14 days OR Ampicillin-sulbactam 3 g IV q6h. ICU admission; AIRWAY MANAGEMENT (often awake fiberoptic intubation or surgical airway); ENT/maxillofacial surgical consultation for drainage; CT neck with contrast.',
+        alt_pen_allergy: 'Vancomycin + Metronidazole + (Aztreonam OR Levofloxacin) OR Clindamycin + (Aztreonam OR Levofloxacin)',
+        duration: '7–14 days IV; longer if mediastinitis or persistent disease'
+      },
+      {
+        name: 'Necrotizing fasciitis of head/neck (cervical necrotizing fasciitis)',
+        criteria: 'Rapidly progressive necrotizing infection — uncommon but devastating; odontogenic source.',
+        first_line: 'Piperacillin-tazobactam + Vancomycin + Clindamycin (toxin suppression for any GAS suspicion) IV — emergent surgical debridement; same principles as other necrotizing fasciitis.',
+        alt_pen_allergy: 'Vancomycin + Aztreonam + Metronidazole + Clindamycin',
+        duration: 'Until surgical source control + clinical resolution; typically 2–4+ weeks'
+      }
+    ],
+    iv_to_po: 'IV → PO step-down once source controlled, afebrile, decreasing swelling, tolerating oral. Most non-Ludwig\'s odontogenic infections can finish course with oral amoxicillin-clavulanate, clindamycin, or moxifloxacin.',
+    pearls: [
+      'SOURCE CONTROL (drainage, root canal, extraction) is the PRIMARY treatment for dental infection — antibiotics alone are inadequate for established abscess.',
+      'CLINDAMYCIN was historically a workhorse for dental infections in penicillin-allergic patients but is now reserved due to C. difficile risk and rising Streptococcus resistance — consider amox-clav (non-anaph allergy), moxifloxacin, or doxycycline+metronidazole alternatives.',
+      'LUDWIG\'S ANGINA: classic woody, brawny submandibular induration with elevated tongue floor; drooling, dyspnea, stridor are airway crisis signs. Awake fiberoptic intubation often safest; surgical airway (cricothyrotomy, tracheostomy) backup. ICU admission.',
+      'CT NECK WITH CONTRAST: identifies deep neck space involvement, abscesses requiring drainage, retropharyngeal/parapharyngeal extension, mediastinitis (descending necrotizing mediastinitis is a feared complication).',
+      'MEDIASTINITIS from descending neck infection: high mortality; cardiothoracic surgery + prolonged IV antibiotics.',
+      'PEDIATRIC odontogenic infections: similar principles; CPS guidance; pediatric maxillofacial referral for complex cases.',
+      'CHRONIC ACTINOMYCOSIS: sulfur granules in pus, slow indolent course, mass-forming — penicillin G (or amoxicillin) × 6–12 months; often misdiagnosed as cancer.',
+      'PHARMACIST ROLE: pain management (acetaminophen-NSAID combo), counsel on dental follow-up, screen for systemic signs requiring escalation, antibiotic stewardship (avoid antibiotics for tooth pain without infection signs).'
+    ],
+    source: 'IDSA SSTI 2014; CDA dental abscess guidance; Bugs & Drugs 2024',
+    related_drugs: ['amoxicillin','amoxicillin_clavulanate','clindamycin','metronidazole','doxycycline','moxifloxacin','piperacillin_tazobactam','ampicillin','vancomycin','aztreonam','levofloxacin','penicillin']
+  },
+
+  // ═══════════ EYE ADDITIONS ═══════════
+  {
+    id: 'orbital_cellulitis',
+    title: 'Orbital vs Preseptal Cellulitis',
+    category: 'eye', icon: '👁️', color: '#0ea5e9',
+    overview: 'Preseptal (periorbital) cellulitis: anterior to the orbital septum — soft tissue infection of eyelid; OUTPATIENT oral antibiotics typically. Orbital (postseptal) cellulitis: infection posterior to orbital septum (involves orbit) — EMERGENCY with risk of vision loss, intracranial extension; admit, IV antibiotics, ophthalmology + ENT (if sinus source) consultation, CT orbit. Distinction: vision/motility/proptosis/severe pain → orbital.',
+    canadian_context: 'Most cases in Canadian centres are pediatric (sinus origin in children — ethmoid > maxillary). Adults may have trauma, dental, or sinus source. SickKids, CHEO, McMaster Children\'s pediatric ENT/ophth combined service for pediatric orbital cellulitis. UHN, Sunnybrook, Hamilton, London, Ottawa adult coverage. Most pediatric orbital cellulitis responds to IV antibiotics + sinus drainage if subperiosteal abscess; surgical decompression for visual threat.',
+    likely_organisms: [
+      { name: 'Staphylococcus aureus (MSSA + MRSA)', frequency: 'Common in both preseptal and orbital — trauma, hematogenous' },
+      { name: 'Streptococcus pneumoniae', frequency: 'Sinusitis-related orbital cellulitis (especially children)' },
+      { name: 'Streptococcus pyogenes (Group A)', frequency: 'Common; rising with iGAS' },
+      { name: 'Haemophilus influenzae', frequency: 'Now uncommon post-Hib vaccine; consider in unvaccinated' },
+      { name: 'Anaerobes', frequency: 'Sinus-origin orbital cellulitis (especially in adults)' },
+      { name: 'Polymicrobial (sinus origin)', frequency: 'Common' }
+    ],
+    severity_strata: [
+      {
+        name: 'Preseptal (periorbital) cellulitis — outpatient',
+        criteria: 'Eyelid swelling, erythema, warmth WITHOUT proptosis, limited eye movements, vision changes, severe pain, or chemosis. NORMAL extraocular motility. NORMAL visual acuity. Skin source (insect bite, hordeolum, conjunctivitis) common.',
+        first_line: 'Amoxicillin-clavulanate 875/125 mg PO BID × 7–10 days (covers Staph, Strep, H. influenzae) OR Cephalexin 500 mg PO QID × 7–10 days (if no anaerobic concern). Pediatric: amox-clav 90 mg/kg/day amox component divided BID.',
+        alt_pen_allergy: 'Clindamycin 300–450 mg PO QID × 7–10 days OR TMP-SMX (covers MRSA) + Cephalexin (Strep coverage if needed)',
+        duration: '7–10 days; close clinical follow-up at 24–48h to detect progression'
+      },
+      {
+        name: 'Orbital (postseptal) cellulitis — EMERGENCY',
+        criteria: 'PROPTOSIS, OPHTHALMOPLEGIA (limited extraocular movements), pain with eye movement, chemosis, vision change (color, acuity, RAPD), severe pain. CT orbit confirms — postseptal soft tissue inflammation, sinusitis (most common source — ethmoid in children).',
+        first_line: 'ADMIT — IV: Ceftriaxone 2 g IV daily + Vancomycin 15–20 mg/kg IV q8–12h (MRSA coverage essential) + Metronidazole 500 mg IV q8h (anaerobic coverage if sinus source). ENT consultation for sinus source control. Ophthalmology consultation. CT orbit/sinuses with contrast.',
+        alt_pen_allergy: 'Vancomycin + Levofloxacin + Metronidazole OR Vancomycin + Aztreonam + Metronidazole',
+        duration: 'IV until clinical improvement (typically 5–7 days), then oral step-down (amoxicillin-clavulanate or based on culture) to complete 14–21 days. Surgical drainage for subperiosteal/orbital abscess.'
+      },
+      {
+        name: 'Subperiosteal abscess or orbital abscess',
+        criteria: 'CT confirms abscess collection along orbital wall (subperiosteal — typically medial, ethmoid sinusitis source) or within orbit. Decision for surgical drainage based on size, vision, age, response.',
+        first_line: 'Same IV antibiotics as orbital cellulitis. SURGICAL DRAINAGE indications: visual compromise, large abscess (>10 mm), age ≥9 (less likely to respond medically), no improvement at 24–48h, frontal sinusitis source (intracranial extension risk), hemorrhagic/atypical features. Many small subperiosteal abscesses in children respond to IV antibiotics alone with close monitoring.',
+        alt_pen_allergy: 'Per orbital cellulitis',
+        duration: 'IV 5–7 days, then oral; total 14–21 days; surgical drainage often required'
+      },
+      {
+        name: 'Cavernous sinus thrombosis or intracranial complication',
+        criteria: 'Bilateral eye findings (especially proptosis), cranial nerve palsies (III, IV, VI), fever, sepsis, mental status changes — emergent neuro/ophth/ENT/ID.',
+        first_line: 'Vancomycin + Cefepime/Meropenem + Metronidazole IV × 4–6 weeks. Anticoagulation (controversial — emerging evidence supports). Neurosurgical consultation. Aggressive sinus/orbit drainage.',
+        alt_pen_allergy: 'Vancomycin + Aztreonam + Metronidazole',
+        duration: '4–6 weeks IV minimum; intracranial complications longer'
+      }
+    ],
+    iv_to_po: 'Preseptal: oral throughout. Orbital: IV until clinical improvement (afebrile, decreasing inflammation, no progression), then oral step-down (amoxicillin-clavulanate, clindamycin) to complete 14–21 days.',
+    pearls: [
+      'PRESEPTAL vs ORBITAL: KEY exam findings — proptosis, ophthalmoplegia, vision change, pain with eye movement → ORBITAL (CT orbit, admit, IV).',
+      'PEDIATRIC SINUSITIS-RELATED ORBITAL CELLULITIS — most common etiology; ethmoid sinus contiguity. Adults may have trauma, dental, or sinus source.',
+      'CT ORBIT WITH CONTRAST: differentiates preseptal from postseptal; identifies abscess (subperiosteal, orbital), sinus disease, intracranial extension.',
+      'MRI orbit + brain for suspected cavernous sinus thrombosis or intracranial extension.',
+      'OPHTHALMOLOGY assessment (visual acuity, color vision, RAPD, motility, IOP) before AND during treatment — vision deterioration warrants urgent surgical decompression.',
+      'BLOOD CULTURES rarely positive in cellulitis but reasonable in admitted patients with systemic signs.',
+      'NASAL/SINUS endoscopy by ENT for sinus drainage source control.',
+      'CHILDREN aged 9+ with subperiosteal abscess often need surgical drainage (less likely to respond to medical management alone vs younger children).',
+      'CAVERNOUS SINUS THROMBOSIS — FEARED COMPLICATION: bilateral eye findings (especially crossed midline), cranial nerve III/IV/VI palsies, fever; mortality historically high; aggressive antibiotics + anticoagulation considered.',
+      'PHYCOMYCOSIS (mucormycosis) — rare but devastating in diabetics with ketoacidosis and immunocompromised; severe pain, black eschar in nasal/palate; emergent surgical debridement + amphotericin B.'
+    ],
+    source: 'AAO ophthalmology; AAO-HNS; Bugs & Drugs 2024',
+    related_drugs: ['amoxicillin_clavulanate','cephalexin','clindamycin','sulfamethoxazole','ceftriaxone','vancomycin','metronidazole','levofloxacin','aztreonam','cefepime','meropenem']
+  },
+
+  // ═══════════ GI ADDITIONS ═══════════
+  {
+    id: 'community_diarrhea',
+    title: 'Acute Infectious Diarrhea (Community, Non-Travel)',
+    category: 'gi', icon: '🤢', color: '#84cc16',
+    overview: 'Acute diarrhea (≥3 loose stools/24h) of bacterial, viral, or parasitic etiology. Most cases (especially viral) are self-limited and require ONLY hydration and supportive care. Antibiotics are reserved for specific bacterial pathogens (Shigella, severe Salmonella, Campylobacter), severe disease, dysentery (bloody/mucous), or immunocompromised. Critical: AVOID antibiotics in EHEC (O157:H7) — increases hemolytic uremic syndrome (HUS) risk.',
+    canadian_context: 'Public Health Ontario tracks reportable enteric pathogens — Salmonella (typhoid + non-typhoidal), Shigella, Campylobacter, EHEC O157:H7, Listeria, Vibrio, Yersinia, Giardia, Cyclospora, Cryptosporidium are reportable. Outbreaks in daycares, schools, LTC, restaurants are PHU-investigated. Pharmacist counselling for ORS, antimotility avoidance in dysentery, and recognizing red flags (bloody diarrhea, dehydration, immunocompromise, persistent symptoms) is key. Most stool testing in Ontario uses multiplex PCR (rapid pathogen ID) at hospital labs.',
+    likely_organisms: [
+      { name: 'Norovirus', frequency: '~30–50% — most common cause of acute infectious diarrhea in adults; outbreaks in cruises, LTC, daycare' },
+      { name: 'Rotavirus', frequency: 'Pediatric < 5 years (declining post-vaccine in Canada)' },
+      { name: 'Campylobacter jejuni', frequency: '5–15% bacterial diarrhea; raw poultry, unpasteurized dairy; FQ resistance >40% in Canada — azithromycin preferred' },
+      { name: 'Salmonella (non-typhoidal)', frequency: '5–10% — eggs, poultry, reptiles; usually self-limited; do NOT routinely treat' },
+      { name: 'Shigella', frequency: '<5%; person-to-person; often dysentery; treat with azithromycin or ciprofloxacin' },
+      { name: 'Shiga-toxin E. coli (STEC; EHEC O157:H7)', frequency: 'Bloody diarrhea, ground beef, leafy greens; HUS risk; DO NOT treat with antibiotics' },
+      { name: 'Clostridioides difficile', frequency: 'Healthcare-associated or post-antibiotic; separate management (see C. diff syndrome)' },
+      { name: 'Giardia lamblia, Cyclospora, Cryptosporidium', frequency: 'Persistent diarrhea (>14 days); waterborne; immigration; immunocompromised' },
+      { name: 'Vibrio (cholera, non-cholera)', frequency: 'Travel, raw seafood — rare in Ontario without travel' },
+      { name: 'Listeria monocytogenes', frequency: 'Pregnancy/immunocompromised — invasive disease > diarrhea; cold deli, soft cheese' }
+    ],
+    severity_strata: [
+      {
+        name: 'Mild–moderate viral or unspecified diarrhea — supportive only',
+        criteria: '<6 stools/24h, no blood, no high fever, no dehydration, immunocompetent. Most cases.',
+        first_line: 'ORAL REHYDRATION (oral rehydration salts/Pedialyte/Gastrolyte preferred over clear sport drinks) + symptom management. NO antibiotics. Loperamide 4 mg initial dose, then 2 mg after each loose stool (max 16 mg/day) for symptom control IF no fever/blood. Bismuth subsalicylate alternative.',
+        alt_pen_allergy: 'NA',
+        duration: 'Self-limited (24–72h typically; viral may persist 5–7 days)'
+      },
+      {
+        name: 'Severe bacterial diarrhea (dysentery, fever, sepsis)',
+        criteria: 'High fever (≥38.5°C), bloody/mucous stools, ≥6 stools/day, severe abdominal pain, dehydration, immunocompromised, age >65 with comorbidities, or persistent (>5–7 days). STOOL CULTURE/PCR FIRST.',
+        first_line: 'Empiric: Azithromycin 500 mg PO daily × 3 days (preferred — covers Campylobacter, Shigella, non-typhoidal Salmonella; FQ resistance high in Campylobacter). ALTERNATIVE: Ciprofloxacin 500 mg PO BID × 3–5 days (in low-resistance regions). DO NOT GIVE ANTIBIOTICS IF EHEC SUSPECTED (bloody diarrhea + history of ground beef, leafy greens, daycare exposure) — HUS risk.',
+        alt_pen_allergy: 'Same — non-beta-lactam',
+        duration: '3–5 days'
+      },
+      {
+        name: 'Specific pathogen-directed therapy',
+        criteria: 'Stool culture/PCR confirms specific pathogen.',
+        first_line: 'Shigella: azithromycin 500 mg PO daily × 3d OR ciprofloxacin × 3d. Campylobacter: azithromycin 500 mg PO daily × 3d (FQ resistance >40%). Non-typhoidal Salmonella: NO ANTIBIOTICS routinely (prolongs shedding) — exceptions: bacteremia, age <3 mo or >65, severe immunocompromise (HIV, transplant). Vibrio (non-cholera): doxycycline. Yersinia: usually self-limited; severe → TMP-SMX or FQ.',
+        alt_pen_allergy: 'Per pathogen',
+        duration: 'Per pathogen (3–5 days bacterial; longer if bacteremic)'
+      },
+      {
+        name: 'STEC / EHEC O157:H7 — DO NOT TREAT WITH ANTIBIOTICS',
+        criteria: 'Shiga-toxin-producing E. coli — bloody diarrhea, recent ground beef/leafy greens/daycare exposure; PCR or stool culture confirmation.',
+        first_line: 'SUPPORTIVE CARE ONLY — IV hydration, monitor for HUS (acute kidney injury, hemolytic anemia, thrombocytopenia at 5–10 days post-onset). NO ANTIBIOTICS, NO ANTIMOTILITY (loperamide) — both associated with HUS development. ADMIT severe cases. Plasma exchange / dialysis if HUS develops.',
+        alt_pen_allergy: 'NA',
+        duration: 'Supportive until resolution (5–14 days)'
+      },
+      {
+        name: 'Persistent diarrhea (>14 days) — parasitic workup',
+        criteria: 'Diarrhea >14 days; immigration, child in daycare, beaver/water exposure, immunocompromised. Stool ova/parasites × 3, Giardia antigen, Cryptosporidium PCR/antigen.',
+        first_line: 'Giardia: Metronidazole 250 mg PO TID × 5–7 days OR Tinidazole 2 g PO × 1 dose. Cyclospora: TMP-SMX 1 DS PO BID × 7–10 days. Cryptosporidium (immunocompetent): self-limited; (immunocompromised): nitazoxanide + ART optimization. Entamoeba histolytica: metronidazole 750 mg TID × 7–10d + paromomycin (luminal cyst eradication).',
+        alt_pen_allergy: 'Per pathogen',
+        duration: 'Per pathogen'
+      }
+    ],
+    iv_to_po: 'Most acute diarrhea is treated entirely with oral therapy (or no therapy). IV rehydration for severe dehydration, hospitalization. IV antibiotics rare — bacteremic non-typhoidal Salmonella, severe shigellosis with sepsis.',
+    pearls: [
+      'AVOID LOPERAMIDE in: dysentery (bloody/mucous), high fever (≥38.5°C), suspected EHEC, suspected C. difficile, severe abdominal pain. Safe in afebrile non-bloody traveler-style diarrhea.',
+      'ORAL REHYDRATION (ORS, Pedialyte, Gastrolyte) is the cornerstone — designed sodium-glucose cotransport optimization. Sports drinks (Gatorade, Powerade) suboptimal; juice/cola WORSE (high osmolality).',
+      'STOOL TESTING indicated for: severe disease, bloody/mucous diarrhea, fever ≥38.5°C, immunocompromised, suspected C. difficile, suspected outbreak, persistent (>7 days), recent travel. Multiplex PCR is standard at most Ontario hospital labs.',
+      'STEC/EHEC: ALWAYS rule out in bloody diarrhea — stool culture (sorbitol-MacConkey) or shiga-toxin PCR. Avoid loperamide AND antibiotics. Watch for HUS at 5–10 days post-onset.',
+      'IMMUNOCOMPROMISED with diarrhea — broaden differential: CMV (HIV/transplant), Cryptosporidium, MAC, microsporidia. Stool tests + endoscopy may be needed.',
+      'PROBIOTICS: weak evidence for prevention (e.g., during antibiotic use); not for treatment of established diarrhea. Saccharomyces boulardii most-studied.',
+      'PUBLIC HEALTH REPORTABLE in Ontario: Salmonella, Shigella, Campylobacter, EHEC, Giardia, Cyclospora, Cryptosporidium, Listeria, Vibrio, Yersinia. Single case may indicate outbreak.',
+      'TYPHOID FEVER (Salmonella Typhi/Paratyphi): bacteremic enteric fever — separate entity; ceftriaxone + azithromycin; reportable; obtain travel history.',
+      'CLOSTRIDIOIDES DIFFICILE: separate empiric therapy and management — see CDI syndrome card.',
+      'VACCINATION: rotavirus oral vaccine routine in Canadian infants; cholera/ETEC oral (Dukoral) for select travelers; typhoid vaccine for travel.'
+    ],
+    source: 'IDSA Infectious Diarrhea 2017; PHAC; Public Health Ontario; Bugs & Drugs 2024',
+    related_drugs: ['azithromycin','ciprofloxacin','metronidazole','sulfamethoxazole','doxycycline','loperamide','bismuth_subsalicylate']
+  },
+  {
+    id: 'secondary_peritonitis',
+    title: 'Secondary Peritonitis & Intra-Abdominal Abscess',
+    category: 'gi', icon: '🤢', color: '#84cc16',
+    overview: 'Bacterial peritonitis from perforated viscus, post-operative leak, or contiguous infection (cholecystitis, appendicitis, diverticulitis). Polymicrobial — Gram-negatives + anaerobes ± Enterococcus. Source control (surgery, percutaneous drainage) + broad-spectrum antibiotics. Differs from primary (spontaneous) bacterial peritonitis (SBP) in cirrhosis (separate management).',
+    canadian_context: 'IDSA + AMMI Canada + Surgical Infection Society aligned. STOP-IT trial (2015 NEJM) showed 4 days of antibiotics post-source-control non-inferior to longer courses for adequately drained intra-abdominal infections — Canadian centres widely adopted. Ontario surgical site infection surveillance (Critical Care Services Ontario) monitors post-op outcomes. Most uncomplicated cases treated with ceftriaxone+metronidazole or amoxicillin-clavulanate; severe with piperacillin-tazobactam or carbapenem (ESBL risk).',
+    likely_organisms: [
+      { name: 'Escherichia coli', frequency: '~40% — most common; rising ESBL' },
+      { name: 'Klebsiella pneumoniae', frequency: '~15%' },
+      { name: 'Bacteroides fragilis group', frequency: '~30% — anaerobic predominance; coverage essential' },
+      { name: 'Other anaerobes (Prevotella, Peptostreptococcus, Clostridium)', frequency: '~25%' },
+      { name: 'Enterococcus faecalis/faecium', frequency: '~15% — coverage typically not first-line empirically; consider in healthcare-associated, immunocompromised, post-operative, antibiotic-pretreated' },
+      { name: 'Pseudomonas aeruginosa', frequency: '~5–10% — recent broad-spectrum antibiotics, healthcare-associated' },
+      { name: 'Streptococci (viridans, milleri group)', frequency: '~10%' },
+      { name: 'Candida species', frequency: 'Healthcare-associated, recurrent perforations, immunosuppressed, prolonged broad-spectrum antibiotics' }
+    ],
+    severity_strata: [
+      {
+        name: 'Community-acquired mild–moderate intra-abdominal infection',
+        criteria: 'No sepsis, no MDR risk factors, no recent broad-spectrum antibiotics, immunocompetent. Examples: uncomplicated diverticulitis with abscess, perforated appendicitis with localized peritonitis post-source-control.',
+        first_line: 'Ceftriaxone 1–2 g IV daily + Metronidazole 500 mg IV q8h (preferred — covers gram-negatives + anaerobes; ENTEROCOCCUS coverage NOT routinely needed in community-acquired) × 4–7 days post-source-control OR Amoxicillin-clavulanate 875/125 mg PO BID (mild outpatient post-drainage)',
+        alt_pen_allergy: 'Ciprofloxacin 400 mg IV q12h or 500 mg PO BID + Metronidazole 500 mg PO/IV TID × 4–7 days OR Levofloxacin + Metronidazole',
+        duration: '4 days post-source-control (STOP-IT trial — non-inferior to longer for adequately drained infections); 5–7 days if source control incomplete'
+      },
+      {
+        name: 'Community-acquired severe intra-abdominal infection (sepsis, ICU, immunocompromised)',
+        criteria: 'Sepsis, hypotension, ICU, immunocompromised, recent antibiotics, prior healthcare exposure.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h (extended infusion preferred) × 7 days post-source-control. Add Vancomycin if Enterococcus suspected (post-op, prior antibiotics, immunocompromised).',
+        alt_pen_allergy: 'Ciprofloxacin + Metronidazole + Vancomycin OR Aztreonam + Metronidazole + Vancomycin',
+        duration: '7 days post-source-control'
+      },
+      {
+        name: 'Healthcare-associated / post-operative intra-abdominal infection',
+        criteria: 'Post-operative abdominal infection, healthcare-associated, ESBL risk, prior MDR colonization. High Enterococcus, MRSA, Pseudomonas, Candida risk.',
+        first_line: 'Piperacillin-tazobactam 4.5 g IV q6h OR Meropenem 1 g IV q8h (if ESBL risk) + Vancomycin (Enterococcus/MRSA coverage). Consider antifungal (fluconazole or echinocandin) if Candida risk (prolonged ICU, TPN, recurrent perforation).',
+        alt_pen_allergy: 'Aztreonam + Metronidazole + Vancomycin ± Echinocandin',
+        duration: '7–14 days; longer if persistent infection or inadequate source control'
+      },
+      {
+        name: 'Intra-abdominal abscess — drainage + antibiotics',
+        criteria: 'Localized abscess identified on imaging (CT, US). Percutaneous drainage by interventional radiology or surgical drainage.',
+        first_line: 'Per severity (community vs healthcare-associated above) + DRAINAGE (percutaneous IR-guided preferred for accessible abscesses ≥3–4 cm; surgical for inaccessible or failed). Antibiotics 4–7 days post-adequate drainage (STOP-IT).',
+        alt_pen_allergy: 'Per severity',
+        duration: '4–7 days post-drainage; longer if drainage incomplete'
+      }
+    ],
+    iv_to_po: 'IV during acute phase + post-source-control. Step-down to oral (amoxicillin-clavulanate, ciprofloxacin+metronidazole, levofloxacin+metronidazole) once afebrile, hemodynamically stable, tolerating PO, decreasing inflammatory markers — typically within 48–72h post-source-control.',
+    pearls: [
+      'SOURCE CONTROL is the cornerstone — antibiotics alone insufficient for peritonitis from a perforated/obstructed viscus. Surgery, percutaneous drainage, or endoscopic drainage as appropriate.',
+      'STOP-IT TRIAL (2015): 4 days antibiotics post-adequate source control = 8 days for INTRA-ABDOMINAL infections. Adopted widely in Canadian Surgical Infection guidelines. Saves antibiotic exposure, C. diff, resistance.',
+      'Empiric Enterococcus coverage NOT recommended for community-acquired intra-abdominal infection (low yield). Add for: healthcare-associated, post-op, immunocompromised, prosthetic valve, prior antibiotic-treated.',
+      'Empiric antifungal (fluconazole or echinocandin) considered for: recurrent intra-abdominal perforations, persistent infection on broad-spectrum antibiotics, immunocompromised, prolonged ICU, TPN — especially with positive intra-abdominal Candida culture.',
+      'BLOOD CULTURES × 2 sets PRE-ANTIBIOTIC; intra-operative or drainage cultures.',
+      'IMAGING: CT abdomen with contrast is the diagnostic standard — identifies source, abscess, free air, complications.',
+      'PRIMARY (SPONTANEOUS) PERITONITIS in cirrhosis is DIFFERENT from secondary — see SBP card; monomicrobial, no surgical source.',
+      'TERTIARY PERITONITIS: persistent peritonitis after surgical management — often immunocompromised, polymicrobial with resistant organisms; ID + surgical co-management.',
+      'SEPSIS BUNDLE applies — early antibiotics, blood cultures, lactate, fluid resuscitation per Surviving Sepsis Campaign.',
+      'POST-OPERATIVE FEVER differential — atelectasis, surgical site infection, anastomotic leak, intra-abdominal abscess, line infection, UTI, DVT/PE, drug fever — workup all.'
+    ],
+    source: 'IDSA / SIS Intra-Abdominal Infection 2010 (updated); Bugs & Drugs 2024; STOP-IT trial 2015',
+    related_drugs: ['ceftriaxone','metronidazole','amoxicillin_clavulanate','piperacillin_tazobactam','meropenem','vancomycin','ciprofloxacin','levofloxacin','aztreonam','fluconazole']
+  },
+  {
+    id: 'pd_peritonitis',
+    title: 'Peritoneal Dialysis (PD) Peritonitis',
+    category: 'gi', icon: '🤢', color: '#84cc16',
+    overview: 'Peritonitis in patient on peritoneal dialysis — diagnosed by cloudy effluent + ≥100 leukocytes/μL with ≥50% neutrophils OR positive culture + symptoms (abdominal pain, fever). Empiric INTRAPERITONEAL (IP) antibiotics + dialysate cultures + ID/Nephrology coordination. Catheter retention attempted in most; removal for refractory, fungal, or recurrent infections.',
+    canadian_context: 'Canadian Society of Nephrology + ISPD (International Society for Peritoneal Dialysis) 2022 guidelines aligned. Ontario PD population is sizeable and growing — multidisciplinary PD clinics at major Ontario centres. PD peritonitis is the leading cause of PD technique failure. Specific empiric regimens vary by Canadian centre antibiogram — gram-positive + gram-negative coverage standard. ODB covers most PD-related antibiotics; intraperitoneal preparations sometimes compounded.',
+    likely_organisms: [
+      { name: 'Coagulase-negative Staphylococci (S. epidermidis)', frequency: '~30% — touch-contamination at exchange; usually responds to empiric cefazolin' },
+      { name: 'Staphylococcus aureus (MSSA, MRSA)', frequency: '~15% — exit-site or tunnel infection origin; nasal carriage' },
+      { name: 'Streptococci, Enterococci', frequency: '~10–15%' },
+      { name: 'Gram-negatives (E. coli, Klebsiella, Pseudomonas, Enterobacter)', frequency: '~20–30% — bowel translocation, peritonitis-associated bacteremia, exit-site' },
+      { name: 'Polymicrobial', frequency: '~10% — concerning for surgical/bowel source' },
+      { name: 'Fungal (Candida species)', frequency: '<5% but high mortality; previous antibiotics, immunocompromise' },
+      { name: 'Mycobacteria (atypical or M. tuberculosis)', frequency: 'Rare; refractory peritonitis, immigration' }
+    ],
+    severity_strata: [
+      {
+        name: 'Empiric PD peritonitis — typical case',
+        criteria: 'Cloudy PD effluent + ≥100 WBC/μL with ≥50% PMN OR positive culture + symptoms. Send IP fluid for cell count, Gram stain, bacterial culture, fungal culture in refractory.',
+        first_line: 'INTRAPERITONEAL (IP) antibiotics — Cefazolin 1 g IP q exchange (CAPD) or 15 mg/kg q daily (APD long dwell) — covers gram-positive + Cefepime 1 g IP q exchange or 15 mg/kg q daily — covers gram-negative including Pseudomonas. Some centres use vancomycin for gram-positive coverage (especially MRSA prevalence). DURATION: 14 days for most pathogens; 21 days for Pseudomonas, S. aureus.',
+        alt_pen_allergy: 'Vancomycin + Aztreonam IP (anaphylactic). Vancomycin alone if gram-positive only on Gram stain.',
+        duration: '14 days standard; 21 days for Pseudomonas, S. aureus, polymicrobial; 28 days for fungal'
+      },
+      {
+        name: 'Refractory PD peritonitis (no improvement at 5 days) — catheter removal',
+        criteria: 'Persistent cloudy effluent or positive cultures despite ≥5 days appropriate IP antibiotics. CATHETER REMOVAL.',
+        first_line: 'Catheter removal + IP antibiotics continued via temporary hemodialysis access (or short transition to hemodialysis until peritoneal cavity clears). Re-insertion of new PD catheter ≥2–4 weeks after resolution if PD continued.',
+        alt_pen_allergy: 'Per cultures',
+        duration: '14–21 days post-catheter removal; nephrology directed'
+      },
+      {
+        name: 'Fungal peritonitis — IMMEDIATE catheter removal',
+        criteria: 'Yeast or mold on Gram stain or culture from PD effluent. Mortality high; rapid action.',
+        first_line: 'IMMEDIATE CATHETER REMOVAL + Fluconazole 200 mg PO daily (mild) or IV (severe) × 14–21 days OR Echinocandin (severe — caspofungin, micafungin) — ID consultation. Transition to hemodialysis (often permanent). Prophylactic antifungal (fluconazole or nystatin) during antibiotic courses prevents fungal peritonitis.',
+        alt_pen_allergy: 'NA',
+        duration: 'Catheter removal + 14–21 days antifungal'
+      }
+    ],
+    iv_to_po: 'INTRAPERITONEAL is preferred route (delivers high local concentrations) — IP is the Canadian/ISPD standard. IV reserved for systemic illness or as adjunct. Oral antibiotics (e.g., ciprofloxacin) with high bioavailability may supplement in some protocols.',
+    pearls: [
+      'EMPIRIC ANTIBIOTICS within 1 hour of diagnosis — cloudy effluent + symptoms is sufficient to start; do NOT wait for culture.',
+      'IP DOSING differs from IV — usually mixed into dialysate; ‟loading" + maintenance regimens; specific protocols per centre.',
+      'CATHETER RETENTION attempted in most cases (especially CoNS); REMOVAL for: refractory at 5 days, fungal, mycobacterial, polymicrobial with bowel-source suspicion, recurrent peritonitis, exit-site/tunnel infection with same organism.',
+      'EXIT-SITE / TUNNEL INFECTION concurrent with peritonitis: catheter removal generally indicated; clinical bias toward removal.',
+      'PROPHYLAXIS: nasal mupirocin BID × 5 days for known nasal S. aureus carriers; chlorhexidine bath; antifungal during antibiotic courses; topical mupirocin or gentamicin to exit site daily.',
+      'PD PERITONITIS PREVENTION: aseptic technique training, exit-site care, dialysate handling, prompt response to cloudy effluent.',
+      'POLYMICROBIAL PD PERITONITIS: concerning for bowel perforation or intra-abdominal abscess — surgical evaluation; CT abdomen.',
+      'TUBERCULOUS PERITONITIS: refractory peritonitis, immigration, lymphocyte predominance — AFB smear, culture, PCR; ATT regimen.',
+      'INFECTION RATE: ~0.3 episodes per patient-year; high rates a leading cause of technique failure and switch to hemodialysis.',
+      'NEPHROLOGY co-management — PD-specific dosing, drug interactions with dialysate, PD prescription adjustments.'
+    ],
+    source: 'ISPD Peritonitis Recommendations 2022; Canadian Society of Nephrology; Bugs & Drugs 2024',
+    related_drugs: ['cefazolin','cefepime','vancomycin','aztreonam','fluconazole','ciprofloxacin','gentamicin','mupirocin']
+  },
+
+  // ═══════════ BONE/JOINT ADDITIONS ═══════════
+  {
+    id: 'pji',
+    title: 'Prosthetic Joint Infection (PJI)',
+    category: 'bone', icon: '🦴', color: '#fb923c',
+    overview: 'Infection of prosthetic joint (typically THA, TKA) — major cause of revision surgery and morbidity. Classified by timing: early (≤3 months post-op), delayed (3–24 months), late (>24 months — typically hematogenous). Management combines surgical strategy (DAIR — debridement antibiotics implant retention, vs 1-stage or 2-stage revision) with prolonged antibiotics (often 3–12 months including rifampin for staphylococcal infection with retained hardware).',
+    canadian_context: 'Ontario performs >40,000 primary joint replacements annually (THA + TKA combined); PJI rate ~1–2% lifetime per joint. Major Ontario joint replacement programs (UHN/Toronto Western, Sunnybrook, Hamilton, London, Ottawa) have established PJI pathways. ID + orthopedic co-management standard. Provincial drug coverage (ODB) for rifampin + extended IV antibiotic courses (often delivered via Ontario Health home IV programs / community hospital infusion clinics).',
+    likely_organisms: [
+      { name: 'Staphylococcus aureus (MSSA, MRSA)', frequency: '~25% — early and late' },
+      { name: 'Coagulase-negative Staphylococci (S. epidermidis)', frequency: '~25% — most common in delayed PJI; biofilm-forming' },
+      { name: 'Streptococci', frequency: '~15% — late hematogenous' },
+      { name: 'Enterococcus', frequency: '~5–10%' },
+      { name: 'Gram-negatives (Pseudomonas, Enterobacterales)', frequency: '~10–15%' },
+      { name: 'Cutibacterium acnes (formerly P. acnes)', frequency: 'Shoulder PJI predominantly; slow-growing — culture incubation ≥14 days' },
+      { name: 'Polymicrobial', frequency: '~15% — particularly chronic' },
+      { name: 'Culture-negative', frequency: '~5–10% — prior antibiotics, fastidious organisms; sonication of explanted hardware improves yield' }
+    ],
+    severity_strata: [
+      {
+        name: 'Acute PJI (<3 weeks symptoms, well-fixed prosthesis, healthy soft tissue) — DAIR',
+        criteria: 'Symptoms ≤3 weeks duration, prosthesis well-fixed (radiographs stable), no sinus tract, healthy soft tissue, susceptible organism (especially staphylococcal). DAIR = Debridement, Antibiotics, Implant Retention.',
+        first_line: 'SURGICAL DAIR + culture-directed IV antibiotics × 6 weeks → ORAL extension typically 12 weeks total (or longer). For STAPHYLOCOCCAL PJI with retained hardware: ADD Rifampin 300–450 mg PO BID throughout (synergistic; biofilm penetration; never as monotherapy — rapid resistance). MSSA: Cefazolin 2 g IV q8h × 6 weeks + Rifampin → step-down to oral fluoroquinolone (levofloxacin) + Rifampin × 6+ weeks. MRSA: Vancomycin × 6 weeks + Rifampin → oral linezolid OR FQ + Rifampin.',
+        alt_pen_allergy: 'Per organism — Vancomycin replaces beta-lactam',
+        duration: '12 weeks total (6 IV + 6 oral) typical; some experts longer (lifetime suppression in select cases)'
+      },
+      {
+        name: 'Chronic PJI (>3 weeks symptoms, loose prosthesis, sinus tract) — REVISION',
+        criteria: 'Chronic symptoms, loose prosthesis, sinus tract, polymicrobial, MDR organism, immunocompromised, biofilm-mature. DAIR likely to fail — 1-stage or 2-stage revision.',
+        first_line: '2-STAGE REVISION (preferred for most chronic PJI): explant + antibiotic spacer + IV antibiotics × 6 weeks → re-implantation + additional antibiotics. 1-STAGE REVISION (selected — susceptible organism, healthy soft tissue) + 6–12 weeks antibiotics. Antibiotic regimen culture-directed.',
+        alt_pen_allergy: 'Per organism',
+        duration: '6 weeks IV between stages + 6 weeks post-reimplantation typical (varies 6–12 weeks post-reimplantation)'
+      },
+      {
+        name: 'Hematogenous late PJI',
+        criteria: 'Late (>2 years post-op) PJI from distant source (S. aureus bacteremia, dental, urinary, etc.). Often DAIR if early presentation; 2-stage if delayed.',
+        first_line: 'Source identification + treatment + per acute PJI / chronic PJI strategy. ALWAYS investigate source (echocardiogram for IE, blood cultures, dental exam, urine).',
+        alt_pen_allergy: 'Per organism',
+        duration: 'Per strategy'
+      },
+      {
+        name: 'Inoperable PJI / chronic suppressive therapy',
+        criteria: 'Patient unfit for revision surgery, poor surgical candidate, declining surgery. Long-term suppression to maintain function and prevent sepsis.',
+        first_line: 'Indefinite (often lifelong) ORAL suppressive antibiotic — cephalexin, doxycycline, TMP-SMX, or FQ depending on susceptibility. Cure NOT expected; goal is symptom suppression.',
+        alt_pen_allergy: 'Per organism',
+        duration: 'Indefinite'
+      }
+    ],
+    iv_to_po: 'IV typically 4–6 weeks initially → oral step-down with high-bioavailability agents (FQs, linezolid, TMP-SMX, clindamycin) for remainder. Rifampin combinations are oral throughout. OVIVA-style early oral step-down (after 1–2 weeks IV) increasingly adopted at Canadian centres for stable patients with susceptible organisms.',
+    pearls: [
+      'DAIR success rates: ~60–70% for acute PJI with well-fixed prosthesis + susceptible staphylococcal organism + rifampin combination. Lower success without rifampin or in chronic PJI.',
+      '2-STAGE REVISION success rates: ~85–95% — gold standard for chronic PJI.',
+      'ADD RIFAMPIN to staphylococcal PJI with retained hardware (DAIR or 1-stage) — synergistic, biofilm penetration. Combine with FQ (levofloxacin), TMP-SMX, doxycycline, or linezolid (susceptibility-directed). NEVER rifampin monotherapy.',
+      'CULTURES: pre-op aspiration if uncertain diagnosis; intraoperative cultures × 5+ from different tissue sites; sonication of explanted hardware improves culture yield (especially for biofilm bacteria).',
+      'CULTURE-NEGATIVE PJI: ~5–10%; consider Cutibacterium (especially shoulder), Mycobacterium, fungi, Brucella, Coxiella; prolonged incubation; broader empiric therapy.',
+      'ALPHA-DEFENSIN, CRP, ESR, synovial leukocyte count + neutrophil percentage are diagnostic adjuncts (Musculoskeletal Infection Society criteria).',
+      'OVIVA TRIAL (NEJM 2019): oral antibiotics non-inferior to IV for bone/joint infection (including PJI) when high-bioavailability oral options used after 1–2 weeks IV — adopted increasingly in Ontario centres for stable cases.',
+      'C. ACNES (formerly P. acnes) — slow-growing; culture media must incubate ≥14 days; predominant in shoulder PJI; treat with penicillin G or ceftriaxone × 6 weeks + oral.',
+      'NUTRITIONAL STATUS, GLYCEMIC CONTROL, SMOKING CESSATION — modifiable risk factors for PJI development and treatment outcomes.',
+      'POST-PJI ARTHROPLASTY: lifetime increased risk of subsequent PJI; antibiotic prophylaxis for high-risk procedures (older AAOS guidance suggested universal prophylaxis; current recommendations focus on individual risk).'
+    ],
+    source: 'IDSA PJI 2013; AAOS 2018; OVIVA 2019; Bugs & Drugs 2024',
+    related_drugs: ['cefazolin','vancomycin','rifampin','levofloxacin','linezolid','daptomycin','ceftriaxone','sulfamethoxazole','doxycycline','clindamycin','penicillin','aztreonam']
+  },
+
+  // ═══════════ STI ADDITIONS ═══════════
+  {
+    id: 'genital_herpes',
+    title: 'Genital Herpes (HSV-1, HSV-2)',
+    category: 'sti', icon: '🔬', color: '#ec4899',
+    overview: 'Genital herpes simplex virus infection — HSV-2 historically dominant; HSV-1 increasingly common cause of new genital infections (oral-genital transmission). Treatment goals: reduce symptom severity/duration, reduce transmission, suppress recurrence. Three regimens: episodic for outbreaks, suppressive (≥6 outbreaks/year or transmission concern), and primary (first episode). Cure not currently possible.',
+    canadian_context: 'PHAC Canadian STI Guidelines 2023 — both HSV-1 and HSV-2 are common (~15% of Canadian adults). Reportable status varies provincially (not routinely reportable in Ontario). Pharmacist prescribing for genital herpes is currently limited but expanding scope discussions in Ontario. Acyclovir, valacyclovir, famciclovir all ODB-listed; valacyclovir is preferred for adherence (less frequent dosing). Preventive counselling and partner education are central. Pregnancy: prophylactic suppressive therapy from 36 weeks gestation in patients with genital herpes history reduces neonatal HSV transmission.',
+    likely_organisms: [
+      { name: 'Herpes simplex virus type 2 (HSV-2)', frequency: '~50–70% of genital herpes (declining proportionally)' },
+      { name: 'Herpes simplex virus type 1 (HSV-1)', frequency: '~30–50% of new genital herpes (increasing — oral-genital transmission)' }
+    ],
+    severity_strata: [
+      {
+        name: 'First episode (primary or non-primary first clinical episode)',
+        criteria: 'First clinically apparent genital herpes outbreak. Often more severe and prolonged than recurrent. Confirm with viral PCR or culture from active lesion.',
+        first_line: 'Acyclovir 400 mg PO TID × 7–10 days OR Valacyclovir 1 g PO BID × 7–10 days (preferred for adherence) OR Famciclovir 250 mg PO TID × 7–10 days',
+        alt_pen_allergy: 'NA — non-beta-lactam',
+        duration: '7–10 days (extend to 14 days if slow healing or severe)'
+      },
+      {
+        name: 'Recurrent episodic therapy',
+        criteria: 'Recurrent outbreak, treat early (within 24h of prodrome ideally — before vesicles form for maximum benefit).',
+        first_line: 'Valacyclovir 500 mg PO BID × 3 days (preferred — short course) OR Valacyclovir 1 g PO daily × 5 days OR Acyclovir 800 mg PO TID × 2 days OR Famciclovir 1 g PO BID × 1 day (single-day high-dose)',
+        alt_pen_allergy: 'NA',
+        duration: '1–5 days depending on regimen'
+      },
+      {
+        name: 'Suppressive therapy (chronic)',
+        criteria: '≥6 outbreaks/year, severe outbreaks, transmission prevention to seronegative partner, or psychosocial impact. Reduces outbreaks by ~75% and transmission by ~50%.',
+        first_line: 'Valacyclovir 500 mg PO daily (adequate for most; use 1 g daily if ≥10 outbreaks/year or transmission prevention) OR Acyclovir 400 mg PO BID OR Famciclovir 250 mg PO BID',
+        alt_pen_allergy: 'NA',
+        duration: 'Indefinite; reassess annually for ongoing need (some patients have natural decline in outbreak frequency)'
+      },
+      {
+        name: 'Genital herpes in pregnancy',
+        criteria: 'Pregnant patient with genital herpes history (recurrent or first episode in pregnancy). High neonatal HSV risk if active lesions at delivery — vertical transmission ~30–50% with primary lesion, ~3% with recurrent.',
+        first_line: 'Suppressive Acyclovir 400 mg PO TID OR Valacyclovir 500 mg PO BID FROM 36 WEEKS GESTATION until delivery (reduces clinical recurrence at delivery, reduces cesarean rate, reduces neonatal HSV). First episode in pregnancy: full treatment course (acyclovir/valacyclovir) — consult MFM. Cesarean delivery if active lesions or prodrome at delivery.',
+        alt_pen_allergy: 'NA',
+        duration: '36 weeks → delivery'
+      },
+      {
+        name: 'Severe / disseminated / immunocompromised HSV',
+        criteria: 'Severe disseminated HSV, eczema herpeticum, HSV hepatitis, HSV encephalitis (separate syndrome), severe disease in HIV/transplant.',
+        first_line: 'Acyclovir 5–10 mg/kg IV q8h × 5–7 days, then oral step-down to complete 14–21 days. HSV encephalitis: 10 mg/kg IV q8h × 14–21 days (see HSV encephalitis card).',
+        alt_pen_allergy: 'Foscarnet (acyclovir-resistant — rare; ID consult)',
+        duration: 'IV 5–7 days + oral step-down; 14–21 days total'
+      }
+    ],
+    iv_to_po: 'IV reserved for severe/disseminated/encephalitis. All other genital herpes treated entirely orally with high-bioavailability acyclovir/valacyclovir/famciclovir.',
+    pearls: [
+      'EARLY THERAPY for episodic recurrence: most effective when started during PRODROME (tingling, pain) — before vesicles form. Patient self-initiated therapy with prescription on hand is effective.',
+      'VALACYCLOVIR is the prodrug of acyclovir with 3–5× better bioavailability — allows less frequent dosing; preferred for adherence.',
+      'TRANSMISSION REDUCTION: condom use, suppressive therapy of infected partner (50% reduction), avoiding sex during outbreaks/prodrome, communication with partners. ASYMPTOMATIC viral shedding occurs even without lesions.',
+      'TYPE-SPECIFIC SEROLOGY (HSV-1, HSV-2) can confirm chronicity; useful for asymptomatic partners; not routinely needed for diagnosis of clinical disease.',
+      'HIV PARTNER: suppressive therapy + condoms reduce HSV transmission to HIV-positive (and HIV-negative) partner — important for serodiscordant couples.',
+      'NEONATAL HSV: devastating mortality (~30%) and morbidity. Prophylactic suppressive therapy from 36 weeks reduces neonatal HSV; cesarean for active lesions at delivery.',
+      'EYE INVOLVEMENT (HSV keratitis): topical trifluridine + oral acyclovir; ophthalmology consult.',
+      'EVERY SUSPECTED GENITAL HERPES: also test for syphilis, HIV, gonorrhea, chlamydia, hepatitis — coinfections common.',
+      'COUNSELLING: substantial psychosocial impact; patient education on natural history, transmission, and treatment options reduces distress.',
+      'RESISTANT HSV (rare): in immunocompromised on prolonged acyclovir → foscarnet IV; ID consultation.'
+    ],
+    source: 'PHAC Canadian STI Guidelines 2023; CDC STI 2021; Bugs & Drugs 2024',
+    related_drugs: ['acyclovir','valacyclovir','famciclovir']
+  },
+
+  // ═══════════ TICKBORNE/VECTOR ═══════════
+  {
+    id: 'malaria',
+    title: 'Malaria (Plasmodium spp.)',
+    category: 'tickborne', icon: '🦟', color: '#22c55e',
+    overview: 'Mosquito-transmitted protozoan disease (Anopheles vector) — P. falciparum (severe, fatal), P. vivax/ovale (relapsing — liver hypnozoites), P. malariae, P. knowlesi. Treatment depends on species, severity, region/resistance pattern, and patient factors (G6PD status for primaquine). Severe falciparum is medical emergency — IV artesunate via Health Canada Special Access Program (PHAC 24/7 hotline).',
+    canadian_context: 'CATMAT (Committee to Advise on Tropical Medicine and Travel — PHAC) is the primary Canadian source. ~500–1000 imported malaria cases annually in Canada — most from sub-Saharan Africa and South Asia travel. IV ARTESUNATE for severe falciparum is available 24/7 via Health Canada Special Access Program — Canadian hospitals with malaria-treatment capacity (most major centres) can access within hours. PHAC malaria hotline available for clinicians. Toronto General/UHN, McGill MUHC, Vancouver have largest experience. Reportable in Ontario.',
+    likely_organisms: [
+      { name: 'Plasmodium falciparum', frequency: 'Most severe; fatal if untreated; sub-Saharan Africa predominantly; chloroquine-resistant essentially everywhere' },
+      { name: 'Plasmodium vivax', frequency: 'Relapsing (liver hypnozoites); South/Southeast Asia, Latin America, some Africa; chloroquine resistance emerging in some regions (Indonesia, PNG)' },
+      { name: 'Plasmodium ovale', frequency: 'Relapsing (liver hypnozoites); West/Central Africa primarily' },
+      { name: 'Plasmodium malariae', frequency: 'Quartan fever; widespread; rarely severe' },
+      { name: 'Plasmodium knowlesi', frequency: 'Southeast Asia (especially Borneo) — zoonotic from macaques; can be severe' }
+    ],
+    severity_strata: [
+      {
+        name: 'Uncomplicated P. falciparum (and other species in chloroquine-resistant areas)',
+        criteria: 'Confirmed P. falciparum (or other species in chloroquine-resistant region) on blood smear or RDT, parasitemia <5%, no organ dysfunction, tolerating oral. Diagnosis confirmed at every Canadian centre with malaria smear capacity (most large hospitals).',
+        first_line: 'Artemether-lumefantrine (Coartem) PO based on weight: 6-dose regimen over 3 days (e.g., 4 tablets of 20/120 mg twice daily for 3 days at 0, 8, 24, 36, 48, 60h) with FAT-CONTAINING food. ALTERNATIVES: Atovaquone-proguanil (Malarone) 4 adult tablets PO daily × 3 days (with food) OR Quinine 600 mg PO TID + Doxycycline 100 mg PO BID × 7 days (less tolerated; reserve)',
+        alt_pen_allergy: 'NA',
+        duration: '3 days (artemether-lumefantrine, atovaquone-proguanil) or 7 days (quinine + doxycycline)'
+      },
+      {
+        name: 'Severe P. falciparum malaria — EMERGENCY',
+        criteria: 'P. falciparum + ANY: parasitemia ≥5% (≥2% in non-immune), impaired consciousness, multi-organ dysfunction, AKI, ARDS, severe anemia (Hb <70), hypoglycemia, acidosis, hyperlactatemia, jaundice, abnormal bleeding, pregnancy with high parasitemia. ICU admission.',
+        first_line: 'IV ARTESUNATE 2.4 mg/kg IV at 0, 12, 24h, then daily until tolerating oral (typically 3 days IV minimum). CONTACT PHAC SAP (Health Canada Special Access Program) immediately — 24/7 hotline; artesunate stocked at major Canadian centres. After IV artesunate: complete with full course of oral artemether-lumefantrine OR atovaquone-proguanil (3 days) for cure. Backup if artesunate not available: IV quinidine (limited Canadian availability) or IV quinine.',
+        alt_pen_allergy: 'NA',
+        duration: 'IV artesunate ≥3 days + oral follow-on therapy (3-day course)'
+      },
+      {
+        name: 'P. vivax / P. ovale / P. malariae (chloroquine-sensitive region)',
+        criteria: 'Confirmed P. vivax, P. ovale (chloroquine-sensitive — most regions), or P. malariae.',
+        first_line: 'Chloroquine 1 g PO at 0h, 500 mg at 6, 24, 48h (total 2.5 g over 3 days) — for blood-stage clearance. PLUS for P. vivax / P. ovale (eradicate liver HYPNOZOITES preventing relapse): Primaquine 30 mg base PO daily × 14 days (G6PD TEST REQUIRED FIRST — primaquine causes severe hemolysis in G6PD deficiency). Tafenoquine 300 mg PO × 1 dose alternative for radical cure (also G6PD-dependent).',
+        alt_pen_allergy: 'Atovaquone-proguanil (alternative to chloroquine) — does NOT eradicate hypnozoites; primaquine still needed for radical cure',
+        duration: '3 days chloroquine + 14 days primaquine for radical cure (P. vivax/ovale)'
+      },
+      {
+        name: 'P. vivax in chloroquine-resistant region (Indonesia, PNG)',
+        criteria: 'P. vivax from chloroquine-resistant region (Indonesia, Papua New Guinea — emerging elsewhere).',
+        first_line: 'Artemether-lumefantrine OR atovaquone-proguanil × 3 days + Primaquine 30 mg daily × 14 days (G6PD test first)',
+        alt_pen_allergy: 'NA',
+        duration: '3 days + 14 days primaquine'
+      },
+      {
+        name: 'Malaria prophylaxis (pre-travel)',
+        criteria: 'Travel to malaria-endemic region. CATMAT region-specific recommendations.',
+        first_line: 'Atovaquone-proguanil (Malarone) 1 adult tab PO daily, starting 1–2 days before travel, throughout, 7 days after return. OR Doxycycline 100 mg PO daily, 1–2 days before travel, throughout, 4 weeks after return (less expensive; photosensitivity, GI). OR Mefloquine 250 mg PO weekly, 2–3 weeks before, throughout, 4 weeks after return (avoid in psychiatric history, seizures, certain cardiac conditions). OR Chloroquine for chloroquine-sensitive regions (limited geography). OR Tafenoquine (G6PD-dependent; new option).',
+        alt_pen_allergy: 'NA',
+        duration: 'Travel duration + post-travel period per drug'
+      }
+    ],
+    iv_to_po: 'Severe malaria: IV artesunate ≥3 days, then oral artemether-lumefantrine or atovaquone-proguanil to complete cure. Uncomplicated: oral throughout.',
+    pearls: [
+      'EVERY FEBRILE TRAVELLER from a malaria-endemic region — RULE OUT MALARIA. Thick + thin blood smears (or RDT) immediately + repeat ×3 over 24–48h if first negative.',
+      'IV ARTESUNATE: Health Canada Special Access Program — 24/7 hotline access; major centres stock; replaces quinidine/quinine as first-line for severe malaria globally.',
+      'PARASITEMIA monitoring: ≥5% parasitemia (or ≥2% in non-immune travellers) defines severe malaria; daily smears until <1%.',
+      'G6PD TESTING REQUIRED before primaquine or tafenoquine — these cause severe hemolysis in G6PD deficiency (X-linked; ~10% of African ancestry, 5% Mediterranean, varies). Test results in <24h at most Canadian labs.',
+      'P. VIVAX/OVALE RELAPSE: liver hypnozoites cause relapses weeks–months post-treatment if NOT eradicated. Primaquine (or tafenoquine) is essential for radical cure — not just blood-stage chloroquine.',
+      'PREGNANCY: severe falciparum has high maternal mortality + fetal loss. IV artesunate now preferred over quinine for severe in pregnancy. Atovaquone-proguanil and primaquine generally avoided in pregnancy; chloroquine safe; mefloquine 2nd/3rd trimester acceptable; doxycycline contraindicated.',
+      'RESISTANCE: chloroquine resistance widespread for P. falciparum (use ACTs); P. vivax chloroquine resistance emerging Indonesia/PNG; mefloquine resistance Southeast Asia border regions; artemisinin partial resistance Greater Mekong subregion.',
+      'PROPHYLAXIS PROVISION: travellers should be educated about: drug regimen + duration, breakthrough infection possible, fever post-travel = malaria until proven otherwise, mosquito avoidance (DEET/icaridin, bed nets, long sleeves dusk-dawn).',
+      'TRAVEL CLINICS in Ontario provide pre-travel risk stratification, vaccinations, prophylaxis, and education — encourage pre-travel consultation.',
+      'POST-TRAVEL FEVER: take detailed travel history (countries, dates, prophylaxis adherence, exposures); blood smears + RDT immediate, even before fever workup.',
+      'PHAC malaria hotline (24/7) available for clinical questions and Special Access Program access.'
+    ],
+    source: 'CATMAT Canadian Recommendations for Prevention and Treatment of Malaria 2023; PHAC; WHO Malaria 2022',
+    related_drugs: ['artemether_lumefantrine','atovaquone_proguanil','chloroquine','primaquine','mefloquine','doxycycline']
+  },
+
+  // ═══════════ PROPHYLAXIS ADDITIONS ═══════════
+  {
+    id: 'rabies_pep',
+    title: 'Rabies Post-Exposure Prophylaxis (PEP)',
+    category: 'prophylaxis', icon: '🛡️', color: '#6366f1',
+    overview: 'Rabies is virtually 100% fatal once symptoms develop — but post-exposure prophylaxis (RPEP) is essentially 100% effective when initiated promptly after exposure. Decision algorithm assesses: animal species (high-risk wild, dog/cat status, bat exposure), bite vs non-bite exposure, ability to observe domestic animal for 10 days, and patient prior immunization. Public Health Unit involvement is standard in Ontario.',
+    canadian_context: 'PHAC Canadian Immunization Guide + Public Health Ontario direct involvement. Reportable: ALL animal bites/exposures in Ontario should be reported to local PHU under the HPPA (animal-borne disease investigation). Bat exposures are particularly emphasized — even WITHOUT a witnessed bite (e.g., bat in bedroom of sleeping/incapacitated person, child unable to communicate). Wild terrestrial high-risk species in Ontario: raccoons, skunks, foxes (raccoon-strain rabies present in Eastern Ontario; bat strains widely). Domestic dog/cat: assessment depends on rabies vaccination status + ability to observe animal for 10 days. Rabies vaccine (RabAvert, Imovax) and HRIG (rabies immune globulin) are publicly funded for indicated PEP through PHU.',
+    likely_organisms: [
+      { name: 'Rabies lyssavirus', frequency: '100% — RNA virus; transmitted in saliva via bite or contact with mucous membranes/non-intact skin' }
+    ],
+    severity_strata: [
+      {
+        name: 'Bat exposure — RPEP indicated even without confirmed bite',
+        criteria: 'WITNESSED BAT BITE OR direct contact (handling, scratch) OR bat in room of sleeping/incapacitated person, young child unable to communicate, intoxicated person — even without observed bite. Bat captured: send to PHU for testing (RPEP started while awaiting); discontinue if bat tests negative. Bat not captured or tests positive: full RPEP.',
+        first_line: 'PREVIOUSLY UNVACCINATED: Rabies Immune Globulin (HRIG) 20 IU/kg — infiltrate as much as possible AROUND the wound site; remainder IM at distant site (e.g., gluteal). PLUS Rabies vaccine 1 mL IM (deltoid; pediatric: anterolateral thigh) at days 0, 3, 7, 14 (4-dose series in immunocompetent; days 0, 3, 7, 14, 28 in immunocompromised). Wound: thorough cleansing with soap and water + povidone-iodine or chlorhexidine.',
+        alt_pen_allergy: 'NA — not antibiotic-based',
+        duration: '4 doses over 14 days (immunocompetent); 5 doses over 28 days (immunocompromised)'
+      },
+      {
+        name: 'Wild high-risk terrestrial carnivore (raccoon, skunk, fox in Ontario)',
+        criteria: 'Bite or significant non-bite exposure (saliva to non-intact skin or mucous membrane) from raccoon, skunk, fox, or coyote in Ontario. Animal usually NOT available for testing.',
+        first_line: 'Same RPEP — HRIG + 4-dose vaccine series. Wound cleansing.',
+        alt_pen_allergy: 'NA',
+        duration: 'Same 4-dose series'
+      },
+      {
+        name: 'Domestic dog or cat — observable, healthy',
+        criteria: 'Bite from APPARENTLY HEALTHY domestic dog or cat that can be safely observed for 10 days (typically owned animal known to person). Animal observed in home or kennel by veterinarian.',
+        first_line: 'OBSERVE animal × 10 days. NO RPEP unless animal develops signs of rabies (behavioural changes, paralysis, death) during observation period — then full RPEP. If animal remains healthy at 10 days: NO RPEP needed.',
+        alt_pen_allergy: 'NA',
+        duration: '10-day observation; no PEP if animal remains healthy'
+      },
+      {
+        name: 'Domestic dog/cat — unknown status, escaped, or signs of rabies',
+        criteria: 'Stray, escaped, ill-appearing, or otherwise non-observable domestic dog/cat. Or animal demonstrating any signs concerning for rabies.',
+        first_line: 'CONSULT PHU immediately — RPEP often indicated; PHU coordinates animal capture and testing if possible. Start RPEP empirically pending animal status.',
+        alt_pen_allergy: 'NA',
+        duration: 'Per PHU guidance; full series if animal cannot be evaluated'
+      },
+      {
+        name: 'Previously immunized person — exposure',
+        criteria: 'Person with documented prior complete rabies vaccination series (e.g., pre-exposure prophylaxis received) AND rabies exposure.',
+        first_line: 'NO HRIG needed (already immune). Vaccine: 1 mL IM at days 0 and 3 (2-dose booster). Wound cleansing standard.',
+        alt_pen_allergy: 'NA',
+        duration: '2 doses over 3 days'
+      },
+      {
+        name: 'Pre-exposure prophylaxis (PrEP)',
+        criteria: 'High-occupational/recreational risk: veterinarians, animal handlers, lab workers handling rabies virus, spelunkers, travel to high-risk areas with limited access to PEP.',
+        first_line: 'Rabies vaccine 1 mL IM at days 0, 7, and 21 OR 28 (3-dose primary series). Antibody titre check 1–3 weeks after 3rd dose; booster if <0.5 IU/mL.',
+        alt_pen_allergy: 'NA',
+        duration: '3 doses over 21–28 days; periodic boosters per occupational risk'
+      }
+    ],
+    iv_to_po: 'NA — vaccine and immune globulin are IM; RPEP is not antimicrobial.',
+    pearls: [
+      'TIME-CRITICAL: start RPEP as soon as possible after exposure — ideally within 48h; effective up to days–weeks post-exposure but earlier is better. NEVER too late to start if symptoms not yet developed.',
+      'BAT EXPOSURE — HIGH SUSPICION: bats can bite without leaving visible mark. RPEP indicated for ANY plausible exposure: bat in room with sleeper, young child, intoxicated person; bare-handed handling; mucous membrane contact.',
+      'WOUND CARE: thorough washing with soap and water for ≥15 minutes followed by povidone-iodine or chlorhexidine. Reduces rabies risk significantly.',
+      'HRIG (rabies immune globulin) 20 IU/kg: INFILTRATE AROUND WOUND SITE (as much as anatomically feasible) + remainder IM at site distant from vaccine (gluteal). Provides immediate passive antibody until vaccine-induced active immunity develops.',
+      'NEVER MIX HRIG and vaccine in same syringe or same site (interferes with active immunization).',
+      'ANIMAL TESTING: head submission to provincial lab for direct fluorescent antibody (DFA) testing. Bats: PHU/Animal Services can capture and submit. RPEP can be started while awaiting; discontinue if animal tests negative.',
+      'PUBLIC HEALTH UNIT coordinates: animal capture/testing, RPEP provision (free), follow-up.',
+      'Free vaccine and HRIG through PHU for indicated RPEP — no out-of-pocket cost.',
+      'Rabies in CANADA: enzootic in bats Canada-wide; raccoon strain in Eastern Ontario; arctic strain in Northern regions; skunk strain in some prairie/eastern regions. Domestic dog rabies essentially eliminated in Canada (vaccinated populations).',
+      'PEP FAILURE: extremely rare with proper administration; reasons include incorrect HRIG infiltration, omitted HRIG, missed doses, immunocompromise.'
+    ],
+    source: 'PHAC Canadian Immunization Guide; Ontario PHU rabies algorithm; ACIP',
+    related_drugs: ['rabies_immunoglobulin']
+  },
+  {
+    id: 'endocarditis_prophylaxis',
+    title: 'Infective Endocarditis Prophylaxis (Dental & Selected Procedures)',
+    category: 'prophylaxis', icon: '🛡️', color: '#6366f1',
+    overview: 'Antibiotic prophylaxis to prevent bacterial endocarditis — narrowed dramatically since 2007 (AHA, ESC, Canadian) — now reserved for HIGH-RISK CARDIAC CONDITIONS undergoing high-risk procedures (primarily dental procedures with mucosal manipulation/perforation). Routine GI/GU procedures, ear/nose surgery, bronchoscopy alone, and most non-dental procedures NO LONGER require IE prophylaxis.',
+    canadian_context: 'Canadian Cardiovascular Society + AHA/ACC 2021 update + ESC 2023 — narrowed indications. Ontario dentists routinely use updated criteria. Pharmacists frequently field IE prophylaxis questions for dental visits. Most patients with murmurs, mitral valve prolapse, valvular heart disease, or prior CABG do NOT need IE prophylaxis. CDA (Canadian Dental Association) aligned guidance.',
+    likely_organisms: [
+      { name: 'Viridans group Streptococci (oral flora)', frequency: 'Primary target of dental procedure prophylaxis — high-risk cardiac patients' },
+      { name: 'Staphylococcus aureus, Enterococcus', frequency: 'Procedures involving infected skin/MSK or genitourinary infection' }
+    ],
+    severity_strata: [
+      {
+        name: 'High-risk cardiac conditions ONLY warrant prophylaxis',
+        criteria: 'PROPHYLAXIS INDICATED for these conditions: (1) Prosthetic cardiac valve OR prosthetic material used for valve repair (TAVR, ring); (2) Prior infective endocarditis; (3) Cardiac transplant recipient with valvulopathy; (4) Congenital heart disease — unrepaired cyanotic CHD, completely repaired with prosthetic material first 6 months, repaired CHD with residual defects at site or adjacent to prosthetic patch/device. NO prophylaxis for: mitral valve prolapse, rheumatic heart disease without prosthetic valve, bicuspid aortic valve, calcified aortic stenosis, hypertrophic cardiomyopathy, pacemaker/ICD only, CABG.',
+        first_line: 'Dental procedures with mucosal manipulation/perforation: Amoxicillin 2 g PO 30–60 minutes BEFORE procedure (single dose). Pediatric: 50 mg/kg PO. Single pre-procedural dose only — no post-procedural doses needed.',
+        alt_pen_allergy: 'Non-anaphylactic: Cephalexin 2 g PO (peds 50 mg/kg) 30–60 min before. Anaphylactic: Azithromycin 500 mg PO (peds 15 mg/kg) OR Doxycycline 100 mg PO (peds 4.4 mg/kg up to 100 mg) — note CLINDAMYCIN is NO LONGER recommended by AHA 2021 due to C. difficile risk and uncertain clinical benefit.',
+        duration: 'Single pre-procedural dose only'
+      },
+      {
+        name: 'Procedures requiring prophylaxis (in high-risk cardiac patients)',
+        criteria: 'Dental procedures with manipulation of gingival tissue, periapical region of teeth, or perforation of oral mucosa (extractions, scaling, periodontal procedures, root canal therapy beyond apex, biopsy). Tonsillectomy/adenoidectomy. Respiratory tract incision or biopsy of mucosa. Skin/musculoskeletal infected tissue procedure.',
+        first_line: 'Same amoxicillin 2 g PO 30–60 min before (or alternatives per allergy). Skin/MSK procedures with active infection: cover S. aureus + Strep — cefazolin 1 g IV pre-procedure or cephalexin 2 g PO.',
+        alt_pen_allergy: 'Per allergy as above',
+        duration: 'Single pre-procedural dose'
+      },
+      {
+        name: 'Procedures NOT requiring IE prophylaxis (most procedures)',
+        criteria: 'GI procedures (endoscopy, colonoscopy, ERCP without obstruction). GU procedures (cystoscopy without infection). Cardiac catheterization/coronary angioplasty. TEE. Routine ear/nose procedures, ear tube placement. Bronchoscopy without biopsy. Vaginal/cesarean delivery without infection. Dental procedures NOT involving gingival/mucosal manipulation (routine cleaning without bleeding, fluoride treatment, simple fillings, orthodontic adjustment).',
+        first_line: 'NO PROPHYLAXIS INDICATED — even in high-risk cardiac patients.',
+        alt_pen_allergy: 'NA',
+        duration: 'NA'
+      }
+    ],
+    iv_to_po: 'Oral preferred for dental procedures. IV (cefazolin or ampicillin) for procedures where patient is NPO or oral not feasible.',
+    pearls: [
+      'INDICATIONS NARROWED in 2007 AHA + 2009 NICE — many patients previously offered prophylaxis NO LONGER need it (mitral valve prolapse, rheumatic heart disease without prosthetic valve, bicuspid aortic valve, etc.).',
+      'Most enduring IE risk reduction comes from EXCELLENT ORAL HYGIENE (regular brushing, flossing, dental visits) — NOT antibiotic prophylaxis.',
+      'TIMING: 30–60 minutes BEFORE procedure for oral; 30 minutes for IV; effective if given up to 2h post-procedure (rescue dose) but worse outcomes.',
+      'CLINDAMYCIN no longer recommended by AHA 2021 — high C. difficile risk and uncertain benefit. Use azithromycin or doxycycline for true anaphylactic penicillin allergy.',
+      'MOST DENTAL PROCEDURES are LOW-RISK for bacteremia (and IE) — careful patient selection important.',
+      'IE PROPHYLAXIS: not indicated for cardiac catheterization, coronary stenting, pacemaker insertion (despite vascular access), TEE.',
+      'JOINT REPLACEMENT: AAOS / ADA 2014 — routine antibiotic prophylaxis for dental procedures NOT recommended for prosthetic joint patients (was previously universal).',
+      'CONGENITAL HEART DISEASE: only specific subgroups need prophylaxis — unrepaired cyanotic CHD; first 6 months after prosthetic material repair; repaired CHD with residual defects.',
+      'PHARMACIST ROLE: counsel patients with murmurs and benign valvular disease that they DO NOT need antibiotic prophylaxis (correct outdated advice); confirm with cardiologist/dentist if uncertainty.',
+      'AHA pocket card / Canadian Cardiovascular Society 2017 IE prevention: useful clinical decision tools.',
+      'INFECTED CARDIAC DEVICE: separate management — not prevention but treatment.'
+    ],
+    source: 'AHA/ACC 2021 IE Prevention; CCS 2017; ESC 2023; CDA',
+    related_drugs: ['amoxicillin','cephalexin','azithromycin','doxycycline','cefazolin','ampicillin']
+  },
+
+  // ═══════════ PERIPARTUM (NEW CATEGORY) ═══════════
+  {
+    id: 'peripartum_infections',
+    title: 'Peripartum Infections (Chorioamnionitis, Endometritis, GBS Prophylaxis)',
+    category: 'peripartum', icon: '🤰', color: '#f472b6',
+    overview: 'Three related peripartum bacterial infection scenarios: (1) Chorioamnionitis (intra-amniotic infection) during labor; (2) Postpartum endometritis after delivery; (3) Group B Streptococcus (GBS) intrapartum prophylaxis to prevent neonatal early-onset GBS sepsis. SOGC 2024 GBS guidelines + standard obstetric infection management. Polymicrobial flora; coverage targets gram-positive + gram-negative + anaerobes.',
+    canadian_context: 'SOGC (Society of Obstetricians and Gynaecologists of Canada) Group B Streptococcus guidelines (revised 2024) — universal screening at 36–37 weeks gestation; intrapartum prophylaxis for all GBS+ patients and risk-based for unknown status. Ontario obstetric units uniformly screen and follow SOGC protocols. Canadian Pediatric Society aligned with neonatal management. Postpartum endometritis is one of the most common causes of postpartum readmission. Chorioamnionitis incidence ~1–4% of term pregnancies.',
+    likely_organisms: [
+      { name: 'Group B Streptococcus (Streptococcus agalactiae)', frequency: '~10–30% of women colonized; vertical transmission causes neonatal early-onset GBS — leading cause of neonatal sepsis pre-prophylaxis era' },
+      { name: 'Polymicrobial (Enterobacterales, anaerobes, Streptococci, Enterococci, Bacteroides, Mycoplasma, Ureaplasma)', frequency: 'Chorioamnionitis and endometritis are polymicrobial' },
+      { name: 'Staphylococcus aureus', frequency: 'Less common; consider in healthcare-associated' }
+    ],
+    severity_strata: [
+      {
+        name: 'GBS intrapartum prophylaxis — INDICATIONS (SOGC 2024)',
+        criteria: 'Prophylaxis indicated: (1) Universal screening 36–37 weeks gestation POSITIVE for GBS (vaginal-rectal swab); (2) Previous infant with invasive GBS disease; (3) GBS bacteriuria during current pregnancy (any colony count). RISK-BASED if status unknown at delivery: preterm <37 weeks, ROM ≥18 hours, intrapartum fever ≥38°C.',
+        first_line: 'Penicillin G 5 million units IV initially, then 2.5–3 million units IV q4h until delivery (PREFERRED — narrow spectrum). Ampicillin 2 g IV initially, then 1 g IV q4h is alternative. Goal: ≥2 doses (≥4 hours) before delivery for maximum efficacy.',
+        alt_pen_allergy: 'NON-ANAPHYLACTIC penicillin allergy: Cefazolin 2 g IV initially, then 1 g IV q8h. ANAPHYLACTIC penicillin allergy: REQUEST GBS susceptibility testing (clindamycin, erythromycin) — if susceptible, use Clindamycin 900 mg IV q8h. If resistant or unknown susceptibility: VANCOMYCIN 20 mg/kg IV q8h (max 2 g/dose). Erythromycin no longer recommended (high resistance).',
+        duration: 'Continue until delivery; goal ≥2 doses (≥4h) before delivery'
+      },
+      {
+        name: 'Chorioamnionitis (intrapartum or peripartum)',
+        criteria: 'Maternal fever ≥38°C with ≥1 of: maternal tachycardia (>100 bpm), fetal tachycardia (>160 bpm), uterine tenderness, foul-smelling amniotic fluid, maternal leukocytosis. Diagnosis often made clinically; may be triggered by prolonged ROM.',
+        first_line: 'Ampicillin 2 g IV q6h + Gentamicin 1.5 mg/kg IV q8h (or 5 mg/kg q24h) — standard SOGC regimen. ADD CLINDAMYCIN 900 mg IV q8h if cesarean delivery (anaerobic coverage). Single dose post-delivery often sufficient if vaginal delivery + no postpartum fever; cesarean delivery typically continues 24–48h or until afebrile 24h.',
+        alt_pen_allergy: 'Vancomycin + Gentamicin (anaphylactic penicillin allergy) ± Clindamycin if cesarean',
+        duration: 'Single dose post-vaginal delivery (uncomplicated) up to 24–48 hours post-cesarean (until afebrile 24h)'
+      },
+      {
+        name: 'Postpartum endometritis',
+        criteria: 'Postpartum fever ≥38°C with uterine tenderness, foul-smelling lochia, leukocytosis. Risk factors: cesarean delivery (5–10× higher), prolonged ROM, prolonged labor, chorioamnionitis, manual placenta extraction, multiple vaginal exams.',
+        first_line: 'Clindamycin 900 mg IV q8h + Gentamicin 1.5 mg/kg IV q8h (or 5 mg/kg q24h) — preferred SOGC/ACOG regimen. ADD Ampicillin 2 g IV q6h if Enterococcus suspected (clinical persistence after 48h, prosthetic valve, prior GBS bacteriuria). Continue IV until afebrile and asymptomatic 24–48h.',
+        alt_pen_allergy: 'Vancomycin + Gentamicin OR Cefoxitin 2 g IV q6h (anaphylactic penicillin allergy) OR Piperacillin-tazobactam (severe)',
+        duration: 'IV until afebrile 24–48h; oral step-down typically NOT needed if clinical improvement (no benefit demonstrated for routine oral continuation)'
+      },
+      {
+        name: 'Septic pelvic thrombophlebitis (rare postpartum complication)',
+        criteria: 'Persistent postpartum fever despite appropriate endometritis antibiotics for 48–72h, no other identifiable source.',
+        first_line: 'Continue endometritis antibiotics + ADD anticoagulation (heparin or LMWH) — controversial; consult ID/OB.',
+        alt_pen_allergy: 'Per endometritis',
+        duration: 'Until afebrile 48–72h on anticoagulation; total typically 7–10 days'
+      }
+    ],
+    iv_to_po: 'GBS prophylaxis IV only (during labor). Chorioamnionitis: IV intrapartum, single post-delivery dose typically sufficient. Endometritis: IV until afebrile 24–48h; oral continuation NOT routinely needed.',
+    pearls: [
+      'GBS UNIVERSAL SCREENING at 36–37 weeks gestation (SOGC 2024) — vaginal-rectal swab. Results valid for 5 weeks.',
+      'GBS BACTERIURIA at any time in pregnancy (any colony count) → automatic intrapartum prophylaxis (no need to repeat screen).',
+      'PREVIOUS INFANT WITH GBS DISEASE → automatic prophylaxis next pregnancy regardless of screening result.',
+      'GBS PROPHYLAXIS GOAL: ≥2 doses (≥4 hours) before delivery for maximum protection. Consider this when timing labor induction or repeat cesarean.',
+      'PENICILLIN G is PREFERRED for GBS prophylaxis (narrowest spectrum effective against GBS). Ampicillin acceptable alternative.',
+      'PENICILLIN ALLERGY: detailed history — most "penicillin allergies" (rash, GI upset, family history) are not true allergies. Cefazolin acceptable for non-anaphylactic. Anaphylactic with susceptibility-tested clindamycin-resistant GBS → vancomycin.',
+      'CHORIOAMNIONITIS DIAGNOSIS: NICHD criteria 2017 — fever + ≥1 of (maternal/fetal tachycardia, uterine tenderness, foul amniotic fluid, leukocytosis). Often clinical.',
+      'CHORIOAMNIONITIS NEONATAL CONSIDERATIONS: neonatal sepsis evaluation; CPS guidelines may indicate empiric ampicillin + gentamicin for newborn pending blood cultures.',
+      'POSTPARTUM ENDOMETRITIS: cesarean delivery is the dominant risk factor (5–10× vs vaginal). Pre-incision cefazolin prophylaxis reduces post-cesarean endometritis significantly.',
+      'POSTPARTUM RETAINED PRODUCTS OF CONCEPTION may cause persistent endometritis — D&C indicated if suspected by ultrasound.',
+      'BREAST FEEDING SAFETY: penicillin, ampicillin, cefazolin, clindamycin, vancomycin, gentamicin all SAFE in breastfeeding. Brief interruption NOT needed.'
+    ],
+    source: 'SOGC GBS 2024; ACOG/SMFM Chorioamnionitis 2017; CPS Neonatal Sepsis; Bugs & Drugs 2024',
+    related_drugs: ['penicillin','ampicillin','cefazolin','clindamycin','vancomycin','gentamicin','cefoxitin','piperacillin_tazobactam']
   }
 
 
