@@ -33634,6 +33634,794 @@ var DISEASES = {
       }
     ]
   }
+,
+  "palliative": {
+    "label": "Palliative Care",
+    "icon": "🕊️",
+    "color": "#a855f7",
+    "conditions": [
+      {
+        "id": "palliative_pain",
+        "name": "Palliative Pain Management & Opioid Rotation",
+        "subtitle": "Cancer + Chronic Pain — WHO Ladder, Opioid Conversion, Breakthrough",
+        "patho": "Palliative pain (cancer-related and non-cancer life-limiting illness) requires individualized, tiered analgesia per WHO 3-step ladder + adjuvants. Opioid rotation is used when: side effects intolerable, inadequate analgesia, change in route, organ dysfunction, drug shortage. INCOMPLETE CROSS-TOLERANCE between opioids — reduce equianalgesic dose by 25–50% when rotating. Always provide BREAKTHROUGH dose (10–20% of 24-h total) for incident pain.",
+        "signs": [
+          "Self-reported pain score (0–10 NRS, FLACC for non-verbal)",
+          "Functional impact: sleep, mobility, mood, social",
+          "Pain quality: somatic (well-localized, aching), visceral (poorly localized, cramping), neuropathic (burning, shooting, allodynia)",
+          "Breakthrough pain frequency + intensity (>4 episodes/day suggests inadequate baseline)",
+          "Side effects: constipation (universal), N/V (early — usually self-resolving), sedation, delirium, myoclonus (toxicity sign), respiratory depression"
+        ],
+        "diagnosis": [
+          "PAIN ASSESSMENT: location, quality, intensity, timing, exacerbating/relieving, impact on function. SOAP / OPQRST framework.",
+          "Document baseline + response to interventions",
+          "BREAKTHROUGH PAIN ASSESSMENT: incident (predictable — movement, dressing change), spontaneous, end-of-dose failure",
+          "Renal function: SCr/eGFR — affects opioid choice (avoid morphine, codeine in CKD; hydromorphone or fentanyl preferred)",
+          "Hepatic function: dose adjustments for many opioids",
+          "Concurrent meds: BZDs, gabapentinoids, antihistamines (additive sedation/respiratory depression), antiemetics, laxatives"
+        ],
+        "monitoring": [
+          "Pain score (NRS) at each visit",
+          "Functional status: ECOG, KPS, ability to perform ADLs",
+          "Side effects: bowel function (constipation universal — start prophylactic laxatives Day 1), nausea, sedation level, mental status",
+          "Bowel function: target 1 BM every 1–3 days; senna ± PEG ± stimulant + osmotic combination",
+          "Opioid toxicity signs: myoclonus, hyperalgesia, hallucinations, sedation, respiratory depression",
+          "Naloxone availability (Take-Home Naloxone Ontario program — for community palliative)"
+        ],
+        "treatment": [
+          {
+            "line": "Step 1 (Mild Pain — NRS 1–3)",
+            "type": "Drug",
+            "agents": [
+              "acetaminophen",
+              "ibuprofen",
+              "naproxen",
+              "celecoxib"
+            ],
+            "notes": "Acetaminophen 1 g PO q6h scheduled (max 4 g/day; reduce in hepatic disease). NSAID for inflammatory/bony pain (osseous metastasis); GI/renal/cardiac caution. Combine with adjuvants below if neuropathic component.",
+            "guideline": "WHO Pain Ladder; Pallium Canada",
+            "family": "NSAIDs"
+          },
+          {
+            "line": "Step 2 (Mild–Moderate Pain — NRS 4–6) — weak opioid OR low-dose strong opioid",
+            "type": "Drug",
+            "agents": [
+              "tramadol",
+              "codeine",
+              "morphine",
+              "hydromorphone"
+            ],
+            "notes": "Modern Canadian palliative practice often skips traditional 'weak opioids' (codeine, tramadol — variable CYP2D6 metabolism + ceiling) and starts low-dose strong opioid (morphine 2.5–5 mg PO q4h or hydromorphone 0.5–1 mg PO q4h). Continue Step 1 acetaminophen as adjunct.",
+            "guideline": "Pallium Canada; CFP Palliative",
+            "family": "Opioid Receptor Modulators"
+          },
+          {
+            "line": "Step 3 (Moderate–Severe Pain — NRS 7–10) — strong opioid",
+            "type": "Drug",
+            "agents": [
+              "morphine",
+              "hydromorphone",
+              "oxycodone",
+              "fentanyl",
+              "methadone"
+            ],
+            "notes": "Choose based on: renal function (avoid morphine if CrCl <30 — accumulates active metabolites), prior opioid history, route (oral, SC for last days, transdermal for stable opioid-tolerant). HYDROMORPHONE preferred in CKD. FENTANYL transdermal patch (Duragesic) for stable chronic pain in opioid-tolerant patients only — NOT for acute pain or opioid-naive. METHADONE for refractory pain — complex pharmacokinetics, requires specialist.",
+            "guideline": "Pallium Canada; WHO",
+            "family": "Opioid Receptor Modulators"
+          },
+          {
+            "line": "Breakthrough dosing (always with regular opioid)",
+            "type": "Drug",
+            "agents": [
+              "morphine",
+              "hydromorphone",
+              "fentanyl_buccal"
+            ],
+            "notes": "BREAKTHROUGH DOSE: 10–20% of 24-h total opioid dose, given q1h prn (oral) or q30min prn (SC) or q15–30 min (sublingual/buccal fentanyl for incident pain). Same opioid as basal preferred. Adjust basal upward if ≥3 breakthrough doses/day used.",
+            "guideline": "Pallium Canada",
+            "family": "Opioid Receptor Modulators"
+          },
+          {
+            "line": "Opioid rotation (incomplete cross-tolerance)",
+            "type": "Drug",
+            "agents": [],
+            "notes": "EQUIANALGESIC CONVERSIONS (PO morphine 30 mg = PO hydromorphone 6 mg = PO oxycodone 15–20 mg = SC morphine 10–15 mg = SC hydromorphone 2 mg). REDUCE EQUIANALGESIC DOSE BY 25–50% when rotating (incomplete cross-tolerance + individual variability). FENTANYL PATCH conversion: 25 mcg/h ≈ PO morphine 60 mg/24h; titrate cautiously.",
+            "guideline": "EAPC Opioid Conversion; Pallium Canada",
+            "family": "Opioid Receptor Modulators"
+          },
+          {
+            "line": "Adjuvants — Neuropathic pain",
+            "type": "Drug",
+            "agents": [
+              "gabapentin",
+              "pregabalin",
+              "amitriptyline",
+              "nortriptyline",
+              "duloxetine",
+              "venlafaxine"
+            ],
+            "notes": "First-line: gabapentin (start 100–300 mg HS, titrate to 300–1200 mg TID; max 3600 mg/day; reduce in CKD) OR pregabalin (start 25–75 mg HS, titrate to 75–300 mg BID; max 600 mg/day). TCAs (nortriptyline preferred in elderly — less anticholinergic than amitriptyline). Duloxetine for diabetic neuropathy + chemo-induced + non-malignant. Combine with opioids for mixed nociceptive + neuropathic.",
+            "guideline": "Canadian Pain Society Neuropathic Pain Guidelines",
+            "family": "Anticonvulsants (Gabapentinoids)"
+          },
+          {
+            "line": "Adjuvants — Bone pain (osseous metastasis)",
+            "type": "Drug",
+            "agents": [
+              "dexamethasone",
+              "naproxen",
+              "ibuprofen",
+              "denosumab",
+              "zoledronic_acid"
+            ],
+            "notes": "Dexamethasone 4–8 mg PO daily (acute flare) — also helps appetite, mood. NSAID short-course (GI/renal caution). BISPHOSPHONATES (zoledronic acid 4 mg IV q4 weeks) or DENOSUMAB (120 mg SC q4 weeks) — reduce skeletal-related events. Palliative radiotherapy single-fraction 8 Gy effective for localized bone pain.",
+            "guideline": "Cancer Care Ontario Bone Mets",
+            "family": "Corticosteroids"
+          },
+          {
+            "line": "Adjuvants — Other",
+            "type": "Drug",
+            "agents": [
+              "lidocaine",
+              "ketamine",
+              "methadone",
+              "capsaicin"
+            ],
+            "notes": "TOPICAL LIDOCAINE patch 5% for localized neuropathic. KETAMINE low-dose subcut/oral for refractory cancer pain (specialist; NMDA antagonist). METHADONE for refractory (NMDA + opioid) — complex; expert use. TOPICAL CAPSAICIN for post-herpetic neuralgia.",
+            "guideline": "Pallium Canada; CFP Palliative",
+            "family": ""
+          }
+        ],
+        "source": "Pallium Canada LEAP Course; Canadian Society of Palliative Care Physicians; Cancer Care Ontario Symptom Management; EAPC opioid use guidelines; WHO Pain Ladder."
+      },
+      {
+        "id": "palliative_nausea",
+        "name": "Palliative Nausea & Vomiting",
+        "subtitle": "Mechanism-Directed Antiemetic Selection",
+        "patho": "Palliative N/V is multifactorial — choose antiemetic based on mechanism: gastric stasis (metoclopramide, domperidone), chemoreceptor trigger zone (haloperidol, prochlorperazine, ondansetron), vestibular (dimenhydrinate, scopolamine), increased ICP (dexamethasone), bowel obstruction (octreotide + dexamethasone + antiemetic). Combine agents from different mechanisms for refractory cases.",
+        "signs": [
+          "Nausea — subjective; ask consistently",
+          "Vomiting — frequency, content (food, bilious, fecaloid — bowel obstruction)",
+          "Triggers: meals (gastric stasis), motion (vestibular), opioids (CTZ), specific smells/foods (anticipatory)",
+          "Concurrent symptoms: pain, constipation (causes N/V), abdominal distension (obstruction), hiccups, dyspnea"
+        ],
+        "diagnosis": [
+          "MECHANISM identification key — review all medications, recent changes, bowel function, hydration",
+          "Bloodwork: electrolytes (Na, K, Ca, Mg), urea, creatinine, glucose, LFTs",
+          "Abdominal exam — distension, tenderness, bowel sounds",
+          "Consider imaging (XR or CT abdomen) if bowel obstruction suspected",
+          "ICP screening if concerning neuro signs (HA, neuro deficit, papilledema)"
+        ],
+        "monitoring": [
+          "Symptom severity (verbal NRS for nausea 0–10)",
+          "Vomiting episodes per day",
+          "Hydration status, oral intake",
+          "Bowel function (rule out constipation as cause)",
+          "QT interval if QT-prolonging antiemetics combined (haloperidol + ondansetron)",
+          "EPS for prochlorperazine, metoclopramide (avoid prolonged use)"
+        ],
+        "treatment": [
+          {
+            "line": "Mechanism: Gastric stasis (early satiety, fullness, hiccups, nausea worse with meals)",
+            "type": "Drug",
+            "agents": [
+              "metoclopramide",
+              "domperidone"
+            ],
+            "notes": "Metoclopramide 10 mg PO/SC q6h (max 30 mg/day Health Canada — EPS risk, especially elderly). Domperidone 10 mg PO TID before meals (Health Canada max 30 mg/day; QT caution; avoid with strong CYP3A4 inhibitors). Both prokinetic — work for gastroparesis from autonomic neuropathy or opioid-induced.",
+            "guideline": "Pallium Canada; Health Canada metoclopramide/domperidone safety reviews",
+            "family": ""
+          },
+          {
+            "line": "Mechanism: Chemoreceptor trigger zone (opioid-induced, metabolic, drug-induced)",
+            "type": "Drug",
+            "agents": [
+              "haloperidol",
+              "prochlorperazine",
+              "ondansetron",
+              "olanzapine"
+            ],
+            "notes": "Haloperidol 0.5–2 mg PO/SC q6–8h prn (or scheduled) — first-line for opioid-induced; potent D2 antagonism CTZ. Prochlorperazine 5–10 mg PO/PR q6h. Ondansetron 4–8 mg PO/IV q8h (constipating — limit chronic use). Olanzapine 2.5–5 mg PO HS — multi-receptor (5HT3, D2, H1, M1) — useful for refractory.",
+            "guideline": "Pallium Canada",
+            "family": ""
+          },
+          {
+            "line": "Mechanism: Vestibular (motion, position-related)",
+            "type": "Drug",
+            "agents": [
+              "dimenhydrinate",
+              "scopolamine"
+            ],
+            "notes": "Dimenhydrinate 25–50 mg PO/IV q4–6h (Gravol — sedating, anticholinergic). Scopolamine SC 0.4 mg q4–8h or transdermal (Transderm-V) for prolonged motion sickness or end-of-life secretions.",
+            "guideline": "Pallium Canada",
+            "family": "Antihistamines"
+          },
+          {
+            "line": "Mechanism: Increased ICP (brain mets, intracranial pressure)",
+            "type": "Drug",
+            "agents": [
+              "dexamethasone"
+            ],
+            "notes": "Dexamethasone 4–16 mg PO/IV daily (single morning dose) — reduces peritumoral edema; rapid effect within 24–48h. Taper based on response. Mannitol IV for acute herniation (hospital setting).",
+            "guideline": "Pallium Canada; CCS Brain Mets",
+            "family": "Corticosteroids"
+          },
+          {
+            "line": "Mechanism: Bowel obstruction (malignant)",
+            "type": "Drug",
+            "agents": [
+              "octreotide",
+              "dexamethasone",
+              "haloperidol",
+              "metoclopramide"
+            ],
+            "notes": "OCTREOTIDE 100–300 mcg SC q8h (or continuous 0.3–0.6 mg/24h SC infusion) — reduces GI secretions, relieves N/V. Dexamethasone 8–16 mg/day SC/IV — reduces edema around obstruction. Haloperidol for nausea (NOT prokinetic — avoid metoclopramide in COMPLETE obstruction; can use in partial). Avoid laxatives in complete obstruction. NG tube for symptomatic decompression.",
+            "guideline": "Pallium Canada; EAPC Malignant Bowel Obstruction",
+            "family": ""
+          },
+          {
+            "line": "Mechanism: Anxiety/anticipatory N/V",
+            "type": "Drug",
+            "agents": [
+              "lorazepam",
+              "midazolam"
+            ],
+            "notes": "Lorazepam 0.5–1 mg PO/SL q6h prn (anticipatory chemo nausea, anxiety-driven). Midazolam SC 2.5–5 mg q4h prn at end of life.",
+            "guideline": "Pallium Canada",
+            "family": "Benzodiazepines"
+          },
+          {
+            "line": "Refractory or multifactorial — combine antiemetics from different mechanisms",
+            "type": "Drug",
+            "agents": [
+              "haloperidol",
+              "metoclopramide",
+              "dexamethasone",
+              "olanzapine",
+              "ondansetron"
+            ],
+            "notes": "Combination: e.g., haloperidol + metoclopramide + dexamethasone (different mechanisms — additive). Olanzapine for refractory. Cannabinoids (nabilone, medical cannabis) — case-by-case adjunct. AVOID combining 2 prokinetics (metoclopramide + domperidone) — additive EPS/QT.",
+            "guideline": "Pallium Canada",
+            "family": ""
+          }
+        ],
+        "source": "Pallium Canada LEAP Course; Cancer Care Ontario Symptom Management; EAPC."
+      },
+      {
+        "id": "palliative_dyspnea",
+        "name": "Palliative Dyspnea",
+        "subtitle": "Opioids, Oxygen, Non-Pharmacological",
+        "patho": "Dyspnea is the subjective sensation of breathlessness — common in advanced cancer (~70%), CHF, COPD, ILD. NOT directly correlated with hypoxemia (PaO2). Palliative management combines: low-dose opioids (mainstay — reduces respiratory drive and air hunger sensation), oxygen if hypoxemic, fan/cool air (TRPM8 trigeminal stimulation), bronchodilators if bronchospasm, BZDs for anxiety component, position (upright), correctable cause (e.g., transfuse if anemia, drain effusion).",
+        "signs": [
+          "Subjective dyspnea — patient self-report (NRS 0–10)",
+          "Increased work of breathing: accessory muscles, tachypnea, paradoxical breathing",
+          "SpO2 (may be normal despite severe dyspnea)",
+          "Anxiety often co-occurs",
+          "Triggers: exertion, position, anxiety, infection, fluid overload"
+        ],
+        "diagnosis": [
+          "DYSPNEA SCORE: NRS or modified Borg",
+          "Identify reversible causes: pleural effusion, pneumonia, PE, anemia, fluid overload, bronchospasm, anxiety, opioid withdrawal",
+          "CXR if treatable cause suspected (effusion, pneumonia)",
+          "Hemoglobin (anemia transfusion may help if Hb <80)",
+          "BNP if CHF suspected"
+        ],
+        "monitoring": [
+          "Subjective dyspnea (NRS 0–10) before/after intervention",
+          "Respiratory rate, SpO2, work of breathing",
+          "Sedation level (opioids — may reduce dyspnea before sedation)",
+          "Anxiety level (consider scale)",
+          "Side effects: constipation (opioids), drowsiness (BZDs)"
+        ],
+        "treatment": [
+          {
+            "line": "First-line — Low-dose opioid (mainstay)",
+            "type": "Drug",
+            "agents": [
+              "morphine",
+              "hydromorphone"
+            ],
+            "notes": "Morphine 2.5–5 mg PO q4h prn (opioid-naive) OR Hydromorphone 0.5–1 mg PO q4h prn. Established opioid users: 25–50% of usual breakthrough dose for dyspnea. Effective at sub-analgesic doses for dyspnea. Subcutaneous route at end-of-life: morphine 2.5 mg SC q4h prn OR hydromorphone 0.5 mg SC q4h prn.",
+            "guideline": "Pallium Canada; CTS Palliative Care",
+            "family": "Opioid Receptor Modulators"
+          },
+          {
+            "line": "Adjunct — Oxygen",
+            "type": "Drug",
+            "agents": [],
+            "notes": "OXYGEN ONLY IF HYPOXEMIC (SpO2 <88% room air). For non-hypoxemic dyspnea, cool air via fan or open window is equally effective and less burdensome (no tubing, mobility). Avoid hyperoxia in COPD (CO2 retention).",
+            "guideline": "CTS Palliative; Pallium Canada",
+            "family": ""
+          },
+          {
+            "line": "Adjunct — Anxiolytic (if anxiety component)",
+            "type": "Drug",
+            "agents": [
+              "lorazepam",
+              "midazolam"
+            ],
+            "notes": "Lorazepam 0.5–1 mg PO/SL q4–6h prn (anxiety-component). Midazolam SC 2.5–5 mg q4h prn (end-of-life dyspnea + anxiety). NOT first-line for dyspnea alone — opioids are. ADD when anxiety is significant component.",
+            "guideline": "Pallium Canada",
+            "family": "Benzodiazepines"
+          },
+          {
+            "line": "Adjunct — Bronchodilator (if bronchospasm)",
+            "type": "Drug",
+            "agents": [
+              "salbutamol",
+              "ipratropium"
+            ],
+            "notes": "Salbutamol MDI 2–4 puffs with spacer q4h prn (or nebulizer). Ipratropium combination if asthma/COPD overlap. ICS continued in COPD/asthma if applicable.",
+            "guideline": "CTS COPD",
+            "family": "Short-Acting Beta-2 Agonists"
+          },
+          {
+            "line": "Adjunct — Steroid (if airway tumor, lymphangitic carcinomatosis)",
+            "type": "Drug",
+            "agents": [
+              "dexamethasone",
+              "prednisone"
+            ],
+            "notes": "Dexamethasone 4–8 mg PO daily for tumor-related dyspnea (airway compression, lymphangitic spread, SVC syndrome). Reduce edema; rapid effect.",
+            "guideline": "Pallium Canada; CCO",
+            "family": "Corticosteroids"
+          },
+          {
+            "line": "Refractory — Palliative sedation if intolerable",
+            "type": "Drug",
+            "agents": [
+              "midazolam",
+              "methotrimeprazine"
+            ],
+            "notes": "Last-resort palliative sedation for refractory dyspnea/distress at end of life — midazolam continuous SC infusion 0.5–2 mg/h titrated to comfort. Multidisciplinary discussion; informed consent; CSPCP framework.",
+            "guideline": "CSPCP Palliative Sedation Framework 2024",
+            "family": "Benzodiazepines"
+          }
+        ],
+        "source": "CTS Palliative Care 2020; Pallium Canada; CSPCP."
+      },
+      {
+        "id": "palliative_secretions",
+        "name": "Death Rattle / Excessive Secretions (End of Life)",
+        "subtitle": "Antimuscarinics & Repositioning",
+        "patho": "Pooled airway secretions in dying patients unable to clear them (reduced consciousness, weak cough). Often more distressing for family/caregivers than for patient. Anticholinergic (antimuscarinic) drugs reduce new secretion production but DO NOT clear existing secretions — repositioning + reassurance equally important. Goal: reduce noise; do not pursue normalized respirations in active dying.",
+        "signs": [
+          "Bubbling/gurgling respirations in unconscious or semi-conscious patient",
+          "Late stages of dying — typically last hours to days",
+          "Patient often unaware (decreased consciousness)",
+          "Family distress is common and significant",
+          "Differentiate from pulmonary edema (may need different management)"
+        ],
+        "diagnosis": [
+          "CLINICAL diagnosis — observable airway noise in dying patient",
+          "Distinguish from pulmonary edema (CHF), aspiration, infection — though late dying-stage workup limited",
+          "Avoid over-investigation — comfort care is priority"
+        ],
+        "monitoring": [
+          "Patient comfort (not respiratory rate normalization)",
+          "Family distress and education",
+          "Side effects: dry mouth (often acceptable), urinary retention (catheter usually in place at this stage), confusion (assess)",
+          "Effectiveness of repositioning and antimuscarinic — often partial"
+        ],
+        "treatment": [
+          {
+            "line": "First-line — Repositioning + Family Education",
+            "type": "Non-Drug",
+            "agents": [],
+            "notes": "Position semi-prone or lateral — gravity drains secretions. Avoid suctioning (traumatic, induces more secretions, distressing). Educate family that noise is from secretions in throat, NOT distressing breathing for patient. This is a normal end-of-life sign.",
+            "guideline": "Pallium Canada; CSPCP",
+            "family": ""
+          },
+          {
+            "line": "Antimuscarinic — first-line drug",
+            "type": "Drug",
+            "agents": [
+              "scopolamine",
+              "glycopyrrolate"
+            ],
+            "notes": "GLYCOPYRROLATE 0.2–0.4 mg SC/IV q4h prn (does NOT cross BBB — preserves alertness, fewer central effects) — preferred when alertness desired. SCOPOLAMINE (hyoscine butylbromide / hyoscine hydrobromide) 0.4 mg SC q4h prn — crosses BBB (mild sedation may be acceptable at end of life). Transdermal scopolamine patch (Transderm-V) — slower onset.",
+            "guideline": "Pallium Canada; EAPC",
+            "family": ""
+          },
+          {
+            "line": "Alternative antimuscarinic",
+            "type": "Drug",
+            "agents": [
+              "atropine"
+            ],
+            "notes": "Atropine sublingual 1% ophthalmic drops 1–2 drops SL q4h prn (off-label — uses ophthalmic preparation sublingually). Cheap, effective.",
+            "guideline": "Pallium Canada",
+            "family": ""
+          },
+          {
+            "line": "Limit IV fluids in actively dying",
+            "type": "Non-Drug",
+            "agents": [],
+            "notes": "Reduce or stop IV fluids in actively dying — excess fluids exacerbate airway and pulmonary secretions. This is COMFORT-FOCUSED care. Family education essential about this transition.",
+            "guideline": "CSPCP; Pallium Canada",
+            "family": ""
+          }
+        ],
+        "source": "Pallium Canada LEAP Course; EAPC End-of-Life Care; CSPCP."
+      },
+      {
+        "id": "palliative_delirium",
+        "name": "Palliative Delirium / Terminal Agitation",
+        "subtitle": "Hyperactive vs Hypoactive — Antipsychotics, Benzodiazepines",
+        "patho": "Delirium affects ~80% of dying patients in last 24–48 hours. Hyperactive (agitation, restlessness, hallucinations) vs hypoactive (withdrawal, lethargy — often missed). Causes: opioid metabolites (morphine especially), dehydration, hypoxia, infection, hepatic/renal failure, untreated pain, urinary retention, constipation, BZD withdrawal, NEW medications. Reverse what is reversible; haloperidol is first-line antipsychotic; midazolam for refractory terminal agitation.",
+        "signs": [
+          "Acute change in mental status (hours-days)",
+          "Inattention, disorganized thinking, altered LOC",
+          "Hyperactive: restlessness, agitation, hallucinations, picking at sheets",
+          "Hypoactive: lethargy, withdrawal, reduced engagement (often UNRECOGNIZED)",
+          "Mixed: alternating",
+          "Sleep-wake cycle disturbance"
+        ],
+        "diagnosis": [
+          "CAM (Confusion Assessment Method) — bedside tool",
+          "CAM-ICU for sedated patients",
+          "Identify and treat REVERSIBLE causes: pain, urinary retention, constipation, dehydration, infection, hypoxia, electrolyte (Ca++, Na+), opioid metabolites",
+          "Review medications — anticholinergics, BZDs, opioids, steroids, recent additions",
+          "Assess for opioid neurotoxicity (myoclonus, hyperalgesia, hallucinations) — rotate opioid"
+        ],
+        "monitoring": [
+          "RASS (Richmond Agitation-Sedation Scale)",
+          "CAM (delirium screen)",
+          "Sleep-wake cycle",
+          "Family distress (high — counsel and support)",
+          "QT interval (haloperidol — limited monitoring at end of life)",
+          "Effect of intervention on patient comfort + family experience"
+        ],
+        "treatment": [
+          {
+            "line": "First — Identify and treat reversible causes",
+            "type": "Non-Drug",
+            "agents": [],
+            "notes": "Pain assessment (untreated pain causes agitation), bladder scan (urinary retention), bowel exam (constipation/impaction), environment (lighting, family presence, familiar items), hearing/vision aids, hydration assessment, oxygenation, infection screen, medication review. Many delirium episodes resolve with these alone.",
+            "guideline": "Pallium Canada; CSPCP",
+            "family": ""
+          },
+          {
+            "line": "Antipsychotic — first-line for hyperactive delirium",
+            "type": "Drug",
+            "agents": [
+              "haloperidol",
+              "methotrimeprazine"
+            ],
+            "notes": "HALOPERIDOL 0.5–2 mg PO/SC q4–6h prn (or scheduled if persistent) — most evidence in palliative delirium. METHOTRIMEPRAZINE (Nozinan) 6.25–25 mg SC q4–6h prn — useful when sedation desired (more sedating than haloperidol). Continue regular medications (opioids for pain) — do NOT stop pain control.",
+            "guideline": "Pallium Canada",
+            "family": "Antipsychotics"
+          },
+          {
+            "line": "Atypical antipsychotic alternatives",
+            "type": "Drug",
+            "agents": [
+              "olanzapine",
+              "risperidone",
+              "quetiapine"
+            ],
+            "notes": "Olanzapine 2.5–10 mg PO/SL HS — useful when sedation desired; multi-receptor. Risperidone 0.25–1 mg PO BID. Quetiapine 12.5–50 mg PO HS-BID — preferred in Parkinson disease/Lewy body dementia (less EPS).",
+            "guideline": "Pallium Canada",
+            "family": "Atypical Antipsychotics"
+          },
+          {
+            "line": "Benzodiazepine — TERMINAL agitation refractory to antipsychotic",
+            "type": "Drug",
+            "agents": [
+              "midazolam",
+              "lorazepam"
+            ],
+            "notes": "Reserved for refractory agitation in last days of life (palliative sedation). MIDAZOLAM SC 2.5–5 mg q1–2h prn or continuous infusion 0.5–2 mg/h titrated. Lorazepam 0.5–2 mg PO/SL/SC q4–6h. AVOID BZD MONOTHERAPY in delirium — can WORSEN (paradoxical disinhibition); combine with antipsychotic. Exception: BZD-withdrawal delirium, ETOH-withdrawal — use BZDs as primary.",
+            "guideline": "Pallium Canada; CSPCP",
+            "family": "Benzodiazepines"
+          },
+          {
+            "line": "Opioid rotation if opioid-induced neurotoxicity suspected",
+            "type": "Drug",
+            "agents": [
+              "morphine",
+              "hydromorphone",
+              "fentanyl"
+            ],
+            "notes": "Signs of OPIOID NEUROTOXICITY: myoclonus, hyperalgesia, agitation, hallucinations, allodynia. Rotate from morphine (active metabolite M3G in CKD) to hydromorphone or fentanyl. Reduce dose 25–50% on rotation (incomplete cross-tolerance).",
+            "guideline": "Pallium Canada",
+            "family": "Opioid Receptor Modulators"
+          },
+          {
+            "line": "Palliative sedation for refractory terminal distress",
+            "type": "Drug",
+            "agents": [
+              "midazolam",
+              "methotrimeprazine",
+              "phenobarbital"
+            ],
+            "notes": "PROPORTIONATE PALLIATIVE SEDATION — last-resort for refractory symptoms (agitation, dyspnea, pain) at end of life. Multidisciplinary discussion; informed consent (or substitute); CSPCP framework. Midazolam continuous SC infusion 0.5–2 mg/h titrated to comfort. Methotrimeprazine SC infusion alternative. Phenobarbital for refractory delirium/seizures. Goal is symptom relief, NOT hastening death.",
+            "guideline": "CSPCP Palliative Sedation 2024",
+            "family": "Benzodiazepines"
+          }
+        ],
+        "source": "Pallium Canada; CSPCP; CCS Delirium Guidelines; EAPC."
+      },
+      {
+        "id": "palliative_constipation",
+        "name": "Opioid-Induced Constipation (OIC) & Palliative Constipation",
+        "subtitle": "Prophylaxis Always with Opioids",
+        "patho": "Constipation is UNIVERSAL with opioids (no tolerance develops to GI effects). Mechanism: μ-opioid receptors in GI tract reduce peristalsis, increase tone, reduce secretions. Always start prophylactic laxative DAY 1 of opioid initiation. Combination (stimulant + osmotic) typically required. Refractory OIC: peripherally-acting μ-opioid receptor antagonists (PAMORAs — methylnaltrexone, naloxegol, naldemedine).",
+        "signs": [
+          "Reduced frequency (<3 BMs/week)",
+          "Hard stool, straining, incomplete evacuation, sensation of obstruction",
+          "Abdominal distension, discomfort, nausea (constipation can cause N/V)",
+          "Delirium / confusion (severe constipation in elderly)",
+          "Overflow diarrhea (paradoxical — fecal impaction)"
+        ],
+        "diagnosis": [
+          "Frequency, consistency (Bristol Stool Chart) of last few BMs",
+          "Abdominal exam (distension, palpable stool, rectal exam if impaction suspected)",
+          "Review medications (opioids, anticholinergics, calcium, iron, ondansetron, etc.)",
+          "Hydration, mobility, diet review",
+          "Consider abdominal X-ray if impaction suspected and unable to do rectal exam"
+        ],
+        "monitoring": [
+          "Daily bowel record (frequency, consistency)",
+          "Goal: 1 BM every 1–3 days",
+          "Side effects: cramping (stimulants), diarrhea (overdose laxative), electrolyte imbalance (excessive osmotic)",
+          "Adjust doses upward if no BM in 3 days"
+        ],
+        "treatment": [
+          {
+            "line": "Prophylaxis — START WITH FIRST OPIOID DOSE",
+            "type": "Drug",
+            "agents": [
+              "sennosides",
+              "polyethylene_glycol",
+              "docusate",
+              "lactulose"
+            ],
+            "notes": "STIMULANT laxative MANDATORY: sennosides 12–24 mg PO HS (titrate to 50–70 mg/day max). ADD osmotic if needed: PEG 17 g PO daily (Lax-A-Day, RestoraLAX) OR lactulose 15–30 mL PO BID. DOCUSATE alone is INADEQUATE for OIC (limited evidence). Adequate hydration. Encourage mobility and dietary fibre as tolerated.",
+            "guideline": "Pallium Canada; CFP Palliative",
+            "family": ""
+          },
+          {
+            "line": "Established constipation",
+            "type": "Drug",
+            "agents": [
+              "sennosides",
+              "polyethylene_glycol",
+              "lactulose",
+              "bisacodyl",
+              "magnesium_hydroxide"
+            ],
+            "notes": "Increase stimulant (sennosides up to 50–70 mg/day); ADD or escalate osmotic (PEG 34 g/day; lactulose 30–45 mL TID). RECTAL options: bisacodyl suppository 10 mg PR, glycerin suppository, mineral oil enema, sodium phosphate enema. Disimpaction if needed (manual or enema cascade).",
+            "guideline": "Pallium Canada",
+            "family": ""
+          },
+          {
+            "line": "Refractory OIC — PAMORA (peripherally-acting μ-opioid antagonist)",
+            "type": "Drug",
+            "agents": [
+              "methylnaltrexone",
+              "naloxegol",
+              "naldemedine"
+            ],
+            "notes": "After failure of standard laxatives × 2 weeks. METHYLNALTREXONE (Relistor) 8 mg SC every other day (38–62 kg) or 12 mg SC every other day (62–114 kg) — ODB Limited Use Code. NALOXEGOL (Movantik) 25 mg PO daily on empty stomach. NALDEMEDINE (Symproic) 0.2 mg PO daily. Do NOT cross BBB → maintains analgesia. Stop ALL other laxatives × 3 days when starting PAMORA (avoid diarrhea).",
+            "guideline": "AGA OIC 2018; CFP Palliative",
+            "family": ""
+          },
+          {
+            "line": "Fecal impaction",
+            "type": "Drug",
+            "agents": [
+              "polyethylene_glycol",
+              "bisacodyl"
+            ],
+            "notes": "Manual disimpaction if low; oil enema (mineral oil or olive oil retention enema) to soften; PEG 1L over 4 h to disimpact (high doses); follow with maintenance regimen. Tap water enema gentle option. Avoid soap suds enemas (mucosal injury).",
+            "guideline": "Pallium Canada",
+            "family": ""
+          },
+          {
+            "line": "Special — opioid rotation may help",
+            "type": "Drug",
+            "agents": [
+              "fentanyl",
+              "buprenorphine",
+              "tapentadol"
+            ],
+            "notes": "FENTANYL transdermal causes LESS constipation than oral morphine/hydromorphone — consider rotation in refractory OIC if appropriate (stable opioid-tolerant patient, not actively dying). TAPENTADOL also less constipating. BUPRENORPHINE patch alternative.",
+            "guideline": "Pallium Canada",
+            "family": "Opioid Receptor Modulators"
+          }
+        ],
+        "source": "Pallium Canada; AGA Opioid-Induced Constipation 2018; CFP Palliative."
+      },
+      {
+        "id": "palliative_comfort_kit",
+        "name": "End-of-Life Comfort Kit (Anticipatory Medications)",
+        "subtitle": "Last Days of Life — Subcutaneous Symptom Management",
+        "patho": "Anticipatory comfort medications stocked in the home (community palliative care) or on inpatient palliative unit allow rapid SC symptom management in last days of life when oral intake is no longer possible. Standard Ontario palliative care 'comfort kit' includes opioids (pain, dyspnea), antiemetic, antipsychotic (delirium), antimuscarinic (secretions), benzodiazepine (anxiety, refractory dyspnea, terminal agitation). Family/caregiver education on indications and SC administration is essential.",
+        "signs": [
+          "PROGNOSTIC signs of last days/hours: bedbound, profound weakness, minimal oral intake, semi-conscious, mottled extremities, irregular breathing (Cheyne-Stokes), pooled secretions",
+          "PPS (Palliative Performance Scale) ≤30%",
+          "Goal-of-care alignment with comfort care confirmed",
+          "Family understanding and preparation"
+        ],
+        "diagnosis": [
+          "Recognition of dying phase (clinical judgment + tools — PPS, surprise question)",
+          "Goals-of-care discussion documented",
+          "MOST/POLST or equivalent advance directive in place",
+          "Comfort-focused approach confirmed; rationalize medications (stop non-comfort meds)",
+          "Subcutaneous route established (butterfly needle SC sites — abdomen, thigh, deltoid, chest wall)"
+        ],
+        "monitoring": [
+          "Pain (NRS, FLACC for non-verbal, observable signs — facial grimacing, restlessness)",
+          "Dyspnea, secretions, agitation, nausea",
+          "PRN dose use frequency — escalate to scheduled or continuous infusion if ≥3 doses/day for any symptom",
+          "Family distress and support needs",
+          "Spiritual care, social support",
+          "Death pronouncement protocol when occurs"
+        ],
+        "treatment": [
+          {
+            "line": "Pain or dyspnea — opioid",
+            "type": "Drug",
+            "agents": [
+              "morphine",
+              "hydromorphone"
+            ],
+            "notes": "MORPHINE 2.5–5 mg SC q1h prn (opioid-naive) OR 10–25% of usual 24-h opioid total dose for established users. HYDROMORPHONE 0.5–1 mg SC q1h prn (opioid-naive) OR equianalgesic (5–10× more potent than morphine) for established. Continuous SC infusion via syringe driver if frequent prn use.",
+            "guideline": "Pallium Canada; CSPCP",
+            "family": "Opioid Receptor Modulators"
+          },
+          {
+            "line": "Nausea/vomiting",
+            "type": "Drug",
+            "agents": [
+              "haloperidol",
+              "metoclopramide"
+            ],
+            "notes": "HALOPERIDOL 0.5–2 mg SC q4–8h prn — broad-spectrum antiemetic; first-line palliative. METOCLOPRAMIDE 10 mg SC q4–6h prn (avoid in complete bowel obstruction).",
+            "guideline": "Pallium Canada",
+            "family": ""
+          },
+          {
+            "line": "Agitation / delirium",
+            "type": "Drug",
+            "agents": [
+              "haloperidol",
+              "methotrimeprazine",
+              "midazolam"
+            ],
+            "notes": "HALOPERIDOL 0.5–2 mg SC q4–8h prn (or scheduled). METHOTRIMEPRAZINE 6.25–25 mg SC q4–8h prn (more sedating). MIDAZOLAM 1–2.5 mg SC q1h prn for refractory agitation, or continuous SC infusion 0.5–2 mg/h.",
+            "guideline": "Pallium Canada",
+            "family": ""
+          },
+          {
+            "line": "Secretions (death rattle)",
+            "type": "Drug",
+            "agents": [
+              "scopolamine",
+              "glycopyrrolate"
+            ],
+            "notes": "GLYCOPYRROLATE 0.2–0.4 mg SC q4–6h prn (preserves alertness). SCOPOLAMINE (hyoscine) 0.4 mg SC q4–6h prn (mildly sedating). Repositioning + family education concurrently.",
+            "guideline": "Pallium Canada",
+            "family": ""
+          },
+          {
+            "line": "Refractory dyspnea or anxiety",
+            "type": "Drug",
+            "agents": [
+              "midazolam",
+              "lorazepam"
+            ],
+            "notes": "MIDAZOLAM 1–2.5 mg SC q1–2h prn (refractory dyspnea + anxiety, terminal agitation). LORAZEPAM 0.5–1 mg SL q4–6h prn (alternative — sublingual route preserved when SC not available).",
+            "guideline": "Pallium Canada",
+            "family": "Benzodiazepines"
+          },
+          {
+            "line": "Continuous SC infusion (CSCI) — for stable need",
+            "type": "Drug",
+            "agents": [
+              "morphine",
+              "hydromorphone",
+              "midazolam",
+              "haloperidol",
+              "methotrimeprazine"
+            ],
+            "notes": "When ≥3 prn doses/day — convert to CSCI via syringe driver (CADD pump). Compatible mixtures: morphine + haloperidol + glycopyrrolate; hydromorphone + midazolam + haloperidol. Rates titrated to comfort. Specialty pharmacy reconstitution; community palliative care RN delivery.",
+            "guideline": "Pallium Canada; CSPCP",
+            "family": ""
+          },
+          {
+            "line": "Family / caregiver education",
+            "type": "Non-Drug",
+            "agents": [],
+            "notes": "Demonstrate SC injection technique. Indications for each medication. When to call (not for ‘normal dying’ signs). After-hours access. Death notification process. Bereavement resources. Pallium Canada family resources available.",
+            "guideline": "Pallium Canada Family Caregiver Resources",
+            "family": ""
+          }
+        ],
+        "source": "Pallium Canada LEAP Course; CSPCP; Ontario Health palliative care guidance; Ontario Palliative Care Network."
+      },
+      {
+        "id": "maid_pharmacist",
+        "name": "Medical Assistance in Dying (MAID) — Pharmacist Role",
+        "subtitle": "Drug Provision, Counselling, Documentation",
+        "patho": "Medical Assistance in Dying is legal in Canada under federal Criminal Code amendments (2016, expanded 2021). Pharmacists may participate in dispensing MAID medications — voluntary; conscientious objection protected. Strict regulatory requirements: documentation, witnessing, return of unused drugs. Two routes: clinician-administered (most common — IV) and self-administered (rare — oral). Standard medication kit per provincial protocol.",
+        "signs": [
+          "Patient eligibility determined by physician/NP — not pharmacist role",
+          "Eligibility (Bill C-7, 2021): grievous and irremediable medical condition causing enduring intolerable suffering; capable adult; voluntary; informed",
+          "Track 1 (death reasonably foreseeable) vs Track 2 (death NOT reasonably foreseeable — additional safeguards: 90-day reflection, multidisciplinary assessment)",
+          "Mental illness as sole underlying condition: extended to March 2027 (currently NOT eligible)",
+          "Mature minors, advance requests: pending federal legislative consideration"
+        ],
+        "diagnosis": [
+          "Eligibility determination by physician/NP — pharmacist verifies prescription compliance with provincial MAID requirements",
+          "Two independent physician/NP assessments required",
+          "10-day reflection period (Track 1; can be waived if death imminent)",
+          "Final consent at time of MAID (Track 1 — waiver possible per Audrey's Amendment 2021 if loss of capacity expected)",
+          "OCP Standards of Practice for MAID (Ontario)"
+        ],
+        "monitoring": [
+          "Provincial MAID drug protocol adherence",
+          "Documentation: prescription, dispensing, administration witness, drug return",
+          "Communication with MAID provider for clarification",
+          "Pharmacist and pharmacy staff support — emotional impact acknowledged",
+          "OCP reporting requirements"
+        ],
+        "treatment": [
+          {
+            "line": "Clinician-Administered MAID — Standard IV protocol",
+            "type": "Drug",
+            "agents": [
+              "midazolam",
+              "lidocaine",
+              "propofol",
+              "rocuronium"
+            ],
+            "notes": "Step 1 — Pre-medication Midazolam 5–20 mg IV (anxiolysis). Step 2 — Local anaesthetic Lidocaine 40 mg IV (prevent propofol burn). Step 3 — Coma induction Propofol 1000 mg IV (large dose; deep coma). Step 4 — Neuromuscular blockade Rocuronium 200 mg IV (respiratory cessation; backup: cisatracurium). Death typically within 5–15 min.",
+            "guideline": "Canadian MAID drug protocol; OCP Practice Standards",
+            "family": ""
+          },
+          {
+            "line": "Self-Administered MAID — Oral protocol (rare)",
+            "type": "Drug",
+            "agents": [
+              "secobarbital",
+              "phenobarbital"
+            ],
+            "notes": "Less commonly used. Oral protocol typically secobarbital 9–15 g (compounded) OR pentobarbital. Long onset (hours), some failure rate — clinician-administered preferred and more common in Canada. Antiemetic premed (e.g., ondansetron) given to prevent vomiting.",
+            "guideline": "Canadian MAID drug protocol",
+            "family": "Barbiturates"
+          },
+          {
+            "line": "Pharmacist responsibilities",
+            "type": "Non-Drug",
+            "agents": [],
+            "notes": "(1) VOLUNTARY participation — conscientious objection protected; refer to colleague. (2) Verify prescription compliance with provincial MAID drug protocol. (3) Dispense medications with full documentation. (4) Provide secure storage instructions; ideally dispense close to procedure date. (5) Witness administration if part of role (some provinces). (6) Account for and dispose of unused/returned medications per protocol. (7) Document in patient record per OCP standards. (8) Notify OCP if any concerns.",
+            "guideline": "OCP Practice Standards; CCMAID; Provincial Pharmacy Boards",
+            "family": ""
+          },
+          {
+            "line": "Conscientious objection",
+            "type": "Non-Drug",
+            "agents": [],
+            "notes": "Pharmacists may decline to participate in MAID on moral/religious grounds. OBLIGATIONS: (1) Notify employer in advance; (2) Do not abandon patient; (3) Provide effective referral to participating colleague/pharmacy; (4) Continue providing other pharmaceutical care unrelated to MAID; (5) Maintain professional boundaries — do not impose personal beliefs on patient.",
+            "guideline": "OCP Code of Ethics; CCMAID Pharmacy",
+            "family": ""
+          },
+          {
+            "line": "Provider support and self-care",
+            "type": "Non-Drug",
+            "agents": [],
+            "notes": "MAID involvement can be emotionally significant. Resources: Canadian Association of MAID Assessors and Providers (CAMAP), MAID Pharmacy Network, employee assistance programs. Peer support, debriefing after procedures, ongoing education.",
+            "guideline": "CAMAP",
+            "family": ""
+          }
+        ],
+        "source": "Health Canada MAID Annual Report; OCP Practice Standards; Canadian Association of MAID Assessors and Providers (CAMAP); Provincial MAID drug protocols; Bill C-14 (2016) and Bill C-7 (2021)."
+      }
+    ]
+  }
+
 };
 var DRUGS = {
   "tamoxifen": {
@@ -175535,6 +176323,921 @@ var REFERENCE_TABLES = [
     related_protocols: []
   }
 
+,
+  // ═══════════ TOXICOLOGY & ACUTE MANAGEMENT ═══════════
+  {
+    id: 'tox_acetaminophen',
+    title: 'Acetaminophen Overdose & N-Acetylcysteine (NAC)',
+    icon: '💊',
+    color: '#dc2626',
+    overview: 'Acetaminophen overdose is a leading cause of acute liver failure in Canada. Toxic dose: ≥150 mg/kg (or ≥7.5 g adult) in single ingestion; chronic risk at lower doses with CYP induction (alcohol, INH, anticonvulsants), malnutrition, fasting. Plot 4-h post-ingestion serum acetaminophen on Rumack-Matthew nomogram → treatment line. NAC within 8h of acute ingestion is nearly 100% hepatoprotective; effective up to 24h post-ingestion (lower benefit beyond 24h but still indicated if hepatotoxicity present). Ontario Poison Centre (1-800-268-9017) — call early.',
+    warnings: [
+      'IV NAC 21-hour 3-bag protocol or 20-hour modified — consult Ontario Poison Centre or institutional protocol; oral NAC (72-h regimen) used historically and in select cases.',
+      'NEVER delay NAC waiting for nomogram if presentation >8h post-ingestion or staggered/chronic ingestion — start empirically while awaiting levels.',
+      'STAGGERED OR CHRONIC INGESTION: nomogram does NOT apply — treat based on cumulative dose, AST/ALT, INR, presence of hepatotoxicity.',
+      'AST/ALT, INR, glucose, creatinine, lipase, lactate at baseline + repeat per protocol; King\'s College criteria for transplant referral if severe hepatic failure.',
+      'NAC adverse: anaphylactoid reactions in ~10% (slow infusion, antihistamines; do not stop NAC permanently — restart at slower rate).',
+      'PEDIATRICS: similar approach; weight-based; same nomogram applies to single acute ingestion ≥4h post.'
+    ],
+    columns: ['Time / Stage', 'Action', 'Drug & Dose', 'Notes'],
+    rows: [
+      ['Initial assessment', 'Detailed history', 'NA', 'Time of ingestion, dose, formulation (regular vs SR), co-ingestants. Weight, comorbidities, alcohol, fasting, CYP-inducing drugs. ABC, IV access.'],
+      ['Decontamination (<2h)', 'Activated charcoal IF awake/protected airway', 'Activated charcoal 1 g/kg PO (max 50 g)', 'Most useful within 1 hour; consider up to 2h with large/SR ingestion. Do NOT use if reduced LOC without intubation. Does NOT preclude NAC.'],
+      ['4 hours post-ingestion', 'Draw serum acetaminophen + AST/ALT/INR/Cr/glucose', 'Serum APAP level 4h post-ingestion (or earlier if 4h not feasible)', 'Plot on Rumack-Matthew nomogram — single acute ingestion only. Treatment line at 1000 mmol/L (150 mcg/mL) at 4h.'],
+      ['NAC indicated', 'IV NAC 21-h protocol (most common Canadian)', 'IV NAC: Bag 1 — 150 mg/kg in 200 mL D5W over 60 min; Bag 2 — 50 mg/kg in 500 mL D5W over 4 h; Bag 3 — 100 mg/kg in 1000 mL D5W over 16 h. Total = 300 mg/kg over 21 h.', 'OR oral NAC 140 mg/kg load, then 70 mg/kg q4h × 17 doses (72 h) — equivalent efficacy if tolerated; not preferred when IV available. OR modified 20-h protocol used in some Ontario centres.'],
+      ['Anaphylactoid reaction', 'Slow infusion + diphenhydramine ± epinephrine', 'Pause IV NAC; diphenhydramine 50 mg IV; restart at slower rate', '~10% incidence with IV NAC, especially during loading dose. Usually mild; rarely severe. Do NOT discontinue NAC permanently.'],
+      ['End of 21-h NAC', 'Reassess — continue NAC?', 'Repeat AST/ALT/INR; if rising or hepatotoxicity present, CONTINUE NAC at maintenance rate (100 mg/kg over 16 h or 6.25 mg/kg/h) until clinical resolution', 'Continue until: AST/ALT trending down AND <100 U/L, INR <2.0, asymptomatic. May need days–weeks in severe cases.'],
+      ['Massive ingestion (≥30 g) or APAP >6000 mmol/L at 4h', 'DOUBLE-DOSE NAC + ID/Tox', 'Increase NAC infusion rate; consider extracorporeal (hemodialysis) for very high levels (>6000 mmol/L)', 'Some experts double the maintenance dose; consult Ontario Poison Centre.'],
+      ['Hepatic failure → transplant referral', 'King\'s College criteria', 'NA', 'King\'s College: pH <7.30 OR (INR >6.5 + Cr >300 mmol/L + grade III/IV encephalopathy). Refer to Toronto General/UHN, McGill MUHC, etc. for liver transplant evaluation.'],
+      ['Staggered / chronic ingestion', 'Empiric NAC if AST/ALT elevated or APAP >130 mmol/L', 'Same NAC regimen', 'Nomogram does NOT apply. Treat based on labs and clinical hepatotoxicity. Always involve Ontario Poison Centre.']
+    ],
+    source: 'Ontario Poison Centre; AACT/EAPCCT consensus; Rumack-Matthew 1975; Canadian Pharmacists Association Therapeutic Choices; Health Canada acetaminophen safety reviews.',
+    related_drugs: ['acetaminophen','acetylcysteine']
+  },
+  {
+    id: 'tox_antidote_table',
+    title: 'Common Overdose Antidotes',
+    icon: '⚗️',
+    color: '#dc2626',
+    overview: 'Quick-reference table of antidotes for common toxic ingestions/exposures. Consult Ontario Poison Centre (1-800-268-9017) early — 24/7 expert toxicology guidance. Most overdoses managed primarily with supportive care + selective antidote when criteria met.',
+    warnings: [
+      'Ontario Poison Centre: 1-800-268-9017 — 24/7. Free, expert, evidence-based.',
+      'AVOID empiric flumazenil in mixed/unknown overdose — can precipitate seizures (especially with TCAs, cocaine, benzodiazepine-dependent patients).',
+      'NALOXONE for opioid reversal — start low (0.04–0.1 mg IV) in chronic users to avoid acute withdrawal; titrate to respiratory rate, NOT consciousness.',
+      'Many "antidotes" require specific toxicology indications; NOT all overdoses need antidotes — supportive care is primary.',
+      'Activated charcoal: most useful within 1 hour; not for caustic, hydrocarbon, alcohol, lithium, iron, heavy metal ingestions.'
+    ],
+    columns: ['Toxin', 'Antidote', 'Dose / Route', 'Key Notes'],
+    rows: [
+      ['Acetaminophen', 'N-Acetylcysteine (NAC)', 'IV 21-h: 150 mg/kg over 60 min, 50 mg/kg over 4 h, 100 mg/kg over 16 h', 'See dedicated acetaminophen reference table. Within 8 h ideal; up to 24 h+ effective.'],
+      ['Opioids (overdose)', 'Naloxone', 'IV 0.04–0.4 mg IV, repeat q2–3 min (up to 10 mg). IM/intranasal 0.4–4 mg.', 'Start low in chronic users to avoid acute withdrawal. Half-life shorter than most opioids — repeat dosing or infusion (2/3 effective dose per hour) often needed. Naloxone kits (THN — Take Home Naloxone) freely distributed in Ontario.'],
+      ['Benzodiazepines (selected)', 'Flumazenil', 'IV 0.2 mg over 30 sec, repeat q60 sec to 1–3 mg total', 'AVOID in mixed/unknown OD (TCA, cocaine), BZD-dependent, seizure history, status epilepticus from any cause. Reserved for procedural/iatrogenic over-sedation in non-tolerant patients.'],
+      ['Beta-blockers / Calcium channel blockers', 'High-dose Insulin Euglycemia (HIE) ± Glucagon ± Calcium', 'HIE: Insulin 1 unit/kg IV bolus + 0.5–1 unit/kg/h infusion (up to 10 u/kg/h) + dextrose. Glucagon 5–10 mg IV bolus. CaCl 1 g IV (or Ca gluconate 3 g).', 'HIE is preferred for severe BB/CCB toxicity. Glucagon less effective; calcium for CCB. Lipid emulsion (intralipid) rescue for refractory cases.'],
+      ['TCAs (sodium channel blockade — wide QRS, hypotension, ventricular dysrhythmia)', 'Sodium bicarbonate', 'Sodium bicarb 1–2 mEq/kg IV bolus, repeat to QRS narrowing and pH 7.45–7.55', 'Indicated for QRS >100 ms, ventricular dysrhythmia, hypotension. Also for other Na-channel blocking drugs (cocaine, lamotrigine, propranolol overdose).'],
+      ['Methanol / ethylene glycol', 'Fomepizole (4-MP) ± hemodialysis', 'Fomepizole 15 mg/kg IV load, then 10 mg/kg q12h × 4 doses, then 15 mg/kg q12h until level <20 mg/dL', 'Ethanol IV is alternative if fomepizole unavailable. Hemodialysis for severe (acidosis, vision changes, AKI). Adjunct: folate (methanol — speeds metabolism), thiamine + pyridoxine (ethylene glycol).'],
+      ['Cyanide (smoke inhalation, industrial)', 'Hydroxocobalamin', 'Hydroxocobalamin 5 g IV over 15 min (peds 70 mg/kg)', 'Preferred over older cyanide kits (sodium nitrite + sodium thiosulfate). Smoke inhalation with severe acidosis + hypotension → empiric.'],
+      ['Methemoglobinemia', 'Methylene blue', 'Methylene blue 1–2 mg/kg IV over 5 min, repeat q1h prn', 'AVOID in G6PD deficiency (hemolysis). Triggers: dapsone, benzocaine, nitrites, primaquine, sulfonamides, local anaesthetics.'],
+      ['Iron overdose', 'Deferoxamine', 'Deferoxamine 15 mg/kg/h IV (max 6 g/24h)', 'Indicated for severe iron toxicity (level >500 mcg/dL, severe symptoms, acidosis). Urine turns vin rosé colour.'],
+      ['Digoxin toxicity', 'Digoxin Fab fragments (DigiFab)', 'Digoxin Fab vials per nomogram or empirically 10–20 vials for life-threatening overdose', 'Indicated for hyperkalemia (>5.0), life-threatening dysrhythmia, mental status, AKI, severely elevated levels.'],
+      ['Heparin / LMWH', 'Protamine sulfate', 'Protamine 1 mg per 100 units heparin (max 50 mg single dose); LMWH partial reversal only', 'Anaphylaxis risk especially in NPH-insulin patients, prior protamine, fish allergy. Slow infusion. Andexanet for FXa inhibitor reversal (separate).'],
+      ['Warfarin / vitamin K antagonist (bleeding)', 'Vitamin K + 4F-PCC ± FFP', 'Vitamin K 5–10 mg IV slow over 30 min + 4F-PCC (Octaplex/Beriplex) 25–50 IU/kg IV (INR-based dosing)', 'See anticoagulation reversal table. PCC > FFP for rapid INR reversal in major bleeding.'],
+      ['Dabigatran (Pradaxa)', 'Idarucizumab (Praxbind)', 'Idarucizumab 5 g IV (2 × 2.5 g vials)', 'Specific reversal for dabigatran-related life-threatening bleeding or emergency surgery.'],
+      ['Apixaban / rivaroxaban / edoxaban', 'Andexanet alfa (Andexxa) ± 4F-PCC', 'Andexanet: low-dose 400 mg bolus + 4 mg/min × 120 min OR high-dose 800 mg bolus + 8 mg/min × 120 min (depending on agent + dose + time since last dose)', 'Limited Canadian availability; high cost. 4F-PCC 50 IU/kg is widely used Canadian alternative.'],
+      ['Sulfonylurea hypoglycemia (refractory)', 'Octreotide', 'Octreotide 50–100 mcg SC q6h × 24–48 h', 'Suppresses pancreatic insulin release. For refractory hypoglycemia despite IV dextrose. Continue dextrose alongside.'],
+      ['Anticholinergic toxidrome (severe)', 'Physostigmine', 'Physostigmine 0.5–2 mg IV slow over 5 min, repeat q10–30 min prn', 'For severe anticholinergic toxicity (delirium, dysrhythmia). AVOID in TCA overdose (precipitates seizures, asystole). Toxicology consult.'],
+      ['Carbon monoxide', 'High-flow O₂ ± hyperbaric', '100% non-rebreather mask × 4–6 h; HBOT for severe (LOC, neuro symptoms, COHb >25%, pregnancy >15%)', 'HBOT availability: Toronto General Hyperbaric Unit, Hamilton, others.'],
+      ['Local anaesthetic systemic toxicity (LAST)', 'Lipid emulsion (Intralipid 20%)', 'Intralipid 20% 1.5 mL/kg IV bolus over 1 min, then 0.25 mL/kg/min infusion × 10 min', 'For bupivacaine/ropivacaine cardiotoxicity. Off-label rescue for other lipophilic drug toxicities (TCA, BB/CCB) when standard fails.'],
+      ['Methotrexate (high-dose toxicity)', 'Leucovorin (folinic acid) ± Glucarpidase', 'Leucovorin 100–1000 mg/m² IV q3–6h until MTX level <0.05 mmol/L. Glucarpidase 50 units/kg IV × 1 for very high levels.', 'Hydration + urine alkalinization (NaHCO3) standard adjuncts.'],
+      ['Organophosphate / carbamate (cholinergic toxicity)', 'Atropine + Pralidoxime (organophosphate only)', 'Atropine 1–6 mg IV, doubled q5min until secretions dry; pralidoxime 30 mg/kg IV over 30 min, then 8–10 mg/kg/h', 'Atropine unlimited dose — titrate to dry secretions (NOT pupil size). Decontaminate skin/clothing.']
+    ],
+    source: 'Ontario Poison Centre 24/7 (1-800-268-9017); CAEP/CAPCC; Goldfrank\'s Toxicologic Emergencies; Canadian Pharmacists Association.',
+    related_drugs: ['acetylcysteine','naloxone','flumazenil','octreotide','idarucizumab','digoxin']
+  },
+  {
+    id: 'tox_anaphylaxis',
+    title: 'Anaphylaxis — Emergency Management',
+    icon: '🚑',
+    color: '#dc2626',
+    overview: 'Anaphylaxis is a severe, rapid-onset systemic hypersensitivity reaction (IgE or non-IgE) — life-threatening; requires IMMEDIATE epinephrine IM and supportive care. Diagnosis is CLINICAL: acute onset (minutes–hours) involving skin/mucosa AND respiratory or cardiovascular OR gastrointestinal symptoms. EpiPen (0.3 mg adult, 0.15 mg pediatric) is the cornerstone of community management. Refer all to emergency department after epinephrine; biphasic reactions (~5%) occur up to 24 h post-initial reaction.',
+    warnings: [
+      'EPINEPHRINE FIRST — IM into anterolateral thigh; do NOT delay for IV access, antihistamines, or steroids.',
+      'No absolute contraindication to epinephrine in anaphylaxis — even in cardiac disease, the risk of NOT giving epinephrine exceeds risks of giving it.',
+      'BIPHASIC REACTION risk ~5% — observe in ED 4–6 hours minimum (longer for severe or refractory).',
+      'PRESCRIBE 2 epinephrine auto-injectors at discharge; demonstrate use; refer to allergist; counsel on triggers, recognition, MedicAlert.',
+      'AVOID beta-blockers in patients with prior anaphylaxis if possible (blunt epinephrine response).',
+      'NO ROLE for "anaphylaxis kits" with antihistamines + steroids alone — these do NOT replace epinephrine.'
+    ],
+    columns: ['Step', 'Action', 'Drug & Dose', 'Notes'],
+    rows: [
+      ['1. Recognize', 'Diagnostic criteria — any 1 of: (a) acute onset skin/mucosa + respiratory or CV symptoms; (b) ≥2 of (skin, respiratory, CV, GI) after likely allergen; (c) hypotension after known allergen.', 'NA', 'Skin: hives, flushing, angioedema. Respiratory: dyspnea, wheeze, stridor. CV: hypotension, tachycardia, syncope. GI: vomiting, cramping. Tryptase elevated 15 min–3 h supports diagnosis.'],
+      ['2. EPINEPHRINE IM', 'IMMEDIATELY into anterolateral thigh (vastus lateralis)', 'Adult: Epinephrine 0.3–0.5 mg (0.3–0.5 mL of 1:1000) IM. Pediatric: 0.01 mg/kg (max 0.3 mg) IM, or EpiPen Jr 0.15 mg if 7.5–25 kg, EpiPen 0.3 mg if ≥25 kg.', 'IM thigh > IM deltoid > SC. Repeat q5–15 min if no improvement (often 2–3 doses needed). Document dose + time.'],
+      ['3. Position', 'Supine with legs elevated UNLESS respiratory distress (then upright)', 'NA', 'Sudden assumption of upright posture in shock can cause cardiac arrest ("empty ventricle syndrome"). Avoid if vomiting.'],
+      ['4. Call 911 / activate emergency response', 'Transport to ED', 'NA', 'All anaphylaxis episodes require ED assessment regardless of response to first dose epinephrine.'],
+      ['5. ABC, Oxygen', 'Airway management; high-flow O₂ NRB', 'O₂ 8–10 L/min via NRB', 'Intubation if airway compromise; have surgical airway equipment ready.'],
+      ['6. IV access + fluids (if hypotensive)', 'Large-bore IV; isotonic crystalloid bolus', 'Normal saline 1–2 L IV bolus rapidly (peds: 20 mL/kg bolus); repeat as needed', 'Hypotension is from massive fluid shift to interstitium. May need 4–8 L total.'],
+      ['7. Refractory hypotension (after 2+ doses IM epi + fluids)', 'IV epinephrine infusion', 'Epinephrine 0.05–2 mcg/kg/min IV (start at 0.1 mcg/kg/min, titrate to BP). Norepinephrine alternative if epinephrine refractory.', 'Adult mix: 1 mg in 1000 mL NS = 1 mcg/mL; start at 5–15 mL/min via pump. Continuous monitoring.'],
+      ['8. Bronchospasm', 'Inhaled β2-agonist', 'Salbutamol 4–8 puffs MDI with spacer (or 5 mg nebulized) q15–20 min. Ipratropium added.', 'Adjunct — does NOT replace epinephrine.'],
+      ['9. Glucagon (β-blocker patients with refractory hypotension)', 'For patients on β-blockers not responding to epinephrine', 'Glucagon 1–5 mg IV bolus, then 5–15 mcg/min infusion', 'Bypasses β-receptor blockade; activates adenylate cyclase via different receptor.'],
+      ['10. Adjunctive antihistamines (NOT first-line)', 'H1 + H2 blockers for symptomatic relief — DO NOT replace epinephrine', 'Diphenhydramine 25–50 mg IV/IM (peds 1 mg/kg). Ranitidine 50 mg IV (or famotidine 20 mg IV).', 'Treats urticaria/pruritus only; no role in airway/CV recovery. Sedation can mask deterioration.'],
+      ['11. Adjunctive corticosteroids (debatable)', 'Methylprednisolone or hydrocortisone IV', 'Methylprednisolone 1–2 mg/kg IV (max 125 mg) OR Hydrocortisone 200 mg IV', 'Theoretical reduction of biphasic reactions — not proven by RCT. Many guidelines now de-emphasize.'],
+      ['12. Observation period', '4–6 h ED observation minimum', 'NA', 'Longer (12–24 h) if: severe initial reaction, ≥2 epinephrine doses needed, ongoing symptoms, history of asthma, unreliable follow-up. Counsel on biphasic risk.'],
+      ['13. Discharge', '2× EpiPen prescription + counselling + allergy referral', 'Epinephrine auto-injectors × 2 (adult 0.3 mg, peds 0.15 mg; carry both at all times)', 'Demonstrate use. MedicAlert bracelet. Allergist referral. Action plan. Trigger avoidance counselling.']
+    ],
+    source: 'Canadian Society of Allergy and Clinical Immunology (CSACI) anaphylaxis guidelines; WAO; Ontario Poison Centre.',
+    related_drugs: ['epinephrine','salbutamol','ipratropium','diphenhydramine','famotidine','ranitidine','methylprednisolone','hydrocortisone']
+  },
+  {
+    id: 'tox_status_epilepticus',
+    title: 'Status Epilepticus — Treatment Algorithm',
+    icon: '⚡',
+    color: '#dc2626',
+    overview: 'Status epilepticus (SE): seizure ≥5 minutes OR ≥2 seizures without recovery between. Convulsive SE (CSE) is medical emergency — neuronal injury accelerates beyond ~30 min; mortality 10–30%. Time-based algorithm: benzodiazepine first-line, then second-line anticonvulsant (levetiracetam preferred per ESETT trial), then anesthetic infusion for refractory. Identify and treat underlying cause concurrently.',
+    warnings: [
+      'GIVE BENZODIAZEPINE within 5 min — every minute of ongoing seizure adds neuronal injury.',
+      'UNDERDOSING is the most common error — adequate first-dose benzo is critical (lorazepam 4 mg IV, midazolam 10 mg IM if no IV).',
+      'INTUBATION: prepare equipment early; intubation often needed at refractory phase (anesthetic infusion).',
+      'CHECK GLUCOSE early; treat hypoglycemia (D50W IV); thiamine 100 mg IV before/with glucose if alcohol use.',
+      'IDENTIFY underlying cause: structural (stroke, tumor, trauma), metabolic (hypoNa, hypoCa, uremia, hepatic), toxic (TCA, INH, theophylline, alcohol withdrawal), infectious (meningitis, encephalitis), eclampsia.',
+      'NON-CONVULSIVE STATUS EPILEPTICUS (NCSE): suspect in altered mental status without obvious motor activity post-seizure or in unexplained coma — needs EEG.'
+    ],
+    columns: ['Time', 'Stage', 'Treatment', 'Notes'],
+    rows: [
+      ['0–5 min', 'Stabilization', 'ABC, IV access, O₂, bedside glucose, IV fluids, position safely. Identify underlying cause. EEG if available.', 'Note time of seizure onset. Early IV access critical.'],
+      ['5 min', 'First-line: BENZODIAZEPINE', 'IF IV available: Lorazepam 0.1 mg/kg IV (max 4 mg per dose, may repeat ×1 after 5 min). IF NO IV: Midazolam 10 mg IM (>40 kg), 5 mg IM (13–40 kg) — single dose; OR Diazepam 0.2 mg/kg PR.', 'Lorazepam preferred if IV (less recurrence vs diazepam). Midazolam IM is non-inferior to lorazepam IV (RAMPART trial). Buccal/intranasal midazolam acceptable for home/EMS use.'],
+      ['10–15 min', 'Repeat benzo if needed', 'Repeat benzodiazepine ×1 if seizure persists', 'Maximum 2 doses of benzo before moving to second-line.'],
+      ['20 min', 'Second-line: anticonvulsant infusion', 'Levetiracetam 60 mg/kg IV over 10 min (max 4500 mg) — PREFERRED per ESETT trial (non-inferior, fewer side effects). Alternative: Fosphenytoin 20 mg PE/kg IV over 10 min OR Valproate 40 mg/kg IV over 10 min (max 3000 mg).', 'ESETT trial (NEJM 2019): levetiracetam, fosphenytoin, valproate equivalent efficacy ~50%; LEV slight safety edge. Avoid valproate in pregnancy, hepatic disease, mitochondrial disease, urea cycle disorders.'],
+      ['40 min', 'REFRACTORY SE — anesthetic infusion + intubation', 'INTUBATE. Midazolam 0.2 mg/kg IV bolus, then 0.05–2 mg/kg/h infusion OR Propofol 1–2 mg/kg IV bolus, then 1–10 mg/kg/h OR Pentobarbital 5–15 mg/kg IV load, then 0.5–5 mg/kg/h.', 'Continuous EEG monitoring required to titrate to seizure suppression (or burst suppression). ICU admission. Hemodynamic support (vasopressors often needed with anesthetics).'],
+      ['>24 h refractory', 'SUPER-REFRACTORY SE', 'Continue anesthetic; consider ketamine 1–5 mg/kg/h infusion (NMDA antagonism); add maintenance anticonvulsant (LEV, VPA, lacosamide, topiramate); evaluate for autoimmune encephalitis (anti-NMDA, anti-GABA-B) → IVIG, plasma exchange, methylprednisolone, rituximab.', 'Neurology + ICU + immunology consultation. Ketogenic diet adjunctive in pediatric super-refractory.'],
+      ['Throughout', 'Treat underlying cause', 'Glucose, electrolytes (Na, Ca, Mg), thiamine if alcohol, antibiotics if suspected meningitis, BP control if eclampsia (Mg 4–6 g IV load, then 1–2 g/h), hyperammonemia if liver failure, antidotes if specific toxidrome (pyridoxine for INH).', 'CT/MRI brain. Lumbar puncture if febrile or unclear cause. Toxicology screen.'],
+      ['Eclamptic SE (special case)', 'Magnesium sulfate', 'MgSO₄ 4–6 g IV over 15 min, then 1–2 g/h infusion. Repeat 2 g IV if recurrent.', 'Eclampsia is OB emergency; deliver fetus once mother stabilized.']
+    ],
+    source: 'Neurocritical Care Society SE Guidelines 2012/2016; ESETT trial 2019; Canadian Stroke Best Practices; AES.',
+    related_drugs: ['lorazepam','midazolam','diazepam','levetiracetam','valproic_acid','magnesium_sulfate']
+  },
+  {
+    id: 'tox_hyperkalemia',
+    title: 'Acute Hyperkalemia — Emergency Treatment',
+    icon: '⚡',
+    color: '#dc2626',
+    overview: 'Severe hyperkalemia (K⁺ ≥6.0–6.5 mmol/L OR ECG changes) is a medical emergency due to ventricular arrhythmia risk. Treatment proceeds in three sequential goals: (1) cardiac membrane stabilization (calcium); (2) intracellular potassium shift (insulin/glucose, β2-agonist, sodium bicarb); (3) potassium elimination (loop diuretic, K-binder, dialysis). Address underlying cause (drugs, AKI, etc.).',
+    warnings: [
+      'ECG monitoring is essential — cardiac membrane stabilization (calcium) is the FIRST step in any patient with ECG changes regardless of K level.',
+      'Calcium does NOT lower K⁺ — protects myocardium until shifting/elimination interventions take effect (15–30 min).',
+      'AVOID Sodium Polystyrene Sulfonate (Kayexalate) when possible — risk of intestinal necrosis (especially with sorbitol). Use newer K-binders (patiromer, sodium zirconium cyclosilicate) for chronic management.',
+      'INSULIN-INDUCED HYPOGLYCEMIA: monitor blood glucose q15min × 1h post-insulin then q1h × 4h.',
+      'DIALYSIS for: severe hyperkalemia refractory to medical management, anuric AKI, ESRD missed dialysis, drug-induced (digoxin Fab co-administration).',
+      'STOP K-elevating drugs: ACE/ARB, MRAs, K-sparing diuretics, NSAIDs, TMP-SMX, K supplements, salt substitutes.'
+    ],
+    columns: ['Step', 'Indication', 'Drug & Dose', 'Onset / Duration / Notes'],
+    rows: [
+      ['ECG', 'Obtain immediately', 'NA', 'Peaked T waves → P-wave loss → QRS widening → sine wave → asystole. ECG changes mandate IMMEDIATE calcium regardless of K level.'],
+      ['1. CALCIUM (membrane stabilization)', 'ECG changes OR K ≥6.5 with cardiac risk', 'Calcium gluconate 1–2 g (10–20 mL of 10%) IV over 5–10 min OR Calcium chloride 1 g (10 mL of 10%) IV over 5–10 min via central line (3× more elemental Ca but caustic via peripheral)', 'Onset 1–3 min, duration 30–60 min. May repeat q5min if persistent ECG changes. AVOID in digoxin toxicity (some use cautiously).'],
+      ['2a. INSULIN + GLUCOSE (intracellular shift)', 'K ≥6.0', 'Regular insulin 5–10 units IV bolus + Dextrose 50% 25–50 g IV (D50W 50–100 mL) — give simultaneously (or insulin after if blood glucose >13 mmol/L)', 'Onset 15–30 min, duration 4–6 h. Lowers K by 0.5–1.0 mmol/L. CHECK glucose q15min × 1h; HYPOGLYCEMIA RISK common — give D10 infusion 50 mL/h × 5 h post-bolus.'],
+      ['2b. β2-AGONIST (intracellular shift)', 'Adjunct to insulin', 'Salbutamol 10–20 mg nebulized over 10 min (4–8× usual asthma dose) — in adults', 'Onset 30 min, duration 2 h. Adds to insulin shift (~0.5 mmol/L additional). AVOID if active CAD/tachydysrhythmia.'],
+      ['2c. SODIUM BICARBONATE (limited role)', 'Severe metabolic acidosis only', 'NaHCO3 50–100 mEq IV over 30 min', 'Modest K-lowering effect; useful only when concurrent acidosis. NOT routine. Volume overload concern.'],
+      ['3a. LOOP DIURETIC (elimination)', 'Volume-replete; preserved kidney function', 'Furosemide 40–80 mg IV', 'Onset 15 min, slow effect. Increases urinary K excretion.'],
+      ['3b. POTASSIUM BINDERS (oral elimination)', 'Subacute / sustained', 'Sodium zirconium cyclosilicate (Lokelma) 10 g PO TID × 48 h, then 5–15 g daily — ODB Limited Use. Patiromer (Veltassa) 8.4–25.2 g PO daily — limited Canadian access.', 'AVOID Kayexalate (sodium polystyrene sulfonate) — bowel necrosis risk especially with sorbitol; use only if newer agents unavailable.'],
+      ['3c. HEMODIALYSIS', 'Severe refractory; AKI; ESRD', 'Emergent HD via temporary dialysis catheter', 'Definitive removal. Plan early in anuric or refractory cases. Bridge with medical therapy until vascular access.'],
+      ['4. STOP CULPRIT DRUGS', 'Always', 'Discontinue ACE/ARB/MRAs, K-sparing diuretics, NSAIDs, TMP-SMX, K supplements, salt substitutes', 'Resume cautiously after correction.'],
+      ['5. Identify underlying cause', 'Always', 'AKI, drug-induced, rhabdo, tumor lysis, adrenal insufficiency, factitious (hemolysis)', 'Test: BUN/Cr, glucose, lactate, CK, calcium, magnesium, cortisol if adrenal suspected. Repeat blood draw if possible hemolyzed sample.']
+    ],
+    source: 'KDIGO 2024; Hypertension Canada; CCS HF 2023; AKI Network.',
+    related_drugs: ['salbutamol','furosemide','patiromer']
+  },
+  {
+    id: 'tox_hypoglycemia',
+    title: 'Acute Hypoglycemia Management',
+    icon: '🍬',
+    color: '#dc2626',
+    overview: 'Hypoglycemia: blood glucose <4.0 mmol/L (Diabetes Canada threshold). Severity stratified: mild (self-treat with 15 g carbs), moderate (self-treat or assistance), severe (requires assistance — caregiver/HCP; reduced LOC). Treatment: 15-g rule for conscious; D50W IV for unconscious; glucagon for unconscious without IV access. Identify underlying cause (insulin, sulfonylurea, alcohol, sepsis, adrenal insufficiency, malignancy).',
+    warnings: [
+      'BLOOD GLUCOSE CONFIRMATION: confirm before treating when feasible (especially with D50W); but in symptomatic patient with strong clinical suspicion, treat empirically.',
+      '15-15 RULE for conscious patient: 15 g fast carbs → recheck in 15 min → repeat if still <4.0 mmol/L.',
+      'D50W IV is first-line for severe hypoglycemia with IV access; glucagon IM for severe without IV access.',
+      'SULFONYLUREA hypoglycemia is PROLONGED — admit and observe; OCTREOTIDE for refractory (suppresses pancreatic insulin release).',
+      'INSULIN PUMP failure: consider basal insulin failure as cause; subcutaneous insulin if pump replaced.',
+      'ALCOHOL-INDUCED hypoglycemia: thiamine 100 mg IV BEFORE/WITH glucose (Wernicke prevention).',
+      'POST-RECOVERY: meal or complex carb to prevent recurrence; review insulin/SU regimen.'
+    ],
+    columns: ['Severity', 'Status', 'Treatment', 'Notes'],
+    rows: [
+      ['Mild–moderate', 'Conscious, alert, can self-treat', '15 g fast-acting carbohydrate PO: 4 oz juice, 4–6 dextrose tablets, 1 tbsp honey/sugar, 5 candies. Recheck BG in 15 min. Repeat if still <4.0 mmol/L. Once ≥4.0, give complex carb meal/snack within 1 h.', 'AVOID candy with fat (chocolate, ice cream — slower absorption). AVOID for hypoglycemia — sugar-free.'],
+      ['Severe — IV access available', 'Reduced LOC, unable to swallow safely; IV in place', 'D50W 25–50 g IV (50–100 mL) bolus over 1–3 min', 'Onset within minutes. Followed by D10 IV infusion 50–100 mL/h × several hours if recurrent (especially sulfonylurea). Glucose-containing IV fluid maintenance.'],
+      ['Severe — no IV access', 'Reduced LOC, no IV available; community/home setting', 'Glucagon 1 mg IM/SC adult (0.5 mg if <25 kg). NEW: Baqsimi (intranasal glucagon) 3 mg one-puff one nostril — easier for caregivers.', 'Onset 10–15 min. Often causes vomiting on awakening — turn patient to side. Less effective in alcohol-induced hypoglycemia, glycogen-depleted state, malnutrition.'],
+      ['Pediatric severe', 'Reduced LOC, child', 'D25W 2–4 mL/kg IV (peds dilution; D50W can cause sclerosing). Glucagon 0.5 mg IM if <25 kg.', 'Pediatric IV dextrose: D10W 5 mL/kg or D25W 2 mL/kg (avoid D50W in young children).'],
+      ['Sulfonylurea / glinide hypoglycemia', 'PROLONGED hypoglycemia — admit', 'D50W IV bolus + D10 infusion to maintain BG 5–10 mmol/L. ADD Octreotide 50–100 mcg SC q6h × 24–48 h for refractory (suppresses insulin release).', 'Effect of long-acting SU (glyburide especially) lasts 24–72 h. Observe ≥24 h after last hypoglycemic event. Fluid + electrolyte monitoring.'],
+      ['Alcohol-related', 'Hypoglycemia in alcohol use', 'Thiamine 100 mg IV/IM BEFORE OR WITH glucose (prevents Wernicke encephalopathy in glucose-loaded thiamine-deficient patients), then D50W IV', 'Alcohol inhibits gluconeogenesis. Consider alcohol level, electrolytes (hypoMg, hypoK), pancreatitis. Glucagon may be ineffective (depleted glycogen).'],
+      ['Insulin overdose', 'Massive insulin administration', 'IV dextrose drip (D10–D20) titrated to maintain euglycemia; can require days of continuous infusion in massive overdose; KCl supplementation often needed (intracellular shift)', 'Endocrinology consult for severe overdose. Insulin glargine/detemir (long-acting) may have prolonged effect.'],
+      ['Continued recurrent hypoglycemia (no obvious cause)', 'Workup for underlying cause', 'Insulinoma workup, adrenal insufficiency (cortisol, ACTH), hypopituitarism, malignancy (NICTH, IGF-2-secreting tumor), surreptitious insulin/SU (C-peptide, sulfonylurea screen), severe malnutrition, sepsis', 'Endocrinology referral.'],
+      ['Post-recovery', 'BG restored to ≥4.0 mmol/L', 'Meal or snack with complex carbs + protein within 1 h', 'Review meds (insulin, SU regimen), CGM data, contributing factors (alcohol, exercise, missed meal, illness). Diabetes Canada hypoglycemia counselling.']
+    ],
+    source: 'Diabetes Canada 2018/2023 Clinical Practice Guidelines on Hypoglycemia; ADA Standards of Care.',
+    related_drugs: ['octreotide','insulin','glyburide','gliclazide']
+  },
+  {
+    id: 'tox_dka_hhs',
+    title: 'DKA / HHS Management Protocol',
+    icon: '🩺',
+    color: '#dc2626',
+    overview: 'Diabetic ketoacidosis (DKA): hyperglycemia (typically >14 mmol/L; can be euglycemic with SGLT2i) + metabolic acidosis (pH <7.30, HCO3 <18) + ketonemia/ketonuria. Hyperosmolar hyperglycemic state (HHS): hyperglycemia >33.3 mmol/L + osmolality >320 mOsm/kg + minimal ketones, no significant acidosis. Both are emergencies — fluid resuscitation, insulin infusion, electrolyte management (especially K+), search for precipitant.',
+    warnings: [
+      'EUGLYCEMIC DKA on SGLT2 INHIBITORS — do not exclude DKA based on glucose alone; check pH, anion gap, ketones if SGLT2i + symptoms.',
+      'POTASSIUM management is critical — total body K depletion despite normal/high serum K. Insulin shifts K intracellularly → can precipitate severe hypokalemia.',
+      'Do NOT start insulin if K <3.3 — replete K first.',
+      'BICARBONATE rarely needed (only severe acidosis pH <6.9); does NOT improve outcomes; can worsen cerebral edema in pediatrics.',
+      'CEREBRAL EDEMA in pediatric DKA — most feared complication; risk factors include rapid fluid administration, severe acidosis, young age. Slow controlled rehydration; mannitol if cerebral edema suspected.',
+      'PRECIPITANT WORKUP: infection (CXR, urine, cultures), MI (ECG, troponin), missed insulin, new diabetes, pancreatitis, drugs (steroids, sympathomimetics), pregnancy.'
+    ],
+    columns: ['Step', 'Action', 'Drug / Dose', 'Goals / Notes'],
+    rows: [
+      ['Diagnosis', 'Confirm DKA / HHS', 'NA', 'DKA: glucose >14, pH <7.30, HCO3 <18, anion gap >12, ketones positive. HHS: glucose >33, osmolality >320, ketones minimal/absent, pH >7.30. Severity: pH <7.0 or HCO3 <10 = severe. Mixed presentations occur.'],
+      ['1. Fluid resuscitation', 'NS 0.9% IV bolus → maintenance', 'NS 1–1.5 L IV in first hour (15–20 mL/kg). Then NS or ½NS at 250–500 mL/h based on hydration status (corrected for BP, urine output, sodium).', 'CORRECTED Na: add 2.4 mmol/L for every 5.6 mmol/L glucose >5.6. Switch to D5W or D5/½NS when glucose <14 mmol/L (DKA) or <16 (HHS).'],
+      ['2. Potassium replacement BEFORE insulin', 'IF K <3.3: HOLD INSULIN, give K+ 20–40 mEq/h IV until K >3.3', 'KCl 20–40 mEq/h IV via central or large peripheral. Cardiac monitoring.', 'Once K ≥3.3, start insulin. Add K 20–30 mEq/L to maintenance fluid when K 3.3–5.0. Monitor K hourly initially.'],
+      ['3. Insulin infusion', 'Regular insulin IV — continuous infusion is standard; bolus optional', 'Regular insulin 0.1 unit/kg IV bolus (optional) + 0.1 unit/kg/h continuous IV infusion. If glucose does not fall by ≥3 mmol/L in first hour, double infusion rate.', 'Goal: glucose decrease 3–6 mmol/L per hour. Once glucose <14 mmol/L, REDUCE insulin rate to 0.05 unit/kg/h AND add D5/D10 to fluid (target glucose 8–14 until anion gap closed).'],
+      ['4. Bicarbonate (controversial)', 'Severe acidosis pH <6.9 only', 'NaHCO3 100 mEq in 400 mL water + 20 mEq KCl over 2 h, repeat if pH still <7.0', 'No benefit demonstrated for pH 6.9–7.0; may worsen cerebral edema (pediatric); paradoxical CSF acidosis. Most experts avoid unless pH <6.9.'],
+      ['5. Phosphate replacement (selective)', 'Severe hypophosphatemia (<0.3 mmol/L)', 'Potassium phosphate 20–30 mmol over 6–12 h', 'Routine replacement NOT beneficial (DKA RCTs); reserve for cardiac dysfunction, respiratory depression, severe weakness, or PO4 <0.3 mmol/L.'],
+      ['6. Anion gap closure → transition', 'Anion gap ≤12 (or close to baseline) AND HCO3 ≥18 AND venous pH ≥7.30 AND patient eating', 'OVERLAP IV insulin with subcutaneous insulin for ≥1–2 hours (subcut takes effect ~30 min for rapid-acting). Then discontinue IV.', 'Restart usual SC regimen if known DM; new DM start basal-bolus weight-based. Failure to overlap → recurrent DKA.'],
+      ['7. HHS-specific', 'Slower correction; greater fluid deficit', 'NS 1 L over first hour, then 250–500 mL/h. Insulin 0.1 unit/kg/h after K addressed. Goal glucose decline 4–5 mmol/L/h (slower than DKA).', 'Total fluid deficit 8–12 L (vs ~6 L in DKA). Mortality higher than DKA (~10–20%). Cerebral edema rare in adults but possible.'],
+      ['8. Pediatric DKA — CEREBRAL EDEMA risk', 'Slow controlled rehydration', 'NS 10 mL/kg bolus (max 1 L) over 30–60 min; if hypotensive, repeat 10 mL/kg. Then maintenance + deficit replacement evenly over 24–48 h.', 'Cerebral edema: HA, bradycardia, HTN, altered mental status, seizure, posturing → mannitol 0.5–1 g/kg IV OR hypertonic saline 3% 5–10 mL/kg over 30 min; head of bed elevation; intubation if severe.'],
+      ['9. Search precipitant', 'Always — addresses underlying cause', 'CXR, urine culture, blood cultures, ECG, troponin, lipase, pregnancy test, urine drug screen, HbA1c, infection workup', 'Pneumonia, UTI, MI, pancreatitis, missed insulin, new diabetes, drugs (steroids, sympathomimetics, antipsychotics), pregnancy, surgery, alcohol.']
+    ],
+    source: 'Diabetes Canada 2018/2023 Clinical Practice Guidelines (DKA + HHS); ADA Hyperglycemic Crises 2009; Canadian Pediatric Society for pediatric DKA.',
+    related_drugs: ['insulin','potassium_chloride','mannitol']
+  },
+  {
+    id: 'tox_asthma_copd',
+    title: 'Acute Asthma & COPD Exacerbation — Severity Ladder',
+    icon: '🫁',
+    color: '#dc2626',
+    overview: 'Severity-stratified emergency management of asthma and COPD exacerbations. Asthma: SABA + ICS + systemic corticosteroid for moderate-severe; magnesium + heliox for severe; intubation for impending respiratory failure. COPD AECOPD: SABA + ipratropium + systemic corticosteroid; antibiotics if Anthonisen ≥2/3 criteria; NIV reduces intubation in moderate-severe respiratory acidosis.',
+    warnings: [
+      'ASTHMA SEVERITY: peak flow <50% predicted, accessory muscle use, inability to speak in sentences, RR >30, HR >120, SpO2 <92% — SEVERE.',
+      'IMPENDING RESPIRATORY FAILURE: silent chest, exhaustion, confusion, paradoxical breathing — INTUBATE.',
+      'AVOID SEDATIVES (BZDs) in respiratory distress unless intubating — depresses respiratory drive.',
+      'ICS ALONE inadequate for acute exacerbation — ALWAYS add systemic corticosteroid for moderate-severe.',
+      'IV MAGNESIUM 2 g IV over 20 min for severe asthma not responding to initial nebs.',
+      'NIV (BiPAP) for COPD AECOPD with acidosis (pH <7.35 + hypercarbia) — reduces intubation, mortality.',
+      'AECOPD ANTIBIOTICS: Anthonisen ≥2/3 (increased dyspnea, sputum volume, sputum purulence) OR mechanically ventilated.'
+    ],
+    columns: ['Severity', 'Findings', 'Treatment', 'Notes'],
+    rows: [
+      ['Mild (asthma/COPD)', 'PEF 70–90% (asthma) or mild dyspnea (COPD); SpO2 >94%; speaks in sentences', 'SABA: salbutamol 4–8 puffs MDI with spacer q20min × 3 OR salbutamol 5 mg neb q20min × 3. ADD ipratropium 4 puffs MDI q20min × 3 (esp. COPD). Oxygen titrated to SpO2 92–96% (asthma) or 88–92% (COPD).', 'Reassess at 1 h; if improved, send home with PO prednisone 50 mg × 5 days, action plan, ICS dose increase, follow-up.'],
+      ['Moderate', 'PEF 40–70%; moderate dyspnea; speaks in phrases; SpO2 90–94%; RR 24–30; HR 100–120', 'CONTINUOUS SABA + IPRATROPIUM nebulization × 1 h. SYSTEMIC CORTICOSTEROID — Prednisone 40–50 mg PO (or methylprednisolone 60–125 mg IV if vomiting/severe). Oxygen titrated.', 'AECOPD: ADD oral antibiotic if Anthonisen ≥2/3 (amox-clav or azithromycin × 5d). Reassess hourly.'],
+      ['Severe asthma', 'PEF <40%; severe distress, accessory muscles; speaks in words; SpO2 <90%; RR >30, HR >120', 'CONTINUOUS SABA neb (10–20 mg/h) + ipratropium q20min. Methylprednisolone 1–2 mg/kg IV (max 125 mg). Magnesium sulfate 2 g IV over 20 min. Oxygen high-flow. Consider Heliox (70:30 O2/He). IV epinephrine if anaphylaxis component.', 'CALL ICU. Monitor for impending failure. Avoid sedation. Continuous capnography.'],
+      ['Severe AECOPD', 'Severe dyspnea; pH <7.35 + pCO2 >45 (hypercarbic acidosis); altered mentation', 'NIV (BiPAP) early — reduces intubation. SABA + ipratropium q20min nebs. Methylprednisolone 60–125 mg IV. Antibiotic (amox-clav, levofloxacin per Anthonisen). Oxygen titrated to SpO2 88–92% (avoid hyperoxia → CO2 retention).', 'Admission to ICU/step-down for NIV. ABG repeated to assess response (improvement 1–2 h). Prepare for intubation if NIV fails.'],
+      ['Impending respiratory failure', 'Silent chest, exhaustion, confusion, cyanosis, paradoxical breathing, PEF <25%, SpO2 <85%', 'INTUBATE — preferred RSI: Ketamine 2 mg/kg IV + Rocuronium 1.2 mg/kg IV (ketamine is bronchodilator, hemodynamically stable). Permissive hypercapnia ventilation strategy in asthma. Continue all medications; consider IV magnesium, ketamine infusion.', 'AVOID etomidate (some adrenal suppression concern); Avoid succinylcholine if hyperkalemia.'],
+      ['Discharge criteria', 'After ED treatment: stable + improving', 'PEF >70% (asthma) or back to baseline (COPD); SpO2 >92% on room air; able to speak full sentences; SABA need <q4h; reliable home environment + follow-up', 'D/C meds: PO prednisone 5–7 days (asthma) or 5 days (AECOPD); ICS for asthma; consider LABA/LAMA optimization; pneumococcal/influenza/COVID/RSV vaccines; smoking cessation referral.'],
+      ['Asthma — preventer optimization at D/C', 'Step up controller therapy', 'ICS or ICS-LABA — increase dose by 1 step. Asthma action plan reviewed.', 'Maintenance and Reliever Therapy (MART) regimen — ICS-formoterol single inhaler for both maintenance + relief — preferred CTS 2024 GINA.'],
+      ['COPD — preventer optimization at D/C', 'Step up to combination LABA/LAMA ± ICS', 'LABA/LAMA combination for moderate-severe; LABA/LAMA/ICS triple for ≥2 exacerbations/year or one hospitalization. Prevention vaccines.', 'Smoking cessation, pulmonary rehab referral, oxygen if SpO2 <88% on room air, palliative review for severe.']
+    ],
+    source: 'CTS Asthma 2024 + COPD 2023 guidelines; GINA 2024; GOLD 2024; CAEP/Choosing Wisely.',
+    related_drugs: ['salbutamol','ipratropium','prednisone','methylprednisolone','magnesium_sulfate','amoxicillin_clavulanate','azithromycin','levofloxacin']
+  },
+  {
+    id: 'tox_sepsis_bundle',
+    title: 'Sepsis Hour-1 Bundle (Surviving Sepsis Campaign)',
+    icon: '⚕️',
+    color: '#dc2626',
+    overview: 'Sepsis = life-threatening organ dysfunction from dysregulated host response to infection. Septic shock = sepsis + vasopressor requirement to maintain MAP ≥65 + lactate >2 mmol/L despite adequate fluid resuscitation. Hour-1 bundle (per Surviving Sepsis Campaign 2021): cultures, lactate, broad-spectrum antibiotics, IV fluid resuscitation if hypotensive, vasopressors if hypotensive after fluids — all within 1 hour of recognition.',
+    warnings: [
+      'EVERY HOUR delay in appropriate antibiotic increases sepsis mortality ~7%.',
+      'BLOOD CULTURES BEFORE ANTIBIOTICS — do not delay >45 min; if delays expected, give antibiotics first.',
+      'NOREPINEPHRINE is first-line vasopressor for septic shock. Avoid dopamine routinely.',
+      '30 mL/kg crystalloid INITIAL bolus standard; balanced solutions (Plasmalyte, Ringer\'s) preferred over 0.9% NS for volume resuscitation per recent evidence.',
+      'SOURCE CONTROL is essential — drain abscess, remove infected device/catheter, debride necrosis, decompress obstruction.',
+      'qSOFA (quick SOFA) screening: ≥2 of (RR ≥22, AMS, SBP ≤100) — high mortality risk.',
+      'ANTIBIOTIC DE-ESCALATION at 48–72 h is essential — narrow per cultures; antibiotic stewardship.'
+    ],
+    columns: ['Time', 'Action', 'Drug / Dose', 'Notes'],
+    rows: [
+      ['Recognition', 'Identify sepsis / septic shock', 'NA', 'qSOFA ≥2 OR SOFA ≥2 over baseline + suspected infection. Sepsis-3 definitions. Document time-zero clearly.'],
+      ['T+0 to T+45 min', 'Blood cultures × 2 sets BEFORE antibiotics', 'NA — collect 2 sets from separate sites', 'Other site cultures: urine, sputum, wound, line — as clinically indicated.'],
+      ['T+0 to T+60 min', 'Measure lactate', 'NA', 'Lactate >2 mmol/L = tissue hypoperfusion; >4 mmol/L = severe; serial lactate q2h to assess clearance (>10% decrease in 2 h favorable).'],
+      ['T+0 to T+60 min', 'BROAD-SPECTRUM ANTIBIOTICS — within 1 hour', 'Empiric per source — see Empiric Therapy syndromes. Most adults: Piperacillin-tazobactam 4.5 g IV q6h OR Cefepime 2 g IV q8h OR Meropenem (if MDR) ± Vancomycin (if MRSA risk). Adjust per suspected source + local antibiogram.', 'Earlier is better — every hour delay increases mortality ~7%. De-escalate at 48–72 h per cultures.'],
+      ['T+0 to T+60 min', 'IV crystalloid bolus IF hypotensive (MAP <65) or lactate ≥4', '30 mL/kg balanced crystalloid (Plasmalyte, Ringer\'s lactate) OR 0.9% NS over 1–3 h', 'Reassess fluid responsiveness after each bolus (passive leg raise, IVC US, BP/HR/UO response). Avoid hypervolemia.'],
+      ['T+1 h onwards (after fluid bolus)', 'VASOPRESSORS if MAP <65 despite fluids', 'NOREPINEPHRINE 0.05–0.5 mcg/kg/min IV (start 0.1, titrate). ADD vasopressin 0.03 U/min IF persistent hypotension on NE 0.25 mcg/kg/min. ADD epinephrine if refractory.', 'Goal MAP ≥65 (higher in chronic HTN consider 80–85 per CKD/cerebral perfusion). Central line for sustained vasopressors; can start peripheral while access established.'],
+      ['T+1 h to T+6 h', 'Reassess perfusion + tissue oxygenation', 'Lactate clearance; capillary refill; urine output ≥0.5 mL/kg/h; ScvO2 ≥70 (if measured)', 'Revaluate fluid responsiveness, vasopressor needs, source control. CT/imaging for source if not yet identified.'],
+      ['T+6 h onwards', 'Source control imperative', 'Drain abscess (interventional radiology or surgery), remove infected catheter/line, debride necrotic tissue, decompress obstruction (urinary, biliary)', 'Antibiotics alone insufficient when surgical source.'],
+      ['Adjuncts (selected)', 'Hydrocortisone for refractory septic shock', 'Hydrocortisone 200 mg IV daily (continuous infusion or divided q6h) — for vasopressor-refractory septic shock', 'ADRENAL replacement; not for routine sepsis. Some controversy; emerging evidence supports use in refractory shock.'],
+      ['Adjuncts (selected)', 'Vitamin C / thiamine — NOT routinely', 'Not recommended per current SSC 2021 (after CITRIS-ALI, VITAMINS, ATESS trials)', 'Earlier enthusiasm; subsequent RCTs failed to show benefit. Not standard of care.'],
+      ['Adjuncts (selected)', 'Glycemic control — moderate', 'Insulin infusion to target BG 7.8–10 mmol/L', 'Avoid tight control (NICE-SUGAR — increased mortality with target 4.5–6.0).'],
+      ['Adjuncts (selected)', 'Mechanical ventilation if respiratory failure', 'Lung-protective: TV 6 mL/kg PBW, plateau pressure ≤30, PEEP titrated, prone if PaO2/FiO2 <150', 'ARDS Network protocol. Sedation minimization.'],
+      ['Adjuncts', 'Renal replacement therapy', 'Standard indications: anuric AKI, severe acidosis, electrolyte derangement, fluid overload', 'No benefit to early vs delayed initiation per AKIKI.'],
+      ['Antibiotic stewardship', 'De-escalate at 48–72 h', 'Narrow spectrum based on cultures; stop antibiotics if infection ruled out; usual duration 7–10 days for most sepsis (5–7 days bacteremia)', 'Procalcitonin can guide de-escalation in some cases.'],
+      ['Adjuncts', 'DVT prophylaxis (LMWH)', 'Enoxaparin 40 mg SC daily (CrCl-adjusted)', 'All sepsis patients without contraindication.'],
+      ['Adjuncts', 'Stress ulcer prophylaxis', 'PPI (pantoprazole 40 mg IV) or H2RA — only for high-risk: mech vent >48h, coagulopathy, GI bleed history', 'Not routine for all ICU.']
+    ],
+    source: 'Surviving Sepsis Campaign 2021; AMMI Canada; Critical Care Services Ontario; Canadian Critical Care Society.',
+    related_drugs: ['piperacillin_tazobactam','cefepime','meropenem','vancomycin','norepinephrine','vasopressin','epinephrine','hydrocortisone','enoxaparin','pantoprazole']
+  },
+
+  // ═══════════ ANTICOAGULATION MANAGEMENT ═══════════
+  {
+    id: 'ac_bridging',
+    title: 'Perioperative Anticoagulation Bridging',
+    icon: '🩸',
+    color: '#dc2626',
+    overview: 'Perioperative management of warfarin and DOACs around procedures balances thromboembolic risk (atrial fibrillation, mechanical valve, VTE) against bleeding risk (procedure-specific). PERIOP-2 and BRIDGE trials transformed practice — most patients (low-moderate thromboembolic risk) do NOT need bridging with LMWH. DOACs are simpler — short hold, no bridging in most cases.',
+    warnings: [
+      'BRIDGE trial (warfarin AFib): no bridging is non-inferior to LMWH bridging for thromboembolism, with significantly LESS major bleeding. Most warfarin AFib patients do NOT need bridging.',
+      'MECHANICAL VALVE patients: still bridge — exclude from BRIDGE conclusions.',
+      'DOACs are SHORT-ACTING — usually held 1–2 days pre-procedure (longer for renal impairment); resume 24–48 h post-procedure based on bleeding risk.',
+      'PROCEDURAL BLEEDING RISK stratification: minor (skin biopsy, dental cleaning, cataract, endoscopy without biopsy) — many do not require holding anticoagulant. High (major surgery, neuraxial, intracranial) — strict hold + delay resumption.',
+      'PERI-OP DOAC trial: no bridging needed for DOAC patients undergoing surgery — simple short hold protocols.',
+      'CANADIAN ANTICOAGULANT BRIDGING approach (Thrombosis Canada) widely adopted.'
+    ],
+    columns: ['Drug', 'Pre-Procedure Hold', 'Bridging?', 'Resume Post-Procedure'],
+    rows: [
+      ['Warfarin — LOW thromboembolic risk (e.g., AFib CHA₂DS₂-VASc ≤4 without prior stroke; bioprosthetic valve in NSR)', 'Hold 5 days before procedure (target INR <1.5)', 'NO BRIDGING (BRIDGE trial)', 'Resume usual dose evening of procedure or POD1 if hemostasis adequate. INR check at 1 week.'],
+      ['Warfarin — MODERATE thromboembolic risk (e.g., AFib with prior stroke; recent VTE 3–12 months ago)', 'Hold 5 days before procedure', 'CONSIDER bridging — INDIVIDUALIZE based on bleeding risk; many guidelines now suggest no bridging unless very high risk', 'Resume warfarin POD1; if bridging, restart LMWH 24h post-procedure (low bleed risk) or 48–72h (high bleed risk)'],
+      ['Warfarin — HIGH thromboembolic risk (mechanical mitral valve; AFib + recent stroke <3 months; recent VTE <3 months)', 'Hold 5 days', 'YES — bridge with LMWH (enoxaparin 1 mg/kg SC BID OR dalteparin 100 IU/kg SC BID) starting 3 days pre-op; LAST DOSE 24h before procedure', 'Resume LMWH 24–72h post-procedure based on bleed risk; restart warfarin POD1; continue LMWH until INR therapeutic'],
+      ['Apixaban (Eliquis)', 'Standard bleed risk: hold 1 day (skip 2 doses); High bleed risk or CrCl <30: hold 2 days', 'NO BRIDGING NEEDED (PAUSE trial)', 'Resume 24h post-procedure (low bleed risk) or 48–72h (high bleed risk)'],
+      ['Rivaroxaban (Xarelto)', 'Standard: hold 1 day (skip 1 dose); High bleed risk: hold 2 days', 'NO BRIDGING NEEDED', 'Resume 24h (low bleed) or 48–72h (high bleed)'],
+      ['Dabigatran (Pradaxa)', 'CrCl ≥80: hold 1–2 days; CrCl 50–79: 2–3 days; CrCl 30–49: 3–4 days; CrCl <30: 4–5 days (high bleed risk: extend further)', 'NO BRIDGING NEEDED', 'Resume 24h (low bleed) or 48–72h (high bleed)'],
+      ['Edoxaban (Lixiana)', 'Standard: hold 1 day; High bleed risk: hold 2 days', 'NO BRIDGING NEEDED', 'Resume 24h (low bleed) or 48–72h (high bleed)'],
+      ['Aspirin (low-dose for primary prevention)', 'Generally CONTINUE through procedure', 'NA', 'Continue — bleeding risk small; thrombotic event prevention preserved.'],
+      ['Aspirin (secondary prevention — CAD, post-stent)', 'Generally CONTINUE — especially within 1 year post-DES', 'NA', 'Continue. Decision shared with cardiology if very high bleed risk procedure.'],
+      ['Clopidogrel / ticagrelor / prasugrel (DAPT post-stent)', 'Hold 5–7 days BEFORE elective procedure IF >12 months post-DES; otherwise DELAY procedure', 'NA — antiplatelet not bridged', 'Resume POD1 if hemostasis adequate. Discuss with cardiology if recent stent <12 months.'],
+      ['LOW BLEED-RISK procedures (often no anticoagulant interruption needed)', 'Examples: cataract, dental cleaning/single extraction, skin biopsy, endoscopy without biopsy/polypectomy, joint aspiration, pacemaker generator change', 'Often no hold or shortened hold; consult procedure-specific guidance', 'Resume immediately'],
+      ['HIGH BLEED-RISK procedures', 'Major surgery (thoracic, abdominal, vascular), neuraxial anesthesia, intracranial, eye (vitrectomy, retina), prostate, polypectomy with large polyp, kidney biopsy', 'Strict hold per regimen; longer post-op delay before resumption', 'Resume 48–72h post-procedure once hemostasis confirmed']
+    ],
+    source: 'Thrombosis Canada perioperative; CCS AF 2020; PERIOP-2 trial; PAUSE trial; BRIDGE trial; ACC/AHA/SCAI.',
+    related_drugs: ['warfarin','apixaban','rivaroxaban','dabigatran','edoxaban','enoxaparin','dalteparin','aspirin','clopidogrel','ticagrelor','prasugrel']
+  },
+  {
+    id: 'ac_doac_reversal',
+    title: 'DOAC Reversal — Major Bleeding or Emergency Surgery',
+    icon: '🩸',
+    color: '#dc2626',
+    overview: 'Reversal of direct oral anticoagulants (apixaban, rivaroxaban, edoxaban — Factor Xa inhibitors; dabigatran — direct thrombin inhibitor). Specific reversal agents: idarucizumab (Praxbind) for dabigatran, andexanet alfa (Andexxa) for FXa inhibitors. 4F-PCC (Octaplex/Beriplex) is widely used Canadian alternative for FXa inhibitor reversal where andexanet unavailable. Reversal is NOT first-line for minor bleeding — supportive care + procedural hemostasis often sufficient.',
+    warnings: [
+      'NOT every bleed needs reversal — minor bleeding with hemodynamically stable patient: supportive care + last-dose timing assessment.',
+      'IDARUCIZUMAB is highly effective for dabigatran (binds with higher affinity than thrombin). Available across Canadian centres.',
+      'ANDEXANET ALFA: limited Canadian availability + high cost; 4F-PCC is widely used Canadian alternative.',
+      'PROTHROMBOTIC RISK: andexanet (~10% thrombotic events post-reversal); 4F-PCC also has procoagulant effect — restart anticoagulation as soon as bleeding controlled and clinically appropriate.',
+      'NO ANTIDOTE for direct effect — supportive care: hemodynamic resuscitation, blood products, surgical/procedural source control, activated charcoal if recent ingestion (<2h).',
+      'TXA (tranexamic acid) is adjunctive antifibrinolytic — useful in trauma and selected bleeding.',
+      'DIALYSIS removes dabigatran (~60% in 4 h) but NOT FXa inhibitors (highly protein-bound).'
+    ],
+    columns: ['DOAC', 'Reversal Agent (Specific)', 'Dose', 'Alternative / Adjunct'],
+    rows: [
+      ['Dabigatran (Pradaxa) — life-threatening bleeding or emergency surgery', 'IDARUCIZUMAB (Praxbind)', 'Idarucizumab 5 g IV (administered as 2 × 2.5 g vials in succession; total ~10 min infusion)', 'IF idarucizumab unavailable: hemodialysis (removes ~60% in 4 h) + 4F-PCC 50 IU/kg + supportive care + activated charcoal if <2 h since ingestion.'],
+      ['Apixaban (Eliquis) — life-threatening bleeding', 'ANDEXANET ALFA (Andexxa) — limited Canadian availability', 'Low-dose (last apixaban dose ≤5 mg or >8 h ago): 400 mg IV bolus over 30 min + 4 mg/min × 120 min (480 mg total infusion). High-dose (>5 mg dose or ≤8 h since last dose): 800 mg bolus + 8 mg/min × 120 min (960 mg total).', 'WIDELY USED CANADIAN ALTERNATIVE: 4F-PCC (Octaplex/Beriplex) 50 IU/kg IV (max 5000 IU) — single dose. Supportive care, surgical hemostasis, activated charcoal if <2 h.'],
+      ['Rivaroxaban (Xarelto) — life-threatening bleeding', 'ANDEXANET ALFA (Andexxa) — limited Canadian availability', 'Low-dose (last rivaroxaban ≤10 mg or >8 h ago): 400 mg + 4 mg/min × 120 min. High-dose (>10 mg dose or ≤8 h since last dose): 800 mg + 8 mg/min × 120 min.', 'CANADIAN ALTERNATIVE: 4F-PCC 50 IU/kg IV (max 5000 IU). Adjuncts as above.'],
+      ['Edoxaban (Lixiana) — life-threatening bleeding', 'No specific Health Canada–approved reversal (andexanet not approved for edoxaban in Canada)', '4F-PCC 50 IU/kg IV (max 5000 IU)', 'Supportive; activated charcoal if <2 h since ingestion.'],
+      ['ANY DOAC — minor bleeding (epistaxis, GI minor, GU minor)', 'Supportive only', 'Hold next dose; local hemostasis (nasal packing, endoscopy); reassess', 'Discuss DOAC continuation vs interruption based on indication. Tranexamic acid topical/oral for some sites.'],
+      ['ANY DOAC — life-threatening bleeding without specific reversal', 'Adjunctive supportive', '4F-PCC 50 IU/kg + Tranexamic acid 1 g IV bolus + 1 g IV over 8 h (CRASH-2 protocol if trauma); blood product resuscitation per massive transfusion protocol; surgical/endoscopic hemostasis', 'Multidisciplinary team — hematology, surgery, ICU.'],
+      ['Pre-emptive emergency surgery/procedure (any DOAC)', 'Hold + supportive', 'Hold drug. If urgent (<24 h to procedure): consider 4F-PCC 25–50 IU/kg pre-procedure based on bleeding risk and time since last dose. Idarucizumab for emergent surgery in dabigatran patients.', 'Consult hematology when in doubt.'],
+      ['Adjunct for any major bleeding', 'TRANEXAMIC ACID', 'TXA 1 g IV bolus, 1 g IV over 8 h (CRASH-2 if trauma); 1 g topical for some bleeds', 'Antifibrinolytic; reduces transfusion requirement in trauma. Useful adjunct.'],
+      ['Adjunct', 'BLOOD PRODUCT RESUSCITATION', 'Per massive transfusion protocol: pRBC + FFP + platelets in 1:1:1 ratio (or whole blood if available); cryoprecipitate for fibrinogen <1.5 g/L', 'Permissive hypotension (SBP target ~90) until hemorrhage controlled in trauma.'],
+      ['Restart anticoagulation', 'After bleeding controlled', 'Resume DOAC after bleeding controlled and acceptable bleeding risk (often 24–72 h post-bleed cessation)', 'Restart prevents thromboembolic complication. Higher restart bleeding risk in select patients — multidisciplinary discussion.']
+    ],
+    source: 'Thrombosis Canada DOAC reversal; ANNEXA-4 trial; REVERSE-AD trial; ESC; ACC/AHA.',
+    related_drugs: ['idarucizumab','dabigatran','apixaban','rivaroxaban','edoxaban','tranexamic_acid']
+  },
+  {
+    id: 'ac_warfarin_reversal',
+    title: 'Warfarin Reversal — INR Elevation & Bleeding',
+    icon: '🩸',
+    color: '#dc2626',
+    overview: 'Warfarin reversal is INR-and-bleeding-risk-stratified. Asymptomatic supratherapeutic INR rarely requires aggressive reversal (vitamin K alone usually sufficient). Major bleeding requires rapid INR normalization with 4F-PCC (Octaplex, Beriplex) — preferred over FFP (faster onset, smaller volume, no thawing). Vitamin K is essential for sustained reversal (PCC effect transient).',
+    warnings: [
+      '4F-PCC (Octaplex, Beriplex) is PREFERRED over FFP for major bleeding — faster, smaller volume, no ABO matching, no thawing.',
+      'VITAMIN K is essential — PCC alone provides transient correction; vitamin K provides sustained reversal (12–24 h).',
+      'IV VITAMIN K is faster than oral (4 h vs 24 h to peak) but PO is acceptable for non-life-threatening reversal; SC vitamin K is unreliable — AVOID.',
+      'OVER-REVERSAL: high-dose vitamin K (10 mg) creates warfarin resistance for days–weeks; use lowest effective dose for situation.',
+      'WARFARIN HALF-LIFE 36 h — INR rebound possible 24–48 h after reversal; recheck INR.',
+      'RESTART warfarin once bleeding controlled and indication remains — most patients should resume.'
+    ],
+    columns: ['Scenario', 'Vitamin K', 'PCC / FFP', 'Notes'],
+    rows: [
+      ['INR <5, no bleeding', 'No vitamin K usually', 'No PCC', 'Hold or reduce next warfarin dose; recheck INR; investigate cause (drug interaction, dietary).'],
+      ['INR 5–10, no bleeding', 'Vitamin K 1–2 mg PO (or 1 mg IV) — selective use', 'No PCC', 'Many patients safely managed without vitamin K — just hold warfarin and recheck. Use vitamin K if high bleeding risk (recent surgery, prior major bleed, frail elderly).'],
+      ['INR >10, no bleeding', 'Vitamin K 2–5 mg PO (or 1–2 mg IV)', 'No PCC routinely', 'Higher bleeding risk; vitamin K appropriate. Hold warfarin. Recheck INR in 12–24 h.'],
+      ['Minor bleeding, any INR', 'Vitamin K 1–5 mg PO or IV (based on INR + bleed)', 'No PCC routinely', 'Local hemostasis. Hold warfarin. Recheck INR.'],
+      ['Major bleeding (hemodynamic compromise, intracranial, GI requiring transfusion)', 'Vitamin K 5–10 mg IV slow (over 30 min)', '4F-PCC (Octaplex, Beriplex) 25–50 IU/kg IV based on INR and weight (max 5000 IU). FFP 10–15 mL/kg if PCC unavailable.', 'PCC dose: INR 1.5–2: 25 IU/kg; INR 2–3: 35 IU/kg; INR ≥3: 50 IU/kg (or weight-based: max 5000 IU). Recheck INR at 30 min — goal <1.5.'],
+      ['Emergent surgery, INR >1.5', 'Vitamin K 5 mg IV slow', '4F-PCC 25–50 IU/kg IV (per INR/weight)', 'Faster reversal than vitamin K alone; surgery can proceed within 30 min.'],
+      ['Intracranial hemorrhage (warfarin-associated)', 'Vitamin K 10 mg IV slow', '4F-PCC 50 IU/kg IV (max 5000 IU)', 'Aggressive — INR <1.4 target. Multidisciplinary (neurosurgery + neurology + ICU). Repeat INR at 30 min and 6 h.'],
+      ['INR rebound post-reversal', 'Repeat vitamin K if INR rises 12–24 h post-reversal', 'Repeat PCC may be needed if continued bleeding', 'Warfarin half-life 36 h — long duration of action; PCC duration ~6 h.'],
+      ['Restart warfarin', 'Once bleeding controlled and indication remains valid', 'NA', 'Most patients restart within days; bridging with LMWH if high thromboembolic risk and warfarin reinitiated. Mechanical valves, recent VTE: critical to restart.'],
+      ['ALTERNATIVES if PCC unavailable', 'FFP 10–15 mL/kg IV', 'NA', 'Slower (60+ min infusion of large volume); less concentrated; volume overload concern especially in CHF, elderly. Recombinant activated factor VII rarely used.']
+    ],
+    source: 'CHEST 2012/2018 antithrombotic guidelines; ACCP; Thrombosis Canada; CCS Antithrombotic 2024.',
+    related_drugs: ['warfarin','phytonadione']
+  },
+  {
+    id: 'ac_switching',
+    title: 'Anticoagulant Switching — Transition Protocols',
+    icon: '🔄',
+    color: '#dc2626',
+    overview: 'Switching between anticoagulants requires careful timing to avoid both bleeding (overlap) and thromboembolism (gap). Common transitions: warfarin ↔ DOAC; warfarin ↔ heparin/LMWH; DOAC ↔ heparin. Always consider INR for warfarin and renal function for DOACs/LMWH.',
+    warnings: [
+      'NEVER STOP anticoagulant prematurely — gap = thromboembolism risk.',
+      'NEVER OVERLAP excessively — overlap = bleeding risk.',
+      'CHECK RENAL FUNCTION before DOAC initiation/switching — most DOACs have CrCl-based dosing.',
+      'INR INTERPRETATION when on combination — INR is unreliable when DOAC + warfarin overlap; use specific assay (anti-Xa for FXa inhibitors, dilute thrombin time for dabigatran) or rely on dosing protocols.',
+      'PARENTERAL ANTICOAGULATION (heparin, LMWH) typically requires fewer transitions; bridging is straightforward.',
+      'Consult specialty (hematology, cardiology, neurology) for complex transitions in high-risk patients.'
+    ],
+    columns: ['From', 'To', 'Protocol', 'Notes'],
+    rows: [
+      ['Warfarin', 'Apixaban / Rivaroxaban / Dabigatran / Edoxaban', 'Stop warfarin. Start DOAC when INR <2.0 (INR <2.5 for edoxaban).', 'Check INR daily once warfarin held; start DOAC as soon as INR threshold met. Most patients reach INR <2 within 1–3 days.'],
+      ['Apixaban / Rivaroxaban / Edoxaban (FXa inhibitor)', 'Warfarin', 'Continue DOAC + start warfarin simultaneously × 5 days minimum. Stop DOAC when INR ≥2 (check INR 24h after last DOAC dose for accuracy; INR while on FXa inhibitor is artificially elevated).', 'Most accurate INR is drawn 24 h AFTER last DOAC dose (trough). Continue until INR therapeutic on warfarin alone for 24h.'],
+      ['Dabigatran (DTI)', 'Warfarin', 'CrCl ≥50: start warfarin 3 days BEFORE stopping dabigatran (overlap 3 days); CrCl 30–49: start 2 days before; CrCl 15–29: start 1 day before. INR while on dabigatran is unreliable — rely on protocol-based timing.', 'INR check after dabigatran cleared (~1–2 days after stop).'],
+      ['Warfarin', 'LMWH / heparin', 'Stop warfarin. Start LMWH (or heparin) when INR <2.0 (or sometimes <2.5).', 'Bridging scenario.'],
+      ['LMWH', 'Warfarin', 'Continue LMWH + start warfarin simultaneously × 5 days minimum. Stop LMWH when INR ≥2 for 24 h.', 'Standard bridge initiation.'],
+      ['Heparin (IV) — therapeutic', 'Warfarin', 'Start warfarin while on heparin × 5 days minimum. Stop heparin when INR ≥2 for 24 h.', 'Common in admitted VTE patients.'],
+      ['LMWH / heparin', 'Apixaban / Rivaroxaban / Dabigatran / Edoxaban', 'Stop LMWH/heparin; start DOAC at next scheduled dose time (i.e., when next LMWH would be due — 12 h after last LMWH dose for BID; 24 h for OD)', 'Heparin IV: stop infusion; start DOAC ~2–4 h later (when therapeutic effect waning).'],
+      ['DOAC', 'LMWH / heparin', 'Stop DOAC; start LMWH/heparin at next scheduled DOAC dose time (or once anticoagulant effect wanes — typically 12–24 h after last DOAC dose)', 'Adjust for renal function.'],
+      ['Apixaban', 'Rivaroxaban (or vice versa) — switching between FXa inhibitors', 'Start new DOAC at the next scheduled dose time (i.e., when next dose of old DOAC would have been due)', 'Effectively no gap; effects overlap briefly.'],
+      ['Dabigatran (DTI)', 'Apixaban / Rivaroxaban / Edoxaban (FXa)', 'Start FXa inhibitor at next scheduled dabigatran dose time', 'No bridging needed.'],
+      ['Apixaban / Rivaroxaban / Edoxaban', 'Dabigatran', 'Start dabigatran at next scheduled FXa dose time', 'No bridging needed.']
+    ],
+    source: 'Thrombosis Canada Anticoagulant Switching algorithm; CCS AF 2020.',
+    related_drugs: ['warfarin','apixaban','rivaroxaban','dabigatran','edoxaban','enoxaparin','dalteparin','heparin']
+  },
+  {
+    id: 'ac_vte',
+    title: 'VTE Treatment & Duration',
+    icon: '🩸',
+    color: '#dc2626',
+    overview: 'Venous thromboembolism (DVT, PE) treatment: most patients started on DOAC monotherapy (apixaban or rivaroxaban — no parenteral lead-in needed). Duration: 3 months for provoked VTE with reversible risk factor; indefinite (with periodic reassessment) for unprovoked VTE or persistent risk factors. Cancer-associated VTE: DOAC OR LMWH (based on bleeding risk and tumor type).',
+    warnings: [
+      'PROVOKED vs UNPROVOKED matters for duration: 3 months sufficient for provoked (surgery, immobility, hormonal); indefinite for unprovoked or strong persistent risk factors.',
+      'CANCER-ASSOCIATED VTE: DOAC (apixaban, edoxaban — non-inferior to LMWH per RCTs) OR LMWH; AVOID DOAC in luminal GI/GU malignancy (higher bleeding); LMWH preferred in those settings.',
+      'PE WITH HEMODYNAMIC INSTABILITY: thrombolysis (tPA 100 mg over 2 h) — high-risk PE only; not for normotensive PE with RV strain.',
+      'PREGNANCY: LMWH (warfarin teratogenic; DOACs not recommended).',
+      'IVC FILTERS: rarely indicated; reserve for absolute contraindication to anticoagulation; retrieve when anticoagulation can resume.',
+      'POST-DVT compression stockings reduce post-thrombotic syndrome modestly; not all patients need them.'
+    ],
+    columns: ['Scenario', 'Initial Therapy', 'Long-Term', 'Duration'],
+    rows: [
+      ['Acute proximal DVT or PE — non-cancer', 'Apixaban 10 mg PO BID × 7 days, then 5 mg PO BID OR Rivaroxaban 15 mg PO BID × 21 days, then 20 mg PO daily — DOAC monotherapy (no LMWH lead-in needed)', 'Continue DOAC at maintenance dose', '3 months minimum; indefinite if unprovoked or recurrent (with reassessment for bleeding risk)'],
+      ['Alternative — DOAC with LMWH lead-in', 'LMWH (enoxaparin 1 mg/kg SC q12h) × 5–10 days, then Dabigatran 150 mg PO BID OR Edoxaban 60 mg PO daily', 'Continue dabigatran or edoxaban', '3 months to indefinite as above'],
+      ['Warfarin-based therapy (alternative)', 'LMWH (enoxaparin 1 mg/kg SC q12h) + warfarin (start 5 mg PO daily, adjust for INR 2–3) × 5 days minimum overlap; stop LMWH when INR ≥2 for 24 h', 'Warfarin INR 2–3', '3 months to indefinite'],
+      ['Cancer-associated VTE', 'Apixaban (10 mg BID × 7d, then 5 mg BID) OR Edoxaban (60 mg PO daily after LMWH lead-in 5 days) OR LMWH (enoxaparin 1 mg/kg SC q12h or 1.5 mg/kg q24h; dalteparin 200 IU/kg SC q24h × 1 month, then 150 IU/kg q24h)', 'Continue same agent', 'Indefinite while cancer active or under treatment; reassess at 6 months'],
+      ['Cancer + luminal GI/GU malignancy or high bleed risk', 'LMWH preferred (less GI bleeding than DOAC)', 'LMWH continued', 'Active cancer/treatment duration'],
+      ['Provoked DVT/PE (transient risk factor — surgery, hospitalization, hormonal, pregnancy)', 'DOAC as above', 'DOAC at maintenance', '3 months — provoked VTE has low recurrence after risk factor resolution'],
+      ['Unprovoked DVT/PE', 'DOAC as above', 'DOAC at maintenance OR reduced-dose extended therapy', '3 months minimum; INDEFINITE for most (unless high bleeding risk). Apixaban 2.5 mg BID OR Rivaroxaban 10 mg daily are reduced-dose extended options after first 6 months.'],
+      ['Recurrent VTE while on anticoagulation', 'Switch class (e.g., DOAC → LMWH if recurrence on DOAC; investigate cause — non-adherence, malignancy, APS), or increase dose', 'LMWH long-term often used', 'Indefinite — multidisciplinary'],
+      ['Antiphospholipid syndrome (APS) — thrombotic', 'Warfarin INR 2–3 PREFERRED (DOACs INFERIOR per RAPS, TRAPS trials in triple-positive APS)', 'Warfarin', 'Indefinite'],
+      ['High-risk PE (hemodynamic instability) — massive PE', 'Tissue plasminogen activator (tPA) 100 mg IV over 2 hours OR Tenecteplase weight-based; concurrent heparin (no lead-in if thrombolysis)', 'Continue heparin → transition to oral anticoagulant', 'Per chronic VTE management'],
+      ['Submassive PE (RV strain, hemodynamically stable)', 'Anticoagulation as above; thrombolysis case-by-case (PEITHO trial — no mortality benefit, increased bleeding); catheter-directed thrombolysis emerging', 'Standard VTE anticoagulation', '3 months minimum'],
+      ['Distal DVT (calf veins only) — symptomatic', 'Anticoagulation similar to proximal DVT; some experts use surveillance with serial US for asymptomatic isolated distal DVT', 'DOAC if treated', '3 months'],
+      ['Pregnancy-associated VTE', 'LMWH (enoxaparin 1 mg/kg SC q12h or 1.5 mg/kg q24h)', 'LMWH', 'Until 6 weeks postpartum (minimum 3 months total)'],
+      ['Postpartum VTE prevention (high-risk women)', 'LMWH 6 weeks postpartum prophylactic dose', 'LMWH', '6 weeks postpartum']
+    ],
+    source: 'CHEST 2016/2021 VTE; CCS Antithrombotic 2024; Thrombosis Canada VTE; CARAVAGGIO/HOKUSAI-VTE-CANCER trials.',
+    related_drugs: ['apixaban','rivaroxaban','dabigatran','edoxaban','enoxaparin','dalteparin','tinzaparin','warfarin','alteplase','tenecteplase','heparin']
+  },
+  {
+    id: 'ac_afib',
+    title: 'Atrial Fibrillation — Stroke Prevention & Rate vs Rhythm',
+    icon: '❤️',
+    color: '#dc2626',
+    overview: 'Atrial fibrillation management: (1) STROKE PREVENTION via anticoagulation based on CHA₂DS₂-VASc score; (2) RATE vs RHYTHM control (rate-control adequate for most; rhythm control for symptomatic, young, HF). DOACs are first-line for stroke prevention (warfarin for mechanical valves, severe mitral stenosis, or DOAC contraindication). HAS-BLED informs bleeding risk discussion (does not preclude anticoagulation).',
+    warnings: [
+      'CHA₂DS₂-VASc (women): includes 1 point for female sex; current CCS approach: anticoagulate if score ≥1 in men, ≥2 in women (except 1 point from sex alone).',
+      'HAS-BLED: identifies modifiable bleeding risk factors but does NOT preclude anticoagulation in eligible patients. NEVER withhold anticoagulation based on HAS-BLED alone — modify reversible factors instead.',
+      'DOACs PREFERRED over warfarin for non-valvular AFib (RE-LY, ROCKET-AF, ARISTOTLE, ENGAGE-AF).',
+      'WARFARIN remains first-line for: mechanical heart valve, moderate-severe rheumatic mitral stenosis, antiphospholipid syndrome (triple positive).',
+      'RATE vs RHYTHM: AFFIRM trial — no mortality difference; rhythm control for symptomatic, young, HF (CASTLE-AF, EAST-AFNET 4).',
+      'ABLATION early in disease course (paroxysmal AFib, symptomatic) reduces progression to persistent AFib.'
+    ],
+    columns: ['Component', 'Decision', 'Action / Drug', 'Notes'],
+    rows: [
+      ['Stroke risk (CHA₂DS₂-VASc)', 'CHF (1) + HTN (1) + Age ≥75 (2) + DM (1) + Stroke/TIA (2) + Vascular disease (1) + Age 65–74 (1) + Sex female (1)', 'Score ≥1 in men or ≥2 in women (excluding sex point alone) → anticoagulation indicated', 'Score 0 (men) or 1 (women, sex only): no anticoagulation; reassess annually.'],
+      ['Bleeding risk (HAS-BLED)', 'HTN uncontrolled (1) + Abnormal renal/hepatic (1 each) + Stroke (1) + Bleeding history (1) + Labile INR (1) + Elderly >65 (1) + Drugs/alcohol (1 each)', 'Score ≥3 = high bleeding risk → modifiable factors targeted; does NOT preclude anticoagulation', 'NEVER withhold anticoagulation based on HAS-BLED alone in eligible patients.'],
+      ['First-line stroke prevention (non-valvular AFib)', 'DOAC', 'Apixaban 5 mg PO BID (2.5 mg BID if 2 of: age ≥80, weight ≤60 kg, Cr ≥133) — preferred for renal impairment OR Rivaroxaban 20 mg PO daily with food (15 mg if CrCl 15–49) OR Dabigatran 150 mg PO BID (110 mg if age ≥80 or bleed risk; CrCl ≥30) OR Edoxaban 60 mg PO daily (30 mg if CrCl 15–50, weight ≤60, P-gp inhibitor)', 'No bridging needed; no lab monitoring; stable food/drug profile. ODB-covered.'],
+      ['Mechanical heart valve / moderate-severe rheumatic mitral stenosis', 'WARFARIN (DOACs CONTRAINDICATED)', 'Warfarin INR 2–3 (mechanical aortic) or 2.5–3.5 (mechanical mitral). Add aspirin 81 mg daily for some.', 'RE-ALIGN trial: dabigatran INFERIOR to warfarin for mechanical valves.'],
+      ['LAA closure (Watchman) — alternative to long-term anticoagulation', 'Selected high-bleed-risk patients', 'Watchman device — left atrial appendage occlusion; followed by short course anticoagulation/antiplatelet then aspirin alone', 'PROTECT-AF, PREVAIL trials. Reserve for high bleed risk + contraindication to long-term anticoagulation.'],
+      ['Rate control — first-line', 'Resting HR <100–110 bpm acceptable', 'Beta-blocker (metoprolol 25–200 mg/day, bisoprolol 2.5–10 mg/day, atenolol) OR Non-DHP CCB (diltiazem 120–360 mg/day, verapamil — AVOID in HFrEF) ± Digoxin (adjunct in HF)', 'AVOID non-DHP CCBs in HFrEF. Digoxin adjunct in HF + AFib.'],
+      ['Rate control — failure or HFrEF', 'Add digoxin OR amiodarone (rhythm control component)', 'Digoxin 0.125–0.25 mg PO daily (level 0.5–1.0 ng/mL) OR Amiodarone (also has rhythm effect)', 'Digoxin levels monitored; renal dose adjustment.'],
+      ['Rhythm control — first-line', 'Symptomatic, young, persistent AFib affecting QoL, HF', 'Class III: amiodarone (most effective; SE-burden); dronedarone (avoid in HF, permanent AFib); sotalol (proarrhythmic) OR Class IC: flecainide, propafenone (no structural heart disease only) OR Catheter ablation', 'CASTLE-AF: ablation reduces mortality + HF hospitalization in HFrEF + AFib. EAST-AFNET 4: early rhythm control reduces CV outcomes vs rate control alone.'],
+      ['Cardioversion (electrical or pharmacologic) — for new-onset symptomatic AFib', 'Anticoagulate ≥3 weeks pre-cardioversion (AFib >48 h or unknown duration) OR TEE to exclude LA thrombus, OR cardiovert immediately if <48 h onset and adequate anticoagulation', 'DCCV synchronized 100–200 J biphasic; pharmacologic: ibutilide IV, flecainide PO ("pill-in-pocket")', 'Anticoagulate ≥4 weeks POST-cardioversion regardless of duration (atrial stunning).'],
+      ['Catheter ablation', 'Symptomatic paroxysmal AFib failing 1+ antiarrhythmic; persistent AFib + HF (CASTLE-AF); first-line for some young symptomatic', 'PVI (pulmonary vein isolation) ± additional substrate ablation; cryoballoon or radiofrequency', '~70–80% efficacy at 1 year for paroxysmal; lower for persistent/long-standing.'],
+      ['AFib + acute coronary syndrome / PCI', 'Triple therapy short → dual therapy', 'Anticoagulant (DOAC preferred) + clopidogrel (P2Y12) + aspirin × 1 month, then anticoagulant + clopidogrel × 12 months, then anticoagulant alone (per AUGUSTUS, ENTRUST-AF-PCI, REDUAL-PCI trials)', 'Reduces bleeding without increasing thrombosis vs traditional triple therapy.']
+    ],
+    source: 'CCS AF Guidelines 2020/2024; ESC AF 2020; AHA/ACC AF 2023.',
+    related_drugs: ['apixaban','rivaroxaban','dabigatran','edoxaban','warfarin','metoprolol','bisoprolol','diltiazem','verapamil','digoxin','amiodarone','dronedarone','sotalol','flecainide','propafenone','clopidogrel','aspirin']
+  }
+
+,
+  // ═══════════ PEDIATRIC DOSING ═══════════
+  {
+    id: 'ped_weight_dosing',
+    title: 'Pediatric Weight-Based Dosing — Common Drugs',
+    icon: '👶',
+    color: '#3b82f6',
+    overview: 'Quick-reference weight-based pediatric dosing for commonly prescribed drugs in community + emergency settings. Always verify dose against current pediatric reference (Lexicomp, Hospital for Sick Children Drug Handbook, CPS pediatric dosing). Doses given as mg/kg/dose unless otherwise specified; max doses noted.',
+    warnings: [
+      'WEIGHT-BASED DOSING is standard until ~50 kg or adult weight reached. Round to convenient measurable volumes.',
+      'PEDIATRIC FORMULATIONS often differ in concentration (e.g., amoxicillin 125/250 mg/5 mL vs 200/400 mg/5 mL) — counsel parents on exact volume/strength.',
+      'PEDIATRIC LIQUID DISPENSING: oral syringe (NOT teaspoon); demonstrate.',
+      'AGE-BAND vs WEIGHT-BAND: prefer weight-based; age-band acceptable when weight not available.',
+      'NEONATAL doses (<1 month) differ from infant — consult NeoFax or hospital protocols.',
+      'OBESITY: total body weight for most drugs; ideal/lean body weight for select drugs (gentamicin, propofol, etc.).'
+    ],
+    columns: ['Drug', 'Dose', 'Maximum / Notes', 'Indication'],
+    rows: [
+      ['Acetaminophen', '15 mg/kg/dose PO/PR q4–6h prn', 'Max 75 mg/kg/day or 4000 mg/day (whichever less)', 'Fever, pain'],
+      ['Ibuprofen', '10 mg/kg/dose PO q6–8h prn', 'Max 40 mg/kg/day or 2400 mg/day; AVOID <6 months, dehydration, active GI', 'Fever, pain (≥6 months)'],
+      ['Amoxicillin', 'Standard: 25–45 mg/kg/day divided BID-TID; High-dose (AOM, sinusitis): 75–90 mg/kg/day divided BID', 'Max 1 g/dose (high dose); 500 mg/dose (standard)', 'AOM, strep pharyngitis, pneumonia, UTI'],
+      ['Amoxicillin-clavulanate', '45–90 mg/kg/day amoxicillin component divided BID', 'Max 875 mg/dose; 7:1 ratio formulation reduces GI', 'AOM (high-dose for treatment failure), AECB, sinusitis, bites'],
+      ['Cephalexin', '25–50 mg/kg/day divided QID', 'Max 500 mg/dose', 'Cellulitis, MSSA SSTI, pediatric UTI'],
+      ['Cefixime', '8 mg/kg/day OD or divided BID', 'Max 400 mg/day', 'AOM (alternative), UTI, cervicitis'],
+      ['Cefuroxime axetil', '30 mg/kg/day divided BID', 'Max 500 mg/dose', 'AOM (penicillin allergy), early Lyme disease (alt)'],
+      ['Azithromycin', 'Day 1: 10 mg/kg; Days 2–5: 5 mg/kg; OR 30 mg/kg single dose for pertussis treatment in some protocols', 'Max 500 mg/dose; 1500 mg total', 'CAP atypical, pertussis, chlamydia'],
+      ['TMP-SMX', '8–10 mg/kg/day TMP component divided BID', 'Max 320 mg TMP/day (standard); UTI prophylaxis 2 mg/kg/day TMP', 'UTI, CA-MRSA SSTI, PJP prophylaxis'],
+      ['Doxycycline', '4.4 mg/kg/dose PO BID (max 100 mg/dose) — IDSA/AAP 2019 endorse short courses (<21 days) at any age', 'Max 200 mg/day', 'Lyme, anaplasmosis, CAP atypical (≥8y or short courses)'],
+      ['Clindamycin', '20–40 mg/kg/day divided TID-QID', 'Max 1.8 g/day (PO); 2.7 g/day (IV)', 'CA-MRSA SSTI, dental, anaerobic'],
+      ['Penicillin V (oral)', '25–50 mg/kg/day divided BID-QID', 'Max 500 mg/dose; Strep pharyngitis: 50 mg/kg/day divided BID × 10 days', 'Strep pharyngitis, dental prophylaxis'],
+      ['Nitrofurantoin', '5–7 mg/kg/day divided QID', 'Max 100 mg/dose; ≥1 month age', 'Pediatric UTI'],
+      ['Acyclovir oral', '20 mg/kg/dose QID (max 800 mg/dose)', 'For HSV; varicella in healthy adolescents', 'HSV, varicella'],
+      ['Acyclovir IV', '10 mg/kg/dose q8h (max 500 mg/m² q8h or weight-based)', 'HSV encephalitis; neonatal HSV 20 mg/kg q8h', 'HSV encephalitis, severe disease'],
+      ['Salbutamol', 'MDI: 4–8 puffs with spacer q20min; Neb: 0.15 mg/kg (min 2.5, max 5 mg) q20min × 3', 'Severe: continuous neb 10–20 mg/h', 'Acute asthma'],
+      ['Prednisone (oral) — asthma', '1–2 mg/kg/day OD × 3–5 days (max 60 mg/day)', 'No taper if <14 days', 'Acute asthma exacerbation'],
+      ['Dexamethasone (croup)', '0.6 mg/kg PO/IM × 1 (max 10 mg)', 'Single dose; very effective for croup', 'Croup'],
+      ['Ondansetron (acute gastroenteritis)', '0.15 mg/kg/dose IV (max 8 mg) OR ODT 4 mg (15–30 kg) or 8 mg (>30 kg) PO × 1', 'Max 4 mg if 8–15 kg', 'Vomiting in gastroenteritis (single dose ED practice)'],
+      ['Diphenhydramine', '1 mg/kg/dose PO/IV q4–6h prn (max 50 mg/dose)', 'AVOID <2 years (sedation, paradoxical excitation)', 'Allergic rxn, sleep, EPS'],
+      ['Cetirizine', '2.5 mg PO daily (6 mo–2 y); 2.5–5 mg daily (2–5 y); 5–10 mg daily (≥6 y)', 'Less sedating than diphenhydramine', 'Allergic rhinitis, urticaria'],
+      ['Lorazepam (acute seizure)', '0.05–0.1 mg/kg IV (max 4 mg/dose); may repeat ×1 in 5–10 min', 'Status epilepticus first-line; midazolam IM if no IV', 'Seizure, status epilepticus'],
+      ['Midazolam IM (status, no IV)', '<13 kg: 5 mg IM; 13–40 kg: 5–7.5 mg IM; >40 kg: 10 mg IM (single dose)', 'OR intranasal/buccal 0.2–0.5 mg/kg (max 10 mg)', 'Acute seizure, no IV'],
+      ['Levetiracetam (status second-line)', '60 mg/kg IV over 10 min (max 4500 mg)', 'ESETT trial — non-inferior to fosphenytoin', 'Status epilepticus second-line'],
+      ['Epinephrine (anaphylaxis IM)', '0.01 mg/kg IM (max 0.3 mg) anterolateral thigh — repeat q5–15 min prn', 'EpiPen Jr 0.15 mg (7.5–25 kg); EpiPen 0.3 mg (≥25 kg)', 'Anaphylaxis'],
+      ['Naloxone (opioid reversal pediatric)', '0.01–0.1 mg/kg IV/IM/SC/IN (max 2 mg/dose); repeat q2–3 min', 'Newborn: 0.1 mg/kg', 'Opioid overdose'],
+      ['Activated charcoal', '1 g/kg PO (max 50 g)', 'Within 1–2 h of ingestion; awake/protected airway', 'Acute toxic ingestion'],
+      ['IV fluid bolus (resuscitation)', 'NS 20 mL/kg IV bolus over 5–10 min, repeat ×2 prn (60 mL/kg total)', 'After 60 mL/kg, consider blood/vasopressors/colloid; pediatric DKA: SLOW (10 mL/kg over 30–60 min)', 'Hypotension, septic shock, dehydration'],
+      ['IV maintenance fluid', '4-2-1 rule (per hour): 4 mL/kg first 10 kg + 2 mL/kg next 10 kg + 1 mL/kg each kg >20', 'Use isotonic (D5/0.9NS or D5LR) — avoid hypotonic (pediatric hyponatremia risk)', 'Maintenance hydration'],
+      ['D25W (severe hypoglycemia, pediatric)', '2–4 mL/kg IV bolus (D25W); avoid D50W in young children (sclerosing)', 'Or D10W 5 mL/kg; glucagon 0.5 mg IM if <25 kg, no IV', 'Severe hypoglycemia']
+    ],
+    source: 'Hospital for Sick Children Drug Handbook; CPS Pediatric Dosing; Lexicomp Pediatric; Therapeutic Choices.',
+    related_drugs: ['acetaminophen','ibuprofen','amoxicillin','amoxicillin_clavulanate','cephalexin','cefixime','cefuroxime','azithromycin','sulfamethoxazole','doxycycline','clindamycin','penicillin','nitrofurantoin','acyclovir','salbutamol','prednisone','dexamethasone','ondansetron','diphenhydramine','cetirizine','lorazepam','midazolam','levetiracetam','epinephrine','naloxone']
+  },
+  {
+    id: 'ped_antibiotic_suspensions',
+    title: 'Pediatric Antibiotic Oral Suspensions — Concentrations & Volumes',
+    icon: '💊',
+    color: '#3b82f6',
+    overview: 'Quick-reference for common pediatric antibiotic oral suspensions used in Canada — concentrations, mg/kg dosing, and volume conversion. Always confirm at dispensing; reconstitute correctly; counsel on shaking, refrigeration, expiry. Use an oral syringe (NOT teaspoon) for accurate measurement.',
+    warnings: [
+      'CONCENTRATION VARIATIONS — same drug can have multiple suspension strengths (e.g., amoxicillin 125 mg/5 mL, 250 mg/5 mL, 200 mg/5 mL, 400 mg/5 mL). Verify at dispensing.',
+      'RECONSTITUTION — most pediatric suspensions require water added before first dose; confirm reconstitution complete; counsel on storage.',
+      'REFRIGERATION REQUIRED for most amoxicillin, cefixime, azithromycin suspensions; some (clarithromycin) at room temperature only — check label.',
+      'SHAKE WELL before each dose — settling causes underdosing.',
+      'EXPIRY post-reconstitution: typically 14 days refrigerated; varies by product — check label.'
+    ],
+    columns: ['Drug', 'Concentrations (Canada)', 'Typical Daily Dose', 'mL per dose (example)'],
+    rows: [
+      ['Amoxicillin', '125 mg/5 mL, 250 mg/5 mL, 200 mg/5 mL, 400 mg/5 mL', 'Standard: 25–45 mg/kg/day BID-TID; High-dose AOM: 75–90 mg/kg/day BID', '20 kg child, AOM (90 mg/kg/day = 1800 mg/day; BID = 900 mg/dose): 11.25 mL of 400 mg/5 mL BID'],
+      ['Amoxicillin-clavulanate (Clavulin)', '125/31.25 mg/5 mL, 250/62.5 mg/5 mL, 400/57 mg/5 mL', '45–90 mg/kg/day amoxicillin component BID', '20 kg, AOM 90 mg/kg/day BID = 900 mg amox/dose: 11.25 mL of 400 mg/5 mL BID'],
+      ['Cephalexin', '125 mg/5 mL, 250 mg/5 mL', '25–50 mg/kg/day divided QID', '20 kg, 50 mg/kg/day QID = 250 mg/dose: 5 mL of 250 mg/5 mL QID'],
+      ['Cefixime (Suprax)', '100 mg/5 mL', '8 mg/kg/day OD or divided BID', '20 kg, 8 mg/kg/day OD = 160 mg/day: 8 mL daily'],
+      ['Cefuroxime axetil (Ceftin)', '125 mg/5 mL', '30 mg/kg/day divided BID', '20 kg, 30 mg/kg/day BID = 300 mg/dose: 12 mL BID. Bitter taste — counsel.'],
+      ['Cefadroxil (Duricef)', '250 mg/5 mL, 500 mg/5 mL', '30 mg/kg/day divided BID', '20 kg, 30 mg/kg/day BID = 300 mg/dose: 6 mL of 250 mg/5 mL BID'],
+      ['Azithromycin', '100 mg/5 mL, 200 mg/5 mL', '10 mg/kg day 1 (max 500 mg), 5 mg/kg days 2–5 (max 250 mg) OR 30 mg/kg single dose (pertussis)', '20 kg, day 1: 10 mL of 200 mg/5 mL; days 2–5: 5 mL'],
+      ['Clarithromycin (Biaxin)', '125 mg/5 mL, 250 mg/5 mL', '15 mg/kg/day divided BID (max 500 mg/dose)', '20 kg, 15 mg/kg/day BID = 150 mg/dose: 6 mL of 125 mg/5 mL BID. Stable at room temperature.'],
+      ['TMP-SMX (Bactrim, Septra)', '40 mg TMP / 200 mg SMX per 5 mL', '8–10 mg/kg/day TMP divided BID', '20 kg, 8 mg/kg/day TMP BID = 80 mg TMP/dose: 10 mL BID'],
+      ['Nitrofurantoin (Macrobid not available as suspension; Macrodantin)', 'Macrodantin 25 mg/5 mL (compounded in some pharmacies)', '5–7 mg/kg/day divided QID; UTI prophylaxis 1–2 mg/kg/day single dose', '20 kg, 5 mg/kg/day QID = 25 mg/dose: 5 mL QID'],
+      ['Penicillin V', '125 mg/5 mL, 250 mg/5 mL', '50 mg/kg/day divided BID for strep pharyngitis × 10 days', '20 kg, 50 mg/kg/day BID = 500 mg/dose: 10 mL of 250 mg/5 mL BID'],
+      ['Cloxacillin', '125 mg/5 mL', '25–50 mg/kg/day divided QID; food-restriction (1 h before / 2 h after food)', '20 kg, 50 mg/kg/day QID = 250 mg/dose: 10 mL QID'],
+      ['Clindamycin (Dalacin C)', '75 mg/5 mL', '20–30 mg/kg/day divided TID', '20 kg, 30 mg/kg/day TID = 200 mg/dose: 13.3 mL TID'],
+      ['Acyclovir', '200 mg/5 mL', '20 mg/kg/dose QID (max 800 mg/dose) — varicella, HSV', '20 kg, 20 mg/kg/dose QID = 400 mg/dose: 10 mL QID'],
+      ['Doxycycline', 'Suspension limited Canadian availability — consider tablets divided/crushed', '4.4 mg/kg/dose BID (max 100 mg)', 'Tablet 100 mg PO BID for adolescent/older child'],
+      ['Metronidazole (Flagyl)', '50 mg/mL (suspension compounded), Tablets 250/500 mg', '15–35 mg/kg/day divided TID', '20 kg, 30 mg/kg/day TID = 200 mg/dose'],
+      ['Fluconazole', '10 mg/mL, 40 mg/mL', '6 mg/kg day 1, then 3–6 mg/kg/day OD', '15 kg, 6 mg/kg = 90 mg day 1: 9 mL of 10 mg/mL']
+    ],
+    source: 'CPS pediatric formulary; Hospital for Sick Children Drug Handbook; Health Canada DPD; Lexicomp Pediatric.',
+    related_drugs: ['amoxicillin','amoxicillin_clavulanate','cephalexin','cefixime','cefuroxime','cefadroxil','azithromycin','clarithromycin','sulfamethoxazole','nitrofurantoin','penicillin','cloxacillin','clindamycin','acyclovir','doxycycline','metronidazole','fluconazole']
+  },
+  {
+    id: 'ped_antipyretics',
+    title: 'Pediatric Antipyretics — Acetaminophen & Ibuprofen',
+    icon: '🌡️',
+    color: '#3b82f6',
+    overview: 'Pediatric fever management: acetaminophen first-line; ibuprofen alternative ≥6 months. Aim for comfort, NOT temperature alone — fever itself rarely harmful. Counsel on weight-based dosing (NOT age-based for accuracy), correct measuring device, correct concentration (multiple available), maximum daily dose, hydration, avoiding alcohol. Refer if persistent >5 days, severe symptoms, age <3 months.',
+    warnings: [
+      'AGE <3 MONTHS WITH FEVER ≥38°C: ALWAYS evaluate medically — sepsis screen needed.',
+      'WEIGHT-BASED DOSING is MORE ACCURATE than age-based — always weigh if possible.',
+      'AVOID IBUPROFEN <6 MONTHS, with dehydration, vomiting/diarrhea (AKI risk), bleeding disorders, varicella (rare necrotizing fasciitis association).',
+      'NEVER ALTERNATE acetaminophen and ibuprofen — confusing for caregivers, no benefit over single drug.',
+      'AVOID ASA (Reye syndrome — viral illness in children).',
+      'COUNSEL: 1 mL ≠ 1 tsp (5 mL); use ORAL SYRINGE (not kitchen spoon).',
+      'CONCENTRATION VARIES — Tylenol Infants (drops) vs Children\'s (suspension); same for ibuprofen.'
+    ],
+    columns: ['Drug', 'Dose', 'Frequency / Max', 'Notes / Concentrations'],
+    rows: [
+      ['Acetaminophen (Tylenol, Tempra, etc.)', '15 mg/kg/dose PO/PR', 'q4–6h prn; max 5 doses/24h or 75 mg/kg/day or 4000 mg/day (lesser)', 'Concentrations: Infant drops 80 mg/mL (now 80 mg/0.8 mL or 80 mg/mL formats); Children\'s suspension 80 mg/5 mL (160 mg/5 mL Canadian); chewable 80 mg, 160 mg; rectal supp 80 mg, 160 mg, 325 mg'],
+      ['Ibuprofen (Advil, Motrin, generic)', '10 mg/kg/dose PO', 'q6–8h prn; max 4 doses/24h or 40 mg/kg/day or 2400 mg/day', 'Concentrations: Infant drops 40 mg/mL; Children\'s suspension 100 mg/5 mL; chewable 100 mg. AVOID <6 months, dehydration.'],
+      ['Naproxen (Aleve, Naprosyn)', '5–7 mg/kg/dose PO BID (≥2 years; off-label some use)', 'Max 1000 mg/day; longer half-life — twice daily', 'Less commonly used pediatric; consider after age 12 for menstrual cramps, JIA. Same NSAID cautions.'],
+      ['Acetaminophen — weight band 5 kg', '75 mg', 'q4–6h', '0.75 mL of 80 mg/mL drops; 2.5 mL of 160 mg/5 mL suspension'],
+      ['Acetaminophen — weight band 10 kg', '150 mg', 'q4–6h', '~5 mL of 160 mg/5 mL suspension; 1 chewable 160 mg'],
+      ['Acetaminophen — weight band 15 kg', '225 mg', 'q4–6h', '7 mL of 160 mg/5 mL suspension'],
+      ['Acetaminophen — weight band 20 kg', '300 mg', 'q4–6h', '~10 mL of 160 mg/5 mL suspension; 2 chewables 160 mg'],
+      ['Acetaminophen — weight band 30 kg', '450 mg', 'q4–6h', '~14 mL of 160 mg/5 mL suspension; 1.5 tablets 325 mg; or junior strength 160 mg × 3'],
+      ['Acetaminophen — weight band 40 kg', '600 mg', 'q4–6h', '2 tablets 325 mg (650 mg); approach adult dose'],
+      ['Ibuprofen — weight band 7 kg (≥6 months)', '70 mg', 'q6–8h', '1.75 mL of 40 mg/mL drops'],
+      ['Ibuprofen — weight band 10 kg', '100 mg', 'q6–8h', '5 mL of 100 mg/5 mL suspension; 1 chewable 100 mg'],
+      ['Ibuprofen — weight band 15 kg', '150 mg', 'q6–8h', '7.5 mL of 100 mg/5 mL suspension; 1.5 chewables 100 mg'],
+      ['Ibuprofen — weight band 20 kg', '200 mg', 'q6–8h', '10 mL of 100 mg/5 mL suspension; 2 chewables 100 mg or 1 tablet 200 mg'],
+      ['Ibuprofen — weight band 30 kg', '300 mg', 'q6–8h', '15 mL of 100 mg/5 mL; 1.5 tablets 200 mg'],
+      ['Ibuprofen — weight band 40 kg', '400 mg', 'q6–8h', '2 tablets 200 mg (approaching adult dose)']
+    ],
+    source: 'CPS Position Statement on Fever and Acetaminophen/Ibuprofen Use; Health Canada labeling; Therapeutic Choices.',
+    related_drugs: ['acetaminophen','ibuprofen','naproxen']
+  },
+  {
+    id: 'ped_vital_signs',
+    title: 'Pediatric Vital Signs by Age',
+    icon: '💓',
+    color: '#3b82f6',
+    overview: 'Normal pediatric vital signs vary substantially by age. Reference for evaluating pediatric patient — age-appropriate ranges for HR, RR, BP. Tachycardia and tachypnea are sensitive but non-specific signs of illness/distress. Hypotension is a LATE sign in pediatric shock.',
+    warnings: [
+      'TACHYCARDIA is the EARLIEST sign of compensated pediatric shock; HYPOTENSION is LATE and ominous.',
+      'BP MEASUREMENT requires correct cuff size (40% upper arm circumference); too-small cuff gives falsely high reading.',
+      'PEDIATRIC HYPOTENSION (per PALS): SBP <60 (term newborn 0–28 days); <70 (1 month–1 year); <70 + (2 × age in years) (1–10 years); <90 (>10 years).',
+      'FEVER definition varies: rectal ≥38.0°C (most accurate); oral ≥37.5°C; axillary ≥37.2°C.',
+      'BRADYCARDIA in distressed/hypoxic infant is PREARREST sign — initiate immediate resuscitation.',
+      'Anxiety, fever, pain, crying all elevate HR/RR — recheck when calm if borderline.'
+    ],
+    columns: ['Age', 'HR (awake)', 'RR', 'SBP (lower limit hypotension PALS)'],
+    rows: [
+      ['Newborn (0–28 days)', '100–205', '30–60', '<60 mmHg = hypotension'],
+      ['Infant (1–11 months)', '100–190', '30–60', '<70 mmHg = hypotension'],
+      ['Toddler (1–3 years)', '90–150', '24–40', '<70 + (2 × age years) — e.g., age 2: <74'],
+      ['Preschool (3–6 years)', '80–140', '22–34', '<70 + (2 × age years) — e.g., age 5: <80'],
+      ['School age (6–12 years)', '70–120', '18–30', '<70 + (2 × age years) — e.g., age 10: <90'],
+      ['Adolescent (12–18 years)', '60–100', '12–16', '<90 mmHg'],
+      ['Adult', '60–100', '12–20', '<90 mmHg = hypotension'],
+      ['Newborn weight estimates', 'Term: 3.5 kg average', 'NA', 'NA'],
+      ['Pediatric weight estimate (1–9 y, simple)', '8 + (2 × age in years) — quick approximation when unable to weigh', 'NA', 'NA'],
+      ['Rough pediatric weight (Broselow tape)', 'Length-based — color-coded resuscitation tape', 'NA', 'Used in pediatric ED resuscitation; provides drug doses and equipment sizes'],
+      ['SpO2', '≥95% (room air, normal in healthy)', 'NA', 'NA'],
+      ['Glucose (fasting)', '4.0–6.0 mmol/L (children); 3.3–6.0 (newborn)', 'NA', 'Hypoglycemia: <3.3 (newborn), <2.6 (older infant), <3.3 (child) — symptomatic'],
+      ['Capillary refill time', '<2 seconds (children)', 'NA', 'Delayed (>3 sec) = poor perfusion / shock'],
+      ['Urine output', 'Newborn 1–3 mL/kg/h; Infant 1–2 mL/kg/h; Older child >0.5 mL/kg/h', 'NA', 'Below thresholds = oliguria, possible hypoperfusion or AKI'],
+      ['Fontanelle closure', 'Anterior: 9–18 months; Posterior: by 2 months', 'NA', 'Bulging = increased ICP; sunken = dehydration'],
+      ['Fever thresholds (rectal)', '≥38.0°C', 'NA', 'Age <3 mo with fever: ALWAYS medical evaluation; age 3–36 mo with fever ≥39°C without source: evaluate UTI, occult bacteremia (low-yield post-PCV), pneumonia']
+    ],
+    source: 'Canadian Pediatric Society; AAP; PALS; Hospital for Sick Children clinical reference.',
+    related_drugs: []
+  },
+  {
+    id: 'ped_sick_day_rules',
+    title: 'Sick Day Rules — Pediatric & Adult Diabetes',
+    icon: '🤒',
+    color: '#3b82f6',
+    overview: 'Sick day management in diabetes (T1DM and T2DM) prevents progression to DKA or HHS during illness. Key principles: NEVER STOP INSULIN (insulin requirements increase during illness due to stress hormones); monitor BG and ketones frequently; maintain hydration with sugar-containing fluids if BG <14 mmol/L; medical attention for persistent vomiting, ketosis, or BG >14 mmol/L.',
+    warnings: [
+      'NEVER STOP INSULIN in T1DM during illness — even if not eating. Insulin requirements often INCREASE due to stress hormones (cortisol, catecholamines, glucagon).',
+      'KETONE TESTING — blood ketones (β-hydroxybutyrate >0.6 mmol/L = elevated; >1.5 = significant; >3.0 = DKA risk) PREFERRED over urine ketones.',
+      'EUGLYCEMIC DKA on SGLT2 INHIBITORS — hold SGLT2i during illness; check ketones even if BG normal.',
+      'METFORMIN, SGLT2i — HOLD during dehydration, AKI risk, NPO, contrast — risk of lactic acidosis (metformin) or DKA (SGLT2i).',
+      'GLP-1 RAs — may exacerbate vomiting; consider holding if N/V severe.',
+      'DEHYDRATION threshold lower in children — call/seek care earlier.',
+      'When in doubt, contact diabetes team or go to ED.'
+    ],
+    columns: ['Topic', 'Pediatric T1DM', 'Adult T1DM / T2DM', 'Notes'],
+    rows: [
+      ['NEVER STOP INSULIN', 'CONTINUE basal insulin always; bolus may need adjustment', 'CONTINUE basal insulin always; bolus per BG/ketones', 'Most common cause of DKA: stopping insulin during illness.'],
+      ['Test BG frequency during illness', 'Every 2–4 hours', 'Every 2–4 hours', 'More frequent if BG fluctuating or ketones present.'],
+      ['Test ketones', 'Whenever BG >14 mmol/L OR symptoms (N/V, abdominal pain, breath odour)', 'Whenever BG >14 mmol/L (or any time on SGLT2i if symptoms — euglycemic DKA risk)', 'Blood ketone meter PREFERRED over urine.'],
+      ['BG <4.0 (hypoglycemia)', 'Treat with fast carbs 15 g; monitor', '15 g fast carbs; monitor; consider reduced insulin if continued risk', 'See acute hypoglycemia table.'],
+      ['BG 4–10 mmol/L', 'Continue usual insulin; sugar-containing fluids if not eating', 'Continue usual insulin; consider reduced if not eating', 'Maintain calorie intake even if not appetite-eating regular meals.'],
+      ['BG 10–14 mmol/L, ketones negative', 'Continue insulin; extra fluids', 'Continue; consider correction bolus per ICR/ISF', 'Watch for rising ketones.'],
+      ['BG >14 mmol/L OR ketones positive', 'CORRECTION BOLUS (rapid-acting insulin per ISF) + sugar-free clear fluids; monitor q1h. CALL DIABETES TEAM if not improving in 4 h or ketones rising.', 'Same approach; correction insulin per regimen', 'Consider extra basal if persistent.'],
+      ['Persistent vomiting, ketones >3, BG >20', 'GO TO ED — evolving DKA', 'GO TO ED — evolving DKA', 'IV insulin + fluid + electrolytes (see DKA protocol).'],
+      ['Hydration (general)', 'If BG <14: sugar-containing fluids (juice, milk, sport drink). If BG >14: sugar-free fluids (water, broth, sugar-free Gatorade).', 'Same approach', '~150–250 mL per hour of fluid (more if vomiting/diarrhea).'],
+      ['SGLT2 INHIBITORS (canagliflozin, dapagliflozin, empagliflozin)', 'NA (not used in pediatrics)', 'HOLD during illness — euglycemic DKA risk; check ketones if symptoms even with normal BG', 'Restart 24–48 h after recovery and adequate intake.'],
+      ['METFORMIN', 'NA', 'HOLD with vomiting, severe diarrhea, AKI risk — lactic acidosis risk', 'Restart with recovery + adequate intake.'],
+      ['INSULIN PUMP failure', 'Suspect if unexplained hyperglycemia + ketones; switch to subcutaneous injections', 'Same approach', 'Always have backup pens/syringes available.'],
+      ['SOLID FOOD intolerance', 'Replace with caloric fluids: juice, ginger ale (low-cal options if BG high), milk, sport drinks, popsicles, soup', 'Same approach', 'Maintain ~50% usual carb intake to prevent ketosis.'],
+      ['When to seek medical care (ED)', 'Persistent vomiting >2–3 episodes; signs of dehydration; ketones >1.5 not improving; BG persistently >20; cannot keep fluids down; mental status change', 'Same — adult thresholds', 'Lower threshold in children, pregnancy, elderly.'],
+      ['Antiemetics (peds)', 'Ondansetron 0.15 mg/kg IV (max 8 mg) or ODT in ED; oral dimenhydrinate (Gravol) 1 mg/kg/dose q6h prn (≥2 y)', 'Ondansetron 4–8 mg PO/IV q8h prn', 'Dimenhydrinate sedating; AVOID <2 years in some advisories.'],
+      ['Anticipatory planning', 'Sick-day kit: ketone meter + strips, antipyretics, sugar-free fluids, antiemetic if approved by team, contact info for diabetes team', 'Same kit', 'Diabetes Canada sick day plan handouts available.']
+    ],
+    source: 'Diabetes Canada 2018/2023 Clinical Practice Guidelines — Pediatric and Adult Sick Day Rules; Canadian Pediatric Society.',
+    related_drugs: ['insulin','insulin_lispro','insulin_aspart','insulin_glargine','insulin_nph','metformin','canagliflozin','dapagliflozin','empagliflozin','ondansetron','dimenhydrinate']
+  },
+
+  // ═══════════ PHARMACOGENOMICS (CPIC) ═══════════
+  {
+    id: 'pgx_cyp2c19',
+    title: 'CPIC: CYP2C19 — Clopidogrel, PPIs, SSRIs, Voriconazole',
+    icon: '🧬',
+    color: '#a855f7',
+    overview: 'CYP2C19 is a key drug-metabolizing enzyme with substantial population variation. Phenotypes: ultrarapid metabolizer (UM), rapid (RM), normal (NM), intermediate (IM), poor (PM). Affects activation of prodrugs (clopidogrel — RM activation reduced) and metabolism of substrates (PPIs, escitalopram/citalopram, voriconazole). Clinical testing is increasing in Canadian centres for cardiology (post-PCI), psychiatry, and ID.',
+    warnings: [
+      'CLOPIDOGREL — activated by CYP2C19 to active metabolite. Poor/intermediate metabolizers have REDUCED platelet inhibition → consider alternative P2Y12 (prasugrel, ticagrelor) per CPIC + CCS in PCI patients.',
+      'PPI METABOLISM — CYP2C19 PMs have HIGHER PPI exposure → may use lower doses; UMs have LOWER exposure → may need higher dose for H. pylori, GERD with persistent symptoms.',
+      'CITALOPRAM/ESCITALOPRAM — CYP2C19 PMs have higher exposure → lower max dose recommended (Health Canada 2012: max citalopram 20 mg/day in CYP2C19 PMs).',
+      'VORICONAZOLE — narrow therapeutic index; CYP2C19 PMs have very high levels → toxicity (CNS, hepatotoxicity, QT); UMs have subtherapeutic — use weight-based + TDM.',
+      'TESTING availability: most Ontario provincial labs offer CYP2C19 genotyping; not yet routinely funded for all indications.'
+    ],
+    columns: ['Phenotype', 'Frequency', 'Drug Implication', 'Recommendation'],
+    rows: [
+      ['Ultrarapid Metabolizer (UM) — *17/*17 or similar', '~5–30% (varies by ethnicity; higher in European, lower in Asian)', 'Clopidogrel: more rapid activation — possibly increased bleeding (limited evidence)', 'No specific clopidogrel dose change. Consider higher PPI dose for refractory GERD/H. pylori. Consider lower SSRI dose.'],
+      ['Rapid Metabolizer (RM) — *1/*17', '~15–30%', 'Same direction as UM but milder', 'No clopidogrel change. Routine dosing for most.'],
+      ['Normal Metabolizer (NM) — *1/*1', '~30–40%', 'Standard activation/metabolism', 'Standard dosing.'],
+      ['Intermediate Metabolizer (IM) — *1/*2 or *1/*3', '~15–35% (higher in Asian populations)', 'CLOPIDOGREL: reduced platelet inhibition; INCREASED CV events post-PCI', 'POST-PCI: USE PRASUGREL or TICAGRELOR INSTEAD (CCS, CPIC). For non-PCI: standard. PPI: standard or slightly reduced. SSRI: standard.'],
+      ['Poor Metabolizer (PM) — *2/*2 or similar', '~2–15% (higher in Asian populations ~15%)', 'CLOPIDOGREL: significantly reduced activation → high CV risk. PPIs: higher exposure (consider lower dose). CITALOPRAM: max 20 mg/day. VORICONAZOLE: very high levels — toxicity', 'Avoid clopidogrel post-PCI; use PRASUGREL or TICAGRELOR. Reduce CITALOPRAM to max 20 mg/day. VORICONAZOLE: TDM and dose reduction or alternative azole.'],
+      ['Clopidogrel — IM/PM', 'Combined IM+PM ~30% of population', 'Reduced effective antiplatelet effect; CV event risk post-PCI', 'PRASUGREL 10 mg PO daily (avoid in age ≥75, weight <60 kg, prior stroke/TIA) OR TICAGRELOR 90 mg PO BID (CCS-preferred alternative)'],
+      ['PPIs — IM/PM (omeprazole, pantoprazole, lansoprazole, esomeprazole)', 'Patient-specific', 'Higher PPI exposure; possible enhanced acid suppression', 'Standard dosing for most indications. Consider reducing dose if side effects or chronic use; full dose for H. pylori eradication.'],
+      ['Citalopram / Escitalopram — IM/PM', 'Patient-specific', 'Higher escitalopram/citalopram exposure → QT prolongation risk', 'CITALOPRAM max 20 mg/day in CYP2C19 PMs (Health Canada 2012 black box). Escitalopram max 10 mg/day in PMs. Consider sertraline alternative.'],
+      ['Voriconazole — IM/PM', 'IM ~25%; PM ~3–15%', 'Very high voriconazole levels → CNS toxicity, hepatotoxicity, QT', 'TDM (target trough 1–5.5 mg/L). Consider posaconazole or isavuconazole alternative in PMs.'],
+      ['Voriconazole — RM/UM', 'RM ~30%; UM ~5%', 'Subtherapeutic levels → treatment failure', 'TDM essential. Increase dose; consider alternative azole.'],
+      ['Testing in Canada', 'Provincial labs offer CYP2C19 genotyping', 'Cost ~$200–500; not always publicly funded', 'TLMP (Toronto Laboratory Medicine Program) and other provincial labs. Cardiology post-PCI emerging routine in some Ontario centres. Psychiatry use for refractory depression/anxiety.']
+    ],
+    source: 'CPIC Clopidogrel/CYP2C19 (2022 update); Citalopram/Escitalopram CPIC; Voriconazole CPIC; CCS Antiplatelet 2024; Health Canada citalopram safety review 2012.',
+    related_drugs: ['clopidogrel','prasugrel','ticagrelor','omeprazole','pantoprazole','esomeprazole','lansoprazole','citalopram','escitalopram','sertraline','voriconazole','posaconazole']
+  },
+  {
+    id: 'pgx_cyp2d6',
+    title: 'CPIC: CYP2D6 — Codeine, Tramadol, Antidepressants, Antipsychotics, Tamoxifen',
+    icon: '🧬',
+    color: '#a855f7',
+    overview: 'CYP2D6 is highly polymorphic — affects activation of prodrugs (codeine → morphine; tramadol → O-desmethyltramadol; tamoxifen → endoxifen) and metabolism of antidepressants, antipsychotics, beta-blockers. Phenotypes: ultrarapid (UM — Health Canada warning for codeine in children 2013); poor metabolizers (PM — therapeutic failure of codeine/tramadol). Variable substrate exposure.',
+    warnings: [
+      'CODEINE in CHILDREN (<18 years) — Health Canada 2013 + 2015: contraindicated in <12 years, post-tonsillectomy/adenoidectomy any age, breastfeeding (CYP2D6 UMs can produce toxic morphine levels — fatal pediatric case).',
+      'CODEINE / TRAMADOL — UMs convert to high morphine/tramadol active metabolite levels → respiratory depression risk, especially in children, post-op, breastfeeding mothers.',
+      'TAMOXIFEN activated by CYP2D6 to ENDOXIFEN — PMs have reduced endoxifen → possibly reduced efficacy in ER+ breast cancer. Avoid strong CYP2D6 inhibitors (paroxetine, fluoxetine, bupropion) in tamoxifen patients.',
+      'ANTIDEPRESSANTS (TCAs, paroxetine, fluoxetine, venlafaxine) — PM = high exposure → side effects; UM = subtherapeutic.',
+      'ANTIPSYCHOTICS (haloperidol, risperidone, aripiprazole) — PM = high exposure, EPS, prolactin elevation; UM = subtherapeutic.',
+      'METOPROLOL — PMs have ~5× higher exposure; usually well-tolerated; bradycardia in some.'
+    ],
+    columns: ['Phenotype', 'Frequency', 'Affected Drug', 'Recommendation'],
+    rows: [
+      ['Ultrarapid Metabolizer (UM) — duplicated *1 or *2 alleles', '~1–10% (higher in Ethiopian, Saudi Arabian ~30%)', 'CODEINE → morphine: high morphine; TRAMADOL → active: high active metabolite', 'AVOID CODEINE in UMs — respiratory depression risk especially children, post-op, breastfeeding (Health Canada). Use alternative analgesia (acetaminophen, NSAID, morphine direct, hydromorphone).'],
+      ['Normal Metabolizer (NM) — *1/*1, *1/*2', '~50–80%', 'Standard metabolism', 'Standard dosing.'],
+      ['Intermediate Metabolizer (IM)', '~10–20%', 'Reduced activation of prodrugs; reduced metabolism of substrates', 'CODEINE: reduced analgesia; consider alternative. TAMOXIFEN: reduced endoxifen — clinical impact debated.'],
+      ['Poor Metabolizer (PM) — *3/*3, *4/*4, *5/*5, *6/*6', '~5–10% (Caucasian); <2% (Asian)', 'CODEINE → no morphine activation: NO ANALGESIA. TRAMADOL: minimal active. TAMOXIFEN: reduced endoxifen. TCA/paroxetine/venlafaxine: high exposure', 'CODEINE: NO ANALGESIA — use alternative. TRAMADOL: limited efficacy. TCA: lower starting dose; monitor for toxicity. Consider alternative SSRI (sertraline, citalopram — minimal CYP2D6).'],
+      ['Codeine in CHILDREN (<18 years)', 'NA — universal precaution', 'Risk of fatal respiratory depression in UMs', 'CONTRAINDICATED <12 years. CONTRAINDICATED post-tonsillectomy/adenoidectomy any age <18. AVOID in breastfeeding mothers (case reports of neonatal death). Use morphine, hydromorphone, oxycodone, or non-opioid alternatives.'],
+      ['Tramadol in CHILDREN', 'NA — same precaution', 'Same UM risk', 'NOT recommended <12 years (Health Canada 2017); cautious >12 if no alternative.'],
+      ['Tamoxifen — CYP2D6 PM/IM', 'Patient-specific', 'Reduced active endoxifen; possibly reduced anti-tumor effect', 'Avoid STRONG CYP2D6 INHIBITORS during tamoxifen (paroxetine, fluoxetine, bupropion, duloxetine, quinidine, terbinafine). Use SSRI alternatives (citalopram, escitalopram, sertraline lower-affinity).'],
+      ['Paroxetine, Fluoxetine — STRONG CYP2D6 inhibitors', 'NA — drug-drug interaction', 'Inhibit CYP2D6 → phenoconversion to PM phenotype', 'AVOID with codeine, tramadol, tamoxifen, metoprolol.'],
+      ['TCAs (amitriptyline, nortriptyline, desipramine, doxepin)', 'CYP2D6 IM/PM dose adjustment', 'PM: higher exposure → toxicity', 'CPIC: PM start at 50% standard dose, titrate slowly. UM: may need higher dose or alternative.'],
+      ['Risperidone — CYP2D6 PM', 'Patient-specific', 'Higher risperidone + 9-OH-risperidone (active) levels', 'Some experts suggest lower starting dose; clinical impact debated; standard dosing usually acceptable with titration.'],
+      ['Atomoxetine — CYP2D6 PM', '~5–10%', 'Higher atomoxetine levels — possibly more side effects', 'CPIC: start lower dose; titrate slowly; monitor for tachycardia, weight loss.'],
+      ['Testing in Canada', 'Available at provincial labs', 'CYP2D6 genotyping ~$200–500', 'Increasing in psychiatry, oncology (tamoxifen), pain management, post-codeine adverse events.']
+    ],
+    source: 'CPIC Codeine/CYP2D6 (2021 update); Tramadol CPIC; Tamoxifen CPIC (2018); TCAs CPIC; Atomoxetine CPIC; Health Canada codeine pediatric safety reviews 2013/2015.',
+    related_drugs: ['codeine','tramadol','morphine','hydromorphone','tamoxifen','amitriptyline','nortriptyline','doxepin','paroxetine','fluoxetine','bupropion','duloxetine','venlafaxine','sertraline','citalopram','escitalopram','risperidone','haloperidol','aripiprazole','metoprolol','atomoxetine']
+  },
+  {
+    id: 'pgx_hla_b5701',
+    title: 'CPIC: HLA-B*57:01 — Abacavir Hypersensitivity',
+    icon: '🧬',
+    color: '#a855f7',
+    overview: 'HLA-B*57:01 strongly predicts abacavir hypersensitivity reaction (~50% of carriers experience HSR within 6 weeks of starting abacavir; 5% of non-carriers experience HSR but symptoms milder/different mechanism). HLA-B*57:01 testing BEFORE abacavir initiation has been STANDARD OF CARE since 2008 (PREDICT-1 trial) — testing essentially eliminates abacavir HSR. Routine in Canadian HIV clinics.',
+    warnings: [
+      'TEST HLA-B*57:01 BEFORE STARTING abacavir — universal pre-treatment test in Canadian HIV clinics.',
+      'HLA-B*57:01 POSITIVE → ABSOLUTE CONTRAINDICATION to abacavir (Health Canada label).',
+      'ABACAVIR HSR is potentially fatal — symptoms include fever, rash, GI, malaise, dyspnea; develops typically within 6 weeks of starting; resolves with discontinuation.',
+      'CROSS-REACTIVITY: NEVER rechallenge after HSR even if symptoms mild — fatal reactions on rechallenge.',
+      'TENOFOVIR-based regimens (TDF or TAF) are alternatives.',
+      'PREVALENCE: ~5–8% (European); ~2% (African); <1% (East Asian); ~10% (Middle Eastern)'
+    ],
+    columns: ['Allele Status', 'Frequency (Canadian context)', 'Clinical Implication', 'Recommendation'],
+    rows: [
+      ['HLA-B*57:01 NEGATIVE', '~92–95% of patients', 'Low risk of abacavir hypersensitivity (~5% — milder, different mechanism)', 'Abacavir is acceptable. Counsel on HSR symptoms; if any symptoms, hold abacavir and reassess.'],
+      ['HLA-B*57:01 POSITIVE', '~5–8% (European); ~2% (African); <1% (East Asian)', 'High risk (~50% will develop HSR if exposed) of fatal hypersensitivity reaction', 'ABACAVIR ABSOLUTELY CONTRAINDICATED. Use tenofovir-based regimen (TDF or TAF + emtricitabine).'],
+      ['HLA-B*57:01 untested', 'Pre-2008 era or rare oversight', 'Unknown risk', 'TEST FIRST — never start abacavir without HLA-B*57:01 testing.'],
+      ['Suspected HSR (without prior testing)', 'Emergency setting', 'Possible HSR — discontinue immediately', 'STOP abacavir immediately. NEVER rechallenge — fatal reactions reported on rechallenge. Test HLA-B*57:01 and document allergy.'],
+      ['Abacavir-containing regimens', 'NA', 'NA', 'Triumeq (abacavir + dolutegravir + lamivudine), Kivexa (abacavir + lamivudine), Trizivir (abacavir + lamivudine + zidovudine)'],
+      ['Alternative NRTI backbones (HLA-B*57:01+)', 'NA', 'NA', 'TDF/FTC (Truvada) or TAF/FTC (Descovy) — both excellent alternatives. TAF preferred in Canadian HIV care for renal/bone safety.']
+    ],
+    source: 'CPIC HLA-B*57:01 / Abacavir 2014; PREDICT-1 trial 2008 NEJM; AIDSinfo HIV guidelines; CTN/IAS Canadian HIV guidelines.',
+    related_drugs: ['tenofovir_alafenamide','emtricitabine','dolutegravir']
+  },
+  {
+    id: 'pgx_hla_b1502',
+    title: 'CPIC: HLA-B*15:02 — Carbamazepine SJS/TEN',
+    icon: '🧬',
+    color: '#a855f7',
+    overview: 'HLA-B*15:02 strongly predicts carbamazepine-induced Stevens-Johnson syndrome / toxic epidermal necrolysis (SJS/TEN) in patients of Han Chinese, Thai, Malaysian, and other Southeast Asian ancestry (~10–15% allele frequency). Health Canada and FDA recommend HLA-B*15:02 testing before carbamazepine initiation in patients of these ancestries. HLA-B*15:02 NEGATIVE in European/African ancestry — testing not routinely indicated. Cross-reactivity with related anticonvulsants (oxcarbazepine, phenytoin) lesser but documented.',
+    warnings: [
+      'TEST HLA-B*15:02 in patients of Han Chinese, Thai, Malaysian, Filipino, Vietnamese, Indian (Tamil) ancestry BEFORE initiating carbamazepine.',
+      'HLA-B*15:02 POSITIVE → AVOID carbamazepine (and oxcarbazepine — partial cross-reactivity; phenytoin — partial); Health Canada black box warning.',
+      'HLA-B*15:02 NEGATIVE — does NOT eliminate SJS/TEN risk entirely (other HLA alleles, idiopathic) — counsel on rash symptoms regardless.',
+      'TIMING of SJS/TEN: typically 2–8 weeks after starting carbamazepine.',
+      'ALLOPURINOL — separate HLA association: HLA-B*58:01 predicts allopurinol-induced SJS/TEN (Han Chinese, Thai, Korean, African).'
+    ],
+    columns: ['Allele Status', 'Population', 'Clinical Implication', 'Recommendation'],
+    rows: [
+      ['HLA-B*15:02 NEGATIVE', 'Most patients', 'Low SJS/TEN risk (~0.1% of carbamazepine starts)', 'Carbamazepine acceptable; counsel on rash symptoms (any rash → discontinue + medical review).'],
+      ['HLA-B*15:02 POSITIVE — Asian ancestry (10–15% allele frequency)', 'Han Chinese, Thai, Malaysian, Filipino, Vietnamese, southern Indian (Tamil)', 'Markedly increased SJS/TEN risk (~10% will develop if exposed)', 'AVOID carbamazepine. Alternative anticonvulsants: levetiracetam, lamotrigine (carry own SJS risk — slower titration), valproate, gabapentin, lacosamide.'],
+      ['HLA-B*15:02 testing in Canadian context', 'Patients of Asian ancestry — recommended pretreatment', 'Identifies high-risk patients', 'Provincial laboratory testing available. Document allele status; if positive — list as adverse drug reaction in chart.'],
+      ['HLA-B*15:02 untested in Asian-ancestry patient', 'Initial therapy decision', 'Unknown risk', 'TEST BEFORE STARTING carbamazepine in patients of Asian ancestry. If urgent therapy and testing not feasible, choose alternative anticonvulsant.'],
+      ['Cross-reactivity with related anticonvulsants', 'NA', 'NA', 'Oxcarbazepine, eslicarbazepine: shared structure with carbamazepine — caution in HLA-B*15:02 positive (some risk; not absolute contraindication). Phenytoin: cross-reactivity in some patients.'],
+      ['Already on carbamazepine without HSR for >3 months', 'Established therapy', 'Low risk if no rash to date — SJS/TEN almost always within 2–8 weeks', 'Continuation acceptable; testing not retrospectively useful for current carbamazepine.'],
+      ['HLA-B*58:01 — Allopurinol SJS/TEN', 'Han Chinese, Thai, Korean, African', 'Predicts allopurinol-induced SJS/TEN (~5–10%)', 'Test before allopurinol in patients of these ancestries (especially first-line for gout). Alternative: febuxostat (no allopurinol cross-reactivity).']
+    ],
+    source: 'CPIC HLA-B*15:02 / Carbamazepine 2018 update; Health Canada Carbamazepine safety review; FDA carbamazepine label.',
+    related_drugs: ['carbamazepine','oxcarbazepine','phenytoin','levetiracetam','lamotrigine','valproic_acid','gabapentin','lacosamide','allopurinol','febuxostat']
+  },
+  {
+    id: 'pgx_tpmt_nudt15',
+    title: 'CPIC: TPMT / NUDT15 — Azathioprine, 6-Mercaptopurine, Thioguanine',
+    icon: '🧬',
+    color: '#a855f7',
+    overview: 'TPMT (thiopurine methyltransferase) and NUDT15 (Nudix hydrolase 15) inactivate thiopurines (azathioprine, 6-MP, thioguanine). Patients with reduced/absent activity accumulate active metabolites → severe myelosuppression (life-threatening neutropenia, fatal). Universal pre-treatment testing recommended by CPIC + Health Canada; standard practice in Canadian rheumatology, gastroenterology, hematology, transplant. NUDT15 deficiency is more common in Asian ancestry and underrecognized historically.',
+    warnings: [
+      'TEST TPMT + NUDT15 BEFORE starting azathioprine, 6-MP, or thioguanine — STANDARD OF CARE.',
+      'TPMT POOR METABOLIZER (homozygous deficient ~0.3%) — STANDARD DOSE causes FATAL myelosuppression. AVOID thiopurines or use 10% standard dose with intensive monitoring.',
+      'NUDT15 POOR METABOLIZER — same severe myelotoxicity risk; MORE COMMON in Asian ancestry (~10% intermediate; ~1% poor) — historically missed because TPMT testing alone insufficient.',
+      'CBC monitoring weekly × 4 weeks then monthly is standard regardless of genotype — but genotype testing PREVENTS catastrophic events at initiation.',
+      'INTERMEDIATE METABOLIZERS (heterozygous) — start at 30–80% of standard dose; titrate.',
+      'COMBINED TPMT+NUDT15 deficiency — extreme caution; avoid thiopurines.'
+    ],
+    columns: ['Phenotype (TPMT or NUDT15)', 'Frequency', 'Clinical Implication', 'Dose Recommendation'],
+    rows: [
+      ['TPMT NORMAL + NUDT15 NORMAL', '~80–90% (varies by ethnicity)', 'Standard metabolism', 'Standard azathioprine dose (typically 2–3 mg/kg/day for IBD, autoimmune; 1–1.5 mg/kg for transplant). CBC monitoring per protocol.'],
+      ['TPMT INTERMEDIATE (heterozygous *2, *3A, *3B, *3C, *4)', '~10% (Caucasian, African); higher Caucasian', 'Reduced inactivation → moderate myelotoxicity risk', 'START 30–80% of standard dose (typically 1–1.5 mg/kg/day); titrate based on CBC and 6-TGN levels (target 235–450 pmol/8×10⁸ RBC).'],
+      ['TPMT POOR (homozygous deficient)', '~0.3% (1 in 300)', 'No inactivation — STANDARD DOSE = fatal myelosuppression', 'AVOID thiopurines if possible; if essential, START 10% of standard dose (e.g., 0.2–0.3 mg/kg/day); intensive CBC monitoring; consider alternative immunosuppression (methotrexate, biologic).'],
+      ['NUDT15 INTERMEDIATE (heterozygous *3, *6, etc.)', '~10–20% in Asian ancestry; ~5% Caucasian', 'Same reduced inactivation as TPMT IM', 'Start 30–80% of standard dose; titrate.'],
+      ['NUDT15 POOR (homozygous *3 or compound heterozygous)', '~1–3% Asian ancestry; <0.5% other', 'Severe myelotoxicity risk equivalent to TPMT poor', 'AVOID or 10% dose with intensive monitoring; alternative immunosuppression preferred.'],
+      ['Combined TPMT + NUDT15 IM', 'Patient-specific', 'Additive impairment of inactivation', 'Even greater dose reduction; consider alternative.'],
+      ['DPYD — separate enzyme for 5-FU/capecitabine', 'See dedicated DPYD card', '5-FU toxicity in DPYD-deficient', 'Test DPYD before fluoropyrimidine therapy (Cancer Care Ontario practice).'],
+      ['Allopurinol + thiopurine interaction', 'Pharmacokinetic (not genetic)', 'Allopurinol inhibits xanthine oxidase pathway → increased 6-TGN active metabolites → myelotoxicity', 'AVOID combination OR reduce thiopurine to 25–33% standard dose with intensive monitoring.'],
+      ['CBC monitoring (regardless of genotype)', 'NA', 'NA', 'Weekly × 4 weeks, then bi-weekly × 4 weeks, then monthly. Hold for ANC <1.5, platelets <100, or marked drop. LFTs also monitored.'],
+      ['6-TGN level monitoring (selected patients)', 'IBD treatment', 'Therapeutic range 235–450 pmol/8×10⁸ RBC; >450 toxicity; 6-MMP >5700 hepatotoxicity', 'Useful for patients not responding or experiencing toxicity; identifies thiopurine "shunters" (high MMP) — split-dose with allopurinol can shift to therapeutic 6-TGN.'],
+      ['Testing in Canada', 'Routine pre-treatment', 'Provincial labs offer TPMT activity (phenotype) and TPMT + NUDT15 genotype', 'Free or low-cost via hospital labs; standard of care in Canadian gastroenterology/rheumatology/oncology/transplant.']
+    ],
+    source: 'CPIC Thiopurines/TPMT/NUDT15 (2018 update); Crohn\'s and Colitis Canada; CRA rheumatology guidance; Health Canada azathioprine label.',
+    related_drugs: ['azathioprine','allopurinol','febuxostat']
+  },
+  {
+    id: 'pgx_dpyd',
+    title: 'CPIC: DPYD — 5-Fluorouracil & Capecitabine',
+    icon: '🧬',
+    color: '#a855f7',
+    overview: 'DPYD encodes dihydropyrimidine dehydrogenase (DPD) — the rate-limiting enzyme in 5-FU catabolism (~80% of dose). DPYD-deficient patients accumulate 5-FU → severe/fatal toxicity (mucositis, neutropenia, diarrhea, neurotoxicity). Cancer Care Ontario and major Canadian cancer centres now routinely test DPYD before fluoropyrimidine therapy. ~3–5% of population are intermediate metabolizers (require dose reduction); ~0.1–0.5% are poor metabolizers (avoid 5-FU).',
+    warnings: [
+      'TEST DPYD BEFORE STARTING 5-FU or capecitabine — Cancer Care Ontario standard since 2022; many international guidelines (UK NHS, EMA) made testing mandatory after fatal cases.',
+      'DPYD POOR METABOLIZERS — STANDARD DOSE FATAL. Start at 25–50% (or avoid).',
+      'DPYD INTERMEDIATE METABOLIZERS — start 50% standard dose, titrate based on tolerability.',
+      'EARLY-ONSET SEVERE TOXICITY (within first 1–2 cycles) — high suspicion for DPYD deficiency; check DPYD if not done; uridine triacetate antidote available for severe toxicity.',
+      'URIDINE TRIACETATE (Vistogard) — antidote for 5-FU/capecitabine overdose or early severe toxicity; Health Canada Special Access Program.',
+      'GENOTYPE TESTED VARIANTS in Canada: c.1905+1G>A (*2A), c.1679T>G (*13), c.2846A>T, c.1129-5923C>G (HapB3) — most clinically significant.'
+    ],
+    columns: ['DPYD Phenotype', 'Activity Score', 'Clinical Implication', 'Dose Recommendation'],
+    rows: [
+      ['DPYD NORMAL ACTIVITY (no variant alleles)', 'Activity score 2', 'Standard 5-FU metabolism', 'Standard 5-FU or capecitabine dose per regimen.'],
+      ['DPYD INTERMEDIATE — heterozygous c.1905+1G>A (*2A) or c.1679T>G (*13) or c.2846A>T', 'Activity score 1–1.5', 'Reduced clearance — moderate-high toxicity risk', 'START 50% standard dose; titrate UP based on tolerance and response. Continued monitoring of cytopenias, mucositis.'],
+      ['DPYD INTERMEDIATE — heterozygous c.1129-5923C>G (HapB3)', 'Activity score 1.5', 'Modest reduction in clearance', 'START 75% standard dose; titrate.'],
+      ['DPYD POOR — homozygous or compound heterozygous for *2A, *13, c.2846A>T', 'Activity score 0–0.5', 'Severe toxicity at standard dose — potentially fatal', 'AVOID 5-FU/capecitabine if alternative effective regimen exists. If essential: START 25–50% standard dose with intensive monitoring; some experts avoid entirely.'],
+      ['DPYD UNKNOWN (untested)', 'NA', 'Risk pre-treatment unknown', 'TEST DPYD BEFORE first dose. If treatment urgent and testing impossible: lower starting dose with vigilant monitoring; complete testing.'],
+      ['EARLY SEVERE TOXICITY (cycle 1 or 2)', 'High suspicion for DPYD deficiency', 'Severe mucositis, neutropenia, diarrhea after 1–2 cycles', 'STOP 5-FU. Test DPYD. URIDINE TRIACETATE (Vistogard) within 96 h of last 5-FU dose can be life-saving — Health Canada Special Access Program.'],
+      ['URIDINE TRIACETATE indications', 'Early severe toxicity OR overdose', 'Antidote — competes with FUTP for incorporation into RNA', 'Dose: 10 g PO q6h × 20 doses (5 days). Best within 96 h of last 5-FU dose; some efficacy beyond. Available via Health Canada SAP — emergency contact.'],
+      ['Capecitabine considerations', 'Same DPYD activity affects capecitabine (prodrug → 5-FU)', 'Toxicity profile similar', 'Same dose reduction rules; oral form simplifies dosing modification.'],
+      ['Testing in Ontario', 'Cancer Care Ontario funded DPYD testing in eligible cancer patients', 'Provincial lab testing — turnaround 1–2 weeks', 'Routine pre-treatment in colorectal, breast, head and neck cancer fluoropyrimidine candidates.'],
+      ['Hand-foot syndrome severity correlation', 'DPYD IM/PM — increased risk', 'Earlier and more severe palmar-plantar erythrodysesthesia', 'Counseling on hand/foot care; supportive measures; dose reduction guided by severity.']
+    ],
+    source: 'CPIC DPYD/5-FU 2017 (2024 update); Cancer Care Ontario DPYD testing guidance; EMA/UK NHS DPYD recommendations; Health Canada uridine triacetate Special Access.',
+    related_drugs: ['fluorouracil','capecitabine']
+  },
+  {
+    id: 'pgx_ugt1a1',
+    title: 'CPIC: UGT1A1 — Irinotecan & Atazanavir',
+    icon: '🧬',
+    color: '#a855f7',
+    overview: 'UGT1A1 (glucuronosyltransferase 1A1) inactivates the active irinotecan metabolite SN-38. UGT1A1*28 (TA7/TA7 — Gilbert syndrome variant) reduces enzyme activity → SN-38 accumulation → severe diarrhea, neutropenia from irinotecan. Also affects bilirubin glucuronidation (Gilbert/Crigler-Najjar) and atazanavir-induced hyperbilirubinemia. *28/*28 homozygous frequency ~10% (Caucasian/African); ~3–5% (East Asian).',
+    warnings: [
+      'IRINOTECAN — UGT1A1*28/*28 patients have ~50% increased severe neutropenia and severe diarrhea risk. Reduce starting dose.',
+      'GILBERT SYNDROME (mild unconjugated hyperbilirubinemia) is caused by UGT1A1*28 — typically benign but predicts irinotecan toxicity.',
+      'ATAZANAVIR — UGT1A1 inhibitor + UGT1A1*28 carriers → unconjugated hyperbilirubinemia (jaundice) — typically cosmetic, not hepatotoxic; rarely requires drug discontinuation.',
+      'ASIAN POPULATIONS — UGT1A1*6 (G71R) is the most clinically significant variant (vs *28 in European); test for both.',
+      'CHEMOTHERAPY DOSE adjustments: FOLFIRINOX, FOLFIRI, oxaliplatin-based regimens — reduce irinotecan in *28/*28 (or compound heterozygous with *6).'
+    ],
+    columns: ['UGT1A1 Phenotype', 'Frequency', 'Clinical Implication', 'Recommendation'],
+    rows: [
+      ['UGT1A1 NORMAL (*1/*1)', '~50% Caucasian; lower Asian (carrier *6)', 'Standard SN-38 inactivation', 'Standard irinotecan dose per regimen (FOLFIRINOX, FOLFIRI, irinotecan single-agent).'],
+      ['UGT1A1 INTERMEDIATE (*1/*28 — heterozygous Gilbert variant)', '~40% Caucasian; ~30% African; ~20% East Asian', 'Mildly reduced inactivation', 'Standard dose acceptable for most; titrate based on tolerability. Monitor for early diarrhea, neutropenia.'],
+      ['UGT1A1 POOR (*28/*28 — homozygous Gilbert; or *6/*6; or *28/*6 compound heterozygous)', '~10% Caucasian/African; ~3–5% East Asian', 'Severely reduced inactivation — high SN-38; severe neutropenia and diarrhea risk', 'REDUCE irinotecan starting dose by 1 dose level (~70% standard); monitor closely; titrate up if tolerated. Consider G-CSF prophylaxis. Aggressive antidiarrheal management.'],
+      ['UGT1A1*6 (G71R) — Asian populations', '~15% allele frequency in East Asian', 'Equivalent reduction to *28 in functional impact', 'Test both *28 and *6 in patients of Asian ancestry. Treat *6/*6 same as *28/*28.'],
+      ['Atazanavir hyperbilirubinemia', 'UGT1A1*28 carriers + atazanavir', 'Unconjugated hyperbilirubinemia (jaundice, scleral icterus) — benign', 'Counsel patient (cosmetic only); rarely requires switching; alternative HIV regimens available.'],
+      ['Crigler-Najjar syndrome (rare severe UGT1A1 deficiency)', 'Homozygous severe loss-of-function', 'Severe unconjugated hyperbilirubinemia from birth — kernicterus risk in type 1', 'NICU management for type 1; phototherapy; phenobarbital may help type 2; liver transplant for type 1.'],
+      ['Indocyanine green test', 'Functional UGT1A1 assessment', 'Assesses glucuronidation', 'Used in some research/specialized settings; genotyping more practical clinically.'],
+      ['Testing context', 'Most clinically actionable: pre-irinotecan in metastatic colorectal cancer + pancreatic cancer (FOLFIRINOX)', 'Cancer Care Ontario testing emerging', 'Less universal than DPYD currently; consider if patient has Gilbert syndrome or family history of severe chemo toxicity.']
+    ],
+    source: 'CPIC UGT1A1/Irinotecan; FDA irinotecan label; CPIC Atazanavir/UGT1A1.',
+    related_drugs: ['atazanavir']
+  },
+  {
+    id: 'pgx_warfarin',
+    title: 'CPIC: CYP2C9 + VKORC1 — Warfarin',
+    icon: '🧬',
+    color: '#a855f7',
+    overview: 'Warfarin dose response is influenced by CYP2C9 (metabolizes S-warfarin) and VKORC1 (vitamin K epoxide reductase target). Genotype-guided dosing algorithms (warfarindosing.org, IWPC) reduce time to therapeutic INR vs clinical-only dosing — though clinical impact on bleeding/thrombosis is debated (COAG, EU-PACT, GIFT trials). DOACs have largely replaced warfarin for most non-valvular indications; pharmacogenomic-guided warfarin remains relevant for mechanical valve, severe rheumatic mitral stenosis, APS.',
+    warnings: [
+      'CYP2C9 *2 and *3 — reduced metabolism of warfarin; lower dose required.',
+      'VKORC1 -1639G>A — reduced VKORC1 expression; lower warfarin dose required (mainly Asian populations).',
+      'COMBINED CYP2C9 + VKORC1 GENOTYPING explains ~40–50% of warfarin dose variability.',
+      'AGE, weight, vitamin K intake, drug interactions, CHF, hepatic disease, INR target also affect dosing.',
+      'NORMAL warfarin dose ~5 mg/day adult; genotype-poor metabolizers may need 1–2 mg/day.',
+      'Health Canada warfarin label includes pharmacogenomic information; testing not routinely funded but available.',
+      'CHEST/ACCP guidelines: consider genotype-guided dosing if available; clinical algorithms acceptable alternative.'
+    ],
+    columns: ['Genotype Combination', 'Expected Sensitivity', 'Initial Dose Adjustment', 'Notes'],
+    rows: [
+      ['CYP2C9 *1/*1 + VKORC1 G/G', 'Normal sensitivity', 'Standard dose (5 mg/day or per nomogram)', '~30% of population. Standard warfarin algorithm.'],
+      ['CYP2C9 *1/*1 + VKORC1 G/A', 'Mildly increased sensitivity', '~75% standard dose (3.5–4 mg/day)', '~30–40% of population.'],
+      ['CYP2C9 *1/*1 + VKORC1 A/A', 'Moderately increased sensitivity', '~50% standard dose (2.5–3 mg/day)', '~10% of population (much higher in Asian — ~80%).'],
+      ['CYP2C9 *1/*2 or *1/*3 (heterozygous variant) + VKORC1 G/G', 'Mildly increased sensitivity', '~75% standard dose', '~10–20% of population.'],
+      ['CYP2C9 *1/*2 or *1/*3 + VKORC1 G/A or A/A', 'Moderately to highly sensitive', '~50–60% standard dose', 'Combined effect.'],
+      ['CYP2C9 *2/*2, *2/*3, *3/*3 (homozygous variant)', 'Highly sensitive', '~25–50% standard dose', '~1–5% of population.'],
+      ['CYP2C9 *2/*2, *2/*3, *3/*3 + VKORC1 A/A', 'EXTREMELY sensitive', '~25% standard dose (1–2 mg/day)', 'Very small population subset; high bleeding risk if started at standard dose.'],
+      ['CYP2C9 *5, *6, *8, *11 — additional variants', 'Recent CPIC update', 'African ancestry variants — clinical impact emerging', '*5/*8 increase warfarin sensitivity in African populations historically underrecognized.'],
+      ['Online dosing tools', 'warfarindosing.org (validated genotype-guided algorithms)', 'NA', 'Provides initial dose recommendation; refine based on INR.'],
+      ['Clinical alternatives to genotype-guided', 'IWPC (clinical-only) or Gage algorithm', 'NA', 'Acceptable when genotype not available; individualize based on INR response.'],
+      ['DOAC alternative', 'For most non-valvular indications', 'NA', 'Apixaban/rivaroxaban have replaced warfarin for AFib, VTE in most patients — pharmacogenomic complexity is a relative argument for DOAC adoption.'],
+      ['Indications requiring warfarin (DOAC inferior)', 'Mechanical heart valve, severe rheumatic mitral stenosis, APS triple-positive, end-stage CKD/dialysis', 'NA', 'Genotype-guided dosing remains relevant in these populations.']
+    ],
+    source: 'CPIC Warfarin/CYP2C9/VKORC1 2017; CHEST 2018; warfarindosing.org; Thrombosis Canada.',
+    related_drugs: ['warfarin']
+  }
+
+
 ];
 
 
@@ -175556,6 +177259,10 @@ function buildReference() {
   var potencyIds = ['ics_potency','topical_steroid_potency'];
   var doseIds = ['doac_dose','insulin_types'];
   var diIds = ['di_qt','di_hyponatremia','di_hyperkalemia','di_aki','di_hepatotoxicity','di_photosensitivity','di_pancreatitis','di_falls','di_delirium','di_depression'];
+  var toxIds = ['tox_acetaminophen','tox_antidote_table','tox_anaphylaxis','tox_status_epilepticus','tox_hyperkalemia','tox_hypoglycemia','tox_dka_hhs','tox_asthma_copd','tox_sepsis_bundle'];
+  var acIds = ['ac_bridging','ac_doac_reversal','ac_warfarin_reversal','ac_switching','ac_vte','ac_afib'];
+  var pedIds = ['ped_weight_dosing','ped_antibiotic_suspensions','ped_antipyretics','ped_vital_signs','ped_sick_day_rules'];
+  var pgxIds = ['pgx_cyp2c19','pgx_cyp2d6','pgx_hla_b5701','pgx_hla_b1502','pgx_tpmt_nudt15','pgx_dpyd','pgx_ugt1a1','pgx_warfarin'];
 
   function refTableById(id) {
     for (var i = 0; i < REFERENCE_TABLES.length; i++) if (REFERENCE_TABLES[i].id === id) return REFERENCE_TABLES[i];
@@ -175565,12 +177272,20 @@ function buildReference() {
   var categories = [
     { key: 'deprescribing', icon: '👴', label: 'Deprescribing Protocols', color: '#fb923c',
       items: DEPRESCRIBING_PROTOCOLS.map(function(p){ return { type:'protocol', id:p.id, name:p.title, icon:p.icon, color:p.color }; }) },
+    { key: 'tox', icon: '🚑', label: 'Toxicology & Acute Management', color: '#dc2626',
+      items: toxIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) },
+    { key: 'anticoag', icon: '🩸', label: 'Anticoagulation Management', color: '#dc2626',
+      items: acIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) },
     { key: 'equivalence', icon: '🔢', label: 'Equivalence References', color: '#06b6d4',
       items: equivIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) },
     { key: 'potency', icon: '💊', label: 'Potency / Classification References', color: '#84cc16',
       items: potencyIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) },
     { key: 'dose', icon: '📏', label: 'Dose Adjustment References', color: '#a855f7',
       items: doseIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) },
+    { key: 'pediatric', icon: '👶', label: 'Pediatric Dosing', color: '#3b82f6',
+      items: pedIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) },
+    { key: 'pgx', icon: '🧬', label: 'Pharmacogenomics (CPIC)', color: '#a855f7',
+      items: pgxIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) },
     { key: 'drug_induced', icon: '🔍', label: 'Drug-Induced Conditions', color: '#ef4444',
       items: diIds.map(function(id){ var t = refTableById(id); return t ? { type:'table', id:t.id, name:t.title, icon:t.icon, color:t.color } : null; }).filter(Boolean) }
   ];
