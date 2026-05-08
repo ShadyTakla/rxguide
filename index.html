@@ -4364,6 +4364,117 @@ var DISEASES = {
         ],
         "introduction": "Acute rheumatic fever is an autoimmune sequela of group A streptococcal pharyngitis affecting heart, joints, brain, and skin. The 2015 Jones Criteria revision incorporates echocardiographic evidence of subclinical carditis and stratifies criteria by population risk. Treatment focuses on streptococcal eradication, anti-inflammatory therapy (aspirin or steroids for severe carditis), and lifelong secondary prophylaxis with benzathine penicillin G to prevent recurrence and cumulative valvular damage (rheumatic heart disease). RHD remains a major preventable cause of cardiovascular morbidity in low/middle-income countries and Indigenous Canadian populations.",
         "source": "Revised Jones Criteria 2015 (Gewitz Circulation 2015). WHO Rheumatic Fever and Rheumatic Heart Disease Position 2018. AHA/AAP Statement Acute Rheumatic Fever 2009/2015. AMMI Canada / Bugs & Drugs 2024. PHAC Indigenous Health programs. Australian RHD Guideline 2020."
+      },
+      {
+        "id": "brugada_syndrome",
+        "name": "Brugada Syndrome",
+        "subtitle": "Inherited arrhythmia syndrome — coved ST elevation V1-V3 — HRS/EHRA/APHRS 2013",
+        "patho": "Inherited cardiac ion channelopathy → SUDDEN CARDIAC DEATH (SCD) in structurally normal hearts. Mutations in SCN5A (cardiac sodium channel — most common 20-30%) + 25 other genes (CACNA1C, GPD1L, SCN1B, KCNE3 etc.). AUTOSOMAL DOMINANT with incomplete penetrance. ECG hallmark: TYPE 1 BRUGADA PATTERN — coved ST-segment elevation ≥2 mm in ≥1 right precordial lead (V1-V2; sometimes V3) followed by negative T-wave; type 2 (saddle-back) and type 3 are non-diagnostic without provocation. Asian + male predominance (M:F ~9:1; possibly testosterone-related); SCD often during sleep + at low heart rates (vagal predominance). DRUG-INDUCED Brugada pattern — many drugs unmask the phenotype (sodium channel blockers, antiarrhythmics, antidepressants, anesthetics, alcohol, cannabis — see brugadadrugs.org). FEVER UNMASKS Brugada (sodium channel kinetics) — antipyretics + admit if febrile + Type 1 ECG. SCD risk highest with PREVIOUS CARDIAC ARREST + SYNCOPE + spontaneous Type 1 ECG.",
+        "signs": "ASYMPTOMATIC (most common — incidental ECG finding). SYMPTOMATIC: SYNCOPE (often nocturnal; arrhythmic), nocturnal agonal respirations / seizure-like activity, sudden cardiac arrest (SCD often FIRST manifestation), palpitations. Family history premature SCD (especially <45 years, nocturnal, Asian descent) — high-risk feature. FEVER-PROVOKED arrhythmias common. DRUG-INDUCED arrhythmias.",
+        "diagnosis": "ECG — TYPE 1 BRUGADA PATTERN (coved ≥2 mm + negative T) in V1-V2 in >1 lead; SPONTANEOUS = high diagnostic value; if Type 2 or 3 → consider SODIUM-CHANNEL BLOCKER PROVOCATION (ajmaline 1 mg/kg IV, flecainide 2 mg/kg IV, procainamide 10 mg/kg IV — performed in monitored EP setting); 'high lead' ECG (V1-V2 in 2nd or 3rd intercostal space) more sensitive. SHANGHAI SCORE 2017 (Antzelevitch HeartRhythm 2017) — diagnostic + risk stratification combining ECG + clinical + family + genetic. GENETIC TESTING — SCN5A panel + 25-gene panel (incomplete — only ~30% identified gene); cascade screening relatives. EPS — INDUCIBILITY of polymorphic VT/VF — controversial prognostic value (PRELUDE/FINGER registries — limited additive). HOLTER, EVENT MONITOR, LOOP RECORDER if syncope. EXCLUDE STRUCTURAL DISEASE — echo, MRI cardiac, exclude arrhythmogenic cardiomyopathy (especially right ventricular), CAD, electrolyte abnormalities. EXCLUDE drug-induced (review meds, alcohol, recreational substances).",
+        "monitoring": "Symptoms (syncope), serial ECG, periodic Holter / event monitor, family screening cascade, ICD therapy logs (if implanted), drug + fever counseling adherence.",
+        "treatment": [
+          {
+            "line": "Foundation — lifestyle + trigger avoidance (ALL)",
+            "type": "Risk reduction",
+            "family": "—",
+            "agents": [
+              "AVOID FEVER PRECIPITANTS — aggressive antipyretics (acetaminophen) at any temperature elevation; admit if Type 1 ECG develops with fever for monitoring",
+              "AVOID DRUGS that unmask/trigger Brugada — extensive list at brugadadrugs.org including: sodium channel blockers (Class IA + IC antiarrhythmics — flecainide, propafenone, ajmaline used as DIAGNOSTIC), TCAs, lithium, propofol (some), local anesthetics in high doses, antimalarials (chloroquine, hydroxychloroquine — caution), alcohol BINGE, cocaine, cannabis, electrolyte abnormalities (especially hypokalemia)",
+              "ELECTROLYTE optimization — K+ + Mg2+ normal range",
+              "MEDIC ALERT bracelet",
+              "EMERGENCY PLAN + family CPR training",
+              "AVOID excessive alcohol + cocaine + cannabis"
+            ],
+            "notes": "Trigger avoidance fundamental — many SCDs preventable.",
+            "guideline": "HRS/EHRA/APHRS Expert Consensus 2013 (Priori HeartRhythm 2013); brugadadrugs.org"
+          },
+          {
+            "line": "Risk-stratified ICD",
+            "type": "Implantable defibrillator",
+            "family": "Device",
+            "agents": [
+              "ICD INDICATED: SURVIVED CARDIAC ARREST (Class I — secondary prevention); SUSTAINED VT (Class I); SYNCOPE PRESUMED ARRHYTHMIC + SPONTANEOUS Type 1 ECG (Class IIa); REASONABLE CONSIDERATION — selected cases per Shanghai Score (Class IIb)",
+              "NOT ROUTINELY INDICATED — asymptomatic with only drug-induced Type 1 ECG (low risk)",
+              "SUBCUTANEOUS ICD (S-ICD) — increasingly used (no transvenous lead; prone), provided pre-implant screening shows acceptable ECG vector for sensing (T-wave oversensing common in Brugada — tested with adjusted vector)",
+              "Programming: high rate cutoff (>220 bpm), single zone often sufficient; long detection windows reduce inappropriate shocks"
+            ],
+            "notes": "ICD is mainstay for high-risk; S-ICD increasingly preferred.",
+            "guideline": "HRS/EHRA/APHRS 2013; ESC Ventricular Arrhythmias 2022 (Zeppenfeld EHJ 2022)"
+          },
+          {
+            "line": "Pharmacotherapy — selected",
+            "type": "Quinidine",
+            "family": "Class IA antiarrhythmic",
+            "agents": [
+              "QUINIDINE 600-1500 mg/day (titrate to QTc <500 ms; specialty pharmacy in Canada — Health Canada limited availability) — for refractory + electrical storm + frequent ICD shocks; mechanism Ito blockade restores epicardial action potential",
+              "ISOPROTERENOL infusion 1-3 mcg/min — acute electrical storm in Brugada (paradoxical — increases HR, opposite of most arrhythmia management)",
+              "Avoid β-blockers, NDH-CCB, amiodarone (worsens)",
+              "Avoid Class I antiarrhythmics other than quinidine"
+            ],
+            "notes": "Quinidine — limited availability; useful for ICD shock reduction.",
+            "guideline": "HRS 2013; ESC 2022"
+          },
+          {
+            "line": "EP catheter ablation",
+            "type": "Substrate-based RF ablation",
+            "family": "—",
+            "agents": [
+              "EPICARDIAL CATHETER ABLATION of RVOT epicardial substrate — emerging therapy for refractory Brugada with frequent ICD shocks / electrical storm; Pappone trials demonstrated ECG normalization + reduced VF episodes",
+              "Requires experienced operator (epicardial access via subxiphoid pericardial puncture)",
+              "Specialty centers — University of Toronto, Montreal Heart, Hamilton, etc."
+            ],
+            "notes": "Emerging therapy for refractory cases.",
+            "guideline": "Pappone JACC 2017; ESC 2022"
+          },
+          {
+            "line": "Family screening + genetic counselling",
+            "type": "Cascade",
+            "family": "—",
+            "agents": [
+              "FIRST-DEGREE RELATIVES — ECG + cardiac history; sodium channel blocker provocation if Type 2/3 ECG",
+              "GENETIC TESTING — proband mutation cascade (~30% identifiable; absence of mutation does not exclude diagnosis if proband-positive)",
+              "GENETIC COUNSELLING — autosomal dominant pattern, incomplete penetrance, variable expressivity",
+              "Family education + emergency response planning + AED at home"
+            ],
+            "notes": "Cascade essential — undiagnosed family members at risk for SCD.",
+            "guideline": "HRS 2013; AHA Genetic Testing 2020"
+          },
+          {
+            "line": "Special situations",
+            "type": "Targeted",
+            "family": "—",
+            "agents": [
+              "FEVER + Type 1 ECG — admit for monitoring; aggressive antipyretics; some ICD-indicated patients receive temporary monitoring during illness",
+              "ANESTHESIA — avoid bupivacaine epidural high doses, propofol high doses, succinylcholine (less concern); inform anesthesia team; cardiology pre-op if high-risk",
+              "PREGNANCY — usually uneventful; avoid drugs (see list); fever management aggressive; cardiology + obstetrics co-management",
+              "ATHLETES — Type 1 ECG → restrict competitive athletics per AHA Bethesda Conference + ESC; recreational physical activity OK"
+            ],
+            "notes": "Specific situational guidance.",
+            "guideline": "HRS 2013; AHA Bethesda; ESC Sports Cardiology"
+          }
+        ],
+        "pearls": [
+          "INHERITED CHANNELOPATHY — SCN5A (~30%); structurally normal heart; SCD risk",
+          "TYPE 1 ECG: COVED ST elevation ≥2 mm V1-V2 + negative T",
+          "TYPE 2/3 — non-diagnostic; provocate with AJMALINE / FLECAINIDE / PROCAINAMIDE",
+          "MALE 9:1; ASIAN predominance",
+          "SCD often DURING SLEEP at low HR (vagal predominance)",
+          "FEVER UNMASKS — aggressive antipyretics; admit if Type 1 with fever",
+          "BRUGADADRUGS.ORG — extensive avoidance list (Na channel blockers, TCAs, alcohol, cocaine, cannabis)",
+          "ICD INDICATED — survived arrest, sustained VT, syncope + spontaneous Type 1",
+          "ASYMPTOMATIC + DRUG-INDUCED Type 1 = LOW RISK; usually no ICD",
+          "S-ICD — increasingly preferred (Brugada vector screening pre-implant)",
+          "QUINIDINE — refractory + electrical storm; specialty pharmacy Canada",
+          "ISOPROTERENOL — acute electrical storm (paradoxical β-agonism)",
+          "EPICARDIAL CATHETER ABLATION — emerging refractory therapy",
+          "FAMILY CASCADE — ECG + provocation; genetic testing if proband mutation",
+          "ATHLETES — competitive restriction Type 1 ECG",
+          "PREGNANCY — usually uneventful; drug avoidance critical",
+          "SHANGHAI SCORE 2017 — diagnostic + risk stratification"
+        ],
+        "introduction": "Brugada syndrome is an inherited cardiac channelopathy (most commonly SCN5A mutation) producing characteristic coved ST-segment elevation in right precordial leads and predisposing to ventricular fibrillation in structurally normal hearts. Sudden cardiac death often occurs during sleep, at low heart rates, with fever, or after triggering drugs. Diagnosis requires Type 1 ECG (spontaneous or after sodium channel blocker provocation). ICD therapy is indicated for survivors of cardiac arrest, sustained VT, or syncope with spontaneous Type 1 ECG. Quinidine and emerging epicardial catheter ablation are options for refractory disease. Aggressive trigger avoidance (fever, drugs per brugadadrugs.org, electrolyte derangements) and family cascade screening with genetic counselling are essential.",
+        "source": "HRS/EHRA/APHRS Expert Consensus on Inherited Primary Arrhythmia Syndromes 2013 (Priori HeartRhythm 2013). Shanghai Score 2017 (Antzelevitch HeartRhythm 2017). ESC Ventricular Arrhythmias and SCD 2022 (Zeppenfeld EHJ 2022). brugadadrugs.org. Pappone Epicardial Ablation JACC 2017."
       }
     ]
   },
@@ -7162,6 +7273,215 @@ var DISEASES = {
         ],
         "introduction": "Primary aldosteronism is the most common form of secondary hypertension and frequently underdiagnosed. Aldosterone-mediated cardiovascular and renal damage is disproportionately higher than equivalent essential hypertension. Screening with the aldosterone-renin ratio in resistant hypertension, hypokalemia, or other suggestive features is followed by confirmation testing and subtyping (adrenal CT plus adrenal vein sampling for unilateral vs bilateral disease). Unilateral disease is treated with laparoscopic adrenalectomy, while bilateral hyperplasia or surgical contraindication is treated with mineralocorticoid receptor antagonists (spironolactone first-line; eplerenone if AE intolerable).",
         "source": "Endocrine Society Clinical Practice Guideline for Primary Aldosteronism 2016 (Funder JCEM 2016). Hypertension Canada 2024. AMBER Trial Williams Lancet 2015. PATHWAY-2 Williams Lancet 2015."
+      },
+      {
+        "id": "subacute_thyroiditis",
+        "name": "Subacute Thyroiditis (de Quervain)",
+        "subtitle": "Painful post-viral thyroid inflammation — ATA Position / ETA 2018",
+        "patho": "GRANULOMATOUS thyroid inflammation following viral upper respiratory infection (Coxsackie, mumps, adenovirus, EBV, COVID-19, influenza). HLA-B35 strongly associated. Female:male ~4:1; peak 30-50 years. Self-limiting; classic TRIPHASIC pattern: (1) HYPERTHYROID phase (1-3 months — destructive release of preformed hormone, low radioactive iodine uptake (RAIU) — distinguishes from Graves'); (2) HYPOTHYROID phase (3-6 months — depleted hormone stores; recovery period); (3) EUTHYROID recovery (6-12 months; ~5-10% persistent hypothyroidism requiring lifelong levothyroxine). Pathology — multinucleated giant cells, granulomas, follicular destruction. May recur in 1-4% of patients.",
+        "signs": "PAINFUL goitre — anterior neck pain often radiating to ear, jaw, occiput, throat (key feature distinguishing from other thyroiditis); often initially unilateral then bilateral. TENDER thyroid on exam, may be FIRM/HARD. SYSTEMIC — fever, malaise, fatigue, myalgia, sore throat (post-viral context). HYPERTHYROID phase symptoms — palpitations, tremor, weight loss, heat intolerance, anxiety, diarrhea (distinct from chronic Graves' — milder, transient). HYPOTHYROID phase — fatigue, cold intolerance, depression. EUTHYROID recovery.",
+        "diagnosis": "CLINICAL — painful goitre + recent viral illness + thyrotoxicosis. LABS: TSH (suppressed initially → elevated → normal); free T4 + free T3 (elevated initially); ESR + CRP HIGH (often >50 mm/h ESR; characteristic; distinguishes from Graves'); CBC (mild leukocytosis); TSH receptor antibodies (TRAb) NEGATIVE (vs Graves'); anti-TPO + anti-Tg often negative or low (vs Hashimoto's). RADIOACTIVE IODINE UPTAKE (RAIU) — suppressed/LOW (<5%) — DISTINGUISHES from Graves' (high uptake) — performed in unclear cases or atypical course. THYROID ULTRASOUND — hypoechoic patchy areas, decreased vascularity (vs Graves' hypervascular). FNA — rarely needed (granulomatous inflammation, multinucleated giant cells, foamy macrophages — distinctive cytology).",
+        "monitoring": "TSH + free T4 q4-6 weeks during phases; ESR/CRP (treatment response); pain assessment; HR/BP; symptoms across phases.",
+        "treatment": [
+          {
+            "line": "Mild — NSAIDs",
+            "type": "First-line analgesic",
+            "family": "NSAID",
+            "agents": [
+              "IBUPROFEN 400-800 mg PO TID-QID OR NAPROXEN 500 mg PO BID OR ASA 650 mg PO QID — for pain + inflammation",
+              "Continue 1-2 weeks based on response; taper as ESR + symptoms improve",
+              "Add PPI for GI prophylaxis if prolonged use or risk factors"
+            ],
+            "notes": "Most patients respond to NSAIDs.",
+            "guideline": "ATA Position; ETA 2018 (Pearce ETJ 2018)"
+          },
+          {
+            "line": "Moderate-severe — glucocorticoids",
+            "type": "Anti-inflammatory",
+            "family": "Steroid",
+            "agents": [
+              "PREDNISONE 40 mg PO daily × 1-2 weeks → taper by 5-10 mg/week over 2-8 weeks (typical course 4-8 weeks total); rapid pain relief within 24-48 hours (diagnostic-therapeutic)",
+              "Use if NSAIDs fail or severe symptoms (incapacitating pain, marked thyrotoxicosis)",
+              "RECURRENCE during taper — common; restart higher dose then slower taper"
+            ],
+            "notes": "Steroids highly effective; reserved for moderate-severe.",
+            "guideline": "ATA; ETA 2018"
+          },
+          {
+            "line": "Hyperthyroid phase symptom control",
+            "type": "β-blocker",
+            "family": "—",
+            "agents": [
+              "PROPRANOLOL 10-40 mg PO TID-QID (preferred; non-cardio-selective + reduces T4→T3 conversion at high doses); OR ATENOLOL 25-100 mg PO daily; OR METOPROLOL",
+              "Used during hyperthyroid phase only; discontinue as symptoms resolve / TSH normalizes",
+              "ANTI-THYROID DRUGS (methimazole, PTU) NOT INDICATED — destructive thyroiditis releases preformed hormone, not de novo synthesis"
+            ],
+            "notes": "β-blocker for symptomatic relief only; do not use anti-thyroid drugs.",
+            "guideline": "ATA; ETA 2018"
+          },
+          {
+            "line": "Hypothyroid phase",
+            "type": "Selective levothyroxine",
+            "family": "—",
+            "agents": [
+              "MOST patients — observation; spontaneous recovery within months",
+              "TRANSIENT LEVOTHYROXINE 25-50 mcg PO daily IF symptomatic hypothyroidism (fatigue, cold intolerance, weight gain, depression); titrate to TSH normalization",
+              "Re-evaluate at 6-12 months — taper off if recovered (TSH normal off therapy)",
+              "PERMANENT HYPOTHYROIDISM in 5-10% (need lifelong levothyroxine)"
+            ],
+            "notes": "Levothyroxine often unnecessary; reserve for symptomatic hypothyroid phase or persistent.",
+            "guideline": "ATA; ETA 2018"
+          },
+          {
+            "line": "Recurrent / refractory",
+            "type": "Specialty referral",
+            "family": "—",
+            "agents": [
+              "RECURRENCE — 1-4%; may be more aggressive; consider longer steroid taper, immunomodulators rarely",
+              "Surgical thyroidectomy — almost never needed; reserved for very rare aggressive recurrence with malignancy concern",
+              "Endocrinology referral if atypical course or refractory"
+            ],
+            "notes": "Recurrence uncommon; specialty input.",
+            "guideline": "ATA; ETA 2018"
+          }
+        ],
+        "pearls": [
+          "PAINFUL GOITRE post-viral — KEY distinguishing feature",
+          "ESR + CRP HIGH (often >50) — characteristic",
+          "RAIU LOW (<5%) — distinguishes from Graves' (high uptake)",
+          "TRIPHASIC: HYPERTHYROID (1-3 mo) → HYPOTHYROID (3-6 mo) → EUTHYROID (6-12 mo)",
+          "5-10% PERSISTENT HYPOTHYROIDISM (lifelong levothyroxine)",
+          "NSAIDs FIRST-LINE (most patients respond)",
+          "PREDNISONE 40 mg → taper 4-8 wks if NSAIDs fail or severe — DRAMATIC pain relief 24-48h (diagnostic-therapeutic)",
+          "β-BLOCKER for hyperthyroid phase symptoms (propranolol preferred)",
+          "ANTI-THYROID DRUGS (methimazole, PTU) NOT indicated — destructive process, not de novo synthesis",
+          "LEVOTHYROXINE — selective; symptomatic hypothyroid phase only",
+          "TRAb NEGATIVE (vs Graves'); anti-TPO often negative (vs Hashimoto's)",
+          "MULTINUCLEATED GIANT CELLS + GRANULOMAS on FNA — rarely needed",
+          "HLA-B35 association",
+          "RECURRENCE 1-4% — restart steroid",
+          "POST-COVID SUBACUTE THYROIDITIS — increasingly reported",
+          "FEMALE 4:1; peak 30-50 years"
+        ],
+        "introduction": "Subacute (de Quervain) thyroiditis is a painful granulomatous thyroid inflammation typically following viral upper respiratory infection. The classic triphasic course (hyperthyroid → hypothyroid → euthyroid) reflects destructive hormone release followed by recovery. Diagnosis combines painful goitre, elevated inflammatory markers (ESR/CRP), and low radioactive iodine uptake (distinguishing from Graves' disease). Treatment is symptomatic with NSAIDs first-line and prednisone for moderate-severe cases (dramatic response within 24-48 hours — diagnostic-therapeutic). β-blockers manage hyperthyroid phase symptoms; anti-thyroid drugs are NOT indicated (destructive, not synthetic process). Levothyroxine is reserved for symptomatic hypothyroid phase or persistent hypothyroidism (5-10% lifelong).",
+        "source": "ATA Thyroiditis Position. European Thyroid Association Subacute Thyroiditis 2018 (Pearce ETJ 2018). CTS Hypothyroidism Canadian Position."
+      },
+      {
+        "id": "hashimoto_thyroiditis",
+        "name": "Hashimoto's Thyroiditis (Autoimmune Hypothyroidism)",
+        "subtitle": "Most common cause of hypothyroidism in iodine-sufficient regions — ATA 2014 + 2024",
+        "patho": "Most common cause of HYPOTHYROIDISM in iodine-sufficient regions. Autoimmune destruction of thyroid by ANTI-THYROID PEROXIDASE (anti-TPO; >90% positive) and ANTI-THYROGLOBULIN (anti-Tg; ~80%) antibodies → progressive lymphocytic infiltration → fibrosis → thyroid atrophy → hypothyroidism. F:M 8:1; peak 30-60 years; familial clustering; HLA-DR3/DR5 association. ASSOCIATED autoimmune diseases: Sjögren's, type 1 diabetes, Addison's, vitiligo, celiac, autoimmune hepatitis, RA, SLE, pernicious anemia (autoimmune polyglandular syndromes — APS-1, APS-2). PROGRESSION: subclinical (TSH elevated, normal T4) → overt (TSH high, T4 low). Some patients transient HYPERTHYROID phase ('Hashitoxicosis' — destructive release). Goiter common initially (lymphocytic infiltration), then atrophic late stage. INCREASED risk PRIMARY THYROID LYMPHOMA (rare but >50× background; rapidly enlarging gland in long-standing Hashimoto's — biopsy).",
+        "signs": "HYPOTHYROIDISM: FATIGUE, cold intolerance, weight gain, constipation, dry skin, hair loss (lateral 1/3 eyebrow — Queen Anne's sign), bradycardia, hyporeflexia (delayed Achilles relaxation), depression, cognitive slowing ('brain fog'), menorrhagia + infertility, hoarseness, myalgia, periorbital edema, NON-pitting puffy face/extremities (myxedema). CHILDREN — growth retardation, delayed puberty. ELDERLY — atypical; depression, falls, cognitive change. GOITER often (firm, painless, bumpy). MYXEDEMA COMA — severe/late: hypothermia, AMS, hypoventilation, hyponatremia, hypotension, life-threatening (mortality 30-50%).",
+        "diagnosis": "TSH (elevated; primary screening test); FREE T4 (decreased — overt; normal — subclinical). ANTI-TPO ANTIBODIES (>90% Hashimoto's positive); anti-Tg (less specific but supportive). TSH RECEPTOR ANTIBODIES (TRAb) — to exclude Graves' if hyperthyroid features (hashitoxicosis vs Graves'). LIPID PANEL (hypothyroidism dyslipidemia), CBC (anemia macrocytic — B12 association; or microcytic IDA), basic chem (Na, glucose), CK (elevated). Ultrasound — diffuse hypoechoic + heterogeneous, often pseudo-nodular ('lymphocytic infiltration'); identifies suspicious nodules requiring FNA. RADIOACTIVE IODINE UPTAKE — usually normal-low (vs Graves' high; subacute thyroiditis low). CARDIAC — bradycardia + low-voltage ECG; QT prolongation in severe; pericardial effusion in severe. SUBCLINICAL HYPOTHYROIDISM — TSH 4.5-10 with normal T4; treatment debated in absence of symptoms (ATA 2014/2024 — treat if TSH ≥10, pregnancy/planning, infertility, goiter, symptoms severe, anti-TPO+).",
+        "monitoring": "TSH at 6-8 weeks after dose change; q6-12 months stable; free T4 selected; symptoms; weight; mood; cardiac (older patients).",
+        "treatment": [
+          {
+            "line": "OVERT HYPOTHYROIDISM — levothyroxine",
+            "type": "Thyroid hormone replacement",
+            "family": "Levothyroxine (LT4)",
+            "agents": [
+              "LEVOTHYROXINE (Synthroid, Eltroxin generic) — daily oral; FULL REPLACEMENT DOSE 1.6-1.7 mcg/kg/day (typical adult ~100-150 mcg/day; weight-based)",
+              "ELDERLY (>65) or CARDIAC DISEASE — START LOW 25-50 mcg/day; titrate by 12.5-25 mcg every 4-6 weeks (avoid precipitating angina, AF, MI)",
+              "PREGNANT — increase dose ~30% pre-conception or first detected pregnancy (target TSH <2.5 first trimester, <3 second-third); higher demand",
+              "PEDIATRIC — weight-based 4-8 mcg/kg infants → 1-3 mcg/kg adolescents",
+              "SUBCLINICAL HYPOTHYROIDISM — treat if TSH ≥10, pregnancy/planning, infertility, goiter, anti-TPO+, symptoms severe (ATA 2014/2024)",
+              "TARGET TSH 0.5-2.5 (younger), 1.0-3.0 (older), <2.5 (pregnancy)",
+              "CHECK TSH at 6-8 weeks after dose change",
+              "ADMINISTER — empty stomach 30-60 minutes before breakfast OR at bedtime ≥3 hours after evening meal — consistent timing; AVOID ABSORPTION INTERFERENCE: calcium, iron, antacids (PPI/H2), bile sequestrants, magnesium, soy, fiber supplements (separate ≥4 hours)"
+            ],
+            "notes": "Levothyroxine cornerstone; consistent timing + avoid interference essential.",
+            "guideline": "ATA Hypothyroidism 2014 (Jonklaas Thyroid 2014); CTS Canadian Position; ATA Pregnancy 2017; ATA 2024 update"
+          },
+          {
+            "line": "Combination therapy (LT4 + LT3) — controversial",
+            "type": "Selective",
+            "family": "—",
+            "agents": [
+              "LIOTHYRONINE (T3) ADDITION — Cytomel 5-25 mcg/day BID — controversial; ATA 2014 + 2024 — not routinely recommended; consider in patients with persistent hypothyroid symptoms despite normal TSH on LT4 monotherapy; trial 12 weeks",
+              "DESICCATED THYROID EXTRACT (DTE; Erfa Thyroid, NP Thyroid, Armour Thyroid) — porcine extract with LT4 + LT3 + calcitonin etc.; some patient preference; T4:T3 ratio 4:1 (vs human 14:1); not preferred per ATA; allowable in stable patients with patient preference",
+              "Genetic factors (DIO2 polymorphism) may identify subset benefiting; not routine testing"
+            ],
+            "notes": "Combination + DTE controversial; ATA 2014/2024 — selective trial in symptomatic LT4 failures.",
+            "guideline": "ATA 2014/2024"
+          },
+          {
+            "line": "MYXEDEMA COMA — life-threatening emergency",
+            "type": "ICU + IV thyroid hormone",
+            "family": "—",
+            "agents": [
+              "AIRWAY + ventilation + warming + hemodynamic support — ICU admission",
+              "IV LEVOTHYROXINE 200-500 mcg load → 50-100 mcg/day",
+              "IV LIOTHYRONINE (T3) 5-20 mcg load + 2.5-10 mcg q8h (controversial; faster onset but caution cardiac risk)",
+              "STRESS-DOSE CORTICOSTEROID — HYDROCORTISONE 100 mg IV q6-8h (treats potential concomitant adrenal insufficiency before T4 unmasks; mandatory)",
+              "Treat precipitant — infection, MI, drug, hypothermia exposure",
+              "Slow rewarming + avoid heating blankets (peripheral vasodilation → shock)",
+              "Treat hyponatremia (dilutional) — fluid restriction, hypertonic saline if severe + symptomatic"
+            ],
+            "notes": "Mortality 30-50%; ICU + immediate hormone + steroid + supportive.",
+            "guideline": "Wartofsky Endocrinol Metab Clin 2018"
+          },
+          {
+            "line": "Pregnancy + Hashimoto's",
+            "type": "Aggressive monitoring",
+            "family": "—",
+            "agents": [
+              "PRE-CONCEPTION optimize TSH <2.5; increase LT4 ~25-30% upon confirmed pregnancy",
+              "TSH at 4 + 8 + 12 + 16 weeks then q4-6 weeks",
+              "TARGET TSH: <2.5 first trimester, <3.0 second-third",
+              "ANTI-TPO+ even with normal TSH increases miscarriage + preterm risk; consider LT4 if TSH >2.5 in pregnancy with anti-TPO+",
+              "Postpartum — return to pre-pregnancy dose; postpartum thyroiditis (separate entity) common (5-10%)"
+            ],
+            "notes": "Pregnancy increases LT4 demand; aggressive monitoring.",
+            "guideline": "ATA Pregnancy 2017"
+          },
+          {
+            "line": "Subclinical hypothyroidism",
+            "type": "Risk-stratified",
+            "family": "—",
+            "agents": [
+              "TSH 4.5-10 with normal T4 — ATA 2014/2024 + CTS:",
+              "TREAT if: TSH ≥10, pregnancy/planning, infertility, goiter, anti-TPO+, severe symptoms attributable to hypothyroidism, age <65 with CV risk, depression",
+              "MAY OBSERVE if: asymptomatic, age >65 (TRUST trial — no benefit elderly), TSH 4.5-10 isolated",
+              "Re-test 4-12 weeks before treating (transient elevation common)"
+            ],
+            "notes": "Subclinical — selective treatment; TRUST 2017 negated benefit elderly.",
+            "guideline": "ATA 2014/2024; TRUST Stott NEJM 2017"
+          },
+          {
+            "line": "Goiter / nodules / lymphoma surveillance",
+            "type": "Monitoring",
+            "family": "—",
+            "agents": [
+              "GOITER — usually regresses with LT4; if not regressing or cosmetic concerns → endocrinology",
+              "DOMINANT NODULES — FNA per ATA Thyroid Nodules 2015 (size, sonographic features)",
+              "RAPIDLY ENLARGING goiter in long-standing Hashimoto's → consider PRIMARY THYROID LYMPHOMA — biopsy + ENT/oncology",
+              "AUTOIMMUNE POLYGLANDULAR SYNDROMES — screen for type 1 DM, Addison's, B12 deficiency, celiac periodically"
+            ],
+            "notes": "Vigilance for nodules + lymphoma + APS.",
+            "guideline": "ATA Thyroid Nodules 2015"
+          }
+        ],
+        "pearls": [
+          "MOST COMMON cause hypothyroidism in iodine-sufficient regions",
+          "F:M 8:1; peak 30-60 years; familial; HLA-DR3/DR5",
+          "ANTI-TPO POSITIVE >90%; anti-Tg supportive",
+          "OVERT: TSH↑ + free T4↓; SUBCLINICAL: TSH↑ + free T4 normal",
+          "LEVOTHYROXINE 1.6-1.7 mcg/kg/day adult; LOW + SLOW elderly/cardiac",
+          "ADMINISTER empty stomach 30-60 min pre-breakfast OR bedtime ≥3h post-meal",
+          "AVOID ABSORPTION INTERFERENCE — calcium, iron, antacids, PPI, bile sequestrants, soy, fiber (separate ≥4 h)",
+          "TARGET TSH 0.5-2.5 younger, 1-3 older; <2.5 pregnancy",
+          "CHECK TSH at 6-8 weeks after dose change",
+          "PREGNANCY — increase 25-30% pre-conception/first detected; aggressive monitoring",
+          "SUBCLINICAL — treat if TSH≥10, pregnancy, infertility, goiter, anti-TPO+, symptoms; observe elderly (TRUST 2017)",
+          "MYXEDEMA COMA — IV LT4 + hydrocortisone (cover adrenal insufficiency) + ICU",
+          "HASHITOXICOSIS — transient hyperthyroid phase; β-blocker; not anti-thyroid drugs",
+          "PRIMARY THYROID LYMPHOMA — rapidly enlarging long-standing Hashimoto's goiter; biopsy",
+          "AUTOIMMUNE POLYGLANDULAR SYNDROMES — screen DM1, Addison, celiac, B12, Sjögren",
+          "T3 (LIOTHYRONINE) — controversial addition; ATA selective",
+          "DESICCATED THYROID EXTRACT (DTE) — patient preference; not preferred ATA"
+        ],
+        "introduction": "Hashimoto's thyroiditis is the most common cause of hypothyroidism in iodine-sufficient regions, characterized by autoimmune destruction with anti-TPO (>90%) and anti-Tg antibodies. Diagnosis combines elevated TSH, decreased free T4, and positive autoantibodies. Levothyroxine 1.6-1.7 mcg/kg/day is the cornerstone therapy with target TSH 0.5-2.5 in younger patients, 1-3 in older patients, and <2.5 in pregnancy. Consistent timing on an empty stomach and avoiding absorption interferences (calcium, iron, PPIs, soy, fiber within 4 hours) are essential. Subclinical hypothyroidism management is risk-stratified per ATA 2014/2024 (treat if TSH ≥10, pregnancy/infertility, goiter, anti-TPO+, severe symptoms). Myxedema coma is a medical emergency requiring IV thyroid hormone plus stress-dose corticosteroid. Hashitoxicosis (transient destructive thyrotoxicosis) is managed symptomatically with β-blockers, NOT anti-thyroid drugs.",
+        "source": "ATA Hypothyroidism Treatment Guidelines 2014 (Jonklaas Thyroid 2014). ATA 2024 update. ATA Pregnancy and Postpartum Thyroid Disease 2017 (Alexander Thyroid 2017). CTS Hypothyroidism Canadian Position. Wartofsky Myxedema Coma Endocrinol Metab Clin 2018. TRUST Subclinical Hypothyroidism Stott NEJM 2017."
       }
     ]
   },
@@ -12849,6 +13169,121 @@ var DISEASES = {
         ],
         "introduction": "Cystic fibrosis is the most common life-shortening autosomal recessive disease in Caucasian populations, caused by CFTR mutations leading to dehydrated thick secretions in airways, pancreas, intestines, biliary tract, and reproductive tract. CFTR modulator therapy (TRIKAFTA — elexacaftor/tezacaftor/ivacaftor) has revolutionized care for ~90% of CF patients with at least one F508del allele — FEV1 +14%, reduced exacerbations, improved nutrition. Foundational care also includes daily airway clearance (physiotherapy + dornase alfa + hypertonic saline), inhaled antibiotics for chronic Pseudomonas (tobramycin + aztreonam), pancreatic enzyme replacement (~85% of patients), CFRD management, and lung transplantation for end-stage disease. Median survival is now 50+ years and rising. Pharmacy roles include CFTR modulator counseling, pancreatic enzyme titration, antibiotic stewardship, and family support throughout the disease course.",
         "source": "CF Foundation Patient Registry 2024; CF Canada Guidelines; Trikafta access pCODR / pCPA / Vertex; ISHLT Lung Transplant; CFF Pulmonary + Nutrition + CFRD + Bone Guidelines 2024"
+      },
+      {
+        "id": "ards",
+        "name": "Acute Respiratory Distress Syndrome (ARDS)",
+        "subtitle": "Berlin Definition; lung-protective ventilation — SCCM/CTS/ATS",
+        "patho": "Acute diffuse inflammatory lung injury → increased pulmonary vascular permeability → non-cardiogenic pulmonary edema → impaired gas exchange + decreased lung compliance + bilateral infiltrates. PRECIPITANTS — DIRECT lung injury (pneumonia ~40%, aspiration ~10%, inhalation injury, near-drowning, pulmonary contusion) vs INDIRECT (sepsis ~30%, severe trauma, pancreatitis, transfusion-related TRALI, drug toxicity, post-cardiopulmonary bypass). Pathology — diffuse alveolar damage; exudative phase (early — alveolar edema, hyaline membranes); proliferative phase (~7-14 days); fibrotic phase (>21 days; some patients). Mortality 30-50% mild-moderate; up to 60% severe; severity correlates with PaO2/FiO2 ratio.",
+        "signs": "ACUTE onset (within 1 week of clinical insult). DYSPNEA, tachypnea, hypoxemia, increased work of breathing. AUSCULTATION — bilateral crackles. NO clinical evidence of left atrial hypertension (rules out cardiogenic edema; echo if uncertain). Often progressive over hours-days. SEPSIS / multi-organ involvement common.",
+        "diagnosis": "BERLIN DEFINITION (Ranieri JAMA 2012; Global ARDS 2024 update): (1) ACUTE ONSET ≤7 days from precipitating insult or new/worsened respiratory symptoms; (2) BILATERAL OPACITIES on chest imaging (CXR or CT) — not fully explained by pleural effusion, lobar/lung collapse, or nodules; (3) RESPIRATORY FAILURE not fully explained by cardiac failure or fluid overload (objectively assessed — echo if no clear risk factor); (4) HYPOXEMIA on PEEP ≥5 cm H2O — MILD: PaO2/FiO2 >200-300; MODERATE: 100-200; SEVERE: ≤100. NEW: NIV/HFNC may qualify (Global ARDS 2024). LABS: ABG, lactate, basic metabolic, coags, CBC, CRP, PCT (sepsis), respiratory cultures, BAL if available, blood cultures. Imaging — CXR, CT chest (PE, abscess, pneumothorax). ECHO — rule out cardiogenic edema. Lung ultrasound — bedside screening.",
+        "monitoring": "Continuous pulse ox + arterial line, ABG q1-6h, ventilator parameters (PEEP, plateau, driving pressure), tidal volume, RR, capnography, sedation (RASS), neuromuscular blockade, hemodynamics, urine output, lactate, daily SBT readiness assessment.",
+        "treatment": [
+          {
+            "line": "Lung-protective mechanical ventilation (FOUNDATION)",
+            "type": "Tidal volume + plateau + driving pressure",
+            "family": "Ventilator strategy",
+            "agents": [
+              "TIDAL VOLUME 4-6 mL/kg PREDICTED body weight (PBW based on height — NOT actual weight) — ARMA Trial NEJM 2000 (mortality reduction 31% → 22% with low TV)",
+              "PLATEAU PRESSURE ≤30 cm H2O (target ≤28)",
+              "DRIVING PRESSURE (Pplat - PEEP) ≤14 cm H2O (Amato NEJM 2015 — mortality predictor)",
+              "PEEP — moderate-high (open-lung approach in moderate-severe ARDS; titrate to PEEP/FiO2 table or esophageal balloon EPVent-2 (Beitler JAMA 2019 — neutral overall, individualized)",
+              "TARGET PaO2 55-80 mm Hg or SpO2 88-95%; permit PERMISSIVE HYPERCAPNIA (PaCO2 up to 60-70 acceptable; pH >7.20)",
+              "FiO2 minimize to lowest tolerable (target FiO2 <0.6 chronic)"
+            ],
+            "notes": "ARDSNet ARMA trial — single most important intervention in ARDS history.",
+            "guideline": "ARMA NEJM 2000; SCCM/ATS/ESICM ARDS 2024 (Grasselli Intensive Care Med 2023); CTS"
+          },
+          {
+            "line": "Moderate-severe ARDS — PRONE POSITIONING",
+            "type": "Position therapy",
+            "family": "Mechanical",
+            "agents": [
+              "PRONE POSITIONING ≥16 hours/day (PROSEVA Guérin NEJM 2013) — moderate-severe ARDS (P/F <150) — MORTALITY REDUCTION absolute 16% (NNT 6)",
+              "Initiate within first 36-72 hours",
+              "Continue until clinical improvement (P/F >150 in supine for ≥4h)",
+              "AVOID injury — pressure ulcers (face, breasts, knees, elbows), corneal abrasion, accidental extubation, line dislodgement, pressure on abdomen, eye injury — pre-prone checklist + skilled team"
+            ],
+            "notes": "PROSEVA single most impactful adjunct since lung-protective ventilation. Standard of care moderate-severe ARDS.",
+            "guideline": "PROSEVA Guérin NEJM 2013; SCCM/ATS 2024"
+          },
+          {
+            "line": "Neuromuscular blockade — selective (severe early)",
+            "type": "NMB",
+            "family": "Cisatracurium / rocuronium",
+            "agents": [
+              "CISATRACURIUM 0.5 mg/kg IV bolus + 0.5-2 mcg/kg/min infusion ≤48 hours — selected SEVERE early ARDS (P/F <150 within 48h) per ACURASYS Papazian NEJM 2010 (mortality benefit) — but ROSE trial Moss NEJM 2019 — NEGATIVE in moderate-severe ARDS already with light sedation",
+              "Modern guidelines: NMB only if SEVERE patient-ventilator dyssynchrony despite optimal sedation; not routine",
+              "Adequate sedation + analgesia required (RASS −5 during NMB); prevent awareness",
+              "Train of 4 monitoring; corneal protection"
+            ],
+            "notes": "ACURASYS positive but ROSE 2019 mostly negated routine use; reserved for refractory dyssynchrony.",
+            "guideline": "ROSE Moss NEJM 2019; SCCM 2024"
+          },
+          {
+            "line": "Refractory hypoxemia — RESCUE THERAPIES",
+            "type": "Multimodal",
+            "family": "—",
+            "agents": [
+              "INHALED VASODILATORS — INHALED NITRIC OXIDE (iNO 5-40 ppm) or PROSTACYCLINS (epoprostenol, iloprost) — improve oxygenation transient; no mortality benefit; rescue bridge therapy",
+              "RECRUITMENT MANEUVERS — controversial; ART trial (Cavalcanti JAMA 2017) — increased mortality with aggressive recruitment; CASCO trial; not routine",
+              "ECMO V-V — refractory severe ARDS (P/F <80 despite optimization, life-threatening hypoxemia) — EOLIA trial (Combes NEJM 2018; Bayesian re-analysis Goligher JAMA 2018 supports benefit); Murray score >3, Berlin SEVERE refractory; Canadian ECMO centers (Toronto General, Hamilton, etc.)"
+            ],
+            "notes": "ECMO transformative for select severe refractory; transfer early if criteria met.",
+            "guideline": "EOLIA Combes NEJM 2018; ELSO Guidelines 2024; CTS"
+          },
+          {
+            "line": "Steroids — selective (moderate-severe early or persistent)",
+            "type": "Glucocorticoid",
+            "family": "Steroid",
+            "agents": [
+              "DEXAMETHASONE 20 mg IV q24h × 5 days then 10 mg × 5 days (DEXA-ARDS Villar Lancet Respir Med 2020 — moderate-severe ARDS; mortality reduction)",
+              "OR METHYLPREDNISOLONE 1-2 mg/kg/day × 14-28 days then taper (CoDEX, RECOVERY for COVID; persistent ARDS)",
+              "TAPER carefully to avoid relapse",
+              "AVOID in viral pneumonia early influenza (worsens; INSIGHT-FluSeq); USE for COVID-ARDS (RECOVERY 2020 — dexamethasone 6 mg × 10 days)",
+              "Co-management with infectious disease + critical care"
+            ],
+            "notes": "Steroids in ARDS — landscape evolving; DEXA-ARDS positive; selected use.",
+            "guideline": "DEXA-ARDS Villar Lancet Respir Med 2020; RECOVERY NEJM 2021"
+          },
+          {
+            "line": "Conservative fluid + broader supportive",
+            "type": "Multi-system",
+            "family": "—",
+            "agents": [
+              "CONSERVATIVE FLUID STRATEGY (FACTT trial Wiedemann NEJM 2006) — once shock resolved, NEGATIVE fluid balance reduces ventilator days + ICU stay (no mortality difference)",
+              "Diuretics + restrict maintenance fluids; CVP/PCWP guidance historic; modern dynamic indices",
+              "ENTERAL NUTRITION early; trophic vs full not clearly different; avoid overfeeding",
+              "VTE prophylaxis (LMWH or UFH; mechanical if bleeding)",
+              "STRESS ULCER prophylaxis (PPI selected; H2 blocker alternative; not all)",
+              "DAILY SBT (spontaneous breathing trial) when ready",
+              "EARLY MOBILIZATION (when stable) — reduces ICU-acquired weakness",
+              "AGGRESSIVE infection control (VAP prevention bundle: HOB elevation, oral chlorhexidine, sedation interruption, daily extubation assessment)"
+            ],
+            "notes": "Comprehensive ICU bundle.",
+            "guideline": "FACTT Wiedemann NEJM 2006; SCCM PADIS 2018 + 2024; CTS Mechanical Ventilation"
+          }
+        ],
+        "pearls": [
+          "BERLIN DEFINITION 2012: acute + bilateral opacities + non-cardiogenic + hypoxemia (P/F)",
+          "MILD: P/F 200-300; MODERATE: 100-200; SEVERE: ≤100 on PEEP ≥5",
+          "LUNG-PROTECTIVE: TV 4-6 mL/kg PBW, PPLAT ≤30, DRIVING PRESSURE ≤14",
+          "PERMISSIVE HYPERCAPNIA — pH >7.20; PaCO2 60-70 acceptable",
+          "PRONE POSITIONING ≥16 h/day for moderate-severe ARDS (P/F <150) — PROSEVA NNT 6",
+          "ECMO V-V for severe refractory (P/F <80) — EOLIA / Goligher Bayesian re-analysis",
+          "STEROIDS — DEXA-ARDS 2020 + COVID RECOVERY 2020 — selected moderate-severe",
+          "NMB — ROSE 2019 negated routine; reserve for refractory dyssynchrony",
+          "CONSERVATIVE FLUID strategy after shock resolved (FACTT 2006)",
+          "INHALED NO / EPOPROSTENOL — rescue oxygenation; no mortality benefit",
+          "DRIVING PRESSURE >14 cm H2O — mortality predictor (Amato 2015)",
+          "AVOID HIGH FiO2 chronic (toxicity); minimize <0.6 once stable",
+          "AGGRESSIVE RECRUITMENT — ART trial NEGATIVE (increased mortality)",
+          "DIRECT (pneumonia/aspiration) vs INDIRECT (sepsis/pancreatitis) etiologies",
+          "DAILY SBT + early mobilization + VAP bundle",
+          "MORTALITY 30-50% mild-mod; up to 60% severe"
+        ],
+        "introduction": "Acute respiratory distress syndrome is acute diffuse inflammatory lung injury producing non-cardiogenic pulmonary edema and severe hypoxemia. Diagnosis follows the Berlin Definition with severity stratified by PaO2/FiO2 ratio. Lung-protective mechanical ventilation (tidal volume 4-6 mL/kg predicted body weight, plateau pressure ≤30 cm H2O, driving pressure ≤14) is foundational (ARMA 2000). Prone positioning ≥16 hours/day reduces mortality in moderate-severe ARDS (PROSEVA 2013, NNT 6). Refractory cases benefit from V-V ECMO (EOLIA 2018) at experienced centers. Selective use of corticosteroids (DEXA-ARDS 2020 for non-COVID moderate-severe; RECOVERY 2020 for COVID-ARDS) and conservative fluid strategy after shock resolution complete the evidence-based bundle.",
+        "source": "ARMA Trial NEJM 2000. Berlin Definition (Ranieri JAMA 2012). Global ARDS Definition Update 2024. PROSEVA Guérin NEJM 2013. EOLIA Combes NEJM 2018. ROSE Moss NEJM 2019. DEXA-ARDS Villar Lancet Respir Med 2020. FACTT Wiedemann NEJM 2006. SCCM/ATS/ESICM Severe ARDS 2024 (Grasselli Intensive Care Med 2023). CTS Mechanical Ventilation."
       }
     ]
   },
@@ -18400,6 +18835,129 @@ var DISEASES = {
         ],
         "introduction": "Membranous nephropathy is the most common cause of nephrotic syndrome in non-diabetic adults. The discovery of anti-phospholipase A2 receptor (PLA2R) antibodies in 70-80% of primary disease has revolutionized diagnosis and monitoring. KDIGO 2021 introduced risk stratification (low/moderate/high/very high) based on proteinuria, eGFR, anti-PLA2R titer, and complications. Rituximab is the preferred first-line therapy for moderate-to-high risk disease (MENTOR 2019), with calcineurin inhibitors (often combined with rituximab — STARMEN) and modified Ponticelli regimen as alternatives. Prophylactic anticoagulation is recommended at serum albumin <25-28 g/L due to elevated thromboembolic risk. Secondary causes (SLE, HBV, malignancy, drugs) must be excluded.",
         "source": "KDIGO Glomerular Diseases Guideline 2021 (Rovin Kidney Int Suppl 2021). MENTOR Rituximab vs Cyclosporine Fervenza NEJM 2019. STARMEN Tacrolimus + Rituximab Fernández-Juárez Kidney Int 2021. Beck Anti-PLA2R NEJM 2009. Beck Anti-THSD7A NEJM 2014. Lin Anticoagulation Modeling Kidney Int 2014. GEMRITUX Dahan JASN 2017."
+      },
+      {
+        "id": "hepatorenal_syndrome",
+        "name": "Hepatorenal Syndrome (HRS)",
+        "subtitle": "AKI in cirrhosis — terlipressin + albumin — AASLD 2021 / CASL",
+        "patho": "Functional acute kidney injury in cirrhosis with portal hypertension, characterized by intense renal arteriolar vasoconstriction in setting of splanchnic arterial vasodilation → effective arterial underfilling → activation RAAS + sympathetic + ADH → renal vasoconstriction. NEW INTERNATIONAL CLUB OF ASCITES (ICA) 2015 + AASLD 2021 CLASSIFICATION: HRS-AKI (formerly Type 1 — rapid progressive; doubling SCr in <2 weeks to >221 µmol/L OR ≥50% increase to ≥133 µmol/L within 48 h-7 days; in cirrhosis with ascites; NOT responsive to volume expansion + diuretic withdrawal; no shock; no nephrotoxic drugs; no parenchymal kidney disease evidence) vs HRS-NAKI (formerly Type 2 — slower; ascites refractory + creatinine progressive elevation but <50% in 7 days; chronic). PRECIPITANTS: SBP, GI bleeding, large-volume paracentesis without albumin, NSAIDs, aminoglycosides, contrast, sepsis. Mortality WITHOUT TREATMENT very high (~50% within 1 month HRS-AKI; up to 90% within months without transplant). Definitive therapy = LIVER TRANSPLANT.",
+        "signs": "Cirrhosis + ascites + AKI. Decreased urine output (often oliguric, sometimes preserved volume). Encephalopathy (often present). Jaundice, splenomegaly, varices, edema, signs of decompensation. Identifiable precipitant in 50%+ (SBP common, GI bleed, paracentesis without albumin, sepsis).",
+        "diagnosis": "ICA 2015 + AASLD 2021 CRITERIA — HRS-AKI: (1) Cirrhosis with ascites; (2) AKI defined by KDIGO criteria (SCr ↑0.3 mg/dL [26.5 µmol/L] in 48h OR ≥50% from baseline in <7 days OR urine output <0.5 mL/kg/h ≥6h); (3) NO response to 2-day diuretic withdrawal + IV ALBUMIN 1 g/kg/day (max 100 g/day); (4) NO SHOCK; (5) NO nephrotoxic drugs; (6) NO parenchymal kidney disease (proteinuria <500 mg/day, no microhematuria, normal renal US). EXCLUDE PRE-RENAL volume-responsive AKI, ATN (urine sediment with granular casts, urine Na often >40), parenchymal (proteinuria, hematuria). LABS: serum creatinine + cystatin C, urinalysis with sediment, urine sodium + Na/Cr fraction, urine eosinophils (AIN), serum ammonia, ABG, lactate (sepsis), albumin, INR, total bilirubin, MELD score. ULTRASOUND — exclude obstruction. ASCITES TAP — SBP screen (mandatory).",
+        "monitoring": "Daily SCr, urine output, electrolytes, lactate, MAP, SpO2, signs of fluid overload, encephalopathy, transplant evaluation accelerated.",
+        "treatment": [
+          {
+            "line": "Initial — diagnosis + supportive (foundation)",
+            "type": "Resuscitation + workup",
+            "family": "—",
+            "agents": [
+              "VOLUME EXPANSION — IV ALBUMIN 1 g/kg day 1 (max 100 g) then 20-40 g/day for ≥48 hours (assess response to volume — fluid-responsive AKI doesn't meet HRS criteria)",
+              "DISCONTINUE diuretics, NSAIDs, ACEi/ARB, β-blockers (cautious — recent data suggests OK in compensated, but holds with active HRS), nephrotoxins, contrast",
+              "TREAT precipitant — SBP (ceftriaxone + albumin per AASLD 2021), GI bleed, paracentesis with albumin replacement (8 g per L removed if >5 L paracentesis), infection",
+              "AVOID HES + colloids (renal toxicity)",
+              "MONITOR — daily creatinine, electrolytes, urine output, MAP target ≥65"
+            ],
+            "notes": "Establish diagnosis after 48h volume challenge fails before HRS-specific therapy.",
+            "guideline": "AASLD HRS 2021 (Biggins Hepatology 2021); ICA 2015"
+          },
+          {
+            "line": "DEFINITIVE MEDICAL — terlipressin + albumin (HRS-AKI)",
+            "type": "V1 vasopressor + plasma protein",
+            "family": "—",
+            "agents": [
+              "TERLIPRESSIN 1 mg IV q6h (TITRATE to 2 mg q6h if SCr not improved by 30% at day 3) + IV ALBUMIN 1 g/kg day 1 then 20-40 g/day (CONFIRM Wong NEJM 2021 — 32% HRS reversal vs 17% placebo + albumin alone)",
+              "Continue until SCr ≤133 µmol/L (1.5 mg/dL) for 24h OR maximum 14 days",
+              "FDA 2022 + Health Canada 2023 NOC",
+              "BLACK BOX RESPIRATORY FAILURE — baseline SpO2 + cardiopulmonary status; AVOID if SpO2 <90% / fluid overload / advanced cardiopulmonary disease / ACLF Grade 3 + lactate >5",
+              "ICA / AASLD 2021 first-line HRS-AKI in centers where available"
+            ],
+            "notes": "Terlipressin transformed HRS care; FDA 2022 specific approval.",
+            "guideline": "CONFIRM Wong NEJM 2021; AASLD 2021"
+          },
+          {
+            "line": "ALTERNATIVE — norepinephrine + albumin (ICU)",
+            "type": "Vasopressor + albumin",
+            "family": "—",
+            "agents": [
+              "NOREPINEPHRINE 0.5-3 mg/h IV continuous (target MAP increase ≥10 mm Hg from baseline, MAP ≥80 if possible) + IV ALBUMIN 1 g/kg day 1 then 20-40 g/day",
+              "Used where TERLIPRESSIN UNAVAILABLE or contraindicated (USA pre-2022 standard)",
+              "Requires central line + ICU monitoring",
+              "Sanyal A&R 2007; Cavallin Hepatology 2015 — non-inferior to terlipressin"
+            ],
+            "notes": "Norepinephrine + albumin alternative in ICU.",
+            "guideline": "AASLD 2021"
+          },
+          {
+            "line": "OUTPATIENT / NON-ICU bridge — midodrine + octreotide + albumin",
+            "type": "Less effective bridge",
+            "family": "—",
+            "agents": [
+              "MIDODRINE 7.5-12.5 mg PO TID (titrate to 15 mg max — α1 agonist) + OCTREOTIDE 100-200 mcg SC TID (decreases splanchnic vasodilation) + IV ALBUMIN",
+              "LESS EFFECTIVE than terlipressin or norepinephrine; reasonable bridge to transplant or temporizing",
+              "Skagen JCG 2009 — modest benefit"
+            ],
+            "notes": "Suboptimal but accessible regimen.",
+            "guideline": "AASLD 2021"
+          },
+          {
+            "line": "Renal replacement therapy (RRT)",
+            "type": "Bridging dialysis",
+            "family": "—",
+            "agents": [
+              "INDICATIONS — refractory hyperkalemia, fluid overload, severe acidosis, uremic complications, life-threatening",
+              "Use as BRIDGE TO LIVER TRANSPLANT; not improving HRS itself",
+              "TYPE — CRRT (preferred hemodynamically unstable) > IHD; SLED alternative",
+              "AVOID standard intermittent dialysis with hypotension"
+            ],
+            "notes": "RRT for refractory complications; bridge to transplant.",
+            "guideline": "AASLD 2021"
+          },
+          {
+            "line": "TIPS — selective",
+            "type": "Procedural",
+            "family": "—",
+            "agents": [
+              "TIPS (transjugular intrahepatic portosystemic shunt) — selected HRS-NAKI (formerly Type 2) with refractory ascites; mainly improves ascites, may improve HRS-NAKI",
+              "AVOID in MELD >18, encephalopathy, severe pulmonary HTN, advanced HF",
+              "Ghinolfi Liver Int 2007"
+            ],
+            "notes": "TIPS for HRS-NAKI selected, not HRS-AKI.",
+            "guideline": "AASLD 2021"
+          },
+          {
+            "line": "DEFINITIVE — LIVER TRANSPLANT",
+            "type": "Curative",
+            "family": "—",
+            "agents": [
+              "LIVER TRANSPLANT — only definitive therapy; ALL HRS patients should be evaluated for transplant immediately",
+              "MELD-Na score weighting (HRS-AKI typically very high MELD)",
+              "Combined liver-kidney transplant (CLKT) considered for HRS-AKI requiring dialysis >6-8 weeks (estimate of irreversible kidney injury); UNOS criteria 2017",
+              "Outcomes — kidney function recovers in most after liver transplant if HRS reversible"
+            ],
+            "notes": "Liver transplant urgent; combined LKT for prolonged HRS.",
+            "guideline": "AASLD 2021; UNOS"
+          }
+        ],
+        "pearls": [
+          "FUNCTIONAL AKI in cirrhosis + portal HTN — splanchnic vasodilation → renal vasoconstriction",
+          "HRS-AKI (Type 1) — rapid; SCr doubling <2 weeks to >221 OR KDIGO AKI",
+          "HRS-NAKI (Type 2) — slower; ascites refractory",
+          "ICA / AASLD 2021 CRITERIA — diagnosis after volume challenge fails (1 g/kg albumin × 2 days)",
+          "PRECIPITANTS: SBP, GI bleed, NSAIDs, paracentesis without albumin, sepsis",
+          "TERLIPRESSIN 1-2 mg IV q6h + ALBUMIN — first-line HRS-AKI (CONFIRM 2021; FDA 2022, Health Canada 2023)",
+          "BLACK BOX TERLIPRESSIN — respiratory failure / pulmonary edema",
+          "AVOID TERLIPRESSIN if SpO2 <90%, fluid overload, ACLF Grade 3 + lactate >5",
+          "ALTERNATIVE: NOREPINEPHRINE + ALBUMIN (ICU)",
+          "BRIDGE: MIDODRINE + OCTREOTIDE + ALBUMIN (less effective; non-ICU)",
+          "AB PROPHYLAXIS — HRS often complicates SBP; add ceftriaxone + IV albumin to prevent",
+          "TIPS — HRS-NAKI selected (refractory ascites); AVOID HRS-AKI with high MELD",
+          "RRT — bridge to transplant (refractory hyperK, fluid overload, acidosis)",
+          "LIVER TRANSPLANT = DEFINITIVE — ALL evaluated immediately",
+          "COMBINED LIVER-KIDNEY TRANSPLANT — HRS-AKI on dialysis >6-8 weeks",
+          "MORTALITY untreated 50% in 1 month HRS-AKI; transplant survival ~85% 1y",
+          "DIAGNOSIS OF EXCLUSION — rule out pre-renal, ATN, parenchymal renal disease"
+        ],
+        "introduction": "Hepatorenal syndrome is functional acute kidney injury in cirrhosis with portal hypertension, characterized by intense renal vasoconstriction in response to splanchnic arterial vasodilation. The 2015 ICA / 2021 AASLD criteria reclassified into HRS-AKI (rapid; formerly Type 1) and HRS-NAKI (slower; formerly Type 2). Terlipressin plus albumin is the first-line therapy for HRS-AKI (CONFIRM 2021; FDA 2022, Health Canada 2023) — with reversal in 32% of patients vs 17% with albumin alone. Norepinephrine plus albumin is an ICU alternative; midodrine plus octreotide plus albumin is a less effective non-ICU bridge. Liver transplantation is the definitive therapy and should be considered in all patients; combined liver-kidney transplant is indicated for prolonged HRS on dialysis.",
+        "source": "AASLD Bacterial Infections in Cirrhosis + HRS Guidance 2021 (Biggins Hepatology 2021). International Club of Ascites Criteria 2015 (Angeli J Hepatol 2015). CONFIRM Terlipressin Wong NEJM 2021. EASL Decompensated Cirrhosis 2018. CASL (Canadian Association for Study of Liver). FDA Approval Terlivaz 2022; Health Canada Glypressin NOC 2023."
       }
     ]
   },
@@ -145788,6 +146346,94 @@ var DRUGS = {
       "LFTs + CBC q3-6 months"
     ],
     "patient_counseling": "Subcutaneous injection every 3 weeks. Reduces blood transfusion needs in thalassemia or MDS. Tell us about leg swelling/pain (blood clot), high BP, severe headache. Effective contraception required. Ongoing transfusion need monitoring."
+  },
+  "terlipressin": {
+    "name": "Terlipressin",
+    "brand": "Terlivaz (US); Glypressin (international/Canadian)",
+    "class": "Synthetic vasopressin V1 receptor agonist (V1 > V2 selectivity)",
+    "napra": "Schedule I (Rx); IV; hospital ICU/specialty.",
+    "moa": "Synthetic analogue of vasopressin — pro-drug slowly cleaved to LYSINE-VASOPRESSIN (active). PREFERENTIAL V1 RECEPTOR agonism (vs vasopressin equal V1/V2) → splanchnic + renal arteriolar vasoconstriction → REDUCED PORTAL PRESSURE + INCREASED RENAL PERFUSION (correction of effective arterial underfilling in cirrhosis with portal HTN). LONG t1/2 (active drug ~6 hours) allows BOLUS or continuous infusion (vs vasopressin requiring continuous). Used: HEPATORENAL SYNDROME (HRS-AKI), VARICEAL HEMORRHAGE (acute control), septic shock (selected ICU). FDA APPROVAL 2022 + Health Canada NOC 2023 for HRS-AKI based on CONFIRM trial (Wong NEJM 2021).",
+    "indications": [
+      "HEPATORENAL SYNDROME-AKI (HRS-AKI; formerly HRS Type 1) — adults; FDA 2022 + Health Canada NOC 2023",
+      "ACUTE VARICEAL HEMORRHAGE — bridging to endoscopy; reduces portal pressure (alternative to octreotide; preferred Europe; INTERNATIONAL standard)",
+      "Off-label: septic shock vasopressin-refractory (selected ICU), POST-paracentesis circulatory dysfunction (rare)"
+    ],
+    "dosing": {
+      "HRS-AKI initial": "1 mg IV bolus q6 hours (4 mg/day); CONCURRENT IV ALBUMIN 1 g/kg day 1 then 20-40 g/day (maintains effective volume; required co-administration)",
+      "HRS-AKI titration": "If serum creatinine has not decreased by ≥30% after 3 days at 1 mg q6h → INCREASE to 2 mg IV q6h (8 mg/day max)",
+      "HRS-AKI duration": "Continue until SCr ≤133 µmol/L (1.5 mg/dL) for 24 hours OR maximum 14 days; discontinue if no SCr improvement after 4 days at maximum dose",
+      "Acute variceal hemorrhage (off-label / international)": "2 mg IV q4 hours × 24-48 hours then 1 mg IV q4-6 hours up to 5 days total",
+      "Hepatic impairment": "No specific adjustment (cirrhotic patients are primary indication)",
+      "Renal impairment": "No specific adjustment (used for renal failure context); monitor for fluid overload",
+      "Storage": "Refrigerate; reconstitute per Product Monograph"
+    },
+    "side_effects": {
+      "common": [
+        "Abdominal pain (~40%)",
+        "Diarrhea / nausea / vomiting",
+        "Headache",
+        "Pallor",
+        "Hypertension",
+        "Bradycardia",
+        "Hyponatremia (V2 partial activity)"
+      ],
+      "serious": [
+        "RESPIRATORY FAILURE — including acute respiratory distress + pulmonary edema (CONFIRM trial signal — fluid overload + V1-mediated pulmonary vascular effects); FDA + Health Canada BLACK BOX caution; AVOID in volume overload, hypoxemia (SpO2 <90%), advanced cardiopulmonary disease",
+        "ISCHEMIA — peripheral, mesenteric, myocardial, cerebral; high-risk CAD, PAD; monitor extremities for cyanosis/pallor",
+        "MYOCARDIAL ISCHEMIA / MI — caution active CAD; monitor troponin",
+        "PULMONARY EDEMA",
+        "HYPONATREMIA — water retention via partial V2",
+        "HYPERSENSITIVITY",
+        "PERIPHERAL ISCHEMIA / GANGRENE (rare; reduce dose / D/C)"
+      ]
+    },
+    "contraindications": [
+      "RESPIRATORY FAILURE / SpO2 <90% / advanced cardiopulmonary disease",
+      "Acute coronary syndrome",
+      "Active vascular ischemia (peripheral, mesenteric)",
+      "Pregnancy (Cat — Avoid; uterotonic)",
+      "Severe uncontrolled hypertension",
+      "Hypersensitivity"
+    ],
+    "interactions": [
+      "Other vasopressors — additive ischemic + BP effects",
+      "Bradycardic agents (β-blockers, NDH-CCB, digoxin) — additive bradycardia + AV block",
+      "Indomethacin / NSAIDs — may potentiate antidiuretic + V2 effects",
+      "Volatile anesthetics — additive cardiovascular depression"
+    ],
+    "pregnancy": "Cat — AVOID (UTEROTONIC — V1 agonism causes uterine contraction; risk preterm labor + fetal compromise). Breastfeeding: limited data; brief exposure compatible.",
+    "pk": "IV: pro-drug slowly cleaved by tissue endopeptidases to lysine-vasopressin (active); active t1/2 ~6 hours; long-acting allowing bolus dosing; renal + hepatic clearance.",
+    "canadian_notes": "GLYPRESSIN — Health Canada NOC 2023 for HRS-AKI; ODB Hospital Benefit (LU pending). CONFIRM trial (Wong NEJM 2021) — terlipressin + albumin vs placebo + albumin → 32% reversal of HRS-AKI vs 17% placebo (NNT ~7); higher mortality in trial in advanced disease (ACLF Grade 3 + lactate >5 — restricted use). FDA 2022 BLACK BOX respiratory failure + ischemic events. AASLD 2021 BACTERIAL INFECTIONS in CIRRHOSIS + HRS algorithm — terlipressin + albumin = first-line for HRS-AKI in centers where available; alternative norepinephrine (ICU) + albumin where terlipressin unavailable; midodrine + octreotide + albumin (outpatient/non-ICU; less effective). Pre-treatment screening — baseline echo + cardiopulmonary assessment + CAD risk evaluation. NOT first-line for acute variceal hemorrhage in Canada (octreotide preferred); used in international (European) practice. SHORTAGES historical.",
+    "pearls": [
+      "FDA 2022 + Health Canada 2023 — first specific HRS-AKI therapy approved",
+      "CONFIRM trial (Wong NEJM 2021) — 32% HRS reversal vs 17% placebo (NNT 7)",
+      "1 mg IV q6h bolus + ALBUMIN 1 g/kg day 1 then 20-40 g/day — both required",
+      "TITRATE TO 2 mg IV q6h if SCr not improved after 3 days",
+      "MAX 14 days; D/C if no improvement at maximum after 4 days",
+      "BLACK BOX RESPIRATORY FAILURE — pulmonary edema risk; baseline SpO2 + cardiopulmonary",
+      "ISCHEMIA — peripheral, mesenteric, myocardial — monitor extremities + ECG + troponin",
+      "AVOID — hypoxemia SpO2 <90%, fluid overload, ACS, severe HTN, active vascular ischemia",
+      "PREGNANCY UTEROTONIC — contraindicated",
+      "ACLF Grade 3 + lactate >5 — higher mortality in trial; cautious use",
+      "ALTERNATIVE: NOREPINEPHRINE + ALBUMIN (ICU) where terlipressin unavailable",
+      "MIDODRINE + OCTREOTIDE + ALBUMIN — less effective; outpatient bridge",
+      "INTERNATIONAL: also for acute variceal hemorrhage (octreotide preferred Canada)",
+      "PRO-DRUG → lysine-vasopressin; long t1/2 ~6h allows bolus dosing",
+      "DIVING TYPES — terlipressin V1 > V2 vs vasopressin V1=V2 (less SIADH)"
+    ],
+    "monitoring": [
+      "BP + HR continuous",
+      "SpO2 (target ≥92%); SO2 q1h initial, q4-6h after stable",
+      "ECG (CAD risk)",
+      "Serum creatinine daily (response endpoint)",
+      "Sodium (hyponatremia)",
+      "Extremity perfusion + skin (peripheral ischemia)",
+      "Troponin if cardiac risk",
+      "Urine output",
+      "Volume status (fluid overload — pulmonary edema)",
+      "Echo + cardiopulmonary assessment baseline"
+    ],
+    "patient_counseling": "IV medication for kidney failure related to liver disease. Tell us if chest pain, breathing difficulty, leg/finger color change. Given with albumin infusion. Monitored in hospital."
   }
 
 };
@@ -147764,7 +148410,8 @@ var FAMILY_MAP = {
   "obeticholic_acid": "FXR Agonists",
   "benzathine_penicillin_g": "Natural Penicillins",
   "methylene_blue": "Antidotes",
-  "luspatercept": "Cytotoxic Agents"
+  "luspatercept": "Cytotoxic Agents",
+  "terlipressin": "Vasopressors"
 };
 var NAPRA_ODB_DATA = {
   "amoxicillin": {
@@ -157633,6 +158280,15 @@ var NAPRA_ODB_DATA = {
     "odbDetail": "ODB LU specialty hematology; β-thal + MDS-RS.",
     "luCode": "Verify current Ontario e-Formulary LU code for Reblozyl (specialty β-thal/MDS — pCPA negotiated)",
     "notes": "Erythroid maturation agent; TGF-β superfamily ligand trap. β-thal Health Canada 2020, MDS-RS 2021. BELIEVE/MEDALIST/COMMANDS. 1.0 mg/kg SC q3wk → up to 1.25 (β-thal) or 1.75 (MDS). Thromboembolism 8% β-thal. Pregnancy contraindicated (teratogenic)."
+  },
+  "terlipressin": {
+    "name": "Terlipressin (Glypressin / Terlivaz)",
+    "napra": "I",
+    "napraDetail": "Schedule I (Rx); IV hospital ICU/specialty.",
+    "odbStatus": "Hospital Benefit",
+    "odbDetail": "Hospital + ICU stock; LU pending.",
+    "luCode": null,
+    "notes": "V1 agonist; HRS-AKI Health Canada NOC 2023. CONFIRM 2021 — 32% HRS reversal. 1 mg IV q6h + albumin. BLACK BOX respiratory failure + ischemia. Avoid hypoxia, ACS, pregnancy. AASLD 2021 first-line HRS-AKI; alternative norepinephrine + albumin."
   }
 };
 var MINOR_AILMENTS = [
@@ -183584,6 +184240,17 @@ var PREG_DATA = {
     "bfColor": "#dc2626",
     "pregDetail": "Cat — AVOID (teratogenic in animals — skeletal abnormalities, fetal loss). Effective contraception during + 12 weeks after last dose for women of reproductive potential. Breastfeeding: limited data; high MW limits transfer; cautious.",
     "bfDetail": "AVOID breastfeeding (per labeling).",
+    "alternatives": "",
+    "source": "Health Canada PM"
+  },
+  "terlipressin": {
+    "name": "Terlipressin (Terlivaz (US); Glypressin (international)",
+    "pregRisk": "Compatible",
+    "pregColor": "#10b981",
+    "bfRisk": "Compatible",
+    "bfColor": "#10b981",
+    "pregDetail": "Cat — AVOID (UTEROTONIC — V1 agonism causes uterine contraction; risk preterm labor + fetal compromise). Breastfeeding: limited data; brief exposure compatible.",
+    "bfDetail": "Compatible with breastfeeding (limited data may apply).",
     "alternatives": "",
     "source": "Health Canada PM"
   }
