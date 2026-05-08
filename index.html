@@ -164773,20 +164773,6 @@ function showReferenceTable(id) {
     return out;
   }
 
-  var h = '<div style="background:var(--card);border-left:5px solid ' + t.color + ';border-radius:8px;padding:18px;margin-bottom:14px;">';
-  h += '<div style="font-size:2rem;margin-bottom:8px;">' + t.icon + '</div>';
-  h += '<h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 10px;">' + t.title + '</h2>';
-  h += '<p style="font-size:0.85rem;color:#c8cadc;line-height:1.6;margin:0;">' + fullLinkify(t.overview, t.related_drugs) + '</p>';
-  h += '</div>';
-
-  if (t.warnings && t.warnings.length) {
-    h += '<div style="background:rgba(239,68,68,0.08);border:2px solid rgba(239,68,68,0.4);border-radius:8px;padding:14px;margin-bottom:14px;">';
-    h += '<div style="font-size:0.95rem;font-weight:700;color:#ef4444;margin-bottom:10px;">⚠️ Important Warnings & Caveats</div>';
-    h += '<ul style="margin:0;padding-left:20px;">';
-    for (var i = 0; i < t.warnings.length; i++) h += '<li style="font-size:0.83rem;color:#fca5a5;line-height:1.5;margin-bottom:5px;">' + fullLinkify(t.warnings[i], t.related_drugs) + '</li>';
-    h += '</ul></div>';
-  }
-
   // Helper: linkify drug-class names in cell text → clickable family-card link with optional
   // acronym expansion ("SSRIs" → "Selective Serotonin Reuptake Inhibitors (SSRIs)").
   // Returns text with class names replaced by placeholder tokens; the spans are restored at the end.
@@ -164891,6 +164877,21 @@ function showReferenceTable(id) {
     }
     return out;
   }
+
+  var h = '<div style="background:var(--card);border-left:5px solid ' + t.color + ';border-radius:8px;padding:18px;margin-bottom:14px;">';
+  h += '<div style="font-size:2rem;margin-bottom:8px;">' + t.icon + '</div>';
+  h += '<h2 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 10px;">' + t.title + '</h2>';
+  h += '<p style="font-size:0.85rem;color:#c8cadc;line-height:1.6;margin:0;">' + fullLinkify(t.overview, t.related_drugs) + '</p>';
+  h += '</div>';
+
+  if (t.warnings && t.warnings.length) {
+    h += '<div style="background:rgba(239,68,68,0.08);border:2px solid rgba(239,68,68,0.4);border-radius:8px;padding:14px;margin-bottom:14px;">';
+    h += '<div style="font-size:0.95rem;font-weight:700;color:#ef4444;margin-bottom:10px;">⚠️ Important Warnings & Caveats</div>';
+    h += '<ul style="margin:0;padding-left:20px;">';
+    for (var i = 0; i < t.warnings.length; i++) h += '<li style="font-size:0.83rem;color:#fca5a5;line-height:1.5;margin-bottom:5px;">' + fullLinkify(t.warnings[i], t.related_drugs) + '</li>';
+    h += '</ul></div>';
+  }
+
 
   // Table
   if (t.columns && t.rows) {
