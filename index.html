@@ -4770,6 +4770,114 @@ var DISEASES = {
         ],
         "introduction": "Acute pulmonary embolism is risk-stratified per ESC 2019 into high-risk (hemodynamic instability — formerly massive PE; mortality 30-50%), intermediate-risk (RV dysfunction or elevated biomarkers — formerly submassive; subdivided high vs low), and low-risk. Diagnosis combines clinical pretest probability with CT pulmonary angiography. Anticoagulation is immediate and universal; high-risk PE warrants systemic thrombolysis (alteplase 100 mg IV over 2 hours) or catheter-directed/mechanical thrombectomy when thrombolysis is contraindicated. Intermediate-high risk management remains controversial (PEITHO 2014 demonstrated mortality benefit offset by major bleeding/ICH with full-dose thrombolysis). Long-term anticoagulation duration depends on provoked vs unprovoked etiology and recurrence risk. CTEPH develops in 2-4% post-PE and is potentially curable with pulmonary thromboendarterectomy.",
         "source": "ESC Guidelines for Acute Pulmonary Embolism 2019 (Konstantinides EHJ 2020). CHEST Antithrombotic Therapy for VTE 2021 (Stevens CHEST 2021), updated 2024. PEITHO Meyer NEJM 2014. AHA/ACC Massive/Submassive PE Statement 2011. CCS Position. SCAI Catheter-Based PE Position 2022."
+      },
+      {
+        "id": "attr_amyloidosis",
+        "name": "ATTR (Transthyretin) Amyloidosis",
+        "subtitle": "Wild-type + hereditary — cardiac + neuropathic — ESC 2021 / ATTR-ACT / APOLLO / ATTRibute-CM",
+        "patho": "Misfolded TRANSTHYRETIN (TTR; pre-albumin) protein → amyloid fibril deposition. SUBTYPES: WILD-TYPE ATTR (ATTRwt; formerly senile systemic amyloidosis) — older men (>60-70), no genetic variant; predominantly CARDIAC (HFpEF + restrictive); rising recognition with cardiac PYP imaging; HEREDITARY ATTR (ATTRv; formerly familial amyloidotic polyneuropathy) — autosomal dominant; >130 TTR mutations; 4 phenotypes — neuropathic-predominant (V30M Portuguese cluster classic), CARDIAC-PREDOMINANT (V122I/Ala122 — common in 4% Black Americans; phenotype mostly cardiac at older onset), MIXED (Glu89Lys Bulgarian), oculo-leptomeningeal (rare). PATHOPHYSIOLOGY: liver synthesizes TTR; mutated/misfolded/dissociated TTR aggregates as amyloid → organ deposition. CARDIAC ATTR: progressive HFpEF with restrictive CM; conduction system disease + arrhythmia; aortic stenosis association (common — 'cryptogenic ATR-CA' in elderly low-flow low-gradient AS). NEUROPATHIC ATTR: progressive small + large fiber sensorimotor + autonomic neuropathy → severe disability + death (untreated 5-15 years); GI manifestations (diarrhea/constipation), orthostatic hypotension, ED, gastroparesis. ATTRwt CARDIAC — 13-15% of HFpEF over 65; substantially under-diagnosed.",
+        "signs": "ATTRwt CARDIAC: HFpEF symptoms (dyspnea, edema), atrial fibrillation, conduction system disease, syncope, BILATERAL CARPAL TUNNEL SYNDROME (~50% precedes by years — KEY clue for surveillance), spinal stenosis (lumbar), biceps tendon rupture, hip + shoulder OA disproportionate to age. ATTRv NEUROPATHIC: progressive ascending sensorimotor + autonomic neuropathy starting feet → legs → upper extremities; significant pain; motor weakness late; orthostatic hypotension (severe — falls, syncope); GI dysmotility (diarrhea + constipation alternating; gastroparesis); ED; weight loss. ATTRv CARDIAC: like ATTRwt but younger onset (50s-70s) + more aggressive course often + family history. AORTIC STENOSIS — 'AS + amyloid' often coexist in elderly; PYP imaging routine in low-flow low-gradient AS.",
+        "diagnosis": "STEP 1 — TYPE DISTINGUISHED (CRUCIAL: AL vs ATTR — completely different treatment): EXCLUDE AL by SPEP + UPEP + immunofixation + SERUM FREE LIGHT CHAINS (κ:λ ratio normal). STEP 2 — IMAGING: CARDIAC MRI with LGE + T1 mapping (transmural circumferential LGE pattern); ECHOCARDIOGRAM (LV thickness usually >12 mm; restrictive filling; preserved EF often); APICAL SPARING ('cherry on top' on longitudinal strain — characteristic); CARDIAC TECHNETIUM PYROPHOSPHATE (PYP) SCAN — Grade 2 or 3 (heart:contralateral lung ratio >1.5) with NEGATIVE LIGHT CHAIN STUDIES = DIAGNOSTIC for cardiac ATTR (without need for biopsy! — class I per ESC 2021); 99% specificity. STEP 3 — TYPING ATTRv vs ATTRwt: GENETIC TESTING for TTR gene mutations — positive = ATTRv (then evaluate phenotype); negative = ATTRwt. STEP 4 — TISSUE BIOPSY ALTERNATIVE — needed if PYP equivocal or atypical features: endomyocardial biopsy (or fat pad/abdomen — lower sensitivity ATTR); Congo red + LMD/MS. NEUROPATHY workup: NCS/EMG, autonomic testing, skin biopsy (small fiber neuropathy density).",
+        "monitoring": "Cardiac biomarkers (NT-proBNP, troponin) q3-6 months; echocardiogram + Lng strain q6-12 months; cardiac MRI q1-2 years; functional status (6MWD, KCCQ); neuropathy (NIS, Total Neuropathy Score); autonomic; BP/orthostatic; medication AE; family cascade screening (if ATTRv).",
+        "treatment": [
+          {
+            "line": "TTR STABILIZATION (selected, Health Canada approved)",
+            "type": "TTR tetramer stabilizer",
+            "family": "—",
+            "agents": [
+              "TAFAMIDIS 80 mg PO daily (Vyndaqel 20 mg × 4 caps OR Vyndamax 61 mg × 1 cap) — STABILIZES TTR TETRAMER preventing dissociation + amyloid formation; FIRST APPROVED THERAPY for ATTR cardiomyopathy; Health Canada 2018 + 2020 expanded; ATTR-ACT Trial Maurer NEJM 2018 (cardiac mortality + hospitalization reduction); CONTINUE INDEFINITELY (continuous protein production; not curative)",
+              "ACORAMIDIS 712 mg PO BID — newer TTR stabilizer; FDA 2024 + Health Canada under review; ATTRibute-CM Gillmore NEJM 2024 (improved death + CV hospitalization vs placebo); preferential to tafamidis demonstrated in head-to-head subset analyses",
+              "DIFLUNISAL (NSAID stabilizing TTR off-label) — historic + cheaper; concerns re: long-term CV/renal/GI in elderly; rarely first-line"
+            ],
+            "notes": "Stabilization slows progression; not reverse; lifelong.",
+            "guideline": "ESC ATTR-CM 2021; CCS Position; ATTR-ACT Maurer NEJM 2018; ATTRibute-CM Gillmore NEJM 2024"
+          },
+          {
+            "line": "RNA SILENCING (TTR knockdown) — neuropathic + cardiac",
+            "type": "siRNA / antisense",
+            "family": "Gene-silencing",
+            "agents": [
+              "PATISIRAN 0.3 mg/kg IV q3 weeks — siRNA targeting TTR mRNA; FIRST gene-silencing therapy approved; FDA 2018 + Health Canada NOC 2018; APOLLO Adams NEJM 2018 (improved neuropathy + QOL in hereditary ATTR neuropathic); also evidence for cardiac benefit (APOLLO-B 2023 + studies)",
+              "VUTRISIRAN 25 mg SC q3 MONTHS — newer siRNA TTR silencer; FDA 2022 + Health Canada NOC 2023; HELIOS-A Adams NEJM 2023 (non-inferior to patisiran neuropathy; convenience SC q3 months); HELIOS-B (cardiac extension) — FDA 2024 cardiac approval",
+              "INOTERSEN 284 mg SC weekly — antisense oligonucleotide TTR silencer; FDA 2018 + Health Canada NOC 2018; NEURO-TTR Benson NEJM 2018; THROMBOCYTOPENIA + GLOMERULONEPHRITIS BLACK BOX (close monitoring)",
+              "EPLONTERSEN — newer ASO with conjugated GalNAc (hepatocyte-targeted); FDA 2023 for ATTRv neuropathy"
+            ],
+            "notes": "Multiple gene-silencing options; SC q3 months convenience.",
+            "guideline": "APOLLO Adams NEJM 2018; HELIOS-A Adams NEJM 2023"
+          },
+          {
+            "line": "CARDIAC AMYLOID supportive",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "LOOP DIURETICS — backbone of HF management; volume status critical in restrictive CM",
+              "MINERALOCORTICOID RECEPTOR ANTAGONIST (spironolactone, eplerenone) — modest benefit",
+              "STANDARD HF DRUGS — limited data; use cautiously: β-BLOCKERS (low doses; bradycardia + orthostatic risk), ACEi/ARB (orthostatic; cautious); SGLT2i (DAPA-CKD/DELIVER showed benefit HFpEF — emerging in cardiac amyloid)",
+              "AVOID DIGOXIN (binds amyloid fibrils → toxicity); AVOID NDH-CCB (verapamil/diltiazem — also bind amyloid); AVOID standard β-blockers high dose in advanced",
+              "AF + AMYLOID → ANTICOAGULATE (regardless of CHADS — high stroke risk; intracardiac thrombus formation common)",
+              "RHYTHM CONTROL preferred over rate control in cardiac AL/ATTR (sensitive to atrial kick)",
+              "ICD primary prevention — selected (not routine in restrictive CM); secondary prevention if VT/VF/syncope",
+              "PACEMAKER for advanced conduction disease + bradycardia",
+              "HEART TRANSPLANT — selected end-stage cardiac AL/ATTR; ATTRwt + V122I more frequent transplant candidates"
+            ],
+            "notes": "Cardiac AL/ATTR HF management requires specialty cardiology amyloid expertise.",
+            "guideline": "ESC ATTR-CM 2021; CCS HF 2021"
+          },
+          {
+            "line": "NEUROPATHIC + AUTONOMIC management",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "NEUROPATHIC PAIN — gabapentin, pregabalin, duloxetine, amitriptyline; topical (lidocaine, capsaicin)",
+              "ORTHOSTATIC HYPOTENSION — non-pharmacologic + midodrine + fludrocortisone + droxidopa",
+              "GASTROPARESIS — metoclopramide cautious (extrapyramidal), domperidone, diet (small frequent low-fat low-fiber); PEG/J-tube selected",
+              "DIARRHEA — loperamide, cholestyramine (bile acid malabsorption); pancreatic enzyme replacement if associated",
+              "ED — sildenafil per cardiac status",
+              "MOBILITY + PT for sensorimotor neuropathy",
+              "WALKING AIDS, fall prevention",
+              "PSYCHOLOGICAL / depression management — chronic illness"
+            ],
+            "notes": "Multidisciplinary supportive neuropathic + autonomic management.",
+            "guideline": "ISA 2024"
+          },
+          {
+            "line": "Family screening (ATTRv)",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "GENETIC COUNSELING for proband + first-degree relatives",
+              "CASCADE GENETIC TESTING for TTR mutation (penetrance variable; not all carriers develop disease)",
+              "PRE-CONCEPTION counseling (autosomal dominant; 50% offspring inheritance)",
+              "Asymptomatic carriers — surveillance every 1-2 years (cardiac biomarkers, ECG, NCS) starting 10 years before predicted age of onset",
+              "Treatment can begin in PRE-SYMPTOMATIC carriers in some scenarios (early intervention)",
+              "Liver transplant — historic curative for ATTRv (eliminates source of mutant TTR; less needed now with gene-silencing therapies)"
+            ],
+            "notes": "Cascade screening + genetic counseling.",
+            "guideline": "ESC ATTR-CM 2021"
+          }
+        ],
+        "pearls": [
+          "ATTRwt — older men, cardiac-predominant, ~13-15% HFpEF over 65 (under-diagnosed)",
+          "ATTRv — autosomal dominant; >130 TTR mutations; 4 phenotypes",
+          "V122I (~4% Black Americans) — late-onset cardiac ATTRv",
+          "BILATERAL CARPAL TUNNEL — KEY herald (precedes by years); spinal stenosis, biceps tendon rupture, AS coexisting",
+          "CARDIAC PYP SCAN: Grade 2/3 + NEGATIVE LIGHT CHAINS = DIAGNOSTIC (no biopsy needed)",
+          "EXCLUDE AL FIRST — SPEP/UPEP + immunofixation + free light chains",
+          "ECHO 'APICAL SPARING' (cherry on top longitudinal strain) — characteristic",
+          "TAFAMIDIS 80 mg/day — first-line TTR stabilizer (ATTR-ACT 2018)",
+          "ACORAMIDIS — newer stabilizer (ATTRibute-CM 2024; FDA 2024)",
+          "PATISIRAN q3 wk IV (APOLLO 2018; FDA 2018)",
+          "VUTRISIRAN q3 MONTHS SC (HELIOS-A 2023; FDA 2022; cardiac extension HELIOS-B 2024)",
+          "INOTERSEN — older ASO; THROMBOCYTOPENIA + GN black box",
+          "EPLONTERSEN — newer GalNAc-ASO (FDA 2023)",
+          "AVOID DIGOXIN, NDH-CCB in cardiac amyloid (bind fibrils)",
+          "AF + cardiac AMYLOID → ANTICOAGULATE regardless CHADS",
+          "ICD primary prevention NOT routine; SECONDARY prevention if VT/syncope",
+          "LIVER TRANSPLANT — historic for ATTRv (less needed with gene silencing)",
+          "FAMILY CASCADE SCREENING (ATTRv) — TTR mutation testing"
+        ],
+        "introduction": "ATTR amyloidosis encompasses wild-type (older men, predominantly cardiac) and hereditary (autosomal dominant, multiple phenotypes — neuropathic, cardiac, mixed) forms caused by misfolded transthyretin (pre-albumin) protein deposition. ATTRwt is increasingly recognized in HFpEF, with bilateral carpal tunnel syndrome heralding disease by years. Diagnosis combines exclusion of AL (SPEP/free light chains) with cardiac technetium pyrophosphate scan (Grade 2/3 with negative light chains is diagnostic without biopsy per ESC 2021), CMR imaging, and TTR genetic testing. Treatment options include TTR stabilizers (tafamidis — ATTR-ACT 2018; acoramidis — ATTRibute-CM 2024) and gene-silencing therapies (patisiran — APOLLO 2018; vutrisiran — HELIOS-A 2023; inotersen; eplontersen). Cardiac management requires amyloid-specific cardiology with avoidance of digoxin and non-dihydropyridine calcium channel blockers. ATTRv requires family cascade screening with genetic counseling.",
+        "source": "ESC ATTR-CM Diagnosis Position 2021 (Garcia-Pavia EHJ 2021). ATTR-ACT Tafamidis Maurer NEJM 2018. APOLLO Patisiran Adams NEJM 2018. HELIOS-A Vutrisiran Adams NEJM 2023. ATTRibute-CM Acoramidis Gillmore NEJM 2024. NEURO-TTR Inotersen Benson NEJM 2018. CCS Cardiac Amyloid Position."
       }
     ]
   },
@@ -26205,6 +26313,457 @@ var DISEASES = {
         ],
         "introduction": "Aplastic anemia is a bone marrow failure syndrome characterized by pancytopenia and a hypocellular bone marrow, most commonly autoimmune T-cell-mediated in idiopathic acquired cases. Severity classification (Camitta) guides treatment intensity. Treatment decision between allogeneic HSCT (first-line for severe disease in young patients with HLA-matched sibling donor) and immunosuppressive therapy with eltrombopag (RACE 2017 — horse ATG plus cyclosporine plus eltrombopag) shapes prognosis. Inherited bone marrow failure syndromes (Fanconi anemia, dyskeratosis congenita) require distinct management with reduced-intensity conditioning and lifelong cancer surveillance. PNH clone expansion and clonal evolution to MDS/AML are long-term concerns post-IST, warranting periodic surveillance.",
         "source": "BSH Guidelines for Aplastic Anemia 2016 (Killick BJH 2016). RACE Trial Townsley NEJM 2017 (eltrombopag + IST). Olnes Eltrombopag Monotherapy NEJM 2012. EBMT Aplastic Anemia. Fanconi Anemia Research Fund. CIBMTR Outcomes."
+      },
+      {
+        "id": "autoimmune_hemolytic_anemia",
+        "name": "Autoimmune Hemolytic Anemia (AIHA)",
+        "subtitle": "Warm + cold agglutinin disease — BSH 2017 / ICAS 2020",
+        "patho": "Antibody-mediated destruction of red blood cells. SUBTYPES based on temperature optima of autoantibodies: WARM AIHA (~70-80%) — IgG (sometimes IgA) autoantibodies maximally active at 37°C; primarily EXTRAVASCULAR hemolysis (splenic — IgG-coated RBCs cleared by macrophages with Fc receptors); idiopathic ~50% or SECONDARY (CLL, lymphoma, SLE, drugs, infections, post-HSCT); COLD AGGLUTININ DISEASE (CAD; ~20%) — IgM autoantibodies maximally active 0-4°C; AGGLUTINATION + COMPLEMENT-mediated INTRAVASCULAR hemolysis + extravascular liver clearance; primary CAD (clonal CD20+ lymphoproliferative — usually KIR1A or related; technically a low-grade B-cell lymphoma in many cases) vs SECONDARY (Mycoplasma pneumoniae, EBV, CLL, lymphoma, parasitic); MIXED AIHA (~5%) — both warm IgG + cold IgM; PAROXYSMAL COLD HEMOGLOBINURIA (PCH; rare) — biphasic IgG (Donath-Landsteiner antibody) attaching at low temp + activating complement at body temp → intravascular hemolysis; classic post-syphilis (now mostly post-viral in children); DRUG-INDUCED — penicillins, cephalosporins, methyldopa, quinidine, NSAIDs, cefoxitin, fludarabine, immune checkpoint inhibitors (CHECKPOINT INHIBITOR-INDUCED AIHA emerging — pembrolizumab, nivolumab, etc.).",
+        "signs": "FATIGUE, DYSPNEA on exertion, pallor, jaundice (mild-severe — unconjugated bilirubin from hemolysis), DARK URINE (intravascular — hemoglobinuria; cola-colored), splenomegaly (especially warm AIHA), tachycardia. CAD-SPECIFIC: ACROCYANOSIS (numbness + bluish discoloration of nose, ears, fingers, toes when cold-exposed; Raynaud's phenomenon-like), livedo reticularis. PCH: classic post-cold exposure hemoglobinuria + abdominal pain. SEVERE — heart failure (high-output), shock. SECONDARY DISEASE FEATURES if applicable (lymphoma, CLL, SLE, infection).",
+        "diagnosis": "DIRECT ANTIGLOBULIN TEST (DAT / Coombs) — POSITIVE; specific patterns help: warm AIHA — IgG positive (sometimes C3); CAD — C3 positive (IgM dissociates at body temp; rarely detected); PCH — C3 positive (Donath-Landsteiner cold-warm test). PERIPHERAL SMEAR — SPHEROCYTES (warm AIHA — partial RBC membrane removal by macrophages); AGGLUTINATION (CAD — clumped RBCs at room temp; pseudo-leukocytosis on automated counters). LABS: CBC (anemia), reticulocyte count (high — bone marrow compensation), LDH (high — hemolysis), HAPTOGLOBIN (low — bound by free Hb), bilirubin (indirect/unconjugated elevated), urine hemoglobin (intravascular). ANTIBODY ID — eluate testing, monospecific DAT (IgG/A/M/C3), serum cold agglutinin titer (>1:64 supports CAD; very high titers in primary CAD), thermal amplitude. UNDERLYING WORKUP: viral panel (EBV, CMV, hep B/C, HIV), Mycoplasma pneumoniae, ANA, complement, SPEP/free light chains (clonal IgM in CAD = M-protein), CT chest/abdomen + lymph node biopsy if lymphoma suspected, peripheral flow cytometry, CD20 + CD79 immunostains (CAD often clonal B cells); checkpoint inhibitor history.",
+        "monitoring": "CBC + reticulocytes + LDH + haptoglobin + bilirubin (acute → biweekly → monthly); DAT (variable); transfusion needs; clinical response to therapy; underlying disease surveillance; medication AE.",
+        "treatment": [
+          {
+            "line": "WARM AIHA — first-line",
+            "type": "Glucocorticoids",
+            "family": "—",
+            "agents": [
+              "PREDNISONE 1-1.5 mg/kg/day (max 80-100 mg) PO daily — initial; response 70-80% within weeks; SLOW TAPER over 3-6 MONTHS to off (avoid relapse during taper)",
+              "If urgent severe: METHYLPREDNISOLONE 250-500 mg IV × 3 days then transition to oral",
+              "+ FOLIC ACID 1-5 mg/day (ongoing hemolysis)",
+              "+ TRANSFUSIONS as needed for symptomatic anemia (warm-incubated cross-matched units; alloantibody risk)",
+              "+ PJP prophylaxis (TMP-SMX) during prolonged high-dose steroid",
+              "+ Bone protection (Ca + vitamin D + bisphosphonate)",
+              "+ DVT prophylaxis (especially active hemolysis + steroid + bedrest)"
+            ],
+            "notes": "Steroid first-line warm AIHA; long taper essential.",
+            "guideline": "BSH AIHA 2017 (Hill BJH 2017)"
+          },
+          {
+            "line": "WARM AIHA — second-line / steroid-refractory or intolerable",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "RITUXIMAB 375 mg/m² IV weekly × 4 OR 1 g IV days 0+14 — second-line standard; effective + steroid-sparing; 70-80% response",
+              "SPLENECTOMY — historic standard; reduces extravascular hemolysis 60-80% response; reserved for steroid-refractory + RTX-refractory (vaccinations PCV13/15/20 + MenACWY/MenB + Hib + INFLUENZA pre-splenectomy; LIFELONG penicillin prophylaxis post-splenectomy especially post-OPSS)",
+              "FOSTAMATINIB 100-150 mg PO BID — Syk kinase inhibitor; FDA approved warm AIHA 2022; refractory cases; emerging Canadian access",
+              "OTHER IMMUNOSUPPRESSANTS: AZATHIOPRINE (1.5-2 mg/kg/day; check TPMT), MYCOPHENOLATE (1-2 g BID), CYCLOSPORINE — selected refractory",
+              "DARATUMUMAB — refractory case series; emerging",
+              "IVIG 1-2 g/kg — adjunct for severe/refractory; modest evidence"
+            ],
+            "notes": "Second-line: rituximab preferred; splenectomy reserved.",
+            "guideline": "BSH 2017"
+          },
+          {
+            "line": "COLD AGGLUTININ DISEASE — first-line",
+            "type": "Anti-CD20 + complement",
+            "family": "—",
+            "agents": [
+              "RITUXIMAB 375 mg/m² IV weekly × 4 — FIRST-LINE for primary CAD (targets clonal CD20+ B cells producing IgM); response ~50-70%; durable in many",
+              "RITUXIMAB + BENDAMUSTINE — second-line CAD; superior to RTX alone (Berentsen Blood 2017); Canadian access via specialty hematology",
+              "SUTIMLIMAB (Enjaymo) 6.5 g (<75 kg) or 7.5 g (≥75 kg) IV weekly × 2 then q14 days — anti-C1s monoclonal; FDA 2022, Health Canada NOC 2023; rapidly improves Hb + reduces transfusion (CARDINAL Roth NEJM 2021); blocks complement activation in primary CAD",
+              "AVOID glucocorticoids (less effective in CAD; toxicity disproportionate)",
+              "AVOID splenectomy (less effective — IgM-mediated hepatic clearance, not splenic)",
+              "AVOID transfusion if possible (alloantibody risk + agglutination); WARM all transfusions to 37°C if needed"
+            ],
+            "notes": "CAD distinct treatment; rituximab + bendamustine + sutimlimab primary.",
+            "guideline": "ICAS 2020 (Berentsen Blood 2020); CARDINAL Roth NEJM 2021"
+          },
+          {
+            "line": "COLD AGGLUTININ DISEASE — supportive + secondary",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "AVOIDANCE COLD EXPOSURE — gloves, hats, scarves, warm beverages; avoid cold drinks, fridge contact, IV cold fluids — KEY non-pharmacologic",
+              "WARM IV fluids/medications/blood products to 37°C",
+              "TREAT SECONDARY CAUSE — Mycoplasma (azithromycin), EBV (supportive); CLL/lymphoma (specific therapy)",
+              "FOLATE supplementation",
+              "AVOID HEMOLYSIS TRIGGERS — cold, infections (vaccinate)",
+              "PCH (paroxysmal cold hemoglobinuria) — usually self-limited (especially post-viral pediatric); supportive + warming + steroid sometimes"
+            ],
+            "notes": "Cold avoidance fundamental; treat triggers.",
+            "guideline": "ICAS 2020"
+          },
+          {
+            "line": "DRUG-INDUCED AIHA",
+            "type": "Withdrawal",
+            "family": "—",
+            "agents": [
+              "DISCONTINUE OFFENDING DRUG — most resolve within weeks",
+              "Common offenders: penicillins, cephalosporins (high-dose IV), methyldopa, quinidine, NSAIDs, fludarabine, oxaliplatin, immune checkpoint inhibitors (immune-related AEs)",
+              "STEROIDS — selected severe drug-induced AIHA (immunosuppression for AE; steroid + IVIG)",
+              "CHECKPOINT INHIBITOR-INDUCED — multidisciplinary oncology + hematology; balance cancer therapy with hemolysis",
+              "Avoid re-exposure"
+            ],
+            "notes": "Drug withdrawal usually curative.",
+            "guideline": "BSH 2017"
+          },
+          {
+            "line": "Severe acute hemolytic crisis",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "URGENT TRANSFUSION (warm-incubated, ABO-cross-matched units; avoid D+ pairing alloantibody; warmed to 37°C)",
+              "HIGH-DOSE STEROIDS (warm AIHA) — methylprednisolone 1 g IV × 3 days",
+              "IVIG 0.4-1 g/kg/day × 4-5 days — adjunct severe; may help temporary",
+              "PLASMAPHERESIS — selected (refractory severe; cold AIHA pre-splenectomy historic)",
+              "ECULIZUMAB / SUTIMLIMAB — emerging severe complement-mediated",
+              "RITUXIMAB rapid initiation (especially CAD)",
+              "ICU admission, oxygen, treat heart failure"
+            ],
+            "notes": "Acute hemolytic crisis — urgent multimodal.",
+            "guideline": "BSH 2017"
+          }
+        ],
+        "pearls": [
+          "DAT POSITIVE — diagnostic; pattern (IgG vs C3) helps subtype",
+          "WARM AIHA (~70-80%) — IgG; extravascular splenic; PRED 1-1.5 mg/kg first-line",
+          "CAD (~20%) — IgM + complement; intravascular + hepatic; RTX first-line",
+          "PCH — biphasic IgG (Donath-Landsteiner); rare; post-viral children",
+          "SPHEROCYTES on smear — warm AIHA + hereditary spherocytosis (DAT distinguishes)",
+          "AGGLUTINATION on smear — CAD; pseudo-leukocytosis automated counters",
+          "WARM AIHA: prednisone → RTX → splenectomy/azathioprine/MMF/cyclosporine; FOSTAMATINIB FDA 2022",
+          "CAD: RTX first; RTX + BENDAMUSTINE refractory; SUTIMLIMAB (anti-C1s) FDA 2022/Health Canada 2023; AVOID steroids + splenectomy",
+          "CAD: COLD AVOIDANCE foundational; warm fluids/blood products",
+          "DRUG-INDUCED — DC offender (PCN, ceph high-dose, methyldopa, quinidine, NSAIDs, ICI)",
+          "CHECKPOINT INHIBITOR-AIHA emerging — multidisciplinary",
+          "SECONDARY: CLL, lymphoma, SLE, viral infections, drugs",
+          "TRANSFUSION: WARM-INCUBATED, cross-matched (alloantibody risk in chronic transfusion); WARM TO 37°C in CAD",
+          "FOLIC ACID supplementation",
+          "PJP PROPHYLAXIS during high-dose steroid",
+          "POST-SPLENECTOMY — vaccines + LIFELONG PCN prophylaxis (encapsulated organism risk)",
+          "PRIMARY CAD = clonal CD20+ B-cell low-grade lymphoma in many cases — RTX + chemoimmunotherapy"
+        ],
+        "introduction": "Autoimmune hemolytic anemia is antibody-mediated red blood cell destruction with subtypes defined by autoantibody temperature optima: warm AIHA (IgG, extravascular splenic clearance), cold agglutinin disease (IgM, complement-mediated intravascular plus hepatic clearance), paroxysmal cold hemoglobinuria, mixed AIHA, and drug-induced forms. Direct antiglobulin test (Coombs) confirms diagnosis with subtype patterns. Warm AIHA first-line is prednisone 1-1.5 mg/kg/day with rituximab as second-line and splenectomy reserved. Cold agglutinin disease responds best to rituximab (first-line; with bendamustine as combination), sutimlimab (anti-C1s, CARDINAL 2021; FDA 2022, Health Canada 2023), and aggressive cold avoidance — steroids and splenectomy are NOT effective. Drug-induced AIHA resolves with offender withdrawal. Severe hemolytic crises require warm-incubated transfusions, high-dose steroids, IVIG, and rapid initiation of definitive therapy.",
+        "source": "BSH AIHA 2017 (Hill BJH 2017). ICAS Cold Agglutinin Disease 2020 (Berentsen Blood 2020). CARDINAL Sutimlimab Roth NEJM 2021. Berentsen Bendamustine + RTX Blood 2017. Fostamatinib Warm AIHA FDA 2022."
+      },
+      {
+        "id": "al_amyloidosis",
+        "name": "AL Amyloidosis (Light Chain)",
+        "subtitle": "Plasma cell dyscrasia → amyloid deposition — ISA 2024 / ANDROMEDA",
+        "patho": "Most common form of systemic amyloidosis. Clonal PLASMA CELL DYSCRASIA → over-production of monoclonal IMMUNOGLOBULIN LIGHT CHAINS (κ or λ; LAMBDA TWICE AS COMMON as kappa) → misfolded light chains aggregate as amyloid fibrils → deposit in tissues + organs → progressive organ dysfunction. Underlying clonal plasma cells small in size (often <10% bone marrow plasma cells; vs multiple myeloma >10%); MULTIPLE MYELOMA + AL OVERLAP (~10-15%). PRIMARY (without precursor MGUS) vs MGUS-precursor (most cases preceded by smoldering MGUS). ORGAN INVOLVEMENT (in order frequency): RENAL (~70% — proteinuria, nephrotic syndrome → ESKD), CARDIAC (~70% — restrictive cardiomyopathy + arrhythmia + HF — DEFINING POOR PROGNOSIS), HEPATIC (~30% — hepatomegaly, ALP elevated), GASTROINTESTINAL (motility issues, malabsorption, bleeding), NEUROLOGIC (autonomic + peripheral neuropathy — orthostatic hypotension, diarrhea, gastroparesis, ED), SOFT TISSUE (macroglossia — diagnostic clue; periorbital purpura, raccoon eyes; arthropathy; carpal tunnel syndrome especially bilateral). Untreated MEDIAN SURVIVAL 6-12 months (cardiac), 18-24 months (renal); modern therapy 5-year survival 50%+ for sensitive disease.",
+        "signs": "INSIDIOUS onset; multi-system. CARDIAC — exertional dyspnea, edema, fatigue, syncope (autonomic + arrhythmic), elevated JVP, S3, low voltage QRS + pseudo-infarct pattern (Q waves anterior leads). RENAL — proteinuria > 3 g/day frequent, nephrotic syndrome (edema, hypoalbuminemia, hyperlipidemia), advancing CKD. NEUROLOGIC — orthostatic hypotension, diarrhea (autonomic), distal sensory neuropathy. SOFT TISSUE — MACROGLOSSIA (~10% — KEY clue; tooth indentations on tongue), PERIORBITAL PURPURA (raccoon eyes; pinch purpura — capillary fragility), shoulder pad sign (deltoid amyloid deposits), carpal tunnel BILATERAL (~25% — often heralds amyloidosis years before systemic). GI — early satiety, diarrhea/constipation alternating, weight loss. HEPATIC — hepatomegaly, sometimes massive.",
+        "diagnosis": "TISSUE BIOPSY = REQUIRED FOR DIAGNOSIS. SCREENING with FAT PAD ASPIRATE (abdominal, periumbilical SC fat) — SAFE + 70-80% sensitive when AL likely; or BONE MARROW (~50-60% sensitive); LABIAL SALIVARY GLAND (60-70%). DEFINITIVE with CONGO RED stain → APPLE-GREEN BIREFRINGENCE under POLARIZED LIGHT. FOLLOWED BY TYPING — IMMUNOELECTRON MICROSCOPY or LASER MICRODISSECTION WITH MASS SPECTROMETRY (LMD/MS — gold standard for amyloid typing, especially distinguishing AL from ATTR + AA + others — critical because treatment differs). LABS: SPEP/UPEP + IMMUNOFIXATION + SERUM FREE LIGHT CHAINS (κ:λ ratio abnormal in 95% AL — characteristic; abnormal κ:λ ratio + tissue amyloid = AL until proven otherwise); BONE MARROW BIOPSY + plasma cell quantitation (% clonal plasma cells; FISH for cytogenetics — MM overlap); BIOMARKERS — N-terminal pro-BNP (cardiac involvement; >332 ng/L abnormal in AL — sensitive marker); TROPONIN (cardiac); echocardiogram + cardiac MRI with LGE + T1 mapping (early cardiac AL); CARDIAC AMYLOID NUCLEAR IMAGING (technetium pyrophosphate — POSITIVE in ATTR, NEGATIVE in AL — distinguishes); CT abdomen-pelvis (organomegaly); 24-h urine protein.",
+        "monitoring": "Hematologic response (free light chains q3 months — target <20 mg/L difference, dFLC <10 = VGPR), organ response (NT-proBNP + troponin cardiac; eGFR + 24h urine renal), cardiac MRI/echo serial, BNP, BP/edema, clinical function (NYHA, ECOG), AE of therapy.",
+        "treatment": [
+          {
+            "line": "DARATUMUMAB-based (FIRST-LINE)",
+            "type": "Anti-CD38 + bortezomib + cyclophosphamide + dex",
+            "family": "Quad therapy",
+            "agents": [
+              "DARATUMUMAB-VRd (DARATUMUMAB + BORTEZOMIB + CYCLOPHOSPHAMIDE + DEXAMETHASONE — 'Dara-VCD' or 'D-VCd') — FIRST-LINE based on ANDROMEDA Trial (Kastritis NEJM 2021) showing superior hematologic + organ response vs VCd alone; FDA 2021 + Health Canada NOC 2022 for newly-diagnosed AL",
+              "DARATUMUMAB SC (subcutaneous Faspro formulation 1800 mg) weekly × 8, then q2 wks × 16, then q4 wks ongoing — major dose-related improvement in convenience vs IV",
+              "BORTEZOMIB 1.3 mg/m² SC weekly",
+              "CYCLOPHOSPHAMIDE 300 mg/m² PO weekly",
+              "DEXAMETHASONE 20-40 mg PO weekly",
+              "Pre-medications for daratumumab — antihistamines, acetaminophen, montelukast first dose; reduces infusion reactions",
+              "Aggressive supportive care for cardiac involvement (HF management, ICD if indicated, anticoagulation if AF + cardiac AL)",
+              "VTE prophylaxis (LMWH or DOAC) — high VTE risk + amyloid + bortezomib"
+            ],
+            "notes": "ANDROMEDA established daratumumab-VCd standard of care; quad therapy.",
+            "guideline": "ISA 2024 (Palladini); ANDROMEDA Kastritis NEJM 2021"
+          },
+          {
+            "line": "AUTOLOGOUS HSCT — selected",
+            "type": "Stem cell transplant",
+            "family": "—",
+            "agents": [
+              "AUTOLOGOUS STEM CELL TRANSPLANT (ASCT) — for FIT patients with limited cardiac involvement; high-dose melphalan 200 mg/m² + auto-HSCT; deep hematologic responses possible",
+              "MAYO CLINIC ELIGIBILITY: NYHA I-II, NT-proBNP <5000 ng/L, troponin <0.06 ng/mL, eGFR >50, age <70 (relative)",
+              "Pre-transplant DECREASE PRECURSOR (induction with daratumumab-VCd or VCd × 4-6 cycles to debulk)",
+              "TRANSPLANT-RELATED MORTALITY higher than MM (5-15% historic; lower modern with better selection)"
+            ],
+            "notes": "ASCT for selected fit patients; depth + durability of response.",
+            "guideline": "ISA 2024"
+          },
+          {
+            "line": "REFRACTORY / RELAPSED",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "NEXT-GEN PROTEASOME INHIBITORS — IXAZOMIB 4 mg PO weekly + RD; CARFILZOMIB",
+              "IMiDS — LENALIDOMIDE / POMALIDOMIDE + dexamethasone",
+              "ANTI-CD38 maintenance — daratumumab continued",
+              "BCMA-TARGETING — TECLISTAMAB (BCMAxCD3 bispecific) emerging in MM-AL overlap",
+              "VENETOCLAX — t(11;14) AL clones (~50% have it); selective response",
+              "CELMOD: IBERDOMIDE — emerging",
+              "CAR-T cell — clinical trials"
+            ],
+            "notes": "Modern MM-style therapy applied to AL.",
+            "guideline": "ISA 2024"
+          },
+          {
+            "line": "Organ-specific supportive",
+            "type": "Multidisciplinary",
+            "family": "—",
+            "agents": [
+              "CARDIAC AL — diuretics (loop + aldosterone antagonists; sensitive to volume); midodrine for orthostatic hypotension; AVOID standard β-BLOCKERS, ACEi/ARB (autonomic dysfunction + low CO + orthostatic limit dose); restrictive cardiomyopathy management with cardiology AL specialty",
+              "ATRIAL FIBRILLATION + cardiac AL — high stroke risk; ANTICOAGULATION even at low CHADS scores (intracardiac thrombus risk)",
+              "VENTRICULAR ARRHYTHMIA / SYNCOPE — ICD; HEART TRANSPLANT in selected highly select cases",
+              "RENAL — diuretics + RAS blocker cautious; dialysis as needed",
+              "AUTONOMIC NEUROPATHY — midodrine + fludrocortisone for orthostatic; PEG/NG nutrition for severe gastroparesis",
+              "PERIPHERAL NEUROPATHY — gabapentin/pregabalin/duloxetine",
+              "GI — pancreatic enzyme replacement if pancreatic; bulking agents/loperamide for diarrhea",
+              "ANTICOAGULATION for VTE risk + AF"
+            ],
+            "notes": "Comprehensive supportive multidisciplinary care.",
+            "guideline": "ISA 2024"
+          },
+          {
+            "line": "STAGING + prognosis",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "MAYO STAGING SYSTEM (2012 + 2024 update) — NT-proBNP + cardiac TROPONIN + difference of FREE LIGHT CHAINS (dFLC); STAGE I (no markers elevated), II (1 marker), III (2 markers), IIIB (NT-proBNP >8500 — worst)",
+              "Stage I — median survival >70 months; Stage IIIB — <10 months",
+              "Cardiac risk dominates outcomes",
+              "Heart-FIRST patients (cardiac AL only) — emerging strategies + heart transplant"
+            ],
+            "notes": "Staging guides prognosis + therapy intensity.",
+            "guideline": "Kumar Mayo Staging 2012/2024"
+          }
+        ],
+        "pearls": [
+          "Most common SYSTEMIC AMYLOIDOSIS",
+          "MONOCLONAL LIGHT CHAINS (κ or λ; lambda 2× more common) → fibrils + organ deposition",
+          "RENAL (70%) + CARDIAC (70%) — most common organ involvement",
+          "MACROGLOSSIA, PERIORBITAL PURPURA, BILATERAL CARPAL TUNNEL — distinctive",
+          "TISSUE BIOPSY + Congo red + APPLE-GREEN BIREFRINGENCE under polarized light",
+          "TYPING by IMMUNOELECTRON MICROSCOPY or LMD/MS — distinguishes AL from ATTR (treatments different)",
+          "ABNORMAL κ:λ RATIO + amyloid biopsy = AL",
+          "CARDIAC: low voltage ECG + pseudo-infarct + restrictive on echo + LGE on MRI",
+          "TECHNETIUM PYROPHOSPHATE: POSITIVE in ATTR, NEGATIVE in AL",
+          "MAYO STAGING — NT-proBNP + troponin + dFLC",
+          "DARATUMUMAB-VCd (ANDROMEDA 2021) — FIRST-LINE; FDA 2021, Health Canada 2022",
+          "ASCT — selected fit patients (Mayo eligibility criteria)",
+          "VENETOCLAX — t(11;14) selective response",
+          "AVOID standard CV drugs in cardiac AL (orthostatic hypotension, low CO)",
+          "AF + cardiac AL → ANTICOAGULATE regardless CHADS (thrombus risk)",
+          "FAT PAD BIOPSY — safe initial screening (70-80% sens)",
+          "PRIMARY CAREGIVER: hematology + cardiology AL + nephrology + neurology multidisciplinary"
+        ],
+        "introduction": "AL amyloidosis is the most common systemic amyloidosis, caused by clonal plasma cell production of monoclonal immunoglobulin light chains (lambda twice as common as kappa) that misfold and deposit as amyloid fibrils in tissues. Renal and cardiac involvement (70% each) drive prognosis. Distinctive features include macroglossia, periorbital purpura, and bilateral carpal tunnel syndrome (often heralding disease). Diagnosis requires tissue biopsy with Congo red staining (apple-green birefringence) plus typing by immunoelectron microscopy or LMD/MS to distinguish AL from ATTR (which has positive technetium pyrophosphate scan). First-line therapy is daratumumab plus bortezomib, cyclophosphamide, and dexamethasone (Dara-VCd; ANDROMEDA 2021; FDA 2021, Health Canada 2022). Autologous stem cell transplant is reserved for fit patients with limited cardiac involvement. Multidisciplinary supportive care addresses cardiac, renal, autonomic, and neurologic manifestations. Mayo staging based on NT-proBNP, troponin, and free light chain difference guides prognosis.",
+        "source": "International Society of Amyloidosis (ISA) Recommendations 2024 (Palladini). ANDROMEDA Daratumumab-VCd Kastritis NEJM 2021. Mayo Staging Kumar 2012, 2024. SAFETY-T1 Tafamidis Maurer NEJM 2018 (ATTR distinct)."
+      },
+      {
+        "id": "hereditary_spherocytosis",
+        "name": "Hereditary Spherocytosis",
+        "subtitle": "Most common inherited hemolytic anemia in Northern Europeans — BSH 2012",
+        "patho": "Most common INHERITED hemolytic anemia in Northern European descent (~1:2000-5000); autosomal DOMINANT in ~75% (mild-moderate; ANK1 ankyrin, SPTB β-spectrin, SLC4A1 band 3); autosomal RECESSIVE in ~25% (often severe; SPTA1 α-spectrin, EPB42 protein 4.2). PATHOGENESIS: defective vertical interaction between membrane skeleton + lipid bilayer → loss of erythrocyte surface area → SPHEROCYTE shape (smaller + rounder + denser; lacks central pallor; reduced deformability) → SPLENIC SEQUESTRATION + EXTRAVASCULAR HEMOLYSIS. CLINICAL SEVERITY VARIABLE: MILD (~25%) — well-compensated, asymptomatic; MODERATE (60-75%) — chronic anemia, jaundice, splenomegaly, gallstones; SEVERE (5-10%) — transfusion-dependent. COMPLICATIONS: pigment GALLSTONES (50-60% over lifetime — chronic hemolysis), aplastic crisis (parvovirus B19 + chronic hemolytic state — SUDDEN reticulocytopenia + Hb drop), hemolytic crisis (febrile illness exacerbates), megaloblastic crisis (folate depletion).",
+        "signs": "ANEMIA — usually mild-moderate; FATIGUE; JAUNDICE (intermittent — exacerbations during illness/stress); SPLENOMEGALY (~80% — palpable; sometimes massive); GALLSTONE pancreatitis or symptomatic cholelithiasis. NEONATAL JAUNDICE common (50%); recurrent jaundice with viral illness in childhood. Family history affirmative in autosomal dominant cases. Variable severity within families. APLASTIC CRISIS — parvovirus B19 → severe anemia + reticulocytopenia × 1-2 weeks (recovers spontaneously; supportive transfusion).",
+        "diagnosis": "CBC + RETICULOCYTES — anemia + reticulocytosis (>5%); MCHC ELEVATED (>35 g/dL — characteristic; spherocytes are dense). PERIPHERAL SMEAR — SPHEROCYTES (small dense round cells without central pallor; key finding). DAT NEGATIVE (vs warm AIHA which also has spherocytes; KEY DISTINGUISHING TEST). Hereditary spherocytosis-specific tests: EOSIN-5'-MALEIMIDE (EMA) BINDING TEST by flow cytometry — REDUCED (gold standard 95%+ sensitivity + specificity); OSMOTIC FRAGILITY (historic; sensitive but less specific; replaced by EMA). HAPTOGLOBIN (low), LDH (high), bilirubin (indirect elevated), HEMOGLOBINURIA (intravascular component minimal — predominantly extravascular). ULTRASOUND ABDOMEN — splenomegaly + GALLSTONES. GENETIC TESTING — confirmatory in atypical cases (ANK1, SPTB, SPTA1, SLC4A1, EPB42); cascade family screening. EXCLUDE: AIHA (DAT positive), other hemolytic anemias, hereditary stomatocytosis (similar but unique findings).",
+        "monitoring": "CBC + reticulocyte + bilirubin + LDH q3-12 months stable; folate; ultrasound for gallstones q1-2 years; vaccination status; aplastic crisis surveillance during viral illnesses.",
+        "treatment": [
+          {
+            "line": "Mild — supportive + folate",
+            "type": "Conservative",
+            "family": "—",
+            "agents": [
+              "FOLIC ACID 1-5 mg/day (chronic increased turnover; prevent megaloblastic crisis)",
+              "Avoid stressors when possible (concurrent viral illness, dehydration)",
+              "Treat infections promptly (avoid hemolytic crisis)",
+              "Routine vaccinations (especially encapsulated organisms)",
+              "Genetic counseling",
+              "Educate re: aplastic crisis (parvovirus → seek care)"
+            ],
+            "notes": "Most patients only need supportive care.",
+            "guideline": "BSH Hereditary Spherocytosis 2012 (Bolton-Maggs BJH 2012)"
+          },
+          {
+            "line": "Moderate-severe — splenectomy",
+            "type": "Surgical",
+            "family": "—",
+            "agents": [
+              "SPLENECTOMY (laparoscopic preferred) — reduces hemolysis 80%+ + Hb increase + reduces transfusion + prevents aplastic crisis recurrence; INDICATIONS: symptomatic hemolytic anemia (Hb <80, symptomatic), transfusion dependence, gallstones requiring cholecystectomy (do CONCURRENTLY where possible — same operation)",
+              "PARTIAL SPLENECTOMY — emerging alternative in children (preserves immune function); 30-50% spleen preserved; reduced anemia; less infection risk than total splenectomy; outcomes long-term still being characterized",
+              "PRE-OPERATIVE VACCINATIONS — ≥2 weeks before splenectomy: PCV13/15/20, PPSV23, MENACWY, MENB, Hib, INFLUENZA annually, COVID; post-splenectomy boosters per schedule",
+              "PNEUMOCOCCAL ANTIBIOTIC PROPHYLAXIS POST-SPLENECTOMY — penicillin V 250 mg PO BID at minimum until age 5 in children + 5 years post; LIFELONG in immunosuppressed; controversial in adults",
+              "EMERGENCY ANTIBIOTIC SUPPLY post-splenectomy — amoxicillin/levofloxacin for febrile illness",
+              "DELAY SPLENECTOMY in young CHILDREN if possible (>6 years old) due to OPSS risk (overwhelming post-splenectomy sepsis — encapsulated organisms; mortality 50%+ if delayed presentation)",
+              "GALLSTONES — cholecystectomy (often concurrent with splenectomy; reduces gallbladder cancer + symptomatic cholelithiasis risk)"
+            ],
+            "notes": "Splenectomy curative for symptomatic; vaccination + lifelong prophylaxis essential.",
+            "guideline": "BSH 2012"
+          },
+          {
+            "line": "Severe / refractory",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "TRANSFUSION DEPENDENCE — chronic transfusions until splenectomy possible (especially severe pediatric); IRON CHELATION if ferritin >1000 (deferasirox)",
+              "PARTIAL SPLENECTOMY in young children (Tchernia approach)",
+              "TOTAL SPLENECTOMY — typically delayed >5-6 years to reduce OPSS risk",
+              "PARTIAL OR TOTAL SPLENECTOMY in adolescents/adults with severe disease",
+              "INVESTIGATIONAL — gene-modifying therapies"
+            ],
+            "notes": "Severe pediatric — partial splenectomy delays total + maintains some immunity.",
+            "guideline": "BSH 2012"
+          },
+          {
+            "line": "Aplastic crisis (parvovirus B19) management",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "TRANSFUSION SUPPORT — RBC transfusion as needed during reticulocytopenia (1-2 weeks)",
+              "ISOLATION — pregnant women + immunocompromised contacts (parvovirus B19 hydrops fetalis risk; chronic infection in immunocompromised)",
+              "HOSPITALIZATION typical; supportive care + CBC q1-2 days",
+              "Spontaneous recovery typical 1-2 weeks",
+              "IVIG considered for chronic infection in immunocompromised"
+            ],
+            "notes": "Self-limited; transfusion support during nadir.",
+            "guideline": "BSH 2012"
+          },
+          {
+            "line": "Cholelithiasis management",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "URSODEOXYCHOLIC ACID — limited efficacy; selected",
+              "CHOLECYSTECTOMY — laparoscopic preferred; INDICATIONS: symptomatic gallstones, cholangitis, pancreatitis; consider concurrent with splenectomy",
+              "GALLSTONE PANCREATITIS — separate management"
+            ],
+            "notes": "Cholecystectomy often concurrent with splenectomy.",
+            "guideline": "BSH 2012"
+          }
+        ],
+        "pearls": [
+          "MOST COMMON inherited hemolytic anemia in Northern Europeans (~1:2-5K)",
+          "AUTOSOMAL DOMINANT 75% (mild-moderate); recessive 25% (severe)",
+          "GENES: ANK1 (most common), SPTB, SPTA1, SLC4A1, EPB42",
+          "SPHEROCYTES on smear (dense round cells; no central pallor)",
+          "MCHC ELEVATED (>35 g/dL) — characteristic",
+          "DAT NEGATIVE — distinguishes from warm AIHA",
+          "EMA BINDING TEST by flow cytometry — gold standard (sensitivity + specificity 95%+)",
+          "GALLSTONES 50-60% lifetime — pigment stones from chronic hemolysis",
+          "APLASTIC CRISIS — parvovirus B19; reticulocytopenia + sudden Hb drop × 1-2 weeks",
+          "FOLIC ACID 1-5 mg/day — prevent megaloblastic crisis",
+          "SPLENECTOMY — symptomatic; reduces hemolysis 80%+; IDEALLY DELAY >5-6 years (OPSS risk)",
+          "PARTIAL SPLENECTOMY — pediatric option (preserves some immunity)",
+          "PRE-OP VACCINATIONS: PCV13/15/20, PPSV23, MENACWY, MENB, Hib, INFLUENZA, COVID",
+          "POST-SPLENECTOMY PCN PROPHYLAXIS — children to age 5+ minimum",
+          "EMERGENCY ABX SUPPLY post-splenectomy — amoxicillin/levofloxacin for fever",
+          "OPSS risk lifelong — encapsulated organisms; mortality 50%+ delayed presentation",
+          "CONCURRENT CHOLECYSTECTOMY at splenectomy if gallstones",
+          "FAMILY CASCADE genetic counseling"
+        ],
+        "introduction": "Hereditary spherocytosis is the most common inherited hemolytic anemia in Northern Europeans, caused by mutations in red cell membrane skeleton proteins (ankyrin, β-spectrin, α-spectrin, band 3, protein 4.2) producing spherocytic erythrocytes prone to splenic sequestration. Severity varies from compensated mild disease to transfusion-dependent severe forms. Diagnosis combines smear (spherocytes), elevated MCHC, negative direct antiglobulin test, and reduced eosin-5'-maleimide binding by flow cytometry. Treatment is folic acid supplementation for all and splenectomy for symptomatic moderate-severe disease (delayed in children to minimize overwhelming post-splenectomy sepsis risk). Aplastic crisis from parvovirus B19 produces reticulocytopenia requiring transfusion support. Concurrent cholecystectomy is performed for gallstones. Pre-operative vaccinations (encapsulated organisms) and post-splenectomy antibiotic prophylaxis are essential. Genetic counseling and family screening complete management.",
+        "source": "BSH Guidelines for Hereditary Spherocytosis 2012 (Bolton-Maggs BJH 2012). King EMA Binding Test review. Tchernia Partial Splenectomy."
+      },
+      {
+        "id": "g6pd_deficiency",
+        "name": "Glucose-6-Phosphate Dehydrogenase (G6PD) Deficiency",
+        "subtitle": "X-linked enzymopathy → drug + infection-triggered hemolysis — WHO 2024",
+        "patho": "Most common ENZYMOPATHY worldwide (~400 million affected). X-LINKED RECESSIVE (males predominantly affected; heterozygous females usually mosaic — variable severity); G6PD gene Xq28; >200 variants. G6PD enzyme catalyzes first step pentose phosphate pathway → produces NADPH → reduces glutathione → protects RBCs from OXIDATIVE STRESS. Deficiency → impaired NADPH/GSH production → vulnerability to OXIDATIVE STRESS → HEINZ BODY formation (denatured Hb) + 'BITE CELLS' (after spleen removes Heinz bodies) → INTRAVASCULAR + EXTRAVASCULAR HEMOLYSIS. CLASSES (WHO): Class I (severe — chronic non-spherocytic hemolytic anemia); Class II (severe Mediterranean type); Class III (moderate — A- variant, common in African descent); Class IV (mild — variant); Class V (asymptomatic). PROTECTIVE EFFECT against MALARIA → high prevalence sub-Saharan Africa, Mediterranean, Middle East, Southeast Asia. TRIGGERS: DRUGS (sulfonamides + sulfa drugs + dapsone — especially antimalarials primaquine/tafenoquine; nitrofurantoin; rasburicase + methylene blue — see PCN antibiotic black boxes; nalidixic acid; phenazopyridine), FAVA BEANS ('FAVISM' — particularly Mediterranean variant; raw or cooked beans), INFECTIONS (especially bacterial including UTI; viral; HEPATITIS), DKA, severe acidosis, neonatal jaundice (intrinsic hemolysis even without trigger).",
+        "signs": "ASYMPTOMATIC at baseline (mild-moderate variants). HEMOLYTIC EPISODE — acute, within 1-3 days of trigger exposure: fatigue, dyspnea, pallor, JAUNDICE, dark/cola-colored URINE (hemoglobinuria + INTRAVASCULAR hemolysis), abdominal/back pain, fever; severe → SHOCK, AKI from myoglobinuria, CV collapse. NEONATAL JAUNDICE — particularly in Mediterranean variant; risk kernicterus if severe. FAVISM — fava bean ingestion → hemolysis 24-72h. CHRONIC NON-SPHEROCYTIC HEMOLYTIC ANEMIA — Class I severe variants; ongoing low-grade hemolysis even without triggers. SPLENOMEGALY in chronic.",
+        "diagnosis": "ENZYME ACTIVITY ASSAY (quantitative G6PD level) — GOLD STANDARD; semi-quantitative spot test (qualitative screen). MEASUREMENT TIMING — DURING ACUTE HEMOLYSIS may give FALSELY NORMAL results (older deficient cells lysed; reticulocytes have higher G6PD → measured average increased); REPEAT 2-3 MONTHS POST-EVENT for accurate baseline. LABS: CBC (anemia during hemolytic episode), reticulocytosis (delayed; bone marrow ramping up over days), HEINZ BODIES (special staining), BITE CELLS on smear (after splenic removal of Heinz bodies), elevated LDH, low haptoglobin, indirect bilirubin elevated, hemoglobinuria; G6PD activity ELISA or spectrophotometric. GENOTYPING — variant identification (A-, A+, Mediterranean, Canton, etc.). NEWBORN SCREENING — implemented in many regions including high-risk populations; Canada — variable provincial; not universal. CASCADE family testing — X-linked.",
+        "monitoring": "G6PD level baseline (when not in active hemolysis); avoidance counseling adherence; CBC during illness/triggers; trigger exposure assessment.",
+        "treatment": [
+          {
+            "line": "PRIMARY — TRIGGER AVOIDANCE (cornerstone)",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "MEDIC ALERT BRACELET / WALLET CARD listing G6PD deficiency",
+              "AVOID OFFENDING DRUGS — comprehensive list maintained at G6PDDeficiency.org + UK G6PD Society:",
+              "  • SULFONAMIDES — sulfamethoxazole-TMP, sulfasalazine, sulfadiazine, sulfadoxine-pyrimethamine; AVOID for G6PD-deficient",
+              "  • DAPSONE — strict avoidance (especially in Mediterranean); modify PJP prophylaxis to atovaquone or pentamidine in G6PD-deficient",
+              "  • PRIMAQUINE / TAFENOQUINE (antimalarials for relapse prevention) — STRICT AVOIDANCE in severe variants; cautious use in mild (Class III A-) with reduced dose + close monitoring",
+              "  • RASBURICASE — black box CONTRAINDICATED G6PD-deficient (alternative for TLS — allopurinol + ASCORBIC ACID)",
+              "  • METHYLENE BLUE — black box CONTRAINDICATED (paradoxical hemolysis; alternative for methemoglobinemia in G6PD-deficient: ASCORBIC ACID, exchange transfusion, hyperbaric O2)",
+              "  • NITROFURANTOIN — caution; avoid where alternative exists",
+              "  • NALIDIXIC ACID, ciprofloxacin (less concerning than older quinolones; case-by-case)",
+              "  • PHENAZOPYRIDINE (Pyridium urinary analgesic) — avoid",
+              "  • ANTIMALARIALS — chloroquine + hydroxychloroquine (low risk; selected)",
+              "AVOID FAVA BEANS — particularly Mediterranean variant",
+              "TREAT INFECTIONS PROMPTLY (infections trigger hemolysis)",
+              "Counsel re: oxidative stress avoidance"
+            ],
+            "notes": "Avoidance is foundation of management; comprehensive medication review.",
+            "guideline": "WHO 2024 Updated G6PD Guidelines; G6PDDeficiency.org; UK G6PD Society"
+          },
+          {
+            "line": "ACUTE HEMOLYTIC EPISODE management",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "IDENTIFY + DISCONTINUE TRIGGER",
+              "IV FLUIDS (aggressive saline) — protect kidneys from hemoglobinuric AKI; target urine output 1-2 mL/kg/h",
+              "TRANSFUSION RBC if symptomatic anemia (Hb <70-80) or shock — leukoreduced + warmed; ABO-matched",
+              "DIALYSIS for severe AKI (myoglobinuric); RRT",
+              "DEFEROXAMINE if ongoing transfusions causing iron overload (long-term chronic)",
+              "TREAT ASSOCIATED INFECTION (cause + amplifier of hemolysis)",
+              "OXYGEN as needed; cardiac monitoring (anemia + hyperK)",
+              "EMERGENCY DEPARTMENT — admit; ICU if shock"
+            ],
+            "notes": "Acute hemolysis — supportive + remove trigger.",
+            "guideline": "WHO 2024"
+          },
+          {
+            "line": "NEONATAL G6PD with JAUNDICE",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "PHOTOTHERAPY — first-line per neonatal jaundice protocols",
+              "EXCHANGE TRANSFUSION — severe (kernicterus risk; bilirubin > thresholds)",
+              "AVOID NEONATAL PHENYTOIN, sulfonamide-containing eye drops, certain antibiotics",
+              "NEWBORN SCREENING — implementation variable; high-risk populations targeted",
+              "Maternal antimalarial avoidance in pregnancy + breastfeeding (some maternal drugs cross placenta/breast milk affecting G6PD-deficient infant)"
+            ],
+            "notes": "Neonatal G6PD important screening + intervention focus.",
+            "guideline": "WHO 2024; AAP Neonatal Jaundice"
+          },
+          {
+            "line": "FAVISM (fava bean-induced)",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "AVOID FAVA BEANS (and broad beans) — strict; particularly Mediterranean variant",
+              "Educate family + patient + community",
+              "If consumed accidentally — supportive treatment as for any acute hemolysis",
+              "Some variants (Class III A-) less susceptible to favism; Mediterranean Class II most severe"
+            ],
+            "notes": "Fava bean avoidance critical; education key.",
+            "guideline": "WHO 2024"
+          },
+          {
+            "line": "Chronic non-spherocytic hemolytic anemia (Class I severe)",
+            "type": "—",
+            "family": "—",
+            "agents": [
+              "Folate supplementation 1-5 mg/day",
+              "Transfusion support during exacerbations",
+              "Iron chelation if chronic transfusions",
+              "Avoid all triggers strictly",
+              "Specialist hematology",
+              "Consider gene therapy investigations (clinical trials)"
+            ],
+            "notes": "Severe chronic — multidisciplinary; emerging therapies.",
+            "guideline": "WHO 2024"
+          }
+        ],
+        "pearls": [
+          "MOST COMMON ENZYMOPATHY worldwide (~400 million)",
+          "X-LINKED RECESSIVE — males primarily; heterozygous females mosaic",
+          "PROTECTS against MALARIA — geographical correlation",
+          "TRIGGERS: SULFA, DAPSONE, PRIMAQUINE/TAFENOQUINE, RASBURICASE, METHYLENE BLUE, FAVA BEANS, infection, DKA, naphthalene",
+          "G6PD ENZYME ACTIVITY — diagnostic; assay 2-3 mo POST-event (during hemolysis falsely normal)",
+          "HEINZ BODIES + BITE CELLS on smear — characteristic during episode",
+          "INTRAVASCULAR HEMOLYSIS — hemoglobinuria; AKI risk",
+          "FAVISM — Mediterranean variant; fava beans",
+          "RASBURICASE BLACK BOX G6PD-deficient — alternative ALLOPURINOL + ASCORBIC ACID for TLS",
+          "METHYLENE BLUE BLACK BOX G6PD-deficient — alternatives ASCORBIC ACID, exchange transfusion, HBO",
+          "DAPSONE — STRICT AVOIDANCE; alternatives ATOVAQUONE or PENTAMIDINE for PJP prophylaxis",
+          "PRIMAQUINE/TAFENOQUINE — strict avoidance severe variants; cautious mild with reduced dose",
+          "NITROFURANTOIN — caution; alternatives if available",
+          "NEONATAL JAUNDICE — Mediterranean variant; phototherapy + exchange transfusion if severe",
+          "CHRONIC NON-SPHEROCYTIC HEMOLYTIC ANEMIA — Class I (severe variants)",
+          "MEDIC ALERT BRACELET essential",
+          "CASCADE FAMILY TESTING (X-linked)",
+          "CLASSES: I (severe chronic), II (Mediterranean severe), III (A- moderate African), IV (mild), V (asymptomatic)",
+          "WHO 2024 updated guidelines"
+        ],
+        "introduction": "Glucose-6-phosphate dehydrogenase deficiency is the most common enzymopathy worldwide (X-linked recessive), affecting approximately 400 million people. The deficiency impairs NADPH production needed for RBC oxidative stress protection, predisposing to hemolytic episodes triggered by oxidant drugs (sulfonamides, dapsone, primaquine/tafenoquine, rasburicase, methylene blue, nitrofurantoin), fava beans (favism — especially Mediterranean variant), and infections. Diagnosis is by G6PD enzyme activity assay (best measured 2-3 months post-hemolytic event due to falsely normal results during acute hemolysis from younger reticulocyte selection). Management is primarily trigger avoidance with comprehensive drug review and a medic alert. Acute hemolytic episodes require IV fluid resuscitation, transfusion support, and trigger removal. Specific drug alternatives (atovaquone for dapsone, ascorbic acid for methylene blue and rasburicase) preserve treatment options. Neonatal jaundice and chronic non-spherocytic hemolytic anemia are notable subtypes. WHO 2024 updated guidelines provide comprehensive guidance.",
+        "source": "WHO Updated G6PD Guidelines 2024. G6PDDeficiency.org. UK G6PD Society. Beutler G6PD Reviews Blood. AABB. Cappellini Lancet 2008."
       }
     ]
   },
