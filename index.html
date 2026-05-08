@@ -18958,6 +18958,255 @@ var DISEASES = {
         ],
         "introduction": "Hepatorenal syndrome is functional acute kidney injury in cirrhosis with portal hypertension, characterized by intense renal vasoconstriction in response to splanchnic arterial vasodilation. The 2015 ICA / 2021 AASLD criteria reclassified into HRS-AKI (rapid; formerly Type 1) and HRS-NAKI (slower; formerly Type 2). Terlipressin plus albumin is the first-line therapy for HRS-AKI (CONFIRM 2021; FDA 2022, Health Canada 2023) — with reversal in 32% of patients vs 17% with albumin alone. Norepinephrine plus albumin is an ICU alternative; midodrine plus octreotide plus albumin is a less effective non-ICU bridge. Liver transplantation is the definitive therapy and should be considered in all patients; combined liver-kidney transplant is indicated for prolonged HRS on dialysis.",
         "source": "AASLD Bacterial Infections in Cirrhosis + HRS Guidance 2021 (Biggins Hepatology 2021). International Club of Ascites Criteria 2015 (Angeli J Hepatol 2015). CONFIRM Terlipressin Wong NEJM 2021. EASL Decompensated Cirrhosis 2018. CASL (Canadian Association for Study of Liver). FDA Approval Terlivaz 2022; Health Canada Glypressin NOC 2023."
+      },
+      {
+        "id": "anti_gbm_disease",
+        "name": "Anti-GBM Disease (Goodpasture)",
+        "subtitle": "Autoantibody-mediated GN ± alveolar hemorrhage — KDIGO 2021",
+        "patho": "Rare autoimmune disease (~1 case/million/year) — autoantibodies against α3 chain of TYPE IV COLLAGEN (NC1 domain — Goodpasture antigen) in glomerular + alveolar basement membranes → linear immunoglobulin deposition → CRESCENTIC GLOMERULONEPHRITIS (>80% crescents typical) ± diffuse alveolar hemorrhage. Bimodal age distribution: young men 20-30 years (smokers, hydrocarbon exposure — pulmonary-renal); older adults 60-70 years (renal-only often). HLA-DRB1*1501 strongly associated. Triggers: smoking, hydrocarbon exposure, infection (URI), UV exposure, lithotripsy (rare). RAPIDLY PROGRESSIVE GLOMERULONEPHRITIS (RPGN) phenotype — irreversible CKD/ESKD often within weeks-months without aggressive therapy. ANCA-POSITIVE in 30% (ANCA + anti-GBM 'double-positive' — distinct subset; ANCA-vasculitis-like behavior with re-relapses).",
+        "signs": "CONSTITUTIONAL — fever, malaise, weight loss, fatigue. PULMONARY — cough, hemoptysis (recurrent — hallmark; sometimes fulminant DAH life-threatening), dyspnea, anemia (alveolar hemorrhage). RENAL — hematuria, proteinuria (subnephrotic), AKI/RPGN with rapidly declining eGFR, oliguria, hypertension. PRESENTATIONS: PULMONARY-RENAL (40-60% — pulmonary + renal); RENAL-ONLY (30-40% — older adults); PULMONARY-ONLY (rare; usually with subclinical renal involvement).",
+        "diagnosis": "ANTI-GBM ANTIBODY (serum) — diagnostic (>90% sensitivity); ELISA + Western blot. RENAL BIOPSY — gold standard; LIGHT MICROSCOPY: focal segmental necrosis + CRESCENTS (>80% typical); IMMUNOFLUORESCENCE: LINEAR IgG (and C3) ALONG GBM (pathognomonic — distinguishes from immune-complex GN with granular pattern); EM: no electron-dense deposits. ANCA — positive in ~30% (concomitant ANCA-anti-GBM disease — different prognosis). LABS: CBC (anemia — alveolar hemorrhage), serum creatinine, urinalysis (RBC + RBC casts, sub-nephrotic proteinuria), 24h urine OR PCR, LFTs, complement (NORMAL — distinguishes from immune-complex GN), HBV/HCV/HIV, autoimmune panel. CHEST IMAGING — diffuse bilateral alveolar opacities (DAH), ground-glass; serial. BAL — increasingly bloody return + hemosiderin-laden macrophages confirms DAH. PFT — increased DLCO during active alveolar hemorrhage (rare cause of HIGH DLCO).",
+        "monitoring": "Anti-GBM titer weekly during induction → q1-3 months; creatinine + urinalysis daily during acute then as outpatient; CBC (Hb), respiratory status, complete blood count for cyclophosphamide, transfusion needs, dialysis access if needed, hepatitis status pre-immunosuppression.",
+        "treatment": [
+          {
+            "line": "Initial — IMMEDIATE triple therapy",
+            "type": "Plasma exchange + cyclophosphamide + steroid",
+            "family": "Combined",
+            "agents": [
+              "PLASMA EXCHANGE (TPE/PEX) — 4 L/day daily × 14 days OR until anti-GBM negative; replacement with 5% albumin (FFP if active bleeding or pre-procedure); REMOVES circulating anti-GBM antibodies — FOUNDATION of therapy",
+              "+ CYCLOPHOSPHAMIDE 2 mg/kg/day PO (or IV pulse 0.5-0.75 g/m² monthly) × 3-6 months — suppresses NEW antibody production",
+              "+ METHYLPREDNISOLONE 1 g IV × 3 days (initial pulse) → PREDNISONE 1 mg/kg/day (max 60-80 mg) PO × 1 month → taper to 5-10 mg/day by 6 months → discontinue 9-12 months",
+              "PJP PROPHYLAXIS — TMP-SMX 1 SS daily during immunosuppression",
+              "MESNA + hydration with cyclophosphamide",
+              "DIALYSIS as needed for AKI"
+            ],
+            "notes": "TRIPLE therapy is standard — most effective combination; outcomes time-dependent on initiation.",
+            "guideline": "KDIGO Glomerular 2021; Pusey Kidney Int 2003"
+          },
+          {
+            "line": "OUTCOMES depend on PRESENTATION SEVERITY",
+            "type": "Prognosis",
+            "family": "—",
+            "agents": [
+              "RENAL RECOVERY POOR if: dialysis-dependent at presentation, oliguria, >50-85% crescents on biopsy, severe interstitial fibrosis",
+              "RENAL RECOVERY POSSIBLE if: SCr <500 µmol/L pre-treatment, no oliguria, fewer crescents",
+              "PULMONARY HEMORRHAGE — mortality 25%+ if severe; treat aggressively (TPE + induction within hours)",
+              "DIALYSIS-DEPENDENT at presentation — generally treat for PULMONARY HEMORRHAGE (life-saving) but renal recovery rare; case-by-case for renal-only dialysis patients"
+            ],
+            "notes": "Early aggressive treatment improves survival; renal salvage limited if late presentation.",
+            "guideline": "KDIGO 2021; Levy Ann Intern Med 2001"
+          },
+          {
+            "line": "Refractory / relapse / ANCA double-positive",
+            "type": "Intensified",
+            "family": "—",
+            "agents": [
+              "RITUXIMAB — 1 g IV × 2 doses (substitute for cyclophosphamide in some cases; emerging evidence; ANCA-positive double-positive patients particularly may benefit)",
+              "REPEATED PLASMA EXCHANGE for anti-GBM rebound",
+              "ALEMTUZUMAB — anecdotal",
+              "ANCA-POSITIVE DOUBLE-POSITIVE (anti-GBM + ANCA) — relapses behave like AAV; longer maintenance immunosuppression considered",
+              "Specialty nephrology"
+            ],
+            "notes": "Refractory + ANCA-positive — adapt therapy.",
+            "guideline": "KDIGO 2021"
+          },
+          {
+            "line": "Long-term outcomes + supportive",
+            "type": "Survival + transplant",
+            "family": "—",
+            "agents": [
+              "RECURRENCE RARE (≤2-3% with proper treatment) — distinct feature from other GN",
+              "TRANSPLANT — wait minimum 6-12 months after anti-GBM negative (avoid post-transplant recurrence); immunosuppression continued",
+              "ANTI-GBM titers monitored long-term",
+              "PNEUMOCOCCAL + influenza vaccinations",
+              "SMOKING CESSATION + hydrocarbon exposure avoidance (relapse triggers)",
+              "CV risk modification (CKD)"
+            ],
+            "notes": "Recurrence rare; transplant feasible after antibody clearance.",
+            "guideline": "KDIGO 2021"
+          },
+          {
+            "line": "ANCA-POSITIVE DOUBLE-POSITIVE — distinct considerations",
+            "type": "AAV-like behavior",
+            "family": "—",
+            "agents": [
+              "~30% anti-GBM patients ANCA-positive (usually MPO/p-ANCA)",
+              "BEHAVIOR: relapsing course like ANCA vasculitis (vs typically monophasic anti-GBM)",
+              "MAINTENANCE IMMUNOSUPPRESSION recommended (rituximab maintenance, azathioprine, MMF)",
+              "Increased malignancy + extra-renal manifestations follow-up"
+            ],
+            "notes": "Double-positive phenotype distinct — relapses likely.",
+            "guideline": "Levy 2004 KI; KDIGO 2021"
+          }
+        ],
+        "pearls": [
+          "ANTI-GBM ANTIBODY (α3 NC1 of type IV collagen) → linear IgG along GBM",
+          "RAPIDLY PROGRESSIVE GLOMERULONEPHRITIS (RPGN) + DIFFUSE ALVEOLAR HEMORRHAGE",
+          "BIMODAL: young men 20-30 (pulmonary-renal); older 60-70 (renal-only)",
+          "HLA-DRB1*1501 association",
+          "TRIGGERS: smoking, hydrocarbon, infection, UV",
+          "TRIPLE THERAPY: PLASMA EXCHANGE + CYCLOPHOSPHAMIDE + STEROID",
+          "PLASMA EXCHANGE 4 L/day daily × 14 days or until anti-GBM negative",
+          "CYCLOPHOSPHAMIDE 2 mg/kg/day PO × 3-6 months",
+          "METHYLPRED 1 g IV × 3 days → PREDNISONE 1 mg/kg taper 9-12 months",
+          "RENAL RECOVERY POOR if dialysis-dependent or >85% crescents at presentation",
+          "PULMONARY HEMORRHAGE — life-saving therapy regardless of renal status",
+          "RECURRENCE RARE (≤2-3%) — distinct feature",
+          "TRANSPLANT after anti-GBM NEGATIVE 6-12 months",
+          "ANCA-POSITIVE DOUBLE-POSITIVE 30% — RELAPSING course like AAV; longer maintenance",
+          "RITUXIMAB — emerging alternative to cyclophosphamide",
+          "DIAGNOSIS: anti-GBM serum + LINEAR IgG on biopsy IF",
+          "COMPLEMENT NORMAL — distinguishes from immune-complex GN",
+          "PJP PROPHYLAXIS during induction"
+        ],
+        "introduction": "Anti-GBM disease (Goodpasture syndrome) is a rare autoimmune disease producing rapidly progressive glomerulonephritis often with diffuse alveolar hemorrhage. Antibodies target the α3 chain of type IV collagen in glomerular and alveolar basement membranes, producing characteristic linear IgG deposition on biopsy. Triple therapy with plasma exchange, cyclophosphamide, and high-dose corticosteroids is the cornerstone of treatment, with outcomes critically dependent on early initiation. Renal salvage is poor in patients dialysis-dependent at presentation but pulmonary hemorrhage warrants aggressive therapy regardless. Recurrence is rare (≤2-3%) — distinct from other autoimmune GN. ANCA-positive double-positive patients (30%) follow a relapsing course like ANCA-associated vasculitis and require longer maintenance immunosuppression.",
+        "source": "KDIGO Glomerular Diseases Guideline 2021. Pusey Anti-GBM Disease Kidney Int 2003. Levy Ann Intern Med 2001. McAdoo Anti-GBM CJASN 2017. Levy ANCA-Anti-GBM Kidney Int 2004."
+      },
+      {
+        "id": "fsgs",
+        "name": "Focal Segmental Glomerulosclerosis (FSGS)",
+        "subtitle": "Common cause of nephrotic syndrome — KDIGO 2021 / FONT trial",
+        "patho": "Histopathologic pattern characterized by SEGMENTAL (part of glomerulus) + FOCAL (some glomeruli) sclerosis on biopsy. Not a single disease but a final common pathway: PRIMARY (idiopathic — circulating permeability factor — possibly suPAR, anti-nephrin antibodies recently implicated), GENETIC (~30% adult FSGS — APOL1 risk variants African ancestry, NPHS1/NPHS2 podocin, ACTN4 actinin, INF2, TRPC6, MYH9, COQ2 etc.), SECONDARY (non-immunologic glomerular injury → adaptive sclerosis): obesity-related, reflux nephropathy, oligonephronia (low nephron number — prematurity, congenital), HIV-associated (HIVAN), heroin nephropathy, anabolic steroids, sickle cell disease, drug-induced (lithium, pamidronate, anti-TNF, interferon, anabolic steroids), post-adaptive (reduced nephron mass — single kidney, prior partial nephrectomy). HISTOLOGIC VARIANTS (Columbia classification): COLLAPSING (worst prognosis — HIVAN, APOL1, idiopathic), TIP LESION (best prognosis — typically responsive to steroids), CELLULAR (intermediate), PERIHILAR (often secondary), NOS (not otherwise specified — most common). DISTINGUISHING PRIMARY (steroid-responsive) vs SECONDARY (RAS blocker + treat cause; less steroid-responsive) is CRITICAL.",
+        "signs": "PRIMARY — typically NEPHROTIC SYNDROME (proteinuria >3.5 g/day, hypoalbuminemia, edema, hyperlipidemia); often abrupt onset; thrombosis risk. SECONDARY — typically NON-NEPHROTIC PROTEINURIA (subnephrotic); preserved albumin (synthesis maintained vs primary). HYPERTENSION common. PROGRESSIVE eGFR decline if untreated. Often APOL1 ancestry, obesity, HIV, drug exposure history (secondary).",
+        "diagnosis": "RENAL BIOPSY — definitive; light microscopy shows focal segmental sclerosis; IF — variable IgM/C3; EM — extensive foot process effacement (PRIMARY — diffuse >80%; SECONDARY — segmental). Columbia classification subtype. EXCLUDE causes: BMI + body habitus (obesity-related secondary), HIV testing (HIVAN), urine drug screen, hepatitis B/C, HIV, syphilis, autoimmune (ANA, complement, immunoglobulins), genetic testing if suspected familial / young-onset / refractory. APOL1 GENETIC TESTING — emerging; African ancestry risk variants 'G1/G2' increase FSGS + ESKD risk; informs prognosis + transplant donor evaluation. ANTI-NEPHRIN ANTIBODY (serum) — emerging biomarker for primary FSGS (Watts JASN 2022).",
+        "monitoring": "UPCR / 24h urine, serum creatinine + eGFR, albumin, BP, weight, edema, lipids, complications (thromboembolism if albumin <25), genetic test results, response to therapy, kidney biopsy re-evaluation if refractory/changing.",
+        "treatment": [
+          {
+            "line": "ALL — supportive (foundational)",
+            "type": "Optimal supportive care",
+            "family": "—",
+            "agents": [
+              "RAS BLOCKADE (ACEi or ARB) — TITRATE TO MAXIMUM TOLERATED for proteinuria reduction; target UPCR <0.5 g/g (50 mg/mmol)",
+              "BP <120/80 (or <130/80 in less proteinuric)",
+              "SODIUM RESTRICTION 1.5-2 g/day",
+              "STATIN — atorvastatin 40-80 mg or rosuvastatin 20-40 mg per CKD CV risk",
+              "DIURETIC for edema (loop diuretic + thiazide adjunct as needed)",
+              "PROPHYLACTIC ANTICOAGULATION — albumin <25 g/L (high VTE risk)",
+              "WEIGHT optimization; smoking cessation; exercise"
+            ],
+            "notes": "Supportive backbone; layered with disease-specific therapy.",
+            "guideline": "KDIGO Glomerular Diseases 2021"
+          },
+          {
+            "line": "ADD SGLT2i (proteinuric CKD)",
+            "type": "Cardiorenal protection",
+            "family": "SGLT2i",
+            "agents": [
+              "DAPAGLIFLOZIN 10 mg/day OR EMPAGLIFLOZIN 10 mg/day — DAPA-CKD (Wheeler Lancet 2021) demonstrated benefit including proteinuric non-diabetic CKD; KDIGO 2024 broader inclusion proteinuric CKD",
+              "Layer onto RAS blocker"
+            ],
+            "notes": "SGLT2i increasingly standard for proteinuric CKD.",
+            "guideline": "DAPA-CKD Wheeler Lancet 2021; KDIGO 2024"
+          },
+          {
+            "line": "PRIMARY FSGS (NEPHROTIC) — corticosteroids",
+            "type": "First-line immunosuppression",
+            "family": "Steroid",
+            "agents": [
+              "PREDNISONE 1 mg/kg/day (max 80 mg) PO daily × 4-16 WEEKS (longer than other GN — primary FSGS slow response) → if complete remission → taper over 6 months; if partial → continue + add steroid-sparing",
+              "OR ALTERNATE-DAY PREDNISONE 2 mg/kg every 48 hours (max 120 mg) — sometimes used",
+              "RESPONSE: complete remission 30-60% (steroid-responsive subset — better prognosis); steroid-resistant 20-40%; relapsing common",
+              "AT LEAST 16 weeks before considering 'steroid-resistant'",
+              "PJP prophylaxis for prolonged high-dose steroid"
+            ],
+            "notes": "Long course distinguishes FSGS from MCD; many require prolonged therapy.",
+            "guideline": "KDIGO 2021"
+          },
+          {
+            "line": "STEROID-RESISTANT or RELAPSING — calcineurin inhibitor",
+            "type": "Second-line",
+            "family": "CNI",
+            "agents": [
+              "CYCLOSPORINE 3-5 mg/kg/day (target trough 100-175 ng/mL) × 6-12 months — first alternative",
+              "OR TACROLIMUS 0.05-0.1 mg/kg/day (target trough 4-8 ng/mL) × 6-12 months",
+              "Ponticelli-like alternating prednisone + chlorambucil — historic",
+              "MMF + dexamethasone — alternative (FONT trial Gipson JASN 2011 mixed)",
+              "Often partial responses; relapse common during taper"
+            ],
+            "notes": "Long-term CNI common; renal toxicity monitoring.",
+            "guideline": "KDIGO 2021"
+          },
+          {
+            "line": "REFRACTORY / SEVERE — RTX or experimental",
+            "type": "Targeted",
+            "family": "—",
+            "agents": [
+              "RITUXIMAB — limited evidence; reasonable trial in steroid + CNI refractory (Fervenza CJASN 2014)",
+              "ABATACEPT (CTLA-4 Ig) — small case series (Yu NEJM 2013)",
+              "ACTH GEL (corticotropin) — Acthar — historic; mixed evidence",
+              "PLASMAPHERESIS / IMMUNOADSORPTION — particularly recurrent post-transplant (circulating permeability factor removal)",
+              "ANTI-NEPHRIN ANTIBODY-DIRECTED therapies — emerging (Watts JASN 2022)",
+              "SURUFATINIB / SPARSENTAN — investigational FSGS"
+            ],
+            "notes": "Refractory FSGS — emerging therapies; transplant + recurrence concerns.",
+            "guideline": "KDIGO 2021"
+          },
+          {
+            "line": "SECONDARY FSGS — RAS blockade + treat underlying",
+            "type": "Cause-directed",
+            "family": "—",
+            "agents": [
+              "NO IMMUNOSUPPRESSION (steroids ineffective + harmful)",
+              "OBESITY-related — significant weight loss + bariatric surgery if BMI >35-40 + heavy proteinuria",
+              "HIV-associated nephropathy (HIVAN) — antiretroviral therapy + RAS blocker",
+              "DRUG-INDUCED — discontinue offender (heroin, anabolic steroids, lithium, pamidronate)",
+              "REFLUX/OBSTRUCTION — urological",
+              "REDUCED NEPHRON MASS — RAS blockade + BP control"
+            ],
+            "notes": "Secondary — etiology-specific; AVOID immunosuppression.",
+            "guideline": "KDIGO 2021"
+          },
+          {
+            "line": "GENETIC FSGS",
+            "type": "Targeted",
+            "family": "—",
+            "agents": [
+              "IMMUNOSUPPRESSION generally INEFFECTIVE — avoid",
+              "RAS blockade + BP + proteinuria control",
+              "GENETIC COUNSELING + family screening",
+              "AVOID kidney transplant from family donor without genetic testing (post-transplant recurrence based on genetic vs primary)"
+            ],
+            "notes": "Genetic FSGS — supportive; not steroid-responsive.",
+            "guideline": "KDIGO 2021"
+          },
+          {
+            "line": "TRANSPLANT considerations + recurrence",
+            "type": "Post-transplant",
+            "family": "—",
+            "agents": [
+              "PRIMARY FSGS — recurrence post-transplant 30-50%; usually within 1-3 months; affects graft survival",
+              "PLASMAPHERESIS pre/peri-transplant + post-transplant for recurrence",
+              "RITUXIMAB peri-transplant (varying centres)",
+              "GENETIC FSGS — much lower recurrence (genetic basis intrinsic to host)",
+              "SECONDARY FSGS — usually no recurrence (cause-specific)",
+              "Pre-transplant evaluation includes genetic workup"
+            ],
+            "notes": "Recurrence challenge primary FSGS; pre-transplant planning.",
+            "guideline": "KDIGO 2021"
+          }
+        ],
+        "pearls": [
+          "FSGS = HISTOLOGIC PATTERN (not single disease)",
+          "PRIMARY (idiopathic — circulating permeability factor; nephrotic) vs GENETIC (~30%) vs SECONDARY (non-immunologic adaptive)",
+          "PRIMARY — nephrotic + low albumin + EM diffuse foot process effacement (>80%)",
+          "SECONDARY — sub-nephrotic + preserved albumin + EM segmental effacement",
+          "COLUMBIA SUBTYPES: COLLAPSING (worst), TIP LESION (best), CELLULAR, PERIHILAR, NOS",
+          "APOL1 risk variants — African ancestry — increased FSGS + ESKD risk",
+          "PRIMARY — STEROID 1 mg/kg/day (max 80) × 4-16 WEEKS (long course)",
+          "STEROID-RESISTANT/RELAPSING — TACROLIMUS or CYCLOSPORINE 6-12 months",
+          "REFRACTORY: RITUXIMAB, abatacept (case series), plasmapheresis",
+          "SECONDARY FSGS — NO IMMUNOSUPPRESSION; treat underlying (obesity, HIV, drugs)",
+          "GENETIC FSGS — immunosuppression INEFFECTIVE; supportive only",
+          "RAS BLOCKADE + SGLT2i (DAPA-CKD) — universal",
+          "PROPHYLACTIC AC if albumin <25 g/L (thromboembolic)",
+          "POST-TRANSPLANT RECURRENCE 30-50% PRIMARY (1-3 mo); plasmapheresis ± RTX peri-tx",
+          "PRE-TRANSPLANT GENETIC WORKUP — affects donor selection + recurrence prediction",
+          "ANTI-NEPHRIN ANTIBODY (Watts 2022) — emerging biomarker primary FSGS",
+          "HIVAN — APOL1 high-risk variants + HIV; ART + RAS blockade",
+          "OBESITY-RELATED FSGS — significant weight loss / bariatric (BMI >35-40)"
+        ],
+        "introduction": "Focal segmental glomerulosclerosis (FSGS) is a histopathologic pattern with multiple etiologies — primary (immunologic; circulating permeability factor), genetic (APOL1, podocin, etc.), or secondary (non-immunologic adaptive injury from obesity, HIV, drugs, reduced nephron mass). Distinction is critical: primary FSGS warrants steroids (1 mg/kg/day for 4-16 weeks) with calcineurin inhibitors as second-line; secondary and genetic forms require RAS blockade plus etiology-directed treatment — immunosuppression is ineffective and harmful. SGLT2 inhibitors (DAPA-CKD 2021) are increasingly standard for proteinuric CKD. Post-transplant recurrence affects 30-50% of primary FSGS within months. APOL1 genetic testing is emerging for prognosis and donor evaluation in African ancestry patients.",
+        "source": "KDIGO Glomerular Diseases Guideline 2021 (Rovin Kidney Int Suppl 2021). FONT Trial Gipson JASN 2011. Watts Anti-Nephrin Antibody JASN 2022. APOL1 Genovese Science 2010. DAPA-CKD Wheeler Lancet 2021. Yu Abatacept NEJM 2013. Fervenza Rituximab CJASN 2014."
       }
     ]
   },
@@ -29575,6 +29824,334 @@ var DISEASES = {
         ],
         "introduction": "Pemphigus vulgaris is an autoimmune blistering disease with IgG autoantibodies against desmoglein 3 (mucosal-dominant) ± desmoglein 1 (mucocutaneous). Pre-immunosuppression mortality was 75%; modern era with rituximab + short-course steroids achieves 5-10% mortality. The RITUX 3 trial (2017) established rituximab as first-line for moderate-to-severe PV, reducing cumulative steroid exposure. Pharmacist roles include monitoring rituximab infusions, steroid tapering, PJP prophylaxis, bone protection, glucose monitoring, and supporting wound care + nutritional needs.",
         "source": "RITUX 3 trial Joly Lancet 2017; CDA Pemphigus Guidelines 2024; AAD Bullous Diseases; FDA Rituximab for PV 2018; International Pemphigus Council (IPC) Consensus 2024"
+      },
+      {
+        "id": "stevens_johnson_syndrome_ten",
+        "name": "Stevens-Johnson Syndrome / Toxic Epidermal Necrolysis (SJS/TEN)",
+        "subtitle": "Severe cutaneous adverse drug reactions — SCAR consortium / SCORTEN",
+        "patho": "T-cell-mediated drug hypersensitivity → keratinocyte apoptosis (granulysin, perforin, FasL pathways) → full-thickness epidermal detachment + mucosal involvement. SAME DISEASE SPECTRUM categorized by EXTENT of body surface area (BSA) detachment: SJS (<10% BSA), SJS/TEN OVERLAP (10-30%), TEN (>30%). MORTALITY: SJS 1-5%, SJS/TEN overlap ~10-15%, TEN 30-50% (sepsis, fluid loss, multi-organ failure). HIGH-RISK DRUGS (most common 50+% of cases): ALLOPURINOL (HLA-B*5801 — Asian, African descent — pre-test), ANTICONVULSANTS (lamotrigine, carbamazepine [HLA-B*1502 in Han Chinese], phenytoin, oxcarbazepine, phenobarbital), SULFA DRUGS (sulfamethoxazole-TMP, sulfasalazine, sulfonamide antibiotics), NSAIDs (oxicam class — meloxicam, piroxicam highest), NEVIRAPINE (HIV), abacavir (HLA-B*5701), oxicam NSAIDs, dapsone, chemotherapy. ONSET typically 4-28 days after drug initiation. M. PNEUMONIAE — second most common cause in CHILDREN (mucositis predominant; less skin involvement; better prognosis).",
+        "signs": "PRODROMAL — fever (often >39°C), malaise, sore throat, conjunctivitis 1-3 days. ERUPTIVE PHASE — atypical TARGETOID erythematous macules → progress to flaccid vesicles + bullae → epidermal detachment (positive NIKOLSKY SIGN — gentle pressure causes detachment) + sloughing. MUCOUS MEMBRANES (HALLMARK — ≥2 sites involved 95%): ORAL (severe stomatitis with hemorrhagic crusts), OCULAR (bilateral conjunctivitis → corneal scarring + symblepharon — emergency ophthalmology), GENITAL (urethritis, balanitis, vaginitis), anorectal. PROGRESSION: skin denudation 'wet skin' appearance; pain disproportionate to early appearance. SYSTEMIC: dehydration, hypothermia/hyperthermia, secondary infection, sepsis, ARDS-like respiratory involvement, cytopenias, elevated LFTs, AKI.",
+        "diagnosis": "CLINICAL — drug + targetoid lesions + mucosal + epidermal detachment. SCORTEN SCORE (severity + mortality predictor — Bastuji-Garin 2000) at admission + 24-48h; 7 variables: AGE >40, MALIGNANCY, HR >120, BSA detached >10% on day 1, BUN >10 mmol/L (28 mg/dL), GLUCOSE >14 mmol/L (252 mg/dL), HCO3 <20 mmol/L. Score 0-1: ~3% mortality; ≥5: >90%. Skin BIOPSY (frozen section if needed): full-thickness epidermal necrosis with limited dermal infiltrate (key — distinguishes from SSSS [staphylococcal scalded skin] which spares dermal-epidermal junction at granular layer). DRUG CAUSALITY assessment: ALDEN score (Algorithm for Drug causality in Epidermal Necrolysis). HLA TESTING (selected high-risk drugs/populations) — HLA-B*5701 abacavir (universal pre-test), HLA-B*1502 carbamazepine (Han Chinese — pre-test), HLA-B*5801 allopurinol (Asian, African — consider). M. pneumoniae PCR if pediatric / atypical presentation.",
+        "monitoring": "BURN UNIT or specialized dermatology unit. Hemodynamics, fluid balance (Parkland-like calculations modified), temperature, BSA evolution daily, pain, mucosal exam (eyes, oral, GU, anorectal), cultures (skin, blood, urine, ETT), labs (CBC, electrolytes, BUN/Cr, glucose, LFTs, ABG, lactate, coags, albumin), SCORTEN at 24-48h, ophthalmology, urology, GI assessment.",
+        "treatment": [
+          {
+            "line": "Immediate — DRUG WITHDRAWAL + supportive (FOUNDATION)",
+            "type": "Etiology + multi-system",
+            "family": "—",
+            "agents": [
+              "IDENTIFY + WITHDRAW ALL CULPRIT DRUGS — most important intervention; cease any drug started in past 4-28 days (especially high-risk classes); EARLY withdrawal correlates with reduced mortality (Garcia-Doval Arch Dermatol 2000)",
+              "TRANSFER TO BURN UNIT or specialized centre — multidisciplinary care",
+              "FLUID RESUSCITATION — modified burn formulas (Parkland 2-4 mL × kg × %BSA; less than burns due to less subcutaneous involvement); titrate to urine output 0.5-1 mL/kg/h adult, 1-2 mL/kg/h pediatric",
+              "TEMPERATURE management — risk of hypothermia (denuded skin); warm room, warming blankets",
+              "WOUND CARE — non-adhesive dressings (Mepilex, Mepitel, gauze with petrolatum); avoid silver sulfadiazine (sulfa cross-reactivity); minimize handling; minimize debridement (controversial; some defer to natural sloughing)",
+              "OPHTHALMOLOGY emergency consultation — preservative-free lubricants, topical steroids/cyclosporine, AMNIOTIC MEMBRANE TRANSPLANT (early intervention reduces ocular sequelae — emerging standard)",
+              "ORAL CARE — frequent mouth rinses, lubricants, soft diet/NG/parenteral nutrition",
+              "GU — gentle hygiene, lubricants, urology consult if severe",
+              "PAIN — IV opioids (titrate); avoid NSAIDs (renal + bleeding); regional/PCA",
+              "INFECTION SURVEILLANCE — frequent cultures; AVOID prophylactic antibiotics; treat documented infection promptly (target-directed)",
+              "DVT prophylaxis (LMWH); PPI",
+              "NUTRITION — enteral preferred (NG); parenteral if extensive GI involvement"
+            ],
+            "notes": "Multidisciplinary supportive care is the foundation; immunomodulators secondary.",
+            "guideline": "SCAR consortium; UK guidelines Creamer BJD 2016; British Burns Association"
+          },
+          {
+            "line": "Immunomodulatory therapy — controversial + evolving",
+            "type": "Multiple options",
+            "family": "—",
+            "agents": [
+              "CYCLOSPORINE 3-5 mg/kg/day PO/IV × 7-14 days then taper — increasingly preferred FIRST-LINE (Valeyrie-Allanore BJD 2010; Mohanty JEAVD 2017 — meta-analyses suggest mortality benefit; T-cell suppression mechanism); contraindicated severe renal impairment",
+              "IVIG 0.75-1 g/kg/day × 3-4 days (total 2-4 g/kg) — historic; mixed evidence (early case series positive; later RCTs mixed); often used despite uncertain benefit; consider if cyclosporine contraindicated",
+              "TNF-α INHIBITORS — ETANERCEPT 50 mg SC × 1-2 doses; INFLIXIMAB 5 mg/kg IV × 1-2 doses — small RCT (Wang JAMA Dermatology 2018 — etanercept superior to corticosteroid); emerging option",
+              "CORTICOSTEROIDS — controversial; PULSE METHYLPREDNISOLONE 250-1000 mg IV × 3 days early (within 48-72h of onset) may benefit, but PROLONGED steroid associated with worse outcomes (sepsis, delayed healing); short-pulse approach increasingly favored",
+              "PLASMAPHERESIS — limited evidence; selected refractory",
+              "NO STANDARD CONSENSUS — institutional approaches vary"
+            ],
+            "notes": "Etanercept + cyclosporine increasingly preferred; IVIG falling out of favor; steroids controversial.",
+            "guideline": "Wang JAMA Dermatol 2018; Mohanty JEAVD 2017 meta-analysis; SCAR; British BJD 2016"
+          },
+          {
+            "line": "Eye care (ophthalmologic emergency)",
+            "type": "Aggressive ocular protection",
+            "family": "—",
+            "agents": [
+              "URGENT ophthalmology consultation at onset — 50%+ have ocular involvement; permanent visual sequelae preventable with early intervention",
+              "PRESERVATIVE-FREE LUBRICANTS hourly",
+              "TOPICAL STEROID drops (prednisolone) + cyclosporine drops to limbus",
+              "AMNIOTIC MEMBRANE TRANSPLANTATION early (within 7-10 days of acute onset) — reduces conjunctival scarring + symblepharon + chronic ocular surface disease (key emerging intervention)",
+              "Lid hygiene; lysis of adhesions; symblepharon ring (specialized)",
+              "Long-term — chronic dry eye, symblepharon repair, scleral lenses, corneal stem cell transplant (severe)"
+            ],
+            "notes": "Eye care is critical — preventable blindness. Amniotic membrane transformative.",
+            "guideline": "Saeed BJD 2016; Iyer Eye 2020"
+          },
+          {
+            "line": "REGISCAR / SCORTEN risk stratification",
+            "type": "Predictive scoring",
+            "family": "—",
+            "agents": [
+              "SCORTEN at admission + 24-48h: AGE >40, MALIGNANCY, HR >120, BSA >10% day 1, BUN >10 mmol/L, GLUCOSE >14 mmol/L, HCO3 <20 mmol/L",
+              "Score 0-1: 3% mortality; 2: 12%; 3: 35%; 4: 58%; ≥5: 90%+",
+              "Higher SCORTEN — escalated ICU care, lower threshold for aggressive immunomodulation"
+            ],
+            "notes": "SCORTEN guides intensity + mortality prognostication.",
+            "guideline": "Bastuji-Garin J Invest Dermatol 2000"
+          },
+          {
+            "line": "Pediatric SJS/TEN",
+            "type": "Specialty pediatric",
+            "family": "—",
+            "agents": [
+              "MYCOPLASMA-INDUCED RASH AND MUCOSITIS (MIRM) — distinct entity in children; often less skin, more mucosal; better prognosis; MACROLIDE for M. pneumoniae",
+              "SUPPORTIVE CARE foundation — pediatric burn/derm centre",
+              "AVOID NSAIDs (Reye's risk + suspected drug-induced)",
+              "IVIG often used pediatric (less data on cyclosporine in children)",
+              "Drug avoidance lifelong + family genetic counseling"
+            ],
+            "notes": "Pediatric — MIRM differential consideration; supportive primary.",
+            "guideline": "Canavan JAAD 2015"
+          },
+          {
+            "line": "Long-term recovery + scar management",
+            "type": "Multidisciplinary follow-up",
+            "family": "—",
+            "agents": [
+              "SKIN — heals over 2-4 weeks; pigmentary changes common (post-inflammatory hyper/hypopigmentation)",
+              "EYE complications — chronic dry eye, symblepharon, trichiasis, vision loss; lifelong ophthalmology follow-up",
+              "GU — urethral strictures, vaginal stenosis (women — speculum + dilator therapy early), sexual dysfunction; urology / gyne",
+              "ORAL — long-term mucositis sequelae; speech/swallow",
+              "PSYCHOLOGICAL — PTSD, depression common; mental health support",
+              "DRUG ALLERGY — lifelong avoidance of culprit drug + cross-reacting agents (e.g., all sulfonamide antibiotics if SMX-TMP); MEDIC ALERT bracelet; family counselling re: HLA testing if applicable",
+              "PHARMACOGENOMICS — HLA testing of relatives if HLA-associated drug (carbamazepine, abacavir, allopurinol)"
+            ],
+            "notes": "Comprehensive multidisciplinary long-term care.",
+            "guideline": "SCAR consortium; ALDEN"
+          }
+        ],
+        "pearls": [
+          "SJS <10% BSA; SJS/TEN OVERLAP 10-30%; TEN >30% — same disease spectrum",
+          "MORTALITY: SJS 1-5%; TEN 30-50%",
+          "MUCOSAL INVOLVEMENT (≥2 sites) in 95% — oral, ocular, genital",
+          "POSITIVE NIKOLSKY SIGN — epidermal detachment with gentle pressure",
+          "HIGH-RISK DRUGS: ALLOPURINOL (HLA-B*5801), CARBAMAZEPINE (HLA-B*1502 Han Chinese), LAMOTRIGINE, PHENYTOIN, SULFA, NSAIDs (oxicam), nevirapine, abacavir (HLA-B*5701)",
+          "ONSET 4-28 days post-drug",
+          "M. PNEUMONIAE — pediatric mucositis-predominant (MIRM)",
+          "SCORTEN 7-variable predictor: age>40, malignancy, HR>120, BSA>10%, BUN>10, glucose>14, HCO3<20",
+          "DRUG WITHDRAWAL early — most important intervention",
+          "BURN UNIT TRANSFER — multidisciplinary care",
+          "WOUND CARE: non-adhesive dressings; AVOID silver sulfadiazine (sulfa)",
+          "AMNIOTIC MEMBRANE TRANSPLANT EARLY — reduces ocular sequelae (emerging standard)",
+          "CYCLOSPORINE first-line immunomodulator (mortality benefit) — Wang 2018",
+          "ETANERCEPT 50 mg SC × 1-2 — superior to steroid (Wang JAMA Dermatol 2018)",
+          "IVIG — historic; mixed evidence; cyclosporine + etanercept replacing",
+          "STEROIDS controversial — pulse early may help; prolonged worse",
+          "AVOID PROPHYLACTIC ANTIBIOTICS — treat documented infection",
+          "HLA-B*5801 allopurinol — Asian + African pre-test",
+          "AVOID NSAIDs in confirmed SJS/TEN (renal + bleeding)",
+          "LIFELONG DRUG AVOIDANCE + medic alert; family HLA cascade if applicable"
+        ],
+        "introduction": "Stevens-Johnson syndrome and toxic epidermal necrolysis are severe cutaneous adverse drug reactions on a single disease spectrum, distinguished by extent of body surface detachment (SJS <10%, overlap 10-30%, TEN >30%). High-risk drugs include allopurinol, anticonvulsants (lamotrigine, carbamazepine, phenytoin), sulfa drugs, NSAIDs (oxicam), and certain antiretrovirals — with HLA-pharmacogenomic associations enabling pre-emptive testing in at-risk populations. Diagnosis is clinical with SCORTEN providing mortality stratification. Management requires immediate drug withdrawal, transfer to a burn unit or specialized center for multidisciplinary supportive care (fluid, wound care, ophthalmology, mucosal care), and consideration of immunomodulatory therapy (cyclosporine and etanercept emerging as preferred over IVIG; corticosteroids controversial). Early amniotic membrane transplantation reduces preventable ocular sequelae.",
+        "source": "SCAR consortium (Severe Cutaneous Adverse Reactions). UK SJS/TEN Guidelines (Creamer BJD 2016). SCORTEN Bastuji-Garin J Invest Dermatol 2000. ALDEN Sassolas Clin Pharmacol Ther 2010. Wang Etanercept JAMA Dermatol 2018. Mohanty Cyclosporine JEAVD 2017. Saeed Eye SJS BJD 2016. Iyer Amniotic Membrane Eye 2020. RegiSCAR Network. Mycoplasma MIRM Canavan JAAD 2015."
+      },
+      {
+        "id": "dress_syndrome",
+        "name": "Drug Reaction with Eosinophilia and Systemic Symptoms (DRESS)",
+        "subtitle": "Severe cutaneous adverse reaction with multi-organ involvement — RegiSCAR",
+        "patho": "Severe drug hypersensitivity reaction (also called Drug-Induced Hypersensitivity Syndrome — DiHS) characterized by skin eruption + fever + lymphadenopathy + EOSINOPHILIA + multi-ORGAN involvement (liver most common). Distinct from SJS/TEN (no significant epidermal detachment) but overlap features can occur. ETIOLOGY: drug-specific T-cell + viral reactivation (HHV-6, HHV-7, EBV, CMV) — KEY FEATURE distinguishing from other reactions. ONSET typically 2-8 weeks after drug initiation (LATER than SJS/TEN). MORTALITY 5-10%. CULPRIT DRUGS — anticonvulsants (carbamazepine, lamotrigine, phenytoin, phenobarbital), allopurinol (HLA-B*5801), sulfa drugs (SMX-TMP, sulfasalazine, dapsone — DAPSONE HYPERSENSITIVITY SYNDROME often classified as DRESS), minocycline, vancomycin, abacavir, nevirapine, antibiotics (some β-lactams, clindamycin), NSAIDs, anti-thyroid (PTU). Also psychiatric (some).",
+        "signs": "PRODROME — fever (often high, prolonged), malaise, pruritus, sore throat. SKIN ERUPTION — diffuse maculopapular morbilliform; >50% BSA often; FACIAL EDEMA (highly characteristic); pustules, vesicles, purpura possible. LYMPHADENOPATHY — generalized. SYSTEMIC: HEPATIC (60-90% — hepatitis ranging from elevated ALT to fulminant; LIVER FAILURE most common cause of DRESS death), RENAL (interstitial nephritis), HEMATOLOGIC (eosinophilia >700-1500 cells/µL; atypical lymphocytosis; thrombocytopenia), CARDIAC (myocarditis 4-27%; sudden death possible; ECG + troponin), PULMONARY (interstitial pneumonitis), NEURO (meningoencephalitis rare), GI (eosinophilic colitis), THYROID (autoimmune thyroiditis weeks-months later — classic delayed manifestation; sometimes Graves'), DIABETES (autoimmune type 1 weeks-months later; classic feature), ENDOCRINE.",
+        "diagnosis": "REGISCAR CRITERIA (Kardaun BMD 2013) — score-based: Hospitalization (1) + Reaction suspected drug-related (1) + Acute rash (1) + Fever >38.5°C (-1 if absent) + Lymphadenopathy ≥2 sites (1) + Atypical lymphocytes (1) + Eosinophilia (mild 0.7-1.5×10⁹/L = 1; severe ≥1.5 = 2) + Skin involvement >50% BSA (1) + Skin biopsy findings (-1 to 1) + Internal organ involvement (1 per organ; max 2) + Resolution >15 days (1) + Other diagnoses ruled out (1). DEFINITE ≥6; PROBABLE 4-5; POSSIBLE 2-3. LABS: CBC + diff (eosinophilia, atypical lymphocytes), liver panel (ALT, AST, ALP, bilirubin, INR, albumin), renal (creatinine, urinalysis), troponin + ECG (myocarditis screen — early), TSH (baseline + 3, 6, 12 months — DELAYED THYROIDITIS), glucose + HbA1c (autoimmune DM1), lipase, CK, viral PCR (HHV-6 reactivation supports diagnosis but not required), chest XR (pneumonitis). Skin biopsy — non-specific perivascular eosinophilic infiltrate.",
+        "monitoring": "Daily LFTs, creatinine, CBC, electrolytes, troponin (early); BP, fluid balance, weight, weekly during acute phase; long-term — TSH q3 months × 1 year (delayed thyroiditis up to 25%), glucose, autoimmune complications (Graves', DM1, lupus, autoimmune hepatitis); skin healing.",
+        "treatment": [
+          {
+            "line": "Immediate — DRUG WITHDRAWAL",
+            "type": "Etiology",
+            "family": "—",
+            "agents": [
+              "IDENTIFY + WITHDRAW ALL SUSPECTED CULPRIT DRUGS — most important first step",
+              "ANTICONVULSANT cross-reactivity — between aromatic anticonvulsants (carbamazepine, phenytoin, phenobarbital, oxcarbazepine, lamotrigine) — avoid in future; switch to non-aromatic (levetiracetam, gabapentin, valproate)",
+              "ALLOPURINOL — never re-challenge; alternative urate-lowering (febuxostat, probenecid; cautious — class effect possible)",
+              "SULFA — avoid all sulfonamide antibiotics + sulfasalazine + dapsone in future"
+            ],
+            "notes": "Drug withdrawal is paramount.",
+            "guideline": "RegiSCAR; Husain JAAD 2013"
+          },
+          {
+            "line": "Supportive care",
+            "type": "Multi-organ support",
+            "family": "—",
+            "agents": [
+              "FLUID + ELECTROLYTE management",
+              "ANTIPYRETICS (acetaminophen first; AVOID NSAIDs in active DRESS — cross-reactivity + organ toxicity)",
+              "TOPICAL STEROIDS for skin (mid-potency triamcinolone 0.1%)",
+              "ANTIHISTAMINES (cetirizine, diphenhydramine) for pruritus",
+              "Hospitalization usually required (multi-organ + monitoring)",
+              "Address specific organ involvement (hepatic failure protocol if severe; cardiac monitoring; AKI management)"
+            ],
+            "notes": "Multidisciplinary supportive care.",
+            "guideline": "Husain JAAD 2013"
+          },
+          {
+            "line": "Systemic corticosteroids — moderate-severe DRESS",
+            "type": "Glucocorticoid",
+            "family": "Steroid",
+            "agents": [
+              "PREDNISONE 1 mg/kg/day (max 60 mg) PO daily — initial; SLOW TAPER over 3-6 MONTHS (rapid taper → relapse common)",
+              "SEVERE / FULMINANT (organ failure): METHYLPREDNISOLONE 1-2 mg/kg/day IV or PULSE 1 g IV × 3 days then 1 mg/kg PO",
+              "PJP PROPHYLAXIS for prolonged high-dose steroid",
+              "Long taper minimizes flare/relapse"
+            ],
+            "notes": "Mainstay for moderate-severe; slow taper essential.",
+            "guideline": "RegiSCAR; Husain JAAD 2013"
+          },
+          {
+            "line": "Refractory / severe — immunosuppression",
+            "type": "Steroid-sparing",
+            "family": "—",
+            "agents": [
+              "IVIG 1-2 g/kg over 2-5 days — adjunct (mixed evidence; reasonable for severe + steroid-refractory)",
+              "CYCLOSPORINE 3-5 mg/kg/day — alternative",
+              "MYCOPHENOLATE 1-2 g/day — refractory",
+              "RITUXIMAB — anecdotal severe",
+              "TPE / Plasmapheresis — selected"
+            ],
+            "notes": "Refractory cases multidisciplinary.",
+            "guideline": "RegiSCAR"
+          },
+          {
+            "line": "Long-term surveillance — autoimmune sequelae",
+            "type": "Delayed complications",
+            "family": "—",
+            "agents": [
+              "TSH at 3, 6, 12 months — autoimmune thyroiditis up to 25% (Hashimoto OR Graves) — delayed manifestation post-DRESS",
+              "GLUCOSE + HbA1c — type 1 DM (autoimmune) classic delayed",
+              "AUTOIMMUNE PANEL — ANA, RF, anti-CCP, autoimmune hepatitis screen if symptoms (lupus, autoimmune hepatitis)",
+              "RHEUMATOLOGY referral if joint symptoms",
+              "RECURRENCE WARNING — flare possible during steroid taper or with viral illness; chronic intermittent flares 1-12 months",
+              "LIFELONG drug avoidance + medic alert",
+              "Genetic testing (HLA cascade) if HLA-associated drug + family"
+            ],
+            "notes": "Long-term surveillance essential — autoimmune complications develop weeks-months after acute resolution.",
+            "guideline": "Husain JAAD 2013; Funck-Brentano JAAD 2017"
+          }
+        ],
+        "pearls": [
+          "DRESS = drug + skin + fever + lymphadenopathy + EOSINOPHILIA + multi-ORGAN",
+          "ONSET 2-8 weeks post-drug (LATER than SJS/TEN)",
+          "FACIAL EDEMA — characteristic",
+          "HHV-6/7/EBV/CMV REACTIVATION — characteristic feature",
+          "MORTALITY 5-10% (HEPATIC FAILURE most common cause)",
+          "REGISCAR criteria — score-based diagnostic",
+          "EOSINOPHILIA ≥0.7-1.5×10⁹/L (atypical lymphocytes also)",
+          "ORGANS: HEPATIC (60-90%), RENAL, CARDIAC (4-27% — myocarditis), PULMONARY, NEURO, ENDOCRINE",
+          "DELAYED AUTOIMMUNE COMPLICATIONS — THYROIDITIS up to 25%, type 1 DM (weeks-months later)",
+          "CULPRITS: ANTICONVULSANTS (aromatic — cross-reactive), ALLOPURINOL (HLA-B*5801), SULFA (SMX-TMP, sulfasalazine, dapsone), MINOCYCLINE, vancomycin, abacavir",
+          "DRUG WITHDRAWAL paramount",
+          "AROMATIC ANTICONVULSANT CROSS-REACTIVITY — switch to non-aromatic (levetiracetam, gabapentin, valproate)",
+          "PREDNISONE 1 mg/kg/day → SLOW TAPER 3-6 MONTHS (rapid taper → relapse)",
+          "REFRACTORY: IVIG, CYCLOSPORINE, MMF",
+          "TSH at 3, 6, 12 months — delayed thyroiditis",
+          "AVOID NSAIDs in active DRESS (additional organ toxicity risk)",
+          "RECURRENCE during taper / viral illness — counsel patient",
+          "LIFELONG DRUG AVOIDANCE + medic alert"
+        ],
+        "introduction": "DRESS (Drug Reaction with Eosinophilia and Systemic Symptoms) is a severe drug hypersensitivity syndrome with multi-organ involvement (especially hepatic), eosinophilia, lymphadenopathy, and characteristic viral reactivation (HHV-6/7/EBV/CMV). Onset is typically 2-8 weeks after drug initiation — later than SJS/TEN. Diagnosis follows the RegiSCAR scoring system. Common culprits include aromatic anticonvulsants, allopurinol, sulfa drugs, minocycline, and vancomycin. Treatment requires immediate drug withdrawal and systemic corticosteroids with slow taper over 3-6 months to prevent relapse. Long-term surveillance for autoimmune complications (thyroiditis, type 1 diabetes) is essential as these can develop weeks-to-months after acute resolution. Aromatic anticonvulsant cross-reactivity necessitates switching to non-aromatic alternatives.",
+        "source": "RegiSCAR Network DRESS Validation Score (Kardaun BJD 2013). Husain DRESS JAAD 2013. Funck-Brentano DRESS Long-term JAAD 2017. SCAR consortium. Cacoub DiHS Am J Med 2011."
+      },
+      {
+        "id": "erythema_multiforme",
+        "name": "Erythema Multiforme",
+        "subtitle": "Acute self-limited targetoid eruption — distinct from SJS/TEN",
+        "patho": "T-cell mediated immune reaction producing characteristic TARGETOID skin lesions. ETIOLOGY: INFECTIONS (~90%) — HSV most common (recurrent EM frequently driven by HSV-1; herpes-induced EM has characteristic pattern), Mycoplasma pneumoniae (especially children — can cause MIRM with mucositis predominant; overlap with SJS spectrum); DRUGS (rare; ~10%) — sulfonamides, NSAIDs, antibiotics, antiepileptics; less commonly autoimmune disease, malignancy, vaccines. CLASSIFICATION: ERYTHEMA MULTIFORME MINOR (skin only) vs ERYTHEMA MULTIFORME MAJOR (mucous membrane involvement, often with prodromal symptoms). DISTINCT FROM SJS/TEN — Bastuji-Garin classification (J Am Acad Dermatol 1993): EM = typical TARGETOID lesions (3 zones — central dusky/bulla + middle pale ring + peripheral erythema) on EXTREMITIES, NO body surface detachment >10%, USUALLY POST-INFECTIOUS; SJS/TEN = atypical 'flat' targets, central + truncal predominance, drug-related, epidermal detachment. SELF-LIMITED 2-4 weeks; recurrence common with HSV-EM.",
+        "signs": "PRODROME — sometimes mild (cold sore HSV; URI Mycoplasma). LESIONS — symmetric, ACRAL distribution (extensor surfaces, palms, soles, knees, elbows; spreads centripetally). CLASSIC TARGETOID — 3 zones: central duskiness/bulla/erosion + middle pale ring + outer erythematous ring. Lesions appear in CROPS over 1-2 weeks. EM MAJOR — mucous membrane involvement (oral most common — erosions; ocular, genital less than SJS/TEN). NIKOLSKY NEGATIVE (vs SJS/TEN). Pruritus mild. Self-resolves 2-4 weeks; pigmentary changes may persist.",
+        "diagnosis": "CLINICAL — typical targetoid lesions + acral predominance + history (HSV cold sore, recent URI). HSV PCR — viral lesions if active; HSV serology supportive. MYCOPLASMA PCR + IgM — children; cold agglutinins. Skin biopsy if atypical — perivascular lymphocytic infiltrate + necrotic keratinocytes (lichenoid pattern). EXCLUDE SJS/TEN by classic targets + acral distribution + lack of detachment + frequent infectious trigger; review medications.",
+        "monitoring": "Symptoms; recurrence pattern (HSV-EM); mucosal exam; ophthalmology if eye involvement.",
+        "treatment": [
+          {
+            "line": "Mild EM minor — symptomatic",
+            "type": "Self-limited",
+            "family": "—",
+            "agents": [
+              "TOPICAL STEROIDS (mid-potency triamcinolone 0.1%) for symptomatic skin lesions",
+              "ANTIHISTAMINES (cetirizine 10 mg, fexofenadine 180 mg) for pruritus",
+              "Cool compresses, soothing emollients",
+              "Analgesia (acetaminophen)"
+            ],
+            "notes": "Most resolve spontaneously 2-4 weeks.",
+            "guideline": "Lerch CDR 2018"
+          },
+          {
+            "line": "EM major (mucosal) — supportive + systemic symptomatic",
+            "type": "Multi-modal",
+            "family": "—",
+            "agents": [
+              "ORAL CARE — viscous lidocaine, magic mouthwash (lidocaine + diphenhydramine + Maalox) for oral discomfort; soft diet",
+              "OCULAR — preservative-free lubricants; ophthalmology consultation if eye involvement",
+              "PREDNISONE 0.5-1 mg/kg/day × 3-7 days then taper — selected severe symptomatic cases (controversial; some evidence shortens course); reserve for moderate-severe + recurrent",
+              "Generally NOT routinely used — most cases resolve without"
+            ],
+            "notes": "Steroids selectively used for severe; supportive primary.",
+            "guideline": "Lerch 2018"
+          },
+          {
+            "line": "HSV-induced EM (recurrent)",
+            "type": "Antiviral suppression",
+            "family": "Antiviral",
+            "agents": [
+              "ACUTE EM with active HSV — VALACYCLOVIR 1 g BID × 7-10 days OR ACYCLOVIR 400 mg 5×/day OR FAMCICLOVIR",
+              "RECURRENT HSV-EM (≥6 episodes/year) — CHRONIC SUPPRESSIVE: VALACYCLOVIR 500 mg-1 g daily OR ACYCLOVIR 400 mg BID — for 6-12 months minimum; may withdraw if no recurrence; restart if recurs",
+              "Trigger education — sun protection (UV-induced HSV reactivation), stress management"
+            ],
+            "notes": "Suppression effective for HSV-EM; trigger management.",
+            "guideline": "Lerch 2018; Chovel-Sella JEAVD 2010"
+          },
+          {
+            "line": "Mycoplasma-induced rash and mucositis (MIRM) — pediatric distinct entity",
+            "type": "Antibiotic + supportive",
+            "family": "—",
+            "agents": [
+              "MACROLIDE — AZITHROMYCIN 10 mg/kg day 1 then 5 mg/kg days 2-5 (max 500/250 mg) for M. pneumoniae",
+              "DOXYCYCLINE alternative >8 years",
+              "Supportive — mucosal care, oral lidocaine, hospitalize if severe mucositis",
+              "Generally good prognosis in MIRM (less skin, more mucosal)",
+              "DISTINCT entity from EM and SJS/TEN — separate spectrum (Canavan JAAD 2015)"
+            ],
+            "notes": "MIRM is its own entity; macrolide for organism + supportive.",
+            "guideline": "Canavan JAAD 2015"
+          },
+          {
+            "line": "Refractory / chronic",
+            "type": "Specialty",
+            "family": "—",
+            "agents": [
+              "DAPSONE 50-100 mg/day — recurrent steroid-refractory (G6PD test pre-treatment)",
+              "AZATHIOPRINE — recurrent severe",
+              "MYCOPHENOLATE — alternative",
+              "HYDROXYCHLOROQUINE — selected",
+              "Specialty dermatology referral"
+            ],
+            "notes": "Refractory cases — multidisciplinary.",
+            "guideline": "Lerch 2018"
+          }
+        ],
+        "pearls": [
+          "TARGETOID 3-zone lesions on EXTREMITIES — pathognomonic",
+          "ACRAL DISTRIBUTION (extensor, palms, soles)",
+          "SELF-LIMITED 2-4 weeks",
+          "EM MINOR (skin only) vs MAJOR (mucosal)",
+          "DISTINCT FROM SJS/TEN — Bastuji-Garin 1993: typical 3-zone targets, acral, no detachment, infection-driven",
+          "INFECTION ETIOLOGY ~90% — HSV most common; Mycoplasma (children — MIRM)",
+          "DRUG ETIOLOGY ~10% (sulfa, NSAIDs, antibiotics)",
+          "RECURRENT HSV-EM — VALACYCLOVIR 500 mg daily suppression (6-12 mo+)",
+          "MIRM (Mycoplasma-induced rash and mucositis) — distinct from EM + SJS/TEN; MACROLIDE",
+          "STEROIDS controversial — selected severe; not routine",
+          "PROGNOSIS GOOD — vs SJS/TEN (mortality 30-50%)",
+          "NIKOLSKY NEGATIVE (positive in SJS/TEN)",
+          "TARGETOID LESIONS can have central bulla — does NOT make it SJS/TEN if acral + no widespread detachment",
+          "PIGMENTARY CHANGES post-resolution common",
+          "G6PD TEST pre-DAPSONE in refractory cases"
+        ],
+        "introduction": "Erythema multiforme is a self-limited targetoid eruption distinct from SJS/TEN, predominantly post-infectious (HSV most common; Mycoplasma in children) and with classic 3-zone targetoid lesions on the extremities. Distinction from SJS/TEN is essential — EM features acral distribution, typical targetoid morphology, and lack of widespread epidermal detachment, while SJS/TEN features atypical flat targets with central/truncal predominance and drug-related etiology. Most cases of EM resolve in 2-4 weeks with symptomatic care. Recurrent HSV-induced EM responds to chronic antiviral suppression. Mycoplasma-induced rash and mucositis (MIRM) is a distinct pediatric entity managed with macrolide antibiotics plus supportive care.",
+        "source": "Lerch Erythema Multiforme Review CDR 2018. Bastuji-Garin Classification J Am Acad Dermatol 1993. Chovel-Sella HSV Suppression JEAVD 2010. Canavan MIRM JAAD 2015."
       }
     ]
   },
