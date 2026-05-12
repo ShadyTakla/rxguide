@@ -351,3 +351,134 @@ The rxguide app moved from a collection of well-developed but partially-orphaned
 - **All tabs** share the same visual width.
 
 Total content additions across 18 PRs: 1 drug, 5 vaccines, 5 disease conditions, 12 reference tables, 5 deprescribing protocols, ~1,800 interaction entries, 448 disease pregnancy/lactation summaries, ~1,500 disease-row agent linkages, plus various UX and bug fixes.
+
+---
+
+# Audit Cycle 2 — 2026-05-12
+
+**Date:** 2026-05-12
+**Scope:** All work since the 2026-05-08 audit (PR #22 → PR #50 inclusive).
+**Theme:** Drug-family mapping accuracy, schema completeness on newly-added drugs, treatment-row type standardization (8 canonical non-pharm categories), deprescribing-protocol schema fix, recently-added drug audits (100 drugs DC-9 + 50 drugs Batches 1–5 + 49 drugs Batches 6–10).
+
+---
+
+## Executive summary
+
+29 merged PRs (#22 – #50) cleaned up the systemic patterns we found after the first audit cycle:
+
+1. **Treatment-row drug-class mapping accuracy** — fixed 11 documented mismatches + 3 app-wide; refreshed family-card source citations (Hypertension Canada 2020 → 2025; CCS HF 2021 → 2025; DOACs + 2024 update; CANMAT 2016 → 2024 update); back-filled GERD/PUD H. pylori row amoxicillin.
+2. **Treatment-row repopulation** for 33 newly-added disease cards (Rounds 1 & 2) — 17 + 16 cards re-typed, agents populated, family field injected, preg_lact_summary recomputed.
+3. **App-wide non-pharm standardization** — replaced heterogeneous `type` values (Non-Drug, Strategy, Procedure, Action, refer, treat, …) with **8 canonical categories** + **81 sub-action keys** across 2,979 treatment rows; introduced `NON_PHARM_AGENTS` data table + `.nonpharm-pill` CSS + render integration.
+4. **Drug schema completeness** — audited 200 drugs (DC-9 100 + 50 + 49) for the 16 canonical DRUGS fields; closed gaps (mostly missing `monitoring`).
+5. **Deprescribing protocol schema** — fixed 5 protocols (44 steps) where `taper_steps` were stored as strings and rendered as `undefined undefined undefined`.
+6. **Family-card completeness** — added `comparison` + `pearls` to 2 new singleton families (Glucagon & Hyperglycemic Agents, Vitamin A (Retinol)).
+
+---
+
+## PR-by-PR summary
+
+| PR | Title | Lines |
+|---|---|---|
+| #22 | Bidirectional reciprocal interactions (warfarin × vitamin_a, disulfiram × chlordiazepoxide) | small |
+| #23 | AUDIT-CONTENT.md — line-by-line clinical content audit of top 40 entries | doc-only |
+| #24 | Drug-family mismatch fixes in treatment.agents arrays + refresh outdated citations | medium |
+| #25 → #27 | Round 1 disease card additions (20 conditions across psych/derm/uro/ophth/ENT/peds + 3 drugs + 3 tox refs) — already on main pre-audit | large |
+| #28 | Audit fix: repopulate agents + family + preg_lact_summary on 17 new disease cards | +1566 / −251 |
+| #29 | Round 2 disease card additions (16 conditions + 4 tox refs) — already on main pre-audit | large |
+| #30 | Reclassify treatment rows to type=Drug where drugs are actively prescribed (Round 1 follow-up) | +28 / −49 |
+| #31 | Audit fix: 16 conditions + 4 tox refs from Round 2 — repopulate + reclassify | +1382 / −303 |
+| #32 → #33 | Drug-add batches (Round 1 + Round 2 of Batch series) — already on main pre-audit | large |
+| #34 | App-wide non-pharm standardization: 8 type categories + 81 sub-agent keys | +11178 / −9334 |
+| #36 | Non-pharm sweep — pass 2/3 + targeted residuals (coverage 100%) | +476 / −226 |
+| #37 → #40 | More drug-add batches | large |
+| #38 | Fix undefined taper steps on 5 deprescribing protocols (schema rewrite) | +44 / −44 |
+| #41 | Audit fix: 50 drugs (PR #32/33/37/39/40) + 2 family cards | +3 / −3 |
+| #42 → #47 | Topical / HIV / antiarrhythmic / biologic / JAK / MS DMT / HCV DAA batches | large |
+| #44 | Audit fix: missing monitoring field on 40 drugs (DC-9 Batches 13–20) | +40 / −40 |
+| #48 | Audit fix: 60 drugs (DC-9 Batches 1–12) — monitoring + Canadian source + orphan PREG cleanup | +61 / −72 |
+| #50 | Audit fix: 49 drugs (Batches 6–10) — resmetirom Canadian source citation | tiny |
+
+---
+
+## Architecture/data additions
+
+### New: NON_PHARM_AGENTS data table
+- **NON_PHARM_CATEGORIES** (8): lifestyle, physical_therapy, psychotherapy, surgery_procedure, monitoring, medical_device, patient_education, supportive_care
+- **NON_PHARM_AGENTS** (81 sub-action keys): each entry `{label, category}` for static class-pill rendering
+- **renderNonPharmPill(key)** helper + **`.nonpharm-pill`** CSS class
+- **renderDrugLink(agentStr)** now first-checks NON_PHARM_AGENTS before DRUGS/VACCINES
+
+### Treatment-row schema reinforcement
+- **`type`** must be one of 9 canonical values: `Drug` + the 8 non-pharm categories
+- **`family`** REQUIRED on every row (per `FAMILY_MAP[firstAgent]` or descriptive label)
+- **`agents`** array can mix drug keys and non-pharm action keys
+
+### DEPRESCRIBING_PROTOCOLS schema reinforcement
+- **`taper_steps`** must be array of `{step, action, detail}` objects (NOT strings)
+
+### Cidofovir × probenecid interaction
+- Severity normalized to `Beneficial` (was `"Required pretreatment"`); mechanism corrected from "blocks renal tubular secretion" (incorrect) to "inhibits OAT1-mediated proximal-tubular UPTAKE"
+
+### Glucagon & Hyperglycemic Agents family card
+- Added `comparison` (GlucaGen HypoKit vs Baqsimi nasal in detail)
+- Added `pearls` (7) — Schedule II + Diabetes Canada universal availability, Baqsimi household preference, caregiver counselling, post-glucagon vomiting + lateral positioning, glycogen-depletion ineffectiveness, β-blocker/CCB high-dose IV protocol, pheo + insulinoma contraindications
+
+### Vitamin A (Retinol) family card
+- Added `comparison` (retinyl palmitate vs β-carotene vs Aquasol A IV; RDA + UL table)
+- Added `pearls` (8) — β-carotene preference in pregnancy, WHO+CPS measles dosing limit, retinoid combo avoidance, doxycycline pseudotumor cerebri, cod-liver-oil dual A+D, chronic hepatic fibrosis + fracture risk, liver-consumption pregnancy limits, post-bariatric supplementation
+
+---
+
+## Final state (live on main, 2026-05-12)
+
+### Data structure counts
+| Structure | Count | Δ vs 2026-05-08 |
+|---|---|---|
+| `DRUGS` | ~1,108 | +19 (new batches) |
+| `VACCINES` | 58 | +2 |
+| `DISEASES` conditions | 487+ | +33 conditions across Rounds 1 & 2 |
+| `REFERENCE_TABLES` | 65 | +4 (Round 2 tox refs) |
+| `DEPRESCRIBING_PROTOCOLS` | 17 | unchanged (all 5 fixed schema) |
+| `MINOR_AILMENTS` | 19 | unchanged |
+| `PREG_DATA` | ~1,100 | +12 (1 orphan removed) |
+| `NAPRA_ODB_DATA` | ~1,108 | +19 |
+| `DRUG_FAMILIES` | ~454 | +2 singleton families |
+| `FAMILY_MAP` | ~1,208 | +10 |
+
+### Treatment-row type distribution (post-sweep)
+| Category | Count |
+|---|---|
+| Drug | 2,213 |
+| supportive_care | 179 |
+| surgery_procedure | 167 |
+| lifestyle | 165 |
+| patient_education | 136 |
+| medical_device | 48 |
+| monitoring | 30 |
+| physical_therapy | 22 |
+| psychotherapy | 19 |
+| Non-canonical | 0 |
+
+### Drug schema completeness (audited)
+| Audit | Count audited | Missing fields before | Missing fields after |
+|---|---|---|---|
+| DC-9 Batches 13–20 | 40 | 40 (monitoring) | 0 |
+| DC-9 Batches 1–12 | 60 | 59 (monitoring) + 1 CDN source | 0 |
+| Batches 1–5 (PR #32/33/37/39/40) | 50 | 0 fields, 2 family-card gaps, 1 bad severity | 0 |
+| Batches 6–10 (PR #42/43/45/46/47) | 49 | 0 fields, 1 CDN source | 0 |
+| **Total audited** | **199 drugs** | various | **all clean** |
+
+---
+
+## Key takeaways for future agents
+
+1. **Always populate `monitoring`** — most-commonly-omitted field. 99 of 100 DC-9 drugs missed it.
+2. **Treatment rows ALWAYS need `family`** — even multi-class combination rows. Use the most relevant drug class or a descriptive label.
+3. **Use the 8 canonical non-pharm `type` values** — never `Strategy`, `Procedure`, `Non-Drug`, etc.
+4. **DEPRESCRIBING `taper_steps` are objects** `{step, action, detail}`, never strings.
+5. **Cross-app integration is REQUIRED for every drug** — DRUGS + PREG_DATA + NAPRA_ODB_DATA + FAMILY_MAP, all matching the canonical key.
+6. **`Beneficial` severity is for required protective combinations** — e.g., cidofovir+probenecid, MTX+folic acid, sirolimus+cyclosporine. Don't invent new severity values.
+7. **Strip drugs mentioned in AVOID/DEPRESCRIBE/CONTRAINDICATED context** out of agents — they're not therapy.
+8. **Canadian-priority sources mandatory** — Health Canada PMs, CCS, CDA, SOGC, NACI, RxFiles, CADTH, etc.
+
+See `AGENTS.md` §17–§23 (added 2026-05-12) for the full updated playbook.
