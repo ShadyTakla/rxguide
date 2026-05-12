@@ -22,11 +22,13 @@ Do not skip the audit and do not skip the merge — both happen on every change.
 
 ## Other persistent rules
 
+- **REUSE BEFORE CREATE** — Before adding any new tab, disease category, disease condition, reference category, reference table, drug family, minor ailment, deprescribing protocol, jurisprudence topic, or empiric-therapy syndrome: SEARCH the existing structure first. Extend an existing container instead of creating a new one whenever scope overlaps. **See `AGENTS.md` §24 for the full no-new-container rule, discovery commands, decision flowchart, and historical examples.** This is the single most-frequently-broken rule by AI agents — every batch-style PR description should explicitly note: "Checked for existing coverage of [topic]; extending [X] is/is not possible because [Y]."
 - No duplicate disease states. Reuse existing conditions whenever scope overlaps (per user direction). Before adding any new condition, verify no existing condition already covers the scope (substring search of `DISEASES[*].conditions[*].name` and the introduction text).
 - Drug card and drug family duplication is acceptable when granularity is clinically useful (per user direction).
 - Do not add net-new Reference tab categories when an existing category fits — extend `toxIds`, `diIds`, `medSafetyIds`, etc. (per user direction).
+- Do not add new tabs (9 cover everything). Do not add new disease categories (20 cover everything). New top-level containers require justification in the PR description.
 - Pharmacist scope and Canadian (Ontario-first) context throughout; do not author US-default content.
 
 ## Last updated
 
-2026-05-12 — initial creation; deployed live to main after audit.
+2026-05-12 — added explicit reuse-before-create rule with cross-reference to AGENTS.md §24.
