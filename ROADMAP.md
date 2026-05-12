@@ -8,13 +8,17 @@
 
 ---
 
-## ⚠️ READ FIRST — Reuse before create
+## ⚠️ READ FIRST — Container hierarchy rules
 
-**Before adding ANY content from this roadmap, run discovery commands to confirm existing coverage** and extend an existing container rather than creating a new one. See **`AGENTS.md` §24** for the full no-new-container rule, discovery commands, decision flowchart, and historical examples.
+**3-tier rule for picking work from this roadmap:**
 
-**Quick rule:** new content goes into an existing tab / disease category / reference category / drug family / minor ailment / etc. wherever possible. New top-level containers are very rare and require justification in the PR description.
+- 🛑 **Tabs — LOCKED.** Do NOT add a new tab without explicit user discussion. The 9 existing tabs cover all planned scope.
+- ❌ **Top-level categories — CLOSED.** Do NOT add a new disease category on the Diseases home page (20 exist) or a new Reference category on the Reference home page (9 exist). Always place new content WITHIN an existing category.
+- ✅ **In-category content — OPEN.** New disease conditions inside an existing category, new reference tables inside an existing Reference category, new drug families, new drug cards, new vaccines, new deprescribing protocols, etc. — all fine. Just substring-search for existing duplicate scope first; extend an existing entry when scope overlaps.
 
-This applies to everything in this ROADMAP — every "new condition", "new reference table", "new drug family" listed below should first be tested against the existing structure for overlap.
+See **`AGENTS.md` §24** for the full rules, examples, and discovery commands.
+
+This means every item below that proposes a "new condition" or "new reference table" is fine to add — just confirm it doesn't duplicate an existing entry. Items that propose new top-level categories or new tabs are not on this roadmap (and if you find one mistakenly listed, treat it as "extend an existing category" instead).
 
 ---
 
@@ -755,16 +759,15 @@ When picking items from this list, weight by:
 - "Canadian-specific context" = ✅
 - "Citation hierarchy" = ✅
 
-### Reuse-before-create red flags to remember
+### Container-hierarchy red flags to remember
 
-- "Adding a new tab" = ❌ (9 tabs cover everything)
-- "Adding a new disease category" = ❌ (20 categories cover everything; very rare exceptions)
-- "Adding a new Reference category" = ❌ (9 categories with hardcoded dispatch; extend an existing one's ID array)
-- "Adding a new drug family for a singleton drug that fits an existing class" = ❌
-- "Creating a duplicate disease for a slightly different patient subgroup" = ❌ (extend the existing card)
-- "Extending an existing drug card with new content" = ✅
-- "Adding a new reference table to an existing category" = ✅
-- "Documenting in PR why an existing container couldn't be extended" = ✅ (required when creating new)
+- "Adding a new tab" = 🛑 STOP — discuss with user first (the 9 tabs are architectural)
+- "Adding a new disease category (top-level header on Diseases home)" = ❌ (the 20 categories are closed; use an existing one)
+- "Adding a new Reference category (top-level header on Reference home)" = ❌ (the 9 categories are closed; extend an existing one's dispatch array)
+- "Adding a new disease condition inside an existing category" = ✅ (just don't duplicate scope of an existing condition)
+- "Adding a new reference table inside an existing Reference category" = ✅ (add the new ID to the category's existing dispatch array)
+- "Adding a new drug card / drug family / vaccine / deprescribing protocol" = ✅ (just don't duplicate)
+- "Creating a duplicate disease for a slightly different patient subgroup when an existing card already covers it" = ❌ (extend the existing card instead)
 
 See `AGENTS.md` §24 for the full discovery-command toolbox before adding content.
 
