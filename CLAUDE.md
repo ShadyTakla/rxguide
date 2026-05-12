@@ -22,13 +22,20 @@ Do not skip the audit and do not skip the merge — both happen on every change.
 
 ## Other persistent rules
 
-- **REUSE BEFORE CREATE** — Before adding any new tab, disease category, disease condition, reference category, reference table, drug family, minor ailment, deprescribing protocol, jurisprudence topic, or empiric-therapy syndrome: SEARCH the existing structure first. Extend an existing container instead of creating a new one whenever scope overlaps. **See `AGENTS.md` §24 for the full no-new-container rule, discovery commands, decision flowchart, and historical examples.** This is the single most-frequently-broken rule by AI agents — every batch-style PR description should explicitly note: "Checked for existing coverage of [topic]; extending [X] is/is not possible because [Y]."
-- No duplicate disease states. Reuse existing conditions whenever scope overlaps (per user direction). Before adding any new condition, verify no existing condition already covers the scope (substring search of `DISEASES[*].conditions[*].name` and the introduction text).
+### Container hierarchy (per user direction)
+
+- 🛑 **NO NEW TABS without user discussion.** The 9 existing tabs cover all planned scope. Pause and ask before considering a new tab.
+- ❌ **NO NEW DISEASE CATEGORIES** on the Diseases home page. The 20 existing categories (Cardiology, Endocrine, GI, Neurology, Psychiatry, Respirology, Renal, Rheumatology, Hematology, Oncology, Dermatology, ENT, Ophthalmology, Urology, Women's Health, Pediatrics, Infectious, Pharmacy Practice, Travel, Toxicology) cover all clinical scope. New conditions go INTO an existing category.
+- ❌ **NO NEW REFERENCE TAB CATEGORIES** on the Reference home page. The 9 existing categories cover everything. New reference tables go INTO an existing category by extending its dispatch ID array (`toxIds`, `diIds`, `medSafetyIds`, `allergyIds`, `foodIds`, `geriatricIds`, `renalIds`, `hepaticIds`, `practiceIds`).
+- ✅ **Adding new content WITHIN existing categories is fine** — new disease conditions in Cardiology, new reference tables in Toxicology, new drug cards, new drug families, new vaccines, new deprescribing protocols, etc. No special permission needed; just don't duplicate scope of an existing entry (search first, extend if there's overlap, otherwise add).
+- See `AGENTS.md` §24 for the full container-hierarchy rules, duplicate-scope check, discovery commands, and worked examples.
+
+### Content quality
+
+- No duplicate disease states. Reuse existing conditions whenever scope overlaps (per user direction). Before adding any new condition, substring-search `DISEASES[*].conditions[*].name` + introduction text to confirm no overlap.
 - Drug card and drug family duplication is acceptable when granularity is clinically useful (per user direction).
-- Do not add net-new Reference tab categories when an existing category fits — extend `toxIds`, `diIds`, `medSafetyIds`, etc. (per user direction).
-- Do not add new tabs (9 cover everything). Do not add new disease categories (20 cover everything). New top-level containers require justification in the PR description.
 - Pharmacist scope and Canadian (Ontario-first) context throughout; do not author US-default content.
 
 ## Last updated
 
-2026-05-12 — added explicit reuse-before-create rule with cross-reference to AGENTS.md §24.
+2026-05-12 — clarified container-hierarchy rule (tabs locked, categories closed, in-category additions open).
