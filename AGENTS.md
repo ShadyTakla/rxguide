@@ -1035,4 +1035,296 @@ console.log(total.n, sevs);
 
 ---
 
-**End of guide.** Last updated 2026-05-08. If you make architectural changes, update this document in the same PR.
+## 17. Non-pharm "type" and "agents" standardization (added 2026-05-12)
+
+Treatment rows under every disease condition follow this canonical schema. A row that prescribes a medication uses `type: "Drug"` and populates `agents` with DRUGS / VACCINES keys. A row whose intervention is **non-pharmacologic** (lifestyle counselling, surgery, monitoring, etc.) MUST use one of the 8 standardized categories below in the `type` field and populate `agents` with specific sub-action keys defined in `NON_PHARM_AGENTS`.
+
+### 17.1 The 8 canonical `type` values for non-pharm rows
+
+Defined in `NON_PHARM_CATEGORIES` (search for it in index.html near `renderDrugLink`):
+
+| Type | Display label | Color |
+|---|---|---|
+| `lifestyle` | Lifestyle | `#16a34a` |
+| `physical_therapy` | Physical Therapy | `#0891b2` |
+| `psychotherapy` | Psychotherapy | `#7c3aed` |
+| `surgery_procedure` | Surgery/Procedure | `#dc2626` |
+| `monitoring` | Monitoring | `#0284c7` |
+| `medical_device` | Medical Device | `#475569` |
+| `patient_education` | Patient Education | `#d97706` |
+| `supportive_care` | Supportive Care | `#0d9488` |
+
+Plus `"Drug"` for medication rows = **9 canonical type values total**. Any other value (`Non-Drug`, `Strategy`, `Procedure`, `Action`, `refer`, `treat`, `caution`, `—`, etc.) is **legacy** and was migrated by PR #34/#36. Do not introduce new ones.
+
+### 17.2 NON_PHARM_AGENTS dictionary (81 entries)
+
+Defined as a `var NON_PHARM_AGENTS` map. Each key has `{label, category}` so the renderer can compute a colored pill. Examples:
+
+- lifestyle → `diet`, `exercise`, `weight_loss`, `smoking_cessation_lifestyle`, `alcohol_reduction`, `stress_management`, `sleep_hygiene`, `fluid_intake`, `posture_ergonomics`, `sun_protection`, `trigger_avoidance`, `sexual_health_counselling`, `caffeine_reduction`
+- physical_therapy → `physiotherapy`, `occupational_therapy`, `vestibular_rehab`, `pelvic_floor_pt`, `pulmonary_rehab`, `cardiac_rehab`, `stretching_program`, `manual_therapy`, `gait_training`
+- psychotherapy → `cbt`, `dbt`, `ipt`, `exposure_therapy`, `mbct`, `motivational_interviewing`, `psychodynamic_therapy`, `family_therapy`, `group_therapy`, `supportive_psychotherapy`
+- surgery_procedure → `elective_surgery`, `urgent_surgery`, `endoscopic_procedure`, `joint_injection`, `incision_drainage`, `paracentesis`, `thoracentesis`, `cardioversion`, `manual_reduction`, `ablation`, `radiation_therapy`, `dialysis`, `blood_transfusion`, `biopsy`, `ect_procedure`, `catheterization`, `lithotripsy`, `surgical_referral`
+- monitoring → `watchful_waiting`, `routine_labs`, `imaging_surveillance`, `bp_monitoring`, `inr_monitoring`, `glucose_monitoring`, `symptom_diary`, `vital_signs_monitoring`, `echocardiography_surveillance`
+- medical_device → `cpap_apap`, `pacemaker_device`, `icd_device`, `compression_stockings`, `splint_brace`, `prosthesis`, `mobility_aid`, `cgm_device`, `insulin_pump`, `feeding_tube`, `urinary_catheter`, `hearing_aid`, `intrauterine_device`
+- patient_education → `counselling`, `written_action_plan`, `medic_alert`, `sick_day_rules`, `medication_review`, `self_monitoring_education`, `advance_care_planning`
+- supportive_care → `rest`, `hydration`, `ice_application`, `heat_application`, `elevation`, `wound_care`, `dressings`, `humidification`, `airway_clearance`, `nutritional_support`, `oxygen_therapy`, `positioning`
+
+When you need a sub-agent that isn't in this list, **add it to NON_PHARM_AGENTS first** (with the right category) and only then reference it in a row. The renderer will silently fall through to plain text for unknown keys.
+
+### 17.3 Rendering rules for non-pharm agents
+
+- `renderDrugLink(agentStr)` checks `NON_PHARM_AGENTS` BEFORE the DRUGS/VACCINES lookup.
+- Match → returns `renderNonPharmPill(key)` (colored `.nonpharm-pill` styled with the category's color, no click-through).
+- These are deliberately **non-clickable** — they exist to provide structured semantic typing, not interactive monographs.
+- Drug agents and non-pharm agents render side-by-side in the same agents list (combination rows like joint injection + corticosteroid work cleanly).
+
+### 17.4 Mixed rows (drug + non-pharm)
+
+A row CAN have both real drug keys and non-pharm action keys in the same `agents` array. The classifier decides the row's `type` by majority vote:
+
+- More drug-key agents → keep `type: "Drug"`.
+- More non-pharm agents → reclassify to the dominant non-pharm category.
+- Empty `agents` on a `type: "Drug"` row is a bug — either the row should be a non-pharm type, or the drug keys never got populated. Fix by inspection.
+
+### 17.5 Reclassification policy when editing existing rows
+
+When you modify a treatment row's `notes`, also re-evaluate its `type`:
+- Notes describe a surgical procedure → `surgery_procedure`.
+- Notes describe a lifestyle intervention only → `lifestyle`.
+- Notes describe what to monitor (no medication change) → `monitoring`.
+- Notes describe counselling content → `patient_education`.
+- Notes describe drugs being prescribed → `Drug`.
+- Notes that AVOID, DEPRESCRIBE, or DO NOT USE certain drugs → DON'T put those drugs in `agents`. Strip them and set `type` based on what the row IS instructing (often `monitoring` or `patient_education`).
+
+---
+
+## 18. Schema fields completeness checklist (added 2026-05-12)
+
+When adding any drug card to DRUGS, the entry must populate **all 16 canonical fields**. Recent batches missed `monitoring`. Audit script: `/tmp/audit_*_drugs.js` (the pattern is reusable).
+
+### 18.1 DRUGS schema (16 required fields)
+
+```
+{
+  "name":              String,         // canonical generic
+  "brand":             String,         // Canadian brand names (semicolon-separated)
+  "class":             String,         // pharmacologic class
+  "napra":             String,         // NAPRA Schedule (I/II/III/U) — also describes Rx/OTC pathway
+  "moa":               String,         // mechanism of action prose
+  "indications":       Array<String>,  // Health Canada–approved + commonly used off-label
+  "dosing":            Object|Array,   // {indication: dose} map OR array of {indication, dose, notes}
+  "side_effects":      Object,         // {common: [...], serious: [...]}
+  "contraindications": Array<String>,
+  "interactions":      Array<{drug, severity, mechanism, management}>,
+  "pregnancy":         String,         // prose summary (PREG_DATA has the full structured entry)
+  "pk":                Object,         // pharmacokinetics: {absorption, half_life, metabolism, renal_adjustment, hepatic_adjustment}
+  "canadian_notes":    String,         // Canadian-specific context — brand availability, ODB coverage, provincial rules
+  "pearls":            Array<String>,  // teaching points (5–10 typical)
+  "monitoring":        Array<String>,  // what to monitor and when (4–7 items typical)  ← OFTEN MISSED
+  "source":            String          // citation hierarchy — MUST include at least one Canadian source
+}
+```
+
+**`monitoring` is the most-commonly-omitted field.** Audit it explicitly. Reason: in batch-generation prompts, "side_effects" and "monitoring" sound redundant; agents drop monitoring. They are **NOT redundant** — side_effects = what can happen; monitoring = what the pharmacist tracks (labs, vitals, symptoms, frequency, intervention thresholds).
+
+### 18.2 Cross-app companion entries — REQUIRED for every drug
+
+For every key in DRUGS, the following must also exist:
+
+1. **NAPRA_ODB_DATA[key]** — `{name, napra, napraDetail, odbStatus, odbDetail, luCode, notes, cdsa}`
+2. **PREG_DATA[key]** — `{name, pregRisk, pregColor, bfRisk, bfColor, pregDetail, bfDetail, alternatives, source}`
+3. **FAMILY_MAP[key]** — `"<DrugFamily name>"` string (must match a key in DRUG_FAMILIES)
+
+If you add a drug card without any one of these, the corresponding tab/section breaks silently.
+
+### 18.3 Key-name discipline
+
+- Use canonical generic name in lowercase snake_case (e.g., `ulipristal_acetate`, NOT `ulipristal`, NOT `ulipristalAcetate`).
+- Multi-component products: join with `_` (e.g., `ethinyl_estradiol_norethindrone`, `velpatasvir_sofosbuvir`).
+- Formulation variants: append the route/form (e.g., `tacrolimus_topical`, `timolol_oral`, `brimonidine_op`, `ofatumumab_ms`).
+- **Orphan PREG_DATA keys** (entry exists under a key that has no matching DRUGS entry) are a real bug — they never render. Fix: rename the PREG key to match the DRUGS key, or delete the orphan. Audit found one such orphan (`ulipristal` PREG entry vs `ulipristal_acetate` DRUGS entry) cleaned up in PR #48.
+
+### 18.4 DRUG_FAMILIES schema (for new family cards)
+
+Family card schema is looser than drug schema but every family should have:
+```
+{
+  "name":            String,
+  "abbrev":          String,         // 1-line headline
+  "class_color":     "#hexcode",
+  "moa_summary":     String,
+  "class_effects":   Array<String>,
+  "class_contraindications": Array<String>,
+  "members":         Array<{drug, notes}>,   // each {drug} key must exist in DRUGS
+  "comparison":      String,         // prose — how members differ (or, for singleton, how they compare to alternatives)
+  "pearls":          Array<String>,
+  "canadian_notes":  String,
+  "source":          String          // Canadian-priority
+}
+```
+
+**`comparison` and `pearls` are easy to skip on singleton families** (one-member family cards added when a new drug class enters the formulary). Audit explicitly when adding a new family.
+
+---
+
+## 19. DEPRESCRIBING_PROTOCOLS schema (added 2026-05-12)
+
+Every deprescribing protocol object MUST have:
+
+```
+{
+  "id":               String,         // snake_case
+  "title":            String,
+  "icon":             String,         // emoji
+  "color":            "#hexcode",
+  "overview":         String,         // prose
+  "indications_to_continue":         Array<String>,
+  "consider_deprescribing":          Array<String>,   // OR consider_deprescribing_or_modifying
+  "taper_steps":      Array<{step:Number, action:String, detail:String}>,   ← MUST be objects, NOT strings
+  "monitoring":       Array<String>,
+  "rebound_management": Array<String>,
+  "counselling":      Array<String>,
+  "sources":          String          // Canadian-priority
+}
+```
+
+**`taper_steps` MUST be an array of objects `{step, action, detail}`, NOT strings.** The renderer reads `s.step / s.action / s.detail` and prints `undefined undefined undefined` when given a string. PR #38 fixed 5 protocols (antidepressant, gabapentinoid, corticosteroid, anticonvulsant, ADHD-stimulant) that had string-form steps.
+
+When adding a new protocol:
+1. Author each step as `{ step: <N>, action: "ALL-CAPS HEADLINE", detail: "Full prose with doses, timing, monitoring, half-life caveats, Canadian-specific notes." }`.
+2. Verify the renderer at `function buildDeprescribing` reads `s.step`, `s.action`, `s.detail`.
+
+---
+
+## 20. Recently audited (since 2026-05-08 — append to §12)
+
+This appends to the audit history in section 12. As of 2026-05-12, the cumulative cycles include:
+
+### 2026-05-12 audit cycle (PR #28 → PR #48)
+
+**Disease cards repopulated (treatment.agents + family field):**
+- ✅ 17 new disease cards (Round 1 — orthostatic_hypotension, halitosis, subconjunctival_hemorrhage, pterygium_pinguecula, acute_bacterial_prostatitis, acute_gastritis, stasis_dermatitis, pressure_injury, pruritus_ani, cheilitis, calluses_corns, ingrown_toenail, measles, varicella, mumps, roseola, erythema_infectiosum) — PR #28
+- ✅ 16 new disease cards (Round 2 — vasovagal_syncope, postpartum_psychosis, seasonal_affective_disorder, stimulant_use_disorder, catatonia, lumbar_spinal_stenosis, testicular_torsion, phimosis_paraphimosis, peyronies_disease, floaters_pvd, retinal_detachment, nasal_polyposis, sialolithiasis, trichomoniasis, abnormal_uterine_bleeding, neonatal_jaundice) — PR #31
+- ✅ Reclassified treatment-row types to canonical `Drug` where drugs are prescribed (25 rows in PR #30, 48 rows in PR #31, 60+ rows in PR #34, 42+13 rows in PR #36)
+- ✅ App-wide non-pharm sweep — 766 non-Drug rows reclassified into the 8 canonical categories with specific sub-agents — PR #34, #36
+- ✅ Coverage verification — 2 legitimate remaining `supportive_care` residuals; everything else mapped — PR #36
+
+**Drug-family content audits:**
+- ✅ ACE Inhibitors / ARBs / Beta-Blockers / CCBs (all variants): Hypertension Canada 2020 → 2025 — PR #24
+- ✅ CCS HF 2021 → CCS HF 2025 Comprehensive Update where used as primary
+- ✅ DOACs: CCS AF 2020 → CCS AF 2020 + 2024 Focused Update
+- ✅ SSRIs: CANMAT MDD 2016 → CANMAT MDD 2016 with 2024 Update
+- ✅ Glucagon & Hyperglycemic Agents family — added `comparison` + 7 pearls — PR #41
+- ✅ Vitamin A (Retinol) family — added `comparison` + 8 pearls — PR #41
+
+**Drug schema completeness audits (DC-9 series 100 drugs):**
+- ✅ DC-9 Batches 13–20 (40 drugs) — added missing `monitoring` field to all 40 — PR #44
+- ✅ DC-9 Batches 1–12 (60 drugs) — added missing `monitoring` field to 59; updated mexiletine source with Canadian citations; deleted orphan `ulipristal` PREG_DATA entry — PR #48
+- ✅ 50-drug audit (PR #32/33/37/39/40) — cidofovir × probenecid severity `"Required pretreatment"` → `Beneficial` (canonical); mechanism correction (probenecid inhibits OAT1 UPTAKE, not secretion) — PR #41
+- ✅ 49-drug audit (Batches 6–10 = PR #42/43/45/46/47) — resmetirom source updated with Health Canada + CASL + CADTH — PR #50
+
+**Treatment-row mismatch sweep (full app):**
+- ✅ 11 documented errors from AUDIT-CONTENT.md cleaned up (mdd, asthma, migraine, osteoarthritis, hfref, gerd_pud, copd, ckd, etc.) — PR #24
+- ✅ App-wide scan of 2,694 treatment rows; 3 additional class-mismatch fixes (psychiatry/ocd, respirology/pertussis, infectious/community_acquired_pneumonia) — PR #24
+- ✅ Stale false-positive agents stripped:
+  - `minoxidil_topical` from wound-care rows (alias map mis-fired on "Foam, Solution" in brand string) — PR #34
+  - `trazodone_sleep` from non-trazodone rows (over-eager match on word "sleep") — PR #34
+  - `atropine_pralidoxime` everywhere (only valid in nerve-agent poisoning) — PR #34
+  - `aspirin` from pediatric infection Reye-syndrome rows — PR #28
+  - `levothyroxine` / `ranitidine` from acute_gastritis context-warning rows — PR #28
+
+**Deprescribing protocol schema fix:**
+- ✅ 5 protocols with string-form `taper_steps` rewritten as canonical `{step, action, detail}` objects (44 steps total): antidepressant_taper, corticosteroid_taper, anticonvulsant_taper, gabapentinoid_taper, stimulant_adhd_taper — PR #38
+
+**Bidirectional interaction reciprocals:**
+- ✅ warfarin × vitamin_a high-dose; disulfiram × chlordiazepoxide — PR #22
+
+---
+
+## 21. Pitfalls discovered in 2026-05-12 audit cycle (extends §9)
+
+### 21.1 Treatment-row schema drift (new cards lack `family` field)
+
+**Symptom:** Class-color pills don't render on treatment rows of newly-added disease cards even though drugs are listed.
+**Cause:** Existing cards use `{line, type, family, agents, notes, guideline}`. New cards omit `family`, breaking class-color rendering.
+**Fix:** When adding any treatment row, populate `family` from `FAMILY_MAP[firstAgent]` or use a descriptive label that spans the agents in a combination row (e.g., "H. pylori Eradication", "Vasodilators, α-blockers, diuretics").
+**Auto-fix script pattern:** see `/tmp/repopulate_new_cards.js` (clean: aliases + blocklist + extract from notes + infer family from FAMILY_MAP[firstAgent]).
+
+### 21.2 Missing `monitoring` on new drug cards
+
+**Symptom:** Drug card opens but the "Monitoring" section is empty / absent.
+**Cause:** Batch-generation prompts often drop the `monitoring` field, assuming it's redundant with `side_effects`.
+**Fix:** Always populate `monitoring` (4–7 items) with: what to check, how often, threshold for intervention, Canadian-specific frequency rules if relevant.
+**Audit pattern:** `/tmp/audit_*_drugs.js` scripts iterate KEYS list + verify `monitoring` array length.
+
+### 21.3 Non-canonical interaction severity values
+
+**Symptom:** Interaction badge renders as plain text (no color).
+**Cause:** Severity outside the 6 canonical values (e.g., `"Required pretreatment"`, `"AVOID"`, `"Use with caution"`).
+**Fix:** Map to one of: `Beneficial`, `Contraindicated`, `Major`, `Moderate`, `Minor`, `Note`.
+**Recent recurrence:** cidofovir × probenecid `"Required pretreatment"` → `Beneficial` (PR #41); see §8.6 for canonical-value semantics.
+
+### 21.4 Bright-light-therapy / dawn-simulation typed as Drug
+
+**Symptom:** Seasonal-affective-disorder BLT row has `type: "Drug"` but no agents.
+**Cause:** Device/therapy mis-classified as drug.
+**Fix:** Use `type: "medical_device"` (BLT, dawn simulation, light box) or `type: "patient_education"` (light-exposure counselling without device).
+
+### 21.5 Orphan PREG_DATA / NAPRA_ODB_DATA entries
+
+**Symptom:** Search returns a vaccine/drug "via PREG" that doesn't exist in DRUGS.
+**Cause:** PREG_DATA entry under a key that doesn't match the canonical DRUGS key (e.g., `ulipristal` PREG vs `ulipristal_acetate` DRUGS).
+**Fix:** Reconcile keys — DRUGS is the source of truth. Rename PREG_DATA / NAPRA_ODB_DATA keys to match, or delete orphans.
+**Detect:** `for (const k of Object.keys(PREG_DATA)) if (!DRUGS[k] && !VACCINES[k]) console.log('orphan PREG:', k)`.
+
+### 21.6 Deprescribing taper_steps written as strings
+
+**Symptom:** Reference → Deprescribing → Antidepressant (or any of the 5 affected protocols) shows `undefined undefined undefined` rows in the Taper Protocol section.
+**Cause:** `taper_steps` written as `[ "step 1 description", "step 2 description", ... ]` instead of `[ { step:1, action:"X", detail:"Y" }, ... ]`.
+**Fix:** Always use object schema. Renderer reads `s.step / s.action / s.detail`.
+
+### 21.7 Mis-classified rows: "deprescribe / avoid / context" drug mentions become agents
+
+**Symptom:** Treatment row in `orthostatic_hypotension [deprescribe offending medications]` lists `amitriptyline, tamsulosin, hydralazine` in `agents` even though those are drugs to STOP.
+**Cause:** Auto-extraction matches drug names in notes regardless of context.
+**Fix:** Classifier should detect anti-Rx markers ("AVOID", "DEPRESCRIBE", "STOP", "CONTRAINDICATED", "do not use", "Reye") and either skip the row or strip those drugs from `agents`.
+**Pattern script:** `/tmp/cleanup_false_positives.js` — list of `{idHint, lineHint, action: CLEAR_ALL | REMOVE | TYPE | POPULATE}` operations applied per row.
+
+---
+
+## 22. Reusable audit scripts (added 2026-05-12)
+
+These scripts live in `/tmp/` during a session and don't persist. When making batch drug additions, save your version and reference these patterns.
+
+| Script | Purpose |
+|---|---|
+| `/tmp/audit_<N>_drugs.js` | Iterate a list of KEYS; check each for SCHEMA fields, NAPRA/PREG/FAMILY_MAP presence, Canadian source, canonical severities; summary report |
+| `/tmp/audit_new_cards.js` | Disease-card audit (schema, treatment-row type-vs-agents, family-vs-FAMILY_MAP mismatch, preg_lact_summary content) |
+| `/tmp/repopulate_new_cards.js` | Populate empty `agents` arrays from notes text + inject `family` from FAMILY_MAP — pattern for new-card sweep |
+| `/tmp/recompute_preg_lact.js` | Recompute `preg_lact_summary` on each condition after agent changes |
+| `/tmp/sweep_nonpharm.js` | App-wide reclassification of non-Drug rows into the 8 canonical types (keyword-based) |
+| `/tmp/sweep_pass2.js`, `/tmp/sweep_pass3.js` | Follow-up passes for surgery/procedure/device terminology missed by the first sweep |
+| `/tmp/add_monitoring.js` | Inject `monitoring` field on drug records that lack it (after authoring 4–7 monitoring items per drug) |
+| `/tmp/fix_taper_steps.js` | Rewrite string-form taper_steps as `{step, action, detail}` objects |
+| `/tmp/verify_coverage.js` | Coverage check across all DISEASES treatment rows — non-canonical types, empty Drug rows, supportive_care empties with hidden keywords |
+
+---
+
+## 23. Quick-reference: 8 non-pharm categories at a glance (added 2026-05-12)
+
+When typing a non-Drug treatment row, use this as a mental sieve:
+
+1. **lifestyle** — patient does it themselves at home (diet, exercise, weight loss, smoking cessation, alcohol reduction, sleep hygiene)
+2. **physical_therapy** — performed by a regulated therapist (PT/OT, vestibular rehab, pelvic floor)
+3. **psychotherapy** — psychotherapeutic intervention (CBT, DBT, IPT, exposure therapy, motivational interviewing)
+4. **surgery_procedure** — operative or procedural intervention (elective/urgent surgery, endoscopy, joint injection, dialysis, transfusion, biopsy, ablation, ECT)
+5. **monitoring** — surveillance without medication change (watchful waiting, scheduled labs, BP/INR/glucose/echo follow-up)
+6. **medical_device** — device-based treatment (CPAP, pacemaker, ICD, compression stockings, splint, prosthesis, IUD)
+7. **patient_education** — counselling / written information (action plans, MedicAlert, sick-day rules, medication review, advance care planning)
+8. **supportive_care** — bedside non-drug care (rest, hydration, ice/heat, elevation, wound care, dressings, oxygen, positioning)
+
+If none fit cleanly, **default to `supportive_care`** with no agents (or descriptive `patient_education` + `counselling` for "refer to specialist" / "reassurance" rows).
+
+---
+
+**End of guide.** Last updated 2026-05-12. If you make architectural changes, update this document in the same PR.
