@@ -8,6 +8,16 @@
 
 ---
 
+## ⚠️ READ FIRST — Reuse before create
+
+**Before adding ANY content from this roadmap, run discovery commands to confirm existing coverage** and extend an existing container rather than creating a new one. See **`AGENTS.md` §24** for the full no-new-container rule, discovery commands, decision flowchart, and historical examples.
+
+**Quick rule:** new content goes into an existing tab / disease category / reference category / drug family / minor ailment / etc. wherever possible. New top-level containers are very rare and require justification in the PR description.
+
+This applies to everything in this ROADMAP — every "new condition", "new reference table", "new drug family" listed below should first be tested against the existing structure for overlap.
+
+---
+
 ## Table of contents
 
 1. [Liability guardrails — what NEVER to add](#1-liability-guardrails--what-never-to-add)
@@ -744,6 +754,19 @@ When picking items from this list, weight by:
 - "Workflow chart" = ✅
 - "Canadian-specific context" = ✅
 - "Citation hierarchy" = ✅
+
+### Reuse-before-create red flags to remember
+
+- "Adding a new tab" = ❌ (9 tabs cover everything)
+- "Adding a new disease category" = ❌ (20 categories cover everything; very rare exceptions)
+- "Adding a new Reference category" = ❌ (9 categories with hardcoded dispatch; extend an existing one's ID array)
+- "Adding a new drug family for a singleton drug that fits an existing class" = ❌
+- "Creating a duplicate disease for a slightly different patient subgroup" = ❌ (extend the existing card)
+- "Extending an existing drug card with new content" = ✅
+- "Adding a new reference table to an existing category" = ✅
+- "Documenting in PR why an existing container couldn't be extended" = ✅ (required when creating new)
+
+See `AGENTS.md` §24 for the full discovery-command toolbox before adding content.
 
 ---
 

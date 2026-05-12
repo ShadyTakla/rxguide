@@ -1328,3 +1328,165 @@ If none fit cleanly, **default to `supportive_care`** with no agents (or descrip
 ---
 
 **End of guide.** Last updated 2026-05-12. If you make architectural changes, update this document in the same PR.
+
+---
+
+## 24. REUSE BEFORE CREATE — the no-new-container rule (added 2026-05-12)
+
+**This is the single most-frequently-broken rule.** Read it before adding ANY content.
+
+### 24.1 The principle
+
+rxguide already has a comprehensive container hierarchy: 9 tabs, 20 disease categories, 487+ disease conditions, 9 Reference categories, 65+ reference tables, 454+ drug families, 19 minor ailments, 67 empiric-therapy syndromes, 17 deprescribing protocols, 15 jurisprudence topics. **Always test whether new content fits an existing container before creating a new one.**
+
+> "Do not add net-new Reference tab categories when an existing category fits — extend `toxIds`, `diIds`, `medSafetyIds`, etc."
+> — user direction, captured in `CLAUDE.md`
+
+> "No duplicate disease states. Reuse existing conditions whenever scope overlaps. Before adding any new condition, verify no existing condition already covers the scope."
+> — user direction, captured in `CLAUDE.md`
+
+These rules generalize: prefer **extending an existing container** to **creating a new one** at every level of the hierarchy.
+
+### 24.2 Containers and the reuse rule, level by level
+
+| Container | Current count | Rule |
+|---|---|---|
+| **Tabs** | 9 | DO NOT ADD A 10TH TAB. The 9 cover everything currently planned. Adding a tab requires architectural sign-off. |
+| **Disease categories** | 20 | Extreme caution. New top-level categories are very rare. Most "new" content fits an existing category (Cardiology, Endocrine, GI, Neurology, Psych, Resp, Renal, Rheum, Heme, Onc, Derm, ENT, Ophth, Uro, Gyn/Repro, Women's, Peds, Infectious, Practice, Travel). |
+| **Disease conditions** | 487+ | Substring-search existing condition `name` and `introduction` for the scope of your proposed new condition. Only add if NO existing condition meaningfully overlaps. Extend an existing condition when scope is close. |
+| **Reference tab categories** | 9 | DO NOT ADD A 10TH CATEGORY. The dispatch is hardcoded in `buildReference()` — `toxIds`, `diIds`, `medSafetyIds`, etc. Extend an existing category's ID array. |
+| **Reference tables** | 65+ | Search existing tables for topic overlap before adding. Extending an existing table is preferred. |
+| **Drug families** | 454+ | Before creating a new family, check if the drug fits an existing family. Singleton families are sometimes appropriate (a class with only one member in Canada), but check `DRUG_FAMILIES` and `FAMILY_MAP` first. |
+| **Minor ailments** | 19 | Driven by provincial MOH scope (Ontario). Only add when MOH formally expands scope. |
+| **Empiric therapy syndromes** | 67 | Check Bugs & Drugs taxonomy + existing syndromes; extend an existing syndrome when possible. |
+| **Deprescribing protocols** | 17 | Check existing protocols; if your proposed taper applies to an existing class, you may not need a new protocol. |
+| **Jurisprudence topics** | 15 | Verify the topic isn't covered before adding. |
+
+### 24.3 Discovery commands — RUN THESE FIRST
+
+Before adding ANY new content, run a substring search on existing structures. If you find existing coverage, extend it rather than duplicate.
+
+**Search disease conditions for keyword:**
+```bash
+grep -o '"name": "[^"]*KEYWORD[^"]*"' /home/user/rxguide/index.html | sort -u
+```
+
+**Search reference tables for keyword:**
+```bash
+grep -o '"title": "[^"]*KEYWORD[^"]*"' /home/user/rxguide/index.html | sort -u
+```
+
+**List all reference table IDs in a category:**
+```bash
+grep -E 'var (toxIds|diIds|medSafetyIds|allergyIds|foodIds|geriatricIds|renalIds|hepaticIds|practiceIds)\s*=' /home/user/rxguide/index.html
+```
+
+**List all disease categories + condition counts:**
+```bash
+node -e "
+const fs=require('fs');const txt=fs.readFileSync('/home/user/rxguide/index.html','utf8');
+function rd(n){const i=txt.indexOf('var '+n+' = ');let s=txt.indexOf('{',i),d=0,j=s;while(j<txt.length){const c=txt[j];if(c==='{')d++;else if(c==='}'){d--;if(d===0)return [s,j+1];}j++;}}
+const D=JSON.parse(txt.slice(...rd('DISEASES')));
+for(const k of Object.keys(D))console.log(k.padEnd(20),(D[k].conditions||[]).length);
+"
+```
+
+**List all drug families:**
+```bash
+node -e "
+const fs=require('fs');const t=fs.readFileSync('/home/user/rxguide/index.html','utf8');
+function rd(n){const i=t.indexOf('var '+n+' = ');let s=t.indexOf('{',i),d=0,j=s;while(j<t.length){const c=t[j];if(c==='{')d++;else if(c==='}'){d--;if(d===0)return [s,j+1];}j++;}}
+const F=JSON.parse(t.slice(...rd('DRUG_FAMILIES')));
+console.log(Object.keys(F).sort().join('\n'));
+" | grep -i KEYWORD
+```
+
+**Find a disease condition by name fragment:**
+```bash
+node -e "
+const fs=require('fs');const t=fs.readFileSync('/home/user/rxguide/index.html','utf8');
+function rd(n){const i=t.indexOf('var '+n+' = ');let s=t.indexOf('{',i),d=0,j=s;while(j<t.length){const c=t[j];if(c==='{')d++;else if(c==='}'){d--;if(d===0)return [s,j+1];}j++;}}
+const D=JSON.parse(t.slice(...rd('DISEASES')));
+const term='KEYWORD'.toLowerCase();
+for(const k of Object.keys(D))for(const c of (D[k].conditions||[])){
+  if((c.name+' '+(c.introduction||'')).toLowerCase().includes(term))
+    console.log(k,'/',c.id,'—',c.name);
+}
+"
+```
+
+### 24.4 Decision flowchart
+
+```
+You want to add content.
+        |
+        v
+ Does it fit an existing
+ disease/reference/family/etc.?
+        |
+   YES  |  NO
+        |
+        v
+   ┌─────────────────┐    ┌─────────────────────┐
+   │ EXTEND that     │    │ Are you sure?       │
+   │ existing item.  │    │ Search for related  │
+   │ Document the    │    │ scope with the      │
+   │ extension in    │    │ discovery commands. │
+   │ PR description. │    └─────────┬───────────┘
+   └─────────────────┘              |
+                              still NO
+                                    |
+                                    v
+                          ┌─────────────────────┐
+                          │ CREATE new item,    │
+                          │ following canonical │
+                          │ schema. Document    │
+                          │ why an extension    │
+                          │ wasn't possible in  │
+                          │ the PR description. │
+                          └─────────────────────┘
+```
+
+### 24.5 Examples of correct REUSE (already done — copy this pattern)
+
+- **PR #25/26/27 Round 1** — adding 17 disease cards: ALL placed in existing categories (Cardiology, ENT, Ophth, Uro, GI, Derm, Infectious, Peds). No new categories.
+- **PR #25/26/27** — 3 tox reference tables (serotonin syndrome, NMS, alcohol withdrawal): added to the **existing** `tox_*` category by extending `toxIds`, not by creating a new "Tox" category.
+- **PR #29 Round 2** — 16 disease cards + 4 tox refs: same pattern.
+- **PR #34** — non-pharm sweep: instead of adding 8 new tabs (one per non-pharm category), used the existing treatment-row `type` field with the 8 categories as values. No new tab or section in the UI.
+- **PR #38** — fixing 5 deprescribing protocols: did NOT create new protocols for SSRI vs SNRI vs TCA; extended the existing `antidepressant_taper` protocol to cover all subclasses.
+
+### 24.6 Examples of INCORRECT (would have been) approach — avoid
+
+- ❌ Adding a 10th tab "Non-Pharm Interventions" instead of expanding the existing treatment-row schema.
+- ❌ Adding a Reference category "Drug-Induced Conditions" instead of adding the table(s) to the existing Med Safety or Adverse Effects category.
+- ❌ Adding a disease card `acute_otitis_externa_pediatric` when `swimmers_ear` (or its pediatric subset) covers the scope.
+- ❌ Creating a new "Beta-Blockers (Cardioselective)" + "Beta-Blockers (Non-Selective)" + "Beta-Blockers (Vasodilatory)" family card when "Beta-Blockers" + drug-level distinction in `class` already covers it.
+
+### 24.7 When you DO need to create new (rare)
+
+Acceptable scenarios for creating a new container:
+- **New Health Canada–approved drug class** with no existing family that fits (e.g., when bempedoic acid arrived — needed a new "ACL Inhibitors" family).
+- **New disease entity recognized by Canadian guidelines** that doesn't fit any existing scope (e.g., long COVID; PASC).
+- **New regulatory category** (e.g., a new pharmacist scope in Ontario that doesn't fit existing minor ailments).
+
+In all these cases:
+1. Document **why an existing container couldn't be extended** in the PR description.
+2. Cite the Canadian guideline or Health Canada document that defines the new entity.
+3. Keep the container as narrow as needed — don't create catch-all containers.
+
+### 24.8 Why this matters
+
+- **Render performance** — the app loads ~22 MB; every new top-level structure adds to the search index and the home grid.
+- **Discoverability** — users search by symptom/drug, not by "container they think this is in". Fragmenting content across many small containers makes things harder to find.
+- **Maintenance** — every new container needs `buildReference()` dispatch, `DISEASE_CATEGORY_ORDER` entry, family-card scaffolding. Reusing existing structures avoids those required updates.
+- **Schema consistency** — extending an existing structure inherits its conventions automatically.
+
+### 24.9 The rule in one sentence
+
+> **Before creating any new tab, category, condition, reference table, or drug family — search the existing structure first. Extend before create. Reuse before add. If you must create new, document why in the PR.**
+
+This is the most-easily-broken rule by AI agents authoring batch content. Every batch-style PR should explicitly note in its description: "Checked for existing coverage of [topic]; extending [X] is not possible because [Y]."
+
+---
+
+**End of guide.** Last updated 2026-05-12. If you make architectural changes, update this document in the same PR.
