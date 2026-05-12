@@ -450,6 +450,29 @@ Current 9 categories (post-consolidation in PR #17):
 8. Pediatric Dosing
 9. Pharmacogenomics (CPIC)
 
+### 5.4.1 Reference-table cell auto-linking (`fullLinkify` → `linkifyClasses` → `linkifyCell`)
+
+Every reference-table cell (overview paragraph + each warning + every row cell) runs through `fullLinkify(text, related_drugs)`, which:
+
+1. **`linkifyClasses`** — wraps known drug-class names (e.g. `"SSRIs"`, `"ACE inhibitors"`, `"DOACs"`) with a clickable span to the matching `DRUG_FAMILIES` card. Hard-coded `DRUG_CLASS_MAP` regex table. Acronyms are expanded ("SSRIs" → "Selective Serotonin Reuptake Inhibitors (SSRIs)") when the cell text used the bare acronym form. Matches are replaced with `\x01CLS{i}\x01` placeholder tokens to prevent re-matching.
+
+2. **`linkifyCell`** — for each `k` in the table's `related_drugs`, walks candidates derived from `DRUGS[k].name`:
+   - Full name (e.g. `"Sacubitril / Valsartan"`)
+   - Name with parentheticals stripped
+   - Parenthetical inner content split on `,;/`
+   - Slash-separated parts of the no-paren name
+   - First word (≥ 4 chars)
+   - Explicit `ALIASES[k]` entries (e.g. `apixaban → ['Eliquis']`, `acetaminophen → ['Paracetamol','Tylenol','APAP']`)
+
+   Candidates are sorted longest-first; first match wins per drug. Regex is whitespace-flexible around any `/` in the candidate (`\s*\/\s*`) so the combo candidate `"Sacubitril / Valsartan"` matches the unspaced cell form `"Sacubitril/valsartan"`. Matches are replaced with `\x01DRG{i}\x01` placeholder tokens to prevent a later iteration (e.g. the standalone `valsartan` key after the combo `sacubitril_valsartan` key matched) from nesting a second `<span>` inside the wrapped HTML or its title attribute.
+
+   Both token sets are restored to full HTML at the end of `fullLinkify`.
+
+**Authoring rule — combination drugs in reference-table cells.** When a cell mentions a combination drug, include BOTH the combo key AND the component keys in `related_drugs` if the cell may also reference the components separately. The longest-name-first sort + slash-flex regex guarantees the combo wins for `"X/Y"` or `"X / Y"` substrings, and the standalone component still links elsewhere in the cell. Authoring conventions:
+- `DRUGS[combo].name` should use the spaced `"X / Y"` form (existing convention — 80+ combos follow this; e.g. `"Sacubitril / Valsartan"`, `"Levodopa / Carbidopa"`). The renderer matches both spacings, but the canonical name should be spaced for consistency.
+- Cell text may use either `"X/Y"` (compact, Health Canada PM style) or `"X / Y"` (presentation style) — both render correctly to the combo card.
+- Do NOT omit the combo key from `related_drugs` just because the components are listed — without it, the cell text matches each component separately and clicking the slash-substring opens the wrong card. (This was the bug fixed in PR #70 — see §21.8.)
+
 ### 5.5 `buildJuri()` / `showJuri(idx)` / `closeJuri()` — Jurisprudence detail-page
 
 Pattern matches Minor Ailments. Topics defined inline in `buildJuri()`, cached at module scope as `_JURI_TOPICS` for retrieval by `showJuri(idx)`.
@@ -537,9 +560,11 @@ This script reads DISEASES + PREG_DATA + VACCINES, computes buckets, and writes 
 You MUST update:
 1. **`REFERENCE_TABLES.push({...})`** with full schema (§4.4).
 2. **`buildReference()` category dispatch** — add the table's ID to the appropriate category's ID array. Without this, the table is orphaned (data exists, invisible in UI). Past bug — see PR #13.
-3. (Optional) Add `related_drugs` keys for cross-link clicks.
+3. **`related_drugs`** — include every DRUGS/VACCINES key referenced in any cell, warning, or overview. The cell auto-linker (`linkifyCell` — see §5.4.1) walks ONLY this list; a key not present here will not become clickable.
+4. **Combination drugs** — if any cell mentions a combination drug (e.g. `"Sacubitril/valsartan"`, `"Trimethoprim/sulfamethoxazole"`, `"Levodopa/carbidopa"`), include the **combo key** in `related_drugs`, not just the components. The renderer guarantees the combo wins via longest-name-first sort + slash-flex regex (§5.4.1), but only if the combo key is actually in the related-drugs list. Components MAY also be listed when they appear elsewhere standalone — both will resolve correctly.
+5. Run the 7-check pre-merge audit (CLAUDE.md): row widths match column count, all `related_drugs` resolve, ≥1 Canadian source, etc.
 
-If creating a NEW category, add to the `categories` array in `buildReference()` with key, icon, label, color, items. Try not to add new categories without strong justification — current 9 categories were consolidated from 12 in PR #17 because the user preferred broader groupings.
+If creating a NEW category, add to the `categories` array in `buildReference()` with key, icon, label, color, items. Try not to add new categories without strong justification — current 9 categories were consolidated from 12 in PR #17 because the user preferred broader groupings (and per the 3-tier rule in §24, reference-tab categories are CLOSED — no new ones without explicit user discussion).
 
 ### 6.6 Adding a new DEPRESCRIBING_PROTOCOL
 
@@ -1289,6 +1314,22 @@ This appends to the audit history in section 12. As of 2026-05-12, the cumulativ
 **Cause:** Auto-extraction matches drug names in notes regardless of context.
 **Fix:** Classifier should detect anti-Rx markers ("AVOID", "DEPRESCRIBE", "STOP", "CONTRAINDICATED", "do not use", "Reye") and either skip the row or strip those drugs from `agents`.
 **Pattern script:** `/tmp/cleanup_false_positives.js` — list of `{idHint, lineHint, action: CLEAR_ALL | REMOVE | TYPE | POPULATE}` operations applied per row.
+
+### 21.8 Combination drug renders as component card in reference-table cells (PR #70)
+
+**Symptom:** Cell text like `"Sacubitril/valsartan 49/51 mg PO BID..."` rendered with the wrong link target — hovering showed "Open Valsartan drug card" and clicking opened the standalone `valsartan` card instead of the canonical `sacubitril_valsartan` combination card.
+
+**Cause:** Pre-PR-#70, `linkifyCell` built its candidate regex from `DRUGS[k].name` with literal whitespace preserved. The combo's name `"Sacubitril / Valsartan"` (spaces around `/`) compiled to `\b(Sacubitril \/ Valsartan)\b`, which did NOT match the unspaced cell form `"Sacubitril/valsartan"`. The function fell through to slash-split components, wrapping `"Sacubitril"` alone with the combo link; a later iteration over the standalone `valsartan` key wrapped the trailing `"valsartan"` with the wrong card.
+
+The same pattern affected all 85 slash-named combos in DRUGS (`sacubitril_valsartan`, `levodopa_carbidopa`, `sulfamethoxazole_trimethoprim`, `fluticasone_salmeterol`, `budesonide_formoterol`, `lopinavir_ritonavir`, `ezetimibe_simvastatin`, `sitagliptin_metformin`, `empagliflozin_metformin`, `ceftolozane_tazobactam`, `ceftazidime_avibactam`, `meropenem_vaborbactam`, `imipenem_relebactam`, etc.) wherever a cell used the compact `"X/Y"` form.
+
+**Fix (PR #70 — at the rendering layer, not in the data):**
+1. **Whitespace-flexible slash** — every literal `/` in the candidate is compiled as `\s*\/\s*`, so the spaced canonical name matches both spaced and unspaced cell forms. Combo wins via longest-name-first sort.
+2. **Placeholder tokenization** — matched substrings swap to `\x01DRG{i}\x01` tokens until end-of-function, then restored. Prevents subsequent component iterations (e.g. standalone `valsartan` after combo `sacubitril_valsartan` matched) from nesting a second `<span>` inside the combo span's visible text or title attribute. Same pattern already used in `linkifyClasses`.
+
+**Author guarantee going forward (§5.4.1 + §6.5):** Include the combo key in `related_drugs`. The renderer handles both `"X/Y"` and `"X / Y"` cell forms; the canonical `DRUGS[combo].name` should use the spaced form (existing convention across all 80+ combos). Listing components alongside the combo is fine — both resolve correctly.
+
+**Detect (regression check):** Headless-simulate `linkifyCell` on representative cell text and assert that the combo key is the ONLY linked key for the `"X/Y"` substring, with no nested spans. See `/tmp/sim_linkify.js` (PR #70) for the pattern.
 
 ---
 
