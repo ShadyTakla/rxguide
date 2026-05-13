@@ -508,11 +508,15 @@ When adding a new entry, several data structures must be updated together. Faili
 ### 6.1 Adding a new DRUG
 
 You MUST update:
-1. **`DRUGS[key] = {...}`** with full schema (§4.1).
+1. **`DRUGS[key] = {...}`** with full schema (§4.1). The `source` field must include explicit Canadian-source recognition (see §21.10 for the rule and accepted tokens). The `interactions` array must NEVER be empty `[]` — at minimum a `severity: "Note"` entry (see §21.11).
 2. **`PREG_DATA[key] = {...}`** — pregnancy + lactation summary (§4.7). Without this, the per-disease preg/lact section will mark this drug as "Limited Data".
 3. **`NAPRA_ODB_DATA[key] = {...}`** — NAPRA scheduling + ODB coverage. Drives the badges on the drug card.
-4. **`FAMILY_MAP[key] = "FamilyName"`** if the drug belongs to an existing family.
-5. **`DRUG_FAMILIES["FamilyName"] = {...}`** if it's a NEW family that doesn't yet exist (rare).
+4. **`FAMILY_MAP[key] = "FamilyName"`** — **MANDATORY for every drug; no exceptions** (§21.9). Three valid paths:
+   - Map to an existing `DRUG_FAMILIES` entry (preferred — grep `FAMILY_MAP` for related-class drugs first).
+   - Map to a NEW multi-member family when ≥2 drugs share the mechanism but no family exists yet.
+   - Map to a NEW singleton family when the mechanism is genuinely unique (singletons are explicitly OK).
+   - DO NOT skip this step. Missing FAMILY_MAP entries are the #1 recurring audit-failure mode (82 gaps across 3 cycles — see §21.9).
+5. **`DRUG_FAMILIES["FamilyName"] = {...}`** if step 4 created a new family — provide the full family schema (§4.9): `moa_summary`, `class_effects`, `class_contraindications`, `members[]`, `comparison`, `pearls`, `canadian_notes`, `source`.
 6. **Existing drug interactions** — update the `interactions` array on RELATED drugs to include the new drug if there's a clinically meaningful interaction (bidirectional).
 7. **Disease cards** that should reference the new drug — update `treatment[i].agents` arrays (or rely on the existing notes-text repopulation if the drug name is in prose).
 8. **Re-run** `/tmp/precompute_preg_lact.js` if the drug appears in any disease's `treatment.agents` — to update the static `preg_lact_summary` buckets.
@@ -1330,6 +1334,78 @@ The same pattern affected all 85 slash-named combos in DRUGS (`sacubitril_valsar
 **Author guarantee going forward (§5.4.1 + §6.5):** Include the combo key in `related_drugs`. The renderer handles both `"X/Y"` and `"X / Y"` cell forms; the canonical `DRUGS[combo].name` should use the spaced form (existing convention across all 80+ combos). Listing components alongside the combo is fine — both resolve correctly.
 
 **Detect (regression check):** Headless-simulate `linkifyCell` on representative cell text and assert that the combo key is the ONLY linked key for the `"X/Y"` substring, with no nested spans. See `/tmp/sim_linkify.js` (PR #70) for the pattern.
+
+### 21.9 Missing FAMILY_MAP entries — the #1 recurring authoring error (PR #59 / #90 / #93)
+
+**Symptom:** New drug cards are merged with full DRUGS + NAPRA_ODB_DATA + PREG_DATA entries but no FAMILY_MAP entry. The drug card opens but the "Drug Family" link is absent. Audit script flags as `Missing FAMILY_MAP: <n> <key-list>`.
+
+**Audit cycle frequency (most common gap across post-merge audits):**
+- Batches 11–15 (PR #59) → 6 FAMILY_MAP gaps + 1 orphan cleanup
+- Batches 26–30 (PR #90) → 29 FAMILY_MAP gaps + 3 orphan cleanups
+- Batches 31–35 (PR #93) → 47 FAMILY_MAP gaps + 4 orphan cleanups
+- **Cumulative: 82 missing FAMILY_MAP entries across 3 audit cycles** — far more than any other recurring error.
+
+**Cause:** Authoring batches focus on DRUGS schema (16 fields) + PREG + NAPRA + interactions. FAMILY_MAP is a separate top-level object, easy to forget. Compounded when the drug's mechanism is novel — author assumes "no family fits" and skips the entry entirely rather than creating a new family.
+
+**Rule (mandatory):** Every drug added to DRUGS MUST have a FAMILY_MAP entry. Three valid paths:
+1. **Map to an existing family** — preferred when an existing `DRUG_FAMILIES` entry covers the drug's mechanism. Grep `FAMILY_MAP` for related-class drugs first.
+2. **Map to a new multi-member family** — preferred when 2+ drugs in DRUGS share the mechanism but no family exists yet (e.g., adding TYK2 inhibitors, BiTEs, Hedgehog inhibitors). Create the family with all members at once.
+3. **Map to a new singleton family** — acceptable when the mechanism is genuinely unique (e.g., menin inhibitors, SYK inhibitors, CD123-targeted immunotoxins). Singleton families are explicitly OK per the 3-tier rule (§24). DO NOT leave the drug unmapped.
+
+**Anti-pattern: "no family fits, so skip."** This produces orphaned drugs that never appear in family-card navigation. If no existing family fits, CREATE a singleton family with full schema (`moa_summary`, `class_effects`, `class_contraindications`, `members: [{k, drug, notes}]`, `pearls`, `canadian_notes`, `source`). One member is fine; the card will expand naturally as future drugs of the same class are added.
+
+**Detect:** `for (const k of Object.keys(DRUGS)) if (!FAMILY_MAP[k]) console.log('orphan:', k)` — run before EVERY batch merge per CLAUDE.md 8-check audit, item 2. See `/tmp/audit_<N>_drugs.js` pattern.
+
+### 21.10 Source citations omit Canadian context for non-HC-approved drugs (PR #59 / #90 / #93)
+
+**Symptom:** A drug card's `source:` field cites only "FDA label", "EMA SmPC", or international guideline ("Japanese SmPC", "Asian functional dyspepsia guidelines") with no acknowledgement of Canadian regulatory status. The CLAUDE.md audit check "every new disease card cites at least one Canadian source" passes when the drug is referenced from a disease card, but the standalone drug card itself lacks Canadian context.
+
+**Audit cycle frequency:**
+- Batches 11–15 (PR #59) → 2 (viloxazine, oxacillin — both HC-approved but CADDRA / "Bugs & Drugs" not recognized by audit regex)
+- Batches 26–30 (PR #90) → 2 (mosapride, racecadotril — neither HC-approved)
+- Batches 31–35 (PR #93) → 3 (arimoclomol, lovotibeglogene, elivaldogene — newer rare-disease therapies, mixed HC status)
+
+**Cause:** Two distinct sub-patterns:
+1. **HC-approved but cited via international sources** — author cites the primary trial (FDA label, EMA SmPC) without the parallel Health Canada Product Monograph. Audit regex misses it.
+2. **Not HC-approved** — author cites the source country's regulator (FDA, EMA, PMDA) without explicit "NOT Health Canada-approved" disclaimer and without listing Canadian alternatives.
+
+**Rule for the `source:` field:**
+
+| Drug regulatory status | Required source-field content |
+|---|---|
+| HC-approved | Cite **Health Canada Product Monograph** explicitly (named) + the primary trial + any Canadian guideline (CCS, SOGC, CADTH, RxFiles, AMMI, CADDRA, etc.). |
+| NOT HC-approved | Explicit phrase **"NOT Health Canada-approved"** + access pathway (Special Access Program / not available in Canada / personal importation) + **Canadian alternatives by name** (with their family + brand). |
+| HC-approved via NOC/c (Notice of Compliance with Conditions) | Note the NOC/c status, any CADTH HTA review, and provincial-rare-disease-drug-program eligibility criteria. |
+
+**Anti-pattern:** `"source": "FDA <name> label 20XX; <pivotal trial>; <disease-foundation>."` with no Canadian content. This was the recurring pattern across all 3 audit cycles.
+
+**Audit recognition regex** (already in audit scripts): tokens that count as Canadian-source recognition include `Health Canada`, `CPS`, `SOGC`, `CCS`, `NACI`, `CADTH`, `CFP`, `CMAJ`, `CTS`, `RxFiles`, `AMMI`, `CDA`, `CUA`, `CRISM`, `CCSA`, `ODB`, `CAG`, `CPhA`, `CMA`, `Toronto Notes`, `RNAO`, `CPSO`, `PHAC`, `CANMAT`, `Diabetes Canada`, `Hypertension Canada`, `Osteoporosis Canada`, `Thrombosis Canada`, `CADDRA`, `CHEP`, `CMRD`, `CIMDRN`, `Garrod Association`, `Sickle Cell Disease Association of Canada`, `ALD Foundation Canada`. **If your source string doesn't include at least one of these, the citation is incomplete** — even if the drug is genuinely not HC-approved, the absence-statement and Canadian-alternatives belong in the source field.
+
+### 21.11 Empty interactions arrays on gene therapy / single-use products (PR #93)
+
+**Symptom:** A drug has `"interactions": []` (an empty array). The 16-field schema completeness check passes (the field exists), but the drug card renders with no interactions section content. Recurring for gene therapies, single-dose biologics, and one-time-use products where the author concluded "no chronic-dosing interactions apply."
+
+**Audit cycle frequency:** First surfaced in Batches 31–35 (PR #93 — `elivaldogene_autotemcel`, a single-dose autologous HSC gene therapy). Expected to recur as more gene/cell therapies enter the catalog.
+
+**Cause:** For products administered once with no chronic-drug exposure post-infusion (autologous HSC gene therapy, in-vivo AAV gene therapy, single-dose enzyme replacement), traditional pharmacokinetic drug-drug interactions are not applicable. Authors leave `interactions: []`.
+
+**Rule:** Never leave `interactions: []`. At minimum, add ONE entry with `severity: "Note"` explaining the absence:
+
+```js
+"interactions": [{
+  "with": "Concurrent immunosuppressants / antiretrovirals / antineoplastics",
+  "severity": "Note",
+  "mechanism": "Single-dose <product type> with no chronic drug exposure post-infusion. Pre-treatment / peri-conditioning interactions follow standard <BMT / infusion-centre> pharmacology.",
+  "management": "Coordinate with <BMT pharmacy / infusion centre>: <relevant peri-treatment considerations — e.g., busulfan TDM, anti-AAV antibody screening, anti-infective prophylaxis>."
+}]
+```
+
+This:
+- Preserves the schema's non-empty invariant.
+- Documents WHY the array is "empty" of conventional pharmacokinetic interactions.
+- Surfaces the peri-treatment considerations (busulfan TDM for ex-vivo gene therapy, prophylactic steroids for in-vivo AAV, etc.) that the prescribing pharmacist DOES need to know.
+
+**Detect:** Audit script reports `Empty schema fields: <n>` with `interactions` listed. Re-run after every gene-therapy / single-use product batch.
 
 ---
 
