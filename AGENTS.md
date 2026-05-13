@@ -1407,6 +1407,27 @@ This:
 
 **Detect:** Audit script reports `Empty schema fields: <n>` with `interactions` listed. Re-run after every gene-therapy / single-use product batch.
 
+### 21.12 "Ghost" FAMILY_MAP entries are intentional brand-name + formulation aliases (PR #112)
+
+**Symptom:** Comprehensive sweep audit reports "Ghost FAMILY_MAP entries: 118" — keys in `FAMILY_MAP` that do not exist in `DRUGS`. Examples: `concerta`, `biphentin`, `foquest` → "CNS Stimulants — Methylphenidate"; `asa` → "Antiplatelet Agents"; `prolopa` → "Levodopa"; `coversyl` → "ACE Inhibitors".
+
+**This is NOT a bug** — these are deliberate alias entries used by the cell auto-linker and class-resolution logic to map brand names, common abbreviations, and formulation suffixes to the appropriate family card when those tokens appear in cell text or notes. The auto-linker walks `FAMILY_MAP` keys; alias keys allow `"asa"`, `"concerta"`, `"prolopa"` mentions in any cell to resolve to the right family card despite no `DRUGS["asa"]` entry existing.
+
+**Categories of intentional alias entries (~118 total):**
+- Brand-name aliases (concerta, biphentin, foquest, contrave, suboxone, coversyl, twynsta, prolopa, champix, cravv, prometrium, caltrate, citracal, zulresso, zurzuvae, pegasys, pegintron, aklief, winlevi, tabex, …)
+- Common abbreviations (asa, tmp-smx, hctz, asa 81mg)
+- Formulation/route suffixes when distinct DRUGS entry not warranted (nicotine patch, nicotine gum, venlafaxine xr, bupropion xl, quetiapine xr, ferrous fumarate, ferrous gluconate, isosorbide, …)
+- Indication-specific alternate keys (lamivudine_hbv, sildenafil_pah, tadalafil_pah, drospirenone_only, brimonidine_ophthalmic, cyclosporine_ophthalmic, …)
+
+**Detect / Validate (audit-script rule):** All 118 ghosts must point to a family that DOES exist in `DRUG_FAMILIES`. Any ghost whose value targets a non-existent family IS a bug — those are broken-pointer aliases that need either fixing the value or deleting the alias. As of PR #112, 0 of 118 ghosts are broken.
+
+**Rule for adding aliases:** When introducing an alias entry, confirm:
+1. The target family name matches an existing `DRUG_FAMILIES` key exactly (no typos).
+2. The alias makes sense in cell-text rendering context (the alias is a token users / authors might write inline).
+3. Do NOT add alias if a canonical `DRUGS` key already exists for the same concept — extend `DRUGS[k].name` with alias text or use `ALIASES` in `linkifyCell` instead.
+
+**Future audit script update:** Distinguish "ghost-with-valid-target" (intentional alias) vs "ghost-with-broken-target" (bug). Only the latter is a finding. Per-category breakdown (space-key / brand-name / formulation-suffix) is informational.
+
 ---
 
 ## 22. Reusable audit scripts (added 2026-05-12)
