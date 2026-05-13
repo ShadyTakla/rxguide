@@ -240,7 +240,8 @@ DISEASES = {
             agents: ["acetaminophen", "ibuprofen"],             // DRUGS or VACCINES keys
             notes: "...",                                       // long-form prose
             guideline: "...",                                   // evidence reference
-            family: "...",                                      // optional family label
+            family: "ACE Inhibitors / ARBs",                    // see §6.3 + §21.13 — multi-family rows use " / " separator;
+                                                                // renderer splits + shows each as a clickable chip per PR #119
             details: "...",                                     // alternative to notes (some entries)
             criteria: "..."                                     // optional eligibility text
           },
@@ -544,8 +545,14 @@ You MUST update:
 You MUST update:
 1. **`DISEASES[category].conditions.push({...})`** with full schema (§4.3).
 2. **Each `treatment[i].agents` array** must contain valid DRUGS or VACCINES keys.
-3. **Re-run** `/tmp/precompute_preg_lact.js` to compute `preg_lact_summary` for the new condition.
-4. (Optional) Add cross-references — drug interactions back to relevant DRUGS, related reference tables, deprescribing protocols.
+3. **Each `treatment[i].family` field must list ALL distinct families across the row's agents** (§21.13). When the agents span more than one `DRUG_FAMILIES` class, join the family names with `" / "` — the renderer (PR #119) splits this string and produces one clickable chip per family. Authoring conventions:
+   - Use the **canonical family name** exactly as it appears as a key in `DRUG_FAMILIES` (e.g., `"PCSK9 Inhibitors / Cholesterol Absorption Inhibitors"`, not `"PCSK9 / Ezetimibe"`).
+   - When the row mixes a parent class with its subclasses (e.g., `bisoprolol` + `metoprolol` + `carvedilol`), include the parent AND each subclass — `"Beta-Blockers / Cardioselective Beta-Blockers / Non-Selective Beta-Blockers"`. Each chip lets the user open the corresponding family card.
+   - Do NOT use `"—"` placeholder; if the row is genuinely Non-Drug, set `type: "Non-Drug"` (or one of the 8 canonical non-pharm types per §17) and leave `family` either absent or set to a descriptor that does not need to resolve to a family card.
+   - Single-family rows still use a single string (e.g., `"Statins"`).
+   - Verification: run the §22 audit script to confirm every row's `family` covers every distinct `FAMILY_MAP[agent]` (target: 0 mismatched rows).
+4. **Re-run** `/tmp/precompute_preg_lact.js` to compute `preg_lact_summary` for the new condition.
+5. (Optional) Add cross-references — drug interactions back to relevant DRUGS, related reference tables, deprescribing protocols.
 
 **If adding a new disease CATEGORY** (rare): also append the key to `DISEASE_CATEGORY_ORDER` and add a colour to `catColors` in `buildHomeGrid`.
 
@@ -1427,6 +1434,60 @@ This:
 3. Do NOT add alias if a canonical `DRUGS` key already exists for the same concept — extend `DRUGS[k].name` with alias text or use `ALIASES` in `linkifyCell` instead.
 
 **Future audit script update:** Distinguish "ghost-with-valid-target" (intentional alias) vs "ghost-with-broken-target" (bug). Only the latter is a finding. Per-category breakdown (space-key / brand-name / formulation-suffix) is informational.
+
+### 21.13 Treatment row `family` field hiding multi-class agent groups (PR #118 / #119)
+
+**Symptom:** A treatment row had agents spanning multiple `DRUG_FAMILIES` classes (e.g., `bisoprolol` + `metoprolol` + `carvedilol` — cardioselective AND non-selective β-blockers; or PCSK9 inhibitors + ezetimibe in the same lipid row) but the row's `family` field named only one class. The UI rendered a single chip linking to that one family, hiding the multi-class makeup from clinicians.
+
+**Audit cycle frequency:** First surfaced in PR #118 — sweep across all `DISEASES.conditions[*].treatment[*]` rows found **943 mismatched rows** (rows where agents had ≥2 distinct `FAMILY_MAP` values but `family` field listed only 1). Updated 946 rows with the correct multi-family strings; PR #119 patched the renderer to split + render each family as its own chip.
+
+**Cause (data side):** Authoring batches typically named the row's single "headline" class but didn't enumerate the actual `FAMILY_MAP[agent]` values across all agents. The em-dash placeholder `"—"` was also used for foundational/lifestyle-mixed rows where the agents listed were drugs to AVOID rather than prescribe.
+
+**Cause (render side, pre-PR-#119):** The renderer treated `tx.family` as a single string lookup against `DRUG_FAMILIES`. A joined string like `"PCSK9 Inhibitors / Cholesterol Absorption Inhibitors"` failed exact-match lookup and fell back to inferring family from only the **first** agent — so even when the data was fixed, the UI still showed one chip.
+
+**Rule (mandatory at authoring time — §6.3 step 3):** When a treatment row's `agents` include drugs from ≥2 different `FAMILY_MAP` classes, the `family` field must list ALL distinct family names joined by `" / "`. Each token must be an exact `DRUG_FAMILIES` key. Examples:
+
+```js
+// Multi-family — PCSK9 inhibitors + ezetimibe in same lipid-intensification row
+{ line: "Second-Line", type: "Drug",
+  agents: ["evolocumab", "alirocumab", "ezetimibe"],
+  family: "PCSK9 Inhibitors / Cholesterol Absorption Inhibitors" }   // ✓
+
+// Multi-family — DOACs + warfarin in same anticoagulation row
+{ line: "First-Line (Stroke Prevention)", type: "Drug",
+  agents: ["apixaban", "rivaroxaban", "dabigatran", "edoxaban", "warfarin"],
+  family: "Direct Oral Anticoagulants / Vitamin K Antagonists" }     // ✓
+
+// Parent + subclass — mix of cardioselective and non-selective β-blockers
+{ line: "First-Line", type: "Drug",
+  agents: ["bisoprolol", "metoprolol", "carvedilol"],
+  family: "Beta-Blockers / Cardioselective Beta-Blockers / Non-Selective Beta-Blockers" }  // ✓
+
+// Single-family — keep simple string
+{ line: "First-Line", type: "Drug",
+  agents: ["ramipril", "perindopril"],
+  family: "ACE Inhibitors" }                                          // ✓
+
+// Anti-pattern — single family hides ezetimibe's class
+{ line: "Second-Line", type: "Drug",
+  agents: ["evolocumab", "alirocumab", "ezetimibe"],
+  family: "PCSK9 Inhibitors" }                                        // ✗
+```
+
+**Renderer behaviour (PR #119) — what the patched code does:**
+1. Splits `tx.family` on `" / "` into candidate family names.
+2. Augments by walking `tx.agents` and pulling `FAMILY_MAP[k]` for any family not already in the list (catches rows where `family` is `"—"` or a non-canonical descriptor like `"Class IA antiarrhythmic"`).
+3. Filters to families that exist in `DRUG_FAMILIES` (skips parent terms that don't have their own family card).
+4. Renders each as its own clickable family-badge chip with its family-card color.
+
+Author guarantee: data-side compliance with the rule yields predictable UI (chips appear in the order the families are listed in `family`). Even if a row's `family` value is incomplete, the renderer recovers via agent-walk — but authoring should not rely on the recovery path; explicit `family` listing is more discoverable and audit-friendly.
+
+**Detect (audit-script rule):** For each `DISEASES.conditions[*].treatment[*]` row with `≥2 agents`:
+1. Compute `distinctFams = unique(FAMILY_MAP[k] for k in agents)`.
+2. Parse `family` field by splitting on `" / "` (or `" + "` / `","` for legacy authoring style).
+3. If `distinctFams.length > 1` AND `family` does NOT contain every member of `distinctFams`, flag for fix.
+
+See `/tmp/audit_treatment_families.js` (PR #118) for the implementation. Re-running this audit should report `0 mismatched rows` after any new condition is added.
 
 ---
 

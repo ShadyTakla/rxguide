@@ -7,7 +7,7 @@ This file captures durable user preferences for AI agents working on rxguide. Re
 **Audit before merge, then always deploy live to main.** For every content addition or change:
 
 1. Author the new content (drugs, families, conditions, reference tables, etc.) following AGENTS.md schemas and the citation hierarchy (ONT > CAN > USA > International).
-2. Run the ten-check pre-merge audit:
+2. Run the eleven-check pre-merge audit:
    - JS parse passes (`node --check` against extracted `<script>`).
    - Every new drug has DRUGS + PREG_DATA + NAPRA_ODB_DATA + FAMILY_MAP entries, and its family exists in DRUG_FAMILIES. **FAMILY_MAP is the #1 recurring gap** — 82 missing entries across PRs #59 / #90 / #93. Singleton families are explicitly OK if no existing family fits; never leave a drug unmapped (AGENTS.md §21.9).
    - Every new drug's `source:` field includes explicit Canadian-source recognition. If the drug is NOT Health Canada-approved, the source must say so explicitly AND list Canadian alternatives by name + family. Accepted Canadian tokens listed in AGENTS.md §21.10.
@@ -16,6 +16,7 @@ This file captures durable user preferences for AI agents working on rxguide. Re
    - Every new reference table that mentions a combination drug (e.g. `"Sacubitril/valsartan"`, `"Levodopa/carbidopa"`) includes the **combo key** in `related_drugs` — not just the components (per AGENTS.md §5.4.1 + §21.8; PR #70 fixed the rendering layer so spaced + unspaced slash forms both resolve, but the combo key must be in `related_drugs` for the click target to be the combo card).
    - Every new disease condition has all required schema fields populated and non-empty `signs`, `diagnosis`, `treatment`, `pearls`.
    - Every `treatment[*].agents[]` key resolves to a DRUGS or VACCINES key.
+   - **Every `treatment[*].family` field lists every distinct `FAMILY_MAP[agent]` value found across its agents, joined by `" / "`** when more than one family is represented (e.g., `"Direct Oral Anticoagulants / Vitamin K Antagonists"` for a row mixing apixaban + warfarin; `"PCSK9 Inhibitors / Cholesterol Absorption Inhibitors"` for evolocumab + ezetimibe). Each token must be an exact `DRUG_FAMILIES` key — the renderer (PR #119) splits the string and produces one clickable chip per family. Do NOT use `"—"` placeholders for Drug-type rows (AGENTS.md §6.3 + §21.13). Run `/tmp/audit_treatment_families.js` (PR #118) to confirm 0 mismatched rows.
    - All new drug-interaction `severity` values are canonical (Beneficial, Contraindicated, Major, Moderate, Minor, Note).
    - Every new disease card cites at least one Canadian source.
 3. If audit passes: open PR, merge to main via GitHub MCP (`mcp__github__merge_pull_request`, method `merge`), confirm live on https://shadytakla.github.io/rxguide/.
@@ -41,6 +42,7 @@ Do not skip the audit and do not skip the merge — both happen on every change.
 
 ## Last updated
 
+2026-05-14 — added multi-family `treatment[*].family` rule (AGENTS.md §6.3 + §21.13; PRs #118 + #119) — every treatment row that mixes agents from ≥2 `DRUG_FAMILIES` classes must list every family joined by `" / "`. Pre-merge audit expanded from 10 to 11 checks. Lesson from PR #118 (943 mismatched rows fixed) + PR #119 (renderer patched to split + render each family as its own clickable chip; 1,323 rows now render multiple chips).
 2026-05-13 — promoted FAMILY_MAP discipline (§21.9), Canadian-source explicit rule (§21.10), and non-empty interactions rule (§21.11) to first-class audit checks; pre-merge audit expanded from 8 to 10 checks. Lessons from PR #59 / #90 / #93 (cumulative 82 missing FAMILY_MAP entries, 7 incomplete source citations, 1 empty interactions array).
 2026-05-12 — added combo-drug `related_drugs` rule for reference tables (AGENTS.md §5.4.1 + §6.5 + §21.8; PR #70).
 2026-05-12 — clarified container-hierarchy rule (tabs locked, categories closed, in-category additions open).
