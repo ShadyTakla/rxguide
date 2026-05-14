@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `f53d924 on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `1bae832 on 2026-05-14`)
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 87.2% |
+| **DRUGS** | 1,546 | 100.0% | 89.9% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
@@ -43,24 +43,13 @@
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `interactions` depth ≥ 5 items | **87.2%** | `████████████████░░` | 1,348 | 198 |
+| `interactions` depth ≥ 5 items | **89.9%** | `████████████████░░` | 1,390 | 156 |
 
-### ❌ `interactions` depth ≥ 5 items — 198 entries remaining (12.8% of total)
+### ❌ `interactions` depth ≥ 5 items — 156 entries remaining (10.1% of total)
 
 | Key/ID | Detail |
 |---|---|
-| `febuxostat` | {"count":4} |
 | `salbutamol` | {"count":4} |
-| `cholecalciferol` | {"count":4} |
-| `folic_acid` | {"count":4} |
-| `pyrazinamide` | {"count":3} |
-| `clofazimine` | {"count":3} |
-| `pentamidine` | {"count":4} |
-| `artemether_lumefantrine` | {"count":4} |
-| `zanamivir` | {"count":2} |
-| `remdesivir` | {"count":3} |
-| `ivermectin` | {"count":4} |
-| `artificial_tears` | {"count":4} |
 | `phenylephrine_rectal` | {"count":4} |
 | `glycerin_suppository` | {"count":4} |
 | `salicylic_acid_topical` | {"count":4} |
@@ -69,7 +58,6 @@
 | `tizanidine` | {"count":4} |
 | `ganciclovir` | {"count":4} |
 | `lapatinib` | {"count":4} |
-| `zonisamide` | {"count":4} |
 | `piperacillin_tazobactam` | {"count":4} |
 | `misoprostol` | {"count":4} |
 | `oxytocin` | {"count":4} |
@@ -101,15 +89,27 @@
 | `calcium_acetate` | {"count":4} |
 | `pilocarpine` | {"count":4} |
 | `rabies_immunoglobulin` | {"count":2} |
-| `deferoxamine` | {"count":4} |
-| `deferiprone` | {"count":4} |
 | `pentosan_polysulfate` | {"count":4} |
 | `budesonide_orodispersible` | {"count":3} |
 | `etoposide` | {"count":1} |
 | `panitumumab` | {"count":4} |
 | `polatuzumab_vedotin` | {"count":2} |
 | `lifileucel` | {"count":3} |
-| ... | 138 more entries |
+| `futibatinib` | {"count":1} |
+| `entrectinib` | {"count":3} |
+| `ramucirumab` | {"count":3} |
+| `eptifibatide` | {"count":3} |
+| `tenecteplase` | {"count":3} |
+| `lubiprostone` | {"count":2} |
+| `plecanatide` | {"count":1} |
+| `abaloparatide` | {"count":2} |
+| `obeticholic_acid` | {"count":3} |
+| `nimodipine` | {"count":3} |
+| `cenobamate` | {"count":4} |
+| `ofatumumab_ms` | {"count":2} |
+| `alemtuzumab` | {"count":4} |
+| `bimekizumab` | {"count":4} |
+| ... | 96 more entries |
 
 ---
 
@@ -174,7 +174,7 @@ Ordered by impact (size of gap × clinical importance):
 
 | Priority | Gap (entries) | Audit area |
 |---|---|---|
-| 2 | **198** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
+| 2 | **156** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
 
 ---
 
