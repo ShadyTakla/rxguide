@@ -28,6 +28,26 @@ Do not skip the audit, do not skip the AUDIT-STATUS regeneration, and do not ski
 
 ## Other persistent rules
 
+### Cross-catalog propagation (CRITICAL — added 2026-05-14)
+
+**Every fix or addition must propagate to every sibling location that carries the same claim.** Point-fixing only the field you noticed creates orphan corrections elsewhere — the same wrong claim survives in 2-5 other places and re-surfaces in later audits. Lesson from the Tier 4 self-review back-propagation pass: 43 fixes had 4 latent sibling-field contradictions (rizatriptan interactions[].mechanism still said CYP1A2 after pearls were switched to MAO-A; imvamune contraindications[] still listed pregnancy after the pearl said "use if indicated"; tinidazole AMR notes contradicted across two entries AND across NAPRA_ODB_DATA).
+
+**On every fix, audit these sibling locations for the same claim:**
+
+1. **Drug-card structured fields** (`DRUGS[k]`): `dose`/`dosing`, `indications`, `monitoring`, `contraindications`, `side_effects`, `source`, `canadian_notes`, `pregnancy`, `class`, `moa`. If you fixed a dose in a pearl, the same dose almost certainly lives in `dosing[*]`.
+2. **Drug interactions array** (`DRUGS[k].interactions[]`): each entry's `mechanism` and `management` strings. Mechanism corrections in pearls (CYP1A2 vs MAO-A, induction vs inhibition direction) MUST also update every matching interaction entry on this drug AND on the counterparty drug (e.g., rizatriptan↔propranolol).
+3. **Parent family** (`DRUG_FAMILIES[fam].pearls`) — and conversely, family-pearl fix → check every member drug's individual pearls.
+4. **Sister catalogs**: `PREG_DATA[k]`, `NAPRA_ODB_DATA[k]`, `FAMILY_MAP[k]`. Withdrawal/restriction/approval changes go in `source` + `canadian_notes` AND the NAPRA/ODB note.
+5. **Vaccine cards** (`VACCINES[k]`): structured `contraindications`, `precautions`, `pregnancy`, `immunocompromised`, `live` fields must match the pearl statements. Changing "contraindicated in pregnancy" in a pearl ⇒ also fix the `contraindications` array entry (or move to `precautions`).
+6. **AMR_DATA agents** (`AMR_DATA[*].families[*].agents[*]`): `dose` + `notes`. Drugs appearing in multiple families/categories (e.g., tinidazole in both Nitroimidazoles + Antiprotozoals) must say the SAME thing — never contradict across entries.
+7. **DISEASES treatment rows** (`DISEASES[*].conditions[*].treatment[*]`): dose strings, agent lists, family chips.
+8. **Reference tables** (`REFERENCE_TABLES[id].rows`): dose columns, related_drugs, footnotes.
+9. **Deprescribing + Minor Ailments**: same drug may appear with dose/duration guidance.
+
+**Pre-fix routine**: BEFORE editing, grep the corrected fingerprint across `index.html` to enumerate every sibling location. AFTER editing, re-grep the OLD wording to confirm zero matches remain. The back-propagation script lives at `/tmp/backprop_scan.js` (re-create on demand using the locate function pattern). **If a fix only touches one field but the same claim plausibly appears elsewhere, the fix is incomplete and must not be merged.**
+
+**Pre-correction sanity check**: when you "find" an error, verify the correction against ≥1 authoritative source before propagating — over-corrections (round 6 Tinidazole "SAP-only" claim, which contradicted ODB General Benefit listing) propagate the same way as fixes. A wrong fix applied to 5 sibling locations is worse than the original error.
+
 ### Container hierarchy (per user direction)
 
 - 🛑 **NO NEW TABS without user discussion.** The 9 existing tabs cover all planned scope. Pause and ask before considering a new tab.
@@ -44,6 +64,7 @@ Do not skip the audit, do not skip the AUDIT-STATUS regeneration, and do not ski
 
 ## Last updated
 
+2026-05-14 — added **cross-catalog propagation rule** as a first-class persistent constraint. Every fix or addition must propagate to every sibling location carrying the same claim (drug-card structured fields, interactions[].mechanism on both sides of a pairwise interaction, parent family pearls, PREG_DATA / NAPRA_ODB_DATA / FAMILY_MAP, VACCINES structured fields, AMR_DATA agents that appear in multiple families, DISEASES treatment rows, REFERENCE_TABLES rows, Deprescribing + Minor Ailments). Lesson from the Tier 4 back-propagation pass: 43 prior fixes had 4 latent sibling-field contradictions surviving because the original fixes only touched the field where the error was first spotted. Pre-fix routine: grep the fingerprint before editing to enumerate sibling locations; re-grep the OLD wording after editing to confirm zero matches. See "Cross-catalog propagation" section above for the full sibling-location checklist.
 2026-05-14 — added **`AUDIT-STATUS.md`** as live audit-coverage file (auto-regenerated from `index.html` by `scripts/regenerate_audit_status.js`). Standing workflow now requires (step 0) reading it before audit work and (step 3) regenerating + committing it alongside every fix PR. See AGENTS.md §25 for the full contract. Initial snapshot: DRUGS 100%, VACCINES 100%, REFERENCE_TABLES 85–100%, DISEASES 93.9–99.7%, DRUG_FAMILIES 19.1–97.5% (454 skeletal cards remain the biggest gap).
 2026-05-14 — added multi-family `treatment[*].family` rule (AGENTS.md §6.3 + §21.13; PRs #118 + #119) — every treatment row that mixes agents from ≥2 `DRUG_FAMILIES` classes must list every family joined by `" / "`. Pre-merge audit expanded from 10 to 11 checks. Lesson from PR #118 (943 mismatched rows fixed) + PR #119 (renderer patched to split + render each family as its own clickable chip; 1,323 rows now render multiple chips).
 2026-05-13 — promoted FAMILY_MAP discipline (§21.9), Canadian-source explicit rule (§21.10), and non-empty interactions rule (§21.11) to first-class audit checks; pre-merge audit expanded from 8 to 10 checks. Lessons from PR #59 / #90 / #93 (cumulative 82 missing FAMILY_MAP entries, 7 incomplete source citations, 1 empty interactions array).
