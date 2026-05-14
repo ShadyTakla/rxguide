@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `8a5b04f on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `f53d924 on 2026-05-14`)
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 84.5% |
+| **DRUGS** | 1,546 | 100.0% | 87.2% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
@@ -43,9 +43,9 @@
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `interactions` depth ≥ 5 items | **84.5%** | `███████████████░░░` | 1,306 | 240 |
+| `interactions` depth ≥ 5 items | **87.2%** | `████████████████░░` | 1,348 | 198 |
 
-### ❌ `interactions` depth ≥ 5 items — 240 entries remaining (15.5% of total)
+### ❌ `interactions` depth ≥ 5 items — 198 entries remaining (12.8% of total)
 
 | Key/ID | Detail |
 |---|---|
@@ -66,7 +66,6 @@
 | `salicylic_acid_topical` | {"count":4} |
 | `camphor_menthol` | {"count":4} |
 | `sunscreen_otc` | {"count":4} |
-| `bacitracin_polymyxin` | {"count":4} |
 | `tizanidine` | {"count":4} |
 | `ganciclovir` | {"count":4} |
 | `lapatinib` | {"count":4} |
@@ -90,8 +89,6 @@
 | `timolol_eye` | {"count":4} |
 | `prenatal_multivitamin` | {"count":4} |
 | `methylphenidate_er` | {"count":4} |
-| `tobramycin_ophth` | {"count":4} |
-| `tobramycin_dexamethasone_ophth` | {"count":4} |
 | `framycetin_gramicidin_dexamethasone_otic` | {"count":4} |
 | `desonide` | {"count":4} |
 | `fusidic_acid_hydrocortisone` | {"count":4} |
@@ -101,15 +98,18 @@
 | `efinaconazole` | {"count":2} |
 | `pyrantel_pamoate` | {"count":2} |
 | `aluminum_chloride` | {"count":1} |
-| `silver_sulfadiazine` | {"count":4} |
 | `calcium_acetate` | {"count":4} |
 | `pilocarpine` | {"count":4} |
 | `rabies_immunoglobulin` | {"count":2} |
 | `deferoxamine` | {"count":4} |
 | `deferiprone` | {"count":4} |
 | `pentosan_polysulfate` | {"count":4} |
-| `brentuximab_vedotin` | {"count":4} |
-| ... | 180 more entries |
+| `budesonide_orodispersible` | {"count":3} |
+| `etoposide` | {"count":1} |
+| `panitumumab` | {"count":4} |
+| `polatuzumab_vedotin` | {"count":2} |
+| `lifileucel` | {"count":3} |
+| ... | 138 more entries |
 
 ---
 
@@ -174,7 +174,7 @@ Ordered by impact (size of gap × clinical importance):
 
 | Priority | Gap (entries) | Audit area |
 |---|---|---|
-| 2 | **240** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
+| 2 | **198** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
 
 ---
 
