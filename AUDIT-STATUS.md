@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `575a6ae on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `c94cc75 on 2026-05-14`)
 
 ---
 
@@ -44,6 +44,8 @@
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
+| `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
+| `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 
 ---
 
