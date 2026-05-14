@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `0d4fb6f on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `fd28800 on 2026-05-14`)
 
 ---
 
@@ -185,6 +185,25 @@
 Ordered by impact (size of gap × clinical importance):
 
 **No remaining audit gaps — catalog is 100% clean across all checked dimensions.**
+
+---
+
+## Tier 4 — Beyond Automated Audit (clinical review domain)
+
+The audit script measures **structural** integrity (schema, depth thresholds, cross-references, taxonomy, dates). It cannot measure:
+
+- **Clinical accuracy** of pearls, interactions, monitoring, contraindications, indications.
+- **Currency** of Health Canada approval status — newly approved drugs, withdrawn drugs, monograph revisions, label changes.
+- **Severity correctness** on drug interactions (the script checks the severity is one of 6 canonical values, but cannot verify a specific interaction was correctly classified as Major vs Moderate).
+- **Canadian-context correctness** — the script accepts any token from a Canadian-keyword list, but cannot verify the citation actually supports the clinical content.
+- **Dose accuracy** for renal/hepatic/pediatric/elderly adjustments.
+- **Pregnancy-category correctness** beyond presence of the structured field.
+- **Treatment-line ordering** (first-line vs second-line vs salvage).
+- **Diagnostic criteria currency** (DSM-5-TR, ICD-11, KDIGO, GOLD/GINA latest annual editions).
+
+**Tier 4 is the domain of human clinical review.** The audit script makes that review tractable by ensuring structural completeness so reviewers can focus on content rather than missing fields. AUDIT-STATUS.md at 100% across all dimensions means the catalog is *ready* for clinical review, not that clinical accuracy has been verified.
+
+Recommended human-review cadence: continuous as Canadian guidelines update (CCS/CTS/CAG/CSN/CRA/AMMI/SOGC/NACI/etc. publish annually or more frequently). Track changes via CHANGELOG; EDIT_HISTORY captures per-entity revision provenance.
 
 ---
 
