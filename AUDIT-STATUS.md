@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `0e15c7d on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `6c48870 on 2026-05-14`)
 
 ---
 
@@ -42,67 +42,8 @@
 | FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,546 | 0 |
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `monitoring` depth ≥ 4 items | **96.5%** | `█████████████████░` | 1,492 | 54 |
+| `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `interactions` depth ≥ 5 items | **79.8%** | `██████████████░░░░` | 1,234 | 312 |
-
-### ❌ `monitoring` depth ≥ 4 items — 54 entries remaining (3.5% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `docusate` | {"count":3} |
-| `fluticasone_nasal` | {"count":3} |
-| `mometasone_nasal` | {"count":3} |
-| `ipratropium_nasal` | {"count":3} |
-| `saline_nasal` | {"count":2} |
-| `ciprofloxacin_dexamethasone_otic` | {"count":2} |
-| `framycetin_gramicidin_dexamethasone_otic` | {"count":3} |
-| `ketoconazole_topical` | {"count":2} |
-| `pyrethrin_piperonyl_butoxide` | {"count":2} |
-| `mometasone_topical` | {"count":3} |
-| `desonide` | {"count":2} |
-| `hydrocortisone_valerate` | {"count":2} |
-| `fusidic_acid_hydrocortisone` | {"count":2} |
-| `betamethasone_calcipotriol` | {"count":3} |
-| `clindamycin_topical` | {"count":2} |
-| `nystatin_topical` | {"count":2} |
-| `terbinafine_topical` | {"count":2} |
-| `imiquimod` | {"count":3} |
-| `ciclopirox` | {"count":2} |
-| `palivizumab` | {"count":2} |
-| `tetanus_immune_globulin` | {"count":2} |
-| `nicotine_patch` | {"count":3} |
-| `nicotine_gum` | {"count":3} |
-| `nicotine_lozenge` | {"count":3} |
-| `nicotine_inhaler` | {"count":2} |
-| `cytisine` | {"count":3} |
-| `olopatadine` | {"count":2} |
-| `ketotifen` | {"count":2} |
-| `phenazopyridine` | {"count":3} |
-| `penciclovir` | {"count":2} |
-| `icaridin` | {"count":2} |
-| `pramoxine` | {"count":3} |
-| `pyridoxine` | {"count":3} |
-| `rupatadine` | {"count":3} |
-| `capsaicin` | {"count":3} |
-| `calamine` | {"count":2} |
-| `polymyxin_b` | {"count":3} |
-| `gramicidin` | {"count":2} |
-| `retapamulin` | {"count":3} |
-| `ethinyl_estradiol_norgestimate` | {"count":1} |
-| `nuvaring` | {"count":1} |
-| `evra_patch` | {"count":1} |
-| `benzonatate` | {"count":3} |
-| `butenafine` | {"count":3} |
-| `rolapitant` | {"count":3} |
-| `fluocinonide` | {"count":3} |
-| `fluocinolone` | {"count":3} |
-| `crotamiton` | {"count":3} |
-| `vitamin_e` | {"count":3} |
-| `niacinamide` | {"count":3} |
-| `biotin` | {"count":3} |
-| `daclatasvir` | {"count":3} |
-| `boceprevir` | {"count":1} |
-| `cromolyn` | {"count":3} |
 
 ### ❌ `interactions` depth ≥ 5 items — 312 entries remaining (20.2% of total)
 
@@ -234,7 +175,6 @@ Ordered by impact (size of gap × clinical importance):
 | Priority | Gap (entries) | Audit area |
 |---|---|---|
 | 2 | **312** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
-| 2 | **54** | DRUGS — thin monitoring (<4 items): expand to 4-7 specific parameters/frequencies |
 
 ---
 
