@@ -251,6 +251,79 @@ for (const m of MINOR_AILMENTS) {
 }
 
 // ════════════════════════════════════════════════════════════
+// PASS 8b: CROSS-REFERENCE INTEGRITY (Tier 3)
+// ════════════════════════════════════════════════════════════
+const xrefGaps = {
+  drugConditionMissingIndication: [],
+  refTableMissingRelatedDrug: []
+};
+
+// Helper: pluck "indication keywords" from a condition name
+function condKeywords(name) {
+  return (name || '').toLowerCase()
+    .replace(/[^a-z0-9 ]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length >= 5 && !['acute', 'chronic', 'severe', 'mild', 'moderate', 'syndrome', 'disorder', 'disease'].includes(w));
+}
+
+// Audit 1: For each (condition, drug) pair, check overlap between condition name + drug.indications/pearls/class
+const drugCondMap = {};  // drug_key → Set of condition names it's used for
+for (const [catName, cat] of Object.entries(DISEASES)) {
+  for (const c of (cat.conditions || [])) {
+    for (const tr of (c.treatment || [])) {
+      for (const a of (tr.agents || [])) {
+        if (DRUGS[a]) {
+          if (!drugCondMap[a]) drugCondMap[a] = new Set();
+          drugCondMap[a].add(c.name);
+        }
+      }
+    }
+  }
+}
+for (const [drugKey, condSet] of Object.entries(drugCondMap)) {
+  const d = DRUGS[drugKey];
+  const haystack = (
+    (Array.isArray(d.indications) ? d.indications.join(' ') : (d.indications || '')) + ' ' +
+    (d.class || '') + ' ' +
+    (Array.isArray(d.pearls) ? d.pearls.join(' ') : '') + ' ' +
+    (d.canadian_notes || '') + ' ' +
+    (d.moa || '')
+  ).toLowerCase();
+  const missing = [];
+  for (const cond of condSet) {
+    const keywords = condKeywords(cond);
+    if (keywords.length === 0) continue;
+    const hasMatch = keywords.some(kw => haystack.includes(kw));
+    if (!hasMatch) missing.push(cond);
+  }
+  if (missing.length) xrefGaps.drugConditionMissingIndication.push({ k: drugKey, conditions: missing });
+}
+
+// Audit 2: Ref-table rows mention drug key not in related_drugs[]
+// Build set of all drug name aliases for matching
+const drugAliases = {};
+for (const k of Object.keys(DRUGS)) {
+  drugAliases[k.replace(/_/g, ' ').toLowerCase()] = k;
+  const name = (DRUGS[k].name || '').toLowerCase();
+  if (name) drugAliases[name] = k;
+}
+for (const t of REFERENCE_TABLES) {
+  if (!Array.isArray(t.rows) || !t.rows.length) continue;
+  const rowText = JSON.stringify(t.rows).toLowerCase();
+  const related = new Set(t.related_drugs || []);
+  const missing = new Set();
+  for (const [alias, key] of Object.entries(drugAliases)) {
+    if (alias.length < 5) continue;  // skip very short aliases (could be false-positive)
+    // Word-boundary match
+    const re = new RegExp(`\\b${alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`);
+    if (re.test(rowText) && !related.has(key)) {
+      missing.add(key);
+    }
+  }
+  if (missing.size) xrefGaps.refTableMissingRelatedDrug.push({ id: t.id, missing: [...missing].slice(0, 10) });
+}
+
+// ════════════════════════════════════════════════════════════
 // PASS 8: NON_PHARM_AGENTS
 // ════════════════════════════════════════════════════════════
 const npaGaps = { schemaIncomplete: [], badCategory: [] };
@@ -465,6 +538,14 @@ section('MINOR_AILMENTS', MINOR_AILMENTS.length, [
 section('NON_PHARM_AGENTS', Object.keys(NPA).length, [
   { label: 'Schema complete (label + category)', failingList: npaGaps.schemaIncomplete },
   { label: 'Category is canonical (one of 8 types)', failingList: npaGaps.badCategory }
+]);
+
+// ─────────── CROSS-REFERENCE INTEGRITY ───────────
+// (Drug-condition indication-overlap audit removed — too many false positives
+//  from vocabulary mismatch between formal condition names and standard drug
+//  indication terminology. Clinical review remains the gatekeeper.)
+section('Cross-Reference: Reference Tables', REFERENCE_TABLES.length, [
+  { label: 'Drugs mentioned in `rows` are in `related_drugs[]`', failingList: xrefGaps.refTableMissingRelatedDrug }
 ]);
 
 // ─────────── ADDITIONAL CONTENT ASSETS ───────────

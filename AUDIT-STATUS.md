@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `c94cc75 on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `d3ce284 on 2026-05-14`)
 
 ---
 
@@ -117,6 +117,14 @@
 |---|---|---|---|---|
 | Schema complete (label + category) | **100.0%** | `██████████████████` | 94 | 0 |
 | Category is canonical (one of 8 types) | **100.0%** | `██████████████████` | 94 | 0 |
+
+---
+
+## Cross-Reference: Reference Tables (100 entries)
+
+| Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
+|---|---|---|---|---|
+| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 100 | 0 |
 
 ---
 
