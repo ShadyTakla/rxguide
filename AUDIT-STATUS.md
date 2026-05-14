@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `d3ce284 on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `15636c2 on 2026-05-14`)
 
 ---
 
@@ -117,6 +117,16 @@
 |---|---|---|---|---|
 | Schema complete (label + category) | **100.0%** | `██████████████████` | 94 | 0 |
 | Category is canonical (one of 8 types) | **100.0%** | `██████████████████` | 94 | 0 |
+
+---
+
+## AMR_DATA (Antimicrobials tab) (205 entries)
+
+| Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
+|---|---|---|---|---|
+| Agent schema complete (drug, dose, uses, ci, notes) | **100.0%** | `██████████████████` | 205 | 0 |
+| Agent resolves to DRUGS catalog (click-through) | **100.0%** | `██████████████████` | 205 | 0 |
+| Family schema complete (name, moa, coverage) | **100.0%** | `██████████████████` | 205 | 0 |
 
 ---
 
