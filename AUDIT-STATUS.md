@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `ddaae6e on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `dda3dc2 on 2026-05-14`)
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 59.4% |
+| **DRUGS** | 1,546 | 100.0% | 77.6% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
@@ -43,7 +43,7 @@
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **96.5%** | `█████████████████░` | 1,492 | 54 |
-| `interactions` depth ≥ 5 items | **59.4%** | `███████████░░░░░░░` | 918 | 628 |
+| `interactions` depth ≥ 5 items | **77.6%** | `██████████████░░░░` | 1,199 | 347 |
 
 ### ❌ `monitoring` depth ≥ 4 items — 54 entries remaining (3.5% of total)
 
@@ -104,14 +104,12 @@
 | `boceprevir` | {"count":1} |
 | `cromolyn` | {"count":3} |
 
-### ❌ `interactions` depth ≥ 5 items — 628 entries remaining (40.6% of total)
+### ❌ `interactions` depth ≥ 5 items — 347 entries remaining (22.4% of total)
 
 | Key/ID | Detail |
 |---|---|
-| `cefazolin` | {"count":4} |
 | `febuxostat` | {"count":4} |
 | `salbutamol` | {"count":4} |
-| `cephalexin` | {"count":4} |
 | `diclofenac_topical` | {"count":4} |
 | `cinacalcet` | {"count":4} |
 | `cholecalciferol` | {"count":4} |
@@ -132,34 +130,21 @@
 | `spinosad` | {"count":1} |
 | `zanamivir` | {"count":2} |
 | `remdesivir` | {"count":3} |
-| `molnupiravir` | {"count":1} |
-| `micafungin` | {"count":4} |
-| `anidulafungin` | {"count":3} |
 | `mebendazole` | {"count":4} |
 | `ivermectin` | {"count":4} |
-| `docusate` | {"count":2} |
-| `guaifenesin` | {"count":4} |
-| `simethicone` | {"count":4} |
 | `st_johns_wort` | {"count":4} |
-| `saline_nasal_spray` | {"count":4} |
-| `zinc_oxide_topical` | {"count":4} |
 | `artificial_tears` | {"count":4} |
 | `phenylephrine_rectal` | {"count":4} |
 | `glycerin_suppository` | {"count":4} |
 | `salicylic_acid_topical` | {"count":4} |
 | `camphor_menthol` | {"count":4} |
-| `menthol_lozenge` | {"count":4} |
-| `witch_hazel` | {"count":4} |
-| `deet` | {"count":4} |
 | `sunscreen_otc` | {"count":4} |
 | `raspberry_leaf` | {"count":4} |
 | `bacitracin_polymyxin` | {"count":4} |
-| `sunscreen` | {"count":4} |
 | `tizanidine` | {"count":4} |
 | `ganciclovir` | {"count":4} |
 | `insulin_aspart` | {"count":4} |
 | `saxagliptin` | {"count":4} |
-| `docosanol` | {"count":4} |
 | `lapatinib` | {"count":4} |
 | `dimethyl_fumarate` | {"count":4} |
 | `natalizumab` | {"count":4} |
@@ -167,8 +152,23 @@
 | `risperidone_lai` | {"count":4} |
 | `methotrimeprazine` | {"count":4} |
 | `zonisamide` | {"count":4} |
-| `meropenem` | {"count":4} |
-| ... | 568 more entries |
+| `piperacillin_tazobactam` | {"count":4} |
+| `misoprostol` | {"count":4} |
+| `oxytocin` | {"count":4} |
+| `methylergonovine` | {"count":4} |
+| `nebivolol` | {"count":4} |
+| `terazosin` | {"count":4} |
+| `rimegepant` | {"count":4} |
+| `ubrogepant` | {"count":4} |
+| `rifaximin` | {"count":4} |
+| `phytonadione` | {"count":4} |
+| `fluticasone_salmeterol` | {"count":4} |
+| `budesonide_formoterol` | {"count":4} |
+| `ipratropium_salbutamol` | {"count":4} |
+| `tiotropium_olodaterol` | {"count":4} |
+| `daridorexant` | {"count":4} |
+| `andexanet_alfa` | {"count":2} |
+| ... | 287 more entries |
 
 ---
 
@@ -233,7 +233,7 @@ Ordered by impact (size of gap × clinical importance):
 
 | Priority | Gap (entries) | Audit area |
 |---|---|---|
-| 2 | **628** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
+| 2 | **347** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
 | 2 | **54** | DRUGS — thin monitoring (<4 items): expand to 4-7 specific parameters/frequencies |
 
 ---

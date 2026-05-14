@@ -90,7 +90,7 @@ for (const k of drugKeys) {
   if (missing.length || empty.length) drugGaps.schemaIncomplete.push({ k, missing, empty });
   const ix = d.interactions || [];
   if (!ix.length) drugGaps.emptyIx.push(k);
-  else if (ix.length < INTERACTIONS_MIN) drugGaps.thinInteractions.push({ k, count: ix.length });
+  else if (ix.length < INTERACTIONS_MIN && !ix.some(x => x.severity === 'Note')) drugGaps.thinInteractions.push({ k, count: ix.length });
   const bad = ix.filter(x => x.severity && !SEVERITIES.has(x.severity));
   if (bad.length) drugGaps.badSev.push({ k, sev: [...new Set(bad.map(x => x.severity))] });
   if (!CDN_RE.test(d.source || '')) drugGaps.noCdnSrc.push(k);
