@@ -79,6 +79,40 @@ function smartSplit(family) {
 // ════════════════════════════════════════════════════════════
 // PASS 1: DRUGS
 // ════════════════════════════════════════════════════════════
+// Helper: count items in monitoring/side_effects regardless of type (array, object, string)
+// For strings: split on semicolons, line breaks, sentence breaks, AND comma-separated lists
+// after colons (e.g., "Baseline: IOP, BP, HR" → 3 items). Filters out very short fragments.
+function splitStr(s) {
+  // Find segments with colon (label: item1, item2, item3) — split commas after colons
+  const parts = [];
+  for (const seg of s.split(/[;\n]|(?<=\.)\s+(?=[A-Z])/)) {
+    const colonIdx = seg.indexOf(':');
+    if (colonIdx > 0 && colonIdx < seg.length - 3) {
+      // Has structured label — split the post-colon list
+      const items = seg.substring(colonIdx + 1).split(',').map(x => x.trim()).filter(x => x.length > 3);
+      if (items.length >= 2) parts.push(...items);
+      else parts.push(seg.trim());
+    } else {
+      parts.push(seg.trim());
+    }
+  }
+  return parts.filter(p => p.length > 3);
+}
+function fieldDepth(v) {
+  if (v == null) return 0;
+  if (Array.isArray(v)) return v.length;
+  if (typeof v === 'object') {
+    let total = 0;
+    for (const val of Object.values(v)) {
+      if (Array.isArray(val)) total += val.length;
+      else if (typeof val === 'string') total += splitStr(val).length;
+    }
+    return total;
+  }
+  if (typeof v === 'string') return splitStr(v).length;
+  return 0;
+}
+
 const drugKeys = Object.keys(DRUGS);
 const drugGaps = {
   schemaIncomplete: [], emptyIx: [], badSev: [], noCdnSrc: [],
@@ -104,13 +138,13 @@ for (const k of drugKeys) {
   if (!PREG[k]) drugGaps.noPREG.push(k);
   if (!FAMILY_MAP[k]) drugGaps.noFM.push(k);
   else if (!DRUG_FAMILIES[FAMILY_MAP[k]]) drugGaps.brokenFM.push({ k, fam: FAMILY_MAP[k] });
-  const mon = d.monitoring || [];
-  if (!mon.length) drugGaps.noMonitoring.push(k);
-  else if (mon.length < MONITORING_MIN) drugGaps.thinMonitoring.push({ k, count: mon.length });
+  const monDepth = fieldDepth(d.monitoring);
+  if (monDepth === 0) drugGaps.noMonitoring.push(k);
+  else if (monDepth < MONITORING_MIN) drugGaps.thinMonitoring.push({ k, count: monDepth });
   const pearls = d.pearls || [];
   if (Array.isArray(pearls) && pearls.length > 0 && pearls.length < PEARLS_MIN) drugGaps.thinPearls.push({ k, count: pearls.length });
-  const se = d.side_effects || [];
-  if (Array.isArray(se) && se.length > 0 && se.length < SE_MIN) drugGaps.thinSE.push({ k, count: se.length });
+  const seDepth = fieldDepth(d.side_effects);
+  if (seDepth > 0 && seDepth < SE_MIN) drugGaps.thinSE.push({ k, count: seDepth });
 }
 
 // ════════════════════════════════════════════════════════════
