@@ -38,6 +38,7 @@ let REFERENCE_TABLES = []; try { REFERENCE_TABLES = ev(txt.slice(...rd('REFERENC
 let DEPRESCRIBING = []; try { DEPRESCRIBING = ev(txt.slice(...rd('DEPRESCRIBING_PROTOCOLS', '['))); } catch (e) {}
 let MINOR_AILMENTS = []; try { MINOR_AILMENTS = ev(txt.slice(...rd('MINOR_AILMENTS', '['))); } catch (e) {}
 let NPA = {}; try { NPA = ev(txt.slice(...rd('NON_PHARM_AGENTS'))); } catch (e) {}
+let AMR_DATA = []; try { AMR_DATA = ev(txt.slice(...rd('AMR_DATA', '['))); } catch (e) {}
 let EDIT_HISTORY = {}; try { EDIT_HISTORY = JSON.parse(txt.slice(...rd('EDIT_HISTORY'))); } catch (e) {}
 let CHANGELOG = []; try { CHANGELOG = JSON.parse(txt.slice(...rd('CHANGELOG', '['))); } catch (e) {}
 
@@ -248,6 +249,46 @@ for (const m of MINOR_AILMENTS) {
   }
   const allSrc = JSON.stringify(m.references || '') + ' ' + (m.ontario_ma_scope || '');
   if (!CDN_RE.test(allSrc)) maGaps.noCdnSrc.push(m.name);
+}
+
+// ════════════════════════════════════════════════════════════
+// PASS 9: AMR_DATA (Antimicrobials tab)
+// ════════════════════════════════════════════════════════════
+const amrAgentSchema = ['drug', 'dose', 'uses', 'ci', 'notes'];
+const amrGaps = { schemaIncomplete: [], unmapped: [], famSchemaIncomplete: [] };
+const drugKeysLower = new Set(Object.keys(DRUGS).map(k => k.toLowerCase()));
+const drugNamesLower = new Set(Object.values(DRUGS).map(d => (d.name || '').toLowerCase()));
+let amrAgentCount = 0;
+let amrFamilyCount = 0;
+for (const cat of AMR_DATA) {
+  for (const fam of (cat.families || [])) {
+    amrFamilyCount++;
+    if (!fam.name || !fam.moa || !fam.coverage) {
+      amrGaps.famSchemaIncomplete.push({ k: fam.name || '(unnamed)', cat: cat.category });
+    }
+    const allAgents = [...(fam.agents || []), ...(fam.generations || []).flatMap(g => g.agents || [])];
+    for (const a of allAgents) {
+      amrAgentCount++;
+      const missing = amrAgentSchema.filter(f => !a[f]);
+      if (missing.length) amrGaps.schemaIncomplete.push({ k: a.drug || '(unnamed)', missing, cat: cat.category, fam: fam.name });
+      // Resolution check — try multiple normalizations
+      const drugLower = (a.drug || '').toLowerCase();
+      const keyAttempt = drugLower.replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
+      const firstWord = drugLower.split(/[ \-\/(]/)[0];
+      // Also try: replace "(Ophthalmic)" / "(Topical)" suffixes with _ophth/_topical
+      const ophthVariant = keyAttempt.replace(/ophthalmic/g, 'ophth').replace(/topical/g, 'topical');
+      const liposomalVariant = drugLower.includes('liposomal') ? 'amphotericin_b' : null;
+      // Substring partial-match: drug name contains a DRUGS key (or vice versa)
+      const partialMatch = [...drugKeysLower].some(k => k.length >= 6 && drugLower.includes(k.replace(/_/g, ' ')));
+      if (!drugKeysLower.has(keyAttempt) && !drugNamesLower.has(drugLower) &&
+          !drugKeysLower.has(firstWord) && !drugNamesLower.has(firstWord) &&
+          !drugKeysLower.has(ophthVariant) &&
+          !(liposomalVariant && drugKeysLower.has(liposomalVariant)) &&
+          !partialMatch) {
+        amrGaps.unmapped.push({ k: a.drug, cat: cat.category, fam: fam.name });
+      }
+    }
+  }
 }
 
 // ════════════════════════════════════════════════════════════
@@ -538,6 +579,13 @@ section('MINOR_AILMENTS', MINOR_AILMENTS.length, [
 section('NON_PHARM_AGENTS', Object.keys(NPA).length, [
   { label: 'Schema complete (label + category)', failingList: npaGaps.schemaIncomplete },
   { label: 'Category is canonical (one of 8 types)', failingList: npaGaps.badCategory }
+]);
+
+// ─────────── AMR_DATA (Antimicrobials tab) ───────────
+section('AMR_DATA (Antimicrobials tab)', amrAgentCount, [
+  { label: 'Agent schema complete (drug, dose, uses, ci, notes)', failingList: amrGaps.schemaIncomplete },
+  { label: 'Agent resolves to DRUGS catalog (click-through)', failingList: amrGaps.unmapped },
+  { label: 'Family schema complete (name, moa, coverage)', failingList: amrGaps.famSchemaIncomplete }
 ]);
 
 // ─────────── CROSS-REFERENCE INTEGRITY ───────────
