@@ -326,6 +326,42 @@ for (const cat of AMR_DATA) {
 }
 
 // ════════════════════════════════════════════════════════════
+// PASS 8c: EDIT_HISTORY + CHANGELOG (Tier 3)
+// ════════════════════════════════════════════════════════════
+const ehGaps = { emptyHistory: [], malformedEntry: [], badDate: [], orphanEntity: [] };
+const knownCatalogKeys = new Set([
+  ...Object.keys(DRUGS),
+  ...Object.keys(VACCINES),
+  ...Object.keys(DRUG_FAMILIES),
+  ...REFERENCE_TABLES.map(t => t.id),
+  ...Object.values(DISEASES).flatMap(c => (c.conditions || []).map(x => x.id)),
+  ...DEPRESCRIBING.map(p => p.id),
+  ...MINOR_AILMENTS.map(m => m.name),
+  ...Object.keys(NPA)
+]);
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+for (const [entityId, entries] of Object.entries(EDIT_HISTORY)) {
+  if (!Array.isArray(entries) || entries.length === 0) {
+    ehGaps.emptyHistory.push(entityId);
+    continue;
+  }
+  for (const e of entries) {
+    if (!e.date || !e.hash || !e.subject) { ehGaps.malformedEntry.push({ k: entityId }); break; }
+    if (!DATE_RE.test(e.date)) { ehGaps.badDate.push({ k: entityId, date: e.date }); break; }
+  }
+  if (!knownCatalogKeys.has(entityId)) ehGaps.orphanEntity.push(entityId);
+}
+
+const clGaps = { malformed: [], badDate: [], badPR: [] };
+const CL_KINDS = new Set(['merge', 'squash', 'rebase', 'amend']);
+for (const c of CHANGELOG) {
+  const missing = ['pr', 'date', 'title'].filter(f => !(f in c) || c[f] === '');
+  if (missing.length) clGaps.malformed.push({ pr: c.pr || '(unknown)', missing });
+  if (c.date && !DATE_RE.test(c.date)) clGaps.badDate.push({ pr: c.pr, date: c.date });
+  if (c.pr !== undefined && (typeof c.pr !== 'number' || !Number.isInteger(c.pr))) clGaps.badPR.push({ pr: c.pr });
+}
+
+// ════════════════════════════════════════════════════════════
 // PASS 8b: CROSS-REFERENCE INTEGRITY (Tier 3)
 // ════════════════════════════════════════════════════════════
 const xrefGaps = {
@@ -628,6 +664,19 @@ section('AMR_DATA (Antimicrobials tab)', amrAgentCount, [
   { label: 'Agent schema complete (drug, dose, uses, ci, notes)', failingList: amrGaps.schemaIncomplete },
   { label: 'Agent resolves to DRUGS catalog (click-through)', failingList: amrGaps.unmapped },
   { label: 'Family schema complete (name, moa, coverage)', failingList: amrGaps.famSchemaIncomplete }
+]);
+
+// ─────────── EDIT_HISTORY + CHANGELOG ───────────
+section('EDIT_HISTORY (entities tracked)', Object.keys(EDIT_HISTORY).length, [
+  { label: 'Has ≥1 history entry', failingList: ehGaps.emptyHistory.map(k => ({ k })) },
+  { label: 'Entries have valid date + hash + subject', failingList: ehGaps.malformedEntry },
+  { label: 'Date format YYYY-MM-DD', failingList: ehGaps.badDate },
+  { label: 'Entity exists in current catalog (no orphan)', failingList: ehGaps.orphanEntity.map(k => ({ k })) }
+]);
+section('CHANGELOG (PR entries)', CHANGELOG.length, [
+  { label: 'Required fields (pr, date, title)', failingList: clGaps.malformed.map(x => ({ k: x.pr, missing: x.missing })) },
+  { label: 'Date format YYYY-MM-DD', failingList: clGaps.badDate.map(x => ({ k: x.pr, date: x.date })) },
+  { label: 'PR number is integer', failingList: clGaps.badPR.map(x => ({ k: x.pr })) }
 ]);
 
 // ─────────── CROSS-REFERENCE INTEGRITY ───────────
