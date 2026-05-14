@@ -1775,4 +1775,56 @@ If a catalog item is NOT listed under any `❌ Remaining` section, it is **confi
 
 ---
 
+## 26. Cross-catalog propagation (added 2026-05-14)
+
+Every fix or addition MUST propagate to every sibling location that carries the same claim. Point-fixing a single field is the most common error-amplification pattern in this repo: the same wrong claim survives in 2-5 other catalogs and re-surfaces in later audits.
+
+### 26.1 Sibling-location checklist
+
+When you correct a claim, audit ALL of these for the same claim:
+
+| # | Location | When it matters |
+|---|---|---|
+| 1 | `DRUGS[k]` structured fields (`dose`/`dosing`, `indications`, `monitoring`, `contraindications`, `side_effects`, `source`, `canadian_notes`, `pregnancy`, `class`, `moa`) | Any factual claim — dose corrections especially |
+| 2 | `DRUGS[k].interactions[]` `mechanism` + `management` | Mechanism corrections (CYP1A2 vs MAO-A), direction-of-effect corrections (induction vs inhibition); BOTH sides of pairwise interactions (e.g., rizatriptan↔propranolol) |
+| 3 | `DRUG_FAMILIES[fam].pearls` | Family-pearl ↔ member-drug pearl parity |
+| 4 | `PREG_DATA[k]`, `NAPRA_ODB_DATA[k]`, `FAMILY_MAP[k]` | Approval/withdrawal/restriction/scheduling changes |
+| 5 | `VACCINES[k]` structured `contraindications`, `precautions`, `pregnancy`, `immunocompromised`, `live` | Pearl saying "use if indicated" while structured `contraindications` still lists it is the classic gap |
+| 6 | `AMR_DATA[*].families[*].agents[*]` `dose` + `notes` | Drugs in multiple AMR categories MUST say the same thing (e.g., tinidazole in Nitroimidazoles AND Antiprotozoals) |
+| 7 | `DISEASES[*].conditions[*].treatment[*]` `dose`, `agents`, `family` chips | Dose corrections in drug card must reach treatment rows |
+| 8 | `REFERENCE_TABLES[id].rows` dose columns, `related_drugs`, footnotes | Cross-catalog dose alignment |
+| 9 | `DEPRESCRIBING_PROTOCOLS`, `MINOR_AILMENTS` | Same drug may carry dose/duration guidance |
+
+### 26.2 Pre-fix routine
+
+```bash
+# 1. Identify the exact wording you're correcting:
+OLD="pull pinna up + back"   # or similar fingerprint
+
+# 2. Enumerate every sibling location BEFORE editing:
+grep -in "$OLD" index.html
+
+# 3. Make the fix in EVERY identified location.
+
+# 4. AFTER editing, re-grep the OLD wording to confirm zero matches remain:
+grep -c "$OLD" index.html   # should print 0 (or only legitimate other-context matches)
+```
+
+### 26.3 Pre-correction sanity check
+
+Before propagating ANY correction, verify against ≥1 authoritative source (Health Canada PM, current Canadian guideline, ODB formulary listing). Over-corrections (e.g., declaring a drug "SAP-only" when it's commercially available per ODB formulary) propagate just as efficiently as fixes — a wrong fix applied to 5 sibling locations is worse than the original error. Lesson from Tier 4 round 6 Tinidazole over-correction that contradicted NAPRA_ODB_DATA.
+
+### 26.4 What "incomplete" looks like
+
+A fix is INCOMPLETE if any of the following are still true after merging:
+- An interactions[].mechanism still claims the OLD mechanism on either side of a pairwise interaction.
+- A vaccine's pearl contradicts its structured contraindications/pregnancy/immunocompromised fields.
+- The same drug appears in two AMR_DATA categories with contradicting Canadian-availability claims.
+- A dose correction in DRUGS.dosing doesn't reach the DISEASES treatment row that prescribes it.
+- A drug-card source/canadian_notes is at odds with PREG_DATA or NAPRA_ODB_DATA notes.
+
+Incomplete fixes must not be merged.
+
+---
+
 **End of guide.** Last updated 2026-05-14. If you make architectural changes, update this document in the same PR.
