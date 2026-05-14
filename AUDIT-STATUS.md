@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `575a6ae on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `25d203f on 2026-05-14`)
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 100.0% |
+| **DRUGS** | 1,546 | 100.0% | 87.8% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
@@ -44,6 +44,113 @@
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
+| `pearls` depth ≥ 5 items | **87.8%** | `████████████████░░` | 1,357 | 189 |
+| `side_effects` depth ≥ 5 items | **97.8%** | `██████████████████` | 1,512 | 34 |
+
+### ❌ `pearls` depth ≥ 5 items — 189 entries remaining (12.2% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `triamcinolone` | {"count":2} |
+| `betamethasone` | {"count":3} |
+| `vancomycin` | {"count":2} |
+| `cefazolin` | {"count":2} |
+| `perindopril` | {"count":4} |
+| `candesartan` | {"count":4} |
+| `valsartan` | {"count":3} |
+| `telmisartan` | {"count":4} |
+| `irbesartan` | {"count":3} |
+| `felodipine` | {"count":4} |
+| `indapamide` | {"count":4} |
+| `ezetimibe` | {"count":4} |
+| `lisinopril` | {"count":4} |
+| `nortriptyline` | {"count":4} |
+| `galantamine` | {"count":4} |
+| `cefuroxime` | {"count":3} |
+| `cefixime` | {"count":3} |
+| `erythromycin` | {"count":4} |
+| `minocycline` | {"count":4} |
+| `sulfamethoxazole_trimethoprim` | {"count":4} |
+| `fosfomycin` | {"count":4} |
+| `linezolid` | {"count":4} |
+| `daptomycin` | {"count":4} |
+| `rifampin` | {"count":4} |
+| `isoniazid` | {"count":4} |
+| `ethambutol` | {"count":4} |
+| `paromomycin` | {"count":4} |
+| `ketoconazole` | {"count":4} |
+| `miconazole` | {"count":4} |
+| `griseofulvin` | {"count":4} |
+| `acyclovir` | {"count":4} |
+| `valacyclovir` | {"count":4} |
+| `famciclovir` | {"count":4} |
+| `oseltamivir` | {"count":4} |
+| `tenofovir` | {"count":4} |
+| `emtricitabine` | {"count":4} |
+| `methyldopa` | {"count":4} |
+| `hydralazine` | {"count":4} |
+| `prasugrel` | {"count":4} |
+| `fenofibrate` | {"count":4} |
+| `dalteparin` | {"count":4} |
+| `tinzaparin` | {"count":4} |
+| `desvenlafaxine` | {"count":4} |
+| `vortioxetine` | {"count":4} |
+| `buprenorphine` | {"count":4} |
+| `methadone_oat` | {"count":4} |
+| `eszopiclone` | {"count":4} |
+| `indomethacin` | {"count":4} |
+| `baclofen_oral` | {"count":4} |
+| `rizatriptan` | {"count":4} |
+| `zolmitriptan` | {"count":4} |
+| `ergotamine` | {"count":4} |
+| `eletriptan` | {"count":4} |
+| `dihydroergotamine` | {"count":4} |
+| `methocarbamol` | {"count":4} |
+| `rabeprazole` | {"count":4} |
+| `ranitidine` | {"count":4} |
+| `sucralfate` | {"count":4} |
+| `senna` | {"count":4} |
+| `bisacodyl` | {"count":4} |
+| ... | 129 more entries |
+
+### ❌ `side_effects` depth ≥ 5 items — 34 entries remaining (2.2% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `docusate` | {"count":4} |
+| `saline_nasal` | {"count":3} |
+| `ciprofloxacin_dexamethasone_otic` | {"count":4} |
+| `pyrethrin_piperonyl_butoxide` | {"count":4} |
+| `desonide` | {"count":3} |
+| `hydrocortisone_valerate` | {"count":4} |
+| `fusidic_acid_hydrocortisone` | {"count":4} |
+| `nystatin_topical` | {"count":3} |
+| `terbinafine_topical` | {"count":4} |
+| `ciclopirox` | {"count":4} |
+| `palivizumab` | {"count":4} |
+| `tetanus_immune_globulin` | {"count":3} |
+| `olopatadine` | {"count":3} |
+| `ketotifen` | {"count":3} |
+| `penciclovir` | {"count":2} |
+| `icaridin` | {"count":3} |
+| `pramoxine` | {"count":3} |
+| `pyridoxine` | {"count":4} |
+| `capsaicin` | {"count":4} |
+| `calamine` | {"count":3} |
+| `polymyxin_b` | {"count":4} |
+| `gramicidin` | {"count":3} |
+| `retapamulin` | {"count":3} |
+| `ravulizumab` | {"count":2} |
+| `dostarlimab` | {"count":2} |
+| `estradiol_vaginal` | {"count":1} |
+| `tafamidis` | {"count":3} |
+| `etoposide` | {"count":2} |
+| `dabrafenib` | {"count":2} |
+| `trametinib` | {"count":2} |
+| `doxercalciferol` | {"count":1} |
+| `infigratinib` | {"count":2} |
+| `futibatinib` | {"count":2} |
+| `tislelizumab` | {"count":2} |
 
 ---
 

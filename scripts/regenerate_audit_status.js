@@ -82,10 +82,12 @@ const drugKeys = Object.keys(DRUGS);
 const drugGaps = {
   schemaIncomplete: [], emptyIx: [], badSev: [], noCdnSrc: [],
   noNAPRA: [], noPREG: [], noFM: [], brokenFM: [], noMonitoring: [],
-  thinMonitoring: [], thinInteractions: []
+  thinMonitoring: [], thinInteractions: [], thinPearls: [], thinSE: []
 };
 const MONITORING_MIN = 4;
 const INTERACTIONS_MIN = 5;
+const PEARLS_MIN = 5;
+const SE_MIN = 5;
 for (const k of drugKeys) {
   const d = DRUGS[k];
   const missing = DRUG_SCHEMA.filter(f => !(f in d));
@@ -104,6 +106,10 @@ for (const k of drugKeys) {
   const mon = d.monitoring || [];
   if (!mon.length) drugGaps.noMonitoring.push(k);
   else if (mon.length < MONITORING_MIN) drugGaps.thinMonitoring.push({ k, count: mon.length });
+  const pearls = d.pearls || [];
+  if (Array.isArray(pearls) && pearls.length > 0 && pearls.length < PEARLS_MIN) drugGaps.thinPearls.push({ k, count: pearls.length });
+  const se = d.side_effects || [];
+  if (Array.isArray(se) && se.length > 0 && se.length < SE_MIN) drugGaps.thinSE.push({ k, count: se.length });
 }
 
 // ════════════════════════════════════════════════════════════
@@ -323,6 +329,8 @@ const drugPcts = [
   100 - drugGaps.noMonitoring.length / drugKeys.length * 100,
   100 - drugGaps.thinMonitoring.length / drugKeys.length * 100,
   100 - drugGaps.thinInteractions.length / drugKeys.length * 100,
+  100 - drugGaps.thinPearls.length / drugKeys.length * 100,
+  100 - drugGaps.thinSE.length / drugKeys.length * 100,
 ];
 lines.push(summaryRow('**DRUGS**', drugKeys.length, drugPcts));
 const vacPcts = vacKeys.length === 0 ? [100] : [
@@ -404,7 +412,9 @@ section('DRUGS', drugKeys.length, [
   { label: 'FAMILY_MAP → resolves to DRUG_FAMILIES card', failingList: drugGaps.brokenFM },
   { label: '`monitoring` field populated', failingList: drugGaps.noMonitoring },
   { label: `\`monitoring\` depth ≥ ${MONITORING_MIN} items`, failingList: drugGaps.thinMonitoring },
-  { label: `\`interactions\` depth ≥ ${INTERACTIONS_MIN} items`, failingList: drugGaps.thinInteractions }
+  { label: `\`interactions\` depth ≥ ${INTERACTIONS_MIN} items`, failingList: drugGaps.thinInteractions },
+  { label: `\`pearls\` depth ≥ ${PEARLS_MIN} items`, failingList: drugGaps.thinPearls },
+  { label: `\`side_effects\` depth ≥ ${SE_MIN} items`, failingList: drugGaps.thinSE }
 ]);
 
 // ─────────── VACCINES section ───────────
