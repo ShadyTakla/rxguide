@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `6b4d9ee on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `ddaae6e on 2026-05-14`)
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 100.0% |
+| **DRUGS** | 1,546 | 100.0% | 59.4% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
@@ -42,6 +42,133 @@
 | FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,546 | 0 |
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
+| `monitoring` depth ≥ 4 items | **96.5%** | `█████████████████░` | 1,492 | 54 |
+| `interactions` depth ≥ 5 items | **59.4%** | `███████████░░░░░░░` | 918 | 628 |
+
+### ❌ `monitoring` depth ≥ 4 items — 54 entries remaining (3.5% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `docusate` | {"count":3} |
+| `fluticasone_nasal` | {"count":3} |
+| `mometasone_nasal` | {"count":3} |
+| `ipratropium_nasal` | {"count":3} |
+| `saline_nasal` | {"count":2} |
+| `ciprofloxacin_dexamethasone_otic` | {"count":2} |
+| `framycetin_gramicidin_dexamethasone_otic` | {"count":3} |
+| `ketoconazole_topical` | {"count":2} |
+| `pyrethrin_piperonyl_butoxide` | {"count":2} |
+| `mometasone_topical` | {"count":3} |
+| `desonide` | {"count":2} |
+| `hydrocortisone_valerate` | {"count":2} |
+| `fusidic_acid_hydrocortisone` | {"count":2} |
+| `betamethasone_calcipotriol` | {"count":3} |
+| `clindamycin_topical` | {"count":2} |
+| `nystatin_topical` | {"count":2} |
+| `terbinafine_topical` | {"count":2} |
+| `imiquimod` | {"count":3} |
+| `ciclopirox` | {"count":2} |
+| `palivizumab` | {"count":2} |
+| `tetanus_immune_globulin` | {"count":2} |
+| `nicotine_patch` | {"count":3} |
+| `nicotine_gum` | {"count":3} |
+| `nicotine_lozenge` | {"count":3} |
+| `nicotine_inhaler` | {"count":2} |
+| `cytisine` | {"count":3} |
+| `olopatadine` | {"count":2} |
+| `ketotifen` | {"count":2} |
+| `phenazopyridine` | {"count":3} |
+| `penciclovir` | {"count":2} |
+| `icaridin` | {"count":2} |
+| `pramoxine` | {"count":3} |
+| `pyridoxine` | {"count":3} |
+| `rupatadine` | {"count":3} |
+| `capsaicin` | {"count":3} |
+| `calamine` | {"count":2} |
+| `polymyxin_b` | {"count":3} |
+| `gramicidin` | {"count":2} |
+| `retapamulin` | {"count":3} |
+| `ethinyl_estradiol_norgestimate` | {"count":1} |
+| `nuvaring` | {"count":1} |
+| `evra_patch` | {"count":1} |
+| `benzonatate` | {"count":3} |
+| `butenafine` | {"count":3} |
+| `rolapitant` | {"count":3} |
+| `fluocinonide` | {"count":3} |
+| `fluocinolone` | {"count":3} |
+| `crotamiton` | {"count":3} |
+| `vitamin_e` | {"count":3} |
+| `niacinamide` | {"count":3} |
+| `biotin` | {"count":3} |
+| `daclatasvir` | {"count":3} |
+| `boceprevir` | {"count":1} |
+| `cromolyn` | {"count":3} |
+
+### ❌ `interactions` depth ≥ 5 items — 628 entries remaining (40.6% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `cefazolin` | {"count":4} |
+| `febuxostat` | {"count":4} |
+| `salbutamol` | {"count":4} |
+| `cephalexin` | {"count":4} |
+| `diclofenac_topical` | {"count":4} |
+| `cinacalcet` | {"count":4} |
+| `cholecalciferol` | {"count":4} |
+| `folic_acid` | {"count":4} |
+| `pyrazinamide` | {"count":3} |
+| `bedaquiline` | {"count":3} |
+| `pretomanid` | {"count":3} |
+| `delamanid` | {"count":2} |
+| `cycloserine` | {"count":3} |
+| `ethionamide` | {"count":3} |
+| `clofazimine` | {"count":3} |
+| `pyrantel` | {"count":2} |
+| `nitazoxanide` | {"count":2} |
+| `paromomycin` | {"count":2} |
+| `pentamidine` | {"count":3} |
+| `artemether_lumefantrine` | {"count":4} |
+| `malathion` | {"count":2} |
+| `spinosad` | {"count":1} |
+| `zanamivir` | {"count":2} |
+| `remdesivir` | {"count":3} |
+| `molnupiravir` | {"count":1} |
+| `micafungin` | {"count":4} |
+| `anidulafungin` | {"count":3} |
+| `mebendazole` | {"count":4} |
+| `ivermectin` | {"count":4} |
+| `docusate` | {"count":2} |
+| `guaifenesin` | {"count":4} |
+| `simethicone` | {"count":4} |
+| `st_johns_wort` | {"count":4} |
+| `saline_nasal_spray` | {"count":4} |
+| `zinc_oxide_topical` | {"count":4} |
+| `artificial_tears` | {"count":4} |
+| `phenylephrine_rectal` | {"count":4} |
+| `glycerin_suppository` | {"count":4} |
+| `salicylic_acid_topical` | {"count":4} |
+| `camphor_menthol` | {"count":4} |
+| `menthol_lozenge` | {"count":4} |
+| `witch_hazel` | {"count":4} |
+| `deet` | {"count":4} |
+| `sunscreen_otc` | {"count":4} |
+| `raspberry_leaf` | {"count":4} |
+| `bacitracin_polymyxin` | {"count":4} |
+| `sunscreen` | {"count":4} |
+| `tizanidine` | {"count":4} |
+| `ganciclovir` | {"count":4} |
+| `insulin_aspart` | {"count":4} |
+| `saxagliptin` | {"count":4} |
+| `docosanol` | {"count":4} |
+| `lapatinib` | {"count":4} |
+| `dimethyl_fumarate` | {"count":4} |
+| `natalizumab` | {"count":4} |
+| `aripiprazole_lai` | {"count":4} |
+| `risperidone_lai` | {"count":4} |
+| `methotrimeprazine` | {"count":4} |
+| `zonisamide` | {"count":4} |
+| `meropenem` | {"count":4} |
+| ... | 568 more entries |
 
 ---
 
@@ -104,7 +231,10 @@
 
 Ordered by impact (size of gap × clinical importance):
 
-**No remaining audit gaps — catalog is 100% clean across all checked dimensions.**
+| Priority | Gap (entries) | Audit area |
+|---|---|---|
+| 2 | **628** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
+| 2 | **54** | DRUGS — thin monitoring (<4 items): expand to 4-7 specific parameters/frequencies |
 
 ---
 
