@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `25d203f on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `f3f0258 on 2026-05-14`)
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 87.8% |
+| **DRUGS** | 1,546 | 100.0% | 90.5% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
@@ -44,30 +44,21 @@
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `pearls` depth ≥ 5 items | **87.8%** | `████████████████░░` | 1,357 | 189 |
+| `pearls` depth ≥ 5 items | **90.5%** | `████████████████░░` | 1,399 | 147 |
 | `side_effects` depth ≥ 5 items | **97.8%** | `██████████████████` | 1,512 | 34 |
 
-### ❌ `pearls` depth ≥ 5 items — 189 entries remaining (12.2% of total)
+### ❌ `pearls` depth ≥ 5 items — 147 entries remaining (9.5% of total)
 
 | Key/ID | Detail |
 |---|---|
 | `triamcinolone` | {"count":2} |
 | `betamethasone` | {"count":3} |
 | `vancomycin` | {"count":2} |
-| `cefazolin` | {"count":2} |
-| `perindopril` | {"count":4} |
-| `candesartan` | {"count":4} |
-| `valsartan` | {"count":3} |
-| `telmisartan` | {"count":4} |
-| `irbesartan` | {"count":3} |
 | `felodipine` | {"count":4} |
 | `indapamide` | {"count":4} |
 | `ezetimibe` | {"count":4} |
-| `lisinopril` | {"count":4} |
 | `nortriptyline` | {"count":4} |
 | `galantamine` | {"count":4} |
-| `cefuroxime` | {"count":3} |
-| `cefixime` | {"count":3} |
 | `erythromycin` | {"count":4} |
 | `minocycline` | {"count":4} |
 | `sulfamethoxazole_trimethoprim` | {"count":4} |
@@ -81,9 +72,6 @@
 | `ketoconazole` | {"count":4} |
 | `miconazole` | {"count":4} |
 | `griseofulvin` | {"count":4} |
-| `acyclovir` | {"count":4} |
-| `valacyclovir` | {"count":4} |
-| `famciclovir` | {"count":4} |
 | `oseltamivir` | {"count":4} |
 | `tenofovir` | {"count":4} |
 | `emtricitabine` | {"count":4} |
@@ -95,23 +83,35 @@
 | `tinzaparin` | {"count":4} |
 | `desvenlafaxine` | {"count":4} |
 | `vortioxetine` | {"count":4} |
-| `buprenorphine` | {"count":4} |
-| `methadone_oat` | {"count":4} |
 | `eszopiclone` | {"count":4} |
 | `indomethacin` | {"count":4} |
-| `baclofen_oral` | {"count":4} |
-| `rizatriptan` | {"count":4} |
-| `zolmitriptan` | {"count":4} |
 | `ergotamine` | {"count":4} |
-| `eletriptan` | {"count":4} |
 | `dihydroergotamine` | {"count":4} |
-| `methocarbamol` | {"count":4} |
 | `rabeprazole` | {"count":4} |
 | `ranitidine` | {"count":4} |
 | `sucralfate` | {"count":4} |
 | `senna` | {"count":4} |
 | `bisacodyl` | {"count":4} |
-| ... | 129 more entries |
+| `polyethylene_glycol` | {"count":4} |
+| `lactulose` | {"count":4} |
+| `doxylamine_pyridoxine` | {"count":4} |
+| `prochlorperazine` | {"count":4} |
+| `sulfasalazine` | {"count":4} |
+| `dronabinol` | {"count":4} |
+| `terbutaline` | {"count":4} |
+| `desloratadine` | {"count":4} |
+| `pseudoephedrine` | {"count":4} |
+| `propylthiouracil` | {"count":4} |
+| `prednisolone` | {"count":4} |
+| `fludrocortisone` | {"count":4} |
+| `desmopressin` | {"count":4} |
+| `permethrin` | {"count":4} |
+| `etanercept` | {"count":4} |
+| `ferrous_gluconate` | {"count":4} |
+| `calcium_citrate` | {"count":4} |
+| `rho_immune_globulin` | {"count":4} |
+| `omega_3` | {"count":4} |
+| ... | 87 more entries |
 
 ### ❌ `side_effects` depth ≥ 5 items — 34 entries remaining (2.2% of total)
 
