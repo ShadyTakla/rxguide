@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `dda3dc2 on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `0e15c7d on 2026-05-14`)
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 77.6% |
+| **DRUGS** | 1,546 | 100.0% | 79.8% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
@@ -43,7 +43,7 @@
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **96.5%** | `█████████████████░` | 1,492 | 54 |
-| `interactions` depth ≥ 5 items | **77.6%** | `██████████████░░░░` | 1,199 | 347 |
+| `interactions` depth ≥ 5 items | **79.8%** | `██████████████░░░░` | 1,234 | 312 |
 
 ### ❌ `monitoring` depth ≥ 4 items — 54 entries remaining (3.5% of total)
 
@@ -104,13 +104,12 @@
 | `boceprevir` | {"count":1} |
 | `cromolyn` | {"count":3} |
 
-### ❌ `interactions` depth ≥ 5 items — 347 entries remaining (22.4% of total)
+### ❌ `interactions` depth ≥ 5 items — 312 entries remaining (20.2% of total)
 
 | Key/ID | Detail |
 |---|---|
 | `febuxostat` | {"count":4} |
 | `salbutamol` | {"count":4} |
-| `diclofenac_topical` | {"count":4} |
 | `cinacalcet` | {"count":4} |
 | `cholecalciferol` | {"count":4} |
 | `folic_acid` | {"count":4} |
@@ -122,41 +121,31 @@
 | `ethionamide` | {"count":3} |
 | `clofazimine` | {"count":3} |
 | `pyrantel` | {"count":2} |
-| `nitazoxanide` | {"count":2} |
-| `paromomycin` | {"count":2} |
-| `pentamidine` | {"count":3} |
+| `pentamidine` | {"count":4} |
 | `artemether_lumefantrine` | {"count":4} |
-| `malathion` | {"count":2} |
-| `spinosad` | {"count":1} |
 | `zanamivir` | {"count":2} |
 | `remdesivir` | {"count":3} |
 | `mebendazole` | {"count":4} |
 | `ivermectin` | {"count":4} |
-| `st_johns_wort` | {"count":4} |
 | `artificial_tears` | {"count":4} |
 | `phenylephrine_rectal` | {"count":4} |
 | `glycerin_suppository` | {"count":4} |
 | `salicylic_acid_topical` | {"count":4} |
 | `camphor_menthol` | {"count":4} |
 | `sunscreen_otc` | {"count":4} |
-| `raspberry_leaf` | {"count":4} |
 | `bacitracin_polymyxin` | {"count":4} |
 | `tizanidine` | {"count":4} |
 | `ganciclovir` | {"count":4} |
-| `insulin_aspart` | {"count":4} |
-| `saxagliptin` | {"count":4} |
 | `lapatinib` | {"count":4} |
 | `dimethyl_fumarate` | {"count":4} |
 | `natalizumab` | {"count":4} |
 | `aripiprazole_lai` | {"count":4} |
 | `risperidone_lai` | {"count":4} |
-| `methotrimeprazine` | {"count":4} |
 | `zonisamide` | {"count":4} |
 | `piperacillin_tazobactam` | {"count":4} |
 | `misoprostol` | {"count":4} |
 | `oxytocin` | {"count":4} |
 | `methylergonovine` | {"count":4} |
-| `nebivolol` | {"count":4} |
 | `terazosin` | {"count":4} |
 | `rimegepant` | {"count":4} |
 | `ubrogepant` | {"count":4} |
@@ -168,7 +157,18 @@
 | `tiotropium_olodaterol` | {"count":4} |
 | `daridorexant` | {"count":4} |
 | `andexanet_alfa` | {"count":2} |
-| ... | 287 more entries |
+| `levocetirizine` | {"count":4} |
+| `lecanemab` | {"count":4} |
+| `olodaterol` | {"count":4} |
+| `moclobemide` | {"count":4} |
+| `tranylcypromine` | {"count":4} |
+| `sulfasalazine_ra` | {"count":4} |
+| `dexamethasone_systemic` | {"count":4} |
+| `tenofovir_emtricitabine` | {"count":4} |
+| `timolol_eye` | {"count":4} |
+| `prenatal_multivitamin` | {"count":4} |
+| `methylphenidate_er` | {"count":4} |
+| ... | 252 more entries |
 
 ---
 
@@ -233,7 +233,7 @@ Ordered by impact (size of gap × clinical importance):
 
 | Priority | Gap (entries) | Audit area |
 |---|---|---|
-| 2 | **347** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
+| 2 | **312** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
 | 2 | **54** | DRUGS — thin monitoring (<4 items): expand to 4-7 specific parameters/frequencies |
 
 ---
