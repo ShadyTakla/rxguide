@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `084a49b on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `575a6ae on 2026-05-14`)
 
 ---
 
@@ -86,6 +86,35 @@
 | Cites Canadian source | **100.0%** | `██████████████████` | 600 | 0 |
 | All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 600 | 0 |
 | §21.13 multi-family compliance | **100.0%** | `██████████████████` | 600 | 0 |
+
+---
+
+## DEPRESCRIBING_PROTOCOLS (17 entries)
+
+| Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
+|---|---|---|---|---|
+| Full 12-field schema complete | **100.0%** | `██████████████████` | 17 | 0 |
+| `taper_steps` structured (step/action/detail objects) | **100.0%** | `██████████████████` | 17 | 0 |
+| Cites Canadian source | **100.0%** | `██████████████████` | 17 | 0 |
+
+---
+
+## MINOR_AILMENTS (19 entries)
+
+| Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
+|---|---|---|---|---|
+| Full 9-field schema complete | **100.0%** | `██████████████████` | 19 | 0 |
+| `assessment` has key_questions + red_flags | **100.0%** | `██████████████████` | 19 | 0 |
+| Cites Canadian source / Ontario regulation | **100.0%** | `██████████████████` | 19 | 0 |
+
+---
+
+## NON_PHARM_AGENTS (94 entries)
+
+| Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
+|---|---|---|---|---|
+| Schema complete (label + category) | **100.0%** | `██████████████████` | 94 | 0 |
+| Category is canonical (one of 8 types) | **100.0%** | `██████████████████` | 94 | 0 |
 
 ---
 

@@ -46,6 +46,9 @@ const SEVERITIES = new Set(['Beneficial', 'Contraindicated', 'Major', 'Moderate'
 const CDN_RE = /Canadian|Canada|Health Canada|CPS\b|SOGC|CCS\b|NACI|CADTH|CFP\b|CMAJ|CTS\b|RxFiles|AMMI|CDA\b|CUA|CRISM|CCSA|ODB|CAG|CPhA|CMA\b|Toronto Notes|RNAO|CPSO|PHAC|CANMAT|Diabetes Canada|Hypertension Canada|Osteoporosis Canada|Thrombosis Canada|CADDRA|CHEP|CMRD|CIMDRN|NAPRA|CATIE|CBMTG|Cancer Care Ontario|BC Cancer|INESSS|CSACI|CASL|CCDR|Choosing Wisely Canada/i;
 const FAM_REQUIRED = ['name', 'moa_summary', 'class_effects', 'class_contraindications', 'members', 'pearls', 'source'];
 const REF_REQUIRED = ['id', 'title', 'icon', 'color', 'overview', 'warnings', 'columns', 'rows', 'source', 'related_drugs'];
+const DEPR_REQUIRED = ['id', 'title', 'icon', 'color', 'overview', 'indications_to_continue', 'consider_deprescribing', 'taper_steps', 'monitoring', 'rebound_management', 'counselling', 'sources'];
+const MA_REQUIRED = ['name', 'icon', 'category', 'ontario_ma_scope', 'assessment', 'treatment', 'references', 'patient_counselling', 'therapeutic_flow'];
+const NPA_CATEGORIES = new Set(['lifestyle', 'physical_therapy', 'psychotherapy', 'surgery_procedure', 'monitoring', 'medical_device', 'patient_education', 'supportive_care']);
 
 // Smart splitter for §21.13 multi-family check
 const familyKeysSorted = Object.keys(DRUG_FAMILIES).sort((a, b) => b.length - a.length);
@@ -205,6 +208,53 @@ for (const [catName, cat] of Object.entries(DISEASES)) {
     if (unresAg.size) condGaps.unresolvedAgents.push({ id: c.id, category: catName, agents: [...unresAg] });
     if (famRows.length) condGaps.familyMismatch.push({ id: c.id, category: catName, rows: famRows });
   }
+}
+
+// ════════════════════════════════════════════════════════════
+// PASS 6: DEPRESCRIBING_PROTOCOLS
+// ════════════════════════════════════════════════════════════
+const deprGaps = { schemaIncomplete: [], unstructuredTaper: [], noCdnSrc: [] };
+for (const p of DEPRESCRIBING) {
+  const missing = DEPR_REQUIRED.filter(f => !(f in p));
+  const empty = DEPR_REQUIRED.filter(f => { const v = p[f]; if (v == null || v === '') return true; if (Array.isArray(v) && !v.length) return true; return false; });
+  if (missing.length || empty.length) deprGaps.schemaIncomplete.push({ id: p.id, missing, empty });
+  // taper_steps must be objects with step/action/detail (not strings)
+  if (Array.isArray(p.taper_steps) && p.taper_steps.length) {
+    const bad = p.taper_steps.filter(s => typeof s !== 'object' || !s.step || !s.action || !s.detail);
+    if (bad.length) deprGaps.unstructuredTaper.push({ id: p.id, badSteps: bad.length });
+  }
+  const allSrc = JSON.stringify(p.sources || '') + ' ' + (p.overview || '');
+  if (!CDN_RE.test(allSrc)) deprGaps.noCdnSrc.push(p.id);
+}
+
+// ════════════════════════════════════════════════════════════
+// PASS 7: MINOR_AILMENTS
+// ════════════════════════════════════════════════════════════
+const maGaps = { schemaIncomplete: [], noAssessmentSubkeys: [], noCdnSrc: [] };
+for (const m of MINOR_AILMENTS) {
+  const missing = MA_REQUIRED.filter(f => !(f in m));
+  const empty = MA_REQUIRED.filter(f => { const v = m[f]; if (v == null || v === '') return true; if (Array.isArray(v) && !v.length) return true; if (typeof v === 'object' && !Array.isArray(v) && Object.keys(v).length === 0) return true; return false; });
+  if (missing.length || empty.length) maGaps.schemaIncomplete.push({ name: m.name, missing, empty });
+  // assessment must have key_questions + red_flags
+  const a = m.assessment || {};
+  if (!a.key_questions || !a.key_questions.length || !a.red_flags || !a.red_flags.length) {
+    maGaps.noAssessmentSubkeys.push(m.name);
+  }
+  const allSrc = JSON.stringify(m.references || '') + ' ' + (m.ontario_ma_scope || '');
+  if (!CDN_RE.test(allSrc)) maGaps.noCdnSrc.push(m.name);
+}
+
+// ════════════════════════════════════════════════════════════
+// PASS 8: NON_PHARM_AGENTS
+// ════════════════════════════════════════════════════════════
+const npaGaps = { schemaIncomplete: [], badCategory: [] };
+for (const [key, val] of Object.entries(NPA)) {
+  if (!val || typeof val !== 'object') { npaGaps.schemaIncomplete.push({ key, missing: ['ALL'] }); continue; }
+  const missing = [];
+  if (!val.label || !val.label.trim()) missing.push('label');
+  if (!val.category || !val.category.trim()) missing.push('category');
+  if (missing.length) npaGaps.schemaIncomplete.push({ key, missing });
+  if (val.category && !NPA_CATEGORIES.has(val.category)) npaGaps.badCategory.push({ key, category: val.category });
 }
 
 // ════════════════════════════════════════════════════════════
@@ -385,6 +435,26 @@ section('DISEASES.conditions', totalCond, [
   { label: 'Cites Canadian source', failingList: condGaps.noCdnSrc },
   { label: 'All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS)', failingList: condGaps.unresolvedAgents },
   { label: '§21.13 multi-family compliance', failingList: condGaps.familyMismatch }
+]);
+
+// ─────────── DEPRESCRIBING_PROTOCOLS ───────────
+section('DEPRESCRIBING_PROTOCOLS', DEPRESCRIBING.length, [
+  { label: 'Full 12-field schema complete', failingList: deprGaps.schemaIncomplete },
+  { label: '`taper_steps` structured (step/action/detail objects)', failingList: deprGaps.unstructuredTaper },
+  { label: 'Cites Canadian source', failingList: deprGaps.noCdnSrc }
+]);
+
+// ─────────── MINOR_AILMENTS ───────────
+section('MINOR_AILMENTS', MINOR_AILMENTS.length, [
+  { label: 'Full 9-field schema complete', failingList: maGaps.schemaIncomplete },
+  { label: '`assessment` has key_questions + red_flags', failingList: maGaps.noAssessmentSubkeys },
+  { label: 'Cites Canadian source / Ontario regulation', failingList: maGaps.noCdnSrc }
+]);
+
+// ─────────── NON_PHARM_AGENTS ───────────
+section('NON_PHARM_AGENTS', Object.keys(NPA).length, [
+  { label: 'Schema complete (label + category)', failingList: npaGaps.schemaIncomplete },
+  { label: 'Category is canonical (one of 8 types)', failingList: npaGaps.badCategory }
 ]);
 
 // ─────────── ADDITIONAL CONTENT ASSETS ───────────
