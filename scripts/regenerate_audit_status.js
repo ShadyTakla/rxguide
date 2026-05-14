@@ -138,7 +138,14 @@ for (const an of dispatchArrays) { const a = getArr(an); if (a) a.forEach(x => a
 const refGaps = { schemaIncomplete: [], noCdn: [], notWired: [], unresolvedDrugs: [], rowWidthBad: [] };
 for (const t of REFERENCE_TABLES) {
   const missing = REF_REQUIRED.filter(f => !(f in t));
-  const empty = REF_REQUIRED.filter(f => { const v = t[f]; if (v == null || v === '') return true; if (Array.isArray(v) && !v.length) return true; return false; });
+  // `related_drugs` may legitimately be empty for non-drug-specific tables
+  // (workflows, vital signs, dosing-by-weight charts, etc.). Don't flag those.
+  const empty = REF_REQUIRED.filter(f => {
+    const v = t[f];
+    if (v == null || v === '') return true;
+    if (Array.isArray(v) && !v.length && f !== 'related_drugs') return true;
+    return false;
+  });
   if (missing.length || empty.length) refGaps.schemaIncomplete.push({ id: t.id, missing, empty });
   if (!CDN_RE.test(JSON.stringify(t.source || ''))) refGaps.noCdn.push(t.id);
   if (!allDispatchIds.has(t.id)) refGaps.notWired.push(t.id);
