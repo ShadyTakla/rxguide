@@ -117,13 +117,32 @@ for (const k of drugKeys) {
 // PASS 2: VACCINES
 // ════════════════════════════════════════════════════════════
 const vacKeys = Object.keys(VACCINES);
-const vacGaps = { schemaIncomplete: [], noCdnSrc: [] };
+const vacGaps = { schemaIncomplete: [], noCdnSrc: [], thinPearls: [], thinCI: [], thinIx: [], thinSE: [], thinInd: [] };
+const VAC_PEARLS_MIN = 5;
+const VAC_CI_MIN = 2;
+const VAC_IX_MIN = 3;
+const VAC_SE_MIN = 5;
+const VAC_IND_MIN = 2;
+function sumDepth(v) {
+  if (Array.isArray(v)) return v.length;
+  if (v && typeof v === 'object') return Object.values(v).flat().length;
+  return 0;
+}
 for (const k of vacKeys) {
   const v = VACCINES[k];
   const required = ['name', 'class', 'indications', 'source'];
   const missing = required.filter(f => !(f in v));
   if (missing.length) vacGaps.schemaIncomplete.push({ k, missing });
   if (!CDN_RE.test(v.source || '')) vacGaps.noCdnSrc.push(k);
+  if (Array.isArray(v.pearls) && v.pearls.length > 0 && v.pearls.length < VAC_PEARLS_MIN) vacGaps.thinPearls.push({ k, count: v.pearls.length });
+  const ciLen = sumDepth(v.contraindications);
+  if (ciLen > 0 && ciLen < VAC_CI_MIN) vacGaps.thinCI.push({ k, count: ciLen });
+  const ixLen = sumDepth(v.interactions);
+  if (ixLen > 0 && ixLen < VAC_IX_MIN) vacGaps.thinIx.push({ k, count: ixLen });
+  const seLen = sumDepth(v.side_effects);
+  if (seLen > 0 && seLen < VAC_SE_MIN) vacGaps.thinSE.push({ k, count: seLen });
+  const indLen = sumDepth(v.indications);
+  if (indLen > 0 && indLen < VAC_IND_MIN) vacGaps.thinInd.push({ k, count: indLen });
 }
 
 // ════════════════════════════════════════════════════════════
@@ -534,7 +553,12 @@ section('DRUGS', drugKeys.length, [
 // ─────────── VACCINES section ───────────
 section('VACCINES', vacKeys.length, [
   { label: 'Required schema fields', failingList: vacGaps.schemaIncomplete },
-  { label: 'Canadian-source (NACI / PHAC / CIG / Canada)', failingList: vacGaps.noCdnSrc }
+  { label: 'Canadian-source (NACI / PHAC / CIG / Canada)', failingList: vacGaps.noCdnSrc },
+  { label: `\`pearls\` depth ≥ ${VAC_PEARLS_MIN} items`, failingList: vacGaps.thinPearls },
+  { label: `\`contraindications\` depth ≥ ${VAC_CI_MIN} items`, failingList: vacGaps.thinCI },
+  { label: `\`interactions\` depth ≥ ${VAC_IX_MIN} items`, failingList: vacGaps.thinIx },
+  { label: `\`side_effects\` depth ≥ ${VAC_SE_MIN} items`, failingList: vacGaps.thinSE },
+  { label: `\`indications\` depth ≥ ${VAC_IND_MIN} items`, failingList: vacGaps.thinInd }
 ]);
 
 // ─────────── DRUG_FAMILIES section ───────────

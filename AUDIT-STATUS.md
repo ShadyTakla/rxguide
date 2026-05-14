@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `15636c2 on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `837aeb7 on 2026-05-14`)
 
 ---
 
@@ -55,6 +55,11 @@
 |---|---|---|---|---|
 | Required schema fields | **100.0%** | `██████████████████` | 56 | 0 |
 | Canadian-source (NACI / PHAC / CIG / Canada) | **100.0%** | `██████████████████` | 56 | 0 |
+| `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 56 | 0 |
+| `contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 56 | 0 |
+| `interactions` depth ≥ 3 items | **100.0%** | `██████████████████` | 56 | 0 |
+| `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 56 | 0 |
+| `indications` depth ≥ 2 items | **100.0%** | `██████████████████` | 56 | 0 |
 
 ---
 
