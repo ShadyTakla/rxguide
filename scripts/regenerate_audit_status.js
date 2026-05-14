@@ -149,7 +149,9 @@ for (const k of vacKeys) {
 // PASS 3: DRUG_FAMILIES
 // ════════════════════════════════════════════════════════════
 const famNames = Object.keys(DRUG_FAMILIES);
-const famGaps = { schemaIncomplete: [], emptyMembers: [], noCdn: [] };
+const famGaps = { schemaIncomplete: [], emptyMembers: [], noCdn: [], thinCE: [], thinCC: [] };
+const FAM_CE_MIN = 3;
+const FAM_CC_MIN = 2;
 for (const fname of famNames) {
   const fam = DRUG_FAMILIES[fname];
   const missing = FAM_REQUIRED.filter(f => !(f in fam));
@@ -157,6 +159,8 @@ for (const fname of famNames) {
   if (missing.length || empty.length) famGaps.schemaIncomplete.push({ fname, missing, empty });
   if (!fam.members || !fam.members.length) famGaps.emptyMembers.push(fname);
   if (!CDN_RE.test((fam.canadian_notes || '') + ' ' + (fam.source || ''))) famGaps.noCdn.push(fname);
+  if (Array.isArray(fam.class_effects) && fam.class_effects.length > 0 && fam.class_effects.length < FAM_CE_MIN) famGaps.thinCE.push({ fname, count: fam.class_effects.length });
+  if (Array.isArray(fam.class_contraindications) && fam.class_contraindications.length > 0 && fam.class_contraindications.length < FAM_CC_MIN) famGaps.thinCC.push({ fname, count: fam.class_contraindications.length });
 }
 
 // ════════════════════════════════════════════════════════════
@@ -197,7 +201,8 @@ for (const t of REFERENCE_TABLES) {
 // PASS 5: DISEASES.conditions
 // ════════════════════════════════════════════════════════════
 const COND_REQUIRED = ['id', 'name', 'signs', 'diagnosis', 'treatment', 'pearls'];
-const condGaps = { schemaIncomplete: [], noCdnSrc: [], unresolvedAgents: [], familyMismatch: [] };
+const condGaps = { schemaIncomplete: [], noCdnSrc: [], unresolvedAgents: [], familyMismatch: [], noPregLact: [] };
+const PREG_LACT_MIN = 30;
 let totalCond = 0;
 let totalMultiRows = 0;
 for (const [catName, cat] of Object.entries(DISEASES)) {
@@ -233,6 +238,16 @@ for (const [catName, cat] of Object.entries(DISEASES)) {
     }
     if (unresAg.size) condGaps.unresolvedAgents.push({ id: c.id, category: catName, agents: [...unresAg] });
     if (famRows.length) condGaps.familyMismatch.push({ id: c.id, category: catName, rows: famRows });
+    // preg_lact_summary is an object with preg + lact subkeys containing categorized drug lists
+    const pls = c.preg_lact_summary;
+    let pregCount = 0, lactCount = 0;
+    if (pls && typeof pls === 'object' && !Array.isArray(pls)) {
+      if (pls.preg && typeof pls.preg === 'object') pregCount = Object.values(pls.preg).flat().length;
+      if (pls.lact && typeof pls.lact === 'object') lactCount = Object.values(pls.lact).flat().length;
+    } else if (typeof pls === 'string') {
+      pregCount = pls.length;
+    }
+    if (pregCount === 0 && lactCount === 0) condGaps.noPregLact.push({ id: c.id, category: catName });
   }
 }
 
@@ -565,7 +580,9 @@ section('VACCINES', vacKeys.length, [
 section('DRUG_FAMILIES', famNames.length, [
   { label: 'Full required schema (moa_summary, class_effects, contraindications, members, pearls, source)', failingList: famGaps.schemaIncomplete },
   { label: 'Non-empty `members[]`', failingList: famGaps.emptyMembers },
-  { label: 'Canadian source / canadian_notes', failingList: famGaps.noCdn }
+  { label: 'Canadian source / canadian_notes', failingList: famGaps.noCdn },
+  { label: `\`class_effects\` depth ≥ ${FAM_CE_MIN} items`, failingList: famGaps.thinCE },
+  { label: `\`class_contraindications\` depth ≥ ${FAM_CC_MIN} items`, failingList: famGaps.thinCC }
 ]);
 
 // ─────────── REFERENCE_TABLES section ───────────
@@ -582,7 +599,8 @@ section('DISEASES.conditions', totalCond, [
   { label: 'Required schema (signs/diagnosis/treatment/pearls non-empty)', failingList: condGaps.schemaIncomplete },
   { label: 'Cites Canadian source', failingList: condGaps.noCdnSrc },
   { label: 'All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS)', failingList: condGaps.unresolvedAgents },
-  { label: '§21.13 multi-family compliance', failingList: condGaps.familyMismatch }
+  { label: '§21.13 multi-family compliance', failingList: condGaps.familyMismatch },
+  { label: '`preg_lact_summary` populated (preg + lact drug categorization)', failingList: condGaps.noPregLact }
 ]);
 
 // ─────────── DEPRESCRIBING_PROTOCOLS ───────────
