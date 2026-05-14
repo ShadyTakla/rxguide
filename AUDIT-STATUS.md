@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `837aeb7 on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `5d950c7 on 2026-05-14`)
 
 ---
 
@@ -70,6 +70,8 @@
 | Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 562 | 0 |
 | Non-empty `members[]` | **100.0%** | `██████████████████` | 562 | 0 |
 | Canadian source / canadian_notes | **100.0%** | `██████████████████` | 562 | 0 |
+| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 562 | 0 |
+| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 562 | 0 |
 
 ---
 
@@ -93,6 +95,7 @@
 | Cites Canadian source | **100.0%** | `██████████████████` | 600 | 0 |
 | All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 600 | 0 |
 | §21.13 multi-family compliance | **100.0%** | `██████████████████` | 600 | 0 |
+| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 600 | 0 |
 
 ---
 
