@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,891 clickable entries (latest commit: `b86519b on 2026-05-13`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `54382c1 on 2026-05-14`)
 
 ---
 
@@ -25,7 +25,7 @@
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
-| **DISEASES.conditions** | 591 | 100.0% | 100.0% |
+| **DISEASES.conditions** | 600 | 100.0% | 100.0% |
 
 ---
 
@@ -76,14 +76,14 @@
 
 ---
 
-## DISEASES.conditions (591 entries)
+## DISEASES.conditions (600 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 591 | 0 |
-| Cites Canadian source | **100.0%** | `██████████████████` | 591 | 0 |
-| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 591 | 0 |
-| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 591 | 0 |
+| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 600 | 0 |
+| Cites Canadian source | **100.0%** | `██████████████████` | 600 | 0 |
+| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 600 | 0 |
+| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 600 | 0 |
 
 ---
 
