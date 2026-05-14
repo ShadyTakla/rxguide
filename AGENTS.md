@@ -1745,4 +1745,34 @@ console.log(Object.keys(F).sort().join('\n'));
 
 ---
 
-**End of guide.** Last updated 2026-05-12. If you make architectural changes, update this document in the same PR.
+## 25. AUDIT-STATUS — live audit-coverage file (added 2026-05-14)
+
+`AUDIT-STATUS.md` (in repo root) is the canonical "what's been audited / what still needs to be audited" file. It is **auto-generated** from `index.html` by `scripts/regenerate_audit_status.js`.
+
+### 25.1 Workflow contract — every audit cycle
+
+1. **READ first.** Before starting any audit/fix work, read `AUDIT-STATUS.md`. Each `❌ Remaining` section lists the *exact* entries (drug keys, family names, condition IDs, ref-table IDs) that still fail each check. That list IS your next audit batch — do not re-audit items already at 100%.
+2. **WORK** on items listed in the failing sections. Match the dimension (e.g., "Cites Canadian source" → add a CAN/ONT source token to the condition's `source` or `treatment[*].guideline`).
+3. **REGENERATE** after every audit/fix PR: `node scripts/regenerate_audit_status.js`. The script reads the current `index.html` and rewrites `AUDIT-STATUS.md` end-to-end (idempotent).
+4. **COMMIT** the regenerated `AUDIT-STATUS.md` in the SAME PR as your fix, so `main` is always self-describing.
+5. **REFERENCE** `AUDIT-STATUS.md` in PR descriptions ("see AUDIT-STATUS.md for full context on remaining gaps").
+
+### 25.2 What the script checks (23 dimensions across 5 catalogs)
+
+- **DRUGS** (9 dims): 16-field schema complete; non-empty `interactions[]`; canonical severities; Canadian-source recognition; NAPRA_ODB_DATA / PREG_DATA / FAMILY_MAP presence; FAMILY_MAP key resolves to a DRUG_FAMILIES card; `monitoring` field populated.
+- **VACCINES** (2 dims): required schema fields; Canadian source.
+- **DRUG_FAMILIES** (3 dims): full schema (`moa_summary`, `class_effects`, `class_contraindications`, `members`, `pearls`, `source`); non-empty `members[]`; Canadian source.
+- **REFERENCE_TABLES** (5 dims): 10-field schema; Canadian source; wired into `buildReference()` dispatch (not orphan); `related_drugs` keys all resolve; row widths match column count.
+- **DISEASES.conditions** (4 dims): required schema (signs/diagnosis/treatment/pearls non-empty); cites Canadian source; all `treatment[*].agents` keys resolve to DRUGS/VACCINES/NON_PHARM_AGENTS; §21.13 multi-family compliance (smart-splitter checks every `treatment[*].family` lists every distinct `FAMILY_MAP[agent]` value).
+
+### 25.3 When to add a new dimension
+
+If you discover a recurring bug class during an audit cycle (e.g., "drug rows with `pregnancy: 'Unknown'` should be 'Contraindicated' for teratogens"), add it to the script's `drugGaps` / `condGaps` / etc. and regenerate. The script is the *single source of truth* for "what we check" — and `AUDIT-STATUS.md` makes the result visible to humans + future agents.
+
+### 25.4 Items absent from `AUDIT-STATUS.md`
+
+If a catalog item is NOT listed under any `❌ Remaining` section, it is **confirmed passing** every check the script knows about. Do not re-audit unless the user explicitly asks or a new dimension is added.
+
+---
+
+**End of guide.** Last updated 2026-05-14. If you make architectural changes, update this document in the same PR.
