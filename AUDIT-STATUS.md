@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,871 clickable entries (latest commit: `b36f48c on 2026-05-13`)
+**Catalog snapshot:** 2,880 clickable entries (latest commit: `dec683c on 2026-05-13`)
 
 ---
 
@@ -24,8 +24,8 @@
 | **DRUGS** | 1,545 | 100.0% | 100.0% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 561 | 97.5% | 19.1% |
-| **REFERENCE_TABLES** | 100 | 100.0% | 85.0% |
-| **DISEASES.conditions** | 573 | 99.7% | 93.9% |
+| **REFERENCE_TABLES** | 100 | 100.0% | 98.0% |
+| **DISEASES.conditions** | 582 | 100.0% | 100.0% |
 
 ---
 
@@ -221,8 +221,8 @@ WHIM Syndrome CXCR4 Antagonists
 |---|---|---|---|---|
 | All 10 schema fields complete | **98.0%** | `██████████████████` | 98 | 2 |
 | Canadian source in citation | **98.0%** | `██████████████████` | 98 | 2 |
-| Wired into `buildReference()` dispatch (not orphan) | **93.0%** | `█████████████████░` | 93 | 7 |
-| `related_drugs` all resolve to DRUGS/VACCINES | **85.0%** | `███████████████░░░` | 85 | 15 |
+| Wired into `buildReference()` dispatch (not orphan) | **100.0%** | `██████████████████` | 100 | 0 |
+| `related_drugs` all resolve to DRUGS/VACCINES | **100.0%** | `██████████████████` | 100 | 0 |
 | Row widths match column count | **100.0%** | `██████████████████` | 100 | 0 |
 
 ### ❌ All 10 schema fields complete — 2 entries remaining (2.0% of total)
@@ -239,116 +239,16 @@ di_delirium
 pgx_ugt1a1
 ```
 
-### ❌ Wired into `buildReference()` dispatch (not orphan) — 7 entries remaining (7.0% of total)
-
-```
-ics_potency
-topical_steroid_potency
-ped_weight_dosing
-ped_antibiotic_suspensions
-ped_antipyretics
-ped_vital_signs
-ped_sick_day_rules
-```
-
-### ❌ `related_drugs` all resolve to DRUGS/VACCINES — 15 entries remaining (15.0% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `steroid_equiv` | {"unresolved":["cortisone"]} |
-| `di_hyperkalemia` | {"unresolved":["succinylcholine"]} |
-| `di_pancreatitis` | {"unresolved":["propofol"]} |
-| `di_falls` | {"unresolved":["dicyclomine"]} |
-| `di_delirium` | {"unresolved":["dicyclomine"]} |
-| `drug_food_dairy_cations` | {"unresolved":["erlotinib","gefitinib"]} |
-| `drug_food_warfarin_vit_k` | {"unresolved":["vitamin_k"]} |
-| `drug_food_alcohol` | {"unresolved":["cefotetan"]} |
-| `beers_criteria_2023` | {"unresolved":["estradiol_oral"]} |
-| `stopp_start_v3` | {"unresolved":["zoledronate"]} |
-| `lasa_pairs` | {"unresolved":["ephedrine","sulfadiazine"]} |
-| `tox_anticholinergic_toxidrome` | {"unresolved":["scopolamine","dicyclomine","hyoscine_butylbromide","atropine"]} |
-| `tox_sympathomimetic_toxidrome` | {"unresolved":["propofol"]} |
-| `tox_salicylate_overdose` | {"unresolved":["activated_charcoal","glucose"]} |
-| `tox_tca_overdose` | {"unresolved":["activated_charcoal"]} |
-
 ---
 
-## DISEASES.conditions (573 entries)
+## DISEASES.conditions (582 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Required schema (signs/diagnosis/treatment/pearls non-empty) | **99.7%** | `██████████████████` | 571 | 2 |
-| Cites Canadian source | **93.9%** | `█████████████████░` | 538 | 35 |
-| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **99.1%** | `██████████████████` | 568 | 5 |
-| §21.13 multi-family compliance | **99.0%** | `██████████████████` | 567 | 6 |
-
-### ❌ Required schema (signs/diagnosis/treatment/pearls non-empty) — 2 entries remaining (0.3% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `hemorrhoids` | [gastroenterology] {"missing":["signs"],"empty":["signs"]} |
-| `acne_vulgaris` | [dermatology] {"missing":["signs"],"empty":["signs"]} |
-
-### ❌ Cites Canadian source — 35 entries remaining (6.1% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `brugada_syndrome` | [cardiology] {} |
-| `insulinoma` | [endocrinology] {} |
-| `zollinger_ellison_syndrome` | [endocrinology] {} |
-| `functional_neurological_disorder` | [psychiatry] {} |
-| `malignant_hyperthermia` | [psychiatry] {} |
-| `rhabdomyolysis` | [psychiatry] {} |
-| `spontaneous_pneumothorax` | [respirology] {} |
-| `microscopic_colitis` | [gastroenterology] {} |
-| `boerhaave_syndrome` | [gastroenterology] {} |
-| `acute_liver_failure` | [gastroenterology] {} |
-| `iga_nephropathy` | [nephrology] {} |
-| `membranous_nephropathy` | [nephrology] {} |
-| `anti_gbm_disease` | [nephrology] {} |
-| `anca_vasculitis` | [rheumatology] {} |
-| `mast_cell_activation_syndrome` | [rheumatology] {} |
-| `granulomatosis_polyangiitis` | [rheumatology] {} |
-| `dermatomyositis_polymyositis` | [rheumatology] {} |
-| `iga_vasculitis` | [rheumatology] {} |
-| `frozen_shoulder` | [rheumatology] {} |
-| `lateral_epicondylitis` | [rheumatology] {} |
-| `rotator_cuff_disease` | [rheumatology] {} |
-| `hereditary_hemorrhagic_telangiectasia` | [hematology] {} |
-| `paroxysmal_nocturnal_hemoglobinuria` | [hematology] {} |
-| `aplastic_anemia` | [hematology] {} |
-| `hereditary_spherocytosis` | [hematology] {} |
-| `cryptococcal_meningitis` | [infectious] {} |
-| `invasive_candidiasis` | [infectious] {} |
-| `stevens_johnson_syndrome_ten` | [dermatology] {} |
-| `dress_syndrome` | [dermatology] {} |
-| `erythema_multiforme` | [dermatology] {} |
-| `pyoderma_gangrenosum` | [dermatology] {} |
-| `sweet_syndrome` | [dermatology] {} |
-| `corneal_abrasion` | [ophthalmology] {} |
-| `laryngopharyngeal_reflux` | [ent] {} |
-| `schistosomiasis` | [travel] {} |
-
-### ❌ All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) — 5 entries remaining (0.9% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `pericarditis` | [cardiology] {"agents":["pericardiocentesis"]} |
-| `graves_disease` | [endocrinology] {"agents":["teprotumumab"]} |
-| `toxoplasmosis` | [infectious] {"agents":["sulfadiazine"]} |
-| `osteomyelitis` | [infectious] {"agents":["trimethoprim_sulfamethoxazole"]} |
-| `folliculitis` | [dermatology] {"agents":["trimethoprim_sulfamethoxazole"]} |
-
-### ❌ §21.13 multi-family compliance — 6 entries remaining (1.0% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `carotid_artery_disease` | [cardiology] {"rows":[{"line":"Smoking cessation","missing":["Nicotinic Receptor Partial Agonists","Aminoketones"]}]} |
-| `pcos` | [endocrinology] {"rows":[{"line":"First-Line","missing":[]}]} |
-| `thyroid_eye_disease` | [endocrinology] {"rows":[{"line":"Foundation — smoking cessation (NON-NEGOTIABLE)","missing":["Nicotinic Receptor Partial Agonists","Aminoketones"]}]} |
-| `severe_hypertriglyceridemia` | [endocrinology] {"rows":[{"line":"Acute hypertriglyceridemic pancreatitis","missing":["Unfractionated Heparin"]}]} |
-| `hypercalcemia_of_malignancy` | [endocrinology] {"rows":[{"line":"Glucocorticoid — calcitriol-mediated (lymphoma)","missing":["Systemic Corticosteroids","Topical Corticosteroids"]}]} |
-| `menopause` | [womens_health] {"rows":[{"line":"First-Line (moderate–severe VMS)","missing":["Estrogens"]},{"line":"First-Line (uterus intact — combined MHT)","missing":[]},{"line":"First-Line (GSM — vaginal symptoms)","missing":["Estrogens"]}]} |
+| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 582 | 0 |
+| Cites Canadian source | **100.0%** | `██████████████████` | 582 | 0 |
+| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 582 | 0 |
+| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 582 | 0 |
 
 ---
 
@@ -358,7 +258,7 @@ ped_sick_day_rules
 |---|---|
 | DEPRESCRIBING_PROTOCOLS | **17** |
 | MINOR_AILMENTS | **19** |
-| NON_PHARM_AGENTS dictionary | **93** |
+| NON_PHARM_AGENTS dictionary | **94** |
 | EDIT_HISTORY entities tracked | **1,649** |
 | CHANGELOG PRs catalogued | **122** |
 | DISEASES categories | **20** |
@@ -373,12 +273,6 @@ Ordered by impact (size of gap × clinical importance):
 |---|---|---|
 | 1 | **454** | DRUG_FAMILIES — full schema authoring (moa_summary, class_effects, members[], pearls, source) |
 | 1 | **398** | DRUG_FAMILIES — populate `members[]` for skeletal family cards |
-| 2 | **15** | REFERENCE_TABLES — fix `related_drugs` keys that don't resolve |
-| 2 | **7** | REFERENCE_TABLES — wire orphan tables into `buildReference()` dispatch arrays |
-| 3 | **35** | DISEASES.conditions — add Canadian source/guideline citation |
-| 3 | **5** | DISEASES.conditions — fix unresolved `treatment.agents` (add to NON_PHARM_AGENTS or DRUGS, or correct typo) |
-| 3 | **2** | DISEASES.conditions — populate missing/empty required fields |
-| 4 | **6** | DISEASES.conditions — apply §21.13 multi-family fix |
 
 ---
 

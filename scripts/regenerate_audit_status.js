@@ -132,7 +132,7 @@ function getArr(name) {
   const m = txt.match(re);
   return m ? Array.from(m[1].matchAll(/['"]([a-z0-9_]+)['"]/g)).map(x => x[1]) : null;
 }
-const dispatchArrays = ['toxIds', 'diIds', 'medSafetyIds', 'allergyIds', 'foodIds', 'geriatricIds', 'renalIds', 'hepaticIds', 'practiceIds', 'doseIds', 'acIds', 'equivIds', 'pgxIds', 'pedsIds'];
+const dispatchArrays = ['toxIds', 'diIds', 'medSafetyIds', 'allergyIds', 'foodIds', 'doseIds', 'acIds', 'equivIds', 'pgxIds', 'pedIds', 'potencyIds'];
 const allDispatchIds = new Set();
 for (const an of dispatchArrays) { const a = getArr(an); if (a) a.forEach(x => allDispatchIds.add(x)); }
 const refGaps = { schemaIncomplete: [], noCdn: [], notWired: [], unresolvedDrugs: [], rowWidthBad: [] };
@@ -184,10 +184,8 @@ for (const [catName, cat] of Object.entries(DISEASES)) {
           totalMultiRows++;
           const tokens = smartSplit(t.family);
           const missingFams = distinct.filter(d => !tokens.includes(d));
-          const rawSplit = (t.family || '').split(/\s+\/\s+/).map(s => s.trim());
-          const cnt = {}; rawSplit.forEach(r => cnt[r] = (cnt[r] || 0) + 1);
-          const dups = Object.values(cnt).some(n => n > 1);
-          if (missingFams.length || dups) famRows.push({ line: t.line, missing: missingFams });
+          const extras = tokens.filter(tok => !distinct.includes(tok) && !DRUG_FAMILIES[tok]);
+          if (missingFams.length || extras.length) famRows.push({ line: t.line, missing: missingFams });
         }
       }
     }
