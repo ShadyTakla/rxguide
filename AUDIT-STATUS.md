@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `45914b7 on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `75bb4e0 on 2026-05-14`)
 
 ---
 
@@ -39,13 +39,19 @@
 | Canadian-source recognition | **100.0%** | `██████████████████` | 1,546 | 0 |
 | NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
 | PREG_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
-| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,546 | 0 |
+| FAMILY_MAP entry | **99.9%** | `██████████████████` | 1,545 | 1 |
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **87.1%** | `████████████████░░` | 1,347 | 199 |
 | `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `side_effects` depth ≥ 5 items | **77.9%** | `██████████████░░░░` | 1,205 | 341 |
+
+### ❌ FAMILY_MAP entry — 1 entries remaining (0.1% of total)
+
+```
+mannitol_inhaled
+```
 
 ### ❌ `monitoring` depth ≥ 4 items — 199 entries remaining (12.9% of total)
 
