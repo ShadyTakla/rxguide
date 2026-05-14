@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-14
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `6c48870 on 2026-05-14`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `5c9890f on 2026-05-14`)
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 79.8% |
+| **DRUGS** | 1,546 | 100.0% | 82.0% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
@@ -43,15 +43,14 @@
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `interactions` depth ≥ 5 items | **79.8%** | `██████████████░░░░` | 1,234 | 312 |
+| `interactions` depth ≥ 5 items | **82.0%** | `███████████████░░░` | 1,267 | 279 |
 
-### ❌ `interactions` depth ≥ 5 items — 312 entries remaining (20.2% of total)
+### ❌ `interactions` depth ≥ 5 items — 279 entries remaining (18.0% of total)
 
 | Key/ID | Detail |
 |---|---|
 | `febuxostat` | {"count":4} |
 | `salbutamol` | {"count":4} |
-| `cinacalcet` | {"count":4} |
 | `cholecalciferol` | {"count":4} |
 | `folic_acid` | {"count":4} |
 | `pyrazinamide` | {"count":3} |
@@ -61,12 +60,10 @@
 | `cycloserine` | {"count":3} |
 | `ethionamide` | {"count":3} |
 | `clofazimine` | {"count":3} |
-| `pyrantel` | {"count":2} |
 | `pentamidine` | {"count":4} |
 | `artemether_lumefantrine` | {"count":4} |
 | `zanamivir` | {"count":2} |
 | `remdesivir` | {"count":3} |
-| `mebendazole` | {"count":4} |
 | `ivermectin` | {"count":4} |
 | `artificial_tears` | {"count":4} |
 | `phenylephrine_rectal` | {"count":4} |
@@ -80,36 +77,39 @@
 | `lapatinib` | {"count":4} |
 | `dimethyl_fumarate` | {"count":4} |
 | `natalizumab` | {"count":4} |
-| `aripiprazole_lai` | {"count":4} |
-| `risperidone_lai` | {"count":4} |
 | `zonisamide` | {"count":4} |
 | `piperacillin_tazobactam` | {"count":4} |
 | `misoprostol` | {"count":4} |
 | `oxytocin` | {"count":4} |
 | `methylergonovine` | {"count":4} |
 | `terazosin` | {"count":4} |
-| `rimegepant` | {"count":4} |
-| `ubrogepant` | {"count":4} |
 | `rifaximin` | {"count":4} |
 | `phytonadione` | {"count":4} |
-| `fluticasone_salmeterol` | {"count":4} |
-| `budesonide_formoterol` | {"count":4} |
 | `ipratropium_salbutamol` | {"count":4} |
 | `tiotropium_olodaterol` | {"count":4} |
 | `daridorexant` | {"count":4} |
 | `andexanet_alfa` | {"count":2} |
 | `levocetirizine` | {"count":4} |
-| `lecanemab` | {"count":4} |
 | `olodaterol` | {"count":4} |
-| `moclobemide` | {"count":4} |
-| `tranylcypromine` | {"count":4} |
 | `sulfasalazine_ra` | {"count":4} |
 | `dexamethasone_systemic` | {"count":4} |
 | `tenofovir_emtricitabine` | {"count":4} |
 | `timolol_eye` | {"count":4} |
 | `prenatal_multivitamin` | {"count":4} |
 | `methylphenidate_er` | {"count":4} |
-| ... | 252 more entries |
+| `tobramycin_ophth` | {"count":4} |
+| `tobramycin_dexamethasone_ophth` | {"count":4} |
+| `framycetin_gramicidin_dexamethasone_otic` | {"count":4} |
+| `desonide` | {"count":4} |
+| `fusidic_acid_hydrocortisone` | {"count":4} |
+| `pyridoxine` | {"count":3} |
+| `brolucizumab` | {"count":3} |
+| `lidocaine_patch` | {"count":4} |
+| `efinaconazole` | {"count":2} |
+| `pyrantel_pamoate` | {"count":2} |
+| `aluminum_chloride` | {"count":1} |
+| `silver_sulfadiazine` | {"count":4} |
+| ... | 219 more entries |
 
 ---
 
@@ -174,7 +174,7 @@ Ordered by impact (size of gap × clinical importance):
 
 | Priority | Gap (entries) | Audit area |
 |---|---|---|
-| 2 | **312** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
+| 2 | **279** | DRUGS — thin interactions (<5 entries): add major drug interactions including severity |
 
 ---
 
