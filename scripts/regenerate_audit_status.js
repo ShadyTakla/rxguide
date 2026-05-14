@@ -78,8 +78,11 @@ function smartSplit(family) {
 const drugKeys = Object.keys(DRUGS);
 const drugGaps = {
   schemaIncomplete: [], emptyIx: [], badSev: [], noCdnSrc: [],
-  noNAPRA: [], noPREG: [], noFM: [], brokenFM: [], noMonitoring: []
+  noNAPRA: [], noPREG: [], noFM: [], brokenFM: [], noMonitoring: [],
+  thinMonitoring: [], thinInteractions: []
 };
+const MONITORING_MIN = 4;
+const INTERACTIONS_MIN = 5;
 for (const k of drugKeys) {
   const d = DRUGS[k];
   const missing = DRUG_SCHEMA.filter(f => !(f in d));
@@ -87,6 +90,7 @@ for (const k of drugKeys) {
   if (missing.length || empty.length) drugGaps.schemaIncomplete.push({ k, missing, empty });
   const ix = d.interactions || [];
   if (!ix.length) drugGaps.emptyIx.push(k);
+  else if (ix.length < INTERACTIONS_MIN) drugGaps.thinInteractions.push({ k, count: ix.length });
   const bad = ix.filter(x => x.severity && !SEVERITIES.has(x.severity));
   if (bad.length) drugGaps.badSev.push({ k, sev: [...new Set(bad.map(x => x.severity))] });
   if (!CDN_RE.test(d.source || '')) drugGaps.noCdnSrc.push(k);
@@ -94,7 +98,9 @@ for (const k of drugKeys) {
   if (!PREG[k]) drugGaps.noPREG.push(k);
   if (!FAMILY_MAP[k]) drugGaps.noFM.push(k);
   else if (!DRUG_FAMILIES[FAMILY_MAP[k]]) drugGaps.brokenFM.push({ k, fam: FAMILY_MAP[k] });
-  if (!d.monitoring || !d.monitoring.length) drugGaps.noMonitoring.push(k);
+  const mon = d.monitoring || [];
+  if (!mon.length) drugGaps.noMonitoring.push(k);
+  else if (mon.length < MONITORING_MIN) drugGaps.thinMonitoring.push({ k, count: mon.length });
 }
 
 // ════════════════════════════════════════════════════════════
@@ -265,6 +271,8 @@ const drugPcts = [
   100 - drugGaps.noFM.length / drugKeys.length * 100,
   100 - drugGaps.brokenFM.length / drugKeys.length * 100,
   100 - drugGaps.noMonitoring.length / drugKeys.length * 100,
+  100 - drugGaps.thinMonitoring.length / drugKeys.length * 100,
+  100 - drugGaps.thinInteractions.length / drugKeys.length * 100,
 ];
 lines.push(summaryRow('**DRUGS**', drugKeys.length, drugPcts));
 const vacPcts = vacKeys.length === 0 ? [100] : [
@@ -344,7 +352,9 @@ section('DRUGS', drugKeys.length, [
   { label: 'PREG_DATA entry', failingList: drugGaps.noPREG },
   { label: 'FAMILY_MAP entry', failingList: drugGaps.noFM },
   { label: 'FAMILY_MAP → resolves to DRUG_FAMILIES card', failingList: drugGaps.brokenFM },
-  { label: '`monitoring` field populated', failingList: drugGaps.noMonitoring }
+  { label: '`monitoring` field populated', failingList: drugGaps.noMonitoring },
+  { label: `\`monitoring\` depth ≥ ${MONITORING_MIN} items`, failingList: drugGaps.thinMonitoring },
+  { label: `\`interactions\` depth ≥ ${INTERACTIONS_MIN} items`, failingList: drugGaps.thinInteractions }
 ]);
 
 // ─────────── VACCINES section ───────────
@@ -408,6 +418,8 @@ if (condGaps.schemaIncomplete.length > 0) priorities.push({ p: 3, gap: condGaps.
 if (condGaps.familyMismatch.length > 0) priorities.push({ p: 4, gap: condGaps.familyMismatch.length, area: 'DISEASES.conditions — apply §21.13 multi-family fix' });
 if (drugGaps.schemaIncomplete.length > 0) priorities.push({ p: 1, gap: drugGaps.schemaIncomplete.length, area: 'DRUGS — schema-incomplete entries' });
 if (drugGaps.noMonitoring.length > 0) priorities.push({ p: 1, gap: drugGaps.noMonitoring.length, area: 'DRUGS — missing monitoring field' });
+if (drugGaps.thinMonitoring.length > 0) priorities.push({ p: 2, gap: drugGaps.thinMonitoring.length, area: `DRUGS — thin monitoring (<${MONITORING_MIN} items): expand to 4-7 specific parameters/frequencies` });
+if (drugGaps.thinInteractions.length > 0) priorities.push({ p: 2, gap: drugGaps.thinInteractions.length, area: `DRUGS — thin interactions (<${INTERACTIONS_MIN} entries): add major drug interactions including severity` });
 priorities.sort((a, b) => a.p - b.p || b.gap - a.gap);
 if (priorities.length === 0) {
   lines.push('**No remaining audit gaps — catalog is 100% clean across all checked dimensions.**');
