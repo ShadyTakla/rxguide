@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-15
-**Catalog snapshot:** 2,884 clickable entries (latest commit: `dd62227 on 2026-05-15`)
+**Catalog snapshot:** 2,884 clickable entries (latest commit: `00d7335 on 2026-05-15`)
 
 ---
 
