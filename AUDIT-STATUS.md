@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-15
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `17525f4 on 2026-05-15`)
+**Catalog snapshot:** 2,900 clickable entries (latest commit: `2b114ab on 2026-05-15`)
 
 ---
 
@@ -307,7 +307,13 @@ mannitol_inhaled
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 100 | 0 |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **99.0%** | `██████████████████` | 99 | 1 |
+
+### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 1 entries remaining (1.0% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `topical_steroid_potency` | {"missing":["fluticasone"]} |
 
 ---
 
