@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-15
-**Catalog snapshot:** 2,901 clickable entries (latest commit: `d15b49e on 2026-05-15`)
+**Catalog snapshot:** 2,901 clickable entries (latest commit: `5756855 on 2026-05-15`)
 
 ---
 
@@ -204,6 +204,7 @@
 | Canadian source / canadian_notes | **100.0%** | `██████████████████` | 563 | 0 |
 | `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 563 | 0 |
 | `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 563 | 0 |
+| `comparison[].key` resolves to DRUGS/VACCINES (rendered table) | **100.0%** | `██████████████████` | 563 | 0 |
 
 ---
 

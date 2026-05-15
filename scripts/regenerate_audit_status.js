@@ -183,7 +183,7 @@ for (const k of vacKeys) {
 // PASS 3: DRUG_FAMILIES
 // ════════════════════════════════════════════════════════════
 const famNames = Object.keys(DRUG_FAMILIES);
-const famGaps = { schemaIncomplete: [], emptyMembers: [], noCdn: [], thinCE: [], thinCC: [] };
+const famGaps = { schemaIncomplete: [], emptyMembers: [], noCdn: [], thinCE: [], thinCC: [], brokenComparisonKey: [] };
 const FAM_CE_MIN = 3;
 const FAM_CC_MIN = 2;
 for (const fname of famNames) {
@@ -195,6 +195,12 @@ for (const fname of famNames) {
   if (!CDN_RE.test((fam.canadian_notes || '') + ' ' + (fam.source || ''))) famGaps.noCdn.push(fname);
   if (Array.isArray(fam.class_effects) && fam.class_effects.length > 0 && fam.class_effects.length < FAM_CE_MIN) famGaps.thinCE.push({ fname, count: fam.class_effects.length });
   if (Array.isArray(fam.class_contraindications) && fam.class_contraindications.length > 0 && fam.class_contraindications.length < FAM_CC_MIN) famGaps.thinCC.push({ fname, count: fam.class_contraindications.length });
+  // Tier 4: comparison[].key must resolve to a DRUGS/VACCINES card (this is the rendered, clickable table)
+  const badKeys = [];
+  for (const c of (fam.comparison || [])) {
+    if (c.key && !DRUGS[c.key] && !VACCINES[c.key]) badKeys.push(c.key);
+  }
+  if (badKeys.length) famGaps.brokenComparisonKey.push({ fname, keys: badKeys });
 }
 
 // ════════════════════════════════════════════════════════════
@@ -652,7 +658,8 @@ section('DRUG_FAMILIES', famNames.length, [
   { label: 'Non-empty `members[]`', failingList: famGaps.emptyMembers },
   { label: 'Canadian source / canadian_notes', failingList: famGaps.noCdn },
   { label: `\`class_effects\` depth ≥ ${FAM_CE_MIN} items`, failingList: famGaps.thinCE },
-  { label: `\`class_contraindications\` depth ≥ ${FAM_CC_MIN} items`, failingList: famGaps.thinCC }
+  { label: `\`class_contraindications\` depth ≥ ${FAM_CC_MIN} items`, failingList: famGaps.thinCC },
+  { label: '`comparison[].key` resolves to DRUGS/VACCINES (rendered table)', failingList: famGaps.brokenComparisonKey }
 ]);
 
 // ─────────── REFERENCE_TABLES section ───────────
