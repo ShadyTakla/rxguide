@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-15
-**Catalog snapshot:** 2,887 clickable entries (latest commit: `4f6dab8 on 2026-05-15`)
+**Catalog snapshot:** 2,884 clickable entries (latest commit: `dd62227 on 2026-05-15`)
 
 ---
 
@@ -23,7 +23,7 @@
 |---|---|---|---|
 | **DRUGS** | 1,546 | 100.0% | 77.9% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
-| **DRUG_FAMILIES** | 549 | 100.0% | 100.0% |
+| **DRUG_FAMILIES** | 546 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
 | **DISEASES.conditions** | 600 | 100.0% | 98.0% |
 
@@ -207,15 +207,15 @@ mannitol_inhaled
 
 ---
 
-## DRUG_FAMILIES (549 entries)
+## DRUG_FAMILIES (546 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 549 | 0 |
-| Non-empty `members[]` | **100.0%** | `██████████████████` | 549 | 0 |
-| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 549 | 0 |
-| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 549 | 0 |
-| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 549 | 0 |
+| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 546 | 0 |
+| Non-empty `members[]` | **100.0%** | `██████████████████` | 546 | 0 |
+| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 546 | 0 |
+| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 546 | 0 |
+| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 546 | 0 |
 
 ---
 
