@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-15
-**Catalog snapshot:** 2,901 clickable entries (latest commit: `b5326cc on 2026-05-15`)
+**Catalog snapshot:** 2,901 clickable entries (latest commit: `d15b49e on 2026-05-15`)
 
 ---
 
@@ -338,6 +338,18 @@ The audit script measures **structural** integrity (schema, depth thresholds, cr
 **Tier 4 is the domain of human clinical review.** The audit script makes that review tractable by ensuring structural completeness so reviewers can focus on content rather than missing fields. AUDIT-STATUS.md at 100% across all dimensions means the catalog is *ready* for clinical review, not that clinical accuracy has been verified.
 
 Recommended human-review cadence: continuous as Canadian guidelines update (CCS/CTS/CAG/CSN/CRA/AMMI/SOGC/NACI/etc. publish annually or more frequently). Track changes via CHANGELOG; EDIT_HISTORY captures per-entity revision provenance.
+
+### Tier 4 verbatim-review progress log
+
+Records which catalogs have had an agent-driven verbatim (line-by-line) clinical-content review beyond the automated structural audit.
+
+| Catalog | Tier 4 verbatim review | Notes |
+|---|---|---|
+| **REFERENCE_TABLES** (100) | ✅ COMPLETE | All 100 tables reviewed line-by-line. 1 safety-critical fix (ped azithromycin suspension example was 2× over — `ped_antibiotic_suspensions`). Doses, equivalence ratios, CrCl/Child-Pugh thresholds, CPIC content, trial citations all verified against current Canadian + international guidelines. |
+| **DISEASES.conditions** (600) | 🟡 IN PROGRESS | Disease audit batches 1–29 + palliative (9) + travel medicine + empty-Drug-row sweep complete. Several SAFETY-CRITICAL fixes (rabies vaccine pregnancy mis-categorization, mefloquine pregnancy, wrong-vaccine agents). Remaining categories not yet fully verbatim-reviewed. |
+| **DRUG_FAMILIES** (563) | 🟡 IN PROGRESS | Tier 4 batches 1–2 complete (GLP-1 / Taxane / TTR Silencer + 6 content-completeness fixes). Verbatim line-by-line review of remaining families ongoing. |
+| **DRUGS** (1546) | 🟡 PARTIAL | AUDIT-CONTENT.md sampled 15 high-volume drug cards. Full verbatim review pending. |
+| **VACCINES** (56) | 🟡 PARTIAL | imvamune contraindications + interaction severity corrected. Full verbatim review pending. |
 
 ---
 

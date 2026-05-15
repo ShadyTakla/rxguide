@@ -782,6 +782,18 @@ lines.push('**Tier 4 is the domain of human clinical review.** The audit script 
 lines.push('');
 lines.push('Recommended human-review cadence: continuous as Canadian guidelines update (CCS/CTS/CAG/CSN/CRA/AMMI/SOGC/NACI/etc. publish annually or more frequently). Track changes via CHANGELOG; EDIT_HISTORY captures per-entity revision provenance.');
 lines.push('');
+lines.push('### Tier 4 verbatim-review progress log');
+lines.push('');
+lines.push('Records which catalogs have had an agent-driven verbatim (line-by-line) clinical-content review beyond the automated structural audit.');
+lines.push('');
+lines.push('| Catalog | Tier 4 verbatim review | Notes |');
+lines.push('|---|---|---|');
+lines.push('| **REFERENCE_TABLES** (100) | ✅ COMPLETE | All 100 tables reviewed line-by-line. 1 safety-critical fix (ped azithromycin suspension example was 2× over — `ped_antibiotic_suspensions`). Doses, equivalence ratios, CrCl/Child-Pugh thresholds, CPIC content, trial citations all verified against current Canadian + international guidelines. |');
+lines.push('| **DISEASES.conditions** (600) | 🟡 IN PROGRESS | Disease audit batches 1–29 + palliative (9) + travel medicine + empty-Drug-row sweep complete. Several SAFETY-CRITICAL fixes (rabies vaccine pregnancy mis-categorization, mefloquine pregnancy, wrong-vaccine agents). Remaining categories not yet fully verbatim-reviewed. |');
+lines.push('| **DRUG_FAMILIES** (' + famNames.length + ') | 🟡 IN PROGRESS | Tier 4 batches 1–2 complete (GLP-1 / Taxane / TTR Silencer + 6 content-completeness fixes). Verbatim line-by-line review of remaining families ongoing. |');
+lines.push('| **DRUGS** (' + drugKeys.length + ') | 🟡 PARTIAL | AUDIT-CONTENT.md sampled 15 high-volume drug cards. Full verbatim review pending. |');
+lines.push('| **VACCINES** (' + vacKeys.length + ') | 🟡 PARTIAL | imvamune contraindications + interaction severity corrected. Full verbatim review pending. |');
+lines.push('');
 lines.push('---');
 lines.push('');
 lines.push('## Audit-workflow contract');
