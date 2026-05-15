@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-15
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `095e26f on 2026-05-15`)
+**Catalog snapshot:** 2,901 clickable entries (latest commit: `811ad9f on 2026-05-15`)
 
 ---
 
@@ -23,7 +23,7 @@
 |---|---|---|---|
 | **DRUGS** | 1,546 | 100.0% | 77.9% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
-| **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
+| **DRUG_FAMILIES** | 563 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
 | **DISEASES.conditions** | 600 | 100.0% | 100.0% |
 
@@ -39,19 +39,13 @@
 | Canadian-source recognition | **100.0%** | `██████████████████` | 1,546 | 0 |
 | NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
 | PREG_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
-| FAMILY_MAP entry | **99.9%** | `██████████████████` | 1,545 | 1 |
+| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,546 | 0 |
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **87.1%** | `████████████████░░` | 1,347 | 199 |
 | `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `side_effects` depth ≥ 5 items | **77.9%** | `██████████████░░░░` | 1,205 | 341 |
-
-### ❌ FAMILY_MAP entry — 1 entries remaining (0.1% of total)
-
-```
-mannitol_inhaled
-```
 
 ### ❌ `monitoring` depth ≥ 4 items — 199 entries remaining (12.9% of total)
 
@@ -194,28 +188,22 @@ mannitol_inhaled
 | Required schema fields | **100.0%** | `██████████████████` | 56 | 0 |
 | Canadian-source (NACI / PHAC / CIG / Canada) | **100.0%** | `██████████████████` | 56 | 0 |
 | `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 56 | 0 |
-| `contraindications` depth ≥ 2 items | **98.2%** | `██████████████████` | 55 | 1 |
+| `contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 56 | 0 |
 | `interactions` depth ≥ 3 items | **100.0%** | `██████████████████` | 56 | 0 |
 | `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 56 | 0 |
 | `indications` depth ≥ 2 items | **100.0%** | `██████████████████` | 56 | 0 |
 
-### ❌ `contraindications` depth ≥ 2 items — 1 entries remaining (1.8% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `imvamune` | {"count":1} |
-
 ---
 
-## DRUG_FAMILIES (562 entries)
+## DRUG_FAMILIES (563 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 562 | 0 |
-| Non-empty `members[]` | **100.0%** | `██████████████████` | 562 | 0 |
-| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 562 | 0 |
-| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 562 | 0 |
-| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 562 | 0 |
+| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 563 | 0 |
+| Non-empty `members[]` | **100.0%** | `██████████████████` | 563 | 0 |
+| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 563 | 0 |
+| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 563 | 0 |
+| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 563 | 0 |
 
 ---
 
@@ -307,13 +295,7 @@ mannitol_inhaled
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **99.0%** | `██████████████████` | 99 | 1 |
-
-### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 1 entries remaining (1.0% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `topical_steroid_potency` | {"missing":["fluticasone"]} |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 100 | 0 |
 
 ---
 
