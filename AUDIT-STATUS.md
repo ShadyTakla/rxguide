@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-15
-**Catalog snapshot:** 2,877 clickable entries (latest commit: `9976d8c on 2026-05-15`)
+**Catalog snapshot:** 2,877 clickable entries (latest commit: `c9ca5fb on 2026-05-15`)
 
 ---
 
@@ -25,7 +25,7 @@
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 539 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
-| **DISEASES.conditions** | 600 | 100.0% | 100.0% |
+| **DISEASES.conditions** | 600 | 100.0% | 99.7% |
 
 ---
 
@@ -39,19 +39,13 @@
 | Canadian-source recognition | **100.0%** | `██████████████████` | 1,546 | 0 |
 | NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
 | PREG_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
-| FAMILY_MAP entry | **99.9%** | `██████████████████` | 1,545 | 1 |
+| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,546 | 0 |
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` depth ≥ 4 items | **87.1%** | `████████████████░░` | 1,347 | 199 |
 | `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `side_effects` depth ≥ 5 items | **77.9%** | `██████████████░░░░` | 1,205 | 341 |
-
-### ❌ FAMILY_MAP entry — 1 entries remaining (0.1% of total)
-
-```
-mannitol_inhaled
-```
 
 ### ❌ `monitoring` depth ≥ 4 items — 199 entries remaining (12.9% of total)
 
@@ -238,8 +232,15 @@ mannitol_inhaled
 | Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 600 | 0 |
 | Cites Canadian source | **100.0%** | `██████████████████` | 600 | 0 |
 | All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 600 | 0 |
-| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 600 | 0 |
+| §21.13 multi-family compliance | **99.7%** | `██████████████████` | 598 | 2 |
 | `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 600 | 0 |
+
+### ❌ §21.13 multi-family compliance — 2 entries remaining (0.3% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `bronchiectasis` | [respirology] {"rows":[{"line":"AIRWAY CLEARANCE + GENERAL MEASURES (foundation)","missing":["Osmotic Agents"]}]} |
+| `cystic_fibrosis` | [respirology] {"rows":[{"line":"AIRWAY CLEARANCE + MUCOLYTICS (Daily)","missing":["Osmotic Agents"]}]} |
 
 ---
 
@@ -337,6 +338,7 @@ Ordered by impact (size of gap × clinical importance):
 | Priority | Gap (entries) | Audit area |
 |---|---|---|
 | 2 | **199** | DRUGS — thin monitoring (<4 items): expand to 4-7 specific parameters/frequencies |
+| 4 | **2** | DISEASES.conditions — apply §21.13 multi-family fix |
 
 ---
 
