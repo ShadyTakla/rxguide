@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-15
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `095e26f on 2026-05-15`)
+**Catalog snapshot:** 2,897 clickable entries (latest commit: `e5f68bf on 2026-05-15`)
 
 ---
 
@@ -23,9 +23,9 @@
 |---|---|---|---|
 | **DRUGS** | 1,546 | 100.0% | 77.9% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
-| **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
+| **DRUG_FAMILIES** | 559 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
-| **DISEASES.conditions** | 600 | 100.0% | 100.0% |
+| **DISEASES.conditions** | 600 | 100.0% | 99.0% |
 
 ---
 
@@ -207,15 +207,15 @@ mannitol_inhaled
 
 ---
 
-## DRUG_FAMILIES (562 entries)
+## DRUG_FAMILIES (559 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 562 | 0 |
-| Non-empty `members[]` | **100.0%** | `██████████████████` | 562 | 0 |
-| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 562 | 0 |
-| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 562 | 0 |
-| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 562 | 0 |
+| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 559 | 0 |
+| Non-empty `members[]` | **100.0%** | `██████████████████` | 559 | 0 |
+| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 559 | 0 |
+| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 559 | 0 |
+| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 559 | 0 |
 
 ---
 
@@ -238,8 +238,19 @@ mannitol_inhaled
 | Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 600 | 0 |
 | Cites Canadian source | **100.0%** | `██████████████████` | 600 | 0 |
 | All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 600 | 0 |
-| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 600 | 0 |
+| §21.13 multi-family compliance | **99.0%** | `██████████████████` | 594 | 6 |
 | `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 600 | 0 |
+
+### ❌ §21.13 multi-family compliance — 6 entries remaining (1.0% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `diffuse_large_b_cell_lymphoma` | [hematology] {"rows":[{"line":"FIRST-LINE — R-CHOP (or R-CHP +polatuzumab)","missing":[]},{"line":"RELAPSED / REFRACTORY","missing":[]}]} |
+| `cervical_cancer_hpv` | [oncology] {"rows":[{"line":"INVASIVE CERVICAL CANCER — Stage-Directed","missing":[]}]} |
+| `lymphoma_hodgkin_nhl` | [oncology] {"rows":[{"line":"DIFFUSE LARGE B-CELL LYMPHOMA (DLBCL) — First-Line","missing":[]},{"line":"DLBCL — Relapsed/Refractory","missing":[]}]} |
+| `ovarian_cancer` | [oncology] {"rows":[{"line":"RECURRENT DISEASE — platinum sensitivity drives choice","missing":[]}]} |
+| `aml` | [oncology] {"rows":[{"line":"First-Line — Newly-Diagnosed AML (Fit; <70-75 with adequate function)","missing":[]},{"line":"Relapsed / Refractory (R/R AML)","missing":[]}]} |
+| `all` | [oncology] {"rows":[{"line":"Induction — Adult Ph-Negative ALL","missing":[]},{"line":"Relapsed / Refractory","missing":[]}]} |
 
 ---
 
@@ -337,6 +348,7 @@ Ordered by impact (size of gap × clinical importance):
 | Priority | Gap (entries) | Audit area |
 |---|---|---|
 | 2 | **199** | DRUGS — thin monitoring (<4 items): expand to 4-7 specific parameters/frequencies |
+| 4 | **6** | DISEASES.conditions — apply §21.13 multi-family fix |
 
 ---
 
