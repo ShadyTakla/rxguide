@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-16
-**Catalog snapshot:** 2,901 clickable entries (latest commit: `351ed5b on 2026-05-16`)
+**Catalog snapshot:** 2,901 clickable entries (latest commit: `2fc15fa on 2026-05-16`)
 
 ---
 
@@ -348,7 +348,7 @@ Records which catalogs have had an agent-driven verbatim (line-by-line) clinical
 |---|---|---|
 | **REFERENCE_TABLES** (100) | ✅ COMPLETE | All 100 tables reviewed line-by-line. 1 safety-critical fix (ped azithromycin suspension example was 2× over — `ped_antibiotic_suspensions`). Doses, equivalence ratios, CrCl/Child-Pugh thresholds, CPIC content, trial citations all verified against current Canadian + international guidelines. |
 | **DISEASES.conditions** (600) | 🟡 IN PROGRESS | Disease audit batches 1–29 + palliative (9) + travel medicine + empty-Drug-row sweep complete. Several SAFETY-CRITICAL fixes (rabies vaccine pregnancy mis-categorization, mefloquine pregnancy, wrong-vaccine agents). Remaining categories not yet fully verbatim-reviewed. |
-| **DRUG_FAMILIES** (563) | 🟡 IN PROGRESS | Tier 4 batches 1–2 complete (GLP-1 / Taxane / TTR Silencer + 6 content-completeness fixes). Verbatim line-by-line review of remaining families ongoing. |
+| **DRUG_FAMILIES** (563) | 🟡 IN PROGRESS | Full-catalog STRUCTURAL pass complete: all 563 comparison[] arrays audited for mis-keyed rows (18 distinct-drug key mismatches fixed) and duplicate rows (~57 same-drug duplicates removed across ~52 families); renderer patched to render members-style ({key,name,brand,notes}) comparison entries. Verbatim CLINICAL-CONTENT review complete through ~family 120 (alphabetical-ish order: biologics, antibiotics, anticoagulants, hematology, HIV families) — content fixes: If-channel ivabradine HR threshold, crisaborole Canadian age, roflumilast interaction direction, anifrolumab/rilonacept approval claims, TMP-SMX CYP2C9 mechanism, voxelotor withdrawal. Verbatim review of remaining ~440 families ongoing. |
 | **DRUGS** (1546) | 🟡 PARTIAL | AUDIT-CONTENT.md sampled 15 high-volume drug cards. Full verbatim review pending. |
 | **VACCINES** (56) | 🟡 PARTIAL | imvamune contraindications + interaction severity corrected. Full verbatim review pending. |
 
