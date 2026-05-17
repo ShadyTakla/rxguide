@@ -3,8 +3,8 @@
 > **Live status file** — auto-regenerated from `index.html` by `scripts/regenerate_audit_status.js`.
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
-**Last regenerated:** 2026-05-15
-**Catalog snapshot:** 2,900 clickable entries (latest commit: `095e26f on 2026-05-15`)
+**Last regenerated:** 2026-05-17
+**Catalog snapshot:** 2,877 clickable entries (latest commit: `522bd24 on 2026-05-17`)
 
 ---
 
@@ -21,9 +21,9 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 77.9% |
+| **DRUGS** | 1,546 | 100.0% | 100.0% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
-| **DRUG_FAMILIES** | 562 | 100.0% | 100.0% |
+| **DRUG_FAMILIES** | 539 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
 | **DISEASES.conditions** | 600 | 100.0% | 100.0% |
 
@@ -39,151 +39,13 @@
 | Canadian-source recognition | **100.0%** | `██████████████████` | 1,546 | 0 |
 | NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
 | PREG_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
-| FAMILY_MAP entry | **99.9%** | `██████████████████` | 1,545 | 1 |
+| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,546 | 0 |
 | FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `monitoring` depth ≥ 4 items | **87.1%** | `████████████████░░` | 1,347 | 199 |
+| `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 | `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `side_effects` depth ≥ 5 items | **77.9%** | `██████████████░░░░` | 1,205 | 341 |
-
-### ❌ FAMILY_MAP entry — 1 entries remaining (0.1% of total)
-
-```
-mannitol_inhaled
-```
-
-### ❌ `monitoring` depth ≥ 4 items — 199 entries remaining (12.9% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `diclofenac_topical` | {"count":3} |
-| `fusidic_acid` | {"count":3} |
-| `paromomycin` | {"count":3} |
-| `pentamidine` | {"count":3} |
-| `sucralfate` | {"count":3} |
-| `loratadine` | {"count":3} |
-| `guaifenesin` | {"count":3} |
-| `timolol_ophthalmic` | {"count":3} |
-| `ginger_supplement` | {"count":3} |
-| `zinc_oxide_topical` | {"count":3} |
-| `artificial_tears` | {"count":3} |
-| `phenylephrine_rectal` | {"count":3} |
-| `menthol_lozenge` | {"count":3} |
-| `witch_hazel` | {"count":3} |
-| `aluminum_hydroxide` | {"count":3} |
-| `vitamin_d` | {"count":2} |
-| `bacitracin_polymyxin` | {"count":3} |
-| `sunscreen` | {"count":1} |
-| `docosanol` | {"count":3} |
-| `methylergonovine` | {"count":3} |
-| `selexipag` | {"count":3} |
-| `mefenamic_acid` | {"count":3} |
-| `levocetirizine` | {"count":3} |
-| `nirsevimab` | {"count":3} |
-| `cefotaxime` | {"count":3} |
-| `fluphenazine` | {"count":3} |
-| `granisetron` | {"count":3} |
-| `ginger` | {"count":3} |
-| `benzocaine` | {"count":3} |
-| `zinc_oxide` | {"count":1} |
-| `vitamin_c` | {"count":3} |
-| `salicylic_acid` | {"count":1} |
-| `lidocaine` | {"count":3} |
-| `polymyxin_b_trimethoprim_ophth` | {"count":3} |
-| `polymyxin_b_gramicidin_ophth` | {"count":3} |
-| `fusidic_acid_ophth` | {"count":3} |
-| `prednisolone_ophth` | {"count":3} |
-| `olopatadine_ophth` | {"count":3} |
-| `timolol_ophth` | {"count":1} |
-| `diltiazem_topical` | {"count":3} |
-| `pilocarpine` | {"count":3} |
-| `brentuximab_vedotin` | {"count":3} |
-| `alfacalcidol` | {"count":3} |
-| `polatuzumab_vedotin` | {"count":3} |
-| `loncastuximab_tesirine` | {"count":3} |
-| `doxercalciferol` | {"count":3} |
-| `ecallantide` | {"count":3} |
-| `hyaluronic_acid_intravesical` | {"count":3} |
-| `chondroitin_sulfate_intravesical` | {"count":3} |
-| `marstacimab` | {"count":3} |
-| `concizumab` | {"count":3} |
-| `midodrine` | {"count":3} |
-| `dydrogesterone` | {"count":3} |
-| `tibolone` | {"count":2} |
-| `progesterone_micronized` | {"count":2} |
-| `testosterone_topical` | {"count":3} |
-| `arformoterol` | {"count":1} |
-| `levalbuterol` | {"count":2} |
-| `revefenacin` | {"count":1} |
-| `riociguat` | {"count":3} |
-| ... | 139 more entries |
-
-### ❌ `side_effects` depth ≥ 5 items — 341 entries remaining (22.1% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `metformin` | {"count":4} |
-| `edoxaban` | {"count":4} |
-| `nirmatrelvir_ritonavir` | {"count":4} |
-| `hydrocortisone` | {"count":4} |
-| `clotrimazole` | {"count":4} |
-| `fosfomycin` | {"count":4} |
-| `ethambutol` | {"count":4} |
-| `paromomycin` | {"count":4} |
-| `malathion` | {"count":4} |
-| `spinosad` | {"count":3} |
-| `miconazole` | {"count":3} |
-| `tinzaparin` | {"count":4} |
-| `guaifenesin` | {"count":4} |
-| `permethrin` | {"count":4} |
-| `ferrous_gluconate` | {"count":4} |
-| `vitamin_b6` | {"count":3} |
-| `probiotics` | {"count":3} |
-| `simethicone` | {"count":2} |
-| `bilastine` | {"count":3} |
-| `ferrous_bisglycinate` | {"count":4} |
-| `vitamin_c_supp` | {"count":4} |
-| `saline_nasal_spray` | {"count":4} |
-| `zinc_oxide_topical` | {"count":2} |
-| `artificial_tears` | {"count":3} |
-| `phenylephrine_rectal` | {"count":4} |
-| `glycerin_suppository` | {"count":3} |
-| `benzocaine_topical` | {"count":4} |
-| `menthol_lozenge` | {"count":4} |
-| `witch_hazel` | {"count":3} |
-| `deet` | {"count":4} |
-| `vitamin_d` | {"count":3} |
-| `bacitracin_polymyxin` | {"count":4} |
-| `sodium_cromoglycate` | {"count":3} |
-| `docosanol` | {"count":4} |
-| `fremanezumab` | {"count":4} |
-| `andexanet_alfa` | {"count":4} |
-| `ciprofloxacin_ophth` | {"count":4} |
-| `gatifloxacin_ophth` | {"count":3} |
-| `tobramycin_ophth` | {"count":4} |
-| `erythromycin_ophth` | {"count":3} |
-| `polymyxin_b_trimethoprim_ophth` | {"count":3} |
-| `polymyxin_b_gramicidin_ophth` | {"count":3} |
-| `fusidic_acid_ophth` | {"count":4} |
-| `brentuximab_vedotin` | {"count":3} |
-| `polatuzumab_vedotin` | {"count":3} |
-| `loncastuximab_tesirine` | {"count":2} |
-| `prasterone` | {"count":4} |
-| `lactase` | {"count":4} |
-| `obeticholic_acid` | {"count":3} |
-| `leucovorin` | {"count":4} |
-| `biotin` | {"count":4} |
-| `ublituximab` | {"count":3} |
-| `resmetirom` | {"count":1} |
-| `lumateperone` | {"count":3} |
-| `pimavanserin` | {"count":2} |
-| `iloperidone` | {"count":2} |
-| `amphetamine_salts` | {"count":2} |
-| `viloxazine` | {"count":2} |
-| `clonidine_er` | {"count":2} |
-| `guanfacine_er` | {"count":3} |
-| ... | 281 more entries |
+| `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
 
 ---
 
@@ -194,28 +56,22 @@ mannitol_inhaled
 | Required schema fields | **100.0%** | `██████████████████` | 56 | 0 |
 | Canadian-source (NACI / PHAC / CIG / Canada) | **100.0%** | `██████████████████` | 56 | 0 |
 | `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 56 | 0 |
-| `contraindications` depth ≥ 2 items | **98.2%** | `██████████████████` | 55 | 1 |
+| `contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 56 | 0 |
 | `interactions` depth ≥ 3 items | **100.0%** | `██████████████████` | 56 | 0 |
 | `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 56 | 0 |
 | `indications` depth ≥ 2 items | **100.0%** | `██████████████████` | 56 | 0 |
 
-### ❌ `contraindications` depth ≥ 2 items — 1 entries remaining (1.8% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `imvamune` | {"count":1} |
-
 ---
 
-## DRUG_FAMILIES (562 entries)
+## DRUG_FAMILIES (539 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 562 | 0 |
-| Non-empty `members[]` | **100.0%** | `██████████████████` | 562 | 0 |
-| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 562 | 0 |
-| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 562 | 0 |
-| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 562 | 0 |
+| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 539 | 0 |
+| Non-empty `members[]` | **100.0%** | `██████████████████` | 539 | 0 |
+| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 539 | 0 |
+| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 539 | 0 |
+| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 539 | 0 |
 
 ---
 
@@ -307,13 +163,7 @@ mannitol_inhaled
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **99.0%** | `██████████████████` | 99 | 1 |
-
-### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 1 entries remaining (1.0% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `topical_steroid_potency` | {"missing":["fluticasone"]} |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 100 | 0 |
 
 ---
 
@@ -334,9 +184,7 @@ mannitol_inhaled
 
 Ordered by impact (size of gap × clinical importance):
 
-| Priority | Gap (entries) | Audit area |
-|---|---|---|
-| 2 | **199** | DRUGS — thin monitoring (<4 items): expand to 4-7 specific parameters/frequencies |
+**No remaining audit gaps — catalog is 100% clean across all checked dimensions.**
 
 ---
 
