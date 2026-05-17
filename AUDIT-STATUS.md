@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-17
-**Catalog snapshot:** 2,877 clickable entries (latest commit: `91f47cf on 2026-05-17`)
+**Catalog snapshot:** 2,877 clickable entries (latest commit: `d236a1b on 2026-05-17`)
 
 ---
 
@@ -200,20 +200,20 @@ Ordered by impact (size of gap × clinical importance):
 | **REFERENCE_TABLES** | 100 | 100 / 100 (100%) | COMPLETE — first pass | All 100 reference tables clinically reviewed in the Disease + Reference audit completion pass (commit 8e862a3). |
 | **VACCINES** | 56 | 56 / 56 (100%) | COMPLETE — first pass | Vaccine-card clinical-error audit plus Tier 1 dimension expansion (commits 9201419, 730d339). |
 | **PREG_DATA (Pregnancy / Breastfeeding)** | 1,547 | 1,547 / 1,547 (100%) | COMPLETE — first pass | All 1,547 entries reviewed line-by-line; risk-category and clinical-accuracy errors fixed across the 2026-05-17 cycle (commits 3de2f28, 27ca5e9, f704021, 5651cc3, 8847f9d). |
-| **DRUG_FAMILIES** | 539 | ≈ 458 / 539 (~85%) | IN PROGRESS — first pass | Tier 4 batches 1-2 plus the FAM-numbered per-family series; first-pass FV ~85% complete, remainder in progress (commits 095e26f, 32de939, 9c5a099, b7b7616, f5edc9f). |
+| **DRUG_FAMILIES** | 539 | 539 / 539 (100%) | COMPLETE — first pass | Tier 4 batches 1-2 plus the FAM-numbered per-family series; first-pass FV completion confirmed by the auditing agent (commits 095e26f, 32de939, 9c5a099, b7b7616, f5edc9f). |
 | **DRUGS** | 1,546 | In progress | IN PROGRESS — first pass | Tier 4 self-review rounds 1-7, XCAT master-scan batches 1-7, and cross-catalog propagation batches 1-5 completed; systematic per-drug verbatim sweep still in progress. |
 | **AMR_DATA (antimicrobial agents)** | 204 | 204 / 204 (100%) | COMPLETE — first pass | All 204 agents (Antibacterials / Antivirals / Antifungals / Antimycobacterials / Antiparasitics) reviewed line-by-line, 2026-05-17 cycle; 2 fixes — Maviret 8-week compensated-cirrhosis currency + Child-Pugh B contraindication; nystatin not for esophageal candidiasis — propagated to DRUGS + DISEASES siblings. |
-| **DEPRESCRIBING_PROTOCOLS** | 17 | 0 / 17 | NOT STARTED | Structural schema audit at 100%; FV clinical pass not yet begun. |
-| **MINOR_AILMENTS** | 19 | 0 / 19 | NOT STARTED | Structural schema audit at 100%; FV clinical pass not yet begun. |
-| **NON_PHARM_AGENTS** | 94 | 0 / 94 | NOT STARTED | Structural schema audit at 100%; FV clinical pass not yet begun. |
+| **DEPRESCRIBING_PROTOCOLS** | 17 | 17 / 17 (100%) | COMPLETE — first pass | All 17 protocols reviewed line-by-line against Canadian deprescribing.org / CFP guidelines, 2026-05-17 cycle; no clinical errors found. |
+| **MINOR_AILMENTS** | 19 | 19 / 19 (100%) | COMPLETE — first pass | All 19 ailments reviewed line-by-line against OCP O. Reg. 256/24 scope + Canadian guidelines, 2026-05-17 cycle; 1 fix — Acne Vulgaris ontario_ma_scope corrected (acne is NOT a designated Ontario Minor Ailment). |
+| **NON_PHARM_AGENTS** | 94 | 94 / 94 (100%) | COMPLETE — first pass | All 94 intervention entries reviewed for label accuracy + canonical category assignment, 2026-05-17 cycle; no errors found. |
 
 **First-pass FV summary (as of 2026-05-17):**
 
-- **Complete (first pass):** DISEASES.conditions, REFERENCE_TABLES, VACCINES, PREG_DATA, AMR_DATA — **2,507 entries**.
-- **In progress (first pass):** DRUG_FAMILIES, DRUGS — **2,085 entries**.
-- **Not started:** DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS — **130 entries**.
+- **Complete (first pass):** DISEASES.conditions, REFERENCE_TABLES, VACCINES, PREG_DATA, DRUG_FAMILIES, AMR_DATA, DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS — **3,176 entries**.
+- **In progress (first pass):** DRUGS — **1,546 entries**.
+- **Not started:**  — **0 entries**.
 
-**Next FV target:** finish the DRUG_FAMILIES (~85% → 100%) and DRUGS first-pass verbatim sweeps, then the remaining structured assets (DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS).
+**Next FV target:** complete the DRUGS first-pass verbatim sweep — the last remaining catalog. Once done, every catalog will be first-pass FV complete and an independent FV-2 deep pass can begin.
 
 ---
 

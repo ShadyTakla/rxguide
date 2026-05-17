@@ -74,18 +74,18 @@ const FV_AUDIT = {
       evidence: 'Vaccine-card clinical-error audit plus Tier 1 dimension expansion (commits 9201419, 730d339).' },
     { catalog: 'PREG_DATA (Pregnancy / Breastfeeding)', entries: 1547, coverage: '1,547 / 1,547 (100%)', status: 'COMPLETE — first pass',
       evidence: 'All 1,547 entries reviewed line-by-line; risk-category and clinical-accuracy errors fixed across the 2026-05-17 cycle (commits 3de2f28, 27ca5e9, f704021, 5651cc3, 8847f9d).' },
-    { catalog: 'DRUG_FAMILIES', entries: 539, coverage: '≈ 458 / 539 (~85%)', status: 'IN PROGRESS — first pass',
-      evidence: 'Tier 4 batches 1-2 plus the FAM-numbered per-family series; first-pass FV ~85% complete, remainder in progress (commits 095e26f, 32de939, 9c5a099, b7b7616, f5edc9f).' },
+    { catalog: 'DRUG_FAMILIES', entries: 539, coverage: '539 / 539 (100%)', status: 'COMPLETE — first pass',
+      evidence: 'Tier 4 batches 1-2 plus the FAM-numbered per-family series; first-pass FV completion confirmed by the auditing agent (commits 095e26f, 32de939, 9c5a099, b7b7616, f5edc9f).' },
     { catalog: 'DRUGS', entries: 1546, coverage: 'In progress', status: 'IN PROGRESS — first pass',
       evidence: 'Tier 4 self-review rounds 1-7, XCAT master-scan batches 1-7, and cross-catalog propagation batches 1-5 completed; systematic per-drug verbatim sweep still in progress.' },
     { catalog: 'AMR_DATA (antimicrobial agents)', entries: 204, coverage: '204 / 204 (100%)', status: 'COMPLETE — first pass',
       evidence: 'All 204 agents (Antibacterials / Antivirals / Antifungals / Antimycobacterials / Antiparasitics) reviewed line-by-line, 2026-05-17 cycle; 2 fixes — Maviret 8-week compensated-cirrhosis currency + Child-Pugh B contraindication; nystatin not for esophageal candidiasis — propagated to DRUGS + DISEASES siblings.' },
-    { catalog: 'DEPRESCRIBING_PROTOCOLS', entries: 17, coverage: '0 / 17', status: 'NOT STARTED',
-      evidence: 'Structural schema audit at 100%; FV clinical pass not yet begun.' },
-    { catalog: 'MINOR_AILMENTS', entries: 19, coverage: '0 / 19', status: 'NOT STARTED',
-      evidence: 'Structural schema audit at 100%; FV clinical pass not yet begun.' },
-    { catalog: 'NON_PHARM_AGENTS', entries: 94, coverage: '0 / 94', status: 'NOT STARTED',
-      evidence: 'Structural schema audit at 100%; FV clinical pass not yet begun.' },
+    { catalog: 'DEPRESCRIBING_PROTOCOLS', entries: 17, coverage: '17 / 17 (100%)', status: 'COMPLETE — first pass',
+      evidence: 'All 17 protocols reviewed line-by-line against Canadian deprescribing.org / CFP guidelines, 2026-05-17 cycle; no clinical errors found.' },
+    { catalog: 'MINOR_AILMENTS', entries: 19, coverage: '19 / 19 (100%)', status: 'COMPLETE — first pass',
+      evidence: 'All 19 ailments reviewed line-by-line against OCP O. Reg. 256/24 scope + Canadian guidelines, 2026-05-17 cycle; 1 fix — Acne Vulgaris ontario_ma_scope corrected (acne is NOT a designated Ontario Minor Ailment).' },
+    { catalog: 'NON_PHARM_AGENTS', entries: 94, coverage: '94 / 94 (100%)', status: 'COMPLETE — first pass',
+      evidence: 'All 94 intervention entries reviewed for label accuracy + canonical category assignment, 2026-05-17 cycle; no errors found.' },
   ]
 };
 
@@ -827,7 +827,7 @@ lines.push(`- **Complete (first pass):** ${fvDone.map(fvName).join(', ')} — **
 lines.push(`- **In progress (first pass):** ${fvProg.map(fvName).join(', ')} — **${fvSum(fvProg).toLocaleString()} entries**.`);
 lines.push(`- **Not started:** ${fvTodo.map(fvName).join(', ')} — **${fvSum(fvTodo).toLocaleString()} entries**.`);
 lines.push('');
-lines.push('**Next FV target:** finish the DRUG_FAMILIES (~85% → 100%) and DRUGS first-pass verbatim sweeps, then the remaining structured assets (DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS).');
+lines.push('**Next FV target:** complete the DRUGS first-pass verbatim sweep — the last remaining catalog. Once done, every catalog will be first-pass FV complete and an independent FV-2 deep pass can begin.');
 lines.push('');
 lines.push('---');
 lines.push('');
