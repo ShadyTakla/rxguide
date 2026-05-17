@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-17
-**Catalog snapshot:** 2,877 clickable entries (latest commit: `522bd24 on 2026-05-17`)
+**Catalog snapshot:** 2,877 clickable entries (latest commit: `8847f9d on 2026-05-17`)
 
 ---
 
@@ -188,6 +188,35 @@ Ordered by impact (size of gap × clinical importance):
 
 ---
 
+## Tier 4 — Full-Verbatim (FV) Clinical Audit Coverage
+
+> **Manually maintained block** — edit `FV_AUDIT` in `scripts/regenerate_audit_status.js`, not this file (it is overwritten on every regeneration). Last updated: **2026-05-17**.
+> FV audit = line-by-line clinical-accuracy review of every field in every entry against the Canadian guideline hierarchy (SOGC > PHAC > Health Canada > CCS/CTS/CADTH > international). This is distinct from — and goes beyond — the structural passes tabulated above.
+> All catalogs below are tracked as **first pass (FV-1)**; an independent FV-2 deep pass may follow.
+
+| Catalog | Entries | FV-audited | Status | Evidence |
+|---|---|---|---|---|
+| **DISEASES.conditions** | 600 | 600 / 600 (100%) | COMPLETE — first pass | Line-by-line audit batches 1-14 plus full-catalog deep batches 25-27 (commits 7d69be7, 7ee3142, 9a6169a, 7dff031, f1771f3, 9f0f986, d294b83, f5051e9, 5d13dfa, 8e862a3). |
+| **REFERENCE_TABLES** | 100 | 100 / 100 (100%) | COMPLETE — first pass | All 100 reference tables clinically reviewed in the Disease + Reference audit completion pass (commit 8e862a3). |
+| **VACCINES** | 56 | 56 / 56 (100%) | COMPLETE — first pass | Vaccine-card clinical-error audit plus Tier 1 dimension expansion (commits 9201419, 730d339). |
+| **PREG_DATA (Pregnancy / Breastfeeding)** | 1,547 | 1,547 / 1,547 (100%) | COMPLETE — first pass | All 1,547 entries reviewed line-by-line; risk-category and clinical-accuracy errors fixed across the 2026-05-17 cycle (commits 3de2f28, 27ca5e9, f704021, 5651cc3, 8847f9d). |
+| **DRUG_FAMILIES** | 539 | ≈ 458 / 539 (~85%) | IN PROGRESS — first pass | Tier 4 batches 1-2 plus the FAM-numbered per-family series; first-pass FV ~85% complete, remainder in progress (commits 095e26f, 32de939, 9c5a099, b7b7616, f5edc9f). |
+| **DRUGS** | 1,546 | In progress | IN PROGRESS — first pass | Tier 4 self-review rounds 1-7, XCAT master-scan batches 1-7, and cross-catalog propagation batches 1-5 completed; systematic per-drug verbatim sweep still in progress. |
+| **AMR_DATA (antimicrobial agents)** | 204 | 0 / 204 | NOT STARTED | Structural audit complete (commit e330864); FV clinical pass not yet begun. |
+| **DEPRESCRIBING_PROTOCOLS** | 17 | 0 / 17 | NOT STARTED | Structural schema audit at 100%; FV clinical pass not yet begun. |
+| **MINOR_AILMENTS** | 19 | 0 / 19 | NOT STARTED | Structural schema audit at 100%; FV clinical pass not yet begun. |
+| **NON_PHARM_AGENTS** | 94 | 0 / 94 | NOT STARTED | Structural schema audit at 100%; FV clinical pass not yet begun. |
+
+**First-pass FV summary (as of 2026-05-17):**
+
+- **Complete (first pass):** DISEASES.conditions, REFERENCE_TABLES, VACCINES, PREG_DATA — **2,303 entries**.
+- **In progress (first pass):** DRUG_FAMILIES, DRUGS — **2,085 entries**.
+- **Not started:** AMR_DATA, DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS — **334 entries**.
+
+**Next FV target:** finish the DRUG_FAMILIES (~85% → 100%) and DRUGS first-pass verbatim sweeps, then AMR_DATA agents, then the remaining structured assets (DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS).
+
+---
+
 ## Tier 4 — Beyond Automated Audit (clinical review domain)
 
 The audit script measures **structural** integrity (schema, depth thresholds, cross-references, taxonomy, dates). It cannot measure:
@@ -201,7 +230,7 @@ The audit script measures **structural** integrity (schema, depth thresholds, cr
 - **Treatment-line ordering** (first-line vs second-line vs salvage).
 - **Diagnostic criteria currency** (DSM-5-TR, ICD-11, KDIGO, GOLD/GINA latest annual editions).
 
-**Tier 4 is the domain of human clinical review.** The audit script makes that review tractable by ensuring structural completeness so reviewers can focus on content rather than missing fields. AUDIT-STATUS.md at 100% across all dimensions means the catalog is *ready* for clinical review, not that clinical accuracy has been verified.
+**Tier 4 is the domain of human clinical review.** The audit script makes that review tractable by ensuring structural completeness so reviewers can focus on content rather than missing fields. AUDIT-STATUS.md at 100% across all *structural* dimensions means the catalog is *ready* for clinical review; the **FV coverage table above** tracks which catalogs have actually completed that first-pass clinical-accuracy review.
 
 Recommended human-review cadence: continuous as Canadian guidelines update (CCS/CTS/CAG/CSN/CRA/AMMI/SOGC/NACI/etc. publish annually or more frequently). Track changes via CHANGELOG; EDIT_HISTORY captures per-entity revision provenance.
 

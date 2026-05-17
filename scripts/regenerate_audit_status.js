@@ -51,6 +51,44 @@ const DEPR_REQUIRED = ['id', 'title', 'icon', 'color', 'overview', 'indications_
 const MA_REQUIRED = ['name', 'icon', 'category', 'ontario_ma_scope', 'assessment', 'treatment', 'references', 'patient_counselling', 'therapeutic_flow'];
 const NPA_CATEGORIES = new Set(['lifestyle', 'physical_therapy', 'psychotherapy', 'surgery_procedure', 'monitoring', 'medical_device', 'patient_education', 'supportive_care']);
 
+// ════════════════════════════════════════════════════════════
+// FULL-VERBATIM (FV) CLINICAL AUDIT COVERAGE — MANUALLY MAINTAINED
+// ════════════════════════════════════════════════════════════
+// The automated passes below measure STRUCTURAL integrity only. FV (full-
+// verbatim) audit is a line-by-line clinical-accuracy review of every field
+// in every entry against the Canadian guideline hierarchy (SOGC > PHAC >
+// Health Canada > CCS/CTS/CADTH > international). It CANNOT be auto-detected
+// from index.html, so this block is hand-maintained. UPDATE the rows whenever
+// an FV cycle completes, then re-run this script so AUDIT-STATUS.md stays
+// self-describing. Status values: 'COMPLETE — first pass' / 'IN PROGRESS —
+// first pass' / 'NOT STARTED'.
+const FV_AUDIT = {
+  asOf: '2026-05-17',
+  passLabel: 'first pass (FV-1)',
+  rows: [
+    { catalog: 'DISEASES.conditions', entries: 600, coverage: '600 / 600 (100%)', status: 'COMPLETE — first pass',
+      evidence: 'Line-by-line audit batches 1-14 plus full-catalog deep batches 25-27 (commits 7d69be7, 7ee3142, 9a6169a, 7dff031, f1771f3, 9f0f986, d294b83, f5051e9, 5d13dfa, 8e862a3).' },
+    { catalog: 'REFERENCE_TABLES', entries: 100, coverage: '100 / 100 (100%)', status: 'COMPLETE — first pass',
+      evidence: 'All 100 reference tables clinically reviewed in the Disease + Reference audit completion pass (commit 8e862a3).' },
+    { catalog: 'VACCINES', entries: 56, coverage: '56 / 56 (100%)', status: 'COMPLETE — first pass',
+      evidence: 'Vaccine-card clinical-error audit plus Tier 1 dimension expansion (commits 9201419, 730d339).' },
+    { catalog: 'PREG_DATA (Pregnancy / Breastfeeding)', entries: 1547, coverage: '1,547 / 1,547 (100%)', status: 'COMPLETE — first pass',
+      evidence: 'All 1,547 entries reviewed line-by-line; risk-category and clinical-accuracy errors fixed across the 2026-05-17 cycle (commits 3de2f28, 27ca5e9, f704021, 5651cc3, 8847f9d).' },
+    { catalog: 'DRUG_FAMILIES', entries: 539, coverage: '≈ 458 / 539 (~85%)', status: 'IN PROGRESS — first pass',
+      evidence: 'Tier 4 batches 1-2 plus the FAM-numbered per-family series; first-pass FV ~85% complete, remainder in progress (commits 095e26f, 32de939, 9c5a099, b7b7616, f5edc9f).' },
+    { catalog: 'DRUGS', entries: 1546, coverage: 'In progress', status: 'IN PROGRESS — first pass',
+      evidence: 'Tier 4 self-review rounds 1-7, XCAT master-scan batches 1-7, and cross-catalog propagation batches 1-5 completed; systematic per-drug verbatim sweep still in progress.' },
+    { catalog: 'AMR_DATA (antimicrobial agents)', entries: 204, coverage: '0 / 204', status: 'NOT STARTED',
+      evidence: 'Structural audit complete (commit e330864); FV clinical pass not yet begun.' },
+    { catalog: 'DEPRESCRIBING_PROTOCOLS', entries: 17, coverage: '0 / 17', status: 'NOT STARTED',
+      evidence: 'Structural schema audit at 100%; FV clinical pass not yet begun.' },
+    { catalog: 'MINOR_AILMENTS', entries: 19, coverage: '0 / 19', status: 'NOT STARTED',
+      evidence: 'Structural schema audit at 100%; FV clinical pass not yet begun.' },
+    { catalog: 'NON_PHARM_AGENTS', entries: 94, coverage: '0 / 94', status: 'NOT STARTED',
+      evidence: 'Structural schema audit at 100%; FV clinical pass not yet begun.' },
+  ]
+};
+
 // Smart splitter for §21.13 multi-family check
 const familyKeysSorted = Object.keys(DRUG_FAMILIES).sort((a, b) => b.length - a.length);
 function smartSplit(family) {
@@ -763,6 +801,34 @@ if (priorities.length === 0) {
   priorities.forEach(p => lines.push(`| ${p.p} | **${p.gap.toLocaleString()}** | ${p.area} |`));
 }
 lines.push('');
+// ─────────── FULL-VERBATIM (FV) CLINICAL AUDIT COVERAGE ───────────
+lines.push('---');
+lines.push('');
+lines.push('## Tier 4 — Full-Verbatim (FV) Clinical Audit Coverage');
+lines.push('');
+lines.push(`> **Manually maintained block** — edit \`FV_AUDIT\` in \`scripts/regenerate_audit_status.js\`, not this file (it is overwritten on every regeneration). Last updated: **${FV_AUDIT.asOf}**.`);
+lines.push('> FV audit = line-by-line clinical-accuracy review of every field in every entry against the Canadian guideline hierarchy (SOGC > PHAC > Health Canada > CCS/CTS/CADTH > international). This is distinct from — and goes beyond — the structural passes tabulated above.');
+lines.push(`> All catalogs below are tracked as **${FV_AUDIT.passLabel}**; an independent FV-2 deep pass may follow.`);
+lines.push('');
+lines.push('| Catalog | Entries | FV-audited | Status | Evidence |');
+lines.push('|---|---|---|---|---|');
+for (const r of FV_AUDIT.rows) {
+  lines.push(`| **${r.catalog}** | ${r.entries.toLocaleString()} | ${r.coverage} | ${r.status} | ${r.evidence} |`);
+}
+lines.push('');
+const fvDone = FV_AUDIT.rows.filter(r => r.status.startsWith('COMPLETE'));
+const fvProg = FV_AUDIT.rows.filter(r => r.status.startsWith('IN PROGRESS'));
+const fvTodo = FV_AUDIT.rows.filter(r => r.status.startsWith('NOT STARTED'));
+const fvSum = rs => rs.reduce((n, r) => n + r.entries, 0);
+const fvName = r => r.catalog.replace(/\s*\(.*\)/, '');
+lines.push(`**First-pass FV summary (as of ${FV_AUDIT.asOf}):**`);
+lines.push('');
+lines.push(`- **Complete (first pass):** ${fvDone.map(fvName).join(', ')} — **${fvSum(fvDone).toLocaleString()} entries**.`);
+lines.push(`- **In progress (first pass):** ${fvProg.map(fvName).join(', ')} — **${fvSum(fvProg).toLocaleString()} entries**.`);
+lines.push(`- **Not started:** ${fvTodo.map(fvName).join(', ')} — **${fvSum(fvTodo).toLocaleString()} entries**.`);
+lines.push('');
+lines.push('**Next FV target:** finish the DRUG_FAMILIES (~85% → 100%) and DRUGS first-pass verbatim sweeps, then AMR_DATA agents, then the remaining structured assets (DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS).');
+lines.push('');
 lines.push('---');
 lines.push('');
 lines.push('## Tier 4 — Beyond Automated Audit (clinical review domain)');
@@ -778,7 +844,7 @@ lines.push('- **Pregnancy-category correctness** beyond presence of the structur
 lines.push('- **Treatment-line ordering** (first-line vs second-line vs salvage).');
 lines.push('- **Diagnostic criteria currency** (DSM-5-TR, ICD-11, KDIGO, GOLD/GINA latest annual editions).');
 lines.push('');
-lines.push('**Tier 4 is the domain of human clinical review.** The audit script makes that review tractable by ensuring structural completeness so reviewers can focus on content rather than missing fields. AUDIT-STATUS.md at 100% across all dimensions means the catalog is *ready* for clinical review, not that clinical accuracy has been verified.');
+lines.push('**Tier 4 is the domain of human clinical review.** The audit script makes that review tractable by ensuring structural completeness so reviewers can focus on content rather than missing fields. AUDIT-STATUS.md at 100% across all *structural* dimensions means the catalog is *ready* for clinical review; the **FV coverage table above** tracks which catalogs have actually completed that first-pass clinical-accuracy review.');
 lines.push('');
 lines.push('Recommended human-review cadence: continuous as Canadian guidelines update (CCS/CTS/CAG/CSN/CRA/AMMI/SOGC/NACI/etc. publish annually or more frequently). Track changes via CHANGELOG; EDIT_HISTORY captures per-entity revision provenance.');
 lines.push('');
