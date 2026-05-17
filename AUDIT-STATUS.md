@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-17
-**Catalog snapshot:** 2,877 clickable entries (latest commit: `8847f9d on 2026-05-17`)
+**Catalog snapshot:** 2,877 clickable entries (latest commit: `91f47cf on 2026-05-17`)
 
 ---
 
@@ -202,18 +202,18 @@ Ordered by impact (size of gap × clinical importance):
 | **PREG_DATA (Pregnancy / Breastfeeding)** | 1,547 | 1,547 / 1,547 (100%) | COMPLETE — first pass | All 1,547 entries reviewed line-by-line; risk-category and clinical-accuracy errors fixed across the 2026-05-17 cycle (commits 3de2f28, 27ca5e9, f704021, 5651cc3, 8847f9d). |
 | **DRUG_FAMILIES** | 539 | ≈ 458 / 539 (~85%) | IN PROGRESS — first pass | Tier 4 batches 1-2 plus the FAM-numbered per-family series; first-pass FV ~85% complete, remainder in progress (commits 095e26f, 32de939, 9c5a099, b7b7616, f5edc9f). |
 | **DRUGS** | 1,546 | In progress | IN PROGRESS — first pass | Tier 4 self-review rounds 1-7, XCAT master-scan batches 1-7, and cross-catalog propagation batches 1-5 completed; systematic per-drug verbatim sweep still in progress. |
-| **AMR_DATA (antimicrobial agents)** | 204 | 0 / 204 | NOT STARTED | Structural audit complete (commit e330864); FV clinical pass not yet begun. |
+| **AMR_DATA (antimicrobial agents)** | 204 | 204 / 204 (100%) | COMPLETE — first pass | All 204 agents (Antibacterials / Antivirals / Antifungals / Antimycobacterials / Antiparasitics) reviewed line-by-line, 2026-05-17 cycle; 2 fixes — Maviret 8-week compensated-cirrhosis currency + Child-Pugh B contraindication; nystatin not for esophageal candidiasis — propagated to DRUGS + DISEASES siblings. |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | 0 / 17 | NOT STARTED | Structural schema audit at 100%; FV clinical pass not yet begun. |
 | **MINOR_AILMENTS** | 19 | 0 / 19 | NOT STARTED | Structural schema audit at 100%; FV clinical pass not yet begun. |
 | **NON_PHARM_AGENTS** | 94 | 0 / 94 | NOT STARTED | Structural schema audit at 100%; FV clinical pass not yet begun. |
 
 **First-pass FV summary (as of 2026-05-17):**
 
-- **Complete (first pass):** DISEASES.conditions, REFERENCE_TABLES, VACCINES, PREG_DATA — **2,303 entries**.
+- **Complete (first pass):** DISEASES.conditions, REFERENCE_TABLES, VACCINES, PREG_DATA, AMR_DATA — **2,507 entries**.
 - **In progress (first pass):** DRUG_FAMILIES, DRUGS — **2,085 entries**.
-- **Not started:** AMR_DATA, DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS — **334 entries**.
+- **Not started:** DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS — **130 entries**.
 
-**Next FV target:** finish the DRUG_FAMILIES (~85% → 100%) and DRUGS first-pass verbatim sweeps, then AMR_DATA agents, then the remaining structured assets (DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS).
+**Next FV target:** finish the DRUG_FAMILIES (~85% → 100%) and DRUGS first-pass verbatim sweeps, then the remaining structured assets (DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS, NON_PHARM_AGENTS).
 
 ---
 
