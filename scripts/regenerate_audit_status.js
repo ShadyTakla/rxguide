@@ -78,6 +78,8 @@ const FV_AUDIT = {
       evidence: 'Tier 4 batches 1-2 plus the FAM-numbered per-family series; first-pass FV completion confirmed by the auditing agent (commits 095e26f, 32de939, 9c5a099, b7b7616, f5edc9f).' },
     { catalog: 'DRUGS', entries: 1546, coverage: 'In progress', status: 'IN PROGRESS — first pass',
       evidence: 'Tier 4 self-review rounds 1-7, XCAT master-scan batches 1-7, and cross-catalog propagation batches 1-5 completed; systematic per-drug verbatim sweep still in progress.' },
+    { catalog: 'NAPRA_ODB_DATA (drug scheduling / ODB coverage)', entries: 1547, coverage: '0 / 1,547', status: 'NOT STARTED',
+      evidence: 'Structural audit confirms a NAPRA_ODB_DATA entry exists for every drug (100%); FV review of NAPRA schedule accuracy + ODB coverage status / LU codes not yet begun. ~1,547-entry catalog — batched multi-cycle FV review required.' },
     { catalog: 'AMR_DATA (antimicrobial agents)', entries: 204, coverage: '204 / 204 (100%)', status: 'COMPLETE — first pass',
       evidence: 'All 204 agents (Antibacterials / Antivirals / Antifungals / Antimycobacterials / Antiparasitics) reviewed line-by-line, 2026-05-17 cycle; 2 fixes — Maviret 8-week compensated-cirrhosis currency + Child-Pugh B contraindication; nystatin not for esophageal candidiasis — propagated to DRUGS + DISEASES siblings.' },
     { catalog: 'DEPRESCRIBING_PROTOCOLS', entries: 17, coverage: '17 / 17 (100%)', status: 'COMPLETE — first pass',
@@ -827,7 +829,7 @@ lines.push(`- **Complete (first pass):** ${fvDone.map(fvName).join(', ')} — **
 lines.push(`- **In progress (first pass):** ${fvProg.map(fvName).join(', ')} — **${fvSum(fvProg).toLocaleString()} entries**.`);
 lines.push(`- **Not started:** ${fvTodo.map(fvName).join(', ')} — **${fvSum(fvTodo).toLocaleString()} entries**.`);
 lines.push('');
-lines.push('**Next FV target:** complete the DRUGS first-pass verbatim sweep — the last remaining catalog. Once done, every catalog will be first-pass FV complete and an independent FV-2 deep pass can begin.');
+lines.push('**Next FV target:** complete the DRUGS first-pass verbatim sweep, then NAPRA_ODB_DATA (drug scheduling + ODB coverage). Both are ~1,547-entry catalogs that require batched, multi-cycle FV review — they cannot be completed in a single pass.');
 lines.push('');
 lines.push('---');
 lines.push('');
