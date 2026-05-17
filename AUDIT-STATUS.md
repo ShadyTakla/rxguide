@@ -3,8 +3,8 @@
 > **Live status file** — auto-regenerated from `index.html` by `scripts/regenerate_audit_status.js`.
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
-**Last regenerated:** 2026-05-16
-**Catalog snapshot:** 2,877 clickable entries (latest commit: `8f0cd06 on 2026-05-16`)
+**Last regenerated:** 2026-05-17
+**Catalog snapshot:** 2,877 clickable entries (latest commit: `1b0a350 on 2026-05-16`)
 
 ---
 
