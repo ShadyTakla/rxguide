@@ -1827,4 +1827,54 @@ Incomplete fixes must not be merged.
 
 ---
 
-**End of guide.** Last updated 2026-05-14. If you make architectural changes, update this document in the same PR.
+## 27. FV Audit Footer Rule — per-tab "Last FV Audit" badge (added 2026-05-18)
+
+### 27.1 Rule
+
+**Every app tab that has been through a Full Verbatim (FV) Tier 4 clinical audit MUST display a "Last FV Audit: [Month DD YYYY]" badge in the rendered UI.** This badge is the in-app signal to pharmacists, students, and future agents that clinical content accuracy has been manually verified.
+
+### 27.2 Where to place the badge
+
+Each tab panel div (e.g., `#tab-formulary`, `#tab-diseases`, `#tab-vaccinations`, `#tab-antimicrobials`, etc.) should contain a `<div class="fv-audit-footer">` element at the **bottom** of the panel's static markup (just before or after the content render div):
+
+```html
+<div class="fv-audit-footer">🔎 Last FV Clinical Audit: May 18, 2026</div>
+```
+
+The CSS class `.fv-audit-footer` is defined in the `<style>` block:
+
+```css
+.fv-audit-footer {
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-top: 18px;
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+  text-align: right;
+}
+```
+
+### 27.3 When to update the badge
+
+- **After each FV Tier 4 audit cycle** for that tab, update the date in the badge to reflect the last completed audit.
+- The badge date should match the entry in `AUDIT-CONTENT.md` for that section's most recent FV cycle.
+- If a tab has NOT been FV-audited, do NOT add a badge (absence = not yet reviewed).
+
+### 27.4 Which tabs have badges as of 2026-05-18
+
+| Tab | Badge date | Cycle |
+|---|---|---|
+| `#tab-formulary` (NAPRA/ODB) | May 18, 2026 | Cycle 3 |
+| `#tab-diseases` | In progress — Cycle 4 (Second Pass) | — |
+
+### 27.5 Future agent instruction
+
+When completing any FV audit cycle:
+1. Update `AUDIT-CONTENT.md` with findings.
+2. Update the `.fv-audit-footer` badge date in the corresponding tab panel in `index.html`.
+3. If no badge exists yet for that tab, add one following the template in §27.2.
+4. Commit both changes in the same PR.
+
+---
+
+**End of guide.** Last updated 2026-05-18. If you make architectural changes, update this document in the same PR.
