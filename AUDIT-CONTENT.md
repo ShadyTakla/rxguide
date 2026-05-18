@@ -88,7 +88,7 @@ All 1,546 drug cards passed FV audit with **zero material errors found**. The en
 - Arsenic trioxide: APL-specific PML-RARα targeting, QT + differentiation syndrome dual BBW, ATRA combination — accurate
 - Bexarotene: preemptive fenofibrate + levothyroxine mandatory (hypertriglyceridemia + central hypothyroidism), retinoid teratogen BBW — accurate
 
-**FV Footer badge added to Drugs tab in index.html on 2026-05-18.**
+**FV Footer badge added to the `#drug-panel` overlay (bottom of every drug card) in index.html on 2026-05-18.** Drug cards render as modal overlays, not in a dedicated tab panel, so the badge is placed at the foot of the overlay. A secondary copy is retained in the Interactions tab.
 
 ---
 
@@ -1042,7 +1042,7 @@ All 539 families across the following major categories were reviewed and confirm
 
 ### Notes on drug family tab badge
 
-DRUG_FAMILIES catalog content is rendered as modal overlays (drug family cards), not within a dedicated tab panel. No tab-panel footer badge is applicable for this catalog section. The audit date is recorded here in AUDIT-CONTENT.md.
+DRUG_FAMILIES catalog content is rendered as modal overlays (drug family cards), not within a dedicated tab panel. **FV Footer badge added to the `#family-panel` overlay (bottom of every family card) in index.html on 2026-05-18.** The audit date is also recorded here in AUDIT-CONTENT.md.
 
 ### Verdict
 
