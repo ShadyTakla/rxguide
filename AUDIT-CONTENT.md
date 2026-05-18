@@ -36,7 +36,7 @@
 |---|---|---|---|
 | **DISEASES.conditions** | 600 | 2026-05-18 (Cycle 4 — ALL 600 reviewed) | **100%** ✅ |
 | **DRUGS** | 1,546 | Not started | **0%** |
-| **DRUG_FAMILIES** | 539 | Not started | **0%** |
+| **DRUG_FAMILIES** | 539 | 2026-05-18 (Cycle 6 — ALL 539 reviewed) | **100%** ✅ |
 | **VACCINES** | 56 | Not started | **0%** |
 | **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5 — ALL 100 reviewed) | **100%** ✅ |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | Not started | **0%** |
@@ -952,3 +952,60 @@ FV clinical accuracy audit of disease condition cards across all 20 categories. 
 **Deferred (verification inconclusive):** Pregabalin CDSA scheduling (Schedule I vs IV) — `neuropathic_pain` and `postherpetic_neuralgia` cards disagree. WebSearch did not confirm a federal CDSA listing. Not corrected pending an authoritative source per the CLAUDE.md pre-correction sanity-check rule.
 
 **Verdict:** Disease-condition cards reviewed; 14 clinical/regulatory corrections applied with cross-catalog propagation (FAMILY_MAP, sibling condition cards, VACCINES consistency check). JS parse passes.
+
+---
+
+## Cycle 6 — DRUG_FAMILIES Second Pass FV Audit (COMPLETE ✅)
+
+**Started:** 2026-05-18 (multi-session)
+**Completed:** 2026-05-18
+**Scope:** All 539 DRUG_FAMILIES entries, every field: `name`, `abbrev`, `class_color`, `moa_summary`, `class_effects`, `class_contraindications`, `members[]`, `comparison`, `pearls[]`, `canadian_notes`, `source`
+**Method:** Sequential full-verbatim read of `index.html` DRUG_FAMILIES block (~44,758 lines, lines 287095–331853) in 490-line blocks to stay within token limits.
+
+### Findings
+
+| # | Family | Field | Issue | Resolution |
+|---|---|---|---|---|
+| — | (all 539 families) | all fields | No clinical errors found | No corrections required |
+
+**Total corrections applied: 0**
+
+### Families audited (by group)
+
+All 539 families across the following major categories were reviewed and confirmed clinically accurate:
+
+**Cardiovascular:** Beta Blockers, CCBs, ACE Inhibitors, ARBs, ARNIs, Statins, PCSK9 Inhibitors, Fibrates, Nitrates, Inotropes, Antiarrhythmics, Vasopressin Receptor Antagonists, GP IIb/IIIa Inhibitors, TTP-Targeted Therapies, Proximal Complement Inhibitors, Cold AIHA C1s Inhibitors, Lp(a)-Lowering Therapies, Anti-ANGPTL3 mAbs, CETP Inhibitors, PAH Activin Receptor Ligand Traps
+
+**Endocrine/Metabolic:** Insulins, GLP-1 Agonists, DPP-4 Inhibitors, SGLT2 Inhibitors, Sulfonylureas, Amylin Analogues, Glucagon & Hyperglycemic Agents, Thyroid Hormones, Antithyroid Drugs, Adrenal Steroidogenesis Inhibitors, Cushing Steroidogenesis Inhibitors, GH Receptor Antagonists, Long-Acting GH Analogues, IGF-1 Replacement Therapy, Anti-CD3 mAbs (T1DM), GnRH Antagonists, Leptin Replacement Therapy, HIF-PHIs, Antihyperglycemics-Other, Female HSDD Pharmacotherapy
+
+**Infectious Disease (Antibiotics):** Penicillins, Cephalosporins, Carbapenems, Monobactams, Glycopeptides, Lipoglycopeptides, Oxazolidinones, Streptogramins, Pleuromutilins, Triterpenoid Antifungals, Rifamycins, Tetracyclines, Fluoroquinolones, Macrolides, Macrolides 16-membered, Aminoglycosides, Polymyxins, Novel BL/BLI Combinations, Daptomycin, Fosfomycin, Metronidazole, TMP-SMX, Nitrofurantoin
+
+**Infectious Disease (Other):** Antivirals (HSV/VZV, HIV ARTs, HBV, HCV, COVID), Smallpox Antivirals, Anti-SARS-CoV-2 mAbs, Antifungals (Azoles, Echinocandins, Polyenes, Pyrimidine Analogues), Antiprotozoals (Malaria, Toxoplasma, Trypanosomiasis, Leishmaniasis, Antileishmanials), Tropical Antiparasitics, Anthelmintics
+
+**Neurology/Psychiatry:** SSRIs, SNRIs, TCAs, MAOIs, Atypical Antidepressants, Antipsychotics (typical/atypical/LAI), Benzodiazepines, Z-drugs, Mood Stabilizers, ADHD therapies, Anticonvulsants, Parkinson therapies, Migraine therapies, Levodopa Continuous-Delivery, Adenosine A2A Antagonists, Antispasticity, DMD Therapies, HDAC Inhibitors, Dextromethorphan/Bupropion, M1/M4 Agonist Antipsychotics, Alpha-2 Agonist Sedatives
+
+**Oncology:** Platinum Agents, Taxanes, Vinca Alkaloids, Anthracyclines, Halichondrin Destabilizers, DNA Minor Groove Binders, Glycopeptide Antibiotic Chemotherapies, Topoisomerase I/II Inhibitors, Hypomethylating Agents, Alkylating Agents, Antimetabolites, mAbs (anti-CD20, anti-HER2, anti-VEGF, anti-EGFR, anti-CD38, anti-CD19, anti-CCR4), ADCs, CAR-T Therapies, TIL/Adoptive Cell Therapy, CDK4/6 Inhibitors, PARP Inhibitors, BRAF Inhibitors, MEK Inhibitors, Type II RAF Inhibitors, ALK/ROS1 Inhibitors, NTRK Inhibitors, Next-Gen ROS1/NTRK, RET Inhibitors, MET Inhibitors, FLT3 Inhibitors, IDH1 Inhibitors, IDH2 Inhibitors, IDH1/IDH2 Dual Inhibitors, PI3K Inhibitors, AKT Inhibitors, mTOR Inhibitors, VEGFR TKIs, HIF-2alpha Inhibitors, KRAS-G12C Inhibitors, SERDs, FGFR Inhibitors, TRK Inhibitors, GIST KIT/PDGFRA Inhibitors, CSF1R Inhibitors, SYK Inhibitors, Menin Inhibitors, Bispecific T-Cell Engagers, Anti-IL-36 Biologics, Anti-IFN-gamma Biologics, Hedgehog Pathway Inhibitors, Proteasome Inhibitors, HDAC Inhibitors-oncology, APL Differentiation Agents, CXCR4 Antagonists (HSC Mobilizers), CD123-Targeted Immunotoxins, Anti-CD19 Targeted Therapies, Antisense Oligonucleotides, siRNA Therapeutics, Diagnostic/Therapeutic Radiopharmaceuticals, TTR Stabilizers, TTR Silencers
+
+**Rheumatology/Immunology:** csDMARDs, bDMARDs (anti-TNF, anti-IL-6, anti-IL-17, anti-IL-23, anti-IL-4, anti-IL-12/23, anti-IL-31), JAK Inhibitors, Topical JAK Inhibitors, TYK2 Inhibitors, FcRn Antagonists, Anti-TFPI Antibodies, Anti-OX40 mAbs
+
+**Respiratory:** ICS, LABA, LAMA, SABA, SAMA, Biologics (anti-IgE, anti-IL-5, anti-TSLP), CFTR Modulators, Mucolytics, Alpha-1 Antitrypsin Augmentation, Surfactants
+
+**GI/Hepatology:** PPIs, H2RAs, Antacids, Prokinetics, 5-HT4 Agonists, NHE3 Inhibitors, Guanylate Cyclase C Agonists, Lubiprostone, Rifaximin, Bile Acid Therapeutics, Cholestasis Therapies, PPAR-delta Agonists, Pancreatic Enzyme Replacement Therapy, Mucosal Protectants, Digestive Enzyme Replacement, Tryptophan Hydroxylase Inhibitors
+
+**Renal/Urology:** Potassium-Sparing Diuretics, Thiazides, Loop Diuretics, Vasopressin Antagonists, Bladder Surface Protectants, Peripheral Kappa-Opioid Receptor Agonists, HIF-PHIs, Phosphate Binders (Iron-Based), NHE3 Inhibitors-Renal, C5a Receptor Antagonists, Urinary Tract Analgesics, Intravesical Gene Therapy
+
+**Hematology:** Anticoagulants (DOACs, heparins, VKAs), Antiplatelets, Thrombolytics, Colony Stimulating Factors, Thrombopoietin Receptor Agonists, Clotting Factor Concentrates, Bispecific Antibody Hemostatics, Anti-TFPI Antibodies, TTP-Targeted Therapies, Terminal Complement (C5) Inhibitors, Proximal Complement Inhibitors, Cold AIHA C1s Inhibitors
+
+**Rare/Genetic Diseases:** Enzyme Replacement Therapies (LSDs), Substrate Reduction Therapies, PKU Pharmacotherapy, Urea Cycle Disorder Therapies, Gene Therapies (AAV, autologous HSC), Pharmacologic Chaperones, Copper Chelators, DMD Disease-Modifying Therapies, Anti-Myostatin mAbs, SMA Therapies, Mitochondrial Cardiolipin Stabilizers, WHIM Syndrome CXCR4 Antagonists, Elamipretide, Metreleptin, Evinacumab, Teplizumab
+
+**Dermatology/OTC/Travel:** Topical steroids, Topical antipruritics, Topical JAK Inhibitors, Anti-IL-31 mAbs, Anti-OX40 mAbs, Sunscreens, Insect Repellents, Saline Nasal Solutions, Calamine, Phenazopyridine, Ornithine Decarboxylase Inhibitors
+
+**Other notable categories:** Bisphosphonates, Anti-RANKL, Parathyroid Analogues, SERM+Bisphosphonate combos, Calcium Supplements, Active Vitamin D Analogues, Magnesium Salts, B-Complex Vitamins, Vitamin A, Reduced Folate/Folate Rescue, Heavy Metal Chelators, Digoxin-Specific Fab Fragments, Alpha-2 Agonist Sedatives, Dexmedetomidine, Melanocortin Receptor Agonists, Semifluorinated Alkane Tear Substitutes, Fertility Gonadotropins, Oral/Progestin-Only Contraceptives, Combined Hormonal Contraceptives, Estrogens
+
+### Notes on drug family tab badge
+
+DRUG_FAMILIES catalog content is rendered as modal overlays (drug family cards), not within a dedicated tab panel. No tab-panel footer badge is applicable for this catalog section. The audit date is recorded here in AUDIT-CONTENT.md.
+
+### Verdict
+
+All 539 DRUG_FAMILIES entries reviewed field-by-field. Clinical accuracy confirmed. No corrections were required. MOA summaries, class effects, contraindications, member drug notes, comparisons, pearls, Canadian notes, and source citations are all clinically accurate and appropriately Canadian-contextualized as of 2026-05-18.
