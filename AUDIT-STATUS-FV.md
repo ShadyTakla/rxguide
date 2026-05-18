@@ -48,12 +48,12 @@ Consolidated full-verbatim (line-by-line clinical-content) review status across 
 | **DISEASES.conditions** (600) | ✅ 100% | other branch | Verbatim review complete (per branch coordination — note: `AUDIT-STATUS.md` auto-generated Tier-4 log is stale and still shows IN PROGRESS). |
 | **PREG_DATA** | ✅ 100% | other branch | Pregnancy/lactation data verbatim-reviewed (per branch coordination). |
 | **NAPRA_ODB_DATA** | 🟡 IN PROGRESS | full-app-audit branch | Actively being verbatim-audited by the full-app-audit branch — do not duplicate. |
-| **MINOR_AILMENTS** (19) | 🔄 IN PROGRESS | this branch | FV first pass started 2026-05-18. |
-| **DEPRESCRIBING_PROTOCOLS** (17) | 🔄 IN PROGRESS | this branch | FV first pass started 2026-05-18. |
+| **MINOR_AILMENTS** (19) | ✅ 100% | this branch | FV first pass complete; 6 fixes (5 ontario_ma_scope contradictions + 1 pregnancy-category attribution). |
+| **DEPRESCRIBING_PROTOCOLS** (17) | ✅ 100% | this branch | FV first pass complete; 1 fix (spurious gabapentinoid boxed-warning claim). |
 
 **Structurally validated, no prose FV pass required:** `FAMILY_MAP` (routing table — orphan resolution checked by the audit script), `SCORE_PATTERNS`, `EMPIRIC_THERAPY_CATEGORIES`, `NON_PHARM_AGENTS`, `EDIT_HISTORY`, `CHANGELOG`, and other helper/config objects.
 
-**Net remaining FV work:** MINOR_AILMENTS + DEPRESCRIBING_PROTOCOLS (this branch, in progress) and NAPRA_ODB_DATA (full-app-audit branch). DRUGS FV status needs re-confirmation. Everything else is FV-complete.
+**Net remaining FV work:** NAPRA_ODB_DATA (full-app-audit branch, in progress). DRUGS FV status needs re-confirmation. All other catalogs are FV-complete (first pass).
 
 ---
 
@@ -68,8 +68,8 @@ Agent-driven full-verbatim (line-by-line) **FIRST-PASS** clinical-content audit 
 | **EMPIRIC_THERAPY_SYNDROMES — Antimicrobials syndrome view** (67) | ✅ 100% | Fix: Bacterial Prostatitis card — doxycycline-duration internal contradiction resolved (STI-related prostatitis 7→10–14 days). |
 | **VACCINES** (56) | ✅ 100% | Fix: Tdap-in-pregnancy timing corrected to the NACI 27–32-week window (Adacel, Td, Adacel-Polio card pearls). |
 | **SCORING_TOOLS** (19) | ✅ 100% | All 19 clinical calculators verified (component point values, score maxima, interpretation thresholds) — 0 errors found. |
-| **MINOR_AILMENTS** (19) | 🔄 in progress | FV first pass started 2026-05-18. |
-| **DEPRESCRIBING_PROTOCOLS** (17) | 🔄 in progress | FV first pass started 2026-05-18. |
+| **MINOR_AILMENTS** (19) | ✅ 100% | 6 fixes — Allergic Rhinitis budesonide pregnancy-category attribution; Tick Bite / Conjunctivitis / Acne / Pinworms ontario_ma_scope contradictions; Herpes Zoster Shingrix funding age (65–70). |
+| **DEPRESCRIBING_PROTOCOLS** (17) | ✅ 100% | 1 fix — gabapentinoid respiratory-depression warning mislabelled "BLACK BOX" (corrected to a Warnings/Precautions labelling change). |
 
 ### Fixes deployed this branch (FV first pass)
 
@@ -79,6 +79,8 @@ Agent-driven full-verbatim (line-by-line) **FIRST-PASS** clinical-content audit 
 | `5f70bb6` | AMR_DATA, DRUG_FAMILIES, DRUGS | Fabricated "FIRST trial / CefBacT" cefazolin-vs-cloxacillin citations → CloCeBa RCT; tedizolid 5→6-day course. |
 | `1096eac` | VACCINES | Tdap-in-pregnancy timing 21–32 → 27–32 weeks (NACI window). |
 | `8746185` | EMPIRIC_THERAPY_SYNDROMES | Prostatitis doxycycline duration 7 → 10–14 days for STI prostatitis. |
+| `2f5b510` | MINOR_AILMENTS | 6 fixes — budesonide pregnancy-category attribution + Tick Bite/Conjunctivitis/Acne/Pinworms ontario_ma_scope contradictions + Herpes Zoster Shingrix funding age. |
+| `22c5764` | DEPRESCRIBING_PROTOCOLS | Gabapentinoid spurious boxed-warning claim corrected. |
 
 ---
 
