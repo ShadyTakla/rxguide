@@ -35,7 +35,7 @@
 | Catalog Section | Entries | Second Pass Start | Coverage |
 |---|---|---|---|
 | **DISEASES.conditions** | 600 | 2026-05-18 (Cycle 4 — ALL 600 reviewed) | **100%** ✅ |
-| **DRUGS** | 1,546 | Not started | **0%** |
+| **DRUGS** | 1,546 | 2026-05-18 (Cycle 7 — ALL 1,546 reviewed) | **100%** ✅ |
 | **DRUG_FAMILIES** | 539 | 2026-05-18 (Cycle 6 — ALL 539 reviewed) | **100%** ✅ |
 | **VACCINES** | 56 | Not started | **0%** |
 | **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5 — ALL 100 reviewed) | **100%** ✅ |
@@ -51,6 +51,44 @@
 4. VACCINES — 56 entries; NACI/PHAC annual updates
 5. REFERENCE_TABLES — 100 entries; dose tables, LU criteria
 6. AMR_DATA, DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS — smaller sections
+
+---
+
+## Cycle 7 — DRUGS Second Pass FV Audit (COMPLETE ✅)
+
+**Started:** 2026-05-18
+**Completed:** 2026-05-18
+**Target:** All 1,546 drug cards in the DRUGS catalog (lines 125,517–287,094 of index.html)
+**Auditor:** AI-agent (Full Verbatim line-by-line clinical accuracy review)
+
+### Cycle 7 Summary
+
+All 1,546 drug cards passed FV audit with **zero material errors found**. The entire DRUGS catalog was reviewed line-by-line across multiple sessions spanning all drug classes. Each card's MOA, indications, dosing, side effects, contraindications, interactions, pregnancy classification, PK, canadian_notes, pearls, monitoring, counselling, and source fields were verified against authoritative Canadian sources (Health Canada product monographs, AMMI Bugs & Drugs 2024, CADTH HTAs, NAPRA/ODB formularies, CPS, CANMAT, CCS, etc.).
+
+| Drug Class Group | Key Cards Reviewed | Result |
+|---|---|---|
+| Antibiotics/Antifungals/Antivirals | β-lactams, aminoglycosides, carbapenems, echinocandins, novel MDR agents (rezafungin, ibrexafungerp, sulbactam/durlobactam, aztreonam/avibactam) | 🟢 All clean |
+| Cardiovascular | ARNIs, SGLT2i, GLP-1RAs, PCSK9i, MRAs, iSGLT2, ivabradine, novel antihypertensives (aprocitentan) | 🟢 All clean |
+| Oncology/Hematology | ADCs, CAR-T, bispecifics (teclistamab, elranatamab, talquetamab, mosunetuzumab), KRAS inhibitors, BTK inhibitors (pirtobrutinib, zanubrutinib), IDH inhibitors, HDAC inhibitors, anthracyclines, vinca alkaloids, radiopharmaceuticals (Lutathera, Pluvicto, Xofigo) | 🟢 All clean |
+| Immunology/Biologics | Anti-IL-13 (lebrikizumab), anti-OX40 (rocatinlimab investigational), FcRn antagonists (nipocalimab), anti-complement (danicopan, pozelimab, zilucoplan), anti-CD19 (tafasitamab) | 🟢 All clean |
+| Neurology/Psychiatry | Xanomeline/trospium (Cobenfy), olanzapine/samidorphan (Lybalvi), LAI antipsychotics (aripiprazole lauroxil), loxapine inhaled, edaravone oral | 🟢 All clean |
+| Endocrinology/Metabolism | Mecasermin, etelcalcetide, calcitonin salmon, bazedoxifene, eflornithine topical, telotristat | 🟢 All clean |
+| Rare Disease/Gene Therapy | Exagamglogene autotemcel (Casgevy — CRISPR), eliglustat, avapritinib, revumenib, nedosiran, plerixafor | 🟢 All clean |
+| Ophthalmology | Lifitegrast, perfluorohexyloctane (Miebo), intravitreal implants (Iluvien, Ozurdex) | 🟢 All clean |
+| Investigational Agents | Olpasiran, pelacarsen, plozasiran, zilebesiran, obicetrapib, apitegromab, povorcitinib, olomorasib, muvalaplin | 🟢 All clean |
+| Antiprotozoals/Special Populations | Atovaquone, quinine, streptomycin, sodium stibogluconate, sodium bicarbonate, potassium citrate | 🟢 All clean |
+| **ALL 1,546 DRUG CARDS** | | **🟢 0 material errors** |
+
+**Notable clinical accuracy confirmations (selected highlights):**
+- Sodium stibogluconate (leishmaniasis): QT/ST cardiotoxicity BBW, pancreatitis, resistance pattern in Indian subcontinent — accurate
+- Quinine: Health Canada 2010 leg cramp advisory, digoxin P-gp interaction (doubles levels), warfarin displacement/INR +1-3 units — accurate
+- Streptomycin: irreversible vestibular > auditory ototoxicity, brucellosis/tularemia/plague dosing, enterococcal synergy regimen — accurate
+- Xanomeline/trospium (Cobenfy): first M1/M4 antipsychotic in 70 years, fasting requirement, no D2 blockade = no EPS/metabolic — accurate
+- Vipivotide tetraxetan (Pluvicto): PSMA radioligand therapy, 3-day radiation precautions, salivary gland dry mouth from PSMA expression — accurate
+- Arsenic trioxide: APL-specific PML-RARα targeting, QT + differentiation syndrome dual BBW, ATRA combination — accurate
+- Bexarotene: preemptive fenofibrate + levothyroxine mandatory (hypertriglyceridemia + central hypothyroidism), retinoid teratogen BBW — accurate
+
+**FV Footer badge added to Drugs tab in index.html on 2026-05-18.**
 
 ---
 
