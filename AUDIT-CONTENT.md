@@ -39,7 +39,7 @@
 | **DRUG_FAMILIES** | 539 | 2026-05-18 (Cycle 6 — ALL 539 reviewed) | **100%** ✅ |
 | **VACCINES** | 56 | 2026-05-18 (Cycle 9 — ALL 56 reviewed) | **100%** ✅ |
 | **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5 — ALL 100 reviewed) | **100%** ✅ |
-| **DEPRESCRIBING_PROTOCOLS** | 17 | Not started | **0%** |
+| **DEPRESCRIBING_PROTOCOLS** | 17 | 2026-05-18 (Cycle 10 — ALL 17 reviewed) | **100%** ✅ |
 | **MINOR_AILMENTS** | 19 | Not started | **0%** |
 | **AMR_DATA** | 204 | 2026-05-18 (Cycle 8 — ALL 204 reviewed) | **100%** ✅ |
 | **NAPRA_ODB_DATA** | 1,547 | 2026-05-18 (Cycle 3 IS second pass) | **100%** ✅ |
@@ -51,6 +51,25 @@
 4. VACCINES — 56 entries; NACI/PHAC annual updates
 5. REFERENCE_TABLES — 100 entries; dose tables, LU criteria
 6. AMR_DATA, DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS — smaller sections
+
+---
+
+## Cycle 10 — DEPRESCRIBING_PROTOCOLS Second Pass FV Audit (COMPLETE ✅)
+
+**Started:** 2026-05-18
+**Completed:** 2026-05-18
+**Target:** All 17 DEPRESCRIBING_PROTOCOLS entries
+**Result:** 3 corrections applied; remainder clinically accurate
+
+### Cycle 10 Corrections
+
+| Field | Location | Correction |
+|---|---|---|
+| `antipsychotic_bpsd.indications_to_continue` | DEPRESCRIBING › Antipsychotic BPSD | Pimavanserin removed as Canadian option (NOT available in Canada per HC); replaced with quetiapine low-dose + clozapine (CPMS) as Canadian alternatives |
+| `opioid_chronic.sources` | DEPRESCRIBING › Long-Term Opioid | CRISM 2018 → CRISM 2023 National Guideline (updated citation) |
+| `gabapentinoid_taper.sources` | DEPRESCRIBING › Gabapentinoid | HC warning date "2019/2022" → "2020/2022" (HC issued 2020; 2019 was FDA date) |
+
+**FV Footer note:** DEPRESCRIBING_PROTOCOLS render inside `#tab-reference`, which already has its footer badge (May 18, 2026). No additional badge needed.
 
 ---
 
