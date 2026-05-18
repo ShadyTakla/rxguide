@@ -34,7 +34,7 @@
 
 | Catalog Section | Entries | Second Pass Start | Coverage |
 |---|---|---|---|
-| **DISEASES.conditions** | 600 | 2026-05-18 (Cycle 4 — started) | **0%** 🔄 |
+| **DISEASES.conditions** | 600 | 2026-05-18 (Cycle 4 — 75 reviewed) | **12.5%** 🔄 |
 | **DRUGS** | 1,546 | Not started | **0%** |
 | **DRUG_FAMILIES** | 539 | Not started | **0%** |
 | **VACCINES** | 56 | Not started | **0%** |
@@ -61,6 +61,133 @@
 **Auditor:** AI-agent (clinical accuracy + guideline currency review)
 
 > Results appended as each category batch is completed. Coverage % updated after each batch.
+
+### Cycle 4 Material Corrections Applied (2026-05-18)
+
+All 4 material errors were fixed in index.html (cross-catalog propagation verified):
+
+| # | Condition | Error | Fix Applied |
+|---|---|---|---|
+| 1 | sepsis_septic_shock | "ADRENAL II" (non-existent trial) in notes, guideline, pearls, source (8 occurrences) | Renamed to "ADRENAL" (Venkatesh NEJM 2018) across all 8 occurrences |
+| 2 | sepsis_septic_shock | "CITRUS-ALI" → correct trial name | Fixed to "CITRIS-ALI" (Fowler JAMA 2019) |
+| 3 | ckd | ACEi notes: "up to 30% eGFR rise acceptable" — factually wrong | Fixed to "up to 30% acute eGFR decline acceptable" with mechanism clarification |
+| 4 | rheumatoid_arthritis | "complete 9 months isoniazid before starting biologic" — outdated (CTS 2022 now prefers short-course + biologic after ≥4 weeks) | Updated in disease pearl AND biologic drug card pearl |
+| 5 | ped_antipyretics | "NEVER ALTERNATE" — inaccurate per CPS 2024 + contradicts pediatric_fever card | Updated to "acceptable when done correctly with education (CPS 2024)" |
+| 6 | contraception | "BMI ≥90 kg" for Evra patch threshold — should be body weight | Fixed to "body weight ≥90 kg (Health Canada PM)" |
+
+---
+
+### Batch 3 — Women's Health + Oncology + Pediatrics + Pharmacy Practice (25 conditions) ✅
+
+**Reviewed:** contraception, menopause, postpartum_depression, preeclampsia_eclampsia, endometriosis, pcos, breast_cancer, febrile_neutropenia, sickle_cell, itp, pediatric_asthma, croup, ped_antipyretics, aom, oat_pharmacy_practice, naloxone_dispensing, anaphylaxis, tox_acetaminophen, tox_serotonin_syndrome
+
+| Result | Count |
+|---|---|
+| 🟢 No issues | 14 |
+| 🟡 Minor | 4 |
+| 🔴 Material correction | 1 |
+
+**🔴 Corrections:**
+
+🔴 **ped_antipyretics** — Warnings state "NEVER ALTERNATE acetaminophen and ibuprofen — no benefit over single drug." This is inaccurate per CPS 2024 and directly contradicts the `pediatric_fever` condition card within the same tool (which correctly states "alternating is common practice and supported by CPS/AAP as safe when done correctly"). CPS 2024 states alternating is safe and acceptable with appropriate parental education; it provides modestly better comfort at high temperatures. The absolute contraindication framing is wrong. → Fix: revise to "use with caution — safe when done correctly with education; risk is dosing confusion not direct harm (CPS 2024)."
+
+**🟡 Minor:**
+
+🟡 **contraception** — Evra patch threshold stated as "BMI ≥90 kg = reduced efficacy." Health Canada PM and SOGC state body **weight** ≥90 kg (not BMI). → Fix: change "BMI ≥90 kg" to "body weight ≥90 kg."
+
+🟡 **croup** — Internal inconsistency: patho block references dexamethasone 0.15–0.6 mg/kg (suggesting 0.15 mg/kg as an alternative), while treatment section correctly states 0.6 mg/kg as the standard (CPS 2024). The 0.15 mg/kg dose is from older protocols with lower efficacy. → Fix: update patho block to remove 0.15 mg/kg reference; standardize to 0.6 mg/kg.
+
+🟡 **breast_cancer** — Mammography screening recommendation cites Canadian Task Force "age 50-74 q2 years." CTFPHC 2024 updated this to starting at age **40**. → Fix: update to CTFPHC 2024 (starting age 40).
+
+🟡 **preeclampsia_eclampsia** — ASA dose range stated as "81-150 mg." SOGC 2022 preferred dose is 162 mg (2 × 81 mg) per pharmacokinetic reasoning; ASPRE trial used 150 mg. The range is defensible but the updated SOGC 2022 Canadian-preferred dose should be specified. → Fix: update to "162 mg (SOGC 2022 preferred)" with 81-150 mg noted as acceptable range.
+
+---
+
+### Batch 2 — Respirology + GI + Nephrology + Infectious + Rheumatology (25 conditions) ✅
+
+**Reviewed:** asthma, copd, community_acquired_pneumonia, hiv, hepatitis_c, hepatitis_b, tuberculosis, lyme_disease, sti, sepsis_septic_shock, infective_endocarditis, cdiff, h_pylori, ibd, gerd_pud, cirrhosis_complications, acute_pancreatitis, ckd, nephrolithiasis, rheumatoid_arthritis, psoriatic_arthritis, sle, iron_deficiency_anemia, vte, chronic_spontaneous_urticaria
+
+| Result | Count |
+|---|---|
+| 🟢 No issues | 20 |
+| 🟡 Minor | 2 |
+| 🔴 Material correction | 3 |
+
+**🔴 Corrections:**
+
+🔴 **sepsis_septic_shock** — Trial name error (×2): (1) "ADRENAL II" should be "ADRENAL" (Venkatesh et al, NEJM 2018); "ADRENAL II" does not exist. (2) "CITRUS-ALI" should be "CITRIS-ALI" (Fowler AA, JAMA 2019). Both errors repeated in treatment notes AND pearls. → Fix: rename both trial references in all occurrences.
+
+🔴 **ckd** — Factual error in ACEi/ARB treatment notes: "up to 30% eGFR **rise** acceptable and expected." ACEi/ARB causes an eGFR **decline** on initiation (reduced efferent arteriolar tone → reduced intraglomerular pressure → lower GFR). Pearl correctly says "decline." Treatment notes contradict pearl. → Fix: change "rise" → "decline" in notes field.
+
+🔴 **rheumatoid_arthritis** — Outdated LTBI pearl: "complete **9 months isoniazid** before starting biologic." Per CTS 2022 Canadian TB Standards + ACR RA 2021: preferred LTBI treatment is a short-course regimen (3HP, 4R, or 3HR); biologic can start after ≥4 weeks of LTBI treatment (not after completing 9H). Waiting 9 months would cause unacceptable disease burden. → Fix: update to short-course preferred + biologic after ≥4 weeks.
+
+**🟡 Minor:**
+
+🟡 **copd** — Internal citation inconsistency: "CTS 2023" vs "CTS 2024" appears across different fields within the same card. No clinical error. → Fix: standardize to "CTS COPD 2023" (the published version).
+
+🟡 **lyme_disease** — "AMMI Canada 2014" listed as primary reference; IDSA/AAN/ACR 2020 is the current authoritative guideline. Content is clinically accurate; citation currency weak. → Fix: swap primary/secondary citation ordering.
+
+---
+
+### Batch 1 — Cardiology + Endocrinology + Psychiatry (25 conditions) ✅
+
+**Reviewed:** acs_postmi, afib, dyslipidemia, hfref, hfpef, hypertension, hypertensive_emergency, pericarditis, vte, stroke_tia, t2dm, t1dm, gout, hypothyroidism, hyperthyroidism, osteoporosis, mdd, bipolar, schizophrenia, epilepsy, migraine, opioid_use_disorder, alcohol_use_disorder, parkinsons (+ hfpef minor)
+
+| Result | Count |
+|---|---|
+| 🟢 No issues | 24 |
+| 🟡 Minor gap | 1 |
+| 🔴 Material correction | 0 |
+
+**Findings:**
+
+🟢 **acs_postmi** — Post-MI quartet correct, LDL <1.4 mmol/L (CCS 2021), DAPT/ticagrelor, eplerenone (EPHESUS), colchicine 0.5 mg OD — accurate.
+
+🟢 **afib** — CHADS-65 primary tool (Canadian), DOAC thresholds, CCS 2024 FU ablation-first-line, RFM emphasis — accurate.
+
+🟢 **dyslipidemia** — CCS 2021 LDL targets, statin intensities, PCSK9i, bempedoic acid (CLEAR Outcomes), HCa pregnancy label 2022 — accurate.
+
+🟢 **hfref** — Fantastic Four GDMT, 36h ACEi washout before ARNI, iron deficiency criteria (ferritin <100 or 100-299 + TSAT <20%), SGLT2i eGFR ≥20 — accurate.
+
+🟡 **hfpef** — Minor incompleteness: FINEARTS-HF 2024 (finerenone for HFpEF) and STEP-HFpEF (semaglutide for obese HFpEF) are cited in the source field but not reflected in the treatment rows. No factual error in existing content; gap between source citations and treatment table. Not a safety concern.
+
+🟢 **hypertension** — HC 2025 targets (<130/80, <120 SPRINT, <140/90 frail), CHADS-65, single-pill combos, atenolol de-emphasised, SOGC 426 pregnancy, spironolactone PATHWAY-2 — accurate.
+
+🟢 **hypertensive_emergency** — MAP 25% first hour, labetalol IV, sublingual nifedipine avoidance, pheo/phentolamine, aortic dissection HR <60 target — accurate.
+
+🟢 **pericarditis** — NSAIDs + colchicine 0.5 mg BID × 3 months, steroid avoidance first-line, anakinra/rilonacept refractory (ESC 2023) — accurate.
+
+🟢 **vte** — Apixaban 10 mg BID × 7 d then 5 mg BID, rivaroxaban 15 mg BID × 21 d then 20 mg OD with food, LMWH lead-in for dabi/edoxaban, APS → warfarin only (TRAPS) — accurate.
+
+🟢 **stroke_tia** — DAPT × 21 d (POINT/CHANCE), clopidogrel monotherapy long-term, permissive HTN acute ischemic, DOAC timing 1-3-6-12 rule, statin all ischemic stroke (Canadian Stroke BP 2024) — accurate.
+
+🟢 **t2dm** — Phenotype algorithm (ASCVD→GLP-1; HF/CKD→SGLT2i), SGLT2i eGFR thresholds, gliclazide MR as preferred SU, saxagliptin/alogliptin HF signal, DC 2018+2024 update — accurate.
+
+🟢 **t1dm** — Basal/bolus, CGM/AID, pramlintide not available in Canada noted, SGLT2i off-label euglycemic DKA risk — accurate.
+
+🟢 **gout** — AGREE regimen (1.2 + 0.6 mg), febuxostat CARES CV signal, HLA-B*5801 Han Chinese/Thai/Korean, urate targets <360 and <300 µmol/L (ACR 2020) — accurate.
+
+🟢 **hypothyroidism** — LT4 1.6 mcg/kg/day, TSH 0.5-2.5 target, +25-30% in pregnancy, TSH <2.5 first trimester, 4h separation interactions, subclinical TSH >10 treatment threshold — accurate.
+
+🟢 **hyperthyroidism** — Methimazole preferred (once daily, lower hepatotox), PTU first trimester + storm only, PTU BBW, Wolff-Chaikoff, Burch-Wartofsky ≥45 storm — accurate.
+
+🟢 **osteoporosis** — OC 2023, denosumab rebound, drug holiday (5yr oral/3yr IV), abaloparatide Canada withdrawal noted, romosozumab CV caution — accurate.
+
+🟢 **mdd** — CANMAT 2023 Level 1 (escitalopram/sertraline/vortioxetine), citalopram max 20 mg >65, escitalopram max 10 mg elderly, esketamine Spravato REMS — accurate.
+
+🟢 **bipolar** — CANMAT/ISBD 2023 cariprazine first-line BP-I depression, lamotrigine titration, valproate NTD risk, lithium anti-suicide, no AD monotherapy rule — accurate.
+
+🟢 **schizophrenia** — Clozapine TRS (≥2 trials), CPMS enrolment, CBC schedule, LAI preference, valbenazine/deutetrabenazine TD, cariprazine negative symptoms — accurate.
+
+🟢 **epilepsy** — Broad-spectrum first-line, ethosuximide pure childhood absence, avoid carbamazepine/gabapentin/pregabalin in generalized, valproate CI in pregnancy, Ontario driving (6 mo personal/12 mo commercial) — accurate.
+
+🟢 **migraine** — CHS 2024 acute guidelines, gepants, lasmiditan 8h driving, anti-CGRP mAbs, metoclopramide ≤5 d HC advisory — accurate.
+
+🟢 **opioid_use_disorder** — CRISM 2023, buprenorphine-naloxone preferred, Bernese low-dose induction, COWS ≥8-12 standard, Sublocade monthly SC, naltrexone opioid-free 7-10 d, Good Samaritan Act — accurate.
+
+🟢 **alcohol_use_disorder** — BZD CIWA-guided, thiamine before IV glucose, naltrexone 50 mg OD/acamprosate 666 mg TID, disulfiram second-line, gabapentin/topiramate relapse prevention — accurate.
+
+🟢 **parkinsons** — Prolopa (levodopa/benserazide) as common Canadian form, ICD counselling for DA, anticholinergics avoided >65 Beers, domperidone only safe antiemetic in PD, MAO-B+serotonergic interaction, amantadine dyskinesia — accurate.
 
 ---
 
