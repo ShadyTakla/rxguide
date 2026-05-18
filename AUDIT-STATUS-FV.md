@@ -39,7 +39,7 @@ Consolidated full-verbatim (line-by-line clinical-content) review status across 
 | Catalog | FV status | Reviewed by | Notes |
 |---|---|---|---|
 | **DRUG_FAMILIES** (563) | ✅ 100% | other branch + this branch | Verbatim clinical-content review complete. |
-| **DRUGS** (1546) | 🟡 IN PROGRESS | this branch | Full-verbatim re-verification underway (object spans index.html lines ~125,541–286,880). Verified clean through the cardiovascular / antidiabetic / lipid / antithrombotic / gout / NSAID / corticosteroid / antidepressant cluster (~69 cards, alphabetical-by-section order ending at `amitriptyline`). 1 fix so far (denosumab FREEDOM-trial mischaracterization, commit `7370d10`). Resume pointer: index.html line ~134,680. |
+| **DRUGS** (1546) | 🟡 IN PROGRESS | this branch | Full-verbatim re-verification underway (object spans index.html lines ~125,541–286,880). Verified through the cardiovascular / antidiabetic / lipid / antithrombotic / gout / NSAID / corticosteroid / antidepressant / anxiolytic / antipsychotic / mood-stabilizer cluster (~74 cards). 3 fixes so far: denosumab FREEDOM-trial mischaracterization (`7370d10`); buspirone + pregabalin `source` fields had copy-pasted unrelated citations (hematology/iron and cardiology respectively). Resume pointer: index.html line ~136,170 (aripiprazole). |
 | **VACCINES** (56) | ✅ 100% | this branch | ~55 vaccine cards verbatim-reviewed. |
 | **AMR_DATA** — Antimicrobials drug view (204) | ✅ 100% | this branch | Antibacterials, antivirals, antifungals, antimycobacterials, antiparasitics. |
 | **EMPIRIC_THERAPY_SYNDROMES** — Antimicrobials syndrome view (67) | ✅ 100% | this branch | ~67 empiric-therapy syndromes verbatim-reviewed. |
