@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-18
-**Catalog snapshot:** 2,877 clickable entries (latest commit: `d0cf2e5 on 2026-05-18`)
+**Catalog snapshot:** 2,877 clickable entries (latest commit: `66bcda8 on 2026-05-18`)
 
 ---
 
@@ -25,7 +25,7 @@
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 539 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
-| **DISEASES.conditions** | 600 | 100.0% | 100.0% |
+| **DISEASES.conditions** | 600 | 100.0% | 99.5% |
 
 ---
 
@@ -94,8 +94,16 @@
 | Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 600 | 0 |
 | Cites Canadian source | **100.0%** | `██████████████████` | 600 | 0 |
 | All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 600 | 0 |
-| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 600 | 0 |
+| §21.13 multi-family compliance | **99.5%** | `██████████████████` | 597 | 3 |
 | `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 600 | 0 |
+
+### ❌ §21.13 multi-family compliance — 3 entries remaining (0.5% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `cdiff` | [infectious] {"rows":[{"line":"Multiple recurrences (≥2nd recurrence)","missing":["Rifamycins"]}]} |
+| `travellers_diarrhea` | [infectious] {"rows":[{"line":"Prevention (pre-travel counseling)","missing":["Rifamycins"]}]} |
+| `hepatocellular_carcinoma` | [oncology] {"rows":[{"line":"TERMINAL HCC (BCLC D) & SUPPORTIVE CARE","missing":["Rifamycins"]}]} |
 
 ---
 
@@ -184,7 +192,9 @@
 
 Ordered by impact (size of gap × clinical importance):
 
-**No remaining audit gaps — catalog is 100% clean across all checked dimensions.**
+| Priority | Gap (entries) | Audit area |
+|---|---|---|
+| 4 | **3** | DISEASES.conditions — apply §21.13 multi-family fix |
 
 ---
 
