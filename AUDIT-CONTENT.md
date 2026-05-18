@@ -886,3 +886,31 @@ This is the first complete FV Tier 4 audit of the Formulary tab. Prior automated
 2. Drug interactions — severity classification spot-check (Major vs Moderate boundary for newer biologics/TKIs)
 3. PREG_DATA — pregnancy risk bucket accuracy (especially newer approvals 2023–2026)
 4. DRUG_FAMILIES — source citation currency (annual guideline updates)
+
+---
+
+## Cycle 5 — FV Tier 4 Audit: Disease Conditions (2026-05-18)
+
+FV clinical accuracy audit of disease condition cards across all 20 categories. Four parallel audit batches; 15 findings reviewed, 14 corrections applied, 1 finding dismissed after verification.
+
+| # | Card | Field | Issue | Resolution |
+|---|---|---|---|---|
+| 1 | (catalog-wide) | `FAMILY_MAP[rifaximin]` + 8 treatment rows | 🔴 Rifaximin classified "Macrocyclic Antibiotics" — it is a non-absorbed rifamycin | 🔧 → "Rifamycins" (valid DRUG_FAMILIES key); propagated to all 8 treatment-row family strings |
+| 2 | gestational_diabetes | screening/treatment/pearls | 🟡 Postpartum OGTT timing inconsistent ("4–6 weeks" vs "6 weeks") | 🔧 Standardized to "6 weeks–6 months postpartum" (SOGC 2019 No. 393) |
+| 3 | nafld | preg_lact_summary | 🔴 Obeticholic acid listed "Compatible" (preg + bf) — withdrawn globally Sept 2024 | 🔧 Moved to "Avoid" in both preg + bf |
+| 4 | malaria_prophylaxis | preg_lact_summary | 🔴 Chloroquine "Caution", mefloquine "Avoid" — both CATMAT-preferred in pregnancy | 🔧 Chloroquine → "Compatible" (sensitive zones); mefloquine → "Caution" (resistant zones) |
+| 5 | polycythemia_vera + essential_thrombocythemia | preg_lact_summary | 🔴 Ropeginterferon alfa-2b "Avoid" — contradicts card's own text (IFN preferred in pregnancy) | 🔧 Moved to "Caution" in both sibling cards |
+| 6 | influenza | preg_lact_summary | 🟡 Oseltamivir "Limited Data" — PHAC recommends antiviral treatment in pregnancy (high-risk indication) | 🔧 preg → "Compatible" |
+| 7 | strep_pharyngitis | preg_lact_summary | 🟡 Penicillin V "Limited Data" — penicillins are the reference-safe class | 🔧 preg + bf → "Compatible" |
+| 8 | otitis / otitis_externa | patho | Claimed "50–70% Pseudomonas" error | ⚪ Dismissed — otitis_externa card already states "Pseudomonas ~40%"; no such figure present |
+| 9 | rosacea | source | 🔴 Erroneous "GINA 2024; CTS COPD 2023" citation (asthma/COPD guidelines) | 🔧 Removed |
+| 10 | herpes | preg_lact_summary | 🔴 Shingrix "Contraindicated" (preg) / "Avoid" (bf) — non-live recombinant vaccine, NACI says defer for insufficient data | 🔧 Both → "Limited Data" with defer note; consistent with VACCINES card |
+| 11 | aki_drug_induced | citations (11×) | 🔴 AKI staging attributed to "KDIGO 2024 CKD Guideline" | 🔧 → "KDIGO AKI Guideline 2012" (11 instances; CKD-card references untouched) |
+| 12 | osteomyelitis | preg_lact_summary | 🟡 TMP-SMX "Limited Data" — well-characterized 1st-trimester + term risks | 🔧 preg → "Caution" (avoid 1st trimester + at term) |
+| 13 | hiv_prep_pep | preg_lact_summary | 🔴 Raltegravir "Avoid" — DHHS Perinatal lists it as a preferred INSTI in pregnancy | 🔧 → "Caution" |
+| 14 | attr_amyloidosis | treatment line header | 🟡 Header "Health Canada approved" blanket-applied to a row including acoramidis (HC under review) + diflunisal (off-label) | 🔧 Header differentiated per agent |
+| 15 | ipf | treatment notes | 🟡 NAC grouped in "Avoid" row with the harmful PANTHER triple-therapy without distinction | 🔧 Notes clarified — NAC monotherapy showed neither benefit nor harm; not recommended for lack of efficacy, not harm |
+
+**Deferred (verification inconclusive):** Pregabalin CDSA scheduling (Schedule I vs IV) — `neuropathic_pain` and `postherpetic_neuralgia` cards disagree. WebSearch did not confirm a federal CDSA listing. Not corrected pending an authoritative source per the CLAUDE.md pre-correction sanity-check rule.
+
+**Verdict:** Disease-condition cards reviewed; 14 clinical/regulatory corrections applied with cross-catalog propagation (FAMILY_MAP, sibling condition cards, VACCINES consistency check). JS parse passes.
