@@ -37,7 +37,7 @@
 | **DISEASES.conditions** | 600 | 2026-05-18 (Cycle 4 — ALL 600 reviewed) | **100%** ✅ |
 | **DRUGS** | 1,546 | 2026-05-18 (Cycle 7 — ALL 1,546 reviewed) | **100%** ✅ |
 | **DRUG_FAMILIES** | 539 | 2026-05-18 (Cycle 6 — ALL 539 reviewed) | **100%** ✅ |
-| **VACCINES** | 56 | Not started | **0%** |
+| **VACCINES** | 56 | 2026-05-18 (Cycle 9 — ALL 56 reviewed) | **100%** ✅ |
 | **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5 — ALL 100 reviewed) | **100%** ✅ |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | Not started | **0%** |
 | **MINOR_AILMENTS** | 19 | Not started | **0%** |
@@ -51,6 +51,26 @@
 4. VACCINES — 56 entries; NACI/PHAC annual updates
 5. REFERENCE_TABLES — 100 entries; dose tables, LU criteria
 6. AMR_DATA, DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS — smaller sections
+
+---
+
+## Cycle 9 — VACCINES Second Pass FV Audit (COMPLETE ✅)
+
+**Started:** 2026-05-18
+**Completed:** 2026-05-18
+**Target:** All 56 VACCINES entries across COVID-19, Influenza, Routine, Travel, RSV, Specialty
+**Result:** 4 corrections applied (3 in VACCINES catalog + 1 cross-catalog sibling in REFERENCE_TABLES); remainder clinically accurate
+
+### Cycle 9 Corrections
+
+| Field | Location | Correction |
+|---|---|---|
+| `comirnaty.dosing[0].notes` | VACCINES › Comirnaty | 2-dose → 3-dose primary series for immunocompromised per NACI |
+| `varivax.indications[1]` | VACCINES › Varivax | Birth year catch-up: ≥1980 → ≥1979 per NACI |
+| `shingrix.canadian_notes` | VACCINES › Shingrix | Ontario UIIP funding: 65–70 window → ≥65 no upper cap |
+| Vivotif duration in travel reference table | REFERENCE_TABLES travel typhoid notes (line 111564) | "protection ~5 years / booster every 5 years" → "~7 years / booster every 7 years" per Health Canada PM |
+
+**FV Footer badge already added to `#tab-vaccinations` (PR #209).**
 
 ---
 
