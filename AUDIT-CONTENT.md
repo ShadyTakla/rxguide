@@ -40,7 +40,7 @@
 | **VACCINES** | 56 | 2026-05-18 (Cycle 9 — ALL 56 reviewed) | **100%** ✅ |
 | **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5 — ALL 100 reviewed) | **100%** ✅ |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | 2026-05-18 (Cycle 10 — ALL 17 reviewed) | **100%** ✅ |
-| **MINOR_AILMENTS** | 19 | Not started | **0%** |
+| **MINOR_AILMENTS** | 19 | 2026-05-18 (Cycle 11 — ALL 19 reviewed) | **100%** ✅ |
 | **AMR_DATA** | 204 | 2026-05-18 (Cycle 8 — ALL 204 reviewed) | **100%** ✅ |
 | **NAPRA_ODB_DATA** | 1,547 | 2026-05-18 (Cycle 3 IS second pass) | **100%** ✅ |
 
@@ -51,6 +51,30 @@
 4. VACCINES — 56 entries; NACI/PHAC annual updates
 5. REFERENCE_TABLES — 100 entries; dose tables, LU criteria
 6. AMR_DATA, DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS — smaller sections
+
+---
+
+## Cycle 11 — MINOR_AILMENTS Second Pass FV Audit (COMPLETE ✅)
+
+**Started:** 2026-05-18
+**Completed:** 2026-05-18
+**Target:** All 19 MINOR_AILMENTS entries (Ontario O. Reg. 256/24 pharmacist prescribing scope)
+**Result:** 7 corrections applied; remainder clinically accurate. 1 missing entry noted (Canker Sores/Aphthous Ulcers — exists as reference within other entries but lacks a dedicated card).
+
+### Cycle 11 Corrections
+
+| Field | Location | Correction |
+|---|---|---|
+| `gerd.ontario_ma_scope` | MINOR_AILMENTS › GERD | Changed "NOT in Ontario MA program" → "IS in designated list under O. Reg. 256/24" — GERD is a designated Ontario MA condition; pharmacists may prescribe PPIs/H2RAs/antacids |
+| `pinworms.ontario_ma_scope` | MINOR_AILMENTS › Pinworms | Changed "NOT a designated Ontario MA condition" → "IS in designated list under O. Reg. 256/24" — pinworm infection IS a designated Ontario MA condition |
+| `oral_candidiasis.ontario_ma_scope` | MINOR_AILMENTS › Oral Candidiasis | Nystatin NAPRA scheduling: "Schedule II/III (behind-the-counter)" → "Schedule I (Rx — prescription required, prescribable under MA authority)" |
+| `urticaria.ontario_ma_scope` | MINOR_AILMENTS › Urticaria | Removed blanket CSU (≥6 weeks) eligibility; clarified pharmacist may initiate H1 antihistamine trial but refractory CSU requires allergist (outside specialist-level MA scope) |
+| `acne.treatment[0].notes` | MINOR_AILMENTS › Acne | Changed "NOT in MA prescribing scope" → correctly states mild acne IS in MA scope; moderate-severe is outside scope |
+| `acne.interactive_flow` msgs | MINOR_AILMENTS › Acne | 3 interactive_flow nodes updated: "Acne is NOT in Ontario MA prescribing scope" → "Moderate-severe acne is OUTSIDE Ontario MA prescribing scope" |
+| `impetigo.therapeutic_flow` step 1 + 3 | MINOR_AILMENTS › Impetigo | Lesion threshold: ≤5/\>5 → ≤3/>3 (consistent with scope field and interactive_flow which use ≤3 per OCP guidance) |
+| `uti.therapeutic_flow` step 1 | MINOR_AILMENTS › Uncomplicated UTI | Age upper limit: "16–65" → "16–64 (inclusive)" per OCP O. Reg. 256/24 criteria |
+
+**FV Footer note:** MINOR_AILMENTS renders inside `#tab-minor_ailments`. The tab does not yet have a footer badge — adding now.
 
 ---
 
