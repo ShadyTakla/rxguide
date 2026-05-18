@@ -41,7 +41,7 @@
 | **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5 — ALL 100 reviewed) | **100%** ✅ |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | Not started | **0%** |
 | **MINOR_AILMENTS** | 19 | Not started | **0%** |
-| **AMR_DATA** | 204 | Not started | **0%** |
+| **AMR_DATA** | 204 | 2026-05-18 (Cycle 8 — ALL 204 reviewed) | **100%** ✅ |
 | **NAPRA_ODB_DATA** | 1,547 | 2026-05-18 (Cycle 3 IS second pass) | **100%** ✅ |
 
 **Priority order for Second Pass:**
@@ -51,6 +51,26 @@
 4. VACCINES — 56 entries; NACI/PHAC annual updates
 5. REFERENCE_TABLES — 100 entries; dose tables, LU criteria
 6. AMR_DATA, DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS — smaller sections
+
+---
+
+## Cycle 8 — AMR_DATA Second Pass FV Audit (COMPLETE ✅)
+
+**Started:** 2026-05-18
+**Completed:** 2026-05-18
+**Target:** All 204 AMR_DATA entries across Antibacterials, Antivirals, Antifungals, Antimycobacterials, Antiparasitics
+**Result:** 4 corrections applied; remainder clinically accurate
+
+### Cycle 8 Corrections
+
+| Field | Location | Correction |
+|---|---|---|
+| Reactive Arthritis chlamydia notes | DISEASES › Reactive Arthritis (line 57001) | Doxycycline now correctly labeled first-line per PHAC STBBI 2024 + CDC 2021; azithromycin demoted to alternative |
+| Fidaxomicin `ci` in AMR_DATA | AMR_DATA › Macrocyclic › Fidaxomicin | Removed NAP1/BI/027 from CI (not a contraindication per IDSA/SHEA 2021); CI now limited to hypersensitivity only |
+| Baloxavir weight threshold | DISEASES › Influenza notes | Changed `>80 kg` to `≥80 kg` per Health Canada Xofluza PM |
+| Amoxicillin UTI in pregnancy | AMR_DATA amoxicillin `uses`; DRUGS[amoxicillin] pregnancy field | Added "culture-confirmed, not empiric" qualification; cephalexin/nitrofurantoin preferred empirically (AMMI/SOGC; ~30–50% E. coli resistance) |
+
+**FV Footer badge added to `#tab-antimicrobials` tab panel in index.html on 2026-05-18.**
 
 ---
 
