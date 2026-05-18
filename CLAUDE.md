@@ -62,6 +62,24 @@ Do not skip the audit, do not skip the AUDIT-STATUS regeneration, and do not ski
 - Drug card and drug family duplication is acceptable when granularity is clinically useful (per user direction).
 - Pharmacist scope and Canadian (Ontario-first) context throughout; do not author US-default content.
 
+### FV Audit Footer Rule (CRITICAL — added 2026-05-18)
+
+**Every app tab that completes a Full Verbatim (FV) Tier 4 clinical audit MUST have a `<div class="fv-audit-footer">` badge added (or updated) in its tab panel in `index.html`.** This badge displays the date of the last completed FV audit in the rendered UI, so pharmacists and future agents can instantly see which sections have been clinically reviewed.
+
+**Badge format:**
+```html
+<div class="fv-audit-footer">🔎 Last FV Clinical Audit: May 18, 2026</div>
+```
+
+**CSS** (in the `<style>` block — add once, reuse across all tabs):
+```css
+.fv-audit-footer { font-size:0.68rem; color:var(--muted); margin-top:18px; padding:6px 0; border-top:1px solid var(--border); text-align:right; }
+```
+
+**When to update:** After every FV audit cycle for a tab, update the badge date to the cycle date. If no badge exists yet for an audited tab, add one. Tabs not yet FV-audited have no badge.
+
+**Must do in same PR as audit findings commit:** update `AUDIT-CONTENT.md` + update badge in `index.html` + commit together. See AGENTS.md §27 for full details and which tabs have badges.
+
 ## Last updated
 
 2026-05-14 — added **cross-catalog propagation rule** as a first-class persistent constraint. Every fix or addition must propagate to every sibling location carrying the same claim (drug-card structured fields, interactions[].mechanism on both sides of a pairwise interaction, parent family pearls, PREG_DATA / NAPRA_ODB_DATA / FAMILY_MAP, VACCINES structured fields, AMR_DATA agents that appear in multiple families, DISEASES treatment rows, REFERENCE_TABLES rows, Deprescribing + Minor Ailments). Lesson from the Tier 4 back-propagation pass: 43 prior fixes had 4 latent sibling-field contradictions surviving because the original fixes only touched the field where the error was first spotted. Pre-fix routine: grep the fingerprint before editing to enumerate sibling locations; re-grep the OLD wording after editing to confirm zero matches. See "Cross-catalog propagation" section above for the full sibling-location checklist.
