@@ -40,7 +40,7 @@
 | **VACCINES** | 56 | 2026-05-18 (Cycle 9 — ALL 56 reviewed) | **100%** ✅ |
 | **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5 — ALL 100 reviewed) | **100%** ✅ |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | 2026-05-18 (Cycle 10 — ALL 17 reviewed) | **100%** ✅ |
-| **MINOR_AILMENTS** | 19 | 2026-05-18 (Cycle 11 — ALL 19 reviewed) | **100%** ✅ |
+| **MINOR_AILMENTS** | 20 | 2026-05-18 (Cycle 11 — ALL 20 reviewed; Canker Sores added) | **100%** ✅ |
 | **AMR_DATA** | 204 | 2026-05-18 (Cycle 8 — ALL 204 reviewed) | **100%** ✅ |
 | **NAPRA_ODB_DATA** | 1,547 | 2026-05-18 (Cycle 3 IS second pass) | **100%** ✅ |
 

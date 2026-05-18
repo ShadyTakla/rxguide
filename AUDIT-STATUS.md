@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-18
-**Catalog snapshot:** 2,877 clickable entries (latest commit: `9a48fe3 on 2026-05-18`)
+**Catalog snapshot:** 2,878 clickable entries (latest commit: `c055c3f on 2026-05-18`)
 
 ---
 
@@ -117,13 +117,13 @@
 
 ---
 
-## MINOR_AILMENTS (19 entries)
+## MINOR_AILMENTS (20 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full 9-field schema complete | **100.0%** | `██████████████████` | 19 | 0 |
-| `assessment` has key_questions + red_flags | **100.0%** | `██████████████████` | 19 | 0 |
-| Cites Canadian source / Ontario regulation | **100.0%** | `██████████████████` | 19 | 0 |
+| Full 9-field schema complete | **100.0%** | `██████████████████` | 20 | 0 |
+| `assessment` has key_questions + red_flags | **100.0%** | `██████████████████` | 20 | 0 |
+| Cites Canadian source / Ontario regulation | **100.0%** | `██████████████████` | 20 | 0 |
 
 ---
 
@@ -180,7 +180,7 @@
 | Asset | Count |
 |---|---|
 | DEPRESCRIBING_PROTOCOLS | **17** |
-| MINOR_AILMENTS | **19** |
+| MINOR_AILMENTS | **20** |
 | NON_PHARM_AGENTS dictionary | **94** |
 | EDIT_HISTORY entities tracked | **1,649** |
 | CHANGELOG PRs catalogued | **122** |
