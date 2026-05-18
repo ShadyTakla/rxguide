@@ -3,8 +3,8 @@
 > **Live status file** — auto-regenerated from `index.html` by `scripts/regenerate_audit_status.js`.
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
-**Last regenerated:** 2026-05-17
-**Catalog snapshot:** 2,877 clickable entries (latest commit: `621e882 on 2026-05-17`)
+**Last regenerated:** 2026-05-18
+**Catalog snapshot:** 2,877 clickable entries (latest commit: `71aca61 on 2026-05-17`)
 
 ---
 
@@ -202,7 +202,7 @@ Ordered by impact (size of gap × clinical importance):
 | **PREG_DATA (Pregnancy / Breastfeeding)** | 1,547 | 1,547 / 1,547 (100%) | COMPLETE — first pass | All 1,547 entries reviewed line-by-line; risk-category and clinical-accuracy errors fixed across the 2026-05-17 cycle (commits 3de2f28, 27ca5e9, f704021, 5651cc3, 8847f9d). |
 | **DRUG_FAMILIES** | 539 | 539 / 539 (100%) | COMPLETE — first pass | Tier 4 batches 1-2 plus the FAM-numbered per-family series; first-pass FV completion confirmed by the auditing agent (commits 095e26f, 32de939, 9c5a099, b7b7616, f5edc9f). |
 | **DRUGS** | 1,546 | In progress | IN PROGRESS — first pass | Tier 4 self-review rounds 1-7, XCAT master-scan batches 1-7, and cross-catalog propagation batches 1-5 completed; systematic per-drug verbatim sweep still in progress. |
-| **NAPRA_ODB_DATA (drug scheduling / ODB coverage)** | 1,547 | ≈ 635 / 1,547 (~41%) | IN PROGRESS — first pass | Batches 1-5 (2026-05-17): first ~635 entries reviewed (antimicrobials, cardiovascular, antithrombotic, endocrine, psychiatric, GI, respiratory, analgesic, dermatology, biologic, muscle relaxant, migraine, gout, hormonal/reproductive, ophthalmic/otic/nasal, immune globulin, addiction drugs). 2 fixes — ceftriaxone gonorrhea dose 250→500 mg IM; naproxen entry reconstructed. 2 flagged for verification (ulipristal_acetate, mometasone_nasal — internal contradictions on Canadian Rx/OTC status). Remaining ~910 entries pending batched review. |
+| **NAPRA_ODB_DATA (drug scheduling / ODB coverage)** | 1,547 | ≈ 730 / 1,547 (~47%) | IN PROGRESS — first pass | Batches 1-6 (2026-05-17): first ~730 entries reviewed (antimicrobials, cardiovascular, antithrombotic, endocrine, psychiatric, GI, respiratory, analgesic, dermatology, biologic, ophthalmic/otic/nasal, immune globulin, addiction medicine, NRT, neurology — Parkinson/dementia/MS DMT/antiseizure, LAI antipsychotics). 2 fixes — ceftriaxone gonorrhea dose 250→500 mg IM; naproxen entry reconstructed. 2 flagged for verification (ulipristal_acetate, mometasone_nasal — internal Rx/OTC contradictions). Remaining ~815 entries pending batched review. |
 | **AMR_DATA (antimicrobial agents)** | 204 | 204 / 204 (100%) | COMPLETE — first pass | All 204 agents (Antibacterials / Antivirals / Antifungals / Antimycobacterials / Antiparasitics) reviewed line-by-line, 2026-05-17 cycle; 2 fixes — Maviret 8-week compensated-cirrhosis currency + Child-Pugh B contraindication; nystatin not for esophageal candidiasis — propagated to DRUGS + DISEASES siblings. |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | 17 / 17 (100%) | COMPLETE — first pass | All 17 protocols reviewed line-by-line against Canadian deprescribing.org / CFP guidelines, 2026-05-17 cycle; no clinical errors found. |
 | **MINOR_AILMENTS** | 19 | 19 / 19 (100%) | COMPLETE — first pass | All 19 ailments reviewed line-by-line against OCP O. Reg. 256/24 scope + Canadian guidelines, 2026-05-17 cycle; 1 fix — Acne Vulgaris ontario_ma_scope corrected (acne is NOT a designated Ontario Minor Ailment). |
