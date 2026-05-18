@@ -11,7 +11,7 @@
 > authoritative for FV status** (the auto-generated Tier 4 log in `AUDIT-STATUS.md` lags
 > branch coordination — e.g., it still shows DISEASES as IN PROGRESS when it is complete).
 
-**Last updated:** 2026-05-20
+**Last updated:** 2026-05-21
 
 ---
 
@@ -39,7 +39,7 @@ Consolidated full-verbatim (line-by-line clinical-content) review status across 
 | Catalog | FV status | Reviewed by | Notes |
 |---|---|---|---|
 | **DRUG_FAMILIES** (563) | ✅ 100% | other branch + this branch | Verbatim clinical-content review complete. |
-| **DRUGS** (1546) | 🟡 IN PROGRESS | this branch | Full-verbatim re-verification underway (object spans index.html lines ~125,541–286,880). Verified through the cardiovascular / antidiabetic / lipid / antithrombotic / gout / NSAID / corticosteroid / antidepressant / anxiolytic / antipsychotic / mood-stabilizer / antiepileptic / ADHD / hypnotic / addiction-medicine / dementia / smoking-cessation / migraine / respiratory / DMARD-biologic cluster + GI/antibiotic/antifungal/opioid/DMARD-JAK cluster + levofloxacin / budesonide / TMP-SMX / clarithromycin / fluticasone / alendronate (~170 cards). Fixes: denosumab FREEDOM-trial mischaracterization; buspirone + pregabalin copy-pasted `source` citations; **CDSA-schedule errors — amphetamine/methylphenidate stimulants wrongly "Schedule I" → corrected to Schedule III; buprenorphine-naloxone wrongly "Schedule III" (US DEA value) → corrected to Schedule I narcotic; Jurisprudence CDSA reference table corrected — all verified, propagated across ~18 locations in DRUGS + DRUG_FAMILIES + DISEASES + NAPRA_ODB_DATA + Jurisprudence**; topiramate duplicate OCP interaction entry removed; tramadol CDSA reclassification year corrected (2024→May 2022); cinacalcet source field corrected (NHP→KDIGO/EVOLVE/HC PM); **budesonide source field corrected (Endocrine Society/Pituitary AI guidelines copy-pasted → replaced with GINA/SOGC/CAG/AGA/ARIA/Health Canada PM); 8 additional corticosteroid cards/families with same copy-paste error fixed (triamcinolone, betamethasone, dexamethasone, fluticasone, hydrocortisone, clobetasol, DRUG_FAMILIES[Systemic CS], DRUG_FAMILIES[ICS], DRUG_FAMILIES[Topical CS])**. Resume pointer: index.html line ~154,753 (risedronate). |
+| **DRUGS** (1546) | 🟡 IN PROGRESS | this branch | Full-verbatim re-verification underway (object spans index.html lines ~125,541–286,880). Verified ~757 of 1546 cards (~49.0%). Fixes: denosumab FREEDOM-trial mischaracterization; buspirone + pregabalin copy-pasted `source` citations; **CDSA-schedule errors — amphetamine/methylphenidate stimulants wrongly "Schedule I" → corrected to Schedule III; buprenorphine-naloxone wrongly "Schedule III" (US DEA value) → corrected to Schedule I narcotic; Jurisprudence CDSA reference table corrected — all verified, propagated across ~18 locations in DRUGS + DRUG_FAMILIES + DISEASES + NAPRA_ODB_DATA + Jurisprudence**; topiramate duplicate OCP interaction entry removed; tramadol CDSA reclassification year corrected (2024→May 2022); cinacalcet source field corrected (NHP→KDIGO/EVOLVE/HC PM); **budesonide source field corrected (Endocrine Society/Pituitary AI guidelines copy-pasted → replaced with GINA/SOGC/CAG/AGA/ARIA/Health Canada PM); 8 additional corticosteroid cards/families with same copy-paste error fixed (triamcinolone, betamethasone, dexamethasone, fluticasone, hydrocortisone, clobetasol, DRUG_FAMILIES[Systemic CS], DRUG_FAMILIES[ICS], DRUG_FAMILIES[Topical CS])**; pseudoephedrine NAPRA schedule label corrected in interaction entry (Schedule III → Schedule II behind-counter); **dexamethasone `moa` corrected — parenthetical wrongly stated betamethasone "does not cross placenta" (betamethasone is a fluorinated steroid that readily crosses the placenta and is Canada's preferred antenatal corticosteroid; contradicted the card's own `pregnancy` field)**. Resume pointer: index.html line ~214,510 (card ~757, post-dexamethasone). |
 | **VACCINES** (56) | ✅ 100% | this branch | ~55 vaccine cards verbatim-reviewed. |
 | **AMR_DATA** — Antimicrobials drug view (204) | ✅ 100% | this branch | Antibacterials, antivirals, antifungals, antimycobacterials, antiparasitics. |
 | **EMPIRIC_THERAPY_SYNDROMES** — Antimicrobials syndrome view (67) | ✅ 100% | this branch | ~67 empiric-therapy syndromes verbatim-reviewed. |
@@ -53,7 +53,7 @@ Consolidated full-verbatim (line-by-line clinical-content) review status across 
 
 **Structurally validated, no prose FV pass required:** `FAMILY_MAP` (routing table — orphan resolution checked by the audit script), `SCORE_PATTERNS`, `EMPIRIC_THERAPY_CATEGORIES`, `NON_PHARM_AGENTS`, `EDIT_HISTORY`, `CHANGELOG`, and other helper/config objects.
 
-**Net remaining FV work:** DRUGS full-verbatim re-verification in progress on this branch (~170 of 1546 cards verified; resume at index.html line ~154,753 (risedronate)). NAPRA_ODB_DATA (full-app-audit branch, in progress). All other catalogs are FV-complete (first pass).
+**Net remaining FV work:** DRUGS full-verbatim re-verification in progress on this branch (~757 of 1546 cards verified; resume at index.html line ~214,510 (card ~757, post-dexamethasone)). NAPRA_ODB_DATA (full-app-audit branch, in progress). All other catalogs are FV-complete (first pass).
 
 ---
 
