@@ -7,7 +7,9 @@
 > line-by-line) clinical-content review**, which the automated script cannot measure.
 >
 > This file is **NOT auto-generated** — regenerating `AUDIT-STATUS.md` will not touch it.
-> Edit it directly after each FV audit cycle.
+> Edit it directly after each FV audit cycle. Where the two files disagree, **this file is
+> authoritative for FV status** (the auto-generated Tier 4 log in `AUDIT-STATUS.md` lags
+> branch coordination — e.g., it still shows DISEASES as IN PROGRESS when it is complete).
 
 **Last updated:** 2026-05-18
 
@@ -30,32 +32,44 @@ The audit script measures **structural** integrity (schema, depth thresholds, cr
 
 ---
 
-## Tier 4 verbatim-review progress log — carried over from AUDIT-STATUS.md
+## Master FV audit status — all catalogs
 
-Records which catalogs have had an agent-driven verbatim (line-by-line) clinical-content review beyond the automated structural audit. **Copied verbatim from `AUDIT-STATUS.md`; reflects work by other branches — do not alter.**
+Consolidated full-verbatim (line-by-line clinical-content) review status across all branches, per current branch coordination.
 
-| Catalog | Tier 4 verbatim review | Notes |
-|---|---|---|
-| **REFERENCE_TABLES** (100) | ✅ COMPLETE | All 100 tables reviewed line-by-line. 1 safety-critical fix (ped azithromycin suspension example was 2× over — `ped_antibiotic_suspensions`). Doses, equivalence ratios, CrCl/Child-Pugh thresholds, CPIC content, trial citations all verified against current Canadian + international guidelines. |
-| **DISEASES.conditions** (600) | 🟡 IN PROGRESS | Disease audit batches 1–29 + palliative (9) + travel medicine + empty-Drug-row sweep complete. Several SAFETY-CRITICAL fixes (rabies vaccine pregnancy mis-categorization, mefloquine pregnancy, wrong-vaccine agents). Remaining categories not yet fully verbatim-reviewed. |
-| **DRUG_FAMILIES** (563) | ✅ COMPLETE | Full-catalog STRUCTURAL pass complete: all 563 comparison[] arrays audited for mis-keyed rows (18 distinct-drug key mismatches fixed) and duplicate rows (~57 same-drug duplicates removed across ~52 families); renderer patched to render members-style ({key,name,brand,notes}) comparison entries. Verbatim CLINICAL-CONTENT review COMPLETE for all 563 families. Fix highlights: catalog-wide sweep of deprecated FDA pregnancy categories (A/B/C/D/X); drug-class misclassification corrected (etripamil sodium→calcium channel blocker); GnRH-antagonist mechanism error (leuprolide is an agonist); topoisomerase-II cytogenetics error (11q23/KMT2A); internal approval-status contradictions resolved (lefamulin, etripamil, adagrasib, capivasertib, arimoclomol); spurious boxed-warning claims removed (larotrectinib, sotorasib); HC approval-date corrections (Opzelura, capivasertib). |
-| **DRUGS** (1546) | 🟡 PARTIAL | AUDIT-CONTENT.md sampled 15 high-volume drug cards. Full verbatim review pending. |
-| **VACCINES** (56) | 🟡 PARTIAL | imvamune contraindications + interaction severity corrected. Full verbatim review pending. |
+| Catalog | FV status | Reviewed by | Notes |
+|---|---|---|---|
+| **DRUG_FAMILIES** (563) | ✅ 100% | other branch + this branch | Verbatim clinical-content review complete. |
+| **DRUGS** (1546) | ◐ unconfirmed | — | `AUDIT-STATUS.md` structural Tier-4 log shows **PARTIAL** ("sampled 15 cards"); this branch's session-continuity record says FV-complete in prior sessions. **Conflict — needs re-verification.** |
+| **VACCINES** (56) | ✅ 100% | this branch | ~55 vaccine cards verbatim-reviewed. |
+| **AMR_DATA** — Antimicrobials drug view (204) | ✅ 100% | this branch | Antibacterials, antivirals, antifungals, antimycobacterials, antiparasitics. |
+| **EMPIRIC_THERAPY_SYNDROMES** — Antimicrobials syndrome view (67) | ✅ 100% | this branch | ~67 empiric-therapy syndromes verbatim-reviewed. |
+| **SCORING_TOOLS** (19) | ✅ 100% | this branch | 19 clinical calculators verified. |
+| **REFERENCE_TABLES** (100) | ✅ 100% | other branch | All 100 tables verbatim-reviewed. |
+| **DISEASES.conditions** (600) | ✅ 100% | other branch | Verbatim review complete (per branch coordination — note: `AUDIT-STATUS.md` auto-generated Tier-4 log is stale and still shows IN PROGRESS). |
+| **PREG_DATA** | ✅ 100% | other branch | Pregnancy/lactation data verbatim-reviewed (per branch coordination). |
+| **NAPRA_ODB_DATA** | 🟡 IN PROGRESS | full-app-audit branch | Actively being verbatim-audited by the full-app-audit branch — do not duplicate. |
+| **MINOR_AILMENTS** (19) | 🔄 IN PROGRESS | this branch | FV first pass started 2026-05-18. |
+| **DEPRESCRIBING_PROTOCOLS** (17) | 🔄 IN PROGRESS | this branch | FV first pass started 2026-05-18. |
+
+**Structurally validated, no prose FV pass required:** `FAMILY_MAP` (routing table — orphan resolution checked by the audit script), `SCORE_PATTERNS`, `EMPIRIC_THERAPY_CATEGORIES`, `NON_PHARM_AGENTS`, `EDIT_HISTORY`, `CHANGELOG`, and other helper/config objects.
+
+**Net remaining FV work:** MINOR_AILMENTS + DEPRESCRIBING_PROTOCOLS (this branch, in progress) and NAPRA_ODB_DATA (full-app-audit branch). DRUGS FV status needs re-confirmation. Everything else is FV-complete.
 
 ---
 
 ## FV first-pass audit log — branch `claude/continue-rx-guide-audit-7I3U1`
 
-Agent-driven full-verbatim (line-by-line) **FIRST-PASS** clinical-content audit completed on this branch. **Additive** — does not supersede the table above; other branches may have audited additional catalogs independently. Where a catalog appears in both tables, both records are intentionally retained.
+Agent-driven full-verbatim (line-by-line) **FIRST-PASS** clinical-content audit completed on this branch.
 
 | Catalog | FV first pass | Notes |
 |---|---|---|
-| **DRUG_FAMILIES** (563) | ✅ 100% | Full verbatim pass complete. Fix: Cushing Steroidogenesis Inhibitors family card — levoketoconazole HC-approval claim corrected (Recorlev is FDA-approved only; SAP access in Canada). |
-| **AMR_DATA — Antimicrobials drug view** (204) | ✅ 100% | Full verbatim pass complete. Fixes: fabricated cefazolin/cloxacillin "FIRST trial / CefBacT" citations replaced with the real CloCeBa RCT (8 locations across DRUGS + DRUG_FAMILIES + AMR_DATA); tedizolid course corrected 5→6 days. |
-| **EMPIRIC_THERAPY_SYNDROMES — Antimicrobials syndrome view** (67) | ✅ 100% | Full verbatim pass complete. Fix: Bacterial Prostatitis card — doxycycline-duration internal contradiction resolved (STI-related prostatitis 7→10–14 days). |
-| **VACCINES** (56) | ✅ 100% | Full verbatim pass complete. Fix: Tdap-in-pregnancy timing corrected to the NACI 27–32-week window (Adacel, Td, Adacel-Polio card pearls). |
-| **SCORING_TOOLS** (19) | ✅ 100% | Full verbatim pass complete. All 19 clinical calculators verified (component point values, score maxima, interpretation thresholds) — 0 errors found. |
-| **DRUGS** (1546) | ◐ prior sessions | Reported FV-complete in earlier sessions of this branch per the session-continuity record; not re-verified in the current session. The structural Tier-4 log above shows DRUGS as PARTIAL — treat DRUGS FV status as unconfirmed pending re-verification. |
+| **DRUG_FAMILIES** (563) | ✅ 100% | Fix: Cushing Steroidogenesis Inhibitors family card — levoketoconazole HC-approval claim corrected (Recorlev is FDA-approved only; SAP access in Canada). |
+| **AMR_DATA — Antimicrobials drug view** (204) | ✅ 100% | Fixes: fabricated cefazolin/cloxacillin "FIRST trial / CefBacT" citations replaced with the real CloCeBa RCT (8 locations across DRUGS + DRUG_FAMILIES + AMR_DATA); tedizolid course corrected 5→6 days. |
+| **EMPIRIC_THERAPY_SYNDROMES — Antimicrobials syndrome view** (67) | ✅ 100% | Fix: Bacterial Prostatitis card — doxycycline-duration internal contradiction resolved (STI-related prostatitis 7→10–14 days). |
+| **VACCINES** (56) | ✅ 100% | Fix: Tdap-in-pregnancy timing corrected to the NACI 27–32-week window (Adacel, Td, Adacel-Polio card pearls). |
+| **SCORING_TOOLS** (19) | ✅ 100% | All 19 clinical calculators verified (component point values, score maxima, interpretation thresholds) — 0 errors found. |
+| **MINOR_AILMENTS** (19) | 🔄 in progress | FV first pass started 2026-05-18. |
+| **DEPRESCRIBING_PROTOCOLS** (17) | 🔄 in progress | FV first pass started 2026-05-18. |
 
 ### Fixes deployed this branch (FV first pass)
 
@@ -68,23 +82,8 @@ Agent-driven full-verbatim (line-by-line) **FIRST-PASS** clinical-content audit 
 
 ---
 
-## Still requiring FV first-pass review
-
-| Catalog | Approx size | FV status |
-|---|---|---|
-| **DISEASES.conditions** (600) | ~125,000 lines | 🟡 IN PROGRESS (other branch — batches 1–29 + palliative + travel done; remaining categories pending) |
-| **PREG_DATA** | ~15,000 lines | ❌ NOT STARTED |
-| **NAPRA_ODB_DATA** | ~10,600 lines | ❌ NOT STARTED |
-| **MINOR_AILMENTS** (19) | ~4,100 lines | ❌ NOT STARTED |
-| **DEPRESCRIBING_PROTOCOLS** (17) | ~1,400 lines | ❌ NOT STARTED |
-| **REFERENCE_TABLES** (100) | — | ✅ COMPLETE (other branch — see carried-over log above; not re-audited on this branch) |
-
-**Structurally validated, no prose FV pass required:** `FAMILY_MAP` (routing table — orphan-resolution checked by the audit script), `SCORE_PATTERNS`, `EMPIRIC_THERAPY_CATEGORIES`, `NON_PHARM_AGENTS`, `EDIT_HISTORY`, `CHANGELOG`, and other helper/config objects.
-
----
-
 ## Maintenance
 
 - Update this file directly after each FV audit cycle (it is not auto-generated).
-- Keep the "carried over from AUDIT-STATUS.md" table in sync if other branches advance Tier 4 work in `AUDIT-STATUS.md`.
+- This file is authoritative for FV status; the auto-generated Tier-4 log in `AUDIT-STATUS.md` may lag.
 - Commit this file alongside the FV fix it documents.
