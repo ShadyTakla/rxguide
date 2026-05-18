@@ -39,7 +39,7 @@ Consolidated full-verbatim (line-by-line clinical-content) review status across 
 | Catalog | FV status | Reviewed by | Notes |
 |---|---|---|---|
 | **DRUG_FAMILIES** (563) | ✅ 100% | other branch + this branch | Verbatim clinical-content review complete. |
-| **DRUGS** (1546) | ◐ unconfirmed | — | `AUDIT-STATUS.md` structural Tier-4 log shows **PARTIAL** ("sampled 15 cards"); this branch's session-continuity record says FV-complete in prior sessions. **Conflict — needs re-verification.** |
+| **DRUGS** (1546) | 🟡 IN PROGRESS | this branch | Full-verbatim re-verification underway (object spans index.html lines ~125,541–286,880). Verified clean through the cardiovascular / antidiabetic / lipid / antithrombotic / gout / NSAID / corticosteroid / antidepressant cluster (~69 cards, alphabetical-by-section order ending at `amitriptyline`). 1 fix so far (denosumab FREEDOM-trial mischaracterization, commit `7370d10`). Resume pointer: index.html line ~134,680. |
 | **VACCINES** (56) | ✅ 100% | this branch | ~55 vaccine cards verbatim-reviewed. |
 | **AMR_DATA** — Antimicrobials drug view (204) | ✅ 100% | this branch | Antibacterials, antivirals, antifungals, antimycobacterials, antiparasitics. |
 | **EMPIRIC_THERAPY_SYNDROMES** — Antimicrobials syndrome view (67) | ✅ 100% | this branch | ~67 empiric-therapy syndromes verbatim-reviewed. |
@@ -53,7 +53,7 @@ Consolidated full-verbatim (line-by-line clinical-content) review status across 
 
 **Structurally validated, no prose FV pass required:** `FAMILY_MAP` (routing table — orphan resolution checked by the audit script), `SCORE_PATTERNS`, `EMPIRIC_THERAPY_CATEGORIES`, `NON_PHARM_AGENTS`, `EDIT_HISTORY`, `CHANGELOG`, and other helper/config objects.
 
-**Net remaining FV work:** NAPRA_ODB_DATA (full-app-audit branch, in progress). DRUGS FV status needs re-confirmation. All other catalogs are FV-complete (first pass).
+**Net remaining FV work:** DRUGS full-verbatim re-verification in progress on this branch (~69 of 1546 cards verified; resume at index.html line ~134,680). NAPRA_ODB_DATA (full-app-audit branch, in progress). All other catalogs are FV-complete (first pass).
 
 ---
 
