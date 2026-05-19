@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,901 clickable entries (latest commit: `8cbc040 on 2026-05-19`)
+**Catalog snapshot:** 2,901 clickable entries (latest commit: `0b71ba8 on 2026-05-19`)
 
 ---
 
@@ -163,7 +163,13 @@
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 116 | 0 |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **99.1%** | `██████████████████` | 115 | 1 |
+
+### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 1 entries remaining (0.9% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `maoi_washout` | {"missing":["norepinephrine"]} |
 
 ---
 
