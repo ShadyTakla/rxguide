@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,904 clickable entries (latest commit: `ba88e03 on 2026-05-19`)
+**Catalog snapshot:** 2,906 clickable entries (latest commit: `8eb66e0 on 2026-05-19`)
 
 ---
 
@@ -23,9 +23,9 @@
 |---|---|---|---|
 | **DRUGS** | 1,551 | 100.0% | 100.0% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
-| **DRUG_FAMILIES** | 541 | 100.0% | 100.0% |
+| **DRUG_FAMILIES** | 542 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 117 | 100.0% | 100.0% |
-| **DISEASES.conditions** | 602 | 100.0% | 100.0% |
+| **DISEASES.conditions** | 603 | 100.0% | 100.0% |
 
 ---
 
@@ -63,15 +63,15 @@
 
 ---
 
-## DRUG_FAMILIES (541 entries)
+## DRUG_FAMILIES (542 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 541 | 0 |
-| Non-empty `members[]` | **100.0%** | `██████████████████` | 541 | 0 |
-| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 541 | 0 |
-| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 541 | 0 |
-| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 541 | 0 |
+| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 542 | 0 |
+| Non-empty `members[]` | **100.0%** | `██████████████████` | 542 | 0 |
+| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 542 | 0 |
+| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 542 | 0 |
+| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 542 | 0 |
 
 ---
 
@@ -87,15 +87,15 @@
 
 ---
 
-## DISEASES.conditions (602 entries)
+## DISEASES.conditions (603 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 602 | 0 |
-| Cites Canadian source | **100.0%** | `██████████████████` | 602 | 0 |
-| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 602 | 0 |
-| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 602 | 0 |
-| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 602 | 0 |
+| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 603 | 0 |
+| Cites Canadian source | **100.0%** | `██████████████████` | 603 | 0 |
+| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 603 | 0 |
+| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 603 | 0 |
+| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 603 | 0 |
 
 ---
 
@@ -163,7 +163,13 @@
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 117 | 0 |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **99.1%** | `██████████████████` | 116 | 1 |
+
+### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 1 entries remaining (0.9% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `maoi_washout` | {"missing":["norepinephrine"]} |
 
 ---
 
