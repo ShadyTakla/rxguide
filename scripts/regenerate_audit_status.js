@@ -606,7 +606,7 @@ function section(title, total, dimensions) {
     } else {
       lines.push('| Key/ID | Detail |');
       lines.push('|---|---|');
-      for (const item of sample) {
+      for (const item of sample.filter(x => x != null)) {
         if (item.k) lines.push(`| \`${item.k}\` | ${JSON.stringify(Object.fromEntries(Object.entries(item).filter(([k]) => k !== 'k')))} |`);
         else if (item.id) lines.push(`| \`${item.id}\` | ${(item.category ? '[' + item.category + '] ' : '') + JSON.stringify(Object.fromEntries(Object.entries(item).filter(([k]) => k !== 'id' && k !== 'category')))} |`);
         else if (item.fname) lines.push(`| \`${item.fname}\` | ${JSON.stringify(Object.fromEntries(Object.entries(item).filter(([k]) => k !== 'fname')))} |`);
