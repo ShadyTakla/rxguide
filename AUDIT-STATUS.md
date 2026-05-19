@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,904 clickable entries (latest commit: `ba88e03 on 2026-05-19`)
+**Catalog snapshot:** 2,905 clickable entries (latest commit: `3572f37 on 2026-05-19`)
 
 ---
 
@@ -25,7 +25,7 @@
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 541 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 117 | 100.0% | 100.0% |
-| **DISEASES.conditions** | 602 | 100.0% | 100.0% |
+| **DISEASES.conditions** | 603 | 100.0% | 100.0% |
 
 ---
 
@@ -87,15 +87,15 @@
 
 ---
 
-## DISEASES.conditions (602 entries)
+## DISEASES.conditions (603 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 602 | 0 |
-| Cites Canadian source | **100.0%** | `██████████████████` | 602 | 0 |
-| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 602 | 0 |
-| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 602 | 0 |
-| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 602 | 0 |
+| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 603 | 0 |
+| Cites Canadian source | **100.0%** | `██████████████████` | 603 | 0 |
+| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 603 | 0 |
+| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 603 | 0 |
+| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 603 | 0 |
 
 ---
 

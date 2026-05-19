@@ -244,18 +244,21 @@ The vast majority of conditions from the original list are present. Remaining ve
 
 ### 4.1 Potentially missing (verify before adding)
 
-| Category | Condition | Note |
-|---|---|---|
-| ~~**Oncology**~~ | ~~Cancer-related fatigue~~ | ✅ Added 2026-05-19 |
-| **Pediatrics** | Kawasaki disease | Common pharmacist role: high-dose ASA + IVIG; coronary artery aneurysm monitoring |
-| **Pediatrics** | Febrile seizures | First seizure counselling; when to treat vs observe; recurrence risk; no routine AED |
-| **Neurology** | Normal pressure hydrocephalus (NPH) | Gait/cognition triad; shunt monitoring; medication-induced mimics |
-| **Rheumatology** | Fibromyalgia | Duloxetine/pregabalin; sleep hygiene; exercise; avoid opioids — pharmacist role |
-| **Rheumatology** | Reactive arthritis | Post-infectious; NSAID + sulfasalazine; STI treatment link |
-| **Cardiology** | Cardiac sarcoidosis | ICD indications; steroid therapy; overlap with inflammatory cardiomyopathy |
+All items in this section have now been confirmed as present or added. See §4.2 below.
 
 ### 4.2 Confirmed already present (do not re-add)
-See the completed section above — all original §4.1 and §4.2 items are confirmed present.
+
+All original §4.1 items are confirmed present:
+
+| Category | Condition | Status |
+|---|---|---|
+| ~~Oncology~~ | ~~Cancer-related fatigue~~ | ✅ Added 2026-05-19 |
+| ~~Pediatrics~~ | ~~Kawasaki disease~~ | ✅ Confirmed present (2026-05-19 audit) |
+| ~~Pediatrics~~ | ~~Febrile seizures~~ | ✅ Added 2026-05-19 |
+| ~~Neurology~~ | ~~Normal pressure hydrocephalus (NPH)~~ | ✅ Confirmed present (2026-05-19 audit) |
+| ~~Rheumatology~~ | ~~Fibromyalgia~~ | ✅ Confirmed present (2026-05-19 audit) |
+| ~~Rheumatology~~ | ~~Reactive arthritis~~ | ✅ Confirmed present (2026-05-19 audit) |
+| ~~Cardiology~~ | ~~Cardiac sarcoidosis~~ | ✅ Confirmed present (2026-05-19 audit) |
 
 ---
 
@@ -295,16 +298,22 @@ For each drug family with multiple members, verify:
 
 ### 6.1 New reference tables still needed
 
-| Table | Category | Why |
-|---|---|---|
-| **MAID Drug Protocol** | Med Safety / Practice | Pharmacist scope, drug kit composition, documentation — no dedicated table yet |
-| **Local Antibiogram / AMR Trends** | AMR Reference | Companion to `abx_duration`; Ontario + national resistance rates by pathogen/antibiotic |
-| **Pediatric High-Risk Medications (KIDs List)** | Pediatric / Med Safety | Published list of high-risk drugs in children; distinct from adult Beers/STOPP |
-| **CYP3A4 Inhibitor / Inducer / Substrate Matrix** | Drug Interactions | Comprehensive table by inhibition strength; already partial in drug cards — dedicated table would be high value |
-| **P-gp Inhibitor / Inducer / Substrate Matrix** | Drug Interactions | Companion to CYP3A4 table; critical for DOACs, immunosuppressants, oncology |
-| **MAOI Washout / Serotonergic Switch Matrix** | Drug Interactions | Switching between MAOIs and SSRIs/SNRIs/TCAs/other serotonergic agents; washout periods by agent |
-| **Frailty Assessment Tools** | Geriatric | Clinical Frailty Scale, FRAIL questionnaire — published only; no calculator |
-| **Falls Risk Medication Reference** | Geriatric | Fall-risk drug list with risk magnitude; Canadian guidance; companion to `di_falls` |
+All originally listed tables are now confirmed present (2026-05-19 audit):
+
+| Table | Status |
+|---|---|
+| ~~MAID Drug Protocol~~ | ✅ `maid_drug_protocol` confirmed present |
+| ~~Local Antibiogram / AMR Trends~~ | ✅ `antibiogram` — Ontario antibiogram confirmed present |
+| ~~Pediatric High-Risk Medications (KIDs List)~~ | ✅ `kids_list` added earlier this session |
+| ~~CYP3A4 Inhibitor / Inducer / Substrate Matrix~~ | ✅ `cyp3a4_matrix` confirmed present |
+| ~~P-gp Inhibitor / Inducer / Substrate Matrix~~ | ✅ `pgp_matrix` confirmed present |
+| ~~MAOI Washout / Serotonergic Switch Matrix~~ | ✅ `maoi_washout` confirmed present |
+| ~~Frailty Assessment Tools~~ | ✅ `frailty_tools` confirmed present |
+| ~~Falls Risk Medication Reference~~ | ✅ `falls_risk_meds` confirmed present |
+| ~~Inhaler Technique by Device~~ | ✅ `inhaler_technique` confirmed present |
+| ~~Pregnancy-Safe Medications by Indication~~ | ✅ `pregnancy_safe_meds` confirmed present |
+
+No new reference tables required at this time.
 
 ### 6.2 Existing reference tables to expand
 
@@ -328,14 +337,17 @@ Still to add (all as reference content — not calculators):
 
 ### 7.3 Jurisprudence expansion
 
-Current jurisprudence content covers Ontario well. Still to add:
-- **Privacy & PHIPA scenarios** — family member pickup, employer requests, court orders, fax/email errors
-- **Conscientious objection** — OCP and CCAPP positions on contraception, MAID drugs, naloxone
-- **Pharmacy ownership / corporate practice** — the 80/20 rule; multi-pharmacy ownership; banking
-- **OAT regulations** — methadone witness rules, takeaway carries, missed doses, urine drug screens
-- **Compounding regulations** — USP 795 (non-sterile), USP 797 (sterile), USP 800 (hazardous) — community-pharmacy scope
-- **CPD requirements** — OCP CE-PLUS / CE record-keeping; annual maintenance of certification
-- **Pharmacist liability & insurance** — PMIC; reportable events; standard of care
+All originally listed topics are confirmed present in the Jurisprudence section (2026-05-19 audit):
+
+- ~~Privacy & PHIPA scenarios~~ ✅ `Privacy and Confidentiality (PHIPA)` topic present
+- ~~Conscientious objection~~ ✅ `Conscientious Objection` topic present (OCP #6-01; MAID, EC, naloxone, Mifegymiso)
+- ~~Pharmacy ownership / corporate practice~~ ✅ `Pharmacy Ownership & Corporate Practice` topic present
+- ~~OAT regulations~~ ✅ `Methadone & Buprenorphine (OAT)` topic present (witnessed dosing, carries, diversion)
+- ~~Compounding regulations~~ ✅ `Compounding Regulations` topic present (USP 795/797/800)
+- ~~CPD requirements~~ ✅ `Continuing Professional Development (CPD)` topic present (CE-PLUS, QAP, CCCEP)
+- ~~Pharmacist liability & insurance~~ ✅ `Pharmacist Liability & Professional Insurance` topic present (PMIC, PHIPA, standard of care)
+
+No new jurisprudence topics required at this time.
 
 ---
 
@@ -356,7 +368,7 @@ Current jurisprudence content covers Ontario well. Still to add:
 
 Dedicated reference content (not currently in a structured table):
 - **Auto-injectors** — EpiPen/Auvi-Q/Allerject/Neffy nasal technique comparison; insulin pen vs vial; GLP-1 weekly pen formulations; biologic SC injectors (Autoject 2, various auto-injectors)
-- **Inhalers** — pMDI + spacer technique; DPI technique (Turbuhaler, Diskus, Ellipta, Breezehaler); SMI (Respimat) technique — *Note: `pharmacist_injection_technique` covers injectable routes; inhaler technique is distinct and still missing as a structured table*
+- ~~**Inhalers**~~ ✅ `inhaler_technique` reference table confirmed present (pMDI/DPI/SMI by device)
 - **Eye drops** — instillation technique; nasolacrimal occlusion; spacing between drops (5 min rule)
 - **Nasal sprays** — priming, technique, alternating nostrils
 - **Transdermal patches** — rotation, removal, hot-weather effects (adhesive failure)
@@ -575,18 +587,27 @@ When picking items from this list, weight by:
 4. **Provincial-scope expansion value** — content that empowers pharmacist prescribing has high value but must be province-tagged.
 5. **Canadian-specific** — content not readily available in Lexicomp/Micromedex/UpToDate (ODB LU codes, provincial scope, NACI schedules) is highest value.
 
-### Quick-impact ranking (updated — top items remaining)
+### Quick-impact ranking (updated 2026-05-19 — items 1–9 confirmed present)
 
-1. **MAID Drug Protocol** reference table — no dedicated table; pharmacist role is expanding
-2. **Inhaler technique** reference table (pMDI/DPI/SMI by device) — high daily-use; not yet structured
-3. **CYP3A4 + P-gp interaction matrices** — dedicated cross-reference tables; high clinical value
-4. **MAOI washout / serotonergic switch matrix** — psychiatry switching is high-risk; no dedicated table
-5. **Pregnancy-safe medication algorithms** — by indication (nausea, UTI, headache, GERD in pregnancy)
-6. **Frailty assessment tools** — CFS + FRAIL questionnaire reference
-7. **Falls-risk medication reference table** — companion to Beers + `di_falls`
-8. **Pediatric KIDs list** — high-risk meds in children; currently no dedicated table
-9. **Local antibiogram / AMR trends** — companion to `abx_duration`
-10. **Jurisprudence expansion** — PHIPA scenarios, OAT regulations, compounding regulations
+All previously listed top-10 items are now confirmed present. The catalog is highly complete. Remaining gap items are lower-priority enhancements:
+
+1. ~~MAID Drug Protocol~~ ✅ `maid_drug_protocol` present
+2. ~~Inhaler technique~~ ✅ `inhaler_technique` present
+3. ~~CYP3A4 + P-gp interaction matrices~~ ✅ `cyp3a4_matrix` + `pgp_matrix` present
+4. ~~MAOI washout / serotonergic switch matrix~~ ✅ `maoi_washout` present
+5. ~~Pregnancy-safe medication algorithms~~ ✅ `pregnancy_safe_meds` present
+6. ~~Frailty assessment tools~~ ✅ `frailty_tools` present
+7. ~~Falls-risk medication reference table~~ ✅ `falls_risk_meds` present
+8. ~~Pediatric KIDs list~~ ✅ `kids_list` present
+9. ~~Local antibiogram / AMR trends~~ ✅ `antibiogram` present
+10. ~~Jurisprudence expansion~~ ✅ All 7 topics confirmed present
+
+**Remaining genuine gaps (lower priority):**
+1. Sterile compounding workflow (USP 797) — community-pharmacy sterile prep scope; PPE, BUD, environmental monitoring
+2. Robbery & burglary preparedness — controlled substance protection; Health Canada/OCP reporting; staff safety
+3. Quality assurance / continuous improvement — OCP QAP; accreditation requirements
+4. Adherence assessment tools — Morisky-8, CUDIT-R; motivational-interviewing reference
+5. New-start counselling templates per drug class — beyond existing `patient_counseling` fields
 
 ### Liability red flags to remember
 
