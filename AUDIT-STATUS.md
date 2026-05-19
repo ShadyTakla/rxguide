@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,878 clickable entries (latest commit: `c4d8216 on 2026-05-19`)
+**Catalog snapshot:** 2,886 clickable entries (latest commit: `d06f40b on 2026-05-18`)
 
 ---
 
@@ -21,31 +21,31 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,546 | 100.0% | 100.0% |
+| **DRUGS** | 1,547 | 100.0% | 100.0% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 539 | 100.0% | 100.0% |
-| **REFERENCE_TABLES** | 100 | 100.0% | 100.0% |
-| **DISEASES.conditions** | 600 | 100.0% | 100.0% |
+| **REFERENCE_TABLES** | 106 | 100.0% | 98.1% |
+| **DISEASES.conditions** | 601 | 100.0% | 100.0% |
 
 ---
 
-## DRUGS (1,546 entries)
+## DRUGS (1,547 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full 16-field schema complete | **100.0%** | `██████████████████` | 1,546 | 0 |
-| Non-empty `interactions[]` | **100.0%** | `██████████████████` | 1,546 | 0 |
-| Canonical severity values | **100.0%** | `██████████████████` | 1,546 | 0 |
-| Canadian-source recognition | **100.0%** | `██████████████████` | 1,546 | 0 |
-| NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
-| PREG_DATA entry | **100.0%** | `██████████████████` | 1,546 | 0 |
-| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,546 | 0 |
-| FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `monitoring` field populated | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
-| `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,546 | 0 |
+| Full 16-field schema complete | **100.0%** | `██████████████████` | 1,547 | 0 |
+| Non-empty `interactions[]` | **100.0%** | `██████████████████` | 1,547 | 0 |
+| Canonical severity values | **100.0%** | `██████████████████` | 1,547 | 0 |
+| Canadian-source recognition | **100.0%** | `██████████████████` | 1,547 | 0 |
+| NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,547 | 0 |
+| PREG_DATA entry | **100.0%** | `██████████████████` | 1,547 | 0 |
+| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,547 | 0 |
+| FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,547 | 0 |
+| `monitoring` field populated | **100.0%** | `██████████████████` | 1,547 | 0 |
+| `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,547 | 0 |
+| `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,547 | 0 |
+| `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,547 | 0 |
+| `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,547 | 0 |
 
 ---
 
@@ -75,27 +75,34 @@
 
 ---
 
-## REFERENCE_TABLES (100 entries)
+## REFERENCE_TABLES (106 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| All 10 schema fields complete | **100.0%** | `██████████████████` | 100 | 0 |
-| Canadian source in citation | **100.0%** | `██████████████████` | 100 | 0 |
-| Wired into `buildReference()` dispatch (not orphan) | **100.0%** | `██████████████████` | 100 | 0 |
-| `related_drugs` all resolve to DRUGS/VACCINES | **100.0%** | `██████████████████` | 100 | 0 |
-| Row widths match column count | **100.0%** | `██████████████████` | 100 | 0 |
+| All 10 schema fields complete | **100.0%** | `██████████████████` | 106 | 0 |
+| Canadian source in citation | **100.0%** | `██████████████████` | 106 | 0 |
+| Wired into `buildReference()` dispatch (not orphan) | **100.0%** | `██████████████████` | 106 | 0 |
+| `related_drugs` all resolve to DRUGS/VACCINES | **98.1%** | `██████████████████` | 104 | 2 |
+| Row widths match column count | **100.0%** | `██████████████████` | 106 | 0 |
+
+### ❌ `related_drugs` all resolve to DRUGS/VACCINES — 2 entries remaining (1.9% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `oral_antineoplastic_counselling` | {"unresolved":["erlotinib"]} |
+| `pharmacist_injection_technique` | {"unresolved":["vitamin_b12"]} |
 
 ---
 
-## DISEASES.conditions (600 entries)
+## DISEASES.conditions (601 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 600 | 0 |
-| Cites Canadian source | **100.0%** | `██████████████████` | 600 | 0 |
-| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 600 | 0 |
-| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 600 | 0 |
-| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 600 | 0 |
+| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 601 | 0 |
+| Cites Canadian source | **100.0%** | `██████████████████` | 601 | 0 |
+| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 601 | 0 |
+| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 601 | 0 |
+| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 601 | 0 |
 
 ---
 
@@ -159,11 +166,21 @@
 
 ---
 
-## Cross-Reference: Reference Tables (100 entries)
+## Cross-Reference: Reference Tables (106 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 100 | 0 |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **95.3%** | `█████████████████░` | 101 | 5 |
+
+### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 5 entries remaining (4.7% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `tall_man_lettering` | {"missing":["amlodipine","amiodarone","levothyroxine","prednisone","sertraline","bupropion","buspirone","lorazepam","clonazepam","lamotrigine"]} |
+| `oral_antineoplastic_counselling` | {"missing":["loperamide","warfarin","allopurinol","prednisone","midazolam","azacitidine"]} |
+| `hospital_community_transition` | {"missing":["naloxone"]} |
+| `cannabis_dispensing` | {"missing":["tacrolimus","warfarin","clozapine","cyclosporine","clobazam"]} |
+| `pharmacist_injection_technique` | {"missing":["semaglutide","aripiprazole","haloperidol","adalimumab","secukinumab","liraglutide","etanercept","dulaglutide","ustekinumab","paliperidone"]} |
 
 ---
 
@@ -184,7 +201,9 @@
 
 Ordered by impact (size of gap × clinical importance):
 
-**No remaining audit gaps — catalog is 100% clean across all checked dimensions.**
+| Priority | Gap (entries) | Audit area |
+|---|---|---|
+| 2 | **2** | REFERENCE_TABLES — fix `related_drugs` keys that don't resolve |
 
 ---
 
