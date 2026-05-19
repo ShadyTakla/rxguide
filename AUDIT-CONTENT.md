@@ -1133,32 +1133,34 @@ All 539 DRUG_FAMILIES entries reviewed field-by-field. Clinical accuracy confirm
 
 ---
 
-## Cycle 7 — SCORING_TOOLS FV Audit + Reference Tab Integration (COMPLETE ✅)
+## Cycle 8 — SCORING_TOOLS FV Audit (1st + 2nd pass) + Reference Tab Integration (COMPLETE ✅)
 
 **Started:** 2026-05-18
 **Completed:** 2026-05-19
-**Scope:** All 19 SCORING_TOOLS entries (cha2ds2vasc, has_bled, phq9, gad7, audit_c, ftnd, frax, moca, mmse, ascvd, das28, nihss, beers, crcl, timi, wells, chads2, vanderbilt, hit_4ts); UI/rendering layer; Reference tab integration.
-**Method:** Full-verbatim read of each tool's `name`, `purpose`, `components[]`, `scoring[]`, `sections[]`, `clinical_action[]`, `pearls[]`, `source` fields against primary Canadian/international clinical sources.
+**Scope:** All 19 SCORING_TOOLS entries (cha2ds2vasc, has_bled, phq9, gad7, audit_c, ftnd, frax, moca, mmse, ascvd, das28, nihss, beers, crcl, timi, wells, chads2, vanderbilt, hit_4ts); SCORING_TOOLS data structure vs REFERENCE_TABLES; Reference-tab rendering layer.
+**Method:** Full-verbatim read of every tool's `name`, `purpose`, `components[]`, `scoring[]`, `sections[]`, `clinical_action[]`, `pearls[]`, `source` against primary + Canadian sources — two passes.
 
-### Findings
+> **Correction to prior record.** An earlier draft of this section (logged as "Cycle 7 — SCORING_TOOLS") carried a reconstructed 8-row findings table. On verification against the live catalog, ≥2 of those rows did not match the data: TIMI ("≥3→≥5" — the data correctly reads ≥3 for an early-invasive strategy) and PHQ-9 ("reorder clinical_action" — PHQ-9 has no `clinical_action` field). That table is withdrawn and superseded by the verified findings below. Confirmed-present 1st-pass work from the prior session is retained: the `showScoringToolDetail()` inline-rendering migration and the HIT-4Ts `SCORE_PATTERNS` regex schema fix. Section renumbered Cycle 8 (avoids the duplicate "Cycle 7" with the DRUGS audit).
+
+### Structural audit — SCORING_TOOLS vs REFERENCE_TABLES
+
+| Aspect | REFERENCE_TABLES | SCORING_TOOLS (before) | Resolution |
+|---|---|---|---|
+| Per-entry `icon` | ✅ distinct per table | ❌ all hardcoded 📊 | 🔧 Added a distinct `icon` to all 19 tools |
+| Per-entry `color` | ✅ distinct per table | ❌ all hardcoded `#a78bfa` | 🔧 Added a distinct `color` to all 19 tools |
+| Reference-grid tile | distinct icon+color per item | identical purple tiles | 🔧 `buildReference()` now reads `s.icon`/`s.color` |
+| Inline detail view | `showReferenceTable()` | `showScoringToolDetail()` (PR #218–219) | ✅ parity — detail header now shows the tool's icon + color accent |
+
+### 2nd-pass clinical findings
 
 | # | Tool | Field | Issue | Resolution |
 |---|---|---|---|---|
-| 1 | timi | pearls[4] | 🔴 TIMI threshold stated as "≥3" for PCI benefit — guideline threshold is ≥5 for high-risk | 🔧 Corrected to ≥5 |
-| 2 | audit_c | scoring (female) | 🟡 Female cut-off stated as ≥2 — validated Canadian cut-off is ≥3 (sensitivity/specificity data) | 🔧 Corrected to ≥3 |
-| 3 | frax | pearls | 🟡 FRAX treatment threshold stated as "10-year hip fracture ≥3%" alone — Osteoporosis Canada criteria also includes major osteoporotic fracture ≥20% | 🔧 Added both thresholds |
-| 4 | moca | scoring | 🔴 MoCA cut-off stated as "<26 = cognitive impairment" without education adjustment — ≤1 point added for ≤12 years education per validated protocol | 🔧 Added education adjustment note |
-| 5 | mmse | pearls | 🟡 MMSE staging boundaries: "mild 21–24" — validated staging is mild 18–24 (some sources 19–24); corrected to 18–24 | 🔧 Corrected mild range |
-| 6 | phq9 | clinical_action | 🟡 PHQ-9 ≥20 action said "consider ECT" as first listed option — pharmacotherapy/psychotherapy should precede ECT | 🔧 Reordered: pharmacotherapy + psychotherapy first |
-| 7 | vanderbilt | source | 🟡 Source citation listed only Vanderbilt University; CADDRA (Canadian ADHD Resource Alliance) also endorses this tool | 🔧 Added CADDRA reference |
-| 8 | hit_4ts | SCORE_PATTERNS regex | 🔴 Wrong schema used (object literal vs `{re:, key:}`) causing pattern-matching to fail silently | 🔧 Fixed to `{re: /4Ts|HIT 4T|4-Ts|four T/gi, key: 'hit_4ts'}` |
+| 1 | audit_c | `scoring[]` | Two scoring rows shared the same range (≥4 men / ≥3 women) — redundant; no negative-screen row, so the table did not span the full score range | 🔧 Consolidated to two rows — negative screen (0–3 men / 0–2 women) + positive screen (≥4 / ≥3); the ≥8 AUDIT-10 caveat retained inside the positive row |
+| 2 | mmse | `scoring[]` (<10 row) | "Memantine Health Canada–approved for MMSE 3–14" — Health Canada approval is for moderate-to-severe Alzheimer's disease, not an MMSE band; 3–14 is the pivotal-trial enrolment range | 🔧 Reworded: "Health Canada–approved for moderate-to-severe Alzheimer's disease (pivotal trials enrolled MMSE 3–14)" |
+| 3 | ascvd | `pearls[]` | Statin-indicated conditions listed "diabetes age ≥40 or >15 yrs" — compressed/ambiguous vs CCS 2021 criteria | 🔧 Expanded to "diabetes (age ≥40, OR age ≥30 with diabetes duration >15 yrs, OR microvascular disease)" per CCS 2021 Dyslipidemia |
 
-**UI/Rendering fixes:**
-- `showScorePanel()` overlay replaced by `showScoringToolDetail()` inline renderer in `reference-detail` panel (consistent with all other Reference tab items)
-- `buildReference()` click handler updated: `type:'score'` now calls `showScoringToolDetail()` instead of `showScorePanel()`
-- `pickSearch()` score handler updated to call `showScoringToolDetail()` instead of `showScorePanel()`
-- Clinical Scoring Tools added as 10th Reference tab category (position 2, beside Deprescribing Protocols), color `#a78bfa`
+The other 16 tools were read field-by-field on both passes — component point totals, score-band cut-offs, and Canadian-source citations verified accurate; no corrections required.
 
 ### Verdict
 
-All 19 SCORING_TOOLS entries reviewed. 7 clinical corrections + 1 schema fix applied. Clinical Scoring Tools integrated inline in Reference tab (PR #218, merged 2026-05-19). Reference tab FV footer updated to May 19, 2026.
+All 19 SCORING_TOOLS reviewed twice. 3 clinical/structural corrections applied. Per-tool `icon` + `color` added for structural parity with REFERENCE_TABLES; `buildReference()` and `showScoringToolDetail()` updated to render them. JS parse passes. Reference-tab FV footer at May 19, 2026.
