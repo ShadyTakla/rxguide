@@ -4,7 +4,7 @@
 
 **Audience:** Future contributors (human or AI). Pick from this list when looking for high-impact work. Cross-reference against existing content (see AGENTS.md §14) before adding to avoid duplication.
 
-**Last updated:** 2026-05-12
+**Last updated:** 2026-05-19
 
 ---
 
@@ -18,11 +18,132 @@
 
 See **`AGENTS.md` §24** for the full rules, examples, and discovery commands.
 
-This means every item below that proposes a "new condition" or "new reference table" is fine to add — just confirm it doesn't duplicate an existing entry. Items that propose new top-level categories or new tabs are not on this roadmap (and if you find one mistakenly listed, treat it as "extend an existing category" instead).
+---
+
+## ✅ Completed items (as of 2026-05-19)
+
+Items confirmed present in `index.html`. Do not re-add.
+
+### Reference tables completed
+| Table ID | Title |
+|---|---|
+| `hfref_gdmt_titration` | HFrEF Quadruple GDMT — Titration Ladder & STRONG-HF Monitoring |
+| `ac_switching` | Anticoagulant Switching — Transition Protocols |
+| `ac_doac_perioperative` | DOAC Perioperative Management |
+| `contraception_method_comparison` | Hormonal & Non-Hormonal Contraception — Method Comparison |
+| `contraception_missed_dose` | Missed-Dose Decision Tree by Contraception Formulation |
+| `contraception_drug_interactions` | Drug Interactions Affecting Hormonal Contraception |
+| `contraception_emergency_selection` | Emergency Contraception — Selection by Time, BMI, Drug Interactions |
+| `nti_substitution` | Narrow-Therapeutic-Index Drug Substitution Rules |
+| `t2dm_algorithm` | Type 2 Diabetes — Diabetes Canada 2024 Stepwise Algorithm |
+| `lai_administration_protocols` | Long-Acting Injectables — Induction, Missed-Dose, Administration |
+| `pen_fast_delabeling` | PEN-FAST Score & Penicillin Allergy De-Labeling Workflow |
+| `tox_hyperkalemia` | Acute Hyperkalemia — Emergency Treatment |
+| `tox_status_epilepticus` | Status Epilepticus — Treatment Algorithm |
+| `asthma_action_plan` | Asthma Action Plan — Green/Yellow/Red Zone (GINA 2024) |
+| `copd_action_plan` | COPD Action Plan — Green/Yellow/Red Zone (GOLD 2024-2025) |
+| `insulin_titration` | Insulin Titration — Basal & Prandial Starting Doses + Adjustment Rules |
+| `abx_duration` | Antimicrobial Duration Cheat Sheet — Shortened Courses (AMMI Canada 2024) |
+| `sadmans_sick_day_rules` | SADMANS Sick-Day Medication Rules |
+| `ped_sick_day_rules` | Sick-Day Rules — Pediatric & Adult Diabetes |
+| `drug_lab_interference` | Drug-Laboratory Test Interference |
+| `tdm_targets` | Therapeutic Drug Monitoring (TDM) Targets |
+| `renal_dose_adjustment` | Renal Dose-Adjustment — CrCl Thresholds by Drug Class |
+| `hepatic_dose_adjustment` | Hepatic Dose-Adjustment — Child-Pugh A/B/C |
+| `pgx_cyp2c19` | CPIC: CYP2C19 |
+| `pgx_cyp2d6` | CPIC: CYP2D6 |
+| `pgx_hla_b5701` | CPIC: HLA-B*57:01 — Abacavir |
+| `pgx_hla_b1502` | CPIC: HLA-B*15:02 — Carbamazepine |
+| `pgx_tpmt_nudt15` | CPIC: TPMT/NUDT15 — Thiopurines |
+| `pgx_dpyd` | CPIC: DPYD — Fluoropyrimidines |
+| `pgx_ugt1a1` | CPIC: UGT1A1 — Irinotecan |
+| `pgx_warfarin` | CPIC: CYP2C9 + VKORC1 — Warfarin |
+| `pgx_g6pd` | G6PD Deficiency — Drugs to Avoid |
+| `iv_ysite_compatibility` | IV Y-Site Compatibility |
+| `crushable_non_crushable` | Crushable vs Non-Crushable Medications |
+| `ng_tube_compatibility` | NG/PEG/Feeding-Tube Medication Compatibility |
+| `hazardous_drug_handling` | Hazardous Drug Handling — USP <800> |
+| `lasa_pairs` | Look-Alike Sound-Alike (LASA) Pairs — ISMP Canada |
+| `high_alert_medications` | High-Alert Medications (ISMP) |
+| `dispensing_safety_errors` | Dispensing Errors & Pharmacy Safety |
+| `beers_criteria_2023` | AGS Beers Criteria 2023 |
+| `stopp_start_v3` | STOPP-START Criteria v3 (2023) |
+| `di_qt` | Drug-Induced QT Prolongation |
+| `di_hyponatremia` | Drug-Induced Hyponatremia (SIADH) |
+| `di_hyperkalemia` | Drug-Induced Hyperkalemia |
+| `di_aki` | Drug-Induced Acute Kidney Injury |
+| `di_hepatotoxicity` | Drug-Induced Liver Injury (DILI) |
+| `di_photosensitivity` | Drug-Induced Photosensitivity |
+| `di_pancreatitis` | Drug-Induced Pancreatitis |
+| `di_falls` | Drug-Induced Falls in Elderly |
+| `di_delirium` | Drug-Induced Confusion/Delirium |
+| `di_depression` | Drug-Induced Depression/Suicidality |
+| `di_lupus` | Drug-Induced Lupus Erythematosus |
+| `di_parkinsonism` | Drug-Induced Parkinsonism |
+| `di_neuropathy` | Drug-Induced Peripheral Neuropathy |
+| `black_box_warnings_canadian` | Black-Box/Boxed Warnings — Canadian Compilation |
+| `drug_shortage_mitigation` | Drug Shortage Mitigation |
+| `medscheck_workflow` | MedsCheck Eligibility & Workflow (Ontario) |
+| `pharmacist_scope_provinces` | Pharmacist Scope of Practice by Province |
+| `naloxone_thn_workflow` | Naloxone Take-Home Kit — Pharmacist Workflow |
+| `beta_lactam_cross_reactivity` | Beta-Lactam Allergy Cross-Reactivity |
+| `sulfa_cross_reactivity` | Sulfa Drug Cross-Reactivity |
+| `nsaid_cross_reactivity` | NSAID Cross-Reactivity & Hypersensitivity |
+| `contrast_reactions` | Iodinated Contrast & Gadolinium Allergy |
+| `vaccine_excipient_allergies` | Vaccine Excipient Allergies & Substitutes |
+| `drug_food_grapefruit` | Grapefruit & Furanocoumarin-Containing Foods |
+| `drug_food_dairy_cations` | Drug-Cation Chelation (Dairy, Iron, Calcium, Antacids) |
+| `drug_food_warfarin_vit_k` | Vitamin K & Warfarin (Dietary Consistency) |
+| `drug_food_alcohol` | Alcohol-Drug Interactions |
+| `drug_food_caffeine_others` | Caffeine, Tyramine, and Other Food-Drug Interactions |
+| `ped_weight_dosing` | Pediatric Weight-Based Dosing |
+| `ped_antibiotic_suspensions` | Pediatric Antibiotic Oral Suspensions |
+| `ped_antipyretics` | Pediatric Antipyretics |
+| `ped_vital_signs` | Pediatric Vital Signs by Age |
+| `opioid_mme` | Opioid Morphine Equivalent (MME) Reference |
+| `steroid_equiv` | Glucocorticoid Equivalence |
+| `ppi_equiv` | PPI Equivalence & Comparison |
+| `statin_equiv` | Statin LDL-Lowering Equivalence |
+| `ics_potency` | Inhaled Corticosteroid (ICS) Potency |
+| `topical_steroid_potency` | Topical Corticosteroid Potency (Class I–VII) |
+| `doac_dose` | DOAC Dose by Indication × CrCl |
+| `insulin_types` | Insulin Types — Onset, Peak, Duration |
+| `tox_acetaminophen` | Acetaminophen Overdose & NAC |
+| `tox_antidote_table` | Common Overdose Antidotes |
+| `tox_anaphylaxis` | Anaphylaxis — Emergency Management |
+| `tox_hypoglycemia` | Acute Hypoglycemia Management |
+| `tox_dka_hhs` | DKA/HHS Management Protocol |
+| `tox_asthma_copd` | Acute Asthma & COPD Exacerbation — Severity Ladder |
+| `tox_sepsis_bundle` | Sepsis Hour-1 Bundle |
+| `tox_serotonin_syndrome` | Serotonin Syndrome — Recognition & Management |
+| `tox_nms` | Neuroleptic Malignant Syndrome (NMS) |
+| `tox_alcohol_withdrawal` | Alcohol Withdrawal Syndrome & Delirium Tremens |
+| `tox_anticholinergic_toxidrome` | Anticholinergic Toxidrome |
+| `tox_sympathomimetic_toxidrome` | Sympathomimetic Toxidrome |
+| `tox_salicylate_overdose` | Salicylate Overdose |
+| `tox_tca_overdose` | Tricyclic Antidepressant Overdose |
+| `ac_bridging` | Perioperative Anticoagulation Bridging |
+| `ac_doac_reversal` | DOAC Reversal — Major Bleeding |
+| `ac_warfarin_reversal` | Warfarin Reversal — INR Elevation & Bleeding |
+| `ac_vte` | VTE Treatment & Duration |
+| `ac_afib` | Atrial Fibrillation — Stroke Prevention & Rate vs Rhythm |
+| **`tall_man_lettering`** | Tall-Man Lettering Standard List — ISMP Canada *(added 2026-05-19)* |
+| **`oral_antineoplastic_counselling`** | Oral Antineoplastic Patient Counselling *(added 2026-05-19)* |
+| **`hospital_community_transition`** | Hospital-to-Community Transition — MedRec Workflow *(added 2026-05-19)* |
+| **`drug_recall_workflow`** | Drug Recall Workflow — Health Canada & Pharmacist Responsibilities *(added 2026-05-19)* |
+| **`cannabis_dispensing`** | Medical Cannabis — Pharmacist Reference & Dispensing Framework *(added 2026-05-19)* |
+| **`pharmacist_injection_technique`** | Pharmacist-Administered Injection Technique — IM, SC, ID Reference *(added 2026-05-19)* |
+
+### Disease cards completed (selected highlights — full list is 601 conditions)
+All conditions in §4.1 and §4.2 of the original roadmap are confirmed present, including:
+Long QT syndrome, Brugada syndrome, **CPVT** *(added 2026-05-19)*, PE/DVT outpatient, Adrenal insufficiency, Subclinical hypothyroidism, Microscopic colitis, Iron deficiency anemia, B12 deficiency, Recurrent UTI, Asymptomatic bacteriuria, C. difficile colitis, AKI, Restless legs syndrome, Allergic conjunctivitis, Dry eye disease, Trigeminal neuralgia, Bronchiolitis, Croup, Otitis externa, ADHD, Anxiety disorders, OCD, PTSD, OSA, Allergic rhinitis, PMR, Erectile dysfunction, Premature ejaculation, Menopause symptom management, PCOS, Endometriosis, Pregnancy counselling, Lactation counselling, Diabetes insipidus, Cushing syndrome, Sickle cell disease, Thalassemia, Polycythemia vera, Essential thrombocythemia, ITP, Myasthenia gravis, Tourette syndrome, Tumor lysis syndrome, CIPN, Opioid use disorder.
+
+### Drug cards completed (selected)
+`conjugated_estrogens`, `conjugated_estrogen`, `elagolix` — all present with full schema.
 
 ---
 
-## Table of contents
+## Table of contents (remaining gaps)
 
 1. [Liability guardrails — what NEVER to add](#1-liability-guardrails--what-never-to-add)
 2. [What rxguide is intentionally NOT](#2-what-rxguide-is-intentionally-not)
@@ -70,8 +191,6 @@ rxguide is **reference content** — published, evidence-based, citable. It is *
 - **Add Canadian context** (ODB coverage, NAPRA scheduling, provincial pharmacist scope).
 - Let the **user (pharmacist) do the calculation**. The app provides the reference; the human provides the judgement.
 
-Anything in this ROADMAP that gets close to the DCS line should be designed as a published table or a counselling script, not as a personalized calculator.
-
 ---
 
 ## 2. What rxguide is intentionally NOT
@@ -88,232 +207,73 @@ It IS:
 - A **counselling-content library** for community-pharmacy interactions.
 - A **rapid-lookup tool** for class effects, contraindications, monitoring schedules, deprescribing protocols.
 
-When in doubt about a feature idea: would CPS, RxFiles, or Bugs & Drugs publish this as a table or chapter? If yes → safe. If it requires user input to compute a recommendation → not safe.
-
 ---
 
 ## 3. High-value reference content gaps
 
-These are the "top of the pile" items — high practical value for Canadian community pharmacists, low liability, fits cleanly into the existing data model.
+Most of the original §3.1 and §3.2 items are **complete** (see completed list above). Remaining gaps:
 
-### 3.1 Top priorities (next 6–12 PRs)
+### 3.1 Still to add
 
-1. **HFrEF GDMT titration ladder reference**
-   - Published stepwise quadruple-therapy titration (ARNI/ACEi/ARB + β-blocker + MRA + SGLT2i) from CCS HF 2025
-   - STRONG-HF-derived monitoring schedule (BP, K, SCr, eGFR at days 7, 14, 30, 90)
-   - Dose-doubling cadence per drug + target dose table
-   - Hold/down-titration triggers
-   - Section in `acute_heart_failure` and `hfref` cards; could also be a Reference table
+1. **MAID Drug Protocol (Medical Assistance in Dying)**
+   - Pharmacist scope (provinces allowing pharmacist participation in MAID drug supply)
+   - Drug kit composition (typically: midazolam + propofol or ketamine + neuromuscular blockade agent)
+   - Documentation workflow; Health Canada requirements
+   - Conscientious objection framework (OCP position)
+   - Referenced in the app but no dedicated reference table yet
 
-2. **DOAC switching matrix (reference table)**
-   - Warfarin → DOAC: hold warfarin, start DOAC when INR <2.0 (apixaban, rivaroxaban) or INR <2.5 (dabigatran, edoxaban)
-   - DOAC → warfarin: overlap rules per agent
-   - DOAC → DOAC: timing rules
-   - DOAC → parenteral anticoagulant (UFH/LMWH/fondaparinux): timing per agent
-   - Perioperative hold rules per CrCl + bleeding risk
-   - Already partially in `practice/anticoagulation_bridging` — could expand
+2. **Local Antibiogram / AMR Trends**
+   - National + provincial AMR trends (Ontario antibiogram)
+   - Link to Bugs & Drugs + AMMI Canada national surveillance
+   - Resistance rates for common community pathogens (E. coli UTI, S. aureus, S. pneumoniae, H. influenzae)
+   - Already have `abx_duration` — this would be a companion table
 
-3. **HIV PrEP / PEP**
-   - PrEP: TDF/FTC daily vs on-demand (2-1-1 for cisgender MSM); TAF/FTC; long-acting cabotegravir; eligibility criteria; baseline + follow-up labs; provincial coverage
-   - PEP: window (72 h); regimen options (TDF/FTC + dolutegravir or raltegravir); 28-day course; baseline + week 6/12 testing
-   - Pharmacist scope is expanding (BC, AB, SK — Ontario in progress)
-
-4. **Hormonal contraception expansion**
-   - Methods comparison chart (efficacy by typical vs perfect use, contraindications, MEC categories)
-   - Missed-dose decision trees per formulation (COC monophasic, COC multiphasic, POP traditional, POP drospirenone 24-h window, ring, patch)
-   - Enzyme-inducer interaction matrix (LARC alternatives for women on rifampin, carbamazepine, phenytoin, St. John's Wort, efavirenz, etc.)
-   - Pharmacist prescribing scope by province (Schedule II contraceptives; in BC/AB/SK/PEI pharmacists can prescribe hormonal contraception)
-
-5. **Therapeutic interchange / NTI substitution rules**
-   - Narrow-therapeutic-index drugs (Health Canada list): warfarin, levothyroxine, cyclosporine, tacrolimus, phenytoin, carbamazepine, valproate, lithium, theophylline, digoxin
-   - Substitution rules per province (most: no automatic substitution without prescriber notification)
-   - Brand-name preservation rules for the patient's currently stable dose
-   - Documentation/notification workflow
-
-6. **Diabetes Canada 2024+ algorithm reference**
-   - A1C-based stepwise algorithm (lifestyle → metformin → second-line based on ASCVD/HF/CKD presence)
-   - SGLT2i preferred in HF and CKD; GLP-1 RA preferred in ASCVD
-   - Tirzepatide + retatrutide positioning
-   - Insulin starting algorithm and titration ladder
-   - Existing `t2dm` card has agents but not the structured stepwise algorithm
-
-7. **Long-acting injectables (LAI) for SUD/psychiatry**
-   - Buprenorphine ER (Sublocade, Brixadi) — induction timing, missed-dose rules, observed-dosing requirements
-   - Naltrexone IM (Vivitrol) — 7–10 day opioid-free required, alcohol abstinence
-   - Aripiprazole, paliperidone, risperidone LAIs — switching from oral, missed-dose
-   - Pharmacist administration scope (Ontario: pharmacists can administer many LAIs under MD order)
-
-8. **Penicillin allergy de-labeling formal protocol**
-   - Existing `practice/penicillin_allergy_delabeling` covers the concept; could expand with:
-   - PEN-FAST score (Trubiano JAMA Intern Med 2020): low/moderate/high risk
-   - Direct oral challenge protocol for low-risk patients
-   - Skin testing referral criteria
-   - Documentation template for the "removed from allergy list" workflow
-   - ASCIA Australasian guideline + Canadian Society of Allergy & Clinical Immunology
-
-### 3.2 Secondary priorities (after 3.1)
-
-9. **NEW: Hyperkalemia management reference**
-   - Acute (ECG changes, K+ >6.5 with symptoms): calcium gluconate, insulin+glucose, β-agonist nebulizer, sodium bicarbonate (acidosis), Kayexalate vs patiromer vs sodium zirconium cyclosilicate
-   - Chronic / outpatient: dietary, RAS-blockade titration, patiromer / sodium zirconium cyclosilicate
-
-10. **NEW: Hyponatremia management reference**
-   - Algorithmic workup (volume status × urine Na × urine osm)
-   - SIADH causes drug-by-drug
-   - Correction speed (max 8 mmol/L/24h to avoid ODS)
-   - Tolvaptan use
-   - Already a card; could deepen with structured correction-speed reference table
-
-11. **NEW: Status epilepticus management reference**
-   - First-line BZD dosing per route + age
-   - Second-line AED (levetiracetam, valproate, phenytoin/fosphenytoin)
-   - Refractory protocol (anesthetic agents)
-   - Already in `tox_status_epilepticus` ref table; expand with new-onset SE-specific workup
-
-12. **NEW: Asthma action plan template**
-   - Green/yellow/red zone definitions
-   - Trigger education
-   - Inhaler technique counselling per device
-   - SABA-only use as a red flag (GINA 2023+ — Track 1: ICS-formoterol PRN preferred)
-   - Already in `asthma` card; could add a printable action plan section
-
-13. **NEW: COPD action plan template**
-   - Similar to asthma but with exacerbation Rx (steroid burst + antibiotic indication criteria — Anthonisen 1987)
-   - Pulmonary rehab referral criteria
-
-14. **NEW: Insulin titration reference (basal + prandial)**
-   - Starting doses (0.1–0.2 U/kg basal)
-   - Titration rules (e.g., 2 U every 3 days until FBG 4–7 mmol/L)
-   - Switching between basal insulins (NPH → glargine → degludec dose-equivalence)
-   - Hypoglycemia mitigation
-   - Sick-day rules (sliding scale concept without an actual scale)
-   - Diabetes Canada 2024+ recommendations
-
-15. **NEW: Antimicrobial duration cheat sheet**
-   - Common infections + Canadian-shortened durations (Bugs & Drugs / IDSA)
-   - Cystitis 3-day; pyelonephritis 5–7 day; CAP outpatient 5-day; cellulitis 5-day; community ABRS 5–7 day
-   - "When 7 days isn't actually 7 days" — published evidence for shortened courses
-
-16. **NEW: Sick-day medication rules**
-   - SADMANS mnemonic (Sulfonylureas, ACEi, Diuretics, Metformin, ARBs, NSAIDs, SGLT2i) — hold during acute illness
-   - Insulin sick-day rules (do NOT hold; may need extra)
-   - Steroid stress-dose rules (already in corticosteroid_taper protocol; cross-reference)
-   - Anticoagulant rules during illness
-   - For diabetes specifically: BG monitoring frequency, ketone monitoring
+3. **Cancer-related fatigue disease card** *(verify — only 2 hits in app; likely just drug mentions)*
+   - Methylphenidate, modafinil (off-label); duloxetine; exercise prescription
+   - NCCN fatigue guideline; CancerCare Ontario
 
 ---
 
 ## 4. Disease/condition cards still to add
 
-These are conditions a Canadian community pharmacist sees regularly that don't currently have a dedicated card. Liability is low — pure reference content.
+The vast majority of conditions from the original list are present. Remaining verifiable gaps:
 
-### 4.1 Common conditions not yet covered
+### 4.1 Potentially missing (verify before adding)
 
-| Category | Condition | Rationale |
+| Category | Condition | Note |
 |---|---|---|
-| **Cardiology** | Long QT syndrome (LQTS) | Common reason for pharmacist QT-stacking screening; existing CrossCheck warnings cover the drugs but no condition card |
-| **Cardiology** | Pulmonary embolism / DVT — outpatient | DOAC monotherapy outpatient protocols; cancer-associated VTE has its own nuances |
-| **Endocrine** | Adrenal insufficiency | Stress dosing rules; MedicAlert counselling — pharmacist is often the first encountered |
-| **Endocrine** | Subclinical hypothyroidism | When to treat per TSH/age; CTS + Canadian Thyroid Association |
-| **Gastroenterology** | Microscopic colitis | (Round 2 added this — verify entry exists) |
-| **Hematology** | Iron deficiency anemia (oral + IV) | Distinct from iron deficiency without anemia; ferritin thresholds (<30 mcg/L iron-deficiency cutoff vs <100 in inflammation) |
-| **Hematology** | B12 deficiency | Schilling-test era replaced by methylmalonic acid / homocysteine; CPS recommends serum B12 + MMA |
-| **Infectious** | Recurrent UTI | Behavioural Mx (post-coital voiding, hygiene), cranberry evidence-summary, methenamine, vaginal estrogen (post-menopausal), continuous low-dose prophylaxis options |
-| **Infectious** | Asymptomatic bacteriuria | When NOT to treat — important pharmacist counselling for screening pre-procedure, pregnancy |
-| **Infectious** | C. difficile colitis | Already a CrossCheck topic; could be its own card with fidaxomicin / vancomycin / bezlotoxumab / FMT structured |
-| **Nephrology** | Acute kidney injury (AKI) | KDIGO staging; nephrotoxin medication review; sick-day rules cross-link |
-| **Neurology** | Restless legs syndrome (RLS) | Iron-deficient subtype (ferritin <75 → IV iron); α2δ ligands; AVOID dopamine agonists (augmentation) — CCN |
-| **Ophthalmology** | Allergic conjunctivitis | OTC antihistamine drops, mast-cell stabilizers — common pharmacist counselling |
-| **Ophthalmology** | Dry eye disease | OTC + Rx options; PRP eye drops emerging |
-| **Pain** | Trigeminal neuralgia | Carbamazepine first-line; pharmacist HLA-B*1502 screening in Asian-ancestry patients |
-| **Pediatrics** | Bronchiolitis | Supportive only; AVOID albuterol routine; CPS-specific |
-| **Pediatrics** | Croup | Single-dose dexamethasone; nebulized epinephrine for severe |
-| **Pediatrics** | Acute otitis externa (swimmer's ear treatment, not prevention) | Topical Ciprodex; pain; differentiate from AOM |
-| **Pediatrics** | ADHD diagnosis & first-line Mx | Diagnostic criteria, stimulant + non-stimulant choices, vacation periods, monitoring |
-| **Psychiatry** | Anxiety disorders (GAD, panic, social) | CANMAT 2014 anxiety guideline; SSRI first-line; psychotherapy emphasis |
-| **Psychiatry** | OCD | (Round 2 verified) — make sure pharmacist scope OCD-specific psychoeducation present |
-| **Psychiatry** | PTSD | VA/DoD + CANMAT — SSRI first-line, prazosin for nightmares, trauma-focused CBT |
-| **Respirology** | Obstructive sleep apnea (OSA) | CPAP > weight loss + positional > MAD > surgery; insurance + provincial coverage; pharmacist counselling on adherence |
-| **Respirology** | Allergic rhinitis | INCS vs oral antihistamine vs combination; pharmacist scope (Schedule II/III access); pediatric considerations |
-| **Rheumatology** | Polymyalgia rheumatica (PMR) | Already exists? Verify. Common in elderly; pharmacist watches for GCA red flags |
-| **Sexual health** | Erectile dysfunction | (Already exists) — verify modernization; tadalafil daily vs PRN; cardiac assessment |
-| **Sexual health** | Premature ejaculation | Dapoxetine; off-label SSRI |
-| **Sexual health** | Menopause symptom management | MHT (estradiol patch vs oral; micronized progesterone; vaginal estrogen); SSRI/SNRI for vasomotor; ospemifene; CMS 2023 guideline |
-| **Womens health** | PCOS | Diagnostic criteria, metformin, COC, spironolactone, GLP-1 emerging |
-| **Womens health** | Endometriosis | (Verify if exists) — NSAIDs, COC, GnRH agonist + add-back, elagolix, dienogest |
-| **Womens health** | Pregnancy counselling (general) | Folic acid pre-conception; live vaccine avoidance; medication-class avoidance list |
-| **Womens health** | Lactation counselling (general) | Most drugs compatible; specific avoid list; volume effects (estrogen → milk supply) |
+| **Oncology** | Cancer-related fatigue | Only 2 hits in app — likely mentions only; verify if dedicated card exists |
+| **Pediatrics** | Kawasaki disease | Common pharmacist role: high-dose ASA + IVIG; coronary artery aneurysm monitoring |
+| **Pediatrics** | Febrile seizures | First seizure counselling; when to treat vs observe; recurrence risk; no routine AED |
+| **Neurology** | Normal pressure hydrocephalus (NPH) | Gait/cognition triad; shunt monitoring; medication-induced mimics |
+| **Rheumatology** | Fibromyalgia | Duloxetine/pregabalin; sleep hygiene; exercise; avoid opioids — pharmacist role |
+| **Rheumatology** | Reactive arthritis | Post-infectious; NSAID + sulfasalazine; STI treatment link |
+| **Cardiology** | Cardiac sarcoidosis | ICD indications; steroid therapy; overlap with inflammatory cardiomyopathy |
 
-### 4.2 Specialty / less-common conditions still high-yield
-
-| Category | Condition | Rationale |
-|---|---|---|
-| **Cardiology** | Brugada syndrome | QT-stacking risk amplifier; pharmacist screening |
-| **Cardiology** | Catecholaminergic polymorphic ventricular tachycardia (CPVT) | Same — β-blocker / flecainide reference |
-| **Endocrine** | Diabetes insipidus | (Round 2 added — verify) |
-| **Endocrine** | Cushing syndrome | (Round 2 added — verify) |
-| **Hematology** | Sickle cell disease | Hydroxyurea, voxelotor, crizanlizumab, transfusion thresholds, vaccination, opioid analgesic counselling |
-| **Hematology** | Thalassemia | Transfusion + chelation, luspatercept, gene therapy |
-| **Hematology** | Polycythemia vera | Hydroxyurea, ruxolitinib, ropeginterferon |
-| **Hematology** | Essential thrombocythemia | Hydroxyurea, anagrelide, ASA |
-| **Hematology** | Immune thrombocytopenia (ITP) | Corticosteroids, IVIG, romiplostim, eltrombopag |
-| **Neurology** | Myasthenia gravis | Pyridostigmine, prednisone, IVIG, plasmapheresis, eculizumab, ravulizumab, efgartigimod |
-| **Neurology** | Tourette syndrome | Pimozide / haloperidol / aripiprazole; behavior therapy primary |
-| **Oncology** | Tumor lysis syndrome | Allopurinol, rasburicase, IV hydration — pharmacist role significant |
-| **Oncology** | Chemotherapy-induced peripheral neuropathy | Duloxetine; pregabalin; no prevention currently approved |
-| **Oncology** | Cancer-related fatigue | Methylphenidate, modafinil, exercise prescription |
-| **Practice** | Anaphylaxis ER protocol | (Exists — verify modernization; EpiPen vs Auvi-Q vs Neffy nasal) |
-| **Practice** | Opioid stewardship | Tapering, MOUD induction (sublingual buprenorphine, methadone), naloxone universal dispensing |
+### 4.2 Confirmed already present (do not re-add)
+See the completed section above — all original §4.1 and §4.2 items are confirmed present.
 
 ---
 
 ## 5. Drug family/card gaps
 
-### 5.1 Drug cards that should exist but don't
+### 5.1 Drug cards that should exist but may not
 
-Detected from earlier audits where `treatment.agents` referenced a missing key:
+Verify with `grep -c '"key_name"' index.html` before adding:
 
-- `vitamin_e` (referenced from peyronies_disease — Round 2 fix left it unresolvable; actually now added in PR #42)
-- `avanafil` (added PR #33)
-- `conjugated_estrogen` — still missing (used in AUB acute hormonal therapy)
-- `elagolix` — still missing (used in AUB GnRH antagonist row)
-- `ethinyl_estradiol_norethindrone` — alternative key for the COC combo (use `ethinyl_estradiol` + `norethindrone` as separate keys?)
-- `atropine` (topical) — only `atropine_pralidoxime` exists; ophthalmology atropine 1% drops have no dedicated card
-- `dasiglucagon` — newer ready-to-use glucagon (Zegalogue); growing market
-- `glucagon_nasal` — currently mapped under generic `glucagon`; brand-specific card useful
-- `diazoxide` — for insulinoma + neonatal hypoglycemia
-- `octreotide` — only family map; verify drug card
+- `atropine_ophthalmic` — topical 1% drops (myopia control; cycloplegia); only `atropine_pralidoxime` exists
+- `dasiglucagon` — Zegalogue (ready-to-use SC glucagon); growing market in severe hypoglycemia
+- `glucagon_nasal` — Baqsimi (intranasal glucagon 3 mg); brand-specific card useful; currently likely under `glucagon`
+- `diazoxide` — insulinoma + congenital hyperinsulinism + neonatal hypoglycemia
+- `octreotide` — verify dedicated drug card exists (FAMILY_MAP entry exists but card may be skeletal)
 
-### 5.2 Drug-family cards that should exist
+### 5.2 Drug-family cards that should exist (verify completeness)
 
-- **Combined Hormonal Contraceptives** — currently exists; verify completeness
-- **Levonorgestrel Intrauterine System** — singleton family
-- **Anti-CGRP Monoclonal Antibodies / Gepants** — eptinezumab, erenumab, fremanezumab, galcanezumab, ubrogepant, rimegepant, atogepant, zavegepant nasal (these may exist — verify)
-- **SGLT2 Inhibitors (Cardioselective)** — empagliflozin + dapagliflozin in HF (verify family completeness)
-- **GLP-1 Receptor Agonists** — semaglutide, liraglutide, dulaglutide, exenatide, lixisenatide, tirzepatide (GIP/GLP-1 — different family), retatrutide (triple agonist — pipeline)
-- **Bile Acid Sequestrants** — cholestyramine, colestipol, colesevelam
-- **Sodium-Glucose Co-Transporter Inhibitors (SGLT2i)** — verify
-- **Mineralocorticoid Receptor Antagonists (MRAs)** — spironolactone, eplerenone, finerenone (FIDELIO + FIGARO)
-- **Mineralocorticoid Antagonists (Non-Steroidal Selective)** — finerenone alone (less hyperK)
-- **Vasopressin Receptor Antagonists** — tolvaptan, conivaptan
-- **Anti-Histamine Combination Eye Drops** — olopatadine, alcaftadine, ketotifen
-- **Topical Calcineurin Inhibitors** — tacrolimus, pimecrolimus (singleton verify)
-- **Topical PDE4 Inhibitors** — crisaborole, roflumilast topical
-- **Aryl Hydrocarbon Receptor Agonists** — tapinarof (singleton)
-- **JAK 1/2/3 Inhibitors (selective)** — sub-family — upadacitinib JAK1, ritlecitinib JAK3, filgotinib JAK1, baricitinib pan-JAK
-- **Anti-IL-17 Family** — secukinumab, ixekizumab, brodalumab, bimekizumab (bispecific A/F)
-- **Anti-IL-23 (p19 selective)** — guselkumab, risankizumab, tildrakizumab, mirikizumab
-- **Anti-IL-12/23 (p40)** — ustekinumab (older)
-- **Anti-amyloid β Monoclonal Antibodies** — aducanumab, lecanemab, donanemab (verify these exist together)
-- **PARP Inhibitors** — olaparib, rucaparib, niraparib, talazoparib
-- **S1P Receptor Modulators** — fingolimod, ozanimod, ponesimod, siponimod
-- **Sphingosine-1-Phosphate Lyase Inhibitors** (emerging — investigational, may not yet warrant a card)
-- **Anti-CD20 Monoclonal Antibodies** — rituximab, obinutuzumab, ocrelizumab, ofatumumab_ms, ublituximab (verify family completeness)
-- **Anti-CD38 Monoclonal Antibodies** — daratumumab, isatuximab (multiple myeloma)
-- **Anti-CD79b ADCs** — polatuzumab vedotin
-- **CAR-T Cell Therapies** — tisagenlecleucel, axicabtagene, lisocabtagene, brexucabtagene, idecabtagene, ciltacabtagene
-- **Bispecific T-Cell Engagers (BiTEs)** — blinatumomab, mosunetuzumab, glofitamab, epcoritamab, talquetamab, teclistamab, elranatamab
-- **Antibody-Drug Conjugates** — broad class — trastuzumab emtansine, trastuzumab deruxtecan, enfortumab vedotin, sacituzumab govitecan, mirvetuximab soravtansine, trastuzumab duocarmazine
+- **GLP-1 Receptor Agonists** — verify tirzepatide (GIP/GLP-1 dual) is correctly in a distinct family from pure GLP-1 agents; retatrutide (triple agonist — pipeline) not yet warranted
+- **Bile Acid Sequestrants** — cholestyramine, colestipol, colesevelam — verify family card depth
+- **Vasopressin Receptor Antagonists** — tolvaptan, conivaptan — verify family depth
+- **CAR-T Cell Therapies** — tisagenlecleucel, axicabtagene, etc. — awareness-level reference cards; verify exist as drug cards
+- **Bispecific T-Cell Engagers (BiTEs)** — blinatumomab, mosunetuzumab, glofitamab, etc. — verify exist
 
 ### 5.3 Drug-family completeness audits to run
 
@@ -329,131 +289,73 @@ For each drug family with multiple members, verify:
 
 ## 6. Reference tables to add or expand
 
-### 6.1 New reference tables (high pharmacist value)
+### 6.1 New reference tables still needed
 
 | Table | Category | Why |
 |---|---|---|
-| **Drug-Lab Interference** | Lab Reference | biotin (TSH, troponin), heparin (aPTT), warfarin (PT/INR), thyroid medications, beta-blockers (catecholamine assays), proton pump inhibitors (gastrin, chromogranin) |
-| **High-Alert Medications** (ISMP Canada) | Med Safety | Already partial — expand to full ISMP Canada list |
-| **Look-Alike/Sound-Alike (LASA)** | Med Safety | Already exists — expand pediatric-specific and oncology-specific subsections |
-| **Tall-Man Lettering Standard List** | Med Safety | ISMP Canada published list |
-| **Therapeutic Drug Monitoring (TDM) targets** | Lab Reference | Vancomycin AUC vs trough; aminoglycoside; digoxin; lithium; valproate; phenytoin; tacrolimus; cyclosporine; sirolimus; everolimus; methotrexate (oncology); 6-mercaptopurine metabolites |
-| **Renal Dose-Adjustment Tables** | Renal Reference | Per drug class; CrCl thresholds and specific dose recommendations. **Publish the table only — never compute** |
-| **Hepatic Dose-Adjustment Tables** | Hepatic Reference | Child-Pugh A/B/C per drug class |
-| **Pharmacogenomic Drug-Pair References** (CPIC) | Pharmacogenomics | HLA-B*5701 (abacavir), HLA-B*1502 (carbamazepine in Asian-ancestry), CYP2C19 (clopidogrel, PPI), CYP2D6 (codeine, tamoxifen, antidepressants), TPMT/NUDT15 (thiopurines), DPYD (fluoropyrimidines), G6PD (rasburicase, dapsone, primaquine) |
-| **Antimicrobial-Resistance / Local Antibiogram** | Antibiotic Reference | National + provincial trends (Ontario antibiogram); link to Bugs & Drugs |
-| **IV Compatibility Chart** | Hospital Reference | Y-site compatibility for common ICU drugs — published Trissel chart |
-| **Crushable / Non-Crushable Medication List** | Med Safety | Sustained-release, enteric-coated, biologics, hazardous drugs (USP <800>) |
-| **NG-Tube / Feeding-Tube Medication Compatibility** | Med Safety | Liquid vs crush + suspend in water; light-sensitive; med-feed interaction (e.g., phenytoin + tube feeds, levothyroxine + soy, ciprofloxacin + dairy) |
-| **Hazardous Drug Handling (USP <800>)** | Practice | List of NIOSH Group 1/2/3 drugs; PPE; closed-system transfer devices; pharmacist responsibility |
-| **Oral Antineoplastic Patient Counselling** | Oncology | Per-drug patient counselling key points for orals (capecitabine, sunitinib, imatinib, palbociclib, etc.) |
-| **Common Drug-Induced Conditions** | Adverse Effects | Drug-induced lupus, drug-induced parkinsonism, drug-induced hypertension, drug-induced hyperkalemia, drug-induced hyponatremia, drug-induced QT prolongation, drug-induced peripheral neuropathy, drug-induced photosensitivity, drug-induced pulmonary fibrosis — already partial; could be its own category |
-| **Black Box / Boxed Warnings (Canadian)** | Med Safety | Health Canada Risk Communication archive |
-| **Drug Shortage Mitigation Strategies** | Practice | Common shortages and clinical-equivalent substitutes; Health Canada drug shortages portal |
-| **MedsCheck Eligibility & Workflow** (Ontario) | Practice | MedsCheck Annual, Diabetes, At Home, LTC — eligibility, billing codes, documentation requirements |
-| **Pharmacist Prescribing Scope by Province** | Practice | Comparison chart — what each province allows (minor ailments, contraception, smoking cessation, travel, vaccine, controlled substances) |
-| **Naloxone Take-Home Kit Workflow** | Practice | Provincial coverage; training requirements; pharmacy stocking; expanded scope (e.g., Ontario Free Naloxone Program at participating pharmacies) |
-| **MAID Drug Protocol (Medical Assistance in Dying)** | Practice | Pharmacist scope (some provinces allow pharmacist participation); drug kit composition; documentation |
-| **Hospital-to-Community Transition Workflow** | Practice | BPMH at discharge; medication reconciliation; high-risk drug review |
+| **MAID Drug Protocol** | Med Safety / Practice | Pharmacist scope, drug kit composition, documentation — no dedicated table yet |
+| **Local Antibiogram / AMR Trends** | AMR Reference | Companion to `abx_duration`; Ontario + national resistance rates by pathogen/antibiotic |
+| **Pediatric High-Risk Medications (KIDs List)** | Pediatric / Med Safety | Published list of high-risk drugs in children; distinct from adult Beers/STOPP |
+| **CYP3A4 Inhibitor / Inducer / Substrate Matrix** | Drug Interactions | Comprehensive table by inhibition strength; already partial in drug cards — dedicated table would be high value |
+| **P-gp Inhibitor / Inducer / Substrate Matrix** | Drug Interactions | Companion to CYP3A4 table; critical for DOACs, immunosuppressants, oncology |
+| **MAOI Washout / Serotonergic Switch Matrix** | Drug Interactions | Switching between MAOIs and SSRIs/SNRIs/TCAs/other serotonergic agents; washout periods by agent |
+| **Frailty Assessment Tools** | Geriatric | Clinical Frailty Scale, FRAIL questionnaire — published only; no calculator |
+| **Falls Risk Medication Reference** | Geriatric | Fall-risk drug list with risk magnitude; Canadian guidance; companion to `di_falls` |
 
 ### 6.2 Existing reference tables to expand
 
-- **Allergy Cross-Reactivity** — already 5 tables; could add:
-  - Sulfa allergy (antibiotic vs non-antibiotic sulfas — minimal cross-reactivity)
-  - β-lactam side-chain cross-reactivity matrix (cefazolin vs cephalexin vs amoxicillin)
-  - NSAID-induced rhinorrhea/asthma (AERD/Samter)
-- **Drug-Food Interactions** — already 5; could add:
-  - Tyramine-restricted foods (MAOI list — already in isocarboxazid card, could be its own ref)
-  - Vitamin K-containing foods (warfarin)
-  - Calcium / iron / dairy + FQ / tetracycline / levothyroxine timing chart
-- **Geriatric Beers/STOPP-START** — already 2; could add:
-  - Pediatric high-risk medication list (KIDs list)
-  - Pregnancy/lactation high-risk medication list
+- **LASA Pairs** (`lasa_pairs`) — could add pediatric-specific and oncology-specific subsections
+- **Drug-Food Interactions** — tyramine/MAOI foods already in `drug_food_caffeine_others`; verify completeness
+- **Geriatric** — Beers 2023 + STOPP-START v3 both present; could add anticholinergic burden drug list (publish only — never compute total)
 
 ---
 
 ## 7. Pharmacist scope & workflow content
 
-### 7.1 Provincial pharmacist scope-of-practice quick references
-
-Since most of rxguide is Ontario-default, expand the scope content for each province:
-
-- **Ontario** — comprehensive (existing baseline)
-- **BC** — full prescribing for minor ailments + contraception + adapt + renew
-- **Alberta** — APA (Additional Prescribing Authorization) — broadest in Canada
-- **Saskatchewan** — Pharmacist Initial Access (broader than ON)
-- **Nova Scotia** — Cape Breton pilot; expanding
-- **New Brunswick** — minor ailments expanding
-- **PEI** — contraception + minor ailments
-- **Newfoundland & Labrador** — basic adapt only
-- **Manitoba** — restricted; growing
-- **Quebec** — Bill 31 (2015) + 2024 expansions; provincial regulations differ significantly
-
-A simple comparison table (province × scope category) would be high-value.
+### 7.1 Provincial pharmacist scope
+`pharmacist_scope_provinces` reference table is complete. No further action needed unless a province changes its regulations — update the table at that time.
 
 ### 7.2 Workflow templates / counselling scripts
 
-For every common dispensing scenario, a structured counselling-script reference. Could be a new tab category or section within existing drug cards. Examples:
-
-- **New start counselling** template per drug class (anticoagulant, insulin, opioid, statin, antibiotic, biologic injectable, etc.)
-- **Refill / continuation counselling** — what to ask, what to flag
-- **Sick-day counselling** — extending from §3.1 #16
-- **Travel counselling per drug class** (already partial in travel medicine; expand for diabetes, anticoagulant, immunosuppressant)
-- **Transitions of care** — discharge med rec, BPMH, hospital-to-community
-- **Adherence assessment** — Morisky-8, validated questionnaires; motivational-interviewing prompts
+Still to add (all as reference content — not calculators):
+- **New-start counselling templates** per drug class (anticoagulant, insulin, opioid, statin, antibiotic, biologic injectable) — structured scripts beyond what's in `patient_counseling` fields
+- **Adherence assessment** — Morisky-8, CUDIT-R, validated questionnaires; motivational-interviewing prompts — reference format
+- **Travel counselling per drug class** — already partial in travel medicine tab; expand for diabetes (sick-day + insulin adjustment while traveling), anticoagulant (time zone crossing + DVT prophylaxis), immunosuppressant (food safety)
 
 ### 7.3 Jurisprudence expansion
 
-Current 15 topics cover Ontario well. Expand for:
-- **Privacy & PHIPA** in pharmacy context (specific scenarios: family member pickup, employer requests, court orders, fax errors)
-- **Cannabis & cannabis-derived medications** (legal landscape; NACI; pharmacist role in dispensing CBD vs medical cannabis)
-- **Conscientious objection** (e.g., contraception, MAID drugs, naloxone) — OCP and CCAPP positions
-- **Pharmacy ownership / corporate practice** rules in Ontario (the 80/20 rule; banking; multi-pharmacy ownership)
-- **Substitution refusal documentation**
-- **Verbal Rx received from prescriber** — proper documentation
-- **OAT (opioid agonist therapy) regulations** — methadone witness rules, takeaway carries, missed doses, urine drug screens
-- **Compounding regulations** (USP 795 non-sterile, USP 797 sterile, USP 800 hazardous)
-- **Continuing Professional Development (CPD)** — OCP CE-PLUS / CE record-keeping
-- **Pharmacist liability & insurance** — Pharmacy Mutual Insurance Company (PMIC); reportable events
+Current jurisprudence content covers Ontario well. Still to add:
+- **Privacy & PHIPA scenarios** — family member pickup, employer requests, court orders, fax/email errors
+- **Conscientious objection** — OCP and CCAPP positions on contraception, MAID drugs, naloxone
+- **Pharmacy ownership / corporate practice** — the 80/20 rule; multi-pharmacy ownership; banking
+- **OAT regulations** — methadone witness rules, takeaway carries, missed doses, urine drug screens
+- **Compounding regulations** — USP 795 (non-sterile), USP 797 (sterile), USP 800 (hazardous) — community-pharmacy scope
+- **CPD requirements** — OCP CE-PLUS / CE record-keeping; annual maintenance of certification
+- **Pharmacist liability & insurance** — PMIC; reportable events; standard of care
 
 ---
 
 ## 8. Patient-counselling content
 
-### 8.1 Counselling scripts (standardized format)
+### 8.1 Counselling script completeness
 
-For every drug card, ensure a `counselling` field is present with:
-- **What is this medication for** (one sentence)
-- **How to take it** (timing, food, dose)
-- **What to expect** (onset, common side effects, when to call)
-- **Red flags** (when to seek urgent care)
-- **Storage / handling** (especially injectables, biologics, opioids, controlled substances)
-- **Missed dose**
-- **Pregnancy / breastfeeding** (if applicable)
+`patient_counseling` fields exist for most drug cards but vary in depth. A systematic pass to ensure every drug card has all 7 domains:
+1. What is this medication for (one sentence)
+2. How to take it (timing, food, dose)
+3. What to expect (onset, common side effects, when to call)
+4. Red flags (when to seek urgent care)
+5. Storage / handling (especially injectables, biologics, opioids, controlled substances)
+6. Missed dose
+7. Pregnancy / breastfeeding (if applicable)
 
-Some cards already have counselling content; many do not. A systematic audit would surface gaps.
+### 8.2 Counselling cards for device-based products
 
-### 8.2 Disease-specific counselling sheets
-
-For each disease card, a separately-renderable patient counselling section in plain language:
-- What is X
-- Why does it happen
-- How is it diagnosed
-- What can the patient do (lifestyle)
-- What are the medication options
-- When to call the pharmacist / MD
-
-The existing `introduction` field is plain-language but tends to be brief; a dedicated counselling section would be longer and more practical.
-
-### 8.3 Counselling cards for specialty / device-based products
-
-- **Auto-injectors** — Epi (EpiPen, Auvi-Q, Allerject, Neffy nasal); buprenorphine (Sublocade by HCP; office-administered); insulin (pen vs vial); GLP-1 (weekly pen formulations); biologic SC injectables
-- **Inhalers** — pMDI + spacer technique; DPI technique; SMI (Respimat) technique
-- **Eye drops** — instillation technique; nasolacrimal occlusion; spacing between drops
+Dedicated reference content (not currently in a structured table):
+- **Auto-injectors** — EpiPen/Auvi-Q/Allerject/Neffy nasal technique comparison; insulin pen vs vial; GLP-1 weekly pen formulations; biologic SC injectors (Autoject 2, various auto-injectors)
+- **Inhalers** — pMDI + spacer technique; DPI technique (Turbuhaler, Diskus, Ellipta, Breezehaler); SMI (Respimat) technique — *Note: `pharmacist_injection_technique` covers injectable routes; inhaler technique is distinct and still missing as a structured table*
+- **Eye drops** — instillation technique; nasolacrimal occlusion; spacing between drops (5 min rule)
 - **Nasal sprays** — priming, technique, alternating nostrils
-- **Suppositories / pessaries / vaginal creams**
-- **Transdermal patches** — rotation, removal, hot weather effects
-- **PEG / NG tube administration**
+- **Transdermal patches** — rotation, removal, hot-weather effects (adhesive failure)
 
 ---
 
@@ -462,26 +364,24 @@ The existing `introduction` field is plain-language but tends to be brief; a ded
 ### 9.1 Search improvements
 
 - **Drug-class search** — typing "PPI" or "DOAC" should surface the family card
-- **Symptom search** — typing "rash" should surface dermatology conditions
-- **Brand-name search** — strict canonical name + alias inclusion (existing aliases cover ~70 brands; could be 200+)
+- **Indication search** — typing "what drugs treat acne?" should surface relevant drug cards
 - **Reverse lookup** — typing a side effect surfaces the drugs that commonly cause it
 - **Pregnancy-category search** — filter drugs by pregRisk bucket
-- **NAPRA-schedule search** — filter by Schedule I/II/III/U; useful for "what can I sell OTC" queries
+- **NAPRA-schedule search** — filter by Schedule I/II/III/U
 
 ### 9.2 Navigation / cross-linking
 
 - **From a drug card → list of disease cards using that drug** ("Used in conditions:")
 - **From a disease card → relevant deprescribing protocol(s)** (if any apply)
-- **From a disease card → relevant minor ailment** (if any applies, e.g., dyspepsia minor ailment from GERD card)
-- **From a family card → all member drug cards** (currently exists; verify completeness)
+- **From a disease card → relevant minor ailment** (e.g., dyspepsia minor ailment from GERD card)
 - **From an interaction → both drug cards bidirectionally**
 - **From a reference table → related drugs / conditions / minor ailments**
 
-### 9.3 Recent / favorites / pinned
+### 9.3 Bookmarking / persistence
 
-- **Recently viewed cards** (browser localStorage; minimal liability — just navigation)
+- **Recently viewed cards** (browser localStorage; minimal liability)
 - **Pinned references** for quick re-access
-- **Print-friendly view** for patient handouts (some cards' counselling sections; not the full card)
+- **Print-friendly view** for patient handouts (counselling sections; not full card)
 
 ---
 
@@ -489,59 +389,43 @@ The existing `introduction` field is plain-language but tends to be brief; a ded
 
 ### 10.1 Per-drug content
 
-PREG_DATA exists for ~1,100 drugs; most have brief `pregDetail` / `bfDetail`. Could deepen with:
+PREG_DATA exists for all 1,547 drugs. Most have brief `pregDetail` / `bfDetail`. Depth improvements:
+- **Lactation transfer data** — milk:plasma ratio, infant exposure %, LactMed risk category (currently text-only)
+- **Inadvertent first-trimester exposure** counselling per high-risk drug
+- **Pre-conception planning** advice (methotrexate 3-month washout, isotretinoin iPLEDGE, retinoid washout, mycophenolate washout)
 
-- **Trimester-specific risk** (already structured for ~40 drugs; expand)
-- **Lactation transfer data** — milk:plasma ratio, infant exposure %, LactMed risk category
-- **Pre-conception planning** advice (folic acid, methotrexate washout, isotretinoin washout, retinoid washout)
-- **Inadvertent first-trimester exposure** counselling per drug
-- **Breastfeeding mother's medication choices** (e.g., asthma flare, depression, migraine, GERD)
+### 10.2 Reference content still to add
 
-### 10.2 Reference content
-
-- **Pregnancy-safe medication algorithms** by indication (nausea/vomiting, headache, heartburn, constipation, allergic rhinitis, common cold, UTI, vaginitis, mastitis, mastitis-associated abscess)
-- **Teratogen registry** — Mother-Risk replacement (defunct since 2019); link to MotherToBaby (US) and Canadian sources
-- **Lactation-incompatible drug list** with alternatives
-- **Folate / iron / iodine / vitamin D supplementation** in pregnancy + lactation
+- **Pregnancy-safe medication algorithms** by indication — nausea/vomiting of pregnancy, gestational headache, heartburn, constipation, allergic rhinitis, UTI, vaginitis, mastitis
+- **Teratogen registry links** — MotherToBaby (US) + ENTIS (Europe) + BC Women's Motherisk replacement resources
+- **Folate / iron / iodine / vitamin D supplementation** in pregnancy + lactation — single structured reference table
 
 ---
 
 ## 11. Vaccine content gaps
 
-### 11.1 Vaccines that should exist
+### 11.1 Vaccines to verify
 
-- Yellow fever (verify — should be there given travel content)
-- Japanese encephalitis (verify)
-- Tick-borne encephalitis (TBE) — Health Canada SAP product
-- Cholera — Dukoral (oral) + injectable
-- Typhoid — Vivotif (oral) + Typhim Vi (IM)
-- Rabies pre-exposure + post-exposure
-- Polio (IPV adult booster for travelers)
-- Smallpox / monkeypox (Imvamune)
-- BCG (rare; travel + occupational)
-- Q fever vaccine (Australia-only; mention for occupational exposure)
-- Anthrax vaccine (military)
-- Plague vaccine (lab worker)
+All NACI-routine vaccines confirmed present (56 total). Verify these travel/specialty vaccines exist:
+- Yellow fever *(should be present — verify)*
+- Japanese encephalitis *(verify)*
+- Tick-borne encephalitis (TBE) — Health Canada SAP product *(verify)*
+- Cholera — Dukoral (oral) *(verify)*
+- Typhoid — Vivotif (oral) + Typhim Vi (IM) *(verify)*
+- Rabies pre-exposure + post-exposure *(verify)*
+- Polio (IPV adult booster for travelers) *(verify)*
 
 ### 11.2 Vaccine content depth
 
-For each vaccine card:
-- Schedule per age (Ontario routine + catch-up)
-- Co-administration rules
-- Live vs inactivated classification
-- Cold-chain requirements
-- Pharmacist administration scope (provincial — most pharmacist injection certifications cover all NACI-recommended vaccines >2 yrs old; some provinces have age restrictions)
+For each vaccine card, verify all fields are present:
 - AEFI reporting workflow
-- Vaccine-preventable disease cross-link
+- Cold-chain temperature + storage duration requirements
+- Provincial immunization registry submission workflow
 
 ### 11.3 Travel vaccination clinic reference
-
-- Risk assessment tools (CDC / Public Health Agency of Canada)
-- Vaccine prioritization (3-month, 1-month, 1-week timelines)
-- Yellow Fever Vaccination Centre referral (only authorized centres can issue ICVP)
-- Malaria chemoprophylaxis (CATMAT)
-- Travelers' diarrhea — empiric treatment options
-- Altitude sickness prophylaxis
+- Vaccine prioritization timelines (3-month, 1-month, 1-week schedules)
+- Malaria chemoprophylaxis (CATMAT) — verify depth in travel medicine section
+- Altitude sickness prophylaxis — acetazolamide protocol
 
 ---
 
@@ -549,130 +433,90 @@ For each vaccine card:
 
 ⚠️ **HIGHEST LIABILITY area** — limit to published reference tables; absolutely no dosing calculators.
 
-### 12.1 What's safe to add
+### 12.1 What's safe to add (still missing)
 
-- **CPS-published dosing tables** for common pediatric medications (acetaminophen, ibuprofen by weight category)
-- **Lexicomp / Canadian Pharmacists Drug Information** equivalent pediatric doses where Canadian-published
-- **NACI immunization schedule** by age
-- **Pediatric "KIDs list" (high-risk meds in children)**
-- **Pediatric formulation considerations** — extemporaneous compounding recipes (USP 795 BUD); commercially available pediatric formulations
-- **Weight-banded dosing tables** for emergency medications (epinephrine 0.01 mg/kg auto-injector cutoffs at 15 kg / 30 kg)
-- **Acetaminophen / ibuprofen mg/kg-equivalent dosing tables** (BY WEIGHT BAND, NOT calculator)
-- **Pediatric inhaler/spacer use technique**
-- **Pediatric pain assessment scales** — FLACC, FACES, age-appropriate
+- **Pediatric high-risk medications (KIDs list)** — published list of medications requiring extra caution in children; distinct from adult Beers criteria
+- **Pediatric inhaler/spacer technique** — device-specific guidance by age group (0–2, 3–5, 6–12, >12)
+- **Pediatric pain assessment scales** — FLACC (0–3 yrs), FACES (4–12 yrs), NRS (>12 yrs) — published scoring guide only
 
-### 12.2 What's high-liability (avoid)
+### 12.2 Already present
 
-- Calculators that take age/weight as input and output a specific mg dose
-- Decision support for pediatric infectious-disease specific drug choice
-- AI-generated counselling for pediatric-specific scenarios
+Pediatric weight-based dosing tables, antibiotic suspensions, antipyretics, vital signs, and sick-day rules all present (`ped_*` tables).
 
 ---
 
 ## 13. Geriatric-specific reference content
 
-Liability is moderate — published tables OK; calculators not OK.
+### 13.1 Still to add
 
-### 13.1 Content gaps
+- **Frailty assessment tools** — Clinical Frailty Scale (CFS), FRAIL questionnaire — published scoring tables only; no calculator
+- **Falls-risk medication reference table** — fall-risk drug list with risk magnitude; links to `di_falls` and `beers_criteria_2023`; Canadian guidance (RNAO falls prevention)
+- **Anticholinergic burden drug list** — all drugs with ABS ≥1; **publish the list only — never compute the total score**; companion to existing CrossCheck anticholinergic content
 
-- **Beers Criteria 2023** — already a ref table; verify completeness
-- **STOPP-START v3 2023** — already a ref table; verify completeness
-- **Anticholinergic Burden Scale (ABS)** — already a CrossCheck; could be a calculator-style table (counts > drug-specific scores) — **publish list only, never compute total**
-- **Frailty assessment tools** (Clinical Frailty Scale, FRAIL questionnaire — published only)
-- **Polypharmacy review framework** — CaDeN, Choosing Wisely, MedsCheck workflow
-- **Deprescribing-specific drugs in advanced dementia** (chronic statins, anti-osteoporosis, bisphosphonates, anti-hyperglycemics in NH residents)
-- **Aging-related drug-handling changes** — protein binding, body composition, renal/hepatic decline
+### 13.2 Already present
 
-### 13.2 Falls medications
-
-- A reference table of fall-risk medications (antihypertensives, sedatives, opioids, anticholinergics, antipsychotics, antidiabetics with hypoglycemia risk) with risk magnitude + Canadian guidance
+Beers Criteria 2023, STOPP-START v3 (2023), `di_falls`, `di_delirium` all present.
 
 ---
 
 ## 14. Drug interactions & safety content
 
-### 14.1 Interaction content gaps
+### 14.1 Interaction reference tables still to add
 
-- **CYP3A4 strong inhibitor / inducer / substrate matrix** — already partial via FDA + Flockhart; could be a dedicated reference table
-- **P-gp inhibitor / inducer / substrate matrix**
-- **OAT / OATP / MATE transporter** matrix (cidofovir, metformin, statins)
-- **Serotonin syndrome culprit drugs** — already a tox ref; expand
-- **Neuroleptic malignant syndrome culprit drugs** — already a tox ref
-- **Anticholinergic burden** — list of all drugs with ABS ≥1 (currently partial)
-- **QT-prolonging drug list** (CredibleMeds Risk Categories: Known, Possible, Conditional, Risk in CCDA)
-- **MAOI washout matrix** — switching between serotonergic agents
-- **Grapefruit-juice interaction list** — comprehensive
-- **St John's Wort interaction list** — comprehensive
+- **CYP3A4 inhibitor / inducer / substrate matrix** — already partial via drug-card interaction fields; a dedicated cross-reference table would be high-value (by inhibition strength: strong / moderate / weak; clinically significant substrates with narrow TI)
+- **P-gp inhibitor / inducer / substrate matrix** — critical for DOACs (dabigatran, rivaroxaban, apixaban), immunosuppressants (cyclosporine, tacrolimus), digoxin, oncology agents
+- **MAOI washout / serotonergic switch matrix** — washout periods when switching from/to MAOIs, SSRIs, SNRIs, TCAs, linezolid, methylene blue; risk-stratified by serotonin syndrome potential
 
-### 14.2 Drug-disease interactions
+### 14.2 Already present
 
-- **Lupus-inducing drugs** list (procainamide, hydralazine, INH, acebutolol, minocycline, anti-TNF, methimazole)
-- **Photosensitizing drugs** list (FQ, tetracyclines, NSAIDs, sulfa, retinoids, amiodarone, voriconazole, vandetanib, vemurafenib)
-- **Drug-induced hyperkalemia** list (ACEi, ARB, MRA, K+-sparing diuretics, trimethoprim, heparin, NSAIDs, calcineurin inhibitors)
-- **Drug-induced hyponatremia / SIADH** list (SSRIs, carbamazepine, oxcarbazepine, thiazides, MDMA, vincristine, cyclophosphamide, opioids, NSAIDs, antipsychotics)
-- **Drug-induced parkinsonism** list (metoclopramide, prochlorperazine, first-gen antipsychotics, atypical antipsychotics with high D2 affinity, lithium, valproate, amiodarone)
-- **Drug-induced peripheral neuropathy** list (FQ, metronidazole, INH, B6 deficiency, oxaliplatin, paclitaxel, vincristine, bortezomib, thalidomide, leflunomide)
+Serotonin syndrome (`tox_serotonin_syndrome`), NMS (`tox_nms`), anticholinergic toxidrome, QT-prolonging drugs (`di_qt`), drug-induced SIADH (`di_hyponatremia`), drug-induced hyperkalemia (`di_hyperkalemia`), drug-induced parkinsonism (`di_parkinsonism`), peripheral neuropathy (`di_neuropathy`), lupus (`di_lupus`), photosensitivity (`di_photosensitivity`), grapefruit (`drug_food_grapefruit`), caffeine/tyramine (`drug_food_caffeine_others`) all present.
 
 ---
 
 ## 15. Practice management & professional content
 
-### 15.1 Existing pharmacy practice content
+### 15.1 Already present
 
-- Anaphylaxis ER protocol — exists
-- Naloxone dispensing — exists
-- Penicillin de-labelling — exists
-- Polypharmacy/deprescribing — exists
-- Pharmacist immunization scope — partial
-- Medication safety — exists
+Anaphylaxis ER protocol, naloxone dispensing (`naloxone_thn_workflow`), penicillin de-labelling (`pen_fast_delabeling`), polypharmacy/deprescribing, pharmacist scope by province (`pharmacist_scope_provinces`), medication safety, MedsCheck (`medscheck_workflow`), cannabis dispensing (`cannabis_dispensing`), hazardous drug handling (`hazardous_drug_handling`), drug recall workflow (`drug_recall_workflow`), hospital-to-community transition (`hospital_community_transition`), pharmacist injection technique (`pharmacist_injection_technique`) — all present.
 
-### 15.2 Practice content to add
+### 15.2 Still to add
 
-- **Pharmacist-administered injection technique** — IM, SC, intradermal (TB skin test in some provinces); ergonomic positioning; needle disposal
-- **Refill renewals & adaptations** — provincial scope of practice; documentation
-- **MedsCheck program** — full workflow + billing
-- **Cannabis dispensing** (for jurisdictions where pharmacy is involved) — currently NACI medical cannabis framework + provincial regulations
-- **Sterile compounding workflow** (USP 797) — community-pharmacy scope; mostly hospital
-- **Hazardous drug handling** (USP 800) — relevant for oral oncology dispensing
-- **Robbery & burglary preparedness** — pharmacy security; controlled substance protection; reporting
-- **Drug recall workflow** — Health Canada Recalls and Safety Alerts; pharmacist responsibility to notify patients; documentation
-- **Quality assurance / continuous improvement** — Pharmacy Practice Management Standards (CPhA); accreditation requirements per province
+- **MAID Drug Protocol** — dedicated reference table (see §3.1 above)
+- **Sterile compounding workflow (USP 797)** — community-pharmacy scope for sterile preparations; PPE, BUD, environmental monitoring basics
+- **Robbery & burglary preparedness** — pharmacy security; controlled substance protection; Health Canada/OCP reporting; staff safety protocol
+- **Quality assurance / continuous improvement** — Pharmacy Practice Management Standards (CPhA); accreditation requirements per province (OCP Quality Assurance Program)
+- **Jurisprudence expansions** — see §7.3 above
 
 ---
 
 ## 16. Search & UX improvements
 
 ### 16.1 Search
-
-- Drug-family search (already mentioned)
-- Indication search ("what drugs treat acne?")
+- Drug-class / acronym search ("PPI", "DOAC", "SGLT2i" → family card)
+- Indication search ("what treats acne?")
 - Side-effect reverse search
-- Provincial-scope filter ("what can I prescribe in Ontario?")
+- NAPRA-schedule filter
 
 ### 16.2 Mobile
-
 - Test on iOS Safari + Android Chrome
 - Touch-friendly tab navigation
-- Off-line caching (Service Worker)
+- Offline caching (Service Worker)
 
 ### 16.3 Accessibility
-
 - WCAG 2.1 AA compliance audit
-- Screen-reader testing
+- Screen-reader testing (NVDA, JAWS, VoiceOver)
 - Keyboard navigation
 - High-contrast mode
 - Text-size adjustment
 
 ### 16.4 Print
-
 - Print-friendly disease counselling sections
 - Print-friendly action plans (asthma, COPD, anaphylaxis)
 - Print-friendly drug counselling scripts
 
 ### 16.5 Bookmarking / persistence
-
-- Browser localStorage for recently-viewed
-- Pinned shortcuts to favorite tables
+- Browser localStorage for recently-viewed cards
+- Pinned shortcuts to favourite tables
 - Custom note-taking on cards (private, browser-side only)
 
 ---
@@ -682,21 +526,20 @@ Liability is moderate — published tables OK; calculators not OK.
 ### 17.1 Periodic refresh items
 
 - **Guideline currency** — quarterly sweep for cited guidelines that have been updated:
-  - Diabetes Canada
-  - Hypertension Canada
-  - CCS (cardiology)
+  - Diabetes Canada (2024+ — check annually)
+  - Hypertension Canada (annual)
+  - CCS (cardiology — annual updates)
   - CTS (respirology)
-  - CANMAT (mood, anxiety)
+  - CANMAT (mood, anxiety — next update expected 2026)
   - SOGC (women's health, obstetrics)
-  - AMMI Canada Bugs & Drugs
-  - NACI Statements
-  - Health Canada Drug Safety Risk Communications
-  - Beers Criteria (every ~3 years)
+  - AMMI Canada Bugs & Drugs (annual)
+  - NACI Statements (ongoing)
+  - Health Canada Drug Safety Risk Communications (ongoing)
+  - Beers Criteria (every ~3 years — next ~2026)
   - STOPP-START (every ~5–10 years)
 - **Health Canada Drug Schedule Regulations** updates — NAPRA scheduling changes
 - **ODB Formulary** updates — Limited Use criteria changes
 - **Drug shortage database** — current shortages and alternatives
-- **Drug-recall integration** — Health Canada Recalls and Safety Alerts
 
 ### 17.2 Automated audits to schedule
 
@@ -709,13 +552,12 @@ Liability is moderate — published tables OK; calculators not OK.
 - Non-canonical interaction severities
 - Non-canonical row.type values
 - DRUG_FAMILIES with missing `members`, `comparison`, or `pearls`
-- DEPRESCRIBING_PROTOCOLS taper_steps schema check (strings vs objects)
 
 ### 17.3 Documentation hygiene
 
-- Cross-reference between AGENTS.md sections and actual code structure when restructuring
 - Update ROADMAP.md (this file) when items are completed
-- Append to AUDIT.md after each audit cycle
+- Append to AUDIT-CONTENT.md after each FV audit cycle
+- Regenerate AUDIT-STATUS.md after every content PR
 
 ---
 
@@ -723,29 +565,24 @@ Liability is moderate — published tables OK; calculators not OK.
 
 When picking items from this list, weight by:
 
-1. **Pharmacist daily-use frequency** — community pharmacists see hypertension, diabetes, asthma, GERD, insomnia, pain, depression, anxiety, contraception, vaccines daily. Specialty oncology and rare disease less so.
+1. **Pharmacist daily-use frequency** — community pharmacists see hypertension, diabetes, asthma, GERD, insomnia, pain, depression, anxiety, contraception, vaccines daily.
 2. **Liability profile** — pure reference + Canadian context = safest. Anything that requires user input to produce output requires extra design care or should be excluded entirely.
-3. **Existing-content gap** — verify the topic isn't already covered before adding.
-4. **Provincial-scope expansion value** — content that empowers pharmacist prescribing (BC/AB/SK/NS) has high value but must be province-tagged.
-5. **Canadian-specific** — content that isn't readily available in Lexicomp/Micromedex/AAFP/UpToDate is high-value (e.g., Canadian Limited-Use codes, provincial pharmacist scope, NACI immunization schedules).
+3. **Existing-content gap** — verify the topic isn't already covered before adding (the app is now very complete; check AUDIT-STATUS.md first).
+4. **Provincial-scope expansion value** — content that empowers pharmacist prescribing has high value but must be province-tagged.
+5. **Canadian-specific** — content not readily available in Lexicomp/Micromedex/UpToDate (ODB LU codes, provincial scope, NACI schedules) is highest value.
 
-### Quick-impact ranking (top 15 items)
+### Quick-impact ranking (updated — top items remaining)
 
-1. HFrEF GDMT titration ladder reference
-2. DOAC switching matrix
-3. HIV PrEP / PEP reference
-4. Insulin titration reference (basal + prandial)
-5. Diabetes Canada 2024+ algorithm
-6. Sick-day medication rules (SADMANS)
-7. Antimicrobial duration cheat sheet
-8. Hormonal contraception methods comparison + missed-dose decision trees
-9. Pharmacist scope by province comparison table
-10. Drug-Lab Interference reference table
-11. Therapeutic Drug Monitoring (TDM) targets table
-12. NG-Tube medication compatibility table
-13. Crushable / non-crushable medication list
-14. Drug-induced conditions reference set (hyperK, hyponatremia, parkinsonism, peripheral neuropathy, photosensitivity, lupus, QT, anticholinergic burden)
-15. Pharmacogenomic drug-pair references (CPIC) — Canadian context
+1. **MAID Drug Protocol** reference table — no dedicated table; pharmacist role is expanding
+2. **Inhaler technique** reference table (pMDI/DPI/SMI by device) — high daily-use; not yet structured
+3. **CYP3A4 + P-gp interaction matrices** — dedicated cross-reference tables; high clinical value
+4. **MAOI washout / serotonergic switch matrix** — psychiatry switching is high-risk; no dedicated table
+5. **Pregnancy-safe medication algorithms** — by indication (nausea, UTI, headache, GERD in pregnancy)
+6. **Frailty assessment tools** — CFS + FRAIL questionnaire reference
+7. **Falls-risk medication reference table** — companion to Beers + `di_falls`
+8. **Pediatric KIDs list** — high-risk meds in children; currently no dedicated table
+9. **Local antibiogram / AMR trends** — companion to `abx_duration`
+10. **Jurisprudence expansion** — PHIPA scenarios, OAT regulations, compounding regulations
 
 ### Liability red flags to remember
 
@@ -773,4 +610,4 @@ See `AGENTS.md` §24 for the full discovery-command toolbox before adding conten
 
 ---
 
-**End of roadmap.** Last updated 2026-05-12. As items are completed, move them to AUDIT.md and remove from this list. As new gaps are identified during audits, append them here.
+**End of roadmap.** Last updated 2026-05-19. As items are completed, move them to the completed section above and remove from the gap lists. As new gaps are identified during audits, append them to the relevant section.
