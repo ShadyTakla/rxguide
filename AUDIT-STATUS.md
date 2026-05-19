@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,896 clickable entries (latest commit: `2d19123 on 2026-05-19`)
+**Catalog snapshot:** 2,896 clickable entries (latest commit: `eae86c3 on 2026-05-19`)
 
 ---
 
@@ -24,7 +24,7 @@
 | **DRUGS** | 1,547 | 100.0% | 100.0% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 539 | 100.0% | 100.0% |
-| **REFERENCE_TABLES** | 116 | 100.0% | 97.4% |
+| **REFERENCE_TABLES** | 116 | 100.0% | 100.0% |
 | **DISEASES.conditions** | 601 | 100.0% | 100.0% |
 
 ---
@@ -80,24 +80,10 @@
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
 | All 10 schema fields complete | **100.0%** | `██████████████████` | 116 | 0 |
-| Canadian source in citation | **97.4%** | `██████████████████` | 113 | 3 |
+| Canadian source in citation | **100.0%** | `██████████████████` | 116 | 0 |
 | Wired into `buildReference()` dispatch (not orphan) | **100.0%** | `██████████████████` | 116 | 0 |
-| `related_drugs` all resolve to DRUGS/VACCINES | **99.1%** | `██████████████████` | 115 | 1 |
+| `related_drugs` all resolve to DRUGS/VACCINES | **100.0%** | `██████████████████` | 116 | 0 |
 | Row widths match column count | **100.0%** | `██████████████████` | 116 | 0 |
-
-### ❌ Canadian source in citation — 3 entries remaining (2.6% of total)
-
-```
-cyp3a4_matrix
-pgp_matrix
-falls_risk_meds
-```
-
-### ❌ `related_drugs` all resolve to DRUGS/VACCINES — 1 entries remaining (0.9% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `kids_list` | {"unresolved":["ketamine"]} |
 
 ---
 
@@ -177,23 +163,7 @@ falls_risk_meds
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **90.5%** | `████████████████░░` | 105 | 11 |
-
-### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 11 entries remaining (9.5% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `tall_man_lettering` | {"missing":["sufentanil","glipizide","hydrocodone","clomiphene","lamivudine"]} |
-| `cannabis_dispensing` | {"missing":["clobazam"]} |
-| `pharmacist_injection_technique` | {"missing":["aripiprazole_lai","glucagon","haloperidol_decanoate","paliperidone_palmitate"]} |
-| `maid_drug_protocol` | {"missing":["lidocaine","midazolam","potassium_chloride"]} |
-| `cyp3a4_matrix` | {"missing":["warfarin","buspirone","dabigatran","dexamethasone","erythromycin","ketoconazole","cimetidine","enzalutamide","lovastatin","aprepitant"]} |
-| `pgp_matrix` | {"missing":["loperamide","apixaban","rivaroxaban","ketoconazole","quinidine","ritonavir","cobicistat","everolimus"]} |
-| `maoi_washout` | {"missing":["amitriptyline","nortriptyline","fluvoxamine","clomipramine","desvenlafaxine","pseudoephedrine","dextromethorphan","methylene_blue","tedizolid"]} |
-| `pregnancy_safe_meds` | {"missing":["cefazolin","valproate","diclofenac","amoxicillin_clavulanate","morphine","hydromorphone","doxycycline","codeine","enalapril","trimethoprim"]} |
-| `falls_risk_meds` | {"missing":["venlafaxine","duloxetine","carbamazepine","tamsulosin","chlorpheniramine","vitamin_d","doxazosin","phenytoin","trospium","temazepam"]} |
-| `kids_list` | {"missing":["amoxicillin"]} |
-| `antibiogram` | {"missing":["amoxicillin_clavulanate","fosfomycin","penicillin","moxifloxacin","meropenem","ertapenem","bezlotoxumab","ceftazidime","ampicillin"]} |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 116 | 0 |
 
 ---
 
@@ -214,9 +184,7 @@ falls_risk_meds
 
 Ordered by impact (size of gap × clinical importance):
 
-| Priority | Gap (entries) | Audit area |
-|---|---|---|
-| 2 | **1** | REFERENCE_TABLES — fix `related_drugs` keys that don't resolve |
+**No remaining audit gaps — catalog is 100% clean across all checked dimensions.**
 
 ---
 
