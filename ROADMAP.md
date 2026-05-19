@@ -136,10 +136,16 @@ Items confirmed present in `index.html`. Do not re-add.
 
 ### Disease cards completed (selected highlights — full list is 601 conditions)
 All conditions in §4.1 and §4.2 of the original roadmap are confirmed present, including:
-Long QT syndrome, Brugada syndrome, **CPVT** *(added 2026-05-19)*, PE/DVT outpatient, Adrenal insufficiency, Subclinical hypothyroidism, Microscopic colitis, Iron deficiency anemia, B12 deficiency, Recurrent UTI, Asymptomatic bacteriuria, C. difficile colitis, AKI, Restless legs syndrome, Allergic conjunctivitis, Dry eye disease, Trigeminal neuralgia, Bronchiolitis, Croup, Otitis externa, ADHD, Anxiety disorders, OCD, PTSD, OSA, Allergic rhinitis, PMR, Erectile dysfunction, Premature ejaculation, Menopause symptom management, PCOS, Endometriosis, Pregnancy counselling, Lactation counselling, Diabetes insipidus, Cushing syndrome, Sickle cell disease, Thalassemia, Polycythemia vera, Essential thrombocythemia, ITP, Myasthenia gravis, Tourette syndrome, Tumor lysis syndrome, CIPN, Opioid use disorder.
+Long QT syndrome, Brugada syndrome, **CPVT** *(added 2026-05-19)*, PE/DVT outpatient, Adrenal insufficiency, Subclinical hypothyroidism, Microscopic colitis, Iron deficiency anemia, B12 deficiency, Recurrent UTI, Asymptomatic bacteriuria, C. difficile colitis, AKI, Restless legs syndrome, Allergic conjunctivitis, Dry eye disease, Trigeminal neuralgia, Bronchiolitis, Croup, Otitis externa, ADHD, Anxiety disorders, OCD, PTSD, OSA, Allergic rhinitis, PMR, Erectile dysfunction, Premature ejaculation, Menopause symptom management, PCOS, Endometriosis, Pregnancy counselling, Lactation counselling, Diabetes insipidus, Cushing syndrome, Sickle cell disease, Thalassemia, Polycythemia vera, Essential thrombocythemia, ITP, Myasthenia gravis, Tourette syndrome, Tumor lysis syndrome, CIPN, Opioid use disorder, **Cancer-Related Fatigue (CRF)** *(added 2026-05-19 — Oncology; NCCN-based; methylphenidate/modafinil/dexamethasone + exercise Rx)*.
 
 ### Drug cards completed (selected)
 `conjugated_estrogens`, `conjugated_estrogen`, `elagolix` — all present with full schema.
+
+**Added 2026-05-19:**
+- `atropine_ophthalmic` — Isopto Atropine 1% + compounded 0.01% for myopia control; cycloplegia/uveitis/amblyopia; new DRUG_FAMILIES entry "Anticholinergics — Ophthalmic"
+- `dasiglucagon` — Zegalogue (Zealand Pharma); Health Canada NOC 2022; aqueous-stable SC auto-injector; severe hypoglycemia ≥6 years
+- `glucagon_nasal` — Baqsimi (Eli Lilly/Amphastar); Health Canada NOC 2020; 3 mg intranasal; no needles/no mixing; severe hypoglycemia ≥4 years
+- `diazoxide` — Proglycem 50 mg/mL oral suspension; congenital hyperinsulinism + insulinoma; ODB LU; new DRUG_FAMILIES entry "ATP-Sensitive K⁺ Channel Openers"
 
 ---
 
@@ -228,9 +234,7 @@ Most of the original §3.1 and §3.2 items are **complete** (see completed list 
    - Resistance rates for common community pathogens (E. coli UTI, S. aureus, S. pneumoniae, H. influenzae)
    - Already have `abx_duration` — this would be a companion table
 
-3. **Cancer-related fatigue disease card** *(verify — only 2 hits in app; likely just drug mentions)*
-   - Methylphenidate, modafinil (off-label); duloxetine; exercise prescription
-   - NCCN fatigue guideline; CancerCare Ontario
+3. ~~**Cancer-related fatigue disease card**~~ ✅ *Added 2026-05-19 — see Completed section above*
 
 ---
 
@@ -242,7 +246,7 @@ The vast majority of conditions from the original list are present. Remaining ve
 
 | Category | Condition | Note |
 |---|---|---|
-| **Oncology** | Cancer-related fatigue | Only 2 hits in app — likely mentions only; verify if dedicated card exists |
+| ~~**Oncology**~~ | ~~Cancer-related fatigue~~ | ✅ Added 2026-05-19 |
 | **Pediatrics** | Kawasaki disease | Common pharmacist role: high-dose ASA + IVIG; coronary artery aneurysm monitoring |
 | **Pediatrics** | Febrile seizures | First seizure counselling; when to treat vs observe; recurrence risk; no routine AED |
 | **Neurology** | Normal pressure hydrocephalus (NPH) | Gait/cognition triad; shunt monitoring; medication-induced mimics |
@@ -261,10 +265,10 @@ See the completed section above — all original §4.1 and §4.2 items are confi
 
 Verify with `grep -c '"key_name"' index.html` before adding:
 
-- `atropine_ophthalmic` — topical 1% drops (myopia control; cycloplegia); only `atropine_pralidoxime` exists
-- `dasiglucagon` — Zegalogue (ready-to-use SC glucagon); growing market in severe hypoglycemia
-- `glucagon_nasal` — Baqsimi (intranasal glucagon 3 mg); brand-specific card useful; currently likely under `glucagon`
-- `diazoxide` — insulinoma + congenital hyperinsulinism + neonatal hypoglycemia
+- ~~`atropine_ophthalmic`~~ ✅ Added 2026-05-19
+- ~~`dasiglucagon`~~ ✅ Added 2026-05-19
+- ~~`glucagon_nasal`~~ ✅ Added 2026-05-19
+- ~~`diazoxide`~~ ✅ Added 2026-05-19
 - `octreotide` — verify dedicated drug card exists (FAMILY_MAP entry exists but card may be skeletal)
 
 ### 5.2 Drug-family cards that should exist (verify completeness)
