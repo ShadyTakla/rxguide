@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,896 clickable entries (latest commit: `bd04cc2 on 2026-05-19`)
+**Catalog snapshot:** 2,901 clickable entries (latest commit: `4211e93 on 2026-05-19`)
 
 ---
 
@@ -21,31 +21,31 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,547 | 100.0% | 100.0% |
+| **DRUGS** | 1,550 | 100.0% | 100.0% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
-| **DRUG_FAMILIES** | 539 | 100.0% | 100.0% |
+| **DRUG_FAMILIES** | 540 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 116 | 100.0% | 100.0% |
-| **DISEASES.conditions** | 601 | 100.0% | 100.0% |
+| **DISEASES.conditions** | 602 | 100.0% | 100.0% |
 
 ---
 
-## DRUGS (1,547 entries)
+## DRUGS (1,550 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full 16-field schema complete | **100.0%** | `██████████████████` | 1,547 | 0 |
-| Non-empty `interactions[]` | **100.0%** | `██████████████████` | 1,547 | 0 |
-| Canonical severity values | **100.0%** | `██████████████████` | 1,547 | 0 |
-| Canadian-source recognition | **100.0%** | `██████████████████` | 1,547 | 0 |
-| NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,547 | 0 |
-| PREG_DATA entry | **100.0%** | `██████████████████` | 1,547 | 0 |
-| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,547 | 0 |
-| FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,547 | 0 |
-| `monitoring` field populated | **100.0%** | `██████████████████` | 1,547 | 0 |
-| `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,547 | 0 |
-| `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,547 | 0 |
-| `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,547 | 0 |
-| `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,547 | 0 |
+| Full 16-field schema complete | **100.0%** | `██████████████████` | 1,550 | 0 |
+| Non-empty `interactions[]` | **100.0%** | `██████████████████` | 1,550 | 0 |
+| Canonical severity values | **100.0%** | `██████████████████` | 1,550 | 0 |
+| Canadian-source recognition | **100.0%** | `██████████████████` | 1,550 | 0 |
+| NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,550 | 0 |
+| PREG_DATA entry | **100.0%** | `██████████████████` | 1,550 | 0 |
+| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,550 | 0 |
+| FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,550 | 0 |
+| `monitoring` field populated | **100.0%** | `██████████████████` | 1,550 | 0 |
+| `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,550 | 0 |
+| `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,550 | 0 |
+| `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,550 | 0 |
+| `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,550 | 0 |
 
 ---
 
@@ -63,15 +63,15 @@
 
 ---
 
-## DRUG_FAMILIES (539 entries)
+## DRUG_FAMILIES (540 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 539 | 0 |
-| Non-empty `members[]` | **100.0%** | `██████████████████` | 539 | 0 |
-| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 539 | 0 |
-| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 539 | 0 |
-| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 539 | 0 |
+| Full required schema (moa_summary, class_effects, contraindications, members, pearls, source) | **100.0%** | `██████████████████` | 540 | 0 |
+| Non-empty `members[]` | **100.0%** | `██████████████████` | 540 | 0 |
+| Canadian source / canadian_notes | **100.0%** | `██████████████████` | 540 | 0 |
+| `class_effects` depth ≥ 3 items | **100.0%** | `██████████████████` | 540 | 0 |
+| `class_contraindications` depth ≥ 2 items | **100.0%** | `██████████████████` | 540 | 0 |
 
 ---
 
@@ -87,15 +87,15 @@
 
 ---
 
-## DISEASES.conditions (601 entries)
+## DISEASES.conditions (602 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 601 | 0 |
-| Cites Canadian source | **100.0%** | `██████████████████` | 601 | 0 |
-| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 601 | 0 |
-| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 601 | 0 |
-| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 601 | 0 |
+| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 602 | 0 |
+| Cites Canadian source | **100.0%** | `██████████████████` | 602 | 0 |
+| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 602 | 0 |
+| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 602 | 0 |
+| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 602 | 0 |
 
 ---
 
