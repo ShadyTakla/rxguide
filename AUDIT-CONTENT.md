@@ -1,5 +1,62 @@
 # rxguide — Manual FV (Full Verbatim) Tier 4 Clinical Audit File
 
+## Cycle 14 — New Content (roadmap-gaps branch) FV Audit: 6 REFERENCE_TABLES + 1 DISEASE Card (COMPLETE ✅)
+
+**Started:** 2026-05-19
+**Completed:** 2026-05-19
+**Scope:** 6 new REFERENCE_TABLES added by `claude/review-roadmap-gaps-u7teE` branch: `tall_man_lettering`, `oral_antineoplastic_counselling`, `hospital_community_transition`, `drug_recall_workflow`, `cannabis_dispensing`, `pharmacist_injection_technique`; plus 1 new DISEASES condition: CPVT (Catecholaminergic Polymorphic Ventricular Tachycardia) in the Cardiology category.
+**Method:** Full-verbatim line-by-line reading of all content; structural audit via `scripts/regenerate_audit_status.js`; cross-catalog propagation check; Canadian source verification.
+
+### Structural audit findings
+
+| Check | Result |
+|---|---|
+| `related_drugs` all resolve to DRUGS/VACCINES | ❌ → ✅ Fixed (3 corrections — see below) |
+| `buildReference()` wiring — all 6 IDs in `medSafetyIds` | ✅ Pass |
+| CPVT treatment agents resolve to DRUGS catalog | ✅ Pass (nadolol, flecainide, propranolol, acetaminophen all present) |
+| CPVT FAMILY_MAP entries present | ✅ Pass (nadolol → Non-Selective Beta-Blockers; flecainide → Antiarrhythmics; propranolol → Non-Selective Beta-Blockers) |
+| CPVT preg_lact_summary `bf` key consistent with Cardiology siblings | ✅ Pass |
+| CPVT required schema fields non-empty | ✅ Pass |
+| CPVT cites Canadian source | ✅ Pass (CCS, ESC, CPVT Registry) |
+| All 6 new tables cite Canadian sources | ✅ Pass |
+
+### Structural fixes applied
+
+| # | Table | Field | Issue | Fix |
+|---|---|---|---|---|
+| 1 | `oral_antineoplastic_counselling` | `related_drugs` | `"erlotinib"` has no DRUGS catalog card; content row present but key unresolved | Removed `"erlotinib"` from `related_drugs` |
+| 2 | `cannabis_dispensing` | `related_drugs` | `"dronabinol"` is FDA-approved only; not Health Canada-approved; no DRUGS card | Removed `"dronabinol"` from `related_drugs` |
+| 3 | `pharmacist_injection_technique` | `related_drugs` | `"vitamin_b12"` is not a DRUGS catalog key; correct key is `"cyanocobalamin"` | Changed `"vitamin_b12"` → `"cyanocobalamin"` |
+
+### Clinical findings (2-pass FV audit)
+
+| # | Item | Field | Issue | Resolution |
+|---|---|---|---|---|
+| 1 | `cannabis_dispensing` | Row 2 — Cannabis-Derived Pharmaceuticals | Nabilone (Cesamet) described as "Schedule I controlled substance" — incorrect; nabilone is a **Schedule III Controlled Drug (Part G, Food and Drug Regulations)**, not a Schedule I narcotic. (Consistent with correction from PR #216 in DISEASES/cannabis.) | Fixed: row header renamed to "Health Canada-Approved"; nabilone classification corrected to "Schedule III Controlled Drug (Part G, Food and Drug Regulations)"; overview text updated with per-product schedule notation |
+| 2 | `cannabis_dispensing` | `related_drugs` | `dronabinol` listed — dronabinol (Marinol) is FDA-approved only (not available in Canada); no Health Canada DIN; excluded from `related_drugs` | Fixed (see structural fix #2 above) |
+
+### Items confirmed clinically accurate (no corrections)
+
+**CPVT disease card:** RYR2 (60–65% AD) / CASQ2 (3–5% AR) genetics; bidirectional VT pathognomonic; nadolol as preferred non-selective β-blocker (ESC 2022 I-B); flecainide direct RYR2 channel blockade (van der Werf JACC 2011, II-A); ICD for refractory with arrhythmic storm risk; nadolol high milk:plasma ratio (4.6 — Caution breastfeeding); propranolol preferred in lactation (lower M:P ratio); all 8 pearls accurate.
+
+**`tall_man_lettering`:** 27 LASA pairs; ISMP Canada conventions; vinBLAStine/vinCRIStine independent double-check; methylPHENIDATE/methaDONE Critical designation; methoTREXate/methaDONE (weekly vs daily — fatal incidents); HYDRALazine/hydrOXYzine interchange (fatal documented). All pairs clinically accurate.
+
+**`oral_antineoplastic_counselling`:** 14 oral oncolytics; Abiraterone Zytiga (fasting) vs Yonsa (with food fine-particle formulation — critical distinction); Venetoclax mandatory 5-week ramp-up (TLS); Capecitabine DPYD*2A screen before starting; Ribociclib QTc monitoring more rigorous than palbociclib; erlotinib clinical content accurate (key just absent from DRUGS catalog). All counselling content accurate per CCO/BC Cancer formulary standards.
+
+**`hospital_community_transition`:** 50–60% discrepancy rate; 12–17% ADE within 30 days (Cornish JAMA 2005); BPMH ≥2 sources (ISMP Canada); MedsCheck At Home for qualifying homebound patients; 8-step MedRec workflow. All content accurate.
+
+**`drug_recall_workflow`:** Class I ≤24h, II ≤48h, III ≤72h (Health Canada); MedEffect 1-866-234-2345; 10-year record retention (OCP); MARKET WITHDRAWAL category distinction. All content accurate.
+
+**`cannabis_dispensing`:** Cannabis Act (2018); LP access pathway; CBD CYP2C19 inhibition (potent), CYP3A4/2C9 (moderate) — clobazam/warfarin interactions accurate; inhalation onset 2–10 min; oral onset 30–120 min; THC driving impairment 4–6 h; legal limit 2–5 ng/mL; CUD 9% lifetime / 17% adolescent-onset; CUDIT-R screening; harm reduction framework. Accurate after nabilone schedule fix.
+
+**`pharmacist_injection_technique`:** No aspiration for vaccines (NACI 2024); deltoid max 2 mL / ventrogluteal max 5 mL; Sublocade SC abdominal only — do not massage; TST 5–15° bevel up, 0.1 mL bleb, read at 48–72 h (induration not erythema); post-injection 15 min standard / 30 min first biologic in high-risk. All content accurate.
+
+### Verdict
+
+All 6 new reference tables and 1 new disease card reviewed field-by-field (2 passes). 4 corrections applied (3 structural `related_drugs` fixes + 1 clinical nabilone schedule classification fix). AUDIT-STATUS.md regenerated — `related_drugs` resolution now 100%. Reference tab FV badge remains at May 19, 2026 (no new tab added; content merged into existing `medSafetyIds` category).
+
+---
+
 > **This file tracks manual clinical content reviews only.** Automated structural checks (schema completeness, cross-references, depth thresholds) are tracked separately in `AUDIT-STATUS.md`. This file records human/agent FV clinical accuracy review.
 >
 > **FV Footer Rule (AGENTS.md §27 / CLAUDE.md):** Every tab that completes a FV audit cycle MUST have its `.fv-audit-footer` badge updated in `index.html` to show the date of the last completed FV audit. Update badge + AUDIT-CONTENT.md in the same PR.
