@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,896 clickable entries (latest commit: `f0c43e6 on 2026-05-19`)
+**Catalog snapshot:** 2,896 clickable entries (latest commit: `bd04cc2 on 2026-05-19`)
 
 ---
 
@@ -163,21 +163,7 @@
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **92.2%** | `█████████████████░` | 107 | 9 |
-
-### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 9 entries remaining (7.8% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `tall_man_lettering` | {"missing":["sufentanil","glipizide","hydrocodone","clomiphene","lamivudine"]} |
-| `cannabis_dispensing` | {"missing":["clobazam"]} |
-| `pharmacist_injection_technique` | {"missing":["aripiprazole_lai","glucagon","haloperidol_decanoate","paliperidone_palmitate"]} |
-| `maid_drug_protocol` | {"missing":["potassium_chloride"]} |
-| `cyp3a4_matrix` | {"missing":["ritonavir","cobicistat"]} |
-| `pgp_matrix` | {"missing":["ritonavir","cobicistat","everolimus"]} |
-| `maoi_washout` | {"missing":["tedizolid"]} |
-| `pregnancy_safe_meds` | {"missing":["trimethoprim"]} |
-| `falls_risk_meds` | {"missing":["trospium","zaleplon","glipizide"]} |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 116 | 0 |
 
 ---
 
