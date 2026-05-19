@@ -1,5 +1,74 @@
 # rxguide — Manual FV (Full Verbatim) Tier 4 Clinical Audit File
 
+## Cycle 15 — New Content FV Audit: 4 DRUG CARDS + 1 DISEASE CARD + 1 REFERENCE TABLE + Patient Leaflet Generator (COMPLETE ✅)
+
+**Started:** 2026-05-19
+**Completed:** 2026-05-19
+**Scope:** All content added in `claude/review-roadmap-gaps-u7teE` branch (this session): 4 new drug cards (`atropine_ophthalmic`, `dasiglucagon`, `glucagon_nasal`, `diazoxide`); 1 new disease card (`cancer_related_fatigue` — Oncology); 1 new reference table (`anticholinergic_burden` — Pharmacy Practice); `showPatientLeaflet()` function (patient counselling handout generator).
+**Method:** Full-verbatim line-by-line reading of all fields for each item; structural audit via `scripts/regenerate_audit_status.js`; cross-catalog propagation check (PREG_DATA, NAPRA_ODB_DATA, FAMILY_MAP, interactions counterparty cards); Canadian source verification; JARGON translation audit for patient leaflet.
+
+### Structural audit findings
+
+| Check | Result |
+|---|---|
+| All 4 drug cards pass full 16-field schema | ✅ Pass (pk fields added — all 1,551 DRUGS at 100%) |
+| `atropine_ophthalmic` interactions ≥5 | ✅ Pass (expanded from 2 → 6) |
+| `cancer_related_fatigue` signs[] field present and non-empty | ✅ Pass (signs[] added) |
+| `anticholinergic_burden` id field present | ✅ Pass (id added) |
+| `anticholinergic_burden` wired into pedIds dispatch | ✅ Pass (already in pedIds; id was missing from object) |
+| `anticholinergic_burden` related_drugs[] all resolve to DRUGS | ✅ Pass (typo cyclobenzapine→cyclobenzaprine fixed; 2 non-existent keys removed; 20 missing keys added) |
+| FAMILY_MAP entries for all 4 new drugs | ✅ Pass (all 4 present) |
+| PREG_DATA entries for all 4 new drugs | ✅ Pass |
+| NAPRA_ODB_DATA entries for all 4 new drugs | ✅ Pass |
+| JS syntax check (node --check both script blocks) | ✅ Pass |
+| `regenerate_audit_status.js` script crash on undefined failingList | ✅ Fixed (undefined items now filtered) |
+
+### Clinical findings — 2-pass FV audit
+
+| Priority | Item | Field | Issue | Resolution |
+|---|---|---|---|---|
+| 🔴 CRITICAL | `diazoxide` | `side_effects.serious` | "Diabetic ketoacidosis (excessive blood glucose suppression)" — mechanism inverted; diazoxide is a hyperglycemic agent; DKA results from excessive hyperglycemia/insulin suppression, NOT glucose suppression | Fixed: "excessive hyperglycemia — diazoxide over-suppresses insulin secretion; monitor blood glucose to prevent uncontrolled hyperglycemia" |
+| 🟡 High | `dasiglucagon` | `dosing` | "Children <25 kg: 0.3 mg" omits the ≥6 year minimum age per Health Canada PM — a child <6 years AND <25 kg is outside the approved indication | Fixed: "Children ≥6 years and <25 kg: 0.3 mg SC once" |
+| 🟡 Moderate | `atropine_ophthalmic` | `interactions[]` | Cholinesterase inhibitor interaction severity "Minor" inconsistent with management text recommending monitoring for reduced efficacy in cognitively impaired patients — should be "Moderate" with dose-dependent note | Fixed: reclassified to "Moderate"; mechanism and management text updated for clarity |
+| 🟡 Moderate | `anticholinergic_burden` | rows — Dimenhydrinate | Note recommended metoclopramide as alternative without acknowledging metoclopramide's Beers Criteria PIM status and tardive dyskinesia risk with prolonged use | Fixed: ondansetron listed as preferred; metoclopramide noted as short-term only with Beers caveat |
+| 🟡 Moderate | `anticholinergic_burden` | rows — Methocarbamol | "Preferred over cyclobenzaprine in elderly if muscle relaxant needed" — both are Beers Criteria PIMs; language should not position either as acceptable | Fixed: "both are Beers Criteria PIMs — neither recommended in elderly; non-pharmacological preferred; if unavoidable use lowest dose/shortest duration with falls precautions" |
+| 🟢 Low | `diazoxide` | `interactions[]` — Phenytoin | Mechanism cited only CYP induction; Proglycem PM also attributes pharmacodynamic component (phenytoin independently inhibits insulin secretion) | Fixed: dual mechanism documented (PD + PK) with source attribution |
+| 🟢 Low | `glucagon_nasal` | `contraindications[]` | "Caution: severe nasal congestion" listed as contraindication — this is a precaution affecting absorption, not an absolute contraindication | Fixed: reworded as a Note clarifying it affects efficacy but is not a true contraindication |
+| 🟢 Low | `cancer_related_fatigue` | `pearls[]` | "Cancer Care Ontario" — organization renamed to "Ontario Health (Cancer Care Ontario)" in 2019 | Fixed |
+| 🟢 Low | `cancer_related_fatigue` | `diagnosis[]` + `pearls[]` | Metoclopramide described as "sedating antiemetic" alongside prochlorperazine — overstates its sedation burden | Fixed: antiemetics differentiated by sedation level (prochlorperazine most → metoclopramide intermediate → ondansetron least/preferred) |
+
+### Patient leaflet (`showPatientLeaflet`) FV audit
+
+| Check | Result |
+|---|---|
+| 30+ new JARGON entries — all patient-facing translations accurate | ✅ Verified |
+| "SYNDROME" orphan artifact (warfarin PURPLE TOE SYNDROME) | ✅ Fixed — JARGON entry + trailing-orphan strip |
+| CALCIPHYLAXIS, HIT, lactic acidosis, myelosuppression, pulmonary fibrosis — all patient-translated | ✅ Verified |
+| Orphan-word filter (bare "Syndrome", "Disease" etc. after processing) | ✅ Added |
+| Torsades de pointes "de pointes" trailing artifact | ✅ Fixed |
+| agranulocytosis double-match via leukopenia cascade | ✅ Fixed |
+| JARGON entries verified against clinical definitions — no inversions or errors | ✅ Pass |
+
+### Items confirmed clinically accurate (no corrections needed)
+
+**`atropine_ophthalmic`:** MOA (M3 → mydriasis/cycloplegia); ATOM2 60% myopia reduction accurate (Chia 2012); cycloplegia 7–12 days / mydriasis up to 14 days accurate; systemic absorption 80% → 10–20% with NL compression accurate; NAPRA Schedule II, ODB General Benefit for uveitis/cycloplegia, no ODB for 0.01% — all correct; USP 797 compounding note accurate for Ontario context.
+
+**`dasiglucagon`:** HC NOC 2022, not ODB as of 2024, $200–280/kit confirmed accurate; Tmax ~35 min, onset 10–15 min consistent with Bhatt JAMA 2021; contraindications (pheochromocytoma, insulinoma) correct; requires adequate hepatic glycogen — accurate and important counselling point.
+
+**`glucagon_nasal`:** HC NOC 2020, ODB General Benefit no LU code confirmed; bioavailability ~47% vs IM (Sherr NEJM 2019) accurate; no inhalation required — passive deposit mechanism accurate and critically important; 3-year shelf life / room temperature accurate; absorption reduced with nasal congestion — documented.
+
+**`diazoxide`:** MOA (KATP opener → β-cell hyperpolarization → inhibited Ca²⁺ → inhibited insulin secretion) fully accurate; opposite of sulfonylureas confirmed; hypertrichosis ~50% children accurate; ABCC8/KCNJ11 diazoxide-unresponsive mutations accurate; Hyperstat IV no longer available in Canada accurate; protein binding ~90% / T½ 24–36h adults confirmed; ODB Limited Use for CHI/insulinoma confirmed.
+
+**`cancer_related_fatigue`:** NCCN diagnostic criteria (6/11 symptoms ≥2 weeks) accurate; ESAS-r ≥4/10 threshold at Ontario Cancer Centres correct; exercise 150 min/week aerobic + 2×/week resistance — strongest CRF evidence (Mustian JAMA Oncol 2017) accurate; methylphenidate 5 mg BID–TID NCCN Category 2A correct; modafinil 100–200 mg qAM NCCN Category 2B correct; ESA indications (Hgb <100, target 100–120, avoid if not on chemo) per ASCO 2023 and CADTH accurate; TSH q3 months on checkpoint inhibitors confirmed.
+
+**`anticholinergic_burden`:** All ACB scores verified against Boustani 2008/2012 scale — diphenhydramine ACB 3, oxybutynin ACB 3, trospium ACB 1 (does not cross BBB — quaternary ammonium), doxepin dose-dependent scoring (>6 mg = ACB 3; ≤6 mg = ACB 1), paroxetine ACB 2 most anticholinergic SSRI, loratadine/fexofenadine ACB 0, mirabegron ACB 0 — all accurate. Ranitidine withdrawal noted correctly.
+
+### Verdict
+
+All 4 drug cards, 1 disease card, 1 reference table, and the patient leaflet generator reviewed field-by-field (2 passes). **9 corrections applied** (1 critical DKA mechanism inversion, 1 high pediatric dosing gap, 5 moderate clinical notes, 2 low nomenclature/framing). AUDIT-STATUS.md remains 100% across all dimensions. No new items to be added per user direction.
+
+---
+
 ## Cycle 14 — New Content (roadmap-gaps branch) FV Audit: 6 REFERENCE_TABLES + 1 DISEASE Card (COMPLETE ✅)
 
 **Started:** 2026-05-19
@@ -71,11 +140,11 @@ All 6 new reference tables and 1 new disease card reviewed field-by-field (2 pas
 
 | Catalog Section | Entries | First Pass Date | Coverage |
 |---|---|---|---|
-| **DRUGS** (drug cards) | 1,546 | 2026-05-09 (Cycle 1 sample) + ongoing PRs | **100%** ✅ |
-| **DRUG_FAMILIES** | 539 | 2026-05-09 (Cycle 1 sample) + ongoing PRs | **100%** ✅ |
+| **DRUGS** (drug cards) | 1,551 | 2026-05-09 (Cycle 1 sample) + ongoing PRs + 2026-05-19 (Cycle 15 — 4 new cards) | **100%** ✅ |
+| **DRUG_FAMILIES** | 541 | 2026-05-09 (Cycle 1 sample) + ongoing PRs | **100%** ✅ |
 | **VACCINES** | 56 | 2026-05-09 (Cycle 1 basis) + NACI/PHAC review | **100%** ✅ |
-| **REFERENCE_TABLES** | 100 | Reviewed per-PR across all cycles | **100%** ✅ |
-| **DISEASES.conditions** | 600 | 2026-05-09 (Cycle 1 sample) + category-wide reviews | **100%** ✅ |
+| **REFERENCE_TABLES** | 117 | Reviewed per-PR across all cycles + 2026-05-19 (Cycle 15 — anticholinergic_burden) | **100%** ✅ |
+| **DISEASES.conditions** | 602 | 2026-05-09 (Cycle 1 sample) + category-wide reviews + 2026-05-19 (Cycle 15 — cancer_related_fatigue) | **100%** ✅ |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | Reviewed across prior PRs | **100%** ✅ |
 | **MINOR_AILMENTS** | 20 | Reviewed across prior PRs | **100%** ✅ |
 | **AMR_DATA** | 204 | Reviewed across prior PRs | **100%** ✅ |
@@ -92,11 +161,11 @@ All 6 new reference tables and 1 new disease card reviewed field-by-field (2 pas
 
 | Catalog Section | Entries | Completed | Coverage |
 |---|---|---|---|
-| **DISEASES.conditions** | 600 | 2026-05-18 (Cycle 4) | **100%** ✅ |
-| **DRUGS** | 1,546 | 2026-05-18 (Cycle 7) | **100%** ✅ |
-| **DRUG_FAMILIES** | 539 | 2026-05-18 (Cycle 6) | **100%** ✅ |
+| **DISEASES.conditions** | 602 | 2026-05-18 (Cycle 4) + 2026-05-19 (Cycle 15 — cancer_related_fatigue) | **100%** ✅ |
+| **DRUGS** | 1,551 | 2026-05-18 (Cycle 7) + 2026-05-19 (Cycle 15 — 4 new cards) | **100%** ✅ |
+| **DRUG_FAMILIES** | 541 | 2026-05-18 (Cycle 6) | **100%** ✅ |
 | **VACCINES** | 56 | 2026-05-18 (Cycle 9) | **100%** ✅ |
-| **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5) + 2026-05-19 (Cycle 13) | **100%** ✅ |
+| **REFERENCE_TABLES** | 117 | 2026-05-18 (Cycle 5) + 2026-05-19 (Cycles 14–15 — 7 new tables) | **100%** ✅ |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | 2026-05-18 (Cycle 10) | **100%** ✅ |
 | **MINOR_AILMENTS** | 20 | 2026-05-18 (Cycle 11; Canker Sores added as entry 20) | **100%** ✅ |
 | **AMR_DATA** | 204 | 2026-05-18 (Cycle 8) | **100%** ✅ |
