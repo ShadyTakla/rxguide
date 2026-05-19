@@ -20,7 +20,7 @@
 | **REFERENCE_TABLES** | 100 | Reviewed per-PR across all cycles | **100%** ✅ |
 | **DISEASES.conditions** | 600 | 2026-05-09 (Cycle 1 sample) + category-wide reviews | **100%** ✅ |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | Reviewed across prior PRs | **100%** ✅ |
-| **MINOR_AILMENTS** | 19 | Reviewed across prior PRs | **100%** ✅ |
+| **MINOR_AILMENTS** | 20 | Reviewed across prior PRs | **100%** ✅ |
 | **AMR_DATA** | 204 | Reviewed across prior PRs | **100%** ✅ |
 | **SCORING_TOOLS** (clinical scores) | 19 | 2026-05-18 (Cycle 12) | **100%** ✅ |
 | **NAPRA_ODB_DATA** (Formulary) | 1,547 | 2026-05-18 (Cycle 3 — full FV) | **100%** ✅ |
@@ -29,30 +29,22 @@
 
 ---
 
-## SECOND PASS — FV Audit Coverage (IN PROGRESS)
+## SECOND PASS — FV Audit Coverage (COMPLETE ✅)
 
-> Second pass is a deeper, line-by-line re-review targeting clinical accuracy, guideline currency, and cross-catalog consistency. Coverage starts at 0% and is updated after each audit cycle.
+> Second pass completed 2026-05-19. All 10 catalog sections reviewed line-by-line for clinical accuracy, guideline currency, and cross-catalog consistency. No remaining gaps.
 
-| Catalog Section | Entries | Second Pass Start | Coverage |
+| Catalog Section | Entries | Completed | Coverage |
 |---|---|---|---|
-| **DISEASES.conditions** | 600 | 2026-05-18 (Cycle 4 — ALL 600 reviewed) | **100%** ✅ |
-| **DRUGS** | 1,546 | 2026-05-18 (Cycle 7 — ALL 1,546 reviewed) | **100%** ✅ |
-| **DRUG_FAMILIES** | 539 | 2026-05-18 (Cycle 6 — ALL 539 reviewed) | **100%** ✅ |
-| **VACCINES** | 56 | 2026-05-18 (Cycle 9 — ALL 56 reviewed) | **100%** ✅ |
-| **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5 — ALL 100 reviewed) | **100%** ✅ |
-| **DEPRESCRIBING_PROTOCOLS** | 17 | 2026-05-18 (Cycle 10 — ALL 17 reviewed) | **100%** ✅ |
-| **MINOR_AILMENTS** | 20 | 2026-05-18 (Cycle 11 — ALL 20 reviewed; Canker Sores added) | **100%** ✅ |
-| **AMR_DATA** | 204 | 2026-05-18 (Cycle 8 — ALL 204 reviewed) | **100%** ✅ |
-| **SCORING_TOOLS** | 19 | 2026-05-19 (Cycle 12 — ALL 19 reviewed) | **100%** ✅ |
-| **NAPRA_ODB_DATA** | 1,547 | 2026-05-18 (Cycle 3 IS second pass) | **100%** ✅ |
-
-**Priority order for Second Pass:**
-1. DISEASES.conditions — 600 entries; highest clinical impact per pharmacist interaction
-2. DRUGS — 1,546 cards; dose/interaction accuracy critical
-3. DRUG_FAMILIES — 539 entries; guideline currency
-4. VACCINES — 56 entries; NACI/PHAC annual updates
-5. REFERENCE_TABLES — 100 entries; dose tables, LU criteria
-6. AMR_DATA, DEPRESCRIBING_PROTOCOLS, MINOR_AILMENTS — smaller sections
+| **DISEASES.conditions** | 600 | 2026-05-18 (Cycle 4) | **100%** ✅ |
+| **DRUGS** | 1,546 | 2026-05-18 (Cycle 7) | **100%** ✅ |
+| **DRUG_FAMILIES** | 539 | 2026-05-18 (Cycle 6) | **100%** ✅ |
+| **VACCINES** | 56 | 2026-05-18 (Cycle 9) | **100%** ✅ |
+| **REFERENCE_TABLES** | 100 | 2026-05-18 (Cycle 5) | **100%** ✅ |
+| **DEPRESCRIBING_PROTOCOLS** | 17 | 2026-05-18 (Cycle 10) | **100%** ✅ |
+| **MINOR_AILMENTS** | 20 | 2026-05-18 (Cycle 11; Canker Sores added as entry 20) | **100%** ✅ |
+| **AMR_DATA** | 204 | 2026-05-18 (Cycle 8) | **100%** ✅ |
+| **SCORING_TOOLS** | 19 | 2026-05-19 (Cycle 12) | **100%** ✅ |
+| **NAPRA_ODB_DATA** | 1,547 | 2026-05-18 (Cycle 3 = second pass) | **100%** ✅ |
 
 ---
 
