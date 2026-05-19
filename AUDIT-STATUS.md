@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,886 clickable entries (latest commit: `d06f40b on 2026-05-18`)
+**Catalog snapshot:** 2,886 clickable entries (latest commit: `cafba48 on 2026-05-19`)
 
 ---
 
@@ -163,17 +163,15 @@
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **95.3%** | `█████████████████░` | 101 | 5 |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **97.2%** | `█████████████████░` | 103 | 3 |
 
-### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 5 entries remaining (4.7% of total)
+### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 3 entries remaining (2.8% of total)
 
 | Key/ID | Detail |
 |---|---|
-| `tall_man_lettering` | {"missing":["amlodipine","amiodarone","levothyroxine","prednisone","sertraline","bupropion","buspirone","lorazepam","clonazepam","lamotrigine"]} |
-| `oral_antineoplastic_counselling` | {"missing":["loperamide","warfarin","allopurinol","prednisone","midazolam","azacitidine"]} |
-| `hospital_community_transition` | {"missing":["naloxone"]} |
-| `cannabis_dispensing` | {"missing":["tacrolimus","warfarin","clozapine","cyclosporine","clobazam"]} |
-| `pharmacist_injection_technique` | {"missing":["semaglutide","aripiprazole","haloperidol","adalimumab","secukinumab","liraglutide","etanercept","dulaglutide","ustekinumab","paliperidone"]} |
+| `tall_man_lettering` | {"missing":["sufentanil","glipizide","hydrocodone","clomiphene","lamivudine"]} |
+| `cannabis_dispensing` | {"missing":["clobazam"]} |
+| `pharmacist_injection_technique` | {"missing":["aripiprazole_lai","glucagon","haloperidol_decanoate","paliperidone_palmitate"]} |
 
 ---
 
