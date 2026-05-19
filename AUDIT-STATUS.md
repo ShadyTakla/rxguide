@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,896 clickable entries (latest commit: `9207310 on 2026-05-19`)
+**Catalog snapshot:** 2,896 clickable entries (latest commit: `244aa19 on 2026-05-19`)
 
 ---
 
@@ -82,7 +82,7 @@
 | All 10 schema fields complete | **100.0%** | `██████████████████` | 116 | 0 |
 | Canadian source in citation | **97.4%** | `██████████████████` | 113 | 3 |
 | Wired into `buildReference()` dispatch (not orphan) | **100.0%** | `██████████████████` | 116 | 0 |
-| `related_drugs` all resolve to DRUGS/VACCINES | **97.4%** | `██████████████████` | 113 | 3 |
+| `related_drugs` all resolve to DRUGS/VACCINES | **99.1%** | `██████████████████` | 115 | 1 |
 | Row widths match column count | **100.0%** | `██████████████████` | 116 | 0 |
 
 ### ❌ Canadian source in citation — 3 entries remaining (2.6% of total)
@@ -93,12 +93,10 @@ pgp_matrix
 falls_risk_meds
 ```
 
-### ❌ `related_drugs` all resolve to DRUGS/VACCINES — 3 entries remaining (2.6% of total)
+### ❌ `related_drugs` all resolve to DRUGS/VACCINES — 1 entries remaining (0.9% of total)
 
 | Key/ID | Detail |
 |---|---|
-| `oral_antineoplastic_counselling` | {"unresolved":["erlotinib"]} |
-| `pharmacist_injection_technique` | {"unresolved":["vitamin_b12"]} |
 | `kids_list` | {"unresolved":["ketamine"]} |
 
 ---
@@ -179,17 +177,15 @@ falls_risk_meds
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **88.8%** | `████████████████░░` | 103 | 13 |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **90.5%** | `████████████████░░` | 105 | 11 |
 
-### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 13 entries remaining (11.2% of total)
+### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 11 entries remaining (9.5% of total)
 
 | Key/ID | Detail |
 |---|---|
-| `tall_man_lettering` | {"missing":["amlodipine","amiodarone","levothyroxine","prednisone","sertraline","bupropion","buspirone","lorazepam","clonazepam","lamotrigine"]} |
-| `oral_antineoplastic_counselling` | {"missing":["loperamide","warfarin","allopurinol","prednisone","midazolam","azacitidine"]} |
-| `hospital_community_transition` | {"missing":["naloxone"]} |
-| `cannabis_dispensing` | {"missing":["tacrolimus","warfarin","clozapine","cyclosporine","clobazam"]} |
-| `pharmacist_injection_technique` | {"missing":["semaglutide","aripiprazole","haloperidol","adalimumab","secukinumab","liraglutide","etanercept","dulaglutide","ustekinumab","paliperidone"]} |
+| `tall_man_lettering` | {"missing":["sufentanil","glipizide","hydrocodone","clomiphene","lamivudine"]} |
+| `cannabis_dispensing` | {"missing":["clobazam"]} |
+| `pharmacist_injection_technique` | {"missing":["aripiprazole_lai","glucagon","haloperidol_decanoate","paliperidone_palmitate"]} |
 | `maid_drug_protocol` | {"missing":["lidocaine","midazolam","potassium_chloride"]} |
 | `cyp3a4_matrix` | {"missing":["warfarin","buspirone","dabigatran","dexamethasone","erythromycin","ketoconazole","cimetidine","enzalutamide","lovastatin","aprepitant"]} |
 | `pgp_matrix` | {"missing":["loperamide","apixaban","rivaroxaban","ketoconazole","quinidine","ritonavir","cobicistat","everolimus"]} |
@@ -220,7 +216,7 @@ Ordered by impact (size of gap × clinical importance):
 
 | Priority | Gap (entries) | Audit area |
 |---|---|---|
-| 2 | **3** | REFERENCE_TABLES — fix `related_drugs` keys that don't resolve |
+| 2 | **1** | REFERENCE_TABLES — fix `related_drugs` keys that don't resolve |
 
 ---
 
