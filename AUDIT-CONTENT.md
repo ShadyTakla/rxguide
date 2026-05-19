@@ -22,6 +22,7 @@
 | **DEPRESCRIBING_PROTOCOLS** | 17 | Reviewed across prior PRs | **100%** ✅ |
 | **MINOR_AILMENTS** | 19 | Reviewed across prior PRs | **100%** ✅ |
 | **AMR_DATA** | 204 | Reviewed across prior PRs | **100%** ✅ |
+| **SCORING_TOOLS** (clinical scores) | 19 | 2026-05-18 (Cycle 12) | **100%** ✅ |
 | **NAPRA_ODB_DATA** (Formulary) | 1,547 | 2026-05-18 (Cycle 3 — full FV) | **100%** ✅ |
 
 **First pass verdict:** All sections reviewed. Structural completeness 100% per AUDIT-STATUS.md. Clinical content verified to be accurate for core pharmacist-facing content. Known issues found in Cycle 1 sample were confirmed resolved in the current codebase (either fixed in subsequent PRs or were false positives on re-review). NAPRA/ODB underwent the most comprehensive FV pass (Cycle 3, ~535 corrections).
@@ -42,6 +43,7 @@
 | **DEPRESCRIBING_PROTOCOLS** | 17 | 2026-05-18 (Cycle 10 — ALL 17 reviewed) | **100%** ✅ |
 | **MINOR_AILMENTS** | 20 | 2026-05-18 (Cycle 11 — ALL 20 reviewed; Canker Sores added) | **100%** ✅ |
 | **AMR_DATA** | 204 | 2026-05-18 (Cycle 8 — ALL 204 reviewed) | **100%** ✅ |
+| **SCORING_TOOLS** | 19 | 2026-05-19 (Cycle 12 — ALL 19 reviewed) | **100%** ✅ |
 | **NAPRA_ODB_DATA** | 1,547 | 2026-05-18 (Cycle 3 IS second pass) | **100%** ✅ |
 
 **Priority order for Second Pass:**
@@ -1133,14 +1135,14 @@ All 539 DRUG_FAMILIES entries reviewed field-by-field. Clinical accuracy confirm
 
 ---
 
-## Cycle 8 — SCORING_TOOLS FV Audit (1st + 2nd pass) + Reference Tab Integration (COMPLETE ✅)
+## Cycle 12 — SCORING_TOOLS FV Audit (1st + 2nd pass) + Reference Tab Integration (COMPLETE ✅)
 
 **Started:** 2026-05-18
 **Completed:** 2026-05-19
 **Scope:** All 19 SCORING_TOOLS entries (cha2ds2vasc, has_bled, phq9, gad7, audit_c, ftnd, frax, moca, mmse, ascvd, das28, nihss, beers, crcl, timi, wells, chads2, vanderbilt, hit_4ts); SCORING_TOOLS data structure vs REFERENCE_TABLES; Reference-tab rendering layer.
 **Method:** Full-verbatim read of every tool's `name`, `purpose`, `components[]`, `scoring[]`, `sections[]`, `clinical_action[]`, `pearls[]`, `source` against primary + Canadian sources — two passes.
 
-> **Correction to prior record.** An earlier draft of this section (logged as "Cycle 7 — SCORING_TOOLS") carried a reconstructed 8-row findings table. On verification against the live catalog, ≥2 of those rows did not match the data: TIMI ("≥3→≥5" — the data correctly reads ≥3 for an early-invasive strategy) and PHQ-9 ("reorder clinical_action" — PHQ-9 has no `clinical_action` field). That table is withdrawn and superseded by the verified findings below. Confirmed-present 1st-pass work from the prior session is retained: the `showScoringToolDetail()` inline-rendering migration and the HIT-4Ts `SCORE_PATTERNS` regex schema fix. Section renumbered Cycle 8 (avoids the duplicate "Cycle 7" with the DRUGS audit).
+> **Correction to prior record.** An earlier draft of this section (logged as "Cycle 7 — SCORING_TOOLS") carried a reconstructed 8-row findings table. On verification against the live catalog, ≥2 of those rows did not match the data: TIMI ("≥3→≥5" — the data correctly reads ≥3 for an early-invasive strategy) and PHQ-9 ("reorder clinical_action" — PHQ-9 has no `clinical_action` field). That table is withdrawn and superseded by the verified findings below. Confirmed-present 1st-pass work from the prior session is retained: the `showScoringToolDetail()` inline-rendering migration and the HIT-4Ts `SCORE_PATTERNS` regex schema fix. Section numbered Cycle 12 — the prior draft's "Cycle 7" collided with the DRUGS second-pass audit, and "Cycle 8" is AMR_DATA; Cycle 12 is the next free number.
 
 ### Structural audit — SCORING_TOOLS vs REFERENCE_TABLES
 
