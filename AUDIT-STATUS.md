@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-19
-**Catalog snapshot:** 2,905 clickable entries (latest commit: `3572f37 on 2026-05-19`)
+**Catalog snapshot:** 2,907 clickable entries (latest commit: `3ef0050 on 2026-05-19`)
 
 ---
 
@@ -25,7 +25,7 @@
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 542 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 117 | 100.0% | 100.0% |
-| **DISEASES.conditions** | 603 | 100.0% | 100.0% |
+| **DISEASES.conditions** | 604 | 100.0% | 100.0% |
 
 ---
 
@@ -87,15 +87,15 @@
 
 ---
 
-## DISEASES.conditions (603 entries)
+## DISEASES.conditions (604 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 603 | 0 |
-| Cites Canadian source | **100.0%** | `██████████████████` | 603 | 0 |
-| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 603 | 0 |
-| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 603 | 0 |
-| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 603 | 0 |
+| Required schema (signs/diagnosis/treatment/pearls non-empty) | **100.0%** | `██████████████████` | 604 | 0 |
+| Cites Canadian source | **100.0%** | `██████████████████` | 604 | 0 |
+| All `treatment.agents` resolve (DRUGS/VACCINES/NON_PHARM_AGENTS) | **100.0%** | `██████████████████` | 604 | 0 |
+| §21.13 multi-family compliance | **100.0%** | `██████████████████` | 604 | 0 |
+| `preg_lact_summary` populated (preg + lact drug categorization) | **100.0%** | `██████████████████` | 604 | 0 |
 
 ---
 
@@ -163,13 +163,7 @@
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Drugs mentioned in `rows` are in `related_drugs[]` | **99.1%** | `██████████████████` | 116 | 1 |
-
-### ❌ Drugs mentioned in `rows` are in `related_drugs[]` — 1 entries remaining (0.9% of total)
-
-| Key/ID | Detail |
-|---|---|
-| `maoi_washout` | {"missing":["norepinephrine"]} |
+| Drugs mentioned in `rows` are in `related_drugs[]` | **100.0%** | `██████████████████` | 117 | 0 |
 
 ---
 
