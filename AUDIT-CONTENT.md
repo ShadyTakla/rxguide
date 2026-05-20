@@ -15,10 +15,45 @@
 | Drug Cards (1,551) | ✅ Complete | 22 | 2026-05-20 |
 | Reference Tables (117) | ✅ Complete | 23 | 2026-05-20 |
 | NAPRA/ODB (1,553) | ✅ Complete | 24 | 2026-05-20 |
-| PREG Data | ⏳ Pending | — | — |
+| PREG Data | ✅ Complete | 25 | 2026-05-20 |
 | Jurisprudence | ⏳ Pending | — | — |
 | AMR/AMT | ⏳ Pending | — | — |
 | Minor Ailments (20) | ⏳ Pending | — | — |
+
+---
+
+## Cycle 25 — Pass 3: PREG Data FV Audit — 2026-05-20
+
+**Scope**: All PREG_DATA entries (index.html lines 371974–378563+).
+
+**Method**: Full verbatim pass through all entries. Each entry verified for: `pregRisk` label accuracy vs. Health Canada PM + SOGC + Briggs 12th ed.; `pregColor` hex-to-risk alignment; `pregDetail` trimester-specific accuracy; `bfRisk`/`bfDetail` per LactMed + Hale's 2024; `alternatives` Canadian availability; `source` credibility. Special attention to known teratogens (valproate, isotretinoin, warfarin, ACEi, ARBs, tetracyclines, fluoroquinolones, lithium, carbamazepine, phenytoin, mycophenolate, methotrexate, thalidomide). Cross-checked codeine (Health Canada 2008 breastfeeding warning), all ACEi/ARB (class effect all trimesters), retinoids (Pregnancy Prevention Program), leflunomide (mandatory washout).
+
+**Errors found**: CRITICAL 0, MAJOR 0, MODERATE 2, MINOR 2 (Total: 4 fixes)
+
+**MINOR corrections (2 fixes):**
+
+1. **gabapentin** — `pregColor` was `#f59e0b` (amber/moderate) but `pregRisk` is `"Avoid"`. Color corrected to `#ef4444` (red/avoid) to match the risk label. A color-risk mismatch would render a misleading visual signal to users.
+
+2. **tramadol** — `pregDetail` recommended "short-course codeine (with caution) if opioid needed." Codeine carries a Health Canada 2008 boxed warning against use in breastfeeding (fatal infant cases in ultra-rapid CYP2D6 metabolizers) and is not a safe first-choice opioid in pregnancy either. Corrected to recommend short-course morphine or hydromorphone as preferred opioids if needed in pregnancy.
+
+**MODERATE corrections (2 fixes):**
+
+3. **hydroxyzine** — `pregRisk: "Avoid"` was too broad. `pregDetail` correctly describes "avoid in 1st trimester; acceptable after 1st trimester for pruritus or anxiety short-term." Updated `pregRisk` to `"Avoid 1st trimester"` to match the nuanced clinical picture. The previous broad "Avoid" label overstated the risk and would cause unnecessary withholding in 2nd–3rd trimester situations where hydroxyzine is clinically appropriate.
+
+4. **ramipril** — `pregRisk: "Contraindicated (2nd/3rd Tri)"` understated the risk. All ACE inhibitors are avoided/contraindicated in ALL trimesters per SOGC and current Canadian guidelines: 1st-trimester cardiovascular malformation signal (epidemiological debate but precaution warranted) + 2nd/3rd trimester ACEi-fetopathy (oligohydramnios, renal dysplasia, calvarial hypoplasia). `pregRisk` updated to `"Contraindicated (all trimesters)"` and `pregColor` updated from `#ef4444` to `#dc2626` (dark red) to reflect absolute contraindication status consistent with other entries in the same class (quinapril, trandolapril, eprosartan all correctly marked `"Contraindicated"` with `#dc2626`).
+
+**Quality summary:**
+- ~500+ entries audited across all therapeutic categories: cardiovascular, endocrine, psychiatric, neurological, respiratory, rheumatological, infectious, dermatological, GI, hematological, oncological, and women's health
+- Teratogen list (valproate, isotretinoin, warfarin, methotrexate, mycophenolate, thalidomide, leflunomide, acitretin, tazarotene, nintedanib, bempedoic acid, macitentan, alectinib, olaparib, niraparib, trastuzumab deruxtecan): all correctly labeled and colored
+- ACE inhibitor / ARB class: all entries verified for fetopathy warning
+- SOGC-preferred pregnancy HTN agents (labetalol, methyldopa, nifedipine XL): correctly identified across entries
+- Biologic mAbs (anti-TNF, anti-IL, anti-CGRP): IgG-crosses-placenta distinction in 2nd–3rd trimester correctly noted; breastfeeding risk ratings as "Low" (large molecule minimal milk transfer) verified correct per LactMed/Hale's pattern
+- Insulin entries: all correctly marked compatible; premix noted as less flexible than MDI in pregnancy — correct
+- HIV antivirals: TAF/TDF/rilpivirine/cabotegravir entries all verified for DHHS Perinatal and CIHR guidelines; breastfeeding avoid (WHO/SOGC) correctly stated
+- GLP-1 RA, SGLT2i, DPP-4i: all correctly labeled avoid in pregnancy; insulin correctly identified as preferred
+- CFTR modulators (Trikafta): nuanced Moderate rating reflecting increasing CF community guidance to continue — verified correct per CF Canada/CFF
+
+**Status**: COMPLETE
 
 ---
 
