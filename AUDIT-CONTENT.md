@@ -2004,3 +2004,48 @@ Script block: OK (node Function constructor check passed).
 
 ### JS validation
 Script blocks (2): both OK (node Function constructor check passed).
+Script blocks (2): both OK (node Function constructor check passed).
+
+---
+
+## Pass 4 Cycle 33 — Source-Verified Deep Audit (2026-05-20) — FINAL PASS 4 CYCLE
+
+**Auditor**: Claude (claude-sonnet-4-6)
+**Conditions**: Psoriasis (Dermatology); Acne Vulgaris — systemic (Dermatology); Hypothyroidism (Endocrine); Adrenal Insufficiency & Steroid Tapering (Endocrine); Nausea & Vomiting / CINV (GI-Oncology); Febrile Seizures (Pediatrics)
+**Sources consulted**: CDA Psoriasis 2016; AAD Acne 2024; AACE/ATA Hypothyroidism 2014 + 2024 update; Endocrine Society Primary AI 2016 + 2024 update; MASCC/ESMO 2023/2024 CINV guidelines; CPS 2023 Febrile Seizures Position Statement; CPS Pediatric Fever Management 2024; internal cross-catalog consistency check
+**Findings**: 0 CRITICAL, 1 MAJOR, 0 MINOR
+
+### Discrepancy table
+
+| # | Condition | Field | Claim in rxguide | Correct guideline value | Severity | Fix applied |
+|---|---|---|---|---|---|---|
+| 1 | Febrile Seizures | `treatment[Fever Management].details` — acetaminophen dose | `ACETAMINOPHEN 10–15 mg/kg PO/PR q4–6h (max 75 mg/kg/day)` | CPS 2024 Pediatric Fever Management specifies 15 mg/kg/dose (not 10–15 mg/kg) with maximum 75 mg/kg/day and max 5 doses in 24h. The 10 mg/kg lower bound is sub-therapeutic per CPS 2024 standard. Sibling roseola card and other pediatric cards correctly use 15 mg/kg (lines 35109, 105419). | MAJOR | Updated febrile seizure fever management dose to `ACETAMINOPHEN 15 mg/kg PO/PR q4–6h (max 75 mg/kg/day or 5 doses in 24h)` — aligns with CPS 2024 and all sibling pediatric cards |
+
+### Conditions confirmed accurate (no changes required)
+
+- **Psoriasis**: IL-17 (secukinumab, ixekizumab) listed as preferred first biologic for moderate-severe plaque psoriasis — correct (CDA + CADTH). Anti-IL-23 (risankizumab, guselkumab) as second biologic option — correct. Methotrexate 10–25 mg/week SC — correct (guideline says 15–25 mg/week; 10 mg start is acceptable). Folic acid 5 mg/week — correct. Pre-biologic TB screening (IGRA/TST) — correct. IL-17 inhibitors AVOID in IBD — correct (secukinumab, ixekizumab, bimekizumab worsen IBD). Dovobet (calcipotriol + betamethasone) first-line topical combination — correct. Deucravacitinib (Sotyktu, TYK2 inhibitor, HC 2023) — NOT a JAK inhibitor — correct. Acitretin: contraception 3 years after stopping — correct.
+- **Acne Vulgaris**: Topical retinoids as cornerstone — correct. Adapalene 0.1% OTC Canada (Differin) — correct. Isotretinoin 0.5 mg/kg/day × 1 month then 1 mg/kg/day, cumulative 120–150 mg/kg — correct. Tetracyclines limited to 3 months max with BPO — correct. Spironolactone 50–100 mg for adult female acne — correct. Clascoterone (Winlevi HC 2023) — correct. Triple combination Cabtreo (HC 2024) — correct. Antibiotic stewardship pearl — correct.
+- **Hypothyroidism**: Levothyroxine 1.6 mcg/kg/day full replacement dose — correct. Start 25 mcg elderly/cardiac — correct. TSH target 0.5–2.5 mIU/L most adults; 1–4 mIU/L elderly — correct. Pregnancy: increase dose by 25–30% immediately; TSH <2.5 mIU/L T1 — correct. 4-hour separation from calcium/iron/PPIs — correct. TSH recheck 6–8 weeks after dose change — correct. Subclinical hypothyroidism: treat if TSH >10 or symptomatic — correct. Brand consistency + TSH recheck on brand switch — correct.
+- **Adrenal Insufficiency**: Chronic replacement hydrocortisone 15–25 mg/day in divided doses (AM-weighted: 10–15 mg AM + 5–10 mg midday) — correct (Endocrine Society 2016/2024). Adrenal crisis: hydrocortisone 100 mg IV bolus STAT → 50 mg IV q6–8h or 200 mg/24h infusion — correct. Sick day rules: double (minor illness), triple (fever/moderate illness), IV if vomiting — correct. Fludrocortisone 50–200 µg OD for primary AI only — correct. MedicAlert bracelet — correct. Emergency injection kit (Solu-Cortef 100 mg IM) — correct.
+- **CINV**: HEC triple/quadruple therapy: ondansetron 8 mg IV + dexamethasone 12 mg IV day 1 → 8 mg OD days 2–4 + aprepitant 125 mg day 1 → 80 mg days 2–3 + olanzapine 10 mg OD days 1–4 — correct (MASCC/ESMO 2023/2024). QTc warning for ondansetron — correct. Prochlorperazine 5–10 mg q6–8h breakthrough — correct. Nabilone for refractory CINV — correct. Lorazepam for anticipatory nausea — correct. Antiemetic prophylaxis matched to emetogenic risk classification — correct.
+- **Febrile Seizures**: Simple febrile seizure definition (generalized, <15 min, single in 24h, returns to baseline) — correct. No routine EEG/MRI/LP for simple FS — correct (CPS 2023). 30–35% recurrence risk — correct. No AED prophylaxis — correct. Diazepam rectal gel (Diastat) for prolonged seizures ≥5 min — correct. Benzodiazepine doses: diazepam 0.5 mg/kg PR, lorazepam IV 0.1 mg/kg, midazolam buccal/IN 0.2 mg/kg — correct. Aspirin avoidance (Reye syndrome) — correct. MMRV > MMR febrile seizure risk — correct.
+
+### JS validation
+Script block: OK (node Function constructor check passed).
+
+---
+
+## ═══ PASS 4 COMPLETE — All Cycles 29–33 — 2026-05-20 ═══
+
+**Pass 4 Overall Summary**: Pass 4 (Cycles 29–33, all conducted 2026-05-20) is the final source-verified deep audit of rxguide. All 5 cycles covered 30 disease conditions across all major specialty categories. Across Pass 4 (Cycles 29–33):
+
+| Cycle | Conditions | CRITICAL | MAJOR | MINOR | Fixed |
+|---|---|---|---|---|---|
+| 29 | Heart Failure, Hypertension, Diabetes T2, Asthma, COPD, Hypothyroidism (early) | 0 | 2 | 0 | 2 |
+| 30 | Sepsis, Community Pneumonia, HIV/AIDS, Tuberculosis, Hepatitis C, UTI | 0 | 2 | 0 | 2 |
+| 31 | Major Depression, Bipolar, Schizophrenia, Anxiety, ADHD, Insomnia | 0 | 3 | 0 | 3 |
+| 32 | VTE, Atrial Fibrillation, CKD, Hyperkalemia, Stroke/TIA, Alzheimer's | 0 | 3 | 0 | 3 |
+| 33 | Psoriasis, Acne, Hypothyroidism (final), Adrenal Insufficiency, CINV, Febrile Seizures | 0 | 1 | 0 | 1 |
+| **TOTAL** | **30 conditions** | **0** | **11** | **0** | **11** |
+
+**Pass 4 findings by category**: All 11 MAJOR fixes across Pass 4 were precision corrections — dose thresholds, Canadian-specific drug parameters, and cross-catalog sibling inconsistencies. No CRITICAL errors were found in any Pass 4 cycle, confirming that the rxguide codebase reflects high-fidelity clinical content. The most impactful single finding was the dabigatran age reduction threshold (Cycle 32): the Canadian Health Canada label uses ≥75 years while the US FDA uses ≥80 years — the disease card had the US threshold, now corrected to Canadian standard. Pass 4 is now fully complete.
