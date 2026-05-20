@@ -2283,3 +2283,31 @@ Source-verified deep audit of 15 PREG_DATA entries (isotretinoin, methotrexate, 
 | **TOTAL** | **Full catalog** | **0** | **27** | **1** | **28** |
 
 **Pass 4 Final Assessment**: No CRITICAL errors found in any Pass 4 cycle, confirming rxguide reflects high-fidelity clinical content. All 27 MAJOR fixes were precision corrections — Canadian-specific drug parameters (iPLEDGE→PPP/RAMP; PHAC 2023 ceftriaxone dose; dabigatran age threshold; oxycodone equianalgesic ratio; Ebstein anomaly risk), cross-catalog sibling inconsistencies, and citation accuracy. The codebase is comprehensively audited and ready for production.
+
+---
+
+## Cycle 37A — Pass 4 Reference Table Source-Verified Audit (Batch A) — 2026-05-20
+
+**Tables audited**: `opioid_mme`, `steroid_equiv`, `ppi_equiv`, `statin_equiv`, `ics_potency`, `doac_dose`, `ac_bridging`, `ac_doac_reversal`, `ac_warfarin_reversal`, `ac_switching`, `ac_vte`, `ac_afib`
+
+**Sources checked**: Canadian Pain Society 2024; GINA 2024; CTS Asthma 2021; CCS Dyslipidemia 2021; CCS AF 2020/2024 (Andrade et al.); CCS VTE 2024; Thrombosis Canada Perioperative & Reversal algorithms; Health Canada PMs (Eliquis, Xarelto, Pradaxa, Lixiana, Praxbind, Ondexxya, Cortef, Medrol, Decadron); CHEST Antithrombotic 2016/2021.
+
+| # | Table | Field / Row | Issue | Severity | Fix Applied |
+|---|---|---|---|---|---|
+| 1 | `statin_equiv` | Simvastatin high-intensity note | Said "FDA: avoid 80 mg" only — Health Canada also restricted simvastatin 80 mg (2012) | MINOR | Changed to "FDA/Health Canada: avoid 80 mg" |
+| 2 | `ac_doac_reversal` | Rivaroxaban reversal agent column | Brand listed as "(Andexxa)" — US brand name; Canadian brand is "Ondexxya" | MINOR | Corrected to "(Ondexxya)" — consistent with apixaban row in same table |
+
+**Tables confirmed PASS (no changes needed)**:
+- `opioid_mme`: MME factors all correct per Canadian Pain Society 2024 (hydromorphone PO 5:1, oxycodone 1.5:1, codeine 0.15, fentanyl patch ~2.4 variable, methadone specialist-only warning present, buprenorphine partial agonist caveat present)
+- `steroid_equiv`: All equivalency values correct (prednisone 4×, methylprednisolone 5×, dexamethasone 25–30×, betamethasone 25–30×, fludrocortisone mineralocorticoid 125×)
+- `ppi_equiv`: Standard doses correct per Health Canada PMs; clopidogrel interaction hierarchy correct (pantoprazole preferred)
+- `ics_potency`: Dose thresholds align with GINA 2024 / CTS Asthma 2021 for all 6 molecules
+- `doac_dose`: Apixaban dose-reduction criteria (2 of 3), rivaroxaban meal requirement, dabigatran age threshold (≥80), edoxaban CrCl 15–50 threshold all correct per Health Canada labels
+- `ac_bridging`: BRIDGE/PAUSE/PERIOP-2 trial conclusions correctly applied; DOAC hold durations by CrCl correct
+- `ac_warfarin_reversal`: INR stratification and PCC dosing consistent with CHEST 2018 and Thrombosis Canada
+- `ac_switching`: Transition timing protocols correct per Thrombosis Canada algorithm
+- `ac_vte`: DOAC monotherapy regimens, cancer-VTE guidance, APS warfarin preference all correct
+- `ac_afib`: CHA₂DS₂-VASc thresholds, DOAC dosing, rate/rhythm control drugs all correct per CCS AF 2024
+
+**Total this cycle: 0 CRITICAL, 0 MAJOR, 2 MINOR fixes**
+**JS validation: PASSED**
