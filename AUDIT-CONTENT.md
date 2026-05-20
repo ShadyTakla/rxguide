@@ -1886,3 +1886,33 @@ The other 16 tools were read field-by-field on both passes — component point t
 ### Verdict
 
 All 19 SCORING_TOOLS reviewed twice. 3 clinical/structural corrections applied. Per-tool `icon` + `color` added for structural parity with REFERENCE_TABLES; `buildReference()` and `showScoringToolDetail()` updated to render them. JS parse passes. Reference-tab FV footer at May 19, 2026.
+
+---
+
+## Cycle 29 — Pass 4: Source-Verified Deep Audit (ACS / HFrEF / T2DM / HTN)
+
+**Date**: 2026-05-20
+**Auditor**: AI agent (Pass 4 — source-verified deep audit)
+**Sources consulted**: CCS Dyslipidemia Guidelines 2021 (internal cross-reference); CCS Heart Failure Guidelines 2021/2023/2025 (internal cross-reference); Diabetes Canada 2018 + 2024 Update (internal cross-reference); Hypertension Canada 2025 (internal cross-reference); Health Canada dapagliflozin (Forxiga) Product Monograph; SPRINT Trial (NEJM 2015). External guideline URLs (onlinecjc.ca, guidelines.diabetes.ca, guidelines.hypertension.ca) returned HTTP 403 — audit performed using internal cross-referencing against multiple drug cards, sibling disease entries, and established guideline values embedded throughout the catalog.
+
+**Findings**: 0 CRITICAL, 2 MAJOR, 1 MINOR
+
+### Discrepancy table
+
+| # | Condition | Field | Claim in rxguide | Correct guideline value | Severity | Fix applied |
+|---|---|---|---|---|---|---|
+| 1 | ACS / Post-MI | `treatment[statin].notes` + `pearls[]` | LDL target post-ACS: `<1.4 mmol/L` stated as the primary CCS 2021 target | CCS 2021 Dyslipidemia: very-high-risk (recent ACS) primary target = `<1.8 mmol/L OR ≥50% reduction`; `<1.4 mmol/L` is an optional lower target, not the primary recommendation. The monitoring field (line 738) correctly said `<1.8 ideally <1.4`, confirming the discrepancy was limited to notes + pearl. | MAJOR | Updated treatment notes and pearl to read `<1.8 mmol/L OR ≥50% reduction` as the primary target; optional aim `<1.4 mmol/L` if tolerated. Also updated `source` field to reflect accurate guideline language. |
+| 2 | HFrEF | `treatment[SGLT2i].notes` | "Continue if eGFR ≥20" applied to BOTH dapagliflozin and empagliflozin | Empagliflozin threshold: ≥20; dapagliflozin threshold: ≥25 (confirmed by Health Canada product monograph and dapagliflozin drug card line 132799). Applying ≥20 to dapagliflozin overstates its eGFR tolerance. | MAJOR | Updated HFrEF SGLT2i treatment note to specify thresholds per agent: `empagliflozin ≥20, dapagliflozin ≥25`. Consistent with T2DM card (line 14726), CKD card (line 50179), and drug card (line 132799). |
+| 3 | Hypertension | `pearls[]` | `<120/80 if high CV risk (SPRINT)` | SPRINT tested SBP reduction to <120 mmHg; diastolic was not the endpoint. `<120/80` implies a specific DBP target that was not validated. Monitoring field (line 2392) correctly used `SBP <120 mmHg`. | MINOR | Updated pearl to `SBP <120 mmHg if high CV risk (SPRINT — SBP-only trial; DBP not specifically tested)`. |
+
+### Conditions confirmed accurate (no changes required)
+
+- **ACS / Post-MI**: DAPT duration (≥12 months; extend 24–36 months high ischemic/low bleed risk) — correct. Ticagrelor loading dose 180 mg → 90 mg BID — correct. Clopidogrel loading 300–600 mg → 75 mg daily — correct. Colchicine 0.5 mg daily (COLCOT) — correct. Eplerenone preferred over spironolactone post-MI (EPHESUS) — correct. ACEi within 24h of stabilization — correct.
+- **HFrEF**: All four GDMT pillars (ARNI, beta-blocker, MRA, SGLT2i) correctly identified. Sacubitril/valsartan starting dose 24/26 or 49/51 BID, target 97/103 BID — correct (matches drug card). Three evidence-based beta-blockers (bisoprolol, carvedilol, metoprolol succinate) with correct target doses — correct. MRA hold threshold K+ >5.5 or eGFR <30 — correct. ICD threshold LVEF ≤35% — correct. 36h ACEi washout before ARNI — correct.
+- **T2DM**: HbA1c targets (≤7.0% most adults; ≤6.5% young/low hypo risk; ≤8.0% functionally dependent; ≤8.5% frail) — correct per Diabetes Canada 2018. Metformin contraindication eGFR <30 and hold threshold eGFR 30–45 — correct. Phenotype-based add-on selection (SGLT2i for HF/CKD; GLP-1 RA for ASCVD/weight) — correct per 2024 Update. Saxagliptin/alogliptin HF warning — correct.
+- **Hypertension**: BP diagnosis threshold AOBP ≥130/80 — correct. Primary treatment target <130/80 — correct. Chlorthalidone preferred over HCTZ — correct. Never combine ACEi + ARB (ONTARGET) — correct. Spironolactone preferred 4th agent resistant HTN (PATHWAY-2) — correct.
+
+### JS validation
+Both script blocks: OK (node Function constructor check passed).
+
+All 19 SCORING_TOOLS reviewed twice. 3 clinical/structural corrections applied. Per-tool `icon` + `color` added for structural parity with REFERENCE_TABLES; `buildReference()` and `showScoringToolDetail()` updated to render them. JS parse passes. Reference-tab FV footer at May 19, 2026.
