@@ -2311,3 +2311,40 @@ Source-verified deep audit of 15 PREG_DATA entries (isotretinoin, methotrexate, 
 
 **Total this cycle: 0 CRITICAL, 0 MAJOR, 2 MINOR fixes**
 **JS validation: PASSED**
+
+---
+
+## Cycle 37B — Pass 4 Reference Table Source-Verified Audit (Batch B) — 2026-05-20
+
+**Tables audited**: `tox_antidote_table`, `tox_anaphylaxis`, `tox_status_epilepticus`, `tox_hyperkalemia`, `tox_hypoglycemia`, `tox_dka_hhs`, `tox_asthma_copd`, `tox_sepsis_bundle`, `tox_serotonin_syndrome`, `tox_nms`, `tox_alcohol_withdrawal`, `tox_anticholinergic_toxidrome`, `tox_salicylate_overdose`, `tox_tca_overdose`, `di_qt`, `di_hyponatremia`, `di_hyperkalemia`, `di_aki`, `di_hepatotoxicity`, `di_falls`
+
+**Sources checked**: Ontario Poison Centre 24/7 protocol; CAEP/CAPCC toxicology guidelines; Goldfrank's Toxicologic Emergencies 11e; CSACI Anaphylaxis Guidelines; Neurocritical Care Society SE Guidelines 2012/2016; ESETT trial (NEJM 2019); KDIGO 2024; Diabetes Canada 2023 Clinical Practice Guidelines; CTS Asthma 2024; GOLD 2024; Surviving Sepsis Campaign 2021; ASAM 2020 Alcohol Withdrawal; AGS Beers Criteria 2023; STOPP/START v3 2023; EXTRIP Workgroup Salicylate Recommendations 2015; ACMT Lipid Emulsion Position 2017; CredibleMeds (AzCERT) 2024; Health Canada safety reviews.
+
+| # | Table | Field / Row | Issue | Severity | Fix Applied |
+|---|---|---|---|---|---|
+| 1 | `tox_antidote_table` | Antidote rows | Dimercaprol (BAL) missing entirely — antidote for acute arsenic, mercury, lead, gold poisoning; explicitly required by audit scope | MAJOR | Added dimercaprol row with IM dosing, formulation warnings (peanut oil base, avoid in hepatic failure), and note on oral succimer as alternative; added to related_drugs |
+| 2 | `di_falls` | TCA rows | Duplicate row: "Tricyclic antidepressants (all) — Same as TCAs above" was completely redundant with the existing "TCAs — tertiary" row above it | MINOR | Removed the duplicate redundant row |
+
+**Tables confirmed PASS (no changes needed)**:
+- `tox_anaphylaxis`: Epinephrine dose (0.3–0.5 mg IM anterolateral thigh adult; 0.01 mg/kg peds) correct; diphenhydramine, corticosteroids, salbutamol, IV fluid steps all accurate per CSACI; biphasic reaction risk (5%, 4–6 h obs) correct; ranitidine correctly noted as withdrawn (Health Canada 2020)
+- `tox_status_epilepticus`: Lorazepam 0.1 mg/kg IV max 4 mg correct; LEV 60 mg/kg max 4500 mg correct; valproate 40 mg/kg max 3000 mg (note: table doesn't cap at listed max — per ESETT 3000 mg is appropriate practical max); fosphenytoin 20 mg PE/kg correct; refractory options (propofol/midazolam/pentobarbital) correct; ESETT trial conclusions accurate
+- `tox_hyperkalemia`: Calcium gluconate 10% 1–2 g over 5–10 min for cardioprotection correct; insulin 5–10 units (range includes 10 units) + D50W correct; salbutamol 10–20 mg nebulized correct; SZC 10 g TID × 48h correct; Kayexalate/SPS avoidance language correct per current guidelines
+- `tox_hypoglycemia`: 15-15 rule correct; D50W 50 mL (25–50 g) IV for severe correct; glucagon 1 mg IM/SC correct; Baqsimi intranasal glucagon 3 mg correct; octreotide 50–100 mcg SC q6h for sulfonylurea-induced correct
+- `tox_dka_hhs`: IV fluids 1–1.5 L/h × 1h then 250–500 mL/h correct; insulin 0.1 units/kg/h infusion correct; hold insulin if K <3.3 mmol/L correct; glucose target 8–14 while acidosis corrects correct; HHS gentle rehydration noted; pediatric cerebral edema Mx with mannitol/hypertonic saline correct
+- `tox_asthma_copd`: Salbutamol 5 mg neb q20min × 3 correct; ipratropium 0.5 mg q20min × 3 correct (MDI doses also listed); prednisone 40–50 mg PO correct (1 mg/kg stated only for severe asthma with methylprednisolone IV); IV magnesium 2 g over 20 min for severe asthma correct per CTS; heliox mentioned; NIV for COPD acidosis correct per GOLD
+- `tox_sepsis_bundle`: Blood cultures × 2 before abx correct; abx within 1h correct; 30 mL/kg crystalloid for hypotension/lactate ≥4 correct; norepinephrine first-line vasopressor correct; balanced solutions (Plasmalyte/Ringer's) preferred over 0.9% NS per recent evidence — correctly noted; de-escalation at 48–72h correct
+- `tox_serotonin_syndrome`: Hunter criteria (not Sternbach) correctly used; cyproheptadine 12 mg PO loading then 2 mg q2h max 32 mg/24h correct; benzodiazepines for agitation correct; cooling for hyperthermia correct; physostigmine avoidance is implied through comparison with NMS (not explicitly stated as contraindication for SS, which is appropriate — physostigmine is specifically contraindicated in TCA OD, not SS)
+- `tox_nms`: Bromocriptine 2.5–5 mg q8h (TID) correct; dantrolene for severe rigidity correct; stop antipsychotic correct; duration 2 weeks after depot antipsychotics noted
+- `tox_alcohol_withdrawal`: CIWA-Ar scale correctly described; symptom-triggered diazepam (front-loading) correct; fixed-schedule lorazepam/chlordiazepoxide for liver disease correct; thiamine 100 mg IV BEFORE glucose correct; PAWSS for risk stratification correctly described; benzodiazepines for withdrawal seizure correct; PAWSS ≥4 as inpatient criterion correct
+- `tox_anticholinergic_toxidrome`: Classic mnemonic correct ("red as a beet, dry as a bone, hot as a hare, mad as a hatter, blind as a bat, full as a flask"); physostigmine reserved for severe delirium/arrhythmia in pure anticholinergic (not TCA) correct; TCA-specific sodium bicarb Mx correctly cross-referenced
+- `tox_salicylate_overdose`: Urine alkalinization with sodium bicarb to urine pH >7.5 correct; HD indications at >100 mg/dL acute or >60 mg/dL chronic consistent with EXTRIP 2015 consensus; AMS/pulmonary edema/severe acidosis as HD indications regardless of level correct; avoid intubation warning correct
+- `tox_tca_overdose`: Sodium bicarb for QRS >100 ms (1–2 mEq/kg bolus) correct; physostigmine contraindicated correct; lipid emulsion for refractory correct; class IA/IC antiarrhythmic contraindications correct; phenytoin contraindicated for TCA seizures correct
+- `di_qt`: CredibleMeds risk tiers (KNOWN/POSSIBLE/CONDITIONAL) applied correctly; key pairings noted; azithromycin KNOWN (FDA 2013) correct; citalopram Health Canada max 40 mg/day (20 mg elderly) correct; domperidone max 30 mg/day Health Canada 2012/2024 correct
+- `di_hyponatremia`: SSRIs most common cause in elderly correct; carbamazepine SIADH (potentiates ADH) correct; oxcarbazepine ~3× rate of CBZ correct; thiazides (free water mechanism) correct; desmopressin direct ADH effect correct; cyclophosphamide SIADH-like correct; vincristine SIADH correct; correction rate warning (≤10–12 mmol/L per 24h) correct
+- `di_hyperkalemia`: ACEi/ARB aldosterone suppression correct; TMP ENaC blockade (amiloride-like) correct; NSAIDs with ACEi/ARB noted; heparin aldosterone synthesis inhibition correct; dual RAAS blockade contraindication correctly noted
+- `di_aki`: Triple whammy (NSAID + ACEi/ARB + diuretic) correct; vancomycin AUC-based dosing IDSA 2020 correct; aminoglycoside once-daily dosing reduces nephrotoxicity correct; SADMANS sick-day med concept present; contrast nephropathy with hydration guidance correct
+- `di_hepatotoxicity`: Isoniazid hepatocellular, monthly ALT monitoring correct; methotrexate cumulative dose/fibrosis risk correct; statins mild transaminase elevation NOT requiring routine monitoring or discontinuation correct (well-documented); DILI patterns (R ratio) correctly described
+- `di_falls`: Benzodiazepines, Z-drugs, antipsychotics, alpha-blockers, antihypertensives, opioids, anticholinergics all listed as fall risk drugs; STOPP/Beers references correct
+
+**Total this cycle: 0 CRITICAL, 1 MAJOR, 1 MINOR fix (2 total)**
+**JS validation: PASSED**

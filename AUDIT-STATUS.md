@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-05-20
-**Catalog snapshot:** 2,907 clickable entries (latest commit: `2ae9bbc on 2026-05-20`)
+**Catalog snapshot:** 2,907 clickable entries (latest commit: `59786cf on 2026-05-20`)
 
 ---
 
@@ -24,7 +24,7 @@
 | **DRUGS** | 1,551 | 100.0% | 100.0% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 542 | 100.0% | 100.0% |
-| **REFERENCE_TABLES** | 117 | 100.0% | 100.0% |
+| **REFERENCE_TABLES** | 117 | 100.0% | 99.1% |
 | **DISEASES.conditions** | 604 | 100.0% | 100.0% |
 
 ---
@@ -82,8 +82,14 @@
 | All 10 schema fields complete | **100.0%** | `██████████████████` | 117 | 0 |
 | Canadian source in citation | **100.0%** | `██████████████████` | 117 | 0 |
 | Wired into `buildReference()` dispatch (not orphan) | **100.0%** | `██████████████████` | 117 | 0 |
-| `related_drugs` all resolve to DRUGS/VACCINES | **100.0%** | `██████████████████` | 117 | 0 |
+| `related_drugs` all resolve to DRUGS/VACCINES | **99.1%** | `██████████████████` | 116 | 1 |
 | Row widths match column count | **100.0%** | `██████████████████` | 117 | 0 |
+
+### ❌ `related_drugs` all resolve to DRUGS/VACCINES — 1 entries remaining (0.9% of total)
+
+| Key/ID | Detail |
+|---|---|
+| `tox_antidote_table` | {"unresolved":["dimercaprol"]} |
 
 ---
 
@@ -184,7 +190,9 @@
 
 Ordered by impact (size of gap × clinical importance):
 
-**No remaining audit gaps — catalog is 100% clean across all checked dimensions.**
+| Priority | Gap (entries) | Audit area |
+|---|---|---|
+| 2 | **1** | REFERENCE_TABLES — fix `related_drugs` keys that don't resolve |
 
 ---
 
