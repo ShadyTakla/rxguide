@@ -2035,17 +2035,60 @@ Script block: OK (node Function constructor check passed).
 
 ---
 
-## ═══ PASS 4 COMPLETE — All Cycles 29–33 — 2026-05-20 ═══
+---
 
-**Pass 4 Overall Summary**: Pass 4 (Cycles 29–33, all conducted 2026-05-20) is the final source-verified deep audit of rxguide. All 5 cycles covered 30 disease conditions across all major specialty categories. Across Pass 4 (Cycles 29–33):
+## Pass 4 Cycle 34 — Source-Verified Deep Audit: Drug Families + Reference Tables (2026-05-20)
 
-| Cycle | Conditions | CRITICAL | MAJOR | MINOR | Fixed |
+**Auditor**: Claude (claude-sonnet-4-6)
+**Scope**: 10 Drug Families (ACE Inhibitors/ARBs, Beta-Blockers, Statins, Direct Oral Anticoagulants, SSRIs/SNRIs, Inhaled Corticosteroids, Opioid Analgesics, Azole Antifungals, Anti-TNF Biologics, Mood Stabilizers/Antiepileptics) + 6 Reference Tables (tox_acetaminophen, renal_dose_adjustment, hepatic_dose_adjustment, beers_criteria_2023, drug_food_grapefruit, drug_food_dairy_cations)
+**Sources**: Health Canada Product Monographs; CRISM 2017 Opioid Guideline; BC/CRISM equianalgesic tables; CCS Lipid 2021; Hypertension Canada 2025; Thrombosis Canada DOACs; GINA 2023; CTS Asthma 2021/COPD 2023; CRA Biologics Guidelines; AGS Beers 2023; Rumack-Matthew nomogram; KDIGO 2024
+**Findings**: 0 CRITICAL, 3 MAJOR, 1 MINOR — 4 fixes applied
+
+### Discrepancy table
+
+| # | Family/Table | Field | Claim in rxguide | Correct value | Severity | Fix |
+|---|---|---|---|---|---|---|
+| 1 | Opioid Analgesics — `pearls` | Equianalgesic conversion for oxycodone | `morphine 10 mg PO = oxycodone 5 mg PO` (2:1 ratio) | The correct ratio is 1.5:1: morphine 10 mg PO ≈ oxycodone 6.7 mg PO (oxycodone is ~1.5× more potent than oral morphine). Consistent with oxycodone drug card (line 147650: "10 mg oxycodone = 15 mg oral morphine") and palliative care disease notes (line 124380: "oxycodone 6.5 mg ≈ morphine 10 mg"). Cross-catalog sibling check confirmed the drug card and disease notes were ALREADY CORRECT — only the Drug Family pearl carried the wrong 2:1 ratio. | MAJOR | Updated Opioid Analgesics family pearl to `oxycodone ~6.7 mg PO` with explicit statement of 1.5× potency ratio |
+| 2 | Inhaled Corticosteroids — `source` | Source field | `"Endocrine Society Primary Adrenal Insufficiency 2016 + 2024 update; Pituitary Society 2017 secondary AI"` — WRONG source for ICS family | ICS family should cite GINA 2023, CTS Asthma 2021, CTS COPD 2023 (not adrenal insufficiency guidelines which belong to systemic corticosteroids). This was a copy-paste error from the systemic corticosteroid family. | MAJOR | Replaced with correct GINA 2023 + CTS Asthma 2021 + CTS COPD 2023 citation |
+| 3 | Anti-TNF Biologics — `source` | Source field | `"Health Canada PM. CTS Asthma 2021. CTS COPD 2023."` — WRONG source for biologic DMARD family | Anti-TNF biologics family should cite CRA Biologics Guidelines, ACR RA Guidelines, and CADTH Optimal Use Recommendation — not respiratory guidelines. Another copy-paste error. | MAJOR | Replaced with correct CRA + ACR + CADTH + CRS guidelines |
+| 4 | hepatic_dose_adjustment — `warnings` | APAP warning | `"ACETAMINOPHEN — max 2 g/day in cirrhosis"` (flat) | Hepatic table rows correctly differentiate Child-Pugh A (max 3 g/day) vs B/C (max 2 g/day). The warning text omitted the A vs B/C nuance — misleadingly implies 2 g for all cirrhosis, undershooting Child-Pugh A. | MINOR | Updated warning to specify max 3 g/day Child-Pugh A vs max 2 g/day Child-Pugh B/C |
+
+### Drug families confirmed accurate (no changes required)
+
+- **ACE Inhibitors/ARBs**: MOA accurate. Pregnancy teratogenic all trimesters — correct. Triple whammy AKI warning — correct. 36-h ARNI washout — correct. Hyperkalemia risk with K+-sparing drugs, NSAIDs, TMP-SMX — correct. ARB no bradykinin → no cough — correct. Cross-angioedema risk 2–17% — correct.
+- **Beta-Blockers**: Cardioselectivity (bisoprolol > metoprolol > atenolol vs non-selective propranolol/carvedilol) — correct. HFrEF only bisoprolol/carvedilol/metoprolol succinate proven — correct. NOT tartrate for HFrEF — correct. Abrupt cessation warning rebound HTN/angina/MI — CORRECT (confirmed in pearl). Labetalol IV pregnancy first-line — correct. REDUCE-AMI 2024 pearl re: 1-year stopping post-MI normal LVEF — correct.
+- **Statins**: High-intensity atorvastatin 40–80 mg / rosuvastatin 20–40 mg — correct per CCS 2021. Hierarchy potency: rosuvastatin > atorvastatin > simvastatin — correct (pearl says "atorvastatin + rosuvastatin high-intensity"). LDL targets: secondary prevention <1.8 OR 50% reduction — correct. CK threshold for stopping: not explicitly stated in family (muscle complaints section mentions rhabdomyolysis "0.01%") — adequate. Simvastatin 80 mg AVOID — correct.
+- **DOACs**: Renal dosing per Health Canada PMs — all correct (apixaban ≥2 criteria; rivaroxaban 15 mg if CrCl 15–49; dabigatran 110 mg if CrCl 30–50; edoxaban 30 mg if CrCl 15–50 AND avoid if >95). Reversal agents: idarucizumab (dabigatran), andexanet alfa (Xa-inhibitors), PCC off-label — correct. Mechanical valve contraindicated — correct.
+- **SSRIs/SNRIs**: Onset 1–2 weeks physical, 4–6 weeks mood — correct. Discontinuation syndrome severity order (paroxetine >> sertraline > fluoxetine last) — correct. MAOI washout 14 days (5 weeks fluoxetine) — correct. Serotonin syndrome triggers — correct. Citalopram max 40 mg (20 mg elderly) Health Canada — correct.
+- **Azole Antifungals**: Fluconazole CYP2C9 strong + CYP3A4 moderate inhibitor — correct. Itraconazole strong CYP3A4 inhibitor + CHF contraindication BBW — correct. Voriconazole first-line invasive aspergillosis, TDM trough 1–5.5 mg/L — correct. Isavuconazole QTc SHORTENING (unique class effect) — correct. Oral ketoconazole withdrawn Canada — correct.
+- **Anti-TNF Biologics**: TB screening IGRA + HBV serology mandatory — correct. Live vaccines ≥4 weeks before (≥8 for live preferred) — correct. HBV reactivation: entecavir/tenofovir prophylaxis if HBsAg+ or anti-HBc+ — correct. CHF: AVOID NYHA III–IV — correct. Certolizumab preferred in pregnancy (Fc-free, minimal placental transfer) — correct.
+- **Mood Stabilizers (valproate/lamotrigine/carbamazepine)**: Valproate teratogenicity — correct (HC 2023 strengthened warnings). Lamotrigine safest in pregnancy — correct. Carbamazepine strong CYP inducer — correct. Lamotrigine titration must be slow — correct.
+
+### Reference Tables confirmed accurate (no changes required)
+
+- **tox_acetaminophen**: Rumack-Matthew nomogram treatment line 1000 μmol/L at 4h (= 150 mcg/mL) — CORRECT (matches standard). King's College criteria (pH <7.30 OR INR >6.5 + Cr >300 + grade III/IV encephalopathy) — CORRECT. NAC 21-h 3-bag protocol (150/50/100 mg/kg) — CORRECT. Staggered ingestion: nomogram does not apply — CORRECT.
+- **renal_dose_adjustment**: Metformin avoid <30 — correct. Nitrofurantoin avoid <60 (note: table correctly acknowledges some guidelines allow 30–60 short courses) — correct. Digoxin reduce if CrCl <50 — correct. Lithium extreme caution <50 — correct. NSAIDs avoid <30 — correct. All DOAC thresholds confirmed correct.
+- **beers_criteria_2023**: PPIs not explicitly in rows but glyburide, NSAIDs, benzos, Z-drugs, anticholinergics all present — correct and complete for 2023 update. Tramadol caution (serotonergic, hypoglycemia, seizure risk) — correct per Beers 2023. Metoclopramide tardive dyskinesia AVOID long-term — correct.
+- **drug_food_grapefruit**: CYP3A4 irreversible inhibition, effect 24–72 h — CORRECT. Simvastatin/lovastatin contraindicated. Felodipine AUC 2–3×. DOAC modest increase — correct.
+- **drug_food_dairy_cations**: Tetracyclines chelation timing 2h before/4h after — correct. Fluoroquinolones 2h before/6h after — correct. Bisphosphonate empty stomach requirement — correct.
+
+### JS validation
+Script blocks (2): both OK (node Function constructor check passed).
+
+---
+
+## ═══ PASS 4 COMPLETE — All Cycles 29–34 — 2026-05-20 ═══
+
+**Pass 4 Overall Summary**: Pass 4 (Cycles 29–34, all conducted 2026-05-20) is the final source-verified deep audit of rxguide. Cycles 29–33 covered 30 disease conditions; Cycle 34 covered 10 Drug Families + 6 Reference Tables. Across Pass 4 (Cycles 29–34):
+
+| Cycle | Scope | CRITICAL | MAJOR | MINOR | Fixed |
 |---|---|---|---|---|---|
 | 29 | Heart Failure, Hypertension, Diabetes T2, Asthma, COPD, Hypothyroidism (early) | 0 | 2 | 0 | 2 |
 | 30 | Sepsis, Community Pneumonia, HIV/AIDS, Tuberculosis, Hepatitis C, UTI | 0 | 2 | 0 | 2 |
 | 31 | Major Depression, Bipolar, Schizophrenia, Anxiety, ADHD, Insomnia | 0 | 3 | 0 | 3 |
 | 32 | VTE, Atrial Fibrillation, CKD, Hyperkalemia, Stroke/TIA, Alzheimer's | 0 | 3 | 0 | 3 |
 | 33 | Psoriasis, Acne, Hypothyroidism (final), Adrenal Insufficiency, CINV, Febrile Seizures | 0 | 1 | 0 | 1 |
-| **TOTAL** | **30 conditions** | **0** | **11** | **0** | **11** |
+| 34 | 10 Drug Families + 6 Reference Tables | 0 | 3 | 1 | 4 |
+| **TOTAL** | **30 conditions + 10 families + 6 ref tables** | **0** | **14** | **1** | **15** |
 
-**Pass 4 findings by category**: All 11 MAJOR fixes across Pass 4 were precision corrections — dose thresholds, Canadian-specific drug parameters, and cross-catalog sibling inconsistencies. No CRITICAL errors were found in any Pass 4 cycle, confirming that the rxguide codebase reflects high-fidelity clinical content. The most impactful single finding was the dabigatran age reduction threshold (Cycle 32): the Canadian Health Canada label uses ≥75 years while the US FDA uses ≥80 years — the disease card had the US threshold, now corrected to Canadian standard. Pass 4 is now fully complete.
+**Pass 4 findings by category**: All 14 MAJOR fixes across Pass 4 were precision corrections — dose thresholds, Canadian-specific drug parameters, cross-catalog sibling inconsistencies, and family-level citation errors. No CRITICAL errors were found in any Pass 4 cycle, confirming that the rxguide codebase reflects high-fidelity clinical content. The most impactful single finding was the dabigatran age reduction threshold (Cycle 32): the Canadian Health Canada label uses ≥75 years while the US FDA uses ≥80 years — the disease card had the US threshold, now corrected to Canadian standard. Cycle 34's most impactful fix was the oxycodone equianalgesic ratio in the Opioid Analgesics family: the 2:1 ratio was wrong; Canadian standard (CRISM, Health Canada, hospice guidelines) is 1.5:1. Pass 4 is now fully complete.
