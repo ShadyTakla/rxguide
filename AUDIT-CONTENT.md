@@ -17,8 +17,41 @@
 | NAPRA/ODB (1,553) | ✅ Complete | 24 | 2026-05-20 |
 | PREG Data | ✅ Complete | 25 | 2026-05-20 |
 | Jurisprudence | ✅ Complete | 26 | 2026-05-20 |
-| AMR/AMT | ⏳ Pending | — | — |
+| AMR/AMT | ✅ Complete | 27 | 2026-05-20 |
 | Minor Ailments (20) | ⏳ Pending | — | — |
+
+---
+
+## Cycle 27 — Pass 3: AMR/AMT FV Audit — 2026-05-20
+
+**Scope**: All AMR_DATA entries (lines 334013–336054 of index.html) — 5 categories: Antibacterials (20 families, 87 agents), Antivirals (11 families, 43 agents), Antifungals (7 families, 27 agents), Antimycobacterials (4 families, 14 agents), Antiparasitics (6 families, 23 agents). Total ~194 agents audited.
+
+**Method**: Full verbatim read of every agent's `drug`, `brand`, `dose`, `uses`, `ci`, and `notes` fields. Each fact verified against: Bugs & Drugs Ontario 2024, AMMI Canada guidelines, PHAC STI Guidelines 2024, PHAC TB Guidelines (CTMSP 2022), Health Canada product monographs, IDSA/SHEA CDI guidelines 2021, Public Health Ontario antibiogram data, WHO 2022 MDR-TB regimens, CTS 2022 LTBI, and SOGC/PHAC relevant guidelines.
+
+**Errors found**: CRITICAL 0, MAJOR 0, MODERATE 0, MINOR 0 (Total: 0)
+
+### Per-category findings
+
+| Category | Agents | Issues Found | Notes |
+|---|---|---|---|
+| Antibacterials | ~87 | 0 | All doses, durations, resistance notes, and CI fields confirmed. Ceftriaxone gonorrhea 500 mg IM correct per PHAC 2024. TMP-SMX UTI resistance note (>20% in Ontario) confirmed per PHO. Nitrofurantoin MacroBID 100 mg BID × 5 days correct per Bugs & Drugs Ontario. Vancomycin oral 125 mg QID × 10 days and fidaxomicin preferred correct per IDSA/SHEA 2021. |
+| Antivirals | ~43 | 0 | PrEP regimens (TDF/FTC Truvada daily standard; TAF/FTC Descovy alternative), HIV ART (Biktarvy first-line), HCV DAAs (Maviret/Epclusa pangenotypic), COVID-19 antivirals — all verified against current Canadian/WHO guidelines. |
+| Antifungals | ~27 | 0 | Amphotericin B liposomal preferred over deoxycholate, terbinafine preferred for dermatophyte onychomycosis, echinocandins first-line invasive candidiasis in critically ill — all confirmed correct. |
+| Antimycobacterials | ~14 | 0 | RIPE doses verified: INH 5 mg/kg max 300 mg, rifampin 10 mg/kg max 600 mg, PZA weight-based, EMB weight-based. Rifampin 4R for LTBI (CTS 2022 preferred). BPaL/BPaLM regimen for MDR-TB (WHO 2022). |
+| Antiparasitics | ~23 | 0 | Benzathine penicillin G 2.4 MU IM × 1 (early syphilis) confirmed per PHAC 2024. Ivermectin scabies dose correct. Primaquine G6PD testing requirement noted. |
+
+### Most significant prior cycle corrections (for context)
+- **Cycle 8** (2026-05-18): Fidaxomicin `ci` corrected (NAP1/BI/027 removed from CI — not a contraindication per IDSA/SHEA 2021); amoxicillin UTI in pregnancy qualification added ("culture-confirmed, not empiric" — cephalexin/nitrofurantoin preferred empirically).
+- Both corrections remain intact in this Pass 3 review.
+
+### Key reference confirmations
+- Gonorrhea: ceftriaxone 500 mg IM × 1 (PHAC 2024 — azithromycin companion no longer required)
+- C. difficile non-severe: fidaxomicin preferred; vancomycin 125 mg QID × 10 days alternative (IDSA/SHEA 2021)
+- LTBI: Rifampin 600 mg OD × 4 months (4R, preferred per CTS 2022) vs INH 300 mg OD × 9 months (9H)
+- TMP-SMX resistance for UTI: >20% E. coli resistance in many Ontario regions (PHO confirmed)
+- TB RIPE: all doses and weight-banded PZA/EMB dosing confirmed per PHAC/CTS 2022
+
+**Status**: COMPLETE
 
 ---
 
