@@ -1,6 +1,28 @@
 # rxguide — Manual FV (Full Verbatim) Tier 4 Clinical Audit File
 
-## Cycle 19 — Minor Ailments Full Verbatim Audit Pass 2 — 2026-05-20
+---
+
+## ═══ PASS 3 — SYSTEMATIC FULL CATALOG FV AUDIT — Started 2026-05-20 ═══
+
+**Goal**: Complete line-by-line FV re-audit of every catalog section against authoritative Canadian sources.
+**Order**: Disease Conditions → Drug Families → Drug Cards → Reference Tables → NAPRA/ODB → PREG Data → Jurisprudence → AMR/AMT → Minor Ailments
+**Standard**: Every fact verified against ≥1 Canadian source (Health Canada, SOGC, CCS, CDA, CADTH, PHAC, CPS, product monographs). Clinical accuracy, completeness, Canadian context, and cross-catalog consistency.
+
+| Category | Status | Cycle | Date Completed |
+|---|---|---|---|
+| Disease Conditions (604) | 🔄 In Progress | 20 | — |
+| Drug Families (542) | ⏳ Pending | — | — |
+| Drug Cards (1,551) | ⏳ Pending | — | — |
+| Reference Tables (117) | ⏳ Pending | — | — |
+| NAPRA/ODB (1,528) | ⏳ Pending | — | — |
+| PREG Data | ⏳ Pending | — | — |
+| Jurisprudence | ⏳ Pending | — | — |
+| AMR/AMT | ⏳ Pending | — | — |
+| Minor Ailments (20) | ⏳ Pending | — | — |
+
+---
+
+## Cycle 20 — Pass 3: Disease Conditions FV Audit — 2026-05-20 Minor Ailments Full Verbatim Audit Pass 2 — 2026-05-20
 **Scope**: All 20 MINOR_AILMENTS entries — independent second-pass verification of Pass 1 fixes + fresh full verbatim scan.
 **Method**: 4 parallel agents (items 0–4, 5–9, 10–14, 15–19); each verified all Pass 1 fixes and ran fresh audit of all fields.
 
