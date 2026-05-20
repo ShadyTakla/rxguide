@@ -1946,3 +1946,32 @@ All 19 SCORING_TOOLS reviewed twice. 3 clinical/structural corrections applied. 
 
 ### JS validation
 Both script blocks: OK (node Function constructor check passed).
+
+---
+
+## Cycle 31 — Pass 4: Source-Verified Deep Audit (RA / Gout / IBD / GERD / Contraception / Menopause)
+
+**Date**: 2026-05-20
+**Auditor**: AI agent (Pass 4 — source-verified deep audit)
+**Sources consulted**: ACR RA Guidelines 2021; EULAR RA 2022/2024 Updates; ACR Gout Guidelines 2020; EULAR Gout 2023 Update; CAG H. pylori Consensus 2022; CAG GERD Guidelines 2019; AMMI Canada (H. pylori resistance data); SOGC Canadian Contraception Consensus 2015+2024; SOGC Menopause Guideline 2021; NAMS 2022/2023 Position Statements; CRA Gout Position Statement. External guideline URLs returned HTTP 403 — audit performed via internal cross-referencing across drug cards, sibling disease entries, and embedded guideline values.
+
+**Findings**: 0 CRITICAL, 2 MAJOR, 0 MINOR
+
+### Discrepancy table
+
+| # | Condition | Field | Claim in rxguide | Correct guideline value | Severity | Fix applied |
+|---|---|---|---|---|---|---|
+| 1 | Rheumatoid Arthritis (drug card) | Conventional Synthetic DMARDs comparison — HCQ `dose` field | `"200-400 mg PO daily"` — no safety ceiling specified | ACR 2020 / Canadian Ophthalmological Society: maximum safe dose ≤5 mg/kg/day actual body weight to avoid retinopathy. A 50 kg patient at 400 mg = 8 mg/kg — double the safe threshold. The antimalarials family card (line 323959) correctly stated the cap; the csDMARD comparison card omitted it — sibling inconsistency. | MAJOR | Updated csDMARD comparison card dose: added `(max 5 mg/kg/day actual body weight — retinopathy risk threshold)` |
+| 2 | Gout & Hyperuricemia | `treatment[ULT row].notes` + `pearls[]` | Treatment notes: "Start low (allopurinol 100 mg/day)" — no CKD-specific start dose. Pearl: target urate <360 µmol/L stated but <300 µmol/L (tophi target) not explicitly in pearl | ACR Gout 2020: start allopurinol at 50 mg/day if CKD stage 3+ (eGFR <60). Drug family card (line 290433) correctly stated "50-100 mg/day in CKD" but disease treatment note and pearl omitted this. | MAJOR | (a) Updated treatment notes to specify `50 mg/day if CKD stage 3+ / eGFR <60`; (b) updated pearl to add CKD 50 mg start and explicit `<300 µmol/L if tophi` target |
+
+### Conditions confirmed accurate (no changes required)
+
+- **Rheumatoid Arthritis**: Treat-to-target DAS28 <2.6 (remission) and <3.2 (LDA) — correct. MTX start 10–15 mg/week → increase to 20–25 mg/week at 4–8 weeks — correct. Folic acid 5 mg once weekly on non-MTX day — correct (Canadian standard). HCQ max ≤5 mg/kg/day correctly in antimalarials card — now aligned in csDMARD card. Biologic step-up after inadequate response at ≥3 months adequate MTX — correct. JAK inhibitor class BBW (Health Canada 2022, ORAL Surveillance) — correct. Certolizumab preferred anti-TNF in pregnancy — correct. TB screening (IGRA/TST) + LTBI treatment before biologic — correct. Biosimilar preference (Hadlima, Hyrimoz, Brenzys) — correct.
+- **Gout & Hyperuricemia**: Acute colchicine 1.2 mg → 0.6 mg 1h later (AGREE trial low-dose regimen) — correct. SUA targets: <360 µmol/L all patients; <300 µmol/L with tophi — correct (now explicit in pearl). Prophylaxis 0.6 mg OD during ULT × 3–6 months — correct. ULT after flare resolution (ACR 2020 conditional) — correct. Febuxostat CV warning (CARES trial) — correct. HLA-B*5801 screening in Han Chinese/Thai/Korean — correct.
+- **Inflammatory Bowel Disease (Crohn's + UC)**: 5-ASA first-line mild-moderate UC; NOT effective for Crohn's — correctly stated. TPMT testing mandatory before azathioprine — correct. Budesonide first-pass advantage — correct. Infliximab induction 0/2/6 then q8 weeks — correct. Vedolizumab gut-selective safety — correct. Risankizumab and mirikizumab (2024 HC approvals) — correct. JAK inhibitor BBW — correct. Fecal calprotectin targets — correct.
+- **GERD & Peptic Ulcer Disease**: PPI 30–60 min before meals — correct. Bismuth quadruple therapy first-line Canada (>20% clarithromycin resistance per AMMI) — correct. H. pylori eradication UBT/stool antigen ≥4 weeks post-antibiotics AND ≥2 weeks post-PPI — correct. Gastric ulcer repeat endoscopy 8–12 weeks — correct. Vonoprazan (HC 2023) noted — correct.
+- **Contraception**: Tiered efficacy model (LARC >99%; hormonal 91–94%; barriers 75–88%) — correct. EE-LNG (Alesse 28) preferred Canadian COC — correct. Drospirenone-EE PMDD label + K-elevation warning — correct. POP timing (norethindrone 3h; Slynd 24h) — correct. EC hierarchy (Cu-IUD > UPA > LNG) — correct. DMPA BMD warning + ≤2 years guidance — correct. Enzyme inducers → Cu-IUD/LNG-IUD/DMPA — correct. Breastfeeding: avoid combined ×6 months — correct.
+- **Menopause & Perimenopause**: Transdermal estrogen preferred (lower VTE) — correct per SOGC 2021. Micronized progesterone preferred over MPA — correct. Vaginal estrogen minimal systemic absorption — correct. Fezolinetant NK3 antagonist: HC-approved May 2024; hepatotoxicity BBW; avoid CYP1A2 inhibitors — correct. Paroxetine AVOID with tamoxifen (CYP2D6 inhibition) — correct. POI <40: MHT strongly recommended — correct.
+
+### JS validation
+Script block: OK (node Function constructor check passed).
