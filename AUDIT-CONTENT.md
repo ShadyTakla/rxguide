@@ -1,5 +1,28 @@
 # rxguide — Manual FV (Full Verbatim) Tier 4 Clinical Audit File
 
+## Cycle 19 — Minor Ailments Full Verbatim Audit Pass 2 — 2026-05-20
+**Scope**: All 20 MINOR_AILMENTS entries — independent second-pass verification of Pass 1 fixes + fresh full verbatim scan.
+**Method**: 4 parallel agents (items 0–4, 5–9, 10–14, 15–19); each verified all Pass 1 fixes and ran fresh audit of all fields.
+
+**Pass 1 fix verification**: 16/16 tracked fixes confirmed present (items 15–19); all other batches confirmed with one partial exception (MSK treatment.first_line.notes "limit" wording — now fixed in this pass).
+
+**Residual corrections applied in Pass 2**:
+- Urticaria: bilastine and rupatadine pediatric age approvals corrected (both ≥12y in Canada, not ≥6y); ACEi angioedema node type changed to "refer-urgent" with airway emergency language
+- Oral Candidiasis: rx_immunocomp self-contradiction resolved — concurrent nystatin with immediate referral clarified
+- Hemorrhoids: ontario_ma_scope age threshold harmonized (≥45→>40 to match all clinical content); MPFF/Daflon acute dosing corrected to Godeberge protocol (3 tabs BID × 4d then 2 BID × 3d)
+- Conjunctivitis: sentence fragment fixed in ontario_ma_scope; chloramphenicol ophthalmic added to treatment options
+- Cold Sores: penciclovir removed from scope note (no longer marketed in Canada); ≥6 episodes/year reframed as IN-scope suppressive therapy
+- Acne: tx_mild_otc.detail "Acne not in MA scope" → corrected to specify only oral antibiotics/systemic agents are outside scope
+- MSK: treatment.first_line.notes "limit" → "AVOID NSAIDs in first 48–72h" (final remaining Pass 1 gap)
+- N&V: Bonjesta/Diclectin max dose clarified in flow node (2/day vs 4/day); ondansetron 1st-trimester safety note added
+- Insect Bites: >5 stings in infants added to refer_when
+- UTI: nitrofurantoin T1/T2 safety explicitly affirmed in rx_preg detail
+- Shingles: famciclovir CrCl <10 dose specified in treatment.first_line (250 mg q48h)
+- Canker Sores: chlorhexidine 0.12% correctly described as NAPRA Schedule I prescribable under MA authority
+
+**FV Pass 2 status**: COMPLETE — all 20 conditions audited ×2; Pass 2 found 0 CRITICAL, 3 MAJOR (bilastine/rupatadine age, angioedema urgency), 6 MODERATE, 8 LOW/MINOR residual issues, all corrected.
+**Coverage**: 20/20 MINOR_AILMENTS conditions, both interactive_flow and therapeutic_flow, all structured fields
+
 ## Cycle 18 — Minor Ailments Deep Audit (FV Pass 1) — 2026-05-20
 **Scope**: All 20 MINOR_AILMENTS entries — full verbatim audit of interactive_flow nodes, therapeutic_flow, assessment red_flags, treatment, ontario_ma_scope, references.
 **Method**: 4-batch parallel agent audit covering all 20 conditions; each batch reviewed key_questions, red_flags, ddx, all treatment nodes, interactive wizard nodes for false referrals, false negatives, dosing errors, scope inaccuracies.
