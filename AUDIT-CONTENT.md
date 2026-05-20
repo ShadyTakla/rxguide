@@ -1,5 +1,29 @@
 # rxguide — Manual FV (Full Verbatim) Tier 4 Clinical Audit File
 
+## Cycle 18 — Minor Ailments Deep Audit (FV Pass 1) — 2026-05-20
+**Scope**: All 20 MINOR_AILMENTS entries — full verbatim audit of interactive_flow nodes, therapeutic_flow, assessment red_flags, treatment, ontario_ma_scope, references.
+**Method**: 4-batch parallel agent audit covering all 20 conditions; each batch reviewed key_questions, red_flags, ddx, all treatment nodes, interactive wizard nodes for false referrals, false negatives, dosing errors, scope inaccuracies.
+**Confirmed corrections applied**:
+- GERD: Removed all "NOT in Ontario MA scope" labels from treatment nodes (GERD IS designated); fixed ≥45→≥50 yr new-onset threshold; added PPI failure as red flag
+- Pinworms: Removed "NOT in MA scope" from tx_pyrantel node; fixed suspension dose notation to "20 mL of 50 mg/mL (single dose)"; corrected albendazole availability claim; added immunocompromised red flag
+- Eczema: Added MA scope warning to tx_severe node (high-potency TCS outside MA scope, changed type to refer); fixed antihistamine recommendation in therapeutic_flow (sedating not non-sedating for AD itch); fixed erythroderma threshold from ≥80–90% to ≥90%
+- Smoking Cessation: Fixed cytisine titration to correct Health Canada 25-day schedule; corrected regulatory attribution (O. Reg. 202/94, not 256/24); standardized "since 2012"; noted Champix withdrawal; added MAOI red flag and key question
+- Tick Bite: Removed amoxicillin pregnancy claim; removed outdated ≥8 yr age restriction; pregnancy → refer to physician
+- Acne: Removed "NOT designated" erroneous references text; fixed tx_mild_otc scope label (acne IS designated); corrected refer_when (topical antibiotics/retinoids are IN scope)
+- Conjunctivitis: Removed fluoroquinolones from ontario_ma_scope prescribing list; added clear note they are outside MA scope per OCP
+- Cold Sores: docosanol dosing was already correct (5×/day until healed); fixed famciclovir renal threshold (≥40 → 1500 mg, 20–39 → 750 mg)
+- Impetigo: Corrected fusidic acid duration to 7 days (7–10 days per Canadian PM); removed BSA parenthetical from scope
+- MSK: Fixed PEACE & LOVE NSAID guidance (AVOID vs limit first 48–72h)
+- N&V: Added ectopic pregnancy to red_flags; fixed Bonjesta dosing (1 tablet at bedtime + 1 in morning if needed, max 2/day)
+- UTI: Added diabetes screening node (n8c2 + rx_diabetes); fixed recurrent UTI definition in red_flags; fixed nitrofurantoin eGFR sentence (≥30 acceptable, <30 avoid)
+- Shingles: Fixed acyclovir CrCl <10 (q12h not OD); fixed Ramsay Hunt triad requirement in red_flags; added CNS red flags; fixed gabapentin low-start counselling; updated Shingrix UIIP age in patient_counselling; fixed acyclovir renal table in patient_counselling
+- Insect Bites: Fixed DEET age (≥6 months not ≥2 years) in two locations
+- Urticaria: Fixed loratadine max dose in up-dosing protocol (20 mg/day standard max); added ACEi angioedema red flag
+- Dysmenorrhea: Fixed celecoxib dosing (400 mg loading dose then 200 mg BID)
+- Thrush: Fixed immunocompromised node to direct referral (no treat-first 5–7 day window); fixed n3 ctx
+**New feature**: Added printable Minor Ailments Documentation Worksheet (`showMaWorksheet(idx)`) with print icon (🖨️) in wizard header; tracks `currentMaIdx`
+**FV Pass 1 status**: COMPLETE — all confirmed critical/major/moderate/minor corrections applied
+
 ## Cycle 17 — FV Double-Pass Audit: `febrile_seizures` Disease Card + ROADMAP.md Gap Reconciliation (COMPLETE ✅)
 
 **Started:** 2026-05-19
