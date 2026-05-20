@@ -2171,3 +2171,115 @@ All 18 vaccine cards reviewed. Key checks:
 **Total: 5 MAJOR fixes (all ceftriaxone gonorrhea dose — PHAC 2023 vs CDC 2020 discrepancy)**  
 **JS validation: PASSED (2 script blocks, 0 errors)**
 
+
+---
+
+## PASS 4 CYCLE 36 — PREG_DATA + Deprescribing Protocols — 2026-05-20 (FINAL Pass 4 Cycle)
+
+### Scope
+Source-verified deep audit of 15 PREG_DATA entries (isotretinoin, methotrexate, valproate, lithium, warfarin, SSRIs paroxetine/sertraline, fluoroquinolones, tetracyclines, NSAIDs, metformin, ondansetron, folic acid, enoxaparin, buprenorphine-naloxone) and all deprescribing protocols (PPI, BZD/Z-drug, opioid, antipsychotic BPSD, antihyperglycemic, cholinesterase, anticholinergic burden, antihypertensive frail, bisphosphonate holiday, statin advanced age, anticoagulant de-intensification, loop diuretic, antidepressant taper, gabapentinoid taper, corticosteroid taper).
+
+### PREG_DATA Findings
+
+**1. Isotretinoin** (PREG_DATA line 374407 + DRUGS line 177946) — **MAJOR FIX**
+- **DISCREPANCY**: PREG_DATA stated "iPLEDGE program is MANDATORY" — iPLEDGE is the **US FDA REMS** system. The Canadian program is Health Canada's **Pregnancy Prevention Program (PPP / RAMP)**.
+- **FIX**: Changed to "Health Canada Pregnancy Prevention Program (PPP / RAMP — Risk Awareness and Minimization Program, distinct from the US iPLEDGE system)". Also corrected DRUGS.pregnancy, DRUGS.monitoring, and acne disease notes where iPLEDGE was stated without Canadian context.
+
+**2. Lithium** (PREG_DATA line 375166 + DRUGS line 136488 + DRUGS pearls line 136587) — **MAJOR FIX**
+- **DISCREPANCY**: Ebstein's anomaly risk stated as "~1.5–2% (vs 0.1% baseline)" — this is the historical overestimate from early case registers (Nora 1974). Modern evidence (Patorno et al. NEJM 2017, Nordic register studies) shows **~0.6% absolute risk (vs ~0.3% background = ~2× increase)**.
+- **FIX**: Corrected all three locations to "~0.6% absolute (vs ~0.3% background = ~2× increase — Patorno NEJM 2017; much lower than historically feared 1.5–2% from early case registers)"
+
+**3. Methotrexate** — CONFIRMED ACCURATE (EULAR 2024 male data present, 3-month washout for females, folic acid 5 mg noted)
+
+**4. Valproate** — CONFIRMED ACCURATE (PPCP mandatory, NTD 1-5%, cognitive impairment, Health Canada PM cited)
+
+**5. Warfarin** — CONFIRMED ACCURATE (embryopathy weeks 6-12, LMWH preferred for VTE, safe in breastfeeding)
+
+**6. Sertraline/Paroxetine** — CONFIRMED ACCURATE (paroxetine cardiac septal defects T1, sertraline preferred, PPHN risk quantified)
+
+**7. Ciprofloxacin** — CONFIRMED ACCURATE (avoid in pregnancy, cartilage risk noted)
+
+**8. Doxycycline** — CONFIRMED ACCURATE (contraindicated all trimesters, short courses OK in breastfeeding)
+
+**9. Ibuprofen/Naproxen** — CONFIRMED ACCURATE (Health Canada 2020 warning at 20 weeks for both; 3rd trimester absolute contraindication stated)
+
+**10. Metformin** — CONFIRMED ACCURATE (crosses placenta, GDM second-line after insulin, SOGC cited)
+
+**11. Ondansetron** — CONFIRMED ACCURATE (orofacial cleft 0.03%→0.14% absolute risk quantified, SOGC 2nd/3rd line, RCOG 2024 cited)
+
+**12. Folic acid** — CONFIRMED ACCURATE (0.4-1 mg standard; 4-5 mg high-risk per SOGC; high-risk criteria complete)
+
+**13. Enoxaparin** — CONFIRMED ACCURATE (does not cross placenta, preferred LMWH, anti-Xa monitoring noted)
+
+**14. Buprenorphine-naloxone** — CONFIRMED ACCURATE (DO NOT discontinue OAT, switch to mono-product noted, NOWS expected in breastfeeding note)
+
+### Deprescribing Protocols Findings
+
+**PPI** — CONFIRMED ACCURATE (step-down vs alternate-day vs PRN; acid rebound 1–2 weeks noted; Farrell 2017 CFP cited)
+
+**BZD/Z-drug** — CONFIRMED ACCURATE (25% q2 weeks per deprescribing.org; switch to diazepam for short-acting BZDs; seizure warning for abrupt cessation; CBT-I as primary replacement; Pottie 2018 CFP cited)
+
+**Antidepressant** — CONFIRMED ACCURATE (hyperbolic taper principle implicit via 25-50% reductions; paroxetine 4-10%/1-2 weeks as slowest; fluoxetine self-tapers; ADS vs relapse distinction explicit; CANMAT 2024 cited)
+
+**Antihypertensive** — CONFIRMED ACCURATE (OPTIMISE trial cited; frailty BP target 140-150/90; α1-blockers stopped first)
+
+**Statin** — CONFIRMED ACCURATE (Choosing Wisely Canada cited; Kutner 2015 JAMA cited; no taper needed)
+
+**BZD/Z-drug sleep** — CONFIRMED ACCURATE (Z-drugs Beers Avoid; CBT-I first-line; melatonin/trazodone alternatives)
+
+**Opioid** — CONFIRMED ACCURATE (5-10% q2-4 weeks; CRISM 2023; naloxone at same time)
+
+**Gabapentinoid** — CONFIRMED ACCURATE (25-33% q1-2 weeks; withdrawal cautions; Health Canada warning cited)
+
+**Anticholinergic** — CONFIRMED ACCURATE (ACB scale; substitute non-anticholinergic alternatives)
+
+**Bisphosphonate holiday** — CONFIRMED ACCURATE (5 years oral, 3 years IV; FRAX/CAROC; Osteoporosis Canada 2023 cited)
+
+**Loop diuretic** — CONFIRMED ACCURATE (STOPP B10 criterion cited; edema without HF = deprescribe)
+
+**Corticosteroid** — CONFIRMED ACCURATE (HPA axis suppression risk; physiologic 5 mg threshold; tapering schedule)
+
+**Cholinesterase/Memantine** — CONFIRMED ACCURATE (50% dose reduction × 4 weeks; restart within 6 weeks if decline)
+
+**Antipsychotic BPSD** — CONFIRMED ACCURATE (25-50% q1-2 weeks; Health Canada Black Box cited)
+
+**Antihyperglycemic** — CONFIRMED ACCURATE (Diabetes Canada 2020; HbA1c 7.5-8.5% in frail; metformin last to stop)
+
+**Anticoagulant** — CONFIRMED ACCURATE (CCS AF 2024; falls ≠ reason to stop; HAS-BLED + CHA2DS2-VASc)
+
+### Summary of Changes Made
+
+| # | Location | Finding | Severity | Fix |
+|---|---|---|---|---|
+| 1 | PREG_DATA isotretinoin pregDetail (line 374413) | "iPLEDGE program is MANDATORY" — US program, not Canadian | MAJOR | Changed to Health Canada PPP/RAMP; noted distinction from US iPLEDGE |
+| 2 | PREG_DATA isotretinoin source (line 374416) | Source listed iPLEDGE | MAJOR | Updated to Health Canada PM RAMP/PPP citation |
+| 3 | DRUGS isotretinoin pregnancy field (line 178029) | "iPLEDGE program (US)" phrasing unclear | MAJOR | Clarified: Canada PPP/RAMP; iPLEDGE = US FDA equivalent |
+| 4 | DRUGS isotretinoin monitoring (line 178044) | "iPLEDGE / Canadian Pregnancy Prevention Program" — iPLEDGE listed first | MAJOR | Reordered: Canadian PPP/RAMP first, iPLEDGE as US equivalent |
+| 5 | DISEASES acne notes (line 81861) | "iPLEDGE/pregnancy prevention program mandatory" without Canadian context | MAJOR | Changed to "Health Canada Pregnancy Prevention Program (PPP/RAMP)" |
+| 6 | PREG_DATA lithium pregDetail (line 375172) | Ebstein anomaly "~1.5–2% vs 0.1% baseline" — historical overestimate | MAJOR | Corrected to ~0.6% absolute (Patorno NEJM 2017) |
+| 7 | DRUGS lithium contraindications (line 136488) | "~1.5-2% risk vs ~0.1% baseline" | MAJOR | Corrected to ~0.6% absolute vs ~0.3% background |
+| 8 | DRUGS lithium pearls (line 136587) | "Ebstein's anomaly risk (~1.5–2%)" | MAJOR | Corrected to ~0.6% with Patorno citation |
+
+**Total: 8 MAJOR fixes (isotretinoin Canadian PPP/RAMP program naming × 5 locations; lithium Ebstein risk correction × 3 locations)**  
+**CRITICAL: 0**  
+**JS validation: PASSED (2 script blocks, 0 errors)**
+
+---
+
+## ═══ PASS 4 FULLY COMPLETE — All Cycles 29–36 — 2026-05-20 ═══
+
+**Pass 4 Overall Summary**: Pass 4 (Cycles 29–36, all conducted 2026-05-20) is the completed final source-verified deep audit of rxguide. Cycles 29–33 covered 30 disease conditions; Cycle 34 covered 10 Drug Families + 6 Reference Tables; Cycle 35 covered AMR Drug Cards + VACCINES; Cycle 36 covered PREG_DATA + Deprescribing Protocols.
+
+| Cycle | Scope | CRITICAL | MAJOR | MINOR | Fixed |
+|---|---|---|---|---|---|
+| 29 | Heart Failure, Hypertension, Diabetes T2, Asthma, COPD, Hypothyroidism | 0 | 2 | 0 | 2 |
+| 30 | Sepsis, Community Pneumonia, HIV/AIDS, Tuberculosis, Hepatitis C, UTI | 0 | 2 | 0 | 2 |
+| 31 | Major Depression, Bipolar, Schizophrenia, Anxiety, ADHD, Insomnia | 0 | 3 | 0 | 3 |
+| 32 | VTE, Atrial Fibrillation, CKD, Hyperkalemia, Stroke/TIA, Alzheimer's | 0 | 3 | 0 | 3 |
+| 33 | Psoriasis, Acne, Hypothyroidism (final), Adrenal Insufficiency, CINV, Febrile Seizures | 0 | 1 | 0 | 1 |
+| 34 | 10 Drug Families + 6 Reference Tables | 0 | 3 | 1 | 4 |
+| 35 | 12 AMR Drug Cards + Full VACCINES Catalog | 0 | 5 | 0 | 5 |
+| 36 | PREG_DATA (15 entries) + All Deprescribing Protocols | 0 | 8 | 0 | 8 |
+| **TOTAL** | **Full catalog** | **0** | **27** | **1** | **28** |
+
+**Pass 4 Final Assessment**: No CRITICAL errors found in any Pass 4 cycle, confirming rxguide reflects high-fidelity clinical content. All 27 MAJOR fixes were precision corrections — Canadian-specific drug parameters (iPLEDGE→PPP/RAMP; PHAC 2023 ceftriaxone dose; dabigatran age threshold; oxycodone equianalgesic ratio; Ebstein anomaly risk), cross-catalog sibling inconsistencies, and citation accuracy. The codebase is comprehensively audited and ready for production.
