@@ -16,9 +16,28 @@
 | Reference Tables (117) | ✅ Complete | 23 | 2026-05-20 |
 | NAPRA/ODB (1,553) | ✅ Complete | 24 | 2026-05-20 |
 | PREG Data | ✅ Complete | 25 | 2026-05-20 |
-| Jurisprudence | ⏳ Pending | — | — |
+| Jurisprudence | ✅ Complete | 26 | 2026-05-20 |
 | AMR/AMT | ⏳ Pending | — | — |
 | Minor Ailments (20) | ⏳ Pending | — | — |
+
+---
+
+## Cycle 26 — Pass 3: Jurisprudence FV Audit — 2026-05-20
+
+**Scope**: Full Jurisprudence tab content (index.html buildJuri() function, lines 366450–367048); all 17 topic cards covering: Prescription Requirements by Drug Schedule, s.56(1) Class Exemption, Ontario NSAA/NMS/DMS, Narcotic Register & Record-Keeping, Pharmacist Prescribing Authority, CDSA Classification, Methadone & Buprenorphine (OAT), Privacy/PHIPA, Drug Interchangeability & ODB, Prescription Verification & Authenticity, Drug Recall & Shortage Management, Medication Error & Incident Reporting, Compounding Regulations, Dispensing Fees & Cognitive Services, Professional Obligations & Standards of Practice, Conscientious Objection, Pharmacy Ownership & Corporate Practice, CPD, and Pharmacist Liability.
+
+**Method**: Full verbatim read of each card. Every regulatory reference verified against: CDSA and its schedules, NCR, BOTSR (SOR/2000-217), FDR Part G, Pharmacy Act 1991, DPRA, RHPA, PHIPA 2004, Ontario regulations (O. Reg. 256/24, O. Reg. 264/16, O. Reg. 551/96, O. Reg. 681/93), OCP published policies, and NAPRA model standards.
+
+**Errors found**: CRITICAL 1, MAJOR 1, MINOR 2 (Total: 4)
+
+- **CRITICAL** (fixed): Line 366459 — nabilone listed as CDSA Schedule I Narcotic example alongside morphine/oxycodone etc. This is factually wrong. Nabilone (Cesamet) is a **Schedule III Controlled Drug under Part G of the Food and Drug Regulations** — NOT a CDSA Schedule I narcotic. A narcotic register is NOT required for nabilone. Nabilone was moved out of the narcotic examples list, with the clarifying note repositioned to appear immediately after the narcotic examples paragraph (also correctly stated in the CDSA Classification card and the Medical Cannabis reference table at line 409553). Fix: removed nabilone from Schedule I narcotics examples list; added explicit clarifying note near examples paragraph.
+- **MAJOR** (fixed): Line 366596 — heading of the Pharmacist Prescribing Authority card said "19 Conditions — Expanded 2023" but the body text correctly stated "20 minor ailments" and the complete enumerated list on line 366634 has 20 conditions (acne, allergic rhinitis, aphthous ulcers, conjunctivitis, atopic dermatitis, dysmenorrhea, hemorrhoids, herpes labialis, herpes zoster, impetigo, insect bites/stings, musculoskeletal sprains, nausea/vomiting of pregnancy, oral candidiasis, pinworms, tick bites, uncomplicated UTI, urticaria, vaginal candidiasis, GERD = 20). Heading updated to "20 Conditions — O. Reg. 256/24."
+- **MINOR** (fixed ×2): Lines 366497 and 366563 used abbreviation "BTSR" — the correct abbreviation for the Benzodiazepines and Other Targeted Substances Regulations is "BOTSR" (SOR/2000-217). Both instances corrected to BOTSR.
+- FV audit footer date updated from May 19, 2026 → May 20, 2026.
+
+**Confirmed correct**: s.56(1) class exemption description and October 1, 2026 CSR transition date; NSAA/NMS requirements; narcotic register retention rules (≥2 years federal / ≥10 years Ontario DPRA); OAT missed-dose protocols; PHIPA circle of care, breach notification thresholds, and IPC reporting requirements; ODB billing rules and MedsCheck cognitive services; RHPA discipline fines ($35,000 individual); CYFSA s.125 mandatory reporting; RHPA s.85.1 sexual abuse reporting; O. Reg. 681/93 professional misconduct regulation; conscientious objection OCP PPP #6-01 framework; CDSA Schedule II (cannabis removal October 17, 2018 under Cannabis Act); BOTSR SOR/2000-217 coverage of targeted substances including anabolic steroids; methadone CPSO MMT certificate requirement (individual s.56(1) exemption eliminated January 31, 2018).
+
+**Status**: COMPLETE
 
 ---
 
