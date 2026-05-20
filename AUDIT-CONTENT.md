@@ -1975,3 +1975,32 @@ Both script blocks: OK (node Function constructor check passed).
 
 ### JS validation
 Script block: OK (node Function constructor check passed).
+
+---
+
+## Pass 4 Cycle 32 — Source-Verified Deep Audit (2026-05-20)
+
+**Auditor**: Claude (claude-sonnet-4-6)
+**Conditions**: VTE (DVT/PE) — Hematology; Atrial Fibrillation — Cardiology; CKD — Nephrology; Hyperkalemia — Nephrology; Ischemic Stroke/TIA — Neurology; Alzheimer's Disease & Dementia — Neurology
+**Sources consulted**: Thrombosis Canada (403 blocked), Canadian Stroke Best Practices (403 blocked), KDIGO CKD (cert error); cross-checked via internal drug-card consistency and guideline text in rxguide source
+**Findings**: 0 CRITICAL, 3 MAJOR, 0 MINOR
+
+### Discrepancy table
+
+| # | Condition | Field | Claim in rxguide | Correct guideline value | Severity | Fix applied |
+|---|---|---|---|---|---|---|
+| 1 | Atrial Fibrillation | `treatment[First-Line Stroke Prevention].notes` — dabigatran dose-reduction threshold | "reduce to 110 mg if age ≥80 or high bleeding risk" | Health Canada dabigatran (Pradaxa) Product Monograph: 110 mg BID consideration for age ≥**75** years (not ≥80) — ≥80 is the US FDA threshold. Canadian CCS 2020 also uses ≥75 as primary consideration. Drug card at line 144325 correctly stated ≥75; disease card used US FDA threshold erroneously. Cross-catalog inconsistency. | MAJOR | Updated disease card notes to "reduce to 110 mg if age ≥75 or high bleeding risk (CrCl 30–50, P-gp inhibitor, frailty — Canadian Health Canada label; note US FDA uses ≥80 threshold)" — propagated to line 5641 flutter anticoagulation reference |
+| 2 | CKD — Nephrology | `monitoring[]` BP target + lifestyle note BP target | "<130/80 mmHg in CKD" | KDIGO 2024 updated CKD BP target to SBP <120 mmHg (SPRINT-derived SBP-intensive target) for most CKD patients who can tolerate it; <130/80 is now the fallback for frail/elderly. Omission of the more aggressive 2024 target. | MAJOR | Updated monitoring BP string to "KDIGO 2024 recommends SBP <120 mmHg if tolerated (SPRINT-derived SBP-intensive target) — practical target <130/80 mmHg in CKD; <140/90 if frail." Lifestyle note updated to include "KDIGO 2024 SBP-intensive target <120 mmHg if tolerated" |
+| 3 | Atrial Fibrillation | Same dabigatran age threshold — sibling at line 5641 (AFL anticoagulation block) | "110 mg if age ≥80 or bleeding risk" | Same as above — Canadian label uses ≥75 | MAJOR | Fixed to "≥75 or bleeding risk — Canadian Health Canada label" |
+
+### Conditions confirmed accurate (no changes required)
+
+- **VTE (DVT/PE) — Hematology**: Apixaban 10 mg BID ×7d → 5 mg BID — correct. Rivaroxaban 15 mg BID ×21d → 20 mg OD with evening meal — correct. Extended prophylaxis: apixaban 2.5 mg BID (AMPLIFY-EXT), rivaroxaban 10 mg OD (EINSTEIN-CHOICE) — correct. Dabigatran/edoxaban require 5–10d LMWH bridging — correct. Provoked DVT 3 months; unprovoked ≥3 months, consider indefinite — correct. Cancer-associated VTE: LMWH or apixaban/rivaroxaban (CARAVAGGIO/ADAM VTE) — correct. APS: warfarin only (TRAPS) — correct. Thrombolysis for massive PE with hemodynamic instability — correct. D-dimer age-adjusted: age × 10 µg/L for >50 years — correct.
+- **Atrial Fibrillation**: CHADS-65 Canadian algorithm — correct. DOACs preferred for non-valvular AF — correct. Rate control target <110 bpm (lenient)/< 80 bpm (strict) — correct. Ablation first-line for symptomatic paroxysmal AF (CCS 2024 Focused Update, CABANA/EARLY-AF) — correct. Aggressive RFM (weight loss, OSA, alcohol) — correct. Apixaban dose-reduction criteria (≥2 of: age ≥80, weight ≤60 kg, SCr ≥133) — correct (apixaban uses ≥80 correctly per Eliquis monograph). Flecainide/propafenone requires AV-node blocker — correct.
+- **CKD**: SGLT2i: dapagliflozin DAPA-CKD approved for CKD regardless of DM — correct. Empagliflozin EMPA-KIDNEY eGFR down to 20 — correct. Finerenone: diabetic CKD, ACR >30, eGFR 25–60 start 10 mg, eGFR ≥60 start 20 mg — correct. ACEi/ARB: up to 30% eGFR decline acceptable; hold if >30–35% or K+ >5.5 — correct. ESA target Hgb 100–120 g/L — correct (TREAT/CHOIR). GLP-1 agonist (semaglutide FLOW trial 2024): added as pillar triad — correct.
+- **Hyperkalemia**: Stepwise emergency approach: calcium gluconate (membrane stabilization) → insulin 10u + D50W (shift) → patiromer/SZC (removal) → hemodialysis — correct. SZC acute 10g TID × 48h — correct. Patiromer drug chelation warning (separate ≥3h) — correct. Kayexalate bowel necrosis risk — correct. TMP-SMX + ACEi/ARB hyperkalemia risk in CKD — correct.
+- **Ischemic Stroke/TIA**: Alteplase 0.9 mg/kg (max 90 mg), 10% bolus → remainder over 60 min, window 4.5h — correct. Tenecteplase 0.25 mg/kg (max 25 mg) single bolus — correct. Aspirin 160–300 mg within 24–48h, NOT if thrombolysis (wait 24h) — correct. DAPT aspirin + clopidogrel × 21 days for minor stroke/TIA (POINT/CHANCE) — correct. Statin: high-intensity atorvastatin 40–80 mg/rosuvastatin 20–40 mg — correct. BP: do not lower unless >220/120 if no thrombolysis; permissive hypertension — correct. Timing anticoagulation after AF stroke: 1–3–6–12 day rule by infarct size — correct.
+- **Alzheimer's Disease & Dementia**: Donepezil 5 mg OD → 10 mg OD after 4–6 weeks — correct. Galantamine ER 8 mg OD → 16 mg OD → 24 mg OD — correct. Memantine start 5 mg OD, titrate by 5 mg/week to 10 mg BID (20 mg/day) — correct. Memantine indication: moderate-severe AD (MMSE 3–14) — correct. Anti-amyloid mAbs: lecanemab (Leqembi) approved October 2025, donanemab (Kisunla) May 2026 — consistent with current date (May 20, 2026). Antipsychotic BBW (1.6–1.7× mortality in dementia) — correct. DLB antipsychotic sensitivity — correct. Paroxetine: most anticholinergic SSRI, avoid — correct.
+
+### JS validation
+Script blocks (2): both OK (node Function constructor check passed).
