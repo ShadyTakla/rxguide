@@ -14,11 +14,54 @@
 | Drug Families (542) | ✅ Complete | 21 | 2026-05-20 |
 | Drug Cards (1,551) | ✅ Complete | 22 | 2026-05-20 |
 | Reference Tables (117) | ✅ Complete | 23 | 2026-05-20 |
-| NAPRA/ODB (1,528) | ⏳ Pending | — | — |
+| NAPRA/ODB (1,553) | ✅ Complete | 24 | 2026-05-20 |
 | PREG Data | ⏳ Pending | — | — |
 | Jurisprudence | ⏳ Pending | — | — |
 | AMR/AMT | ⏳ Pending | — | — |
 | Minor Ailments (20) | ⏳ Pending | — | — |
+
+---
+
+## Cycle 24 — Pass 3: NAPRA/ODB FV Audit — 2026-05-20
+
+**Scope**: All 1,553 NAPRA_ODB_DATA entries (index.html lines 337732–361044).
+
+**Method**: Full verbatim pass through all entries. Systematic review by category: Schedule I Rx drugs (cardiovascular, diabetes, psychiatry, neurology, respiratory, rheumatology, dermatology, GI, endocrine, antibiotics, antivirals, biologics/specialty, hematology, oncology, women's health, bone health, ophthalmology, renal/urology, pain, controlled substances); Schedule II OTC-behind-counter (29 entries); Schedule III pharmacy-self-select (12 entries); complex/route-dependent schedules (14 entries); Unscheduled (97 entries); all Limited Use entries (473 entries including LU code verification); all EAP entries (38 entries). Standard: NAPRA National Drug Schedules (NDS), Ontario Drug Benefit Formulary Edition 43, Health Canada product monographs.
+
+**Errors found**: CRITICAL 0, MAJOR 3, MODERATE 0, MINOR 0 (Total: 3 fixes)
+
+**Schedule II entries (29 total)** — all verified correct:
+- Insulins (glargine, lispro, aspart, NPH, degludec, premix, umbrella): Schedule II ✅
+- Levonorgestrel EC (Plan B): Schedule II ✅
+- Permethrin / pyrethrin / pyrantel: Schedule II ✅
+- Epinephrine auto-injectors: Schedule II ✅
+- Omeprazole OTC (14-day pack): Schedule II ✅
+- Lidocaine OTC topical: Schedule II ✅
+- Glucagon / glucagon nasal: Schedule II ✅
+- Other 14 Schedule II entries: ✅
+
+**Schedule III entries (12 total)** — all verified correct:
+- Dimenhydrinate, diphenhydramine, cimetidine, methocarbamol, fluticasone nasal, budesonide nasal, meclizine, sodium cromoglycate, polymyxin B (ophthalmic combos), phenazopyridine, cromolyn, clemastine: all ✅
+
+**Complex napra entries (14 total)** — all verified correct:
+- clotrimazole U/III, miconazole U/III, esomeprazole I/II/III, famotidine U/III, naloxone I/II, olopatadine I/III, etc.: all ✅
+
+**Unscheduled entries (97 total)** — all verified correct.
+
+**MAJOR corrections (3 fixes):**
+
+1. **omalizumab** (Xolair) — `odbStatus` was `"EAP"` → corrected to `"Limited Use"`. Entry had LU codes 726, 727, 728 (Limited Use criteria codes), confirming ODB Limited Use status. The `odbDetail` was rewritten to accurately describe LU criteria rather than the former "physician application" EAP language. Classification as EAP was clinically significant: EAP requires a separate special access application, while Limited Use codes are pre-specified formulary criteria; wrong classification could delay or prevent patient access.
+
+2. **voriconazole** (Vfend) — `odbStatus` was `"EAP"` → corrected to `"Limited Use"`. Entry had LU code 399 (confirmed Ontario ODB Limited Use for invasive aspergillosis/serious mold infections). The `odbDetail` was updated from "ODB Special Authorization" language to accurate Limited Use description. The `notes` field had a trailing "ODB Special Authorization" mention also removed.
+
+3. **lamivudine** (Epivir, Heptovir) — `odbStatus` was `"EAP"` → corrected to `"Limited Use"`. Entry had LU codes 502, 503, 504 (HBV Limited Use codes). The `odbDetail` was rewritten to correctly distinguish: (a) HBV indication = ODB Limited Use (LU 502-504), and (b) HIV indication = Ontario AIDS Bureau Exceptional Access Program (AB-EAP, a distinct program). Prior entry was contradictory — `odbDetail` started with "ODB GB" while `odbStatus` said "EAP."
+
+**Other notable observations:**
+- 149 entries contain `"Verify current Ontario formulary LU code"` as the luCode value. These are advisory reminders for specialty/oncology drugs whose LU codes change frequently. Not clinical errors — appropriate for high-turnover specialty formulary items.
+- 10 entries carry legacy `napra_schedule` / `odb_coverage` fields alongside the canonical `napra` / `odbStatus` fields. Both field sets are present with consistent values; the renderer uses the canonical fields. Minor structural redundancy, not a clinical issue.
+- cdsa field uses abbreviated codes (N = Narcotic, T = Targeted Substance, C = Controlled Drug) in 39 entries alongside longer descriptions in others. Consistent within each entry; not a clinical error.
+
+**Status**: COMPLETE
 
 ---
 
