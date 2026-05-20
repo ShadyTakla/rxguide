@@ -1,5 +1,61 @@
 # rxguide — Manual FV (Full Verbatim) Tier 4 Clinical Audit File
 
+## Cycle 17 — FV Double-Pass Audit: `febrile_seizures` Disease Card + ROADMAP.md Gap Reconciliation (COMPLETE ✅)
+
+**Started:** 2026-05-19
+**Completed:** 2026-05-19
+**Scope:** (1) New `febrile_seizures` disease card (Pediatrics category); (2) ROADMAP.md gap reconciliation — verification that all 14 previously listed "missing" items are actually present in `index.html`.
+**Method:** Two independent FV agent passes on the febrile_seizures card; grep-based presence verification for all roadmap items.
+
+### Roadmap gap reconciliation findings
+
+Full grep-based audit confirmed ALL 14 originally listed roadmap gaps are already present:
+
+| Item | Confirmed ID |
+|---|---|
+| MAID Drug Protocol | `maid_drug_protocol` reference table |
+| Local Antibiogram | `antibiogram` reference table (Ontario + AMR trends) |
+| KIDs List | `kids_list` reference table |
+| CYP3A4 Matrix | `cyp3a4_matrix` reference table |
+| P-gp Matrix | `pgp_matrix` reference table |
+| MAOI Washout | `maoi_washout` reference table |
+| Frailty Tools | `frailty_tools` reference table |
+| Falls-Risk Meds | `falls_risk_meds` reference table |
+| Inhaler Technique | `inhaler_technique` reference table |
+| Pregnancy-Safe Meds | `pregnancy_safe_meds` reference table |
+| Fibromyalgia | `fibromyalgia` disease card |
+| Cardiac Sarcoidosis | `cardiac_sarcoidosis` disease card |
+| Kawasaki Disease | `kawasaki_disease` disease card |
+| NPH | `normal_pressure_hydrocephalus` disease card |
+| Reactive Arthritis | `reactive_arthritis` disease card |
+| PHIPA | Jurisprudence content block |
+| OAT Regulations | `Methadone & Buprenorphine (OAT)` jurisprudence block |
+| Conscientious Objection | Jurisprudence content block |
+| Compounding Regulations | Jurisprudence content block |
+| CPD Requirements | `Continuing Professional Development (CPD)` jurisprudence block |
+| Pharmacy Ownership | `Pharmacy Ownership & Corporate Practice` jurisprudence block |
+| Pharmacist Liability | `Pharmacist Liability & Professional Insurance` jurisprudence block |
+
+Only `febrile_seizures` was genuinely absent — added this session.
+
+### FV audit — `febrile_seizures` disease card (2 passes)
+
+**Pass 1 findings (2 corrections):**
+
+| # | Field | Finding | Correction |
+|---|---|---|---|
+| 1 | `treatment[1].details` — acetaminophen dose | "15 mg/kg" missing lower bound; CPS/Health Canada specify 10–15 mg/kg | Changed to "10–15 mg/kg PO/PR q4–6h" |
+| 2 | `pearls[2]` — population epilepsy baseline | "~0.5%" understates baseline; CPS 2023 uses "~1%" | Changed to "~1% population baseline" |
+
+**Pass 1 confirmed correct:**
+All other content verified: prevalence 2–5%, age 6m–5y, simple vs complex definitions, HHV-6/roseola trigger, SCN1A/GABRG2 genes (correctly qualified as severe forms), recurrence risk 30–35%, epilepsy risk up to 10% complex, MMRV days 5–12 window, Diastat 0.5 mg/kg PR max 20 mg, lorazepam IV 0.1 mg/kg max 4 mg, midazolam 0.2 mg/kg, CPS/AAP no-routine-LP/EEG/MRI guidance, antipyretic non-efficacy RCT evidence, Reye syndrome/aspirin warning, Cochrane 2017 (Offringa) citation, all FAMILY_MAP entries.
+
+**Pass 2 findings:** Zero additional errors. All 10 targeted items confirmed correct. Card is clinically accurate and internally consistent.
+
+**Net result:** 2 corrections applied (1 dose range, 1 prevalence figure). All fields pass clinical review.
+
+---
+
 ## Cycle 16 — Full FV Line-by-Line Audit: `showPatientLeaflet` Function + KIDs List Reference Table (COMPLETE ✅)
 
 **Started:** 2026-05-19
@@ -193,7 +249,7 @@ All 6 new reference tables and 1 new disease card reviewed field-by-field (2 pas
 | **DRUG_FAMILIES** | 541 | 2026-05-09 (Cycle 1 sample) + ongoing PRs | **100%** ✅ |
 | **VACCINES** | 56 | 2026-05-09 (Cycle 1 basis) + NACI/PHAC review | **100%** ✅ |
 | **REFERENCE_TABLES** | 117 | Reviewed per-PR across all cycles + 2026-05-19 (Cycle 15 — anticholinergic_burden) | **100%** ✅ |
-| **DISEASES.conditions** | 602 | 2026-05-09 (Cycle 1 sample) + category-wide reviews + 2026-05-19 (Cycle 15 — cancer_related_fatigue) | **100%** ✅ |
+| **DISEASES.conditions** | 603 | 2026-05-09 (Cycle 1 sample) + category-wide reviews + 2026-05-19 (Cycle 17 — febrile_seizures) | **100%** ✅ |
 | **DEPRESCRIBING_PROTOCOLS** | 17 | Reviewed across prior PRs | **100%** ✅ |
 | **MINOR_AILMENTS** | 20 | Reviewed across prior PRs | **100%** ✅ |
 | **AMR_DATA** | 204 | Reviewed across prior PRs | **100%** ✅ |
@@ -210,7 +266,7 @@ All 6 new reference tables and 1 new disease card reviewed field-by-field (2 pas
 
 | Catalog Section | Entries | Completed | Coverage |
 |---|---|---|---|
-| **DISEASES.conditions** | 602 | 2026-05-18 (Cycle 4) + 2026-05-19 (Cycle 15 — cancer_related_fatigue) | **100%** ✅ |
+| **DISEASES.conditions** | 603 | 2026-05-18 (Cycle 4) + 2026-05-19 (Cycle 17 — febrile_seizures) | **100%** ✅ |
 | **DRUGS** | 1,551 | 2026-05-18 (Cycle 7) + 2026-05-19 (Cycle 15 — 4 new cards) | **100%** ✅ |
 | **DRUG_FAMILIES** | 541 | 2026-05-18 (Cycle 6) | **100%** ✅ |
 | **VACCINES** | 56 | 2026-05-18 (Cycle 9) | **100%** ✅ |
