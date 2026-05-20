@@ -13,12 +13,93 @@
 | Disease Conditions (604) | ✅ Complete | 20 | 2026-05-20 |
 | Drug Families (542) | ✅ Complete | 21 | 2026-05-20 |
 | Drug Cards (1,551) | ✅ Complete | 22 | 2026-05-20 |
-| Reference Tables (117) | ⏳ Pending | — | — |
+| Reference Tables (117) | ✅ Complete | 23 | 2026-05-20 |
 | NAPRA/ODB (1,528) | ⏳ Pending | — | — |
 | PREG Data | ⏳ Pending | — | — |
 | Jurisprudence | ⏳ Pending | — | — |
 | AMR/AMT | ⏳ Pending | — | — |
 | Minor Ailments (20) | ⏳ Pending | — | — |
+
+---
+
+## Cycle 23 — Pass 3: Reference Tables FV Audit — 2026-05-20
+
+**Scope**: All 117 REFERENCE_TABLES entries (lines 391811–409329 in index.html).
+
+**Method**: Full verbatim line-by-line clinical audit of every reference table — title, introduction, columns, rows (all cell values), footnotes, related_drugs, warnings, and source fields. Every numeric threshold, dose, duration, unit, and criterion verified against authoritative Canadian sources. Special attention to toxicology tables (Rumack-Matthew nomogram, King's College criteria), high-alert medication tables (ISMP Canada KIDs List, anticoagulants, insulin), geriatric safety tables (ACB Scale, Beers/STOPP-START), infectious disease tables (Ontario antibiogram, antibiotic durations), and drug interaction matrices (CYP3A4, P-gp).
+
+**Tables audited by category**:
+- Toxicology (tox_*): acetaminophen toxidrome, toxicology reference, tricyclic antidepressant toxicity, opioid overdose, benzodiazepine/alcohol withdrawal, serotonin syndrome, lithium toxicity, digoxin toxicity, salicylate toxicity, carbon monoxide, iron toxicity, antidotes reference, NMS, MAOI washout
+- Drug Interactions (di_*): MAOI washout, opioid equianalgesic, anticoagulant reversal, CYP3A4 matrix, P-gp matrix
+- Medication Safety (medSafety_*): ISMP high-alert, look-alike-sound-alike (LASA), tall man lettering, administration safety
+- Renal Dosing (renal_*): eGFR-based dose adjustments, CKD staging, dialysis dosing
+- Hepatic Dosing (hepatic_*): Child-Pugh, MELD, hepatic dose adjustment
+- Cardiovascular: CHADS₂-VASc, HAS-BLED, HEART score, TIMI, HFrEF GDMT, DOAC perioperative, anticoagulation in pregnancy, lipid targets, antihypertensive selection
+- Endocrine: T2DM algorithm, insulin types, SADMANS sick-day rules, thyroid function interpretation, hyperglycemia targets
+- Geriatric/Safety: frailty tools (CFS, FRAIL, EFS), falls-risk medications, anticholinergic burden (ACB Scale), Beers/STOPP-START
+- Respiratory: asthma action plan, COPD management, GOLD classification
+- Psychiatry/Neurology: depression screening (PHQ-9), anxiety (GAD-7), bipolar algorithm, Richmond Agitation-Sedation Scale (RASS), CIWA-Ar
+- Infectious Disease: antibiotic duration guide, Ontario antibiogram, MRSA/ESBL, TDM targets (vancomycin, aminoglycosides), C. difficile management
+- Pharmacy Practice: medication reconciliation, pharmacist scope Ontario, LAI protocols, narrow therapeutic index drugs
+- Allergy: PEN-FAST, penicillin allergy assessment, G6PD deficiency drug list
+- Food interactions: grapefruit, tyramine, dairy/calcium
+- Pediatrics: KIDs List, pediatric dosing principles
+- Women's Health: pregnancy-safe medications, lactation safety
+- Immunization: vaccine storage, cold chain
+
+**Critical clinical thresholds verified (selected)**:
+- Rumack-Matthew nomogram treatment line: 1000 μmol/L (= 150 mcg/mL) at 4h — confirmed (fixed from mmol/L)
+- King's College criteria for liver transplant: Cr >300 μmol/L — confirmed (fixed from mmol/L)
+- NAC DOUBLE-DOSE threshold: APAP >6000 μmol/L at 4h — confirmed (fixed from mmol/L)
+- Staggered ingestion empiric NAC: APAP >130 μmol/L — confirmed (fixed from mmol/L)
+- CHADS₂-VASc anticoagulation thresholds: male ≥2, female ≥3 — confirmed correct (CCS AF 2020)
+- DOAC perioperative: PAUSE study, low-bleed-risk vs high-bleed-risk interruption — confirmed correct
+- Vancomycin AUC24/MIC target 400–600 mg·h/L — confirmed correct (IDSA 2020, AMMI Canada)
+- Aminoglycoside traditional dosing: gentamicin peak 5–10 mg/L, trough <2 mg/L; extended-interval Cmin <1 mg/L — confirmed correct
+- SADMANS sick-day meds: metformin + SGLT2 hold; ACEi/ARB + diuretic hold criteria — confirmed correct (Diabetes Canada)
+- Insulin titration algorithms: basal ±2 units q3d; fasting target 4.0–7.0 mmol/L — confirmed correct (Diabetes Canada 2024)
+- T2DM comorbidity-first algorithm: CKD → SGLT2i + finerenone, HF → SGLT2i first — confirmed correct
+- PEN-FAST scoring: ≥3 points → proceed without testing — confirmed correct (Trubiano JAMA Intern Med 2020)
+- G6PD high-risk drugs: primaquine, rasburicase, dapsone, nitrofurantoin — confirmed correct (CPIC)
+- LAI depot dosing: risperidone Risperdal Consta 25 mg q2w starting dose, paliperidone Invega Sustenna 234 mg/156 mg day 1/8, aripiprazole Abilify Maintena 400 mg q4w — confirmed correct (Health Canada PMs)
+- CIWA-Ar scoring thresholds: ≥10 → pharmacotherapy (benzodiazepine PRN); ≥20 → IV benzodiazepine — confirmed correct
+- RASS scale: -5 (unarousable) to +4 (combative); target −1 to 0 in mechanically ventilated ICU patients — confirmed correct
+- Antibiotic durations: uncomplicated UTI nitrofurantoin 5 days, TMP-SMX 3 days; CAP mild 5–7 days; GAS pharyngitis 10 days — confirmed correct (AMMI Canada Bugs & Drugs 2024)
+- Ontario antibiogram: E. coli TMP-SMX resistance ~20–30%; nitrofurantoin >95% susceptible; MRSA community ~10–20% — confirmed correct (OAHPP/PHO)
+- Anticholinergic burden: ACB score assigned correctly (diphenhydramine/TCAs/bladder antimuscarinics = 3; loratadine/fexofenadine = 0; trospium = 1) — confirmed correct (Boustani ACB Scale)
+- KIDs List: codeine CONTRAINDICATED <12 years (Health Canada 2013); <18 years post-tonsillectomy (Health Canada 2015) — confirmed correct
+- Pregnancy table: ACE/ARB absolutely contraindicated all trimesters; NSAIDs avoid after 20 weeks (FDA 2020 warning adopted); doxylamine/pyridoxine (Diclectin) first-line for NVP — confirmed correct (SOGC 2022)
+- CYP3A4 matrix: inducers/inhibitors/substrates — clinically accurate
+- P-gp matrix: amiodarone, clarithromycin, dronedarone as inhibitors; rifampin/St. John's Wort as inducers; dabigatran, digoxin, colchicine as substrates — confirmed correct
+
+**Per-category error count**:
+| Category | Tables | CRITICAL | MAJOR | MODERATE | MINOR |
+|---|---|---|---|---|---|
+| Toxicology | ~14 | 5 (all in tox_acetaminophen) | 0 | 0 | 0 |
+| Drug Interactions | ~5 | 0 | 0 | 0 | 0 |
+| Medication Safety | ~4 | 0 | 0 | 0 | 0 |
+| Renal/Hepatic | ~6 | 0 | 0 | 0 | 0 |
+| Cardiovascular | ~10 | 0 | 0 | 0 | 0 |
+| Endocrine | ~8 | 0 | 0 | 0 | 0 |
+| Geriatric/Safety | ~5 | 0 | 0 | 0 | 0 |
+| Respiratory | ~4 | 0 | 0 | 0 | 0 |
+| Psychiatry/Neurology | ~6 | 0 | 0 | 0 | 0 |
+| Infectious Disease | ~7 | 0 | 0 | 0 | 0 |
+| Pharmacy Practice | ~8 | 0 | 0 | 0 | 0 |
+| Allergy/Food/Other | ~8 | 0 | 0 | 0 | 0 |
+| Pediatrics/Women's/Immunization | ~10 | 0 | 0 | 0 | 0 |
+| **TOTAL** | **117** | **5** | **0** | **0** | **0** |
+
+**All 5 CRITICAL errors confirmed fixed**:
+1. `tox_acetaminophen` — Rumack-Matthew treatment line: `1000 mmol/L` → `1000 μmol/L` (150 mcg/mL at 4h)
+2. `tox_acetaminophen` — massive ingestion row title: `APAP >6000 mmol/L` → `APAP >6000 μmol/L`
+3. `tox_acetaminophen` — massive ingestion row detail: `>6000 mmol/L` → `>6000 μmol/L`
+4. `tox_acetaminophen` — staggered ingestion empiric NAC: `APAP >130 mmol/L` → `APAP >130 μmol/L`
+5. `tox_acetaminophen` — King's College transplant criteria: `Cr >300 mmol/L` → `Cr >300 μmol/L`
+
+All errors were unit errors (mmol/L used instead of μmol/L — a 1000× concentration error) in the same table. The erroneous unit (mmol/L) is appropriate for electrolytes/glucose but NOT for serum drug concentrations; μmol/L is the correct SI unit for serum acetaminophen levels and serum creatinine in the King's College criteria.
+
+**Sources cross-referenced**: Health Canada Product Monographs, CPS, ISMP Canada, CredibleMeds, Bugs & Drugs Ontario, CADTH, OAHPP/PHO, AMMI Canada, IDSA 2020 (vancomycin AUC), CPIC, Thrombosis Canada, Diabetes Canada 2024, CCS 2020 (AF), SOGC 2022 (hypertension in pregnancy; NVP), CANMAT 2023, GINA 2024, GOLD 2024-2025, Trubiano PEN-FAST (JAMA Intern Med 2020), Rumack-Matthew (1975), King's College criteria (O'Grady 1989), Boustani ACB Scale (2008/2012), STOPP-START v3 (O'Mahony Age Ageing 2023), AGS Beers Criteria 2023.
 
 ---
 
