@@ -2,6 +2,143 @@
 
 ---
 
+## Cycle 29 — Ontario Minor Ailments 2026 Expansion + Scope Reconciliation — 2026-07-29
+
+**Trigger**: Ontario's Minor Ailments expansion took effect **July 1, 2026**, adding nine conditions to Schedule 4 of O. Reg. 256/24 and bringing the designated list from 19 to **28**. Six additional vaccine-preventable diseases entered pharmacist scope under Schedule 3 the same day (pertussis, tetanus, and diphtheria having been added to Schedule 3 on May 11, 2026). rxguide's Minor Ailments tab covered 17 of 28 designated conditions and carried several stale or incorrect scope claims.
+
+**Scope of this cycle**: (a) author the 11 missing MA cards; (b) systematically reconcile the `ontario_ma_scope` field of ALL 31 MA cards against the authoritative designated list; (c) propagate every scope correction to sibling locations per the CLAUDE.md cross-catalog rule; (d) reconcile VACCINES pharmacist-authority statements against Schedule 3.
+
+**Sources**: Ontario O. Reg. 256/24 Schedules 3 and 4 (as amended May 11 and July 1, 2026); OCP Minor Ailments Expansion notices; Ontario MOH Executive Officer Notice — Minor Ailments (May 19, 2026); CPS, SOGC, PHAC, Diabetes Canada, Canadian Dermatology Association, CSO-HNS rhinosinusitis guidelines, TFOS DEWS II, Bugs & Drugs, RxTx (CPhA), Health Canada product monographs.
+
+### Content added (11 new MA cards, all with full schema + decision wizard)
+
+| Condition | Designation | Category |
+|---|---|---|
+| Seborrheic Dermatitis (Dandruff) | Jul 1, 2026 | Dermatology |
+| Tinea Corporis (Ringworm) | Jul 1, 2026 | Dermatology |
+| Tinea Cruris (Jock Itch) | Jul 1, 2026 | Dermatology |
+| Verrucae (Warts — Common & Plantar) | Jul 1, 2026 | Dermatology |
+| Calluses & Corns | Jul 1, 2026 | Dermatology |
+| Head Lice (Pediculosis Capitis) | Jul 1, 2026 | Infectious |
+| Tension-Type Headache (Mild Headache) | Jul 1, 2026 | MSK |
+| Viral Rhinitis / Rhinosinusitis (Nasal Congestion) | Jul 1, 2026 | ENT |
+| Dry Eye Disease (Xerophthalmia) | Jul 1, 2026 | Ophthalmology |
+| Diaper Dermatitis (Diaper Rash) | Oct 1, 2023 — **pre-existing gap** | Dermatology |
+| Vulvovaginal Candidiasis (Yeast Infection) | Oct 1, 2023 — **pre-existing gap** | Womens Health |
+
+### Errors found by systematic scope reconciliation
+
+**CRITICAL 1, MAJOR 2, MODERATE 1 (Total: 4 scope-accuracy defects, 15 sibling locations corrected)**
+
+| # | Severity | Card | Defect | Correction |
+|---|---|---|---|---|
+| 1 | **CRITICAL** | Herpes Zoster (Shingles) | `ontario_ma_scope` asserted *"Herpes zoster IS in Ontario MA scope (added Oct 2023)"* — **false**. Zoster is on none of the Jan 2023 (13), Oct 2023 (+6), or Jul 2026 (+9) lists. The card's `references[]` cited a **non-existent** "OCP Standards" document for it, and the `tx_acute` wizard node rendered as a green ✅ *Treatment Recommendation* directing antiviral initiation. A pharmacist relying on this would have prescribed outside their authority. | Rewrote `ontario_ma_scope` to state clearly that zoster is NOT designated; changed `tx_acute` node type `treat` → `refer` and rewrote its message to expedite same-day prescriber access (preserving the <72 h window rationale); replaced the fabricated reference; corrected `first_line[0]` and `first_line[1]` labels; corrected 3 further sibling locations in the DISEASES pain condition (`notes`, `pearls`, `source`) and the Impetigo DDx cross-reference. **7 locations total.** |
+| 2 | **MAJOR** | Insect Bites & Stings | Asserted insect bites are *"NOT a designated Ontario MA condition"* — **false**. The Jan 1, 2023 designation reads *"insect bites and urticaria (hives)"*, covering both. The card therefore told pharmacists to refer patients they were authorized to treat. | Rewrote `ontario_ma_scope` to affirm designation and note the shared entry with the Urticaria card; corrected the `references[]` note and the `tx_standard` wizard node message, which was labelled *"NOT in Ontario MA prescribing scope — OTC counselling only"*. **3 locations.** |
+| 3 | **MAJOR** | Eczema / Contact Dermatitis | Asserted *"Atopic dermatitis IS in Ontario MA scope (Oct 2023). Allergic contact dermatitis (ACD) is NOT"* — wrong on both counts. Dermatitis was designated **January 1, 2023**, and the designation expressly reads *"dermatitis (atopic, eczema, allergic and contact)"*. | Rewrote `ontario_ma_scope` with the correct date and full designation wording; corrected the `refer_when[]` entry that excluded ACD outright, clarifying that **patch testing** is the out-of-scope element, not prescribing for the dermatitis. **2 locations.** |
+| 4 | MODERATE | Nausea & Vomiting | NVP scope stated *"added Jan 2023"* — NVP was in the **October 1, 2023** expansion. | Corrected the date and named the co-designated October 2023 conditions. **1 location.** |
+
+### Stale refer-out logic corrected (conditions that became in-scope on July 1, 2026)
+
+Because these conditions were previously outside scope, four existing cards actively routed pharmacists **away** from patients they may now treat. All corrected to point into the new cards:
+
+- **Allergic Rhinitis** → `rx_nonAR` node referred out viral rhinitis
+- **Conjunctivitis (Pink Eye)** → `ddx[]` + `rx_unclear` node referred out dry eye
+- **Eczema / Contact Dermatitis** → `ddx[]` + `rx_atypical` node referred out seborrheic dermatitis and tinea corporis
+- **Impetigo** → `ddx[]` referred out tinea corporis
+
+Correctly **retained** as out-of-scope: anogenital warts (expressly excluded from the verrucae designation), tinea capitis and tinea unguium (require oral antifungals), acute bacterial rhinosinusitis, and motion-sickness/general nausea (only NVP is designated).
+
+### 🔴 Renderer defect found during verification — `ontario_ma_scope` was never displayed
+
+**Severity: MAJOR (pre-existing).** Browser verification of the zoster correction revealed that the **`ontario_ma_scope` field was not rendered anywhere in the UI**. `grep` for renderer references returned only the data definitions — no read site existed in `showMA()` or any other function. Every Minor Ailment card carried a scope statement that no pharmacist could ever see.
+
+This made the entire scope dimension invisible: the false zoster claim, the two false "not designated" claims, and all 11 new cards' scope statements were data-only. A scope correction that cannot be displayed is not a delivered fix, so this was repaired as part of this cycle.
+
+**Fix**: added a scope section to `showMA()`, rendered **first** in the card (above the wizard trigger) because whether the pharmacist may prescribe at all governs everything below it. Colour-coded from the leading glyph of the field — green `#4ade80` / "Within Ontario Minor Ailments scope" for `✅`, red `#ef4444` / "NOT a designated Ontario Minor Ailment" for `⛔`, amber otherwise — and it also renders the optional `ontario_prescribing_authority` field, which was likewise previously unrendered. Verified across 6 cards: zoster renders red, the five in-scope cards render green, zero JS errors.
+
+### Vaccines — Schedule 3 authority reconciliation
+
+No vaccine *products* were missing; the gap was that **no VACCINES entry cited the regulatory basis** for pharmacist administration. Added explicit Schedule 3 authority statements with effective dates to **16 vaccine cards** (Tdap/Td/pertussis-containing ×7, RSV ×3, zoster ×1, pneumococcal ×5), and added a scope banner to the Vaccinations tab. Flagged the vaccine/treatment distinction explicitly on the Shingrix card: administering the zoster **vaccine** is in scope; treating acute shingles is not.
+
+### Supporting catalog additions
+
+11 new drug cards with complete 16-field schema plus matching `PREG_DATA`, `NAPRA_ODB_DATA`, and `FAMILY_MAP` entries (all resolving to existing `DRUG_FAMILIES` — no new families required): selenium sulfide, zinc pyrithione, coal tar, dimeticone, isopropyl myristate, urea topical, carboxymethylcellulose ophthalmic, xylometazoline, terconazole, cyclosporine ophthalmic, tolnaftate. Adding `cyclosporine_ophthalmic` also resolved a pre-existing orphan `FAMILY_MAP` entry that had no drug card.
+
+### Clinical safety emphases carried into the new content
+
+- ⛔ **Diabetic / neuropathic / ischemic foot** gate on calluses, corns, and plantar warts — self-applied keratolytics and cryotherapy are a documented cause of ulceration and amputation. Made the FIRST wizard question on both cards.
+- ⛔ **Contact lens wearer with a red or painful eye** = microbial keratitis until proven otherwise. Made the FIRST wizard question on the dry eye card.
+- ⛔ **Medication-overuse headache** screening before supplying analgesia. Made the second wizard question on the tension headache card.
+- ⛔ **Rhinitis medicamentosa** — the 3–5 day topical decongestant limit, counselled at every supply.
+- ⛔ **Health Canada advisory** against OTC cough and cold products under 6 years — dedicated pediatric wizard branch.
+- ⛔ **Permethrin/pyrethrin resistance is widespread in Canada** — new head lice card leads with physical agents (dimeticone, isopropyl myristate), and flags their flammability in hair.
+- ⛔ **Face and genital warts** expressly excluded from the verrucae designation; anogenital warts in a child routed to safeguarding with Ontario's personal duty-to-report noted.
+
+### Verification
+
+- `node --check` on extracted inline JS: **PASS**
+- 11-check pre-merge audit: **8/11 pass**; the 3 failures (reference-table dispatch orphans, unresolved DISEASES agents, `treatment[*].family` mismatches) were confirmed **byte-identical at HEAD** — pre-existing, untouched by this cycle, zero regression.
+- `AUDIT-STATUS.md` regenerated. ⚠️ **The committed file was badly stale** — it claimed DRUGS 1,551 (actual 1,102), REFERENCE_TABLES worst 99.1% (actual 47.9%), DISEASES worst 100% (actual 93.0%). Regenerating from the unmodified HEAD `index.html` reproduced the corrected figures exactly, confirming staleness rather than regression. MINOR_AILMENTS: 20 → **31 entries at 100% on all three dimensions**.
+- Browser render (Chromium/Playwright): 31 cards render in a balanced 3-column grid, both tab banners display, **all 11 new decision wizards reach terminal outcomes on both Yes and No branches**, realistic clinical paths reach correct `treat` nodes, **zero JS console/page errors**. Baseline-vs-current comparison confirmed the vaccines tab renders identically (77,953 chars).
+
+---
+
+## Cycle 29b — FV Tier 4 Clinical Audit of the Cycle 29 Content — 2026-07-29
+
+**Scope**: full verbatim clinical audit of everything added or changed in Cycle 29 — 11 new MA cards, 14 new drug cards (11 from Cycle 29 + 3 ophthalmic added here), 16 vaccine authority notes, and all sibling-catalog entries. Method: (a) automated cross-catalog consistency audit (`/tmp/fv_audit.js`, 10 rule classes), (b) verbatim verification of product-specific Canadian label claims against Health Canada monographs and CPS, (c) rendered-output verification of every drug link and wizard path.
+
+**Errors found: CRITICAL 0, MAJOR 2, MODERATE 4, MINOR 0 (Total: 6)**
+
+### MAJOR 1 — Wrong drug concentration on a Canadian product (dimeticone)
+
+The head lice content specified **dimeticone 50%**, which is the **European** NYDA formulation. The Canadian product is **dimethicone 100 cSt at 92%** (Health Canada PM 00066082), and is approved for adults and children **≥2 years** — an age limit the content had left as "verify the current monograph". Both facts were verified against the Health Canada product monograph and the Canadian Paediatric Society clinical update.
+
+Corrected in **14 locations** across the propagation chain: `DRUGS.dimeticone` (`moa`, `contraindications[3]`, `canadian_notes`), `PREG_DATA.dimeticone.name` + `alternatives`, `NAPRA_ODB_DATA.dimeticone.name`, and the Head Lice MA card (`ontario_ma_scope`, `clinical_considerations`, `treatment.first_line[0].name` + `.drugs`, `therapeutic_flow`, and the `tx_physical` and `tx_special` wizard nodes). Post-fix re-grep for `dimeticone 50%`: **0 matches**.
+
+Verified as CORRECT and left unchanged: Resultz = isopropyl myristate **50% w/w**, **≥4 years**, dry hair 10 minutes then rinse, **repeat day 7**, not ovicidal; NYDA leave-on **≥8 hours/overnight**, **repeat day 8–10**, flammable in hair.
+
+### MAJOR 2 — `linkifyMaDrugs` produced 51 clinically wrong drug links (pre-existing)
+
+Rendered-output verification showed the Minor Ailments drug-linkifier harvesting **dosage-form words and bare numeric strengths** from brand strings as matchable "drug names". Brand text like `Aristocort (topical 0.025%, 0.1% …)` contributed `topical` and `0.1%` as matchers, so:
+
+- "solution" → **clotrimazole**; "nasal spray" → **fluticasone / triamcinolone**; "ointment" → **fusidic acid**; "oral" → **6 different drugs**
+- "Cyclosporine **0.05%** ophthalmic emulsion" → **tretinoin**; "**0.1%**" → **triamcinolone**; "**2.5%**" → **cabtreo**
+
+**51 mislinked dosage-form tokens across all 31 MA cards**, plus the numeric class. A pharmacist clicking a strength or a dosage form got an unrelated monograph. Fixed by adding two filters (`MA_LINK_STOPWORDS`, ~70 form/route/packaging words; `MA_LINK_NUMERIC`, numeric and unit tokens) applied to both the brand-derived and name-derived matcher lists. **Post-fix: 351 drug links across the tab, 0 mislinks of either class.**
+
+### MODERATE 1–2 — Missing Column 3 caveat on the two Oct 2023 gap cards
+
+Diaper Dermatitis and Vulvovaginal Candidiasis lacked the ⚠️ Column 3 verification caveat that the nine July 2026 cards carry. The Column 3 restriction applies to **every** designated ailment regardless of designation date. Added to both.
+
+### MODERATE 3 — New drug cards did not linkify from the MA cards
+
+Six of the new agents (`urea_topical`, `carboxymethylcellulose`, `terconazole`, `tolnaftate`, `zinc_pyrithione`, `coal_tar`) produced **no** click-through because their `name` carried a route qualifier — "Urea (topical)" never matches "Urea 20–40% cream". Renamed all 11 Cycle 29 drug cards to lead with the bare generic (qualifiers retained in `class`/`brand`), and reworded the dry-eye cyclosporine mention to "Cyclosporine ophthalmic 0.05% emulsion (Restasis)" so it resolves to the ophthalmic card rather than the systemic one. All 14 now linkify correctly.
+
+### MODERATE 4 — `NAPRA_ODB_DATA.urea_topical.napra` understated the schedule
+
+Top-level field read `"U"` while its own `napraDetail` and the drug card both noted that higher-concentration products may be Schedule II. Aligned to `"U / II"`, matching the coal tar pattern.
+
+### Content added during this cycle (closing gaps the audit surfaced)
+
+Three ophthalmic agents referenced by the Dry Eye card but absent from the catalog: **hypromellose**, **lifitegrast**, and **polyethylene glycol 400 / propylene glycol ophthalmic (Systane)**. The last was added specifically to prevent a genuine hazard — "polyethylene glycol" in a dry-eye context otherwise resolves to the **PEG 3350 oral osmotic laxative**; the new card carries an explicit `severity: "Note"` interaction entry disambiguating the two products.
+
+Adding `lifitegrast` also resolved a **second pre-existing orphan** (PREG_DATA, NAPRA_ODB_DATA and FAMILY_MAP entries existed with no drug card, as with `cyclosporine_ophthalmic`). Its two skeletal sister entries — `pregDetail: "Topical low absorption."`, `napraDetail: "Schedule I (Rx)."`, `source: "COS DED"` — were enriched to Tier 4 depth. The existing `pregRisk: "Caution"` bucket was **retained** rather than overwritten, and the new drug card's `pregnancy` prose was written to match it.
+
+### Checker calibration note
+
+Three initial "findings" were false positives from the audit script and were corrected in the checker rather than the content: NAPRA token comparison did not de-duplicate (`"I — Schedule I"` → `I/I` vs `I`); an unanchored `⛔` matched "avoid" anywhere in prose; and the pregColor check assumed one colour per bucket when the codebase legitimately uses two variants each (Caution `#facc15` ×90 / `#f59e0b` ×89; Compatible `#10b981` / `#22c55e`; Avoid `#dc2626` / `#ef4444`). Recording this so a future agent does not "fix" the colour variants.
+
+### Verification (post-fix)
+
+- `node --check` on extracted inline JS: **PASS**
+- FV cross-catalog consistency audit: **0 findings** (10 rule classes — NAPRA agreement, pregnancy bucket/colour agreement, FAMILY_MAP resolution, Column 3 caveat presence, 12 named safety-claim assertions, flammability warnings, tolnaftate anti-Candida limitation, July 2026 designation citation, out-of-scope flagging of immunomodulators)
+- 11-check pre-merge audit: **8/11**, with the same 3 failures confirmed **byte-identical at HEAD** (ref-table orphans 37, unresolved DISEASES agents 41, family mismatches 118 — identical before and after despite adding 14 drugs and 13 FAMILY_MAP entries)
+- Rendered output: 31 MA cards, 351 drug links with **0 mislinks**, all 11 wizards reaching terminal outcomes on both branches, Head Lice card showing 92% and ≥2 years with no stale 50% text, `dimeticone` drug panel opening with its family chip, **zero JS errors**
+
+**Follow-up recommended**: the exact **Column 3 eligible-agent lists** for the nine new ailments could not be retrieved — this environment's network policy blocks `ocpinfo.com` and `ontario.ca` (403 at the proxy). Every new card's `ontario_ma_scope` therefore carries an explicit ⚠️ instruction to verify prescribable agents against Schedule 4 Column 3 before prescribing. Agent selections were authored from Canadian clinical guidance. Obtaining the official table and reconciling the agent lists should be the next cycle.
+
+---
+
 ## ═══ PASS 3 — SYSTEMATIC FULL CATALOG FV AUDIT — Started 2026-05-20 ═══
 
 **Goal**: Complete line-by-line FV re-audit of every catalog section against authoritative Canadian sources.
