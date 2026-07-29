@@ -4,7 +4,7 @@
 > Re-run after every audit cycle so future agents know exactly what's audited and what remains.
 
 **Last regenerated:** 2026-07-29
-**Catalog snapshot:** 2,480 clickable entries (latest commit: `c51b9ec on 2026-05-29`)
+**Catalog snapshot:** 2,483 clickable entries (latest commit: `30d133f on 2026-07-29`)
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Category | Count | Best % | Worst % |
 |---|---|---|---|
-| **DRUGS** | 1,113 | 100.0% | 100.0% |
+| **DRUGS** | 1,116 | 100.0% | 100.0% |
 | **VACCINES** | 56 | 100.0% | 100.0% |
 | **DRUG_FAMILIES** | 542 | 100.0% | 100.0% |
 | **REFERENCE_TABLES** | 117 | 100.0% | 47.9% |
@@ -29,23 +29,23 @@
 
 ---
 
-## DRUGS (1,113 entries)
+## DRUGS (1,116 entries)
 
 | Audit dimension | Coverage | Bar | Audited (clean) | Remaining |
 |---|---|---|---|---|
-| Full 16-field schema complete | **100.0%** | `██████████████████` | 1,113 | 0 |
-| Non-empty `interactions[]` | **100.0%** | `██████████████████` | 1,113 | 0 |
-| Canonical severity values | **100.0%** | `██████████████████` | 1,113 | 0 |
-| Canadian-source recognition | **100.0%** | `██████████████████` | 1,113 | 0 |
-| NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,113 | 0 |
-| PREG_DATA entry | **100.0%** | `██████████████████` | 1,113 | 0 |
-| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,113 | 0 |
-| FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,113 | 0 |
-| `monitoring` field populated | **100.0%** | `██████████████████` | 1,113 | 0 |
-| `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,113 | 0 |
-| `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,113 | 0 |
-| `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,113 | 0 |
-| `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,113 | 0 |
+| Full 16-field schema complete | **100.0%** | `██████████████████` | 1,116 | 0 |
+| Non-empty `interactions[]` | **100.0%** | `██████████████████` | 1,116 | 0 |
+| Canonical severity values | **100.0%** | `██████████████████` | 1,116 | 0 |
+| Canadian-source recognition | **100.0%** | `██████████████████` | 1,116 | 0 |
+| NAPRA_ODB_DATA entry | **100.0%** | `██████████████████` | 1,116 | 0 |
+| PREG_DATA entry | **100.0%** | `██████████████████` | 1,116 | 0 |
+| FAMILY_MAP entry | **100.0%** | `██████████████████` | 1,116 | 0 |
+| FAMILY_MAP → resolves to DRUG_FAMILIES card | **100.0%** | `██████████████████` | 1,116 | 0 |
+| `monitoring` field populated | **100.0%** | `██████████████████` | 1,116 | 0 |
+| `monitoring` depth ≥ 4 items | **100.0%** | `██████████████████` | 1,116 | 0 |
+| `interactions` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,116 | 0 |
+| `pearls` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,116 | 0 |
+| `side_effects` depth ≥ 5 items | **100.0%** | `██████████████████` | 1,116 | 0 |
 
 ---
 
@@ -317,9 +317,9 @@
 | Has ≥1 history entry | **100.0%** | `██████████████████` | 1,648 | 0 |
 | Entries have valid date + hash + subject | **100.0%** | `██████████████████` | 1,648 | 0 |
 | Date format YYYY-MM-DD | **100.0%** | `██████████████████` | 1,648 | 0 |
-| Entity exists in current catalog (no orphan) | **73.2%** | `█████████████░░░░░` | 1,207 | 441 |
+| Entity exists in current catalog (no orphan) | **73.3%** | `█████████████░░░░░` | 1,208 | 440 |
 
-### ❌ Entity exists in current catalog (no orphan) — 441 entries remaining (26.8% of total)
+### ❌ Entity exists in current catalog (no orphan) — 440 entries remaining (26.7% of total)
 
 | Key/ID | Detail |
 |---|---|
@@ -383,7 +383,7 @@
 | `olanzapine_samidorphan` | {} |
 | `aripiprazole_lauroxil` | {} |
 | `loxapine_inhaled` | {} |
-| ... | 381 more entries |
+| ... | 380 more entries |
 
 ---
 

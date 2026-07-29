@@ -81,6 +81,60 @@ No vaccine *products* were missing; the gap was that **no VACCINES entry cited t
 - `AUDIT-STATUS.md` regenerated. ⚠️ **The committed file was badly stale** — it claimed DRUGS 1,551 (actual 1,102), REFERENCE_TABLES worst 99.1% (actual 47.9%), DISEASES worst 100% (actual 93.0%). Regenerating from the unmodified HEAD `index.html` reproduced the corrected figures exactly, confirming staleness rather than regression. MINOR_AILMENTS: 20 → **31 entries at 100% on all three dimensions**.
 - Browser render (Chromium/Playwright): 31 cards render in a balanced 3-column grid, both tab banners display, **all 11 new decision wizards reach terminal outcomes on both Yes and No branches**, realistic clinical paths reach correct `treat` nodes, **zero JS console/page errors**. Baseline-vs-current comparison confirmed the vaccines tab renders identically (77,953 chars).
 
+---
+
+## Cycle 29b — FV Tier 4 Clinical Audit of the Cycle 29 Content — 2026-07-29
+
+**Scope**: full verbatim clinical audit of everything added or changed in Cycle 29 — 11 new MA cards, 14 new drug cards (11 from Cycle 29 + 3 ophthalmic added here), 16 vaccine authority notes, and all sibling-catalog entries. Method: (a) automated cross-catalog consistency audit (`/tmp/fv_audit.js`, 10 rule classes), (b) verbatim verification of product-specific Canadian label claims against Health Canada monographs and CPS, (c) rendered-output verification of every drug link and wizard path.
+
+**Errors found: CRITICAL 0, MAJOR 2, MODERATE 4, MINOR 0 (Total: 6)**
+
+### MAJOR 1 — Wrong drug concentration on a Canadian product (dimeticone)
+
+The head lice content specified **dimeticone 50%**, which is the **European** NYDA formulation. The Canadian product is **dimethicone 100 cSt at 92%** (Health Canada PM 00066082), and is approved for adults and children **≥2 years** — an age limit the content had left as "verify the current monograph". Both facts were verified against the Health Canada product monograph and the Canadian Paediatric Society clinical update.
+
+Corrected in **14 locations** across the propagation chain: `DRUGS.dimeticone` (`moa`, `contraindications[3]`, `canadian_notes`), `PREG_DATA.dimeticone.name` + `alternatives`, `NAPRA_ODB_DATA.dimeticone.name`, and the Head Lice MA card (`ontario_ma_scope`, `clinical_considerations`, `treatment.first_line[0].name` + `.drugs`, `therapeutic_flow`, and the `tx_physical` and `tx_special` wizard nodes). Post-fix re-grep for `dimeticone 50%`: **0 matches**.
+
+Verified as CORRECT and left unchanged: Resultz = isopropyl myristate **50% w/w**, **≥4 years**, dry hair 10 minutes then rinse, **repeat day 7**, not ovicidal; NYDA leave-on **≥8 hours/overnight**, **repeat day 8–10**, flammable in hair.
+
+### MAJOR 2 — `linkifyMaDrugs` produced 51 clinically wrong drug links (pre-existing)
+
+Rendered-output verification showed the Minor Ailments drug-linkifier harvesting **dosage-form words and bare numeric strengths** from brand strings as matchable "drug names". Brand text like `Aristocort (topical 0.025%, 0.1% …)` contributed `topical` and `0.1%` as matchers, so:
+
+- "solution" → **clotrimazole**; "nasal spray" → **fluticasone / triamcinolone**; "ointment" → **fusidic acid**; "oral" → **6 different drugs**
+- "Cyclosporine **0.05%** ophthalmic emulsion" → **tretinoin**; "**0.1%**" → **triamcinolone**; "**2.5%**" → **cabtreo**
+
+**51 mislinked dosage-form tokens across all 31 MA cards**, plus the numeric class. A pharmacist clicking a strength or a dosage form got an unrelated monograph. Fixed by adding two filters (`MA_LINK_STOPWORDS`, ~70 form/route/packaging words; `MA_LINK_NUMERIC`, numeric and unit tokens) applied to both the brand-derived and name-derived matcher lists. **Post-fix: 351 drug links across the tab, 0 mislinks of either class.**
+
+### MODERATE 1–2 — Missing Column 3 caveat on the two Oct 2023 gap cards
+
+Diaper Dermatitis and Vulvovaginal Candidiasis lacked the ⚠️ Column 3 verification caveat that the nine July 2026 cards carry. The Column 3 restriction applies to **every** designated ailment regardless of designation date. Added to both.
+
+### MODERATE 3 — New drug cards did not linkify from the MA cards
+
+Six of the new agents (`urea_topical`, `carboxymethylcellulose`, `terconazole`, `tolnaftate`, `zinc_pyrithione`, `coal_tar`) produced **no** click-through because their `name` carried a route qualifier — "Urea (topical)" never matches "Urea 20–40% cream". Renamed all 11 Cycle 29 drug cards to lead with the bare generic (qualifiers retained in `class`/`brand`), and reworded the dry-eye cyclosporine mention to "Cyclosporine ophthalmic 0.05% emulsion (Restasis)" so it resolves to the ophthalmic card rather than the systemic one. All 14 now linkify correctly.
+
+### MODERATE 4 — `NAPRA_ODB_DATA.urea_topical.napra` understated the schedule
+
+Top-level field read `"U"` while its own `napraDetail` and the drug card both noted that higher-concentration products may be Schedule II. Aligned to `"U / II"`, matching the coal tar pattern.
+
+### Content added during this cycle (closing gaps the audit surfaced)
+
+Three ophthalmic agents referenced by the Dry Eye card but absent from the catalog: **hypromellose**, **lifitegrast**, and **polyethylene glycol 400 / propylene glycol ophthalmic (Systane)**. The last was added specifically to prevent a genuine hazard — "polyethylene glycol" in a dry-eye context otherwise resolves to the **PEG 3350 oral osmotic laxative**; the new card carries an explicit `severity: "Note"` interaction entry disambiguating the two products.
+
+Adding `lifitegrast` also resolved a **second pre-existing orphan** (PREG_DATA, NAPRA_ODB_DATA and FAMILY_MAP entries existed with no drug card, as with `cyclosporine_ophthalmic`). Its two skeletal sister entries — `pregDetail: "Topical low absorption."`, `napraDetail: "Schedule I (Rx)."`, `source: "COS DED"` — were enriched to Tier 4 depth. The existing `pregRisk: "Caution"` bucket was **retained** rather than overwritten, and the new drug card's `pregnancy` prose was written to match it.
+
+### Checker calibration note
+
+Three initial "findings" were false positives from the audit script and were corrected in the checker rather than the content: NAPRA token comparison did not de-duplicate (`"I — Schedule I"` → `I/I` vs `I`); an unanchored `⛔` matched "avoid" anywhere in prose; and the pregColor check assumed one colour per bucket when the codebase legitimately uses two variants each (Caution `#facc15` ×90 / `#f59e0b` ×89; Compatible `#10b981` / `#22c55e`; Avoid `#dc2626` / `#ef4444`). Recording this so a future agent does not "fix" the colour variants.
+
+### Verification (post-fix)
+
+- `node --check` on extracted inline JS: **PASS**
+- FV cross-catalog consistency audit: **0 findings** (10 rule classes — NAPRA agreement, pregnancy bucket/colour agreement, FAMILY_MAP resolution, Column 3 caveat presence, 12 named safety-claim assertions, flammability warnings, tolnaftate anti-Candida limitation, July 2026 designation citation, out-of-scope flagging of immunomodulators)
+- 11-check pre-merge audit: **8/11**, with the same 3 failures confirmed **byte-identical at HEAD** (ref-table orphans 37, unresolved DISEASES agents 41, family mismatches 118 — identical before and after despite adding 14 drugs and 13 FAMILY_MAP entries)
+- Rendered output: 31 MA cards, 351 drug links with **0 mislinks**, all 11 wizards reaching terminal outcomes on both branches, Head Lice card showing 92% and ≥2 years with no stale 50% text, `dimeticone` drug panel opening with its family chip, **zero JS errors**
+
 **Follow-up recommended**: the exact **Column 3 eligible-agent lists** for the nine new ailments could not be retrieved — this environment's network policy blocks `ocpinfo.com` and `ontario.ca` (403 at the proxy). Every new card's `ontario_ma_scope` therefore carries an explicit ⚠️ instruction to verify prescribable agents against Schedule 4 Column 3 before prescribing. Agent selections were authored from Canadian clinical guidance. Obtaining the official table and reconciling the agent lists should be the next cycle.
 
 ---
