@@ -83,6 +83,76 @@ No vaccine *products* were missing; the gap was that **no VACCINES entry cited t
 
 ---
 
+## Cycle 29c — Deep Line-by-Line Audit of ALL 31 Minor Ailment Wizards & Therapeutic Flows — 2026-07-29
+
+**Scope**: every `interactive_flow` and `therapeutic_flow` in the Minor Ailments tab — all **31 cards, 437 wizard nodes, 256 root→terminal paths**, both pre-existing and newly added. Objective: reduce FALSE NEGATIVES (a red flag never screened, so the patient walks through to a treatment outcome) and FALSE POSITIVES (a treat outcome that should refer, a referral for something now in scope, a question that cannot change management).
+
+**Method — two automated passes over the full path space, then manual clinical review of every flag.**
+
+- **Pass 1** (`/tmp/wizard_audit.js`): full path enumeration per card, then — structural integrity (dead ends, self-loops, unreachable nodes, missing `crumb`, terminal-type validity); treat-without-a-red-flag-gate detection; red-flag/`refer_when` concept coverage against wizard text across a 15-concept clinical lexicon; terminal type vs message semantics; treat outcomes on non-designated cards; pregnancy gating on paths recommending pregnancy-relevant agents; therapeutic_flow screening/documentation/follow-up steps.
+- **Pass 2** (`/tmp/flow_balance.js`): workthrough ergonomics — the **archetypal path** (yes to diagnostic-confirmation questions, no to red-flag/exclusion questions) must reach a treat outcome on a designated ailment; treat:refer ratio per card; questions whose branches cannot change management; non-red-flag questions bundling many criteria behind one Yes/No.
+
+**Errors found: CRITICAL 1, MAJOR 3, MODERATE 5 (Total: 9 defects fixed; 16 additional flags triaged as checker artifacts and the checkers corrected).**
+
+### CRITICAL — Nausea & Vomiting: refractory NVP could never reach obstetric referral
+
+`n2e` (has max-dose Diclectin/Bonjesta already failed?) and `rx_refer_ob` were **both unreachable from the start node**. `n2c.no` (moderate/severe PUQE) and `n2d.yes` (pyridoxine already tried) each routed straight to `tx_diclectin`, so a patient who had *already failed maximum-dose Diclectin* was recommended Diclectin again, and the escalation-to-OB pathway existed in the data but could never fire. NVP that fails maximum-dose therapy is the presentation that progresses to hyperemesis gravidarum with dehydration, weight loss, and admission. Rewired both branches through `n2e`; `rx_refer_ob` is now reachable and verified end-to-end in the browser.
+
+### MAJOR 1 — Canker Sores: a question with no effect suppressed the coeliac/nutritional workup
+
+`n5b` had `yes → n6` and `no → n6` — both branches identical, so the question could not change anything, and the nutritional/coeliac referral it was clearly meant to trigger never happened. Recurrent aphthous stomatitis at ≥6 episodes/year is a recognized presenting feature of haematinic deficiency and of coeliac disease. Rewrote `n5b` as a single unambiguous question (was a compound "has screening been done? Should referral be arranged?") and added **`rx_nutritional_workup`**, which arranges the workup *while still directing today's symptomatic treatment* — including the point that coeliac serology must be drawn **before** any gluten-free diet is started or it is uninterpretable.
+
+### MAJOR 2 — Oral Candidiasis: no pregnancy screen anywhere, yet the pathway escalates to oral fluconazole
+
+The thrush wizard screened for urgent features, immunocompromise, infant age, ICS use and other contributing factors — but **never asked about pregnancy**, while its treat nodes escalate to **oral fluconazole**, the exact agent flagged as avoid-in-pregnancy on the VVC card. Oral thrush in pregnancy is common. Added gate **`n4b`** (pregnant or breastfeeding?) and a dedicated **`tx_pregnancy`** outcome: topical nystatin only, explicit ⛔ on oral fluconazole, plus the nipple–infant candida cycle that must be treated simultaneously, and gestational-diabetes screening as a driver.
+
+### MAJOR 3 — Uncomplicated UTI: gross haematuria never screened
+
+"Hematuria alone without classic UTI symptoms → other pathology (stones, cancer) — investigate" appears in both `red_flags` and `refer_when`, but **no wizard node screened it**. Painless visible haematuria misattributed to cystitis is a classic route to delayed bladder-cancer diagnosis. Added gate **`n5b`** and outcome **`rx_hematuria`**.
+
+⚠️ **Deliberately scoped to avoid the opposite error**: the question targets **VISIBLE (gross)** haematuria — painless, or without the classic dysuria/frequency picture, or persisting after symptoms settle. A dipstick trace of blood is expected in acute cystitis and is explicitly stated **not** to be a reason to withhold treatment. Screening on dipstick would have traded a false negative for a large false positive.
+
+### MODERATE 1–3 — NSAID recommendations reachable with no pregnancy screen
+
+Path analysis showed `Hemorrhoids/tx_thrombosed_late`, `Musculoskeletal Sprains/tx_back_simple` and `Insect Bites/tx_standard` recommend oral NSAIDs and are reachable **without crossing any pregnancy question**, even though both of the first two cards *have* pregnancy nodes on other branches. Hemorrhoids and musculoskeletal pain are both extremely common in pregnancy, and NSAIDs are contraindicated from 20 weeks. Added an explicit NSAID-in-pregnancy caveat to each node, and to four further adult treat nodes surfaced by the same check (`Insect Bites/tx_large_local`, `Cold Sores/tx_late` and `/tx_supportive`, `Tinea Cruris/tx_candida`), plus keratolytic-in-pregnancy notes to `Calluses & Corns/tx_callus` and `/tx_corn` and `Verrucae/tx_salicylic`.
+
+### MODERATE 4 — Conjunctivitis: the under-3 referral was buried mid-message
+
+`tx_allergic` rendered as a green ✅ *Treatment Recommendation* whose age restriction ("AGES <3y: refer to physician") sat several lines into the body text, after the ≥3y dosing. A pharmacist assessing a two-year-old could act on the first recommendation they read. Moved the age gate to the **front** of the message.
+
+### MODERATE 5 — Herpes Zoster: a green treat badge on a non-designated card
+
+`tx_late` (late presentation, symptomatic management) rendered as ✅ *Treatment Recommendation* on a card correctly marked ⛔ not designated. The advice itself is legitimate OTC self-care, so converting it to a referral would have been the wrong fix — instead the message now opens by stating explicitly that this is OTC self-care requiring no minor ailment designation.
+
+### Workthrough balance — Pass 2 result
+
+**All 31 cards reach a treat outcome on the archetypal in-scope patient path.** No card routes away the very patient it exists to serve. Across the whole tab: **256 paths → 101 treat (39%), 125 refer (49%), 30 caution (12%)**. The highest referral ratio is Uncomplicated UTI at 17/23 outcome paths, which is appropriate given how many exclusion criteria O. Reg. 256/24 places on that ailment. Pass 2 found **no defects** in either the current or the pre-fix content — it is a health metric rather than a bug-finder, and is recorded as such.
+
+### Checker calibration — 16 flags triaged as artifacts, checkers corrected
+
+Rather than "fixing" content that was already correct, the following checker weaknesses were corrected and the reasoning recorded so a future agent does not re-litigate them:
+
+| Artifact class | Why it was wrong | Correction |
+|---|---|---|
+| Pregnancy gate demanded on paediatric cards | Diaper Dermatitis, infantile seborrheic dermatitis and the under-6 rhinitis branch treat **infants** — pregnancy is not a possible attribute of the patient | card-level and node-level paediatric detection |
+| Teratogen named inside a prohibition | "⛔ DO NOT USE … boric acid" counted as *recommending* boric acid | negation-aware lookbehind before each token |
+| Teratogen named in a review-only list | isotretinoin listed under "contributing medications to review" in the Dry Eye card | review-context exclusion |
+| Treat node "directs referral" | tiered nodes legitimately embed a referral for the severe end (`Cold Sores/tx_preg`, `Conjunctivitis/tx_allergic`) | allow scope/age/tier qualifiers to open a treat message |
+| Both branches terminate in `treat` ⇒ pointless question | 15 of these are legitimate **treatment-selection forks** — pregnancy → azole vs terbinafine, scalp vs face, TMP-SMX contraindication → fosfomycin | only flag when both branches carry an *identical* recommendation |
+| Bundled criteria ⇒ over-referral | `MSK/n7` bundles 6 NSAID contraindications, all of which lead to the same decision | contraindication screens recognized alongside red-flag screens |
+| Naive all-"No" path | a card whose first question is "does this look like X?" correctly sends "No" to reassess-differential | replaced with a proper archetypal-path walker |
+
+### Verification
+
+- **Checker discrimination validated**: Pass 1 reports **16 findings against pre-fix `main`** and **0 against the fixed content** — it distinguishes rather than passing everything. Both checkers were run against `origin/main` as a control.
+- `node --check` on extracted inline JS: **PASS**
+- Pass 1: **0 findings** · Pass 2: **0 findings**
+- FV cross-catalog consistency audit: **0 findings**
+- 11-check pre-merge audit: **8/11**, same 3 pre-existing failures, byte-identical at HEAD
+- Browser: all four newly added gates walked end-to-end to their new outcomes (`rx_refer_ob`, `rx_nutritional_workup`, `tx_pregnancy`, `rx_hematuria`), all 31 wizards reaching terminal outcomes on both branches, 353 drug links with **0 mislinks**, **zero JS errors**
+
+---
+
 ## Cycle 29b — FV Tier 4 Clinical Audit of the Cycle 29 Content — 2026-07-29
 
 **Scope**: full verbatim clinical audit of everything added or changed in Cycle 29 — 11 new MA cards, 14 new drug cards (11 from Cycle 29 + 3 ophthalmic added here), 16 vaccine authority notes, and all sibling-catalog entries. Method: (a) automated cross-catalog consistency audit (`/tmp/fv_audit.js`, 10 rule classes), (b) verbatim verification of product-specific Canadian label claims against Health Canada monographs and CPS, (c) rendered-output verification of every drug link and wizard path.
