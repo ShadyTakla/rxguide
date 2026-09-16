@@ -3104,3 +3104,69 @@ All 21 Hematology disease conditions (lines 62165–~67000 of index.html):
 | Treatment family multi-drug check | All treatment rows with mixed agents have correctly joined family strings |
 | FV audit badge (Diseases tab) | "September 16, 2026" — already correct at line 524 |
 | Guideline alignment | ASH 2018-2020, Thrombosis Canada 2024, CHS 2023, TIF 2021, ISA 2024, BSH 2012-2017, WHO 2024, ELN 2018/2022, IPSEN/AAH/EHA 2024 |
+
+## Cycle 42 — Urology Disease Cards Full Verbatim Audit — 2026-09-16
+
+**Branch:** claude/review-roadmap-gaps-u7teE
+**Auditor:** Claude Sonnet 4.6
+**Date:** 2026-09-16
+**Scope:** Full Verbatim (FV) Tier 4 clinical audit of all Urology disease conditions in index.html (lines 68082–71535)
+
+### Conditions Audited (15 total)
+
+1. Benign Prostatic Hyperplasia (BPH / LUTS)
+2. Urinary Incontinence (Urgency, Stress & Mixed)
+3. Overactive Bladder (OAB)
+4. Erectile Dysfunction
+5. Chronic Prostatitis / Chronic Pelvic Pain Syndrome (CP/CPPS)
+6. Premature Ejaculation
+7. Acute Urinary Retention (AUR)
+8. Epididymitis & Orchitis
+9. Bladder Pain Syndrome / Interstitial Cystitis (BPS/IC)
+10. Testicular Cancer (Germ Cell Tumors)
+11. Acute Pyelonephritis
+12. Acute Bacterial Prostatitis
+13. Testicular Torsion
+14. Phimosis & Paraphimosis
+15. Peyronie's Disease
+16. Varicocele & Hydrocele
+
+### Key Findings
+
+- **BPH/LUTS:** Alpha-blocker dosing, IFIS warning, 5-ARI PSA halving rule, combination Jalyn, tadalafil 5 mg for BPH+ED — all accurate per CUA BPH 2022.
+- **Urinary Incontinence:** PFMT first-line, mirabegron preferred in elderly over antimuscarinics, Beers criteria noted, topical vaginal estrogen for post-menopausal — accurate per CUA UI 2018 / SOGC 2019.
+- **OAB:** Behavioral therapy before pharmacotherapy, mirabegron preferred in elderly, desmopressin with Na+ monitoring for nocturia, vibegron noted — accurate per CUA 2022.
+- **Erectile Dysfunction:** PDE5i first-line, nitrate absolute contraindication (≥24h washout sildenafil/vardenafil, ≥48h tadalafil), daily tadalafil 5 mg for BPH+ED — accurate per CUA 2023.
+- **CP/CPPS:** UPOINT phenotyping, pelvic floor PT first-line, antibiotics limited to one empirical trial only, Health Canada FQ warnings referenced — accurate per CUA 2022.
+- **Premature Ejaculation:** Dapoxetine correctly noted as not available in Canada/US; paroxetine most effective SSRI for PE; SSRIs off-label — accurate per CUA 2023 / ISSM 2024.
+- **Acute Urinary Retention:** Drug-induced causes comprehensive (anticholinergics, sympathomimetics, opioids), alpha-blocker before TWOC improves success 50%→75%, pharmacist medication review role prominent — accurate per CUA BPH Position.
+- **Epididymitis & Orchitis:** Age-based empiric (STI <35 yrs vs enteric ≥35 yrs), FQ resistance noted with Health Canada advisories, partner notification, torsion red flags clearly delineated — accurate per AMMI Canada Bugs & Drugs 2025 / CDC STI 2021.
+- **BPS/IC:** Dietary triggers, amitriptyline first oral, pentosan polysulfate ophthalmology monitoring (annual), DMSO intravesical, Hunner lesion subset — accurate per CUA BPS 2016 / AUA 2022.
+- **Testicular Cancer:** BEP regimen accurate, bleomycin pulmonary toxicity lifelong O2 sensitivity, fertility preservation pre-treatment, AFP elevated in "pure seminoma" = NSGCT, RPLND for residual NSGCT — accurate per NCCN v1.2025 / EAU 2024 / CUA 2023.
+- **Acute Pyelonephritis:** **ERROR FOUND AND FIXED** — nitrofurantoin and fosfomycin incorrectly listed as agents in outpatient treatment row despite notes explicitly stating to AVOID them (no renal tissue penetration). Removed from agents list; clarified in notes.
+- **Acute Bacterial Prostatitis:** 4-week duration rationale, FQ resistance ~25% Ontario 2024, ESBL/post-biopsy coverage, suprapubic preferred over urethral catheter in retention — accurate per CUA/AUA 2023.
+- **Testicular Torsion:** 6-hour salvage window, pharmacist triage role (send to ED immediately), bilateral orchidopexy for bell-clapper deformity, manual detorsion bridge to OR — accurate per CUA/AUA 2023.
+- **Phimosis & Paraphimosis:** **ERROR FOUND AND FIXED** — epinephrine incorrectly included as agent in paraphimosis manual reduction treatment row despite notes explicitly saying "no epinephrine; risk of vascular compromise" and pearl saying AVOID. Removed epinephrine from agents list; notes clarified to plainly state "NO EPINEPHRINE." Family corrected from "Topical Anesthetics / Sympathomimetic Catecholamines" to "Topical Anesthetics." Physiologic vs pathologic phimosis distinction, topical betamethasone 70-95% success rate — accurate per CPS 2018 / AAP 2012.
+- **Peyronie's Disease:** Two-phase management (active vs stable), collagenase Xiaflex for stable phase, pentoxifylline modest evidence, vitamin E weak evidence (Cochrane 2018), vitamin E + warfarin interaction noted — accurate per AUA 2015 / CUA 2024.
+- **Varicocele & Hydrocele:** Isolated right varicocele → CT for retroperitoneal mass, microscopic subinguinal varicocelectomy gold standard, pediatric hydrocele observe to age 2, adult hydrocele ultrasound to exclude testicular cancer — accurate per AUA 2024 / CUA 2023.
+
+### Errors Found and Fixed
+
+| # | Condition | Field | Error | Fix |
+|---|-----------|-------|-------|-----|
+| 1 | Acute Pyelonephritis | treatment agents (outpatient row) | `nitrofurantoin` and `fosfomycin` listed as treatment agents despite notes explicitly saying to AVOID both (no renal tissue penetration) — creates risk of prescribing these bladder-only agents for upper UTI | Removed both from agents list; added explicit clarification to notes: "do NOT use for pyelonephritis" |
+| 2 | Phimosis & Paraphimosis | treatment agents (paraphimosis row) | `epinephrine` listed as agent for paraphimosis manual reduction despite notes and pearls both explicitly warning to AVOID it (risk of vascular compromise / glans ischemia) | Removed epinephrine from agents; notes updated to "NO EPINEPHRINE: risk of vascular compromise and ischemia to glans; ALWAYS use plain lidocaine only"; family corrected to "Topical Anesthetics" |
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 16 |
+| Total errors found | 2 |
+| Total errors fixed | 2 |
+| Critical errors (patient-safety) | 2 (pyelonephritis inappropriate agents; paraphimosis contraindicated agent) |
+| JS parse: node --check | PASS |
+| Canadian source coverage | All conditions cite ≥1 Canadian source (CUA, AMMI Canada, SOGC, CPS, PHO, Health Canada) |
+| FAMILY_MAP coverage | No new drugs added — N/A |
+| FV audit badge (Diseases tab) | "September 16, 2026" — confirmed correct at line 524 |
+| Guideline alignment | CUA 2022-2024, AMMI Canada Bugs & Drugs 2025, CDC STI 2021, NCCN v1.2025, EAU 2024, AUA 2024, SOGC 2019, AGS Beers 2023, ISSM 2024, CPS 2018 |
