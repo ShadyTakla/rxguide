@@ -2832,3 +2832,41 @@ Source-verified deep audit of 15 PREG_DATA entries (isotretinoin, methotrexate, 
 | Other MINOR | 1 MINOR | A | batch A second MINOR finding |
 
 **Pass 4 Reference Table Audit COMPLETE.** All 117 reference tables in rxguide have been subjected to a full source-verified (FV) Tier 4 audit. The catalog demonstrates high clinical accuracy: 9 total issues across 117 tables (0 CRITICAL, 4 MAJOR, 5 MINOR). No CRITICAL errors found across any batch. All issues were corrected in-place and JS syntax verified after each fix. Canadian sources (Health Canada, PHO, OCP, NACI, CAMAP, SOGC, CCS, Diabetes Canada, Thrombosis Canada) formed the primary verification standard throughout, with international guidelines (GINA, GOLD, STOPP-START, ISMP, CPIC, ACR) as supporting sources.
+
+---
+
+## Cycle 38 — Psychiatry & Neurology Disease Cards Full Verbatim Audit — 2026-09-16
+
+**Scope:** Full Verbatim (FV) Tier 4 clinical audit of all 23 Psychiatry & Neurology disease cards in `DISEASES["psychiatry_neurology"].conditions[]`. Every field audited line-by-line against current Canadian-first guidelines (CANMAT 2018/2023, Health Canada, CAMH, ISBD, CPS, OCP). Cross-catalog propagation check performed for all corrections.
+
+**Auditor:** Claude Sonnet 4.6 (automated Tier 4 review) — 2026-09-16
+
+**Conditions audited (23):** ADHD, Alcohol Use Disorder, Alzheimer's/Dementia, Bipolar Disorder, Epilepsy, GAD, Insomnia, MDD, Migraine, Multiple Sclerosis, Nicotine Use Disorder, Opioid Use Disorder, Panic Disorder, Parkinson's Disease, PTSD, Schizophrenia, Social Anxiety Disorder, Cannabis Use Disorder, Delirium, Borderline Personality Disorder, OCD, Eating Disorders, Adjustment Disorder.
+
+### Findings and Fixes
+
+| # | Severity | Condition | Finding | Resolution |
+|---|----------|-----------|---------|------------|
+| 1 | 🔴 Critical | Bipolar Disorder | Lithium first-line treatment notes cited maintenance target "0.6–1.0 mmol/L" — incorrect per CANMAT/ISBD 2018 Bipolar Guidelines which specify maintenance 0.6–0.8 mmol/L | Fixed to "0.6–0.8 mmol/L maintenance" in Bipolar treatment row (line 22142) |
+| 2 | 🔴 Critical | MDD | Lithium augmentation notes cited target level "0.6–1.0 mmol/L" — same guideline error | Fixed to "0.6–0.8 mmol/L" in MDD augmentation row (line 23334) |
+| 3 | 🔴 Critical | Cross-catalog: DRUGS lithium interactions | CKD interaction mechanism text cited "0.6-1.0 mEq/L for maintenance" | Fixed to "0.6-0.8 mEq/L for maintenance" (line 136553) |
+| 4 | 🔴 Critical | Cross-catalog: Reference table (mood stabilizers) | Lithium dose reference cited "Maintenance: 0.6–1.0 mEq/L" | Fixed to "Maintenance: 0.6–0.8 mEq/L" (line 261254) |
+
+**All other conditions (21):** No material clinical errors found. Content accurate, guideline citations current, Canadian-first context correct. Specifics: ADHD (Health Canada-approved agents, stimulant first-line per CADDRA 2020 correct), Alcohol Use Disorder (naltrexone/acamprosate/disulfiram correct, AUDIT-C correct), Alzheimer's/Dementia (ChEI dose titration, memantine combination correct, BPSD approaches correct), Epilepsy (ILAE 2022 classifications, Health Canada-approved AEDs correct, carbamazepine HLA-B*1502 warning present), GAD (CANMAT 2014 SSRI/SNRI first-line, pregabalin correct), Insomnia (CBT-I first-line, melatonin, Z-drugs with caution in elderly correct per STOPP criteria), Migraine (CGRP mAbs correct, triptans correct, 5-HT3 correct), Multiple Sclerosis (Health Canada DMTs correct, EDSS-based decisions correct), Nicotine Use Disorder (Nicotine replacement therapy, varenicline, bupropion correct per Canadian Thoracic Society), OUD (methadone/buprenorphine-naloxone OAT per OCP/CAMH 2021 correct), Panic Disorder (CANMAT SSRI/SNRI first-line correct), Parkinson's Disease (levodopa-carbidopa primary, MAO-B inhibitors, DBS correct), PTSD (CANMAT 2018: sertraline/paroxetine/venlafaxine/mirtazapine correct, prazosin for nightmares correct), Schizophrenia (Canadian guidelines, clozapine ANC monitoring 2.0 to start / 1.5 to continue correct, CPMS program noted), Social Anxiety (CANMAT SSRI first-line correct), Cannabis Use Disorder (DSM-5-TR criteria, CBT correct), Delirium (non-pharm first, ABCDEF bundle, antipsychotic caution correct), BPD (DBT first-line per NICE/CAMH correct), OCD (ERP+SSRI, CANMAT stepped care correct), Eating Disorders (AN weight restoration, CBT-E for BN, Canadian resources correct), Adjustment Disorder (psychotherapy first-line correct).
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 23 |
+| Total errors found and fixed | 4 |
+| Critical errors (lithium maintenance range — cross-catalog) | 4 |
+| Significant errors | 0 |
+| Minor errors | 0 |
+| JS parse: node --check | PASS |
+| Canadian source coverage | All conditions cite ≥1 Canadian source |
+| FAMILY_MAP coverage | No new drugs added — N/A |
+| Guideline alignment | CANMAT 2018/2023, Health Canada, CAMH, ISBD, CADDRA, OCP, CTS |
+
+**All 4 errors were the same underlying defect:** lithium maintenance therapeutic range cited as "0.6–1.0" (incorrect) instead of "0.6–0.8 mmol/L" (CANMAT/ISBD 2018 correct). Fixed in all 4 sibling locations per cross-catalog propagation rule.
+
