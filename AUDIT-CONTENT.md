@@ -3170,3 +3170,86 @@ All 21 Hematology disease conditions (lines 62165–~67000 of index.html):
 | FAMILY_MAP coverage | No new drugs added — N/A |
 | FV audit badge (Diseases tab) | "September 16, 2026" — confirmed correct at line 524 |
 | Guideline alignment | CUA 2022-2024, AMMI Canada Bugs & Drugs 2025, CDC STI 2021, NCCN v1.2025, EAU 2024, AUA 2024, SOGC 2019, AGS Beers 2023, ISSM 2024, CPS 2018 |
+
+## Cycle 43 — Infectious Disease Cards Full Verbatim Audit — 2026-09-16
+
+### Scope
+
+Full Verbatim (FV) Tier 4 clinical audit of all Infectious Disease conditions in the DISEASES catalog (lines 71537–~80995 of index.html). Conditions audited include:
+
+- Community-Acquired Pneumonia (CAP)
+- Hepatitis C (HCV)
+- Recurrent & Complicated UTI
+- Clostridioides difficile Infection (CDI)
+- HIV Infection & Antiretroviral Therapy
+- HIV PrEP & PEP
+- Tuberculosis (Latent & Active)
+- Herpes Simplex & Herpes Zoster
+- Influenza (Treatment & Prophylaxis)
+- Candidiasis (mucocutaneous + vulvovaginal)
+- Sexually Transmitted Infections (Chlamydia, Gonorrhea, Syphilis)
+- Travellers' Diarrhea
+- COVID-19 (Acute Treatment & Antivirals)
+- Cold Sores (HSV-1 Labialis)
+- Group A Streptococcal Pharyngitis
+- Acute Bacterial Rhinosinusitis (ABRS)
+- Lyme Disease (Borreliosis)
+- Bacterial Meningitis
+- Syphilis (dedicated deep-dive)
+- Cryptococcal Meningitis
+- Invasive Candidiasis
+- Sepsis / Septic Shock
+
+### Findings Summary
+
+**CAP:** CRB-65 scoring correct; outpatient/inpatient/ICU stratification accurate; ONTARIO macrolide resistance ~25% correctly flagged; fluoroquinolone stewardship advisory included; durations 5-7 days accurate per IDSA/ATS 2019 + AMMI Canada 2024.
+
+**HCV:** Pan-genotypic DAA regimens (Maviret, Epclusa) accurate; Vosevi for treatment failure correct; ribavirin use appropriately restricted to complex cases; SVR12 = cure; amiodarone-sofosbuvir fatal bradycardia warning correctly flagged; HBV reactivation monitoring included — all accurate per AASLD/IDSA 2023.
+
+**Complicated UTI:** Nitrofurantoin correctly stated NOT for pyelonephritis; eGFR <30 contraindication included; asymptomatic bacteriuria guidance correct; fluoroquinolone stewardship advisory included; vaginal estrogen for postmenopausal rUTI included — accurate per CUA/Bugs & Drugs 2024.
+
+**CDI:** Fidaxomicin preferred over vancomycin for non-severe CDI correct per IDSA/SHEA 2021; bezlotoxumab correctly described as recurrence prevention only; FMT for multiple recurrences correct; metronidazole appropriately relegated to fulminant/ileus adjunct only — accurate.
+
+**HIV:** Biktarvy (bictegravir/FTC/TAF) and dolutegravir-based regimens correctly listed as preferred first-line; HLA-B*5701 mandatory before abacavir correctly emphasized; U=U principle present; long-acting Cabenuva/Sunlenca included; PrEP/PEP regimens correct per DHHS/IAS-USA 2024.
+
+**HIV PrEP/PEP:** TDF/FTC and TAF/FTC correct; on-demand 2-1-1 restricted to cisgender MSM correct; cabotegravir LA pharmacological tail warning (48 weeks oral PrEP after stopping) correct; dolutegravir + TDF/FTC as preferred PEP regimen correct; DoxyPEP (doxycycline 200 mg within 72h) included with appropriate caveats — accurate per PHAC 2024.
+
+**TB:** RIPE × 2 months then IR × 4 months correct; LTBI preferred short courses (3HP, 4R) with 9H alternative correct per Canadian TB Standards 2022; DOT recommendation correct; INH hepatotoxicity and ethambutol ocular monitoring included; MDR-TB BPaL regimen included — accurate.
+
+**Herpes/Zoster:** Valacyclovir dosing accurate; PHN treatment (gabapentinoids, TCAs) correct; Shingrix preferred over Zostavax (no longer available in Canada) — correct; zoster antiviral start within 72h recommendation correct with clarification that it's not absolute.
+
+**Influenza:** Oseltamivir 75 mg BID × 5 days correct; baloxavir single-dose included; high-dose/adjuvanted vaccines preferred for ≥65 correct per NACI 2024; LTC prophylaxis guidance correct; Reye syndrome/ASA contraindication correctly flagged.
+
+**STIs:** Gonorrhea treatment ceftriaxone 500 mg IM × 1 dose (PHAC 2024) correctly stated in treatment section. **ERROR FOUND AND FIXED**: patho section incorrectly stated "dual therapy ceftriaxone 500 mg IM + azithromycin 1 g PO OR doxycycline 100 mg BID × 7 days per PHAC 2024" — azithromycin dual therapy for gonorrhea is OBSOLETE and not recommended per PHAC 2024 due to rising azithromycin resistance. Fixed to correctly state ceftriaxone 500 mg IM monotherapy with doxycycline added only if chlamydia NAAT not performed. Chlamydia: doxycycline 100 mg BID × 7 days as preferred — correct (azithromycin 1 g as alternative also listed). Syphilis: benzathine penicillin G staging correct; neurosyphilis IV PCN G correct.
+
+**Travellers' Diarrhea:** Azithromycin preferred for S/SE Asia; ciprofloxacin for other regions; rifaximin watery TD only — all correct per CATMAT 2024.
+
+**COVID-19:** Paxlovid (nirmatrelvir/ritonavir) 5-day course with CYP3A4 drug interaction emphasis correct; remdesivir and molnupiravir alternatives listed correctly; dexamethasone only when O2 required (RECOVERY trial) correctly emphasized; Paxlovid rebound counselling included.
+
+**Bacterial Meningitis:** Dexamethasone 15-20 min before/with first antibiotic correct; ceftriaxone + vancomycin empiric correct; ampicillin added for age >50/immunocompromised (Listeria) correct; neonatal — cefotaxime preferred over ceftriaxone (bilirubin displacement) correctly specified.
+
+**Syphilis:** BPG 2.4 mU IM staging correct (single dose early, weekly × 3 late latent/tertiary, IV PCN G for neurosyphilis); azithromycin explicitly NOT recommended due to resistance — correct; congenital syphilis surge correctly flagged as Canadian public health emergency.
+
+**Cryptococcal Meningitis:** Liposomal AmB + 5-FC induction; AMBITION trial (single high-dose) included; ART delayed 4-6 weeks (COAT trial); corticosteroids HARMFUL (CryptoDex 2016) — all correct.
+
+**Sepsis:** Surviving Sepsis Campaign 2021 1-hour bundle correct; norepinephrine first-line vasopressor; vasopressin as add-on; hydrocortisone 200 mg/day for refractory shock (ADRENAL/APROCCHSS) — all correct; vitamin C/thiamine/hydrocortisone 'HAT' correctly noted as NEGATIVE.
+
+### Errors Found and Fixed
+
+| # | Condition | Field | Error | Fix |
+|---|-----------|-------|-------|-----|
+| 1 | STI (Chlamydia/Gonorrhea/Syphilis) | `patho` field | Gonorrhea described as requiring "dual therapy ceftriaxone 500 mg IM + azithromycin 1 g PO" — azithromycin dual therapy is obsolete per PHAC 2024 due to azithromycin resistance in N. gonorrhoeae | Updated to: ceftriaxone 500 mg IM monotherapy (PHAC 2024); doxycycline 100 mg BID × 7 days added only if chlamydia NAAT not performed; azithromycin dual therapy explicitly stated as "NO longer recommended" |
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 22 |
+| Total errors found | 1 |
+| Total errors fixed | 1 |
+| Critical errors (patient-safety) | 1 (gonorrhea dual-therapy azithromycin — obsolete; contradiction with correct treatment section) |
+| JS parse: node --check | PASS |
+| Canadian source coverage | All conditions cite ≥1 Canadian source (PHAC, AMMI Canada, DHHS adapted for Canada, CTS, CATMAT, PHO, Health Canada) |
+| FAMILY_MAP coverage | No new drugs added — N/A |
+| FV audit badge (Diseases tab) | "September 16, 2026" — confirmed at line 524 |
+| Guideline alignment | PHAC 2024, AMMI Canada Bugs & Drugs 2024, Canadian TB Standards 2022, IDSA/SHEA 2021, DHHS 2024, IAS-USA 2024, Surviving Sepsis Campaign 2021, IDSA Candidiasis 2016, WHO 2022 |
