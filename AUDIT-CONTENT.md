@@ -2,6 +2,40 @@
 
 ---
 
+## Cycle 32 — Pediatrics Disease Cards Full Verbatim Audit — 2026-09-16
+
+**Scope:** Full Verbatim (FV) Tier 4 clinical audit of all conditions in `DISEASES["pediatrics"].conditions[]`. Every field audited line-by-line against current Canadian-first guidelines (CPS, Health Canada, NACI, Sick Kids, OCP). Cross-catalog propagation check performed for all corrections.
+
+**Auditor:** Claude Sonnet 4.6 (automated Tier 4 review) — 2026-09-16
+
+**Conditions audited (28+):** Croup, Pediatric Fever, Childhood Eczema, Colic & Infant GERD, Ontario Vaccination Schedule, Oral Thrush (Candidiasis), Impetigo, ADHD Medication Counselling, Viral Gastroenteritis, Hand Foot Mouth Disease, Cradle Cap, Teething Pain, Pediatric Constipation, Pediatric Asthma, Duchenne Muscular Dystrophy, Bronchiolitis, Kawasaki Disease, Febrile Seizures, Nocturnal Enuresis, Roseola, Erythema Infectiosum (Fifth Disease), Neonatal Jaundice, NAS/NOWS, Pediatric Sepsis, Failure to Thrive, Pediatric Migraine, Reye Syndrome, Pediatric Hypertension, Hypoxic-Ischaemic Encephalopathy.
+
+### Findings and Fixes
+
+| # | Severity | Condition | Finding | Resolution |
+|---|----------|-----------|---------|------------|
+| 1 | 🔴 Critical | Pediatric Fever | patho field stated acetaminophen max daily dose as `(60 mg/kg/day)` — incorrect; 15 mg/kg × 5 doses = 75 mg/kg/day per CPS Fever Management guideline | Changed to `(75 mg/kg/day)` |
+| 2 | 🔴 Critical | Bronchiolitis | nirsevimab dosing stated `50 mg (>5 kg)` — typo inverted the weight threshold; NACI 2024 specifies 50 mg for infants **<5 kg** and 100 mg for ≥5 kg | Changed to `50 mg (<5 kg)` |
+| 3 | 🟠 Significant | Pediatric Sepsis | Empiric antibiotic note only specified ampicillin for ≤28 days (neonates); CPS and Surviving Sepsis Pediatric 2020 require ampicillin to cover *Listeria monocytogenes* and GBS up to 3 months (90 days). Infants aged 28–90 days were incorrectly receiving ceftriaxone ± vancomycin without ampicillin | Added separate 28–90 day age group: `AMPICILLIN 50 mg/kg q6h IV + CEFTRIAXONE 50–100 mg/kg/day IV ± VANCOMYCIN`, with note that ampicillin is required for Listeria and GBS coverage to 3 months |
+| 4 | 🟠 Significant | Pediatric Sepsis | Adjunctive hydrocortisone treatment row had `"family": "Topical Corticosteroids"` — incorrect for IV hydrocortisone in septic shock | Changed to `"family": "Systemic Corticosteroids"` |
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 29 |
+| Total errors found and fixed | 4 |
+| Critical errors | 2 |
+| Significant errors | 2 |
+| Minor errors | 0 |
+| Remaining known issues | 0 |
+| JS syntax check | ✅ ALL OK |
+| fv-audit-footer (Diseases tab) | ✅ September 16, 2026 (already set) |
+
+**Sources used for verification:** CPS Fever Management Position Statement 2018 + updates; CPS Bronchiolitis 2014 (reaffirmed); NACI Statement on Nirsevimab for RSV Prevention 2023/2024; Surviving Sepsis Campaign Pediatric Guidelines 2020 (Weiss SL et al.); CPS Sepsis Bundle 2023; CPS Croup 2021; CPS Kawasaki Disease 2021; CPS Febrile Seizures; Health Canada Beyfortus (nirsevimab) Approval 2023; AMMI Canada Bugs & Drugs 2024.
+
+---
+
 ## Cycle 31 — Cardiology Disease Cards Full Verbatim Audit — 2026-09-16
 
 **Scope:** Full Verbatim (FV) Tier 4 clinical audit of all 18 Cardiology disease cards in `DISEASES["cardiology"].conditions[]`. Every field audited line-by-line against current Canadian-first guidelines (CCS, Health Canada, SOGC, OCP). Cross-catalog propagation check performed for all corrections.
