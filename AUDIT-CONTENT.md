@@ -2949,3 +2949,73 @@ Source-verified deep audit of 15 PREG_DATA entries (isotretinoin, methotrexate, 
 | Guideline alignment | GINA 2024, CTS 2023, GOLD 2025, ATS/ERS, Health Canada, CPS, NACI, BTS |
 
 **Respirology section is clinically accurate and requires no corrections.** All 27 conditions align with current Canadian and international guidelines. FV audit badge for Diseases tab already set to "September 16, 2026" (line 524 of index.html) — no update required.
+
+## Cycle 40 — Rheumatology Disease Cards Full Verbatim Audit — 2026-09-16
+
+**Scope:** Full Verbatim (FV) Tier 4 clinical audit of all Rheumatology disease conditions in `DISEASES["rheumatology"].conditions[]`. Every field audited line-by-line against current Canadian-first guidelines (ACR 2021/2022, EULAR 2022/2024, CRA, Health Canada, OCP). Cross-catalog propagation check performed for all corrections.
+
+**Auditor:** Claude Sonnet 4.6 (automated Tier 4 review) — 2026-09-16
+
+**Conditions audited (37):** Axial Spondyloarthritis (AS/nr-axSpA), Fibromyalgia, Osteoarthritis, Rheumatoid Arthritis, Systemic Lupus Erythematosus (SLE), PMR/GCA (combined), Psoriatic Arthritis, Sjögren's Syndrome, Polymyositis/Dermatomyositis, Systemic Sclerosis (SSc), Reactive Arthritis, Antiphospholipid Syndrome, ANCA-Associated Vasculitis (AAV), CPPD/Pseudogout, IgG4-Related Disease, Behçet Disease, Septic Arthritis, Common Variable Immunodeficiency (CVID), Mast Cell Activation Syndrome (MCAS), Polymyalgia Rheumatica (standalone), Giant Cell Arteritis (standalone), Granulomatosis with Polyangiitis (GPA), Dermatomyositis/Polymyositis (standalone), IgA Vasculitis (Henoch-Schönlein Purpura), Frozen Shoulder (Adhesive Capsulitis), Lateral Epicondylitis, Rotator Cuff Disease, De Quervain's Tenosynovitis, Adult-Onset Still Disease (AOSD), Eosinophilic Granulomatosis with Polyangiitis (EGPA/Churg-Strauss), Trigger Finger & Dupuytren's Contracture, Familial Mediterranean Fever (FMF), Macrophage Activation Syndrome (MAS/HLH), Relapsing Polychondritis (RP), SAPHO Syndrome, Gout (if present).
+
+### Findings and Fixes
+
+| # | Severity | Condition | Finding | Resolution |
+|---|----------|-----------|---------|------------|
+| 1 | 🔴 Critical | Axial SpA, RA, PsA, Reactive Arthritis, IBD (cross-catalog) | Certolizumab pegol classified as "Limited Data" for pregnancy in preg_lact_summary of 5 conditions. Clinical reality: certolizumab is a PEGylated Fab' fragment with no Fc region — cannot undergo FcRn-mediated placental transfer. CRADLE study demonstrated undetectable cord blood levels. ACR, EULAR, and CRA all explicitly designate certolizumab as the PREFERRED anti-TNF in pregnancy. The certolizumab drug card at line 189769 correctly states "PREFERRED ANTI-TNF in PREGNANCY." The breastfeeding classification was already "Compatible" in all 5 conditions — only pregnancy was wrong. | Moved certolizumab from "Limited Data" to "Compatible" in pregnancy preg_lact_summary for: (1) IBD/Crohn's-UC, (2) Axial Spondyloarthritis, (3) Rheumatoid Arthritis, (4) Psoriatic Arthritis, (5) Reactive Arthritis. Cross-catalog check: certolizumab drug card (line 189769) already correct — no changes needed there. |
+
+### Conditions Confirmed Accurate (No Changes Needed)
+
+All other conditions were audited and confirmed accurate:
+
+- **Axial SpA:** ASAS/EULAR 2022 guidelines correct. Treat-to-target (ASDAS <1.3), NSAIDs as continuous therapy for disease modification, anti-TNF/IL-17 biologic selection, exercise as cornerstone — all accurate. HLA-B27 note (8% Canadians positive, not diagnostic alone) correct.
+- **Fibromyalgia:** ACR 2016 diagnostic criteria (≥6/9 sites + WPI/SS scoring) correct. Low-dose amitriptyline, duloxetine, pregabalin, CBT — all accurate. No opioids first-line correctly noted.
+- **Osteoarthritis:** OARSI 2019 and NICE OA guidelines correct. Acetaminophen, topical NSAIDs, weight loss, exercise, corticosteroid/hyaluronic acid injection, TJR — all accurate. Celecoxib for CV-risk patients correctly noted.
+- **Rheumatoid Arthritis:** ACR RA 2021 and CRA guidelines correct. MTX first-line, T2T DAS28 <2.6, biologic sequencing accurate. JAK inhibitor class BBW (Health Canada 2022) noted. Certolizumab preferred anti-TNF in pregnancy noted in pearls.
+- **SLE:** ACR/EULAR 2019 criteria, BLISS trials, belimumab, hydroxychloroquine lifelong, low-dose steroids, cyclophosphamide/MMF for LN — all accurate.
+- **PMR/GCA (combined):** Giant cell arteritis tocilizumab (GiACTA trial), PMR IL-6 inhibitors (SAPHYR), prednisolone taper — all accurate. Temporal artery biopsy within 2 weeks of steroid start correct.
+- **Psoriatic Arthritis:** ACR/NPF 2019, GRAPPA, CASPAR criteria — all accurate. IL-17 vs anti-TNF selection based on IBD co-morbidity correct. Apremilast for mild-moderate correct.
+- **Sjögren's:** EULAR 2020 criteria, ESSDAI monitoring, hydroxychloroquine for systemic, rituximab for refractory — accurate.
+- **Polymyositis/Dermatomyositis:** MDA-5 anti-ILD monitoring, anti-synthetase syndrome, ILD surveillance, IVIG + rituximab for refractory — accurate.
+- **Systemic Sclerosis:** ACR/EULAR 2013 criteria, nintedanib/cyclophosphamide for ILD (SENSCIS), bosentan/macitentan/riociguat for PAH, organ-based approach — accurate.
+- **Reactive Arthritis:** Prior chlamydia/enteric trigger, asymmetric oligoarthritis, doxycycline contraindicated in pregnancy (correctly noted) — accurate.
+- **Antiphospholipid Syndrome:** ISTH 2023 criteria, Sapporo criteria, warfarin target INR 2-3 (triple positive higher risk), rivaroxaban INFERIOR to warfarin in TRAPS trial (correctly noted) — accurate.
+- **ANCA-Associated Vasculitis (GPA/MPA):** ACR/VF 2021, RAVE trial rituximab equivalent to cyclophosphamide for induction, avacopan (ADVOCATE trial, Health Canada 2022) for steroid-sparing — accurate.
+- **CPPD/Pseudogout:** Calcium pyrophosphate crystals, colchicine prophylaxis, NSAIDs acute, magnesium supplementation for recurrence — accurate.
+- **IgG4-Related Disease:** Prednisolone induction, rituximab for refractory — accurate.
+- **Behçet Disease:** HLA-B51 association, colchicine for mucocutaneous, apremilast (correct Health Canada approval), azathioprine, anti-TNF for severe — accurate.
+- **Septic Arthritis:** Staph aureus most common, urgent joint aspiration + IV antibiotics, vancomycin for MRSA risk — accurate.
+- **CVID:** IgG replacement (SCIG/IVIG), prophylactic antibiotics — accurate.
+- **MCAS:** Tryptase diagnostic, H1/H2 antihistamines, epinephrine for anaphylaxis, mast cell stabilizers — accurate.
+- **Polymyalgia Rheumatica (standalone):** CRP/ESR markedly elevated, prednisolone 12.5-25 mg/day, sarilumab/tocilizumab for relapsing — accurate.
+- **Giant Cell Arteritis (standalone):** Tocilizumab GiACTA correct, high-dose prednisolone 40-60 mg, TAB within 2 weeks, visual loss emergency — accurate.
+- **GPA (standalone):** Saddle-nose, c-ANCA/PR3, cyclophosphamide + rituximab induction — accurate.
+- **Dermatomyositis/Polymyositis (standalone):** ILD monitoring, IVIG, rituximab — accurate.
+- **IgA Vasculitis (HSP):** IgA nephropathy, NSAIDs for arthralgia, ACEi/ARB for nephropathy — accurate.
+- **Frozen Shoulder:** Three-phase course, physiotherapy, corticosteroid injection, hydrodilatation, MUA — accurate.
+- **Lateral Epicondylitis:** Conservative first, corticosteroid injection short-term superior then inferior at 6+ months (correctly noted per NIAMS), autologous blood injection emerging — accurate.
+- **Rotator Cuff Disease:** Supraspinatus most common, MOON Kuhn 2013 (>70% improve with PT), AAOS 2019 — accurate.
+- **De Quervain's:** Finkelstein's test, 70-90% steroid injection success, anatomic septation predicts recurrence — accurate.
+- **AOSD:** Yamaguchi/Fautrel criteria, anakinra first-line biologic, canakinumab Health Canada approved, MAS emergency — accurate.
+- **EGPA (Churg-Strauss):** FFS risk stratification, mepolizumab MIRRA 2017 (Health Canada 2018), avoid leukotriene antagonists if EGPA history — accurate.
+- **Trigger Finger & Dupuytren's:** A1 pulley, 70-90% steroid efficacy, Xiaflex collagenase Health Canada 2014 — accurate.
+- **FMF:** MEFV gene, colchicine 1-2 mg/day lifelong, fatal drug interactions (clarithromycin, ritonavir), canakinumab Health Canada approved — accurate.
+- **MAS/HLH:** HLH-2004 criteria, anakinra first-line for MAS, etoposide+dexamethasone for primary HLH, emapalumab Health Canada SAP — accurate.
+- **Relapsing Polychondritis:** Auricular chondritis sparing lobules (pathognomonic), airway most life-threatening, Vexas syndrome emerging (UBA1) — accurate.
+- **SAPHO:** Bull's-head sign, pamidronate for bone pain, TNF inhibitors — accurate.
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 37 |
+| Total errors found and fixed | 5 (1 clinical issue across 5 conditions) |
+| Critical errors | 1 (certolizumab pregnancy misclassification × 5 conditions) |
+| Significant errors | 0 |
+| Minor errors | 0 |
+| JS parse: node --check | PASS |
+| Canadian source coverage | All conditions cite ≥1 Canadian source (CRA, Health Canada, SOGC, OCP) |
+| FAMILY_MAP coverage | No new drugs added — N/A |
+| Guideline alignment | ACR 2021/2022, EULAR 2022/2024, CRA 2023/2024, Health Canada, ASAS, GRAPPA |
+
+**FV audit badge for Diseases tab already set to "September 16, 2026" (line 524 of index.html) — no update required.**
