@@ -2,6 +2,41 @@
 
 ---
 
+## Cycle 31 — Cardiology Disease Cards Full Verbatim Audit — 2026-09-16
+
+**Scope:** Full Verbatim (FV) Tier 4 clinical audit of all 18 Cardiology disease cards in `DISEASES["cardiology"].conditions[]`. Every field audited line-by-line against current Canadian-first guidelines (CCS, Health Canada, SOGC, OCP). Cross-catalog propagation check performed for all corrections.
+
+**Auditor:** Claude Sonnet 4.6 (automated Tier 4 review) — 2026-09-16
+
+**Conditions audited (18):** Aortic Stenosis, Atrial Fibrillation, HFpEF, HFrEF, Hypertension, Hypertensive Emergency, Pericarditis, HCM, Atrial Flutter, Cardiac Amyloidosis, Cardiac Arrest/ACLS, Aortic Dissection, Cardiac Tamponade, Mitral Stenosis, Aortic Regurgitation, Mitral Regurgitation, Mitral Valve Prolapse, Cardiac Sarcoidosis.
+
+### Findings and Fixes
+
+| # | Severity | Condition | Finding | Resolution |
+|---|----------|-----------|---------|------------|
+| 1 | 🔴 Critical | HCM | "DRUGS TO AVOID in Obstructive HCM" treatment row has `type: "Drug"` but no `family` field — violates CLAUDE.md §6.3 requirement that all Drug-type rows include a `family` field | Added `family: "Adrenergic Agonists / Vasodilators (Hydralazine + Nitrates) / DHP Calcium Channel Blockers / PDE5 Inhibitors / Sympathomimetic Catecholamines / Cardiac Glycosides"` using exact FAMILY_MAP values |
+| 2 | 🟠 Significant | Atrial Flutter | Anticoagulation treatment row and all pearls cite `CHA₂DS₂-VASc` exclusively; CCS 2020/2024 AF guidelines (which AFL anticoag follows) mandate CHADS-65 as the Canadian-preferred tool — inconsistent with the Atrial Fibrillation card in the same app | Updated anticoagulation row, introduction, pearls, and pharmacist pearl to note CHADS-65 as 🍁 CCS-preferred with CHA₂DS₂-VASc as international alternative |
+| 3 | 🟡 Minor | Mitral Valve Prolapse | AF treatment notes and monitoring bullet cite CHA₂DS₂-VASc exclusively — same Canadian-preferred tool inconsistency | Updated MVP AF treatment notes and monitoring bullet to note CHADS-65 (CCS preferred) / CHA₂DS₂-VASc |
+
+**All other conditions (15):** No material clinical errors found. Content accurate, guideline citations current, Canadian-first context correct. Specifics: Aortic Stenosis (CCS VHD 2017+updates accurate), AF (CHADS-65 correct, CCS 2024 Focused Update accurate), HFpEF (SGLT2i first-line per CCS HF 2023 correct), HFrEF ('Fantastic Four' GDMT, CCS 2025 accurate), Hypertension (Hypertension Canada 2025, BP <130/80, SOGC references correct), Hypertensive Emergency (IV agents correct), Pericarditis (NSAIDs+colchicine first-line per ESC 2023 correct), Cardiac Amyloidosis (tafamidis and ATTR/AL distinction correct), Cardiac Arrest/ACLS (DOSE-VF, TTM2 correct), Aortic Dissection (Stanford classification, β-blocker first correct), Cardiac Tamponade (Beck's Triad, echo-guided correct), Mitral Stenosis (INVICTUS 2022 warfarin>DOACs in rheumatic MS-AF correct), Aortic Regurgitation (LVEF <55% / LVEDD >65 mm / LVESD >50 mm surgical thresholds correct), Mitral Regurgitation (primary vs functional, COAPT/MITRA-FR, LVEF <60%/LVESD ≥40 mm triggers correct), Cardiac Sarcoidosis (HRS 2014, corticosteroid + steroid-sparing + device therapy correct).
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 18 |
+| Total errors found and fixed | 3 |
+| Critical errors | 1 |
+| Significant errors | 1 |
+| Minor errors | 1 |
+| Remaining known issues | 0 |
+| JS syntax check | ✅ ALL OK |
+| fv-audit-footer (Diseases tab) | ✅ Updated to September 16, 2026 |
+
+**Sources used for verification:** CCS Atrial Fibrillation Guidelines 2020 + 2024 Focused Update; CCS Heart Failure Guidelines 2023 + 2025 Update; Hypertension Canada Guidelines 2025; CCS Valvular Heart Disease Guidelines 2017 + updates; AHA/ACC HCM Guideline 2020 + 2024 Update; ESC HCM 2023; ESC Pericardial Diseases 2015 + 2023; ESC Valvular Heart Disease 2021; AHA/ACC/HRS Atrial Flutter Guidelines 2023; Health Canada Product Monograph — Camzyos (mavacamten) 2024; INVICTUS Trial (2022); EXPLORER-HCM/VALOR-HCM; DOSE-VF/TTM2 Trials; HRS Expert Consensus on Cardiac Sarcoidosis 2014.
+
+---
+
 ## Cycle 30 — Compounding Formulations Section — 2026-09-16
 
 **Scope:** Full audit of all 51 entries in the new `COMPOUNDING_FORMULATIONS` array (⚗️ Compounding Formulations, Reference tab). Two sequential audit passes performed. All entries reviewed for: NAPRA level accuracy, BUD, storage conditions, stability chemistry, clinical rationale, hazardous drug warnings, controlled substance flags, NTI warnings, sterility requirements, and Canadian source citations.
