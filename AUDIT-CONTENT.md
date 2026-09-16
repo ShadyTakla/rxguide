@@ -2,6 +2,60 @@
 
 ---
 
+## Cycle 30 — Compounding Formulations Section — 2026-09-16
+
+**Scope:** Full audit of all 51 entries in the new `COMPOUNDING_FORMULATIONS` array (⚗️ Compounding Formulations, Reference tab). Two sequential audit passes performed. All entries reviewed for: NAPRA level accuracy, BUD, storage conditions, stability chemistry, clinical rationale, hazardous drug warnings, controlled substance flags, NTI warnings, sterility requirements, and Canadian source citations.
+
+**Auditor:** Claude Sonnet 4.6 (automated Tier 4 review) — 2026-09-16
+
+### Pass 1 — Initial Audit
+
+| # | Severity | Entry | Finding | Resolution |
+|---|----------|-------|---------|------------|
+| 1 | 🔴 Critical | Ursodiol 50 mg/mL | Duplicate ID — entry appeared twice in array | Simpler original removed; complete Category 11 version with warnings retained |
+| 2 | 🔴 Critical | Omeprazole 2 mg/mL | Stability note said "8.4% NaHCl" (saline — acidic, destroys omeprazole); correct buffer is 8.4% NaHCO₃ (sodium bicarbonate) | Corrected to NaHCO₃ |
+| 3 | 🟠 Moderate | Lisinopril 1 mg/mL | Stability note stated "Bicitra vehicle" (enalapril's buffer, not lisinopril's); lisinopril uses purified water + sodium saccharin per FDA method | Corrected |
+| 4 | 🟠 Moderate | Topiramate 6 mg/mL | Stated tablets "cannot be crushed safely" — incorrect; Topamax tablets can be crushed | Corrected to reflect suspension enables sub-tablet weight-based titration |
+| 5 | 🟡 Minor | LDN Capsules | source_url pointed to CPSM ketamine page (wrong link) | Updated to OCP compounding standards |
+| 6 | 🟡 Minor | Amlodipine 1 mg/mL | Amber container in stability_notes but absent from storage field | Added to storage field |
+
+**Pass 1 Result:** 6 errors corrected. Entry count after deduplication: **51**.
+
+### Pass 2 — Second Deep Audit
+
+| # | Severity | Entry | Finding | Resolution |
+|---|----------|-------|---------|------------|
+| 1 | 🔴 Critical | Bevacizumab intravitreal | NAPRA level: "Sterile Low Risk" — grossly understated for intravitreal repackaging into prefilled syringes; intraocular endotoxin causes devastating inflammation | Corrected to Sterile High Risk |
+| 2 | 🔴 Critical | Pantoprazole 2 mg/mL | Stability note: "does not require alkaline buffer" — pantoprazole IS acid-labile (all PPIs are); vehicle pH must remain >5.5 | Corrected; added "Do NOT use an acidic vehicle" |
+| 3 | 🟠 Significant | Mycophenolate 200 mg/mL | Storage field: "Do NOT use PVC syringes" — copied from tacrolimus; mycophenolate has no PVC adsorption issue | Wrong warning removed |
+| 4 | 🟠 Moderate | Sildenafil 2.5 mg/mL | Missing Health Canada/FDA 2012 warning: high-dose sildenafil associated with increased mortality in pediatric PAH (STARTS-2 trial) | Warning added |
+| 5 | 🟠 Moderate | Losartan 2.5 mg/mL | Warning used "potassium-sparing effect" — wrong terminology (describes K-sparing diuretics); ARBs cause hyperkalemia via aldosterone blockade | Corrected to "ARBs can cause hyperkalemia — monitor serum potassium" |
+| 6 | 🟠 Moderate | Clobazam 1 mg/mL | No controlled substance warning — clobazam is Schedule IV (benzodiazepine); double-lock storage required | Warning added |
+| 7 | 🟡 Minor | Amphotericin B 0.15% ophthalmic | Risk level stated as unconditionally High Risk; clarification needed — High Risk if API is bulk powder; Medium Risk if using commercial Fungizone IV vials as API source | Clarified by API source |
+| 8 | 🟡 Minor | Metronidazole 15 mg/mL | Storage missing "Shake well before each dose" (suspension) | Added |
+| 9 | 🟡 Minor | Metoprolol 10 mg/mL | Amber container in stability_notes but absent from storage field | Added |
+| 10 | 🟡 Minor | Hydrochlorothiazide 5 mg/mL | Amber container absent from storage field | Added |
+| 11 | 🟡 Minor | Ursodiol 50 mg/mL | Amber container absent from storage field (SickKids recipe specifies amber) | Added |
+
+**Pass 2 Result:** 11 additional errors corrected.
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Total entries audited | 51 |
+| Passes performed | 2 |
+| Total errors found and fixed | 17 (6 + 11) |
+| Critical errors | 4 |
+| Moderate errors | 5 |
+| Minor errors | 8 |
+| Remaining known issues | 0 |
+| fv-audit-footer updated | ✅ September 16, 2026 |
+
+**Sources used for verification:** NAPRA Non-Sterile Compounding Standards 2018 (clarified 2022); NAPRA Model Standards for Pharmacy Compounding of Non-Hazardous Sterile Preparations 2016; SickKids Hospital compounding recipes (publicly available PDFs); Health Canada product monographs and safety advisories; Allen & Erickson published stability data; USP <795>/<797> as adopted in Canada; FDA-referenced stability methods; NIOSH Hazardous Drug classification; Health Canada NDMA guidance 2020.
+
+---
+
 ## Cycle 29 — Ontario Minor Ailments 2026 Expansion + Scope Reconciliation — 2026-07-29
 
 **Trigger**: Ontario's Minor Ailments expansion took effect **July 1, 2026**, adding nine conditions to Schedule 4 of O. Reg. 256/24 and bringing the designated list from 19 to **28**. Six additional vaccine-preventable diseases entered pharmacist scope under Schedule 3 the same day (pertussis, tetanus, and diphtheria having been added to Schedule 3 on May 11, 2026). rxguide's Minor Ailments tab covered 17 of 28 designated conditions and carried several stale or incorrect scope claims.
