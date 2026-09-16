@@ -3019,3 +3019,88 @@ All other conditions were audited and confirmed accurate:
 | Guideline alignment | ACR 2021/2022, EULAR 2022/2024, CRA 2023/2024, Health Canada, ASAS, GRAPPA |
 
 **FV audit badge for Diseases tab already set to "September 16, 2026" (line 524 of index.html) — no update required.**
+
+## Cycle 41 — Hematology Disease Cards Full Verbatim Audit — 2026-09-16
+
+### Auditor
+Claude Sonnet 4.6 — Full Verbatim (FV) Tier 4 Clinical Audit
+
+### Scope
+All 21 Hematology disease conditions (lines 62165–~67000 of index.html):
+1. Iron Deficiency Anemia
+2. Venous Thromboembolism (DVT/PE)
+3. Sickle Cell Disease
+4. Vitamin B12 & Folate Deficiency Anemia
+5. Heparin-Induced Thrombocytopenia (HIT)
+6. Immune Thrombocytopenia (ITP)
+7. Anticoagulation Reversal & Peri-Procedural Bridging
+8. Hereditary Hemochromatosis
+9. Hemophilia A & B
+10. von Willebrand Disease (vWD)
+11. Atypical Hemolytic Uremic Syndrome (aHUS)
+12. MGUS, Smoldering Multiple Myeloma & Plasma Cell Dyscrasias
+13. Disseminated Intravascular Coagulation (DIC)
+14. Thrombotic Thrombocytopenic Purpura (TTP)
+15. Myelodysplastic Syndrome (MDS)
+16. Polycythemia Vera (PV)
+17. Essential Thrombocythemia (ET)
+18. Hereditary Hemorrhagic Telangiectasia (Osler-Weber-Rendu)
+19. Thalassemia (β-Thalassemia Spectrum)
+20. Methemoglobinemia
+21. Paroxysmal Nocturnal Hemoglobinuria (PNH)
+22. Aplastic Anemia
+23. Autoimmune Hemolytic Anemia (AIHA)
+24. AL Amyloidosis (Light Chain)
+25. Hereditary Spherocytosis
+26. G6PD Deficiency
+
+### Key Findings
+
+- **ITP — fostamatinib Health Canada date:** "Health Canada 2020+" corrected to "Health Canada 2021" per Health Canada Product Monograph (Tavalisse approval confirmed 2021). Cross-catalog propagation check: DRUGS[fostamatinib].canadian_notes correctly states "Health Canada-approved for chronic ITP" without specifying year; FAMILY_MAP and DRUG_FAMILIES unaffected. No other erroneous date instances found.
+- **Iron Deficiency Anemia:** IDA workup, ferritin thresholds (confirm <15 µg/L deficiency), alternate-day dosing evidence, oral iron selection — accurate per Canadian Hematology Society Position.
+- **DVT/PE:** DOAC dosing (rivaroxaban 15 mg BID × 21d then 20 mg OD; apixaban 10 mg BID × 7d then 5 mg BID), cancer-associated VTE (SELECT-D, CARAVAGGIO, CLOT trials), HIT pearl, BRIDGE trial bridging — accurate per Thrombosis Canada 2024.
+- **Sickle Cell Disease:** Voxelotor 2024 withdrawal correctly documented; hydroxyurea starting age ≥9 months; crizanlizumab SUSTAIN trial 45% VOC reduction; gene therapy HC approval status — accurate.
+- **B12/Folate:** Oral B12 1000 µg effective in pernicious anemia (1% passive absorption); folic acid masking B12 neurologic damage — critical safety point correctly highlighted — accurate.
+- **HIT:** 4Ts score, argatroban first-line ICU, fondaparinux as alternative, warfarin hold until plt ≥150, DOACs after platelet recovery — accurate per ASH 2018.
+- **Anticoagulation Reversal:** PCC (Octaplex/Beriplex) preferred over FFP; idarucizumab for dabigatran; andexanet alfa for apixaban/rivaroxaban; BRIDGE trial — accurate.
+- **Hemochromatosis:** Phlebotomy first-line; chelators reserved; target ferritin <50 µg/L induction; TSAT target; raw shellfish (Vibrio vulnificus) risk — accurate per AASLD 2019.
+- **Hemophilia A & B:** Emicizumab dosing; Altuviiio once-weekly FVIII; Hemgenix gene therapy HC 2024; FEIBA/rFVIIa inhibitor management; TMA risk with FEIBA >100 U/kg on emicizumab — accurate per WFH 2020/CHS 2023.
+- **vWD:** DDAVP 0.3 mcg/kg IV; type 2B contraindication; hyponatremia black box (fluid restrict 1-1.5 L × 24h); type 3 concentrate; menorrhagia management ladder — accurate per ASH/ISTH/NHF/WFH 2021.
+- **aHUS:** ADAMTS13 <10% = TTP (not aHUS); eculizumab/ravulizumab transformative; meningococcal vaccination mandatory; plasma exchange removes eculizumab — accurate per KDIGO 2024.
+- **MGUS/SMM:** Mayo MGUS risk stratification (3 factors); E3A06 lenalidomide delay progression in SMM; IMWG 2014 criteria; AL amyloid urgent diagnosis — accurate.
+- **DIC:** ISTH scoring; ATRA empiric for APL before cytogenetics; CRASH-2 TXA within 3h trauma; fibrinogen targets (>1 g/L, >2 g/L pregnancy); anticoagulation selective — accurate.
+- **TTP:** Triple therapy PEX + rituximab + caplacizumab (HERCULES); PLASMIC score ≥6; avoid platelet transfusion; recombinant ADAMTS13 (ADZYNMA FDA 2023); ADAMTS13 monitoring quarterly — accurate.
+- **MDS:** IPSS-R + IPSS-M; lenalidomide del(5q); luspatercept ring sideroblasts (MEDALIST); imetelstat FDA 2024; azacitidine/decitabine higher-risk; Inqovi oral decitabine — accurate.
+- **Polycythemia Vera:** Hct target <45% both sexes (CYTO-PV 2013); ropeginterferon HC 2022; ruxolitinib for HU-resistant (RESPONSE 2015); aquagenic pruritus management — accurate.
+- **Essential Thrombocythemia:** IPSET-thrombosis stratification; HU first-line (PT-1 2005); anagrelide alternative; extreme thrombocytosis acquired vWF deficiency — accurate.
+- **HHT:** Curaçao criteria; PAVM bubble echo screening; amoxicillin 2 g pre-procedure prophylaxis; bevacizumab for refractory epistaxis; hepatic embolization CONTRAINDICATED — accurate per Faughnan 2020.
+- **Thalassemia:** TDT pre-transfusion Hb 95-100 g/L; deferasirox first-line oral; deferiprone cardiac iron; luspatercept BELIEVE 2020; betibeglogene FDA 2022 + HC 2023; exagamglogene/CRISPR FDA 2024 — accurate per TIF 2021.
+- **Methemoglobinemia:** Methylene blue 1-2 mg/kg IV (max 7 mg/kg); G6PD contraindicated; serotonin syndrome black box with serotonergic drugs; dapsone long t1/2 + cimetidine adjunct — accurate.
+- **PNH:** Flow cytometry CD55/CD59 + FLAER; eculizumab/ravulizumab/pegcetacoplan/iptacopan; meningococcal vaccination mandatory; APPLY-PNH 2024 iptacopan superior — accurate per IPSEN/AAH/EHA 2024.
+- **Aplastic Anemia:** Camitta severity criteria; RACE 2017 h-ATG + cyclosporine + eltrombopag standard; horse > rabbit ATG; PNH clone 10-30% AA; MDS/AML 10-15% over 10 years post-IST — accurate per BSH 2016.
+- **AIHA:** Warm (IgG) vs CAD (IgM C3); prednisone 1-1.5 mg/kg warm AIHA; rituximab + bendamustine CAD; sutimlimab (anti-C1s) CARDINAL 2021 HC 2023; avoid steroids + splenectomy in CAD; fostamatinib FDA 2022 warm AIHA — accurate.
+- **AL Amyloidosis:** Daratumumab-VCd ANDROMEDA 2021; Mayo staging NT-proBNP + troponin + dFLC; fat pad biopsy; Congo red + apple-green birefringence; technetium pyrophosphate positive ATTR not AL; ASCT eligibility criteria — accurate per ISA 2024.
+- **Hereditary Spherocytosis:** EMA binding test gold standard; MCHC elevated; DAT negative vs warm AIHA; splenectomy delayed >5-6 years children; partial splenectomy emerging; pre-op vaccinations + PCN prophylaxis — accurate per BSH 2012.
+- **G6PD Deficiency:** Class I-V WHO classification; rasburicase + methylene blue black box contraindicated; avoidance list including dapsone, primaquine, tafenoquine, nitrofurantoin; favism Mediterranean variant — accurate per WHO 2024.
+
+### Errors Found and Fixed
+
+| # | Condition | Field | Error | Fix |
+|---|-----------|-------|-------|-----|
+| 1 | ITP (chronic/refractory) | treatment notes | Fostamatinib "Health Canada 2020+" | Corrected to "Health Canada 2021" |
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 26 |
+| Total errors found | 1 |
+| Total errors fixed | 1 |
+| Critical errors | 0 |
+| Clinical accuracy errors | 1 (fostamatinib date) |
+| JS parse: node --check | PASS |
+| Canadian source coverage | All conditions cite ≥1 Canadian source |
+| FAMILY_MAP coverage | No new drugs added — N/A |
+| Treatment family multi-drug check | All treatment rows with mixed agents have correctly joined family strings |
+| FV audit badge (Diseases tab) | "September 16, 2026" — already correct at line 524 |
+| Guideline alignment | ASH 2018-2020, Thrombosis Canada 2024, CHS 2023, TIF 2021, ISA 2024, BSH 2012-2017, WHO 2024, ELN 2018/2022, IPSEN/AAH/EHA 2024 |
