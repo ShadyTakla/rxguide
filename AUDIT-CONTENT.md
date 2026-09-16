@@ -3253,3 +3253,54 @@ Full Verbatim (FV) Tier 4 clinical audit of all Infectious Disease conditions in
 | FAMILY_MAP coverage | No new drugs added — N/A |
 | FV audit badge (Diseases tab) | "September 16, 2026" — confirmed at line 524 |
 | Guideline alignment | PHAC 2024, AMMI Canada Bugs & Drugs 2024, Canadian TB Standards 2022, IDSA/SHEA 2021, DHHS 2024, IAS-USA 2024, Surviving Sepsis Campaign 2021, IDSA Candidiasis 2016, WHO 2022 |
+
+---
+
+## Cycle 44 — Dermatology Disease Cards Full Verbatim Audit — 2026-09-16
+
+**Scope:** Full Verbatim (FV) Tier 4 clinical audit of all Dermatology disease conditions in `DISEASES["dermatology"].conditions[]`. Every field audited line-by-line against current Canadian-first guidelines (CDA, Health Canada, OCP, BAD, ISSVD, AAD with Canadian adaptation). Cross-catalog propagation performed for all corrections.
+
+**Auditor:** Claude Sonnet 4.6 (automated Tier 4 review) — 2026-09-16
+
+**Conditions audited (30+):** atopic_dermatitis, psoriasis, ssti, acne_vulgaris, rosacea, fungal_skin, lice_scabies, contact_dermatitis, diaper_rash, warts, insect_bites, xerosis, seb_derm, sunburn, chronic_spontaneous_urticaria, alopecia, hidradenitis_suppurativa, onychomycosis, tinea_pedis_cruris_corporis, hyperhidrosis, chronic_pruritus, bullous_pemphigoid, vitiligo, lichen_sclerosus, lichen_planus, pemphigus_vulgaris, stevens_johnson_syndrome_ten, dress_syndrome, erythema_multiforme, pyoderma_gangrenosum, sweet_syndrome, folliculitis, pityriasis_rosea, pityriasis_versicolor, molluscum_contagiosum, stasis_dermatitis, pressure_injury, pruritus_ani, cheilitis, calluses_corns, ingrown_toenail.
+
+### Errors Found and Fixed
+
+| # | Severity | Condition | Field | Error | Fix |
+|---|----------|-----------|-------|-------|-----|
+| 1 | 🟠 Significant | atopic_dermatitis | treatment[*].notes (TCI row, line 81060) | "FDA BBW: theoretical malignancy risk" — incorrect agency for a Canadian app; Health Canada (not FDA) holds the black box on tacrolimus/pimecrolimus re: theoretical lymphoma risk | Changed to "Health Canada BBW: theoretical malignancy risk" |
+| 2 | 🟠 Significant | vitiligo | treatment[*].details (first-line pharmacotherapy, line 85804) | "FDA black box for theoretical malignancy risk (limited evidence in vitiligo)" — same agency error | Changed to "Health Canada black box for theoretical malignancy risk" |
+| 3 | 🟠 Significant | lichen_sclerosus | treatment[*].details (second-line/steroid-sparing, line 85987) | "FDA black box for theoretical malignancy (controversial in LS context)" — same agency error for TCI warning | Changed to "Health Canada black box for theoretical malignancy" |
+| 4 | 🟡 Minor | stasis_dermatitis | treatment row "Venous ulcer — wound care" family field | `"family": "Topical Hair Growth Agents"` — wrong DRUG_FAMILIES key; this is a supportive_care type row with no minoxidil agents (copy-paste artifact from alopecia section) | Changed to `"family": "—"` |
+| 5 | 🟡 Minor | stasis_dermatitis | treatment row "Surgical / endovenous referral" family field | Same copy-paste artifact — `"family": "Topical Hair Growth Agents"` on a surgery_procedure type row | Changed to `"family": "—"` |
+| 6 | 🟡 Minor | pressure_injury | treatment row "First-Line — prevention" family field | `"family": "Topical Hair Growth Agents"` on a supportive_care row with no minoxidil agents | Changed to `"family": "—"` |
+| 7 | 🟡 Minor | pressure_injury | treatment row "Stage 2" family field | Same artifact | Changed to `"family": "—"` |
+| 8 | 🟡 Minor | pressure_injury | treatment row "Stage 3" family field | Same artifact | Changed to `"family": "—"` |
+
+### Confirmed Correct (representative highlights)
+
+- **Isotretinoin (acne_vulgaris):** RAMP/ACNE SMART program cited (not US iPLEDGE); 2 forms contraception; monthly LFT/lipid/CBC monitoring; Health Canada PM referenced — correct.
+- **Calcineurin inhibitors (atopic_dermatitis, seb_derm, vitiligo, lichen_sclerosus):** After fixes, all three treatment rows now correctly cite Health Canada (not FDA) for the black box warning on theoretical malignancy risk. The pimecrolimus drug card (line 310489) already correctly said "Health Canada/FDA boxed warning" — no change needed.
+- **Doxycycline rosacea:** Sub-antimicrobial 40 mg ER (Oracea/Apprilon) correctly specified; NOT 100 mg BID — confirmed correct.
+- **Terbinafine onychomycosis:** 250 mg/day × 6w fingernails / 12w toenails; LFT monitoring; CYP2D6 inhibitor — confirmed correct.
+- **Psoriasis biologics:** IL-17 inhibitors IBD caution stated; TNFi TB screening mandated; Canadian ODB listing context included — correct.
+- **Bullous pemphigoid:** Anti-BP180/BP230 differentiated from pemphigus; rituximab + prednisone for severe correct per CDA 2024 — confirmed correct.
+- **Pemphigus vulgaris:** RITUX 3 trial cited; Health Canada approval stated alongside FDA; PJP prophylaxis correct — confirmed correct.
+- **SJS/TEN:** SCORTEN 7-variable score; cyclosporine + etanercept as preferred over IVIG; amniotic membrane transplant for ocular — confirmed correct.
+- **treatment[*].family multi-family strings:** Checked representative rows across all conditions; all Drug-type rows correctly list all distinct DRUG_FAMILIES keys joined by " / " — no violations found.
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 41 (all Dermatology) |
+| Total errors found | 8 |
+| Total errors fixed | 8 |
+| Critical errors (patient-safety) | 0 |
+| Significant errors (Canadian regulatory) | 3 (FDA→Health Canada BBW for TCI black box in 3 conditions) |
+| Minor errors (data/family field) | 5 (Topical Hair Growth Agents copy-paste in non-Drug rows) |
+| JS parse: node --check | PASS (post-edit) |
+| Canadian source coverage | All conditions cite ≥1 Canadian source (CDA, Health Canada, OCP, BAD adapted for Canada, ISSVD, NPIAP/EPUAP, Wound Care Canada, CPMA, CPS, SOGC) |
+| FAMILY_MAP coverage | No new drugs added — N/A |
+| FV audit badge (Diseases tab) | "September 16, 2026" — confirmed at line 524; no change required |
+| Guideline alignment | CDA 2024, Health Canada product monographs, OCP Minor Ailment scope, BAD LS Guidelines 2018, RITUX 3 Joly Lancet 2017, SCORTEN, NPIAP/EPUAP 2019, Wound Care Canada 2024, Diabetes Canada 2023 |
