@@ -3354,3 +3354,37 @@ Full Verbatim (FV) Tier 4 clinical audit of all Infectious Disease conditions in
 | FAMILY_MAP coverage | No new drugs added — N/A |
 | FV audit badge (Diseases tab) | "September 16, 2026" — confirmed at line 524; no change required (set during Cycle 31 Cardiology audit) |
 | Guideline alignment | SOGC CPG 431 PPH (2022), SOGC Hypertensive Disorders (2022), SOGC Contraception (2015/2023 update), SOGC PCOS (2023), Health Canada Product Monographs, Diabetes Canada 2023, Hypertension Canada 2025, OCP Minor Ailments, PHAC STI Guidelines 2022 |
+
+---
+
+## Cycle 46 — Ophthalmology Disease Cards Full Verbatim Audit — 2026-09-16
+
+**Scope:** Full Verbatim (FV) Tier 4 clinical audit of all 25 Ophthalmology disease cards in `DISEASES["ophthalmology"].conditions[]`. Every field audited line-by-line against current Canadian-first guidelines (COS, Health Canada, AREDS2, OCP, AAO, ASRS). Cross-catalog propagation check performed for all corrections.
+
+**Auditor:** Claude Sonnet 4.6 (automated Tier 4 review) — 2026-09-16
+
+**Conditions audited (25):** Open-Angle Glaucoma, Dry Eye Disease, Allergic Conjunctivitis, Closed-Angle Glaucoma, Red Eye Differential, Chalazion/Hordeolum, Blepharitis, Age-Related Macular Degeneration, Cataract Care, Bacterial Conjunctivitis, Viral Conjunctivitis, Diabetic Retinopathy, Optic Neuritis, Uveitis, Corneal Abrasion, Subconjunctival Hemorrhage, Pterygium/Pinguecula, Floaters/PVD, Retinal Detachment, Retinal Vein Occlusion, Episcleritis/Scleritis, Central Retinal Artery Occlusion, Endophthalmitis, NAION, Keratoconus.
+
+### Findings and Fixes
+
+| # | Severity | Condition | Finding | Resolution |
+|---|----------|-----------|---------|------------|
+| 1 | 🔴 Critical | Retinal Detachment | "Post-operative — face-down positioning (gas tamponade)" row had `"family": "Atypical Antidepressants"` — clinically unrelated drug family on a `patient_education` type row about post-surgical positioning instructions (SF6/C3F8 gas tamponade face-down posture); clearly a copy-paste artifact | Changed to `"family": null`; confirmed zero remaining instances of the erroneous pairing via grep |
+| 2 | 🟠 Significant | Open-Angle Glaucoma | "Newer agents" treatment row had `"family": "Rho Kinase Inhibitors"` but the `agents[]` array contained `["bimatoprost", "travoprost"]` — both prostaglandin analogues, not ROCK inhibitors; notes mentioned netarsudil (ROCK inhibitor) in free text but netarsudil is not in the agents array | Changed to `"family": "Prostaglandin Analogues"` — matches the actual agents listed; confirmed no other mismatched instances remain |
+
+**All other conditions (23):** No material clinical errors found. Key Canadian clinical checks confirmed: (1) AREDS2 formulation correctly notes NO beta-carotene in smokers — use lutein 10 mg/zeaxanthin 2 mg instead; (2) Brimonidine correctly noted as contraindicated in children <2 years (CNS depression risk); (3) Anti-VEGF agents (ranibizumab, bevacizumab, aflibercept, brolucizumab) correctly listed for AMD/DME/RVO; (4) Gonococcal conjunctivitis correctly shows ceftriaxone IM/IV; (5) Bacterial conjunctivitis tobramycin/ciprofloxacin/polymyxin-B correct; (6) Cyclosporine ophthalmic (Restasis) and lifitegrast (Xiidra) correctly listed for dry eye; (7) Uveitis adalimumab (Humira) Health Canada approved for non-infectious uveitis correctly noted; (8) All treatment[*].family fields on Drug-type rows match exact DRUG_FAMILIES keys; (9) All 25 conditions cite ≥1 Canadian source.
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 25 |
+| Total errors found and fixed | 2 |
+| Critical errors | 1 (wrong drug family on patient_education row) |
+| Significant errors | 1 (wrong drug family mismatching agents array) |
+| Minor errors | 0 |
+| JS parse: node --check | PASS (post-edit) |
+| Canadian source coverage | All 25 conditions cite ≥1 Canadian source (COS, Health Canada, OCP, AAO, ASRS, AREDS2) |
+| FAMILY_MAP coverage | No new drugs added — N/A |
+| FV audit badge (Diseases tab) | "September 16, 2026" — confirmed at line 524; no change required (already current) |
+| Guideline alignment | COS 2024 (Glaucoma), AREDS2 (AMD supplements), Health Canada Product Monographs, OCP Minor Ailments (bacterial/allergic conjunctivitis), AAO 2024, ASRS (retinal detachment), PHAC STI Guidelines 2022 (gonococcal conjunctivitis) |
