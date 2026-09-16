@@ -3304,3 +3304,53 @@ Full Verbatim (FV) Tier 4 clinical audit of all Infectious Disease conditions in
 | FAMILY_MAP coverage | No new drugs added — N/A |
 | FV audit badge (Diseases tab) | "September 16, 2026" — confirmed at line 524; no change required |
 | Guideline alignment | CDA 2024, Health Canada product monographs, OCP Minor Ailment scope, BAD LS Guidelines 2018, RITUX 3 Joly Lancet 2017, SCORTEN, NPIAP/EPUAP 2019, Wound Care Canada 2024, Diabetes Canada 2023 |
+
+---
+
+## Cycle 45 — Women's Health Disease Cards Full Verbatim Audit — 2026-09-16
+
+**Scope:** Full Verbatim (FV) Tier 4 clinical audit of all Women's Health disease conditions in `DISEASES["womens_health"].conditions[]`. Every field audited line-by-line against current Canadian-first guidelines (SOGC, Health Canada, OCP, ACOG adapted for Canada). Cross-catalog propagation performed for all corrections.
+
+**Auditor:** Claude Sonnet 4.6 (automated Tier 4 review) — 2026-09-16
+
+**Conditions audited (26):** contraception, emergency_contraception, dysmenorrhea, pms_pmdd, amenorrhea, pcos, endometriosis, menopause, osteoporosis_women, sti_women, ectopic_pregnancy, gestational_diabetes, preeclampsia, hyperemesis_gravidarum, antepartum_hemorrhage, postpartum_hemorrhage, postpartum_depression, breast_cancer, cervical_cancer, ovarian_cancer, endometrial_cancer, vulvodynia, pelvic_inflammatory_disease, bacterial_vaginosis, vaginitis, preterm_labour.
+
+### Errors Found and Fixed
+
+| # | Severity | Condition | Field | Error | Fix |
+|---|----------|-----------|-------|-------|-----|
+| 1 | 🔴 Critical | postpartum_hemorrhage | treatment[*].notes ("TONE" row) | Misoprostol dose stated as "800-1000 mcg PR or sublingual" — upper bound of 1000 mcg is not in SOGC PPH Guideline 431 (2022) or WHO PPH guidelines; correct dose is 600-800 mcg SL | Changed to "MISOPROSTOL 600-800 mcg SL or PR (universal — temperature stable)" |
+| 2 | 🔴 Critical | carboprost drug card (`DRUGS["carboprost"].canadian_notes`) | sibling location — cross-catalog propagation | Same error: "MISOPROSTOL (800-1000 mcg PR sublingual if other unavailable)" — same out-of-range upper bound | Changed to "MISOPROSTOL (600-800 mcg SL or PR if other unavailable)" |
+
+### Confirmed Correct (representative highlights)
+
+- **Misoprostol PPH (after fix):** 600-800 mcg SL — correct per SOGC Guideline 431 (2022) and WHO PPH guidelines.
+- **Oxytocin PPH:** 10 IU IM after delivery; 20-40 IU in 500 mL IV infusion — correct per SOGC.
+- **Carboprost:** 0.25 mg IM q15min × max 8 doses — correct per Health Canada PM.
+- **Tranexamic acid PPH:** 1 g IV within 3h of birth (WOMAN trial) — correct.
+- **Magnesium sulfate (preeclampsia):** 4-6 g IV loading; 1-2 g/hr maintenance — correct per SOGC Hypertensive Disorders Guidelines.
+- **ASA preeclampsia prevention:** 81-162 mg/day from <16 weeks in high-risk women — correct per SOGC/Hypertension Canada.
+- **Letrozole (PCOS ovulation induction):** Health Canada-approved; 2.5-7.5 mg days 3-7 — correct.
+- **Metformin (gestational diabetes):** Use with caution; not first-line in Canada; insulin preferred — correct per Diabetes Canada 2023.
+- **Nifedipine (preterm labour tocolysis):** Short-acting 10-20 mg PO loading; extended-release maintenance — correct per SOGC.
+- **LNG-IUD (Mirena/Kyleena):** 5 and 3 year duration distinction correct; postpartum insertion timing correct per SOGC.
+- **Medroxyprogesterone acetate:** 10 mg × 10 days for secondary amenorrhea progestin challenge — correct.
+- **Doxylamine/B6 (Diclegis):** First-line hyperemesis; Health Canada-approved — correct.
+- **treatment[*].family multi-family strings:** Checked all Drug-type rows; multi-agent rows correctly list all distinct DRUG_FAMILIES keys joined by " / " — no violations found.
+- **Canadian source coverage:** All 26 conditions cite ≥1 Canadian source (SOGC, Health Canada, OCP, Diabetes Canada, Hypertension Canada, PHAC) — confirmed.
+
+### Final Status
+
+| Metric | Value |
+|--------|-------|
+| Conditions audited | 26 |
+| Total errors found | 2 (both instances of same clinical dosing error across 2 sibling locations) |
+| Total errors fixed | 2 |
+| Critical errors (patient-safety) | 1 unique error (misoprostol PPH dose), fixed in 2 sibling locations |
+| Significant errors | 0 |
+| Minor errors | 0 |
+| JS parse: node --check | PASS (post-edit) |
+| Canadian source coverage | All 26 conditions cite ≥1 Canadian source |
+| FAMILY_MAP coverage | No new drugs added — N/A |
+| FV audit badge (Diseases tab) | "September 16, 2026" — confirmed at line 524; no change required (set during Cycle 31 Cardiology audit) |
+| Guideline alignment | SOGC CPG 431 PPH (2022), SOGC Hypertensive Disorders (2022), SOGC Contraception (2015/2023 update), SOGC PCOS (2023), Health Canada Product Monographs, Diabetes Canada 2023, Hypertension Canada 2025, OCP Minor Ailments, PHAC STI Guidelines 2022 |
